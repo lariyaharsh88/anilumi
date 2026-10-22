@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { abs } from "@/lib/site";
-import { listAnime, getCategories, seasonOf, shiftSeason, animePath, episodePath, getLastAired } from "@/lib/kitsu";
+import { listAnime, getCategories, seasonOf, shiftSeason, animePath, episodePath, getLastAiredBest } from "@/lib/kitsu";
 
 export const revalidate = 86400;
 
@@ -27,7 +27,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // Episode pages: latest 3 + next for every airing show (the weekly-refreshed queries).
     const seasonal = await listAnime({ filter: { status: "current", season: s.season, seasonYear: String(s.year) }, sort: "-userCount", limit: 20, revalidate: 86400 });
     const airingSet = new Map([...airing.items, ...seasonal.items].map((a) => [a.id, a]));
-    const latestAll = await Promise.all([...airingSet.values()].map((a) => getLastAired(a.id)));
+    const latestAll = await Promise.all([...airingSet.values()].map((a) => getLastAiredBest(a.id)));
     [...airingSet.values()].forEach((a, i) => {
       const { lastAired, reliable } = latestAll[i];
       for (const n of reliable ? [lastAired - 2, lastAired - 1, lastAired, lastAired + 1] : [lastAired - 2, lastAired - 1, lastAired]) {

@@ -563,3 +563,47 @@ export function isFuture(iso: string | null): boolean {
   const d = new Date(iso.length === 10 ? `${iso}T23:59:59+09:00` : iso);
   return d.getTime() > Date.now();
 }
+
+/* ---------------- Optional MyAnimeList (Jikan) enrichment ----------------
+ * Kitsu's episode air dates lag badly for long-running shows (One Piece stops at ep. 743),
+ * so numbered "next episode" pages can't be derived from Kitsu alone. When JIKAN_ENRICH=1,
+ * we look up the MAL id via Kitsu's mappings and read the latest aired episode from Jikan.
+ * Fails soft: any error or a 4 s timeout simply returns null. */
+
+export async function getMalId(animeId: string): Promise<string | null> {
+  const doc = await kitsu(`/anime/${animeId}/mappings`, { "fields[mappings]": "externalSite,externalId" }, 86400 * 7);
+  if (!doc || !Array.isArray(doc.data)) return null;
+  const m = doc.data.find((x) => x.attributes.externalSite === "myanimelist/anime");
+  return m ? String(m.attributes.externalId) : null;
+}
+
+export async function getMalLastAired(animeId: string): Promise<LastAired | null> {
+  if (process.env.JIKAN_ENRICH !== "1") return null;
+  try {
+    const malId = await getMalId(animeId);
+    if (!malId) return null;
+    const get = async (page: number) => {
+      const res = await fetch(`https://api.jikan.moe/v4/anime/${malId}/episodes?page=${page}`, { next: { revalidate: 21600 }, signal: AbortSignal.timeout(4000) });
+      if (!res.ok) return null;
+      return (await res.json()) as { pagination?: { last_visible_page?: number }; data?: { mal_id: number; aired: string | null }[] };
+    };
+    const first = await get(1);
+    const lastPage = first?.pagination?.last_visible_page || 1;
+    const tail = lastPage > 1 ? await get(lastPage) : first;
+    const eps = (tail?.data || []).filter((e) => e.aired && !isFuture(e.aired));
+    const last = eps[eps.length - 1];
+    if (!last) return null;
+    const date = last.aired!.slice(0, 10);
+    return { count: last.mal_id, lastAired: last.mal_id, lastAiredDate: date, reliable: reliableTail(date) };
+  } catch {
+    return null;
+  }
+}
+
+/** Kitsu first; MAL as a fallback when Kitsu's tail is stale and enrichment is enabled. */
+export async function getLastAiredBest(animeId: string): Promise<LastAired> {
+  const k = await getLastAired(animeId);
+  if (k.reliable) return k;
+  const m = await getMalLastAired(animeId);
+  return m && m.lastAired >= k.lastAired ? m : k;
+}

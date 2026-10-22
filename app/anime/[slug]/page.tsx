@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { getAnimeBySlug, getCharacters, getEpisodes, listAnime, getTrending, getRelations, getLastAired, episodePath, posterUrl, fmtDate, statusLabel, subtypeLabel, animePath, weekdayOf, runtimeMinutes, fmtMinutes, Anime } from "@/lib/kitsu";
+import { getAnimeBySlug, getCharacters, getEpisodes, listAnime, getTrending, getRelations, getLastAiredBest, episodePath, posterUrl, fmtDate, statusLabel, subtypeLabel, animePath, weekdayOf, runtimeMinutes, fmtMinutes, Anime } from "@/lib/kitsu";
 import { abs } from "@/lib/site";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import JsonLd from "@/components/JsonLd";
@@ -74,7 +74,7 @@ export default async function AnimePage({ params }: Props) {
     a.subtype === "movie" ? Promise.resolve({ items: [], total: 0, limit: 0, offset: 0 }) : getEpisodes(a.id, 1, 6),
     mainGenre ? listAnime({ filter: { categories: mainGenre.slug }, sort: "-userCount", limit: 13 }) : Promise.resolve({ items: [], total: 0, limit: 0, offset: 0 }),
     getRelations(a.id),
-    a.status === "current" ? getLastAired(a.id) : Promise.resolve({ count: 0, lastAired: 0, lastAiredDate: null, reliable: false }),
+    a.status === "current" ? getLastAiredBest(a.id) : Promise.resolve({ count: 0, lastAired: 0, lastAiredDate: null, reliable: false }),
   ]);
   const relatedItems = related.items.filter((r) => r.id !== a.id).slice(0, 12);
   const franchise = relations.filter((r) => ["sequel", "prequel", "side_story", "spinoff", "summary", "alternative_version", "other", "character"].includes(r.role));

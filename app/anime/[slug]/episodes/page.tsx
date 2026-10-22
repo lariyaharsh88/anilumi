@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { getAnimeBySlug, getEpisodes, getLastAired, fmtDate, animePath, episodePath, posterUrl } from "@/lib/kitsu";
+import { getAnimeBySlug, getEpisodes, getLastAiredBest, fmtDate, animePath, episodePath, posterUrl } from "@/lib/kitsu";
 import Countdown from "@/components/Countdown";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import Pagination from "@/components/Pagination";
@@ -31,7 +31,7 @@ export default async function EpisodesPage({ params, searchParams }: Props) {
   const page = Math.max(1, Number(pageStr) || 1);
   const a = await getAnimeBySlug(decodeURIComponent(slug));
   if (!a) notFound();
-  const [eps, { lastAired, reliable }] = await Promise.all([getEpisodes(a.id, page, LIMIT), getLastAired(a.id)]);
+  const [eps, { lastAired, reliable }] = await Promise.all([getEpisodes(a.id, page, LIMIT), getLastAiredBest(a.id)]);
   const nextN = a.status === "current" && a.nextRelease && reliable ? lastAired + 1 : null;
 
   return (
