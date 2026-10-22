@@ -3,6 +3,7 @@ import "./globals.css";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import JsonLd from "@/components/JsonLd";
+import Analytics from "@/components/Analytics";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -12,6 +13,8 @@ export const metadata: Metadata = {
   openGraph: { siteName: site.name, type: "website", locale: "en_US" },
   twitter: { card: "summary_large_image", site: site.twitter },
   robots: { index: true, follow: true },
+  manifest: "/manifest.webmanifest",
+  alternates: { types: { "application/rss+xml": [{ url: "/feed.xml", title: `${site.name} – this week's episodes` }] } },
   verification: process.env.NEXT_PUBLIC_GSC_VERIFICATION ? { google: process.env.NEXT_PUBLIC_GSC_VERIFICATION } : undefined,
 };
 
@@ -34,6 +37,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             },
           }}
         />
+        <Analytics />
         <SiteHeader />
         <main className="flex-1">{children}</main>
         <SiteFooter />

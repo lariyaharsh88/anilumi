@@ -160,7 +160,7 @@ function normalizeAnime(r: JsonApiResource, included: JsonApiResource[] = []): A
 
 /** Kitsu returns 15-minute signed Backblaze URLs for freshly uploaded art; the
  *  same path is served permanently from media.kitsu.app without a signature. */
-function stableUrl(u: unknown): string | undefined {
+export function stableUrl(u: unknown): string | undefined {
   if (typeof u !== "string" || !u) return undefined;
   if (u.includes("backblazeb2.com")) {
     try {
@@ -431,10 +431,10 @@ const NOTES: Record<WatchEntry["kind"], string> = {
 };
 
 /** Walk prequel/sequel links to assemble the franchise, max 12 hops each way. */
-export async function buildWatchOrder(start: Anime): Promise<WatchOrder> {
+export async function buildWatchOrder(start: Anime, fetchRelations: (id: string) => Promise<Relation[]> = getRelations): Promise<WatchOrder> {
   const relCache = new Map<string, Relation[]>();
   const rels = async (a: Anime) => {
-    if (!relCache.has(a.id)) relCache.set(a.id, await getRelations(a.id));
+    if (!relCache.has(a.id)) relCache.set(a.id, await fetchRelations(a.id));
     return relCache.get(a.id)!;
   };
 
@@ -531,27 +531,33 @@ function reliableTail(lastAiredDate: string | null): boolean {
   return Date.now() - new Date(`${lastAiredDate}T00:00:00Z`).getTime() < 45 * 86400000;
 }
 
+/** Pure binary search: largest index i in [0, count) with aired(at(i)); -1 if none. Assumes aired is monotone (true…true false…false). */
+export async function findLastAiredIndex(count: number, at: (i: number) => Promise<Episode | null>, aired: (e: Episode | null) => boolean): Promise<{ index: number; episode: Episode | null }> {
+  if (!count) return { index: -1, episode: null };
+  const last = await at(count - 1);
+  if (aired(last)) return { index: count - 1, episode: last };
+  const first = await at(0);
+  if (!aired(first)) return { index: -1, episode: null };
+  let lo = 0, hi = count - 1, best = first;
+  for (let i = 0; i < 20 && hi - lo > 1; i++) {
+    const mid = Math.floor((lo + hi) / 2);
+    const e = await at(mid);
+    if (aired(e)) { lo = mid; best = e; } else hi = mid;
+  }
+  return { index: lo, episode: best };
+}
+
 export async function getLastAired(animeId: string): Promise<LastAired> {
   const head = await kitsu(`/anime/${animeId}/episodes`, { "page[limit]": 1, "fields[episodes]": "number" }, 21600);
   const count = head?.meta?.count ?? 0;
-  if (!count) return { count: 0, lastAired: 0, lastAiredDate: null, reliable: false };
   const at = async (offset: number): Promise<Episode | null> => {
     const doc = await kitsu(`/anime/${animeId}/episodes`, { "page[limit]": 1, "page[offset]": offset, sort: "number", "fields[episodes]": "number,airdate" }, 21600);
     return doc && Array.isArray(doc.data) && doc.data[0] ? normalizeEpisode(doc.data[0]) : null;
   };
   const aired = (e: Episode | null) => Boolean(e?.airdate) && !isFuture(e!.airdate);
-  const last = await at(count - 1);
-  if (aired(last)) return { count, lastAired: last!.number ?? count, lastAiredDate: last!.airdate, reliable: reliableTail(last!.airdate) };
-  let lo = 0, hi = count - 1, best: Episode | null = null; // invariant: predicate true at lo (or nothing aired), false at hi
-  const first = await at(0);
-  if (!aired(first)) return { count, lastAired: 0, lastAiredDate: null, reliable: false };
-  best = first;
-  for (let i = 0; i < 14 && hi - lo > 1; i++) {
-    const mid = Math.floor((lo + hi) / 2);
-    const e = await at(mid);
-    if (aired(e)) { lo = mid; best = e; } else hi = mid;
-  }
-  return { count, lastAired: best?.number ?? lo + 1, lastAiredDate: best?.airdate ?? null, reliable: reliableTail(best?.airdate ?? null) };
+  const { index, episode } = await findLastAiredIndex(count, at, aired);
+  if (index < 0) return { count, lastAired: 0, lastAiredDate: null, reliable: false };
+  return { count, lastAired: episode?.number ?? index + 1, lastAiredDate: episode?.airdate ?? null, reliable: reliableTail(episode?.airdate ?? null) };
 }
 
 export function episodePath(a: Pick<Anime, "slug">, n: number) {
