@@ -48,8 +48,18 @@ body { @apply bg-bg text-ink antialiased; }
 .prose-anime a { @apply text-violet underline-offset-2 hover:underline; }
 .line-clamp-3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
 .line-clamp-6 { display: -webkit-box; -webkit-line-clamp: 6; -webkit-box-orient: vertical; overflow: hidden; }
-.scroll-x { @apply flex gap-4 overflow-x-auto pb-3 [scrollbar-width:thin]; scroll-snap-type: x proximity; scroll-padding-left: 0; }
+/* Horizontal rails. `position: relative` matters: it makes the rail the containing block for any
+   absolutely positioned descendant (e.g. sr-only labels), so nothing escapes it and widens the page. */
+.scroll-x { @apply relative flex gap-4 overflow-x-auto pb-1; scroll-snap-type: x proximity; overscroll-behavior-x: contain;
+  scrollbar-width: none; -webkit-overflow-scrolling: touch; scroll-padding-inline: 1rem; }
+.scroll-x::-webkit-scrollbar { display: none; }
 .scroll-x > * { scroll-snap-align: start; flex: 0 0 auto; }
+.scroll-x.is-dragging { scroll-snap-type: none; cursor: grabbing; user-select: none; }
+.scroll-x.is-dragging a { pointer-events: none; }
+@media (hover: none) { .rail-btn { display: none !important; } }
+
+/* Safety net: nothing may ever make the page itself scroll sideways (clip keeps sticky headers working). */
+html, body { overflow-x: clip; }
 
 /* Filler toggle (components/FillerToggle.tsx) */
 [data-hide-filler] [data-filler] { display: none; }
