@@ -4,6 +4,8 @@ import { getTrending, listAnime, getSeason, seasonOf, cap, getCategories } from 
 import AnimeRail from "@/components/AnimeRail";
 import AdSlot from "@/components/AdSlot";
 import { site } from "@/lib/site";
+import StatTiles from "@/components/viz/StatTiles";
+import { WATCH_ORDER_OVERRIDES } from "@/data/watch-orders";
 
 export const revalidate = 1800;
 
@@ -40,6 +42,16 @@ export default async function Home() {
           <Link href="/watch-order" className="btn-outline">Watch orders</Link>
         </div>
       </section>
+
+      <StatTiles
+        className="mt-6"
+        stats={[
+          { label: "Airing right now", value: airing.total.toLocaleString(), sub: "series with new episodes" },
+          { label: `${cap(season)} ${year} lineup`, value: seasonal.total.toLocaleString(), sub: "titles this season" },
+          { label: "Announced", value: upcoming.total.toLocaleString(), sub: "not aired yet" },
+          { label: "Watch-order guides", value: String(Object.keys(WATCH_ORDER_OVERRIDES).length), sub: "with editor notes" },
+        ]}
+      />
 
       <AnimeRail title="Trending right now" href="/top/popular" items={trending} rank />
       <AnimeRail title="Airing this season" href="/schedule" items={airing.items} />

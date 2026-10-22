@@ -9,12 +9,20 @@ import JsonLd from "@/components/JsonLd";
 import Faq from "@/components/Faq";
 import AdSlot from "@/components/AdSlot";
 import { amazonSearch, affiliateRel } from "@/lib/affiliate";
+import BarChart from "@/components/viz/BarChart";
 
 export const revalidate = 86400;
 type Props = { params: Promise<{ slug: string }> };
 
 const KIND_LABEL: Record<WatchEntry["kind"], string> = { main: "Main", movie: "Movie", side: "Side story", recap: "Recap", spinoff: "Spin-off", alt: "Alt. version" };
 const KIND_CLASS: Record<WatchEntry["kind"], string> = { main: "bg-accent-strong text-white", movie: "bg-violet-strong text-white", side: "bg-bg-2 text-ink", recap: "bg-line text-muted line-through", spinoff: "bg-bg-2 text-ink", alt: "bg-line text-muted" };
+
+/** Drop the shared franchise prefix so sibling entries stay distinguishable in narrow labels. */
+function shortTitle(title: string, franchise: string) {
+  if (title === franchise || !title.toLowerCase().startsWith(franchise.toLowerCase())) return title;
+  const rest = title.slice(franchise.length).replace(/^[\s:：\-–—]+/, "").trim();
+  return rest ? rest.charAt(0).toUpperCase() + rest.slice(1) : title;
+}
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
@@ -76,6 +84,23 @@ export default async function WatchOrderPage({ params }: Props) {
         <a href={amazonSearch(`${name} blu-ray`)} target="_blank" rel={affiliateRel} className="btn-outline">💿 Blu-ray box sets</a>
       </div>
       <AdSlot slot="watch-order-top" />
+
+      {(() => {
+        const timed = ordered.filter((e) => (e.kind === "main" || e.kind === "movie") && runtimeMinutes(e.anime) > 0);
+        if (timed.length < 2) return null;
+        const longest = timed.reduce((x, y) => (runtimeMinutes(y.anime) > runtimeMinutes(x.anime) ? y : x));
+        return (
+          <div className="mt-8">
+            <BarChart
+              orientation="bar"
+              title="Where the hours go"
+              subtitle={`Core story and movies in watch order · ${fmtMinutes(wo.totalMinutes)} in total · longest: ${longest.anime.title}`}
+              valueHeading="Runtime"
+              data={timed.map((e) => ({ key: e.anime.id, label: shortTitle(e.anime.title, name), value: runtimeMinutes(e.anime), display: fmtMinutes(runtimeMinutes(e.anime)), href: animePath(e.anime) }))}
+            />
+          </div>
+        );
+      })()}
 
       <section className="mt-8">
         <h2 className="h-section mb-3">Recommended order</h2>

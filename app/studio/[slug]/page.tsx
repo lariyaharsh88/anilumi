@@ -8,6 +8,8 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import JsonLd from "@/components/JsonLd";
 import Faq from "@/components/Faq";
 import AdSlot from "@/components/AdSlot";
+import StatTiles from "@/components/viz/StatTiles";
+import BarChart from "@/components/viz/BarChart";
 
 export const revalidate = 86400;
 type Props = { params: Promise<{ slug: string }> };
@@ -31,6 +33,13 @@ export default async function StudioPage({ params }: Props) {
   const airing = items.filter((a) => a.status === "current");
   const upcoming = items.filter((a) => a.status === "upcoming");
   const rated = [...items].filter((a) => a.rating).sort((x, y) => (y.rating || 0) - (x.rating || 0)).slice(0, 10);
+  const allRated = items.filter((a) => a.rating);
+  const avg = allRated.length ? allRated.reduce((n, a) => n + (a.rating || 0), 0) / allRated.length / 10 : null;
+  const byYear = new Map<number, number>();
+  for (const a of items) { const yr = Number(a.startDate?.slice(0, 4)); if (yr) byYear.set(yr, (byYear.get(yr) || 0) + 1); }
+  const years = [...byYear.keys()].sort((x, y) => x - y);
+  const span = years.length ? Array.from({ length: Math.min(years[years.length - 1] - years[0] + 1, 30) }, (_, i) => years[years.length - 1] - Math.min(years[years.length - 1] - years[0], 29) + i) : [];
+  const busiest = [...byYear.entries()].sort((x, y) => y[1] - x[1])[0];
   const ld = { "@context": "https://schema.org", "@type": "Organization", name: p.name, url: abs(`/studio/${p.slug}`) };
   return (
     <div className="container-x py-8">
@@ -38,6 +47,26 @@ export default async function StudioPage({ params }: Props) {
       <Breadcrumbs items={[{ href: "/", label: "Home" }, { href: `/studio/${p.slug}`, label: p.name }]} />
       <h1 className="text-3xl font-extrabold tracking-tight">{p.name} anime</h1>
       <p className="mt-2 max-w-2xl text-muted">{total} titles credited to {p.name} as animation studio on Kitsu. Showing the {items.length} most followed.</p>
+      <section className="mt-6 space-y-3" aria-label="Studio at a glance">
+        <StatTiles
+          stats={[
+            { label: "Titles credited", value: total.toLocaleString(), sub: "as animation studio" },
+            { label: "Average score", value: avg ? avg.toFixed(1) : "–", sub: avg ? `across ${allRated.length} rated titles` : "No ratings yet" },
+            { label: "Highest rated", value: rated[0]?.rating ? (rated[0].rating / 10).toFixed(1) : "–", sub: rated[0]?.title },
+            { label: "Busiest year", value: busiest ? String(busiest[0]) : "–", sub: busiest ? `${busiest[1]} titles premiered` : undefined },
+          ]}
+        />
+        {span.length >= 3 && (
+          <BarChart
+            title="Titles per year"
+            subtitle={`Premiere year of the ${items.length} most-followed ${p.name} titles`}
+            valueHeading="Titles"
+            data={span.map((yr) => ({ key: String(yr), label: span.length > 16 ? `’${String(yr).slice(2)}` : String(yr), value: byYear.get(yr) || 0, display: `${byYear.get(yr) || 0} in ${yr}` }))}
+            labelKeys={busiest ? [String(busiest[0])] : []}
+          />
+        )}
+      </section>
+
       <AdSlot slot="studio-top" />
       <AnimeRail title="Airing now" items={airing} />
       <AnimeRail title="Upcoming" items={upcoming} />

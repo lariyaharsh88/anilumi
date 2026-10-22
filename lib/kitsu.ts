@@ -42,6 +42,8 @@ export type Anime = {
   episodeCount: number | null;
   episodeLength: number | null;
   totalLength: number | null; // minutes
+  /** Count of ratings per star bucket 1–10 (index 0 = 1★). Present on detail fetches only. */
+  ratingDist?: number[] | null;
   youtubeVideoId: string | null;
   nsfw: boolean;
   categories: Category[];
@@ -153,6 +155,7 @@ function normalizeAnime(r: JsonApiResource, included: JsonApiResource[] = []): A
     episodeCount: num(a.episodeCount),
     episodeLength: num(a.episodeLength),
     totalLength: num(a.totalLength),
+    ratingDist: ratingBuckets(a.ratingFrequencies),
     youtubeVideoId: str(a.youtubeVideoId),
     nsfw: Boolean(a.nsfw),
     categories,
@@ -183,6 +186,26 @@ function stableSet(v: unknown): ImageSet {
     if (s) out[k] = s;
   }
   return Object.keys(out).length ? out : null;
+}
+
+/** Kitsu keys ratings 2–20 (half-star steps); fold them into ten 1★–10★ buckets. */
+export function ratingBuckets(freq: unknown): number[] | null {
+  if (!freq || typeof freq !== "object") return null;
+  const out = Array(10).fill(0) as number[];
+  for (const [k, v] of Object.entries(freq as Record<string, string | number>)) {
+    const key = Number(k), n = Number(v);
+    if (!Number.isFinite(key) || !Number.isFinite(n) || key < 2 || key > 20) continue;
+    out[Math.min(10, Math.ceil(key / 2)) - 1] += n;
+  }
+  return out.some((n) => n > 0) ? out : null;
+}
+
+/** Total matching titles without fetching them (page[limit]=1, read meta.count). */
+export async function countAnime(filter: Record<string, string>, revalidate = 3600): Promise<number> {
+  const params: Record<string, string | number> = { "page[limit]": 1, "fields[anime]": "slug", "filter[ageRating]": SAFE_RATINGS };
+  for (const [k, v] of Object.entries(filter)) params[`filter[${k}]`] = v;
+  const doc = await kitsu("/anime", params, revalidate);
+  return doc?.meta?.count ?? 0;
 }
 
 function hostLabel(url: string) {

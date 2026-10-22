@@ -14,6 +14,8 @@ import Countdown from "@/components/Countdown";
 import WatchButton from "@/components/WatchButton";
 import EmbedSnippet from "@/components/EmbedSnippet";
 import YouTubeFacade from "@/components/YouTubeFacade";
+import StatTiles from "@/components/viz/StatTiles";
+import BarChart from "@/components/viz/BarChart";
 import { streamLink, amazonSearch, affiliateRel } from "@/lib/affiliate";
 import LocalTime from "@/components/LocalTime";
 
@@ -84,6 +86,10 @@ export default async function AnimePage({ params }: Props) {
   const relatedItems = related.items.filter((r) => r.id !== a.id).slice(0, 12);
   const franchise = relations.filter((r) => ["sequel", "prequel", "side_story", "spinoff", "summary", "alternative_version", "other", "character"].includes(r.role));
   const runtime = runtimeMinutes(a);
+  const dist = a.ratingDist || null;
+  const totalRatings = dist ? dist.reduce((n, v) => n + v, 0) : 0;
+  const topShare = dist && totalRatings ? Math.round(((dist[8] + dist[9]) / totalRatings) * 100) : 0;
+  const compactN = (n: number) => (n >= 1e6 ? `${(n / 1e6).toFixed(1)}M` : n >= 1e3 ? `${(n / 1e3).toFixed(n >= 1e4 ? 0 : 1)}K` : String(n));
   const lastAired = latestInfo.lastAired;
   const studios = productions.filter((p) => p.role === "studio");
   const licensors = productions.filter((p) => p.role === "licensor");
@@ -194,6 +200,30 @@ export default async function AnimePage({ params }: Props) {
             <h2 className="h-section mb-2">Synopsis</h2>
             <p className="prose-anime whitespace-pre-line">{a.synopsis || "No synopsis available yet."}</p>
           </section>
+
+          {(a.rating || a.userCount > 0) && (
+            <section className="mt-8">
+              <h2 className="h-section mb-3">By the numbers</h2>
+              <StatTiles
+                stats={[
+                  ...(a.rating ? [{ label: "Community score", value: `${(a.rating / 10).toFixed(1)} / 10`, sub: totalRatings ? `${totalRatings.toLocaleString()} ratings` : undefined }] : []),
+                  ...(a.ratingRank ? [{ label: "Rank by score", value: `#${a.ratingRank.toLocaleString()}`, sub: "of all anime on Kitsu" }] : []),
+                  ...(a.popularityRank ? [{ label: "Popularity rank", value: `#${a.popularityRank.toLocaleString()}`, sub: `${compactN(a.userCount)} members` }] : []),
+                  ...(a.userCount ? [{ label: "Favorited by", value: `${((a.favoritesCount / a.userCount) * 100).toFixed(1)}%`, sub: `${a.favoritesCount.toLocaleString()} of its members` }] : []),
+                ]}
+              />
+              {dist && totalRatings >= 20 && (
+                <div className="mt-3">
+                  <BarChart
+                    title="Score breakdown"
+                    subtitle={`${topShare}% of ${totalRatings.toLocaleString()} ratings are 9★ or 10★`}
+                    valueHeading="Ratings"
+                    data={dist.map((n, i) => ({ key: String(i + 1), label: `${i + 1}★`, value: n, display: n.toLocaleString() }))}
+                  />
+                </div>
+              )}
+            </section>
+          )}
 
           {(a.status === "current" || a.status === "upcoming") && <EmbedSnippet slug={a.slug} title={a.title} />}
           <p className="mt-2 text-xs text-muted"><a href={`${animePath(a)}/feed.xml`} className="hover:text-ink">RSS feed for new episodes</a></p>

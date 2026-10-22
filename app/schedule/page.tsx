@@ -4,6 +4,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import Faq from "@/components/Faq";
 import AdSlot from "@/components/AdSlot";
 import ScheduleBoard, { BoardDay, BoardItem } from "@/components/ScheduleBoard";
+import BarChart from "@/components/viz/BarChart";
 
 export const revalidate = 1800;
 export const metadata: Metadata = {
@@ -47,6 +48,17 @@ export default async function SchedulePage() {
       <Breadcrumbs items={[{ href: "/", label: "Home" }, { href: "/schedule", label: "Schedule" }]} />
       <h1 className="text-3xl font-extrabold tracking-tight">Anime airing this week</h1>
       <p className="mt-2 max-w-2xl text-muted">Next-episode times for the {all.length} most-followed series currently airing, grouped by day in Japan Standard Time, with your local time alongside. Today is {todayJst} in Tokyo. Save shows to your list to filter the week down to what you watch.</p>
+      <div className="mt-5">
+        <BarChart
+          title="Episodes this week"
+          subtitle={`Followed series airing each day (JST), starting today · ${days.reduce((n, d) => n + d.items.length, 0)} in total`}
+          valueHeading="Series"
+          height={120}
+          highlightKey={todayJst}
+          labelKeys={[todayJst, days.reduce((x, y) => (y.items.length > x.items.length ? y : x)).day]}
+          data={days.map((d) => ({ key: d.day, label: d.day === todayJst ? "Today" : d.day.slice(0, 3), value: d.items.length, display: `${d.items.length} series` }))}
+        />
+      </div>
       <AdSlot slot="schedule-top" />
       <ScheduleBoard days={days} today={todayJst} tba={tba} />
       <Faq

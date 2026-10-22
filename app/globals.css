@@ -11,6 +11,16 @@
   --color-accent-2: #ff7a8f;
   --color-accent-strong: #d81b45; /* white text 5.0:1 */
   --color-violet-strong: #6c5ce7; /* white text 4.9:1 */
+  /* Data-viz: dark categorical slots validated against the card surface #161b28
+     (lightness band, chroma, adjacent CVD >= 8.4, normal-vision >= 19.3, contrast >= 3:1). */
+  --color-viz-1: #3987e5;
+  --color-viz-2: #d95926;
+  --color-viz-3: #199e70;
+  --color-viz-4: #c98500;
+  --color-viz-5: #d55181;
+  --color-viz-6: #008300;
+  --color-viz-muted: #465066; /* de-emphasis marks */
+  --color-viz-grid: #242b3b;  /* hairline, one step off the card */
   --color-violet: #8b7cff;
   --color-gold: #ffc857;
   --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;

@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getSeason, SEASONS, Season, cap, shiftSeason, seasonOf } from "@/lib/kitsu";
+import { getSeason, SEASONS, Season, cap, shiftSeason, seasonOf, countAnime, animePath } from "@/lib/kitsu";
+import StatTiles from "@/components/viz/StatTiles";
+import StackedBar from "@/components/viz/StackedBar";
+import BarChart from "@/components/viz/BarChart";
 import AnimeGrid from "@/components/AnimeGrid";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import Pagination from "@/components/Pagination";
@@ -45,7 +48,16 @@ export default async function SeasonPage({ params, searchParams }: Props) {
   const y = Number(year);
   const s = season as Season;
   const page = Math.max(1, Number(pageStr) || 1);
-  const data = await getSeason(y, s, page, LIMIT);
+  const sf = { season: s, seasonYear: year };
+  const FORMATS = [["TV", "TV series"], ["movie", "Movies"], ["ONA", "ONA (web)"], ["OVA", "OVA"], ["special", "Specials"], ["music", "Music"]] as const;
+  const [data, formatCounts, airingNow, upcomingCount] = await Promise.all([
+    getSeason(y, s, page, LIMIT),
+    page === 1 ? Promise.all(FORMATS.map(([f]) => countAnime({ ...sf, subtype: f }))) : Promise.resolve([] as number[]),
+    page === 1 ? countAnime({ ...sf, status: "current" }) : Promise.resolve(0),
+    page === 1 ? countAnime({ ...sf, status: "upcoming" }) : Promise.resolve(0),
+  ]);
+  const rated = data.items.filter((a) => a.rating);
+  const avgScore = rated.length ? rated.reduce((n, a) => n + (a.rating || 0), 0) / rated.length / 10 : null;
   const prev = shiftSeason(s, y, -1);
   const next = shiftSeason(s, y, 1);
   const now = seasonOf();
@@ -71,6 +83,29 @@ export default async function SeasonPage({ params, searchParams }: Props) {
           <Link key={yy} href={`/season/${yy}/${season}`} className={`chip ${yy === y ? "chip-active" : ""}`}>{yy}</Link>
         ))}
       </div>
+
+      {page === 1 && data.total > 0 && (
+        <section className="mt-6 space-y-3" aria-label="Season at a glance">
+          <StatTiles
+            stats={[
+              { label: "Titles this season", value: data.total.toLocaleString() },
+              { label: "Airing now", value: airingNow.toLocaleString() },
+              { label: "Not started yet", value: upcomingCount.toLocaleString() },
+              { label: "Avg score, top 20", value: avgScore ? avgScore.toFixed(1) : "–", sub: avgScore ? `${rated.length} rated titles` : "No ratings yet" },
+            ]}
+          />
+          <div className="grid gap-3 lg:grid-cols-2">
+            <StackedBar title="Format mix" subtitle={`What ${cap(season)} ${year} is made of`} segments={FORMATS.map(([k, label], i) => ({ key: k, label, value: formatCounts[i] || 0 }))} />
+            <BarChart
+              orientation="bar"
+              title="Most followed"
+              subtitle="Kitsu members tracking each title"
+              valueHeading="Members"
+              data={[...data.items].sort((x, y) => y.userCount - x.userCount).slice(0, 8).map((a) => ({ key: a.id, label: a.title, value: a.userCount, display: a.userCount.toLocaleString(), href: animePath(a) }))}
+            />
+          </div>
+        </section>
+      )}
 
       <AdSlot slot="season-top" />
       <div className="mt-6">

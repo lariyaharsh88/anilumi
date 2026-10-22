@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { fmtMinutes, shiftSeason, seasonOf, uniqueById, stableUrl, isFuture, weekdayOf, fmtDate } from "../lib/kitsu";
+import { fmtMinutes, shiftSeason, seasonOf, uniqueById, stableUrl, isFuture, weekdayOf, fmtDate, ratingBuckets } from "../lib/kitsu";
 
 test("fmtMinutes formats hours, minutes and days", () => {
   assert.equal(fmtMinutes(0), "–");
@@ -43,4 +43,14 @@ test("isFuture handles date-only and datetime strings", () => {
 test("weekdayOf and fmtDate use Tokyo / UTC consistently", () => {
   assert.equal(weekdayOf("2026-10-25T09:30:00.000+09:00"), "Sunday");
   assert.equal(fmtDate("2013-04-06"), "Apr 6, 2013");
+});
+
+test("ratingBuckets folds Kitsu's 2–20 keys into ten star buckets", () => {
+  const b = ratingBuckets({ "2": "201", "3": "1", "4": "13", "19": "457", "20": "5451", junk: "9" })!;
+  assert.equal(b.length, 10);
+  assert.equal(b[0], 201);       // key 2 -> 1★
+  assert.equal(b[1], 14);        // keys 3,4 -> 2★
+  assert.equal(b[9], 457 + 5451); // keys 19,20 -> 10★
+  assert.equal(ratingBuckets({}), null);
+  assert.equal(ratingBuckets(null), null);
 });
