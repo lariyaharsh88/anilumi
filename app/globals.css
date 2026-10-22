@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #0b0d13;
+  --color-bg-2: #111520;
+  --color-card: #161b28;
+  --color-line: #242b3b;
+  --color-ink: #e8ecf5;
+  --color-muted: #8f9ab3;
+  --color-accent: #ff4d6d;
+  --color-accent-2: #ff7a8f;
+  --color-violet: #8b7cff;
+  --color-gold: #ffc857;
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --shadow-card: 0 1px 0 rgb(255 255 255 / 0.03) inset, 0 10px 30px -14px rgb(0 0 0 / 0.7);
+}
+
+html { color-scheme: dark; scroll-behavior: smooth; }
+body { @apply bg-bg text-ink antialiased; }
+::selection { background: color-mix(in oklab, var(--color-accent) 60%, transparent); }
+
+.container-x { @apply mx-auto w-full max-w-6xl px-4 sm:px-6; }
+.card { @apply rounded-2xl border border-line bg-card shadow-card; }
+@utility chip { @apply inline-flex items-center rounded-full border border-line bg-bg-2 px-3 py-1 text-xs font-medium text-muted transition hover:border-violet hover:text-ink; }
+.chip-active { @apply border-accent bg-accent/15 text-ink; }
+@utility btn { @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-sm font-semibold transition focus:outline-none focus-visible:ring-2 focus-visible:ring-violet disabled:cursor-not-allowed disabled:opacity-60; }
+.btn-primary { @apply btn bg-accent text-white hover:bg-accent-2; }
+.btn-outline { @apply btn border border-line bg-bg-2 text-ink hover:border-violet; }
+.input { @apply w-full rounded-lg border border-line bg-bg-2 px-3 py-2 text-sm text-ink placeholder:text-muted focus:border-violet focus:outline-none focus:ring-2 focus:ring-violet/30; }
+.h-section { @apply text-xl font-bold tracking-tight text-ink sm:text-2xl; }
+.prose-anime { @apply text-[15px] leading-7 text-ink/90; }
+.prose-anime h2 { @apply mt-10 mb-3 text-xl font-bold text-ink; }
+.prose-anime h3 { @apply mt-6 mb-2 text-base font-semibold text-ink; }
+.prose-anime p { @apply my-3; }
+.prose-anime ul { @apply my-3 list-disc pl-6; }
+.prose-anime a { @apply text-violet underline-offset-2 hover:underline; }
+.line-clamp-3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.line-clamp-6 { display: -webkit-box; -webkit-line-clamp: 6; -webkit-box-orient: vertical; overflow: hidden; }
+.scroll-x { @apply flex gap-4 overflow-x-auto pb-3 [scrollbar-width:thin]; scroll-snap-type: x proximity; scroll-padding-left: 0; }
+.scroll-x > * { scroll-snap-align: start; flex: 0 0 auto; }
