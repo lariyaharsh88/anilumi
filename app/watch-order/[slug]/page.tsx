@@ -10,6 +10,7 @@ import Faq from "@/components/Faq";
 import AdSlot from "@/components/AdSlot";
 import { amazonSearch, affiliateRel } from "@/lib/affiliate";
 import BarChart from "@/components/viz/BarChart";
+import LineChart from "@/components/viz/LineChart";
 
 export const revalidate = 86400;
 type Props = { params: Promise<{ slug: string }> };
@@ -97,6 +98,27 @@ export default async function WatchOrderPage({ params }: Props) {
               subtitle={`Core story and movies in watch order · ${fmtMinutes(wo.totalMinutes)} in total · longest: ${longest.anime.title}`}
               valueHeading="Runtime"
               data={timed.map((e) => ({ key: e.anime.id, label: shortTitle(e.anime.title, name), value: runtimeMinutes(e.anime), display: fmtMinutes(runtimeMinutes(e.anime)), href: animePath(e.anime) }))}
+            />
+          </div>
+        );
+      })()}
+
+      {(() => {
+        const rated = ordered.filter((e) => e.kind === "main" && e.anime.rating);
+        if (rated.length < 3) return null;
+        const score = (e: (typeof rated)[number]) => (e.anime.rating || 0) / 10;
+        const best = rated.reduce((p, q) => (score(q) > score(p) ? q : p));
+        const first = rated[0], last = rated[rated.length - 1];
+        const delta = score(last) - score(first);
+        const trend = Math.abs(delta) < 0.15 ? "held steady" : delta > 0 ? `rose ${delta.toFixed(2)}` : `fell ${Math.abs(delta).toFixed(2)}`;
+        return (
+          <div className="mt-8">
+            <LineChart
+              title="Score across seasons"
+              subtitle={`Peaked with ${shortTitle(best.anime.title, name)} at ${score(best).toFixed(2)} · from first to latest, the score ${trend}`}
+              valueHeading="Score / 10"
+              labelKeys={[...new Set([first.anime.id, best.anime.id, last.anime.id])]}
+              points={rated.map((e) => ({ key: e.anime.id, label: shortTitle(e.anime.title, name), fullLabel: e.anime.title, value: score(e), display: score(e).toFixed(2), href: animePath(e.anime) }))}
             />
           </div>
         );
