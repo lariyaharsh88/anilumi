@@ -48,6 +48,13 @@ Every page ships with a unique title/description, canonical URL, Open Graph imag
 - **Airing heatmap** on `/schedule`: AniList `airingSchedules` for the next 7 days (Japanese, non-adult, non-music), bucketed by weekday × hour in the viewer's time zone. Sequential blue ramp validated as ordinal on the card surface.
 - **Genre trends**: `/trends/[genre]` for 17 genres (share of new TV series per premiere year since 2000, counts per year, defining titles per decade, method note, `Dataset` JSON-LD) and `/trends` ranking genres by the 10-year change in share. Kitsu's latest year is incomplete and tagging has improved over time; pages say so.
 
+## Where to watch by country, AniList import, drop rates, parents' guide (added 22 Oct)
+
+- **Where to watch** (`/api/watch`, `components/WhereToWatch.tsx`, `lib/tmdb.ts`): the viewer's country (geo header, then Accept-Language, then US; overridable) and that country's providers from TMDB (JustWatch data). **Needs `TMDB_API_KEY` or `TMDB_READ_TOKEN`**; without it pages show Kitsu's region-less links exactly as before.
+- **AniList import** (`/api/import/anilist?user=`): public lists only; watching, planning, paused and rewatching with episode progress, merged into My list in the browser. Per-show progress counters; "time left" subtracts watched episodes.
+- **Do people finish it?**: AniList status counts give drop and completion rates against the median of the 50 most popular finished shows in the same genre.
+- **Parents' guide**: AniList content tags grouped into five areas with levels from tag agreement; story-theme tags (war, crime, slavery) capped at moderate; spoiler tags counted, not named; explicit tag names never shown.
+
 ## Run
 
 ```bash
