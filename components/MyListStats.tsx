@@ -17,7 +17,10 @@ export default function MyListStats({ items }: { items: WatchItem[] }) {
   const airing = items.filter((i) => i.status === "current");
   const known = enriched.filter((i) => (i.runtime || 0) > 0);
   const ongoing = enriched.filter((i) => !i.runtime && i.status === "current").length;
-  const total = known.reduce((n, i) => n + (i.runtime || 0), 0);
+  // Time left: subtract episodes already watched when progress is known.
+  const left = (i: WatchItem) => Math.max(0, (i.runtime || 0) - (i.progress || 0) * (i.episodeLength || (i.episodeCount ? (i.runtime || 0) / i.episodeCount : 0)));
+  const total = known.reduce((n, i) => n + left(i), 0);
+  const watchedAny = known.some((i) => (i.progress || 0) > 0);
   const days = Math.ceil(total / 120);
   const now = Date.now();
   const weekly = airing.filter((i) => i.nextRelease && new Date(i.nextRelease).getTime() - now < 7 * 86400000 && new Date(i.nextRelease).getTime() > now - 86400000);
@@ -35,7 +38,7 @@ export default function MyListStats({ items }: { items: WatchItem[] }) {
       <StatTiles
         stats={[
           { label: "Saved shows", value: String(items.length), sub: `${airing.length} airing · ${items.length - airing.length} other` },
-          { label: "Time to watch it all", value: total ? fmt(total) : "–", sub: ongoing ? `plus ${ongoing} ongoing series` : `${known.length} shows with runtimes` },
+          { label: watchedAny ? "Time left to watch" : "Time to watch it all", value: total ? fmt(total) : "–", sub: ongoing ? `plus ${ongoing} ongoing series` : watchedAny ? "after the episodes you've watched" : `${known.length} shows with runtimes` },
           { label: "At 2 hours a day", value: total ? `${days} day${days === 1 ? "" : "s"}` : "–", sub: total ? `≈ ${Math.ceil(days / 7)} week${Math.ceil(days / 7) === 1 ? "" : "s"}` : undefined },
           { label: "Episodes in the next 7 days", value: String(weekly.length), sub: onBreak ? `${onBreak} airing show${onBreak === 1 ? " is" : "s are"} on a break` : weekly.length ? "from your airing shows" : "none airing right now" },
         ]}

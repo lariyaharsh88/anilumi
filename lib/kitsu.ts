@@ -961,3 +961,73 @@ export function trendDirection(rows: TrendRow[], lastFull: number): { dir: "rise
   const dir = delta >= 2 && to >= from * 1.4 ? "rise" : delta <= -2 && to <= from * 0.7 ? "decline" : "steady";
   return { dir, from, to, delta };
 }
+
+/* ---------------- AniList list import ---------------- */
+
+export type ImportedEntry = { anilistId: number; status: "watching" | "planning" | "paused" | "rewatching"; progress: number };
+export type ImportResult =
+  | { ok: true; user: string; entries: ImportedEntry[] }
+  | { ok: false; code: "private" | "not_found" | "unavailable"; message: string };
+
+const AL_STATUS: Record<string, ImportedEntry["status"]> = { CURRENT: "watching", PLANNING: "planning", PAUSED: "paused", REPEATING: "rewatching" };
+
+/** A public AniList user's watching / planning / paused / rewatching anime. No login needed. */
+export async function fetchAniListList(userName: string): Promise<ImportResult> {
+  try {
+    const res = await fetch("https://graphql.anilist.co", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify({
+        query: "query($u:String){MediaListCollection(userName:$u,type:ANIME,status_in:[CURRENT,PLANNING,PAUSED,REPEATING]){user{name} lists{entries{status progress media{id isAdult}}}}}",
+        variables: { u: userName },
+      }),
+      cache: "no-store",
+      signal: AbortSignal.timeout(10000),
+    });
+    const json = (await res.json()) as { errors?: { message: string }[]; data?: { MediaListCollection?: { user?: { name: string }; lists: { entries: { status: string; progress: number; media: { id: number; isAdult: boolean } }[] }[] } | null } };
+    const err = json.errors?.[0]?.message || "";
+    if (/private/i.test(err)) return { ok: false, code: "private", message: "That AniList profile is private. Make the list public in AniList settings, then try again." };
+    if (/not found/i.test(err)) return { ok: false, code: "not_found", message: "No AniList user with that name." };
+    const col = json.data?.MediaListCollection;
+    if (!res.ok || !col) return { ok: false, code: "unavailable", message: "AniList didn't answer. Try again in a minute." };
+    const seen = new Set<number>();
+    const entries: ImportedEntry[] = [];
+    for (const l of col.lists) for (const e of l.entries) {
+      if (e.media.isAdult || seen.has(e.media.id) || !AL_STATUS[e.status]) continue;
+      seen.add(e.media.id);
+      entries.push({ anilistId: e.media.id, status: AL_STATUS[e.status], progress: e.progress || 0 });
+    }
+    return { ok: true, user: col.user?.name || userName, entries };
+  } catch {
+    return { ok: false, code: "unavailable", message: "AniList didn't answer. Try again in a minute." };
+  }
+}
+
+/** Map AniList ids to Kitsu anime (20 per request via the mappings endpoint). */
+export async function kitsuByAniListIds(ids: number[]): Promise<Map<number, Anime>> {
+  const out = new Map<number, Anime>();
+  const chunks: number[][] = [];
+  for (let i = 0; i < ids.length; i += 20) chunks.push(ids.slice(i, i + 20));
+  await Promise.all(
+    chunks.map(async (chunk) => {
+      const doc = await kitsu("/mappings", {
+        "filter[externalSite]": "anilist/anime",
+        "filter[externalId]": chunk.join(","),
+        include: "item",
+        "page[limit]": 20,
+        "fields[mappings]": "externalId,item",
+        "fields[anime]": LIST_FIELDS,
+      }, 86400);
+      if (!doc || !Array.isArray(doc.data)) return;
+      const byId = new Map((doc.included || []).filter((i) => i.type === "anime").map((i) => [i.id, i]));
+      for (const m of doc.data) {
+        const ref = m.relationships?.item?.data as { id: string; type: string } | undefined;
+        const res = ref?.type === "anime" ? byId.get(ref.id) : undefined;
+        if (!res) continue;
+        const a = normalizeAnime(res);
+        if (!a.nsfw && a.ageRating !== "R18") out.set(Number(m.attributes.externalId), a);
+      }
+    }),
+  );
+  return out;
+}

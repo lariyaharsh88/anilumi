@@ -6,9 +6,10 @@ import { useWatchlist, type WatchItem } from "@/lib/watchlist";
 import Countdown from "./Countdown";
 import MyListStats from "./MyListStats";
 import CalendarLinks from "./CalendarLinks";
+import ImportAniList from "./ImportAniList";
 
 export default function MyList() {
-  const { items, ready, remove, update } = useWatchlist();
+  const { items, ready, remove, update, setProgress } = useWatchlist();
   const refreshed = useRef(false);
 
   useEffect(() => {
@@ -25,17 +26,30 @@ export default function MyList() {
     return (
       <div className="card p-8 text-center">
         <p className="font-semibold">Your list is empty.</p>
-        <p className="mt-1 text-sm text-muted">Press “+ My list” on any anime page. It is saved in this browser only, no account needed.</p>
-        <Link href="/schedule" className="btn-primary mt-4">Browse the schedule</Link>
+        <p className="mt-1 text-sm text-muted">Press “+ My list” on any anime page, or import your AniList list. It is saved in this browser only, no account needed.</p>
+        <div className="mx-auto mt-4 flex max-w-md flex-col items-center gap-3">
+          <ImportAniList compact />
+          <Link href="/schedule" className="text-sm text-violet hover:underline">Or browse the schedule →</Link>
+        </div>
       </div>
     );
   const airing = items.filter((i) => i.status === "current").sort((a, b) => (a.nextRelease || "9").localeCompare(b.nextRelease || "9"));
   const rest = items.filter((i) => i.status !== "current");
-  const Row = ({ i }: { i: (typeof items)[number] }) => (
-    <li className="card flex items-center gap-3 p-3">
+  // A render function, not a component: defining a component inside render remounts every row
+  // on each update, which drops keyboard focus from the progress buttons.
+  const row = (i: (typeof items)[number]) => (
+    <li key={i.id} className="card flex items-center gap-3 p-3">
       <div className="relative h-16 w-11 shrink-0 overflow-hidden rounded bg-bg-2">{i.poster && <Image src={i.poster} alt="" fill sizes="44px" className="object-cover" loading="eager" />}</div>
       <div className="min-w-0 flex-1">
         <Link href={`/anime/${encodeURIComponent(i.slug)}`} className="line-clamp-1 font-semibold hover:text-violet">{i.title}</Link>
+        {(i.listStatus || i.progress !== undefined) && (
+          <div className="mt-1 flex items-center gap-1.5 text-xs">
+            {i.listStatus && <span className="rounded bg-white/5 px-1.5 py-0.5 text-[10px] font-semibold uppercase text-muted">{i.listStatus}</span>}
+            <button type="button" onClick={() => setProgress(i.id, (i.progress || 0) - 1)} className="rounded px-1.5 text-muted hover:bg-white/5 hover:text-ink" aria-label={`One episode less of ${i.title}`}>−</button>
+            <span className="tabular-nums text-ink/90">Ep {i.progress || 0}{i.episodeCount ? ` of ${i.episodeCount}` : ""}</span>
+            <button type="button" onClick={() => setProgress(i.id, (i.progress || 0) + 1)} className="rounded px-1.5 text-muted hover:bg-white/5 hover:text-ink" aria-label={`One more episode of ${i.title}`}>+</button>
+          </div>
+        )}
         <p className="text-xs text-muted">
           {i.status === "current" && i.nextRelease ? <>Next: {new Date(i.nextRelease).toLocaleString("en-US", { weekday: "short", month: "short", day: "numeric", hour: "numeric", minute: "2-digit" })} · <Countdown iso={i.nextRelease} label="in" /></> : i.status === "current" ? "Airing · next date TBA" : i.status === "upcoming" ? "Upcoming" : "Finished"}
         </p>
@@ -47,6 +61,7 @@ export default function MyList() {
   return (
     <div className="space-y-8">
       <MyListStats items={items} />
+      <ImportAniList />
       {calendarIds.length > 0 && (
         <section className="card p-4">
           <h2 className="font-semibold">Put your episodes in your calendar</h2>
@@ -58,13 +73,13 @@ export default function MyList() {
       {airing.length > 0 && (
         <section>
           <h2 className="h-section mb-3">Airing · next episodes</h2>
-          <ul className="space-y-2">{airing.map((i) => <Row key={i.id} i={i} />)}</ul>
+          <ul className="space-y-2">{airing.map(row)}</ul>
         </section>
       )}
       {rest.length > 0 && (
         <section>
           <h2 className="h-section mb-3">Everything else</h2>
-          <ul className="space-y-2">{rest.map((i) => <Row key={i.id} i={i} />)}</ul>
+          <ul className="space-y-2">{rest.map(row)}</ul>
         </section>
       )}
     </div>
