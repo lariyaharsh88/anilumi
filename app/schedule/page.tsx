@@ -1,5 +1,6 @@
+import Link from "next/link";
 import type { Metadata } from "next";
-import { listAnime, Anime, posterUrl, fmtDate, weekdayOf, uniqueById, seasonOf, getWeekBroadcasts } from "@/lib/kitsu";
+import { listAnime, Anime, posterUrl, fmtDate, weekdayOf, uniqueById, seasonOf, getWeekBroadcasts, aniListNextFor } from "@/lib/kitsu";
 import AiringHeatmap from "@/components/viz/AiringHeatmap";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import Faq from "@/components/Faq";
@@ -27,10 +28,15 @@ export default async function SchedulePage() {
     ...[0, 20].map((offset) => listAnime({ filter: { status: "current" }, sort: "-userCount", limit: 20, offset, revalidate: 1800 })),
   ]);
   const all = uniqueById(pages.flatMap((p) => p.items));
-  const broadcasts = await getWeekBroadcasts();
+  const [broadcasts, aniNext] = await Promise.all([getWeekBroadcasts(), aniListNextFor(all.map((a) => a.id))]);
+  // AniList tracks broadcast times more closely than Kitsu; shows whose next episode is > 14 days out are on a break.
+  for (const a of all) { const t = aniNext.get(a.id); if (t) a.nextRelease = t; }
+  const onBreak = all.filter((a) => a.nextRelease && new Date(a.nextRelease).getTime() - Date.now() > 14 * 86400000);
+  const breakIds = new Set(onBreak.map((a) => a.id));
   const byDay = new Map<string, BoardItem[]>(DAYS.map((d) => [d, []]));
   const tba: BoardItem[] = [];
   for (const a of all) {
+    if (breakIds.has(a.id)) continue;
     const exact = weekdayOf(a.nextRelease);
     // Weekly TV series keep their premiere weekday, so fall back to it when Kitsu has no next-episode timestamp.
     const est = !exact && a.subtype === "TV" && a.startDate ? weekdayOf(`${a.startDate}T12:00:00+09:00`) : null;
@@ -65,6 +71,22 @@ export default async function SchedulePage() {
       {broadcasts.length > 0 && <div className="mt-3"><AiringHeatmap broadcasts={broadcasts} /></div>}
       <AdSlot slot="schedule-top" />
       <ScheduleBoard days={days} today={todayJst} tba={tba} />
+      {onBreak.length > 0 && (
+        <section className="mt-10" aria-labelledby="break-h">
+          <h2 id="break-h" className="h-section mb-1">On a break</h2>
+          <p className="mb-3 text-sm text-muted">Airing series with no new episode in the next two weeks, and when they return (Japan time, from AniList).</p>
+          <ul className="grid gap-2 sm:grid-cols-2">
+            {onBreak.sort((x, y) => (x.nextRelease || "").localeCompare(y.nextRelease || "")).map((a) => (
+              <li key={a.id}>
+                <Link href={`/anime/${encodeURIComponent(a.slug)}`} className="card flex items-center justify-between gap-3 p-3 text-sm transition hover:border-violet">
+                  <span className="font-medium"><span aria-hidden className="mr-1.5">⏸</span>{a.title}</span>
+                  <span className="shrink-0 text-xs text-muted">back {fmtDate(a.nextRelease, { month: "short", day: "numeric", year: "numeric", timeZone: "Asia/Tokyo" })}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
       <Faq
         items={[
           { q: "What time zone is the schedule in?", a: "All times are Japan Standard Time (JST, UTC+9), when episodes first broadcast, with the equivalent in your own time zone next to it. Simulcasts on Crunchyroll and other services usually go live within an hour or two after that." },

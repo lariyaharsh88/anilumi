@@ -1031,3 +1031,40 @@ export async function kitsuByAniListIds(ids: number[]): Promise<Map<number, Anim
   );
   return out;
 }
+
+/* ---------------- Breaks, delays and source disagreements ---------------- */
+
+const DAY = 86400000;
+export type AiringNotice = {
+  next: string | null;
+  source: "AniList" | "Kitsu" | null;
+  onBreak: boolean;
+  /** Days until the next episode when on a break. */
+  breakDays: number | null;
+  /** The other source's time when the two disagree by more than two days. */
+  disagree: { aniList: string; kitsu: string } | null;
+};
+
+/** Decide what to tell viewers about the next episode. Pure: kitsuAt is Kitsu's own nextRelease (before any override). */
+export function airingNotice(kitsuAt: string | null, aniAt: string | null | undefined, now = Date.now()): AiringNotice {
+  const next = aniAt || kitsuAt || null;
+  const source = aniAt ? "AniList" : kitsuAt ? "Kitsu" : null;
+  if (!next) return { next: null, source: null, onBreak: false, breakDays: null, disagree: null };
+  const days = (new Date(next).getTime() - now) / DAY;
+  const onBreak = days > 14;
+  const disagree = aniAt && kitsuAt && Math.abs(new Date(aniAt).getTime() - new Date(kitsuAt).getTime()) > 2 * DAY ? { aniList: aniAt, kitsu: kitsuAt } : null;
+  return { next, source, onBreak, breakDays: onBreak ? Math.round(days) : null, disagree };
+}
+
+/** AniList next-airing times for many Kitsu ids: Kitsu mappings (cached a week) + one batched AniList request per 50. */
+export async function aniListNextFor(kitsuIds: string[]): Promise<Map<string, string>> {
+  const pairs = await Promise.all(kitsuIds.map(async (k) => [k, await getAniListId(k)] as const));
+  const ids = pairs.map(([, a]) => a).filter((x): x is number => x !== null);
+  const next = await aniListNextAiring(ids);
+  const out = new Map<string, string>();
+  for (const [k, a] of pairs) {
+    const n = a ? next.get(a) : null;
+    if (n && n.airingAt > 0) out.set(k, new Date(n.airingAt * 1000).toISOString());
+  }
+  return out;
+}

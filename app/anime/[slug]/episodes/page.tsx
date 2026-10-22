@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { getAnimeBySlug, getEpisodes, getLastAiredBest, fmtDate, animePath, episodePath, posterUrl } from "@/lib/kitsu";
+import { getAnimeBySlug, getEpisodes, getLastAiredBest, airingNotice, fmtDate, animePath, episodePath, posterUrl } from "@/lib/kitsu";
 import Countdown from "@/components/Countdown";
+import AiringNoticeBanner from "@/components/AiringNoticeBanner";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import Pagination from "@/components/Pagination";
 import AdSlot from "@/components/AdSlot";
@@ -32,6 +33,7 @@ export default async function EpisodesPage({ params, searchParams }: Props) {
   const a = await getAnimeBySlug(decodeURIComponent(slug));
   if (!a) notFound();
   const [eps, { lastAired, reliable, nextAt }] = await Promise.all([getEpisodes(a.id, page, LIMIT), getLastAiredBest(a.id)]);
+  const notice = a.status === "current" ? airingNotice(a.nextRelease, nextAt) : null;
   if (nextAt) a.nextRelease = nextAt;
   const nextN = a.status === "current" && a.nextRelease && reliable ? lastAired + 1 : null;
 
@@ -59,6 +61,7 @@ export default async function EpisodesPage({ params, searchParams }: Props) {
           </div>
         )
       )}
+      {notice && <AiringNoticeBanner n={notice} title={a.title} />}
       <AdSlot slot="episodes-top" />
       {eps.items.length ? (
         <ol className="mt-6 space-y-3">

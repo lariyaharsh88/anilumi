@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { getAnimeBySlug, getCharacters, getEpisodes, listAnime, getTrending, getRelations, getLastAiredBest, getProductions, type LastAired, comparePath, franchiseRoot, episodePath, posterUrl, fmtDate, statusLabel, subtypeLabel, animePath, weekdayOf, runtimeMinutes, fmtMinutes, Anime } from "@/lib/kitsu";
+import { getAnimeBySlug, getCharacters, getEpisodes, listAnime, getTrending, getRelations, getLastAiredBest, getProductions, type LastAired, comparePath, franchiseRoot, airingNotice, episodePath, posterUrl, fmtDate, statusLabel, subtypeLabel, animePath, weekdayOf, runtimeMinutes, fmtMinutes, Anime } from "@/lib/kitsu";
 import { abs } from "@/lib/site";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import JsonLd from "@/components/JsonLd";
@@ -16,6 +16,7 @@ import EmbedSnippet from "@/components/EmbedSnippet";
 import CalendarLinks from "@/components/CalendarLinks";
 import WhereToWatch from "@/components/WhereToWatch";
 import ViewerBehaviour from "@/components/ViewerBehaviour";
+import AiringNoticeBanner from "@/components/AiringNoticeBanner";
 import ParentsGuideSection from "@/components/ParentsGuide";
 import { getAniListInsight, dropStats, genreDropBenchmark, parentsGuide, type ParentsGuide } from "@/lib/insights";
 import YouTubeFacade from "@/components/YouTubeFacade";
@@ -97,6 +98,7 @@ export default async function AnimePage({ params }: Props) {
   const totalRatings = dist ? dist.reduce((n, v) => n + v, 0) : 0;
   const topShare = dist && totalRatings ? Math.round(((dist[8] + dist[9]) / totalRatings) * 100) : 0;
   const compactN = (n: number) => (n >= 1e6 ? `${(n / 1e6).toFixed(1)}M` : n >= 1e3 ? `${(n / 1e3).toFixed(n >= 1e4 ? 0 : 1)}K` : String(n));
+  const notice = a.status === "current" ? airingNotice(a.nextRelease, latestInfo.nextAt) : null;
   if (latestInfo.nextAt) a.nextRelease = latestInfo.nextAt; // AniList pair: number and time stay consistent
   const lastAired = latestInfo.lastAired;
   const studios = productions.filter((p) => p.role === "studio");
@@ -195,6 +197,7 @@ export default async function AnimePage({ params }: Props) {
                 <WatchButton item={{ id: a.id, slug: a.slug, title: a.title, poster: posterUrl(a, "small"), status: a.status, nextRelease: a.nextRelease }} />
                 <Link href={`/similar/${a.slug}`} className="btn-outline">More like this</Link>
               </div>
+              {notice && <AiringNoticeBanner n={notice} title={a.title} />}
               <WhereToWatch
                 animeId={a.id}
                 title={a.title}
