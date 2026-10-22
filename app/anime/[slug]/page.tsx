@@ -12,6 +12,7 @@ import AdSlot from "@/components/AdSlot";
 import BingePlanner from "@/components/BingePlanner";
 import Countdown from "@/components/Countdown";
 import WatchButton from "@/components/WatchButton";
+import EmbedSnippet from "@/components/EmbedSnippet";
 import { streamLink, amazonSearch, affiliateRel } from "@/lib/affiliate";
 import LocalTime from "@/components/LocalTime";
 
@@ -192,6 +193,9 @@ export default async function AnimePage({ params }: Props) {
             <h2 className="h-section mb-2">Synopsis</h2>
             <p className="prose-anime whitespace-pre-line">{a.synopsis || "No synopsis available yet."}</p>
           </section>
+
+          {(a.status === "current" || a.status === "upcoming") && <EmbedSnippet slug={a.slug} title={a.title} />}
+          <p className="mt-2 text-xs text-muted"><a href={`${animePath(a)}/feed.xml`} className="hover:text-ink">RSS feed for new episodes</a></p>
 
           {(runtime > 0 || (a.episodeCount && a.episodeLength)) && (
             <BingePlanner title={a.title} episodes={a.episodeCount || 0} episodeLength={a.episodeLength || 24} totalMinutes={runtime} status={a.status} />

@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { abs } from "@/lib/site";
-import { listAnime, getCategories, seasonOf, shiftSeason, animePath, episodePath, getLastAiredBest, isFuture, getCharacters, getProductions } from "@/lib/kitsu";
+import { listAnime, getCategories, seasonOf, shiftSeason, animePath, episodePath, getLastAiredBest, getCharacters, getProductions } from "@/lib/kitsu";
 
 export const revalidate = 86400;
 
