@@ -15,6 +15,9 @@ import WatchButton from "@/components/WatchButton";
 import EmbedSnippet from "@/components/EmbedSnippet";
 import CalendarLinks from "@/components/CalendarLinks";
 import WhereToWatch from "@/components/WhereToWatch";
+import ViewerBehaviour from "@/components/ViewerBehaviour";
+import ParentsGuideSection from "@/components/ParentsGuide";
+import { getAniListInsight, dropStats, genreDropBenchmark, parentsGuide, type ParentsGuide } from "@/lib/insights";
 import YouTubeFacade from "@/components/YouTubeFacade";
 import StatTiles from "@/components/viz/StatTiles";
 import BarChart from "@/components/viz/BarChart";
@@ -51,7 +54,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-function buildFaq(a: Anime): FaqItem[] {
+function buildFaq(a: Anime, extra: FaqItem[] = []): FaqItem[] {
   const items: FaqItem[] = [];
   const next = a.nextRelease ? fmtDate(a.nextRelease, { weekday: "long", month: "long", day: "numeric", year: "numeric" }) : null;
   if (a.status === "current") {
@@ -67,6 +70,7 @@ function buildFaq(a: Anime): FaqItem[] {
   items.push({ q: `Is ${a.title} finished?`, a: a.status === "finished" ? `Yes. ${a.title} finished airing${a.endDate ? ` on ${fmtDate(a.endDate)}` : ""}.` : a.status === "current" ? `No, ${a.title} is currently airing.` : `${a.title} has not started airing yet.` });
   const rt = runtimeMinutes(a);
   if (rt) items.push({ q: `How long does it take to watch ${a.title}?`, a: `${a.title} runs about ${fmtMinutes(rt)} in total${a.episodeCount && a.episodeLength ? ` (${a.episodeCount} episodes of ${a.episodeLength} minutes)` : ""}. At two hours a day you can finish it in ${Math.max(1, Math.ceil(rt / 120))} day${Math.ceil(rt / 120) === 1 ? "" : "s"}.` });
+  items.push(...extra);
   if (a.rating) items.push({ q: `Is ${a.title} worth watching?`, a: `${a.title} holds a community score of ${(a.rating / 10).toFixed(1)}/10 from ${a.userCount.toLocaleString()} Kitsu users${a.ratingRank ? ` and ranks #${a.ratingRank} among all anime by rating` : ""}.` });
   return items;
 }
@@ -77,13 +81,14 @@ export default async function AnimePage({ params }: Props) {
   if (!a) notFound();
 
   const mainGenre = a.categories[0];
-  const [characters, episodes, related, relations, latestInfo, productions] = await Promise.all([
+  const [characters, episodes, related, relations, latestInfo, productions, insight] = await Promise.all([
     getCharacters(a.id, 12),
     a.subtype === "movie" ? Promise.resolve({ items: [], total: 0, limit: 0, offset: 0 }) : getEpisodes(a.id, 1, 6),
     mainGenre ? listAnime({ filter: { categories: mainGenre.slug }, sort: "-userCount", limit: 13 }) : Promise.resolve({ items: [], total: 0, limit: 0, offset: 0 }),
     getRelations(a.id),
     a.status === "current" ? getLastAiredBest(a.id) : Promise.resolve({ count: 0, lastAired: 0, lastAiredDate: null, reliable: false } as LastAired),
     getProductions(a.id),
+    getAniListInsight(a.id),
   ]);
   const relatedItems = related.items.filter((r) => r.id !== a.id).slice(0, 12);
   const franchise = relations.filter((r) => ["sequel", "prequel", "side_story", "spinoff", "summary", "alternative_version", "other", "character"].includes(r.role));
@@ -95,11 +100,22 @@ export default async function AnimePage({ params }: Props) {
   if (latestInfo.nextAt) a.nextRelease = latestInfo.nextAt; // AniList pair: number and time stay consistent
   const lastAired = latestInfo.lastAired;
   const studios = productions.filter((p) => p.role === "studio");
+  const drop = insight ? dropStats(insight.dist) : null;
+  const dropOk = drop && drop.started >= 200 ? drop : null;
+  const benchGenre = insight?.genres.find((g) => g !== "Ecchi" && g !== "Hentai") ?? null;
+  const bench = dropOk && benchGenre ? await genreDropBenchmark(benchGenre) : null;
+  const guide: ParentsGuide | null = insight ? parentsGuide(insight.tags, insight.genres, a.ageRating) : null;
   const licensors = productions.filter((p) => p.role === "licensor");
   const nextN = a.status === "current" && a.nextRelease && latestInfo.reliable ? lastAired + 1 : null;
   const poster = posterUrl(a, "medium");
   const cover = a.cover?.tiny || a.cover?.small || a.cover?.large || null; // heavily blurred backdrop: served ~96px wide by the optimizer
-  const faq = buildFaq(a);
+  const faqExtra: FaqItem[] = [];
+  if (guide) {
+    const flagged = guide.areas.filter((x) => x.level === "strong" || x.level === "moderate").map((x) => x.label.toLowerCase());
+    faqExtra.push({ q: `Is ${a.title} appropriate for kids?`, a: `${a.title} is best for ${guide.suitable.toLowerCase()}${a.ageRating ? ` and is rated ${a.ageRating}${a.ageRatingGuide ? ` (${a.ageRatingGuide})` : ""}` : ""}. ${flagged.length ? `Viewers flag ${flagged.join(", ")}.` : "Viewers don't flag any strong content."} See the parents' guide on this page for details.` });
+  }
+  if (dropOk) faqExtra.push({ q: `Do people finish ${a.title}?`, a: `${dropOk.dropRate.toFixed(1)}% of AniList members who start ${a.title} drop it${a.status === "current" ? " so far" : `, and ${dropOk.completionRate.toFixed(0)}% finish it`}${bench && benchGenre ? `. The median for popular ${benchGenre.toLowerCase()} anime is ${bench.toFixed(1)}%` : ""}.` });
+  const faq = buildFaq(a, faqExtra);
   const year = a.startDate?.slice(0, 4);
 
   const ld = {
@@ -220,6 +236,9 @@ export default async function AnimePage({ params }: Props) {
               )}
             </section>
           )}
+
+          {dropOk && <ViewerBehaviour title={a.title} s={dropOk} airing={a.status === "current"} genre={benchGenre} bench={bench} />}
+          {guide && <ParentsGuideSection title={a.title} guide={guide} ageRating={a.ageRating} ageRatingGuide={a.ageRatingGuide} />}
 
           {(a.status === "current" || a.status === "upcoming") && (
             <div className="mt-6"><CalendarLinks compact ids={[a.id]} /></div>
