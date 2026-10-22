@@ -19,7 +19,9 @@ export default function MyListStats({ items }: { items: WatchItem[] }) {
   const ongoing = enriched.filter((i) => !i.runtime && i.status === "current").length;
   const total = known.reduce((n, i) => n + (i.runtime || 0), 0);
   const days = Math.ceil(total / 120);
-  const weekly = airing.filter((i) => i.nextRelease);
+  const now = Date.now();
+  const weekly = airing.filter((i) => i.nextRelease && new Date(i.nextRelease).getTime() - now < 7 * 86400000 && new Date(i.nextRelease).getTime() > now - 86400000);
+  const onBreak = airing.filter((i) => i.nextRelease && new Date(i.nextRelease).getTime() - now >= 7 * 86400000).length;
   const today = new Date().toLocaleDateString("en-US", { weekday: "long" });
   const perDay = DAYS.map((d) => ({ d, n: weekly.filter((i) => new Date(i.nextRelease!).toLocaleDateString("en-US", { weekday: "long" }) === d).length }));
   const genreCount = new Map<string, number>();
@@ -35,15 +37,16 @@ export default function MyListStats({ items }: { items: WatchItem[] }) {
           { label: "Saved shows", value: String(items.length), sub: `${airing.length} airing · ${items.length - airing.length} other` },
           { label: "Time to watch it all", value: total ? fmt(total) : "–", sub: ongoing ? `plus ${ongoing} ongoing series` : `${known.length} shows with runtimes` },
           { label: "At 2 hours a day", value: total ? `${days} day${days === 1 ? "" : "s"}` : "–", sub: total ? `≈ ${Math.ceil(days / 7)} week${Math.ceil(days / 7) === 1 ? "" : "s"}` : undefined },
-          { label: "New episodes a week", value: String(weekly.length), sub: weekly.length ? "from your airing shows" : "none airing right now" },
+          { label: "Episodes in the next 7 days", value: String(weekly.length), sub: onBreak ? `${onBreak} airing show${onBreak === 1 ? " is" : "s are"} on a break` : weekly.length ? "from your airing shows" : "none airing right now" },
         ]}
       />
       <div className="grid gap-3 lg:grid-cols-2">
         {weekly.length > 0 && (
           <BarChart
             title="When your episodes land"
-            subtitle={`Next episode of each airing show, by weekday in your time zone · today is ${today}`}
+            subtitle={`Episodes airing in the next 7 days, by weekday in your time zone · today is ${today}`}
             valueHeading="Episodes"
+            integer
             height={120}
             highlightKey={today}
             labelKeys={perDay.filter((p) => p.n > 0).map((p) => p.d)}

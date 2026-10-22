@@ -20,6 +20,10 @@ export default async function Lists() {
       <h1 className="text-3xl font-extrabold tracking-tight">Anime lists</h1>
       <p className="mt-2 max-w-2xl text-muted">Generated from live data, refreshed daily. No one&apos;s opinion, just what fans actually rate and watch.</p>
       <section className="mt-8">
+        <h2 className="h-section mb-3">Compare two anime</h2>
+        <p className="text-sm text-muted"><Link href="/compare" className="text-violet hover:underline">Put any two anime side by side →</Link> scores, rating breakdowns, runtime and shared genres.</p>
+      </section>
+      <section className="mt-8">
         <h2 className="h-section mb-3">Finish it tonight</h2>
         <div className="flex flex-wrap gap-2">
           {[[30, "in 30 minutes"], [60, "in an hour"], [120, "in 2 hours"], [180, "in 3 hours"], [300, "in 5 hours"], [600, "in a day"]].map(([m, t]) => (

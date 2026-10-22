@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { abs } from "@/lib/site";
 import { WATCH_ORDER_OVERRIDES } from "@/data/watch-orders";
-import { listAnime, getCategories, seasonOf, shiftSeason, animePath, episodePath, getLastAiredBest, getCharacters, getProductions, primeAniList } from "@/lib/kitsu";
+import { listAnime, getCategories, seasonOf, shiftSeason, animePath, episodePath, getLastAiredBest, getCharacters, getProductions, primeAniList, comparePath, suggestComparePairs } from "@/lib/kitsu";
 
 export const revalidate = 86400;
 
@@ -47,6 +47,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const charSeen = new Set<string>(), studioSeen = new Set<string>();
     chars.flat().forEach((c) => { if (!charSeen.has(c.slug)) { charSeen.add(c.slug); out.push({ url: abs(`/character/${c.slug}`), lastModified: now, changeFrequency: "monthly", priority: 0.4 }); } });
     prods.flat().filter((p) => p.role === "studio").forEach((p) => { if (!studioSeen.has(p.producer.slug)) { studioSeen.add(p.producer.slug); out.push({ url: abs(`/studio/${p.producer.slug}`), lastModified: now, changeFrequency: "weekly", priority: 0.6 }); } });
+    // Compare pages: each of the top 60 with its two closest genre peers.
+    const withGenres = await Promise.all([0, 20, 40].map((offset) => listAnime({ sort: "-userCount", limit: 20, offset, withCategories: true, revalidate: 86400 })));
+    out.push({ url: abs("/compare"), lastModified: now, changeFrequency: "weekly", priority: 0.6 });
+    for (const [x, y] of suggestComparePairs(withGenres.flatMap((p) => p.items), 2)) out.push({ url: abs(comparePath(x, y)), lastModified: now, changeFrequency: "weekly", priority: 0.5 });
     const seen = new Set<string>();
     for (const a of [...airing.items, ...pages.flatMap((p) => p.items)]) {
       if (seen.has(a.id)) continue;

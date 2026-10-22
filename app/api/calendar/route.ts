@@ -40,7 +40,7 @@ export async function GET(req: Request) {
     headers: {
       "Content-Type": "text/calendar; charset=utf-8",
       "Content-Disposition": `inline; filename="${shows.length === 1 ? shows[0].slug : "anilumi"}.ics"`,
-      "Cache-Control": "public, s-maxage=1800, stale-while-revalidate=3600",
+      "Cache-Control": "public, max-age=0, s-maxage=1800, stale-while-revalidate=3600",
     },
   });
 }

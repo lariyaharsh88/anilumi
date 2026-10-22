@@ -53,6 +53,7 @@ export default async function SchedulePage() {
           title="Episodes this week"
           subtitle={`Followed series airing each day (JST), starting today · ${days.reduce((n, d) => n + d.items.length, 0)} in total`}
           valueHeading="Series"
+          integer
           height={120}
           highlightKey={todayJst}
           labelKeys={[todayJst, days.reduce((x, y) => (y.items.length > x.items.length ? y : x)).day]}

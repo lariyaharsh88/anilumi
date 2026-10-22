@@ -36,6 +36,13 @@ Every page ships with a unique title/description, canonical URL, Open Graph imag
 - **What to watch tonight** (`/tonight`): pick available time, genre, format and minimum score; returns complete titles whose real runtime fits, one per franchise, plus longer series with episodes-per-night. GET form, works without JS.
 - **Next-episode sources**: Kitsu → AniList (`nextAiringEpisode`, batched, on by default, `ANILIST_ENRICH=0` to disable) → Jikan (`JIKAN_ENRICH=1`). Compare them with `npx tsx scripts/check-jikan.ts`.
 
+## My list stats, calendar, compare (added 22 Oct)
+
+- **My list** shows time to watch everything, days at 2 h/day, episodes in the next 7 days (shows on a break called out), a weekday chart in the viewer's time zone and a main-genre breakdown. All computed in the browser from `/api/anime?ids=` (which now uses the Kitsu → AniList → Jikan next-episode chain).
+- **Calendar**: `/api/calendar?ids=…` is a subscribable iCalendar feed (next episode per airing show, premiere dates for upcoming). Google / Apple-Outlook / .ics links on My list and airing anime pages. Google needs the site on a public URL.
+- **Compare**: `/compare/[a]-vs-[b]` (slugs sorted; the reverse order 308-redirects), with verdict, comparison table, grouped score-share chart, runtime bars, genre overlap and FAQ. `/compare` has a search form and genre-matched popular matchups; ~100 pairs in the sitemap.
+- Kitsu gotcha: `filter[id]` is silently ignored when combined with `filter[ageRating]`; `listAnime` skips the age filter for id lookups and drops R18 afterwards.
+
 ## Run
 
 ```bash

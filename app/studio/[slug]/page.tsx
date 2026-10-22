@@ -61,6 +61,7 @@ export default async function StudioPage({ params }: Props) {
             title="Titles per year"
             subtitle={`Premiere year of the ${items.length} most-followed ${p.name} titles`}
             valueHeading="Titles"
+            integer
             data={span.map((yr) => ({ key: String(yr), label: span.length > 16 ? `’${String(yr).slice(2)}` : String(yr), value: byYear.get(yr) || 0, display: `${byYear.get(yr) || 0} in ${yr}` }))}
             labelKeys={busiest ? [String(busiest[0])] : []}
           />

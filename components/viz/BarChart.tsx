@@ -15,6 +15,8 @@ type Props = {
   labelKeys?: string[];
   valueHeading?: string;
   height?: number;
+  /** Counts: keep axis ticks on whole numbers. */
+  integer?: boolean;
 };
 
 function niceMax(v: number) {
@@ -27,11 +29,12 @@ function niceMax(v: number) {
 }
 const compact = (n: number) => (n >= 1e6 ? `${+(n / 1e6).toFixed(1)}M` : n >= 1e4 ? `${Math.round(n / 1e3)}K` : n >= 1e3 ? `${+(n / 1e3).toFixed(1)}K` : `${+n.toFixed(1)}`);
 
-export default function BarChart({ title, subtitle, data, orientation = "column", highlightKey, labelKeys, valueHeading = "Value", height = 180 }: Props) {
+export default function BarChart({ title, subtitle, data, orientation = "column", highlightKey, labelKeys, valueHeading = "Value", height = 180, integer = false }: Props) {
   const [active, setActive] = useState<number | null>(null);
   if (!data.length) return null;
-  const max = niceMax(Math.max(...data.map((d) => d.value)));
-  const ticks = [0, max / 2, max];
+  const raw = Math.max(...data.map((d) => d.value));
+  const max = integer ? Math.max(2, Math.ceil(raw / 2) * 2 > raw ? Math.ceil(raw / 2) * 2 : raw) : niceMax(raw);
+  const ticks = [0, max / 2, max].filter((t) => !integer || Number.isInteger(t));
   const maxKey = data.reduce((a, b) => (b.value > a.value ? b : a)).key;
   const labelled = new Set(labelKeys ?? [maxKey]);
   const color = (d: Datum) => (highlightKey ? (d.key === highlightKey ? "bg-viz-1" : "bg-viz-muted") : "bg-viz-1");

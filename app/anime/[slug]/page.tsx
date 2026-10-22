@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { getAnimeBySlug, getCharacters, getEpisodes, listAnime, getTrending, getRelations, getLastAiredBest, getProductions, type LastAired, episodePath, posterUrl, fmtDate, statusLabel, subtypeLabel, animePath, weekdayOf, runtimeMinutes, fmtMinutes, Anime } from "@/lib/kitsu";
+import { getAnimeBySlug, getCharacters, getEpisodes, listAnime, getTrending, getRelations, getLastAiredBest, getProductions, type LastAired, comparePath, franchiseRoot, episodePath, posterUrl, fmtDate, statusLabel, subtypeLabel, animePath, weekdayOf, runtimeMinutes, fmtMinutes, Anime } from "@/lib/kitsu";
 import { abs } from "@/lib/site";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import JsonLd from "@/components/JsonLd";
@@ -334,6 +334,17 @@ export default async function AnimePage({ params }: Props) {
       </div>
 
       <div className="container-x">
+        {relatedItems.length > 0 && (
+          <section className="mt-10">
+            <h2 className="h-section mb-3">Compare {a.title} with…</h2>
+            <div className="flex flex-wrap gap-2">
+              {relatedItems.filter((o) => franchiseRoot(o.title) !== franchiseRoot(a.title)).slice(0, 5).map((o) => (
+                <Link key={o.id} href={comparePath(a, o)} className="chip">{a.title} vs {o.title}</Link>
+              ))}
+              <Link href="/compare" className="chip chip-active">Pick any anime →</Link>
+            </div>
+          </section>
+        )}
         {mainGenre && <AnimeRail title={`More ${mainGenre.title} anime`} href={`/genre/${mainGenre.slug}`} items={relatedItems} />}
       </div>
     </article>

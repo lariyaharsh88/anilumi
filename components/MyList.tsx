@@ -14,7 +14,7 @@ export default function MyList() {
   useEffect(() => {
     if (!ready || refreshed.current || !items.length) return;
     refreshed.current = true;
-    fetch(`/api/anime?ids=${items.map((i) => i.id).join(",")}`)
+    fetch(`/api/anime?ids=${items.map((i) => i.id).join(",")}`, { cache: "no-cache" })
       .then((r) => r.json())
       .then((d: { items: Partial<WatchItem>[] }) => update(d.items))
       .catch(() => {});
