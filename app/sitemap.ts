@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { abs } from "@/lib/site";
+import { WATCH_ORDER_OVERRIDES } from "@/data/watch-orders";
 import { listAnime, getCategories, seasonOf, shiftSeason, animePath, episodePath, getLastAiredBest, getCharacters, getProductions } from "@/lib/kitsu";
 
 export const revalidate = 86400;
@@ -12,6 +13,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: abs("/genre"), lastModified: now, changeFrequency: "weekly", priority: 0.6 },
     { url: abs("/watch-order"), lastModified: now, changeFrequency: "weekly", priority: 0.7 },
     { url: abs("/lists"), lastModified: now, changeFrequency: "weekly", priority: 0.6 },
+    ...Object.keys(WATCH_ORDER_OVERRIDES).map((slug) => ({ url: abs(`/watch-order/${slug}`), lastModified: now, changeFrequency: "weekly" as const, priority: 0.8 })),
     { url: abs("/short-anime"), lastModified: now, changeFrequency: "weekly", priority: 0.7 },
     ...Array.from({ length: now.getFullYear() - 1999 }, (_, i) => ({ url: abs(`/best/${now.getFullYear() - i}`), lastModified: now, changeFrequency: (i === 0 ? "daily" : "monthly") as "daily" | "monthly", priority: i < 3 ? 0.8 : 0.5 })),
     { url: abs("/about"), lastModified: now, changeFrequency: "yearly", priority: 0.2 },

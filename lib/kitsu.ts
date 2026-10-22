@@ -5,6 +5,8 @@
  * per hour, not per visitor.
  */
 
+import { WATCH_ORDER_OVERRIDES, type WatchOrderOverride } from "@/data/watch-orders";
+
 const BASE = "https://kitsu.io/api/edge";
 const SAFE_RATINGS = "G,PG,R"; // excludes R18 catalogue entries site-wide
 
@@ -411,7 +413,7 @@ export type WatchEntry = {
   attachedTo?: string; // id of main entry this hangs off
 };
 
-export type WatchOrder = { root: Anime; entries: WatchEntry[]; mainCount: number; totalMinutes: number; releaseOrder: Anime[] };
+export type WatchOrder = { root: Anime; entries: WatchEntry[]; mainCount: number; totalMinutes: number; releaseOrder: Anime[]; intro: string | null };
 
 function kindOf(role: RelationRole, a: Anime): WatchEntry["kind"] {
   if (role === "summary") return "recap";
@@ -431,7 +433,7 @@ const NOTES: Record<WatchEntry["kind"], string> = {
 };
 
 /** Walk prequel/sequel links to assemble the franchise, max 12 hops each way. */
-export async function buildWatchOrder(start: Anime, fetchRelations: (id: string) => Promise<Relation[]> = getRelations): Promise<WatchOrder> {
+export async function buildWatchOrder(start: Anime, fetchRelations: (id: string) => Promise<Relation[]> = getRelations, overrides: Record<string, WatchOrderOverride> = WATCH_ORDER_OVERRIDES): Promise<WatchOrder> {
   const relCache = new Map<string, Relation[]>();
   const rels = async (a: Anime) => {
     if (!relCache.has(a.id)) relCache.set(a.id, await fetchRelations(a.id));
@@ -476,10 +478,23 @@ export async function buildWatchOrder(start: Anime, fetchRelations: (id: string)
     }
   }
 
+  // 4. editorial overrides (data/watch-orders.ts)
+  const ov = overrides[root.slug];
+  if (ov?.skip?.length) for (const e of entries) if (ov.skip.includes(e.anime.slug)) { e.kind = "recap"; e.note = NOTES.recap; e.optional = true; }
+  if (ov?.mainOrder?.length) {
+    const rank = (e: WatchEntry) => { const i = ov.mainOrder!.indexOf(e.anime.slug); return i < 0 ? 1e6 + e.step : i; };
+    const mains = entries.filter((e) => e.kind === "main").sort((x, y) => rank(x) - rank(y));
+    const rest = entries.filter((e) => e.kind !== "main");
+    entries.length = 0;
+    for (const m of mains) { entries.push(m); entries.push(...rest.filter((r) => r.attachedTo === m.anime.id)); }
+    entries.push(...rest.filter((r) => !mains.some((m) => m.anime.id === r.attachedTo)));
+    entries.forEach((e, i) => (e.step = i + 1));
+  }
+
   const minutes = (a: Anime) => a.totalLength || (a.episodeCount && a.episodeLength ? a.episodeCount * a.episodeLength : 0);
   const totalMinutes = entries.filter((e) => e.kind === "main" || e.kind === "movie").reduce((n, e) => n + minutes(e.anime), 0);
   const releaseOrder = [...entries.map((e) => e.anime)].sort((x, y) => (x.startDate || "9").localeCompare(y.startDate || "9"));
-  return { root, entries, mainCount: main.length, totalMinutes, releaseOrder };
+  return { root, entries, mainCount: main.length, totalMinutes, releaseOrder, intro: ov?.intro || null };
 }
 
 export function runtimeMinutes(a: Anime): number {
@@ -681,11 +696,11 @@ export async function getProducerBySlug(slug: string): Promise<Producer | null> 
   return { id: p.id, slug: String(p.attributes.slug), name: String(p.attributes.name) };
 }
 
-/** Up to 60 titles the producer worked on as the animation studio, most popular first. */
+/** Up to 120 titles the producer worked on as the animation studio, most popular first. */
 export async function getStudioAnime(producerId: string): Promise<{ items: Anime[]; total: number }> {
   const first = await kitsu(`/producers/${producerId}/anime-productions`, { include: "anime", "filter[role]": "studio", "page[limit]": 20, "page[offset]": 0, "fields[animeProductions]": "role,anime", "fields[anime]": LIST_FIELDS }, 86400);
   const total = first?.meta?.count ?? 0;
-  const rest = await Promise.all([20, 40].filter((o) => o < total).map((offset) => kitsu(`/producers/${producerId}/anime-productions`, { include: "anime", "filter[role]": "studio", "page[limit]": 20, "page[offset]": offset, "fields[animeProductions]": "role,anime", "fields[anime]": LIST_FIELDS }, 86400)));
+  const rest = await Promise.all([20, 40, 60, 80, 100].filter((o) => o < total).map((offset) => kitsu(`/producers/${producerId}/anime-productions`, { include: "anime", "filter[role]": "studio", "page[limit]": 20, "page[offset]": offset, "fields[animeProductions]": "role,anime", "fields[anime]": LIST_FIELDS }, 86400)));
   const items = [first, ...rest].flatMap((doc) => (doc?.included || []).filter((i) => i.type === "anime").map((i) => normalizeAnime(i))).filter((a) => !a.nsfw);
   return { items: uniqueById(items).sort((x, y) => y.userCount - x.userCount), total };
 }

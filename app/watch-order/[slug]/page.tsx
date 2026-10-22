@@ -58,6 +58,12 @@ export default async function WatchOrderPage({ params }: Props) {
           : `${wo.mainCount} core ${wo.mainCount === 1 ? "entry" : "entries"}, ${wo.entries.length - wo.mainCount} ${wo.entries.length - wo.mainCount === 1 ? "extra" : "extras"}. Watching only the core story and movies takes about ${fmtMinutes(wo.totalMinutes)}. Generated from the franchise graph, so it updates when new seasons are announced.`}
       </p>
 
+      {wo.intro && (
+        <div className="card mt-5 border-violet/40 bg-violet/10 p-4">
+          <p className="text-xs font-semibold uppercase tracking-wider text-violet">How to watch</p>
+          <p className="mt-1 text-sm leading-6 text-ink/90">{wo.intro}</p>
+        </div>
+      )}
       <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-4">
         <div className="card p-3"><p className="text-xl font-extrabold text-accent-2">{wo.mainCount}</p><p className="text-xs text-muted">core entries</p></div>
         <div className="card p-3"><p className="text-xl font-extrabold">{required.length - wo.mainCount}</p><p className="text-xs text-muted">movies to include</p></div>
@@ -124,7 +130,7 @@ export default async function WatchOrderPage({ params }: Props) {
       <Faq
         title={`${name} watch order FAQ`}
         items={[
-          { q: `What order should I watch ${name} in?`, a: wo.entries.length === 1 ? `${name} has a single entry, so there is nothing to sequence.` : `Follow the recommended order above: ${wo.entries.filter((e) => e.kind === "main").map((e) => e.anime.title).join(" → ")}. Movies and side stories are slotted after the season they relate to.` },
+          { q: `What order should I watch ${name} in?`, a: wo.intro ? wo.intro : wo.entries.length === 1 ? `${name} has a single entry, so there is nothing to sequence.` : `Follow the recommended order above: ${wo.entries.filter((e) => e.kind === "main").map((e) => e.anime.title).join(" → ")}. Movies and side stories are slotted after the season they relate to.` },
           { q: `How long does it take to watch all of ${name}?`, a: wo.totalMinutes ? `The core story and movies run about ${fmtMinutes(wo.totalMinutes)}. At two hours a day that is roughly ${Math.ceil(wo.totalMinutes / 120)} days.` : "Runtime data is incomplete for this franchise." },
           { q: `Can I skip the recaps?`, a: skippable.length ? `Yes. ${skippable.map((e) => e.anime.title).join(", ")} retell events you have already seen and can be skipped.` : "There are no recap episodes or compilation movies on record for this franchise." },
           { q: "Where does this order come from?", a: "It is built automatically from the sequel, prequel, side-story and spin-off links in the Kitsu database and refreshed daily, so new seasons appear without manual edits." },

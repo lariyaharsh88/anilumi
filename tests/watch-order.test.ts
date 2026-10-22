@@ -37,3 +37,11 @@ test("total runtime counts main entries and movies only", async () => {
   const wo = await buildWatchOrder(s1, fetchRelations);
   assert.equal(wo.totalMinutes, 288 * 3 + 110);
 });
+
+test("overrides can force the main order and move entries to skip", async () => {
+  const wo = await buildWatchOrder(s1, fetchRelations, { "1": { intro: "note", mainOrder: ["3", "1", "2"], skip: ["5"] } });
+  assert.equal(wo.intro, "note");
+  assert.deepEqual(wo.entries.filter((e) => e.kind === "main").map((e) => e.anime.id), ["3", "1", "2"]);
+  assert.equal(wo.entries.find((e) => e.anime.id === "5")?.kind, "recap");
+  assert.equal(wo.totalMinutes, 288 * 3);
+});

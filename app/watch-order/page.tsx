@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { listAnime, animePath, getRelations, uniqueById } from "@/lib/kitsu";
+import { WATCH_ORDER_OVERRIDES } from "@/data/watch-orders";
 import AnimeGrid from "@/components/AnimeGrid";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
@@ -25,6 +26,12 @@ export default async function WatchOrderIndex() {
       <ul className="mt-6 flex flex-wrap gap-2">
         {items.map((a) => (
           <li key={a.id}><Link href={`/watch-order/${a.slug}`} className="chip">{a.title} →</Link></li>
+        ))}
+      </ul>
+      <h2 className="h-section mt-10 mb-3">Guides with editor notes</h2>
+      <ul className="flex flex-wrap gap-2">
+        {Object.keys(WATCH_ORDER_OVERRIDES).map((slug) => (
+          <li key={slug}><Link href={`/watch-order/${slug}`} className="chip">{slug.replace(/-/g, " ")}</Link></li>
         ))}
       </ul>
       <h2 className="h-section mt-10 mb-3">Most popular franchises</h2>
