@@ -3,13 +3,15 @@ import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getAnimeBySlug, getEpisodeByNumber, getLastAiredBest, airingNotice, type AiringNotice, animePath, episodePath, fmtDate, isFuture, posterUrl, weekdayOf, Episode } from "@/lib/kitsu";
-import { abs } from "@/lib/site";
+import { site, abs } from "@/lib/site";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import JsonLd from "@/components/JsonLd";
 import Faq from "@/components/Faq";
 import Countdown from "@/components/Countdown";
 import LocalTime from "@/components/LocalTime";
 import AiringNoticeBanner from "@/components/AiringNoticeBanner";
+import SpoilerGate from "@/components/SpoilerGate";
+import WatchedUpTo from "@/components/WatchedUpTo";
 import AdSlot from "@/components/AdSlot";
 import { streamLink, affiliateRel } from "@/lib/affiliate";
 
@@ -86,7 +88,7 @@ export default async function EpisodePage({ params }: Props) {
       <div className="grid gap-6 md:grid-cols-[1fr_280px]">
         <div className="min-w-0">
           <p className="text-xs font-semibold uppercase tracking-wider text-accent">{a.title} · Episode {n}{isNext ? " · Next episode" : ""}</p>
-          <h1 className="mt-1 text-3xl font-extrabold tracking-tight sm:text-4xl">{episode.title || `${a.title} Episode ${n}`}</h1>
+          <h1 className="mt-1 text-3xl font-extrabold tracking-tight sm:text-4xl">{episode.title ? <SpoilerGate inline animeId={a.id} ep={n} safeDocTitle={`${a.title} Episode ${n} | ${site.name}`}>{episode.title}</SpoilerGate> : `${a.title} Episode ${n}`}</h1>
           <p className="mt-2 text-muted">
             {when ? <>{upcoming ? "Airs" : "Aired"} {when}{whenTime ? ` · ${whenTime} JST` : ""}{airIso && airIso.length > 10 && <LocalTime iso={airIso} />}</> : "Release date not announced yet"}
             {episode.length ? ` · ${episode.length} min` : ""}
@@ -101,17 +103,23 @@ export default async function EpisodePage({ params }: Props) {
           )}
 
           {episode.thumbnail && (
+            <SpoilerGate animeId={a.id} ep={n}>
             <div className="relative mt-6 aspect-video overflow-hidden rounded-xl border border-line bg-bg-2">
               <Image src={episode.thumbnail} alt={`${a.title} episode ${n} still`} fill sizes="(max-width: 768px) 100vw, 700px" className="object-cover" priority />
             </div>
+            </SpoilerGate>
           )}
 
           <section className="mt-6">
             <h2 className="h-section mb-2">{upcoming ? "What to expect" : "Synopsis"}</h2>
+            <SpoilerGate animeId={a.id} ep={n}>
             <p className="prose-anime whitespace-pre-line">{episode.synopsis || (upcoming ? `Episode ${n} of ${a.title} continues the story${lastAired ? ` after episode ${lastAired}` : ""}. The official synopsis is added here as soon as it is published.` : "No synopsis has been added for this episode yet.")}</p>
+            </SpoilerGate>
           </section>
 
           <AdSlot slot="episode-mid" />
+
+          {!upcoming && <WatchedUpTo ep={n} item={{ id: a.id, slug: a.slug, title: a.title, poster: posterUrl(a, "small"), status: a.status, nextRelease: a.nextRelease, episodeCount: a.episodeCount, episodeLength: a.episodeLength }} />}
 
           {a.streaming.length > 0 && (
             <section className="mt-6">

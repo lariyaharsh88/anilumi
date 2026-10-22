@@ -15,6 +15,7 @@ import WatchButton from "@/components/WatchButton";
 import EmbedSnippet from "@/components/EmbedSnippet";
 import CalendarLinks from "@/components/CalendarLinks";
 import WhereToWatch from "@/components/WhereToWatch";
+import SpoilerGate from "@/components/SpoilerGate";
 import ViewerBehaviour from "@/components/ViewerBehaviour";
 import AiringNoticeBanner from "@/components/AiringNoticeBanner";
 import ParentsGuideSection from "@/components/ParentsGuide";
@@ -292,7 +293,7 @@ export default async function AnimePage({ params }: Props) {
                   <li key={e.id} className="flex items-start gap-3 p-3 text-sm">
                     <span className="w-10 shrink-0 font-bold text-muted">#{e.number ?? "–"}</span>
                     <div className="min-w-0 flex-1">
-                      <p className="font-medium text-ink">{e.number ? <Link href={episodePath(a, e.number)} className="hover:text-violet">{e.title || `Episode ${e.number}`}</Link> : e.title}</p>
+                      <p className="font-medium text-ink">{e.number ? <Link href={episodePath(a, e.number)} className="hover:text-violet">{e.title ? <SpoilerGate inline animeId={a.id} ep={e.number}>{e.title}</SpoilerGate> : `Episode ${e.number}`}</Link> : e.title}</p>
                       {e.airdate && <p className="text-xs text-muted">Aired {fmtDate(e.airdate)}</p>}
                     </div>
                   </li>

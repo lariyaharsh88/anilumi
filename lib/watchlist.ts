@@ -72,3 +72,32 @@ export function useWatchlist() {
   }, []);
   return { items, ready, has, toggle, remove, update, importItems, setProgress };
 }
+
+/* ---------- spoiler shield setting ---------- */
+const SHIELD_KEY = "anilumi:spoiler-shield";
+const SHIELD_EVT = "anilumi:spoiler-shield";
+
+/** On by default; only has an effect for shows with recorded episode progress. */
+export function useSpoilerShield() {
+  const [on, setOn] = useState(true);
+  useEffect(() => {
+    const sync = () => { try { setOn(localStorage.getItem(SHIELD_KEY) !== "off"); } catch { setOn(true); } };
+    sync();
+    window.addEventListener(SHIELD_EVT, sync);
+    window.addEventListener("storage", sync);
+    return () => { window.removeEventListener(SHIELD_EVT, sync); window.removeEventListener("storage", sync); };
+  }, []);
+  const set = useCallback((v: boolean) => {
+    try { localStorage.setItem(SHIELD_KEY, v ? "on" : "off"); } catch { /* storage blocked */ }
+    window.dispatchEvent(new Event(SHIELD_EVT));
+  }, []);
+  return { on, set };
+}
+
+/**
+ * Runs before first paint (inline at the top of <body>): blurs spoiler-prone content for every show with
+ * recorded progress, so nothing flashes before React decides which episodes are safe. It appends its own
+ * <style> to <head> (React 19 skips unexpected head nodes during hydration; filling a React-rendered
+ * <style> would be a hydration mismatch). Ids are digit-checked before going into CSS.
+ */
+export const SPOILER_PREPAINT = `(function(){try{if(localStorage.getItem('${SHIELD_KEY}')==='off')return;var l=JSON.parse(localStorage.getItem('anilumi:watchlist:v1')||'[]'),c='';for(var i=0;i<l.length;i++){var t=l[i];if(t&&typeof t.progress==='number'&&/^\\d+$/.test(t.id))c+='[data-sp="'+t.id+'"] [data-sp-body]:not([data-sp-ok]){filter:blur(8px);user-select:none}';}if(c){var s=document.createElement('style');s.id='sp-style';s.textContent=c;document.head.appendChild(s);}}catch(e){}})();`;

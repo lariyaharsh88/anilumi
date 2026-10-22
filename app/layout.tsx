@@ -4,6 +4,7 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import JsonLd from "@/components/JsonLd";
 import Analytics from "@/components/Analytics";
+import { SPOILER_PREPAINT } from "@/lib/watchlist";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -24,6 +25,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className="flex min-h-screen flex-col">
+        {/* Spoiler shield: runs synchronously before any content paints (see lib/watchlist.ts). */}
+        <script dangerouslySetInnerHTML={{ __html: SPOILER_PREPAINT }} />
         <JsonLd
           data={{
             "@context": "https://schema.org",

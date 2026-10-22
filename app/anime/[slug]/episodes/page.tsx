@@ -5,6 +5,7 @@ import Link from "next/link";
 import { getAnimeBySlug, getEpisodes, getLastAiredBest, airingNotice, fmtDate, animePath, episodePath, posterUrl } from "@/lib/kitsu";
 import Countdown from "@/components/Countdown";
 import AiringNoticeBanner from "@/components/AiringNoticeBanner";
+import SpoilerGate from "@/components/SpoilerGate";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import Pagination from "@/components/Pagination";
 import AdSlot from "@/components/AdSlot";
@@ -68,12 +69,12 @@ export default async function EpisodesPage({ params, searchParams }: Props) {
           {eps.items.map((e) => (
             <li key={e.id} className="card flex gap-4 p-3">
               <div className="relative hidden aspect-video w-40 shrink-0 overflow-hidden rounded-lg bg-bg-2 sm:block">
-                {e.thumbnail && <Image src={e.thumbnail} alt="" fill sizes="160px" className="object-cover" />}
+                {e.thumbnail && (e.number ? <SpoilerGate animeId={a.id} ep={e.number}><div className="relative aspect-video w-40"><Image src={e.thumbnail} alt="" fill sizes="160px" className="object-cover" /></div></SpoilerGate> : <Image src={e.thumbnail} alt="" fill sizes="160px" className="object-cover" />)}
               </div>
               <div className="min-w-0 flex-1">
-                <h2 className="font-semibold">{e.number ? <Link href={episodePath(a, e.number)} className="hover:text-violet"><span className="text-muted">Episode {e.number}</span>{e.title ? ` · ${e.title}` : ""}</Link> : e.title}</h2>
+                <h2 className="font-semibold">{e.number ? <Link href={episodePath(a, e.number)} className="hover:text-violet"><span className="text-muted">Episode {e.number}</span>{e.title ? <> · <SpoilerGate inline animeId={a.id} ep={e.number}>{e.title}</SpoilerGate></> : ""}</Link> : e.title}</h2>
                 <p className="text-xs text-muted">{e.airdate ? `Aired ${fmtDate(e.airdate, { weekday: "long", year: "numeric", month: "long", day: "numeric" })}` : "Air date TBA"}{e.length ? ` · ${e.length} min` : ""}</p>
-                {e.synopsis && <p className="mt-1 line-clamp-3 text-sm text-ink/80">{e.synopsis}</p>}
+                {e.synopsis && (e.number ? <SpoilerGate animeId={a.id} ep={e.number}><p className="mt-1 line-clamp-3 text-sm text-ink/80">{e.synopsis}</p></SpoilerGate> : <p className="mt-1 line-clamp-3 text-sm text-ink/80">{e.synopsis}</p>)}
               </div>
             </li>
           ))}

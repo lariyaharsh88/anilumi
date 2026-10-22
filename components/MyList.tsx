@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
-import { useWatchlist, type WatchItem } from "@/lib/watchlist";
+import { useWatchlist, useSpoilerShield, type WatchItem } from "@/lib/watchlist";
 import Countdown from "./Countdown";
 import MyListStats from "./MyListStats";
 import CalendarLinks from "./CalendarLinks";
@@ -10,6 +10,7 @@ import ImportAniList from "./ImportAniList";
 
 export default function MyList() {
   const { items, ready, remove, update, setProgress } = useWatchlist();
+  const shield = useSpoilerShield();
   const refreshed = useRef(false);
 
   useEffect(() => {
@@ -61,6 +62,15 @@ export default function MyList() {
   return (
     <div className="space-y-8">
       <MyListStats items={items} />
+      <section className="card flex flex-wrap items-center justify-between gap-3 p-4">
+        <div className="min-w-0">
+          <h2 className="font-semibold">Spoiler shield {shield.on ? "on" : "off"}</h2>
+          <p className="mt-1 text-sm text-muted">Hides titles, synopses and stills for episodes past your progress, for every show where you&apos;ve set an episode. Each hidden item has a “show” button.</p>
+        </div>
+        <button type="button" role="switch" aria-checked={shield.on} onClick={() => shield.set(!shield.on)} className={shield.on ? "btn bg-violet-strong text-white" : "btn-outline"}>
+          {shield.on ? "Turn off" : "Turn on"}
+        </button>
+      </section>
       <ImportAniList />
       {calendarIds.length > 0 && (
         <section className="card p-4">
