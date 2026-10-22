@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { abs } from "@/lib/site";
-import { listAnime, getCategories, seasonOf, shiftSeason, animePath, episodePath, getLastAiredBest } from "@/lib/kitsu";
+import { listAnime, getCategories, seasonOf, shiftSeason, animePath, episodePath, getLastAiredBest, isFuture, getCharacters, getProductions } from "@/lib/kitsu";
 
 export const revalidate = 86400;
 
@@ -37,6 +37,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         if (n >= 1) out.push({ url: abs(episodePath(a, n)), lastModified: now, changeFrequency: "daily", priority: n === lastAired + 1 ? 0.8 : 0.6 });
       }
     });
+    // Character and studio pages for the 60 most popular titles.
+    const top60 = pages.slice(0, 3).flatMap((p) => p.items);
+    const [chars, prods] = await Promise.all([Promise.all(top60.map((a) => getCharacters(a.id, 6))), Promise.all(top60.map((a) => getProductions(a.id)))]);
+    const charSeen = new Set<string>(), studioSeen = new Set<string>();
+    chars.flat().forEach((c) => { if (!charSeen.has(c.slug)) { charSeen.add(c.slug); out.push({ url: abs(`/character/${c.slug}`), lastModified: now, changeFrequency: "monthly", priority: 0.4 }); } });
+    prods.flat().filter((p) => p.role === "studio").forEach((p) => { if (!studioSeen.has(p.producer.slug)) { studioSeen.add(p.producer.slug); out.push({ url: abs(`/studio/${p.producer.slug}`), lastModified: now, changeFrequency: "weekly", priority: 0.6 }); } });
     const seen = new Set<string>();
     for (const a of [...airing.items, ...pages.flatMap((p) => p.items)]) {
       if (seen.has(a.id)) continue;

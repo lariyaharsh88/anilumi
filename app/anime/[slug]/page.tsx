@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { getAnimeBySlug, getCharacters, getEpisodes, listAnime, getTrending, getRelations, getLastAiredBest, episodePath, posterUrl, fmtDate, statusLabel, subtypeLabel, animePath, weekdayOf, runtimeMinutes, fmtMinutes, Anime } from "@/lib/kitsu";
+import { getAnimeBySlug, getCharacters, getEpisodes, listAnime, getTrending, getRelations, getLastAiredBest, getProductions, episodePath, posterUrl, fmtDate, statusLabel, subtypeLabel, animePath, weekdayOf, runtimeMinutes, fmtMinutes, Anime } from "@/lib/kitsu";
 import { abs } from "@/lib/site";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import JsonLd from "@/components/JsonLd";
@@ -71,17 +71,20 @@ export default async function AnimePage({ params }: Props) {
   if (!a) notFound();
 
   const mainGenre = a.categories[0];
-  const [characters, episodes, related, relations, latestInfo] = await Promise.all([
+  const [characters, episodes, related, relations, latestInfo, productions] = await Promise.all([
     getCharacters(a.id, 12),
     a.subtype === "movie" ? Promise.resolve({ items: [], total: 0, limit: 0, offset: 0 }) : getEpisodes(a.id, 1, 6),
     mainGenre ? listAnime({ filter: { categories: mainGenre.slug }, sort: "-userCount", limit: 13 }) : Promise.resolve({ items: [], total: 0, limit: 0, offset: 0 }),
     getRelations(a.id),
     a.status === "current" ? getLastAiredBest(a.id) : Promise.resolve({ count: 0, lastAired: 0, lastAiredDate: null, reliable: false }),
+    getProductions(a.id),
   ]);
   const relatedItems = related.items.filter((r) => r.id !== a.id).slice(0, 12);
   const franchise = relations.filter((r) => ["sequel", "prequel", "side_story", "spinoff", "summary", "alternative_version", "other", "character"].includes(r.role));
   const runtime = runtimeMinutes(a);
   const lastAired = latestInfo.lastAired;
+  const studios = productions.filter((p) => p.role === "studio");
+  const licensors = productions.filter((p) => p.role === "licensor");
   const nextN = a.status === "current" && a.nextRelease && latestInfo.reliable ? lastAired + 1 : null;
   const poster = posterUrl(a, "large");
   const cover = a.cover?.large || a.cover?.original || null;
@@ -144,6 +147,7 @@ export default async function AnimePage({ params }: Props) {
                 {year && <span className="chip">{year}</span>}
                 {a.episodeCount && <span className="chip">{a.episodeCount} episodes</span>}
                 {a.ageRating && <span className="chip">{a.ageRating}</span>}
+                {studios.slice(0, 1).map((p) => <Link key={p.producer.id} href={`/studio/${p.producer.slug}`} className="chip">🎬 {p.producer.name}</Link>)}
               </div>
               <div className="mt-3 flex flex-wrap gap-2">
                 {a.categories.map((c) => (
@@ -249,11 +253,13 @@ export default async function AnimePage({ params }: Props) {
               <ul className="grid grid-cols-3 gap-3 sm:grid-cols-4 md:grid-cols-6">
                 {characters.map((c) => (
                   <li key={c.id} className="text-center">
-                    <div className="relative mx-auto aspect-[5/6] w-full overflow-hidden rounded-lg border border-line bg-bg-2">
-                      {c.image && <Image src={c.image} alt={c.name} fill sizes="120px" className="object-cover" />}
-                    </div>
-                    <p className="mt-1 line-clamp-2 text-xs font-medium">{c.name}</p>
-                    <p className="text-[10px] uppercase text-muted">{c.role}</p>
+                    <Link href={`/character/${c.slug}`} className="group/c block">
+                      <div className="relative mx-auto aspect-[5/6] w-full overflow-hidden rounded-lg border border-line bg-bg-2">
+                        {c.image && <Image src={c.image} alt={c.name} fill sizes="120px" className="object-cover transition group-hover/c:scale-105" />}
+                      </div>
+                      <p className="mt-1 line-clamp-2 text-xs font-medium group-hover/c:text-violet">{c.name}</p>
+                      <p className="text-[10px] uppercase text-muted">{c.role}</p>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -277,6 +283,10 @@ export default async function AnimePage({ params }: Props) {
                   <dd className="text-right font-medium">{v}</dd>
                 </div>
               ))}
+              {studios.length > 0 && (
+                <div className="flex justify-between gap-3"><dt className="text-muted">Studio</dt><dd className="text-right font-medium">{studios.map((p, i) => <span key={p.producer.id}>{i > 0 && ", "}<Link href={`/studio/${p.producer.slug}`} className="text-violet hover:underline">{p.producer.name}</Link></span>)}</dd></div>
+              )}
+              {licensors.length > 0 && <div className="flex justify-between gap-3"><dt className="text-muted">Licensor</dt><dd className="text-right font-medium">{licensors.map((p) => p.producer.name).join(", ")}</dd></div>}
               <div className="flex justify-between gap-3"><dt className="text-muted">Members</dt><dd className="font-medium">{a.userCount.toLocaleString()}</dd></div>
               <div className="flex justify-between gap-3"><dt className="text-muted">Favorites</dt><dd className="font-medium">{a.favoritesCount.toLocaleString()}</dd></div>
             </dl>

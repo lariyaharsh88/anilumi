@@ -613,3 +613,79 @@ export async function getLastAiredBest(animeId: string): Promise<LastAired> {
   const m = await getMalLastAired(animeId);
   return m && m.lastAired >= k.lastAired ? m : k;
 }
+
+/* ---------------- Characters ---------------- */
+
+export type Character = { id: string; slug: string; name: string; nameJp: string | null; description: string; image: string | null };
+export type Appearance = { role: string; anime: Anime };
+
+function normalizeCharacter(c: JsonApiResource): Character {
+  const img = c.attributes.image as { original?: string } | null;
+  const names = (c.attributes.names as Record<string, string>) || {};
+  return {
+    id: c.id,
+    slug: String(c.attributes.slug),
+    name: str(c.attributes.canonicalName) || names.en || "Unknown",
+    nameJp: names.ja_jp || null,
+    description: (str(c.attributes.description) || "").replace(/\[\/?(b|i|u|spoiler|url[^\]]*)\]/gi, "").trim(),
+    image: stableUrl(img?.original) || null,
+  };
+}
+
+export async function getCharacterBySlug(slug: string): Promise<Character | null> {
+  const doc = await kitsu("/characters", { "filter[slug]": slug, "fields[characters]": "slug,canonicalName,names,description,image" }, 86400);
+  if (!doc || !Array.isArray(doc.data) || !doc.data.length) return null;
+  return normalizeCharacter(doc.data[0]);
+}
+
+export async function getCharacterAppearances(characterId: string): Promise<Appearance[]> {
+  const doc = await kitsu(`/characters/${characterId}/media-characters`, { include: "media", "page[limit]": 20, "fields[mediaCharacters]": "role,media", "fields[anime]": LIST_FIELDS }, 86400);
+  if (!doc || !Array.isArray(doc.data)) return [];
+  const byId = new Map((doc.included || []).filter((i) => i.type === "anime").map((i) => [i.id, i]));
+  const out: Appearance[] = [];
+  for (const mc of doc.data) {
+    const ref = mc.relationships?.media?.data as { id: string; type: string } | undefined;
+    if (!ref || ref.type !== "anime") continue;
+    const res = byId.get(ref.id);
+    if (!res) continue;
+    const anime = normalizeAnime(res);
+    if (anime.nsfw) continue;
+    out.push({ role: String(mc.attributes.role || "supporting"), anime });
+  }
+  return uniqueById(out.map((o) => ({ ...o, id: o.anime.id }))).sort((x, y) => (x.anime.startDate || "9").localeCompare(y.anime.startDate || "9"));
+}
+
+/* ---------------- Studios / producers ---------------- */
+
+export type Producer = { id: string; slug: string; name: string };
+export type Production = { role: "studio" | "producer" | "licensor"; producer: Producer };
+
+export async function getProductions(animeId: string): Promise<Production[]> {
+  const doc = await kitsu(`/anime/${animeId}/anime-productions`, { include: "producer", "fields[animeProductions]": "role,producer", "fields[producers]": "slug,name" }, 86400);
+  if (!doc || !Array.isArray(doc.data)) return [];
+  const byId = new Map((doc.included || []).map((i) => [i.id, i]));
+  return doc.data
+    .map((p) => {
+      const ref = p.relationships?.producer?.data as { id: string } | undefined;
+      const pr = ref ? byId.get(ref.id) : undefined;
+      if (!pr) return null;
+      return { role: String(p.attributes.role) as Production["role"], producer: { id: pr.id, slug: String(pr.attributes.slug), name: String(pr.attributes.name) } };
+    })
+    .filter((x): x is Production => Boolean(x));
+}
+
+export async function getProducerBySlug(slug: string): Promise<Producer | null> {
+  const doc = await kitsu("/producers", { "filter[slug]": slug, "fields[producers]": "slug,name" }, 86400);
+  if (!doc || !Array.isArray(doc.data) || !doc.data.length) return null;
+  const p = doc.data[0];
+  return { id: p.id, slug: String(p.attributes.slug), name: String(p.attributes.name) };
+}
+
+/** Up to 60 titles the producer worked on as the animation studio, most popular first. */
+export async function getStudioAnime(producerId: string): Promise<{ items: Anime[]; total: number }> {
+  const first = await kitsu(`/producers/${producerId}/anime-productions`, { include: "anime", "filter[role]": "studio", "page[limit]": 20, "page[offset]": 0, "fields[animeProductions]": "role,anime", "fields[anime]": LIST_FIELDS }, 86400);
+  const total = first?.meta?.count ?? 0;
+  const rest = await Promise.all([20, 40].filter((o) => o < total).map((offset) => kitsu(`/producers/${producerId}/anime-productions`, { include: "anime", "filter[role]": "studio", "page[limit]": 20, "page[offset]": offset, "fields[animeProductions]": "role,anime", "fields[anime]": LIST_FIELDS }, 86400)));
+  const items = [first, ...rest].flatMap((doc) => (doc?.included || []).filter((i) => i.type === "anime").map((i) => normalizeAnime(i))).filter((a) => !a.nsfw);
+  return { items: uniqueById(items).sort((x, y) => y.userCount - x.userCount), total };
+}
