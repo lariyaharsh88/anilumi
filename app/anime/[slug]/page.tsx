@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { getAnimeBySlug, getCharacters, getEpisodes, listAnime, getTrending, getRelations, getLastAiredBest, getProductions, episodePath, posterUrl, fmtDate, statusLabel, subtypeLabel, animePath, weekdayOf, runtimeMinutes, fmtMinutes, Anime } from "@/lib/kitsu";
+import { getAnimeBySlug, getCharacters, getEpisodes, listAnime, getTrending, getRelations, getLastAiredBest, getProductions, type LastAired, episodePath, posterUrl, fmtDate, statusLabel, subtypeLabel, animePath, weekdayOf, runtimeMinutes, fmtMinutes, Anime } from "@/lib/kitsu";
 import { abs } from "@/lib/site";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import JsonLd from "@/components/JsonLd";
@@ -80,7 +80,7 @@ export default async function AnimePage({ params }: Props) {
     a.subtype === "movie" ? Promise.resolve({ items: [], total: 0, limit: 0, offset: 0 }) : getEpisodes(a.id, 1, 6),
     mainGenre ? listAnime({ filter: { categories: mainGenre.slug }, sort: "-userCount", limit: 13 }) : Promise.resolve({ items: [], total: 0, limit: 0, offset: 0 }),
     getRelations(a.id),
-    a.status === "current" ? getLastAiredBest(a.id) : Promise.resolve({ count: 0, lastAired: 0, lastAiredDate: null, reliable: false }),
+    a.status === "current" ? getLastAiredBest(a.id) : Promise.resolve({ count: 0, lastAired: 0, lastAiredDate: null, reliable: false } as LastAired),
     getProductions(a.id),
   ]);
   const relatedItems = related.items.filter((r) => r.id !== a.id).slice(0, 12);
@@ -90,6 +90,7 @@ export default async function AnimePage({ params }: Props) {
   const totalRatings = dist ? dist.reduce((n, v) => n + v, 0) : 0;
   const topShare = dist && totalRatings ? Math.round(((dist[8] + dist[9]) / totalRatings) * 100) : 0;
   const compactN = (n: number) => (n >= 1e6 ? `${(n / 1e6).toFixed(1)}M` : n >= 1e3 ? `${(n / 1e3).toFixed(n >= 1e4 ? 0 : 1)}K` : String(n));
+  if (latestInfo.nextAt) a.nextRelease = latestInfo.nextAt; // AniList pair: number and time stay consistent
   const lastAired = latestInfo.lastAired;
   const studios = productions.filter((p) => p.role === "studio");
   const licensors = productions.filter((p) => p.role === "licensor");

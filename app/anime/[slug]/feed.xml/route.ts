@@ -9,7 +9,8 @@ export async function GET(_req: Request, { params }: { params: Promise<{ slug: s
   const { slug } = await params;
   const a = await getAnimeBySlug(decodeURIComponent(slug));
   if (!a) return new Response("Not found", { status: 404 });
-  const { lastAired, reliable } = await getLastAiredBest(a.id);
+  const { lastAired, reliable, nextAt } = await getLastAiredBest(a.id);
+  if (nextAt) a.nextRelease = nextAt;
   const page = Math.max(1, Math.ceil(Math.max(lastAired, 1) / 20));
   const [cur, prev] = await Promise.all([getEpisodes(a.id, page, 20), page > 1 ? getEpisodes(a.id, page - 1, 20) : Promise.resolve({ items: [], total: 0, limit: 20, offset: 0 })]);
   const items: RssItem[] = [...prev.items, ...cur.items]

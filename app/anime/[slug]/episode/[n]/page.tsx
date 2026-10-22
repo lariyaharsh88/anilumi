@@ -20,7 +20,8 @@ async function load(slug: string, nStr: string) {
   if (!Number.isInteger(n) || n < 1 || n > 10000) return null;
   const a = await getAnimeBySlug(decodeURIComponent(slug));
   if (!a) return null;
-  const [ep, { count, lastAired, reliable }] = await Promise.all([getEpisodeByNumber(a.id, n), getLastAiredBest(a.id)]);
+  const [ep, { count, lastAired, reliable, nextAt }] = await Promise.all([getEpisodeByNumber(a.id, n), getLastAiredBest(a.id)]);
+  if (nextAt) a.nextRelease = nextAt;
   // A not-yet-catalogued next episode of an airing show still gets a page, driven by the series' nextRelease.
   const synthetic: Episode | null = !ep && a.status === "current" && reliable && n === lastAired + 1 ? { id: `next-${n}`, number: n, title: null, airdate: a.nextRelease ? a.nextRelease.slice(0, 10) : null, synopsis: null, length: a.episodeLength, thumbnail: null } : null;
   const episode = ep || synthetic;

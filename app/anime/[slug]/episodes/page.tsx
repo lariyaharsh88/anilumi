@@ -31,7 +31,8 @@ export default async function EpisodesPage({ params, searchParams }: Props) {
   const page = Math.max(1, Number(pageStr) || 1);
   const a = await getAnimeBySlug(decodeURIComponent(slug));
   if (!a) notFound();
-  const [eps, { lastAired, reliable }] = await Promise.all([getEpisodes(a.id, page, LIMIT), getLastAiredBest(a.id)]);
+  const [eps, { lastAired, reliable, nextAt }] = await Promise.all([getEpisodes(a.id, page, LIMIT), getLastAiredBest(a.id)]);
+  if (nextAt) a.nextRelease = nextAt;
   const nextN = a.status === "current" && a.nextRelease && reliable ? lastAired + 1 : null;
 
   return (

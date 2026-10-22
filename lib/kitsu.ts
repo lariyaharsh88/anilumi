@@ -578,7 +578,16 @@ export async function getEpisodeByNumber(animeId: string, n: number): Promise<Ep
  * carry hundreds of placeholder episodes with no air date, so we binary-search for the
  * last dated episode (≈11 cached requests for a 1,400-episode series).
  */
-export type LastAired = { count: number; lastAired: number; lastAiredDate: string | null; reliable: boolean };
+export type LastAired = {
+  count: number;
+  lastAired: number;
+  lastAiredDate: string | null;
+  /** True when lastAired + 1 really is the next episode. */
+  reliable: boolean;
+  /** Air time of the next episode when the source supplies it (AniList); pages prefer it over Kitsu's nextRelease. */
+  nextAt?: string | null;
+  source?: "kitsu" | "anilist" | "jikan";
+};
 
 /** True when the last dated episode is recent enough that "last + 1" is really the next episode. */
 function reliableTail(lastAiredDate: string | null): boolean {
@@ -665,13 +674,86 @@ export async function getMalLastAired(animeId: string): Promise<LastAired | null
   }
 }
 
-/** Kitsu first; MAL as a fallback when Kitsu's tail is stale and enrichment is enabled. */
+/* ---------------- AniList enrichment (second fallback) ----------------
+ * AniList's nextAiringEpisode gives the next episode number and air time as one pair.
+ * On by default; ANILIST_ENRICH=0 disables it. The public API is capped (30 req/min while
+ * degraded), so lookups batch up to 50 ids per request and are memoised for 30 minutes on
+ * top of Next's fetch cache. Fails soft: any error, 429 or timeout returns null. */
+
+type AniListNext = { episode: number; airingAt: number } | null;
+const aniMemo = new Map<number, { v: AniListNext; exp: number }>();
+const ANI_TTL = 30 * 60 * 1000;
+
+export async function getAniListId(animeId: string): Promise<number | null> {
+  const doc = await kitsu(`/anime/${animeId}/mappings`, { "fields[mappings]": "externalSite,externalId" }, 86400 * 7);
+  if (!doc || !Array.isArray(doc.data)) return null;
+  const m = doc.data.find((x) => x.attributes.externalSite === "anilist/anime");
+  const id = m ? Number(m.attributes.externalId) : NaN;
+  return Number.isInteger(id) && id > 0 ? id : null;
+}
+
+/** Next airing episode for each AniList id; one request per 50 ids, memoised. */
+export async function aniListNextAiring(ids: number[]): Promise<Map<number, AniListNext>> {
+  const out = new Map<number, AniListNext>();
+  if (process.env.ANILIST_ENRICH === "0") return out;
+  const now = Date.now();
+  const todo = [...new Set(ids)].filter((id) => {
+    const hit = aniMemo.get(id);
+    if (hit && hit.exp > now) { out.set(id, hit.v); return false; }
+    return true;
+  });
+  for (let i = 0; i < todo.length; i += 50) {
+    const chunk = todo.slice(i, i + 50);
+    try {
+      const res = await fetch("https://graphql.anilist.co", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({ query: "query($ids:[Int]){Page(perPage:50){media(id_in:$ids,type:ANIME){id nextAiringEpisode{episode airingAt}}}}", variables: { ids: chunk } }),
+        next: { revalidate: 1800 },
+        signal: AbortSignal.timeout(Number(process.env.ANILIST_TIMEOUT_MS) || 5000),
+      });
+      if (!res.ok) {
+        if (process.env.ANILIST_DEBUG === "1") console.warn(`[anilist] HTTP ${res.status} for ${chunk.length} ids`);
+        continue;
+      }
+      const json = (await res.json()) as { data?: { Page?: { media?: { id: number; nextAiringEpisode: AniListNext }[] } } };
+      const found = new Map((json.data?.Page?.media || []).map((m) => [m.id, m.nextAiringEpisode]));
+      for (const id of chunk) {
+        const v = found.get(id) ?? null;
+        aniMemo.set(id, { v, exp: now + ANI_TTL });
+        out.set(id, v);
+      }
+    } catch (err) {
+      if (process.env.ANILIST_DEBUG === "1") console.warn(`[anilist] ${(err as Error).name}: ${(err as Error).message}`);
+    }
+  }
+  return out;
+}
+
+/** Warm the AniList memo for many Kitsu ids with one batched request (used by the sitemap). */
+export async function primeAniList(kitsuIds: string[]): Promise<void> {
+  const ids = (await Promise.all(kitsuIds.map((k) => getAniListId(k)))).filter((x): x is number => x !== null);
+  if (ids.length) await aniListNextAiring(ids);
+}
+
+export async function getAniListLastAired(animeId: string, count: number): Promise<LastAired | null> {
+  const id = await getAniListId(animeId);
+  if (!id) return null;
+  const next = (await aniListNextAiring([id])).get(id);
+  if (!next || !(next.episode > 0) || !(next.airingAt > 0)) return null;
+  return { count, lastAired: next.episode - 1, lastAiredDate: null, reliable: true, nextAt: new Date(next.airingAt * 1000).toISOString(), source: "anilist" };
+}
+
+/** Kitsu first; then AniList (number + time as a pair); then MAL via Jikan when JIKAN_ENRICH=1. */
 export async function getLastAiredBest(animeId: string): Promise<LastAired> {
   const k = await getLastAired(animeId);
-  if (k.reliable) return k;
+  if (k.reliable) return { ...k, source: "kitsu" };
+  const al = await getAniListLastAired(animeId, k.count);
+  if (al) return al;
   const m = await getMalLastAired(animeId);
-  return m && m.lastAired >= k.lastAired ? m : k;
+  return m && m.lastAired >= k.lastAired ? { ...m, source: "jikan" } : { ...k, source: "kitsu" };
 }
+
 
 /* ---------------- Characters ---------------- */
 
