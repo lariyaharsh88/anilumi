@@ -30,9 +30,11 @@ export default async function WatchOrderIndex() {
       </ul>
       <h2 className="h-section mt-10 mb-3">Guides with editor notes</h2>
       <ul className="flex flex-wrap gap-2">
-        {Object.keys(WATCH_ORDER_OVERRIDES).map((slug) => (
-          <li key={slug}><Link href={`/watch-order/${slug}`} className="chip">{slug.replace(/-/g, " ")}</Link></li>
-        ))}
+        {Object.entries(WATCH_ORDER_OVERRIDES)
+          .sort(([, a], [, b]) => (a.label || "").localeCompare(b.label || ""))
+          .map(([slug, o]) => (
+            <li key={slug}><Link href={`/watch-order/${slug}`} className="chip">{o.label || slug.replace(/-/g, " ")}</Link></li>
+          ))}
       </ul>
       <h2 className="h-section mt-10 mb-3">Most popular franchises</h2>
       <AnimeGrid items={items} />

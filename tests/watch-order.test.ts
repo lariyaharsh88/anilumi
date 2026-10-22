@@ -45,3 +45,16 @@ test("overrides can force the main order and move entries to skip", async () => 
   assert.equal(wo.entries.find((e) => e.anime.id === "5")?.kind, "recap");
   assert.equal(wo.totalMinutes, 288 * 3);
 });
+
+test("overrides match a non-root entry and demote a prequel side story", async () => {
+  const prequel = mk("6", "Prequel OVA", { subtype: "OVA", episodeCount: 2, totalLength: 50 });
+  const g: Record<string, Relation[]> = { ...graph, "6": [{ role: "sequel", anime: s1 }], "1": [{ role: "prequel", anime: prequel }, ...graph["1"]] };
+  const wo = await buildWatchOrder(s2, async (id) => g[id] || [], { "2": { intro: "keyed on season 2", demote: ["6"] } });
+  assert.equal(wo.intro, "keyed on season 2");
+  assert.equal(wo.root.id, "1");
+  assert.deepEqual(wo.entries.filter((e) => e.kind === "main").map((e) => e.anime.id), ["1", "2", "3"]);
+  const d = wo.entries.find((e) => e.anime.id === "6")!;
+  assert.equal(d.kind, "side");
+  assert.equal(d.attachedTo, "1");
+  assert.ok(wo.entries.findIndex((e) => e.anime.id === "6") > wo.entries.findIndex((e) => e.anime.id === "1"));
+});

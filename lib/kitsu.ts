@@ -423,13 +423,14 @@ function kindOf(role: RelationRole, a: Anime): WatchEntry["kind"] {
   return "side";
 }
 
-const NOTES: Record<WatchEntry["kind"], string> = {
+const NOTES: Record<WatchEntry["kind"] | "skipped", string> = {
   main: "Core story – watch in this order.",
   movie: "Movie – canon side content, best watched here.",
   side: "Side story / OVA – optional but adds context.",
   recap: "Recap – skip unless you need a refresher.",
   spinoff: "Spin-off – optional, different tone or cast.",
   alt: "Alternative version – retells the same events; skip if you watched the series.",
+  skipped: "Safe to skip – see the guide notes above.",
 };
 
 /** Walk prequel/sequel links to assemble the franchise, max 12 hops each way. */
@@ -478,9 +479,24 @@ export async function buildWatchOrder(start: Anime, fetchRelations: (id: string)
     }
   }
 
-  // 4. editorial overrides (data/watch-orders.ts)
-  const ov = overrides[root.slug];
-  if (ov?.skip?.length) for (const e of entries) if (ov.skip.includes(e.anime.slug)) { e.kind = "recap"; e.note = NOTES.recap; e.optional = true; }
+  // 4. editorial overrides (data/watch-orders.ts). Keyed by any slug in the franchise, so
+  //    a key still matches when Kitsu roots the graph at a prequel film or OVA.
+  const ov = overrides[root.slug] ?? entries.map((e) => overrides[e.anime.slug]).find(Boolean);
+  if (ov?.demote?.length) {
+    for (const slug of ov.demote) {
+      const i = entries.findIndex((e) => e.anime.slug === slug && e.kind === "main");
+      if (i < 0) continue;
+      const [d] = entries.splice(i, 1);
+      d.kind = d.anime.subtype === "movie" ? "movie" : "side";
+      d.optional = true;
+      d.note = NOTES[d.kind];
+      const anchor = entries.findIndex((e, j) => j >= i && e.kind === "main");
+      const at = anchor < 0 ? entries.findIndex((e) => e.kind === "main") : anchor;
+      d.attachedTo = at < 0 ? undefined : entries[at].anime.id;
+      entries.splice(at < 0 ? entries.length : at + 1, 0, d);
+    }
+  }
+  if (ov?.skip?.length) for (const e of entries) if (ov.skip.includes(e.anime.slug)) { e.kind = "recap"; e.note = NOTES.skipped; e.optional = true; }
   if (ov?.mainOrder?.length) {
     const rank = (e: WatchEntry) => { const i = ov.mainOrder!.indexOf(e.anime.slug); return i < 0 ? 1e6 + e.step : i; };
     const mains = entries.filter((e) => e.kind === "main").sort((x, y) => rank(x) - rank(y));
@@ -488,13 +504,14 @@ export async function buildWatchOrder(start: Anime, fetchRelations: (id: string)
     entries.length = 0;
     for (const m of mains) { entries.push(m); entries.push(...rest.filter((r) => r.attachedTo === m.anime.id)); }
     entries.push(...rest.filter((r) => !mains.some((m) => m.anime.id === r.attachedTo)));
-    entries.forEach((e, i) => (e.step = i + 1));
   }
+  entries.forEach((e, i) => (e.step = i + 1));
 
   const minutes = (a: Anime) => a.totalLength || (a.episodeCount && a.episodeLength ? a.episodeCount * a.episodeLength : 0);
   const totalMinutes = entries.filter((e) => e.kind === "main" || e.kind === "movie").reduce((n, e) => n + minutes(e.anime), 0);
   const releaseOrder = [...entries.map((e) => e.anime)].sort((x, y) => (x.startDate || "9").localeCompare(y.startDate || "9"));
-  return { root, entries, mainCount: main.length, totalMinutes, releaseOrder, intro: ov?.intro || null };
+  const firstMain = entries.find((e) => e.kind === "main")?.anime ?? root;
+  return { root: firstMain, entries, mainCount: entries.filter((e) => e.kind === "main").length, totalMinutes, releaseOrder, intro: ov?.intro || null };
 }
 
 export function runtimeMinutes(a: Anime): number {
