@@ -689,11 +689,15 @@ type AniListNext = { episode: number; airingAt: number } | null;
 const aniMemo = new Map<number, { v: AniListNext; exp: number }>();
 const ANI_TTL = 30 * 60 * 1000;
 
-export async function getAniListId(animeId: string): Promise<number | null> {
+/** External ids Kitsu knows for a title, e.g. { "anilist/anime": "21", "thetvdb/series": "81797" }. Cached a week. */
+export async function getMappings(animeId: string): Promise<Record<string, string>> {
   const doc = await kitsu(`/anime/${animeId}/mappings`, { "fields[mappings]": "externalSite,externalId" }, 86400 * 7);
-  if (!doc || !Array.isArray(doc.data)) return null;
-  const m = doc.data.find((x) => x.attributes.externalSite === "anilist/anime");
-  const id = m ? Number(m.attributes.externalId) : NaN;
+  if (!doc || !Array.isArray(doc.data)) return {};
+  return Object.fromEntries(doc.data.map((x) => [String(x.attributes.externalSite), String(x.attributes.externalId)]));
+}
+
+export async function getAniListId(animeId: string): Promise<number | null> {
+  const id = Number((await getMappings(animeId))["anilist/anime"]);
   return Number.isInteger(id) && id > 0 ? id : null;
 }
 

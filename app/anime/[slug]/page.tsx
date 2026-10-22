@@ -14,10 +14,11 @@ import Countdown from "@/components/Countdown";
 import WatchButton from "@/components/WatchButton";
 import EmbedSnippet from "@/components/EmbedSnippet";
 import CalendarLinks from "@/components/CalendarLinks";
+import WhereToWatch from "@/components/WhereToWatch";
 import YouTubeFacade from "@/components/YouTubeFacade";
 import StatTiles from "@/components/viz/StatTiles";
 import BarChart from "@/components/viz/BarChart";
-import { streamLink, amazonSearch, affiliateRel } from "@/lib/affiliate";
+import { amazonSearch, affiliateRel } from "@/lib/affiliate";
 import LocalTime from "@/components/LocalTime";
 
 export const revalidate = 86400;
@@ -178,19 +179,12 @@ export default async function AnimePage({ params }: Props) {
                 <WatchButton item={{ id: a.id, slug: a.slug, title: a.title, poster: posterUrl(a, "small"), status: a.status, nextRelease: a.nextRelease }} />
                 <Link href={`/similar/${a.slug}`} className="btn-outline">More like this</Link>
               </div>
-              {a.streaming.length > 0 && (
-                <div className="mt-4">
-                  <h2 className="text-xs font-semibold uppercase tracking-wider text-muted">Where to watch</h2>
-                  <div className="mt-2 flex flex-wrap gap-2">
-                    {a.streaming.map((s) => (
-                      <a key={s.id} href={streamLink(s.url)} target="_blank" rel={affiliateRel} className="btn-outline capitalize">
-                        ▶ {s.site}{s.dubs.includes("en") ? " (dub)" : ""}
-                      </a>
-                    ))}
-                    <a href={amazonSearch(`${a.title} manga`)} target="_blank" rel={affiliateRel} className="btn-outline">📚 Manga on Amazon</a>
-                  </div>
-                </div>
-              )}
+              <WhereToWatch
+                animeId={a.id}
+                title={a.title}
+                links={a.streaming.map((x) => ({ id: x.id, url: x.url, site: x.site, dubs: x.dubs }))}
+                extra={<a href={amazonSearch(`${a.title} manga`)} target="_blank" rel={affiliateRel} className="btn-outline">📚 Manga on Amazon</a>}
+              />
             </div>
           </div>
         </div>
