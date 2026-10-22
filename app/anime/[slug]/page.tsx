@@ -16,6 +16,8 @@ import EmbedSnippet from "@/components/EmbedSnippet";
 import CalendarLinks from "@/components/CalendarLinks";
 import WhereToWatch from "@/components/WhereToWatch";
 import SpoilerGate from "@/components/SpoilerGate";
+import StoryGuide from "@/components/StoryGuide";
+import { fillerFor, continuationFor } from "@/lib/filler";
 import ViewerBehaviour from "@/components/ViewerBehaviour";
 import AiringNoticeBanner from "@/components/AiringNoticeBanner";
 import ParentsGuideSection from "@/components/ParentsGuide";
@@ -241,6 +243,13 @@ export default async function AnimePage({ params }: Props) {
             </section>
           )}
 
+          <StoryGuide
+            title={a.title}
+            episodesHref={`${animePath(a)}/episodes`}
+            filler={fillerFor(a.slug, a.episodeCount ?? (lastAired || null))}
+            episodeLength={a.episodeLength}
+            cont={continuationFor(a.slug)}
+          />
           {dropOk && <ViewerBehaviour title={a.title} s={dropOk} airing={a.status === "current"} genre={benchGenre} bench={bench} />}
           {guide && <ParentsGuideSection title={a.title} guide={guide} ageRating={a.ageRating} ageRatingGuide={a.ageRatingGuide} />}
 

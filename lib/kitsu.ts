@@ -80,7 +80,18 @@ type JsonApiResource = {
 };
 type JsonApiDoc = { data: JsonApiResource | JsonApiResource[]; included?: JsonApiResource[]; meta?: { count?: number } };
 
-async function kitsu(path: string, params: Record<string, string | number> = {}, revalidate = 3600): Promise<JsonApiDoc | null> {
+/** Thrown when Kitsu is unreachable, so callers that decide 404s don't mistake an outage for "not found". */
+export class UpstreamError extends Error {
+  constructor(message: string) { super(message); this.name = "UpstreamError"; }
+}
+
+/** Like kitsu(), but throws UpstreamError on network / 5xx / 429 failure; returns null only for a real 404. */
+async function kitsuStrict(path: string, params: Record<string, string | number> = {}, revalidate = 3600): Promise<JsonApiDoc | null> {
+  const doc = await kitsu(path, params, revalidate, true);
+  return doc;
+}
+
+async function kitsu(path: string, params: Record<string, string | number> = {}, revalidate = 3600, strict = false): Promise<JsonApiDoc | null> {
   const qs = Object.entries(params)
     .map(([k, v]) => `${encodeURIComponent(k)}=${encodeURIComponent(String(v))}`)
     .join("&");
@@ -102,6 +113,7 @@ async function kitsu(path: string, params: Record<string, string | number> = {},
       await new Promise((r) => setTimeout(r, 400 * (attempt + 1)));
     }
   }
+  if (strict) throw new UpstreamError(`Kitsu unavailable: ${path}`);
   return null;
 }
 
@@ -259,7 +271,7 @@ export async function getTrending(limit = 10): Promise<Anime[]> {
 }
 
 export async function getAnimeBySlug(slug: string): Promise<Anime | null> {
-  const doc = await kitsu(
+  const doc = await kitsuStrict(
     "/anime",
     {
       "filter[slug]": slug,
@@ -331,7 +343,7 @@ export async function getCategories(limit = 40): Promise<Category[]> {
 }
 
 export async function getCategory(slug: string): Promise<Category | null> {
-  const doc = await kitsu("/categories", { "filter[slug]": slug, "fields[categories]": "slug,title,totalMediaCount,description" }, 86400);
+  const doc = await kitsuStrict("/categories", { "filter[slug]": slug, "fields[categories]": "slug,title,totalMediaCount,description" }, 86400);
   if (!doc || !Array.isArray(doc.data) || !doc.data.length) return null;
   const c = doc.data[0];
   return { id: c.id, slug: String(c.attributes.slug), title: String(c.attributes.title), count: num(c.attributes.totalMediaCount) || 0, description: str(c.attributes.description) };
@@ -783,7 +795,7 @@ function normalizeCharacter(c: JsonApiResource): Character {
 }
 
 export async function getCharacterBySlug(slug: string): Promise<Character | null> {
-  const doc = await kitsu("/characters", { "filter[slug]": slug, "fields[characters]": "slug,canonicalName,names,description,image" }, 86400);
+  const doc = await kitsuStrict("/characters", { "filter[slug]": slug, "fields[characters]": "slug,canonicalName,names,description,image" }, 86400);
   if (!doc || !Array.isArray(doc.data) || !doc.data.length) return null;
   return normalizeCharacter(doc.data[0]);
 }
@@ -825,7 +837,7 @@ export async function getProductions(animeId: string): Promise<Production[]> {
 }
 
 export async function getProducerBySlug(slug: string): Promise<Producer | null> {
-  const doc = await kitsu("/producers", { "filter[slug]": slug, "fields[producers]": "slug,name" }, 86400);
+  const doc = await kitsuStrict("/producers", { "filter[slug]": slug, "fields[producers]": "slug,name" }, 86400);
   if (!doc || !Array.isArray(doc.data) || !doc.data.length) return null;
   const p = doc.data[0];
   return { id: p.id, slug: String(p.attributes.slug), name: String(p.attributes.name) };

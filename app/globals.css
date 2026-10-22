@@ -50,3 +50,6 @@ body { @apply bg-bg text-ink antialiased; }
 .line-clamp-6 { display: -webkit-box; -webkit-line-clamp: 6; -webkit-box-orient: vertical; overflow: hidden; }
 .scroll-x { @apply flex gap-4 overflow-x-auto pb-3 [scrollbar-width:thin]; scroll-snap-type: x proximity; scroll-padding-left: 0; }
 .scroll-x > * { scroll-snap-align: start; flex: 0 0 auto; }
+
+/* Filler toggle (components/FillerToggle.tsx) */
+[data-hide-filler] [data-filler] { display: none; }

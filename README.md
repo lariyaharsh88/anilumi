@@ -55,6 +55,14 @@ Every page ships with a unique title/description, canonical URL, Open Graph imag
 - **Do people finish it?**: AniList status counts give drop and completion rates against the median of the 50 most popular finished shows in the same genre.
 - **Parents' guide**: AniList content tags grouped into five areas with levels from tag agreement; story-theme tags (war, crime, slavery) capped at moderate; spoiler tags counted, not named; explicit tag names never shown.
 
+## Breaks, spoiler shield, filler and manga continuation (added 22 Oct)
+
+- **Break / disagreement banner** (`airingNotice` in `lib/kitsu.ts`): on a break when the next episode is more than 14 days out; "sources disagree" when Kitsu and AniList differ by more than 2 days. The schedule now uses AniList times and lists shows on a break separately.
+- **Spoiler shield** (`components/SpoilerGate.tsx`): hides episode titles, synopses and stills past the progress saved in My list, with per-item "show" buttons and a safe browser-tab title. A pre-paint script (`SPOILER_PREPAINT`) blurs gated content before first paint. Toggle on My list; "I've watched up to episode N" on episode pages.
+- **Filler and continuation data** (`data/filler.ts`, `lib/filler.ts`): DRAFT, written from memory; every entry is `reviewed: false` and the site labels it as a draft. Verify (e.g. against animefillerlist.com and the manga), then set `reviewed: true`.
+- **Dub tracker: not built.** Neither Kitsu (its `dubs` field only lists original audio) nor AniList exposes reliable dub availability.
+- **Outages vs 404s**: page-deciding Kitsu lookups throw `UpstreamError` on failure, so an outage shows `app/error.tsx` and is never cached as a 404.
+
 ## Run
 
 ```bash

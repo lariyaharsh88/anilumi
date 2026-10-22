@@ -6,6 +6,8 @@ import { getAnimeBySlug, getEpisodes, getLastAiredBest, airingNotice, fmtDate, a
 import Countdown from "@/components/Countdown";
 import AiringNoticeBanner from "@/components/AiringNoticeBanner";
 import SpoilerGate from "@/components/SpoilerGate";
+import FillerToggle from "@/components/FillerToggle";
+import { fillerFor } from "@/lib/filler";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import Pagination from "@/components/Pagination";
 import AdSlot from "@/components/AdSlot";
@@ -35,6 +37,7 @@ export default async function EpisodesPage({ params, searchParams }: Props) {
   if (!a) notFound();
   const [eps, { lastAired, reliable, nextAt }] = await Promise.all([getEpisodes(a.id, page, LIMIT), getLastAiredBest(a.id)]);
   const notice = a.status === "current" ? airingNotice(a.nextRelease, nextAt) : null;
+  const fill = fillerFor(a.slug, a.episodeCount ?? (lastAired || null));
   if (nextAt) a.nextRelease = nextAt;
   const nextN = a.status === "current" && a.nextRelease && reliable ? lastAired + 1 : null;
 
@@ -63,16 +66,25 @@ export default async function EpisodesPage({ params, searchParams }: Props) {
         )
       )}
       {notice && <AiringNoticeBanner n={notice} title={a.title} />}
+      {fill && (
+        <div className="card mt-5 flex flex-wrap items-center justify-between gap-3 p-4">
+          <p className="text-sm text-ink/90">
+            <strong>{fill.count}</strong> of {fill.total} episodes are filler ({fill.share.toFixed(0)}%).
+            {!fill.entry.reviewed && <span className="ml-1 text-xs text-muted">Draft list, being verified.</span>}
+          </p>
+          <FillerToggle targetId="episode-list" />
+        </div>
+      )}
       <AdSlot slot="episodes-top" />
       {eps.items.length ? (
-        <ol className="mt-6 space-y-3">
+        <ol id="episode-list" className="mt-6 space-y-3">
           {eps.items.map((e) => (
-            <li key={e.id} className="card flex gap-4 p-3">
+            <li key={e.id} className="card flex gap-4 p-3" data-filler={e.number && fill?.filler.has(e.number) ? "" : undefined}>
               <div className="relative hidden aspect-video w-40 shrink-0 overflow-hidden rounded-lg bg-bg-2 sm:block">
                 {e.thumbnail && (e.number ? <SpoilerGate animeId={a.id} ep={e.number}><div className="relative aspect-video w-40"><Image src={e.thumbnail} alt="" fill sizes="160px" className="object-cover" /></div></SpoilerGate> : <Image src={e.thumbnail} alt="" fill sizes="160px" className="object-cover" />)}
               </div>
               <div className="min-w-0 flex-1">
-                <h2 className="font-semibold">{e.number ? <Link href={episodePath(a, e.number)} className="hover:text-violet"><span className="text-muted">Episode {e.number}</span>{e.title ? <> · <SpoilerGate inline animeId={a.id} ep={e.number}>{e.title}</SpoilerGate></> : ""}</Link> : e.title}</h2>
+                <h2 className="font-semibold">{e.number ? <Link href={episodePath(a, e.number)} className="hover:text-violet"><span className="text-muted">Episode {e.number}</span>{fill?.filler.has(e.number) && <span className="ml-2 rounded bg-white/5 px-1.5 py-0.5 align-middle text-[10px] font-semibold uppercase text-muted">Filler</span>}{fill?.mixed.has(e.number) && <span className="ml-2 rounded bg-white/5 px-1.5 py-0.5 align-middle text-[10px] font-semibold uppercase text-muted">Mixed</span>}{e.title ? <> · <SpoilerGate inline animeId={a.id} ep={e.number}>{e.title}</SpoilerGate></> : ""}</Link> : e.title}</h2>
                 <p className="text-xs text-muted">{e.airdate ? `Aired ${fmtDate(e.airdate, { weekday: "long", year: "numeric", month: "long", day: "numeric" })}` : "Air date TBA"}{e.length ? ` · ${e.length} min` : ""}</p>
                 {e.synopsis && (e.number ? <SpoilerGate animeId={a.id} ep={e.number}><p className="mt-1 line-clamp-3 text-sm text-ink/80">{e.synopsis}</p></SpoilerGate> : <p className="mt-1 line-clamp-3 text-sm text-ink/80">{e.synopsis}</p>)}
               </div>

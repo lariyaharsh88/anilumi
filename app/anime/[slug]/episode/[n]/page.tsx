@@ -12,6 +12,7 @@ import LocalTime from "@/components/LocalTime";
 import AiringNoticeBanner from "@/components/AiringNoticeBanner";
 import SpoilerGate from "@/components/SpoilerGate";
 import WatchedUpTo from "@/components/WatchedUpTo";
+import { fillerFor } from "@/lib/filler";
 import AdSlot from "@/components/AdSlot";
 import { streamLink, affiliateRel } from "@/lib/affiliate";
 
@@ -95,6 +96,22 @@ export default async function EpisodePage({ params }: Props) {
           </p>
 
           {isNext && notice && <AiringNoticeBanner n={notice} title={a.title} />}
+          {(() => {
+            const f = fillerFor(a.slug, a.episodeCount ?? (lastAired || null));
+            if (!f || !(f.filler.has(n) || f.mixed.has(n))) return null;
+            const next = f.filler.has(n) ? f.nextCanon(n) : null;
+            return (
+              <div className="mt-4 rounded-xl border border-line bg-bg-2 p-3 text-sm" role="note">
+                <p>
+                  <span aria-hidden className="mr-1.5">⏭</span>
+                  <strong className="text-ink">{f.filler.has(n) ? "Filler episode." : "Mixed canon and filler."}</strong>{" "}
+                  <span className="text-ink/90">{f.filler.has(n) ? "Not adapted from the manga, so it's safe to skip." : "Partly adapted from the source; worth watching if you're unsure."}</span>
+                  {next && <> <Link href={episodePath(a, next)} className="text-violet hover:underline">The story continues in episode {next} →</Link></>}
+                </p>
+                {!f.entry.reviewed && <p className="mt-1 text-xs text-muted">From a draft filler list that&apos;s still being verified.</p>}
+              </div>
+            );
+          })()}
           {upcoming && airIso && (
             <div className="card mt-5 p-5">
               <Countdown iso={airIso} big label={`Episode ${n} airs in`} />
