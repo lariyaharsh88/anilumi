@@ -1,7 +1,8 @@
 "use client";
 import { useState } from "react";
 
-export type Datum = { key: string; label: string; value: number; display: string; href?: string };
+/** `display` is used in tooltips and the table; `mark` (optional, shorter) is printed on the bar itself. */
+export type Datum = { key: string; label: string; value: number; display: string; mark?: string; href?: string };
 
 type Props = {
   title: string;
@@ -72,7 +73,7 @@ export default function BarChart({ title, subtitle, data, orientation = "column"
                 {data.map((d, i) => (
                   <div key={d.key} className="group relative flex h-full flex-1 cursor-default items-end justify-center outline-none" {...markProps(i, d)}>
                     {labelled.has(d.key) && d.value > 0 && (
-                      <span className="pointer-events-none absolute left-1/2 -translate-x-1/2 whitespace-nowrap text-[10px] font-semibold text-ink" style={{ bottom: `calc(${(d.value / max) * 100}% + 4px)` }}>{d.display}</span>
+                      <span className="pointer-events-none absolute left-1/2 -translate-x-1/2 whitespace-nowrap text-[10px] font-semibold text-ink" style={{ bottom: `calc(${(d.value / max) * 100}% + 4px)` }}>{d.mark ?? d.display}</span>
                     )}
                     <div className={`w-full max-w-6 rounded-t-[4px] transition group-hover:brightness-125 group-focus-visible:brightness-125 group-focus-visible:ring-2 group-focus-visible:ring-ink/60 ${color(d)}`} style={{ height: `${(d.value / max) * 100}%`, minHeight: d.value > 0 ? 2 : 0 }} />
                   </div>

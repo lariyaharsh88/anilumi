@@ -43,6 +43,11 @@ Every page ships with a unique title/description, canonical URL, Open Graph imag
 - **Compare**: `/compare/[a]-vs-[b]` (slugs sorted; the reverse order 308-redirects), with verdict, comparison table, grouped score-share chart, runtime bars, genre overlap and FAQ. `/compare` has a search form and genre-matched popular matchups; ~100 pairs in the sitemap.
 - Kitsu gotcha: `filter[id]` is silently ignored when combined with `filter[ageRating]`; `listAnime` skips the age filter for id lookups and drops R18 afterwards.
 
+## Airing heatmap and genre trends (added 22 Oct)
+
+- **Airing heatmap** on `/schedule`: AniList `airingSchedules` for the next 7 days (Japanese, non-adult, non-music), bucketed by weekday × hour in the viewer's time zone. Sequential blue ramp validated as ordinal on the card surface.
+- **Genre trends**: `/trends/[genre]` for 17 genres (share of new TV series per premiere year since 2000, counts per year, defining titles per decade, method note, `Dataset` JSON-LD) and `/trends` ranking genres by the 10-year change in share. Kitsu's latest year is incomplete and tagging has improved over time; pages say so.
+
 ## Run
 
 ```bash

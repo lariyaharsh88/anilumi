@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getCategory, listAnime, getCategories } from "@/lib/kitsu";
+import { getCategory, listAnime, getCategories, TREND_GENRES } from "@/lib/kitsu";
 import AnimeGrid from "@/components/AnimeGrid";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import Pagination from "@/components/Pagination";
@@ -62,6 +62,9 @@ export default async function GenrePage({ params, searchParams }: Props) {
           <Link key={k} href={`/genre/${slug}${k !== "popular" ? `?sort=${k}` : ""}`} className={`chip ${k === sortKey ? "chip-active" : ""}`}>{v.label}</Link>
         ))}
       </div>
+      {TREND_GENRES.some(([t]) => t === slug) && (
+        <p className="mt-3 text-sm"><Link href={`/trends/${slug}`} className="text-violet hover:underline">How {g.title.toLowerCase()} has grown or shrunk since 2000 →</Link></p>
+      )}
       <AdSlot slot="genre-top" />
       <div className="mt-6">
         <AnimeGrid items={data.items} startRank={(page - 1) * LIMIT + 1} />

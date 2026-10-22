@@ -11,13 +11,21 @@ type Props = {
   labelKeys?: string[];
   valueHeading?: string;
   height?: number;
+  /** Fixed y range (otherwise fitted to scores, clamped to 0–10). */
+  yDomain?: [number, number];
+  /** Tick text format. */
+  format?: "decimal" | "percent";
+  /** Label every Nth x position (plus the last) instead of all or none. */
+  xLabelEvery?: number;
+  /** Heading for the label column in the table view. */
+  labelHeading?: string;
 };
 
 const M = { top: 26, right: 18, bottom: 8, left: 34 };
 const SURFACE = "#161b28"; // card surface, used for marker rings
 
 /** Single-series line over an ordered sequence, with crosshair tooltip, keyboard stepping and a table view. */
-export default function LineChart({ title, subtitle, points, labelKeys = [], valueHeading = "Value", height = 190 }: Props) {
+export default function LineChart({ title, subtitle, points, labelKeys = [], valueHeading = "Value", height = 190, yDomain, format = "decimal", xLabelEvery, labelHeading = "Entry" }: Props) {
   const wrap = useRef<HTMLDivElement>(null);
   const [w, setW] = useState(0);
   const [active, setActive] = useState<number | null>(null);
@@ -34,8 +42,10 @@ export default function LineChart({ title, subtitle, points, labelKeys = [], val
   let lo = Math.max(0, Math.floor((Math.min(...vals) - 0.4) * 2) / 2);
   let hi = Math.min(10, Math.ceil((Math.max(...vals) + 0.4) * 2) / 2);
   if (hi - lo < 1) { lo = Math.max(0, hi - 1); hi = lo + 1; }
-  const stepT = hi - lo <= 2 ? 0.5 : 1; // ticks land on clean values that match their labels
+  if (yDomain) [lo, hi] = yDomain;
+  const stepT = yDomain ? (hi - lo) / 2 : hi - lo <= 2 ? 0.5 : 1; // ticks land on clean values that match their labels
   const ticks = Array.from({ length: Math.floor((hi - lo) / stepT + 1e-9) + 1 }, (_, i) => lo + i * stepT);
+  const tickText = (t: number) => (format === "percent" ? `${Number.isInteger(t) ? t : t.toFixed(1)}%` : t.toFixed(1));
   const plotW = Math.max(0, w - M.left - M.right);
   const plotH = height - M.top - M.bottom;
   const PAD = 22; // keep end points and their labels clear of the y-axis ticks
@@ -82,18 +92,20 @@ export default function LineChart({ title, subtitle, points, labelKeys = [], val
             {ticks.map((t, i) => (
               <g key={t}>
                 <line x1={M.left} x2={M.left + plotW} y1={y(t)} y2={y(t)} stroke={i === 0 ? "#2f3749" : "#242b3b"} strokeWidth={1} />
-                <text x={M.left - 6} y={y(t)} textAnchor="end" dominantBaseline="middle" fontSize={10} fill="#8f9ab3" style={{ fontVariantNumeric: "tabular-nums" }}>{t.toFixed(1)}</text>
+                <text x={M.left - 6} y={y(t)} textAnchor="end" dominantBaseline="middle" fontSize={10} fill="#8f9ab3" style={{ fontVariantNumeric: "tabular-nums" }}>{tickText(t)}</text>
               </g>
             ))}
             {active !== null && <line x1={x(active)} x2={x(active)} y1={M.top - 6} y2={M.top + plotH} stroke="#8f9ab3" strokeWidth={1} />}
             <path d={path} fill="none" stroke="var(--color-viz-1)" strokeWidth={2} strokeLinejoin="round" strokeLinecap="round" />
             {points.map((p, i) => (
               <g key={p.key}>
-                <circle cx={x(i)} cy={y(p.value)} r={active === i ? 6 : 4} fill="var(--color-viz-1)" stroke={SURFACE} strokeWidth={2} />
+                {(points.length <= 14 || active === i || labelled.has(p.key)) && <circle cx={x(i)} cy={y(p.value)} r={active === i ? 6 : 4} fill="var(--color-viz-1)" stroke={SURFACE} strokeWidth={2} />}
                 {labelled.has(p.key) && (
                   <text x={x(i)} y={y(p.value) - 11} textAnchor="middle" fontSize={11} fontWeight={600} fill="#e8ecf5">{p.display}</text>
                 )}
-                <text x={x(i)} y={height + 14} textAnchor="middle" fontSize={10} fill="#8f9ab3">{showNames ? short(p.label) : i + 1}</text>
+                {(xLabelEvery ? i % xLabelEvery === 0 || (i === points.length - 1 && i % xLabelEvery >= Math.ceil(xLabelEvery / 2)) : true) && (
+                  <text x={x(i)} y={height + 14} textAnchor="middle" fontSize={10} fill="#8f9ab3">{xLabelEvery ? p.label : showNames ? short(p.label) : i + 1}</text>
+                )}
               </g>
             ))}
           </svg>
@@ -108,11 +120,11 @@ export default function LineChart({ title, subtitle, points, labelKeys = [], val
           </div>
         )}
       </div>
-      {!showNames && <p className="mt-1 text-[11px] text-muted">Numbers follow the watch order; hover a point or use the table for names.</p>}
+      {!showNames && !xLabelEvery && <p className="mt-1 text-[11px] text-muted">Numbers follow the watch order; hover a point or use the table for names.</p>}
       <details className="mt-3 text-xs text-muted">
         <summary className="cursor-pointer select-none hover:text-ink">Show as table</summary>
         <table className="mt-2 w-full border-collapse">
-          <thead><tr><th className="border-b border-line py-1 text-left font-medium">#</th><th className="border-b border-line py-1 text-left font-medium">Entry</th><th className="border-b border-line py-1 text-right font-medium">{valueHeading}</th></tr></thead>
+          <thead><tr><th className="border-b border-line py-1 text-left font-medium">#</th><th className="border-b border-line py-1 text-left font-medium">{labelHeading}</th><th className="border-b border-line py-1 text-right font-medium">{valueHeading}</th></tr></thead>
           <tbody>
             {points.map((p, i) => (
               <tr key={p.key}>

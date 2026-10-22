@@ -924,3 +924,36 @@ export async function getWeekBroadcasts(): Promise<Broadcast[]> {
   if (out.length) weekMemo = { v: out, exp: Date.now() + 30 * 60 * 1000 };
   return out;
 }
+
+/* ---------------- Genre trends ---------------- */
+
+export const TREND_GENRES: [string, string][] = [
+  ["isekai", "Isekai"], ["romance", "Romance"], ["comedy", "Comedy"], ["action", "Action"], ["fantasy", "Fantasy"],
+  ["slice-of-life", "Slice of Life"], ["drama", "Drama"], ["sports", "Sports"], ["mecha", "Mecha"], ["horror", "Horror"],
+  ["mystery", "Mystery"], ["science-fiction", "Sci-Fi"], ["music", "Music"], ["psychological", "Psychological"],
+  ["supernatural", "Supernatural"], ["school-life", "School Life"], ["idol", "Idol"],
+];
+export const TREND_FROM = 2000;
+
+export type TrendRow = { year: number; total: number; count: number; share: number };
+
+/** TV series per premiere year, overall and tagged with the genre, from TREND_FROM to this year. Cached daily. */
+export async function getGenreTrend(slug: string, from = TREND_FROM, to = new Date().getUTCFullYear()): Promise<TrendRow[]> {
+  const years = Array.from({ length: to - from + 1 }, (_, i) => from + i);
+  const [totals, counts] = await Promise.all([
+    Promise.all(years.map((y) => countAnime({ seasonYear: String(y), subtype: "TV" }, 86400))),
+    Promise.all(years.map((y) => countAnime({ seasonYear: String(y), subtype: "TV", categories: slug }, 86400))),
+  ]);
+  return years.map((year, i) => ({ year, total: totals[i], count: counts[i], share: totals[i] ? (counts[i] / totals[i]) * 100 : 0 }));
+}
+
+/** Rise / decline / steady, comparing the last full year with the 3-year average a decade earlier. */
+export function trendDirection(rows: TrendRow[], lastFull: number): { dir: "rise" | "decline" | "steady"; from: number; to: number; delta: number } {
+  const at = (y: number) => rows.find((r) => r.year === y)?.share ?? 0;
+  const base = [lastFull - 11, lastFull - 10, lastFull - 9].map(at);
+  const from = base.reduce((a, b) => a + b, 0) / base.length;
+  const to = at(lastFull);
+  const delta = to - from;
+  const dir = delta >= 2 && to >= from * 1.4 ? "rise" : delta <= -2 && to <= from * 0.7 ? "decline" : "steady";
+  return { dir, from, to, delta };
+}
