@@ -39,6 +39,7 @@ export default async function Home() {
           <Link href="/schedule" className="btn-primary">This week&apos;s schedule</Link>
           <Link href={`/season/${year}/${season}`} className="btn-outline">{cap(season)} {year} anime</Link>
           <Link href="/top/rated" className="btn-outline">Top 100</Link>
+          <Link href="/tonight" className="btn-outline">What to watch tonight</Link>
           <Link href="/watch-order" className="btn-outline">Watch orders</Link>
         </div>
       </section>

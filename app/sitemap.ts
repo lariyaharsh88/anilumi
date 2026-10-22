@@ -15,6 +15,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: abs("/lists"), lastModified: now, changeFrequency: "weekly", priority: 0.6 },
     ...Object.keys(WATCH_ORDER_OVERRIDES).map((slug) => ({ url: abs(`/watch-order/${slug}`), lastModified: now, changeFrequency: "weekly" as const, priority: 0.8 })),
     { url: abs("/short-anime"), lastModified: now, changeFrequency: "weekly", priority: 0.7 },
+    ...[30, 60, 120, 180, 300, 600].map((m) => ({ url: abs(`/tonight${m !== 120 ? `?minutes=${m}` : ""}`), lastModified: now, changeFrequency: "weekly" as const, priority: 0.7 })),
     ...Array.from({ length: now.getFullYear() - 1999 }, (_, i) => ({ url: abs(`/best/${now.getFullYear() - i}`), lastModified: now, changeFrequency: (i === 0 ? "daily" : "monthly") as "daily" | "monthly", priority: i < 3 ? 0.8 : 0.5 })),
     { url: abs("/about"), lastModified: now, changeFrequency: "yearly", priority: 0.2 },
     ...["rated", "popular", "airing", "upcoming", "movies", "tv"].map((l) => ({ url: abs(`/top/${l}`), lastModified: now, changeFrequency: "daily" as const, priority: 0.8 })),

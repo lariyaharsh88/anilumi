@@ -20,6 +20,14 @@ export default async function Lists() {
       <h1 className="text-3xl font-extrabold tracking-tight">Anime lists</h1>
       <p className="mt-2 max-w-2xl text-muted">Generated from live data, refreshed daily. No one&apos;s opinion, just what fans actually rate and watch.</p>
       <section className="mt-8">
+        <h2 className="h-section mb-3">Finish it tonight</h2>
+        <div className="flex flex-wrap gap-2">
+          {[[30, "in 30 minutes"], [60, "in an hour"], [120, "in 2 hours"], [180, "in 3 hours"], [300, "in 5 hours"], [600, "in a day"]].map(([m, t]) => (
+            <Link key={m} href={`/tonight${m !== 120 ? `?minutes=${m}` : ""}`} className="chip">Anime you can finish {t}</Link>
+          ))}
+        </div>
+      </section>
+      <section className="mt-8">
         <h2 className="h-section mb-3">Best anime by year</h2>
         <div className="flex flex-wrap gap-2">{years.map((yy) => <Link key={yy} href={`/best/${yy}`} className="chip">{yy}</Link>)}</div>
       </section>

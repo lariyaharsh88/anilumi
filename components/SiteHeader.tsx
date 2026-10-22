@@ -5,6 +5,7 @@ import WatchlistBadge from "./WatchlistBadge";
 
 const nav = [
   { href: "/schedule", label: "Schedule" },
+  { href: "/tonight", label: "Tonight" },
   { href: "/season", label: "Seasonal" },
   { href: "/top/rated", label: "Top 100" },
   { href: "/genre", label: "Genres" },

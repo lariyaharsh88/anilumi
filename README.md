@@ -30,6 +30,12 @@ Every page ships with a unique title/description, canonical URL, Open Graph imag
 - **Data-templated lists**: `/best/[year]` (top rated / most popular per year), `/short-anime` (complete TV series ≤ 12/13/24/26 episodes, by genre), `/similar/[slug]` (genre-overlap recommendations), hub at `/lists`.
 - **Affiliates**: `lib/affiliate.ts`. Set `NEXT_PUBLIC_AMAZON_TAG` for manga/Blu-ray buttons and `NEXT_PUBLIC_AFFILIATE_WRAP` to wrap streaming links; unset, they are plain links.
 
+## Charts, tonight picker and AniList (added 22 Oct)
+
+- **Charts** (`components/viz/`): stat tiles, bar/column, stacked bar and line charts, each with hover + keyboard tooltips and a table view. Palette validated against the `#161b28` card surface. Used on anime (score breakdown), watch-order (where the hours go, score across seasons), season, studio, schedule and home.
+- **What to watch tonight** (`/tonight`): pick available time, genre, format and minimum score; returns complete titles whose real runtime fits, one per franchise, plus longer series with episodes-per-night. GET form, works without JS.
+- **Next-episode sources**: Kitsu → AniList (`nextAiringEpisode`, batched, on by default, `ANILIST_ENRICH=0` to disable) → Jikan (`JIKAN_ENRICH=1`). Compare them with `npx tsx scripts/check-jikan.ts`.
+
 ## Run
 
 ```bash
