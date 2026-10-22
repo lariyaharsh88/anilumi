@@ -1,4 +1,4 @@
-# AniPulse — anime schedule, seasonal charts & where-to-watch
+# AniLumi (anilumi.in) — anime schedule, watch orders, episode countdowns
 
 SEO-first anime site built on the free, keyless [Kitsu API](https://kitsu.io/api/edge). Next.js 15 App Router, Tailwind 4, ISR caching. No database, no API key, no sign-up.
 
@@ -24,6 +24,12 @@ Every page ships with a unique title/description, canonical URL, Open Graph imag
 - **Local-time schedule**: JST is rendered on the server; a tiny client component appends the viewer's own timezone after hydration, so the page is still fully static and cacheable.
 - **Franchise panel** on each anime page linking sequels, prequels, spin-offs and specials.
 
+## Watchlist, lists & affiliates (added 22 Oct)
+
+- **My list** (`/my`): localStorage watchlist, no account. "+ My list" on every anime page and schedule card; the schedule gets an "Only my list" filter; `/my` refreshes next-episode times through `/api/anime?ids=`.
+- **Data-templated lists**: `/best/[year]` (top rated / most popular per year), `/short-anime` (complete TV series ≤ 12/13/24/26 episodes, by genre), `/similar/[slug]` (genre-overlap recommendations), hub at `/lists`.
+- **Affiliates**: `lib/affiliate.ts`. Set `NEXT_PUBLIC_AMAZON_TAG` for manga/Blu-ray buttons and `NEXT_PUBLIC_AFFILIATE_WRAP` to wrap streaming links; unset, they are plain links.
+
 ## Run
 
 ```bash
@@ -48,7 +54,7 @@ Revalidation windows: home 30 min · schedule 30 min · lists 1 h · anime detai
 
 1. Push this folder to a GitHub repo.
 2. In Vercel: **Add New → Project → Import** the repo. Framework is auto-detected as Next.js; no build settings to change.
-3. Environment variables: `NEXT_PUBLIC_SITE_URL=https://<your-domain>` (required for canonicals, sitemap and OG images), `NEXT_PUBLIC_GSC_VERIFICATION=<token>` once you add the property in Search Console, `NEXT_PUBLIC_ADS=1` when an ad network is approved.
+3. Environment variables: `NEXT_PUBLIC_SITE_URL=https://anilumi.in` (defaults to this in production builds), `NEXT_PUBLIC_GSC_VERIFICATION=<token>` once you add the property in Search Console, `NEXT_PUBLIC_ADS=1` when an ad network is approved.
 4. Add the custom domain under **Settings → Domains** and point DNS (A `76.76.21.21` or the CNAME Vercel shows).
 5. Search Console: add the domain property, choose the HTML-tag method, paste only the `content` value into `NEXT_PUBLIC_GSC_VERIFICATION`, redeploy, verify, then submit `https://<your-domain>/sitemap.xml`.
 

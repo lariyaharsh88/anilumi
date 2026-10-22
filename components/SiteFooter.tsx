@@ -5,7 +5,7 @@ import { seasonOf, cap } from "@/lib/kitsu";
 export default function SiteFooter() {
   const { season, year } = seasonOf();
   const cols = [
-    { h: "Browse", links: [["/schedule", "Airing this week"], [`/season/${year}/${season}`, `${cap(season)} ${year} anime`], ["/top/rated", "Top rated anime"], ["/top/popular", "Most popular anime"], ["/top/upcoming", "Upcoming anime"], ["/top/movies", "Best anime movies"], ["/watch-order", "Watch order guides"]] },
+    { h: "Browse", links: [["/schedule", "Airing this week"], [`/season/${year}/${season}`, `${cap(season)} ${year} anime`], ["/top/rated", "Top rated anime"], ["/top/popular", "Most popular anime"], ["/top/upcoming", "Upcoming anime"], ["/top/movies", "Best anime movies"], ["/watch-order", "Watch order guides"], ["/lists", "Lists: best by year, short anime"], ["/my", "My list"]] },
     { h: "Genres", links: [["/genre/action", "Action"], ["/genre/romance", "Romance"], ["/genre/comedy", "Comedy"], ["/genre/fantasy", "Fantasy"], ["/genre/isekai", "Isekai"], ["/genre", "All genres"]] },
     { h: "About", links: [["/about", "About & data sources"], ["/search", "Search"]] },
   ];
@@ -24,7 +24,7 @@ export default function SiteFooter() {
         ))}
       </div>
       <div className="container-x border-t border-line py-6 text-xs text-muted">
-        <p>© {new Date().getFullYear()} {site.name}. Anime data and images from <a className="underline" href="https://kitsu.io" rel="noopener">Kitsu</a> and belong to their respective owners. Not affiliated with any studio or streaming service.</p>
+        <p>© {new Date().getFullYear()} {site.name}. Anime data and images from <a className="underline" href="https://kitsu.io" rel="noopener">Kitsu</a> and belong to their respective owners. Not affiliated with any studio or streaming service. Some links are affiliate links; we may earn a commission at no cost to you.</p>
       </div>
     </footer>
   );

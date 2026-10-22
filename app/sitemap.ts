@@ -11,6 +11,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: abs("/schedule"), lastModified: now, changeFrequency: "hourly", priority: 0.9 },
     { url: abs("/genre"), lastModified: now, changeFrequency: "weekly", priority: 0.6 },
     { url: abs("/watch-order"), lastModified: now, changeFrequency: "weekly", priority: 0.7 },
+    { url: abs("/lists"), lastModified: now, changeFrequency: "weekly", priority: 0.6 },
+    { url: abs("/short-anime"), lastModified: now, changeFrequency: "weekly", priority: 0.7 },
+    ...Array.from({ length: now.getFullYear() - 1999 }, (_, i) => ({ url: abs(`/best/${now.getFullYear() - i}`), lastModified: now, changeFrequency: (i === 0 ? "daily" : "monthly") as "daily" | "monthly", priority: i < 3 ? 0.8 : 0.5 })),
     { url: abs("/about"), lastModified: now, changeFrequency: "yearly", priority: 0.2 },
     ...["rated", "popular", "airing", "upcoming", "movies", "tv"].map((l) => ({ url: abs(`/top/${l}`), lastModified: now, changeFrequency: "daily" as const, priority: 0.8 })),
   ];
@@ -41,6 +44,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       out.push({ url: abs(animePath(a)), lastModified: now, changeFrequency: a.status === "current" ? "daily" : "weekly", priority: a.status === "current" ? 0.8 : 0.7 });
       if (a.subtype !== "movie") out.push({ url: abs(`${animePath(a)}/episodes`), lastModified: now, changeFrequency: a.status === "current" ? "daily" : "monthly", priority: 0.5 });
       if (a.subtype === "TV" && seen.size <= 200) out.push({ url: abs(`/watch-order/${a.slug}`), lastModified: now, changeFrequency: "weekly", priority: 0.6 });
+      if (seen.size <= 300) out.push({ url: abs(`/similar/${a.slug}`), lastModified: now, changeFrequency: "weekly", priority: 0.5 });
     }
   } catch {
     /* upstream hiccup: ship the static part of the sitemap */

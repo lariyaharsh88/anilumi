@@ -84,7 +84,7 @@ async function kitsu(path: string, params: Record<string, string | number> = {},
   for (let attempt = 0; attempt < 3; attempt++) {
     try {
       const res = await fetch(url, {
-        headers: { Accept: "application/vnd.api+json", "User-Agent": "AniPulse/1.0 (+https://github.com/harshlariya98)" },
+        headers: { Accept: "application/vnd.api+json", "User-Agent": "AniLumi/1.0 (+https://github.com/harshlariya98)" },
         next: { revalidate },
       });
       if (res.status === 404) return null;

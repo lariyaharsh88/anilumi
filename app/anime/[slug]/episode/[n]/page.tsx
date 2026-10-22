@@ -10,6 +10,7 @@ import Faq from "@/components/Faq";
 import Countdown from "@/components/Countdown";
 import LocalTime from "@/components/LocalTime";
 import AdSlot from "@/components/AdSlot";
+import { streamLink, affiliateRel } from "@/lib/affiliate";
 
 export const revalidate = 3600;
 type Props = { params: Promise<{ slug: string; n: string }> };
@@ -113,7 +114,7 @@ export default async function EpisodePage({ params }: Props) {
               <h2 className="text-xs font-semibold uppercase tracking-wider text-muted">Where to watch</h2>
               <div className="mt-2 flex flex-wrap gap-2">
                 {a.streaming.map((s) => (
-                  <a key={s.id} href={s.url} target="_blank" rel="noopener nofollow sponsored" className="btn-outline capitalize">▶ {s.site}</a>
+                  <a key={s.id} href={streamLink(s.url)} target="_blank" rel={affiliateRel} className="btn-outline capitalize">▶ {s.site}</a>
                 ))}
               </div>
             </section>

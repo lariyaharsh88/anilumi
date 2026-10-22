@@ -11,6 +11,8 @@ import AnimeRail from "@/components/AnimeRail";
 import AdSlot from "@/components/AdSlot";
 import BingePlanner from "@/components/BingePlanner";
 import Countdown from "@/components/Countdown";
+import WatchButton from "@/components/WatchButton";
+import { streamLink, amazonSearch, affiliateRel } from "@/lib/affiliate";
 import LocalTime from "@/components/LocalTime";
 
 export const revalidate = 86400;
@@ -159,16 +161,19 @@ export default async function AnimePage({ params }: Props) {
                   {franchise.length ? `Watch order · ${franchise.length + 1} entries` : "Watch order & binge time"}
                 </Link>
                 {runtime > 0 && <span className="btn-outline cursor-default">⏱ {fmtMinutes(runtime)} to binge</span>}
+                <WatchButton item={{ id: a.id, slug: a.slug, title: a.title, poster: posterUrl(a, "small"), status: a.status, nextRelease: a.nextRelease }} />
+                <Link href={`/similar/${a.slug}`} className="btn-outline">More like this</Link>
               </div>
               {a.streaming.length > 0 && (
                 <div className="mt-4">
                   <h2 className="text-xs font-semibold uppercase tracking-wider text-muted">Where to watch</h2>
                   <div className="mt-2 flex flex-wrap gap-2">
                     {a.streaming.map((s) => (
-                      <a key={s.id} href={s.url} target="_blank" rel="noopener nofollow sponsored" className="btn-outline capitalize">
+                      <a key={s.id} href={streamLink(s.url)} target="_blank" rel={affiliateRel} className="btn-outline capitalize">
                         ▶ {s.site}{s.dubs.includes("en") ? " (dub)" : ""}
                       </a>
                     ))}
+                    <a href={amazonSearch(`${a.title} manga`)} target="_blank" rel={affiliateRel} className="btn-outline">📚 Manga on Amazon</a>
                   </div>
                 </div>
               )}
@@ -253,6 +258,10 @@ export default async function AnimePage({ params }: Props) {
                 ))}
               </ul>
             </section>
+          )}
+
+          {a.streaming.length === 0 && (
+            <p className="mt-6 text-sm text-muted">No licensed streams listed yet. <a href={amazonSearch(`${a.title} manga`)} target="_blank" rel={affiliateRel} className="text-violet hover:underline">Read the manga on Amazon →</a></p>
           )}
 
           <Faq items={faq} title={`${a.title} FAQ`} />

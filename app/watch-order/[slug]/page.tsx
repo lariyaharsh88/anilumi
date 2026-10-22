@@ -8,6 +8,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import JsonLd from "@/components/JsonLd";
 import Faq from "@/components/Faq";
 import AdSlot from "@/components/AdSlot";
+import { amazonSearch, affiliateRel } from "@/lib/affiliate";
 
 export const revalidate = 86400;
 type Props = { params: Promise<{ slug: string }> };
@@ -64,6 +65,10 @@ export default async function WatchOrderPage({ params }: Props) {
         <div className="card p-3"><p className="text-xl font-extrabold">{fmtMinutes(wo.totalMinutes)}</p><p className="text-xs text-muted">total core runtime</p></div>
       </div>
 
+      <div className="mt-4 flex flex-wrap gap-2">
+        <a href={amazonSearch(`${name} manga`)} target="_blank" rel={affiliateRel} className="btn-outline">📚 Read the manga</a>
+        <a href={amazonSearch(`${name} blu-ray`)} target="_blank" rel={affiliateRel} className="btn-outline">💿 Blu-ray box sets</a>
+      </div>
       <AdSlot slot="watch-order-top" />
 
       <section className="mt-8">

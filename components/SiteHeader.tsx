@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { site } from "@/lib/site";
 import SearchBox from "./SearchBox";
+import WatchlistBadge from "./WatchlistBadge";
 
 const nav = [
   { href: "/schedule", label: "Schedule" },
@@ -8,7 +9,7 @@ const nav = [
   { href: "/top/rated", label: "Top 100" },
   { href: "/genre", label: "Genres" },
   { href: "/watch-order", label: "Watch orders" },
-  { href: "/top/movies", label: "Movies" },
+  { href: "/lists", label: "Lists" },
 ];
 
 export default function SiteHeader() {
@@ -25,6 +26,7 @@ export default function SiteHeader() {
               {n.label}
             </Link>
           ))}
+          <WatchlistBadge />
         </nav>
         <div className="ml-auto w-full max-w-xs">
           <SearchBox />
@@ -36,6 +38,7 @@ export default function SiteHeader() {
             {n.label}
           </Link>
         ))}
+        <Link href="/my" className="chip whitespace-nowrap">My list</Link>
       </nav>
     </header>
   );
