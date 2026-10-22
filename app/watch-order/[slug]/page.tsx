@@ -14,7 +14,7 @@ export const revalidate = 86400;
 type Props = { params: Promise<{ slug: string }> };
 
 const KIND_LABEL: Record<WatchEntry["kind"], string> = { main: "Main", movie: "Movie", side: "Side story", recap: "Recap", spinoff: "Spin-off", alt: "Alt. version" };
-const KIND_CLASS: Record<WatchEntry["kind"], string> = { main: "bg-accent text-white", movie: "bg-violet text-white", side: "bg-bg-2 text-ink", recap: "bg-line text-muted line-through", spinoff: "bg-bg-2 text-ink", alt: "bg-line text-muted" };
+const KIND_CLASS: Record<WatchEntry["kind"], string> = { main: "bg-accent-strong text-white", movie: "bg-violet-strong text-white", side: "bg-bg-2 text-ink", recap: "bg-line text-muted line-through", spinoff: "bg-bg-2 text-ink", alt: "bg-line text-muted" };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;

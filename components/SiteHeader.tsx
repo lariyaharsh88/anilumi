@@ -17,7 +17,7 @@ export default function SiteHeader() {
     <header className="sticky top-0 z-40 border-b border-line/70 bg-bg/85 backdrop-blur">
       <div className="container-x flex h-14 items-center gap-4">
         <Link href="/" className="flex shrink-0 items-center gap-2 text-lg font-extrabold tracking-tight">
-          <span className="grid h-7 w-7 place-items-center rounded-md bg-accent text-sm text-white">A</span>
+          <span className="grid h-7 w-7 place-items-center rounded-md bg-accent-strong text-sm text-white">A</span>
           {site.name}
         </Link>
         <nav className="hidden items-center gap-1 md:flex">

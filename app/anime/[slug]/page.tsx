@@ -13,6 +13,7 @@ import BingePlanner from "@/components/BingePlanner";
 import Countdown from "@/components/Countdown";
 import WatchButton from "@/components/WatchButton";
 import EmbedSnippet from "@/components/EmbedSnippet";
+import YouTubeFacade from "@/components/YouTubeFacade";
 import { streamLink, amazonSearch, affiliateRel } from "@/lib/affiliate";
 import LocalTime from "@/components/LocalTime";
 
@@ -87,8 +88,8 @@ export default async function AnimePage({ params }: Props) {
   const studios = productions.filter((p) => p.role === "studio");
   const licensors = productions.filter((p) => p.role === "licensor");
   const nextN = a.status === "current" && a.nextRelease && latestInfo.reliable ? lastAired + 1 : null;
-  const poster = posterUrl(a, "large");
-  const cover = a.cover?.large || a.cover?.original || null;
+  const poster = posterUrl(a, "medium");
+  const cover = a.cover?.tiny || a.cover?.small || a.cover?.large || null; // heavily blurred backdrop: served ~96px wide by the optimizer
   const faq = buildFaq(a);
   const year = a.startDate?.slice(0, 4);
 
@@ -98,7 +99,7 @@ export default async function AnimePage({ params }: Props) {
     name: a.title,
     alternateName: [a.titleEn, a.titleJp].filter(Boolean),
     url: abs(animePath(a)),
-    image: poster || undefined,
+    image: posterUrl(a, "large") || undefined,
     description: a.synopsis,
     genre: a.categories.map((c) => c.title),
     datePublished: a.startDate || undefined,
@@ -128,7 +129,7 @@ export default async function AnimePage({ params }: Props) {
       <div className="relative">
         {cover && (
           <div className="absolute inset-0 -z-10 h-72 overflow-hidden">
-            <Image src={cover} alt="" fill className="object-cover opacity-30 blur-sm" sizes="100vw" priority />
+            <Image src={cover} alt="" fill className="scale-110 object-cover opacity-30 blur-2xl" sizes="96px" quality={40} priority />
             <div className="absolute inset-0 bg-gradient-to-b from-bg/20 to-bg" />
           </div>
         )}
@@ -136,7 +137,7 @@ export default async function AnimePage({ params }: Props) {
           <Breadcrumbs items={[{ href: "/", label: "Home" }, ...(mainGenre ? [{ href: `/genre/${mainGenre.slug}`, label: mainGenre.title }] : []), { href: animePath(a), label: a.title }]} />
           <div className="flex flex-col gap-6 md:flex-row">
             <div className="relative aspect-[2/3] w-44 shrink-0 overflow-hidden rounded-xl border border-line bg-bg-2 shadow-card sm:w-56">
-              {poster && <Image src={poster} alt={`${a.title} poster`} fill sizes="224px" className="object-cover" priority />}
+              {poster && <Image src={poster} alt={`${a.title} poster`} fill sizes="(max-width: 640px) 176px, 224px" className="object-cover" priority fetchPriority="high" />}
             </div>
             <div className="min-w-0 flex-1">
               <h1 className="text-3xl font-extrabold tracking-tight sm:text-4xl">{a.title}</h1>
@@ -223,9 +224,7 @@ export default async function AnimePage({ params }: Props) {
           {a.youtubeVideoId && (
             <section className="mt-8">
               <h2 className="h-section mb-3">Trailer</h2>
-              <div className="aspect-video overflow-hidden rounded-xl border border-line">
-                <iframe className="h-full w-full" src={`https://www.youtube-nocookie.com/embed/${a.youtubeVideoId}`} title={`${a.title} trailer`} loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture" allowFullScreen />
-              </div>
+              <YouTubeFacade id={a.youtubeVideoId} title={`${a.title} trailer`} />
             </section>
           )}
 

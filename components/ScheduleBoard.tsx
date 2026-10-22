@@ -30,12 +30,12 @@ export default function ScheduleBoard({ days, today, tba }: { days: BoardDay[]; 
         const list = filter(items);
         return (
           <section key={day} id={day.toLowerCase()} className="mt-10 scroll-mt-20">
-            <h2 className="h-section mb-3">{day}{day === today ? <span className="ml-2 rounded-md bg-accent px-2 py-0.5 text-xs font-bold uppercase text-white">Today</span> : null}</h2>
+            <h2 className="h-section mb-3">{day}{day === today ? <span className="ml-2 rounded-md bg-accent-strong px-2 py-0.5 text-xs font-bold uppercase text-white">Today</span> : null}</h2>
             {list.length ? (
               <ul className="grid gap-3 sm:grid-cols-2">
                 {list.map((a) => (
                   <li key={a.id} className="card flex gap-3 p-3 transition hover:border-violet">
-                    <Link href={`/anime/${encodeURIComponent(a.slug)}`} className="relative h-20 w-14 shrink-0 overflow-hidden rounded-md bg-bg-2">
+                    <Link href={`/anime/${encodeURIComponent(a.slug)}`} aria-hidden="true" tabIndex={-1} className="relative h-20 w-14 shrink-0 overflow-hidden rounded-md bg-bg-2">
                       {a.poster && <Image src={a.poster} alt="" fill sizes="56px" className="object-cover" />}
                     </Link>
                     <div className="min-w-0 flex-1">
