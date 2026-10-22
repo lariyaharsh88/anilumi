@@ -20,9 +20,11 @@ jobs:
       - name: Raw probe
         run: |
           for u in "https://api.jikan.moe/v4" "https://api.jikan.moe/v4/anime/21/episodes?page=1"; do
-            curl -sS -m 30 -o /tmp/body -w "%{http_code} %{time_total}s $u\n" "$u" || true
-            head -c 300 /tmp/body; echo
+            rm -f /tmp/body
+            curl -sS -m 30 -o /tmp/body -w "%{http_code} %{time_total}s $u\n" "$u" || echo "unreachable: $u"
+            [ -f /tmp/body ] && head -c 300 /tmp/body && echo
           done
+        continue-on-error: true
       - run: npx tsx scripts/check-jikan.ts ${{ inputs.slugs }}
         env:
           JIKAN_ENRICH: "1"
