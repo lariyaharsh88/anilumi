@@ -13,6 +13,7 @@ import BingePlanner from "@/components/BingePlanner";
 import Countdown from "@/components/Countdown";
 import WatchButton from "@/components/WatchButton";
 import EmbedSnippet from "@/components/EmbedSnippet";
+import CalendarLinks from "@/components/CalendarLinks";
 import YouTubeFacade from "@/components/YouTubeFacade";
 import StatTiles from "@/components/viz/StatTiles";
 import BarChart from "@/components/viz/BarChart";
@@ -226,6 +227,9 @@ export default async function AnimePage({ params }: Props) {
             </section>
           )}
 
+          {(a.status === "current" || a.status === "upcoming") && (
+            <div className="mt-6"><CalendarLinks compact ids={[a.id]} /></div>
+          )}
           {(a.status === "current" || a.status === "upcoming") && <EmbedSnippet slug={a.slug} title={a.title} />}
           <p className="mt-2 text-xs text-muted"><a href={`${animePath(a)}/feed.xml`} className="hover:text-ink">RSS feed for new episodes</a></p>
 

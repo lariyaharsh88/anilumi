@@ -1,7 +1,11 @@
 "use client";
 import { useEffect, useState, useCallback } from "react";
 
-export type WatchItem = { id: string; slug: string; title: string; poster: string | null; status: string; nextRelease: string | null; addedAt: number };
+export type WatchItem = {
+  id: string; slug: string; title: string; poster: string | null; status: string; nextRelease: string | null; addedAt: number;
+  /** Filled in by the /api/anime refresh on the My list page. */
+  runtime?: number; episodeCount?: number | null; episodeLength?: number | null; genres?: string[]; subtype?: string; rating?: number | null;
+};
 const KEY = "anilumi:watchlist:v1";
 const EVT = "anilumi:watchlist";
 

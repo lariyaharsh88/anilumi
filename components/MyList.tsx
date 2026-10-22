@@ -2,8 +2,10 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
-import { useWatchlist } from "@/lib/watchlist";
+import { useWatchlist, type WatchItem } from "@/lib/watchlist";
 import Countdown from "./Countdown";
+import MyListStats from "./MyListStats";
+import CalendarLinks from "./CalendarLinks";
 
 export default function MyList() {
   const { items, ready, remove, update } = useWatchlist();
@@ -14,7 +16,7 @@ export default function MyList() {
     refreshed.current = true;
     fetch(`/api/anime?ids=${items.map((i) => i.id).join(",")}`)
       .then((r) => r.json())
-      .then((d: { items: { id: string; status: string; nextRelease: string | null; poster: string | null }[] }) => update(d.items))
+      .then((d: { items: Partial<WatchItem>[] }) => update(d.items))
       .catch(() => {});
   }, [ready, items, update]);
 
@@ -41,8 +43,18 @@ export default function MyList() {
       <button type="button" onClick={() => remove(i.id)} className="text-xs text-muted hover:text-accent-2" aria-label={`Remove ${i.title}`}>Remove</button>
     </li>
   );
+  const calendarIds = items.filter((i) => i.status === "current" || i.status === "upcoming").map((i) => i.id);
   return (
     <div className="space-y-8">
+      <MyListStats items={items} />
+      {calendarIds.length > 0 && (
+        <section className="card p-4">
+          <h2 className="font-semibold">Put your episodes in your calendar</h2>
+          <p className="mt-1 text-sm text-muted">Subscribe once and your calendar app pulls the next episode of every airing show on your list, plus premiere dates for upcoming ones. It refreshes on its own every few hours.</p>
+          <CalendarLinks ids={calendarIds} />
+          <p className="mt-2 text-xs text-muted">The subscription covers the {calendarIds.length} show{calendarIds.length === 1 ? "" : "s"} saved right now. Subscribe again after adding new ones.</p>
+        </section>
+      )}
       {airing.length > 0 && (
         <section>
           <h2 className="h-section mb-3">Airing · next episodes</h2>

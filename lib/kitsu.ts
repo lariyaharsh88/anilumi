@@ -220,6 +220,8 @@ const LIST_FIELDS =
   "slug,canonicalTitle,titles,synopsis,averageRating,userCount,favoritesCount,popularityRank,ratingRank,startDate,endDate,nextRelease,ageRating,subtype,status,posterImage,episodeCount,episodeLength,totalLength,nsfw";
 
 export type ListOpts = {
+  /** Also return each title's genres (one request, via JSON:API include). */
+  withCategories?: boolean;
   sort?: string;
   limit?: number;
   offset?: number;
@@ -228,19 +230,22 @@ export type ListOpts = {
 };
 
 export async function listAnime(opts: ListOpts = {}): Promise<Paged<Anime>> {
-  const { sort = "-userCount", limit = 20, offset = 0, filter = {}, revalidate = 3600 } = opts;
+  const { sort = "-userCount", limit = 20, offset = 0, filter = {}, revalidate = 3600, withCategories = false } = opts;
   const params: Record<string, string | number> = {
     "page[limit]": Math.min(limit, 20),
     "page[offset]": offset,
     sort,
-    "fields[anime]": LIST_FIELDS,
-    "filter[ageRating]": SAFE_RATINGS,
+    "fields[anime]": withCategories ? `${LIST_FIELDS},categories` : LIST_FIELDS,
+    // Kitsu silently drops filter[id] when filter[ageRating] is also present (it switches to its
+    // search index), returning the whole catalogue. For id lookups, filter adult titles after the fact.
+    ...(filter.id ? {} : { "filter[ageRating]": SAFE_RATINGS }),
+    ...(withCategories ? { include: "categories", "fields[categories]": "slug,title" } : {}),
   };
   for (const [k, v] of Object.entries(filter)) params[`filter[${k}]`] = v;
   const doc = await kitsu("/anime", params, revalidate);
   if (!doc || !Array.isArray(doc.data)) return { items: [], total: 0, limit, offset };
   return {
-    items: uniqueById(doc.data.map((r) => normalizeAnime(r)).filter((a) => !a.nsfw)),
+    items: uniqueById(doc.data.map((r) => normalizeAnime(r, doc.included)).filter((a) => !a.nsfw && a.ageRating !== "R18")),
     total: doc.meta?.count ?? 0,
     limit,
     offset,
@@ -829,4 +834,51 @@ export async function getStudioAnime(producerId: string): Promise<{ items: Anime
   const rest = await Promise.all([20, 40, 60, 80, 100].filter((o) => o < total).map((offset) => kitsu(`/producers/${producerId}/anime-productions`, { include: "anime", "filter[role]": "studio", "page[limit]": 20, "page[offset]": offset, "fields[animeProductions]": "role,anime", "fields[anime]": LIST_FIELDS }, 86400)));
   const items = [first, ...rest].flatMap((doc) => (doc?.included || []).filter((i) => i.type === "anime").map((i) => normalizeAnime(i))).filter((a) => !a.nsfw);
   return { items: uniqueById(items).sort((x, y) => y.userCount - x.userCount), total };
+}
+
+/* ---------------- Genres & comparisons ---------------- */
+
+/** Broad genres used for breakdowns; Kitsu's other tags (e.g. "Pirate", "Elf") are themes, not genres. */
+export const MAIN_GENRES = new Set([
+  "action", "adventure", "comedy", "drama", "fantasy", "romance", "science-fiction", "slice-of-life", "mystery", "horror",
+  "thriller", "sports", "supernatural", "psychological", "mecha", "music", "isekai", "historical", "military", "magic",
+  "school-life", "shounen", "shoujo", "seinen", "josei", "ecchi", "harem", "martial-arts", "parody", "space", "super-power",
+]);
+export const mainGenres = (a: Pick<Anime, "categories">) => a.categories.filter((c) => MAIN_GENRES.has(c.slug));
+
+/** Canonical compare URL: slugs in alphabetical order so A-vs-B and B-vs-A are one page. */
+export function comparePath(a: Pick<Anime, "slug">, b: Pick<Anime, "slug">) {
+  const [x, y] = [a.slug, b.slug].sort((p, q) => p.localeCompare(q));
+  return `/compare/${encodeURIComponent(x)}-vs-${encodeURIComponent(y)}`;
+}
+
+/** For each title, its closest peers by shared genres (Jaccard), ties to the more popular; deduped pairs. */
+export function suggestComparePairs(items: Anime[], perItem = 1): [Anime, Anime][] {
+  const g = new Map(items.map((a) => [a.id, new Set(mainGenres(a).map((c) => c.slug))]));
+  const seen = new Set<string>();
+  const out: [Anime, Anime][] = [];
+  for (const a of items) {
+    const ga = g.get(a.id)!;
+    if (!ga.size) continue;
+    const peers = items
+      .filter((b) => b.id !== a.id && franchiseRoot(b.title) !== franchiseRoot(a.title))
+      .map((b) => {
+        const gb = g.get(b.id)!;
+        const inter = [...ga].filter((x) => gb.has(x)).length;
+        return { b, score: inter / (ga.size + gb.size - inter || 1) };
+      })
+      .filter((p) => p.score > 0)
+      .sort((x, y) => y.score - x.score || y.b.userCount - x.b.userCount)
+      .slice(0, perItem);
+    for (const { b } of peers) {
+      const key = [a.id, b.id].sort().join(":");
+      if (!seen.has(key)) { seen.add(key); out.push([a, b]); }
+    }
+  }
+  return out;
+}
+
+/** Rough franchise key so "X Season 2" isn't suggested as a rival to "X". */
+export function franchiseRoot(title: string) {
+  return title.toLowerCase().split(/[:：]| - | season\b| movie\b| \d|\(/)[0].trim();
 }
