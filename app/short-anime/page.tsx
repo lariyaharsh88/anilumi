@@ -14,7 +14,7 @@ const MAXES = [12, 13, 24, 26];
 export async function generateMetadata({ searchParams }: Props): Promise<Metadata> {
   const { genre, max, page } = await searchParams;
   const m = MAXES.includes(Number(max)) ? Number(max) : 13;
-  const g = genre ? ` ${genre.replace(/-/g, " ")}` : "";
+  const g = genre ? ` ${genre.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase())}` : "";
   const qs = [genre ? `genre=${genre}` : "", m !== 13 ? `max=${m}` : "", Number(page) > 1 ? `page=${page}` : ""].filter(Boolean).join("&");
   return {
     title: `Best Short${g} Anime (${m} Episodes or Less) – Weekend Binges`,

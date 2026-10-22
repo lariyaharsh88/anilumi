@@ -31,7 +31,7 @@ export default function MyList() {
   const rest = items.filter((i) => i.status !== "current");
   const Row = ({ i }: { i: (typeof items)[number] }) => (
     <li className="card flex items-center gap-3 p-3">
-      <div className="relative h-16 w-11 shrink-0 overflow-hidden rounded bg-bg-2">{i.poster && <Image src={i.poster} alt="" fill sizes="44px" className="object-cover" />}</div>
+      <div className="relative h-16 w-11 shrink-0 overflow-hidden rounded bg-bg-2">{i.poster && <Image src={i.poster} alt="" fill sizes="44px" className="object-cover" loading="eager" />}</div>
       <div className="min-w-0 flex-1">
         <Link href={`/anime/${encodeURIComponent(i.slug)}`} className="line-clamp-1 font-semibold hover:text-violet">{i.title}</Link>
         <p className="text-xs text-muted">
