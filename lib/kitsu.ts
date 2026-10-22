@@ -882,3 +882,45 @@ export function suggestComparePairs(items: Anime[], perItem = 1): [Anime, Anime]
 export function franchiseRoot(title: string) {
   return title.toLowerCase().split(/[:：]| - | season\b| movie\b| \d|\(/)[0].trim();
 }
+
+/* ---------------- AniList weekly broadcast schedule (for the airing heatmap) ---------------- */
+
+export type Broadcast = { at: number; title: string; episode: number; popularity: number };
+let weekMemo: { v: Broadcast[]; exp: number } | null = null;
+
+/** Every Japanese, non-adult TV broadcast in the next 7 days (unix seconds). Up to 10 pages of 50, cached 30 min. */
+export async function getWeekBroadcasts(): Promise<Broadcast[]> {
+  if (process.env.ANILIST_ENRICH === "0") return [];
+  if (weekMemo && weekMemo.exp > Date.now()) return weekMemo.v;
+  const from = Math.floor(Date.now() / 1000 / 1800) * 1800; // round to 30 min so the fetch cache key is stable
+  const to = from + 7 * 86400;
+  const out: Broadcast[] = [];
+  for (let page = 1; page <= 10; page++) {
+    try {
+      const res = await fetch("https://graphql.anilist.co", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          query: "query($a:Int,$b:Int,$p:Int){Page(page:$p,perPage:50){pageInfo{hasNextPage} airingSchedules(airingAt_greater:$a,airingAt_lesser:$b,sort:TIME){airingAt episode media{isAdult countryOfOrigin popularity format title{romaji english}}}}}",
+          variables: { a: from, b: to, p: page },
+        }),
+        next: { revalidate: 1800 },
+        signal: AbortSignal.timeout(Number(process.env.ANILIST_TIMEOUT_MS) || 5000),
+      });
+      if (!res.ok) break;
+      const json = (await res.json()) as { data?: { Page?: { pageInfo: { hasNextPage: boolean }; airingSchedules: { airingAt: number; episode: number; media: { isAdult: boolean; countryOfOrigin: string; popularity: number; format: string; title: { romaji: string; english: string | null } } }[] } } };
+      const pg = json.data?.Page;
+      if (!pg) break;
+      for (const s of pg.airingSchedules) {
+        const m = s.media;
+        if (m.isAdult || m.countryOfOrigin !== "JP" || m.format === "MUSIC") continue;
+        out.push({ at: s.airingAt, episode: s.episode, popularity: m.popularity || 0, title: m.title.english || m.title.romaji });
+      }
+      if (!pg.pageInfo.hasNextPage) break;
+    } catch {
+      break;
+    }
+  }
+  if (out.length) weekMemo = { v: out, exp: Date.now() + 30 * 60 * 1000 };
+  return out;
+}

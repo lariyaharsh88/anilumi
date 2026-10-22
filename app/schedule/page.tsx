@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { listAnime, Anime, posterUrl, fmtDate, weekdayOf, uniqueById, seasonOf } from "@/lib/kitsu";
+import { listAnime, Anime, posterUrl, fmtDate, weekdayOf, uniqueById, seasonOf, getWeekBroadcasts } from "@/lib/kitsu";
+import AiringHeatmap from "@/components/viz/AiringHeatmap";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import Faq from "@/components/Faq";
 import AdSlot from "@/components/AdSlot";
@@ -26,6 +27,7 @@ export default async function SchedulePage() {
     ...[0, 20].map((offset) => listAnime({ filter: { status: "current" }, sort: "-userCount", limit: 20, offset, revalidate: 1800 })),
   ]);
   const all = uniqueById(pages.flatMap((p) => p.items));
+  const broadcasts = await getWeekBroadcasts();
   const byDay = new Map<string, BoardItem[]>(DAYS.map((d) => [d, []]));
   const tba: BoardItem[] = [];
   for (const a of all) {
@@ -60,6 +62,7 @@ export default async function SchedulePage() {
           data={days.map((d) => ({ key: d.day, label: d.day === todayJst ? "Today" : d.day.slice(0, 3), value: d.items.length, display: `${d.items.length} series` }))}
         />
       </div>
+      {broadcasts.length > 0 && <div className="mt-3"><AiringHeatmap broadcasts={broadcasts} /></div>}
       <AdSlot slot="schedule-top" />
       <ScheduleBoard days={days} today={todayJst} tba={tba} />
       <Faq
