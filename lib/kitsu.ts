@@ -621,8 +621,11 @@ export async function getMalLastAired(animeId: string): Promise<LastAired | null
     const malId = await getMalId(animeId);
     if (!malId) return null;
     const get = async (page: number) => {
-      const res = await fetch(`https://api.jikan.moe/v4/anime/${malId}/episodes?page=${page}`, { next: { revalidate: 21600 }, signal: AbortSignal.timeout(4000) });
-      if (!res.ok) return null;
+      const res = await fetch(`https://api.jikan.moe/v4/anime/${malId}/episodes?page=${page}`, { next: { revalidate: 21600 }, signal: AbortSignal.timeout(Number(process.env.JIKAN_TIMEOUT_MS) || 4000) });
+      if (!res.ok) {
+        if (process.env.JIKAN_DEBUG === "1") console.warn(`[jikan] ${malId} page ${page}: HTTP ${res.status}`);
+        return null;
+      }
       return (await res.json()) as { pagination?: { last_visible_page?: number }; data?: { mal_id: number; aired: string | null }[] };
     };
     const first = await get(1);
@@ -633,7 +636,8 @@ export async function getMalLastAired(animeId: string): Promise<LastAired | null
     if (!last) return null;
     const date = last.aired!.slice(0, 10);
     return { count: last.mal_id, lastAired: last.mal_id, lastAiredDate: date, reliable: reliableTail(date) };
-  } catch {
+  } catch (err) {
+    if (process.env.JIKAN_DEBUG === "1") console.warn(`[jikan] ${animeId}: ${(err as Error).name}: ${(err as Error).message}`);
     return null;
   }
 }

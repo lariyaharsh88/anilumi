@@ -17,6 +17,14 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      - name: Raw probe
+        run: |
+          for u in "https://api.jikan.moe/v4" "https://api.jikan.moe/v4/anime/21/episodes?page=1"; do
+            curl -sS -m 30 -o /tmp/body -w "%{http_code} %{time_total}s $u\n" "$u" || true
+            head -c 300 /tmp/body; echo
+          done
       - run: npx tsx scripts/check-jikan.ts ${{ inputs.slugs }}
         env:
           JIKAN_ENRICH: "1"
+          JIKAN_DEBUG: "1"
+          JIKAN_TIMEOUT_MS: "15000"
