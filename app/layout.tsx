@@ -4,6 +4,8 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import JsonLd from "@/components/JsonLd";
 import Analytics from "@/components/Analytics";
+import MotionProvider from "@/components/MotionProvider";
+import Toaster from "@/components/Toaster";
 import { SPOILER_PREPAINT } from "@/lib/watchlist";
 import { site } from "@/lib/site";
 
@@ -41,9 +43,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }}
         />
         <Analytics />
-        <SiteHeader />
-        <main className="flex-1">{children}</main>
-        <SiteFooter />
+        <MotionProvider>
+          <SiteHeader />
+          <main className="flex-1">{children}</main>
+          <SiteFooter />
+          <Toaster />
+        </MotionProvider>
       </body>
     </html>
   );

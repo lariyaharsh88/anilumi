@@ -158,19 +158,22 @@ export default async function AnimePage({ params }: Props) {
       <JsonLd data={ld} />
       <div className="relative">
         {cover && (
-          <div className="absolute inset-0 -z-10 h-72 overflow-hidden">
-            <Image src={cover} alt="" fill className="scale-110 object-cover opacity-30 blur-2xl" sizes="96px" quality={40} priority />
-            <div className="absolute inset-0 bg-gradient-to-b from-bg/20 to-bg" />
+          <div className="absolute inset-0 -z-10 h-80 overflow-hidden">
+            <div className="parallax-bg absolute inset-0">
+            <Image src={cover} alt="" fill className="scale-110 object-cover opacity-40 blur-2xl" sizes="96px" quality={40} priority />
+            </div>
+            <div className="aurora opacity-60"><span /></div>
+            <div className="absolute inset-0 bg-gradient-to-b from-bg/10 via-bg/50 to-bg" />
           </div>
         )}
         <div className="container-x pt-8">
           <Breadcrumbs items={[{ href: "/", label: "Home" }, ...(mainGenre ? [{ href: `/genre/${mainGenre.slug}`, label: mainGenre.title }] : []), { href: animePath(a), label: a.title }]} />
           <div className="flex flex-col gap-6 md:flex-row">
-            <div className="relative aspect-[2/3] w-44 shrink-0 overflow-hidden rounded-xl border border-line bg-bg-2 shadow-card sm:w-56">
+            <div className="rise relative aspect-[2/3] w-44 shrink-0 overflow-hidden rounded-xl border border-white/10 bg-bg-2 shadow-[0_25px_60px_-25px_rgba(255,77,109,.5)] sm:w-56">
               {poster && <Image src={poster} alt={`${a.title} poster`} fill sizes="(max-width: 640px) 176px, 224px" className="object-cover" priority fetchPriority="high" />}
             </div>
             <div className="min-w-0 flex-1">
-              <h1 className="text-3xl font-extrabold tracking-tight sm:text-4xl">{a.title}</h1>
+              <h1 className="rise-t text-3xl font-extrabold tracking-tight sm:text-5xl" style={{ ["--d" as string]: "80ms" }}>{a.title}</h1>
               {a.titleEn && a.titleEn !== a.title && <p className="mt-1 text-muted">{a.titleEn}</p>}
               <div className="mt-3 flex flex-wrap items-center gap-2 text-sm">
                 {a.rating && <span className="rounded-md bg-gold/15 px-2 py-1 font-bold text-gold">★ {(a.rating / 10).toFixed(1)}</span>}

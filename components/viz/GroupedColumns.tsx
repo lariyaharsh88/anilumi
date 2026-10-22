@@ -26,7 +26,7 @@ export default function GroupedColumns({ title, subtitle, series, categories, va
   return (
     <figure className="card p-4">
       <figcaption>
-        <h3 className="font-semibold text-ink">{title}</h3>
+        <p className="font-semibold text-ink">{title}</p>
         {subtitle && <p className="mt-0.5 text-xs text-muted">{subtitle}</p>}
       </figcaption>
       <ul className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-xs">
@@ -46,6 +46,7 @@ export default function GroupedColumns({ title, subtitle, series, categories, va
                 <div
                   key={c.key}
                   tabIndex={0}
+                  role="img"
                   aria-label={`${c.label}: ${series[0].label} ${fmt(values[0][ci])}, ${series[1].label} ${fmt(values[1][ci])}`}
                   onPointerEnter={() => setActive(ci)}
                   onPointerLeave={() => setActive(null)}
@@ -54,7 +55,7 @@ export default function GroupedColumns({ title, subtitle, series, categories, va
                   className={`flex h-full flex-1 items-end justify-center gap-[2px] rounded-sm outline-none focus-visible:ring-2 focus-visible:ring-ink/60 ${active === ci ? "bg-white/[0.03]" : ""}`}
                 >
                   {[0, 1].map((si) => (
-                    <div key={si} className={`w-full max-w-4 rounded-t-[4px] ${FILL[si]} ${active === ci ? "brightness-125" : ""}`} style={{ height: `${(values[si][ci] / max) * 100}%`, minHeight: values[si][ci] > 0 ? 2 : 0 }} />
+                    <div key={si} className={`grow-y w-full max-w-4 rounded-t-[4px] ${FILL[si]} ${active === ci ? "brightness-125" : ""}`} style={{ height: `${(values[si][ci] / max) * 100}%`, minHeight: values[si][ci] > 0 ? 2 : 0 }} />
                   ))}
                 </div>
               ))}

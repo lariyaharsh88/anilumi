@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { site } from "@/lib/site";
+import Logo from "./Logo";
 import { seasonOf, cap } from "@/lib/kitsu";
 
 export default function SiteFooter() {
@@ -10,8 +11,10 @@ export default function SiteFooter() {
     { h: "About", links: [["/about", "About & data sources"], ["/search", "Search"], ["/feed.xml", "RSS: this week’s episodes"]] },
   ];
   return (
-    <footer className="mt-16 border-t border-line bg-bg-2">
-      <div className="container-x grid gap-8 py-12 sm:grid-cols-3">
+    <footer className="relative mt-20 border-t border-line bg-bg-2">
+      <div aria-hidden className="absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-accent/70 to-transparent" />
+      <div className="container-x flex items-center gap-2 pt-10 text-lg font-extrabold"><Logo size={24} /><span>Ani<span className="text-gradient">Lumi</span></span><span className="ml-2 text-sm font-normal text-muted">{site.tagline}</span></div>
+      <div className="container-x grid gap-8 py-10 sm:grid-cols-3">
         {cols.map((c) => (
           <div key={c.h}>
             <h3 className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted">{c.h}</h3>

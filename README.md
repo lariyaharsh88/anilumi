@@ -63,6 +63,15 @@ Every page ships with a unique title/description, canonical URL, Open Graph imag
 - **Dub tracker: not built.** Neither Kitsu (its `dubs` field only lists original audio) nor AniList exposes reliable dub availability.
 - **Outages vs 404s**: page-deciding Kitsu lookups throw `UpstreamError` on failure, so an outage shows `app/error.tsx` and is never cached as a 404.
 
+## Motion and visual layer (added 23 Oct)
+
+- **Motion** (`motion` package, the successor to Framer Motion) loads through `components/MotionProvider.tsx` with `LazyMotion` + `domAnimation` and `MotionConfig reducedMotion="user"`. Client-only effects live in `components/fx/`.
+- **Home hero** (`fx/HeroSpotlight.tsx`): aurora, stars, grain and petals (CSS), staggered pitch, rotating trending spotlight with fanned posters and crossfading desktop-only backdrop. Auto-advance starts only after the first scroll, tap, click or key press, so a slide change can't become a late LCP.
+- **Cards** (`fx/TiltCard.tsx`): 3D tilt and glare on fine pointers only. **Rails** (`fx/RailScroller.tsx`): arrow buttons and edge fades; trending uses Top-10 outlined numerals. **Stat tiles** count up when scrolled in (`fx/CountUp.tsx`). Charts grow in via CSS scroll timelines.
+- **Rules that keep Lighthouse at 100 for accessibility**: scroll reveals move but never fade (axe reads faded text as low contrast); headlines use `rise-t` (slide only) so they paint with the first frame; phones get no hero backdrop image.
+- **Lighthouse note**: on localhost the simulated mobile LCP sometimes reads ~6 s because scripts finish before the first paint and the simulator charges them to the headline. Observed LCP equals FCP (~0.2 s); with `--throttling-method=devtools` the home page scores 92-99.
+- **Parallel builds**: `NEXT_DIST_DIR=.next-prod npm run build` builds without disturbing the dev server (`.next-*` is git-, lint- and tsconfig-ignored).
+
 ## Run
 
 ```bash

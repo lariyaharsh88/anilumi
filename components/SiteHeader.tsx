@@ -2,6 +2,9 @@ import Link from "next/link";
 import { site } from "@/lib/site";
 import SearchBox from "./SearchBox";
 import WatchlistBadge from "./WatchlistBadge";
+import Logo from "./Logo";
+import HeaderShell from "./HeaderShell";
+import NavLinks, { MobileNav } from "./NavLinks";
 
 const nav = [
   { href: "/schedule", label: "Schedule" },
@@ -15,32 +18,19 @@ const nav = [
 
 export default function SiteHeader() {
   return (
-    <header className="sticky top-0 z-40 border-b border-line/70 bg-bg/85 backdrop-blur">
+    <HeaderShell>
       <div className="container-x flex h-14 items-center gap-4">
-        <Link href="/" className="flex shrink-0 items-center gap-2 text-lg font-extrabold tracking-tight">
-          <span className="grid h-7 w-7 place-items-center rounded-md bg-accent-strong text-sm text-white">A</span>
-          {site.name}
+        <Link href="/" className="group flex shrink-0 items-center gap-2 text-lg font-extrabold tracking-tight">
+          <span className="transition-transform duration-300 group-hover:rotate-[-8deg] group-hover:scale-110"><Logo /></span>
+          <span>Ani<span className="text-gradient">Lumi</span></span>
+          <span className="sr-only">{site.name} home</span>
         </Link>
-        <nav className="hidden items-center gap-1 md:flex">
-          {nav.map((n) => (
-            <Link key={n.href} href={n.href} className="whitespace-nowrap rounded-md px-3 py-1.5 text-sm font-medium text-muted hover:bg-bg-2 hover:text-ink">
-              {n.label}
-            </Link>
-          ))}
-          <WatchlistBadge />
-        </nav>
+        <NavLinks items={nav} trailing={<WatchlistBadge />} />
         <div className="ml-auto w-full max-w-xs">
           <SearchBox />
         </div>
       </div>
-      <nav className="container-x flex gap-1 overflow-x-auto pb-2 md:hidden">
-        {nav.map((n) => (
-          <Link key={n.href} href={n.href} className="chip whitespace-nowrap">
-            {n.label}
-          </Link>
-        ))}
-        <Link href="/my" className="chip whitespace-nowrap">My list</Link>
-      </nav>
-    </header>
+      <MobileNav items={[...nav, { href: "/my", label: "My list" }]} />
+    </HeaderShell>
   );
 }

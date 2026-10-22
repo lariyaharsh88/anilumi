@@ -51,7 +51,7 @@ export default function AiringHeatmap({ broadcasts }: { broadcasts: Broadcast[] 
   return (
     <figure className="card p-4">
       <figcaption>
-        <h3 className="font-semibold text-ink">When anime airs, in your time zone</h3>
+        <p className="font-semibold text-ink">When anime airs, in your time zone</p>
         <p className="mt-0.5 text-xs text-muted">
           {tz ? <>{total} Japanese TV broadcasts in the next 7 days, shown in {tz.replace(/_/g, " ")}. Busiest slot: {LONG[peak.d]} {hourFmt(peak.h)} ({peak.n}). {Math.round((night / total) * 100)}% air between 9 pm and 3 am your time.</> : "Loading your time zone…"}
         </p>

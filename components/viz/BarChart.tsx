@@ -42,6 +42,7 @@ export default function BarChart({ title, subtitle, data, orientation = "column"
   const tip = active !== null ? data[active] : null;
   const markProps = (i: number, d: Datum) => ({
     tabIndex: 0,
+    role: "img",
     "aria-label": `${d.label}: ${d.display}`,
     onPointerEnter: () => setActive(i),
     onPointerLeave: () => setActive(null),
@@ -52,7 +53,7 @@ export default function BarChart({ title, subtitle, data, orientation = "column"
   return (
     <figure className="card p-4">
       <figcaption>
-        <h3 className="font-semibold text-ink">{title}</h3>
+        <p className="font-semibold text-ink">{title}</p>
         {subtitle && <p className="mt-0.5 text-xs text-muted">{subtitle}</p>}
       </figcaption>
 
@@ -75,7 +76,7 @@ export default function BarChart({ title, subtitle, data, orientation = "column"
                     {labelled.has(d.key) && d.value > 0 && (
                       <span className="pointer-events-none absolute left-1/2 -translate-x-1/2 whitespace-nowrap text-[10px] font-semibold text-ink" style={{ bottom: `calc(${(d.value / max) * 100}% + 4px)` }}>{d.mark ?? d.display}</span>
                     )}
-                    <div className={`w-full max-w-6 rounded-t-[4px] transition group-hover:brightness-125 group-focus-visible:brightness-125 group-focus-visible:ring-2 group-focus-visible:ring-ink/60 ${color(d)}`} style={{ height: `${(d.value / max) * 100}%`, minHeight: d.value > 0 ? 2 : 0 }} />
+                    <div className={`grow-y w-full max-w-6 rounded-t-[4px] transition group-hover:brightness-125 group-focus-visible:brightness-125 group-focus-visible:ring-2 group-focus-visible:ring-ink/60 ${color(d)}`} style={{ height: `${(d.value / max) * 100}%`, minHeight: d.value > 0 ? 2 : 0 }} />
                   </div>
                 ))}
               </div>
@@ -99,13 +100,13 @@ export default function BarChart({ title, subtitle, data, orientation = "column"
                 <span className="w-32 shrink-0 truncate text-xs text-ink/90 sm:w-48" title={d.label}>{d.label}</span>
                 <span className="relative flex h-5 flex-1 items-center">
                   <span className="absolute inset-y-0 left-0 w-px bg-line" />
-                  <span className={`h-3.5 rounded-r-[4px] transition group-hover:brightness-125 ${color(d)}`} style={{ width: `${(d.value / max) * 100}%`, minWidth: d.value > 0 ? 2 : 0 }} />
+                  <span className={`grow-x h-3.5 rounded-r-[4px] transition group-hover:brightness-125 ${color(d)}`} style={{ width: `${(d.value / max) * 100}%`, minWidth: d.value > 0 ? 2 : 0 }} />
                   <span className="ml-1.5 whitespace-nowrap text-[11px] tabular-nums text-muted">{d.display}</span>
                 </span>
               </>
             );
             return (
-              <li key={d.key} className="group flex items-center gap-2 rounded outline-none focus-visible:ring-2 focus-visible:ring-ink/60" {...markProps(i, d)}>
+              <li key={d.key} className="group flex items-center gap-2 rounded outline-none focus-visible:ring-2 focus-visible:ring-ink/60" {...markProps(i, d)} role={undefined}>
                 {d.href ? <a href={d.href} className="flex flex-1 items-center gap-2" tabIndex={-1}>{inner}</a> : inner}
               </li>
             );

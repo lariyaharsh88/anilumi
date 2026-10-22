@@ -68,7 +68,7 @@ export default function LineChart({ title, subtitle, points, labelKeys = [], val
   return (
     <figure className="card p-4">
       <figcaption>
-        <h3 className="font-semibold text-ink">{title}</h3>
+        <p className="font-semibold text-ink">{title}</p>
         {subtitle && <p className="mt-0.5 text-xs text-muted">{subtitle}</p>}
       </figcaption>
       <div ref={wrap} className="relative mt-3" style={{ height: height + 22 }}>

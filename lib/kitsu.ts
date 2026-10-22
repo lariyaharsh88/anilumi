@@ -265,7 +265,7 @@ export async function listAnime(opts: ListOpts = {}): Promise<Paged<Anime>> {
 }
 
 export async function getTrending(limit = 10): Promise<Anime[]> {
-  const doc = await kitsu("/trending/anime", { limit, "fields[anime]": LIST_FIELDS }, 1800);
+  const doc = await kitsu("/trending/anime", { limit, "fields[anime]": `${LIST_FIELDS},coverImage` }, 1800);
   if (!doc || !Array.isArray(doc.data)) return [];
   return doc.data.map((r) => normalizeAnime(r)).filter((a) => !a.nsfw && a.ageRating !== "R18");
 }

@@ -15,7 +15,7 @@ export default function StackedBar({ title, subtitle, segments, unit = "titles" 
   return (
     <figure className="card p-4">
       <figcaption>
-        <h3 className="font-semibold text-ink">{title}</h3>
+        <p className="font-semibold text-ink">{title}</p>
         {subtitle && <p className="mt-0.5 text-xs text-muted">{subtitle}</p>}
       </figcaption>
       <div className="relative mt-4">
@@ -25,6 +25,7 @@ export default function StackedBar({ title, subtitle, segments, unit = "titles" 
               <div
                 key={s.key}
                 tabIndex={0}
+                role="img"
                 aria-label={`${s.label}: ${s.value.toLocaleString()} ${unit}, ${pct(s.value)}`}
                 onPointerEnter={() => setActive(i)}
                 onPointerLeave={() => setActive(null)}
