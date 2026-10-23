@@ -239,10 +239,12 @@ export type ListOpts = {
   offset?: number;
   filter?: Record<string, string>;
   revalidate?: number;
+  /** Skip the age-rating filter: newly announced titles often have no rating yet. Adult titles are still dropped. */
+  unrated?: boolean;
 };
 
 export async function listAnime(opts: ListOpts = {}): Promise<Paged<Anime>> {
-  const { sort = "-userCount", limit = 20, offset = 0, filter = {}, revalidate = 3600, withCategories = false } = opts;
+  const { sort = "-userCount", limit = 20, offset = 0, filter = {}, revalidate = 3600, withCategories = false, unrated = false } = opts;
   const params: Record<string, string | number> = {
     "page[limit]": Math.min(limit, 20),
     "page[offset]": offset,
@@ -250,7 +252,7 @@ export async function listAnime(opts: ListOpts = {}): Promise<Paged<Anime>> {
     "fields[anime]": withCategories ? `${LIST_FIELDS},categories` : LIST_FIELDS,
     // Kitsu silently drops filter[id] when filter[ageRating] is also present (it switches to its
     // search index), returning the whole catalogue. For id lookups, filter adult titles after the fact.
-    ...(filter.id ? {} : { "filter[ageRating]": SAFE_RATINGS }),
+    ...(filter.id || unrated ? {} : { "filter[ageRating]": SAFE_RATINGS }),
     ...(withCategories ? { include: "categories", "fields[categories]": "slug,title" } : {}),
   };
   for (const [k, v] of Object.entries(filter)) params[`filter[${k}]`] = v;

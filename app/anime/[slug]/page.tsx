@@ -386,7 +386,10 @@ export default async function AnimePage({ params }: Props) {
           {/* ───────── Characters ───────── */}
           {characters.length > 0 && (
             <section id="characters" data-section aria-labelledby="h-characters">
-              <h2 id="h-characters" className="h-section mb-1">Characters</h2>
+              <div className="mb-1 flex items-end justify-between gap-3">
+                <h2 id="h-characters" className="h-section">Characters</h2>
+                <Link href={`${animePath(a)}/cast`} className="group text-sm font-medium text-violet hover:text-violet-2">Cast &amp; voice actors <span className="inline-block transition-transform group-hover:translate-x-1">→</span></Link>
+              </div>
               <RailScroller label="Characters">
                 {characters.map((c) => (
                   <Link key={c.id} href={`/character/${c.slug}`} className="group block w-28 sm:w-32">
@@ -451,6 +454,8 @@ export default async function AnimePage({ params }: Props) {
                 <a href={`${animePath(a)}/feed.xml`} className="text-violet hover:underline">RSS feed</a> for new episodes ·{" "}
                 <Link href={`/watch-order/${a.slug}`} className="text-violet hover:underline">Watch order</Link> ·{" "}
                 <Link href={`${animePath(a)}/how-long-to-watch`} className="text-violet hover:underline">How long to watch</Link> ·{" "}
+                {a.subtype !== "movie" && <><Link href={`${animePath(a)}/next-season`} className="text-violet hover:underline">{a.status === "finished" ? "Is there a next season?" : "Next season"}</Link> ·{" "}</>}
+                <Link href={`${animePath(a)}/cast`} className="text-violet hover:underline">Voice cast</Link> ·{" "}
                 <Link href="/my" className="text-violet hover:underline">My list</Link>
               </p>
               {(a.status === "current" || a.status === "upcoming") && <EmbedSnippet slug={a.slug} title={a.title} />}

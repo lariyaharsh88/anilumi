@@ -7,6 +7,7 @@ import { abs } from "@/lib/site";
 import PageHero from "@/components/PageHero";
 import JsonLd from "@/components/JsonLd";
 import Faq from "@/components/Faq";
+import { getCast, sameName, vaPath } from "@/lib/anilist";
 import AdSlot from "@/components/AdSlot";
 
 export const revalidate = 86400;
@@ -33,6 +34,10 @@ export default async function CharacterPage({ params }: Props) {
   const apps = await getCharacterAppearances(c.id);
   const mains = apps.filter((a) => a.role === "main");
   const home = mains[0]?.anime || apps[0]?.anime;
+  const cast = home ? await getCast(home.id, 25) : null;
+  const jpKey = (s: string | null | undefined) => (s || "").replace(/[\s・·=＝]/g, "");
+  const voiced = cast?.entries.find((e) => sameName(e.character.name, c.name) || (c.nameJp && jpKey(e.character.native) === jpKey(c.nameJp)));
+  const voices = voiced ? [voiced.jp && { va: voiced.jp, lang: "Japanese" }, voiced.en && { va: voiced.en, lang: "English dub" }].filter((x): x is NonNullable<typeof x> => Boolean(x)) : [];
   const ld = { "@context": "https://schema.org", "@type": "Person", name: c.name, alternateName: c.nameJp || undefined, image: c.image || undefined, description: c.description || undefined, url: abs(`/character/${c.slug}`) };
   return (
     <article className="container-x pb-8">
@@ -53,6 +58,18 @@ export default async function CharacterPage({ params }: Props) {
           </div>
         )}
       </PageHero>
+      {voices.length > 0 && (
+        <section className="mt-8 flex flex-wrap items-center gap-3" aria-label="Voiced by">
+          <span className="text-xs font-semibold uppercase tracking-wider text-muted">Voiced by</span>
+          {voices.map(({ va, lang }) => (
+            <Link key={va.id} href={vaPath(va)} className="card group flex items-center gap-2.5 py-1.5 pl-1.5 pr-4 transition hover:border-violet/60">
+              <span className="relative h-10 w-10 overflow-hidden rounded-full bg-bg-2">{va.image && <Image src={va.image} alt="" fill sizes="40px" className="object-cover" />}</span>
+              <span><span className="block text-sm font-semibold text-ink group-hover:text-violet-2">{va.name}</span><span className="block text-[11px] text-muted">{lang}</span></span>
+            </Link>
+          ))}
+          {home && <Link href={`${animePath(home)}/cast`} className="text-sm text-violet hover:text-violet-2">Full {home.title} cast →</Link>}
+        </section>
+      )}
       <section className="card reveal mt-8 max-w-4xl p-5 sm:p-6">
         <h2 className="h-section mb-2">Biography</h2>
         <p className="prose-anime whitespace-pre-line">{c.description || "No biography has been written for this character yet."}</p>
@@ -80,6 +97,7 @@ export default async function CharacterPage({ params }: Props) {
         title={`${c.name} FAQ`}
         items={[
           { q: `What anime is ${c.name} from?`, a: home ? `${c.name} is ${mains.length ? "a main character" : "a character"} in ${home.title}${apps.length > 1 ? ` and appears in ${apps.length} titles in total, including ${apps.slice(1, 3).map((a) => a.anime.title).join(" and ")}` : ""}.` : `${c.name}'s appearances have not been catalogued yet.` },
+          ...(voiced?.jp ? [{ q: `Who voices ${c.name}?`, a: `${c.name} is voiced by ${voiced.jp.name} in Japanese${voiced.en ? ` and by ${voiced.en.name} in the English dub` : ""}.` }] : []),
           ...(c.nameJp ? [{ q: `What is ${c.name}'s Japanese name?`, a: `${c.name} is written ${c.nameJp} in Japanese.` }] : []),
           { q: `Where can I watch ${c.name}?`, a: home ? `Open the ${home.title} page for licensed streaming links and the full episode list.` : "Streaming links are listed on each anime page." },
         ]}

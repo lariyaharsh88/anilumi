@@ -3,37 +3,11 @@
  * Pure helpers are unit-tested; fetchers fail soft and are cached (fetch cache + memo).
  */
 import { getAniListId } from "./kitsu";
+import { anilist, memoized } from "./anilist";
 
 export type StatusCount = { status: string; amount: number };
 export type AlTag = { name: string; rank: number; category: string; isAdult: boolean; isMediaSpoiler: boolean };
 export type AniListInsight = { genres: string[]; dist: StatusCount[]; tags: AlTag[]; anilistId: number; score: number | null; scoreVotes: number };
-
-async function anilist<T>(query: string, variables: Record<string, unknown>, revalidate: number): Promise<T | null> {
-  if (process.env.ANILIST_ENRICH === "0") return null;
-  try {
-    const res = await fetch("https://graphql.anilist.co", {
-      method: "POST",
-      headers: { "Content-Type": "application/json", Accept: "application/json" },
-      body: JSON.stringify({ query, variables }),
-      next: { revalidate },
-      signal: AbortSignal.timeout(Number(process.env.ANILIST_TIMEOUT_MS) || 5000),
-    });
-    if (!res.ok) return null;
-    const j = (await res.json()) as { data?: T };
-    return j.data ?? null;
-  } catch {
-    return null;
-  }
-}
-
-const memo = new Map<string, { v: unknown; exp: number }>();
-async function memoized<T>(key: string, ttlMs: number, fn: () => Promise<T | null>): Promise<T | null> {
-  const hit = memo.get(key);
-  if (hit && hit.exp > Date.now()) return hit.v as T;
-  const v = await fn();
-  if (v !== null) memo.set(key, { v, exp: Date.now() + ttlMs });
-  return v;
-}
 
 export async function getAniListInsight(kitsuId: string): Promise<AniListInsight | null> {
   const id = await getAniListId(kitsuId);

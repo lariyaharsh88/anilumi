@@ -1,7 +1,8 @@
 import type { MetadataRoute } from "next";
 import { abs } from "@/lib/site";
 import { WATCH_ORDER_OVERRIDES } from "@/data/watch-orders";
-import { listAnime, getCategories, seasonOf, shiftSeason, animePath, episodePath, getLastAiredBest, getCharacters, getProductions, primeAniList, comparePath, suggestComparePairs, TREND_GENRES } from "@/lib/kitsu";
+import { listAnime, getCategories, seasonOf, shiftSeason, animePath, episodePath, getLastAiredBest, getCharacters, getProductions, primeAniList, comparePath, suggestComparePairs, getAniListId, TREND_GENRES } from "@/lib/kitsu";
+import { mainCastVas, popularVoiceActors, vaPath } from "@/lib/anilist";
 
 export const revalidate = 86400;
 
@@ -19,6 +20,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: abs("/short-anime"), lastModified: now, changeFrequency: "weekly", priority: 0.7 },
     { url: abs("/how-long-to-watch"), lastModified: now, changeFrequency: "weekly", priority: 0.7 },
     { url: abs("/parents-guide"), lastModified: now, changeFrequency: "weekly", priority: 0.7 },
+    { url: abs("/upcoming-seasons"), lastModified: now, changeFrequency: "daily", priority: 0.8 },
+    { url: abs("/voice-actors"), lastModified: now, changeFrequency: "weekly", priority: 0.6 },
     ...[30, 60, 120, 180, 300, 600].map((m) => ({ url: abs(`/tonight${m !== 120 ? `?minutes=${m}` : ""}`), lastModified: now, changeFrequency: "weekly" as const, priority: 0.7 })),
     ...Array.from({ length: now.getFullYear() - 1999 }, (_, i) => ({ url: abs(`/best/${now.getFullYear() - i}`), lastModified: now, changeFrequency: (i === 0 ? "daily" : "monthly") as "daily" | "monthly", priority: i < 3 ? 0.8 : 0.5 })),
     { url: abs("/about"), lastModified: now, changeFrequency: "yearly", priority: 0.2 },
@@ -65,7 +68,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       if (seen.size <= 300) out.push({ url: abs(`/similar/${a.slug}`), lastModified: now, changeFrequency: "weekly", priority: 0.5 });
       if (seen.size <= 300 && a.status !== "upcoming" && a.status !== "tba" && a.status !== "unreleased") out.push({ url: abs(`${animePath(a)}/how-long-to-watch`), lastModified: now, changeFrequency: a.status === "current" ? "weekly" : "monthly", priority: 0.6 });
       if (seen.size <= 200) out.push({ url: abs(`${animePath(a)}/parents-guide`), lastModified: now, changeFrequency: "monthly", priority: 0.5 });
+      if (seen.size <= 300 && (a.subtype === "TV" || a.subtype === "ONA") && a.status !== "upcoming") out.push({ url: abs(`${animePath(a)}/next-season`), lastModified: now, changeFrequency: "daily", priority: 0.7 });
+      if (seen.size <= 300) out.push({ url: abs(`${animePath(a)}/cast`), lastModified: now, changeFrequency: "monthly", priority: 0.5 });
     }
+    // Voice actors: main casts of the 100 most popular titles (two batched AniList requests) plus the most followed.
+    const alIds = (await Promise.all(pages.slice(0, 5).flatMap((p) => p.items).map((a) => getAniListId(a.id)))).filter((x): x is number => x !== null);
+    const vas = new Map([...(await mainCastVas(alIds)), ...(await popularVoiceActors())].map((v) => [v.id, v]));
+    for (const v of vas.values()) out.push({ url: abs(vaPath(v)), lastModified: now, changeFrequency: "monthly", priority: 0.5 });
   } catch {
     /* upstream hiccup: ship the static part of the sitemap */
   }

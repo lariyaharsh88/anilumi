@@ -18,6 +18,7 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "media.kitsu.app" },
       { protocol: "https", hostname: "media.kitsu.io" },
       { protocol: "https", hostname: "img.youtube.com" },
+      { protocol: "https", hostname: "s4.anilist.co" },
     ],
   },
 };
