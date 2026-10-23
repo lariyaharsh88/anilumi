@@ -140,7 +140,7 @@ export async function getCast(kitsuId: string, perPage = 25): Promise<Cast | nul
       anilistId: id,
       total: c.pageInfo.total,
       entries: c.edges.map((e) => {
-        const vas = e.voiceActorRoles.map((r) => r.voiceActor).filter((v): v is AlVa => Boolean(v));
+        const vas = (e.voiceActorRoles || []).map((r) => r.voiceActor).filter((v): v is AlVa => Boolean(v));
         const jp = vas.find((v) => v.languageV2 === "Japanese");
         const en = vas.find((v) => v.languageV2 === "English");
         return {
@@ -155,19 +155,15 @@ export async function getCast(kitsuId: string, perPage = 25): Promise<Cast | nul
   });
 }
 
-/** Main-cast Japanese voice actors for many AniList ids in one request (sitemap). */
-export async function mainCastVas(anilistIds: number[]): Promise<Va[]> {
+/**
+ * Main-cast Japanese voice actors of several anime (sitemap). AniList returns null for voice actors
+ * inside batched Page queries, so this reuses each title's cast request (same cache as /cast pages).
+ */
+export async function mainCastVas(kitsuIds: string[]): Promise<Va[]> {
   const out = new Map<number, Va>();
-  for (let i = 0; i < anilistIds.length; i += 50) {
-    const d = await anilist<{ Page: { media: { characters: { edges: { voiceActorRoles: { voiceActor: AlVa | null }[] }[] } }[] } }>(
-      "query($ids:[Int]){Page(perPage:50){media(id_in:$ids,type:ANIME){characters(role:MAIN,perPage:6){edges{voiceActorRoles(sort:[RELEVANCE,ID]){voiceActor{id name{full native} image{medium} languageV2}}}}}}}",
-      { ids: anilistIds.slice(i, i + 50) },
-      86400,
-    );
-    for (const m of d?.Page.media || []) for (const e of m.characters.edges) {
-      const jp = e.voiceActorRoles.map((r) => r.voiceActor).find((v) => v?.languageV2 === "Japanese");
-      if (jp) out.set(jp.id, toVa(jp)!);
-    }
+  for (const id of kitsuIds) {
+    const cast = await getCast(id, 25);
+    for (const e of cast?.entries || []) if (e.role === "MAIN" && e.jp) out.set(e.jp.id, e.jp);
   }
   return [...out.values()];
 }

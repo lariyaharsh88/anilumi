@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { abs } from "@/lib/site";
 import { WATCH_ORDER_OVERRIDES } from "@/data/watch-orders";
-import { listAnime, getCategories, seasonOf, shiftSeason, animePath, episodePath, getLastAiredBest, getCharacters, getProductions, primeAniList, comparePath, suggestComparePairs, getAniListId, TREND_GENRES } from "@/lib/kitsu";
+import { listAnime, getCategories, seasonOf, shiftSeason, animePath, episodePath, getLastAiredBest, getCharacters, getProductions, primeAniList, comparePath, suggestComparePairs, TREND_GENRES } from "@/lib/kitsu";
 import { mainCastVas, popularVoiceActors, vaPath } from "@/lib/anilist";
 
 export const revalidate = 86400;
@@ -71,9 +71,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       if (seen.size <= 300 && (a.subtype === "TV" || a.subtype === "ONA") && a.status !== "upcoming") out.push({ url: abs(`${animePath(a)}/next-season`), lastModified: now, changeFrequency: "daily", priority: 0.7 });
       if (seen.size <= 300) out.push({ url: abs(`${animePath(a)}/cast`), lastModified: now, changeFrequency: "monthly", priority: 0.5 });
     }
-    // Voice actors: main casts of the 100 most popular titles (two batched AniList requests) plus the most followed.
-    const alIds = (await Promise.all(pages.slice(0, 5).flatMap((p) => p.items).map((a) => getAniListId(a.id)))).filter((x): x is number => x !== null);
-    const vas = new Map([...(await mainCastVas(alIds)), ...(await popularVoiceActors())].map((v) => [v.id, v]));
+    // Voice actors: main casts of the 25 most popular titles (one cached AniList request each) plus the most followed.
+    const vas = new Map([...(await mainCastVas(pages[0].items.concat(pages[1].items).slice(0, 25).map((a) => a.id))), ...(await popularVoiceActors())].map((v) => [v.id, v]));
     for (const v of vas.values()) out.push({ url: abs(vaPath(v)), lastModified: now, changeFrequency: "monthly", priority: 0.5 });
   } catch {
     /* upstream hiccup: ship the static part of the sitemap */
