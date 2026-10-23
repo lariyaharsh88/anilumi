@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { listAnime } from "@/lib/kitsu";
+import { listAnime, posterUrl } from "@/lib/kitsu";
 import AnimeGrid from "@/components/AnimeGrid";
-import Breadcrumbs from "@/components/Breadcrumbs";
+import PageHero from "@/components/PageHero";
 import Pagination from "@/components/Pagination";
 import Faq from "@/components/Faq";
 import AdSlot from "@/components/AdSlot";
@@ -43,11 +43,17 @@ export default async function BestOfYear({ params, searchParams }: Props) {
   const data = await listAnime({ filter: { seasonYear: year }, sort: SORTS[sortKey].sort, limit: LIMIT, offset: (page - 1) * LIMIT });
   const cur = y === new Date().getFullYear();
   return (
-    <div className="container-x py-8">
-      <Breadcrumbs items={[{ href: "/", label: "Home" }, { href: "/lists", label: "Lists" }, { href: `/best/${year}`, label: `Best of ${year}` }]} />
-      <h1 className="text-3xl font-extrabold tracking-tight">Best anime of {year}{cur ? " so far" : ""}</h1>
-      <p className="mt-2 max-w-2xl text-muted">{data.total} titles premiered in {year}. Ranked by {SORTS[sortKey].label.toLowerCase()}{cur ? ", updated hourly as the year goes on" : ""}.</p>
-      <div className="mt-4 flex flex-wrap gap-2">
+    <div className="container-x pb-8">
+      <PageHero
+        crumbs={[{ href: "/", label: "Home" }, { href: "/lists", label: "Lists" }, { href: `/best/${year}`, label: `Best of ${year}` }]}
+        eyebrow={`Year in review · ${year}`}
+        title={<>Best anime of <span className="text-gradient">{year}</span>{cur ? " so far" : ""}</>}
+        subtitle={`Ranked by ${SORTS[sortKey].label.toLowerCase()}${cur ? ", updated hourly as the year goes on" : ""}.`}
+        facts={[{ value: data.total.toLocaleString(), label: `titles premiered in ${year}` }]}
+        hue={40}
+        posters={data.items.slice(0, 3).map((x) => posterUrl(x, "medium"))}
+      >
+      <div className="flex flex-wrap gap-2">
         {Object.entries(SORTS).map(([k, v]) => (
           <Link key={k} href={`/best/${year}${k !== "rated" ? `?sort=${k}` : ""}`} className={`chip ${k === sortKey ? "chip-active" : ""}`}>{v.label}</Link>
         ))}
@@ -56,6 +62,7 @@ export default async function BestOfYear({ params, searchParams }: Props) {
           <Link key={yy} href={`/best/${yy}`} className={`chip ${yy === y ? "chip-active" : ""}`}>{yy}</Link>
         ))}
       </div>
+      </PageHero>
       <AdSlot slot="best-top" />
       <div className="mt-6"><AnimeGrid items={data.items} startRank={(page - 1) * LIMIT + 1} /></div>
       <Pagination page={page} total={Math.min(data.total, LIMIT * 25)} limit={LIMIT} base={`/best/${year}${sortKey !== "rated" ? `?sort=${sortKey}` : ""}`} />

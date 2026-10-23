@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getSeason, SEASONS, Season, cap, shiftSeason, seasonOf, countAnime, animePath } from "@/lib/kitsu";
+import { getSeason, SEASONS, Season, cap, shiftSeason, seasonOf, countAnime, animePath, posterUrl } from "@/lib/kitsu";
 import StatTiles from "@/components/viz/StatTiles";
 import StackedBar from "@/components/viz/StackedBar";
 import BarChart from "@/components/viz/BarChart";
 import AnimeGrid from "@/components/AnimeGrid";
-import Breadcrumbs from "@/components/Breadcrumbs";
+import PageHero from "@/components/PageHero";
 import Pagination from "@/components/Pagination";
 import Faq from "@/components/Faq";
 import AdSlot from "@/components/AdSlot";
@@ -66,12 +66,16 @@ export default async function SeasonPage({ params, searchParams }: Props) {
   const months: Record<Season, string> = { winter: "January to March", spring: "April to June", summer: "July to September", fall: "October to December" };
 
   return (
-    <div className="container-x py-8">
-      <Breadcrumbs items={[{ href: "/", label: "Home" }, { href: "/season", label: "Seasons" }, { href: `/season/${year}/${season}`, label: `${cap(season)} ${year}` }]} />
-      <h1 className="text-3xl font-extrabold tracking-tight">{cap(season)} {year} anime</h1>
-      <p className="mt-1 text-muted">{data.total} titles · {months[s]} · ranked by popularity</p>
-
-      <div className="mt-4 flex flex-wrap items-center gap-2">
+    <div className="container-x pb-8">
+      <PageHero
+        crumbs={[{ href: "/", label: "Home" }, { href: "/season", label: "Seasons" }, { href: `/season/${year}/${season}`, label: `${cap(season)} ${year}` }]}
+        eyebrow={`Seasonal chart · ${months[s]}`}
+        title={<><span className="text-gradient">{cap(season)} {year}</span> anime</>}
+        subtitle={`Every new series, sequel and film of the season, ranked by how many fans follow it.`}
+        hue={{ winter: 200, spring: 330, summer: 40, fall: 20 }[s]}
+        posters={data.items.slice(0, 3).map((x) => posterUrl(x, "medium"))}
+      >
+      <div className="flex flex-wrap items-center gap-2">
         <Link href={`/season/${prev.year}/${prev.season}`} className="chip">← {cap(prev.season)} {prev.year}</Link>
         {SEASONS.map((ss) => (
           <Link key={ss} href={`/season/${year}/${ss}`} className={`chip ${ss === s ? "chip-active" : ""}`}>{cap(ss)}</Link>
@@ -83,6 +87,7 @@ export default async function SeasonPage({ params, searchParams }: Props) {
           <Link key={yy} href={`/season/${yy}/${season}`} className={`chip ${yy === y ? "chip-active" : ""}`}>{yy}</Link>
         ))}
       </div>
+      </PageHero>
 
       {page === 1 && data.total > 0 && (
         <section className="mt-6 space-y-3" aria-label="Season at a glance">

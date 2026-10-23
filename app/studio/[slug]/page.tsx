@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getProducerBySlug, getStudioAnime } from "@/lib/kitsu";
+import { getProducerBySlug, getStudioAnime, posterUrl } from "@/lib/kitsu";
 import { abs } from "@/lib/site";
 import AnimeGrid from "@/components/AnimeGrid";
 import AnimeRail from "@/components/AnimeRail";
-import Breadcrumbs from "@/components/Breadcrumbs";
+import PageHero from "@/components/PageHero";
 import JsonLd from "@/components/JsonLd";
 import Faq from "@/components/Faq";
 import AdSlot from "@/components/AdSlot";
@@ -42,12 +42,18 @@ export default async function StudioPage({ params }: Props) {
   const busiest = [...byYear.entries()].sort((x, y) => y[1] - x[1])[0];
   const ld = { "@context": "https://schema.org", "@type": "Organization", name: p.name, url: abs(`/studio/${p.slug}`) };
   return (
-    <div className="container-x py-8">
+    <div className="container-x pb-8">
       <JsonLd data={ld} />
-      <Breadcrumbs items={[{ href: "/", label: "Home" }, { href: `/studio/${p.slug}`, label: p.name }]} />
-      <h1 className="text-3xl font-extrabold tracking-tight">{p.name} anime</h1>
-      <p className="mt-2 max-w-2xl text-muted">{total} titles credited to {p.name} as animation studio on Kitsu. Showing the {items.length} most followed.</p>
-      <section className="mt-6 space-y-3" aria-label="Studio at a glance">
+      <PageHero
+        crumbs={[{ href: "/", label: "Home" }, { href: `/studio/${p.slug}`, label: p.name }]}
+        eyebrow="Animation studio"
+        title={<><span className="text-gradient">{p.name}</span> anime</>}
+        subtitle={`${total} titles credited to ${p.name} as animation studio on Kitsu. Showing the ${items.length} most followed.`}
+        hue={220}
+        backdrop={items[0]?.cover?.large || null}
+        posters={(rated.length >= 3 ? rated : items).slice(0, 3).map((x) => posterUrl(x, "medium"))}
+      />
+      <section className="reveal mt-8 space-y-3" aria-label="Studio at a glance">
         <StatTiles
           stats={[
             { label: "Titles credited", value: total.toLocaleString(), sub: "as animation studio" },

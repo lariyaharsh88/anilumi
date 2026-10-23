@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { listAnime, getCategories } from "@/lib/kitsu";
+import { listAnime, getCategories, posterUrl } from "@/lib/kitsu";
 import AnimeGrid from "@/components/AnimeGrid";
-import Breadcrumbs from "@/components/Breadcrumbs";
+import PageHero from "@/components/PageHero";
 import Pagination from "@/components/Pagination";
 import Faq from "@/components/Faq";
 import AdSlot from "@/components/AdSlot";
@@ -34,16 +34,22 @@ export default async function ShortAnime({ searchParams }: Props) {
   const base = `/short-anime${[genre ? `genre=${genre}` : "", m !== 13 ? `max=${m}` : ""].filter(Boolean).length ? `?${[genre ? `genre=${genre}` : "", m !== 13 ? `max=${m}` : ""].filter(Boolean).join("&")}` : ""}`;
   const gTitle = genre ? genres.find((x) => x.slug === genre)?.title || genre : null;
   return (
-    <div className="container-x py-8">
-      <Breadcrumbs items={[{ href: "/", label: "Home" }, { href: "/lists", label: "Lists" }, { href: "/short-anime", label: "Short anime" }]} />
-      <h1 className="text-3xl font-extrabold tracking-tight">Best short{gTitle ? ` ${gTitle.toLowerCase()}` : ""} anime · {m} episodes or less</h1>
-      <p className="mt-2 max-w-2xl text-muted">Complete TV series only, so every pick has an ending. Ranked by community score. Roughly {Math.round((m * 24) / 60)} hours or less per show.</p>
-      <div className="mt-4 flex flex-wrap gap-2">
+    <div className="container-x pb-8">
+      <PageHero
+        crumbs={[{ href: "/", label: "Home" }, { href: "/lists", label: "Lists" }, { href: "/short-anime", label: "Short anime" }]}
+        eyebrow="Weekend binges"
+        title={<>Best short{gTitle ? ` ${gTitle.toLowerCase()}` : ""} anime, <span className="text-gradient">{m} episodes or less</span></>}
+        subtitle={`Complete TV series only, so every pick has an ending. Ranked by community score. Roughly ${Math.round((m * 24) / 60)} hours or less per show.`}
+        hue={190}
+        posters={data.items.slice(0, 3).map((x) => posterUrl(x, "medium"))}
+      >
+      <div className="flex flex-wrap gap-2">
         {MAXES.map((x) => <Link key={x} href={`/short-anime?${[genre ? `genre=${genre}` : "", x !== 13 ? `max=${x}` : ""].filter(Boolean).join("&")}`} className={`chip ${x === m ? "chip-active" : ""}`}>≤ {x} ep</Link>)}
         <span className="mx-2 text-muted">·</span>
         <Link href={`/short-anime${m !== 13 ? `?max=${m}` : ""}`} className={`chip ${!genre ? "chip-active" : ""}`}>All genres</Link>
         {genres.map((g) => <Link key={g.id} href={`/short-anime?genre=${g.slug}${m !== 13 ? `&max=${m}` : ""}`} className={`chip ${g.slug === genre ? "chip-active" : ""}`}>{g.title}</Link>)}
       </div>
+      </PageHero>
       <AdSlot slot="short-top" />
       <div className="mt-6"><AnimeGrid items={data.items} startRank={(page - 1) * LIMIT + 1} /></div>
       <Pagination page={page} total={Math.min(data.total, LIMIT * 25)} limit={LIMIT} base={base} />

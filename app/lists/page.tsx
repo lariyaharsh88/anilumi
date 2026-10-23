@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { getTrending, getCategories } from "@/lib/kitsu";
-import Breadcrumbs from "@/components/Breadcrumbs";
+import { getTrending, getCategories, posterUrl } from "@/lib/kitsu";
+import PageHero from "@/components/PageHero";
 
 export const revalidate = 86400;
 export const metadata: Metadata = {
@@ -15,42 +15,60 @@ export default async function Lists() {
   const [trending, genres] = await Promise.all([getTrending(12), getCategories(10)]);
   const years = Array.from({ length: y - 1999 }, (_, i) => y - i);
   return (
-    <div className="container-x py-8">
-      <Breadcrumbs items={[{ href: "/", label: "Home" }, { href: "/lists", label: "Lists" }]} />
-      <h1 className="text-3xl font-extrabold tracking-tight">Anime lists</h1>
-      <p className="mt-2 max-w-2xl text-muted">Generated from live data, refreshed daily. No one&apos;s opinion, just what fans actually rate and watch.</p>
-      <section className="mt-8">
-        <h2 className="h-section mb-3">Genre trends</h2>
-        <p className="text-sm text-muted"><Link href="/trends" className="text-violet hover:underline">Which genres are growing and shrinking →</Link> year-by-year shares since 2000, e.g. <Link href="/trends/isekai" className="text-violet hover:underline">the rise of isekai</Link>.</p>
-      </section>
-      <section className="mt-8">
-        <h2 className="h-section mb-3">Compare two anime</h2>
-        <p className="text-sm text-muted"><Link href="/compare" className="text-violet hover:underline">Put any two anime side by side →</Link> scores, rating breakdowns, runtime and shared genres.</p>
-      </section>
-      <section className="mt-8">
+    <div className="container-x pb-8">
+      <PageHero
+        crumbs={[{ href: "/", label: "Home" }, { href: "/lists", label: "Lists" }]}
+        eyebrow="Curated by data"
+        title={<>Anime <span className="text-gradient">lists</span></>}
+        subtitle="Generated from live data and refreshed daily. No one's opinion, just what fans actually rate and watch."
+        hue={190}
+        posters={trending.slice(0, 3).map((a) => posterUrl(a, "medium"))}
+      />
+
+      <ul className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        {[
+          { href: "/tonight", icon: "🌙", t: "What to watch tonight", d: "Pick your free time; get complete shows that fit." },
+          { href: "/compare", icon: "⚔️", t: "Compare two anime", d: "Scores, rating breakdowns, runtime and genres side by side." },
+          { href: "/trends", icon: "📈", t: "Genre trends", d: "Which genres are growing and shrinking since 2000." },
+          { href: "/short-anime", icon: "⏱️", t: "Short anime", d: "Complete series you can finish in a weekend." },
+          { href: `/best/${y}`, icon: "🏆", t: `Best of ${y}`, d: "This year's top rated and most popular." },
+          { href: "/watch-order", icon: "🧭", t: "Watch orders", d: "Every franchise in the right order, recaps flagged." },
+        ].map((c, i) => (
+          <li key={c.href} className="reveal">
+            <Link href={c.href} className="genre-tile card group flex h-full gap-3 p-4 transition duration-300 hover:-translate-y-0.5 hover:border-white/20" style={{ ["--h" as string]: String([262, 350, 190, 140, 40, 300][i]) }}>
+              <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-white/5 text-xl" aria-hidden>{c.icon}</span>
+              <span className="min-w-0">
+                <span className="block font-semibold text-ink group-hover:text-violet-2">{c.t}</span>
+                <span className="mt-0.5 block text-sm text-muted">{c.d}</span>
+              </span>
+            </Link>
+          </li>
+        ))}
+      </ul>
+
+      <section className="reveal mt-12">
         <h2 className="h-section mb-3">Finish it tonight</h2>
         <div className="flex flex-wrap gap-2">
           {[[30, "in 30 minutes"], [60, "in an hour"], [120, "in 2 hours"], [180, "in 3 hours"], [300, "in 5 hours"], [600, "in a day"]].map(([m, t]) => (
-            <Link key={m} href={`/tonight${m !== 120 ? `?minutes=${m}` : ""}`} className="chip">Anime you can finish {t}</Link>
+            <Link key={m} href={`/tonight${m !== 120 ? `?minutes=${m}` : ""}`} className="chip">Finish {t}</Link>
           ))}
         </div>
       </section>
-      <section className="mt-8">
+      <section className="reveal mt-10">
         <h2 className="h-section mb-3">Best anime by year</h2>
-        <div className="flex flex-wrap gap-2">{years.map((yy) => <Link key={yy} href={`/best/${yy}`} className="chip">{yy}</Link>)}</div>
+        <div className="flex flex-wrap gap-2">{years.map((yy) => <Link key={yy} href={`/best/${yy}`} className="chip tabular-nums">{yy}</Link>)}</div>
       </section>
-      <section className="mt-8">
-        <h2 className="h-section mb-3">Short anime you can finish in a weekend</h2>
+      <section className="reveal mt-10">
+        <h2 className="h-section mb-3">Short anime by genre</h2>
         <div className="flex flex-wrap gap-2">
           <Link href="/short-anime" className="chip chip-active">All genres · ≤ 13 ep</Link>
           {genres.map((g) => <Link key={g.id} href={`/short-anime?genre=${g.slug}`} className="chip">Short {g.title.toLowerCase()}</Link>)}
           <Link href="/short-anime?max=26" className="chip">≤ 26 episodes</Link>
         </div>
       </section>
-      <section className="mt-8">
+      <section className="reveal mt-10">
         <h2 className="h-section mb-3">What to watch next</h2>
         <div className="flex flex-wrap gap-2">{trending.map((a) => <Link key={a.id} href={`/similar/${a.slug}`} className="chip">Anime like {a.title}</Link>)}</div>
-        <p className="mt-2 text-sm text-muted">Every anime page links to its own “more like this” list.</p>
       </section>
     </div>
   );

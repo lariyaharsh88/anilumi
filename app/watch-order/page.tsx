@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { listAnime, animePath, getRelations, uniqueById } from "@/lib/kitsu";
+import { listAnime, animePath, getRelations, uniqueById, posterUrl } from "@/lib/kitsu";
 import { WATCH_ORDER_OVERRIDES } from "@/data/watch-orders";
-import AnimeGrid from "@/components/AnimeGrid";
-import Breadcrumbs from "@/components/Breadcrumbs";
+import PageHero from "@/components/PageHero";
+import Image from "next/image";
 
 export const revalidate = 86400;
 export const metadata: Metadata = {
@@ -19,26 +19,46 @@ export default async function WatchOrderIndex() {
   // Only franchise starting points: drop entries that have a prequel on record.
   const items = candidates.filter((_, i) => !rels[i].some((r) => r.role === "prequel")).slice(0, 24);
   return (
-    <div className="container-x py-8">
-      <Breadcrumbs items={[{ href: "/", label: "Home" }, { href: "/watch-order", label: "Watch orders" }]} />
-      <h1 className="text-3xl font-extrabold tracking-tight">Anime watch orders</h1>
-      <p className="mt-2 max-w-2xl text-muted">Pick a franchise. We assemble seasons, movies, OVAs and spin-offs into one list, flag the recaps you can skip, and total the runtime.</p>
-      <ul className="mt-6 flex flex-wrap gap-2">
-        {items.map((a) => (
-          <li key={a.id}><Link href={`/watch-order/${a.slug}`} className="chip">{a.title} →</Link></li>
-        ))}
-      </ul>
-      <h2 className="h-section mt-10 mb-3">Guides with editor notes</h2>
-      <ul className="flex flex-wrap gap-2">
-        {Object.entries(WATCH_ORDER_OVERRIDES)
-          .sort(([, a], [, b]) => (a.label || "").localeCompare(b.label || ""))
-          .map(([slug, o]) => (
-            <li key={slug}><Link href={`/watch-order/${slug}`} className="chip">{o.label || slug.replace(/-/g, " ")}</Link></li>
+    <div className="container-x pb-8">
+      <PageHero
+        crumbs={[{ href: "/", label: "Home" }, { href: "/watch-order", label: "Watch orders" }]}
+        eyebrow="Franchise guides"
+        title={<>Anime <span className="text-gradient">watch orders</span></>}
+        subtitle="Pick a franchise. We assemble seasons, movies, OVAs and spin-offs into one list, flag the recaps you can skip, and total the runtime."
+        facts={[{ value: String(Object.keys(WATCH_ORDER_OVERRIDES).length), label: "guides with editor notes" }, { value: String(items.length), label: "popular franchises" }]}
+        hue={262}
+        posters={items.slice(0, 3).map((a) => posterUrl(a, "medium"))}
+      />
+
+      <section className="reveal mt-10">
+        <h2 className="h-section mb-3">Most popular franchises</h2>
+        <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {items.map((a) => (
+            <li key={a.id}>
+              <Link href={`/watch-order/${a.slug}`} className="card group flex items-center gap-3 p-2.5 transition duration-300 hover:-translate-y-0.5 hover:border-violet/60">
+                <span className="relative h-16 w-11 shrink-0 overflow-hidden rounded-md bg-bg-2">{posterUrl(a, "small") && <Image src={posterUrl(a, "small")!} alt="" fill sizes="44px" className="object-cover" />}</span>
+                <span className="min-w-0 flex-1">
+                  <span className="block truncate font-semibold group-hover:text-violet-2">{a.title}</span>
+                  <span className="text-xs text-muted">{a.startDate?.slice(0, 4)}{a.rating ? ` · ★ ${(a.rating / 10).toFixed(1)}` : ""}</span>
+                </span>
+                <span className="text-muted transition group-hover:translate-x-0.5 group-hover:text-ink" aria-hidden>→</span>
+              </Link>
+            </li>
           ))}
-      </ul>
-      <h2 className="h-section mt-10 mb-3">Most popular franchises</h2>
-      <AnimeGrid items={items} />
-      <p className="mt-4 text-sm text-muted">Any title has a watch order: open it and press “Watch order”, or go to <code className="text-ink">/watch-order/&lt;slug&gt;</code>. Example: <Link href={animePath({ slug: "naruto" })} className="text-violet">Naruto</Link>.</p>
+        </ul>
+      </section>
+
+      <section className="reveal mt-12">
+        <h2 className="h-section mb-3">Guides with editor notes</h2>
+        <ul className="flex flex-wrap gap-2">
+          {Object.entries(WATCH_ORDER_OVERRIDES)
+            .sort(([, x], [, y]) => (x.label || "").localeCompare(y.label || ""))
+            .map(([slug, o]) => (
+              <li key={slug}><Link href={`/watch-order/${slug}`} className="chip">{o.label || slug.replace(/-/g, " ")}</Link></li>
+            ))}
+        </ul>
+        <p className="mt-4 text-sm text-muted">Any title has a watch order: open it and press “Watch order”. Example: <Link href={animePath({ slug: "naruto" })} className="text-violet">Naruto</Link>.</p>
+      </section>
     </div>
   );
 }

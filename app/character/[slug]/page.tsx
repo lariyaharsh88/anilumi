@@ -4,7 +4,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getCharacterBySlug, getCharacterAppearances, animePath, posterUrl, subtypeLabel } from "@/lib/kitsu";
 import { abs } from "@/lib/site";
-import Breadcrumbs from "@/components/Breadcrumbs";
+import PageHero from "@/components/PageHero";
 import JsonLd from "@/components/JsonLd";
 import Faq from "@/components/Faq";
 import AdSlot from "@/components/AdSlot";
@@ -35,18 +35,28 @@ export default async function CharacterPage({ params }: Props) {
   const home = mains[0]?.anime || apps[0]?.anime;
   const ld = { "@context": "https://schema.org", "@type": "Person", name: c.name, alternateName: c.nameJp || undefined, image: c.image || undefined, description: c.description || undefined, url: abs(`/character/${c.slug}`) };
   return (
-    <article className="container-x py-8">
+    <article className="container-x pb-8">
       <JsonLd data={ld} />
-      <Breadcrumbs items={[{ href: "/", label: "Home" }, ...(home ? [{ href: animePath(home), label: home.title }] : []), { href: `/character/${c.slug}`, label: c.name }]} />
-      <div className="flex flex-col gap-6 sm:flex-row">
-        <div className="relative aspect-[5/6] w-44 shrink-0 overflow-hidden rounded-xl border border-line bg-bg-2 sm:w-56">{c.image && <Image src={c.image} alt={c.name} fill sizes="224px" className="object-cover" priority />}</div>
-        <div className="min-w-0 flex-1">
-          <h1 className="text-3xl font-extrabold tracking-tight sm:text-4xl">{c.name}</h1>
-          {c.nameJp && <p className="mt-1 text-muted">{c.nameJp}</p>}
-          {home && <p className="mt-2 text-sm text-muted">{mains.length ? "Main character in" : "Appears in"} <Link href={animePath(home)} className="text-violet hover:underline">{home.title}</Link>{apps.length > 1 ? ` and ${apps.length - 1} more` : ""}</p>}
-          <p className="prose-anime mt-4 whitespace-pre-line">{c.description || "No biography has been written for this character yet."}</p>
-        </div>
-      </div>
+      <PageHero
+        crumbs={[{ href: "/", label: "Home" }, ...(home ? [{ href: animePath(home), label: home.title }] : []), { href: `/character/${c.slug}`, label: c.name }]}
+        eyebrow={mains.length ? "Main character" : "Character"}
+        title={<>{c.name}{c.nameJp && <span className="mt-1 block text-lg font-semibold text-ink/60 sm:text-xl">{c.nameJp}</span>}</>}
+        subtitle={home ? <>{mains.length ? "Main character in" : "Appears in"} <Link href={animePath(home)} className="font-semibold text-violet-2 hover:underline">{home.title}</Link>{apps.length > 1 ? ` and ${apps.length - 1} more` : ""}.</> : undefined}
+        facts={apps.length ? [{ value: String(apps.length), label: apps.length === 1 ? "appearance" : "appearances" }, { value: String(mains.length), label: "main roles" }] : undefined}
+        hue={300}
+        backdrop={home?.cover?.large || null}
+        posters={[c.image]}
+      >
+        {c.image && (
+          <div className="relative -mt-1 aspect-[5/6] w-36 overflow-hidden rounded-2xl border border-white/15 shadow-2xl lg:hidden">
+            <Image src={c.image} alt={c.name} fill sizes="144px" className="object-cover" priority />
+          </div>
+        )}
+      </PageHero>
+      <section className="card reveal mt-8 max-w-4xl p-5 sm:p-6">
+        <h2 className="h-section mb-2">Biography</h2>
+        <p className="prose-anime whitespace-pre-line">{c.description || "No biography has been written for this character yet."}</p>
+      </section>
       <AdSlot slot="character-mid" />
       {apps.length > 0 && (
         <section className="mt-10">

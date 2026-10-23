@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { listAnime, ListOpts } from "@/lib/kitsu";
+import { listAnime, ListOpts, posterUrl } from "@/lib/kitsu";
 import AnimeGrid from "@/components/AnimeGrid";
-import Breadcrumbs from "@/components/Breadcrumbs";
+import PageHero from "@/components/PageHero";
 import Pagination from "@/components/Pagination";
 import Faq from "@/components/Faq";
 import AdSlot from "@/components/AdSlot";
@@ -42,15 +42,21 @@ export default async function TopPage({ params, searchParams }: Props) {
   const data = await listAnime({ ...def.opts, limit: LIMIT, offset: (page - 1) * LIMIT });
 
   return (
-    <div className="container-x py-8">
-      <Breadcrumbs items={[{ href: "/", label: "Home" }, { href: `/top/${list}`, label: def.h1 }]} />
-      <h1 className="text-3xl font-extrabold tracking-tight">{def.h1}</h1>
-      <p className="mt-2 max-w-2xl text-muted">{def.intro}</p>
-      <div className="mt-4 flex flex-wrap gap-2">
-        {Object.entries(LISTS).map(([k, v]) => (
-          <Link key={k} href={`/top/${k}`} className={`chip ${k === list ? "chip-active" : ""}`}>{v.h1}</Link>
-        ))}
-      </div>
+    <div className="container-x pb-8">
+      <PageHero
+        crumbs={[{ href: "/", label: "Home" }, { href: `/top/${list}`, label: def.h1 }]}
+        eyebrow="Rankings · refreshed hourly"
+        title={def.h1}
+        subtitle={def.intro}
+        hue={40}
+        posters={data.items.slice(0, 3).map((x) => posterUrl(x, "medium"))}
+      >
+        <div className="flex flex-wrap gap-2">
+          {Object.entries(LISTS).map(([k, v]) => (
+            <Link key={k} href={`/top/${k}`} className={`chip ${k === list ? "chip-active" : ""}`}>{v.h1}</Link>
+          ))}
+        </div>
+      </PageHero>
       <AdSlot slot="top-top" />
       <div className="mt-6">
         <AnimeGrid items={data.items} startRank={(page - 1) * LIMIT + 1} />

@@ -8,7 +8,7 @@ import AiringNoticeBanner from "@/components/AiringNoticeBanner";
 import SpoilerGate from "@/components/SpoilerGate";
 import FillerToggle from "@/components/FillerToggle";
 import { fillerFor } from "@/lib/filler";
-import Breadcrumbs from "@/components/Breadcrumbs";
+import PageHero from "@/components/PageHero";
 import Pagination from "@/components/Pagination";
 import AdSlot from "@/components/AdSlot";
 
@@ -42,10 +42,21 @@ export default async function EpisodesPage({ params, searchParams }: Props) {
   const nextN = a.status === "current" && a.nextRelease && reliable ? lastAired + 1 : null;
 
   return (
-    <div className="container-x py-8">
-      <Breadcrumbs items={[{ href: "/", label: "Home" }, { href: animePath(a), label: a.title }, { href: `${animePath(a)}/episodes`, label: "Episodes" }]} />
-      <h1 className="text-3xl font-extrabold tracking-tight">{a.title} episodes</h1>
-      <p className="mt-1 text-muted">{eps.total ? `${eps.total} episodes` : "Episode list"}{a.nextRelease ? ` · next episode ${fmtDate(a.nextRelease, { weekday: "short", month: "short", day: "numeric" })}` : ""}</p>
+    <div className="container-x pb-8">
+      <PageHero
+        crumbs={[{ href: "/", label: "Home" }, { href: animePath(a), label: a.title }, { href: `${animePath(a)}/episodes`, label: "Episodes" }]}
+        eyebrow="Episode guide"
+        title={<>{a.title} <span className="text-gradient">episodes</span></>}
+        subtitle={`${eps.total ? `${eps.total} episodes` : "Episode list"}${a.nextRelease ? ` · next episode ${fmtDate(a.nextRelease, { weekday: "short", month: "short", day: "numeric" })}` : ""}`}
+        facts={[
+          ...(eps.total ? [{ value: String(eps.total), label: "episodes listed" }] : []),
+          ...(a.status === "current" && lastAired ? [{ value: String(lastAired), label: "aired so far" }] : []),
+          ...(fill ? [{ value: String(fill.filler.size), label: "filler to skip" }] : []),
+        ]}
+        hue={350}
+        backdrop={a.cover?.large || null}
+        posters={[posterUrl(a, "medium")]}
+      />
       {a.status === "current" && a.nextRelease && page === 1 && (
         nextN ? (
           <Link href={episodePath(a, nextN)} className="card mt-5 flex flex-wrap items-center justify-between gap-3 border-accent/40 bg-accent/10 p-4 transition hover:border-accent">

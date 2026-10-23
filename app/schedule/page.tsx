@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { listAnime, Anime, posterUrl, fmtDate, weekdayOf, uniqueById, seasonOf, getWeekBroadcasts, aniListNextFor } from "@/lib/kitsu";
 import AiringHeatmap from "@/components/viz/AiringHeatmap";
-import Breadcrumbs from "@/components/Breadcrumbs";
+import PageHero from "@/components/PageHero";
 import Faq from "@/components/Faq";
 import AdSlot from "@/components/AdSlot";
 import ScheduleBoard, { BoardDay, BoardItem } from "@/components/ScheduleBoard";
@@ -52,11 +52,21 @@ export default async function SchedulePage() {
   }));
 
   return (
-    <div className="container-x py-8">
-      <Breadcrumbs items={[{ href: "/", label: "Home" }, { href: "/schedule", label: "Schedule" }]} />
-      <h1 className="text-3xl font-extrabold tracking-tight">Anime airing this week</h1>
-      <p className="mt-2 max-w-2xl text-muted">Next-episode times for the {all.length} most-followed series currently airing, grouped by day in Japan Standard Time, with your local time alongside. Today is {todayJst} in Tokyo. Save shows to your list to filter the week down to what you watch.</p>
-      <div className="mt-5">
+    <div className="container-x pb-8">
+      <PageHero
+        crumbs={[{ href: "/", label: "Home" }, { href: "/schedule", label: "Schedule" }]}
+        eyebrow={<><span className="live-dot mr-2 inline-block align-middle" aria-hidden />Live · {todayJst} in Tokyo</>}
+        title={<>Anime airing <span className="text-gradient">this week</span></>}
+        subtitle={`Next-episode times for the ${all.length} most-followed series currently airing, grouped by day in Japan Standard Time, with your local time alongside. Save shows to your list to filter the week down to what you watch.`}
+        facts={[
+          { value: String(days.reduce((n, d) => n + d.items.length, 0)), label: "episodes this week" },
+          { value: String(days[0].items.length), label: "airing today" },
+          { value: days.reduce((x, y) => (y.items.length > x.items.length ? y : x)).day.slice(0, 3), label: "busiest day" },
+        ]}
+        hue={350}
+        posters={days.flatMap((d) => d.items).sort((x, y) => y.userCount - x.userCount).slice(0, 3).map((x) => x.poster)}
+      />
+      <div className="reveal mt-8">
         <BarChart
           title="Episodes this week"
           subtitle={`Followed series airing each day (JST), starting today · ${days.reduce((n, d) => n + d.items.length, 0)} in total`}

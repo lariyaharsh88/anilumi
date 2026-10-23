@@ -4,7 +4,7 @@ import { abs } from "@/lib/site";
 
 export default function Breadcrumbs({ items }: { items: { href: string; label: string }[] }) {
   return (
-    <nav aria-label="Breadcrumb" className="mb-4 text-xs text-muted">
+    <nav aria-label="Breadcrumb" className="mb-3 text-xs text-muted">
       <JsonLd
         data={{
           "@context": "https://schema.org",

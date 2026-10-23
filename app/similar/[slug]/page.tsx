@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getAnimeBySlug, listAnime, uniqueById, animePath, Anime } from "@/lib/kitsu";
+import { getAnimeBySlug, listAnime, uniqueById, animePath, Anime, posterUrl } from "@/lib/kitsu";
 import AnimeGrid from "@/components/AnimeGrid";
-import Breadcrumbs from "@/components/Breadcrumbs";
+import PageHero from "@/components/PageHero";
 import Faq from "@/components/Faq";
 import AdSlot from "@/components/AdSlot";
 
@@ -45,11 +45,18 @@ export default async function SimilarPage({ params }: Props) {
   if (!a) notFound();
   const items = await similarTo(a);
   return (
-    <div className="container-x py-8">
-      <Breadcrumbs items={[{ href: "/", label: "Home" }, { href: animePath(a), label: a.title }, { href: `/similar/${a.slug}`, label: "Similar anime" }]} />
-      <h1 className="text-3xl font-extrabold tracking-tight">Anime like {a.title}</h1>
-      <p className="mt-2 max-w-2xl text-muted">Matched on {a.categories.slice(0, 4).map((c) => c.title).join(", ")}. Titles that share more of these tags rank higher; ties go to the more popular show.</p>
-      <div className="mt-3 flex flex-wrap gap-2">{a.categories.slice(0, 6).map((c) => <Link key={c.id} href={`/genre/${c.slug}`} className="chip">{c.title}</Link>)}</div>
+    <div className="container-x pb-8">
+      <PageHero
+        crumbs={[{ href: "/", label: "Home" }, { href: animePath(a), label: a.title }, { href: `/similar/${a.slug}`, label: "Similar anime" }]}
+        eyebrow="What to watch next"
+        title={<>Anime like <span className="text-gradient">{a.title}</span></>}
+        subtitle={`Matched on ${a.categories.slice(0, 4).map((c) => c.title).join(", ")}. Titles that share more of these tags rank higher; ties go to the more popular show.`}
+        hue={262}
+        backdrop={a.cover?.large || null}
+        posters={[posterUrl(a, "medium"), ...items.slice(0, 2).map((x) => posterUrl(x, "medium"))]}
+      >
+        <div className="flex flex-wrap gap-2">{a.categories.slice(0, 6).map((c) => <Link key={c.id} href={`/genre/${c.slug}`} className="chip">{c.title}</Link>)}</div>
+      </PageHero>
       <AdSlot slot="similar-top" />
       <div className="mt-6"><AnimeGrid items={items} startRank={1} emptyText="Not enough genre data to find matches yet." /></div>
       <Faq

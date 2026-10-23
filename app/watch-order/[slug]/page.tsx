@@ -4,7 +4,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getAnimeBySlug, buildWatchOrder, animePath, posterUrl, fmtMinutes, runtimeMinutes, subtypeLabel, WatchEntry } from "@/lib/kitsu";
 import { abs } from "@/lib/site";
-import Breadcrumbs from "@/components/Breadcrumbs";
+import PageHero from "@/components/PageHero";
 import JsonLd from "@/components/JsonLd";
 import Faq from "@/components/Faq";
 import AdSlot from "@/components/AdSlot";
@@ -57,15 +57,21 @@ export default async function WatchOrderPage({ params }: Props) {
   };
 
   return (
-    <div className="container-x py-8">
+    <div className="container-x pb-8">
       <JsonLd data={ld} />
-      <Breadcrumbs items={[{ href: "/", label: "Home" }, { href: animePath(a), label: a.title }, { href: `/watch-order/${a.slug}`, label: "Watch order" }]} />
-      <h1 className="text-3xl font-extrabold tracking-tight sm:text-4xl">{name} watch order</h1>
-      <p className="mt-2 max-w-2xl text-muted">
+      <PageHero
+        crumbs={[{ href: "/", label: "Home" }, { href: animePath(a), label: a.title }, { href: `/watch-order/${a.slug}`, label: "Watch order" }]}
+        eyebrow="🧭 Watch order guide"
+        title={<>{name} <span className="text-gradient">watch order</span></>}
+        hue={262}
+        backdrop={a.cover?.large || null}
+        posters={required.slice(0, 3).map((e) => posterUrl(e.anime, "medium"))}
+        subtitle={<>
         {wo.entries.length === 1
           ? `${name} is a standalone title with no sequels, prequels or spin-offs on record. Just start with it.`
           : `${wo.mainCount} core ${wo.mainCount === 1 ? "entry" : "entries"}, ${wo.entries.length - wo.mainCount} ${wo.entries.length - wo.mainCount === 1 ? "extra" : "extras"}. Watching only the core story and movies takes about ${fmtMinutes(wo.totalMinutes)}. Generated from the franchise graph, so it updates when new seasons are announced.`}
-      </p>
+      </>}
+      />
 
       {wo.intro && (
         <div className="card mt-5 border-violet/40 bg-violet/10 p-4">

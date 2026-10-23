@@ -4,7 +4,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getAnimeBySlug, getEpisodeByNumber, getLastAiredBest, airingNotice, type AiringNotice, animePath, episodePath, fmtDate, isFuture, posterUrl, weekdayOf, Episode } from "@/lib/kitsu";
 import { site, abs } from "@/lib/site";
-import Breadcrumbs from "@/components/Breadcrumbs";
+import PageHero from "@/components/PageHero";
 import JsonLd from "@/components/JsonLd";
 import Faq from "@/components/Faq";
 import Countdown from "@/components/Countdown";
@@ -83,17 +83,21 @@ export default async function EpisodePage({ params }: Props) {
   ];
 
   return (
-    <article className="container-x py-8">
+    <article className="container-x pb-8">
       <JsonLd data={ld} />
-      <Breadcrumbs items={[{ href: "/", label: "Home" }, { href: animePath(a), label: a.title }, { href: `${animePath(a)}/episodes`, label: "Episodes" }, { href: episodePath(a, n), label: `Episode ${n}` }]} />
-      <div className="grid gap-6 md:grid-cols-[1fr_280px]">
-        <div className="min-w-0">
-          <p className="text-xs font-semibold uppercase tracking-wider text-accent">{a.title} · Episode {n}{isNext ? " · Next episode" : ""}</p>
-          <h1 className="mt-1 text-3xl font-extrabold tracking-tight sm:text-4xl">{episode.title ? <SpoilerGate inline animeId={a.id} ep={n} safeDocTitle={`${a.title} Episode ${n} | ${site.name}`}>{episode.title}</SpoilerGate> : `${a.title} Episode ${n}`}</h1>
-          <p className="mt-2 text-muted">
+      <PageHero
+        crumbs={[{ href: "/", label: "Home" }, { href: animePath(a), label: a.title }, { href: `${animePath(a)}/episodes`, label: "Episodes" }, { href: episodePath(a, n), label: `Episode ${n}` }]}
+        eyebrow={<>{a.title} · Episode {n}{isNext ? " · Next episode" : ""}</>}
+        title={episode.title ? <SpoilerGate inline animeId={a.id} ep={n} safeDocTitle={`${a.title} Episode ${n} | ${site.name}`}>{episode.title}</SpoilerGate> : `${a.title} Episode ${n}`}
+        subtitle={<p>
             {when ? <>{upcoming ? "Airs" : "Aired"} {when}{whenTime ? ` · ${whenTime} JST` : ""}{airIso && airIso.length > 10 && <LocalTime iso={airIso} />}</> : "Release date not announced yet"}
             {episode.length ? ` · ${episode.length} min` : ""}
-          </p>
+          </p>}
+        hue={upcoming ? 350 : 262}
+        backdrop={a.cover?.large || null}
+      />
+      <div className="mt-8 grid gap-6 md:grid-cols-[1fr_280px]">
+        <div className="min-w-0">
 
           {isNext && notice && <AiringNoticeBanner n={notice} title={a.title} />}
           {(() => {

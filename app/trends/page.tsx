@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { countAnime, TREND_GENRES } from "@/lib/kitsu";
-import Breadcrumbs from "@/components/Breadcrumbs";
+import PageHero from "@/components/PageHero";
 
 export const revalidate = 86400;
 export const metadata: Metadata = {
@@ -24,12 +24,17 @@ export default async function TrendsIndex() {
   }).sort((x, y) => y.delta - x.delta);
   const maxAbs = Math.max(...rows.map((r) => Math.abs(r.delta)), 1);
   return (
-    <div className="container-x py-8">
-      <Breadcrumbs items={[{ href: "/", label: "Home" }, { href: "/trends", label: "Genre trends" }]} />
-      <h1 className="text-3xl font-extrabold tracking-tight">Anime genre trends</h1>
-      <p className="mt-2 max-w-2xl text-muted">How each genre&apos;s share of new TV anime changed from {then} to {lastFull}. Genres above the line grew, those below shrank. Open any genre for the full year-by-year chart.</p>
+    <div className="container-x pb-8">
+      <PageHero
+        crumbs={[{ href: "/", label: "Home" }, { href: "/trends", label: "Genre trends" }]}
+        eyebrow="Data story"
+        title={<>Anime <span className="text-gradient">genre trends</span></>}
+        subtitle={`How each genre's share of new TV anime changed from ${then} to ${lastFull}. Genres at the top grew, those at the bottom shrank. Open any genre for the full year-by-year chart.`}
+        facts={[{ value: `+${rows[0].delta.toFixed(1)} pts`, label: `${rows[0].name}, biggest riser` }, { value: `${rows[rows.length - 1].delta.toFixed(1)} pts`.replace("-", "−"), label: `${rows[rows.length - 1].name}, biggest faller` }]}
+        hue={190}
+      />
 
-      <figure className="card mt-6 p-4">
+      <figure className="card reveal mt-8 p-4">
         <figcaption>
           <h2 className="font-semibold text-ink">Change in share of new TV anime, {then} → {lastFull}</h2>
           <p className="mt-0.5 text-xs text-muted">Percentage points · blue = grew, red = shrank, gray center line = no change</p>

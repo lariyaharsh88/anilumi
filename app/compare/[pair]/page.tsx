@@ -4,7 +4,7 @@ import Image from "next/image";
 import { notFound, permanentRedirect } from "next/navigation";
 import { getAnimeBySlug, getProductions, listAnime, runtimeMinutes, fmtMinutes, posterUrl, animePath, comparePath, mainGenres, franchiseRoot, statusLabel, subtypeLabel, Anime } from "@/lib/kitsu";
 import { abs } from "@/lib/site";
-import Breadcrumbs from "@/components/Breadcrumbs";
+import PageHero from "@/components/PageHero";
 import JsonLd from "@/components/JsonLd";
 import Faq from "@/components/Faq";
 import AdSlot from "@/components/AdSlot";
@@ -104,15 +104,20 @@ export default async function ComparePage({ params }: Props) {
   };
 
   return (
-    <div className="container-x py-8">
+    <div className="container-x pb-8">
       <JsonLd data={ld} />
-      <Breadcrumbs items={[{ href: "/", label: "Home" }, { href: "/compare", label: "Compare" }, { href: canonical, label: `${a.title} vs ${b.title}` }]} />
-      <h1 className="text-3xl font-extrabold tracking-tight sm:text-4xl">{a.title} vs {b.title}</h1>
-      <p className="mt-2 max-w-2xl text-muted">Side by side on community score, how it&apos;s rated, audience size and how long each takes to watch. Data from Kitsu, refreshed daily.</p>
+      <PageHero
+        crumbs={[{ href: "/", label: "Home" }, { href: "/compare", label: "Compare" }, { href: canonical, label: `${a.title} vs ${b.title}` }]}
+        eyebrow="Head to head"
+        title={<>{a.title} <span className="text-gradient">vs</span> {b.title}</>}
+        subtitle="Side by side on community score, how it's rated, audience size and how long each takes to watch. Data from Kitsu, refreshed daily."
+        hue={350}
+        backdrop={a.cover?.large || b.cover?.large || null}
+      />
 
-      <div className="mt-6 grid grid-cols-[1fr_auto_1fr] items-center gap-3 sm:gap-6">
+      <div className="mt-8 grid grid-cols-[1fr_auto_1fr] items-center gap-3 sm:gap-6">
         {[a, b].map((x, i) => (
-          <Link key={x.id} href={animePath(x)} className={`card flex flex-col items-center gap-2 p-3 text-center transition hover:border-violet sm:flex-row sm:text-left ${i === 1 ? "col-start-3" : ""}`}>
+          <Link key={x.id} href={animePath(x)} className={`card flex flex-col items-center gap-2 p-3 text-center transition duration-300 hover:-translate-y-0.5 hover:border-violet sm:flex-row sm:text-left ${i === 1 ? "col-start-3" : ""}`}>
             <span className={`h-1 w-10 rounded-full sm:hidden ${i ? "bg-viz-2" : "bg-viz-1"}`} aria-hidden />
             <div className="relative h-28 w-20 shrink-0 overflow-hidden rounded-md bg-bg-2">{posterUrl(x, "small") && <Image src={posterUrl(x, "small")!} alt="" fill sizes="80px" className="object-cover" />}</div>
             <div className="min-w-0">
@@ -122,7 +127,7 @@ export default async function ComparePage({ params }: Props) {
             </div>
           </Link>
         ))}
-        <span className="col-start-2 row-start-1 text-lg font-black text-muted">vs</span>
+        <span className="col-start-2 row-start-1 grid h-11 w-11 place-items-center rounded-full border border-white/15 bg-gradient-to-br from-accent/30 to-violet/30 text-sm font-black text-ink shadow-[0_0_30px_-5px_rgba(255,77,141,.5)]">VS</span>
       </div>
 
       <section className="card mt-6 p-4">

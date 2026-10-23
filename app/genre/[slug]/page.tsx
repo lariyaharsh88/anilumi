@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getCategory, listAnime, getCategories, TREND_GENRES } from "@/lib/kitsu";
+import { getCategory, listAnime, getCategories, TREND_GENRES, posterUrl } from "@/lib/kitsu";
 import AnimeGrid from "@/components/AnimeGrid";
-import Breadcrumbs from "@/components/Breadcrumbs";
+import PageHero from "@/components/PageHero";
 import Pagination from "@/components/Pagination";
 import Faq from "@/components/Faq";
 import AdSlot from "@/components/AdSlot";
@@ -53,18 +53,25 @@ export default async function GenrePage({ params, searchParams }: Props) {
   const base = `/genre/${slug}${sortKey !== "popular" ? `?sort=${sortKey}` : ""}`;
 
   return (
-    <div className="container-x py-8">
-      <Breadcrumbs items={[{ href: "/", label: "Home" }, { href: "/genre", label: "Genres" }, { href: `/genre/${slug}`, label: g.title }]} />
-      <h1 className="text-3xl font-extrabold tracking-tight">Best {g.title.toLowerCase()} anime</h1>
-      <p className="mt-2 max-w-2xl text-muted">{g.description || `${g.count?.toLocaleString()} ${g.title.toLowerCase()} titles, ranked so the essentials come first.`}</p>
-      <div className="mt-4 flex flex-wrap gap-2">
-        {Object.entries(SORTS).map(([k, v]) => (
-          <Link key={k} href={`/genre/${slug}${k !== "popular" ? `?sort=${k}` : ""}`} className={`chip ${k === sortKey ? "chip-active" : ""}`}>{v.label}</Link>
-        ))}
-      </div>
-      {TREND_GENRES.some(([t]) => t === slug) && (
-        <p className="mt-3 text-sm"><Link href={`/trends/${slug}`} className="text-violet hover:underline">How {g.title.toLowerCase()} has grown or shrunk since 2000 →</Link></p>
-      )}
+    <div className="container-x pb-8">
+      <PageHero
+        crumbs={[{ href: "/", label: "Home" }, { href: "/genre", label: "Genres" }, { href: `/genre/${slug}`, label: g.title }]}
+        eyebrow="Genre"
+        title={<>Best <span className="text-gradient">{g.title.toLowerCase()}</span> anime</>}
+        subtitle={<p className="line-clamp-3">{g.description || `${g.count?.toLocaleString()} ${g.title.toLowerCase()} titles, ranked so the essentials come first.`}</p>}
+        facts={g.count ? [{ value: g.count.toLocaleString(), label: "titles in this genre" }] : undefined}
+        hue={262}
+        posters={data.items.slice(0, 3).map((x) => posterUrl(x, "medium"))}
+      >
+        <div className="flex flex-wrap gap-2">
+          {Object.entries(SORTS).map(([k, v]) => (
+            <Link key={k} href={`/genre/${slug}${k !== "popular" ? `?sort=${k}` : ""}`} className={`chip ${k === sortKey ? "chip-active" : ""}`}>{v.label}</Link>
+          ))}
+        </div>
+        {TREND_GENRES.some(([t]) => t === slug) && (
+          <p className="mt-3 text-sm"><Link href={`/trends/${slug}`} className="text-violet hover:text-violet-2">📈 How {g.title.toLowerCase()} has grown or shrunk since 2000 →</Link></p>
+        )}
+      </PageHero>
       <AdSlot slot="genre-top" />
       <div className="mt-6">
         <AnimeGrid items={data.items} startRank={(page - 1) * LIMIT + 1} />

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { listAnime, getCategories, runtimeMinutes, fmtMinutes, posterUrl, animePath, subtypeLabel, uniqueById, Anime } from "@/lib/kitsu";
-import Breadcrumbs from "@/components/Breadcrumbs";
+import PageHero from "@/components/PageHero";
 import Faq from "@/components/Faq";
 import AdSlot from "@/components/AdSlot";
 import WatchButton from "@/components/WatchButton";
@@ -69,10 +69,15 @@ export default async function TonightPage({ searchParams }: Props) {
   const genreTitle = v.genre ? genres.find((g) => g.slug === v.genre)?.title || v.genre : null;
 
   return (
-    <div className="container-x py-8">
-      <Breadcrumbs items={[{ href: "/", label: "Home" }, { href: "/lists", label: "Lists" }, { href: "/tonight", label: "What to watch tonight" }]} />
-      <h1 className="text-3xl font-extrabold tracking-tight">What to watch tonight</h1>
-      <p className="mt-2 max-w-2xl text-muted">Tell us how much time you have. We find {v.all ? "anime" : "complete anime"} you can actually finish in it, using real runtimes, best-rated first.</p>
+    <div className="container-x pb-8">
+      <PageHero
+        crumbs={[{ href: "/", label: "Home" }, { href: "/lists", label: "Lists" }, { href: "/tonight", label: "What to watch tonight" }]}
+        eyebrow="🌙 Tonight"
+        title={<>What to watch <span className="text-gradient">tonight</span></>}
+        subtitle={`Tell us how much time you have. We find ${v.all ? "anime" : "complete anime"} you can actually finish in it, using real runtimes, best-rated first.`}
+        hue={262}
+        posters={finish.slice(0, 3).map((p) => posterUrl(p.a, "medium"))}
+      />
 
       <TonightForm v={v} genres={genres.map((g) => ({ slug: g.slug, title: g.title }))} />
 

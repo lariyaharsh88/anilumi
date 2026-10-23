@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getGenreTrend, trendDirection, listAnime, TREND_GENRES, TREND_FROM, Anime } from "@/lib/kitsu";
+import { getGenreTrend, trendDirection, listAnime, TREND_GENRES, TREND_FROM, Anime, posterUrl } from "@/lib/kitsu";
 import { site, abs } from "@/lib/site";
-import Breadcrumbs from "@/components/Breadcrumbs";
+import PageHero from "@/components/PageHero";
 import JsonLd from "@/components/JsonLd";
 import Faq from "@/components/Faq";
 import AdSlot from "@/components/AdSlot";
@@ -74,13 +74,16 @@ export default async function TrendPage({ params }: Props) {
   };
 
   return (
-    <div className="container-x py-8">
+    <div className="container-x pb-8">
       <JsonLd data={ld} />
-      <Breadcrumbs items={[{ href: "/", label: "Home" }, { href: "/trends", label: "Genre trends" }, { href: `/trends/${genre}`, label: name }]} />
-      <h1 className="text-3xl font-extrabold tracking-tight sm:text-4xl">{headline(name, t.dir)}</h1>
-      <p className="mt-2 max-w-2xl text-muted">
-        Share of new TV anime tagged {name.toLowerCase()} each year since {TREND_FROM}. In {lastFull} it was {pct(t.to)}, {t.dir === "rise" ? `up from an average of ${pct(t.from)}` : t.dir === "decline" ? `down from an average of ${pct(t.from)}` : `close to the ${pct(t.from)} average`} a decade earlier.
-      </p>
+      <PageHero
+        crumbs={[{ href: "/", label: "Home" }, { href: "/trends", label: "Genre trends" }, { href: `/trends/${genre}`, label: name }]}
+        eyebrow={`Genre trend · ${TREND_FROM}–${now}`}
+        title={headline(name, t.dir)}
+        subtitle={<p>Share of new TV anime tagged {name.toLowerCase()} each year since {TREND_FROM}. In {lastFull} it was {pct(t.to)}, {t.dir === "rise" ? `up from an average of ${pct(t.from)}` : t.dir === "decline" ? `down from an average of ${pct(t.from)}` : `close to the ${pct(t.from)} average`} a decade earlier.</p>}
+        hue={t.dir === "rise" ? 140 : t.dir === "decline" ? 350 : 262}
+        posters={picks.flatMap((p) => p.items).slice(0, 3).map((a: Anime) => posterUrl(a, "medium"))}
+      />
 
       <StatTiles
         className="mt-6"
