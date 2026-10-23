@@ -6,7 +6,7 @@ import { seasonOf, cap } from "@/lib/kitsu";
 export default function SiteFooter() {
   const { season, year } = seasonOf();
   const cols = [
-    { h: "Browse", links: [["/schedule", "Airing this week"], [`/season/${year}/${season}`, `${cap(season)} ${year} anime`], ["/top/rated", "Top rated anime"], ["/top/popular", "Most popular anime"], ["/top/upcoming", "Upcoming anime"], ["/top/movies", "Best anime movies"], ["/watch-order", "Watch order guides"], ["/tonight", "What to watch tonight"], ["/compare", "Compare two anime"], ["/trends", "Genre trends"], ["/lists", "Lists: best by year, short anime"], ["/my", "My list"]] },
+    { h: "Browse", links: [["/schedule", "Airing this week"], [`/season/${year}/${season}`, `${cap(season)} ${year} anime`], ["/top/rated", "Top rated anime"], ["/top/popular", "Most popular anime"], ["/top/upcoming", "Upcoming anime"], ["/top/movies", "Best anime movies"], ["/watch-order", "Watch order guides"], ["/tonight", "What to watch tonight"], ["/compare", "Compare two anime"], ["/trends", "Genre trends"], ["/how-long-to-watch", "How long to watch"], ["/parents-guide", "Best anime for kids"], ["/lists", "Lists: best by year, short anime"], ["/my", "My list"]] },
     { h: "Genres", links: [["/genre/action", "Action"], ["/genre/romance", "Romance"], ["/genre/comedy", "Comedy"], ["/genre/fantasy", "Fantasy"], ["/genre/isekai", "Isekai"], ["/genre", "All genres"]] },
     { h: "About", links: [["/about", "About & data sources"], ["/search", "Search"], ["/feed.xml", "RSS: this week’s episodes"]] },
   ];

@@ -17,6 +17,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...TREND_GENRES.map(([g]) => ({ url: abs(`/trends/${g}`), lastModified: now, changeFrequency: "monthly" as const, priority: 0.6 })),
     ...Object.keys(WATCH_ORDER_OVERRIDES).map((slug) => ({ url: abs(`/watch-order/${slug}`), lastModified: now, changeFrequency: "weekly" as const, priority: 0.8 })),
     { url: abs("/short-anime"), lastModified: now, changeFrequency: "weekly", priority: 0.7 },
+    { url: abs("/how-long-to-watch"), lastModified: now, changeFrequency: "weekly", priority: 0.7 },
+    { url: abs("/parents-guide"), lastModified: now, changeFrequency: "weekly", priority: 0.7 },
     ...[30, 60, 120, 180, 300, 600].map((m) => ({ url: abs(`/tonight${m !== 120 ? `?minutes=${m}` : ""}`), lastModified: now, changeFrequency: "weekly" as const, priority: 0.7 })),
     ...Array.from({ length: now.getFullYear() - 1999 }, (_, i) => ({ url: abs(`/best/${now.getFullYear() - i}`), lastModified: now, changeFrequency: (i === 0 ? "daily" : "monthly") as "daily" | "monthly", priority: i < 3 ? 0.8 : 0.5 })),
     { url: abs("/about"), lastModified: now, changeFrequency: "yearly", priority: 0.2 },
@@ -61,6 +63,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       if (a.subtype !== "movie") out.push({ url: abs(`${animePath(a)}/episodes`), lastModified: now, changeFrequency: a.status === "current" ? "daily" : "monthly", priority: 0.5 });
       if (a.subtype === "TV" && seen.size <= 200) out.push({ url: abs(`/watch-order/${a.slug}`), lastModified: now, changeFrequency: "weekly", priority: 0.6 });
       if (seen.size <= 300) out.push({ url: abs(`/similar/${a.slug}`), lastModified: now, changeFrequency: "weekly", priority: 0.5 });
+      if (seen.size <= 300 && a.status !== "upcoming" && a.status !== "tba" && a.status !== "unreleased") out.push({ url: abs(`${animePath(a)}/how-long-to-watch`), lastModified: now, changeFrequency: a.status === "current" ? "weekly" : "monthly", priority: 0.6 });
+      if (seen.size <= 200) out.push({ url: abs(`${animePath(a)}/parents-guide`), lastModified: now, changeFrequency: "monthly", priority: 0.5 });
     }
   } catch {
     /* upstream hiccup: ship the static part of the sitemap */

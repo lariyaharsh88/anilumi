@@ -25,7 +25,7 @@ export default async function Lists() {
         posters={trending.slice(0, 3).map((a) => posterUrl(a, "medium"))}
       />
 
-      <ul className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+      <ul className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
         {[
           { href: "/tonight", icon: "🌙", t: "What to watch tonight", d: "Pick your free time; get complete shows that fit." },
           { href: "/compare", icon: "⚔️", t: "Compare two anime", d: "Scores, rating breakdowns, runtime and genres side by side." },
@@ -33,9 +33,11 @@ export default async function Lists() {
           { href: "/short-anime", icon: "⏱️", t: "Short anime", d: "Complete series you can finish in a weekend." },
           { href: `/best/${y}`, icon: "🏆", t: `Best of ${y}`, d: "This year's top rated and most popular." },
           { href: "/watch-order", icon: "🧭", t: "Watch orders", d: "Every franchise in the right order, recaps flagged." },
+          { href: "/how-long-to-watch", icon: "⏳", t: "How long to watch", d: "Runtime and binge time for every series." },
+          { href: "/parents-guide", icon: "👪", t: "Best anime for kids", d: "Age ratings and viewer-rated parents' guides." },
         ].map((c, i) => (
           <li key={c.href} className="reveal">
-            <Link href={c.href} className="genre-tile card group flex h-full gap-3 p-4 transition duration-300 hover:-translate-y-0.5 hover:border-white/20" style={{ ["--h" as string]: String([262, 350, 190, 140, 40, 300][i]) }}>
+            <Link href={c.href} className="genre-tile card group flex h-full gap-3 p-4 transition duration-300 hover:-translate-y-0.5 hover:border-white/20" style={{ ["--h" as string]: String([262, 350, 190, 140, 40, 300, 220, 20][i]) }}>
               <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-white/5 text-xl" aria-hidden>{c.icon}</span>
               <span className="min-w-0">
                 <span className="block font-semibold text-ink group-hover:text-violet-2">{c.t}</span>

@@ -6,7 +6,7 @@ import { getAniListId } from "./kitsu";
 
 export type StatusCount = { status: string; amount: number };
 export type AlTag = { name: string; rank: number; category: string; isAdult: boolean; isMediaSpoiler: boolean };
-export type AniListInsight = { genres: string[]; dist: StatusCount[]; tags: AlTag[] };
+export type AniListInsight = { genres: string[]; dist: StatusCount[]; tags: AlTag[]; anilistId: number; score: number | null; scoreVotes: number };
 
 async function anilist<T>(query: string, variables: Record<string, unknown>, revalidate: number): Promise<T | null> {
   if (process.env.ANILIST_ENRICH === "0") return null;
@@ -39,12 +39,21 @@ export async function getAniListInsight(kitsuId: string): Promise<AniListInsight
   const id = await getAniListId(kitsuId);
   if (!id) return null;
   return memoized(`insight:${id}`, 6 * 3600_000, async () => {
-    const d = await anilist<{ Media: { genres: string[]; stats: { statusDistribution: StatusCount[] }; tags: AlTag[] } | null }>(
-      "query($id:Int){Media(id:$id,type:ANIME){genres stats{statusDistribution{status amount}} tags{name rank category isAdult isMediaSpoiler}}}",
+    const d = await anilist<{ Media: { genres: string[]; averageScore: number | null; stats: { statusDistribution: StatusCount[]; scoreDistribution: { score: number; amount: number }[] }; tags: AlTag[] } | null }>(
+      "query($id:Int){Media(id:$id,type:ANIME){genres averageScore stats{statusDistribution{status amount} scoreDistribution{score amount}} tags{name rank category isAdult isMediaSpoiler}}}",
       { id },
       86400,
     );
-    return d?.Media ? { genres: d.Media.genres || [], dist: d.Media.stats?.statusDistribution || [], tags: d.Media.tags || [] } : null;
+    const m = d?.Media;
+    if (!m) return null;
+    return {
+      genres: m.genres || [],
+      dist: m.stats?.statusDistribution || [],
+      tags: m.tags || [],
+      anilistId: id,
+      score: m.averageScore ? m.averageScore / 10 : null,
+      scoreVotes: (m.stats?.scoreDistribution || []).reduce((n, x) => n + x.amount, 0),
+    };
   });
 }
 

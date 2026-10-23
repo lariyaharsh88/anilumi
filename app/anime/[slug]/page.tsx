@@ -29,6 +29,8 @@ import { amazonSearch, affiliateRel } from "@/lib/affiliate";
 import LocalTime from "@/components/LocalTime";
 import Backdrop from "@/components/fx/Backdrop";
 import ScoreRing from "@/components/fx/ScoreRing";
+import ScoreCard from "@/components/ScoreCard";
+import { combineScores, kitsuScore, aniListScore, getMalScore } from "@/lib/scores";
 import SectionNav, { type NavSection } from "@/components/fx/SectionNav";
 import ClampText from "@/components/fx/ClampText";
 import StickyActions from "@/components/fx/StickyActions";
@@ -92,7 +94,7 @@ export default async function AnimePage({ params }: Props) {
   if (!a) notFound();
 
   const mainGenre = a.categories[0];
-  const [characters, episodes, related, relations, latestInfo, productions, insight] = await Promise.all([
+  const [characters, episodes, related, relations, latestInfo, productions, insight, malScore] = await Promise.all([
     getCharacters(a.id, 12),
     a.subtype === "movie" ? Promise.resolve({ items: [], total: 0, limit: 0, offset: 0 }) : getEpisodes(a.id, 1, 6),
     mainGenre ? listAnime({ filter: { categories: mainGenre.slug }, sort: "-userCount", limit: 13 }) : Promise.resolve({ items: [], total: 0, limit: 0, offset: 0 }),
@@ -100,7 +102,10 @@ export default async function AnimePage({ params }: Props) {
     a.status === "current" ? getLastAiredBest(a.id) : Promise.resolve({ count: 0, lastAired: 0, lastAiredDate: null, reliable: false } as LastAired),
     getProductions(a.id),
     getAniListInsight(a.id),
+    getMalScore(a.id),
   ]);
+  const combined = combineScores([kitsuScore(a), aniListScore(insight), malScore]);
+  const multi = combined && combined.sources.length > 1 ? combined : null;
   const relatedItems = related.items.filter((r) => r.id !== a.id).slice(0, 12);
   const franchise = relations.filter((r) => ["sequel", "prequel", "side_story", "spinoff", "summary", "alternative_version", "other", "character"].includes(r.role));
   const runtime = runtimeMinutes(a);
@@ -227,7 +232,15 @@ export default async function AnimePage({ params }: Props) {
 
               {/* Key facts */}
               <div className="rise mt-5 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 md:justify-start" style={{ ["--d" as string]: "120ms" }}>
-                {a.rating && (
+                {multi ? (
+                  <a href="#stats" className="flex items-center gap-3">
+                    <ScoreRing score={multi.score} label="AniLumi score" />
+                    <div className="text-left leading-tight">
+                      <p className="text-sm font-semibold text-ink">AniLumi score</p>
+                      <p className="text-xs text-muted">{multi.sources.map((x) => (x.key === "mal" ? "MAL" : x.label)).join(" · ")}</p>
+                    </div>
+                  </a>
+                ) : a.rating ? (
                   <div className="flex items-center gap-3">
                     <ScoreRing score={a.rating / 10} label="Community score" />
                     <div className="text-left leading-tight">
@@ -235,7 +248,7 @@ export default async function AnimePage({ params }: Props) {
                       <p className="text-xs text-muted">{totalRatings ? `${compactN(totalRatings)} ratings` : "Kitsu members"}</p>
                     </div>
                   </div>
-                )}
+                ) : null}
                 {facts2.length > 0 && <span className="hidden h-10 w-px bg-white/10 sm:block" aria-hidden />}
                 <dl className="flex flex-wrap justify-center gap-x-6 gap-y-2 md:justify-start">
                   {facts2.map((f) => (
@@ -394,9 +407,10 @@ export default async function AnimePage({ params }: Props) {
           {hasStats && (
             <section id="stats" data-section aria-labelledby="h-stats">
               <h2 id="h-stats" className="h-section mb-3">By the numbers</h2>
+              {multi && <div className="mb-3"><ScoreCard title={a.title} c={multi} /></div>}
               <StatTiles
                 stats={[
-                  ...(a.rating ? [{ label: "Community score", value: `${(a.rating / 10).toFixed(1)} / 10`, sub: totalRatings ? `${totalRatings.toLocaleString()} ratings` : undefined }] : []),
+                  ...(a.rating && !multi ? [{ label: "Community score", value: `${(a.rating / 10).toFixed(1)} / 10`, sub: totalRatings ? `${totalRatings.toLocaleString()} ratings` : undefined }] : []),
                   ...(a.ratingRank ? [{ label: "Rank by score", value: `#${a.ratingRank.toLocaleString()}`, sub: "of all anime on Kitsu" }] : []),
                   ...(a.popularityRank ? [{ label: "Popularity rank", value: `#${a.popularityRank.toLocaleString()}`, sub: `${compactN(a.userCount)} members` }] : []),
                   ...(a.userCount ? [{ label: "Favorited by", value: `${((a.favoritesCount / a.userCount) * 100).toFixed(1)}%`, sub: `${a.favoritesCount.toLocaleString()} of its members` }] : []),
@@ -420,6 +434,7 @@ export default async function AnimePage({ params }: Props) {
           {guide && (
             <div id="guide" data-section>
               <ParentsGuideSection title={a.title} guide={guide} ageRating={a.ageRating} ageRatingGuide={a.ageRatingGuide} />
+              <Link href={`${animePath(a)}/parents-guide`} className="mt-3 inline-block text-sm font-medium text-violet hover:text-violet-2">Is {a.title} okay for kids? Full guide →</Link>
             </div>
           )}
 
@@ -434,6 +449,7 @@ export default async function AnimePage({ params }: Props) {
               <p className="text-sm text-muted">
                 <a href={`${animePath(a)}/feed.xml`} className="text-violet hover:underline">RSS feed</a> for new episodes ·{" "}
                 <Link href={`/watch-order/${a.slug}`} className="text-violet hover:underline">Watch order</Link> ·{" "}
+                <Link href={`${animePath(a)}/how-long-to-watch`} className="text-violet hover:underline">How long to watch</Link> ·{" "}
                 <Link href="/my" className="text-violet hover:underline">My list</Link>
               </p>
               {(a.status === "current" || a.status === "upcoming") && <EmbedSnippet slug={a.slug} title={a.title} />}
