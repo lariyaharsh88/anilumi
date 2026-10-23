@@ -148,7 +148,8 @@ export default async function AnimePage({ params }: Props) {
     datePublished: a.startDate || undefined,
     numberOfEpisodes: a.episodeCount || undefined,
     contentRating: a.ageRating || undefined,
-    aggregateRating: a.rating ? { "@type": "AggregateRating", ratingValue: (a.rating / 10).toFixed(1), bestRating: 10, worstRating: 1, ratingCount: a.userCount } : undefined,
+    // No aggregateRating: Google's review-snippet policy requires ratings collected on this site, not
+    // aggregated from Kitsu/AniList/MAL. Add it back only once AniLumi has its own user ratings.
     trailer: a.youtubeVideoId ? { "@type": "VideoObject", name: `${a.title} trailer`, embedUrl: `https://www.youtube.com/embed/${a.youtubeVideoId}`, thumbnailUrl: `https://img.youtube.com/vi/${a.youtubeVideoId}/hqdefault.jpg`, uploadDate: a.startDate || undefined, description: `Official trailer for ${a.title}` } : undefined,
   };
 
