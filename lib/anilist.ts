@@ -7,23 +7,32 @@ import { getAniListId } from "./kitsu";
 
 export async function anilist<T>(query: string, variables: Record<string, unknown>, revalidate: number): Promise<T | null> {
   if (process.env.ANILIST_ENRICH === "0") return null;
-  try {
-    const res = await fetch("https://graphql.anilist.co", {
-      method: "POST",
-      headers: { "Content-Type": "application/json", Accept: "application/json" },
-      body: JSON.stringify({ query, variables }),
-      next: { revalidate },
-      signal: AbortSignal.timeout(Number(process.env.ANILIST_TIMEOUT_MS) || 5000),
-    });
-    if (!res.ok) {
-      if (process.env.ANILIST_DEBUG === "1") console.warn(`[anilist] HTTP ${res.status}`);
+  // Builds fire many requests at once; on a 429, wait as long as AniList asks (capped) and retry twice.
+  for (let attempt = 0; attempt < 3; attempt++) {
+    try {
+      const res = await fetch("https://graphql.anilist.co", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({ query, variables }),
+        next: { revalidate },
+        signal: AbortSignal.timeout(Number(process.env.ANILIST_TIMEOUT_MS) || 5000),
+      });
+      if (res.status === 429 && attempt < 2) {
+        const wait = Math.min(Number(res.headers.get("retry-after")) || 2, 8);
+        await new Promise((r) => setTimeout(r, wait * 1000));
+        continue;
+      }
+      if (!res.ok) {
+        if (process.env.ANILIST_DEBUG === "1") console.warn(`[anilist] HTTP ${res.status}`);
+        return null;
+      }
+      const j = (await res.json()) as { data?: T };
+      return j.data ?? null;
+    } catch {
       return null;
     }
-    const j = (await res.json()) as { data?: T };
-    return j.data ?? null;
-  } catch {
-    return null;
   }
+  return null;
 }
 
 const memo = new Map<string, { v: unknown; exp: number }>();

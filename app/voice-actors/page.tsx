@@ -4,7 +4,8 @@ import Image from "next/image";
 import { popularVoiceActors, vaPath } from "@/lib/anilist";
 import PageHero from "@/components/PageHero";
 
-export const revalidate = 86400;
+// Hourly: if AniList is rate-limiting during a build, the empty state clears quickly.
+export const revalidate = 3600;
 export const metadata: Metadata = {
   title: "Popular Anime Voice Actors – Seiyuu Roles & Characters",
   description: "The most-followed anime voice actors in Japanese and English, with every character they've voiced, their best-known roles and roles per year.",
