@@ -129,7 +129,7 @@ html, body { overflow-x: clip; }
 
 /* Page enter (app/template.tsx): starts mostly visible, so text paints immediately. */
 @media (prefers-reduced-motion: no-preference) {
-  .page-enter { animation: page-enter .45s cubic-bezier(.2, .7, .2, 1) both; }
+  .page-enter { animation: page-enter .45s cubic-bezier(.2, .7, .2, 1) backwards; } /* backwards: no transform left after it ends, so position:fixed children stay viewport-fixed */
 }
 @keyframes page-enter { from { opacity: .55; transform: translateY(10px); } }
 
@@ -200,3 +200,13 @@ html, body { overflow-x: clip; }
 .genre-tile::before { content: ""; position: absolute; inset: 0; z-index: -1; opacity: .55; transition: opacity .3s, transform .5s;
   background: radial-gradient(120% 120% at 0% 0%, hsl(var(--h) 85% 62% / .45), transparent 60%); }
 .genre-tile:hover::before { opacity: 1; transform: scale(1.08); }
+
+/* Score ring sweep (components/fx/ScoreRing.tsx). */
+@media (prefers-reduced-motion: no-preference) {
+  .ring-arc { animation: ring 1.2s cubic-bezier(.2, .7, .2, 1) .2s both; }
+}
+@keyframes ring { from { stroke-dashoffset: var(--ring-from); } to { stroke-dashoffset: var(--ring-to); } }
+
+/* In-page anchors land below the sticky header + section tabs. */
+[data-section] { scroll-margin-top: 150px; }
+@media (min-width: 768px) { [data-section] { scroll-margin-top: 120px; } }

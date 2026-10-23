@@ -57,7 +57,7 @@ export default function RailScroller({ children, label }: { children: React.Reac
     const d = drag.current, el = ref.current;
     if (!d.active || !el) return;
     const dx = e.clientX - d.x;
-    if (!d.moved && Math.abs(dx) > 6) { d.moved = true; el.classList.add("is-dragging"); el.setPointerCapture(e.pointerId); }
+    if (!d.moved && Math.abs(dx) > 6) { d.moved = true; el.classList.add("is-dragging"); try { el.setPointerCapture(e.pointerId); } catch { /* pointer already gone */ } }
     if (!d.moved) return;
     el.scrollLeft = d.left - dx;
     const dt = e.timeStamp - d.lastT;
@@ -69,7 +69,7 @@ export default function RailScroller({ children, label }: { children: React.Reac
     if (!d.active || !el) return;
     d.active = false;
     if (d.moved) {
-      if (el.hasPointerCapture(e.pointerId)) el.releasePointerCapture(e.pointerId);
+      try { if (el.hasPointerCapture(e.pointerId)) el.releasePointerCapture(e.pointerId); } catch { /* ignore */ }
       el.scrollBy({ left: -d.v * 220, behavior: "smooth" }); // momentum
       setTimeout(() => el.classList.remove("is-dragging"), 260);
     }

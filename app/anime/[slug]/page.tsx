@@ -27,6 +27,13 @@ import StatTiles from "@/components/viz/StatTiles";
 import BarChart from "@/components/viz/BarChart";
 import { amazonSearch, affiliateRel } from "@/lib/affiliate";
 import LocalTime from "@/components/LocalTime";
+import Backdrop from "@/components/fx/Backdrop";
+import ScoreRing from "@/components/fx/ScoreRing";
+import SectionNav, { type NavSection } from "@/components/fx/SectionNav";
+import ClampText from "@/components/fx/ClampText";
+import StickyActions from "@/components/fx/StickyActions";
+import TiltCard from "@/components/fx/TiltCard";
+import RailScroller from "@/components/fx/RailScroller";
 
 export const revalidate = 86400;
 export const dynamicParams = true;
@@ -113,6 +120,7 @@ export default async function AnimePage({ params }: Props) {
   const licensors = productions.filter((p) => p.role === "licensor");
   const nextN = a.status === "current" && a.nextRelease && latestInfo.reliable ? lastAired + 1 : null;
   const poster = posterUrl(a, "medium");
+  const coverLarge = a.cover?.large || a.cover?.original || null;
   const cover = a.cover?.tiny || a.cover?.small || a.cover?.large || null; // heavily blurred backdrop: served ~96px wide by the optimizer
   const faqExtra: FaqItem[] = [];
   if (guide) {
@@ -153,78 +161,239 @@ export default async function AnimePage({ params }: Props) {
     ["Rating rank", a.ratingRank ? `#${a.ratingRank}` : null],
   ];
 
+  const watchItem = { id: a.id, slug: a.slug, title: a.title, poster: posterUrl(a, "small"), status: a.status, nextRelease: a.nextRelease };
+  const GENRES_SHOWN = 6;
+  const hasStats = Boolean(a.rating || a.userCount > 0 || dropOk);
+  const sections: NavSection[] = [
+    { id: "overview", label: "Overview" },
+    ...(episodes.items.length ? [{ id: "episodes", label: "Episodes" }] : []),
+    ...(characters.length ? [{ id: "characters", label: "Characters" }] : []),
+    ...(hasStats ? [{ id: "stats", label: "Stats" }] : []),
+    ...(guide ? [{ id: "guide", label: "Parents' guide" }] : []),
+    { id: "plan", label: "Plan & track" },
+    { id: "faq", label: "FAQ" },
+  ];
+  const facts2: { k: string; v: string; sub?: string }[] = [
+    ...(a.ratingRank ? [{ k: `#${a.ratingRank.toLocaleString()}`, v: "by score" }] : []),
+    ...(a.popularityRank ? [{ k: `#${a.popularityRank.toLocaleString()}`, v: "popularity" }] : []),
+    ...(a.episodeCount ? [{ k: String(a.episodeCount), v: a.episodeCount === 1 ? "episode" : "episodes", sub: a.episodeLength ? `${a.episodeLength} min each` : undefined }] : a.status === "current" ? [{ k: lastAired ? String(lastAired) : "–", v: "aired so far" }] : []),
+    ...(runtime > 0 ? [{ k: fmtMinutes(runtime), v: "to binge" }] : []),
+    ...(a.userCount ? [{ k: compactN(a.userCount), v: "members" }] : []),
+  ];
+
   return (
     <article>
       <JsonLd data={ld} />
-      <div className="relative">
-        {cover && (
-          <div className="absolute inset-0 -z-10 h-80 overflow-hidden">
+
+      {/* ───────── Hero ───────── */}
+      <header id="hero" className="relative isolate overflow-hidden">
+        <div className="absolute inset-0 -z-10" aria-hidden>
+          {cover && (
             <div className="parallax-bg absolute inset-0">
-            <Image src={cover} alt="" fill className="scale-110 object-cover opacity-40 blur-2xl" sizes="96px" quality={40} priority />
+              <Image src={cover} alt="" fill className="scale-110 object-cover opacity-40 blur-2xl" sizes="96px" quality={40} priority />
             </div>
-            <div className="aurora opacity-60"><span /></div>
-            <div className="absolute inset-0 bg-gradient-to-b from-bg/10 via-bg/50 to-bg" />
-          </div>
-        )}
-        <div className="container-x pt-8">
+          )}
+          {coverLarge && <Backdrop src={coverLarge} className="opacity-[.42] [mask-image:linear-gradient(180deg,#000_55%,transparent)]" position="center 25%" />}
+          <div className="aurora opacity-50"><span /></div>
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(11,13,19,.25)_0%,rgba(11,13,19,.75)_55%,#0b0d13_100%)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(11,13,19,.85)_0%,rgba(11,13,19,.35)_60%,transparent_100%)] max-lg:hidden" />
+        </div>
+
+        <div className="container-x pb-8 pt-6 lg:pt-10">
           <Breadcrumbs items={[{ href: "/", label: "Home" }, ...(mainGenre ? [{ href: `/genre/${mainGenre.slug}`, label: mainGenre.title }] : []), { href: animePath(a), label: a.title }]} />
-          <div className="flex flex-col gap-6 md:flex-row">
-            <div className="rise relative aspect-[2/3] w-44 shrink-0 overflow-hidden rounded-xl border border-white/10 bg-bg-2 shadow-[0_25px_60px_-25px_rgba(255,77,109,.5)] sm:w-56">
-              {poster && <Image src={poster} alt={`${a.title} poster`} fill sizes="(max-width: 640px) 176px, 224px" className="object-cover" priority fetchPriority="high" />}
+          <div className="mt-2 flex flex-col gap-6 md:flex-row md:items-end lg:gap-10">
+            <div className="rise mx-auto w-44 shrink-0 sm:w-52 md:mx-0 lg:w-60">
+              <TiltCard max={6} className="rounded-2xl">
+                <div className="relative aspect-[2/3] w-full overflow-hidden rounded-2xl border border-white/15 bg-bg-2 shadow-[0_30px_70px_-25px_rgba(255,77,109,.55)]">
+                  {poster && <Image src={poster} alt={`${a.title} poster`} fill sizes="(max-width: 640px) 176px, 240px" className="object-cover" priority fetchPriority="high" />}
+                </div>
+              </TiltCard>
             </div>
-            <div className="min-w-0 flex-1">
-              <h1 className="rise-t text-3xl font-extrabold tracking-tight sm:text-5xl" style={{ ["--d" as string]: "80ms" }}>{a.title}</h1>
-              {a.titleEn && a.titleEn !== a.title && <p className="mt-1 text-muted">{a.titleEn}</p>}
-              <div className="mt-3 flex flex-wrap items-center gap-2 text-sm">
-                {a.rating && <span className="rounded-md bg-gold/15 px-2 py-1 font-bold text-gold">★ {(a.rating / 10).toFixed(1)}</span>}
-                <span className="chip">{subtypeLabel(a.subtype)}</span>
-                <span className={`chip ${a.status === "current" ? "chip-active" : ""}`}>{statusLabel(a.status)}</span>
-                {year && <span className="chip">{year}</span>}
-                {a.episodeCount && <span className="chip">{a.episodeCount} episodes</span>}
-                {a.ageRating && <span className="chip">{a.ageRating}</span>}
-                {studios.slice(0, 1).map((p) => <Link key={p.producer.id} href={`/studio/${p.producer.slug}`} className="chip">🎬 {p.producer.name}</Link>)}
+
+            <div className="min-w-0 flex-1 text-center md:text-left">
+              <p className="rise flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-xs font-semibold uppercase tracking-widest text-muted md:justify-start">
+                <span className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 ${a.status === "current" ? "bg-accent-strong text-white" : "bg-white/10 text-ink"}`}>
+                  {a.status === "current" && <span className="live-dot" aria-hidden />}{statusLabel(a.status)}
+                </span>
+                <span>{subtypeLabel(a.subtype)}</span>
+                {year && <><span aria-hidden>·</span><span>{year}</span></>}
+                {a.ageRating && <><span aria-hidden>·</span><span>{a.ageRating}</span></>}
+                {studios[0] && <><span aria-hidden>·</span><Link href={`/studio/${studios[0].producer.slug}`} className="hover:text-ink">{studios[0].producer.name}</Link></>}
+              </p>
+              <h1 className="rise-t mt-3 text-4xl font-black leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl" style={{ ["--d" as string]: "60ms" }}>{a.title}</h1>
+              {(a.titleEn && a.titleEn !== a.title) || a.titleJp ? (
+                <p className="mt-2 text-base text-ink/70">{[a.titleEn !== a.title ? a.titleEn : null, a.titleJp].filter(Boolean).join(" · ")}</p>
+              ) : null}
+
+              {/* Key facts */}
+              <div className="rise mt-5 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 md:justify-start" style={{ ["--d" as string]: "120ms" }}>
+                {a.rating && (
+                  <div className="flex items-center gap-3">
+                    <ScoreRing score={a.rating / 10} label="Community score" />
+                    <div className="text-left leading-tight">
+                      <p className="text-sm font-semibold text-ink">Community score</p>
+                      <p className="text-xs text-muted">{totalRatings ? `${compactN(totalRatings)} ratings` : "Kitsu members"}</p>
+                    </div>
+                  </div>
+                )}
+                {facts2.length > 0 && <span className="hidden h-10 w-px bg-white/10 sm:block" aria-hidden />}
+                <dl className="flex flex-wrap justify-center gap-x-6 gap-y-2 md:justify-start">
+                  {facts2.map((f) => (
+                    <div key={f.v} className="text-left leading-tight">
+                      <dt className="sr-only">{f.v}</dt>
+                      <dd className="text-lg font-bold text-ink">{f.k}</dd>
+                      <dd className="text-xs text-muted">{f.v}{f.sub ? ` · ${f.sub}` : ""}</dd>
+                    </div>
+                  ))}
+                </dl>
               </div>
-              <div className="mt-3 flex flex-wrap gap-2">
-                {a.categories.map((c) => (
-                  <Link key={c.id} href={`/genre/${c.slug}`} className="chip">{c.title}</Link>
-                ))}
-              </div>
+
+              {/* Genres: first few, the rest behind a toggle */}
+              {a.categories.length > 0 && (
+                <div className="mt-5 flex flex-wrap items-center justify-center gap-2 md:justify-start">
+                  {a.categories.slice(0, GENRES_SHOWN).map((c) => <Link key={c.id} href={`/genre/${c.slug}`} className="chip">{c.title}</Link>)}
+                  {a.categories.length > GENRES_SHOWN && (
+                    <details className="group contents">
+                      <summary className="chip cursor-pointer list-none group-open:hidden">+{a.categories.length - GENRES_SHOWN} more</summary>
+                      {a.categories.slice(GENRES_SHOWN).map((c) => <Link key={c.id} href={`/genre/${c.slug}`} className="chip">{c.title}</Link>)}
+                    </details>
+                  )}
+                </div>
+              )}
+
               {a.status === "current" && a.nextRelease && (
-                <Link href={nextN ? episodePath(a, nextN) : `${animePath(a)}/episodes`} className="mt-4 flex flex-wrap items-center justify-between gap-3 rounded-xl border border-accent/40 bg-accent/10 p-3 text-sm transition hover:border-accent">
+                <Link href={nextN ? episodePath(a, nextN) : `${animePath(a)}/episodes`} className="mt-5 flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-accent/40 bg-accent/10 p-3 text-left text-sm backdrop-blur transition hover:border-accent">
                   <span><strong className="text-accent-2">{nextN ? `Episode ${nextN}:` : "Next episode:"}</strong> {fmtDate(a.nextRelease, { weekday: "long", month: "long", day: "numeric", hour: "numeric", minute: "2-digit", timeZone: "Asia/Tokyo" })} JST<LocalTime iso={a.nextRelease} /></span>
                   <Countdown iso={a.nextRelease} label="in" />
                 </Link>
               )}
-              <div className="mt-4 flex flex-wrap gap-2">
-                <Link href={`/watch-order/${a.slug}`} className="btn-primary">
-                  {franchise.length ? `Watch order · ${franchise.length + 1} entries` : "Watch order & binge time"}
-                </Link>
-                {runtime > 0 && <span className="btn-outline cursor-default">⏱ {fmtMinutes(runtime)} to binge</span>}
-                <WatchButton item={{ id: a.id, slug: a.slug, title: a.title, poster: posterUrl(a, "small"), status: a.status, nextRelease: a.nextRelease }} />
-                <Link href={`/similar/${a.slug}`} className="btn-outline">More like this</Link>
+              {notice && <div className="text-left"><AiringNoticeBanner n={notice} title={a.title} /></div>}
+
+              <div className="mt-5 flex flex-wrap justify-center gap-2 md:justify-start">
+                <a href="#watch" className="btn-primary px-5 py-3">▶ Where to watch</a>
+                <Link href={`/watch-order/${a.slug}`} className="btn-outline px-4 py-3">{franchise.length ? `Watch order · ${franchise.length + 1}` : "Watch order"}</Link>
+                <WatchButton item={watchItem} />
+                <Link href={`/similar/${a.slug}`} className="btn-outline px-4 py-3">More like this</Link>
               </div>
-              {notice && <AiringNoticeBanner n={notice} title={a.title} />}
-              <WhereToWatch
-                animeId={a.id}
-                title={a.title}
-                links={a.streaming.map((x) => ({ id: x.id, url: x.url, site: x.site, dubs: x.dubs }))}
-                extra={<a href={amazonSearch(`${a.title} manga`)} target="_blank" rel={affiliateRel} className="btn-outline">📚 Manga on Amazon</a>}
-              />
             </div>
           </div>
-        </div>
-      </div>
 
-      <div className="container-x mt-8 grid gap-8 lg:grid-cols-[1fr_300px]">
-        <div className="min-w-0">
-          <section>
-            <h2 className="h-section mb-2">Synopsis</h2>
-            <p className="prose-anime whitespace-pre-line">{a.synopsis || "No synopsis available yet."}</p>
+          <div id="watch" data-section className="mt-6 rounded-2xl border border-white/10 bg-card/70 p-4 backdrop-blur">
+            <WhereToWatch
+              animeId={a.id}
+              title={a.title}
+              links={a.streaming.map((x) => ({ id: x.id, url: x.url, site: x.site, dubs: x.dubs }))}
+              extra={<a href={amazonSearch(`${a.title} manga`)} target="_blank" rel={affiliateRel} className="btn-outline">📚 Manga on Amazon</a>}
+            />
+            {a.streaming.length === 0 && (
+              <p className="mt-2 text-sm text-muted">No licensed streams listed yet. <a href={amazonSearch(`${a.title} manga`)} target="_blank" rel={affiliateRel} className="text-violet hover:underline">Read the manga on Amazon →</a></p>
+            )}
+          </div>
+        </div>
+      </header>
+
+      {/* One wrapper for tabs + content, so the sticky tabs stay pinned through every section. */}
+      <div className="container-x">
+        <SectionNav sections={sections} />
+
+      <div className="mt-8 grid gap-10 lg:grid-cols-[1fr_300px]">
+        <div className="min-w-0 space-y-14">
+          {/* ───────── Overview ───────── */}
+          <section id="overview" data-section aria-labelledby="h-overview">
+            <h2 id="h-overview" className="h-section mb-3">Synopsis</h2>
+            {a.synopsis ? <ClampText text={a.synopsis} lines={5} /> : <p className="text-muted">No synopsis available yet.</p>}
+            {a.youtubeVideoId && (
+              <div className="mt-8">
+                <h3 className="mb-3 text-lg font-bold">Trailer</h3>
+                <YouTubeFacade id={a.youtubeVideoId} title={`${a.title} trailer`} />
+              </div>
+            )}
+            {franchise.length > 0 && (
+              <div className="mt-8">
+                <div className="mb-3 flex items-end justify-between">
+                  <h3 className="text-lg font-bold">Franchise</h3>
+                  <Link href={`/watch-order/${a.slug}`} className="text-sm font-medium text-violet hover:underline">Full watch order →</Link>
+                </div>
+                <ul className="grid gap-2 sm:grid-cols-2">
+                  {franchise.slice(0, 8).map((r) => (
+                    <li key={r.anime.id}>
+                      <Link href={animePath(r.anime)} className="card group flex items-center gap-3 p-2 pr-3 text-sm transition hover:-translate-y-0.5 hover:border-violet/60">
+                        <span className="relative h-14 w-10 shrink-0 overflow-hidden rounded-md bg-bg-2">{posterUrl(r.anime, "small") && <Image src={posterUrl(r.anime, "small")!} alt="" fill sizes="40px" className="object-cover" />}</span>
+                        <span className="min-w-0 flex-1">
+                          <span className="block truncate font-medium group-hover:text-violet-2">{r.anime.title}</span>
+                          <span className="text-[11px] uppercase tracking-wide text-muted">{r.role.replace("_", " ")}{r.anime.startDate ? ` · ${r.anime.startDate.slice(0, 4)}` : ""}</span>
+                        </span>
+                        <span className="text-muted transition group-hover:translate-x-0.5 group-hover:text-ink" aria-hidden>→</span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </section>
 
-          {(a.rating || a.userCount > 0) && (
-            <section className="mt-8">
-              <h2 className="h-section mb-3">By the numbers</h2>
+          <AdSlot slot="anime-mid" />
+
+          {/* ───────── Episodes ───────── */}
+          {episodes.items.length > 0 && (
+            <section id="episodes" data-section aria-labelledby="h-episodes">
+              <div className="mb-3 flex items-end justify-between">
+                <h2 id="h-episodes" className="h-section">Episodes{episodes.total ? ` (${episodes.total})` : ""}</h2>
+                <Link href={`${animePath(a)}/episodes`} className="text-sm font-medium text-violet hover:underline">All episodes →</Link>
+              </div>
+              <ol className="grid gap-3 sm:grid-cols-2">
+                {episodes.items.map((e) => (
+                  <li key={e.id}>
+                    <Link href={e.number ? episodePath(a, e.number) : `${animePath(a)}/episodes`} className="card group flex gap-3 overflow-hidden p-2 transition hover:-translate-y-0.5 hover:border-violet/60">
+                      <span className="relative aspect-video w-32 shrink-0 overflow-hidden rounded-lg bg-bg-2">
+                        {e.thumbnail && e.number ? (
+                          <SpoilerGate animeId={a.id} ep={e.number}><span className="relative block aspect-video w-32"><Image src={e.thumbnail} alt="" fill sizes="128px" className="object-cover transition duration-300 group-hover:scale-105" /></span></SpoilerGate>
+                        ) : <span className="grid h-full place-items-center text-xs text-muted">Ep {e.number ?? "–"}</span>}
+                        <span className="absolute bottom-1 left-1 rounded bg-black/70 px-1.5 text-[10px] font-bold text-ink">EP {e.number ?? "–"}</span>
+                      </span>
+                      <span className="min-w-0 flex-1 py-1">
+                        <span className="line-clamp-2 text-sm font-semibold text-ink group-hover:text-violet-2">{e.title && e.number ? <SpoilerGate inline animeId={a.id} ep={e.number}>{e.title}</SpoilerGate> : e.title || `Episode ${e.number}`}</span>
+                        {e.airdate && <span className="mt-1 block text-xs text-muted">{fmtDate(e.airdate)}{e.length ? ` · ${e.length} min` : ""}</span>}
+                      </span>
+                    </Link>
+                  </li>
+                ))}
+              </ol>
+              <StoryGuide
+                title={a.title}
+                episodesHref={`${animePath(a)}/episodes`}
+                filler={fillerFor(a.slug, a.episodeCount ?? (lastAired || null))}
+                episodeLength={a.episodeLength}
+                cont={continuationFor(a.slug)}
+              />
+            </section>
+          )}
+
+          {/* ───────── Characters ───────── */}
+          {characters.length > 0 && (
+            <section id="characters" data-section aria-labelledby="h-characters">
+              <h2 id="h-characters" className="h-section mb-1">Characters</h2>
+              <RailScroller label="Characters">
+                {characters.map((c) => (
+                  <Link key={c.id} href={`/character/${c.slug}`} className="group block w-28 sm:w-32">
+                    <TiltCard max={7} className="rounded-xl">
+                      <div className="relative aspect-[5/6] w-full overflow-hidden rounded-xl border border-line bg-bg-2 transition-colors group-hover:border-violet/60">
+                        {c.image && <Image src={c.image} alt="" fill sizes="128px" className="object-cover" />}
+                        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-black/70 to-transparent" />
+                        {c.role === "main" && <span className="absolute left-1.5 top-1.5 rounded bg-accent-strong px-1.5 py-0.5 text-[9px] font-bold uppercase text-white">Main</span>}
+                      </div>
+                    </TiltCard>
+                    <p className="mt-2 line-clamp-2 text-xs font-semibold group-hover:text-violet-2">{c.name}</p>
+                  </Link>
+                ))}
+              </RailScroller>
+            </section>
+          )}
+
+          {/* ───────── Stats ───────── */}
+          {hasStats && (
+            <section id="stats" data-section aria-labelledby="h-stats">
+              <h2 id="h-stats" className="h-section mb-3">By the numbers</h2>
               <StatTiles
                 stats={[
                   ...(a.rating ? [{ label: "Community score", value: `${(a.rating / 10).toFixed(1)} / 10`, sub: totalRatings ? `${totalRatings.toLocaleString()} ratings` : undefined }] : []),
@@ -243,128 +412,67 @@ export default async function AnimePage({ params }: Props) {
                   />
                 </div>
               )}
+              {dropOk && <ViewerBehaviour title={a.title} s={dropOk} airing={a.status === "current"} genre={benchGenre} bench={bench} />}
             </section>
           )}
 
-          <StoryGuide
-            title={a.title}
-            episodesHref={`${animePath(a)}/episodes`}
-            filler={fillerFor(a.slug, a.episodeCount ?? (lastAired || null))}
-            episodeLength={a.episodeLength}
-            cont={continuationFor(a.slug)}
-          />
-          {dropOk && <ViewerBehaviour title={a.title} s={dropOk} airing={a.status === "current"} genre={benchGenre} bench={bench} />}
-          {guide && <ParentsGuideSection title={a.title} guide={guide} ageRating={a.ageRating} ageRatingGuide={a.ageRatingGuide} />}
-
-          {(a.status === "current" || a.status === "upcoming") && (
-            <div className="mt-6"><CalendarLinks compact ids={[a.id]} /></div>
-          )}
-          {(a.status === "current" || a.status === "upcoming") && <EmbedSnippet slug={a.slug} title={a.title} />}
-          <p className="mt-2 text-xs text-muted"><a href={`${animePath(a)}/feed.xml`} className="hover:text-ink">RSS feed for new episodes</a></p>
-
-          {(runtime > 0 || (a.episodeCount && a.episodeLength)) && (
-            <BingePlanner title={a.title} episodes={a.episodeCount || 0} episodeLength={a.episodeLength || 24} totalMinutes={runtime} status={a.status} />
+          {/* ───────── Parents' guide ───────── */}
+          {guide && (
+            <div id="guide" data-section>
+              <ParentsGuideSection title={a.title} guide={guide} ageRating={a.ageRating} ageRatingGuide={a.ageRatingGuide} />
+            </div>
           )}
 
-          {franchise.length > 0 && (
-            <section className="mt-8">
-              <div className="mb-3 flex items-end justify-between">
-                <h2 className="h-section">Franchise</h2>
-                <Link href={`/watch-order/${a.slug}`} className="text-sm font-medium text-violet hover:underline">Full watch order →</Link>
-              </div>
-              <ul className="grid gap-2 sm:grid-cols-2">
-                {franchise.slice(0, 8).map((r) => (
-                  <li key={r.anime.id}>
-                    <Link href={animePath(r.anime)} className="card flex items-center gap-3 p-2 text-sm transition hover:border-violet">
-                      <span className="w-20 shrink-0 rounded bg-bg-2 px-1.5 py-0.5 text-center text-[10px] font-bold uppercase text-muted">{r.role.replace("_", " ")}</span>
-                      <span className="truncate font-medium">{r.anime.title}</span>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </section>
-          )}
+          {/* ───────── Plan & track ───────── */}
+          <section id="plan" data-section aria-labelledby="h-plan">
+            <h2 id="h-plan" className="h-section mb-1">Plan &amp; track</h2>
+            {(runtime > 0 || (a.episodeCount && a.episodeLength)) && (
+              <BingePlanner title={a.title} episodes={a.episodeCount || 0} episodeLength={a.episodeLength || 24} totalMinutes={runtime} status={a.status} />
+            )}
+            <div className="card mt-4 space-y-3 p-4">
+              {(a.status === "current" || a.status === "upcoming") && <CalendarLinks compact ids={[a.id]} />}
+              <p className="text-sm text-muted">
+                <a href={`${animePath(a)}/feed.xml`} className="text-violet hover:underline">RSS feed</a> for new episodes ·{" "}
+                <Link href={`/watch-order/${a.slug}`} className="text-violet hover:underline">Watch order</Link> ·{" "}
+                <Link href="/my" className="text-violet hover:underline">My list</Link>
+              </p>
+              {(a.status === "current" || a.status === "upcoming") && <EmbedSnippet slug={a.slug} title={a.title} />}
+            </div>
+          </section>
 
-          {a.youtubeVideoId && (
-            <section className="mt-8">
-              <h2 className="h-section mb-3">Trailer</h2>
-              <YouTubeFacade id={a.youtubeVideoId} title={`${a.title} trailer`} />
-            </section>
-          )}
-
-          <AdSlot slot="anime-mid" />
-
-          {episodes.items.length > 0 && (
-            <section className="mt-8">
-              <div className="mb-3 flex items-end justify-between">
-                <h2 className="h-section">Episodes{episodes.total ? ` (${episodes.total})` : ""}</h2>
-                <Link href={`${animePath(a)}/episodes`} className="text-sm font-medium text-violet hover:underline">Full episode list →</Link>
-              </div>
-              <ol className="card divide-y divide-line">
-                {episodes.items.map((e) => (
-                  <li key={e.id} className="flex items-start gap-3 p-3 text-sm">
-                    <span className="w-10 shrink-0 font-bold text-muted">#{e.number ?? "–"}</span>
-                    <div className="min-w-0 flex-1">
-                      <p className="font-medium text-ink">{e.number ? <Link href={episodePath(a, e.number)} className="hover:text-violet">{e.title ? <SpoilerGate inline animeId={a.id} ep={e.number}>{e.title}</SpoilerGate> : `Episode ${e.number}`}</Link> : e.title}</p>
-                      {e.airdate && <p className="text-xs text-muted">Aired {fmtDate(e.airdate)}</p>}
-                    </div>
-                  </li>
-                ))}
-              </ol>
-            </section>
-          )}
-
-          {characters.length > 0 && (
-            <section className="mt-8">
-              <h2 className="h-section mb-3">Characters</h2>
-              <ul className="grid grid-cols-3 gap-3 sm:grid-cols-4 md:grid-cols-6">
-                {characters.map((c) => (
-                  <li key={c.id} className="text-center">
-                    <Link href={`/character/${c.slug}`} className="group/c block">
-                      <div className="relative mx-auto aspect-[5/6] w-full overflow-hidden rounded-lg border border-line bg-bg-2">
-                        {c.image && <Image src={c.image} alt={c.name} fill sizes="120px" className="object-cover transition group-hover/c:scale-105" />}
-                      </div>
-                      <p className="mt-1 line-clamp-2 text-xs font-medium group-hover/c:text-violet">{c.name}</p>
-                      <p className="text-[10px] uppercase text-muted">{c.role}</p>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </section>
-          )}
-
-          {a.streaming.length === 0 && (
-            <p className="mt-6 text-sm text-muted">No licensed streams listed yet. <a href={amazonSearch(`${a.title} manga`)} target="_blank" rel={affiliateRel} className="text-violet hover:underline">Read the manga on Amazon →</a></p>
-          )}
-
-          <Faq items={faq} title={`${a.title} FAQ`} />
+          {/* ───────── FAQ ───────── */}
+          <div id="faq" data-section>
+            <Faq items={faq} title={`${a.title} FAQ`} />
+          </div>
         </div>
 
-        <aside>
+        {/* ───────── Sidebar ───────── */}
+        <aside className="lg:sticky lg:top-[130px] lg:self-start">
           <div className="card p-4">
             <h2 className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted">Details</h2>
-            <dl className="space-y-2 text-sm">
+            <dl className="divide-y divide-line/60 text-sm">
               {facts.filter(([, v]) => v).map(([k, v]) => (
-                <div key={k} className="flex justify-between gap-3">
+                <div key={k} className="flex justify-between gap-3 py-2">
                   <dt className="text-muted">{k}</dt>
                   <dd className="text-right font-medium">{v}</dd>
                 </div>
               ))}
               {studios.length > 0 && (
-                <div className="flex justify-between gap-3"><dt className="text-muted">Studio</dt><dd className="text-right font-medium">{studios.map((p, i) => <span key={p.producer.id}>{i > 0 && ", "}<Link href={`/studio/${p.producer.slug}`} className="text-violet hover:underline">{p.producer.name}</Link></span>)}</dd></div>
+                <div className="flex justify-between gap-3 py-2"><dt className="text-muted">Studio</dt><dd className="text-right font-medium">{studios.map((p, i) => <span key={p.producer.id}>{i > 0 && ", "}<Link href={`/studio/${p.producer.slug}`} className="text-violet hover:underline">{p.producer.name}</Link></span>)}</dd></div>
               )}
-              {licensors.length > 0 && <div className="flex justify-between gap-3"><dt className="text-muted">Licensor</dt><dd className="text-right font-medium">{licensors.map((p) => p.producer.name).join(", ")}</dd></div>}
-              <div className="flex justify-between gap-3"><dt className="text-muted">Members</dt><dd className="font-medium">{a.userCount.toLocaleString()}</dd></div>
-              <div className="flex justify-between gap-3"><dt className="text-muted">Favorites</dt><dd className="font-medium">{a.favoritesCount.toLocaleString()}</dd></div>
+              {licensors.length > 0 && <div className="flex justify-between gap-3 py-2"><dt className="text-muted">Licensor</dt><dd className="text-right font-medium">{licensors.map((p) => p.producer.name).join(", ")}</dd></div>}
+              <div className="flex justify-between gap-3 py-2"><dt className="text-muted">Members</dt><dd className="font-medium">{a.userCount.toLocaleString()}</dd></div>
+              <div className="flex justify-between gap-3 py-2"><dt className="text-muted">Favorites</dt><dd className="font-medium">{a.favoritesCount.toLocaleString()}</dd></div>
             </dl>
           </div>
           <AdSlot slot="anime-side" />
         </aside>
       </div>
+      </div>
 
       <div className="container-x">
         {relatedItems.length > 0 && (
-          <section className="mt-10">
+          <section className="mt-14">
             <h2 className="h-section mb-3">Compare {a.title} with…</h2>
             <div className="flex flex-wrap gap-2">
               {relatedItems.filter((o) => franchiseRoot(o.title) !== franchiseRoot(a.title)).slice(0, 5).map((o) => (
@@ -376,6 +484,8 @@ export default async function AnimePage({ params }: Props) {
         )}
         {mainGenre && <AnimeRail title={`More ${mainGenre.title} anime`} href={`/genre/${mainGenre.slug}`} items={relatedItems} />}
       </div>
+
+      <StickyActions item={watchItem} />
     </article>
   );
 }

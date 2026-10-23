@@ -1,7 +1,8 @@
 "use client";
 import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
-import Image, { getImageProps } from "next/image";
+import Image from "next/image";
+import Backdrop from "./Backdrop";
 import { AnimatePresence, m, useReducedMotion } from "motion/react";
 
 export type Spot = { id: string; href: string; title: string; poster: string | null; cover: string | null; rating: number | null; meta: string; rank: number };
@@ -64,7 +65,7 @@ export default function HeroSpotlight({ items, children }: { items: Spot[]; chil
         <AnimatePresence initial={false}>
           {art && (
             <m.div key={cur.id} className="absolute inset-0" initial={{ opacity: 0, scale: 1.06 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }} transition={{ duration: 1.1, ease: [0.2, 0.7, 0.2, 1] }}>
-              <Backdrop src={art} />
+              <Backdrop src={art} className="opacity-[.38] blur-[1px]" />
             </m.div>
           )}
         </AnimatePresence>
@@ -144,21 +145,5 @@ function Ghost({ spot, rotate, x }: { spot: Spot; rotate: number; x: number }) {
       {spot.poster && <Image key={spot.id} src={spot.poster} alt="" fill sizes="220px" className="object-cover" />}
       <div className="absolute inset-0 bg-bg/40" />
     </m.div>
-  );
-}
-
-const BLANK = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
-
-/**
- * Title art behind the hero, desktop only. On phones the <picture> resolves to a 1px transparent GIF, so
- * no large image downloads and the headline stays the Largest Contentful Paint; phones keep the CSS aurora.
- */
-function Backdrop({ src }: { src: string }) {
-  const { props } = getImageProps({ src, alt: "", fill: true, sizes: "1152px", quality: 45 });
-  return (
-    <picture>
-      <source media="(min-width: 1024px)" srcSet={props.srcSet} sizes="1152px" />
-      <img src={BLANK} alt="" decoding="async" className="absolute inset-0 h-full w-full object-cover object-center opacity-[.38] blur-[1px]" />
-    </picture>
   );
 }
