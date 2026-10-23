@@ -1,0 +1,26 @@
+// Cloudflare Workers deploy for AniLumi via OpenNext (@opennextjs/cloudflare).
+// Build + deploy: `npm run deploy`. Local test in the Workers runtime: `npm run preview`.
+// Before the first deploy: `npx wrangler r2 bucket create anilumi-next-cache` (R2 must be enabled on the account).
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "anilumi",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2026-10-19",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  "services": [{ "binding": "WORKER_SELF_REFERENCE", "service": "anilumi" }],
+  // ISR page + fetch cache.
+  "r2_buckets": [{ "binding": "NEXT_INC_CACHE_R2_BUCKET", "bucket_name": "anilumi-next-cache" }],
+  // Background revalidation queue for time-based ISR.
+  "durable_objects": {
+    "bindings": [{ "name": "NEXT_CACHE_DO_QUEUE", "class_name": "DOQueueHandler" }]
+  },
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["DOQueueHandler"] }],
+  "vars": {
+    "NEXT_PUBLIC_SITE_URL": "https://anilumi.in"
+  },
+  "observability": { "enabled": true }
+}

@@ -72,6 +72,28 @@ Every page ships with a unique title/description, canonical URL, Open Graph imag
 - **Lighthouse note**: on localhost the simulated mobile LCP sometimes reads ~6 s because scripts finish before the first paint and the simulator charges them to the headline. Observed LCP equals FCP (~0.2 s); with `--throttling-method=devtools` the home page scores 92-99.
 - **Parallel builds**: `NEXT_DIST_DIR=.next-prod npm run build` builds without disturbing the dev server (`.next-*` is git-, lint- and tsconfig-ignored).
 
+## Deploy: Cloudflare Workers (OpenNext)
+
+AniLumi runs on Cloudflare Workers through `@opennextjs/cloudflare` (`wrangler.jsonc`, `open-next.config.ts`).
+
+- `npm run preview` builds and serves the site in the real Workers runtime on http://localhost:8787 (no account needed).
+- `npm run deploy` builds and deploys. It also uploads the pre-rendered pages into the R2 cache.
+- Cache: R2 bucket `anilumi-next-cache` (ISR pages + fetch cache) with a regional cache in front; a Durable Object queue handles background revalidation. No tag cache (only time-based revalidation is used).
+- Images: `images.unoptimized` (no Next image optimizer on Workers); Kitsu serves fixed sizes and the code picks them.
+- `NEXT_PUBLIC_SITE_URL` is set in `wrangler.jsonc` `vars`; other env vars go in the Worker's Settings → Variables (rebuild after changing any `NEXT_PUBLIC_*`).
+- Plan: the Workers Free plan caps CPU at 10 ms per request, which server-rendered pages can exceed; Workers Paid lifts it to 30 s.
+- `npm run build` (plain `next build`) still works for CI.
+
+First deploy:
+
+```bash
+npx wrangler login
+npx wrangler r2 bucket create anilumi-next-cache
+npm run deploy
+```
+
+Then in the Cloudflare dashboard: Workers & Pages → anilumi → Settings → Domains & Routes → add `anilumi.in` (and `www.anilumi.in`). The domain's nameservers must point to Cloudflare first.
+
 ## Run
 
 ```bash

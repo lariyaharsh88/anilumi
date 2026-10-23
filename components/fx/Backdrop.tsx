@@ -11,7 +11,7 @@ export default function Backdrop({ src, className = "", position = "center" }: {
   const { props } = getImageProps({ src, alt: "", fill: true, sizes: "1400px", quality: 50 });
   return (
     <picture>
-      <source media="(min-width: 1024px)" srcSet={props.srcSet} sizes="1400px" />
+      <source media="(min-width: 1024px)" srcSet={props.srcSet || props.src} sizes="1400px" />
       <img src={BLANK} alt="" decoding="async" className={`absolute inset-0 h-full w-full object-cover ${className}`} style={{ objectPosition: position }} />
     </picture>
   );
