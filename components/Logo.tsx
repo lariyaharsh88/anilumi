@@ -1,21 +1,24 @@
-/** Brand mark: a lumi (light) burst over a gradient tile. */
+import { BRAND, CRESCENT, SPARKLE, DOT } from "@/lib/brand";
+
+/** Brand mark: a crescent moon holding an anime sparkle, on a pink→violet tile (same geometry as the favicon). */
 export default function Logo({ size = 28 }: { size?: number }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 32 32" aria-hidden="true" className="shrink-0 drop-shadow-[0_0_10px_rgba(255,77,109,.45)]">
+    <svg width={size} height={size} viewBox="0 0 64 64" aria-hidden="true" className="shrink-0 drop-shadow-[0_0_12px_rgba(193,60,240,.45)]">
       <defs>
-        <linearGradient id="lg-tile" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stopColor="#ff4d6d" />
-          <stop offset="1" stopColor="#6c5ce7" />
+        <linearGradient id="al-bg" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stopColor={BRAND.pink} />
+          <stop offset=".55" stopColor={BRAND.magenta} />
+          <stop offset="1" stopColor={BRAND.violet} />
         </linearGradient>
-        <radialGradient id="lg-glow" cx=".5" cy=".42" r=".5">
-          <stop offset="0" stopColor="#fff" stopOpacity=".95" />
-          <stop offset="1" stopColor="#fff" stopOpacity="0" />
-        </radialGradient>
+        <linearGradient id="al-moon" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#fff" /><stop offset="1" stopColor="#ffe3ee" /></linearGradient>
+        <linearGradient id="al-star" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#fff6dc" /><stop offset="1" stopColor={BRAND.gold} /></linearGradient>
+        <radialGradient id="al-glow" cx=".5" cy=".5" r=".5"><stop offset="0" stopColor="#fff" stopOpacity=".45" /><stop offset="1" stopColor="#fff" stopOpacity="0" /></radialGradient>
       </defs>
-      <rect width="32" height="32" rx="9" fill="url(#lg-tile)" />
-      <circle cx="16" cy="13.5" r="7" fill="url(#lg-glow)" />
-      <path d="M16 6.5l1.6 4.9 4.9 1.6-4.9 1.6L16 19.5l-1.6-4.9-4.9-1.6 4.9-1.6z" fill="#fff" />
-      <path d="M9.5 25.5h13" stroke="#fff" strokeOpacity=".85" strokeWidth="2" strokeLinecap="round" />
+      <rect width="64" height="64" rx="15" fill="url(#al-bg)" />
+      <circle cx="45" cy="19" r="11" fill="url(#al-glow)" />
+      <path d={CRESCENT} fill="url(#al-moon)" />
+      <path d={SPARKLE} fill="url(#al-star)" className="logo-twinkle" />
+      <circle cx={DOT.cx} cy={DOT.cy} r={DOT.r} fill="#fff" fillOpacity=".85" />
     </svg>
   );
 }

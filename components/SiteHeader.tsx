@@ -22,7 +22,7 @@ export default function SiteHeader() {
       <div className="container-x flex h-14 items-center gap-4">
         <Link href="/" className="group flex shrink-0 items-center gap-2 text-lg font-extrabold tracking-tight">
           <span className="transition-transform duration-300 group-hover:rotate-[-8deg] group-hover:scale-110"><Logo /></span>
-          <span>Ani<span className="text-gradient">Lumi</span></span>
+          <span>Ani<span className="brand-gradient">Lumi</span></span>
           <span className="sr-only">{site.name} home</span>
         </Link>
         <NavLinks items={nav} trailing={<WatchlistBadge />} />

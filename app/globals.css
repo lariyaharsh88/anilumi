@@ -75,6 +75,12 @@ html, body { overflow-x: clip; }
   --color-violet-2: #b3a8ff;
 }
 
+/* Wordmark gradient: same stops as the logo tile. */
+.brand-gradient {
+  background: linear-gradient(100deg, #ff4d6d 0%, #c13cf0 55%, #8b7bff 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+
 .text-gradient {
   background: linear-gradient(100deg, #ff7a8f 0%, #b3a8ff 55%, #ffd88a 100%);
   -webkit-background-clip: text; background-clip: text; color: transparent;
@@ -210,3 +216,8 @@ html, body { overflow-x: clip; }
 /* In-page anchors land below the sticky header + section tabs. */
 [data-section] { scroll-margin-top: 150px; }
 @media (min-width: 768px) { [data-section] { scroll-margin-top: 120px; } }
+
+/* Header logo: the sparkle twinkles now and then. */
+.logo-twinkle { transform-box: fill-box; transform-origin: center; animation: twinkle 4.5s ease-in-out infinite; }
+@keyframes twinkle { 0%, 82%, 100% { transform: scale(1) rotate(0); opacity: 1; } 88% { transform: scale(1.25) rotate(45deg); opacity: .85; } 94% { transform: scale(.9) rotate(90deg); opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .logo-twinkle { animation: none; } }

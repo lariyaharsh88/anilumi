@@ -6,6 +6,8 @@ const nextConfig: NextConfig = {
   // Without this, on-demand ISR pages cache whichever variant the first visitor triggered;
   // for normal browsers that is streamed metadata in <body>, which crawlers then receive too.
   htmlLimitedBots: /.*/,
+  // Inter TTFs for generated Open Graph images (read from disk at runtime).
+  outputFileTracingIncludes: { "/**": ["./assets/fonts/*.ttf"] },
   // One canonical host: www.anilumi.in → anilumi.in (301).
   async redirects() {
     return [{ source: "/:path*", has: [{ type: "host", value: "www.anilumi.in" }], destination: "https://anilumi.in/:path*", permanent: true }];
