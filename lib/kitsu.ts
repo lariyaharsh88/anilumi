@@ -1019,13 +1019,18 @@ export async function fetchAniListList(userName: string): Promise<ImportResult> 
 
 /** Map AniList ids to Kitsu anime (20 per request via the mappings endpoint). */
 export async function kitsuByAniListIds(ids: number[]): Promise<Map<number, Anime>> {
+  return kitsuByExternalIds("anilist/anime", ids);
+}
+
+/** Map external ids (e.g. "anilist/anime", "myanimelist/anime") to Kitsu anime, 20 per request. */
+export async function kitsuByExternalIds(site: "anilist/anime" | "myanimelist/anime", ids: number[]): Promise<Map<number, Anime>> {
   const out = new Map<number, Anime>();
   const chunks: number[][] = [];
   for (let i = 0; i < ids.length; i += 20) chunks.push(ids.slice(i, i + 20));
   await Promise.all(
     chunks.map(async (chunk) => {
       const doc = await kitsu("/mappings", {
-        "filter[externalSite]": "anilist/anime",
+        "filter[externalSite]": site,
         "filter[externalId]": chunk.join(","),
         include: "item",
         "page[limit]": 20,

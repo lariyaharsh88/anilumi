@@ -3,6 +3,7 @@ import { abs } from "@/lib/site";
 import { WATCH_ORDER_OVERRIDES } from "@/data/watch-orders";
 import { listAnime, getCategories, seasonOf, shiftSeason, animePath, episodePath, getLastAiredBest, getCharacters, getProductions, primeAniList, comparePath, suggestComparePairs, TREND_GENRES } from "@/lib/kitsu";
 import { mainCastVas, popularVoiceActors, vaPath } from "@/lib/anilist";
+import { allDays, birthdaysOn, bdPath } from "@/lib/birthdays";
 
 export const revalidate = 86400;
 
@@ -22,6 +23,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: abs("/parents-guide"), lastModified: now, changeFrequency: "weekly", priority: 0.7 },
     { url: abs("/upcoming-seasons"), lastModified: now, changeFrequency: "daily", priority: 0.8 },
     { url: abs("/voice-actors"), lastModified: now, changeFrequency: "weekly", priority: 0.6 },
+    { url: abs("/anime-openings"), lastModified: now, changeFrequency: "weekly", priority: 0.6 },
+    { url: abs("/tier-list"), lastModified: now, changeFrequency: "weekly", priority: 0.6 },
+    { url: abs("/quiz"), lastModified: now, changeFrequency: "monthly", priority: 0.6 },
+    { url: abs("/my/wrapped"), lastModified: now, changeFrequency: "monthly", priority: 0.5 },
+    { url: abs("/birthdays"), lastModified: now, changeFrequency: "daily", priority: 0.7 },
+    ...allDays().filter(({ m, d }) => birthdaysOn(m, d).characters.length).map(({ m, d }) => ({ url: abs(bdPath(m, d)), lastModified: now, changeFrequency: "yearly" as const, priority: 0.4 })),
     ...[30, 60, 120, 180, 300, 600].map((m) => ({ url: abs(`/tonight${m !== 120 ? `?minutes=${m}` : ""}`), lastModified: now, changeFrequency: "weekly" as const, priority: 0.7 })),
     ...Array.from({ length: now.getFullYear() - 1999 }, (_, i) => ({ url: abs(`/best/${now.getFullYear() - i}`), lastModified: now, changeFrequency: (i === 0 ? "daily" : "monthly") as "daily" | "monthly", priority: i < 3 ? 0.8 : 0.5 })),
     { url: abs("/about"), lastModified: now, changeFrequency: "yearly", priority: 0.2 },
@@ -70,6 +77,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       if (seen.size <= 200) out.push({ url: abs(`${animePath(a)}/parents-guide`), lastModified: now, changeFrequency: "monthly", priority: 0.5 });
       if (seen.size <= 300 && (a.subtype === "TV" || a.subtype === "ONA") && a.status !== "upcoming") out.push({ url: abs(`${animePath(a)}/next-season`), lastModified: now, changeFrequency: "daily", priority: 0.7 });
       if (seen.size <= 300) out.push({ url: abs(`${animePath(a)}/cast`), lastModified: now, changeFrequency: "monthly", priority: 0.5 });
+      if (seen.size <= 300 && a.status !== "upcoming") out.push({ url: abs(`${animePath(a)}/openings-endings`), lastModified: now, changeFrequency: "monthly", priority: 0.5 });
     }
     // Voice actors: main casts of the 25 most popular titles (one cached AniList request each) plus the most followed.
     const vas = new Map([...(await mainCastVas(pages[0].items.concat(pages[1].items).slice(0, 25).map((a) => a.id))), ...(await popularVoiceActors())].map((v) => [v.id, v]));

@@ -456,6 +456,7 @@ export default async function AnimePage({ params }: Props) {
                 <Link href={`${animePath(a)}/how-long-to-watch`} className="text-violet hover:underline">How long to watch</Link> ·{" "}
                 {a.subtype !== "movie" && <><Link href={`${animePath(a)}/next-season`} className="text-violet hover:underline">{a.status === "finished" ? "Is there a next season?" : "Next season"}</Link> ·{" "}</>}
                 <Link href={`${animePath(a)}/cast`} className="text-violet hover:underline">Voice cast</Link> ·{" "}
+                <Link href={`${animePath(a)}/openings-endings`} className="text-violet hover:underline">Openings &amp; endings</Link> ·{" "}
                 <Link href="/my" className="text-violet hover:underline">My list</Link>
               </p>
               {(a.status === "current" || a.status === "upcoming") && <EmbedSnippet slug={a.slug} title={a.title} />}

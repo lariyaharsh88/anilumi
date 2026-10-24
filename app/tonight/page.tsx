@@ -77,7 +77,12 @@ export default async function TonightPage({ searchParams }: Props) {
         subtitle={`Tell us how much time you have. We find ${v.all ? "anime" : "complete anime"} you can actually finish in it, using real runtimes, best-rated first.`}
         hue={262}
         posters={finish.slice(0, 3).map((p) => posterUrl(p.a, "medium"))}
-      />
+      >
+        <div className="flex flex-wrap gap-2 text-sm">
+          <Link href="/quiz" className="chip">Take the 30-second quiz 🎯</Link>
+          <Link href="/random" prefetch={false} className="chip">Random pick 🎲</Link>
+        </div>
+      </PageHero>
 
       <TonightForm v={v} genres={genres.map((g) => ({ slug: g.slug, title: g.title }))} />
 

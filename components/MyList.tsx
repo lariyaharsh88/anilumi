@@ -7,6 +7,7 @@ import Countdown from "./Countdown";
 import MyListStats from "./MyListStats";
 import CalendarLinks from "./CalendarLinks";
 import ImportAniList from "./ImportAniList";
+import ImportMal from "./ImportMal";
 
 export default function MyList() {
   const { items, ready, remove, update, setProgress } = useWatchlist();
@@ -27,9 +28,10 @@ export default function MyList() {
     return (
       <div className="card p-8 text-center">
         <p className="font-semibold">Your list is empty.</p>
-        <p className="mt-1 text-sm text-muted">Press “+ My list” on any anime page, or import your AniList list. It is saved in this browser only, no account needed.</p>
+        <p className="mt-1 text-sm text-muted">Press “+ My list” on any anime page, or import your AniList or MyAnimeList list. It is saved in this browser only, no account needed.</p>
         <div className="mx-auto mt-4 flex max-w-md flex-col items-center gap-3">
           <ImportAniList compact />
+          <ImportMal compact />
           <Link href="/schedule" className="text-sm text-violet hover:underline">Or browse the schedule →</Link>
         </div>
       </div>
@@ -71,7 +73,11 @@ export default function MyList() {
           {shield.on ? "Turn off" : "Turn on"}
         </button>
       </section>
-      <ImportAniList />
+      <div className="grid gap-4 md:grid-cols-2"><ImportAniList /><ImportMal /></div>
+      <Link href="/my/wrapped" className="card group flex items-center justify-between gap-3 bg-gradient-to-r from-accent/15 to-violet/15 p-4 transition hover:border-white/20">
+        <span><span className="block font-semibold text-ink">Your {new Date().getFullYear()} Anime Wrapped ✨</span><span className="block text-sm text-muted">Hours watched, top genres and your anime personality, as a card to share.</span></span>
+        <span className="text-violet transition group-hover:translate-x-1" aria-hidden>→</span>
+      </Link>
       {calendarIds.length > 0 && (
         <section className="card p-4">
           <h2 className="font-semibold">Put your episodes in your calendar</h2>
