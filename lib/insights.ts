@@ -9,7 +9,7 @@ export type StatusCount = { status: string; amount: number };
 export type AlTag = { name: string; rank: number; category: string; isAdult: boolean; isMediaSpoiler: boolean };
 export type AniListInsight = { genres: string[]; dist: StatusCount[]; tags: AlTag[]; anilistId: number; score: number | null; scoreVotes: number };
 
-export async function getAniListInsight(kitsuId: string): Promise<AniListInsight | null> {
+export async function getAniListInsight(kitsuId: string, strict = false): Promise<AniListInsight | null> {
   const id = await getAniListId(kitsuId);
   if (!id) return null;
   return memoized(`insight:${id}`, 6 * 3600_000, async () => {
@@ -17,6 +17,7 @@ export async function getAniListInsight(kitsuId: string): Promise<AniListInsight
       "query($id:Int){Media(id:$id,type:ANIME){genres averageScore stats{statusDistribution{status amount} scoreDistribution{score amount}} tags{name rank category isAdult isMediaSpoiler}}}",
       { id },
       86400,
+      { strict },
     );
     const m = d?.Media;
     if (!m) return null;

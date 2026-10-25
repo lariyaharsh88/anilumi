@@ -20,7 +20,7 @@ const LEVEL_WORD = { none: "No", mild: "Mild", moderate: "Moderate", strong: "St
 async function load(slug: string) {
   const a = await getAnimeBySlug(decodeURIComponent(slug));
   if (!a) notFound();
-  const insight = await getAniListInsight(a.id);
+  const insight = await getAniListInsight(a.id, true);
   const guide: ParentsGuide | null = insight ? parentsGuide(insight.tags, insight.genres, a.ageRating) : null;
   return { a, guide };
 }

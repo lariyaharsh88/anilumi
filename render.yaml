@@ -17,3 +17,6 @@ services:
         value: https://anilumi.in
       - key: NEXT_TELEMETRY_DISABLED
         value: "1"
+      # Render's shared egress is slower to AniList; allow more time before giving up.
+      - key: ANILIST_TIMEOUT_MS
+        value: "9000"

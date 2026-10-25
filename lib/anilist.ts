@@ -3,10 +3,19 @@
  * richer than Kitsu's, so voice actors come from here. Everything fails soft (null / empty) and is
  * cached by Next's fetch cache plus a small in-process memo, because the public API is rate-limited.
  */
-import { getAniListId, ANILIST_MIN_REVALIDATE } from "./kitsu";
+import { getAniListId, ANILIST_MIN_REVALIDATE, UpstreamError } from "./kitsu";
 
-export async function anilist<T>(query: string, variables: Record<string, unknown>, revalidate: number): Promise<T | null> {
+/**
+ * `strict`: for pages whose main content comes from AniList. A network error, 5xx or exhausted 429 throws
+ * UpstreamError instead of returning null, so the page errors (and is retried) rather than caching an
+ * empty "nothing found" result for days. A real 404 (no such staff/media) still returns null.
+ */
+export async function anilist<T>(query: string, variables: Record<string, unknown>, revalidate: number, { strict = false }: { strict?: boolean } = {}): Promise<T | null> {
   if (process.env.ANILIST_ENRICH === "0") return null;
+  const fail = (why: string) => {
+    if (strict) throw new UpstreamError(`AniList unavailable: ${why}`);
+    return null;
+  };
   // Builds fire many requests at once; on a 429, wait as long as AniList asks (capped) and retry twice.
   for (let attempt = 0; attempt < 3; attempt++) {
     try {
@@ -22,17 +31,19 @@ export async function anilist<T>(query: string, variables: Record<string, unknow
         await new Promise((r) => setTimeout(r, wait * 1000));
         continue;
       }
+      if (res.status === 404) return null;
       if (!res.ok) {
         if (process.env.ANILIST_DEBUG === "1") console.warn(`[anilist] HTTP ${res.status}`);
-        return null;
+        return fail(`HTTP ${res.status}`);
       }
       const j = (await res.json()) as { data?: T };
       return j.data ?? null;
-    } catch {
-      return null;
+    } catch (err) {
+      if (err instanceof UpstreamError) throw err;
+      return fail((err as Error).name);
     }
   }
-  return null;
+  return fail("rate limited");
 }
 
 const memo = new Map<string, { v: unknown; exp: number }>();
@@ -124,7 +135,7 @@ type AlName = { full: string; native: string | null };
 type AlVa = { id: number; name: AlName; image: { medium: string | null } | null; languageV2: string };
 const toVa = (v: AlVa | undefined): Va | null => (v ? { id: v.id, name: v.name.full.trim(), native: v.name.native, image: v.image?.medium || null } : null);
 
-export async function getCast(kitsuId: string, perPage = 25): Promise<Cast | null> {
+export async function getCast(kitsuId: string, perPage = 25, strict = false): Promise<Cast | null> {
   const id = await getAniListId(kitsuId);
   if (!id) return null;
   return memoized(`cast:${id}:${perPage}`, 6 * 3600_000, async () => {
@@ -133,6 +144,7 @@ export async function getCast(kitsuId: string, perPage = 25): Promise<Cast | nul
       "query($id:Int,$n:Int){Media(id:$id,type:ANIME){characters(sort:[ROLE,RELEVANCE,ID],perPage:$n){pageInfo{total} edges{role node{id name{full native} image{medium}} voiceActorRoles(sort:[RELEVANCE,ID]){voiceActor{id name{full native} image{medium} languageV2}}}}}}",
       { id, n: perPage },
       86400,
+      { strict },
     );
     const c = d?.Media?.characters;
     if (!c) return null;
@@ -190,7 +202,7 @@ const STAFF_Q =
 
 export async function getVoiceActor(staffId: number): Promise<VoiceActor | null> {
   return memoized(`va:${staffId}`, 6 * 3600_000, async () => {
-    const [p1, p2] = await Promise.all([1, 2].map((p) => anilist<{ Staff: AlStaff | null }>(STAFF_Q, { id: staffId, p }, 86400)));
+    const [p1, p2] = await Promise.all([1, 2].map((p) => anilist<{ Staff: AlStaff | null }>(STAFF_Q, { id: staffId, p }, 86400, { strict: p === 1 })));
     const s = p1?.Staff;
     if (!s) return null;
     const edges = [...s.characterMedia.edges, ...(p2?.Staff?.characterMedia.edges || [])];

@@ -15,7 +15,7 @@ type Props = { params: Promise<{ slug: string }> };
 async function load(slug: string) {
   const a = await getAnimeBySlug(decodeURIComponent(slug));
   if (!a) notFound();
-  const cast = await getCast(a.id, 25);
+  const cast = await getCast(a.id, 25, true);
   return { a, cast };
 }
 
