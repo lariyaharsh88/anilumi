@@ -1,6 +1,10 @@
 import { getAnimeBySlug, posterUrl, statusLabel, subtypeLabel } from "@/lib/kitsu";
 import { posterCard, OG_SIZE } from "@/lib/og";
 
+export const revalidate = 604800;
+// Render on first request, then serve from the ISR cache until revalidated.
+export async function generateStaticParams() { return []; }
+
 export const alt = "Anime details";
 export const size = OG_SIZE;
 export const contentType = "image/png";

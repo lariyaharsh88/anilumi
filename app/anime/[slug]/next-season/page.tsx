@@ -11,7 +11,7 @@ import Countdown from "@/components/Countdown";
 import Faq, { type FaqItem } from "@/components/Faq";
 import AdSlot from "@/components/AdSlot";
 
-export const revalidate = 21600;
+export const revalidate = 86400;
 export async function generateStaticParams() { return []; }
 type Props = { params: Promise<{ slug: string }> };
 

@@ -7,7 +7,9 @@ import PageHero from "@/components/PageHero";
 import Faq from "@/components/Faq";
 import AdSlot from "@/components/AdSlot";
 
-export const revalidate = 86400;
+export const revalidate = 604800;
+// Render on first request, then serve from the ISR cache until revalidated.
+export async function generateStaticParams() { return []; }
 type Props = { params: Promise<{ slug: string }> };
 
 /** Candidates sharing the title's top genres, scored by genre overlap then popularity. */

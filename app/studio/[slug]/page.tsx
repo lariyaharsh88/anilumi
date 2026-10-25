@@ -11,7 +11,9 @@ import AdSlot from "@/components/AdSlot";
 import StatTiles from "@/components/viz/StatTiles";
 import BarChart from "@/components/viz/BarChart";
 
-export const revalidate = 86400;
+export const revalidate = 604800;
+// Render on first request, then serve from the ISR cache until revalidated.
+export async function generateStaticParams() { return []; }
 type Props = { params: Promise<{ slug: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

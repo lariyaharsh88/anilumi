@@ -11,7 +11,9 @@ import AdSlot from "@/components/AdSlot";
 import GroupedColumns from "@/components/viz/GroupedColumns";
 import BarChart from "@/components/viz/BarChart";
 
-export const revalidate = 86400;
+export const revalidate = 604800;
+// Render on first request, then serve from the ISR cache until revalidated.
+export async function generateStaticParams() { return []; }
 type Props = { params: Promise<{ pair: string }> };
 
 /** Slugs can contain "-vs-", so try each split point until both halves resolve. */

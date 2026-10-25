@@ -10,7 +10,9 @@ import Faq from "@/components/Faq";
 import { getCast, sameName, vaPath } from "@/lib/anilist";
 import AdSlot from "@/components/AdSlot";
 
-export const revalidate = 86400;
+export const revalidate = 604800;
+// Render on first request, then serve from the ISR cache until revalidated.
+export async function generateStaticParams() { return []; }
 type Props = { params: Promise<{ slug: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

@@ -17,6 +17,8 @@ import AdSlot from "@/components/AdSlot";
 import { streamLink, affiliateRel } from "@/lib/affiliate";
 
 export const revalidate = 3600;
+// Render on first request, then serve from the ISR cache until revalidated.
+export async function generateStaticParams() { return []; }
 type Props = { params: Promise<{ slug: string; n: string }> };
 
 async function load(slug: string, nStr: string) {

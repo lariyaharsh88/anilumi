@@ -12,7 +12,9 @@ import { amazonSearch, affiliateRel } from "@/lib/affiliate";
 import BarChart from "@/components/viz/BarChart";
 import LineChart from "@/components/viz/LineChart";
 
-export const revalidate = 86400;
+export const revalidate = 604800;
+// Render on first request, then serve from the ISR cache until revalidated.
+export async function generateStaticParams() { return []; }
 type Props = { params: Promise<{ slug: string }> };
 
 const KIND_LABEL: Record<WatchEntry["kind"], string> = { main: "Main", movie: "Movie", side: "Side story", recap: "Recap", spinoff: "Spin-off", alt: "Alt. version" };

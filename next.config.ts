@@ -10,7 +10,32 @@ const nextConfig: NextConfig = {
   outputFileTracingIncludes: { "/**": ["./assets/fonts/*.ttf"] },
   // One canonical host: www.anilumi.in → anilumi.in (301).
   async redirects() {
-    return [{ source: "/:path*", has: [{ type: "host", value: "www.anilumi.in" }], destination: "https://anilumi.in/:path*", permanent: true }];
+    return [
+      { source: "/:path*", has: [{ type: "host", value: "www.anilumi.in" }], destination: "https://anilumi.in/:path*", permanent: true },
+      // Episode lists moved from ?page=n to /page/n so they can be cached.
+      { source: "/anime/:slug/episodes", has: [{ type: "query", key: "page", value: "(?<p>[2-9]|[1-9][0-9]+)" }], destination: "/anime/:slug/episodes/page/:p", permanent: true },
+    ];
+  },
+  // Query-string variants of list pages render dynamically under ./q; the plain URLs stay ISR-cached.
+  async rewrites() {
+    return {
+      beforeFiles: [
+      { source: "/top/:list", has: [{ type: "query", key: "page" }], destination: "/top/:list/q" },
+      { source: "/genre/:slug", has: [{ type: "query", key: "page" }], destination: "/genre/:slug/q" },
+      { source: "/genre/:slug", has: [{ type: "query", key: "sort" }], destination: "/genre/:slug/q" },
+      { source: "/season/:year/:season", has: [{ type: "query", key: "page" }], destination: "/season/:year/:season/q" },
+      { source: "/best/:year", has: [{ type: "query", key: "page" }], destination: "/best/:year/q" },
+      { source: "/best/:year", has: [{ type: "query", key: "sort" }], destination: "/best/:year/q" },
+      { source: "/tonight", has: [{ type: "query", key: "minutes" }], destination: "/tonight/q" },
+      { source: "/tonight", has: [{ type: "query", key: "genre" }], destination: "/tonight/q" },
+      { source: "/tonight", has: [{ type: "query", key: "type" }], destination: "/tonight/q" },
+      { source: "/tonight", has: [{ type: "query", key: "min" }], destination: "/tonight/q" },
+      { source: "/tonight", has: [{ type: "query", key: "all" }], destination: "/tonight/q" },
+      { source: "/short-anime", has: [{ type: "query", key: "page" }], destination: "/short-anime/q" },
+      { source: "/short-anime", has: [{ type: "query", key: "genre" }], destination: "/short-anime/q" },
+      { source: "/short-anime", has: [{ type: "query", key: "max" }], destination: "/short-anime/q" },
+      ],
+    };
   },
   images: {
     // Cloudflare Workers has no built-in Next.js image optimizer (Cloudflare Images is a paid add-on).

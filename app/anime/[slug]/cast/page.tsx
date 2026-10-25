@@ -8,7 +8,7 @@ import CastGrid from "@/components/CastGrid";
 import Faq, { type FaqItem } from "@/components/Faq";
 import AdSlot from "@/components/AdSlot";
 
-export const revalidate = 86400;
+export const revalidate = 604800;
 export async function generateStaticParams() { return []; }
 type Props = { params: Promise<{ slug: string }> };
 

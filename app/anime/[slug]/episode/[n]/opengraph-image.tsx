@@ -1,6 +1,10 @@
 import { getAnimeBySlug, getEpisodeByNumber, getLastAiredBest, posterUrl, fmtDate, isFuture } from "@/lib/kitsu";
 import { posterCard, OG_SIZE } from "@/lib/og";
 
+export const revalidate = 86400;
+// Render on first request, then serve from the ISR cache until revalidated.
+export async function generateStaticParams() { return []; }
+
 export const alt = "Episode release date";
 export const size = OG_SIZE;
 export const contentType = "image/png";

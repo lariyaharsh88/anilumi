@@ -9,7 +9,7 @@ import AnimeRail from "@/components/AnimeRail";
 import Faq, { type FaqItem } from "@/components/Faq";
 import AdSlot from "@/components/AdSlot";
 
-export const revalidate = 86400;
+export const revalidate = 604800;
 // Render on first request, then serve from the ISR cache until revalidated.
 export async function generateStaticParams() { return []; }
 type Props = { params: Promise<{ slug: string }> };

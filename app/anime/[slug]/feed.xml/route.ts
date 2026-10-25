@@ -3,6 +3,8 @@ import { site, abs } from "@/lib/site";
 import { rss, RssItem } from "@/lib/rss";
 
 export const revalidate = 3600;
+// Render on first request, then serve from the ISR cache until revalidated.
+export async function generateStaticParams() { return []; }
 
 /** Per-series feed: latest catalogued episodes plus the next scheduled one. */
 export async function GET(_req: Request, { params }: { params: Promise<{ slug: string }> }) {
