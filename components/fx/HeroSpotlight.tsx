@@ -1,6 +1,6 @@
 "use client";
 import { useCallback, useEffect, useState } from "react";
-import Link from "next/link";
+import Link from "@/components/Link";
 import Image from "next/image";
 import Backdrop from "./Backdrop";
 import { AnimatePresence, m, useReducedMotion } from "motion/react";

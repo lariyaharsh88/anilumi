@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/Link";
 
 /** `pathStyle` links to `${base}/page/n` (cacheable) instead of `?page=n`. */
 export default function Pagination({ page, total, limit, base, pathStyle = false }: { page: number; total: number; limit: number; base: string; pathStyle?: boolean }) {

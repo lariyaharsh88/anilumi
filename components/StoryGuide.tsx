@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/Link";
 import type { FillerInfo } from "@/lib/filler";
 import type { ContinueEntry } from "@/data/filler";
 import { formatRanges } from "@/lib/filler";

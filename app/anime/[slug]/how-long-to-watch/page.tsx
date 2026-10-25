@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/components/Link";
 import { notFound } from "next/navigation";
 import { getAnimeBySlug, getLastAiredBest, buildWatchOrder, listAnime, animePath, posterUrl, runtimeMinutes, subtypeLabel, type Anime } from "@/lib/kitsu";
 import { fillerFor } from "@/lib/filler";

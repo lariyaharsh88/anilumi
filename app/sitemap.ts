@@ -1,8 +1,8 @@
 import type { MetadataRoute } from "next";
 import { abs } from "@/lib/site";
 import { WATCH_ORDER_OVERRIDES } from "@/data/watch-orders";
-import { listAnime, getCategories, seasonOf, shiftSeason, animePath, episodePath, getLastAiredBest, getCharacters, getProductions, primeAniList, comparePath, suggestComparePairs, TREND_GENRES } from "@/lib/kitsu";
-import { mainCastVas, popularVoiceActors, vaPath } from "@/lib/anilist";
+import { listAnime, getCategories, seasonOf, shiftSeason, animePath, TREND_GENRES } from "@/lib/kitsu";
+import { popularVoiceActors, vaPath } from "@/lib/anilist";
 import { allDays, birthdaysOn, bdPath } from "@/lib/birthdays";
 
 export const revalidate = 86400;
@@ -42,46 +42,32 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   try {
     const genres = await getCategories(60);
     for (const g of genres) out.push({ url: abs(`/genre/${g.slug}`), lastModified: now, changeFrequency: "weekly", priority: 0.6 });
-    const pages = await Promise.all(Array.from({ length: 25 }, (_, i) => listAnime({ sort: "-userCount", limit: 20, offset: i * 20, revalidate: 86400 })));
+    // Kept deliberately small: each URL listed here gets crawled and rendered, and on a metered host
+    // every render costs compute and cache writes. Deeper pages stay reachable through internal links.
+    const pages = await Promise.all(Array.from({ length: 10 }, (_, i) => listAnime({ sort: "-userCount", limit: 20, offset: i * 20, revalidate: 86400 })));
     const airing = await listAnime({ filter: { status: "current" }, sort: "-userCount", limit: 20, revalidate: 86400 });
-    // Episode pages: latest 3 + next for every airing show (the weekly-refreshed queries).
-    const seasonal = await listAnime({ filter: { status: "current", season: s.season, seasonYear: String(s.year) }, sort: "-userCount", limit: 20, revalidate: 86400 });
-    const airingSet = new Map([...airing.items, ...seasonal.items].map((a) => [a.id, a]));
-    await primeAniList([...airingSet.keys()]); // one batched AniList request instead of one per show
-    const latestAll = await Promise.all([...airingSet.values()].map((a) => getLastAiredBest(a.id)));
-    [...airingSet.values()].forEach((a, i) => {
-      const { lastAired, reliable } = latestAll[i];
-      for (const n of reliable ? [lastAired - 2, lastAired - 1, lastAired, lastAired + 1] : [lastAired - 2, lastAired - 1, lastAired]) {
-        if (n >= 1) out.push({ url: abs(episodePath(a, n)), lastModified: now, changeFrequency: "daily", priority: n === lastAired + 1 ? 0.8 : 0.6 });
-      }
-    });
-    // Character and studio pages for the 60 most popular titles.
-    const top60 = pages.slice(0, 3).flatMap((p) => p.items);
-    const [chars, prods] = await Promise.all([Promise.all(top60.map((a) => getCharacters(a.id, 6))), Promise.all(top60.map((a) => getProductions(a.id)))]);
-    const charSeen = new Set<string>(), studioSeen = new Set<string>();
-    chars.flat().forEach((c) => { if (!charSeen.has(c.slug)) { charSeen.add(c.slug); out.push({ url: abs(`/character/${c.slug}`), lastModified: now, changeFrequency: "monthly", priority: 0.4 }); } });
-    prods.flat().filter((p) => p.role === "studio").forEach((p) => { if (!studioSeen.has(p.producer.slug)) { studioSeen.add(p.producer.slug); out.push({ url: abs(`/studio/${p.producer.slug}`), lastModified: now, changeFrequency: "weekly", priority: 0.6 }); } });
-    // Compare pages: each of the top 60 with its two closest genre peers.
-    const withGenres = await Promise.all([0, 20, 40].map((offset) => listAnime({ sort: "-userCount", limit: 20, offset, withCategories: true, revalidate: 86400 })));
-    out.push({ url: abs("/compare"), lastModified: now, changeFrequency: "weekly", priority: 0.6 });
-    for (const [x, y] of suggestComparePairs(withGenres.flatMap((p) => p.items), 2)) out.push({ url: abs(comparePath(x, y)), lastModified: now, changeFrequency: "weekly", priority: 0.5 });
+    out.push({ url: abs("/compare"), lastModified: now, changeFrequency: "monthly", priority: 0.5 });
     const seen = new Set<string>();
     for (const a of [...airing.items, ...pages.flatMap((p) => p.items)]) {
       if (seen.has(a.id)) continue;
       seen.add(a.id);
+      const n = seen.size;
+      const released = a.status !== "upcoming" && a.status !== "tba" && a.status !== "unreleased";
+      const series = a.subtype === "TV" || a.subtype === "ONA";
       out.push({ url: abs(animePath(a)), lastModified: now, changeFrequency: a.status === "current" ? "daily" : "weekly", priority: a.status === "current" ? 0.8 : 0.7 });
-      if (a.subtype !== "movie") out.push({ url: abs(`${animePath(a)}/episodes`), lastModified: now, changeFrequency: a.status === "current" ? "daily" : "monthly", priority: 0.5 });
-      if (a.subtype === "TV" && seen.size <= 200) out.push({ url: abs(`/watch-order/${a.slug}`), lastModified: now, changeFrequency: "weekly", priority: 0.6 });
-      if (seen.size <= 300) out.push({ url: abs(`/similar/${a.slug}`), lastModified: now, changeFrequency: "weekly", priority: 0.5 });
-      if (seen.size <= 300 && a.status !== "upcoming" && a.status !== "tba" && a.status !== "unreleased") out.push({ url: abs(`${animePath(a)}/how-long-to-watch`), lastModified: now, changeFrequency: a.status === "current" ? "weekly" : "monthly", priority: 0.6 });
-      if (seen.size <= 200) out.push({ url: abs(`${animePath(a)}/parents-guide`), lastModified: now, changeFrequency: "monthly", priority: 0.5 });
-      if (seen.size <= 300 && (a.subtype === "TV" || a.subtype === "ONA") && a.status !== "upcoming") out.push({ url: abs(`${animePath(a)}/next-season`), lastModified: now, changeFrequency: "daily", priority: 0.7 });
-      if (seen.size <= 300) out.push({ url: abs(`${animePath(a)}/cast`), lastModified: now, changeFrequency: "monthly", priority: 0.5 });
-      if (seen.size <= 300 && a.status !== "upcoming") out.push({ url: abs(`${animePath(a)}/openings-endings`), lastModified: now, changeFrequency: "monthly", priority: 0.5 });
+      if (n > 100) continue;
+      if (series && released) out.push({ url: abs(`${animePath(a)}/next-season`), lastModified: now, changeFrequency: "weekly", priority: 0.7 });
+      if (released) out.push({ url: abs(`${animePath(a)}/how-long-to-watch`), lastModified: now, changeFrequency: "monthly", priority: 0.6 });
+      if (series) out.push({ url: abs(`/watch-order/${a.slug}`), lastModified: now, changeFrequency: "monthly", priority: 0.6 });
+      if (a.subtype !== "movie" && a.status === "current") out.push({ url: abs(`${animePath(a)}/episodes`), lastModified: now, changeFrequency: "daily", priority: 0.5 });
+      if (n > 50) continue;
+      out.push({ url: abs(`${animePath(a)}/cast`), lastModified: now, changeFrequency: "monthly", priority: 0.5 });
+      if (released) out.push({ url: abs(`${animePath(a)}/openings-endings`), lastModified: now, changeFrequency: "monthly", priority: 0.5 });
+      out.push({ url: abs(`${animePath(a)}/parents-guide`), lastModified: now, changeFrequency: "monthly", priority: 0.5 });
+      out.push({ url: abs(`/similar/${a.slug}`), lastModified: now, changeFrequency: "monthly", priority: 0.4 });
     }
-    // Voice actors: main casts of the 25 most popular titles (one cached AniList request each) plus the most followed.
-    const vas = new Map([...(await mainCastVas(pages[0].items.concat(pages[1].items).slice(0, 25).map((a) => a.id))), ...(await popularVoiceActors())].map((v) => [v.id, v]));
-    for (const v of vas.values()) out.push({ url: abs(vaPath(v)), lastModified: now, changeFrequency: "monthly", priority: 0.5 });
+    // Most-followed voice actors only (the hub's own cached request).
+    for (const v of await popularVoiceActors()) out.push({ url: abs(vaPath(v)), lastModified: now, changeFrequency: "monthly", priority: 0.4 });
   } catch {
     /* upstream hiccup: ship the static part of the sitemap */
   }

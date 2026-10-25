@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import Link from "next/link";
+import Link from "@/components/Link";
 import { getAnimeBySlug, getEpisodes, getLastAiredBest, airingNotice, fmtDate, animePath, episodePath, posterUrl } from "@/lib/kitsu";
 import Countdown from "@/components/Countdown";
 import AiringNoticeBanner from "@/components/AiringNoticeBanner";

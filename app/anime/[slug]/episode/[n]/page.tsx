@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/components/Link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getAnimeBySlug, getEpisodeByNumber, getLastAiredBest, airingNotice, type AiringNotice, animePath, episodePath, fmtDate, isFuture, posterUrl, weekdayOf, Episode } from "@/lib/kitsu";
@@ -16,7 +16,7 @@ import { fillerFor } from "@/lib/filler";
 import AdSlot from "@/components/AdSlot";
 import { streamLink, affiliateRel } from "@/lib/affiliate";
 
-export const revalidate = 3600;
+export const revalidate = 21600;
 // Render on first request, then serve from the ISR cache until revalidated.
 export async function generateStaticParams() { return []; }
 type Props = { params: Promise<{ slug: string; n: string }> };

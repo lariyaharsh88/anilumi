@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/components/Link";
 import { notFound } from "next/navigation";
 import { getAnimeBySlug, listAnime, uniqueById, animePath, Anime, posterUrl } from "@/lib/kitsu";
 import AnimeGrid from "@/components/AnimeGrid";

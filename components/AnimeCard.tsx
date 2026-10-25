@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/Link";
 import Image from "next/image";
 import { Anime, animePath, posterUrl, subtypeLabel, statusLabel } from "@/lib/kitsu";
 import TiltCard from "./fx/TiltCard";

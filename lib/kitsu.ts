@@ -8,6 +8,13 @@
 import { WATCH_ORDER_OVERRIDES, type WatchOrderOverride } from "@/data/watch-orders";
 
 const BASE = "https://kitsu.io/api/edge";
+/**
+ * Floors for upstream cache lifetimes. A page re-renders as often as its shortest-lived fetch, so a
+ * single 30-minute call made every anime page rebuild (and re-write the ISR cache) twice an hour.
+ * Catalogue data barely changes; next-episode times come from AniList and refresh every 6 hours.
+ */
+export const KITSU_MIN_REVALIDATE = Number(process.env.KITSU_MIN_REVALIDATE) || 43200;
+export const ANILIST_MIN_REVALIDATE = Number(process.env.ANILIST_MIN_REVALIDATE) || 21600;
 const SAFE_RATINGS = "G,PG,R"; // excludes R18 catalogue entries site-wide
 
 export type ImageSet = {
@@ -100,7 +107,7 @@ async function kitsu(path: string, params: Record<string, string | number> = {},
     try {
       const res = await fetch(url, {
         headers: { Accept: "application/vnd.api+json", "User-Agent": "AniLumi/1.0 (+https://github.com/harshlariya98)" },
-        next: { revalidate },
+        next: { revalidate: Math.max(revalidate, KITSU_MIN_REVALIDATE) },
       });
       if (res.status === 404) return null;
       if (res.status === 429 || res.status >= 500) {
@@ -732,7 +739,7 @@ export async function aniListNextAiring(ids: number[]): Promise<Map<number, AniL
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({ query: "query($ids:[Int]){Page(perPage:50){media(id_in:$ids,type:ANIME){id nextAiringEpisode{episode airingAt}}}}", variables: { ids: chunk } }),
-        next: { revalidate: 1800 },
+        next: { revalidate: ANILIST_MIN_REVALIDATE },
         signal: AbortSignal.timeout(Number(process.env.ANILIST_TIMEOUT_MS) || 5000),
       });
       if (!res.ok) {
@@ -922,7 +929,7 @@ export async function getWeekBroadcasts(): Promise<Broadcast[]> {
           query: "query($a:Int,$b:Int,$p:Int){Page(page:$p,perPage:50){pageInfo{hasNextPage} airingSchedules(airingAt_greater:$a,airingAt_lesser:$b,sort:TIME){airingAt episode media{isAdult countryOfOrigin popularity format title{romaji english}}}}}",
           variables: { a: from, b: to, p: page },
         }),
-        next: { revalidate: 1800 },
+        next: { revalidate: ANILIST_MIN_REVALIDATE },
         signal: AbortSignal.timeout(Number(process.env.ANILIST_TIMEOUT_MS) || 5000),
       });
       if (!res.ok) break;

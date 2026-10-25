@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/components/Link";
 import Image from "next/image";
 import { notFound, permanentRedirect } from "next/navigation";
 import { getAnimeBySlug, getProductions, listAnime, runtimeMinutes, fmtMinutes, posterUrl, animePath, comparePath, mainGenres, franchiseRoot, statusLabel, subtypeLabel, Anime } from "@/lib/kitsu";

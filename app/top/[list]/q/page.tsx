@@ -1,7 +1,7 @@
 // Query-string variants (?page=, ?sort=, filters). Reached only through the rewrites in next.config.ts;
 // the plain URL is served by ../page.tsx from the ISR cache.
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/components/Link";
 import { notFound } from "next/navigation";
 import { listAnime, ListOpts, posterUrl } from "@/lib/kitsu";
 import AnimeGrid from "@/components/AnimeGrid";

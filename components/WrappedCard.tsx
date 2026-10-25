@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import Link from "next/link";
+import Link from "@/components/Link";
 import Image from "next/image";
 import { useWatchlist, type WatchItem } from "@/lib/watchlist";
 import { computeWrapped } from "@/lib/wrapped";

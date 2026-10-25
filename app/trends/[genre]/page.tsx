@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/components/Link";
 import { notFound } from "next/navigation";
 import { getGenreTrend, trendDirection, listAnime, TREND_GENRES, TREND_FROM, Anime, posterUrl } from "@/lib/kitsu";
 import { site, abs } from "@/lib/site";

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/components/Link";
 import Image from "next/image";
 import { notFound, permanentRedirect } from "next/navigation";
 import { kitsuByAniListIds, animePath, type Anime } from "@/lib/kitsu";

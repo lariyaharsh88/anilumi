@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/components/Link";
 import { listAnime, uniqueById, posterUrl } from "@/lib/kitsu";
 import { quizFilter, describe, type Answers } from "@/lib/quiz";
 import PageHero from "@/components/PageHero";

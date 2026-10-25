@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/components/Link";
 import { listAnime, getSeason, seasonOf, uniqueById, posterUrl, cap, type Anime } from "@/lib/kitsu";
 import { decodeTiers } from "@/lib/tierlist";
 import PageHero from "@/components/PageHero";

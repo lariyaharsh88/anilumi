@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import Link from "next/link";
+import Link from "@/components/Link";
 import { AnimatePresence, m } from "motion/react";
 
 export type Toast = { id: number; text: string; href?: string; cta?: string };

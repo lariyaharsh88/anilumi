@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/Link";
 import type { Metadata } from "next";
 import { listAnime, Anime, posterUrl, fmtDate, weekdayOf, uniqueById, seasonOf, getWeekBroadcasts, aniListNextFor } from "@/lib/kitsu";
 import AiringHeatmap from "@/components/viz/AiringHeatmap";

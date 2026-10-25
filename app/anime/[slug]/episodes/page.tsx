@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { EpisodesView, episodesMetadata } from "./view";
 
-export const revalidate = 3600;
+export const revalidate = 21600;
 // Render on first request, then serve from the ISR cache until revalidated.
 export async function generateStaticParams() { return []; }
 

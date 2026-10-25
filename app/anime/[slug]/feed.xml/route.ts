@@ -2,7 +2,7 @@ import { getAnimeBySlug, getEpisodes, getLastAiredBest, animePath, episodePath, 
 import { site, abs } from "@/lib/site";
 import { rss, RssItem } from "@/lib/rss";
 
-export const revalidate = 3600;
+export const revalidate = 21600;
 // Render on first request, then serve from the ISR cache until revalidated.
 export async function generateStaticParams() { return []; }
 

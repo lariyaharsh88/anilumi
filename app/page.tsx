@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/Link";
 import type { Metadata } from "next";
 import { getTrending, listAnime, getSeason, seasonOf, cap, getCategories, animePath, posterUrl, subtypeLabel, MAIN_GENRES } from "@/lib/kitsu";
 import HeroSpotlight, { type Spot } from "@/components/fx/HeroSpotlight";

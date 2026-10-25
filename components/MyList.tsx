@@ -1,5 +1,5 @@
 "use client";
-import Link from "next/link";
+import Link from "@/components/Link";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 import { useWatchlist, useSpoilerShield, type WatchItem } from "@/lib/watchlist";

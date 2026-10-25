@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/components/Link";
 import { countAnime, TREND_GENRES } from "@/lib/kitsu";
 import PageHero from "@/components/PageHero";
 

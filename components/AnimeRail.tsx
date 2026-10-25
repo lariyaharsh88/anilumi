@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/Link";
 import { Anime } from "@/lib/kitsu";
 import AnimeCard from "./AnimeCard";
 import RailScroller from "./fx/RailScroller";

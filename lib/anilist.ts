@@ -3,7 +3,7 @@
  * richer than Kitsu's, so voice actors come from here. Everything fails soft (null / empty) and is
  * cached by Next's fetch cache plus a small in-process memo, because the public API is rate-limited.
  */
-import { getAniListId } from "./kitsu";
+import { getAniListId, ANILIST_MIN_REVALIDATE } from "./kitsu";
 
 export async function anilist<T>(query: string, variables: Record<string, unknown>, revalidate: number): Promise<T | null> {
   if (process.env.ANILIST_ENRICH === "0") return null;
@@ -14,7 +14,7 @@ export async function anilist<T>(query: string, variables: Record<string, unknow
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({ query, variables }),
-        next: { revalidate },
+        next: { revalidate: Math.max(revalidate, ANILIST_MIN_REVALIDATE) },
         signal: AbortSignal.timeout(Number(process.env.ANILIST_TIMEOUT_MS) || 5000),
       });
       if (res.status === 429 && attempt < 2) {
@@ -153,19 +153,6 @@ export async function getCast(kitsuId: string, perPage = 25): Promise<Cast | nul
       }),
     };
   });
-}
-
-/**
- * Main-cast Japanese voice actors of several anime (sitemap). AniList returns null for voice actors
- * inside batched Page queries, so this reuses each title's cast request (same cache as /cast pages).
- */
-export async function mainCastVas(kitsuIds: string[]): Promise<Va[]> {
-  const out = new Map<number, Va>();
-  for (const id of kitsuIds) {
-    const cast = await getCast(id, 25);
-    for (const e of cast?.entries || []) if (e.role === "MAIN" && e.jp) out.set(e.jp.id, e.jp);
-  }
-  return [...out.values()];
 }
 
 /* ---------------- a voice actor ---------------- */

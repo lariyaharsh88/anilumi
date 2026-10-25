@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/components/Link";
 import { listAnime, animePath, getRelations, uniqueById, posterUrl } from "@/lib/kitsu";
 import { WATCH_ORDER_OVERRIDES } from "@/data/watch-orders";
 import PageHero from "@/components/PageHero";
