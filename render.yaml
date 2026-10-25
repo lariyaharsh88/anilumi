@@ -1,0 +1,19 @@
+# Render Blueprint: free web service (temporary home while the Vercel team is paused).
+# Free instances sleep after 15 min idle; the first request after that takes ~30-60 s.
+services:
+  - type: web
+    name: anilumi
+    runtime: node
+    plan: free
+    region: singapore
+    buildCommand: npm ci && npm run build
+    startCommand: npx next start -p $PORT
+    healthCheckPath: /about
+    autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: NEXT_PUBLIC_SITE_URL
+        value: https://anilumi.in
+      - key: NEXT_TELEMETRY_DISABLED
+        value: "1"
