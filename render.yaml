@@ -7,7 +7,7 @@ services:
     plan: free
     region: singapore
     buildCommand: npm ci && npm run build
-    startCommand: npx next start -p $PORT
+    startCommand: NODE_OPTIONS=--max-old-space-size=384 npx next start -p $PORT
     healthCheckPath: /about
     autoDeploy: true
     envVars:

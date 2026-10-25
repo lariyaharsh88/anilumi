@@ -6,6 +6,8 @@ const nextConfig: NextConfig = {
   // Without this, on-demand ISR pages cache whichever variant the first visitor triggered;
   // for normal browsers that is streamed metadata in <body>, which crawlers then receive too.
   htmlLimitedBots: /.*/,
+  // Render's free instance has 512 MB: build with one page-generation worker and leaner webpack.
+  ...(process.env.RENDER ? { experimental: { cpus: 1, webpackMemoryOptimizations: true } } : {}),
   // Inter TTFs for generated Open Graph images (read from disk at runtime).
   outputFileTracingIncludes: { "/**": ["./assets/fonts/*.ttf"] },
   // One canonical host: www.anilumi.in → anilumi.in (301).
