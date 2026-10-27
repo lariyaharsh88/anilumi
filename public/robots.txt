@@ -7,5 +7,12 @@ Disallow: /embed/
 Disallow: /search
 Disallow: /quiz/results
 Disallow: /random
+Disallow: /*?
+
+# Versioned icons and link-preview images carry a ?hash; keep them crawlable.
+Allow: /icon.svg?
+Allow: /apple-icon.png?
+Allow: /*opengraph-image?
+Allow: /*twitter-image?
 
 Sitemap: https://anilumi.in/sitemap.xml
