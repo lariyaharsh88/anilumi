@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+Disallow: /my
+Disallow: /api/
+Disallow: /embed/
+Disallow: /search
+Disallow: /quiz/results
+Disallow: /random
+
+Sitemap: https://anilumi.in/sitemap.xml
