@@ -65,3 +65,14 @@ test("charstats: format mix, years, per-year buckets and cast rank", async () =>
   assert.equal(castRank([{ id: 1, favourites: 5 }], 1), null);
   assert.equal(yearsActive([]), null);
 });
+
+test("snapFor matches across word order and middle names, only within the character's anime", async () => {
+  const { snapFor, showRanking } = await import("../lib/charsnap");
+  const mk = (id: number, n: string, s: string, f: number) => ({ id, n, f, age: null, g: null, bt: null, m: null, d: null, l: [], a: s.length, s, t: s, jp: null, en: null });
+  const src = [mk(1, "Luffy Monkey", "one-piece", 300), mk(2, "Zoro Roronoa", "one-piece", 200), mk(3, "Eren Yeager", "attack-on-titan", 500), mk(4, "Eren Yeager", "other-show", 1)];
+  assert.equal(snapFor("Monkey D. Luffy", ["one-piece"], src)?.id, 1);
+  assert.equal(snapFor("Eren Yeager", ["attack-on-titan"], src)?.id, 3);
+  assert.equal(snapFor("Monkey D. Luffy", ["attack-on-titan"], src), null);
+  assert.equal(snapFor("Luffy", ["one-piece"], src), null);
+  assert.deepEqual(showRanking(src[0], src).map((c) => c.id), [1, 2]);
+});

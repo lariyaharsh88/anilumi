@@ -24,10 +24,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const { a, cast } = await load(slug);
   const mains = (cast?.entries || []).filter((e) => e.role === "MAIN" && e.jp).slice(0, 3);
+  const dub = (cast?.entries || []).some((e) => e.en);
+  // Names in the title answer "vinland saga cast" at a glance: who plays the leads.
+  const lead = mains.slice(0, 2).map((e) => `${e.character.name} (${e.jp!.name})`).join(", ");
   return {
-    title: `${a.title} Cast & Voice Actors (Japanese and English Dub)`,
+    title: lead ? `${a.title} Cast & Voice Actors: ${lead} & More` : `${a.title} Cast & Voice Actors (Japanese and English Dub)`,
     description: mains.length
-      ? `Who voices who in ${a.title}: ${mains.map((e) => `${e.character.name} (${e.jp!.name}${e.en ? ` / ${e.en.name}` : ""})`).join(", ")} and the rest of the cast.`
+      ? `${dub ? "Japanese and English dub" : "Japanese"} voice actors for the characters of ${a.title}: ${mains.map((e) => `${e.character.name} (${e.jp!.name}${e.en ? ` / ${e.en.name}` : ""})`).join(", ")} and the rest of the cast.`
       : `Characters and voice actors of ${a.title}.`,
     alternates: { canonical: `${animePath(a)}/cast` },
     robots: cast?.entries.length ? undefined : { index: false },

@@ -21,7 +21,7 @@ type Ch = { id: number; name: { full: string }; image: { medium: string | null }
 type St = { id: number; name: { full: string; native: string | null }; image: { medium: string | null }; dateOfBirth: { year: number | null; month: number | null; day: number | null }; favourites: number; primaryOccupations: string[]; languageV2: string | null };
 
 const chars: Ch[] = [];
-for (let page = 1; page <= 40; page++) {
+for (let page = 1; page <= (Number(process.env.BIRTHDAY_PAGES) || 80); page++) {
   const d = await al<{ Page: { characters: Ch[] } }>("query($p:Int){Page(page:$p,perPage:50){characters(sort:FAVOURITES_DESC){id name{full} image{medium} dateOfBirth{month day} favourites media(perPage:1,sort:POPULARITY_DESC,type:ANIME){nodes{id isAdult title{romaji english}}}}}}", { p: page });
   chars.push(...d.Page.characters);
   process.stdout.write(`characters page ${page}\r`);

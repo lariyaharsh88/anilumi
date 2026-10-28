@@ -7,7 +7,8 @@ import Countdown from "./Countdown";
 import LocalTime from "./LocalTime";
 import WatchButton from "./WatchButton";
 
-export type BoardItem = { id: string; slug: string; title: string; poster: string | null; rating: number | null; userCount: number; nextRelease: string | null; estimated: boolean; jst: string | null; status: string };
+/** `nextEp`: the upcoming episode number when AniList knows it (links to its page). */
+export type BoardItem = { nextEp?: number | null; id: string; slug: string; title: string; poster: string | null; rating: number | null; userCount: number; nextRelease: string | null; estimated: boolean; jst: string | null; status: string };
 export type BoardDay = { day: string; items: BoardItem[] };
 
 export default function ScheduleBoard({ days, today, tba }: { days: BoardDay[]; today: string; tba: BoardItem[] }) {
@@ -40,7 +41,7 @@ export default function ScheduleBoard({ days, today, tba }: { days: BoardDay[]; 
                     </Link>
                     <div className="min-w-0 flex-1">
                       <Link href={`/anime/${encodeURIComponent(a.slug)}`} className="line-clamp-2 font-semibold hover:text-violet">{a.title}</Link>
-                      <p className="text-xs text-accent-2">{a.estimated ? `Weekly on ${day}s · time not listed` : `${a.jst} JST`}{!a.estimated && a.nextRelease && <LocalTime iso={a.nextRelease} />}</p>
+                      <p className="text-xs text-accent-2">{a.nextEp ? <><Link href={`/anime/${encodeURIComponent(a.slug)}/episode/${a.nextEp}`} className="font-semibold underline-offset-2 hover:underline">Episode {a.nextEp}</Link> · </> : null}{a.estimated ? `Weekly on ${day}s · time not listed` : `${a.jst} JST`}{!a.estimated && a.nextRelease && <LocalTime iso={a.nextRelease} />}</p>
                       <p className="text-xs text-muted">{a.rating ? `★ ${(a.rating / 10).toFixed(1)} · ` : ""}{a.userCount.toLocaleString()} fans{!a.estimated && a.nextRelease && <> · <Countdown iso={a.nextRelease} label="in" /></>}</p>
                     </div>
                     <div className="self-start"><WatchButton compact item={{ id: a.id, slug: a.slug, title: a.title, poster: a.poster, status: a.status, nextRelease: a.nextRelease }} /></div>

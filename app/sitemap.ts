@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { abs } from "@/lib/site";
 import { WATCH_ORDER_OVERRIDES } from "@/data/watch-orders";
-import { listAnime, getCategories, seasonOf, shiftSeason, animePath, TREND_GENRES } from "@/lib/kitsu";
+import { listAnime, getCategories, seasonOf, shiftSeason, animePath, episodePath, aniListNextEpisodes, TREND_GENRES } from "@/lib/kitsu";
 import { popularVoiceActors, vaPath } from "@/lib/anilist";
 import { allDays, birthdaysOn, bdPath } from "@/lib/birthdays";
 import { fillerSlugs, continuationSlugs } from "@/lib/filler";
@@ -61,6 +61,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const pages = await Promise.all(Array.from({ length: 10 }, (_, i) => listAnime({ sort: "-userCount", limit: 20, offset: i * 20, revalidate: 86400 })));
     const airing = await listAnime({ filter: { status: "current" }, sort: "-userCount", limit: 20, revalidate: 86400 });
     out.push({ url: abs("/compare"), lastModified: now, changeFrequency: "monthly", priority: 0.5 });
+    // Single-episode pages get the best click-through of any page type: list the next episode and the
+    // two latest aired ones for every popular airing show (all ISR-cached, so a few dozen URLs is cheap).
+    const nexts = await aniListNextEpisodes(airing.items.map((a) => a.id)).catch(() => new Map<string, { episode: number; at: string }>());
+    for (const a of airing.items) {
+      const n = nexts.get(a.id)?.episode;
+      if (!n) continue;
+      for (const ep of [n, n - 1, n - 2].filter((x) => x >= 1)) out.push({ url: abs(episodePath(a, ep)), lastModified: now, changeFrequency: "daily", priority: ep === n ? 0.6 : 0.5 });
+    }
     const seen = new Set<string>();
     for (const a of [...airing.items, ...pages.flatMap((p) => p.items)]) {
       if (seen.has(a.id)) continue;

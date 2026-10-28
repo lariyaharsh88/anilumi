@@ -64,6 +64,9 @@ export function parseKitsuBio(desc: string): { facts: Facts; bio: string } {
   return { facts, bio: paras.slice(n).join("\n\n").replace(/^(?:(?:major|minor)\s+)?(?:background\s+)?spoilers?\s*/i, "").trim() };
 }
 
+/** Keep only fact lines we'd display (for the snapshot, so it stays small). Pure. */
+export const shownLines = (lines: BioFact[]): BioFact[] => lines.filter((f) => keyOf(f.label));
+
 /** AniList "__Height:__ 170 cm" lines (already spoiler-stripped by cleanBio) → facts. Pure. */
 export function factsFromAniList(lines: BioFact[]): Facts {
   const out: Facts = {};

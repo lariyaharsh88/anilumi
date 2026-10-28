@@ -1,6 +1,6 @@
 import Link from "@/components/Link";
 import type { Metadata } from "next";
-import { listAnime, Anime, posterUrl, fmtDate, weekdayOf, uniqueById, seasonOf, getWeekBroadcasts, aniListNextFor } from "@/lib/kitsu";
+import { listAnime, Anime, posterUrl, fmtDate, weekdayOf, uniqueById, seasonOf, getWeekBroadcasts, aniListNextEpisodes } from "@/lib/kitsu";
 import AiringHeatmap from "@/components/viz/AiringHeatmap";
 import PageHero from "@/components/PageHero";
 import Faq from "@/components/Faq";
@@ -17,8 +17,8 @@ export const metadata: Metadata = {
 
 const DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
 
-function toItem(a: Anime, estimated: boolean): BoardItem {
-  return { id: a.id, slug: a.slug, title: a.title, poster: posterUrl(a, "small"), rating: a.rating, userCount: a.userCount, nextRelease: a.nextRelease, estimated, status: a.status, jst: a.nextRelease ? fmtDate(a.nextRelease, { month: "short", day: "numeric", hour: "numeric", minute: "2-digit", timeZone: "Asia/Tokyo" }) : null };
+function toItem(a: Anime, estimated: boolean, nextEp: number | null = null): BoardItem {
+  return { nextEp, id: a.id, slug: a.slug, title: a.title, poster: posterUrl(a, "small"), rating: a.rating, userCount: a.userCount, nextRelease: a.nextRelease, estimated, status: a.status, jst: a.nextRelease ? fmtDate(a.nextRelease, { month: "short", day: "numeric", hour: "numeric", minute: "2-digit", timeZone: "Asia/Tokyo" }) : null };
 }
 
 export default async function SchedulePage() {
@@ -28,9 +28,10 @@ export default async function SchedulePage() {
     ...[0, 20].map((offset) => listAnime({ filter: { status: "current" }, sort: "-userCount", limit: 20, offset, revalidate: 1800 })),
   ]);
   const all = uniqueById(pages.flatMap((p) => p.items));
-  const [broadcasts, aniNext] = await Promise.all([getWeekBroadcasts(), aniListNextFor(all.map((a) => a.id))]);
+  const [broadcasts, aniNext] = await Promise.all([getWeekBroadcasts(), aniListNextEpisodes(all.map((a) => a.id))]);
   // AniList tracks broadcast times more closely than Kitsu; shows whose next episode is > 14 days out are on a break.
-  for (const a of all) { const t = aniNext.get(a.id); if (t) a.nextRelease = t; }
+  for (const a of all) { const t = aniNext.get(a.id); if (t) a.nextRelease = t.at; }
+  const nextEp = (a: Anime) => aniNext.get(a.id)?.episode ?? null;
   const onBreak = all.filter((a) => a.nextRelease && new Date(a.nextRelease).getTime() - Date.now() > 14 * 86400000);
   const breakIds = new Set(onBreak.map((a) => a.id));
   const byDay = new Map<string, BoardItem[]>(DAYS.map((d) => [d, []]));
@@ -41,8 +42,8 @@ export default async function SchedulePage() {
     // Weekly TV series keep their premiere weekday, so fall back to it when Kitsu has no next-episode timestamp.
     const est = !exact && a.subtype === "TV" && a.startDate ? weekdayOf(`${a.startDate}T12:00:00+09:00`) : null;
     const d = exact || est;
-    if (d && byDay.has(d)) byDay.get(d)!.push(toItem(a, !exact));
-    else tba.push(toItem(a, true));
+    if (d && byDay.has(d)) byDay.get(d)!.push(toItem(a, !exact, nextEp(a)));
+    else tba.push(toItem(a, true, nextEp(a)));
   }
   const todayJst = new Date().toLocaleDateString("en-US", { weekday: "long", timeZone: "Asia/Tokyo" });
   const order = [...DAYS.slice(DAYS.indexOf(todayJst)), ...DAYS.slice(0, DAYS.indexOf(todayJst))];

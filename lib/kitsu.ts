@@ -1096,13 +1096,19 @@ export function airingNotice(kitsuAt: string | null, aniAt: string | null | unde
 
 /** AniList next-airing times for many Kitsu ids: Kitsu mappings (cached a week) + one batched AniList request per 50. */
 export async function aniListNextFor(kitsuIds: string[]): Promise<Map<string, string>> {
+  const eps = await aniListNextEpisodes(kitsuIds);
+  return new Map([...eps].map(([k, v]) => [k, v.at]));
+}
+
+/** Next episode number and air time (ISO) per Kitsu id, from AniList's airing schedule. */
+export async function aniListNextEpisodes(kitsuIds: string[]): Promise<Map<string, { episode: number; at: string }>> {
   const pairs = await Promise.all(kitsuIds.map(async (k) => [k, await getAniListId(k)] as const));
   const ids = pairs.map(([, a]) => a).filter((x): x is number => x !== null);
   const next = await aniListNextAiring(ids);
-  const out = new Map<string, string>();
+  const out = new Map<string, { episode: number; at: string }>();
   for (const [k, a] of pairs) {
     const n = a ? next.get(a) : null;
-    if (n && n.airingAt > 0) out.set(k, new Date(n.airingAt * 1000).toISOString());
+    if (n && n.airingAt > 0) out.set(k, { episode: n.episode, at: new Date(n.airingAt * 1000).toISOString() });
   }
   return out;
 }

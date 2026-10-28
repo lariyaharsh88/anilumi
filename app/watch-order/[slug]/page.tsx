@@ -27,14 +27,38 @@ function shortTitle(title: string, franchise: string) {
   return rest ? rest.charAt(0).toUpperCase() + rest.slice(1) : title;
 }
 
+const plural = (n: number, one: string, many = `${one}s`) => `${n} ${n === 1 ? one : many}`;
+
+/** The name people search: the most-followed main entry ("Nichijou", not its episode-0 prequel). */
+const franchiseName = (wo: Awaited<ReturnType<typeof buildWatchOrder>>) =>
+  [...wo.entries.filter((e) => e.kind === "main")].sort((x, y) => y.anime.userCount - x.anime.userCount)[0]?.anime.title || wo.root.title;
+
+/** "8 Seasons + 2 Movies & 5 OVAs": what searchers ask for ("aot watch order with ova and movies"). */
+function counts(wo: Awaited<ReturnType<typeof buildWatchOrder>>) {
+  const mains = wo.entries.filter((e) => e.kind === "main");
+  const movies = wo.entries.filter((e) => e.kind === "movie").length;
+  const extras = wo.entries.filter((e) => e.kind === "side").length;
+  // "Seasons" when the follow-ups are numbered seasons; Naruto → Shippuden → Boruto are separate series.
+  const seasonal = mains.slice(1).some((e) => /season|\b(2nd|3rd|\d+th)\b|part \d|final/i.test(`${e.anime.title} ${e.anime.slug}`));
+  const core = plural(mains.length, seasonal ? "Season" : "Series", seasonal ? "Seasons" : "Series");
+  const label = [core, movies && plural(movies, "Movie"), extras && plural(extras, "OVA")].filter(Boolean);
+  return { label: label.length > 1 ? `${label.slice(0, -1).join(" + ")} & ${label[label.length - 1]}` : label[0], movies, extras };
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const a = await getAnimeBySlug(decodeURIComponent(slug));
   if (!a) notFound();
   const year = new Date().getFullYear();
+  const wo = await buildWatchOrder(a);
+  const name = franchiseName(wo);
+  const order = wo.entries.filter((e) => e.kind === "main" || e.kind === "movie");
+  const c = counts(wo);
   return {
-    title: `${a.title} Watch Order (${year}) – Complete Guide + Total Time`,
-    description: `How to watch ${a.title} in order: every season, movie, OVA and spin-off, which recaps to skip, and how long the whole franchise takes to binge.`,
+    title: wo.entries.length > 1 ? `${name} Watch Order: ${c.label} (${year})` : `${name} Watch Order (${year}): Standalone, No Sequels`,
+    description: wo.entries.length > 1
+      ? `Watch ${name} in this order: ${order.slice(0, 4).map((e, i) => `${i + 1}. ${e.anime.title}`).join(", ")}${order.length > 4 ? ", …" : ""}. Where every movie and OVA fits, which recaps to skip, and the total time (${fmtMinutes(wo.totalMinutes)}).`.slice(0, 300)
+      : `${name} is a standalone title with no sequels, prequels or spin-offs on record.`,
     alternates: { canonical: `/watch-order/${a.slug}` },
   };
 }
@@ -47,7 +71,7 @@ export default async function WatchOrderPage({ params }: Props) {
   const required = wo.entries.filter((e) => !e.optional || e.kind === "movie");
   const skippable = wo.entries.filter((e) => e.kind === "recap" || e.kind === "alt");
   const ordered = wo.entries.filter((e) => e.kind !== "recap" && e.kind !== "alt").map((e, i) => ({ ...e, step: i + 1 }));
-  const name = wo.root.title;
+  const name = franchiseName(wo);
 
   const ld = {
     "@context": "https://schema.org",
@@ -80,6 +104,19 @@ export default async function WatchOrderPage({ params }: Props) {
           <p className="text-xs font-semibold uppercase tracking-wider text-violet">How to watch</p>
           <p className="mt-1 text-sm leading-6 text-ink/90">{wo.intro}</p>
         </div>
+      )}
+      {ordered.length > 1 && (
+        <section className="card mt-5 p-4" aria-labelledby="quick-h">
+          <h2 id="quick-h" className="font-semibold text-ink">{name} watch order at a glance</h2>
+          <ol className="mt-2 grid gap-x-6 gap-y-1 text-sm sm:grid-cols-2">
+            {ordered.filter((e) => e.kind === "main" || e.kind === "movie" || e.kind === "side").map((e, i) => (
+              <li key={e.anime.id} className="flex gap-2">
+                <span className="w-6 shrink-0 text-right font-bold tabular-nums text-muted">{i + 1}.</span>
+                <span className="min-w-0"><Link href={animePath(e.anime)} className="text-ink hover:text-violet-2">{e.anime.title}</Link> <span className="text-xs text-muted">{e.kind === "main" ? subtypeLabel(e.anime.subtype) : e.kind === "movie" ? "Movie" : `${subtypeLabel(e.anime.subtype)} · optional`}{e.anime.startDate ? ` · ${e.anime.startDate.slice(0, 4)}` : ""}</span></span>
+              </li>
+            ))}
+          </ol>
+        </section>
       )}
       <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-4">
         <div className="card p-3"><p className="text-xl font-extrabold text-accent-2">{wo.mainCount}</p><p className="text-xs text-muted">core entries</p></div>

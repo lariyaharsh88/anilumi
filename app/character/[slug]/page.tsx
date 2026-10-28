@@ -7,7 +7,8 @@ import { abs } from "@/lib/site";
 import PageHero from "@/components/PageHero";
 import JsonLd from "@/components/JsonLd";
 import Faq from "@/components/Faq";
-import { getCast, getAniListCharacter, sameName, vaPath } from "@/lib/anilist";
+import { getCast, getAniListCharacter, sameName, vaPath, type Va } from "@/lib/anilist";
+import { snapFor, showRanking, snapToAniList } from "@/lib/charsnap";
 import { parseKitsuBio, mergeFacts, factsTitle, ageAnswer } from "@/lib/charfacts";
 import { formatMix, yearsActive, perYear, castRank } from "@/lib/charstats";
 import StatTiles from "@/components/viz/StatTiles";
@@ -33,21 +34,34 @@ async function load(slug: string) {
   const tv = (xs: typeof apps) => xs.filter((x) => x.anime.subtype === "TV");
   const homeApp = top(tv(mains)) || top(tv(apps)) || top(mains) || top(apps);
   const home = homeApp?.anime;
-  const cast = home ? await getCast(home.id, 25) : null;
-  const jpKey = (s: string | null | undefined) => (s || "").replace(/[\s・·=＝]/g, "");
-  const voiced = cast?.entries.find((e) => sameName(e.character.name, c.name) || (c.nameJp && jpKey(e.character.native) === jpKey(c.nameJp)));
   const bday = birthdayFor(c.name, apps.map((x) => x.anime.slug));
-  const [al, others] = await Promise.all([
-    voiced ? getAniListCharacter(voiced.character.id) : null,
-    home ? getCharacters(home.id, 13) : [],
-  ]);
+  // Popular characters come from the monthly AniList snapshot (no live calls: AniList allows ~30 a minute);
+  // everyone else falls back to live AniList, which may be missing on a bad minute.
+  const snap = snapFor(c.name, apps.map((x) => x.anime.slug));
+  const person = (p: { id: number; n: string; i: string | null } | null): Va | null => (p ? { id: p.id, name: p.n, native: null, image: p.i } : null);
+  let voiced: { character: { id: number }; jp: Va | null; en: Va | null } | undefined;
+  let al, cast = null, ranking: { id: number; name: string; favourites: number }[] = [], rankShow: string | null = null;
+  if (snap) {
+    voiced = { character: { id: snap.id }, jp: person(snap.jp), en: person(snap.en) };
+    al = snapToAniList(snap);
+    ranking = showRanking(snap).map((x) => ({ id: x.id, name: x.n, favourites: x.f }));
+    rankShow = snap.t;
+  } else {
+    cast = home ? await getCast(home.id, 25) : null;
+    const jpKey = (s: string | null | undefined) => (s || "").replace(/[\s・·=＝]/g, "");
+    voiced = cast?.entries.find((e) => sameName(e.character.name, c.name) || (c.nameJp && jpKey(e.character.native) === jpKey(c.nameJp)));
+    al = voiced ? await getAniListCharacter(voiced.character.id) : null;
+    ranking = (cast?.entries || []).map((e) => e.character);
+    rankShow = home?.title ?? null;
+  }
+  const others = home ? await getCharacters(home.id, 13) : [];
   const { facts: kitsuFacts, bio } = parseKitsuBio(c.description);
   const facts = mergeFacts(al, kitsuFacts);
   // The birthday snapshot links to a date page; fall back to it when neither source lists a birthday.
   if (bday && !facts.some((f) => f.key === "birthday")) facts.splice(facts.findIndex((f) => f.key !== "age") < 0 ? facts.length : facts.findIndex((f) => f.key !== "age"), 0, { key: "birthday", label: "Birthday", value: bdLabel(bday.m, bday.d) });
   const fact = (k: string) => facts.find((f) => f.key === k)?.value;
-  const ranked = castRank((cast?.entries || []).map((e) => e.character), voiced?.character.id);
-  return { c, apps, mains, home, homeApp, voiced, bday, facts, fact, bio, al, ranked, others: others.filter((o) => o.id !== c.id).slice(0, 12) };
+  const ranked = castRank(ranking, voiced?.character.id);
+  return { c, apps, mains, home, homeApp, voiced, bday, facts, fact, bio, al, ranked, rankShow, snapped: Boolean(snap), others: others.filter((o) => o.id !== c.id).slice(0, 12) };
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -70,7 +84,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function CharacterPage({ params }: Props) {
   const { slug } = await params;
-  const { c, apps, mains, home, homeApp, voiced, bday, facts, fact, bio, al, ranked, others } = await load(slug);
+  const { c, apps, mains, home, homeApp, voiced, bday, facts, fact, bio, al, ranked, rankShow, snapped, others } = await load(slug);
   const span = yearsActive(apps);
   const formats = formatMix(apps);
   const years = perYear(apps);
@@ -79,7 +93,7 @@ export default async function CharacterPage({ params }: Props) {
   const loved = ranked ? [...ranked.sorted.slice(0, 8), ...(ranked.rank > 8 ? [ranked.sorted[ranked.rank - 1]] : [])] : [];
   const stats = [
     ...(favs ? [{ label: "Favourites on AniList", value: favs.toLocaleString("en-US"), sub: "fans who marked them a favourite" }] : []),
-    ...(ranked && home ? [{ label: `Rank in ${home.title}`, value: `#${ranked.rank}`, sub: `of ${ranked.of} characters, by favourites` }] : []),
+    ...(ranked && rankShow ? [{ label: `Rank in ${rankShow}`, value: `#${ranked.rank}`, sub: snapped ? "among its characters, by favourites" : `of ${ranked.of} characters, by favourites` }] : []),
     ...(apps.length ? [{ label: "Appearances", value: String(apps.length), sub: `${mains.length} as a main character` }] : []),
     ...(span ? [{ label: "On screen", value: span.from === span.to ? String(span.from) : `${span.from}–${span.to}`, sub: span.to > span.from ? `${span.to - span.from + 1} years` : "one year", still: true }] : []),
   ];
@@ -142,10 +156,10 @@ export default async function CharacterPage({ params }: Props) {
           <h2 id="numbers-h" className="h-section mb-3">{c.name} in numbers</h2>
           <StatTiles stats={stats} />
           <div className="mt-3 grid gap-3 lg:grid-cols-2">
-            {loved.length >= 3 && home && (
+            {loved.length >= 3 && rankShow && (
               <BarChart
                 orientation="bar"
-                title={`Most-loved characters in ${home.title}`}
+                title={`Most-loved characters in ${rankShow}`}
                 subtitle="AniList favourites"
                 valueHeading="Favourites"
                 highlightKey={String(voiced!.character.id)}
