@@ -9,6 +9,10 @@ import JsonLd from "@/components/JsonLd";
 import Faq from "@/components/Faq";
 import { getCast, getAniListCharacter, sameName, vaPath } from "@/lib/anilist";
 import { parseKitsuBio, mergeFacts, factsTitle, ageAnswer } from "@/lib/charfacts";
+import { formatMix, yearsActive, perYear, castRank } from "@/lib/charstats";
+import StatTiles from "@/components/viz/StatTiles";
+import BarChart from "@/components/viz/BarChart";
+import StackedBar from "@/components/viz/StackedBar";
 import AdSlot from "@/components/AdSlot";
 import { birthdayFor, bdLabel, bdPath } from "@/lib/birthdays";
 
@@ -42,7 +46,8 @@ async function load(slug: string) {
   // The birthday snapshot links to a date page; fall back to it when neither source lists a birthday.
   if (bday && !facts.some((f) => f.key === "birthday")) facts.splice(facts.findIndex((f) => f.key !== "age") < 0 ? facts.length : facts.findIndex((f) => f.key !== "age"), 0, { key: "birthday", label: "Birthday", value: bdLabel(bday.m, bday.d) });
   const fact = (k: string) => facts.find((f) => f.key === k)?.value;
-  return { c, apps, mains, home, homeApp, voiced, bday, facts, fact, bio, others: others.filter((o) => o.id !== c.id).slice(0, 12) };
+  const ranked = castRank((cast?.entries || []).map((e) => e.character), voiced?.character.id);
+  return { c, apps, mains, home, homeApp, voiced, bday, facts, fact, bio, al, ranked, others: others.filter((o) => o.id !== c.id).slice(0, 12) };
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -65,7 +70,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function CharacterPage({ params }: Props) {
   const { slug } = await params;
-  const { c, apps, mains, home, homeApp, voiced, bday, facts, fact, bio, others } = await load(slug);
+  const { c, apps, mains, home, homeApp, voiced, bday, facts, fact, bio, al, ranked, others } = await load(slug);
+  const span = yearsActive(apps);
+  const formats = formatMix(apps);
+  const years = perYear(apps);
+  const favs = al?.favourites || 0;
+  // Top 8 of the show's cast by favourites, always including this character.
+  const loved = ranked ? [...ranked.sorted.slice(0, 8), ...(ranked.rank > 8 ? [ranked.sorted[ranked.rank - 1]] : [])] : [];
+  const stats = [
+    ...(favs ? [{ label: "Favourites on AniList", value: favs.toLocaleString("en-US"), sub: "fans who marked them a favourite" }] : []),
+    ...(ranked && home ? [{ label: `Rank in ${home.title}`, value: `#${ranked.rank}`, sub: `of ${ranked.of} characters, by favourites` }] : []),
+    ...(apps.length ? [{ label: "Appearances", value: String(apps.length), sub: `${mains.length} as a main character` }] : []),
+    ...(span ? [{ label: "On screen", value: span.from === span.to ? String(span.from) : `${span.from}–${span.to}`, sub: span.to > span.from ? `${span.to - span.from + 1} years` : "one year", still: true }] : []),
+  ];
   const voices = voiced ? [voiced.jp && { va: voiced.jp, lang: "Japanese" }, voiced.en && { va: voiced.en, lang: "English dub" }].filter((x): x is NonNullable<typeof x> => Boolean(x)) : [];
   const ld = { "@context": "https://schema.org", "@type": "Person", name: c.name, alternateName: c.nameJp || undefined, image: c.image || undefined, description: bio || undefined, url: abs(`/character/${c.slug}`) };
   return (
@@ -120,6 +137,30 @@ export default async function CharacterPage({ params }: Props) {
           <p className="prose-anime whitespace-pre-line">{bio || "No biography has been written for this character yet."}</p>
         </section>
       </div>
+      {stats.length >= 2 && (
+        <section className="reveal mt-10" aria-labelledby="numbers-h">
+          <h2 id="numbers-h" className="h-section mb-3">{c.name} in numbers</h2>
+          <StatTiles stats={stats} />
+          <div className="mt-3 grid gap-3 lg:grid-cols-2">
+            {loved.length >= 3 && home && (
+              <BarChart
+                orientation="bar"
+                title={`Most-loved characters in ${home.title}`}
+                subtitle="AniList favourites"
+                valueHeading="Favourites"
+                highlightKey={String(voiced!.character.id)}
+                labelKeys={[String(voiced!.character.id)]}
+                data={loved.map((x) => ({ key: String(x.id), label: x.name, value: x.favourites, display: x.favourites.toLocaleString("en-US") }))}
+              />
+            )}
+            <div className="space-y-3">
+              {formats.length > 1 && <StackedBar title="Appearances by format" subtitle={`${apps.length} titles in total`} segments={formats} unit="titles" />}
+              {years.length >= 3 && <BarChart title="Appearances per year" subtitle={years[0].label.endsWith("s") ? "Grouped by five years" : "New titles featuring them"} valueHeading="Titles" integer height={140} data={years.map((y) => ({ ...y, display: `${y.value} ${y.value === 1 ? "title" : "titles"}` }))} />}
+            </div>
+          </div>
+        </section>
+      )}
+
       <AdSlot slot="character-mid" />
       {apps.length > 0 && (
         <section className="mt-10">

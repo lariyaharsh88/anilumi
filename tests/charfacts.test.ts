@@ -49,3 +49,19 @@ test("parseKitsuBio follows facts across paragraphs and cuts at unknown labels",
   assert.equal(k.facts.occupation, "Jonin");
   assert.equal(k.bio, "Like his father, Kakashi is a genius.");
 });
+
+test("charstats: format mix, years, per-year buckets and cast rank", async () => {
+  const { formatMix, yearsActive, perYear, castRank } = await import("../lib/charstats");
+  const app = (subtype: string, y: string) => ({ role: "main", anime: { id: y + subtype, subtype, startDate: `${y}-04-01` } });
+  const apps = [app("TV", "2013"), app("TV", "2017"), app("movie", "2015"), app("OVA", "2013")];
+  assert.deepEqual(formatMix(apps).map((f) => [f.key, f.value]), [["TV", 2], ["movie", 1], ["OVA", 1]]);
+  assert.deepEqual(yearsActive(apps), { from: 2013, to: 2017 });
+  assert.deepEqual(perYear(apps).map((y) => y.value), [2, 0, 1, 0, 1]);
+  const long = perYear([app("TV", "1971"), app("movie", "2019")]);
+  assert.equal(long[0].label, "1970s");
+  assert.equal(long.reduce((n, y) => n + y.value, 0), 2);
+  const r = castRank([{ id: 1, favourites: 5 }, { id: 2, favourites: 50 }, { id: 3, favourites: 20 }], 3);
+  assert.deepEqual([r?.rank, r?.of], [2, 3]);
+  assert.equal(castRank([{ id: 1, favourites: 5 }], 1), null);
+  assert.equal(yearsActive([]), null);
+});

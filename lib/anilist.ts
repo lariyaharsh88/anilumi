@@ -123,7 +123,7 @@ export function cleanBio(md: string | null): { text: string; facts: BioFact[] } 
 
 export type Va = { id: number; name: string; native: string | null; image: string | null };
 export type CastEntry = {
-  character: { id: number; name: string; native: string | null; image: string | null };
+  character: { id: number; name: string; native: string | null; image: string | null; favourites: number };
   role: "MAIN" | "SUPPORTING" | "BACKGROUND";
   jp: Va | null;
   en: Va | null;
@@ -140,8 +140,8 @@ export async function getCast(kitsuId: string, perPage = 25, strict = false): Pr
   if (!id) return null;
   return memoized(`cast:${id}:${perPage}`, 6 * 3600_000, async () => {
     // voiceActorRoles (not aliased voiceActors(language:…)): AniList ignores per-alias arguments.
-    const d = await anilist<{ Media: { characters: { pageInfo: { total: number }; edges: { role: CastEntry["role"]; node: { id: number; name: AlName; image: { medium: string | null } | null }; voiceActorRoles: { voiceActor: AlVa | null }[] }[] } } | null }>(
-      "query($id:Int,$n:Int){Media(id:$id,type:ANIME){characters(sort:[ROLE,RELEVANCE,ID],perPage:$n){pageInfo{total} edges{role node{id name{full native} image{medium}} voiceActorRoles(sort:[RELEVANCE,ID]){voiceActor{id name{full native} image{medium} languageV2}}}}}}",
+    const d = await anilist<{ Media: { characters: { pageInfo: { total: number }; edges: { role: CastEntry["role"]; node: { id: number; name: AlName; image: { medium: string | null } | null; favourites?: number }; voiceActorRoles: { voiceActor: AlVa | null }[] }[] } } | null }>(
+      "query($id:Int,$n:Int){Media(id:$id,type:ANIME){characters(sort:[ROLE,RELEVANCE,ID],perPage:$n){pageInfo{total} edges{role node{id name{full native} image{medium} favourites} voiceActorRoles(sort:[RELEVANCE,ID]){voiceActor{id name{full native} image{medium} languageV2}}}}}}",
       { id, n: perPage },
       86400,
       { strict },
@@ -156,7 +156,7 @@ export async function getCast(kitsuId: string, perPage = 25, strict = false): Pr
         const jp = vas.find((v) => v.languageV2 === "Japanese");
         const en = vas.find((v) => v.languageV2 === "English");
         return {
-          character: { id: e.node.id, name: e.node.name.full.trim(), native: e.node.name.native, image: e.node.image?.medium || null },
+          character: { id: e.node.id, name: e.node.name.full.trim(), native: e.node.name.native, image: e.node.image?.medium || null, favourites: e.node.favourites || 0 },
           role: e.role,
           jp: toVa(jp),
           en: toVa(en),
@@ -377,12 +377,12 @@ export async function getAniListDuration(kitsuId: string): Promise<number | null
 
 /** Structured facts for an AniList character (age, gender, blood type, birthday, "__Height:__" lines). */
 export async function getAniListCharacter(id: number): Promise<import("./charfacts").AniListCharacter | null> {
-  const d = await anilist<{ Character: { age: string | null; gender: string | null; bloodType: string | null; dateOfBirth: { month: number | null; day: number | null } | null; description: string | null } | null }>(
-    "query($id:Int){Character(id:$id){age gender bloodType dateOfBirth{month day} description}}",
+  const d = await anilist<{ Character: { age: string | null; gender: string | null; bloodType: string | null; dateOfBirth: { month: number | null; day: number | null } | null; description: string | null; favourites: number | null } | null }>(
+    "query($id:Int){Character(id:$id){age gender bloodType dateOfBirth{month day} description favourites}}",
     { id },
     86400 * 7,
   );
   const c = d?.Character;
   if (!c) return null;
-  return { age: c.age, gender: c.gender, bloodType: c.bloodType, dateOfBirth: c.dateOfBirth, lines: cleanBio(c.description).facts };
+  return { age: c.age, gender: c.gender, bloodType: c.bloodType, dateOfBirth: c.dateOfBirth, lines: cleanBio(c.description).facts, favourites: c.favourites || 0 };
 }

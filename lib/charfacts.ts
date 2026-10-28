@@ -75,7 +75,7 @@ export function factsFromAniList(lines: BioFact[]): Facts {
 }
 
 const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-export type AniListCharacter = { age: string | null; gender: string | null; bloodType: string | null; dateOfBirth: { month: number | null; day: number | null } | null; lines: BioFact[] };
+export type AniListCharacter = { age: string | null; gender: string | null; bloodType: string | null; dateOfBirth: { month: number | null; day: number | null } | null; lines: BioFact[]; favourites?: number };
 
 /**
  * One fact sheet: AniList's structured fields first (they're curated), then its fact lines, then Kitsu's.
