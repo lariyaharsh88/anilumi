@@ -2,6 +2,7 @@ User-agent: *
 Allow: /
 
 Disallow: /my
+Disallow: /admin
 Disallow: /api/
 Disallow: /embed/
 Disallow: /search

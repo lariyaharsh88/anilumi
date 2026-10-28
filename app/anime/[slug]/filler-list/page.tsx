@@ -6,6 +6,8 @@ import { fillerFor, fillerSource, formatRanges, kindRuns, type EpisodeKind, type
 import PageHero from "@/components/PageHero";
 import Faq, { type FaqItem } from "@/components/Faq";
 import AdSlot from "@/components/AdSlot";
+import LeadForm from "@/components/LeadForm";
+import { dbEnabled } from "@/lib/db";
 
 export const revalidate = 604800;
 export async function generateStaticParams() { return []; }
@@ -141,6 +143,8 @@ export default async function FillerListPage({ params }: Props) {
             : <>Draft list, still being verified. Double-check before skipping a long run.</>}
         {f.entry.note ? ` ${f.entry.note}` : ""} Episode numbers follow Kitsu&apos;s numbering for this series.
       </p>
+
+      {dbEnabled() && <LeadForm className="mt-8" kind="guide" source="filler-guide" animeId={a.id} animeTitle={a.title} title={`📬 Get ${a.title} guide updates`} blurb="An email when this filler list changes or the next season's guide is out." button="Keep me posted" />}
 
       <p className="mt-6 text-sm text-muted">
         <Link href={animePath(a)} className="text-violet hover:underline">{a.title} overview</Link> ·{" "}

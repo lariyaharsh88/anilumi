@@ -7,6 +7,10 @@ import { getSeasonPreview, premiereCalendar, type PreviewItem } from "@/lib/prev
 import PageHero from "@/components/PageHero";
 import Faq, { type FaqItem } from "@/components/Faq";
 import AdSlot from "@/components/AdSlot";
+import HypeButton, { HypeProvider } from "@/components/HypeButton";
+import HypeBoard from "@/components/HypeBoard";
+import LeadForm from "@/components/LeadForm";
+import { dbEnabled } from "@/lib/db";
 
 export const revalidate = 86400;
 export async function generateStaticParams() { return []; }
@@ -38,7 +42,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-function Row({ i }: { i: PreviewItem }) {
+function Row({ i, hype }: { i: PreviewItem; hype: boolean }) {
   const href = i.anime ? animePath(i.anime) : null;
   return (
     <li className="flex gap-3 p-3">
@@ -54,18 +58,19 @@ function Row({ i }: { i: PreviewItem }) {
           <p className="mt-0.5 text-xs text-muted">Follows {i.prequelAnime ? <Link href={animePath(i.prequelAnime)} className="text-violet hover:underline">{i.prequelAnime.title}</Link> : i.prequel.title}</p>
         )}
         {i.genres.length > 0 && <p className="mt-1.5 flex flex-wrap gap-1">{i.genres.map((g) => <span key={g} className="rounded bg-white/5 px-1.5 py-0.5 text-[11px] text-muted">{g}</span>)}</p>}
+        {hype && i.anime && <div className="mt-2"><HypeButton animeId={i.anime.id} compact /></div>}
       </div>
     </li>
   );
 }
 
-function Group({ id, title, sub, items }: { id: string; title: string; sub: string; items: PreviewItem[] }) {
+function Group({ id, title, sub, items, hype }: { id: string; title: string; sub: string; items: PreviewItem[]; hype: boolean }) {
   if (!items.length) return null;
   return (
     <section className="reveal mt-10" aria-labelledby={id}>
       <h2 id={id} className="h-section">{title} <span className="text-base font-semibold text-muted">{items.length}</span></h2>
       <p className="mt-1 text-sm text-muted">{sub}</p>
-      <ul className="card mt-3 grid divide-y divide-line md:grid-cols-2 md:divide-y-0 md:[&>li]:border-b md:[&>li]:border-line">{items.map((i) => <Row key={i.id} i={i} />)}</ul>
+      <ul className="card mt-3 grid divide-y divide-line md:grid-cols-2 md:divide-y-0 md:[&>li]:border-b md:[&>li]:border-line">{items.map((i) => <Row key={i.id} i={i} hype={hype} />)}</ul>
     </section>
   );
 }
@@ -79,6 +84,8 @@ export default async function SeasonPreview({ params }: Props) {
   const dated = cal.reduce((n, d) => n + d.items.length, 0);
   const prev = shiftSeason(s, y, -1), next = shiftSeason(s, y, 1);
   const label = `${cap(s)} ${y}`;
+  const community = dbEnabled();
+  const linked = items.filter((i) => i.anime);
   const adaptations = Object.entries(items.reduce<Record<string, number>>((m, i) => { if (i.source) m[i.source] = (m[i.source] || 0) + 1; return m; }, {})).sort((a, b) => b[1] - a[1]);
 
   const faq: FaqItem[] = [
@@ -89,6 +96,7 @@ export default async function SeasonPreview({ params }: Props) {
   ];
 
   return (
+    <HypeProvider ids={community ? linked.map((i) => i.anime!.id) : []}>
     <div className="container-x pb-8">
       <PageHero
         crumbs={[{ href: "/", label: "Home" }, { href: "/season", label: "Seasons" }, { href: `/season/${y}/${s}`, label }, { href: `/season/${y}/${s}/preview`, label: "Preview" }]}
@@ -134,6 +142,20 @@ export default async function SeasonPreview({ params }: Props) {
         </section>
       )}
 
+      {community && <HypeBoard items={linked.map((i) => ({ id: i.anime!.id, title: name(i), href: animePath(i.anime!) }))} title={`Most hyped ${label} shows`} />}
+
+      {community && items.length > 0 && (
+        <LeadForm
+          className="reveal mt-10"
+          kind="cheatsheet"
+          source="preview-cheatsheet"
+          title={`📋 Get the ${label} cheat sheet`}
+          blurb="Every premiere date on one printable page, plus a heads-up when new shows are confirmed."
+          button="Send it to me"
+          done={<p className="mt-1 text-sm"><Link href={`/season/${y}/${s}/cheatsheet`} className="font-semibold text-violet hover:text-violet-2">Open the {label} cheat sheet →</Link></p>}
+        />
+      )}
+
       {cal.length > 0 && (
         <section className="reveal mt-10" aria-labelledby="cal-h">
           <h2 id="cal-h" className="h-section">Premiere calendar</h2>
@@ -149,13 +171,14 @@ export default async function SeasonPreview({ params }: Props) {
         </section>
       )}
 
-      <Group id="seq-h" title="Sequels and new seasons" sub="Returning shows. Catch up first with each one's watch order." items={sequels} />
+      <Group id="seq-h" title="Sequels and new seasons" sub="Returning shows. Catch up first with each one's watch order." items={sequels} hype={community} />
       <AdSlot slot="preview-mid" />
-      <Group id="new-h" title="New series" sub="First seasons, most-followed first." items={fresh} />
-      <Group id="mov-h" title="Films" sub="Theatrical releases dated in this season." items={movies} />
+      <Group id="new-h" title="New series" sub="First seasons, most-followed first." items={fresh} hype={community} />
+      <Group id="mov-h" title="Films" sub="Theatrical releases dated in this season." items={movies} hype={community} />
 
       <p className="mt-6 text-xs text-muted">Line-up, dates and studios from AniList; titles link to AniLumi pages once Kitsu lists them. Updated daily.</p>
       <Faq items={faq} />
     </div>
+    </HypeProvider>
   );
 }

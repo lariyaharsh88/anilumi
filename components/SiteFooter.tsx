@@ -1,6 +1,8 @@
 import Link from "@/components/Link";
 import { site } from "@/lib/site";
 import Logo from "./Logo";
+import LeadForm from "./LeadForm";
+import { dbEnabled } from "@/lib/db";
 import { seasonOf, shiftSeason, cap } from "@/lib/kitsu";
 
 type Col = { h: string; links: [string, string][] };
@@ -12,13 +14,13 @@ export default function SiteFooter() {
   const cols: Col[] = [
     { h: "Discover", links: [["/schedule", "Airing this week"], [`/season/${year}/${season}`, `${cap(season)} ${year} season`], ["/top/rated", "Top rated"], ["/top/popular", "Most popular"], ["/top/upcoming", "Upcoming"], ["/top/movies", "Best movies"], ["/news", "Anime news"], [`/season/${next.year}/${next.season}/preview`, `${cap(next.season)} ${next.year} preview`]] },
     { h: "Guides", links: [["/watch-order", "Watch orders"], ["/upcoming-seasons", "Confirmed sequels"], ["/how-long-to-watch", "How long to watch"], ["/filler-lists", "Filler lists"], ["/anime-to-manga", "Anime to manga"], ["/parents-guide", "Anime for kids"], ["/anime-openings", "Openings & endings"], ["/voice-actors", "Voice actors"]] },
-    { h: "Tools", links: [["/what-anime-is-this", "What anime is this?"], ["/tonight", "Watch tonight"], ["/quiz", "What should I watch?"], ["/tier-list", "Tier list maker"], ["/compare", "Compare anime"], ["/trends", "Genre trends"], ["/birthdays", "Birthdays"], ["/on-this-day", "On this day"]] },
+    { h: "Tools", links: [["/what-anime-is-this", "What anime is this?"], ["/tonight", "Watch tonight"], ["/quiz", "What should I watch?"], ["/tier-list", "Tier list maker"], ["/compare", "Compare anime"], ["/trends", "Genre trends"], ["/birthdays", "Birthdays"], ["/on-this-day", "On this day"], ["/hype", "Most hyped"]] },
     { h: "Genres", links: [["/genre/action", "Action"], ["/genre/romance", "Romance"], ["/genre/comedy", "Comedy"], ["/genre/fantasy", "Fantasy"], ["/genre/isekai", "Isekai"], ["/genre", "All genres"]] },
   ];
-  const small: [string, string][] = [["/about", "About"], ["/my", "My list"], ["/search", "Search"], ["/feed.xml", "RSS"]];
+  const small: [string, string][] = [["/about", "About"], ["/advertise", "Advertise"], ["/privacy", "Privacy"], ["/my", "My list"], ["/feed.xml", "RSS"]];
 
   return (
-    <footer className="relative mt-20 border-t border-line bg-bg-2">
+    <footer data-chrome className="relative mt-20 border-t border-line bg-bg-2">
       <div aria-hidden className="absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-accent/70 to-transparent" />
 
       <div className="container-x grid gap-10 py-12 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,3fr)] lg:gap-16">
@@ -32,6 +34,7 @@ export default function SiteFooter() {
             <Link href="/my" className="chip">My list</Link>
             <a href="/feed.xml" className="chip">RSS feed</a>
           </div>
+          {dbEnabled() && <LeadForm compact className="mt-6" kind="digest" source="footer-digest" title="📰 Weekly anime digest" button="Subscribe" />}
         </div>
 
         <nav aria-label="Footer" className="grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-4">

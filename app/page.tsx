@@ -13,6 +13,9 @@ import { getQuoteOfDay } from "@/lib/quote";
 import { premieresOn, animeOfTheDay, nowJst, otdPath } from "@/lib/onthisday";
 import { bdPath } from "@/lib/birthdays";
 import Image from "next/image";
+import PollCard from "@/components/PollCard";
+import { currentPoll } from "@/data/polls";
+import { dbEnabled } from "@/lib/db";
 
 export const revalidate = 1800;
 
@@ -135,6 +138,7 @@ export default async function Home() {
           )}
         </section>
       )}
+      {dbEnabled() && currentPoll(new Date().toISOString().slice(0, 10)) && <div className="mt-12"><PollCard poll={currentPoll(new Date().toISOString().slice(0, 10))!} /></div>}
       {quote && (
         <figure className="reveal card relative mt-12 overflow-hidden p-6 sm:p-8" aria-label="Anime quote of the day">
           <span aria-hidden className="pointer-events-none absolute -left-2 -top-8 select-none text-[9rem] font-black leading-none text-white/5">“</span>

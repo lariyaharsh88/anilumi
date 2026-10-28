@@ -258,3 +258,10 @@ html, body { overflow-x: clip; }
 .logo-twinkle { transform-box: fill-box; transform-origin: center; animation: twinkle 4.5s ease-in-out infinite; }
 @keyframes twinkle { 0%, 82%, 100% { transform: scale(1) rotate(0); opacity: 1; } 88% { transform: scale(1.25) rotate(45deg); opacity: .85; } 94% { transform: scale(.9) rotate(90deg); opacity: 1; } }
 @media (prefers-reduced-motion: reduce) { .logo-twinkle { animation: none; } }
+
+/* Print (e.g. the season cheat sheet): black on white, no site chrome. */
+@media print {
+  :root, :root[data-theme="light"] { color-scheme: light; --color-bg: #fff; --color-bg-2: #fff; --color-card: #fff; --color-line: #d4d8e2; --color-ink: #111; --color-muted: #555; --color-accent-2: #b0123b; --color-violet: #3f32b5; --color-violet-2: #3f32b5; }
+  [data-chrome] { display: none !important; }
+  body { background: #fff; }
+}

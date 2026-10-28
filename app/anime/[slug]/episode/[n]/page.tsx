@@ -13,6 +13,9 @@ import AiringNoticeBanner from "@/components/AiringNoticeBanner";
 import SpoilerGate from "@/components/SpoilerGate";
 import WatchedUpTo from "@/components/WatchedUpTo";
 import { fillerFor, fillerSource } from "@/lib/filler";
+import EpisodeReactions from "@/components/EpisodeReactions";
+import LeadForm from "@/components/LeadForm";
+import { dbEnabled } from "@/lib/db";
 import AdSlot from "@/components/AdSlot";
 import { streamLink, affiliateRel } from "@/lib/affiliate";
 import SkipGuide from "@/components/SkipGuide";
@@ -122,6 +125,10 @@ export default async function EpisodePage({ params }: Props) {
             );
           })()}
           {!upcoming && skips && <SkipGuide s={skips} episode={n} />}
+          {dbEnabled() && !upcoming && <EpisodeReactions animeId={a.id} ep={n} />}
+          {dbEnabled() && upcoming && a.status !== "finished" && (
+            <LeadForm className="mt-5" kind="alert" source="episode-alert" animeId={a.id} animeTitle={a.title} title={`🔔 Email me when episode ${n} airs`} blurb={`One email when ${a.title} episode ${n} is out, then one per new episode. Unsubscribe any time.`} />
+          )}
           {upcoming && airIso && (
             <div className="card mt-5 p-5">
               <Countdown iso={airIso} big label={`Episode ${n} airs in`} />

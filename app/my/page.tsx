@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import MyList from "@/components/MyList";
 import PageHero from "@/components/PageHero";
 import InstallButton from "@/components/InstallButton";
+import LeadForm from "@/components/LeadForm";
+import { dbEnabled } from "@/lib/db";
 
 export const metadata: Metadata = { title: "My list", description: "Your saved anime and their next episodes.", robots: { index: false, follow: true } };
 
@@ -12,6 +14,7 @@ export default function MyPage() {
         <InstallButton />
       </PageHero>
       <div className="mt-8"><MyList /></div>
+      {dbEnabled() && <LeadForm className="mt-10" kind="digest" source="mylist-digest" title="📰 Get the weekly anime digest" blurb="Every Friday: new episodes, premieres and the week's news, in one short email." button="Subscribe" />}
     </div>
   );
 }

@@ -7,6 +7,8 @@ import Analytics from "@/components/Analytics";
 import MotionProvider from "@/components/MotionProvider";
 import Toaster from "@/components/Toaster";
 import ServiceWorker from "@/components/ServiceWorker";
+import StickyLeadBar from "@/components/StickyLeadBar";
+import { dbEnabled } from "@/lib/db";
 import { SPOILER_PREPAINT, THEME_PREPAINT } from "@/lib/prepaint";
 import { site } from "@/lib/site";
 
@@ -50,6 +52,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <SiteFooter />
           <Toaster />
           <ServiceWorker />
+          {dbEnabled() && <StickyLeadBar />}
         </MotionProvider>
       </body>
     </html>

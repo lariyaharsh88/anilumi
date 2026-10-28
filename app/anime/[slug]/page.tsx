@@ -17,6 +17,11 @@ import CalendarLinks from "@/components/CalendarLinks";
 import WhereToWatch from "@/components/WhereToWatch";
 import SpoilerGate from "@/components/SpoilerGate";
 import StoryGuide from "@/components/StoryGuide";
+import RatingWidget from "@/components/RatingWidget";
+import HypeButton from "@/components/HypeButton";
+import LeadForm from "@/components/LeadForm";
+import { dbEnabled, ratingStats } from "@/lib/db";
+import { summarize, aggregateRating } from "@/lib/community";
 import { fillerFor, continuationFor } from "@/lib/filler";
 import ViewerBehaviour from "@/components/ViewerBehaviour";
 import AiringNoticeBanner from "@/components/AiringNoticeBanner";
@@ -143,6 +148,10 @@ export default async function AnimePage({ params }: Props) {
   if (dropOk) faqExtra.push({ q: `Do people finish ${a.title}?`, a: `${dropOk.dropRate.toFixed(1)}% of AniList members who start ${a.title} drop it${a.status === "current" ? " so far" : `, and ${dropOk.completionRate.toFixed(0)}% finish it`}${bench && benchGenre ? `. The median for popular ${benchGenre.toLowerCase()} anime is ${bench.toFixed(1)}%` : ""}.` });
   const faq = buildFaq(a, faqExtra);
   const year = a.startDate?.slice(0, 4);
+  const community = dbEnabled();
+  const released = a.status === "current" || a.status === "finished";
+  // Read when the page (re)renders, i.e. at most daily: fresh enough for search engines; the widget shows live numbers.
+  const fanRating = community && released ? aggregateRating(summarize(await ratingStats(a.id))) : undefined;
 
   const ld = {
     "@context": "https://schema.org",
@@ -156,8 +165,9 @@ export default async function AnimePage({ params }: Props) {
     datePublished: a.startDate || undefined,
     numberOfEpisodes: a.episodeCount || undefined,
     contentRating: a.ageRating || undefined,
-    // No aggregateRating: Google's review-snippet policy requires ratings collected on this site, not
-    // aggregated from Kitsu/AniList/MAL. Add it back only once AniLumi has its own user ratings.
+    // Only AniLumi's own fan ratings, and only past RATING_SNIPPET_MIN votes: Google's review-snippet policy
+    // requires ratings collected on this site, never scores aggregated from Kitsu/AniList/MAL.
+    aggregateRating: fanRating,
     trailer: a.youtubeVideoId ? { "@type": "VideoObject", name: `${a.title} trailer`, embedUrl: `https://www.youtube.com/embed/${a.youtubeVideoId}`, thumbnailUrl: `https://img.youtube.com/vi/${a.youtubeVideoId}/hqdefault.jpg`, uploadDate: a.startDate || undefined, description: `Official trailer for ${a.title}` } : undefined,
   };
 
@@ -295,6 +305,7 @@ export default async function AnimePage({ params }: Props) {
                 <a href="#watch" className="btn-primary px-5 py-3">▶ Where to watch</a>
                 <Link href={`/watch-order/${a.slug}`} className="btn-outline px-4 py-3">{franchise.length ? `Watch order · ${franchise.length + 1}` : "Watch order"}</Link>
                 <WatchButton item={watchItem} />
+                {community && !released && <HypeButton animeId={a.id} />}
                 <Link href={`/similar/${a.slug}`} className="btn-outline px-4 py-3">More like this</Link>
               </div>
             </div>
@@ -311,6 +322,17 @@ export default async function AnimePage({ params }: Props) {
               <p className="mt-2 text-sm text-muted">No licensed streams listed yet. <a href={amazonSearch(`${a.title} manga`)} target="_blank" rel={affiliateRel} className="text-violet hover:underline">Read the manga on Amazon →</a></p>
             )}
           </div>
+          {community && (a.status === "current" || !released) && (
+            <LeadForm
+              className="mt-4"
+              kind="alert"
+              source={a.status === "current" ? "anime-alert" : "anime-premiere"}
+              animeId={a.id}
+              animeTitle={a.title}
+              title={a.status === "current" ? `🔔 Get an email when the next ${a.title} episode airs` : `🔔 Get an email when ${a.title} premieres`}
+              blurb="One short email per episode, at air time. Nothing else."
+            />
+          )}
         </div>
       </header>
 
@@ -479,6 +501,7 @@ export default async function AnimePage({ params }: Props) {
 
         {/* ───────── Sidebar ───────── */}
         <aside className="lg:sticky lg:top-[130px] lg:self-start">
+          {community && released && <div className="mb-3"><RatingWidget animeId={a.id} title={a.title} /></div>}
           <div className="card p-4">
             <h2 className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted">Details</h2>
             <dl className="divide-y divide-line/60 text-sm">

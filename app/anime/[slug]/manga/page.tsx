@@ -7,6 +7,8 @@ import { amazonSearch, affiliateRel } from "@/lib/affiliate";
 import PageHero from "@/components/PageHero";
 import Faq, { type FaqItem } from "@/components/Faq";
 import AdSlot from "@/components/AdSlot";
+import LeadForm from "@/components/LeadForm";
+import { dbEnabled } from "@/lib/db";
 
 export const revalidate = 604800;
 export async function generateStaticParams() { return []; }
@@ -88,6 +90,8 @@ export default async function MangaPage({ params }: Props) {
           </ul>
         </section>
       )}
+
+      {dbEnabled() && <LeadForm className="mt-10" kind="guide" source="manga-guide" animeId={a.id} animeTitle={a.title} title={`📬 Tell me when ${a.title} gets its next season`} blurb="One email when a sequel is announced or dated, with where it picks up in the story." button="Notify me" />}
 
       <AdSlot slot="manga-mid" />
 
