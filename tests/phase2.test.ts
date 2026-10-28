@@ -47,3 +47,14 @@ test("toQuote validates the response and links the anime", () => {
   assert.equal(toQuote({ status: "error" }), null);
   assert.equal(toQuote({ ...ok, data: { ...ok.data, content: "x".repeat(400) } }), null);
 });
+
+test("retryDelay: 429 honours Retry-After (capped), transient errors retry twice, client errors never", async () => {
+  const { retryDelay } = await import("../lib/anilist");
+  assert.equal(retryDelay({ status: 429, retryAfter: 3 }, 0), 3000);
+  assert.equal(retryDelay({ status: 429, retryAfter: 60 }, 1), 8000);
+  assert.equal(retryDelay({ status: 429 }, 2), null);
+  assert.equal(retryDelay({ network: true }, 0), 700);
+  assert.equal(retryDelay({ status: 503 }, 1), 1800);
+  assert.equal(retryDelay({ status: 502 }, 2), null);
+  assert.equal(retryDelay({ status: 400 }, 0), null);
+});

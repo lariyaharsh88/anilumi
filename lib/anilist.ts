@@ -6,6 +6,21 @@
 import { getAniListId, kitsuByAniListIds, ANILIST_MIN_REVALIDATE, UpstreamError, type Anime } from "./kitsu";
 
 /**
+ * How long to wait before retrying, or null to give up. 429s honour Retry-After (capped); network errors,
+ * timeouts and 5xx get two quick retries with backoff, because from Render's shared IPs AniList fails
+ * intermittently and a single miss used to leave ISR pages cached without their AniList half. Pure.
+ */
+export function retryDelay(failure: { status?: number; network?: boolean; retryAfter?: number }, attempt: number): number | null {
+  if (failure.status === 429) return attempt < 2 ? Math.min(failure.retryAfter || 2, 8) * 1000 : null;
+  const transient = failure.network || (failure.status !== undefined && failure.status >= 500);
+  return transient && attempt < 2 ? [700, 1800][attempt] : null;
+}
+
+// After AniList says "wait N seconds" beyond what we retried, skip calls until then instead of piling on.
+let coolUntil = 0;
+const opName = (q: string) => q.match(/\{\s*(?:Page\([^)]*\)\s*\{\s*)?(\w+)/)?.[1] || "query";
+
+/**
  * `strict`: for pages whose main content comes from AniList. A network error, 5xx or exhausted 429 throws
  * UpstreamError instead of returning null, so the page errors (and is retried) rather than caching an
  * empty "nothing found" result for days. A real 404 (no such staff/media) still returns null.
@@ -13,11 +28,14 @@ import { getAniListId, kitsuByAniListIds, ANILIST_MIN_REVALIDATE, UpstreamError,
 export async function anilist<T>(query: string, variables: Record<string, unknown>, revalidate: number, { strict = false }: { strict?: boolean } = {}): Promise<T | null> {
   if (process.env.ANILIST_ENRICH === "0") return null;
   const fail = (why: string) => {
+    console.warn(`[anilist] ${opName(query)} failed: ${why}`);
     if (strict) throw new UpstreamError(`AniList unavailable: ${why}`);
     return null;
   };
-  // Builds fire many requests at once; on a 429, wait as long as AniList asks (capped) and retry twice.
-  for (let attempt = 0; attempt < 3; attempt++) {
+  if (Date.now() < coolUntil) return fail("cooling down after rate limit");
+  const started = Date.now();
+  for (let attempt = 0; ; attempt++) {
+    let failure: { status?: number; network?: boolean; retryAfter?: number; why: string };
     try {
       const res = await fetch("https://graphql.anilist.co", {
         method: "POST",
@@ -26,24 +44,28 @@ export async function anilist<T>(query: string, variables: Record<string, unknow
         next: { revalidate: Math.max(revalidate, ANILIST_MIN_REVALIDATE) },
         signal: AbortSignal.timeout(Number(process.env.ANILIST_TIMEOUT_MS) || 5000),
       });
-      if (res.status === 429 && attempt < 2) {
-        const wait = Math.min(Number(res.headers.get("retry-after")) || 2, 8);
-        await new Promise((r) => setTimeout(r, wait * 1000));
-        continue;
-      }
       if (res.status === 404) return null;
-      if (!res.ok) {
-        if (process.env.ANILIST_DEBUG === "1") console.warn(`[anilist] HTTP ${res.status}`);
-        return fail(`HTTP ${res.status}`);
+      if (res.ok) {
+        const j = (await res.json()) as { data?: T; errors?: { status?: number; message?: string }[] };
+        // GraphQL can answer 200 with an internal error and no data: treat that as a 5xx, not "not found".
+        if (j.data || !j.errors?.length) return j.data ?? null;
+        const st = j.errors[0].status || 500;
+        if (st === 404) return null;
+        failure = { status: st, why: `GraphQL ${st}` };
+      } else {
+        const ra = Number(res.headers.get("retry-after")) || undefined;
+        failure = { status: res.status, retryAfter: ra, why: `HTTP ${res.status}` };
+        if (res.status === 429 && ra && ra > 8) coolUntil = Date.now() + ra * 1000;
       }
-      const j = (await res.json()) as { data?: T };
-      return j.data ?? null;
     } catch (err) {
       if (err instanceof UpstreamError) throw err;
-      return fail((err as Error).name);
+      failure = { network: true, why: (err as Error).name };
     }
+    const wait = retryDelay(failure, attempt);
+    // Keep the whole call well under a page render's patience.
+    if (wait === null || Date.now() - started + wait > 20000) return fail(`${failure.why} after ${attempt + 1} attempt${attempt ? "s" : ""}`);
+    await new Promise((r) => setTimeout(r, wait));
   }
-  return fail("rate limited");
 }
 
 const memo = new Map<string, { v: unknown; exp: number }>();
