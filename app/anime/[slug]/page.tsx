@@ -31,6 +31,8 @@ import Backdrop from "@/components/fx/Backdrop";
 import ScoreRing from "@/components/fx/ScoreRing";
 import ScoreCard from "@/components/ScoreCard";
 import FanRecs from "@/components/FanRecs";
+import NewsList from "@/components/NewsList";
+import { getNews, newsAbout } from "@/lib/news";
 import { getFanRecommendations } from "@/lib/anilist";
 import { combineScores, kitsuScore, aniListScore, getMalScore } from "@/lib/scores";
 import SectionNav, { type NavSection } from "@/components/fx/SectionNav";
@@ -96,7 +98,7 @@ export default async function AnimePage({ params }: Props) {
   if (!a) notFound();
 
   const mainGenre = a.categories[0];
-  const [characters, episodes, related, relations, latestInfo, productions, insight, malScore, fanRecs] = await Promise.all([
+  const [characters, episodes, related, relations, latestInfo, productions, insight, malScore, fanRecs, allNews] = await Promise.all([
     getCharacters(a.id, 12),
     a.subtype === "movie" ? Promise.resolve({ items: [], total: 0, limit: 0, offset: 0 }) : getEpisodes(a.id, 1, 6),
     mainGenre ? listAnime({ filter: { categories: mainGenre.slug }, sort: "-userCount", limit: 13 }) : Promise.resolve({ items: [], total: 0, limit: 0, offset: 0 }),
@@ -106,7 +108,9 @@ export default async function AnimePage({ params }: Props) {
     getAniListInsight(a.id),
     getMalScore(a.id),
     getFanRecommendations(a.id, 12),
+    getNews(),
   ]);
+  const news = newsAbout(allNews, [a.title, a.titleEn]).slice(0, 4);
   const combined = combineScores([kitsuScore(a), aniListScore(insight), malScore]);
   const multi = combined && combined.sources.length > 1 ? combined : null;
   const relatedItems = related.items.filter((r) => r.id !== a.id).slice(0, 12);
@@ -506,6 +510,12 @@ export default async function AnimePage({ params }: Props) {
               ))}
               <Link href="/compare" className="chip chip-active">Pick any anime →</Link>
             </div>
+          </section>
+        )}
+        {news.length > 0 && (
+          <section className="reveal mt-12" aria-labelledby="anime-news-h">
+            <h2 id="anime-news-h" className="h-section mb-2">Latest {a.title} news</h2>
+            <div className="card max-w-3xl px-4 sm:px-5"><NewsList items={news} compact /></div>
           </section>
         )}
         <FanRecs title={a.title} recs={fanRecs} />

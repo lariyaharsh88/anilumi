@@ -7,6 +7,8 @@ import AdSlot from "@/components/AdSlot";
 import { site } from "@/lib/site";
 import StatTiles from "@/components/viz/StatTiles";
 import { WATCH_ORDER_OVERRIDES } from "@/data/watch-orders";
+import NewsList from "@/components/NewsList";
+import { getNews } from "@/lib/news";
 
 export const revalidate = 1800;
 
@@ -18,7 +20,7 @@ export const metadata: Metadata = {
 
 export default async function Home() {
   const { season, year } = seasonOf();
-  const [trending, airing, seasonal, upcoming, topRated, movies, genres] = await Promise.all([
+  const [trending, airing, seasonal, upcoming, topRated, movies, genres, news] = await Promise.all([
     getTrending(10),
     listAnime({ filter: { status: "current" }, sort: "-userCount", limit: 12 }),
     getSeason(year, season, 1, 12),
@@ -26,6 +28,7 @@ export default async function Home() {
     listAnime({ sort: "ratingRank", limit: 12 }),
     listAnime({ filter: { subtype: "movie" }, sort: "-userCount", limit: 12 }),
     getCategories(60),
+    getNews(),
   ]);
 
   const spots: Spot[] = trending.slice(0, 6).map((a, i) => ({
@@ -81,6 +84,15 @@ export default async function Home() {
       <AnimeRail title="Airing this season" href="/schedule" items={airing.items} />
       <AdSlot slot="home-mid" />
       <AnimeRail title={`${cap(season)} ${year} lineup`} href={`/season/${year}/${season}`} items={seasonal.items} />
+      {news.length > 0 && (
+        <section className="reveal mt-12" aria-labelledby="home-news-h">
+          <div className="mb-2 flex items-end justify-between">
+            <h2 id="home-news-h" className="h-section">Latest anime news</h2>
+            <Link href="/news" className="group text-sm font-medium text-violet hover:text-violet-2">All news <span className="inline-block transition-transform group-hover:translate-x-1">→</span></Link>
+          </div>
+          <div className="card px-4 sm:px-5"><NewsList items={news.slice(0, 5)} compact /></div>
+        </section>
+      )}
       <AnimeRail title="Top rated of all time" href="/top/rated" items={topRated.items} rank />
       <AnimeRail title="Coming soon" href="/top/upcoming" items={upcoming.items} />
       <AnimeRail title="Best anime movies" href="/top/movies" items={movies.items} />

@@ -26,6 +26,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: abs("/anime-openings"), lastModified: now, changeFrequency: "weekly", priority: 0.6 },
     { url: abs("/tier-list"), lastModified: now, changeFrequency: "weekly", priority: 0.6 },
     { url: abs("/what-anime-is-this"), lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: abs("/news"), lastModified: now, changeFrequency: "hourly", priority: 0.8 },
     { url: abs("/quiz"), lastModified: now, changeFrequency: "monthly", priority: 0.6 },
     { url: abs("/my/wrapped"), lastModified: now, changeFrequency: "monthly", priority: 0.5 },
     { url: abs("/birthdays"), lastModified: now, changeFrequency: "daily", priority: 0.7 },

@@ -28,6 +28,7 @@ export default async function SearchPage({ searchParams }: Props) {
       <div className="mt-8">
         {q ? <AnimeGrid items={results} emptyText={`No anime matched “${q}”. Try the Japanese or English title.`} /> : <><h2 className="h-section mb-3">Trending searches</h2><AnimeGrid items={trending} /></>}
       </div>
+      <p className="mt-8 text-xs text-muted">Search understands nicknames and common misspellings, using alternative titles from the <a href="https://github.com/manami-project/anime-offline-database" rel="noopener" className="underline">anime-offline-database</a> (ODbL).</p>
     </div>
   );
 }

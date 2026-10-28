@@ -360,8 +360,16 @@ export async function getCategory(slug: string): Promise<Category | null> {
 
 export async function searchAnime(q: string, limit = 20): Promise<Anime[]> {
   if (!q.trim()) return [];
-  const { items } = await listAnime({ filter: { text: q.trim() }, limit, sort: "-userCount", revalidate: 600 });
-  return items;
+  // Alias hits (nicknames, alternate titles, typos) go first; Kitsu's text search fills the rest.
+  const { aliasLookup } = await import("./aliases");
+  const hits = aliasLookup(q, 5);
+  const [text, byId] = await Promise.all([
+    listAnime({ filter: { text: q.trim() }, limit, sort: "-userCount", revalidate: 600 }),
+    hits.length ? listAnime({ filter: { id: hits.map((h) => h.id).join(",") }, limit: 20, revalidate: 86400 }) : Promise.resolve(null),
+  ]);
+  const found = new Map((byId?.items || []).map((a) => [a.id, a]));
+  const first = hits.map((h) => found.get(h.id)).filter((a): a is Anime => Boolean(a));
+  return uniqueById([...first, ...text.items]).slice(0, limit);
 }
 
 /* ---------------- Seasons ---------------- */
