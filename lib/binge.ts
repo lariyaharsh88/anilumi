@@ -75,9 +75,12 @@ export function fmtRun(min: number): string {
  * (Banana Fish: 24 episodes, 176 minutes), so an implied length under 5 minutes is treated as unknown
  * unless the show really is a short (AniList's duration says so). Pure.
  */
-export function episodeMinutes(a: { episodeCount: number | null; episodeLength: number | null; totalLength: number | null }, aniListDuration: number | null = null): number {
+export function episodeMinutes(a: { episodeCount: number | null; episodeLength: number | null; totalLength: number | null; subtype?: string }, aniListDuration: number | null = null): number {
   if (a.episodeLength) return a.episodeLength;
   if (aniListDuration) return aniListDuration;
   const implied = a.episodeCount && a.totalLength ? a.totalLength / a.episodeCount : 0;
-  return implied >= 5 ? Math.round(implied) : 0;
+  // A full TV season of sub-10-minute episodes is almost always bad data (Banana Fish: 7 min); real shorts
+  // usually carry episodeLength. Unknown beats wrong: the page then shows no figure and isn't indexed.
+  const minimum = a.subtype === "TV" && (a.episodeCount || 0) >= 6 ? 10 : 3;
+  return implied >= minimum ? Math.round(implied) : 0;
 }
