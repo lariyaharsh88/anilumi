@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getProducerBySlug, getStudioAnime, posterUrl } from "@/lib/kitsu";
 import { abs } from "@/lib/site";
+import { studioFacts } from "@/lib/wikidata";
 import AnimeGrid from "@/components/AnimeGrid";
 import AnimeRail from "@/components/AnimeRail";
 import PageHero from "@/components/PageHero";
@@ -42,7 +43,9 @@ export default async function StudioPage({ params }: Props) {
   const years = [...byYear.keys()].sort((x, y) => x - y);
   const span = years.length ? Array.from({ length: Math.min(years[years.length - 1] - years[0] + 1, 30) }, (_, i) => years[years.length - 1] - Math.min(years[years.length - 1] - years[0], 29) + i) : [];
   const busiest = [...byYear.entries()].sort((x, y) => y[1] - x[1])[0];
-  const ld = { "@context": "https://schema.org", "@type": "Organization", name: p.name, url: abs(`/studio/${p.slug}`) };
+  const wd = await studioFacts(p.name);
+  const ld = { "@context": "https://schema.org", "@type": "Organization", name: p.name, url: abs(`/studio/${p.slug}`), foundingDate: wd?.founded ? String(wd.founded) : undefined, founder: wd?.founders.length ? wd.founders.map((name) => ({ "@type": "Person", name })) : undefined, parentOrganization: wd?.parent ? { "@type": "Organization", name: wd.parent } : undefined, sameAs: [wd?.website, wd ? `https://www.wikidata.org/wiki/${wd.qid}` : undefined].filter(Boolean) };
+  const about = wd ? [wd.founded && ["Founded", String(wd.founded)], wd.headquarters && ["Headquarters", wd.headquarters], wd.founders.length && ["Founded by", wd.founders.join(", ")], wd.parent && ["Parent company", wd.parent]].filter(Boolean) as [string, string][] : [];
   return (
     <div className="container-x pb-8">
       <JsonLd data={ld} />
@@ -50,7 +53,7 @@ export default async function StudioPage({ params }: Props) {
         crumbs={[{ href: "/", label: "Home" }, { href: `/studio/${p.slug}`, label: p.name }]}
         eyebrow="Animation studio"
         title={<><span className="text-gradient">{p.name}</span> anime</>}
-        subtitle={`${total} titles credited to ${p.name} as animation studio on Kitsu. Showing the ${items.length} most followed.`}
+        subtitle={`${wd?.founded ? `Founded in ${wd.founded}${wd.headquarters ? ` in ${wd.headquarters}` : ""}. ` : ""}${total} titles credited to ${p.name} as animation studio on Kitsu. Showing the ${items.length} most followed.`}
         hue={220}
         backdrop={items[0]?.cover?.large || null}
         posters={(rated.length >= 3 ? rated : items).slice(0, 3).map((x) => posterUrl(x, "medium"))}
@@ -76,6 +79,15 @@ export default async function StudioPage({ params }: Props) {
         )}
       </section>
 
+      {about.length > 0 && (
+        <section className="card reveal mt-6 p-4" aria-labelledby="studio-about-h">
+          <h2 id="studio-about-h" className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted">About {p.name}</h2>
+          <dl className="grid gap-x-8 gap-y-2 text-sm sm:grid-cols-2 lg:grid-cols-4">
+            {about.map(([k, v]) => <div key={k}><dt className="text-xs text-muted">{k}</dt><dd className="font-medium text-ink">{v}</dd></div>)}
+          </dl>
+          <p className="mt-3 text-xs text-muted">{wd?.website && <><a href={wd.website} target="_blank" rel="noopener nofollow" className="text-violet hover:text-violet-2">Official website</a> · </>}Facts from <a href={`https://www.wikidata.org/wiki/${wd!.qid}`} target="_blank" rel="noopener" className="underline">Wikidata</a>.</p>
+        </section>
+      )}
       <AdSlot slot="studio-top" />
       <AnimeRail title="Airing now" items={airing} />
       <AnimeRail title="Upcoming" items={upcoming} />
@@ -88,6 +100,7 @@ export default async function StudioPage({ params }: Props) {
         items={[
           { q: `What is ${p.name} working on now?`, a: airing.length || upcoming.length ? `${[...airing, ...upcoming].slice(0, 4).map((a) => a.title).join(", ")}${airing.length + upcoming.length > 4 ? " and more" : ""}.` : `${p.name} has no currently airing or announced titles on record.` },
           { q: `What is ${p.name}'s best anime?`, a: rated[0] ? `${rated[0].title} is the studio's highest-rated work${rated[0].rating ? ` at ${(rated[0].rating / 10).toFixed(1)}/10` : ""}, while ${items[0]?.title} is its most watched.` : "Ratings will appear once titles are scored." },
+          ...(wd?.founded ? [{ q: `When was ${p.name} founded?`, a: `${p.name} was founded in ${wd.founded}${wd.founders.length ? ` by ${wd.founders.join(" and ")}` : ""}${wd.headquarters ? ` and is based in ${wd.headquarters}` : ""}${wd.parent ? `. It is part of ${wd.parent}` : ""}.` }] : []),
         ]}
       />
     </div>

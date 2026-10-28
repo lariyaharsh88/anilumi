@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Link from "@/components/Link";
 import { notFound } from "next/navigation";
 import { getAnimeBySlug, animePath, posterUrl } from "@/lib/kitsu";
-import { getCast, vaPath } from "@/lib/anilist";
+import { getCast, getKeyStaff, vaPath } from "@/lib/anilist";
+import KeyStaff from "@/components/KeyStaff";
 import PageHero from "@/components/PageHero";
 import CastGrid from "@/components/CastGrid";
 import Faq, { type FaqItem } from "@/components/Faq";
@@ -15,8 +16,8 @@ type Props = { params: Promise<{ slug: string }> };
 async function load(slug: string) {
   const a = await getAnimeBySlug(decodeURIComponent(slug));
   if (!a) notFound();
-  const cast = await getCast(a.id, 25, true);
-  return { a, cast };
+  const [cast, staff] = await Promise.all([getCast(a.id, 25, true), getKeyStaff(a.id)]);
+  return { a, cast, staff };
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -35,7 +36,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function CastPage({ params }: Props) {
   const { slug } = await params;
-  const { a, cast } = await load(slug);
+  const { a, cast, staff } = await load(slug);
   const entries = cast?.entries || [];
   const mains = entries.filter((e) => e.role === "MAIN");
   const hasDub = entries.some((e) => e.en);
@@ -64,6 +65,7 @@ export default async function CastPage({ params }: Props) {
         posters={mains.length >= 2 ? mains.slice(0, 3).map((e) => e.character.image) : [posterUrl(a, "medium")]}
       />
       {entries.length > 0 && <section className="reveal mt-10"><CastGrid entries={entries} /></section>}
+      {staff.length > 0 && <section className="reveal mt-10"><h2 className="h-section mb-3">Key staff</h2><KeyStaff staff={staff} /></section>}
       <AdSlot slot="cast-mid" />
       <p className="mt-8 text-sm text-muted">
         <Link href={animePath(a)} className="text-violet hover:underline">{a.title} overview</Link> ·{" "}

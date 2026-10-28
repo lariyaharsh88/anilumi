@@ -188,17 +188,35 @@ export type VoiceActor = Va & {
   favourites: number;
   totalRoles: number;
   roles: VaRole[];
+  /** Production credits (director, music, original creator…), grouped per anime. */
+  work: StaffWork[];
 };
+export type StaffWork = { media: VaRole["media"]; roles: string[] };
 
 type AlStaff = {
   id: number; name: AlName & { alternative: string[] }; image: { large: string | null; medium: string | null } | null; description: string | null;
   primaryOccupations: string[]; gender: string | null; dateOfBirth: { year: number | null; month: number | null; day: number | null } | null;
   age: number | null; yearsActive: number[]; homeTown: string | null; languageV2: string | null; favourites: number;
-  characterMedia: { pageInfo: { total: number }; edges: { characterRole: string; node: { id: number; format: string | null; title: { romaji: string; english: string | null }; popularity: number; seasonYear: number | null; startDate: { year: number | null } | null; averageScore: number | null; coverImage: { medium: string | null } | null; isAdult: boolean }; characters: ({ id: number; name: { full: string }; image: { medium: string | null } | null } | null)[] }[] };
+  characterMedia: { pageInfo: { total: number }; edges: { characterRole: string; node: AlMediaNode; characters: ({ id: number; name: { full: string }; image: { medium: string | null } | null } | null)[] }[] };
+  staffMedia?: { edges: { staffRole: string; node: AlMediaNode }[] };
 };
+type AlMediaNode = { id: number; format: string | null; title: { romaji: string; english: string | null }; popularity: number; seasonYear: number | null; startDate: { year: number | null } | null; averageScore: number | null; coverImage: { medium: string | null } | null; isAdult: boolean };
+const toMedia = (n: AlMediaNode): VaRole["media"] => ({ id: n.id, title: n.title.english || n.title.romaji, format: n.format, year: n.seasonYear ?? n.startDate?.year ?? null, popularity: n.popularity, score: n.averageScore ? n.averageScore / 10 : null, cover: n.coverImage?.medium || null });
+
+/** Group production credits per anime, most popular first, adult titles dropped. Pure. */
+export function groupWork(edges: { staffRole: string; node: AlMediaNode }[]): StaffWork[] {
+  const byId = new Map<number, StaffWork>();
+  for (const e of edges) {
+    if (e.node.isAdult) continue;
+    const w = byId.get(e.node.id) ?? { media: toMedia(e.node), roles: [] };
+    if (!w.roles.includes(e.staffRole)) w.roles.push(e.staffRole);
+    byId.set(e.node.id, w);
+  }
+  return [...byId.values()].sort((a, b) => b.media.popularity - a.media.popularity);
+}
 
 const STAFF_Q =
-  "query($id:Int,$p:Int){Staff(id:$id){id name{full native alternative} image{large medium} description primaryOccupations gender dateOfBirth{year month day} age yearsActive homeTown languageV2 favourites characterMedia(page:$p,perPage:50,sort:[POPULARITY_DESC]){pageInfo{total} edges{characterRole node{id format title{romaji english} popularity seasonYear startDate{year} averageScore coverImage{medium} isAdult} characters{id name{full} image{medium}}}}}}";
+  "query($id:Int,$p:Int){Staff(id:$id){id name{full native alternative} image{large medium} description primaryOccupations gender dateOfBirth{year month day} age yearsActive homeTown languageV2 favourites characterMedia(page:$p,perPage:50,sort:[POPULARITY_DESC]){pageInfo{total} edges{characterRole node{id format title{romaji english} popularity seasonYear startDate{year} averageScore coverImage{medium} isAdult} characters{id name{full} image{medium}}}} staffMedia(page:1,perPage:50,sort:[POPULARITY_DESC],type:ANIME){edges{staffRole node{id format title{romaji english} popularity seasonYear startDate{year} averageScore coverImage{medium} isAdult}}}}}";
 
 export async function getVoiceActor(staffId: number): Promise<VoiceActor | null> {
   return memoized(`va:${staffId}`, 6 * 3600_000, async () => {
@@ -212,7 +230,7 @@ export async function getVoiceActor(staffId: number): Promise<VoiceActor | null>
       if (e.node.isAdult || seen.has(e.node.id)) continue;
       seen.add(e.node.id);
       roles.push({
-        media: { id: e.node.id, title: e.node.title.english || e.node.title.romaji, format: e.node.format, year: e.node.seasonYear ?? e.node.startDate?.year ?? null, popularity: e.node.popularity, score: e.node.averageScore ? e.node.averageScore / 10 : null, cover: e.node.coverImage?.medium || null },
+        media: toMedia(e.node),
         role: e.characterRole,
         characters: e.characters.filter((c): c is NonNullable<typeof c> => Boolean(c)).map((c) => ({ id: c.id, name: c.name.full.trim(), image: c.image?.medium || null })),
       });
@@ -222,6 +240,7 @@ export async function getVoiceActor(staffId: number): Promise<VoiceActor | null>
       alternative: (s.name.alternative || []).filter(Boolean), bio: s.description, occupations: s.primaryOccupations || [], gender: s.gender,
       birth: s.dateOfBirth?.month ? s.dateOfBirth : null, age: s.age, yearsActive: s.yearsActive || [], homeTown: s.homeTown,
       language: s.languageV2, favourites: s.favourites, totalRoles: s.characterMedia.pageInfo.total, roles,
+      work: groupWork(s.staffMedia?.edges || []),
     };
   });
 }
@@ -302,3 +321,45 @@ export async function getFanRecommendations(kitsuId: string, limit = 12): Promis
   const kitsu = await kitsuByAniListIds(recs.map((r) => r.anilistId));
   return recs.map((r) => ({ ...r, anime: kitsu.get(r.anilistId) ?? null }));
 }
+
+/* ---------------- key staff of an anime ---------------- */
+
+export type StaffPerson = { id: number; name: string; image: string | null; voices: boolean };
+export type KeyStaff = { role: string; people: StaffPerson[] };
+
+// Credits worth showing on an anime page, in display order. AniList roles carry qualifiers ("Director (eps 1-12)").
+const KEY_ROLES: [string, RegExp][] = [
+  ["Original creator", /^(original (creator|story|work)|original character design)/i],
+  ["Director", /^(chief )?director\b(?! of photography)/i],
+  ["Series composition", /^series composition/i],
+  ["Script", /^(script|screenplay)\b/i],
+  ["Character design", /^character design\b/i],
+  ["Music", /^music\b/i],
+];
+
+/** Group raw credits into the key roles, up to 3 people each, first credit wins. Pure. */
+export function keyStaffFrom(edges: { role: string; node: { id: number; name: { full: string }; image: { medium: string | null } | null; primaryOccupations: string[] | null } }[]): KeyStaff[] {
+  return KEY_ROLES.flatMap(([label, re]) => {
+    const people: StaffPerson[] = [];
+    for (const e of edges) {
+      if (!re.test(e.role.trim()) || people.some((p) => p.id === e.node.id) || people.length >= 3) continue;
+      people.push({ id: e.node.id, name: e.node.name.full.trim(), image: e.node.image?.medium || null, voices: (e.node.primaryOccupations || []).some((o) => /voice actor/i.test(o)) });
+    }
+    return people.length ? [{ role: label, people }] : [];
+  });
+}
+
+export async function getKeyStaff(kitsuId: string): Promise<KeyStaff[]> {
+  const id = await getAniListId(kitsuId);
+  if (!id) return [];
+  const d = await anilist<{ Media: { staff: { edges: Parameters<typeof keyStaffFrom>[0] } } | null }>(
+    "query($id:Int){Media(id:$id,type:ANIME){staff(sort:[RELEVANCE,ID],perPage:50){edges{role node{id name{full} image{medium} primaryOccupations}}}}}",
+    { id },
+    86400,
+  );
+  return keyStaffFrom(d?.Media?.staff.edges || []);
+}
+
+/** Production staff get /staff/…; voice actors keep /voice-actor/… */
+export const staffPath = (p: { id: number; name: string }) => `/staff/${p.id}-${slugify(p.name) || "staff"}`;
+export const personPath = (p: { id: number; name: string; voices?: boolean }) => (p.voices ? vaPath(p) : staffPath(p));

@@ -9,6 +9,7 @@ import StatTiles from "@/components/viz/StatTiles";
 import { WATCH_ORDER_OVERRIDES } from "@/data/watch-orders";
 import NewsList from "@/components/NewsList";
 import { getNews } from "@/lib/news";
+import { getQuoteOfDay } from "@/lib/quote";
 
 export const revalidate = 1800;
 
@@ -20,7 +21,7 @@ export const metadata: Metadata = {
 
 export default async function Home() {
   const { season, year } = seasonOf();
-  const [trending, airing, seasonal, upcoming, topRated, movies, genres, news] = await Promise.all([
+  const [trending, airing, seasonal, upcoming, topRated, movies, genres, news, quote] = await Promise.all([
     getTrending(10),
     listAnime({ filter: { status: "current" }, sort: "-userCount", limit: 12 }),
     getSeason(year, season, 1, 12),
@@ -29,6 +30,7 @@ export default async function Home() {
     listAnime({ filter: { subtype: "movie" }, sort: "-userCount", limit: 12 }),
     getCategories(60),
     getNews(),
+    getQuoteOfDay(),
   ]);
 
   const spots: Spot[] = trending.slice(0, 6).map((a, i) => ({
@@ -92,6 +94,16 @@ export default async function Home() {
           </div>
           <div className="card px-4 sm:px-5"><NewsList items={news.slice(0, 5)} compact /></div>
         </section>
+      )}
+      {quote && (
+        <figure className="reveal card relative mt-12 overflow-hidden p-6 sm:p-8" aria-label="Anime quote of the day">
+          <span aria-hidden className="pointer-events-none absolute -left-2 -top-8 select-none text-[9rem] font-black leading-none text-white/5">“</span>
+          <p className="text-xs font-semibold uppercase tracking-wider text-accent-2">Quote of the day</p>
+          <blockquote className="mt-2 max-w-3xl text-lg font-semibold leading-relaxed text-ink sm:text-xl">“{quote.text}”</blockquote>
+          <figcaption className="mt-3 text-sm text-muted">
+            <span className="text-ink/90">{quote.character}</span>, {quote.slug ? <Link href={`/anime/${quote.slug}`} className="text-violet hover:text-violet-2">{quote.anime}</Link> : quote.anime}
+          </figcaption>
+        </figure>
       )}
       <AnimeRail title="Top rated of all time" href="/top/rated" items={topRated.items} rank />
       <AnimeRail title="Coming soon" href="/top/upcoming" items={upcoming.items} />

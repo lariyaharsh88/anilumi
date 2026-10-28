@@ -33,7 +33,7 @@ import ScoreCard from "@/components/ScoreCard";
 import FanRecs from "@/components/FanRecs";
 import NewsList from "@/components/NewsList";
 import { getNews, newsAbout } from "@/lib/news";
-import { getFanRecommendations } from "@/lib/anilist";
+import { getFanRecommendations, getKeyStaff, personPath } from "@/lib/anilist";
 import { combineScores, kitsuScore, aniListScore, getMalScore } from "@/lib/scores";
 import SectionNav, { type NavSection } from "@/components/fx/SectionNav";
 import ClampText from "@/components/fx/ClampText";
@@ -98,7 +98,7 @@ export default async function AnimePage({ params }: Props) {
   if (!a) notFound();
 
   const mainGenre = a.categories[0];
-  const [characters, episodes, related, relations, latestInfo, productions, insight, malScore, fanRecs, allNews] = await Promise.all([
+  const [characters, episodes, related, relations, latestInfo, productions, insight, malScore, fanRecs, allNews, keyStaff] = await Promise.all([
     getCharacters(a.id, 12),
     a.subtype === "movie" ? Promise.resolve({ items: [], total: 0, limit: 0, offset: 0 }) : getEpisodes(a.id, 1, 6),
     mainGenre ? listAnime({ filter: { categories: mainGenre.slug }, sort: "-userCount", limit: 13 }) : Promise.resolve({ items: [], total: 0, limit: 0, offset: 0 }),
@@ -109,6 +109,7 @@ export default async function AnimePage({ params }: Props) {
     getMalScore(a.id),
     getFanRecommendations(a.id, 12),
     getNews(),
+    getKeyStaff(a.id),
   ]);
   const news = newsAbout(allNews, [a.title, a.titleEn]).slice(0, 4);
   const combined = combineScores([kitsuScore(a), aniListScore(insight), malScore]);
@@ -490,6 +491,9 @@ export default async function AnimePage({ params }: Props) {
               {studios.length > 0 && (
                 <div className="flex justify-between gap-3 py-2"><dt className="text-muted">Studio</dt><dd className="text-right font-medium">{studios.map((p, i) => <span key={p.producer.id}>{i > 0 && ", "}<Link href={`/studio/${p.producer.slug}`} className="text-violet hover:underline">{p.producer.name}</Link></span>)}</dd></div>
               )}
+              {keyStaff.filter((k) => k.role !== "Script").map((k) => (
+                <div key={k.role} className="flex justify-between gap-3 py-2"><dt className="text-muted">{k.role}</dt><dd className="text-right font-medium">{k.people.slice(0, 2).map((pp, i) => <span key={pp.id}>{i > 0 && ", "}<Link href={personPath(pp)} className="text-violet hover:underline">{pp.name}</Link></span>)}</dd></div>
+              ))}
               {licensors.length > 0 && <div className="flex justify-between gap-3 py-2"><dt className="text-muted">Licensor</dt><dd className="text-right font-medium">{licensors.map((p) => p.producer.name).join(", ")}</dd></div>}
               <div className="flex justify-between gap-3 py-2"><dt className="text-muted">Members</dt><dd className="font-medium">{a.userCount.toLocaleString()}</dd></div>
               <div className="flex justify-between gap-3 py-2"><dt className="text-muted">Favorites</dt><dd className="font-medium">{a.favoritesCount.toLocaleString()}</dd></div>
