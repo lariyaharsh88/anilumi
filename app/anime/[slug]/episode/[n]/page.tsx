@@ -15,6 +15,8 @@ import WatchedUpTo from "@/components/WatchedUpTo";
 import { fillerFor } from "@/lib/filler";
 import AdSlot from "@/components/AdSlot";
 import { streamLink, affiliateRel } from "@/lib/affiliate";
+import SkipGuide from "@/components/SkipGuide";
+import { skipTimesFor } from "@/lib/skip";
 
 export const revalidate = 21600;
 // Render on first request, then serve from the ISR cache until revalidated.
@@ -26,7 +28,7 @@ async function load(slug: string, nStr: string) {
   if (!Number.isInteger(n) || n < 1 || n > 10000) return null;
   const a = await getAnimeBySlug(decodeURIComponent(slug));
   if (!a) return null;
-  const [ep, { count, lastAired, reliable, nextAt }] = await Promise.all([getEpisodeByNumber(a.id, n), getLastAiredBest(a.id)]);
+  const [ep, { count, lastAired, reliable, nextAt }, skips] = await Promise.all([getEpisodeByNumber(a.id, n), getLastAiredBest(a.id), a.subtype === "movie" ? Promise.resolve(null) : skipTimesFor(a.id, n)]);
   const notice: AiringNotice | null = a.status === "current" ? airingNotice(a.nextRelease, nextAt) : null;
   if (nextAt) a.nextRelease = nextAt;
   // A not-yet-catalogued next episode of an airing show still gets a page, driven by the series' nextRelease.
@@ -36,7 +38,7 @@ async function load(slug: string, nStr: string) {
   const upcoming = !episode.airdate || isFuture(episode.airdate);
   const isNext = a.status === "current" && reliable && n === lastAired + 1;
   const airIso = isNext && a.nextRelease ? a.nextRelease : episode.airdate;
-  return { a, episode, n, count, lastAired, upcoming, isNext, airIso, notice };
+  return { a, episode, n, count, lastAired, upcoming, isNext, airIso, notice, skips };
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -58,7 +60,7 @@ export default async function EpisodePage({ params }: Props) {
   const { slug, n: nStr } = await params;
   const d = await load(slug, nStr);
   if (!d) notFound();
-  const { a, episode, n, count, lastAired, upcoming, isNext, airIso, notice } = d;
+  const { a, episode, n, count, lastAired, upcoming, isNext, airIso, notice, skips } = d;
   const when = airIso ? fmtDate(airIso, { weekday: "long", month: "long", day: "numeric", year: "numeric" }) : null;
   const whenTime = airIso && airIso.length > 10 ? fmtDate(airIso, { hour: "numeric", minute: "2-digit", timeZone: "Asia/Tokyo" }) : null;
   const hasPrev = n > 1;
@@ -118,6 +120,7 @@ export default async function EpisodePage({ params }: Props) {
               </div>
             );
           })()}
+          {!upcoming && skips && <SkipGuide s={skips} episode={n} />}
           {upcoming && airIso && (
             <div className="card mt-5 p-5">
               <Countdown iso={airIso} big label={`Episode ${n} airs in`} />

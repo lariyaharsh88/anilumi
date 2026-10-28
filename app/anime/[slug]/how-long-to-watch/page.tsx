@@ -9,6 +9,7 @@ import BingePlanner from "@/components/BingePlanner";
 import BarChart from "@/components/viz/BarChart";
 import Faq, { type FaqItem } from "@/components/Faq";
 import AdSlot from "@/components/AdSlot";
+import { measuredSkips, fmtSec } from "@/lib/skip";
 
 export const revalidate = 86400;
 // Render on first request, then serve from the ISR cache until revalidated.
@@ -42,12 +43,13 @@ export default async function HowLongPage({ params }: Props) {
   const { slug } = await params;
   const { a, airing, eps, len, total } = await load(slug);
   const fill = a.subtype === "movie" ? null : fillerFor(a.slug, eps || null);
-  const [wo, popular] = await Promise.all([
+  const [wo, popular, skipAvg] = await Promise.all([
     a.subtype === "movie" ? Promise.resolve(null) : buildWatchOrder(a),
     listAnime({ sort: "-userCount", limit: 20, filter: { subtype: "TV" }, revalidate: 86400 }),
+    a.subtype === "movie" ? Promise.resolve(null) : measuredSkips(a.id, eps),
   ]);
   const plan = paces(total, a.subtype === "movie" ? 0 : eps);
-  const fast = shortcuts(total, a.subtype === "movie" ? 0 : eps, len, fill?.count || 0);
+  const fast = shortcuts(total, a.subtype === "movie" ? 0 : eps, len, fill?.count || 0, skipAvg ? { perEpisodeMin: skipAvg.perEpisodeSec / 60, sampled: skipAvg.sampled } : undefined);
   // Airing shows: count the current title by what has aired, so every figure on the page agrees.
   const fTotal = wo ? wo.totalMinutes - runtimeMinutes(a) + total : 0;
   const franchise = wo && wo.entries.length > 1 && fTotal > total ? wo : null;
@@ -120,7 +122,7 @@ export default async function HowLongPage({ params }: Props) {
                     <p className="font-semibold text-ink">{f.label}</p>
                     <p className="mt-2 text-2xl font-black tracking-tight text-accent-2">{fmtRun(f.minutes)}</p>
                     <p className="text-xs text-muted">saves {fmtRun(f.saved)}</p>
-                    <p className="mt-2 text-xs leading-5 text-ink/70">{f.note}{f.key === "filler" && <> <Link href={`${animePath(a)}/episodes`} className="text-violet hover:underline">See which episodes</Link></>}</p>
+                    <p className="mt-2 text-xs leading-5 text-ink/70">{f.note}{f.key === "filler" && <> <Link href={`${animePath(a)}/episodes`} className="text-violet hover:underline">See which episodes</Link></>}{f.key === "oped" && skipAvg && <> Opening ~{fmtSec(skipAvg.opSec)}, ending ~{fmtSec(skipAvg.edSec)} (<a href="https://aniskip.com" target="_blank" rel="noopener" className="underline">AniSkip</a>).</>}</p>
                   </li>
                 ))}
               </ul>

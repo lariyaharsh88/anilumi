@@ -34,18 +34,26 @@ export function paces(totalMin: number, episodes: number): Pace[] {
 }
 
 /** Ways to get through it faster. `fillerEps` is the number of skippable filler episodes, if known. */
-export function shortcuts(totalMin: number, episodes: number, epLength: number, fillerEps = 0): Shortcut[] {
+/**
+ * Ways to get through it faster. `fillerEps` is the number of skippable filler episodes, if known.
+ * `skip` is the measured opening+ending length per episode (AniSkip); otherwise a 3-minute estimate.
+ */
+export function shortcuts(totalMin: number, episodes: number, epLength: number, fillerEps = 0, skip?: { perEpisodeMin: number; sampled: number }): Shortcut[] {
   if (totalMin <= 0) return [];
   const out: Shortcut[] = [];
+  const per = skip && skip.perEpisodeMin > 0 ? skip.perEpisodeMin : OP_ED_MIN;
   if (episodes > 1 && epLength >= 20) {
-    const m = totalMin - episodes * OP_ED_MIN;
-    out.push({ key: "oped", label: "Skip openings & endings", minutes: m, saved: totalMin - m, note: `About ${OP_ED_MIN} minutes saved per episode.` });
+    const m = Math.round(totalMin - episodes * per);
+    const note = skip
+      ? `About ${per >= 1 ? `${+per.toFixed(1)} minutes` : `${Math.round(per * 60)} seconds`} saved per episode, measured on ${skip.sampled} episode${skip.sampled === 1 ? "" : "s"}.`
+      : `About ${OP_ED_MIN} minutes saved per episode.`;
+    out.push({ key: "oped", label: "Skip openings & endings", minutes: m, saved: totalMin - m, note });
   }
   if (fillerEps > 0 && episodes > fillerEps) {
     const m = totalMin - fillerEps * epLength;
     out.push({ key: "filler", label: "Skip filler episodes", minutes: m, saved: totalMin - m, note: `${fillerEps} filler episode${fillerEps === 1 ? "" : "s"} that aren't from the manga.` });
     if (out[0]?.key === "oped") {
-      const both = (episodes - fillerEps) * (epLength - OP_ED_MIN);
+      const both = Math.round((episodes - fillerEps) * (epLength - per));
       out.push({ key: "both", label: "Skip filler and openings", minutes: both, saved: totalMin - both, note: "The fastest way to the full story." });
     }
   }
