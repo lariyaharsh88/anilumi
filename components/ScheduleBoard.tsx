@@ -30,7 +30,7 @@ export default function ScheduleBoard({ days, today, tba }: { days: BoardDay[]; 
         const list = filter(items);
         return (
           <section key={day} id={day.toLowerCase()} className="mt-10 scroll-mt-20">
-            <h2 className="h-section mb-3">{day}{day === today ? <span className="ml-2 rounded-md bg-accent-strong px-2 py-0.5 text-xs font-bold uppercase text-white">Today</span> : null}</h2>
+            <h2 className="h-section mb-3">{day}{day === today ? <span className="ml-2 rounded-md bg-accent-strong px-2 py-0.5 text-xs font-bold uppercase text-snow">Today</span> : null}</h2>
             {list.length ? (
               <ul className="grid gap-3 sm:grid-cols-2">
                 {list.map((a) => (

@@ -209,8 +209,8 @@ export default async function AnimePage({ params }: Props) {
           )}
           {coverLarge && <Backdrop src={coverLarge} className="opacity-[.42] [mask-image:linear-gradient(180deg,#000_55%,transparent)]" position="center 25%" />}
           <div className="aurora opacity-50"><span /></div>
-          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(11,13,19,.25)_0%,rgba(11,13,19,.75)_55%,#0b0d13_100%)]" />
-          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(11,13,19,.85)_0%,rgba(11,13,19,.35)_60%,transparent_100%)] max-lg:hidden" />
+          <div className="absolute inset-0 veil-down" />
+          <div className="absolute inset-0 veil-side max-lg:hidden" />
         </div>
 
         <div className="container-x pb-8 pt-6 lg:pt-10">
@@ -226,7 +226,7 @@ export default async function AnimePage({ params }: Props) {
 
             <div className="min-w-0 flex-1 text-center md:text-left">
               <p className="rise flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-xs font-semibold uppercase tracking-widest text-muted md:justify-start">
-                <span className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 ${a.status === "current" ? "bg-accent-strong text-white" : "bg-white/10 text-ink"}`}>
+                <span className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 ${a.status === "current" ? "bg-accent-strong text-snow" : "bg-white/10 text-ink"}`}>
                   {a.status === "current" && <span className="live-dot" aria-hidden />}{statusLabel(a.status)}
                 </span>
                 <span>{subtypeLabel(a.subtype)}</span>
@@ -371,7 +371,7 @@ export default async function AnimePage({ params }: Props) {
                         {e.thumbnail && e.number ? (
                           <SpoilerGate animeId={a.id} ep={e.number}><span className="relative block aspect-video w-32"><Image src={e.thumbnail} alt="" fill sizes="128px" className="object-cover transition duration-300 group-hover:scale-105" /></span></SpoilerGate>
                         ) : <span className="grid h-full place-items-center text-xs text-muted">Ep {e.number ?? "–"}</span>}
-                        <span className="absolute bottom-1 left-1 rounded bg-black/70 px-1.5 text-[10px] font-bold text-ink">EP {e.number ?? "–"}</span>
+                        <span className="absolute bottom-1 left-1 rounded bg-black/70 px-1.5 text-[10px] font-bold text-snow">EP {e.number ?? "–"}</span>
                       </span>
                       <span className="min-w-0 flex-1 py-1">
                         <span className="line-clamp-2 text-sm font-semibold text-ink group-hover:text-violet-2">{e.title && e.number ? <SpoilerGate inline animeId={a.id} ep={e.number}>{e.title}</SpoilerGate> : e.title || `Episode ${e.number}`}</span>
@@ -405,7 +405,7 @@ export default async function AnimePage({ params }: Props) {
                       <div className="relative aspect-[5/6] w-full overflow-hidden rounded-xl border border-line bg-bg-2 transition-colors group-hover:border-violet/60">
                         {c.image && <Image src={c.image} alt="" fill sizes="128px" className="object-cover" />}
                         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-black/70 to-transparent" />
-                        {c.role === "main" && <span className="absolute left-1.5 top-1.5 rounded bg-accent-strong px-1.5 py-0.5 text-[9px] font-bold uppercase text-white">Main</span>}
+                        {c.role === "main" && <span className="absolute left-1.5 top-1.5 rounded bg-accent-strong px-1.5 py-0.5 text-[9px] font-bold uppercase text-snow">Main</span>}
                       </div>
                     </TiltCard>
                     <p className="mt-2 line-clamp-2 text-xs font-semibold group-hover:text-violet-2">{c.name}</p>

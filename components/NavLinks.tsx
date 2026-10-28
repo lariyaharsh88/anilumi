@@ -11,7 +11,7 @@ const active = (path: string, href: string) => (href === "/season" ? path.starts
 export default function NavLinks({ items, trailing }: { items: NavItem[]; trailing?: React.ReactNode }) {
   const path = usePathname() || "/";
   return (
-    <nav className="hidden items-center gap-0.5 md:flex" aria-label="Main">
+    <nav className="hidden items-center gap-0.5 lg:flex" aria-label="Main">
       {items.map((n) => {
         const on = active(path, n.href);
         return (
@@ -30,7 +30,7 @@ export default function NavLinks({ items, trailing }: { items: NavItem[]; traili
 export function MobileNav({ items }: { items: NavItem[] }) {
   const path = usePathname() || "/";
   return (
-    <nav className="container-x edge-fade flex gap-1.5 overflow-x-auto pb-2 md:hidden" aria-label="Main">
+    <nav className="container-x edge-fade flex gap-1.5 overflow-x-auto pb-2 lg:hidden" aria-label="Main">
       {items.map((n) => (
         <Link key={n.href} href={n.href} aria-current={active(path, n.href) ? "page" : undefined} className={`chip whitespace-nowrap ${active(path, n.href) ? "chip-active" : ""}`}>{n.label}</Link>
       ))}

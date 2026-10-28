@@ -69,7 +69,7 @@ export default function MyList() {
           <h2 className="font-semibold">Spoiler shield {shield.on ? "on" : "off"}</h2>
           <p className="mt-1 text-sm text-muted">Hides titles, synopses and stills for episodes past your progress, for every show where you&apos;ve set an episode. Each hidden item has a “show” button.</p>
         </div>
-        <button type="button" role="switch" aria-checked={shield.on} onClick={() => shield.set(!shield.on)} className={shield.on ? "btn bg-violet-strong text-white" : "btn-outline"}>
+        <button type="button" role="switch" aria-checked={shield.on} onClick={() => shield.set(!shield.on)} className={shield.on ? "btn bg-violet-strong text-snow" : "btn-outline"}>
           {shield.on ? "Turn off" : "Turn on"}
         </button>
       </section>

@@ -3,8 +3,9 @@ import { useEffect, useMemo, useState } from "react";
 import type { Broadcast } from "@/lib/kitsu";
 
 // Sequential blue, validated as an ordinal ramp on the #161b28 card (monotone L, single hue, >= 2:1 at the faint end).
-const RAMP = ["#184f95", "#256abf", "#3987e5", "#6da7ec", "#9ec5f4"];
-const EMPTY = "#1d2333";
+// Colours live in globals.css (--heat-0..4, --heat-empty) so light mode can run the ramp light-to-dark instead.
+const RAMP = [0, 1, 2, 3, 4].map((i) => `var(--heat-${i})`);
+const EMPTY = "var(--heat-empty)";
 const DAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 const LONG = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
 

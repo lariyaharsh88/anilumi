@@ -75,14 +75,14 @@ export default function WrappedCard() {
     <div className="mt-8 grid gap-6 lg:grid-cols-[minmax(0,420px)_1fr] lg:items-start">
       <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-[#2a0f2a] via-[#120f2e] to-bg p-6 shadow-[0_30px_80px_-40px_rgba(0,0,0,.9)]">
         <p className="text-xs font-bold uppercase tracking-[.2em] text-accent-2">My {year} anime wrapped</p>
-        <p className="mt-2 text-3xl font-black leading-tight text-white">{w.persona.title}</p>
+        <p className="mt-2 text-3xl font-black leading-tight text-snow">{w.persona.title}</p>
         <p className="mt-1 text-sm text-ink/75">{w.persona.line}</p>
         <div className="mt-5 grid grid-cols-4 gap-2">
           {posters.map((p) => <span key={p.id} className="relative aspect-[5/7] overflow-hidden rounded-lg bg-bg-2">{p.poster && <Image src={p.poster} alt="" fill sizes="100px" className="object-cover" />}</span>)}
         </div>
         <dl className="mt-6 grid grid-cols-2 gap-4">
           {[[hrs(w.minutesWatched), "watched"], [w.episodesWatched.toLocaleString("en-US"), "episodes"], [String(w.total), "shows on my list"], [hrs(w.minutesPlanned), "still to watch"]].map(([v, l]) => (
-            <div key={l}><dd className="text-3xl font-black text-white">{v}</dd><dt className="text-xs text-muted">{l}</dt></div>
+            <div key={l}><dd className="text-3xl font-black text-snow">{v}</dd><dt className="text-xs text-muted">{l}</dt></div>
           ))}
         </dl>
         <p className="mt-5 text-sm font-semibold text-[#ffd88a]">Top genres: {w.topGenres.slice(0, 3).map((x) => x.name).join(" · ") || "—"}</p>

@@ -69,7 +69,7 @@ export default function HeroSpotlight({ items, children }: { items: Spot[]; chil
             </m.div>
           )}
         </AnimatePresence>
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,#0b0d13_0%,rgba(11,13,19,.82)_45%,rgba(11,13,19,.35)_100%)]" />
+        <div className="absolute inset-0 veil-spot" />
         <div className="aurora"><span /></div>
         <div className="stars" />
         {PETALS.map((p) => <span key={p.left} className="petal" style={{ left: p.left, ["--dur" as string]: p.dur, ["--delay" as string]: p.delay, ["--drift" as string]: p.drift }} />)}
@@ -98,8 +98,8 @@ export default function HeroSpotlight({ items, children }: { items: Spot[]; chil
                       <Image src={cur.poster} alt="" fill sizes="(max-width: 640px) 160px, 250px" className="object-cover transition duration-500 group-hover:scale-105" priority={i === 0} />
                     ) : <div className="grid h-full place-items-center text-sm text-muted">No image</div>}
                     <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/85 to-transparent" />
-                    <span className="absolute left-2.5 top-2.5 rounded-full bg-black/60 px-2.5 py-1 text-xs font-bold text-gold backdrop-blur">#{cur.rank}<span className="hidden sm:inline"> trending</span></span>
-                    {cur.rating && <span className="absolute right-2.5 top-2.5 rounded-full bg-black/60 px-2 py-1 text-xs font-semibold text-ink backdrop-blur">★ {(cur.rating / 10).toFixed(1)}</span>}
+                    <span className="absolute left-2.5 top-2.5 rounded-full bg-black/60 px-2.5 py-1 text-xs font-bold text-[#ffc857] backdrop-blur">#{cur.rank}<span className="hidden sm:inline"> trending</span></span>
+                    {cur.rating && <span className="absolute right-2.5 top-2.5 rounded-full bg-black/60 px-2 py-1 text-xs font-semibold text-snow backdrop-blur">★ {(cur.rating / 10).toFixed(1)}</span>}
                   </Link>
                 </m.div>
               </AnimatePresence>

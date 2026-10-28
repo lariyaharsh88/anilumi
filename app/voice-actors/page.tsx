@@ -23,7 +23,7 @@ export default async function VoiceActorsHub() {
           <Link href={vaPath(v)} className="group block">
             <span className="relative block aspect-[5/7] overflow-hidden rounded-xl border border-line bg-bg-2 transition group-hover:border-violet/60">
               {v.image && <Image src={v.image} alt="" fill sizes="(max-width:640px) 50vw, 180px" className="object-cover transition duration-500 group-hover:scale-105" />}
-              <span className="absolute left-2 top-2 rounded bg-black/60 px-1.5 py-0.5 text-[11px] font-bold text-white tabular-nums">#{i + 1}</span>
+              <span className="absolute left-2 top-2 rounded bg-black/60 px-1.5 py-0.5 text-[11px] font-bold text-snow tabular-nums">#{i + 1}</span>
             </span>
             <span className="mt-2 block truncate text-sm font-semibold text-ink group-hover:text-violet-2">{v.name}</span>
             <span className="block truncate text-xs text-muted">{v.native || v.language}</span>

@@ -23,11 +23,39 @@
   --color-viz-grid: #242b3b;  /* hairline, one step off the card */
   --color-violet: #8b7cff;
   --color-gold: #ffc857;
+  --color-snow: #ffffff; /* always white: text on accent buttons, badges over artwork */
   --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --shadow-card: 0 1px 0 rgb(255 255 255 / 0.03) inset, 0 10px 30px -14px rgb(0 0 0 / 0.7);
 }
 
 html { color-scheme: dark; scroll-behavior: smooth; }
+:root { --heat-0: #184f95; --heat-1: #256abf; --heat-2: #3987e5; --heat-3: #6da7ec; --heat-4: #9ec5f4; --heat-empty: #1d2333; }
+
+/* Light theme (components/ThemeToggle.tsx sets data-theme on <html> before first paint).
+   Utilities read the colour variables, so redefining them re-skins the whole site. --color-white
+   flips to near-black so the many "white/5"-style overlays become subtle dark tints on light surfaces;
+   real white text uses --color-snow. Text colours keep >= 4.5:1 on white and on bg-2. */
+:root[data-theme="light"] {
+  color-scheme: light;
+  --color-bg: #f5f6fa;
+  --color-bg-2: #eceef4;
+  --color-card: #ffffff;
+  --color-line: #dce0ea;
+  --color-ink: #151a29;
+  --color-muted: #586276;
+  --color-accent: #e11d48;
+  --color-accent-2: #be123c;
+  --color-violet: #5646d4;
+  --color-violet-2: #4636be;
+  --color-gold: #a15c00;
+  --color-gold-2: #8a4b00;
+  --color-white: #0b0d13;
+  --color-viz-4: #a86f00;
+  --color-viz-muted: #b4bccb;
+  --color-viz-grid: #e4e7ef;
+  --heat-0: #b9d3f5; --heat-1: #7fadeb; --heat-2: #3f86dd; --heat-3: #2365bd; --heat-4: #154a8f; --heat-empty: #eceff5;
+  --shadow-card: 0 1px 2px rgb(16 24 40 / .05), 0 10px 28px -18px rgb(16 24 40 / .28);
+}
 body { @apply bg-bg text-ink antialiased; }
 ::selection { background: color-mix(in oklab, var(--color-accent) 60%, transparent); }
 
@@ -36,7 +64,7 @@ body { @apply bg-bg text-ink antialiased; }
 @utility chip { @apply inline-flex items-center rounded-full border border-line bg-bg-2 px-3 py-1 text-xs font-medium text-muted transition hover:border-violet hover:text-ink; }
 .chip-active { @apply border-accent bg-accent/15 text-ink; }
 @utility btn { @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-sm font-semibold transition focus:outline-none focus-visible:ring-2 focus-visible:ring-violet disabled:cursor-not-allowed disabled:opacity-60; }
-.btn-primary { @apply btn bg-accent-strong text-white hover:bg-[#c8163f]; }
+.btn-primary { @apply btn bg-accent-strong text-snow hover:bg-[#c8163f]; }
 .btn-outline { @apply btn border border-line bg-bg-2 text-ink hover:border-violet; }
 .input { @apply w-full rounded-lg border border-line bg-bg-2 px-3 py-2 text-sm text-ink placeholder:text-muted focus:border-violet focus:outline-none focus:ring-2 focus:ring-violet/30; }
 .h-section { @apply text-xl font-bold tracking-tight text-ink sm:text-2xl; }
@@ -85,6 +113,13 @@ html, body { overflow-x: clip; }
   background: linear-gradient(100deg, #ff7a8f 0%, #b3a8ff 55%, #ffd88a 100%);
   -webkit-background-clip: text; background-clip: text; color: transparent;
 }
+[data-theme="light"] .text-gradient { background-image: linear-gradient(100deg, #e11d48 0%, #6d3fd6 55%, #b45309 100%); }
+
+/* Hero veils over artwork: built from the page colour, so they wash dark or light with the theme. */
+.veil-hero { background: linear-gradient(90deg, color-mix(in srgb, var(--color-bg-2) 60%, transparent) 0%, color-mix(in srgb, var(--color-bg-2) 80%, transparent) 55%, color-mix(in srgb, var(--color-bg-2) 90%, transparent) 100%); }
+.veil-spot { background: linear-gradient(90deg, var(--color-bg) 0%, color-mix(in srgb, var(--color-bg) 82%, transparent) 45%, color-mix(in srgb, var(--color-bg) 35%, transparent) 100%); }
+.veil-down { background: linear-gradient(180deg, color-mix(in srgb, var(--color-bg) 25%, transparent) 0%, color-mix(in srgb, var(--color-bg) 75%, transparent) 55%, var(--color-bg) 100%); }
+.veil-side { background: linear-gradient(90deg, color-mix(in srgb, var(--color-bg) 85%, transparent) 0%, color-mix(in srgb, var(--color-bg) 35%, transparent) 60%, transparent 100%); }
 
 /* Aurora: three soft colour fields drifting behind the hero. */
 .aurora { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
@@ -115,6 +150,7 @@ html, body { overflow-x: clip; }
     radial-gradient(1px 1px at 58% 38%, #fff6 50%, transparent 51%), radial-gradient(1.5px 1.5px at 22% 84%, #fff5 50%, transparent 51%); }
 @media (prefers-reduced-motion: no-preference) { .stars { animation: twinkle 6s ease-in-out infinite alternate; } }
 @keyframes twinkle { from { opacity: .45; } to { opacity: 1; } }
+[data-theme="light"] .stars { display: none; }
 
 /* Drifting sakura petals (decorative, aria-hidden). */
 .petal { position: absolute; top: -8%; width: 12px; height: 10px; border-radius: 80% 0 80% 0; background: linear-gradient(135deg, #ffb7c5, #ff7a8f); opacity: .0; pointer-events: none; }
@@ -169,7 +205,7 @@ html, body { overflow-x: clip; }
 .edge-fade { mask-image: linear-gradient(90deg, transparent 0, #000 24px, #000 calc(100% - 48px), transparent 100%); }
 
 /* Skeleton shimmer. */
-.shimmer { background: linear-gradient(100deg, #161b28 30%, #1f2638 50%, #161b28 70%); background-size: 300% 100%; }
+.shimmer { background: linear-gradient(100deg, var(--color-card) 30%, var(--color-bg-2) 50%, var(--color-card) 70%); background-size: 300% 100%; }
 @media (prefers-reduced-motion: no-preference) { .shimmer { animation: shimmer 1.4s linear infinite; } }
 @keyframes shimmer { to { background-position: -150% 0; } }
 
@@ -184,7 +220,7 @@ html, body { overflow-x: clip; }
 .h-section::before { content: ""; display: inline-block; width: 4px; height: .9em; margin-right: .5rem; border-radius: 4px; vertical-align: -0.08em; background: linear-gradient(#ff4d6d, #8b7cff); }
 
 /* Visible keyboard focus everywhere. */
-:where(a, button, input, select, [tabindex]):focus-visible { outline: 2px solid #b3a8ff; outline-offset: 2px; border-radius: 6px; }
+:where(a, button, input, select, [tabindex]):focus-visible { outline: 2px solid var(--color-violet-2); outline-offset: 2px; border-radius: 6px; }
 
 /* Primary buttons share the hover sheen. */
 .btn-primary { position: relative; overflow: hidden; isolation: isolate; box-shadow: 0 8px 24px -12px rgb(216 27 69 / .8); }
@@ -195,6 +231,7 @@ html, body { overflow-x: clip; }
 /* Top-10 outlined rank numerals. */
 .rank-numeral { font-size: clamp(84px, 11vw, 124px); font-weight: 900; line-height: .78; letter-spacing: -.06em; color: transparent;
   -webkit-text-stroke: 2px #5a6684; background: linear-gradient(180deg, #2f3852, #0b0d13 90%); -webkit-background-clip: text; background-clip: text; }
+[data-theme="light"] .rank-numeral { -webkit-text-stroke-color: #9aa3b8; background-image: linear-gradient(180deg, #dfe3ec, #f5f6fa 90%); }
 
 /* Live "airing" dot. */
 .live-dot { width: 6px; height: 6px; border-radius: 9999px; background: #fff; }

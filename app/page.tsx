@@ -10,6 +10,9 @@ import { WATCH_ORDER_OVERRIDES } from "@/data/watch-orders";
 import NewsList from "@/components/NewsList";
 import { getNews } from "@/lib/news";
 import { getQuoteOfDay } from "@/lib/quote";
+import { premieresOn, animeOfTheDay, nowJst, otdPath } from "@/lib/onthisday";
+import { bdPath } from "@/lib/birthdays";
+import Image from "next/image";
 
 export const revalidate = 1800;
 
@@ -21,7 +24,8 @@ export const metadata: Metadata = {
 
 export default async function Home() {
   const { season, year } = seasonOf();
-  const [trending, airing, seasonal, upcoming, topRated, movies, genres, news, quote] = await Promise.all([
+  const jst = nowJst();
+  const [trending, airing, seasonal, upcoming, topRated, movies, genres, news, quote, premieres, pick] = await Promise.all([
     getTrending(10),
     listAnime({ filter: { status: "current" }, sort: "-userCount", limit: 12 }),
     getSeason(year, season, 1, 12),
@@ -31,7 +35,10 @@ export default async function Home() {
     getCategories(60),
     getNews(),
     getQuoteOfDay(),
+    premieresOn(jst.m, jst.d, 12),
+    animeOfTheDay(jst.y, jst.m, jst.d),
   ]);
+  const onDay = premieres.filter((p) => p.anime).slice(0, 4);
 
   const spots: Spot[] = trending.slice(0, 6).map((a, i) => ({
     id: a.id,
@@ -93,6 +100,39 @@ export default async function Home() {
             <Link href="/news" className="group text-sm font-medium text-violet hover:text-violet-2">All news <span className="inline-block transition-transform group-hover:translate-x-1">→</span></Link>
           </div>
           <div className="card px-4 sm:px-5"><NewsList items={news.slice(0, 5)} compact /></div>
+        </section>
+      )}
+      {(pick || onDay.length > 0) && (
+        <section className="reveal mt-12 grid gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)]" aria-label="Today in anime">
+          {pick && (
+            <div className="card flex gap-4 p-4 sm:p-5">
+              <Link href={animePath(pick)} className="relative h-36 w-24 shrink-0 overflow-hidden rounded-lg bg-bg-2">{posterUrl(pick, "small") && <Image src={posterUrl(pick, "small")!} alt="" fill sizes="96px" className="object-cover" />}</Link>
+              <div className="min-w-0">
+                <p className="text-xs font-semibold uppercase tracking-wider text-accent-2">Anime of the day</p>
+                <h2 className="mt-1 text-lg font-bold text-ink"><Link href={animePath(pick)} className="hover:text-violet-2">{pick.title}</Link></h2>
+                <p className="mt-1 line-clamp-3 text-sm leading-6 text-ink/75">{pick.synopsis}</p>
+              </div>
+            </div>
+          )}
+          {onDay.length > 0 && (
+            <div className="card p-4 sm:p-5">
+              <div className="flex items-baseline justify-between gap-3">
+                <h2 className="text-xs font-semibold uppercase tracking-wider text-accent-2">On this day in anime</h2>
+                <Link href="/on-this-day" className="shrink-0 text-sm font-medium text-violet hover:text-violet-2">All →</Link>
+              </div>
+              <ul className="mt-3 grid grid-cols-2 gap-x-4 gap-y-3 sm:grid-cols-4">
+                {onDay.map((p) => (
+                  <li key={p.anime!.id}>
+                    <Link href={animePath(p.anime!)} className="group block">
+                      <span className="relative block aspect-[5/7] overflow-hidden rounded-lg bg-bg-2">{posterUrl(p.anime!, "small") && <Image src={posterUrl(p.anime!, "small")!} alt="" fill sizes="(max-width:640px) 45vw, 140px" className="object-cover transition duration-500 group-hover:scale-105" />}<span className="absolute left-1.5 top-1.5 rounded bg-black/75 px-1.5 py-0.5 text-[11px] font-bold text-snow">{p.year}</span></span>
+                      <span className="mt-1.5 block truncate text-sm font-semibold text-ink group-hover:text-violet-2">{p.anime!.title}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-3 text-xs text-muted"><Link href={otdPath(jst.m, jst.d)} className="hover:text-ink">Premiered on this date</Link> · <Link href={bdPath(jst.m, jst.d)} className="hover:text-ink">Today&apos;s character birthdays</Link></p>
+            </div>
+          )}
         </section>
       )}
       {quote && (

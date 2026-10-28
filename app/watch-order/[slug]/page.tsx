@@ -18,7 +18,7 @@ export async function generateStaticParams() { return []; }
 type Props = { params: Promise<{ slug: string }> };
 
 const KIND_LABEL: Record<WatchEntry["kind"], string> = { main: "Main", movie: "Movie", side: "Side story", recap: "Recap", spinoff: "Spin-off", alt: "Alt. version" };
-const KIND_CLASS: Record<WatchEntry["kind"], string> = { main: "bg-accent-strong text-white", movie: "bg-violet-strong text-white", side: "bg-bg-2 text-ink", recap: "bg-line text-muted line-through", spinoff: "bg-bg-2 text-ink", alt: "bg-line text-muted" };
+const KIND_CLASS: Record<WatchEntry["kind"], string> = { main: "bg-accent-strong text-snow", movie: "bg-violet-strong text-snow", side: "bg-bg-2 text-ink", recap: "bg-line text-muted line-through", spinoff: "bg-bg-2 text-ink", alt: "bg-line text-muted" };
 
 /** Drop the shared franchise prefix so sibling entries stay distinguishable in narrow labels. */
 function shortTitle(title: string, franchise: string) {

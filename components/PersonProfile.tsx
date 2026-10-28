@@ -153,7 +153,7 @@ export default async function PersonProfile({ va, kind }: { va: VoiceActor; kind
                 <>
                   <span className="relative block aspect-[5/6] overflow-hidden rounded-xl border border-line bg-bg-2">
                     {r.character.image && <Image src={r.character.image} alt="" fill sizes="(max-width:640px) 50vw, 180px" className="object-cover transition duration-500 group-hover:scale-105" />}
-                    {r.role === "MAIN" && <span className="absolute left-2 top-2 rounded bg-accent-strong px-1.5 py-0.5 text-[10px] font-bold uppercase text-white">Main</span>}
+                    {r.role === "MAIN" && <span className="absolute left-2 top-2 rounded bg-accent-strong px-1.5 py-0.5 text-[10px] font-bold uppercase text-snow">Main</span>}
                   </span>
                   <span className="mt-2 block truncate text-sm font-semibold text-ink group-hover:text-violet-2">{r.character.name}</span>
                   <span className="block truncate text-xs text-muted">{r.media[0].title}{r.media.length > 1 ? ` +${r.media.length - 1}` : ""}</span>

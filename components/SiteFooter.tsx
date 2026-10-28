@@ -1,17 +1,18 @@
 import Link from "@/components/Link";
 import { site } from "@/lib/site";
 import Logo from "./Logo";
-import { seasonOf, cap } from "@/lib/kitsu";
+import { seasonOf, shiftSeason, cap } from "@/lib/kitsu";
 
 type Col = { h: string; links: [string, string][] };
 
 export default function SiteFooter() {
   const { season, year } = seasonOf();
+  const next = shiftSeason(season, year, 1);
   // Four balanced groups (6–8 links each) instead of one long list, so the footer scans quickly.
   const cols: Col[] = [
-    { h: "Discover", links: [["/schedule", "Airing this week"], [`/season/${year}/${season}`, `${cap(season)} ${year} season`], ["/top/rated", "Top rated"], ["/top/popular", "Most popular"], ["/top/upcoming", "Upcoming"], ["/top/movies", "Best movies"], ["/news", "Anime news"]] },
+    { h: "Discover", links: [["/schedule", "Airing this week"], [`/season/${year}/${season}`, `${cap(season)} ${year} season`], ["/top/rated", "Top rated"], ["/top/popular", "Most popular"], ["/top/upcoming", "Upcoming"], ["/top/movies", "Best movies"], ["/news", "Anime news"], [`/season/${next.year}/${next.season}/preview`, `${cap(next.season)} ${next.year} preview`]] },
     { h: "Guides", links: [["/watch-order", "Watch orders"], ["/upcoming-seasons", "Confirmed sequels"], ["/how-long-to-watch", "How long to watch"], ["/filler-lists", "Filler lists"], ["/anime-to-manga", "Anime to manga"], ["/parents-guide", "Anime for kids"], ["/anime-openings", "Openings & endings"], ["/voice-actors", "Voice actors"]] },
-    { h: "Tools", links: [["/what-anime-is-this", "What anime is this?"], ["/tonight", "Watch tonight"], ["/quiz", "What should I watch?"], ["/tier-list", "Tier list maker"], ["/compare", "Compare anime"], ["/trends", "Genre trends"], ["/birthdays", "Birthdays"]] },
+    { h: "Tools", links: [["/what-anime-is-this", "What anime is this?"], ["/tonight", "Watch tonight"], ["/quiz", "What should I watch?"], ["/tier-list", "Tier list maker"], ["/compare", "Compare anime"], ["/trends", "Genre trends"], ["/birthdays", "Birthdays"], ["/on-this-day", "On this day"]] },
     { h: "Genres", links: [["/genre/action", "Action"], ["/genre/romance", "Romance"], ["/genre/comedy", "Comedy"], ["/genre/fantasy", "Fantasy"], ["/genre/isekai", "Isekai"], ["/genre", "All genres"]] },
   ];
   const small: [string, string][] = [["/about", "About"], ["/my", "My list"], ["/search", "Search"], ["/feed.xml", "RSS"]];

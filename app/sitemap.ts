@@ -35,6 +35,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: abs("/quiz"), lastModified: now, changeFrequency: "monthly", priority: 0.6 },
     { url: abs("/my/wrapped"), lastModified: now, changeFrequency: "monthly", priority: 0.5 },
     { url: abs("/birthdays"), lastModified: now, changeFrequency: "daily", priority: 0.7 },
+    { url: abs("/on-this-day"), lastModified: now, changeFrequency: "daily", priority: 0.7 },
     ...allDays().filter(({ m, d }) => birthdaysOn(m, d).characters.length).map(({ m, d }) => ({ url: abs(bdPath(m, d)), lastModified: now, changeFrequency: "yearly" as const, priority: 0.4 })),
     // Query-string variants are disallowed in robots.txt, so only the plain URL is listed.
     { url: abs("/tonight"), lastModified: now, changeFrequency: "weekly", priority: 0.7 },
@@ -46,6 +47,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   for (let d = -8; d <= 2; d++) {
     const x = shiftSeason(s.season, s.year, d);
     out.push({ url: abs(`/season/${x.year}/${x.season}`), lastModified: now, changeFrequency: d >= -1 ? "daily" : "monthly", priority: d >= -1 ? 0.8 : 0.5 });
+    if (d >= 0) out.push({ url: abs(`/season/${x.year}/${x.season}/preview`), lastModified: now, changeFrequency: "daily", priority: 0.8 });
   }
   try {
     const genres = await getCategories(60);

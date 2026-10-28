@@ -83,6 +83,7 @@ export default async function SeasonPage({ params, searchParams }: Props) {
           <Link key={ss} href={`/season/${year}/${ss}`} className={`chip ${ss === s ? "chip-active" : ""}`}>{cap(ss)}</Link>
         ))}
         <Link href={`/season/${next.year}/${next.season}`} className="chip">{cap(next.season)} {next.year} →</Link>
+        <Link href={`/season/${year}/${season}/preview`} className="chip chip-active">📋 {cap(season)} {year} preview guide</Link>
       </div>
       <div className="mt-2 flex flex-wrap gap-2 text-xs">
         {[y - 2, y - 1, y, y + 1].map((yy) => (

@@ -39,7 +39,7 @@ export default function PageHero({ crumbs, eyebrow, title, subtitle, facts, post
           <div className="absolute -left-16 -top-24 h-72 w-96 rounded-full blur-3xl" style={{ background: "radial-gradient(closest-side, hsl(var(--hue) 85% 60% / .5), transparent)" }} />
           <div className="absolute -bottom-28 right-0 h-72 w-[28rem] rounded-full blur-3xl" style={{ background: "radial-gradient(closest-side, hsl(calc(var(--hue) + 70) 80% 62% / .3), transparent)" }} />
           <div className="stars opacity-60" />
-          <div className="absolute inset-0 bg-[linear-gradient(90deg,#11152099_0%,#111520cc_55%,#111520e6_100%)]" />
+          <div className="absolute inset-0 veil-hero" />
         </div>
 
         <div className={`relative grid gap-6 p-6 sm:p-8 ${art.length ? "lg:grid-cols-[1fr_260px] lg:items-center" : ""}`}>

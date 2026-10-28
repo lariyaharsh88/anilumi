@@ -6,7 +6,8 @@ import JsonLd from "@/components/JsonLd";
 import Analytics from "@/components/Analytics";
 import MotionProvider from "@/components/MotionProvider";
 import Toaster from "@/components/Toaster";
-import { SPOILER_PREPAINT } from "@/lib/watchlist";
+import ServiceWorker from "@/components/ServiceWorker";
+import { SPOILER_PREPAINT, THEME_PREPAINT } from "@/lib/prepaint";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -25,10 +26,10 @@ export const viewport: Viewport = { themeColor: "#0b0d13", width: "device-width"
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className="flex min-h-screen flex-col">
-        {/* Spoiler shield: runs synchronously before any content paints (see lib/watchlist.ts). */}
-        <script dangerouslySetInnerHTML={{ __html: SPOILER_PREPAINT }} />
+        {/* Theme + spoiler shield: run synchronously before any content paints (see lib/prepaint.ts). */}
+        <script dangerouslySetInnerHTML={{ __html: THEME_PREPAINT + SPOILER_PREPAINT }} />
         <JsonLd
           data={{
             "@context": "https://schema.org",
@@ -48,6 +49,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <main className="flex-1">{children}</main>
           <SiteFooter />
           <Toaster />
+          <ServiceWorker />
         </MotionProvider>
       </body>
     </html>

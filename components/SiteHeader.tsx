@@ -5,6 +5,7 @@ import WatchlistBadge from "./WatchlistBadge";
 import Logo from "./Logo";
 import HeaderShell from "./HeaderShell";
 import NavLinks, { MobileNav } from "./NavLinks";
+import ThemeToggle from "./ThemeToggle";
 
 const nav = [
   { href: "/schedule", label: "Schedule" },
@@ -26,9 +27,10 @@ export default function SiteHeader() {
           <span className="sr-only">{site.name} home</span>
         </Link>
         <NavLinks items={nav} trailing={<WatchlistBadge />} />
-        <div className="ml-auto w-full max-w-xs">
+        <div className="ml-auto w-full min-w-0 max-w-xs">
           <SearchBox />
         </div>
+        <ThemeToggle />
       </div>
       <MobileNav items={[...nav, { href: "/my", label: "My list" }]} />
     </HeaderShell>
