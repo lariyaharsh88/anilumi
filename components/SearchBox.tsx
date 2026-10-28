@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useId, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
+import { track } from "@/lib/track";
 
 type Hit = { id: string; slug: string; title: string; poster: string | null; type: string; year: string | null; score: number | null; status: string };
 
@@ -56,8 +57,8 @@ export default function SearchBox({ defaultValue = "" }: { defaultValue?: string
     return () => window.removeEventListener("resize", fit);
   }, [show]);
   const total = hits.length + 1; // results + "see all"
-  const go = (h: Hit) => { setOpen(false); router.push(`/anime/${h.slug}`); };
-  const searchAll = () => { setOpen(false); router.push(`/search?q=${encodeURIComponent(q.trim())}`); };
+  const go = (h: Hit) => { track("search_suggestion", { search_term: q.trim(), anime: h.slug }); setOpen(false); router.push(`/anime/${h.slug}`); };
+  const searchAll = () => { track("search", { search_term: q.trim() }); setOpen(false); router.push(`/search?q=${encodeURIComponent(q.trim())}`); };
 
   const onKey = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "ArrowDown") { e.preventDefault(); setOpen(true); setActive((a) => (a + 1) % total); }
@@ -73,7 +74,7 @@ export default function SearchBox({ defaultValue = "" }: { defaultValue?: string
   };
 
   return (
-    <form ref={boxRef} action="/search" role="search" className="relative" onSubmit={() => setOpen(false)}>
+    <form ref={boxRef} action="/search" role="search" className="relative" onSubmit={() => { track("search", { search_term: q.trim() }); setOpen(false); }}>
       <input
         name="q"
         type="search"

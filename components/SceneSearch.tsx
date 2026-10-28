@@ -2,6 +2,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "@/components/Link";
 import { toMatches, traceError, timecode, CONFIDENT, type Match, type TraceHit } from "@/lib/scene";
+import { track } from "@/lib/track";
 
 const API = "https://api.trace.moe";
 type Mapped = Record<string, { slug: string; title: string; poster: string | null; episodes: number | null }>;
@@ -57,6 +58,7 @@ export default function SceneSearch() {
         mapped = m.map || {};
       }
       setState({ kind: "done", matches, hiddenAdult, mapped });
+      track("scene_search", { found: matches.length > 0, top_similarity: matches[0] ? Math.round(matches[0].similarity * 100) : 0 });
     } catch {
       setState({ kind: "error", message: "Couldn't reach the search service. Check your connection and try again." });
     } finally {

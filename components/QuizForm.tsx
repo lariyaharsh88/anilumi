@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { m, AnimatePresence } from "motion/react";
 import { QUIZ } from "@/lib/quiz";
+import { track } from "@/lib/track";
 
 /** One question at a time; the last answer jumps to the server-rendered results page. */
 export default function QuizForm() {
@@ -14,7 +15,7 @@ export default function QuizForm() {
     const next = { ...ans, [q.key]: v };
     setAns(next);
     if (step < QUIZ.length - 1) setStep(step + 1);
-    else router.push(`/quiz/results?${new URLSearchParams(next).toString()}`);
+    else { track("quiz_complete", next); router.push(`/quiz/results?${new URLSearchParams(next).toString()}`); }
   };
   return (
     <div className="card mx-auto mt-8 max-w-2xl p-5 sm:p-7">

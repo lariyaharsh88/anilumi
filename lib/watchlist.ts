@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState, useCallback } from "react";
+import { track } from "./track";
 
 export type WatchItem = {
   id: string; slug: string; title: string; poster: string | null; status: string; nextRelease: string | null; addedAt: number;
@@ -47,7 +48,9 @@ export function useWatchlist() {
   const has = useCallback((id: string) => items.some((i) => i.id === id), [items]);
   const toggle = useCallback((item: Omit<WatchItem, "addedAt">) => {
     const cur = readWatchlist();
-    write(cur.some((i) => i.id === item.id) ? cur.filter((i) => i.id !== item.id) : [...cur, { ...item, addedAt: Date.now() }]);
+    const removing = cur.some((i) => i.id === item.id);
+    track(removing ? "remove_from_list" : "add_to_list", { anime: item.slug });
+    write(removing ? cur.filter((i) => i.id !== item.id) : [...cur, { ...item, addedAt: Date.now() }]);
   }, []);
   const remove = useCallback((id: string) => write(readWatchlist().filter((i) => i.id !== id)), []);
   const update = useCallback((patch: Partial<WatchItem>[]) => {

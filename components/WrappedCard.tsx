@@ -7,6 +7,7 @@ import { computeWrapped } from "@/lib/wrapped";
 import { loadImg, drawCover, downloadCanvas, fit } from "@/lib/canvas";
 import ImportAniList from "./ImportAniList";
 import ImportMal from "./ImportMal";
+import { track } from "@/lib/track";
 
 const hrs = (m: number) => (m >= 120 ? `${Math.round(m / 60).toLocaleString("en-US")} h` : `${m} min`);
 
@@ -66,6 +67,7 @@ export default function WrappedCard() {
     if (w.mostWatched) { ctx.fillStyle = "#c9cfdd"; ctx.font = "500 30px system-ui, sans-serif"; ctx.fillText(fit(ctx, `Most watched: ${w.mostWatched.title}`, W - 140), 70, 1110); }
     ctx.fillStyle = "#8f9ab3"; ctx.font = "600 28px system-ui, sans-serif"; ctx.fillText("Make yours at anilumi.in/my/wrapped", 70, H - 90);
     downloadCanvas(c, `anime-wrapped-${year}.png`);
+    track("wrapped_download", { shows: w.total });
     setBusy(false);
   };
 

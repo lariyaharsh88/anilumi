@@ -17,6 +17,9 @@ services:
         value: https://anilumi.in
       - key: NEXT_TELEMETRY_DISABLED
         value: "1"
+      # Google Analytics 4 (public measurement ID, read at build time)
+      - key: NEXT_PUBLIC_GA_ID
+        value: G-V7DV9GGSDD
       # Render's shared egress is slower to AniList; allow more time before giving up.
       - key: ANILIST_TIMEOUT_MS
         value: "9000"

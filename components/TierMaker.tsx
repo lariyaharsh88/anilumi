@@ -3,6 +3,7 @@ import { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import { TIERS, encodeTiers, type Tier, type TierState } from "@/lib/tierlist";
 import { loadImg, drawCover, downloadCanvas, fit } from "@/lib/canvas";
+import { track } from "@/lib/track";
 
 export type TierItem = { id: string; slug: string; title: string; poster: string | null };
 const COLORS: Record<Tier, string> = { S: "#ff7f7f", A: "#ffbf7f", B: "#ffdf7f", C: "#fdfd7f", D: "#bfff7f", F: "#7fdfff" };
@@ -83,6 +84,7 @@ export default function TierMaker({ items, initialTiers, initialTitle }: { items
     }
     ctx.fillStyle = "#8f9ab3"; ctx.font = "600 18px system-ui, sans-serif"; ctx.fillText("Made on anilumi.in/tier-list", 20, H - 22);
     downloadCanvas(c, `${(title.trim() || "anime-tier-list").toLowerCase().replace(/[^a-z0-9]+/g, "-")}.png`);
+    track("tierlist_download", { ranked: Object.values(tiers).flat().length });
     setBusy(false);
   };
 
