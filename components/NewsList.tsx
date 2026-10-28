@@ -18,6 +18,8 @@ export default function NewsList({ items, compact = false }: { items: NewsItem[]
           <p className="flex flex-wrap items-center gap-x-2 text-xs text-muted">
             <span className="rounded bg-white/5 px-1.5 py-0.5 font-semibold uppercase tracking-wide">{n.category}</span>
             <time dateTime={n.date}>{timeAgo(n.date)}</time>
+            <span aria-hidden>·</span>
+            <span>{n.source}</span>
           </p>
           <a href={n.url} target="_blank" rel="noopener" className={`mt-1 block font-semibold leading-snug text-ink hover:text-violet-2 ${compact ? "text-[15px]" : "text-base sm:text-lg"}`}>{n.title}</a>
           {!compact && n.summary && <p className="mt-1 text-sm text-ink/70">{n.summary}</p>}

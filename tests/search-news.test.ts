@@ -1,7 +1,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { norm, editDistance, buildIndex, aliasLookup, type AliasEntry } from "../lib/aliases";
-import { parseRss, buildMatchers, animeInHeadline, newsAbout, type NewsItem } from "../lib/news";
+import { parseRss, buildMatchers, animeInHeadline, newsAbout, mergeNews, teaser, type NewsItem } from "../lib/news";
 
 const E = (i: string, t: string, r: number, n: string[]): AliasEntry => ({ i, s: t.toLowerCase().replace(/\W+/g, "-"), t, r, n: n.map(norm) });
 const idx = buildIndex([
@@ -58,7 +58,16 @@ test("animeInHeadline prefers the most specific title and ignores short names", 
 });
 
 test("newsAbout matches any title variant", () => {
-  const n = (title: string): NewsItem => ({ id: title, title, summary: "", url: "https://x", date: "", category: "Anime", anime: [] });
+  const n = (title: string): NewsItem => ({ id: title, title, summary: "", url: "https://x", date: "", category: "Anime", source: "ANN", anime: [] });
   const items = [n("Sousou no Frieren Season 3 Teaser"), n("Frieren: Beyond Journey's End Wins Award"), n("Unrelated Game")];
   assert.equal(newsAbout(items, ["Sousou no Frieren", "Frieren: Beyond Journey's End"]).length, 2);
+});
+
+test("teaser keeps one short sentence; mergeNews sorts and drops duplicate headlines", () => {
+  assert.equal(teaser("First sentence here. Second one."), "First sentence here.");
+  assert.ok(teaser("x ".repeat(200)).length <= 161);
+  const item = (title: string, date: string, source: string) => ({ id: title + source, title, summary: "", url: "https://x", date, category: "News", source });
+  const merged = mergeNews([[item("Frieren S3 Teaser", "2026-10-28T10:00:00Z", "ANN")], [item("Frieren S3 teaser!", "2026-10-28T11:00:00Z", "MAL"), item("Other", "2026-10-28T12:00:00Z", "MAL")]]);
+  assert.deepEqual(merged.map((m) => [m.title, m.source]), [["Other", "MAL"], ["Frieren S3 teaser!", "MAL"]]);
+  assert.equal(parseRss("<item><title>&amp;#039;Iruma-kun&amp;#039; Staff</title><link>https://m/1</link></item>", "MyAnimeList")[0].title, "'Iruma-kun' Staff");
 });

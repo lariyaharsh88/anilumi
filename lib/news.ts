@@ -5,9 +5,13 @@
 import data from "@/data/aliases.json";
 import { norm, type AliasEntry } from "./aliases";
 
-export type NewsItem = { id: string; title: string; summary: string; url: string; date: string; category: string; anime: { slug: string; title: string }[] };
+export type NewsItem = { id: string; title: string; summary: string; url: string; date: string; category: string; source: string; anime: { slug: string; title: string }[] };
 
-const FEED = "https://www.animenewsnetwork.com/news/rss.xml?ann-edition=w";
+// Two outlets: if one blocks or rate-limits our host, the other still fills the page.
+const FEEDS = [
+  { source: "Anime News Network", url: "https://www.animenewsnetwork.com/news/rss.xml?ann-edition=w" },
+  { source: "MyAnimeList", url: "https://myanimelist.net/rss/news.xml" },
+];
 const ENT: Record<string, string> = { amp: "&", lt: "<", gt: ">", quot: '"', apos: "'", nbsp: " " };
 const entities = (s: string) =>
   s
@@ -15,21 +19,30 @@ const entities = (s: string) =>
     .replace(/&#x([0-9a-f]+);/gi, (_, n) => String.fromCodePoint(parseInt(n, 16)))
     .replace(/&([a-z]+);/gi, (m, n) => ENT[n.toLowerCase()] ?? m);
 // Decode entities before stripping tags: ANN escapes inline markup (&lt;cite&gt;) inside descriptions.
+// Twice: some feeds double-escape (&amp;#039;).
 const decode = (s: string) =>
-  entities(s.replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g, "$1"))
+  entities(entities(s.replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g, "$1")))
     .replace(/<[^>]+>/g, "")
     .replace(/\s+/g, " ")
     .trim();
 
+/** First sentence, at most ~160 characters: a teaser, not the article. Pure. */
+export function teaser(s: string, max = 160): string {
+  // Break only at a full stop followed by a capital: titles like "Mairimashita!" contain "!".
+  const first = s.split(/(?<=\.)\s(?=[A-Z"'“])/)[0] || s;
+  const t = first.length <= max ? first : `${first.slice(0, max).replace(/\s+\S*$/, "")}…`;
+  return t.trim();
+}
+
 /** Parse RSS 2.0 items. Pure. */
-export function parseRss(xml: string): Omit<NewsItem, "anime">[] {
+export function parseRss(xml: string, source = "News"): Omit<NewsItem, "anime">[] {
   return [...xml.matchAll(/<item>([\s\S]*?)<\/item>/g)].flatMap(([, it]) => {
     const tag = (t: string) => decode(it.match(new RegExp(`<${t}[^>]*>([\\s\\S]*?)</${t}>`))?.[1] || "");
     const url = tag("link");
     const title = tag("title");
     if (!url.startsWith("https://") || !title) return [];
     const when = Date.parse(tag("pubDate"));
-    return [{ id: tag("guid") || url, title, summary: tag("description"), url, date: Number.isNaN(when) ? "" : new Date(when).toISOString(), category: tag("category") || "News" }];
+    return [{ id: tag("guid") || url, title, summary: teaser(tag("description")), url, date: Number.isNaN(when) ? "" : new Date(when).toISOString(), category: tag("category") || "News", source }];
   });
 }
 
@@ -61,15 +74,35 @@ export function animeInHeadline(headline: string, ms: Matcher[], limit = 2): { s
   return found.map(({ slug, title }) => ({ slug, title }));
 }
 
-export async function getNews(): Promise<NewsItem[]> {
+async function fetchFeed(f: (typeof FEEDS)[number]): Promise<Omit<NewsItem, "anime">[]> {
   try {
-    const res = await fetch(FEED, { headers: { Accept: "application/rss+xml", "User-Agent": "AniLumi/1.0 (+https://anilumi.in)" }, next: { revalidate: 3600 }, signal: AbortSignal.timeout(8000) });
-    if (!res.ok) return [];
-    matchers ??= buildMatchers((data as { anime: AliasEntry[] }).anime);
-    return parseRss(await res.text()).map((n) => ({ ...n, anime: animeInHeadline(n.title, matchers!) }));
-  } catch {
+    const res = await fetch(f.url, {
+      headers: { Accept: "application/rss+xml, application/xml;q=0.9, */*;q=0.8", "User-Agent": "Mozilla/5.0 (compatible; AniLumi/1.0; +https://anilumi.in)" },
+      next: { revalidate: 3600 },
+      signal: AbortSignal.timeout(8000),
+    });
+    if (!res.ok) { console.warn(`[news] ${f.source}: HTTP ${res.status}`); return []; }
+    return parseRss(await res.text(), f.source);
+  } catch (err) {
+    console.warn(`[news] ${f.source}: ${(err as Error).name}`);
     return [];
   }
+}
+
+/** Merge feeds newest first, dropping the same headline from a second outlet. Pure. */
+export function mergeNews(lists: Omit<NewsItem, "anime">[][], limit = 50): Omit<NewsItem, "anime">[] {
+  const seen = new Set<string>();
+  return lists
+    .flat()
+    .sort((a, b) => (b.date || "").localeCompare(a.date || ""))
+    .filter((n) => { const k = norm(n.title); if (seen.has(k)) return false; seen.add(k); return true; })
+    .slice(0, limit);
+}
+
+export async function getNews(): Promise<NewsItem[]> {
+  const lists = await Promise.all(FEEDS.map(fetchFeed));
+  matchers ??= buildMatchers((data as { anime: AliasEntry[] }).anime);
+  return mergeNews(lists).map((n) => ({ ...n, anime: animeInHeadline(n.title, matchers!) }));
 }
 
 /** News that mentions a given anime (by its title variants), newest first. */
