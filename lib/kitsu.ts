@@ -808,7 +808,7 @@ function normalizeCharacter(c: JsonApiResource): Character {
   return {
     id: c.id,
     slug: String(c.attributes.slug),
-    name: str(c.attributes.canonicalName) || names.en || "Unknown",
+    name: (str(c.attributes.canonicalName) || names.en || "Unknown").replace(/\s+/g, " ").trim(),
     nameJp: names.ja_jp || null,
     description: (str(c.attributes.description) || "").replace(/\[\/?(b|i|u|spoiler|url[^\]]*)\]/gi, "").trim(),
     image: stableUrl(img?.original) || null,

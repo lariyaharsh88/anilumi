@@ -374,3 +374,15 @@ export async function getAniListDuration(kitsuId: string): Promise<number | null
   const d = await anilist<{ Media: { duration: number | null } | null }>("query($id:Int){Media(id:$id,type:ANIME){duration}}", { id }, 86400 * 7, { strict: true });
   return d?.Media?.duration || null;
 }
+
+/** Structured facts for an AniList character (age, gender, blood type, birthday, "__Height:__" lines). */
+export async function getAniListCharacter(id: number): Promise<import("./charfacts").AniListCharacter | null> {
+  const d = await anilist<{ Character: { age: string | null; gender: string | null; bloodType: string | null; dateOfBirth: { month: number | null; day: number | null } | null; description: string | null } | null }>(
+    "query($id:Int){Character(id:$id){age gender bloodType dateOfBirth{month day} description}}",
+    { id },
+    86400 * 7,
+  );
+  const c = d?.Character;
+  if (!c) return null;
+  return { age: c.age, gender: c.gender, bloodType: c.bloodType, dateOfBirth: c.dateOfBirth, lines: cleanBio(c.description).facts };
+}
