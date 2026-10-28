@@ -1,0 +1,51 @@
+name: Refresh data
+# Monthly snapshot refresh: birthdays (AniList), search aliases (Kitsu + anime-offline-database) and
+# MyAnimeList filler flags (Jikan). Each source may be down; a failed step keeps the old file.
+# Tests and the type check must pass before anything is committed; the push makes Render redeploy.
+on:
+  schedule:
+    - cron: "17 3 1 * *" # 03:17 UTC on the 1st of each month
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency: refresh-data
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Birthdays
+        run: npx tsx scripts/fetch-birthdays.mts
+        continue-on-error: true
+        timeout-minutes: 15
+      - name: Search aliases
+        run: npx tsx scripts/build-aliases.mts
+        continue-on-error: true
+        timeout-minutes: 15
+      - name: MyAnimeList filler flags
+        run: npx tsx scripts/build-filler-mal.mts
+        continue-on-error: true
+        timeout-minutes: 15
+      - name: Keep the old file if a new one is broken or much smaller
+        run: |
+          for f in data/birthdays.json data/aliases.json data/filler-mal.json; do
+            old=$(git show "HEAD:$f" | wc -c); new=$(wc -c < "$f")
+            if ! node -e "JSON.parse(require('fs').readFileSync('$f','utf8'))" || [ "$new" -lt $((old * 8 / 10)) ]; then
+              echo "::warning::$f looks wrong ($old -> $new bytes); keeping the committed version"
+              git checkout -- "$f"
+            fi
+          done
+      - run: npm run typecheck
+      - run: npm test
+      - name: Commit changes
+        run: |
+          git add data/birthdays.json data/aliases.json data/filler-mal.json
+          if git diff --cached --quiet; then echo "No data changes."; exit 0; fi
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -m "Monthly data refresh"
+          git push

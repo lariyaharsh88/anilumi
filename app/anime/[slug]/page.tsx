@@ -383,7 +383,7 @@ export default async function AnimePage({ params }: Props) {
               </ol>
               <StoryGuide
                 title={a.title}
-                episodesHref={`${animePath(a)}/episodes`}
+                animeHref={animePath(a)}
                 filler={fillerFor(a.slug, a.episodeCount ?? (lastAired || null))}
                 episodeLength={a.episodeLength}
                 cont={continuationFor(a.slug)}

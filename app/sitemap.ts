@@ -4,6 +4,7 @@ import { WATCH_ORDER_OVERRIDES } from "@/data/watch-orders";
 import { listAnime, getCategories, seasonOf, shiftSeason, animePath, TREND_GENRES } from "@/lib/kitsu";
 import { popularVoiceActors, vaPath } from "@/lib/anilist";
 import { allDays, birthdaysOn, bdPath } from "@/lib/birthdays";
+import { fillerSlugs, continuationSlugs } from "@/lib/filler";
 
 export const revalidate = 86400;
 
@@ -22,6 +23,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: abs("/how-long-to-watch"), lastModified: now, changeFrequency: "weekly", priority: 0.7 },
     { url: abs("/parents-guide"), lastModified: now, changeFrequency: "weekly", priority: 0.7 },
     { url: abs("/upcoming-seasons"), lastModified: now, changeFrequency: "daily", priority: 0.8 },
+    { url: abs("/filler-lists"), lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    ...fillerSlugs().map((slug) => ({ url: abs(`${animePath({ slug })}/filler-list`), lastModified: now, changeFrequency: "monthly" as const, priority: 0.7 })),
+    { url: abs("/anime-to-manga"), lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    ...continuationSlugs().map((slug) => ({ url: abs(`${animePath({ slug })}/manga`), lastModified: now, changeFrequency: "monthly" as const, priority: 0.6 })),
     { url: abs("/voice-actors"), lastModified: now, changeFrequency: "weekly", priority: 0.6 },
     { url: abs("/anime-openings"), lastModified: now, changeFrequency: "weekly", priority: 0.6 },
     { url: abs("/tier-list"), lastModified: now, changeFrequency: "weekly", priority: 0.6 },

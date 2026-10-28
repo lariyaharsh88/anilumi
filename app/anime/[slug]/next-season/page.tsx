@@ -143,6 +143,7 @@ export default async function NextSeasonPage({ params }: Props) {
         <section className="card reveal mt-10 border-violet/40 bg-violet/10 p-4" aria-label="Continue the story">
           <p className="text-xs font-semibold uppercase tracking-wider text-violet-2">Can&apos;t wait?</p>
           <p className="mt-1 text-sm leading-6 text-ink/90">The anime leaves off at {cont.medium} {cont.chapter ? `chapter ${cont.chapter}` : `volume ${cont.volume}`}. {cont.note || ""}{!cont.reviewed && <span className="text-muted"> (Draft, being verified.)</span>}</p>
+          <Link href={`${animePath(a)}/manga`} className="mt-2 inline-block text-sm text-violet hover:underline">Where the anime ends in the {cont.medium} →</Link>
         </section>
       )}
 
