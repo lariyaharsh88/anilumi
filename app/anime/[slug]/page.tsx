@@ -30,6 +30,8 @@ import LocalTime from "@/components/LocalTime";
 import Backdrop from "@/components/fx/Backdrop";
 import ScoreRing from "@/components/fx/ScoreRing";
 import ScoreCard from "@/components/ScoreCard";
+import FanRecs from "@/components/FanRecs";
+import { getFanRecommendations } from "@/lib/anilist";
 import { combineScores, kitsuScore, aniListScore, getMalScore } from "@/lib/scores";
 import SectionNav, { type NavSection } from "@/components/fx/SectionNav";
 import ClampText from "@/components/fx/ClampText";
@@ -94,7 +96,7 @@ export default async function AnimePage({ params }: Props) {
   if (!a) notFound();
 
   const mainGenre = a.categories[0];
-  const [characters, episodes, related, relations, latestInfo, productions, insight, malScore] = await Promise.all([
+  const [characters, episodes, related, relations, latestInfo, productions, insight, malScore, fanRecs] = await Promise.all([
     getCharacters(a.id, 12),
     a.subtype === "movie" ? Promise.resolve({ items: [], total: 0, limit: 0, offset: 0 }) : getEpisodes(a.id, 1, 6),
     mainGenre ? listAnime({ filter: { categories: mainGenre.slug }, sort: "-userCount", limit: 13 }) : Promise.resolve({ items: [], total: 0, limit: 0, offset: 0 }),
@@ -103,6 +105,7 @@ export default async function AnimePage({ params }: Props) {
     getProductions(a.id),
     getAniListInsight(a.id),
     getMalScore(a.id),
+    getFanRecommendations(a.id, 12),
   ]);
   const combined = combineScores([kitsuScore(a), aniListScore(insight), malScore]);
   const multi = combined && combined.sources.length > 1 ? combined : null;
@@ -505,6 +508,7 @@ export default async function AnimePage({ params }: Props) {
             </div>
           </section>
         )}
+        <FanRecs title={a.title} recs={fanRecs} />
         {mainGenre && <AnimeRail title={`More ${mainGenre.title} anime`} href={`/genre/${mainGenre.slug}`} items={relatedItems} />}
       </div>
 

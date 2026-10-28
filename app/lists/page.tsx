@@ -37,6 +37,7 @@ export default async function Lists() {
           { href: "/parents-guide", icon: "👪", t: "Best anime for kids", d: "Age ratings and viewer-rated parents' guides." },
           { href: "/upcoming-seasons", icon: "📣", t: "Confirmed sequels", d: "Every announced season 2, 3 and beyond." },
           { href: "/voice-actors", icon: "🎙️", t: "Voice actors", d: "Every role of the voices fans follow most." },
+          { href: "/what-anime-is-this", icon: "🔍", t: "What anime is this?", d: "Find any anime, episode and moment from a screenshot." },
           { href: "/quiz", icon: "🎯", t: "What should I watch?", d: "Four questions, picks ranked by fans." },
           { href: "/tier-list", icon: "🏆", t: "Tier list maker", d: "Rank anime S to F and share the image." },
           { href: "/anime-openings", icon: "🎵", t: "Openings & endings", d: "Every theme song, artist and episode range." },
@@ -45,7 +46,7 @@ export default async function Lists() {
           { href: "/random", icon: "🎲", t: "Random anime", d: "Can't decide? Let the dice pick." },
         ].map((c, i) => (
           <li key={c.href} className="reveal">
-            <Link href={c.href} className="genre-tile card group flex h-full gap-3 p-4 transition duration-300 hover:-translate-y-0.5 hover:border-white/20" style={{ ["--h" as string]: String([262, 350, 190, 140, 40, 300, 220, 20, 40, 300, 262, 40, 330, 330, 300, 190][i]) }}>
+            <Link href={c.href} className="genre-tile card group flex h-full gap-3 p-4 transition duration-300 hover:-translate-y-0.5 hover:border-white/20" style={{ ["--h" as string]: String([262, 350, 190, 140, 40, 300, 220, 20, 40, 300, 190, 262, 40, 330, 330, 300, 190][i]) }}>
               <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-white/5 text-xl" aria-hidden>{c.icon}</span>
               <span className="min-w-0">
                 <span className="block font-semibold text-ink group-hover:text-violet-2">{c.t}</span>

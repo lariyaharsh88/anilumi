@@ -6,6 +6,8 @@ import AnimeGrid from "@/components/AnimeGrid";
 import PageHero from "@/components/PageHero";
 import Faq from "@/components/Faq";
 import AdSlot from "@/components/AdSlot";
+import FanRecs from "@/components/FanRecs";
+import { getFanRecommendations } from "@/lib/anilist";
 
 export const revalidate = 604800;
 // Render on first request, then serve from the ISR cache until revalidated.
@@ -45,7 +47,7 @@ export default async function SimilarPage({ params }: Props) {
   const { slug } = await params;
   const a = await getAnimeBySlug(decodeURIComponent(slug));
   if (!a) notFound();
-  const items = await similarTo(a);
+  const [items, recs] = await Promise.all([similarTo(a), getFanRecommendations(a.id, 12)]);
   return (
     <div className="container-x pb-8">
       <PageHero
@@ -59,10 +61,13 @@ export default async function SimilarPage({ params }: Props) {
       >
         <div className="flex flex-wrap gap-2">{a.categories.slice(0, 6).map((c) => <Link key={c.id} href={`/genre/${c.slug}`} className="chip">{c.title}</Link>)}</div>
       </PageHero>
+      <FanRecs title={a.title} recs={recs} heading={`What ${a.title} fans recommend`} />
       <AdSlot slot="similar-top" />
-      <div className="mt-6"><AnimeGrid items={items} startRank={1} emptyText="Not enough genre data to find matches yet." /></div>
+      <h2 className="h-section mb-3 mt-12">Same genres and themes</h2>
+      <div><AnimeGrid items={items} startRank={1} emptyText="Not enough genre data to find matches yet." /></div>
       <Faq
         items={[
+          ...(recs[0] ? [{ q: `What do ${a.title} fans recommend?`, a: `AniList members most often recommend ${recs.slice(0, 3).map((r) => `${r.title} (${r.votes.toLocaleString("en-US")} votes)`).join(", ")}.` }] : []),
           { q: `What should I watch after ${a.title}?`, a: items[0] ? `${items.slice(0, 3).map((x) => x.title).join(", ")} are the closest matches: they share ${a.title}'s main genres and have large audiences.` : "Recommendations appear once the title has genre tags." },
           { q: "How are these picked?", a: "Automatically, from genre and theme tags on Kitsu, weighted by how many tags overlap and then by popularity. No editorial opinion is involved, so treat it as a starting point." },
         ]}

@@ -3,7 +3,7 @@
  * richer than Kitsu's, so voice actors come from here. Everything fails soft (null / empty) and is
  * cached by Next's fetch cache plus a small in-process memo, because the public API is rate-limited.
  */
-import { getAniListId, ANILIST_MIN_REVALIDATE, UpstreamError } from "./kitsu";
+import { getAniListId, kitsuByAniListIds, ANILIST_MIN_REVALIDATE, UpstreamError, type Anime } from "./kitsu";
 
 /**
  * `strict`: for pages whose main content comes from AniList. A network error, 5xx or exhausted 429 throws
@@ -266,4 +266,39 @@ export async function getAniListSequel(kitsuId: string): Promise<AlSequel | null
     21600,
   );
   return d?.Media ? alSequelFrom(d.Media.relations.edges) : null;
+}
+
+/* ---------------- fan recommendations ---------------- */
+
+export type FanRec = { anilistId: number; votes: number; title: string; cover: string | null; year: number | null; format: string | null; anime: Anime | null };
+
+type AlRecNode = { rating: number; mediaRecommendation: { id: number; type: string; format: string | null; seasonYear: number | null; isAdult: boolean; title: { romaji: string; english: string | null }; coverImage: { medium: string | null } | null } | null };
+
+/** Keep positively rated, non-adult anime recommendations, most votes first. Pure. */
+export function pickRecs(nodes: AlRecNode[], limit = 12): Omit<FanRec, "anime">[] {
+  const seen = new Set<number>();
+  return nodes
+    .filter((n) => n.rating > 0 && n.mediaRecommendation && n.mediaRecommendation.type === "ANIME" && !n.mediaRecommendation.isAdult)
+    .sort((x, y) => y.rating - x.rating)
+    .filter((n) => (seen.has(n.mediaRecommendation!.id) ? false : (seen.add(n.mediaRecommendation!.id), true)))
+    .slice(0, limit)
+    .map((n) => {
+      const m = n.mediaRecommendation!;
+      return { anilistId: m.id, votes: n.rating, title: m.title.english || m.title.romaji, cover: m.coverImage?.medium || null, year: m.seasonYear, format: m.format };
+    });
+}
+
+/** "Fans who liked this also liked…": AniList's user-voted recommendations, linked to our pages when Kitsu has them. */
+export async function getFanRecommendations(kitsuId: string, limit = 12): Promise<FanRec[]> {
+  const id = await getAniListId(kitsuId);
+  if (!id) return [];
+  const d = await anilist<{ Media: { recommendations: { nodes: AlRecNode[] } } | null }>(
+    "query($id:Int){Media(id:$id,type:ANIME){recommendations(sort:[RATING_DESC,ID],perPage:25){nodes{rating mediaRecommendation{id type format seasonYear isAdult title{romaji english} coverImage{medium}}}}}}",
+    { id },
+    86400,
+  );
+  const recs = pickRecs(d?.Media?.recommendations.nodes || [], limit);
+  if (!recs.length) return [];
+  const kitsu = await kitsuByAniListIds(recs.map((r) => r.anilistId));
+  return recs.map((r) => ({ ...r, anime: kitsu.get(r.anilistId) ?? null }));
 }
