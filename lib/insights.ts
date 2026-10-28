@@ -120,8 +120,34 @@ export function parentsGuide(tags: AlTag[], genres: string[], ageRating: string 
   const suitable =
     r === "R18" ? "Adults only"
     : adultish ? "Older teens and adults (17+)"
+    // Made-for-children shows (Doraemon) beat Kitsu's broad "PG = 13+" bucket unless viewers flag real content.
+    : madeForKids && worst !== "moderate" ? "All ages"
     : r === "PG" || worst === "moderate" ? "Teens (13+)"
-    : madeForKids || r === "G" ? "All ages"
+    : r === "G" ? "All ages"
     : "Most viewers, with a parent's check";
   return { areas, suitable, madeForKids };
+}
+
+/** Short age for titles: "13+", "17+", "All Ages". Pure. */
+export function ageLabel(suitable: string): string {
+  return ({ "All ages": "All Ages", "Teens (13+)": "13+", "Older teens and adults (17+)": "17+", "Adults only": "18+" } as Record<string, string>)[suitable] ?? "Parental Guidance";
+}
+
+const SHORT: Record<string, string> = { violence: "Violence", sexual: "Nudity", "sexual-violence": "Sexual Violence", disturbing: "Dark Themes", "drugs-crime": "Crime" };
+/** The strongest flagged areas in short form, strongest first ("Violence, Dark Themes"). Pure. */
+export function flaggedShort(g: ParentsGuide, max = 2): string[] {
+  const order: Level[] = ["strong", "moderate"];
+  return order.flatMap((lv) => g.areas.filter((a) => a.level === lv).map((a) => SHORT[a.key] || a.label)).slice(0, max);
+}
+
+/** "Is it OK for a 12-year-old?" answer, worded by how strong the content is. Pure. */
+export function preteenAnswer(title: string, g: ParentsGuide): string {
+  const flags = flaggedShort(g, 3).join(", ").toLowerCase();
+  switch (g.suitable) {
+    case "All ages": return `Yes. ${title} suits all ages${g.madeForKids ? " and was made for children" : ""}.`;
+    case "Teens (13+)": return `${title} is aimed at teens 13 and up. Many 12-year-olds will be fine with it, but watch an episode first${flags ? `: viewers flag ${flags}` : ""}.`;
+    case "Older teens and adults (17+)": return `Probably not. ${title} is aimed at older teens and adults${flags ? `; viewers flag ${flags}` : ""}.`;
+    case "Adults only": return `No. ${title} is for adults only.`;
+    default: return `Usually, yes, but preview an episode first: ${title} has no strong content flagged by viewers.`;
+  }
 }

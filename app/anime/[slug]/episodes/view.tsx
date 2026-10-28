@@ -21,9 +21,22 @@ export async function episodesMetadata(slug: string, page: number): Promise<Meta
   const a = await getAnimeBySlug(decodeURIComponent(slug));
   if (!a) notFound();
   const p = page > 1 ? ` – Page ${page}` : "";
+  // Put the count in the title: searches like "banana fish episodes" want the number at a glance.
+  const airing = a.status === "current";
+  const aired = airing ? (await getLastAiredBest(a.id)).lastAired : 0;
+  const fill = fillerFor(a.slug, a.episodeCount ?? (aired || null));
+  const n = airing ? aired : a.episodeCount || 0;
+  const head = !n
+    ? `${a.title} Episode List & Air Dates`
+    : airing
+      ? `${a.title} Episode Guide: ${n} Episodes So Far & Next Air Date`
+      : `${a.title} Episode Guide: All ${n} Episodes${fill?.count ? ` (${fill.count} Filler)` : ""}`;
+  const span = a.startDate ? ` (${fmtDate(a.startDate, { month: "short", year: "numeric" })}${a.endDate ? ` – ${fmtDate(a.endDate, { month: "short", year: "numeric" })}` : airing ? " – now" : ""})` : "";
   return {
-    title: `${a.title} Episode List & Air Dates${p}`,
-    description: `Every episode of ${a.title} with titles, air dates and synopses${a.episodeCount ? ` (${a.episodeCount} episodes)` : ""}.`,
+    title: `${head}${p}`,
+    description: n
+      ? `${airing ? `${n} episodes of ${a.title} have aired so far` : `All ${n} episodes of ${a.title}`}${span}, with titles, air dates and spoiler-safe synopses${fill?.count ? `, plus which ${fill.count} are filler` : ""}.`
+      : `Every episode of ${a.title} with titles, air dates and synopses.`,
     alternates: { canonical: episodesPath(a.slug, page) },
     openGraph: { images: posterUrl(a, "large") ? [{ url: posterUrl(a, "large")! }] : [] },
   };

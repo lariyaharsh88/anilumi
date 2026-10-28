@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "@/components/Link";
 import { notFound } from "next/navigation";
 import { getAnimeBySlug, listAnime, animePath, posterUrl } from "@/lib/kitsu";
-import { getAniListInsight, parentsGuide, type ParentsGuide } from "@/lib/insights";
+import { getAniListInsight, parentsGuide, ageLabel, flaggedShort, preteenAnswer, type ParentsGuide } from "@/lib/insights";
 import PageHero from "@/components/PageHero";
 import ParentsGuideSection from "@/components/ParentsGuide";
 import AnimeRail from "@/components/AnimeRail";
@@ -28,9 +28,13 @@ async function load(slug: string) {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const { a, guide } = await load(slug);
-  const title = `Is ${a.title} Appropriate for Kids? Parents' Guide & Age Rating`;
+  // Lead with the answer people search for ("madoka magica age rating", "deadman wonderland nudity").
+  const flags = guide ? flaggedShort(guide) : [];
+  const title = guide
+    ? `${a.title} Age Rating: ${ageLabel(guide.suitable)}${flags.length ? ` (${flags.join(", ")})` : ""} · Parents' Guide`
+    : `${a.title} Age Rating & Parents' Guide`;
   const description = guide
-    ? `${a.title} is best for ${guide.suitable.toLowerCase()}${a.ageRating ? `, rated ${a.ageRating}` : ""}. Violence, language, sexual content and frightening themes, rated by viewers, with spoilers hidden.`
+    ? `${a.title} is best for ${guide.suitable.toLowerCase()}${a.ageRating ? `; officially rated ${a.ageRating}` : ""}. ${guide.areas.filter((x) => x.key !== "sexual-violence" || x.level !== "none").map((x) => `${x.label}: ${LEVEL_WORD[x.level].toLowerCase()}`).join(" · ")}. Spoiler-free, from viewer tags.`
     : `Age rating and content notes for ${a.title}.`;
   return { title, description, alternates: { canonical: `${animePath(a)}/parents-guide` }, robots: guide ? undefined : { index: false } };
 }
@@ -53,6 +57,7 @@ export default async function ParentsGuidePage({ params }: Props) {
     ? [
         { q: `Is ${a.title} appropriate for kids?`, a: `${verdict}${a.ageRating ? ` Its official age rating is ${a.ageRating}${a.ageRatingGuide ? ` (${a.ageRatingGuide})` : ""}.` : ""}` },
         { q: `What age is ${a.title} for?`, a: `${guide.suitable}.${guide.madeForKids ? ` ${a.title} was made for children.` : ""} Preview an episode if you're unsure for your child.` },
+        { q: `Is ${a.title} appropriate for a 12-year-old?`, a: preteenAnswer(a.title, guide) },
         ...guide.areas.filter((x) => x.level !== "none").map((x) => ({
           q: `Does ${a.title} have ${x.label.toLowerCase()}?`,
           a: `${LEVEL_WORD[x.level]}.${x.shown.length ? ` Viewers tag it with ${x.shown.join(", ").toLowerCase()}.` : ""}${x.hiddenSpoilers ? ` ${x.hiddenSpoilers} more detail${x.hiddenSpoilers > 1 ? "s are" : " is"} hidden to avoid spoilers.` : ""}`,
@@ -65,7 +70,7 @@ export default async function ParentsGuidePage({ params }: Props) {
       <PageHero
         crumbs={[{ href: "/", label: "Home" }, { href: animePath(a), label: a.title }, { href: `${animePath(a)}/parents-guide`, label: "Parents' guide" }]}
         eyebrow="👪 Parents' guide"
-        title={<>Is <span className="text-gradient">{a.title}</span> appropriate for kids?</>}
+        title={guide ? <><span className="text-gradient">{a.title}</span> age rating: {ageLabel(guide.suitable)}</> : <>Is <span className="text-gradient">{a.title}</span> appropriate for kids?</>}
         subtitle={verdict}
         facts={[
           ...(guide ? [{ value: guide.suitable.replace("Older teens and adults (17+)", "17+").replace("Teens (13+)", "13+"), label: "best for" }] : []),

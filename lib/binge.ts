@@ -69,3 +69,15 @@ export function fmtRun(min: number): string {
   const h = Math.floor(min / 60), m = Math.round(min % 60);
   return h ? `${h}h${m ? ` ${m}m` : ""}` : `${m}m`;
 }
+
+/**
+ * Minutes per episode we can trust. Kitsu sometimes lacks episodeLength and carries a broken totalLength
+ * (Banana Fish: 24 episodes, 176 minutes), so an implied length under 5 minutes is treated as unknown
+ * unless the show really is a short (AniList's duration says so). Pure.
+ */
+export function episodeMinutes(a: { episodeCount: number | null; episodeLength: number | null; totalLength: number | null }, aniListDuration: number | null = null): number {
+  if (a.episodeLength) return a.episodeLength;
+  if (aniListDuration) return aniListDuration;
+  const implied = a.episodeCount && a.totalLength ? a.totalLength / a.episodeCount : 0;
+  return implied >= 5 ? Math.round(implied) : 0;
+}

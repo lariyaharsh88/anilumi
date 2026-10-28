@@ -3,7 +3,8 @@ import Link from "@/components/Link";
 import { notFound } from "next/navigation";
 import { getAnimeBySlug, getLastAiredBest, buildWatchOrder, listAnime, animePath, posterUrl, runtimeMinutes, subtypeLabel, type Anime } from "@/lib/kitsu";
 import { fillerFor } from "@/lib/filler";
-import { paces, shortcuts, humanDays, hoursOf, fmtRun } from "@/lib/binge";
+import { paces, shortcuts, humanDays, hoursOf, fmtRun, episodeMinutes } from "@/lib/binge";
+import { getAniListDuration } from "@/lib/anilist";
 import PageHero from "@/components/PageHero";
 import BingePlanner from "@/components/BingePlanner";
 import BarChart from "@/components/viz/BarChart";
@@ -16,43 +17,65 @@ export const revalidate = 86400;
 export async function generateStaticParams() { return []; }
 type Props = { params: Promise<{ slug: string }> };
 
-/** Runtime facts for a title; airing shows count only what has aired so far. */
+/**
+ * Runtime facts for a title; airing shows count only what has aired so far. Also the whole franchise:
+ * people searching "how long is Attack on Titan" mean every season, not season 1.
+ */
 async function load(slug: string) {
   const a = await getAnimeBySlug(decodeURIComponent(slug));
   if (!a) notFound();
   const airing = a.status === "current";
-  const latest = airing ? await getLastAiredBest(a.id) : null;
-  const len = a.episodeLength || 0;
+  const movie = a.subtype === "movie";
+  const [latest, aniDuration, wo] = await Promise.all([
+    airing ? getLastAiredBest(a.id) : null,
+    !movie && !a.episodeLength ? getAniListDuration(a.id) : null,
+    movie ? null : buildWatchOrder(a),
+  ]);
+  const len = movie ? 0 : episodeMinutes(a, aniDuration);
   const eps = airing ? latest?.lastAired || 0 : a.episodeCount || 0;
-  const total = a.subtype === "movie" ? runtimeMinutes(a) : eps && len ? eps * len : airing ? 0 : runtimeMinutes(a);
-  return { a, airing, eps, len, total };
+  // No trustworthy episode length means no figure (the page is then noindexed) rather than a wrong one.
+  const total = movie ? runtimeMinutes(a) : eps && len ? eps * len : 0;
+  // Sum the core story and films entry by entry, using this page's checked runtime for its own entry
+  // (airing: what has aired), so the whole-series figure always agrees with the rest of the page.
+  const core = wo ? wo.entries.filter((e) => e.kind === "main" || e.kind === "movie") : [];
+  const fTotal = wo ? core.reduce((n, e) => n + (e.anime.id === a.id ? 0 : runtimeMinutes(e.anime)), 0) + total : 0;
+  const franchise = wo && wo.entries.length > 1 && fTotal > total ? wo : null;
+  // Only the first entry of a multi-season series speaks for "the whole show"; later seasons lead with their own figure.
+  const isRoot = Boolean(franchise && franchise.mainCount > 1 && franchise.root.id === a.id);
+  // "Season 1" only when the follow-ups are numbered seasons (Attack on Titan); Naruto → Shippuden is a new series.
+  const seasonal = core.some((e) => e.kind === "main" && e.anime.id !== a.id && /season|\b(2nd|3rd|\d+th)\b|part \d|final/i.test(`${e.anime.title} ${e.anime.slug}`));
+  const part = seasonal ? "Season 1" : a.title;
+  return { a, airing, eps, len, total, wo, franchise, fTotal, isRoot, seasonal, part };
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const { a, airing, eps, len, total } = await load(slug);
-  const h = hoursOf(total);
-  const title = `How Long to Watch ${a.title}? ${total ? `${h} Hour${h === 1 ? "" : "s"}${airing ? " So Far" : ""}` : "Runtime"} & Binge Time`;
+  const { a, airing, eps, len, total, franchise, fTotal, isRoot, seasonal, part } = await load(slug);
+  const h = hoursOf(total), fh = hoursOf(fTotal);
+  const own = `${h} Hour${h === 1 ? "" : "s"}${eps > 1 ? ` (${eps} Episodes${airing ? " So Far" : ""})` : ""}`;
+  const title = !total
+    ? `How Long Is ${a.title}? Runtime & Binge Time`
+    : isRoot
+      ? `How Long Is ${a.title}? ${fh} Hours for ${seasonal ? "All Seasons" : "the Whole Franchise"} (${part}: ${h}h)`
+      : `How Long Is ${a.title}? ${own}`;
   const description = total
-    ? `${a.title} takes about ${fmtRun(total)} to watch${eps > 1 && len ? ` (${eps} episodes × ${len} min)` : ""}. At 2 hours a day that's ${humanDays(Math.ceil(total / 120))}. See faster ways, filler skips and the whole franchise.`
+    ? isRoot
+      ? `All of ${a.title} takes about ${fmtRun(fTotal)} across ${franchise!.mainCount} main parts${franchise!.entries.some((e) => e.kind === "movie") ? " plus films" : ""}. ${seasonal ? `${a.title} season 1` : a.title} alone is ${fmtRun(total)}${eps > 1 && len ? ` (${eps} episodes × ${len} min)` : ""}. At 2 hours a day the whole series takes ${humanDays(Math.ceil(fTotal / 120))}.`
+      : `${a.title} takes about ${fmtRun(total)} to watch${eps > 1 && len ? ` (${eps} episodes × ${len} min)` : ""}. At 2 hours a day that's ${humanDays(Math.ceil(total / 120))}.${franchise ? ` The whole franchise runs about ${fmtRun(fTotal)}.` : " See faster ways and filler skips."}`
     : `Runtime and binge planner for ${a.title}.`;
   return { title, description, alternates: { canonical: `${animePath(a)}/how-long-to-watch` }, robots: total ? undefined : { index: false } };
 }
 
 export default async function HowLongPage({ params }: Props) {
   const { slug } = await params;
-  const { a, airing, eps, len, total } = await load(slug);
+  const { a, airing, eps, len, total, franchise, fTotal, isRoot, seasonal } = await load(slug);
   const fill = a.subtype === "movie" ? null : fillerFor(a.slug, eps || null);
-  const [wo, popular, skipAvg] = await Promise.all([
-    a.subtype === "movie" ? Promise.resolve(null) : buildWatchOrder(a),
+  const [popular, skipAvg] = await Promise.all([
     listAnime({ sort: "-userCount", limit: 20, filter: { subtype: "TV" }, revalidate: 86400 }),
     a.subtype === "movie" ? Promise.resolve(null) : measuredSkips(a.id, eps),
   ]);
   const plan = paces(total, a.subtype === "movie" ? 0 : eps);
   const fast = shortcuts(total, a.subtype === "movie" ? 0 : eps, len, fill?.count || 0, skipAvg ? { perEpisodeMin: skipAvg.perEpisodeSec / 60, sampled: skipAvg.sampled } : undefined);
-  // Airing shows: count the current title by what has aired, so every figure on the page agrees.
-  const fTotal = wo ? wo.totalMinutes - runtimeMinutes(a) + total : 0;
-  const franchise = wo && wo.entries.length > 1 && fTotal > total ? wo : null;
   const at2h = Math.ceil(total / 120);
   const h = hoursOf(total);
 
@@ -66,13 +89,16 @@ export default async function HowLongPage({ params }: Props) {
   const near = at < 0 ? [] : ranked.slice(from, from + 9);
   const longerThan = at < 0 ? 0 : ranked.length - at - 1;
 
-  const answer = total
+  const own = total
     ? `${a.title} ${airing ? "has" : "takes"} about ${fmtRun(total)} ${airing ? "of episodes out so far" : "to watch"}${eps > 1 && len ? `: ${eps} episodes of ${len} minutes` : a.subtype === "movie" ? " from start to credits" : ""}.`
     : `${a.title} doesn't have a published runtime yet.`;
+  // The series root answers for the whole show first ("how long is Attack on Titan"), then season 1.
+  const answer = total && isRoot ? `All of ${a.title} takes about ${fmtRun(fTotal)} across ${franchise!.mainCount} main parts${franchise!.entries.some((e) => e.kind === "movie") ? " plus films" : ""}. ${seasonal ? "Season 1" : `${a.title} on its own`} is ${fmtRun(total)}${eps > 1 && len ? ` (${eps} episodes of ${len} minutes)` : ""}.` : own;
 
   const faq: FaqItem[] = total
     ? [
-        { q: `How long does it take to watch ${a.title}?`, a: `${answer} That's ${h} hour${h === 1 ? "" : "s"} non-stop, or ${humanDays(at2h)} at two hours a day.` },
+        ...(isRoot ? [{ q: `How long is ${a.title}?`, a: `${answer} That's about ${hoursOf(fTotal)} hours non-stop, or ${humanDays(Math.ceil(fTotal / 120))} at two hours a day.` }] : []),
+        { q: isRoot && seasonal ? `How long is ${a.title} season 1?` : `How long does it take to watch ${a.title}?`, a: `${own} That's ${h} hour${h === 1 ? "" : "s"} non-stop, or ${humanDays(at2h)} at two hours a day.` },
         ...(eps > 1 ? [{ q: `How many episodes of ${a.title} are there?`, a: airing ? `${eps} episodes have aired so far, and ${a.title} is still airing.` : `${a.title} has ${eps} episodes${len ? ` of about ${len} minutes each` : ""}.` }] : []),
         ...(fill && fill.count ? [{ q: `How long is ${a.title} without filler?`, a: `Skipping its ${fill.count} filler episodes cuts the watch to about ${fmtRun(total - fill.count * len)}, saving ${fmtRun(fill.count * len)}.` }] : []),
         ...(franchise ? [{ q: `How long does it take to watch all of ${a.title}?`, a: `The core story plus movies across the franchise runs about ${fmtRun(fTotal)} over ${franchise.mainCount} main entries. The watch order page lists them in sequence.` }] : []),
@@ -88,7 +114,8 @@ export default async function HowLongPage({ params }: Props) {
         title={<>How long to watch <span className="text-gradient">{a.title}</span>?</>}
         subtitle={answer}
         facts={total ? [
-          { value: `${h.toLocaleString()} h`, label: airing ? "aired so far" : "non-stop" },
+          ...(isRoot ? [{ value: `${hoursOf(fTotal).toLocaleString()} h`, label: "whole series" }] : []),
+          { value: `${h.toLocaleString()} h`, label: isRoot ? (seasonal ? "season 1" : "this series") : airing ? "aired so far" : "non-stop" },
           ...(eps > 1 ? [{ value: eps.toLocaleString(), label: airing ? "episodes out" : "episodes" }] : []),
           { value: humanDays(at2h), label: "at 2 h a day" },
           ...(fill?.count ? [{ value: String(fill.count), label: "filler to skip" }] : []),

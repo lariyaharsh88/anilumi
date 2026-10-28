@@ -564,15 +564,19 @@ export async function buildWatchOrder(start: Anime, fetchRelations: (id: string)
   }
   entries.forEach((e, i) => (e.step = i + 1));
 
-  const minutes = (a: Anime) => a.totalLength || (a.episodeCount && a.episodeLength ? a.episodeCount * a.episodeLength : 0);
-  const totalMinutes = entries.filter((e) => e.kind === "main" || e.kind === "movie").reduce((n, e) => n + minutes(e.anime), 0);
+  const totalMinutes = entries.filter((e) => e.kind === "main" || e.kind === "movie").reduce((n, e) => n + runtimeMinutes(e.anime), 0);
   const releaseOrder = [...entries.map((e) => e.anime)].sort((x, y) => (x.startDate || "9").localeCompare(y.startDate || "9"));
   const firstMain = entries.find((e) => e.kind === "main")?.anime ?? root;
   return { root: firstMain, entries, mainCount: entries.filter((e) => e.kind === "main").length, totalMinutes, releaseOrder, intro: ov?.intro || null };
 }
 
-export function runtimeMinutes(a: Anime): number {
-  return a.totalLength || (a.episodeCount && a.episodeLength ? a.episodeCount * a.episodeLength : 0);
+/**
+ * Total minutes: the larger of totalLength and episodes × length. Kitsu's totalLength is sometimes stale,
+ * too small or even negative (Bleach: Thousand-Year Blood War has -900), so it never wins when it's absurd.
+ */
+export function runtimeMinutes(a: Pick<Anime, "episodeCount" | "episodeLength" | "totalLength">): number {
+  const byEpisode = a.episodeCount && a.episodeLength ? a.episodeCount * a.episodeLength : 0;
+  return Math.max(byEpisode, a.totalLength && a.totalLength > 0 ? a.totalLength : 0);
 }
 
 export function fmtMinutes(min: number): string {

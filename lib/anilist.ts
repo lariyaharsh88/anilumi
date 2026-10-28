@@ -363,3 +363,11 @@ export async function getKeyStaff(kitsuId: string): Promise<KeyStaff[]> {
 /** Production staff get /staff/…; voice actors keep /voice-actor/… */
 export const staffPath = (p: { id: number; name: string }) => `/staff/${p.id}-${slugify(p.name) || "staff"}`;
 export const personPath = (p: { id: number; name: string; voices?: boolean }) => (p.voices ? vaPath(p) : staffPath(p));
+
+/** AniList's minutes-per-episode for a Kitsu title (fallback when Kitsu has no episode length). */
+export async function getAniListDuration(kitsuId: string): Promise<number | null> {
+  const id = await getAniListId(kitsuId).catch(() => null);
+  if (!id) return null;
+  const d = await anilist<{ Media: { duration: number | null } | null }>("query($id:Int){Media(id:$id,type:ANIME){duration}}", { id }, 86400 * 7);
+  return d?.Media?.duration || null;
+}

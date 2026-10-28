@@ -34,14 +34,25 @@ async function load(slug: string) {
   }
   const verdict = sequelVerdict(a, next);
   const first = idx <= 0;
-  const label = first ? `${a.title} Season 2` : `${a.title}: Next Season`;
+  const label = first ? `${a.title} Season 2` : `${a.title} Next Season`;
   return { a, chain, idx, next, verdict, label, first };
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const { a, verdict, label, first } = await load(slug);
-  const title = `${label}: ${verdict.kind === "none" ? "Is It Confirmed?" : verdict.kind === "dated" ? "Release Date Confirmed" : verdict.kind === "out" || verdict.kind === "airing" ? "Where It Continues" : "Release Date & Status"}`;
+  const { a, next, verdict, label, first } = await load(slug);
+  // The answer goes in the title: "Akame ga Kill Season 2: Not Announced (Oct 2026)" beats a question.
+  const asOf = new Date().toLocaleDateString("en-US", { month: "short", year: "numeric", timeZone: "UTC" });
+  const movie = next?.anime?.subtype === "movie";
+  const answer: Record<SequelKind, string> = {
+    none: `Not Announced Yet (${asOf})`,
+    dated: next?.startDate ? `Release Date ${fmtDate(next.startDate, { month: "short", day: "numeric", year: "numeric" })}` : "Release Date Confirmed",
+    announced: `Confirmed${next?.expected ? ` for ${next.expected}` : ""}, Date TBA`,
+    out: movie ? `The Story Continues in a Movie` : `Yes, ${next?.title || "It"} Is Out`,
+    airing: movie ? "New Movie in Theaters" : `Airing Now: ${next?.title || "New Season"}`,
+    "still-airing": `Still Airing, No Sequel Yet (${asOf})`,
+  };
+  const title = `${label}: ${answer[verdict.kind]}`;
   return {
     title,
     description: `${first ? `Is there a ${a.title} season 2?` : `Will ${a.title} get another season?`} ${verdict.headline} ${verdict.detail}`.slice(0, 300),

@@ -55,3 +55,15 @@ test("theme tags are capped: a show about war and crime isn't automatically 17+"
   assert.equal(aot.areas.find((a) => a.key === "violence")!.level, "strong");
   assert.equal(aot.suitable, "Older teens and adults (17+)");
 });
+
+test("made-for-kids shows read as all ages even when Kitsu says PG; age labels and flags", async () => {
+  const { ageLabel, flaggedShort, preteenAnswer } = await import("../lib/insights");
+  const kids = parentsGuide([tag("Kids", 90, { category: "Demographic" })], ["Comedy"], "PG");
+  assert.equal(kids.suitable, "All ages");
+  assert.equal(ageLabel(kids.suitable), "All Ages");
+  assert.match(preteenAnswer("Doraemon", kids), /^Yes\./);
+  const dark = parentsGuide([tag("Gore", 90), tag("Suicide", 60)], ["Action"], "R");
+  assert.deepEqual(flaggedShort(dark), ["Violence", "Dark Themes"]);
+  assert.equal(ageLabel(dark.suitable), "17+");
+  assert.match(preteenAnswer("X", dark), /^Probably not/);
+});

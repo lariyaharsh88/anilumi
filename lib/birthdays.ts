@@ -45,3 +45,18 @@ export function nextDays(m: number, d: number, n: number) {
   const i = days.findIndex((x) => x.m === m && x.d === d);
   return Array.from({ length: n }, (_, k) => days[(i + 1 + k) % days.length]);
 }
+
+/** "Yeager, Eren" and "Eren Yeager" → the same key (accents dropped, word order ignored). Pure. */
+const nameKey = (s: string) => s.normalize("NFKD").replace(/[̀-ͯ]/g, "").toLowerCase().split(/[^a-z0-9]+/).filter(Boolean).sort().join(" ");
+
+/**
+ * A character's birthday from the snapshot, matched by name. When several characters share a name, the one
+ * whose anime is among `animeSlugs` (the character's Kitsu appearances) wins; otherwise no guess. Pure.
+ */
+export function birthdayFor(name: string, animeSlugs: string[] = [], src: BdChar[] = chars): BdChar | null {
+  const k = nameKey(name);
+  if (!k) return null;
+  const hits = src.filter((c) => nameKey(c.n) === k);
+  if (hits.length <= 1) return hits[0] ?? null;
+  return hits.find((c) => c.s && animeSlugs.includes(c.s)) ?? null;
+}

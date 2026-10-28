@@ -58,3 +58,10 @@ test("overrides match a non-root entry and demote a prequel side story", async (
   assert.equal(d.attachedTo, "1");
   assert.ok(wo.entries.findIndex((e) => e.anime.id === "6") > wo.entries.findIndex((e) => e.anime.id === "1"));
 });
+
+test("runtimeMinutes ignores negative or tiny totalLength", async () => {
+  const { runtimeMinutes } = await import("../lib/kitsu");
+  assert.equal(runtimeMinutes({ episodeCount: 13, episodeLength: 24, totalLength: -900 }), 312);
+  assert.equal(runtimeMinutes({ episodeCount: 1, episodeLength: 24, totalLength: 110 }), 110);
+  assert.equal(runtimeMinutes({ episodeCount: null, episodeLength: null, totalLength: null }), 0);
+});
