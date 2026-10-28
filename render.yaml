@@ -23,3 +23,9 @@ services:
       # Render's shared egress is slower to AniList; allow more time before giving up.
       - key: ANILIST_TIMEOUT_MS
         value: "9000"
+      # MongoDB Atlas (community features + leads) and the /admin password. Secrets: values are set in the
+      # Render dashboard only (sync: false), never committed. Production uses the default "anilumi" database.
+      - key: MONGODB_URI
+        sync: false
+      - key: ADMIN_TOKEN
+        sync: false
