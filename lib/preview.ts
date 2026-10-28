@@ -84,8 +84,12 @@ export function premiereCalendar<T extends { date: PreviewItem["date"] }>(items:
 
 const QUERY = `query($s:MediaSeason,$y:Int,$p:Int){Page(page:$p,perPage:50){pageInfo{hasNextPage} media(type:ANIME,season:$s,seasonYear:$y,isAdult:false,sort:POPULARITY_DESC,format_in:[TV,TV_SHORT,ONA,MOVIE]){id title{romaji english} format episodes source startDate{year month day} popularity genres studios(isMain:true){nodes{name}} coverImage{large} relations{edges{relationType node{id type format title{romaji english}}}}}}}`;
 
+/**
+ * Strict: if AniList is down or rate-limiting, this throws (UpstreamError) instead of returning [], so an
+ * ISR page keeps its last good version rather than caching an empty "line-up not announced" page for a day.
+ */
 export async function getSeasonPreview(year: number, season: Season, minPopularity = 800): Promise<PreviewItem[]> {
-  const pages = await Promise.all([1, 2].map((p) => anilist<{ Page: { media: Raw[] } }>(QUERY, { s: season.toUpperCase(), y: year, p }, 86400)));
+  const pages = await Promise.all([1, 2].map((p) => anilist<{ Page: { media: Raw[] } }>(QUERY, { s: season.toUpperCase(), y: year, p }, 86400, { strict: true })));
   const raw = pages.flatMap((p) => p?.Page.media ?? []);
   const seen = new Set<number>();
   const items = raw.filter((r) => r.popularity >= minPopularity && !seen.has(r.id) && seen.add(r.id)).map(toPreview);
