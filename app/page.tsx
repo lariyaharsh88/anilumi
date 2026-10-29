@@ -47,7 +47,7 @@ export default async function Home() {
     id: a.id,
     href: animePath(a),
     title: a.title,
-    poster: posterUrl(a, "large"),
+    poster: posterUrl(a, "medium"), // shown at most ~250 px wide
     cover: a.cover?.large || a.cover?.original || null,
     rating: a.rating,
     rank: i + 1,

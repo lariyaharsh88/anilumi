@@ -2,9 +2,10 @@ import Link from "@/components/Link";
 import { Anime, animePath, posterUrl, posterSrcSet, subtypeLabel, statusLabel } from "@/lib/kitsu";
 import TiltCard from "./fx/TiltCard";
 
-type Props = { a: Anime; rank?: number; priority?: boolean; className?: string };
+/** `sizes`: the card's rendered width, so phones pick the 284 px poster when the card is narrow. */
+type Props = { a: Anime; rank?: number; priority?: boolean; className?: string; sizes?: string };
 
-export default function AnimeCard({ a, rank, priority = false, className = "w-full" }: Props) {
+export default function AnimeCard({ a, rank, priority = false, className = "w-full", sizes = "(max-width: 640px) 45vw, 200px" }: Props) {
   const img = posterUrl(a, "medium");
   const year = a.startDate?.slice(0, 4);
   const meta = [subtypeLabel(a.subtype), year, a.episodeCount ? `${a.episodeCount} ep` : a.status === "upcoming" ? statusLabel(a.status) : null].filter(Boolean).join(" · ");
@@ -15,7 +16,7 @@ export default function AnimeCard({ a, rank, priority = false, className = "w-fu
         {img ? (
           // Plain <img> with Kitsu's own sizes as a srcset: with unoptimized images, next/image would always send one size.
           // eslint-disable-next-line @next/next/no-img-element
-          <img src={img} srcSet={posterSrcSet(a)} sizes="(max-width: 640px) 45vw, 200px" alt={`${a.title} poster`} loading={priority ? "eager" : "lazy"} fetchPriority={priority ? "high" : undefined} decoding="async" className="absolute inset-0 h-full w-full object-cover transition duration-300 group-hover:scale-105" />
+          <img src={img} srcSet={posterSrcSet(a)} sizes={sizes} alt={`${a.title} poster`} loading={priority ? "eager" : "lazy"} fetchPriority={priority ? "high" : undefined} decoding="async" className="absolute inset-0 h-full w-full object-cover transition duration-300 group-hover:scale-105" />
         ) : (
           <div className="grid h-full place-items-center p-3 text-center text-xs text-muted">No image</div>
         )}

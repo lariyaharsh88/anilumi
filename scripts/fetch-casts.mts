@@ -11,8 +11,17 @@ const PER_QUERY = 4; // anime per GraphQL request (aliased)
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
 // The most-followed titles on Kitsu, from the search index (already ranked).
-const aliases = JSON.parse(readFileSync(new URL("../data/aliases.json", import.meta.url), "utf8")) as { anime: { i: string }[] };
+const aliases = JSON.parse(readFileSync(new URL("../data/aliases.json", import.meta.url), "utf8")) as { anime: { i: string; s: string }[] };
+// Outside the top list but with real search traffic to their cast pages (Search Console, Oct 2026).
+const EXTRA = ["crayon-shin-chan", "plastic-memories", "doraemon-2005", "haikyuu-to-the-top", "kimi-ni-todoke", "akatsuki-no-yona", "relife", "charlotte", "the-girl-who-leapt-through-time"];
+const extraIds: string[] = [];
+{
+  const url = `https://kitsu.io/api/edge/anime?filter[slug]=${EXTRA.join(",")}&fields[anime]=slug&page[limit]=20`;
+  const res = await fetch(url, { headers: { Accept: "application/vnd.api+json", "User-Agent": "AniLumi data refresh (+https://anilumi.in)" } }).catch(() => null);
+  if (res?.ok) for (const a of ((await res.json()) as { data: { id: string }[] }).data) extraIds.push(a.id);
+}
 const kitsuIds = [...new Set(aliases.anime.map((a) => a.i))].slice(0, TOP);
+for (const id of extraIds) if (!kitsuIds.includes(id)) kitsuIds.push(id);
 
 // Kitsu id → AniList id, 20 per request.
 const anilistIds: number[] = [];

@@ -22,10 +22,10 @@ export default function AnimeRail({ title, href, items, rank = false, bigRank = 
                 <span aria-hidden>{i + 1}</span>
                 <span className="sr-only">Rank {i + 1}</span>
               </span>
-              <AnimeCard a={a} priority={i < 4} className="relative w-32 sm:w-40" />
+              <AnimeCard a={a} priority={i < 4} className="relative w-32 sm:w-40" sizes="(max-width: 640px) 128px, 160px" />
             </div>
           ) : (
-            <AnimeCard key={a.id} a={a} rank={rank ? i + 1 : undefined} priority={i < 4} className="w-36 sm:w-44" />
+            <AnimeCard key={a.id} a={a} rank={rank ? i + 1 : undefined} priority={i < 4} className="w-36 sm:w-44" sizes="(max-width: 640px) 144px, 176px" />
           ),
         )}
       </RailScroller>
