@@ -92,7 +92,7 @@ export default async function Home() {
         ]}
       />
 
-      <AnimeRail title="Trending right now" href="/top/popular" items={trending} bigRank />
+      <AnimeRail title="Trending right now" href="/top/popular" items={trending} bigRank eager />
       <AnimeRail title="Airing this season" href="/schedule" items={airing.items} />
       <AdSlot slot="home-mid" />
       <AnimeRail title={`${cap(season)} ${year} lineup`} href={`/season/${year}/${season}`} items={seasonal.items} />

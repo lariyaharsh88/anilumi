@@ -3,10 +3,14 @@ import { Anime } from "@/lib/kitsu";
 import AnimeCard from "./AnimeCard";
 import RailScroller from "./fx/RailScroller";
 
-type Props = { title: string; href?: string; items: Anime[]; rank?: boolean; bigRank?: boolean };
+type Props = {
+  title: string; href?: string; items: Anime[]; rank?: boolean; bigRank?: boolean;
+  /** Load the first posters eagerly: only for a page's first rail, or every rail competes with the hero image. */
+  eager?: boolean;
+};
 
 /** Horizontal rail. `bigRank` draws Top-10 style outlined numerals beside each card. */
-export default function AnimeRail({ title, href, items, rank = false, bigRank = false }: Props) {
+export default function AnimeRail({ title, href, items, rank = false, bigRank = false, eager = false }: Props) {
   if (!items.length) return null;
   return (
     <section className="reveal mt-12">
@@ -22,10 +26,10 @@ export default function AnimeRail({ title, href, items, rank = false, bigRank = 
                 <span aria-hidden>{i + 1}</span>
                 <span className="sr-only">Rank {i + 1}</span>
               </span>
-              <AnimeCard a={a} priority={i < 4} className="relative w-32 sm:w-40" sizes="(max-width: 640px) 128px, 160px" />
+              <AnimeCard a={a} priority={eager && i < 4} className="relative w-32 sm:w-40" sizes="(max-width: 640px) 128px, 160px" />
             </div>
           ) : (
-            <AnimeCard key={a.id} a={a} rank={rank ? i + 1 : undefined} priority={i < 4} className="w-36 sm:w-44" sizes="(max-width: 640px) 144px, 176px" />
+            <AnimeCard key={a.id} a={a} rank={rank ? i + 1 : undefined} priority={eager && i < 4} className="w-36 sm:w-44" sizes="(max-width: 640px) 144px, 176px" />
           ),
         )}
       </RailScroller>

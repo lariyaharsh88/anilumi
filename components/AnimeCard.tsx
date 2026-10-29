@@ -16,7 +16,7 @@ export default function AnimeCard({ a, rank, priority = false, className = "w-fu
         {img ? (
           // Plain <img> with Kitsu's own sizes as a srcset: with unoptimized images, next/image would always send one size.
           // eslint-disable-next-line @next/next/no-img-element
-          <img src={img} srcSet={posterSrcSet(a)} sizes={sizes} alt={`${a.title} poster`} loading={priority ? "eager" : "lazy"} fetchPriority={priority ? "high" : undefined} decoding="async" className="absolute inset-0 h-full w-full object-cover transition duration-300 group-hover:scale-105" />
+          <img src={img} srcSet={posterSrcSet(a)} sizes={sizes} alt={`${a.title} poster`} loading={priority ? "eager" : "lazy"} decoding="async" className="absolute inset-0 h-full w-full object-cover transition duration-300 group-hover:scale-105" />
         ) : (
           <div className="grid h-full place-items-center p-3 text-center text-xs text-muted">No image</div>
         )}
