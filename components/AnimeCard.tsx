@@ -1,6 +1,5 @@
 import Link from "@/components/Link";
-import Image from "next/image";
-import { Anime, animePath, posterUrl, subtypeLabel, statusLabel } from "@/lib/kitsu";
+import { Anime, animePath, posterUrl, posterSrcSet, subtypeLabel, statusLabel } from "@/lib/kitsu";
 import TiltCard from "./fx/TiltCard";
 
 type Props = { a: Anime; rank?: number; priority?: boolean; className?: string };
@@ -14,7 +13,9 @@ export default function AnimeCard({ a, rank, priority = false, className = "w-fu
       <TiltCard className="rounded-xl shadow-card transition-shadow duration-300 group-hover:shadow-[0_18px_40px_-14px_rgba(139,124,255,.55)]">
       <div className="relative aspect-[2/3] w-full overflow-hidden rounded-xl border border-line bg-bg-2 transition-colors duration-300 group-hover:border-violet/60">
         {img ? (
-          <Image src={img} alt={`${a.title} poster`} fill sizes="(max-width: 640px) 40vw, 200px" className="object-cover transition duration-300 group-hover:scale-105" priority={priority} />
+          // Plain <img> with Kitsu's own sizes as a srcset: with unoptimized images, next/image would always send one size.
+          // eslint-disable-next-line @next/next/no-img-element
+          <img src={img} srcSet={posterSrcSet(a)} sizes="(max-width: 640px) 45vw, 200px" alt={`${a.title} poster`} loading={priority ? "eager" : "lazy"} fetchPriority={priority ? "high" : undefined} decoding="async" className="absolute inset-0 h-full w-full object-cover transition duration-300 group-hover:scale-105" />
         ) : (
           <div className="grid h-full place-items-center p-3 text-center text-xs text-muted">No image</div>
         )}

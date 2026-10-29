@@ -16,16 +16,6 @@ import AdSlot from "@/components/AdSlot";
 type Props = { params: Promise<{ year: string; season: string }>; searchParams: Promise<{ page?: string }> };
 const LIMIT = 20;
 
-export async function generateStaticParamsList() {
-  const now = seasonOf();
-  const out: { year: string; season: string }[] = [];
-  for (let d = -4; d <= 2; d++) {
-    const s = shiftSeason(now.season, now.year, d);
-    out.push({ year: String(s.year), season: s.season });
-  }
-  return out;
-}
-
 function valid(year: string, season: string) {
   const y = Number(year);
   return SEASONS.includes(season as Season) && y >= 1960 && y <= new Date().getFullYear() + 2;

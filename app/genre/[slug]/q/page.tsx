@@ -3,7 +3,7 @@
 import type { Metadata } from "next";
 import Link from "@/components/Link";
 import { notFound } from "next/navigation";
-import { getCategory, listAnime, getCategories, TREND_GENRES, posterUrl } from "@/lib/kitsu";
+import { getCategory, listAnime, TREND_GENRES, posterUrl } from "@/lib/kitsu";
 import AnimeGrid from "@/components/AnimeGrid";
 import PageHero from "@/components/PageHero";
 import Pagination from "@/components/Pagination";
@@ -20,14 +20,6 @@ const SORTS: Record<string, { label: string; sort: string; filter?: Record<strin
 };
 
 type Props = { params: Promise<{ slug: string }>; searchParams: Promise<{ page?: string; sort?: string }> };
-
-export async function generateStaticParamsList() {
-  try {
-    return (await getCategories(30)).map((g) => ({ slug: g.slug }));
-  } catch {
-    return [];
-  }
-}
 
 export async function generateMetadata({ params, searchParams }: Props): Promise<Metadata> {
   const { slug } = await params;

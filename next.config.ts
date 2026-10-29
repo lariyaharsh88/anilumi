@@ -8,8 +8,8 @@ const nextConfig: NextConfig = {
   htmlLimitedBots: /.*/,
   // Render's free instance has 512 MB: build with one page-generation worker and leaner webpack.
   ...(process.env.RENDER ? { experimental: { cpus: 1, webpackMemoryOptimizations: true } } : {}),
-  // Inter TTFs for generated Open Graph images (read from disk at runtime).
-  outputFileTracingIncludes: { "/**": ["./assets/fonts/*.ttf"] },
+  // Inter TTFs for OG images, and the cast snapshot (read with fs, not bundled).
+  outputFileTracingIncludes: { "/**": ["./assets/fonts/*.ttf", "./data/casts.json"] },
   // One canonical host: www.anilumi.in → anilumi.in (301).
   async redirects() {
     return [

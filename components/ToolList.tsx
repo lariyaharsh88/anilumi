@@ -16,7 +16,7 @@ export default function ToolList({ title, subtitle, rows }: { title: string; sub
           <li key={r.a.id}>
             <Link href={r.href} className="group flex items-center gap-3 p-2.5 transition hover:bg-white/[.03]">
               <span className="w-6 text-right text-sm font-bold text-muted tabular-nums">{i + 1}</span>
-              <span className="relative h-14 w-10 shrink-0 overflow-hidden rounded-md bg-bg-2">{posterUrl(r.a, "small") && <Image src={posterUrl(r.a, "small")!} alt="" fill sizes="40px" className="object-cover" />}</span>
+              <span className="relative h-14 w-10 shrink-0 overflow-hidden rounded-md bg-bg-2">{posterUrl(r.a, "tiny") && <Image src={posterUrl(r.a, "tiny")!} alt="" fill sizes="40px" className="object-cover" />}</span>
               <span className="min-w-0 flex-1">
                 <span className="block truncate font-semibold group-hover:text-violet-2">{r.a.title}</span>
                 {r.sub && <span className="block truncate text-xs text-muted">{r.sub}</span>}

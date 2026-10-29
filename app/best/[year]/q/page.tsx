@@ -17,11 +17,6 @@ type Props = { params: Promise<{ year: string }>; searchParams: Promise<{ page?:
 
 const valid = (y: string) => /^\d{4}$/.test(y) && Number(y) >= MIN_YEAR && Number(y) <= new Date().getFullYear() + 1;
 
-export function generateStaticParamsList() {
-  const y = new Date().getFullYear();
-  return [y, y - 1, y - 2, y - 3, y - 4].map((year) => ({ year: String(year) }));
-}
-
 export async function generateMetadata({ params, searchParams }: Props): Promise<Metadata> {
   const { year } = await params;
   const { page, sort } = await searchParams;

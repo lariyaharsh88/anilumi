@@ -4,6 +4,7 @@
  * cached by Next's fetch cache plus a small in-process memo, because the public API is rate-limited.
  */
 import { getAniListId, kitsuByAniListIds, ANILIST_MIN_REVALIDATE, UpstreamError, type Anime } from "./kitsu";
+import { castFromSnapshot } from "./castsnap";
 
 /**
  * How long to wait before retrying, or null to give up. 429s honour Retry-After (capped); network errors,
@@ -160,6 +161,9 @@ const toVa = (v: AlVa | undefined): Va | null => (v ? { id: v.id, name: v.name.f
 export async function getCast(kitsuId: string, perPage = 25, strict = false): Promise<Cast | null> {
   const id = await getAniListId(kitsuId);
   if (!id) return null;
+  // Popular shows come from the monthly snapshot: no live AniList call (30 requests a minute).
+  const snap = castFromSnapshot(id, perPage);
+  if (snap) return snap;
   return memoized(`cast:${id}:${perPage}`, 6 * 3600_000, async () => {
     // voiceActorRoles (not aliased voiceActors(language:…)): AniList ignores per-alias arguments.
     const d = await anilist<{ Media: { characters: { pageInfo: { total: number }; edges: { role: CastEntry["role"]; node: { id: number; name: AlName; image: { medium: string | null } | null; favourites?: number }; voiceActorRoles: { voiceActor: AlVa | null }[] }[] } } | null }>(

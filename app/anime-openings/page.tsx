@@ -35,7 +35,7 @@ export default async function OpeningsHub() {
           return (
             <li key={a.id} className="reveal">
               <Link href={`${animePath(a)}/openings-endings`} className="card group flex gap-3 p-3 transition duration-300 hover:-translate-y-0.5 hover:border-white/20">
-                <span className="relative h-20 w-14 shrink-0 overflow-hidden rounded-md bg-bg-2">{posterUrl(a, "small") && <Image src={posterUrl(a, "small")!} alt="" fill sizes="56px" className="object-cover" />}</span>
+                <span className="relative h-20 w-14 shrink-0 overflow-hidden rounded-md bg-bg-2">{posterUrl(a, "tiny") && <Image src={posterUrl(a, "tiny")!} alt="" fill sizes="56px" className="object-cover" />}</span>
                 <span className="min-w-0">
                   <span className="block truncate font-semibold text-ink group-hover:text-violet-2">{a.title}</span>
                   <span className="mt-0.5 block truncate text-sm text-ink/80">OP1 “{ops[0].song}”</span>

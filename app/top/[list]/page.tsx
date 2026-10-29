@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import Q, { generateMetadata as qMetadata, generateStaticParamsList } from "./q/page";
+import Q, { generateMetadata as qMetadata } from "./q/page";
+import { generateStaticParamsList } from "./q/params";
 
 // Plain URL: no query string, so it can be cached. ?page=/?sort= variants are rewritten to ./q.
 export const revalidate = 3600;

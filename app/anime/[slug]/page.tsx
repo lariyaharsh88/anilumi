@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "@/components/Link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { getAnimeBySlug, getCharacters, getEpisodes, listAnime, getTrending, getRelations, getLastAiredBest, getProductions, type LastAired, comparePath, franchiseRoot, airingNotice, episodePath, posterUrl, fmtDate, statusLabel, subtypeLabel, animePath, weekdayOf, runtimeMinutes, fmtMinutes, Anime } from "@/lib/kitsu";
+import { getAnimeBySlug, getCharacters, getEpisodes, listAnime, getRelations, getLastAiredBest, getProductions, type LastAired, comparePath, franchiseRoot, airingNotice, episodePath, posterUrl, fmtDate, statusLabel, subtypeLabel, animePath, weekdayOf, runtimeMinutes, fmtMinutes, Anime } from "@/lib/kitsu";
 import { abs } from "@/lib/site";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import JsonLd from "@/components/JsonLd";
@@ -18,6 +18,8 @@ import WhereToWatch from "@/components/WhereToWatch";
 import SpoilerGate from "@/components/SpoilerGate";
 import StoryGuide from "@/components/StoryGuide";
 import EditorNote from "@/components/EditorNote";
+import QuickAnswers, { type Answer } from "@/components/QuickAnswers";
+import { ageLabel } from "@/lib/insights";
 import { noteFor } from "@/data/notes";
 import RatingWidget from "@/components/RatingWidget";
 import HypeButton from "@/components/HypeButton";
@@ -51,14 +53,9 @@ import RailScroller from "@/components/fx/RailScroller";
 export const revalidate = 86400;
 export const dynamicParams = true;
 
-export async function generateStaticParams() {
-  try {
-    const t = await getTrending(20);
-    return t.map((a) => ({ slug: a.slug }));
-  } catch {
-    return [];
-  }
-}
+// Rendered on first request, then cached (ISR). Pre-building trending titles at deploy time made every
+// build depend on Kitsu and AniList being up: one upstream hiccup failed the whole deploy.
+export async function generateStaticParams() { return []; }
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -142,6 +139,19 @@ export default async function AnimePage({ params }: Props) {
   const poster = posterUrl(a, "medium");
   const coverLarge = a.cover?.large || a.cover?.original || null;
   const cover = a.cover?.tiny || a.cover?.small || a.cover?.large || null; // heavily blurred backdrop: served ~96px wide by the optimizer
+  // One-line answers to each guide's question, linking to the full guide (depth + descriptive internal links).
+  const base = animePath(a);
+  const fillerInfo = a.subtype === "movie" ? null : fillerFor(a.slug, a.episodeCount ?? (lastAired || null));
+  const cont = continuationFor(a.slug);
+  const glance: Answer[] = [
+    ...(runtime ? [{ q: "How long to watch", a: runtime >= 120 ? `About ${Math.round(runtime / 60)} hours${a.status === "current" ? " so far" : ""}` : `${runtime} minutes`, href: `${base}/how-long-to-watch` }] : []),
+    ...(fillerInfo ? [{ q: "Filler episodes", a: `${fillerInfo.count} of ${fillerInfo.total} (${fillerInfo.share.toFixed(0)}%)`, href: `${base}/filler-list` }] : []),
+    ...(guide ? [{ q: "Age rating", a: `${ageLabel(guide.suitable)}${a.ageRating ? ` · rated ${a.ageRating}` : ""}`, href: `${base}/parents-guide` }] : []),
+    ...(franchise.length ? [{ q: "Watch order", a: "Every season, movie and OVA in order", href: `/watch-order/${a.slug}` }] : []),
+    ...(cont ? [{ q: `Continue in the ${cont.medium}`, a: cont.chapter ? `From chapter ${cont.chapter}` : `From volume ${cont.volume}`, href: `${base}/manga` }] : []),
+    { q: "Cast & voice actors", a: "Who voices who", href: `${base}/cast` },
+    ...(a.subtype !== "movie" && a.status === "finished" ? [{ q: "Season 2?", a: "Status and release date", href: `${base}/next-season` }] : []),
+  ];
   const faqExtra: FaqItem[] = [];
   const note = noteFor(a.slug);
   if (note?.start) faqExtra.push({ q: `Where should I start with ${a.title}?`, a: note.start });
@@ -350,6 +360,7 @@ export default async function AnimePage({ params }: Props) {
           {/* ───────── Overview ───────── */}
           <section id="overview" data-section aria-labelledby="h-overview">
             {note && <EditorNote title={a.title} note={note} />}
+            <QuickAnswers title={a.title} items={glance} />
             <h2 id="h-overview" className="h-section mb-3">Synopsis</h2>
             {a.synopsis ? <ClampText text={a.synopsis} lines={5} /> : <p className="text-muted">No synopsis available yet.</p>}
             {a.youtubeVideoId && (
@@ -368,7 +379,7 @@ export default async function AnimePage({ params }: Props) {
                   {franchise.slice(0, 8).map((r) => (
                     <li key={r.anime.id}>
                       <Link href={animePath(r.anime)} className="card group flex items-center gap-3 p-2 pr-3 text-sm transition hover:-translate-y-0.5 hover:border-violet/60">
-                        <span className="relative h-14 w-10 shrink-0 overflow-hidden rounded-md bg-bg-2">{posterUrl(r.anime, "small") && <Image src={posterUrl(r.anime, "small")!} alt="" fill sizes="40px" className="object-cover" />}</span>
+                        <span className="relative h-14 w-10 shrink-0 overflow-hidden rounded-md bg-bg-2">{posterUrl(r.anime, "tiny") && <Image src={posterUrl(r.anime, "tiny")!} alt="" fill sizes="40px" className="object-cover" />}</span>
                         <span className="min-w-0 flex-1">
                           <span className="block truncate font-medium group-hover:text-violet-2">{r.anime.title}</span>
                           <span className="text-[11px] uppercase tracking-wide text-muted">{r.role.replace("_", " ")}{r.anime.startDate ? ` · ${r.anime.startDate.slice(0, 4)}` : ""}</span>

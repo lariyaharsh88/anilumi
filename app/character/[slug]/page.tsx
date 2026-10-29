@@ -183,7 +183,7 @@ export default async function CharacterPage({ params }: Props) {
             {apps.map(({ role, anime }) => (
               <li key={anime.id}>
                 <Link href={animePath(anime)} className="card flex gap-3 p-3 transition hover:border-violet">
-                  <div className="relative h-20 w-14 shrink-0 overflow-hidden rounded-md bg-bg-2">{posterUrl(anime, "small") && <Image src={posterUrl(anime, "small")!} alt="" fill sizes="56px" className="object-cover" />}</div>
+                  <div className="relative h-20 w-14 shrink-0 overflow-hidden rounded-md bg-bg-2">{posterUrl(anime, "tiny") && <Image src={posterUrl(anime, "tiny")!} alt="" fill sizes="56px" className="object-cover" />}</div>
                   <div className="min-w-0">
                     <p className="line-clamp-2 font-semibold">{anime.title}</p>
                     <p className="text-xs text-muted">{subtypeLabel(anime.subtype)}{anime.startDate ? ` · ${anime.startDate.slice(0, 4)}` : ""} · <span className="uppercase">{role}</span></p>

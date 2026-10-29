@@ -103,23 +103,28 @@ async function kitsu(path: string, params: Record<string, string | number> = {},
     .map(([k, v]) => `${encodeURIComponent(k)}=${encodeURIComponent(String(v))}`)
     .join("&");
   const url = `${BASE}${path}${qs ? `?${qs}` : ""}`;
-  for (let attempt = 0; attempt < 3; attempt++) {
+  // Four tries with growing waits (0.5 s, 1.5 s, 3 s) and a per-try timeout, so a slow or flaky Kitsu
+  // doesn't hang a render or fail it on the first blip.
+  const waits = [500, 1500, 3000];
+  for (let attempt = 0; attempt < 4; attempt++) {
     try {
       const res = await fetch(url, {
         headers: { Accept: "application/vnd.api+json", "User-Agent": "AniLumi/1.0 (+https://github.com/harshlariya98)" },
         next: { revalidate: Math.max(revalidate, KITSU_MIN_REVALIDATE) },
+        signal: AbortSignal.timeout(Number(process.env.KITSU_TIMEOUT_MS) || 10000),
       });
       if (res.status === 404) return null;
       if (res.status === 429 || res.status >= 500) {
-        await new Promise((r) => setTimeout(r, 400 * (attempt + 1)));
+        if (attempt < 3) await new Promise((r) => setTimeout(r, waits[attempt]));
         continue;
       }
       if (!res.ok) return null;
       return (await res.json()) as JsonApiDoc;
     } catch {
-      await new Promise((r) => setTimeout(r, 400 * (attempt + 1)));
+      if (attempt < 3) await new Promise((r) => setTimeout(r, waits[attempt]));
     }
   }
+  console.warn(`[kitsu] ${path} failed after 4 attempts`);
   if (strict) throw new UpstreamError(`Kitsu unavailable: ${path}`);
   return null;
 }
@@ -408,8 +413,26 @@ export function animePath(a: Pick<Anime, "slug">) {
   return `/anime/${encodeURIComponent(a.slug)}`;
 }
 
-export function posterUrl(a: Pick<Anime, "poster">, size: "small" | "medium" | "large" | "original" = "medium") {
-  return a.poster?.[size] || a.poster?.original || a.poster?.large || a.poster?.medium || null;
+type Size = "tiny" | "small" | "medium" | "large" | "original";
+// When a size is missing, use the nearest sized derivative (bigger first) before the full-size original:
+// originals can be several hundred KB.
+const FALLBACK: Record<Size, Size[]> = {
+  tiny: ["tiny", "small", "medium", "large", "original"],
+  small: ["small", "medium", "large", "tiny", "original"],
+  medium: ["medium", "large", "small", "original", "tiny"],
+  large: ["large", "medium", "original", "small", "tiny"],
+  original: ["original", "large", "medium", "small", "tiny"],
+};
+export function posterUrl(a: Pick<Anime, "poster">, size: Size = "medium"): string | null {
+  for (const s of FALLBACK[size]) if (a.poster?.[s]) return a.poster[s]!;
+  return null;
+}
+
+/** Kitsu poster widths, for srcset: phones fetch 284 px, large screens 390–550 px. */
+const POSTER_W: Partial<Record<Size, number>> = { small: 284, medium: 390, large: 550 };
+export function posterSrcSet(a: Pick<Anime, "poster">): string | undefined {
+  const parts = (Object.keys(POSTER_W) as Size[]).filter((s) => a.poster?.[s]).map((s) => `${a.poster![s]} ${POSTER_W[s]}w`);
+  return parts.length > 1 ? parts.join(", ") : undefined;
 }
 
 export function fmtDate(iso: string | null, opts: Intl.DateTimeFormatOptions = { year: "numeric", month: "short", day: "numeric" }) {

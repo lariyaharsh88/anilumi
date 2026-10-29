@@ -36,7 +36,7 @@ export default async function WatchOrderIndex() {
           {items.map((a) => (
             <li key={a.id}>
               <Link href={`/watch-order/${a.slug}`} className="card group flex items-center gap-3 p-2.5 transition duration-300 hover:-translate-y-0.5 hover:border-violet/60">
-                <span className="relative h-16 w-11 shrink-0 overflow-hidden rounded-md bg-bg-2">{posterUrl(a, "small") && <Image src={posterUrl(a, "small")!} alt="" fill sizes="44px" className="object-cover" />}</span>
+                <span className="relative h-16 w-11 shrink-0 overflow-hidden rounded-md bg-bg-2">{posterUrl(a, "tiny") && <Image src={posterUrl(a, "tiny")!} alt="" fill sizes="44px" className="object-cover" />}</span>
                 <span className="min-w-0 flex-1">
                   <span className="block truncate font-semibold group-hover:text-violet-2">{a.title}</span>
                   <span className="text-xs text-muted">{a.startDate?.slice(0, 4)}{a.rating ? ` · ★ ${(a.rating / 10).toFixed(1)}` : ""}</span>
