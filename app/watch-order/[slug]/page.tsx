@@ -8,6 +8,7 @@ import PageHero from "@/components/PageHero";
 import JsonLd from "@/components/JsonLd";
 import Faq from "@/components/Faq";
 import AdSlot from "@/components/AdSlot";
+import { noteFor } from "@/data/notes";
 import { amazonSearch, affiliateRel } from "@/lib/affiliate";
 import BarChart from "@/components/viz/BarChart";
 import LineChart from "@/components/viz/LineChart";
@@ -99,12 +100,16 @@ export default async function WatchOrderPage({ params }: Props) {
       </>}
       />
 
-      {wo.intro && (
-        <div className="card mt-5 border-violet/40 bg-violet/10 p-4">
-          <p className="text-xs font-semibold uppercase tracking-wider text-violet">How to watch</p>
-          <p className="mt-1 text-sm leading-6 text-ink/90">{wo.intro}</p>
-        </div>
-      )}
+      {(() => {
+        // Franchise-specific advice: the editor's watch-order intro, else the start tip from AniLumi's take.
+        const tip = wo.intro || noteFor(wo.root.slug)?.start || noteFor(a.slug)?.start;
+        return tip ? (
+          <div className="card mt-5 border-violet/40 bg-violet/10 p-4">
+            <p className="text-xs font-semibold uppercase tracking-wider text-violet">How to watch</p>
+            <p className="mt-1 text-sm leading-6 text-ink/90">{tip}</p>
+          </div>
+        ) : null;
+      })()}
       {ordered.length > 1 && (
         <section className="card mt-5 p-4" aria-labelledby="quick-h">
           <h2 id="quick-h" className="font-semibold text-ink">{name} watch order at a glance</h2>

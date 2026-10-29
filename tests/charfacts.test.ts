@@ -76,3 +76,14 @@ test("snapFor matches across word order and middle names, only within the charac
   assert.equal(snapFor("Luffy", ["one-piece"], src), null);
   assert.deepEqual(showRanking(src[0], src).map((c) => c.id), [1, 2]);
 });
+
+test("editor notes: 100 entries, 'try next' points at other noted shows, no self-links", async () => {
+  const { NOTES } = await import("../data/notes");
+  const slugs = Object.keys(NOTES);
+  assert.equal(slugs.length, 100);
+  for (const [s, n] of Object.entries(NOTES)) {
+    assert.ok(n.take.length > 60 && n.take.length < 400, s);
+    assert.equal(n.next.length, 3, s);
+    for (const [x] of n.next) { assert.ok(slugs.includes(x), `${s} → ${x}`); assert.notEqual(x, s); }
+  }
+});

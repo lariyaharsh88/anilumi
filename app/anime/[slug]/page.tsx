@@ -17,6 +17,8 @@ import CalendarLinks from "@/components/CalendarLinks";
 import WhereToWatch from "@/components/WhereToWatch";
 import SpoilerGate from "@/components/SpoilerGate";
 import StoryGuide from "@/components/StoryGuide";
+import EditorNote from "@/components/EditorNote";
+import { noteFor } from "@/data/notes";
 import RatingWidget from "@/components/RatingWidget";
 import HypeButton from "@/components/HypeButton";
 import LeadForm from "@/components/LeadForm";
@@ -141,6 +143,9 @@ export default async function AnimePage({ params }: Props) {
   const coverLarge = a.cover?.large || a.cover?.original || null;
   const cover = a.cover?.tiny || a.cover?.small || a.cover?.large || null; // heavily blurred backdrop: served ~96px wide by the optimizer
   const faqExtra: FaqItem[] = [];
+  const note = noteFor(a.slug);
+  if (note?.start) faqExtra.push({ q: `Where should I start with ${a.title}?`, a: note.start });
+  if (note) faqExtra.push({ q: `What should I watch after ${a.title}?`, a: `If you liked ${a.title}, try ${note.next.map(([, t]) => t).join(", ")}.` });
   if (guide) {
     const flagged = guide.areas.filter((x) => x.level === "strong" || x.level === "moderate").map((x) => x.label.toLowerCase());
     faqExtra.push({ q: `Is ${a.title} appropriate for kids?`, a: `${a.title} is best for ${guide.suitable.toLowerCase()}${a.ageRating ? ` and is rated ${a.ageRating}${a.ageRatingGuide ? ` (${a.ageRatingGuide})` : ""}` : ""}. ${flagged.length ? `Viewers flag ${flagged.join(", ")}.` : "Viewers don't flag any strong content."} See the parents' guide on this page for details.` });
@@ -344,6 +349,7 @@ export default async function AnimePage({ params }: Props) {
         <div className="min-w-0 space-y-14">
           {/* ───────── Overview ───────── */}
           <section id="overview" data-section aria-labelledby="h-overview">
+            {note && <EditorNote title={a.title} note={note} />}
             <h2 id="h-overview" className="h-section mb-3">Synopsis</h2>
             {a.synopsis ? <ClampText text={a.synopsis} lines={5} /> : <p className="text-muted">No synopsis available yet.</p>}
             {a.youtubeVideoId && (
