@@ -9,9 +9,14 @@ export type WatchItem = {
   runtime?: number; episodeCount?: number | null; episodeLength?: number | null; genres?: string[]; subtype?: string; rating?: number | null;
   /** Episodes watched, and where it sits in the user's list (from an AniList import or set by hand). */
   progress?: number; listStatus?: "watching" | "planning" | "paused" | "rewatching";
+  /** Last change made by the user (add, progress, import); sync keeps the newer copy of each show. */
+  editedAt?: number;
 };
 const KEY = "anilumi:watchlist:v1";
-const EVT = "anilumi:watchlist";
+/** Removed show ids → when, so a removal on one device isn't undone by another device's copy. */
+const REMOVED_KEY = "anilumi:watchlist:removed:v1";
+export const WATCHLIST_EVENT = "anilumi:watchlist";
+const EVT = WATCHLIST_EVENT;
 
 export function readWatchlist(): WatchItem[] {
   try {
@@ -20,6 +25,26 @@ export function readWatchlist(): WatchItem[] {
   } catch {
     return [];
   }
+}
+
+export function readRemoved(): Record<string, number> {
+  try {
+    return JSON.parse(localStorage.getItem(REMOVED_KEY) || "{}") as Record<string, number>;
+  } catch {
+    return {};
+  }
+}
+
+function markRemoved(ids: string[], on: boolean) {
+  const r = readRemoved();
+  for (const id of ids) if (on) r[id] = Date.now(); else delete r[id];
+  try { localStorage.setItem(REMOVED_KEY, JSON.stringify(r)); } catch { /* storage blocked */ }
+}
+
+/** Replace the list with a synced copy (from lib/sync.ts). */
+export function applySynced(items: WatchItem[], removed: Record<string, number>) {
+  try { localStorage.setItem(REMOVED_KEY, JSON.stringify(removed)); } catch { /* storage blocked */ }
+  write(items);
 }
 
 function write(items: WatchItem[]) {
@@ -51,9 +76,10 @@ export function useWatchlist() {
     const cur = readWatchlist();
     const removing = cur.some((i) => i.id === item.id);
     track(removing ? "remove_from_list" : "add_to_list", { anime: item.slug });
-    write(removing ? cur.filter((i) => i.id !== item.id) : [...cur, { ...item, addedAt: Date.now() }]);
+    markRemoved([item.id], removing);
+    write(removing ? cur.filter((i) => i.id !== item.id) : [...cur, { ...item, addedAt: Date.now(), editedAt: Date.now() }]);
   }, []);
-  const remove = useCallback((id: string) => write(readWatchlist().filter((i) => i.id !== id)), []);
+  const remove = useCallback((id: string) => { markRemoved([id], true); write(readWatchlist().filter((i) => i.id !== id)); }, []);
   const update = useCallback((patch: Partial<WatchItem>[]) => {
     const cur = readWatchlist();
     write(cur.map((i) => ({ ...i, ...(patch.find((p) => p.id === i.id) || {}) })));
@@ -65,14 +91,15 @@ export function useWatchlist() {
     let added = 0;
     for (const it of incoming) {
       const prev = byId.get(it.id);
-      if (prev) byId.set(it.id, { ...prev, ...it, addedAt: prev.addedAt });
-      else { byId.set(it.id, { ...it, addedAt: Date.now() }); added++; }
+      if (prev) byId.set(it.id, { ...prev, ...it, addedAt: prev.addedAt, editedAt: Date.now() });
+      else { byId.set(it.id, { ...it, addedAt: Date.now(), editedAt: Date.now() }); added++; }
     }
+    markRemoved(incoming.map((i) => i.id), false);
     write([...byId.values()]);
     return added;
   }, []);
   const setProgress = useCallback((id: string, progress: number) => {
-    write(readWatchlist().map((i) => (i.id === id ? { ...i, progress: Math.max(0, i.episodeCount ? Math.min(progress, i.episodeCount) : progress) } : i)));
+    write(readWatchlist().map((i) => (i.id === id ? { ...i, editedAt: Date.now(), progress: Math.max(0, i.episodeCount ? Math.min(progress, i.episodeCount) : progress) } : i)));
   }, []);
   return { items, ready, has, toggle, remove, update, importItems, setProgress };
 }

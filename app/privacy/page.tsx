@@ -11,10 +11,11 @@ export default function Privacy() {
       <PageHero crumbs={[{ href: "/", label: "Home" }, { href: "/privacy", label: "Privacy" }]} eyebrow="Your data" title="Privacy" subtitle="Short version: no accounts, no selling data, and you can remove anything you gave us." hue={200} />
       <div className="prose-anime mt-8 max-w-3xl">
         <h2>What stays in your browser</h2>
-        <p>My list, your watch progress, theme and spoiler settings are saved in your own browser (local storage). They never reach our servers unless you choose to import or sign up for something.</p>
+        <p>My list, your watch progress, theme and spoiler settings are saved in your own browser (local storage). Your list reaches our servers only if you turn on sync; settings never do.</p>
         <h2>What we store</h2>
         <ul>
           <li><strong>Ratings, reactions, hype votes and poll answers</strong>, linked to a random anonymous id kept in a cookie (<code>al_vid</code>), so you can vote once and change your mind. It isn&apos;t linked to your name or email.</li>
+          <li><strong>Your synced list</strong>, only if you turn on sync on My list: the shows, progress and list status, stored under a private code. We keep only a one-way hash of the code, so the code itself is never stored. Delete the synced copy from My list at any time.</li>
           <li><strong>Your email address</strong>, only if you sign up for episode alerts, a digest, a cheat sheet or guide updates, together with what you signed up for, the page you signed up on and when you agreed.</li>
           <li><strong>Partner enquiries</strong>: the details you type into the form on the Advertise page.</li>
           <li><strong>Abuse protection</strong>: a one-way, daily-changing hash of your IP address, kept for a few minutes to stop spam. We never store the IP address itself.</li>

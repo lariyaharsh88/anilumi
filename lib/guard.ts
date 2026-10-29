@@ -55,13 +55,13 @@ export type Guarded = { d: Db; body: Record<string, unknown>; vid: string; newVi
  * Run the checks; returns either the parsed request context or an error response to send as-is.
  * `website` is a honeypot field: hidden from people, filled in by bots.
  */
-export async function guard(req: Request, route: string, perMinute: number): Promise<Guarded | Response> {
+export async function guard(req: Request, route: string, perMinute: number, maxBody = MAX_BODY): Promise<Guarded | Response> {
   let d: Db | null;
   try { d = await db(); } catch { return json({ error: "Temporarily unavailable" }, 503); }
   if (!d) return json({ error: "Not available" }, 404);
   if (!(await sameOrigin())) return json({ error: "Forbidden" }, 403);
   const text = await req.text();
-  if (text.length > MAX_BODY) return json({ error: "Too large" }, 413);
+  if (text.length > maxBody) return json({ error: "Too large" }, 413);
   let body: Record<string, unknown>;
   try { body = JSON.parse(text || "{}"); } catch { return json({ error: "Bad request" }, 400); }
   if (typeof body !== "object" || body === null || Array.isArray(body)) return json({ error: "Bad request" }, 400);
