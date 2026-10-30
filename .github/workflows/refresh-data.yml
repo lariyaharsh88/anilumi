@@ -1,5 +1,5 @@
 name: Refresh data
-# Monthly snapshot refresh: birthdays and the character snapshot (AniList), search aliases (Kitsu + anime-offline-database) and
+# Monthly snapshot refresh: birthdays and the character, voice-actor and cast snapshots (AniList), search aliases (Kitsu + anime-offline-database) and
 # MyAnimeList filler flags (Jikan). Each source may be down; a failed step keeps the old file.
 # Tests and the type check must pass before anything is committed; the push makes Render redeploy.
 on:
@@ -12,7 +12,7 @@ concurrency: refresh-data
 jobs:
   refresh:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 75
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -32,6 +32,10 @@ jobs:
         run: npx tsx scripts/map-character-slugs.mts
         continue-on-error: true
         timeout-minutes: 20
+      - name: Voice-actor snapshot (hub + top 200 profiles)
+        run: npx tsx scripts/fetch-voice-actors.mts
+        continue-on-error: true
+        timeout-minutes: 25
       - name: Cast snapshot (top 300 anime)
         run: npx tsx scripts/fetch-casts.mts
         continue-on-error: true
@@ -46,7 +50,7 @@ jobs:
         timeout-minutes: 15
       - name: Keep the old file if a new one is broken or much smaller
         run: |
-          for f in data/birthdays.json data/characters.json data/casts.json data/aliases.json data/filler-mal.json; do
+          for f in data/birthdays.json data/characters.json data/voice-actors.json data/casts.json data/aliases.json data/filler-mal.json; do
             old=$(git show "HEAD:$f" | wc -c); new=$(wc -c < "$f")
             if ! node -e "JSON.parse(require('fs').readFileSync('$f','utf8'))" || [ "$new" -lt $((old * 8 / 10)) ]; then
               echo "::warning::$f looks wrong ($old -> $new bytes); keeping the committed version"
@@ -57,7 +61,7 @@ jobs:
       - run: npm test
       - name: Commit changes
         run: |
-          git add data/birthdays.json data/characters.json data/casts.json data/aliases.json data/filler-mal.json
+          git add data/birthdays.json data/characters.json data/voice-actors.json data/casts.json data/aliases.json data/filler-mal.json
           if git diff --cached --quiet; then echo "No data changes."; exit 0; fi
           git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -m "Monthly data refresh"
           git push

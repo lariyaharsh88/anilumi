@@ -5,6 +5,7 @@
  */
 import { getAniListId, kitsuByAniListIds, ANILIST_MIN_REVALIDATE, UpstreamError, type Anime } from "./kitsu";
 import { castFromSnapshot } from "./castsnap";
+import { popularFromSnapshot, voiceActorFromSnapshot } from "./vasnap";
 
 /**
  * How long to wait before retrying, or null to give up. 429s honour Retry-After (capped); network errors,
@@ -19,6 +20,8 @@ export function retryDelay(failure: { status?: number; network?: boolean; retryA
 
 // After AniList says "wait N seconds" beyond what we retried, skip calls until then instead of piling on.
 let coolUntil = 0;
+/** Most recent failure, shown by /api/version so Render-only AniList trouble can be seen from outside. */
+export const anilistHealth: { lastFailure: { op: string; why: string; at: string } | null } = { lastFailure: null };
 const opName = (q: string) => q.match(/\{\s*(?:Page\([^)]*\)\s*\{\s*)?(\w+)/)?.[1] || "query";
 
 /**
@@ -30,6 +33,7 @@ export async function anilist<T>(query: string, variables: Record<string, unknow
   if (process.env.ANILIST_ENRICH === "0") return null;
   const fail = (why: string) => {
     console.warn(`[anilist] ${opName(query)} failed: ${why}`);
+    anilistHealth.lastFailure = { op: opName(query), why, at: new Date().toISOString() };
     if (strict) throw new UpstreamError(`AniList unavailable: ${why}`);
     return null;
   };
@@ -70,12 +74,19 @@ export async function anilist<T>(query: string, variables: Record<string, unknow
 }
 
 const memo = new Map<string, { v: unknown; exp: number }>();
+// Calls already in flight, so a page and its generateMetadata (rendered concurrently) share one fetch.
+const inflight = new Map<string, Promise<unknown>>();
 export async function memoized<T>(key: string, ttlMs: number, fn: () => Promise<T | null>): Promise<T | null> {
   const hit = memo.get(key);
   if (hit && hit.exp > Date.now()) return hit.v as T;
-  const v = await fn();
-  if (v !== null) memo.set(key, { v, exp: Date.now() + ttlMs });
-  return v;
+  const running = inflight.get(key);
+  if (running) return running as Promise<T | null>;
+  const p = fn().then((v) => {
+    if (v !== null) memo.set(key, { v, exp: Date.now() + ttlMs });
+    return v;
+  }).finally(() => inflight.delete(key));
+  inflight.set(key, p);
+  return p;
 }
 
 /* ---------------- helpers (pure) ---------------- */
@@ -219,7 +230,7 @@ export type VoiceActor = Va & {
 };
 export type StaffWork = { media: VaRole["media"]; roles: string[] };
 
-type AlStaff = {
+export type AlStaff = {
   id: number; name: AlName & { alternative: string[] }; image: { large: string | null; medium: string | null } | null; description: string | null;
   primaryOccupations: string[]; gender: string | null; dateOfBirth: { year: number | null; month: number | null; day: number | null } | null;
   age: number | null; yearsActive: number[]; homeTown: string | null; languageV2: string | null; favourites: number;
@@ -241,49 +252,58 @@ export function groupWork(edges: { staffRole: string; node: AlMediaNode }[]): St
   return [...byId.values()].sort((a, b) => b.media.popularity - a.media.popularity);
 }
 
-const STAFF_Q =
+export const STAFF_Q =
   "query($id:Int,$p:Int){Staff(id:$id){id name{full native alternative} image{large medium} description primaryOccupations gender dateOfBirth{year month day} age yearsActive homeTown languageV2 favourites characterMedia(page:$p,perPage:50,sort:[POPULARITY_DESC]){pageInfo{total} edges{characterRole node{id format title{romaji english} popularity seasonYear startDate{year} averageScore coverImage{medium} isAdult} characters{id name{full} image{medium}}}} staffMedia(page:1,perPage:50,sort:[POPULARITY_DESC],type:ANIME){edges{staffRole node{id format title{romaji english} popularity seasonYear startDate{year} averageScore coverImage{medium} isAdult}}}}}";
 
+/** One person from STAFF_Q's two role pages (adult titles dropped, each anime once). Pure. */
+export function toVoiceActor(s: AlStaff, more: AlStaff | null = null): VoiceActor {
+  const edges = [...s.characterMedia.edges, ...(more?.characterMedia.edges || [])];
+  const seen = new Set<number>();
+  const roles: VaRole[] = [];
+  for (const e of edges) {
+    if (e.node.isAdult || seen.has(e.node.id)) continue;
+    seen.add(e.node.id);
+    roles.push({
+      media: toMedia(e.node),
+      role: e.characterRole,
+      characters: e.characters.filter((c): c is NonNullable<typeof c> => Boolean(c)).map((c) => ({ id: c.id, name: c.name.full.trim(), image: c.image?.medium || null })),
+    });
+  }
+  return {
+    id: s.id, name: s.name.full.trim(), native: s.name.native, image: s.image?.medium || null, imageLarge: s.image?.large || null,
+    alternative: (s.name.alternative || []).filter(Boolean), bio: s.description, occupations: s.primaryOccupations || [], gender: s.gender,
+    birth: s.dateOfBirth?.month ? s.dateOfBirth : null, age: s.age, yearsActive: s.yearsActive || [], homeTown: s.homeTown,
+    language: s.languageV2, favourites: s.favourites, totalRoles: s.characterMedia.pageInfo.total, roles,
+    work: groupWork(s.staffMedia?.edges || []),
+  };
+}
+
+/** Snapshot first (data/voice-actors.json), so the most-followed voice actors never depend on AniList being up. */
 export async function getVoiceActor(staffId: number): Promise<VoiceActor | null> {
+  const snap = voiceActorFromSnapshot(staffId);
+  if (snap) return snap;
   return memoized(`va:${staffId}`, 6 * 3600_000, async () => {
     const [p1, p2] = await Promise.all([1, 2].map((p) => anilist<{ Staff: AlStaff | null }>(STAFF_Q, { id: staffId, p }, 86400, { strict: p === 1 })));
-    const s = p1?.Staff;
-    if (!s) return null;
-    const edges = [...s.characterMedia.edges, ...(p2?.Staff?.characterMedia.edges || [])];
-    const seen = new Set<number>();
-    const roles: VaRole[] = [];
-    for (const e of edges) {
-      if (e.node.isAdult || seen.has(e.node.id)) continue;
-      seen.add(e.node.id);
-      roles.push({
-        media: toMedia(e.node),
-        role: e.characterRole,
-        characters: e.characters.filter((c): c is NonNullable<typeof c> => Boolean(c)).map((c) => ({ id: c.id, name: c.name.full.trim(), image: c.image?.medium || null })),
-      });
-    }
-    return {
-      id: s.id, name: s.name.full.trim(), native: s.name.native, image: s.image?.medium || null, imageLarge: s.image?.large || null,
-      alternative: (s.name.alternative || []).filter(Boolean), bio: s.description, occupations: s.primaryOccupations || [], gender: s.gender,
-      birth: s.dateOfBirth?.month ? s.dateOfBirth : null, age: s.age, yearsActive: s.yearsActive || [], homeTown: s.homeTown,
-      language: s.languageV2, favourites: s.favourites, totalRoles: s.characterMedia.pageInfo.total, roles,
-      work: groupWork(s.staffMedia?.edges || []),
-    };
+    return p1?.Staff ? toVoiceActor(p1.Staff, p2?.Staff ?? null) : null;
   });
 }
 
-/** Voice actors most favourited on AniList (hub page). */
-export async function popularVoiceActors(): Promise<(Va & { language: string | null; favourites: number })[]> {
-  const pages = await Promise.all([1, 2].map((page) =>
-    anilist<{ Page: { staff: { id: number; name: AlName; image: { medium: string | null } | null; primaryOccupations: string[]; languageV2: string | null; favourites: number }[] } }>(
-      "query($p:Int){Page(page:$p,perPage:50){staff(sort:FAVOURITES_DESC){id name{full native} image{medium} primaryOccupations languageV2 favourites}}}",
-      { p: page },
-      86400,
-    ),
-  ));
-  return pages
-    .flatMap((d) => d?.Page.staff || [])
+export type PopularVa = Va & { language: string | null; favourites: number };
+type AlPopular = { id: number; name: AlName; image: { medium: string | null } | null; primaryOccupations: string[]; languageV2: string | null; favourites: number };
+export const POPULAR_VA_Q = "query($p:Int){Page(page:$p,perPage:50){staff(sort:FAVOURITES_DESC){id name{full native} image{medium} primaryOccupations languageV2 favourites}}}";
+
+/** Most-favourited staff → the voice actors among them. Pure. */
+export const toPopular = (staff: AlPopular[]): PopularVa[] =>
+  staff
     .filter((s) => s.primaryOccupations?.some((o) => /voice actor/i.test(o)))
     .map((s) => ({ id: s.id, name: s.name.full.trim(), native: s.name.native, image: s.image?.medium || null, language: s.languageV2, favourites: s.favourites }));
+
+/** Voice actors most favourited on AniList (hub page and sitemap): the snapshot, or live if there isn't one. */
+export async function popularVoiceActors(): Promise<PopularVa[]> {
+  const snap = popularFromSnapshot();
+  if (snap.length) return snap;
+  const pages = await Promise.all([1, 2].map((p) => anilist<{ Page: { staff: AlPopular[] } }>(POPULAR_VA_Q, { p }, 86400)));
+  return toPopular(pages.flatMap((d) => d?.Page.staff || []));
 }
 
 /* ---------------- sequel announcements ---------------- */
