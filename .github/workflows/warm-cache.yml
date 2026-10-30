@@ -1,0 +1,31 @@
+name: Warm cache after deploy
+# Render empties the page cache on every deploy, so the first visit to each page renders from scratch (2-7 s).
+# Wait for this commit to go live, then load the top sitemap pages slowly (see scripts/warm-cache.mjs).
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+concurrency:
+  group: warm-cache
+  cancel-in-progress: true
+jobs:
+  warm:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Wait for the deploy of this commit
+        id: wait
+        run: |
+          for i in $(seq 1 60); do
+            live=$(curl -s -m 20 https://anilumi.in/api/version | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{try{console.log(JSON.parse(s).commit||'')}catch{console.log('')}})")
+            if [ "$live" = "$GITHUB_SHA" ]; then echo "live=1" >> "$GITHUB_OUTPUT"; echo "Deployed."; exit 0; fi
+            sleep 20
+          done
+          echo "::warning::Commit not live after 20 minutes; skipping warm-up."
+      - name: Warm the top pages
+        if: steps.wait.outputs.live == '1'
+        run: node scripts/warm-cache.mjs https://anilumi.in

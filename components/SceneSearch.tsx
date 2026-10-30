@@ -189,7 +189,7 @@ export default function SceneSearch() {
                         const page = state.mapped[String(m.anilistId)];
                         return (
                           <li key={`${m.anilistId}-${m.episode}`}>
-                            {(m.similarity * 100).toFixed(0)}% · {page ? <Link href={`/anime/${page.slug}`} className="text-violet hover:text-violet-2">{page.title}</Link> : m.title}{m.episode ? `, episode ${m.episode}` : ""} at {timecode(m.at)}
+                            {(m.similarity * 100).toFixed(0)}% · {page ? <Link href={`/anime/${page.slug}`} className="text-violet underline decoration-violet/40 underline-offset-2 hover:text-violet-2 hover:decoration-violet-2">{page.title}</Link> : m.title}{m.episode ? `, episode ${m.episode}` : ""} at {timecode(m.at)}
                           </li>
                         );
                       })}

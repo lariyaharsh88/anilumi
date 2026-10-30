@@ -63,7 +63,7 @@ export default async function GenrePage({ params, searchParams }: Props) {
           ))}
         </div>
         {TREND_GENRES.some(([t]) => t === slug) && (
-          <p className="mt-3 text-sm"><Link href={`/trends/${slug}`} className="text-violet hover:text-violet-2">📈 How {g.title.toLowerCase()} has grown or shrunk since 2000 →</Link></p>
+          <p className="mt-3 text-sm"><Link href={`/trends/${slug}`} className="text-violet underline decoration-violet/40 underline-offset-2 hover:text-violet-2 hover:decoration-violet-2">📈 How {g.title.toLowerCase()} has grown or shrunk since 2000 →</Link></p>
         )}
       </PageHero>
       <AdSlot slot="genre-top" />

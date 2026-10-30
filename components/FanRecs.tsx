@@ -35,7 +35,7 @@ export default function FanRecs({ title, recs, heading }: { title: string; recs:
         ))}
       </RailScroller>
       {recs[0]?.anime && (
-        <p className="mt-2 text-sm text-muted">Most recommended: <Link href={`/anime/${recs[0].anime.slug}`} className="text-violet hover:text-violet-2">{recs[0].title}</Link>, by {recs[0].votes.toLocaleString("en-US")} fans.</p>
+        <p className="mt-2 text-sm text-muted">Most recommended: <Link href={`/anime/${recs[0].anime.slug}`} className="text-violet underline decoration-violet/40 underline-offset-2 hover:text-violet-2 hover:decoration-violet-2">{recs[0].title}</Link>, by {recs[0].votes.toLocaleString("en-US")} fans.</p>
       )}
     </section>
   );

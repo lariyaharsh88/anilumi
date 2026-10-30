@@ -10,6 +10,8 @@ type Person = { id: number; n: string; i: string | null } | null;
 export type SnapChar = {
   id: number; n: string; f: number; age: string | null; g: string | null; bt: string | null; m: number | null; d: number | null;
   l: [string, string][]; a: number; s: string; t: string; jp: Person; en: Person;
+  /** Kitsu character page slug, when scripts/map-character-slugs.mts could match it. */
+  k?: string;
 };
 const chars = (data as { characters: SnapChar[] }).characters;
 
@@ -48,6 +50,10 @@ export const snapToAniList = (c: SnapChar): AniListCharacter => ({
   age: c.age, gender: c.g, bloodType: c.bt, dateOfBirth: c.m && c.d ? { month: c.m, day: c.d } : null,
   lines: c.l.map(([label, value]) => ({ label, value })), favourites: c.f,
 });
+
+/** Kitsu page slugs of the most-favourited snapshot characters, for the sitemap. */
+export const topCharacterSlugs = (limit = 1000): string[] =>
+  [...chars].filter((c) => c.k).sort((a, b) => b.f - a.f).slice(0, limit).map((c) => c.k!);
 
 export const snapGenerated = (data as { generated: string }).generated;
 

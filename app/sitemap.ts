@@ -5,6 +5,7 @@ import { listAnime, getCategories, seasonOf, shiftSeason, animePath, episodePath
 import { popularVoiceActors, vaPath } from "@/lib/anilist";
 import { allDays, birthdaysOn, bdPath } from "@/lib/birthdays";
 import { fillerSlugs, continuationSlugs } from "@/lib/filler";
+import { topCharacterSlugs } from "@/lib/charsnap";
 
 export const revalidate = 86400;
 
@@ -36,6 +37,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: abs("/my/wrapped"), lastModified: now, changeFrequency: "monthly", priority: 0.5 },
     { url: abs("/birthdays"), lastModified: now, changeFrequency: "daily", priority: 0.7 },
     { url: abs("/on-this-day"), lastModified: now, changeFrequency: "daily", priority: 0.7 },
+    // Character pages bring the most search impressions; list the most-favourited ones (snapshot-backed, so cheap to render).
+    ...topCharacterSlugs(1000).map((s, i) => ({ url: abs(`/character/${s}`), lastModified: now, changeFrequency: "monthly" as const, priority: i < 100 ? 0.6 : 0.4 })),
     { url: abs("/hype"), lastModified: now, changeFrequency: "daily", priority: 0.6 },
     { url: abs("/polls"), lastModified: now, changeFrequency: "weekly", priority: 0.4 },
     { url: abs("/advertise"), lastModified: now, changeFrequency: "monthly", priority: 0.3 },

@@ -85,7 +85,7 @@ export default async function StudioPage({ params }: Props) {
           <dl className="grid gap-x-8 gap-y-2 text-sm sm:grid-cols-2 lg:grid-cols-4">
             {about.map(([k, v]) => <div key={k}><dt className="text-xs text-muted">{k}</dt><dd className="font-medium text-ink">{v}</dd></div>)}
           </dl>
-          <p className="mt-3 text-xs text-muted">{wd?.website && <><a href={wd.website} target="_blank" rel="noopener nofollow" className="text-violet hover:text-violet-2">Official website</a> · </>}Facts from <a href={`https://www.wikidata.org/wiki/${wd!.qid}`} target="_blank" rel="noopener" className="underline">Wikidata</a>.</p>
+          <p className="mt-3 text-xs text-muted">{wd?.website && <><a href={wd.website} target="_blank" rel="noopener nofollow" className="text-violet underline decoration-violet/40 underline-offset-2 hover:text-violet-2 hover:decoration-violet-2">Official website</a> · </>}Facts from <a href={`https://www.wikidata.org/wiki/${wd!.qid}`} target="_blank" rel="noopener" className="underline">Wikidata</a>.</p>
         </section>
       )}
       <AdSlot slot="studio-top" />

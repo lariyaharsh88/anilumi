@@ -1,0 +1,33 @@
+name: Daily health check
+# Loads key pages and APIs once a day; a failure here makes GitHub email the repository owner.
+on:
+  schedule:
+    - cron: "40 5 * * *" # 05:40 UTC (11:10 IST)
+  workflow_dispatch:
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check pages
+        run: |
+          fail=0
+          check() { # url, text that must appear
+            for try in 1 2 3; do
+              body=$(curl -s -m 60 -w "\n%{http_code}" "https://anilumi.in$1"); code=$(echo "$body" | tail -1)
+              if [ "$code" = "200" ] && echo "$body" | grep -q -- "$2"; then echo "ok   $1"; return; fi
+              sleep 20
+            done
+            echo "::error::$1 returned $code or is missing \"$2\""; fail=1
+          }
+          check "/" "AniLumi"
+          check "/schedule" "Anime airing"
+          check "/anime/attack-on-titan" "at a glance"
+          check "/anime/attack-on-titan/cast" "Voice Actors"
+          check "/character/mikasa-ackerman" "quick facts"
+          check "/anime/naruto/filler-list" "filler list"
+          check "/season/2027/winter/preview" "anime preview"
+          check "/api/community?anime=7442" "\"enabled\":true"
+          check "/sitemap.xml" "<urlset"
+          check "/robots.txt" "Sitemap"
+          exit $fail

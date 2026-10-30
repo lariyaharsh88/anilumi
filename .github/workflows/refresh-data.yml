@@ -28,6 +28,10 @@ jobs:
         run: npx tsx scripts/fetch-characters.mts
         continue-on-error: true
         timeout-minutes: 20
+      - name: Match snapshot characters to their Kitsu pages (sitemap)
+        run: npx tsx scripts/map-character-slugs.mts
+        continue-on-error: true
+        timeout-minutes: 20
       - name: Cast snapshot (top 300 anime)
         run: npx tsx scripts/fetch-casts.mts
         continue-on-error: true

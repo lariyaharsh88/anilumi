@@ -33,7 +33,7 @@ export default function OnThisDayView({ m, d, premieres, pick, today = false }: 
 
       {pick && (
         <section className="card reveal mt-10 flex gap-4 p-4 sm:p-5" aria-labelledby="aotd-h">
-          <Link href={animePath(pick)} className="relative h-40 w-28 shrink-0 overflow-hidden rounded-lg bg-bg-2">{posterUrl(pick, "small") && <Image src={posterUrl(pick, "small")!} alt="" fill sizes="112px" className="object-cover" />}</Link>
+          <Link href={animePath(pick)} aria-hidden="true" tabIndex={-1} className="relative h-40 w-28 shrink-0 overflow-hidden rounded-lg bg-bg-2">{posterUrl(pick, "small") && <Image src={posterUrl(pick, "small")!} alt="" fill sizes="112px" className="object-cover" />}</Link>
           <div className="min-w-0">
             <p className="text-xs font-semibold uppercase tracking-wider text-accent-2">Anime of the day</p>
             <h2 id="aotd-h" className="mt-1 text-xl font-bold text-ink"><Link href={animePath(pick)} className="hover:text-violet-2">{pick.title}</Link></h2>

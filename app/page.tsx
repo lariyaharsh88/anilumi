@@ -109,7 +109,7 @@ export default async function Home() {
         <section className="reveal mt-12 grid gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)]" aria-label="Today in anime">
           {pick && (
             <div className="card flex gap-4 p-4 sm:p-5">
-              <Link href={animePath(pick)} className="relative h-36 w-24 shrink-0 overflow-hidden rounded-lg bg-bg-2">{posterUrl(pick, "small") && <Image src={posterUrl(pick, "small")!} alt="" fill sizes="96px" className="object-cover" />}</Link>
+              <Link href={animePath(pick)} aria-hidden="true" tabIndex={-1} className="relative h-36 w-24 shrink-0 overflow-hidden rounded-lg bg-bg-2">{posterUrl(pick, "small") && <Image src={posterUrl(pick, "small")!} alt="" fill sizes="96px" className="object-cover" />}</Link>
               <div className="min-w-0">
                 <p className="text-xs font-semibold uppercase tracking-wider text-accent-2">Anime of the day</p>
                 <h2 className="mt-1 text-lg font-bold text-ink"><Link href={animePath(pick)} className="hover:text-violet-2">{pick.title}</Link></h2>
@@ -145,7 +145,7 @@ export default async function Home() {
           <p className="text-xs font-semibold uppercase tracking-wider text-accent-2">Quote of the day</p>
           <blockquote className="mt-2 max-w-3xl text-lg font-semibold leading-relaxed text-ink sm:text-xl">“{quote.text}”</blockquote>
           <figcaption className="mt-3 text-sm text-muted">
-            <span className="text-ink/90">{quote.character}</span>, {quote.slug ? <Link href={`/anime/${quote.slug}`} className="text-violet hover:text-violet-2">{quote.anime}</Link> : quote.anime}
+            <span className="text-ink/90">{quote.character}</span>, {quote.slug ? <Link href={`/anime/${quote.slug}`} className="text-violet underline decoration-violet/40 underline-offset-2 hover:text-violet-2 hover:decoration-violet-2">{quote.anime}</Link> : quote.anime}
           </figcaption>
         </figure>
       )}
