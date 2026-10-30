@@ -14,14 +14,21 @@ const urls = [...xml.matchAll(/<url>([\s\S]*?)<\/url>/g)]
   .sort((a, b) => b.p - a.p)
   .slice(0, LIMIT);
 
-let warmed = 0, failed = 0;
-for (const { loc } of urls) {
+async function warm(loc) {
   const t = Date.now();
   const res = await fetch(loc, { headers: { "User-Agent": "AniLumi cache warmer" } }).catch(() => null);
-  const ms = Date.now() - t;
   const cache = res?.headers.get("x-nextjs-cache") || "-";
-  if (res?.ok) warmed++; else failed++;
-  console.log(`${res?.status ?? "ERR"} ${cache.padEnd(5)} ${String(ms).padStart(5)} ms  ${loc.replace(base, "")}`);
+  console.log(`${res?.status ?? "ERR"} ${cache.padEnd(5)} ${String(Date.now() - t).padStart(5)} ms  ${loc.replace(base, "")}`);
   await sleep(cache === "HIT" ? 500 : GAP); // already cached: no render, no upstream calls
+  return Boolean(res?.ok);
 }
-console.log(`\nwarmed ${warmed}, failed ${failed} of ${urls.length}`);
+
+const retry = [];
+for (const { loc } of urls) if (!(await warm(loc))) retry.push(loc);
+// Pages that error on purpose when AniList is rate-limited (season previews) usually work a minute later.
+if (retry.length) {
+  console.log(`\nretrying ${retry.length} after a pause`);
+  await sleep(60000);
+  for (let i = retry.length - 1; i >= 0; i--) if (await warm(retry[i])) retry.splice(i, 1);
+}
+console.log(`\nwarmed ${urls.length - retry.length}, failed ${retry.length} of ${urls.length}`);
