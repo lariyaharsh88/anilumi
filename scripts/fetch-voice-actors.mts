@@ -3,13 +3,15 @@
  * voices of the most-favourited characters, each with the full profile getVoiceActor returns, so their pages
  * don't need live AniList calls. Each person is two requests; AniList allows ~30 a minute.
  * Runs monthly in .github/workflows/refresh-data.yml after the character snapshot; by hand:
- * npx tsx scripts/fetch-voice-actors.mts
+ * npx tsx scripts/fetch-voice-actors.mts — or ONLY=123268,95185 to refetch just those people into the existing file.
  */
-import { readFileSync, writeFileSync } from "node:fs";
+import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { POPULAR_VA_Q, STAFF_Q, toPopular, toVoiceActor, type AlStaff, type VoiceActor } from "../lib/anilist";
-import { packSnapshot } from "../lib/vasnap";
+import { packSnapshot, unpackSnapshot } from "../lib/vasnap";
 
 const TOP = Number(process.env.TOP) || 200;
+const ONLY = (process.env.ONLY || "").split(",").map(Number).filter(Boolean);
+const OUT = new URL("../data/voice-actors.json", import.meta.url);
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
 async function ask<T>(query: string, variables: Record<string, unknown>): Promise<T> {
@@ -24,21 +26,26 @@ async function ask<T>(query: string, variables: Record<string, unknown>): Promis
   throw new Error("AniList kept failing");
 }
 
-// Hub: voice actors among the 150 most-favourited staff.
-const hubStaff = [];
-for (const p of [1, 2, 3]) {
-  hubStaff.push(...(await ask<{ Page: { staff: Parameters<typeof toPopular>[0] } }>(POPULAR_VA_Q, { p })).Page.staff);
-  await sleep(2500);
+const prev = ONLY.length && existsSync(OUT) ? unpackSnapshot(readFileSync(OUT, "utf8")) : null;
+let hub = prev?.hub ?? [];
+let ids = ONLY;
+if (!prev) {
+  // Hub: voice actors among the 150 most-favourited staff.
+  const hubStaff = [];
+  for (const p of [1, 2, 3]) {
+    hubStaff.push(...(await ask<{ Page: { staff: Parameters<typeof toPopular>[0] } }>(POPULAR_VA_Q, { p })).Page.staff);
+    await sleep(2500);
+  }
+  hub = toPopular(hubStaff).slice(0, 100);
+
+  // Then the voices behind the most-favourited characters, by their characters' total favourites.
+  const chars = (JSON.parse(readFileSync(new URL("../data/characters.json", import.meta.url), "utf8")) as { characters: { f: number; jp: { id: number } | null; en: { id: number } | null }[] }).characters;
+  const weight = new Map<number, number>();
+  for (const c of chars) for (const v of [c.jp, c.en]) if (v) weight.set(v.id, (weight.get(v.id) || 0) + c.f);
+  ids = [...new Set([...hub.map((v) => v.id), ...[...weight].sort((a, b) => b[1] - a[1]).map(([id]) => id)])].slice(0, TOP);
 }
-const hub = toPopular(hubStaff).slice(0, 100);
 
-// Then the voices behind the most-favourited characters, by their characters' total favourites.
-const chars = (JSON.parse(readFileSync(new URL("../data/characters.json", import.meta.url), "utf8")) as { characters: { f: number; jp: { id: number } | null; en: { id: number } | null }[] }).characters;
-const weight = new Map<number, number>();
-for (const c of chars) for (const v of [c.jp, c.en]) if (v) weight.set(v.id, (weight.get(v.id) || 0) + c.f);
-const ids = [...new Set([...hub.map((v) => v.id), ...[...weight].sort((a, b) => b[1] - a[1]).map(([id]) => id)])].slice(0, TOP);
-
-const people: Record<string, VoiceActor> = {};
+const people: Record<string, VoiceActor> = { ...prev?.people };
 for (const [n, id] of ids.entries()) {
   try {
     const p1 = await ask<{ Staff: AlStaff | null }>(STAFF_Q, { id, p: 1 });
@@ -52,5 +59,5 @@ for (const [n, id] of ids.entries()) {
   process.stdout.write(`voice actors ${n + 1}/${ids.length}\r`);
 }
 
-writeFileSync(new URL("../data/voice-actors.json", import.meta.url), packSnapshot({ generated: new Date().toISOString().slice(0, 10), hub, people }));
+writeFileSync(OUT, packSnapshot({ generated: prev?.generated || new Date().toISOString().slice(0, 10), hub, people }));
 console.log(`\nwrote ${hub.length} hub entries, ${Object.keys(people).length} profiles`);
