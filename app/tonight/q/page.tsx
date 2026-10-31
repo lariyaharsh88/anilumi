@@ -31,7 +31,7 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
     title: `Anime You Can Finish in ${t} – What to Watch Tonight`,
     description: `Complete anime series and movies that fit into ${label(v.minutes)}, ranked by community score, with exact runtimes. Filter by genre and format.`,
     alternates: { canonical: `/tonight${v.minutes !== 120 ? `?minutes=${v.minutes}` : ""}` },
-    robots: onlyTime ? undefined : { index: false, follow: true },
+    ...(onlyTime ? {} : { robots: { index: false, follow: true } }),
   };
 }
 

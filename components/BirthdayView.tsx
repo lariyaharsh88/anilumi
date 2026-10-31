@@ -3,7 +3,7 @@ import Image from "next/image";
 import { animePath } from "@/lib/kitsu";
 import { vaPath } from "@/lib/anilist";
 import { characterPathFor } from "@/lib/charsnap";
-import { bdLabel, bdPath, nextDays, birthdaysOn, MONTHS, cap, type BdChar, type BdPerson } from "@/lib/birthdays";
+import { bdLabel, bdPath, monthPath, nextDays, birthdaysOn, MONTHS, cap, type BdChar, type BdPerson } from "@/lib/birthdays";
 import PageHero from "./PageHero";
 import Faq from "./Faq";
 
@@ -15,7 +15,7 @@ export default function BirthdayView({ m, d, characters, people, today = false }
   return (
     <div className="container-x pb-8">
       <PageHero
-        crumbs={[{ href: "/", label: "Home" }, { href: "/birthdays", label: "Birthdays" }, ...(today ? [] : [{ href: bdPath(m, d), label }])]}
+        crumbs={[{ href: "/", label: "Home" }, { href: "/birthdays", label: "Birthdays" }, ...(today ? [] : [{ href: monthPath(m), label: cap(MONTHS[m - 1]) }, { href: bdPath(m, d), label }])]}
         eyebrow={today ? `🎂 Today in Japan · ${label}` : "🎂 Anime birthdays"}
         title={<>Anime characters born on <span className="text-gradient">{label}</span></>}
         subtitle={characters.length ? `${characters.slice(0, 3).map((c) => c.n).join(", ")}${characters.length > 3 ? ` and ${characters.length - 3} more` : ""} celebrate on ${label}${people.length ? `, along with ${people.length} voice actor${people.length === 1 ? "" : "s"}` : ""}.` : `No popular characters on record share the ${label} birthday${people.length ? `, but ${people.length} voice actor${people.length === 1 ? " does" : "s do"}` : ""}.`}
@@ -68,7 +68,8 @@ export default function BirthdayView({ m, d, characters, people, today = false }
           {upcoming.map((x) => <li key={`${x.m}-${x.d}`}><Link href={bdPath(x.m, x.d)} className="chip">{bdLabel(x.m, x.d)}{x.n ? ` · ${x.n}` : ""}</Link></li>)}
         </ul>
         <h2 className="h-section mb-3 mt-8">Browse by month</h2>
-        <ul className="flex flex-wrap gap-2">{MONTHS.map((mo, i) => <li key={mo}><Link href={bdPath(i + 1, 1)} className={`chip ${i + 1 === m ? "chip-active" : ""}`}>{cap(mo)}</Link></li>)}</ul>
+        <ul className="flex flex-wrap gap-2">{MONTHS.map((mo, i) => <li key={mo}><Link href={monthPath(i + 1)} className={`chip ${i + 1 === m ? "chip-active" : ""}`}>{cap(mo)}</Link></li>)}</ul>
+        <p className="mt-4 text-sm"><Link href={monthPath(m)} className="text-violet hover:underline">Every anime character born in {cap(MONTHS[m - 1])}, day by day →</Link></p>
       </section>
 
       <Faq items={[

@@ -9,10 +9,14 @@ import { writeFileSync } from "node:fs";
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 async function al<T>(query: string, variables: Record<string, unknown>): Promise<T> {
   for (let i = 0; i < 6; i++) {
-    const res = await fetch("https://graphql.anilist.co", { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify({ query, variables }) });
+    // Network errors and timeouts are retried too: one stalled response used to lose the whole run.
+    const res = await fetch("https://graphql.anilist.co", { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify({ query, variables }), signal: AbortSignal.timeout(30000) }).catch(() => null);
+    if (!res) { await sleep(5000 * (i + 1)); continue; }
     if (res.status === 429) { await sleep((Number(res.headers.get("retry-after")) || 30) * 1000); continue; }
     if (!res.ok) throw new Error(`AniList ${res.status}`);
-    return ((await res.json()) as { data: T }).data;
+    const body = await res.json().catch(() => null) as { data: T } | null;
+    if (body) return body.data;
+    await sleep(5000 * (i + 1));
   }
   throw new Error("AniList kept rate-limiting");
 }
@@ -21,14 +25,15 @@ type Ch = { id: number; name: { full: string }; image: { medium: string | null }
 type St = { id: number; name: { full: string; native: string | null }; image: { medium: string | null }; dateOfBirth: { year: number | null; month: number | null; day: number | null }; favourites: number; primaryOccupations: string[]; languageV2: string | null };
 
 const chars: Ch[] = [];
-for (let page = 1; page <= (Number(process.env.BIRTHDAY_PAGES) || 80); page++) {
+// AniList pages stop at 100 (5,000 results) and answer 400 beyond that.
+for (let page = 1; page <= Math.min(100, Number(process.env.BIRTHDAY_PAGES) || 100); page++) {
   const d = await al<{ Page: { characters: Ch[] } }>("query($p:Int){Page(page:$p,perPage:50){characters(sort:FAVOURITES_DESC){id name{full} image{medium} dateOfBirth{month day} favourites media(perPage:1,sort:POPULARITY_DESC,type:ANIME){nodes{id isAdult title{romaji english}}}}}}", { p: page });
   chars.push(...d.Page.characters);
   process.stdout.write(`characters page ${page}\r`);
   await sleep(2200);
 }
 const staff: St[] = [];
-for (let page = 1; page <= 10; page++) {
+for (let page = 1; page <= 40; page++) {
   const d = await al<{ Page: { staff: St[] } }>("query($p:Int){Page(page:$p,perPage:50){staff(sort:FAVOURITES_DESC){id name{full native} image{medium} dateOfBirth{year month day} favourites primaryOccupations languageV2}}}", { p: page });
   staff.push(...d.Page.staff);
   process.stdout.write(`staff page ${page}     \r`);

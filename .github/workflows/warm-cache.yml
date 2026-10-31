@@ -1,6 +1,6 @@
 name: Warm cache after deploy
 # Render empties the page cache on every deploy, so the first visit to each page renders from scratch (2-7 s).
-# Wait for this commit to go live, then load the top sitemap pages slowly (see scripts/warm-cache.mjs).
+# Wait for this commit to go live, then load the 500 most important pages one by one (see scripts/warm-cache.mjs).
 on:
   push:
     branches: [main]
@@ -11,7 +11,7 @@ concurrency:
 jobs:
   warm:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 120
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4

@@ -10,6 +10,10 @@ export const cap = (s: string) => s[0].toUpperCase() + s.slice(1);
 
 export const bdPath = (m: number, d: number) => `/birthdays/${MONTHS[m - 1]}/${d}`;
 export const bdLabel = (m: number, d: number) => `${cap(MONTHS[m - 1])} ${d}`;
+export const monthPath = (m: number) => `/birthdays/${MONTHS[m - 1]}`;
+
+/** "october" → 10, or null. */
+export const parseMonth = (month: string): number | null => (MONTHS.includes(month.toLowerCase()) && month === month.toLowerCase() ? MONTHS.indexOf(month) + 1 : null);
 
 /** "/birthdays/march/30" params → {m: 3, d: 30}, or null when the date doesn't exist. */
 export function parseBdParams(month: string, day: string): { m: number; d: number } | null {
@@ -30,6 +34,14 @@ export function birthdaysOn(m: number, d: number, src: { characters: BdChar[]; p
   return {
     characters: src.characters.filter((c) => c.m === m && c.d === d).sort((x, y) => y.f - x.f),
     people: src.people.filter((p) => p.m === m && p.d === d).sort((x, y) => y.f - x.f),
+  };
+}
+
+/** Everyone born in a month, most-favourited first. Pure. */
+export function birthdaysIn(m: number, src: { characters: BdChar[]; people: BdPerson[] } = { characters: chars, people }) {
+  return {
+    characters: src.characters.filter((c) => c.m === m).sort((x, y) => y.f - x.f),
+    people: src.people.filter((p) => p.m === m).sort((x, y) => y.f - x.f),
   };
 }
 

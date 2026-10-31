@@ -57,7 +57,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title,
     description: `${first ? `Is there a ${a.title} season 2?` : `Will ${a.title} get another season?`} ${verdict.headline} ${verdict.detail}`.slice(0, 300),
     alternates: { canonical: `${animePath(a)}/next-season` },
-    robots: a.subtype === "TV" || a.subtype === "ONA" ? undefined : { index: false },
+    ...(a.subtype === "TV" || a.subtype === "ONA" ? {} : { robots: { index: false } }),
   };
 }
 

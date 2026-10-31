@@ -40,7 +40,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       ? `${dub ? "Japanese and English dub" : "Japanese"} voice actors for the characters of ${a.title}: ${mains.map((e) => `${e.character.name} (${e.jp!.name}${e.en ? ` / ${e.en.name}` : ""})`).join(", ")} and the rest of the cast.`
       : `Characters and voice actors of ${a.title}.`,
     alternates: { canonical: `${animePath(a)}/cast` },
-    robots: cast?.entries.length ? undefined : { index: false },
+    ...(cast?.entries.length ? {} : { robots: { index: false } }),
   };
 }
 

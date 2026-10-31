@@ -23,7 +23,7 @@ jobs:
       - name: Birthdays
         run: npx tsx scripts/fetch-birthdays.mts
         continue-on-error: true
-        timeout-minutes: 15
+        timeout-minutes: 25
       - name: Character snapshot (AniList facts, voice actors, favourites)
         run: npx tsx scripts/fetch-characters.mts
         continue-on-error: true

@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `Anime Released on ${bdLabel(p.m, p.d)}`,
     description: `Anime that premiered on ${bdLabel(p.m, p.d)}${premieres[0] ? `: ${premieres.slice(0, 4).map((x) => `${x.anime?.title || x.title} (${x.year})`).join(", ")}` : ""}.`,
     alternates: { canonical: otdPath(p.m, p.d) },
-    robots: premieres.length ? undefined : { index: false },
+    ...(premieres.length ? {} : { robots: { index: false } }),
   };
 }
 

@@ -3,7 +3,7 @@ import { abs } from "@/lib/site";
 import { WATCH_ORDER_OVERRIDES } from "@/data/watch-orders";
 import { listAnime, getCategories, seasonOf, shiftSeason, animePath, episodePath, aniListNextEpisodes, TREND_GENRES } from "@/lib/kitsu";
 import { popularVoiceActors, vaPath } from "@/lib/anilist";
-import { allDays, birthdaysOn, bdPath } from "@/lib/birthdays";
+import { allDays, birthdaysOn, bdPath, monthPath } from "@/lib/birthdays";
 import { fillerSlugs, continuationSlugs } from "@/lib/filler";
 import { topCharacterSlugs, characterTableSlugs } from "@/lib/charsnap";
 
@@ -37,6 +37,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: abs("/quiz"), lastModified: now, changeFrequency: "monthly", priority: 0.6 },
     { url: abs("/my/wrapped"), lastModified: now, changeFrequency: "monthly", priority: 0.5 },
     { url: abs("/birthdays"), lastModified: now, changeFrequency: "daily", priority: 0.7 },
+    ...Array.from({ length: 12 }, (_, i) => ({ url: abs(monthPath(i + 1)), lastModified: now, changeFrequency: "monthly" as const, priority: 0.6 })),
     { url: abs("/on-this-day"), lastModified: now, changeFrequency: "daily", priority: 0.7 },
     // Character pages bring the most search impressions; list the most-favourited ones (snapshot-backed, so cheap to render).
     ...topCharacterSlugs(1500).map((s, i) => ({ url: abs(`/character/${s}`), lastModified: now, changeFrequency: "monthly" as const, priority: i < 100 ? 0.6 : 0.4 })),

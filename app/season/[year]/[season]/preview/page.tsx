@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${cap(s)} ${y} Anime Preview: Every New Show, Sequel & Premiere Date`,
     description: `The ${cap(s)} ${y} anime season at a glance: ${items.length} shows${top.length ? ` including ${top.join(", ")}` : ""}, with premiere dates, studios, source material and which ones are sequels.`,
     alternates: { canonical: `/season/${y}/${s}/preview` },
-    robots: items.length >= 5 ? undefined : { index: false },
+    ...(items.length >= 5 ? {} : { robots: { index: false } }),
   };
 }
 

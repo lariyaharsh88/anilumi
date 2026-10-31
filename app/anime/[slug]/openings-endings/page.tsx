@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       ? `Every ${a.title} opening and ending: ${t.themes.slice(0, 3).map((x) => `${x.type}${x.sequence} “${x.song}” by ${x.artists[0] || "unknown"}`).join(", ")}, with the episodes each one plays on.`
       : `Opening and ending songs for ${a.title}.`,
     alternates: { canonical: `${animePath(a)}/openings-endings` },
-    robots: t?.themes.length ? undefined : { index: false },
+    ...(t?.themes.length ? {} : { robots: { index: false } }),
   };
 }
 

@@ -36,7 +36,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const description = guide
     ? `${a.title} is best for ${guide.suitable.toLowerCase()}${a.ageRating ? `; officially rated ${a.ageRating}` : ""}. ${guide.areas.filter((x) => x.key !== "sexual-violence" || x.level !== "none").map((x) => `${x.label}: ${LEVEL_WORD[x.level].toLowerCase()}`).join(" · ")}. Spoiler-free, from viewer tags.`
     : `Age rating and content notes for ${a.title}.`;
-  return { title, description, alternates: { canonical: `${animePath(a)}/parents-guide` }, robots: guide ? undefined : { index: false } };
+  return { title, description, alternates: { canonical: `${animePath(a)}/parents-guide` }, ...(guide ? {} : { robots: { index: false } }) };
 }
 
 export default async function ParentsGuidePage({ params }: Props) {

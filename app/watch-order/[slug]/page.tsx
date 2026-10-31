@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "@/components/Link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { getAnimeBySlug, buildWatchOrder, animePath, posterUrl, fmtMinutes, runtimeMinutes, subtypeLabel, WatchEntry } from "@/lib/kitsu";
+import { getAnimeBySlug, buildWatchOrder, franchiseName, animePath, posterUrl, fmtMinutes, runtimeMinutes, subtypeLabel, WatchEntry } from "@/lib/kitsu";
 import { abs } from "@/lib/site";
 import PageHero from "@/components/PageHero";
 import JsonLd from "@/components/JsonLd";
@@ -30,9 +30,6 @@ function shortTitle(title: string, franchise: string) {
 
 const plural = (n: number, one: string, many = `${one}s`) => `${n} ${n === 1 ? one : many}`;
 
-/** The name people search: the most-followed main entry ("Nichijou", not its episode-0 prequel). */
-const franchiseName = (wo: Awaited<ReturnType<typeof buildWatchOrder>>) =>
-  [...wo.entries.filter((e) => e.kind === "main")].sort((x, y) => y.anime.userCount - x.anime.userCount)[0]?.anime.title || wo.root.title;
 
 /** "8 Seasons + 2 Movies & 5 OVAs": what searchers ask for ("aot watch order with ova and movies"). */
 function counts(wo: Awaited<ReturnType<typeof buildWatchOrder>>) {
@@ -40,7 +37,8 @@ function counts(wo: Awaited<ReturnType<typeof buildWatchOrder>>) {
   const movies = wo.entries.filter((e) => e.kind === "movie").length;
   const extras = wo.entries.filter((e) => e.kind === "side").length;
   // "Seasons" when the follow-ups are numbered seasons; Naruto → Shippuden → Boruto are separate series.
-  const seasonal = mains.slice(1).some((e) => /season|\b(2nd|3rd|\d+th)\b|part \d|final/i.test(`${e.anime.title} ${e.anime.slug}`));
+  // Arc-named seasons count too: Demon Slayer's "Yuukaku-hen", "Katanakaji no Sato-hen".
+  const seasonal = mains.slice(1).some((e) => /season|\b(2nd|3rd|\d+th)\b|part \d|final|-hen\b|\barc\b/i.test(`${e.anime.title} ${e.anime.slug}`));
   const core = plural(mains.length, seasonal ? "Season" : "Series", seasonal ? "Seasons" : "Series");
   const label = [core, movies && plural(movies, "Movie"), extras && plural(extras, "OVA")].filter(Boolean);
   return { label: label.length > 1 ? `${label.slice(0, -1).join(" + ")} & ${label[label.length - 1]}` : label[0], movies, extras };

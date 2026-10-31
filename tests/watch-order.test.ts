@@ -75,3 +75,18 @@ test("orderWindow lists short orders whole and keeps the current entry visible i
   assert.deepEqual(orderWindow(9, 7), [0, null, 6, 7, 8]);
   assert.deepEqual(orderWindow(9, 8), [0, null, 7, 8]);
 });
+
+test("franchiseName uses the searched name, not a longer sequel title", async () => {
+  const { franchiseName } = await import("../lib/kitsu");
+  const e = (title: string, userCount: number, kind: "main" | "movie" = "main") => ({ anime: mk(title, title, { userCount }), step: 1, kind, note: "", optional: kind !== "main" });
+  const root = mk("r", "Root");
+  assert.equal(franchiseName({ root, entries: [e("Naruto", 100), e("Naruto: Shippuuden", 200), e("Boruto: Naruto Next Generations", 50)] }), "Naruto");
+  assert.equal(franchiseName({ root, entries: [e("Nichijou: Episode 0", 10), e("Nichijou", 300)] }), "Nichijou");
+  assert.equal(franchiseName({ root, entries: [e("Toaru Majutsu no Index", 100), e("Toaru Kagaku no Railgun", 300)] }), "Toaru Kagaku no Railgun");
+  assert.equal(franchiseName({ root, entries: [e("Movie", 999, "movie")] }), "Root");
+  assert.equal(franchiseName({ root, entries: [e("Naruto", 1)], label: "Naruto (editorial)" }), "Naruto (editorial)");
+  const en = (title: string, titleEn: string | null) => ({ anime: mk(title, title, { userCount: 1, titleEn }), step: 1, kind: "main" as const, note: "", optional: false });
+  assert.equal(franchiseName({ root, entries: [en("Boku no Hero Academia", "My Hero Academia")] }), "My Hero Academia");
+  assert.equal(franchiseName({ root, entries: [en("Hunter x Hunter (2011)", null)] }), "Hunter x Hunter");
+  assert.equal(franchiseName({ root, entries: [en("Kimetsu", "x".repeat(46))] }), "Kimetsu");
+});
