@@ -45,6 +45,7 @@ export default async function VoiceActorsHub() {
       />
       <section className="reveal mt-10"><h2 className="h-section mb-3">Japanese voice actors</h2><Grid items={jp} /></section>
       {other.length > 0 && <section className="reveal mt-12"><h2 className="h-section mb-3">English and other dubs</h2><Grid items={other} /></section>}
+      <p className="mt-10 text-sm"><Link href="/characters" className="chip">👤 Most popular anime characters</Link></p>
       {!vas.length && <p className="card mt-10 p-8 text-center text-muted">AniList didn&apos;t answer just now. Try again in a minute.</p>}
     </div>
   );

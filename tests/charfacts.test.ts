@@ -87,3 +87,44 @@ test("editor notes: 100 entries, 'try next' points at other noted shows, no self
     for (const [x] of n.next) { assert.ok(slugs.includes(x), `${s} → ${x}`); assert.notEqual(x, s); }
   }
 });
+
+test("zodiac signs change on the right days", async () => {
+  const { zodiac } = await import("../lib/charfacts");
+  assert.equal(zodiac(3, 30), "Aries"); // Eren
+  assert.equal(zodiac(1, 19), "Capricorn");
+  assert.equal(zodiac(1, 20), "Aquarius");
+  assert.equal(zodiac(12, 21), "Sagittarius");
+  assert.equal(zodiac(12, 22), "Capricorn");
+  assert.equal(zodiac(7, 1), "Cancer"); // Touka
+  assert.equal(zodiac(13, 1), null);
+});
+
+test("aliasList merges sources without repeats or the character's own names", async () => {
+  const { aliasList } = await import("../lib/charfacts");
+  assert.deepEqual(aliasList("Nate River", "ネイト リバー", ["Near", "N"], ["near", "Nate River", " ", "Near (ニア)"]), ["Near", "N"]);
+  assert.deepEqual(aliasList("Eren Yeager", null, ["Shi ni Isogi Yarou (死に急ぎ野郎)"]), ["Shi ni Isogi Yarou"]);
+  assert.deepEqual(aliasList("Eren Yeager", null, [], ["Eren Jaeger", "Eren Jäger", "x".repeat(41), "A", "B", "C"]), ["Eren Jaeger", "Eren Jäger", "A", "B"]);
+});
+
+test("quickAnswer reads naturally and quotes ranges as listed", async () => {
+  const { quickAnswer } = await import("../lib/charfacts");
+  assert.equal(
+    quickAnswer({ name: "Eren Yeager", gender: "Male", role: "main", anime: "Attack on Titan", age: "15", height: "170 cm (5'7\")", birthday: "March 30", sign: "Aries", jp: "Yuuki Kaji", en: "Bryce Papenbrook" }),
+    "Eren Yeager is a main character in Attack on Titan. He is 15 years old and 170 cm (5'7\") tall. His birthday is March 30, which makes him an Aries. He is voiced by Yuuki Kaji in Japanese and by Bryce Papenbrook in the English dub.",
+  );
+  assert.equal(
+    quickAnswer({ name: "Sakura Haruno", gender: "Female", role: "main", anime: "Naruto", age: "12-17", height: "149cm (I), 161cm (II)" }),
+    "Sakura Haruno is a main character in Naruto. Her age is listed as 12-17. Her height is listed as 149cm (I), 161cm (II).",
+  );
+  assert.equal(quickAnswer({ name: "Ryuk", height: "170 cm (5'7\") - 183 cm (6'0\")", birthday: "December 1", sign: "Sagittarius" }),
+    "Ryuk's height is listed as 170 cm (5'7\") - 183 cm (6'0\"). Ryuk's birthday is December 1, which makes them a Sagittarius.");
+});
+
+test("debutAndLatest picks first and most recent dated titles", async () => {
+  const { debutAndLatest } = await import("../lib/charstats");
+  const a = (id: string, startDate: string | null) => ({ anime: { id, startDate } });
+  const r = debutAndLatest([a("2", "2017-04-01"), a("1", "2013-04-07"), a("x", null), a("3", "2023-03-04")])!;
+  assert.deepEqual([r.first.anime.id, r.latest?.anime.id], ["1", "3"]);
+  assert.equal(debutAndLatest([a("1", "2013-04-07")])!.latest, null);
+  assert.equal(debutAndLatest([a("1", null)]), null);
+});

@@ -4,7 +4,7 @@
  * AniList calls. AniList allows ~30 requests a minute from one IP, and a character page used to need three.
  * Runs monthly in .github/workflows/refresh-data.yml; by hand: npx tsx scripts/fetch-characters.mts
  */
-import { writeFileSync } from "node:fs";
+import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { cleanBio } from "../lib/anilist";
 import { shownLines } from "../lib/charfacts";
 
@@ -14,11 +14,11 @@ const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
 type Va = { id: number; name: { full: string }; image: { medium: string | null } | null; languageV2: string };
 type Ch = {
-  id: number; name: { full: string; native: string | null }; favourites: number; age: string | null; gender: string | null; bloodType: string | null;
+  id: number; name: { full: string; native: string | null; alternative: (string | null)[] }; image: { medium: string | null } | null; favourites: number; age: string | null; gender: string | null; bloodType: string | null;
   dateOfBirth: { month: number | null; day: number | null }; description: string | null;
   media: { edges: { node: { id: number; isAdult: boolean; title: { romaji: string; english: string | null } }; voiceActorRoles: { voiceActor: Va | null }[] }[] };
 };
-const QUERY = `query($p:Int,$n:Int){Page(page:$p,perPage:$n){characters(sort:FAVOURITES_DESC){id name{full native} favourites age gender bloodType dateOfBirth{month day} description media(perPage:1,sort:POPULARITY_DESC,type:ANIME){edges{node{id isAdult title{romaji english}} voiceActorRoles(sort:[RELEVANCE,ID]){voiceActor{id name{full} image{medium} languageV2}}}}}}}`;
+const QUERY = `query($p:Int,$n:Int){Page(page:$p,perPage:$n){characters(sort:FAVOURITES_DESC){id name{full native alternative} image{medium} favourites age gender bloodType dateOfBirth{month day} description media(perPage:1,sort:POPULARITY_DESC,type:ANIME){edges{node{id isAdult title{romaji english}} voiceActorRoles(sort:[RELEVANCE,ID]){voiceActor{id name{full} image{medium} languageV2}}}}}}}`;
 
 async function page(p: number): Promise<Ch[]> {
   for (let i = 0; i < 6; i++) {
@@ -62,6 +62,13 @@ const va = (roles: { voiceActor: Va | null }[], lang: string) => {
   const v = roles.find((r) => r.voiceActor?.languageV2 === lang)?.voiceActor;
   return v ? { id: v.id, n: v.name.full.trim(), i: v.image?.medium || null } : null;
 };
+// Keep last month's Kitsu slugs (scripts/map-character-slugs.mts then only matches newcomers).
+const FILE = new URL("../data/characters.json", import.meta.url);
+const prevK = new Map<number, string>();
+if (existsSync(FILE)) for (const c of (JSON.parse(readFileSync(FILE, "utf8")) as { characters: { id: number; k?: string }[] }).characters) if (c.k) prevK.set(c.id, c.k);
+/** Other names fans search by ("Eren Jaeger", "Near"); AniList keeps spoiler names in a separate field we don't fetch. */
+const aliases = (c: Ch) => [...new Set((c.name.alternative || []).map((x) => (x || "").trim()).filter((x) => x && x.length <= 40 && x.toLowerCase() !== c.name.full.trim().toLowerCase()))].slice(0, 4);
+const IMG = "https://s4.anilist.co/file/anilistcdn/character/medium/";
 const out = {
   generated: new Date().toISOString().slice(0, 10),
   characters: usable.flatMap((c) => {
@@ -70,12 +77,16 @@ const out = {
     if (!k) return []; // no Kitsu page to match against
     return [{
       id: c.id, n: c.name.full.trim(), f: c.favourites,
+      ...(aliases(c).length ? { al: aliases(c) } : {}),
+      // Image file name only (the CDN prefix is constant), to keep this bundled file small.
+      ...(c.image?.medium?.startsWith(IMG) ? { i: c.image.medium.slice(IMG.length) } : {}),
       age: c.age, g: c.gender, bt: c.bloodType, m: c.dateOfBirth.month, d: c.dateOfBirth.day,
       l: shownLines(cleanBio(c.description).facts).map((x) => [x.label, x.value]),
       a: e.node.id, s: k.slug, t: k.title,
       jp: va(e.voiceActorRoles, "Japanese"), en: va(e.voiceActorRoles, "English"),
+      ...(prevK.has(c.id) ? { k: prevK.get(c.id) } : {}),
     }];
   }),
 };
-writeFileSync(new URL("../data/characters.json", import.meta.url), JSON.stringify(out));
+writeFileSync(FILE, JSON.stringify(out));
 console.log(`\nwrote ${out.characters.length} of ${chars.length} characters`);

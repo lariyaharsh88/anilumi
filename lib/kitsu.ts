@@ -837,7 +837,7 @@ export async function getLastAiredBest(animeId: string): Promise<LastAired> {
 
 /* ---------------- Characters ---------------- */
 
-export type Character = { id: string; slug: string; name: string; nameJp: string | null; description: string; image: string | null };
+export type Character = { id: string; slug: string; name: string; nameJp: string | null; description: string; image: string | null; otherNames?: string[] };
 export type Appearance = { role: string; anime: Anime };
 
 function normalizeCharacter(c: JsonApiResource): Character {
@@ -854,9 +854,11 @@ function normalizeCharacter(c: JsonApiResource): Character {
 }
 
 export async function getCharacterBySlug(slug: string): Promise<Character | null> {
-  const doc = await kitsuStrict("/characters", { "filter[slug]": slug, "fields[characters]": "slug,canonicalName,names,description,image" }, 86400);
+  const doc = await kitsuStrict("/characters", { "filter[slug]": slug, "fields[characters]": "slug,canonicalName,names,otherNames,description,image" }, 86400);
   if (!doc || !Array.isArray(doc.data) || !doc.data.length) return null;
-  return normalizeCharacter(doc.data[0]);
+  const c = normalizeCharacter(doc.data[0]);
+  const other = doc.data[0].attributes.otherNames;
+  return Array.isArray(other) ? { ...c, otherNames: other.map(String).filter(Boolean) } : c;
 }
 
 export async function getCharacterAppearances(characterId: string): Promise<Appearance[]> {

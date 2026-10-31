@@ -3,6 +3,7 @@ import Image from "next/image";
 import { kitsuByAniListIds, animePath, type Anime } from "@/lib/kitsu";
 import { vaPath, staffPath, cleanBio, type VoiceActor, type VaRole, type StaffWork } from "@/lib/anilist";
 import { personFacts } from "@/lib/wikidata";
+import { characterPathFor } from "@/lib/charsnap";
 import { abs } from "@/lib/site";
 import PageHero from "./PageHero";
 import JsonLd from "./JsonLd";
@@ -149,6 +150,7 @@ export default async function PersonProfile({ va, kind }: { va: VoiceActor; kind
           <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
             {sig.slice(0, 12).map((r) => {
               const k = link(r.media[0]);
+              const cp = characterPathFor(r.character.id);
               const body = (
                 <>
                   <span className="relative block aspect-[5/6] overflow-hidden rounded-xl border border-line bg-bg-2">
@@ -159,7 +161,9 @@ export default async function PersonProfile({ va, kind }: { va: VoiceActor; kind
                   <span className="block truncate text-xs text-muted">{r.media[0].title}{r.media.length > 1 ? ` +${r.media.length - 1}` : ""}</span>
                 </>
               );
-              return <li key={r.character.id}>{k ? <Link href={animePath(k)} className="group block">{body}</Link> : <div className="group">{body}</div>}</li>;
+              // The character's own page when we have one (their profile is what people want), else the anime.
+              const href = cp ?? (k ? animePath(k) : null);
+              return <li key={r.character.id}>{href ? <Link href={href} className="group block">{body}</Link> : <div className="group">{body}</div>}</li>;
             })}
           </ul>
         </section>
@@ -210,7 +214,10 @@ export default async function PersonProfile({ va, kind }: { va: VoiceActor; kind
                       <span className="relative h-12 w-9 shrink-0 overflow-hidden rounded bg-bg-2">{r.media.cover && <Image src={r.media.cover} alt="" fill sizes="36px" className="object-cover" />}</span>
                       <span className="min-w-0 flex-1">
                         {k ? <Link href={animePath(k)} className="block truncate font-medium text-ink hover:text-violet-2">{r.media.title}</Link> : <span className="block truncate font-medium text-ink">{r.media.title}</span>}
-                        <span className="block truncate text-xs text-muted">{r.characters.map((c) => c.name).join(", ")}</span>
+                        <span className="block truncate text-xs text-muted">{r.characters.map((c, i) => {
+                          const cp = characterPathFor(c.id);
+                          return <span key={c.id}>{i ? ", " : ""}{cp ? <Link href={cp} className="text-violet hover:underline">{c.name}</Link> : c.name}</span>;
+                        })}</span>
                       </span>
                       <span className={`shrink-0 rounded px-1.5 py-0.5 text-[10px] font-semibold uppercase ${r.role === "MAIN" ? "bg-accent/20 text-accent-2" : "bg-white/5 text-muted"}`}>{r.role.toLowerCase()}</span>
                     </li>

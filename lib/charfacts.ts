@@ -105,3 +105,57 @@ export function factsTitle(keys: string[], hasVoice: boolean): string {
 export function ageAnswer(name: string, age: string): string {
   return /^\d{1,4}$/.test(age) ? `${name} is ${age} years old.` : `${name}'s age is listed as ${age}.`;
 }
+
+const SIGNS: [string, number, number][] = [
+  ["Capricorn", 1, 19], ["Aquarius", 2, 18], ["Pisces", 3, 20], ["Aries", 4, 19], ["Taurus", 5, 20], ["Gemini", 6, 20],
+  ["Cancer", 7, 22], ["Leo", 8, 22], ["Virgo", 9, 22], ["Libra", 10, 22], ["Scorpio", 11, 21], ["Sagittarius", 12, 21],
+];
+/** Western zodiac sign for a birthday (each sign ends on the listed day of its month). Pure. */
+export function zodiac(m: number, d: number): string | null {
+  if (!(m >= 1 && m <= 12 && d >= 1 && d <= 31)) return null;
+  const [sign, , end] = SIGNS[m - 1];
+  return d <= end ? sign : SIGNS[m % 12][0];
+}
+
+/** Other names fans search by, from every source: no duplicates, never the main or Japanese name. Pure. */
+export function aliasList(name: string, nameJp: string | null, ...lists: (string[] | null | undefined)[]): string[] {
+  const seen = new Set([name, nameJp || ""].map((x) => x.toLowerCase().trim()));
+  const out: string[] = [];
+  for (const x of lists.flat()) {
+    // "Near (ニア)" → "Near": the Japanese spelling is already on the page.
+    const v = (x || "").replace(/\s*\([^)]*[\u3040-\u30ff\u4e00-\u9fff][^)]*\)/g, "").replace(/\s+/g, " ").trim();
+    if (!v || v.length > 40 || seen.has(v.toLowerCase())) continue;
+    seen.add(v.toLowerCase());
+    out.push(v);
+  }
+  return out.slice(0, 4);
+}
+
+/** A plain number or measurement reads as prose; ranges and per-arc lists ("149cm (I), 161cm (II)") are quoted. */
+const single = (v: string) => !/\s[-–~]\s|[-–~]\s*\d|,|\/|;/.test(v.replace(/\(\d+'\d+½?"\)/g, ""));
+
+/**
+ * The one-paragraph answer at the top of a character page: who they are, age, height, birthday (with sign) and
+ * voices, in that order, skipping whatever isn't known. Written to be quotable as a search snippet. Pure.
+ */
+export function quickAnswer(x: {
+  name: string; gender?: string | null; role?: "main" | "supporting" | null; anime?: string | null;
+  age?: string; height?: string; birthday?: string; sign?: string | null; jp?: string | null; en?: string | null;
+}): string {
+  const g = (x.gender || "").toLowerCase();
+  const [he, his] = g === "male" ? ["He", "His"] : g === "female" ? ["She", "Her"] : [x.name, `${x.name}'s`];
+  const out: string[] = [];
+  if (x.anime) out.push(`${x.name} is ${x.role === "main" ? "a main" : "a supporting"} character in ${x.anime}.`);
+  const age = x.age && /^\d{1,4}$/.test(x.age) ? `${x.age} years old` : null;
+  const tall = x.height && single(x.height) ? `${x.height} tall` : null;
+  if (age && tall) out.push(`${he} is ${age} and ${tall}.`);
+  else {
+    if (age) out.push(`${he} is ${age}.`);
+    else if (x.age) out.push(`${his} age is listed as ${x.age}.`);
+    if (tall) out.push(`${he} is ${tall}.`);
+    else if (x.height) out.push(`${his} height is listed as ${x.height}.`);
+  }
+  if (x.birthday) out.push(`${his} birthday is ${x.birthday}${x.sign ? `, which makes ${g === "male" ? "him" : g === "female" ? "her" : "them"} ${/^[AEIOU]/.test(x.sign) ? "an" : "a"} ${x.sign}` : ""}.`);
+  if (x.jp) out.push(`${he} is voiced by ${x.jp} in Japanese${x.en ? ` and by ${x.en} in the English dub` : ""}.`);
+  return out.join(" ");
+}

@@ -38,3 +38,11 @@ export function castRank<T extends { id: number; favourites: number }>(cast: T[]
   const i = sorted.findIndex((c) => c.id === id);
   return i < 0 ? null : { rank: i + 1, of: sorted.length, sorted };
 }
+
+/** First and most recent title a character appears in (by premiere date); latest is null when it's the debut. */
+export function debutAndLatest<T extends { anime: { id: string; startDate: string | null } }>(apps: T[]): { first: T; latest: T | null } | null {
+  const dated = apps.filter((a) => a.anime.startDate).sort((x, y) => x.anime.startDate!.localeCompare(y.anime.startDate!));
+  if (!dated.length) return null;
+  const last = dated[dated.length - 1];
+  return { first: dated[0], latest: last.anime.id === dated[0].anime.id ? null : last };
+}

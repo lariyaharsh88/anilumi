@@ -15,8 +15,8 @@ function Person({ va, lang, align = "right" }: { va: Va | null; lang: string; al
   );
 }
 
-/** Character on the left, Japanese voice on the right, English dub underneath. */
-export default function CastGrid({ entries }: { entries: CastEntry[] }) {
+/** Character on the left (linked to their page when we have one), Japanese voice on the right, English dub underneath. */
+export default function CastGrid({ entries, links = {} }: { entries: CastEntry[]; links?: Record<number, string> }) {
   return (
     <ul className="grid gap-3 md:grid-cols-2">
       {entries.map((e) => (
@@ -25,7 +25,9 @@ export default function CastGrid({ entries }: { entries: CastEntry[] }) {
             <div className="flex min-w-0 items-center gap-2.5">
               <span className="relative h-16 w-12 shrink-0 overflow-hidden rounded-md bg-bg-2">{e.character.image && <Image src={e.character.image} alt="" fill sizes="48px" className="object-cover" />}</span>
               <span className="min-w-0">
-                <span className="block truncate font-semibold text-ink">{e.character.name}</span>
+                {links[e.character.id]
+                  ? <Link href={links[e.character.id]} className="block truncate font-semibold text-ink hover:text-violet-2 hover:underline">{e.character.name}</Link>
+                  : <span className="block truncate font-semibold text-ink">{e.character.name}</span>}
                 <span className={`mt-0.5 inline-block rounded px-1.5 py-0.5 text-[10px] font-semibold uppercase ${e.role === "MAIN" ? "bg-accent/20 text-accent-2" : "bg-white/5 text-muted"}`}>{e.role.toLowerCase()}</span>
               </span>
             </div>

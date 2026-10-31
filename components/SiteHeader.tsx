@@ -14,6 +14,7 @@ const nav = [
   { href: "/top/rated", label: "Top 100" },
   { href: "/genre", label: "Genres" },
   { href: "/watch-order", label: "Watch orders" },
+  { href: "/characters", label: "Characters" },
   { href: "/lists", label: "Lists" },
 ];
 

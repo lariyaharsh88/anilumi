@@ -29,6 +29,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: abs("/anime-to-manga"), lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     ...continuationSlugs().map((slug) => ({ url: abs(`${animePath({ slug })}/manga`), lastModified: now, changeFrequency: "monthly" as const, priority: 0.6 })),
     { url: abs("/voice-actors"), lastModified: now, changeFrequency: "weekly", priority: 0.6 },
+    { url: abs("/characters"), lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: abs("/anime-openings"), lastModified: now, changeFrequency: "weekly", priority: 0.6 },
     { url: abs("/tier-list"), lastModified: now, changeFrequency: "weekly", priority: 0.6 },
     { url: abs("/what-anime-is-this"), lastModified: now, changeFrequency: "monthly", priority: 0.8 },

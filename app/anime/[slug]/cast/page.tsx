@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Link from "@/components/Link";
 import { notFound } from "next/navigation";
-import { getAnimeBySlug, animePath, posterUrl } from "@/lib/kitsu";
-import { getCast, getKeyStaff, vaPath } from "@/lib/anilist";
+import { getAnimeBySlug, getCharacters, animePath, posterUrl } from "@/lib/kitsu";
+import { getCast, getKeyStaff, vaPath, sameName } from "@/lib/anilist";
+import { characterPathFor } from "@/lib/charsnap";
 import KeyStaff from "@/components/KeyStaff";
 import PageHero from "@/components/PageHero";
 import CastGrid from "@/components/CastGrid";
@@ -16,8 +17,14 @@ type Props = { params: Promise<{ slug: string }> };
 async function load(slug: string) {
   const a = await getAnimeBySlug(decodeURIComponent(slug));
   if (!a) notFound();
-  const [cast, staff] = await Promise.all([getCast(a.id, 25, true), getKeyStaff(a.id)]);
-  return { a, cast, staff };
+  // Kitsu's main cast (same request as the anime page, so usually cached) links characters the snapshot doesn't know.
+  const [cast, staff, kitsuCast] = await Promise.all([getCast(a.id, 25, true), getKeyStaff(a.id), getCharacters(a.id, 12)]);
+  const charLinks: Record<number, string> = {};
+  for (const e of cast?.entries || []) {
+    const k = characterPathFor(e.character.id) ?? kitsuCast.find((x) => sameName(x.name, e.character.name))?.slug;
+    if (k) charLinks[e.character.id] = k.startsWith("/") ? k : `/character/${k}`;
+  }
+  return { a, cast, staff, charLinks };
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -39,7 +46,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function CastPage({ params }: Props) {
   const { slug } = await params;
-  const { a, cast, staff } = await load(slug);
+  const { a, cast, staff, charLinks } = await load(slug);
   const entries = cast?.entries || [];
   const mains = entries.filter((e) => e.role === "MAIN");
   const hasDub = entries.some((e) => e.en);
@@ -67,7 +74,7 @@ export default async function CastPage({ params }: Props) {
         backdrop={a.cover?.large || null}
         posters={mains.length >= 2 ? mains.slice(0, 3).map((e) => e.character.image) : [posterUrl(a, "medium")]}
       />
-      {entries.length > 0 && <section className="reveal mt-10"><CastGrid entries={entries} /></section>}
+      {entries.length > 0 && <section className="reveal mt-10"><CastGrid entries={entries} links={charLinks} /></section>}
       {staff.length > 0 && <section className="reveal mt-10"><h2 className="h-section mb-3">Key staff</h2><KeyStaff staff={staff} /></section>}
       <AdSlot slot="cast-mid" />
       <p className="mt-8 text-sm text-muted">

@@ -2,6 +2,7 @@ import Link from "@/components/Link";
 import Image from "next/image";
 import { animePath } from "@/lib/kitsu";
 import { vaPath } from "@/lib/anilist";
+import { characterPathFor } from "@/lib/charsnap";
 import { bdLabel, bdPath, nextDays, birthdaysOn, MONTHS, cap, type BdChar, type BdPerson } from "@/lib/birthdays";
 import PageHero from "./PageHero";
 import Faq from "./Faq";
@@ -35,7 +36,8 @@ export default function BirthdayView({ m, d, characters, people, today = false }
                   <span className="block truncate text-xs text-muted">{c.t}</span>
                 </>
               );
-              return <li key={c.id}>{c.s ? <Link href={animePath({ slug: c.s })} className="group block">{body}</Link> : <div className="group">{body}</div>}</li>;
+              const href = characterPathFor(c.id) ?? (c.s ? animePath({ slug: c.s }) : null);
+              return <li key={c.id}>{href ? <Link href={href} className="group block">{body}</Link> : <div className="group">{body}</div>}</li>;
             })}
           </ul>
         </section>

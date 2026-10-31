@@ -6,7 +6,7 @@
 import { readFileSync, writeFileSync } from "node:fs";
 
 const FILE = new URL("../data/characters.json", import.meta.url);
-const data = JSON.parse(readFileSync(FILE, "utf8")) as { generated: string; characters: { n: string; s: string; k?: string }[] };
+const data = JSON.parse(readFileSync(FILE, "utf8")) as { generated: string; characters: { n: string; s: string; k?: string; al?: string[] }[] };
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 const H = { Accept: "application/vnd.api+json", "User-Agent": "AniLumi data refresh (+https://anilumi.in)" };
 const key = (s: string) => s.normalize("NFKD").replace(/[̀-ͯ]/g, "").toLowerCase().split(/[^a-z0-9]+/).filter((w) => w.length > 1).sort();
@@ -41,15 +41,17 @@ for (const slug of shows) {
   const id = ids.get(slug);
   done++;
   if (!id) continue;
-  // First page of the cast (main roles first); a second page only if someone is still unmatched.
-  for (let offset = 0; offset <= 20 && want.some((c) => !c.k); offset += 20) {
+  // First page of the cast (main roles first); more pages (up to 60 characters) only while someone is unmatched.
+  for (let offset = 0; offset <= 40 && want.some((c) => !c.k); offset += 20) {
     const j = await get<{ included?: { type: string; attributes: { slug: string; canonicalName: string } }[] }>(
       `https://kitsu.io/api/edge/anime/${id}/characters?include=character&fields[characters]=slug,canonicalName&fields[mediaCharacters]=character&sort=role&page[limit]=20&page[offset]=${offset}`,
     );
     const cast = (j?.included || []).filter((x) => x.type === "characters");
     for (const c of want) {
       if (c.k) continue;
-      const hits = cast.filter((x) => same(c.n, x.attributes.canonicalName));
+      // Then by other names: Kitsu may list "Eren Jaeger" where AniList says "Eren Yeager".
+      let hits = cast.filter((x) => same(c.n, x.attributes.canonicalName));
+      if (!hits.length && c.al) hits = cast.filter((x) => c.al!.some((n) => same(n, x.attributes.canonicalName)));
       if (hits.length === 1) { c.k = hits[0].attributes.slug; matched++; }
     }
     await sleep(250);

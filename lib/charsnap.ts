@@ -12,12 +12,18 @@ export type SnapChar = {
   l: [string, string][]; a: number; s: string; t: string; jp: Person; en: Person;
   /** Kitsu character page slug, when scripts/map-character-slugs.mts could match it. */
   k?: string;
+  /** Other names ("Eren Jaeger"), never spoiler names. */
+  al?: string[];
+  /** AniList image file name, without CHAR_IMG. */
+  i?: string;
 };
+const CHAR_IMG = "https://s4.anilist.co/file/anilistcdn/character/medium/";
 const chars = (data as { characters: SnapChar[] }).characters;
 
 const nameKey = (s: string) => s.normalize("NFKD").replace(/[̀-ͯ]/g, "").toLowerCase().split(/[^a-z0-9]+/).filter(Boolean).sort().join(" ");
 let byName: Map<string, SnapChar[]> | null = null;
 let byAnime: Map<number, SnapChar[]> | null = null;
+let pathById: Map<number, string> | null = null;
 
 let bySlug: Map<string, SnapChar[]> | null = null;
 const words = (s: string) => new Set(nameKey(s).split(" ").filter((w) => w.length > 1));
@@ -54,6 +60,18 @@ export const snapToAniList = (c: SnapChar): AniListCharacter => ({
 /** Kitsu page slugs of the most-favourited snapshot characters, for the sitemap. */
 export const topCharacterSlugs = (limit = 1000): string[] =>
   [...chars].filter((c) => c.k).sort((a, b) => b.f - a.f).slice(0, limit).map((c) => c.k!);
+
+/** Our character page for an AniList character id, if the snapshot matched one (cast, voice-actor and birthday pages link through this). */
+export function characterPathFor(anilistId: number): string | null {
+  pathById ??= new Map(chars.filter((c) => c.k).map((c) => [c.id, `/character/${c.k}`]));
+  return pathById.get(anilistId) ?? null;
+}
+
+/** AniList keeps the same file name at /large/ (230px wide) as at /medium/ (100px). */
+export const snapImage = (c: SnapChar, size: "medium" | "large" = "medium"): string | null => (c.i ? (size === "large" ? CHAR_IMG.replace("/medium/", "/large/") : CHAR_IMG) + c.i : null);
+
+/** Most-favourited characters that have a page here, for the /characters hub. */
+export const popularCharacters = (limit = 100): SnapChar[] => [...chars].filter((c) => c.k).sort((a, b) => b.f - a.f).slice(0, limit);
 
 export const snapGenerated = (data as { generated: string }).generated;
 

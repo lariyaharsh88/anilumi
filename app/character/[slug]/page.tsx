@@ -9,8 +9,8 @@ import JsonLd from "@/components/JsonLd";
 import Faq from "@/components/Faq";
 import { getCast, getAniListCharacter, sameName, vaPath, type Va } from "@/lib/anilist";
 import { snapFor, showRanking, snapToAniList } from "@/lib/charsnap";
-import { parseKitsuBio, mergeFacts, factsTitle, ageAnswer } from "@/lib/charfacts";
-import { formatMix, yearsActive, perYear, castRank } from "@/lib/charstats";
+import { parseKitsuBio, mergeFacts, factsTitle, ageAnswer, zodiac, aliasList, quickAnswer } from "@/lib/charfacts";
+import { formatMix, yearsActive, perYear, castRank, debutAndLatest } from "@/lib/charstats";
 import StatTiles from "@/components/viz/StatTiles";
 import BarChart from "@/components/viz/BarChart";
 import StackedBar from "@/components/viz/StackedBar";
@@ -61,21 +61,29 @@ async function load(slug: string) {
   if (bday && !facts.some((f) => f.key === "birthday")) facts.splice(facts.findIndex((f) => f.key !== "age") < 0 ? facts.length : facts.findIndex((f) => f.key !== "age"), 0, { key: "birthday", label: "Birthday", value: bdLabel(bday.m, bday.d) });
   const fact = (k: string) => facts.find((f) => f.key === k)?.value;
   const ranked = castRank(ranking, voiced?.character.id);
-  return { c, apps, mains, home, homeApp, voiced, bday, facts, fact, bio, al, ranked, rankShow, snapped: Boolean(snap), others: others.filter((o) => o.id !== c.id).slice(0, 12) };
+  const aliases = aliasList(c.name, c.nameJp, c.otherNames, snap?.al);
+  const born = bday ? { m: bday.m, d: bday.d } : al?.dateOfBirth?.month && al.dateOfBirth.day ? { m: al.dateOfBirth.month, d: al.dateOfBirth.day } : null;
+  const sign = born ? zodiac(born.m, born.d) : null;
+  const span = debutAndLatest(apps);
+  // Only a one-word nickname that isn't part of the name goes in the title: "Nate River "Near"", "Touka Kirishima "Rabbit"".
+  // Kitsu's list only: AniList's alternatives are mostly spellings ("Ryuu" for Ryuk).
+  const nick = (c.otherNames || []).find((x) => /^[\p{L}'-]{2,12}$/u.test(x) && !c.name.toLowerCase().includes(x.toLowerCase())) ?? null;
+  return { c, apps, mains, home, homeApp, voiced, bday, facts, fact, bio, al, ranked, rankShow, snapped: Boolean(snap), others: others.filter((o) => o.id !== c.id).slice(0, 12), aliases, sign, span, nick };
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const { c, home, voiced, facts, fact, bio } = await load(slug);
+  const { c, home, voiced, facts, fact, bio, aliases, nick } = await load(slug);
   // Searchers want quick facts (age, height, birthday, voice actor), so the title and snippet lead with them.
   const what = factsTitle(facts.map((f) => f.key), Boolean(voiced?.jp));
   const brief = [fact("age") && `age ${fact("age")}`, fact("height") && `${fact("height")} tall`, fact("birthday") && `birthday ${fact("birthday")}`].filter(Boolean).join(", ");
   const lead = [
     home && `${c.name} from ${home.title}${brief ? `: ${brief}` : ""}.`,
     voiced?.jp && `Voiced by ${voiced.jp.name} (Japanese)${voiced.en ? ` and ${voiced.en.name} (English)` : ""}.`,
+    aliases.length > 0 && `Also known as ${aliases.slice(0, 2).join(" and ")}.`,
   ].filter(Boolean).join(" ");
   return {
-    title: `${c.name}${home ? ` (${home.title})` : ""}: ${what ? `${what}` : "Character Profile & Appearances"}`,
+    title: `${c.name}${nick ? ` "${nick}"` : ""}${home ? ` (${home.title})` : ""}: ${what ? `${what}` : "Character Profile & Appearances"}`,
     description: ((lead ? `${lead} ` : "") + (bio ? bio.slice(0, 120).replace(/\s+\S*$/, "") + "…" : `Every anime ${c.name} appears in.`)).slice(0, 300),
     alternates: { canonical: `/character/${c.slug}` },
     openGraph: c.image ? { images: [{ url: c.image }] } : undefined,
@@ -84,8 +92,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function CharacterPage({ params }: Props) {
   const { slug } = await params;
-  const { c, apps, mains, home, homeApp, voiced, bday, facts, fact, bio, al, ranked, rankShow, snapped, others } = await load(slug);
+  const { c, apps, mains, home, homeApp, voiced, bday, facts, fact, bio, al, ranked, rankShow, snapped, others, aliases, sign, span: firsts } = await load(slug);
   const span = yearsActive(apps);
+  const answer = quickAnswer({
+    name: c.name, gender: fact("gender"), role: home ? (homeApp?.role === "main" ? "main" : "supporting") : null, anime: home?.title,
+    age: fact("age"), height: fact("height"), birthday: fact("birthday"), sign, jp: voiced?.jp?.name, en: voiced?.en?.name,
+  });
+  const appLabel = (x: { anime: { title: string; startDate: string | null } }) => `${x.anime.title}${x.anime.startDate ? ` (${x.anime.startDate.slice(0, 4)})` : ""}`;
   const formats = formatMix(apps);
   const years = perYear(apps);
   const favs = al?.favourites || 0;
@@ -98,7 +111,8 @@ export default async function CharacterPage({ params }: Props) {
     ...(span ? [{ label: "On screen", value: span.from === span.to ? String(span.from) : `${span.from}–${span.to}`, sub: span.to > span.from ? `${span.to - span.from + 1} years` : "one year", still: true }] : []),
   ];
   const voices = voiced ? [voiced.jp && { va: voiced.jp, lang: "Japanese" }, voiced.en && { va: voiced.en, lang: "English dub" }].filter((x): x is NonNullable<typeof x> => Boolean(x)) : [];
-  const ld = { "@context": "https://schema.org", "@type": "Person", name: c.name, alternateName: c.nameJp || undefined, image: c.image || undefined, description: bio || undefined, url: abs(`/character/${c.slug}`) };
+  const alternateName = [c.nameJp, ...aliases].filter(Boolean);
+  const ld = { "@context": "https://schema.org", "@type": "Person", name: c.name, alternateName: alternateName.length ? alternateName : undefined, image: c.image || undefined, description: bio || undefined, url: abs(`/character/${c.slug}`) };
   return (
     <article className="container-x pb-8">
       <JsonLd data={ld} />
@@ -117,11 +131,18 @@ export default async function CharacterPage({ params }: Props) {
       >
         {c.image && (
           <div className="relative -mt-1 aspect-[5/6] w-36 overflow-hidden rounded-2xl border border-white/15 shadow-2xl lg:hidden">
-            <Image src={c.image} alt={c.name} fill sizes="144px" className="object-cover" priority />
+            <Image src={c.image} alt={home ? `${c.name} from ${home.title}` : c.name} fill sizes="144px" className="object-cover" priority />
           </div>
         )}
       </PageHero>
-      <div className="mt-8 grid gap-5 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.5fr)] lg:items-start">
+      {answer && (
+        <section className="reveal mt-8 rounded-2xl border-2 border-violet/40 bg-violet/[.06] p-4 sm:p-5" aria-labelledby="answer-h">
+          <h2 id="answer-h" className="flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-violet-2"><span aria-hidden>⚡</span> {c.name} at a glance</h2>
+          <p className="mt-2 text-base leading-7 text-ink sm:text-lg">{answer}</p>
+          {aliases.length > 0 && <p className="mt-2 text-sm text-muted">Also known as {aliases.map((x, i) => <span key={x}>{i ? ", " : ""}<strong className="font-semibold text-ink/85">{x}</strong></span>)}.</p>}
+        </section>
+      )}
+      <div className="mt-5 grid gap-5 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.5fr)] lg:items-start">
         <section className="card reveal p-5" aria-labelledby="facts-h">
           <h2 id="facts-h" className="text-xs font-semibold uppercase tracking-wider text-muted">{c.name}: quick facts</h2>
           <dl className="mt-3 divide-y divide-line/60 text-sm">
@@ -133,6 +154,10 @@ export default async function CharacterPage({ params }: Props) {
                 <dd className="text-right font-medium">{f.key === "birthday" && bday ? <Link href={bdPath(bday.m, bday.d)} className="text-violet hover:underline">{f.value}</Link> : f.value}</dd>
               </div>
             ))}
+            {sign && <div className="flex justify-between gap-4 py-2"><dt className="text-muted">Zodiac sign</dt><dd className="text-right font-medium">{sign}</dd></div>}
+            {aliases.length > 0 && <div className="flex justify-between gap-4 py-2"><dt className="shrink-0 text-muted">Also known as</dt><dd className="text-right font-medium">{aliases.join(", ")}</dd></div>}
+            {firsts && <div className="flex justify-between gap-4 py-2"><dt className="shrink-0 text-muted">First appearance</dt><dd className="text-right font-medium"><Link href={animePath(firsts.first.anime)} className="text-violet hover:underline">{appLabel(firsts.first)}</Link></dd></div>}
+            {firsts?.latest && <div className="flex justify-between gap-4 py-2"><dt className="shrink-0 text-muted">Latest appearance</dt><dd className="text-right font-medium"><Link href={animePath(firsts.latest.anime)} className="text-violet hover:underline">{appLabel(firsts.latest)}</Link></dd></div>}
             {c.nameJp && <div className="flex justify-between gap-4 py-2"><dt className="text-muted">Japanese name</dt><dd className="text-right font-medium">{c.nameJp}</dd></div>}
             {voices.map(({ va, lang }) => (
               <div key={va.id} className="flex items-center justify-between gap-4 py-2">
@@ -144,10 +169,11 @@ export default async function CharacterPage({ params }: Props) {
           <p className="mt-3 flex flex-wrap gap-2 text-sm">
             {bday && <Link href={bdPath(bday.m, bday.d)} className="chip">🎂 Everyone born on {bdLabel(bday.m, bday.d)}</Link>}
             {home && <Link href={`${animePath(home)}/cast`} className="chip">Full {home.title} cast</Link>}
+            <Link href="/characters" className="chip">👤 Most popular characters</Link>
           </p>
         </section>
         <section className="card reveal p-5 sm:p-6" aria-labelledby="bio-h">
-          <h2 id="bio-h" className="h-section mb-2">Biography</h2>
+          <h2 id="bio-h" className="h-section mb-2">Who is {c.name}?</h2>
           <p className="prose-anime whitespace-pre-line">{bio || "No biography has been written for this character yet."}</p>
         </section>
       </div>
@@ -218,6 +244,11 @@ export default async function CharacterPage({ params }: Props) {
           ...(fact("height") ? [{ q: `How tall is ${c.name}?`, a: `${c.name} is ${fact("height")} tall.` }] : []),
           ...(bday ? [{ q: `When is ${c.name}'s birthday?`, a: `${c.name}'s birthday is ${bdLabel(bday.m, bday.d)}. See every anime character born on ${bdLabel(bday.m, bday.d)} on AniLumi's birthday page.` }] : fact("birthday") ? [{ q: `When is ${c.name}'s birthday?`, a: `${c.name}'s birthday is ${fact("birthday")}.` }] : []),
           ...(voiced?.jp ? [{ q: `Who voices ${c.name}?`, a: `${c.name} is voiced by ${voiced.jp.name} in Japanese${voiced.en ? ` and by ${voiced.en.name} in the English dub` : ""}.` }] : []),
+          // "Sakura Haruno" → "What is Sakura's full name?"; skipped for "Monkey D. Luffy" style names, whose first word isn't the given name.
+          ...(c.name.split(" ").length === 2 ? [{ q: `What is ${c.name.split(" ")[0]}'s full name?`, a: `${c.name.split(" ")[0]}'s full name is ${c.name}${c.nameJp ? ` (${c.nameJp} in Japanese)` : ""}.${aliases.length ? ` ${c.name} is also known as ${aliases.join(", ")}.` : ""}` }] : []),
+          ...(aliases.length && c.name.split(" ").length !== 2 ? [{ q: `What else is ${c.name} called?`, a: `${c.name} is also known as ${aliases.join(", ")}.` }] : []),
+          ...(sign && fact("birthday") ? [{ q: `What is ${c.name}'s zodiac sign?`, a: `${c.name} is ${/^[AEIOU]/.test(sign) ? "an" : "a"} ${sign}: ${fact("gender")?.toLowerCase() === "female" ? "her" : fact("gender")?.toLowerCase() === "male" ? "his" : "the"} birthday is ${fact("birthday")}.` }] : []),
+          ...(firsts ? [{ q: `When did ${c.name} first appear?`, a: `${c.name} first appeared in ${appLabel(firsts.first)}${firsts.latest ? ` and most recently appeared in ${appLabel(firsts.latest)}` : ""}.` }] : []),
           ...(c.nameJp ? [{ q: `What is ${c.name}'s Japanese name?`, a: `${c.name} is written ${c.nameJp} in Japanese.` }] : []),
           { q: `Where can I watch ${c.name}?`, a: home ? `Open the ${home.title} page for licensed streaming links and the full episode list.` : "Streaming links are listed on each anime page." },
         ]}
