@@ -336,8 +336,8 @@ export default async function AnimePage({ params }: Props) {
             </div>
           </div>
 
-          <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 md:items-start">
-          <div id="watch" data-section className="rounded-2xl border-2 border-accent/50 bg-accent/[.07] p-4 shadow-[0_0_45px_-18px_rgba(255,77,109,.7)] backdrop-blur sm:p-5">
+          <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 md:grid-rows-[auto_1fr]">
+          <div id="watch" data-section className="self-start rounded-2xl md:col-start-1 md:row-start-1 border-2 border-accent/50 bg-accent/[.07] p-4 shadow-[0_0_45px_-18px_rgba(255,77,109,.7)] backdrop-blur sm:p-5">
             <WhereToWatch
               animeId={a.id}
               title={a.title}
@@ -349,7 +349,9 @@ export default async function AnimePage({ params }: Props) {
               <p className="mt-2 text-sm text-muted">No licensed streams listed yet. <a href={amazonSearch(`${a.title} manga`)} target="_blank" rel={affiliateRel} className="text-violet hover:underline">Read the manga on Amazon →</a></p>
             )}
           </div>
-          <WatchOrderCard anime={a} order={order} relations={relations} />
+          <WatchOrderCard anime={a} order={order} relations={relations} className="md:col-start-2 md:row-span-2 md:row-start-1" />
+          {/* Fills the space under Where to watch; the watch-order answer is the card beside it. */}
+          <QuickAnswers title={a.title} items={glance.filter((x) => !x.href.startsWith("/watch-order/"))} className="md:col-start-1 md:row-start-2" />
           </div>
           {community && (a.status === "current" || !released) && (
             <LeadForm
@@ -374,7 +376,6 @@ export default async function AnimePage({ params }: Props) {
           {/* ───────── Overview ───────── */}
           <section id="overview" data-section aria-labelledby="h-overview">
             {note && <EditorNote title={a.title} note={note} />}
-            <QuickAnswers title={a.title} items={glance} />
             <h2 id="h-overview" className="h-section mb-3">Synopsis</h2>
             {a.synopsis ? <ClampText text={a.synopsis} lines={5} /> : <p className="text-muted">No synopsis available yet.</p>}
             {a.youtubeVideoId && (
