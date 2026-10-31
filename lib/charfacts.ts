@@ -159,3 +159,21 @@ export function quickAnswer(x: {
   if (x.jp) out.push(`${he} is voiced by ${x.jp} in Japanese${x.en ? ` and by ${x.en} in the English dub` : ""}.`);
   return out.join(" ");
 }
+
+/**
+ * Height in cm from however a source writes it: "170 cm (5'7") - 183 cm (6'0")", "~300cm", "149cm (I), 161cm (II)",
+ * or feet only ("5'7""). Ranges and per-arc lists give the largest value (the grown-up, latest height). Pure.
+ */
+export function heightCm(v: string | null | undefined): number | null {
+  if (!v) return null;
+  const cm = [...v.matchAll(/(\d{2,3}(?:\.\d)?)\s*cm/gi)].map((m) => Number(m[1]));
+  if (!cm.length) for (const m of v.matchAll(/(\d)\s*['’′]\s*(\d{1,2}(?:\.\d)?)?/g)) cm.push(Math.round((Number(m[1]) * 12 + Number(m[2] || 0)) * 2.54));
+  const ok = cm.filter((n) => n >= 20 && n <= 1000);
+  return ok.length ? Math.max(...ok) : null;
+}
+
+/** Age as a number for sorting ("15" → 15, "17-18" → 17, "800+" → 800); null when no number is given. Pure. */
+export function ageNum(v: string | null | undefined): number | null {
+  const m = (v || "").match(/\d{1,4}/);
+  return m ? Number(m[0]) : null;
+}

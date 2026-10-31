@@ -128,3 +128,27 @@ test("debutAndLatest picks first and most recent dated titles", async () => {
   assert.equal(debutAndLatest([a("1", "2013-04-07")])!.latest, null);
   assert.equal(debutAndLatest([a("1", null)]), null);
 });
+
+test("heightCm reads cm, ranges, per-arc lists and feet", async () => {
+  const { heightCm, ageNum } = await import("../lib/charfacts");
+  assert.equal(heightCm(`170 cm (5'7") - 183 cm (6'0")`), 183);
+  assert.equal(heightCm("149cm (I), 161cm (II)"), 161);
+  assert.equal(heightCm("~300cm (~9'10\")"), 300);
+  assert.equal(heightCm("177.5 cm (5'10\")"), 177.5);
+  assert.equal(heightCm("154 cm (5’1”)"), 154);
+  assert.equal(heightCm(`5'7"`), 170);
+  assert.equal(heightCm("tall"), null);
+  assert.equal(heightCm(null), null);
+  assert.deepEqual(["15", "17-18", "800+", "unknown", null].map(ageNum), [15, 17, 800, null, null]);
+});
+
+test("characterTable needs enough people and data, sorted by favourites", async () => {
+  const { characterTable } = await import("../lib/charsnap");
+  const mk = (id: number, f: number, h: string | null, age: string | null = null) => ({ id, n: `C${id}`, f, age, g: null, bt: null, m: null, d: null, l: h ? [["Height", h]] as [string, string][] : [], a: 1, s: "show", t: "Show", jp: null, en: null });
+  const four = [mk(1, 10, "170 cm"), mk(2, 30, "160 cm"), mk(3, 20, "150 cm"), mk(4, 5, null)];
+  assert.deepEqual(characterTable("show", four)!.map((r) => [r.c.id, r.cm]), [[2, 160], [3, 150], [1, 170], [4, null]]);
+  assert.equal(characterTable("show", four.slice(0, 3)), null); // too few people
+  assert.equal(characterTable("show", [mk(1, 1, null), mk(2, 1, null), mk(3, 1, "150 cm"), mk(4, 1, null)]), null); // too little data
+  assert.ok(characterTable("show", [mk(1, 1, null, "15"), mk(2, 1, null, "16"), mk(3, 1, null, "17"), mk(4, 1, null)]));
+  assert.equal(characterTable("other", four), null);
+});

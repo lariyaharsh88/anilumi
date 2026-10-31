@@ -4,7 +4,7 @@
  * only ~30 requests a minute and failed calls used to leave pages without voice actors or favourites. Pure.
  */
 import data from "@/data/characters.json";
-import type { AniListCharacter } from "./charfacts";
+import { ageNum, heightCm, type AniListCharacter } from "./charfacts";
 
 type Person = { id: number; n: string; i: string | null } | null;
 export type SnapChar = {
@@ -80,3 +80,24 @@ function group<K>(xs: SnapChar[], key: (c: SnapChar) => K): Map<K, SnapChar[]> {
   for (const x of xs) m.set(key(x), [...(m.get(key(x)) || []), x]);
   return m;
 }
+
+export type TableRow = { c: SnapChar; age: string | null; ageN: number | null; height: string | null; cm: number | null };
+let bySlug2: Map<string, SnapChar[]> | null = null;
+
+/**
+ * The snapshot characters of one anime (by its Kitsu slug), most-favourited first, with age and height parsed,
+ * or null when there's too little to make a useful table: at least 4 characters with 3 known heights or ages.
+ */
+export function characterTable(animeSlug: string, src: SnapChar[] = chars): TableRow[] | null {
+  if (src === chars) bySlug2 ??= group(chars, (c) => c.s);
+  const list = src === chars ? bySlug2!.get(animeSlug) || [] : src.filter((c) => c.s === animeSlug);
+  const rows = [...list].sort((a, b) => b.f - a.f).map((c) => {
+    const height = c.l.find(([k]) => k.toLowerCase() === "height")?.[1] ?? null;
+    return { c, age: c.age, ageN: ageNum(c.age), height, cm: heightCm(height) };
+  });
+  const known = (f: (r: TableRow) => unknown) => rows.filter(f).length;
+  return rows.length >= 4 && (known((r) => r.cm) >= 3 || known((r) => r.ageN !== null) >= 3) ? rows : null;
+}
+
+/** Anime slugs that get a characters table (sitemap, anime page links). */
+export const characterTableSlugs = (): string[] => [...new Set(chars.map((c) => c.s))].filter((s) => characterTable(s));

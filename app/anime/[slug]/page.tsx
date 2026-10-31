@@ -20,6 +20,7 @@ import SpoilerGate from "@/components/SpoilerGate";
 import StoryGuide from "@/components/StoryGuide";
 import EditorNote from "@/components/EditorNote";
 import QuickAnswers, { type Answer } from "@/components/QuickAnswers";
+import { characterTable } from "@/lib/charsnap";
 import { ageLabel } from "@/lib/insights";
 import { noteFor } from "@/data/notes";
 import RatingWidget from "@/components/RatingWidget";
@@ -153,6 +154,8 @@ export default async function AnimePage({ params }: Props) {
   const base = animePath(a);
   const fillerInfo = a.subtype === "movie" ? null : fillerFor(a.slug, a.episodeCount ?? (lastAired || null));
   const cont = continuationFor(a.slug);
+  const charRows = characterTable(a.slug);
+  const charTall = charRows?.filter((r) => r.cm).sort((x, y) => y.cm! - x.cm!)[0] ?? null;
   const glance: Answer[] = [
     ...(runtime ? [{ q: "How long to watch", a: runtime >= 120 ? `About ${Math.round(runtime / 60)} hours${a.status === "current" ? " so far" : ""}` : `${runtime} minutes`, href: `${base}/how-long-to-watch` }] : []),
     ...(fillerInfo ? [{ q: "Filler episodes", a: `${fillerInfo.count} of ${fillerInfo.total} (${fillerInfo.share.toFixed(0)}%)`, href: `${base}/filler-list` }] : []),
@@ -160,6 +163,7 @@ export default async function AnimePage({ params }: Props) {
     ...(franchise.length ? [{ q: "Watch order", a: "Every season, movie and OVA in order", href: `/watch-order/${a.slug}` }] : []),
     ...(cont ? [{ q: `Continue in the ${cont.medium}`, a: cont.chapter ? `From chapter ${cont.chapter}` : `From volume ${cont.volume}`, href: `${base}/manga` }] : []),
     { q: "Cast & voice actors", a: "Who voices who", href: `${base}/cast` },
+    ...(charRows ? [{ q: "Characters' ages & heights", a: charTall ? `Tallest: ${charTall.c.n}, ${charTall.cm} cm` : `${charRows.length} characters compared`, href: `${base}/characters` }] : []),
     ...(a.subtype !== "movie" && a.status === "finished" ? [{ q: "Season 2?", a: "Status and release date", href: `${base}/next-season` }] : []),
   ];
   const faqExtra: FaqItem[] = [];

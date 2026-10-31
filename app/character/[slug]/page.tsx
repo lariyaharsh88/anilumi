@@ -8,7 +8,7 @@ import PageHero from "@/components/PageHero";
 import JsonLd from "@/components/JsonLd";
 import Faq from "@/components/Faq";
 import { getCast, getAniListCharacter, sameName, vaPath, type Va } from "@/lib/anilist";
-import { snapFor, showRanking, snapToAniList } from "@/lib/charsnap";
+import { snapFor, showRanking, snapToAniList, characterTable } from "@/lib/charsnap";
 import { parseKitsuBio, mergeFacts, factsTitle, ageAnswer, zodiac, aliasList, quickAnswer } from "@/lib/charfacts";
 import { formatMix, yearsActive, perYear, castRank, debutAndLatest } from "@/lib/charstats";
 import StatTiles from "@/components/viz/StatTiles";
@@ -65,10 +65,13 @@ async function load(slug: string) {
   const born = bday ? { m: bday.m, d: bday.d } : al?.dateOfBirth?.month && al.dateOfBirth.day ? { m: al.dateOfBirth.month, d: al.dateOfBirth.day } : null;
   const sign = born ? zodiac(born.m, born.d) : null;
   const span = debutAndLatest(apps);
+  // Their series' character table (ages and heights), when the snapshot has enough of the cast.
+  const table = snap ? characterTable(snap.s) : null;
+  const tableShow = snap && table ? { slug: snap.s, title: snap.t, me: snap.id } : null;
   // Only a one-word nickname that isn't part of the name goes in the title: "Nate River "Near"", "Touka Kirishima "Rabbit"".
   // Kitsu's list only: AniList's alternatives are mostly spellings ("Ryuu" for Ryuk).
   const nick = (c.otherNames || []).find((x) => /^[\p{L}'-]{2,12}$/u.test(x) && !c.name.toLowerCase().includes(x.toLowerCase())) ?? null;
-  return { c, apps, mains, home, homeApp, voiced, bday, facts, fact, bio, al, ranked, rankShow, snapped: Boolean(snap), others: others.filter((o) => o.id !== c.id).slice(0, 12), aliases, sign, span, nick };
+  return { c, apps, mains, home, homeApp, voiced, bday, facts, fact, bio, al, ranked, rankShow, snapped: Boolean(snap), others: others.filter((o) => o.id !== c.id).slice(0, 12), aliases, sign, span, nick, table, tableShow };
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -92,12 +95,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function CharacterPage({ params }: Props) {
   const { slug } = await params;
-  const { c, apps, mains, home, homeApp, voiced, bday, facts, fact, bio, al, ranked, rankShow, snapped, others, aliases, sign, span: firsts } = await load(slug);
+  const { c, apps, mains, home, homeApp, voiced, bday, facts, fact, bio, al, ranked, rankShow, snapped, others, aliases, sign, span: firsts, table, tableShow } = await load(slug);
   const span = yearsActive(apps);
   const answer = quickAnswer({
     name: c.name, gender: fact("gender"), role: home ? (homeApp?.role === "main" ? "main" : "supporting") : null, anime: home?.title,
     age: fact("age"), height: fact("height"), birthday: fact("birthday"), sign, jp: voiced?.jp?.name, en: voiced?.en?.name,
   });
+  // Height next to the rest of the cast: the 12 tallest with a known height, always including this character.
+  const tall = (table || []).filter((r) => r.cm).sort((a, b) => b.cm! - a.cm!);
+  const meAt = tableShow ? tall.findIndex((r) => r.c.id === tableShow.me) : -1;
+  const heightBars = meAt < 0 || tall.length < 3 ? [] : [...tall.slice(0, 12), ...(meAt >= 12 ? [tall[meAt]] : [])];
   const appLabel = (x: { anime: { title: string; startDate: string | null } }) => `${x.anime.title}${x.anime.startDate ? ` (${x.anime.startDate.slice(0, 4)})` : ""}`;
   const formats = formatMix(apps);
   const years = perYear(apps);
@@ -169,6 +176,7 @@ export default async function CharacterPage({ params }: Props) {
           <p className="mt-3 flex flex-wrap gap-2 text-sm">
             {bday && <Link href={bdPath(bday.m, bday.d)} className="chip">🎂 Everyone born on {bdLabel(bday.m, bday.d)}</Link>}
             {home && <Link href={`${animePath(home)}/cast`} className="chip">Full {home.title} cast</Link>}
+            {tableShow && <Link href={`/anime/${tableShow.slug}/characters`} className="chip">📏 {tableShow.title} ages &amp; heights</Link>}
             <Link href="/characters" className="chip">👤 Most popular characters</Link>
           </p>
         </section>
@@ -198,6 +206,22 @@ export default async function CharacterPage({ params }: Props) {
               {years.length >= 3 && <BarChart title="Appearances per year" subtitle={years[0].label.endsWith("s") ? "Grouped by five years" : "New titles featuring them"} valueHeading="Titles" integer height={140} data={years.map((y) => ({ ...y, display: `${y.value} ${y.value === 1 ? "title" : "titles"}` }))} />}
             </div>
           </div>
+        </section>
+      )}
+
+      {heightBars.length > 0 && tableShow && (
+        <section className="reveal mt-10" aria-labelledby="height-h">
+          <h2 id="height-h" className="h-section mb-3">How tall is {c.name}?</h2>
+          <BarChart
+            orientation="bar"
+            title={`${c.name} next to the ${tableShow.title} cast`}
+            subtitle={`Height in cm, tallest first. ${c.name} is ${tall[meAt].cm} cm: #${meAt + 1} of ${tall.length} with a listed height.`}
+            valueHeading="Height (cm)"
+            highlightKey={String(tableShow.me)}
+            labelKeys={[String(tableShow.me), String(tall[0].c.id)]}
+            data={heightBars.map((r) => ({ key: String(r.c.id), label: r.c.n, value: r.cm!, display: `${r.cm} cm` }))}
+          />
+          <p className="mt-2 text-sm"><Link href={`/anime/${tableShow.slug}/characters`} className="text-violet hover:underline">Every {tableShow.title} character&apos;s age, height and birthday →</Link></p>
         </section>
       )}
 
