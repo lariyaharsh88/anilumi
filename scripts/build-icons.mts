@@ -1,6 +1,7 @@
 /**
  * Renders every icon from the single mark in lib/brand.ts:
- *   app/favicon.ico (16/32/48) · app/icon.svg · app/apple-icon.png (180, full bleed)
+ *   app/favicon.ico (16/32/48) · app/icon.svg — the bare mark, no tile, for browser tabs
+ *   app/apple-icon.png (180, full bleed)
  *   public/icons/icon-192.png, icon-512.png, maskable-512.png · public/brand/anilumi-mark.svg, -1024.png
  * Run after changing the mark:  npx tsx scripts/build-icons.mts  (PREVIEW=<dir> also writes a contact sheet)
  */
@@ -29,9 +30,9 @@ function ico(images: { size: number; data: Buffer }[]): Buffer {
 mkdirSync(`${root}public/icons`, { recursive: true });
 mkdirSync(`${root}public/brand`, { recursive: true });
 const tile = markSvg();
-writeFileSync(`${root}app/icon.svg`, tile);
+writeFileSync(`${root}app/icon.svg`, markSvg({ shape: "bare" }));
 writeFileSync(`${root}public/brand/anilumi-mark.svg`, tile);
-writeFileSync(`${root}app/favicon.ico`, ico(await Promise.all([16, 32, 48].map(async (s) => ({ size: s, data: await png(markSvg({ size: s }), s) })))));
+writeFileSync(`${root}app/favicon.ico`, ico(await Promise.all([16, 32, 48].map(async (s) => ({ size: s, data: await png(markSvg({ shape: "bare", size: s }), s) })))));
 writeFileSync(`${root}app/apple-icon.png`, await png(markSvg({ shape: "bleed" }), 180));
 writeFileSync(`${root}public/icons/icon-192.png`, await png(tile, 192));
 writeFileSync(`${root}public/icons/icon-512.png`, await png(tile, 512));

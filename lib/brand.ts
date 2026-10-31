@@ -20,8 +20,11 @@ export const SPARKLE = "M45 10.5Q46.3 17.7 53.5 19Q46.3 20.3 45 27.5Q43.7 20.3 3
 export const DOT = { cx: 52.5, cy: 33, r: 2 };
 
 type Opts = {
-  /** "tile" = rounded square (favicons, UI); "bleed" = full square (apple-touch, OS masks it); "maskable" = full square with the mark inside the 80% safe zone. */
-  shape?: "tile" | "bleed" | "maskable";
+  /**
+   * "tile" = rounded square (header, PWA icons); "bleed" = full square (apple-touch, OS masks it); "maskable" = full square
+   * with the mark inside the 80% safe zone; "bare" = just the moon and sparkle, no tile, cropped tight (browser favicon).
+   */
+  shape?: "tile" | "bleed" | "maskable" | "bare";
   size?: number;
   /** Prefix for gradient ids when several marks share a document. */
   id?: string;
@@ -29,6 +32,7 @@ type Opts = {
 
 /** Standalone SVG markup for the mark. */
 export function markSvg({ shape = "tile", size = 64, id = "al" }: Opts = {}): string {
+  if (shape === "bare") return bareSvg(size, id);
   const bg = shape === "tile" ? `<rect width="64" height="64" rx="15" fill="url(#${id}-bg)"/>` : `<rect width="64" height="64" fill="url(#${id}-bg)"/>`;
   const art = `<circle cx="45" cy="19" r="11" fill="url(#${id}-glow)"/><path d="${CRESCENT}" fill="url(#${id}-moon)"/><path d="${SPARKLE}" fill="url(#${id}-star)"/><circle cx="${DOT.cx}" cy="${DOT.cy}" r="${DOT.r}" fill="#fff" fill-opacity=".85"/>`;
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 64 64">
@@ -39,6 +43,20 @@ export function markSvg({ shape = "tile", size = 64, id = "al" }: Opts = {}): st
 <radialGradient id="${id}-glow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#fff" stop-opacity=".45"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
 </defs>
 ${bg}${shape === "maskable" ? `<g transform="translate(9.6 9.6) scale(.7)">${art}</g>` : art}
+</svg>`;
+}
+
+/**
+ * No tile: the crescent takes the tile's pink→violet gradient and the sparkle a deeper gold, so both read on light
+ * and dark browser tabs. The viewBox hugs the art (x 11–54.5, y 10.5–52) so it fills a 16px favicon.
+ */
+function bareSvg(size: number, id: string): string {
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="10 9 45.5 45.5">
+<defs>
+<linearGradient id="${id}-moon" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${BRAND.pink}"/><stop offset=".55" stop-color="${BRAND.magenta}"/><stop offset="1" stop-color="${BRAND.violet}"/></linearGradient>
+<linearGradient id="${id}-star" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffc94d"/><stop offset="1" stop-color="#f59e0b"/></linearGradient>
+</defs>
+<path d="${CRESCENT}" fill="url(#${id}-moon)"/><path d="${SPARKLE}" fill="url(#${id}-star)"/><circle cx="${DOT.cx}" cy="${DOT.cy}" r="${DOT.r}" fill="${BRAND.magenta}"/>
 </svg>`;
 }
 
