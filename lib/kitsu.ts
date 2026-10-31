@@ -594,6 +594,21 @@ export async function buildWatchOrder(start: Anime, fetchRelations: (id: string)
 }
 
 /**
+ * Which of `n` main entries to list in a short preview: all of them if they fit, otherwise the first few plus
+ * the one before, at and after `cur`, with null marking each gap ("…"). Pure.
+ */
+export function orderWindow(n: number, cur: number, max = 5): (number | null)[] {
+  if (n <= max) return Array.from({ length: n }, (_, i) => i);
+  const keep = new Set<number>();
+  if (cur < 0 || cur < max - 1) for (let i = 0; i < max - 1; i++) keep.add(i);
+  else { keep.add(0); for (const i of [cur - 1, cur, cur + 1]) if (i < n) keep.add(i); }
+  keep.add(n - 1);
+  const out: (number | null)[] = [];
+  [...keep].sort((x, y) => x - y).forEach((i, k, all) => { if (k && i - all[k - 1] > 1) out.push(null); out.push(i); });
+  return out;
+}
+
+/**
  * Total minutes: the larger of totalLength and episodes × length. Kitsu's totalLength is sometimes stale,
  * too small or even negative (Bleach: Thousand-Year Blood War has -900), so it never wins when it's absurd.
  */

@@ -29,10 +29,13 @@ export default function WhereToWatch({ animeId, title, links, extra }: { animeId
   };
   useEffect(() => { load(read() || undefined); }, [animeId]); // eslint-disable-line react-hooks/exhaustive-deps
 
+  const heading = (text: string) => (
+    <h2 className="flex items-center gap-2 text-lg font-bold text-ink"><span aria-hidden className="text-accent-2">▶</span> {text}</h2>
+  );
   const kitsuButtons = (
-    <div className="mt-2 flex flex-wrap gap-2">
-      {links.map((s) => (
-        <a key={s.id} href={streamLink(s.url)} target="_blank" rel={affiliateRel} className="btn-outline capitalize">▶ {s.site}{s.dubs.includes("en") ? " (dub)" : ""}</a>
+    <div className="mt-3 flex flex-wrap gap-2">
+      {links.map((s, i) => (
+        <a key={s.id} href={streamLink(s.url)} target="_blank" rel={affiliateRel} className={`${i ? "btn-outline" : "btn-primary"} px-4 py-2.5 font-semibold capitalize`}>▶ {s.site}{s.dubs.includes("en") ? " (dub)" : ""}</a>
       ))}
       {extra}
     </div>
@@ -40,8 +43,8 @@ export default function WhereToWatch({ animeId, title, links, extra }: { animeId
 
   if (!data?.configured) {
     return links.length || extra ? (
-      <div className="mt-4">
-        <h2 className="text-xs font-semibold uppercase tracking-wider text-muted">Where to watch</h2>
+      <div>
+        {heading("Where to watch")}
         {kitsuButtons}
       </div>
     ) : null;
@@ -54,9 +57,9 @@ export default function WhereToWatch({ animeId, title, links, extra }: { animeId
   const groups = data.groups || [];
 
   return (
-    <div className={`mt-4 ${loading ? "opacity-60" : ""}`} aria-busy={loading}>
+    <div className={loading ? "opacity-60" : ""} aria-busy={loading}>
       <div className="flex flex-wrap items-center gap-2">
-        <h2 className="text-xs font-semibold uppercase tracking-wider text-muted">Where to watch in</h2>
+        {heading("Where to watch in")}
         <select value={country} onChange={(e) => { save(e.target.value); load(e.target.value); }} className="input w-auto py-1 text-xs" aria-label="Country">
           {options.map((c) => <option key={c} value={c}>{names.of(c) || c}</option>)}
         </select>
@@ -66,11 +69,11 @@ export default function WhereToWatch({ animeId, title, links, extra }: { animeId
           {groups.map((g) => (
             <div key={g.kind} className="flex flex-wrap items-center gap-2">
               <span className="w-full text-[11px] text-muted sm:w-40">{g.label}</span>
-              {g.providers.map((p) => {
+              {g.providers.map((p, i) => {
                 const k = deep(p.name);
                 const href = k ? streamLink(k.url) : data.link || "#";
                 return (
-                  <a key={p.id} href={href} target="_blank" rel={affiliateRel} className="btn-outline gap-2 py-1.5" title={`${title} on ${p.name}`}>
+                  <a key={p.id} href={href} target="_blank" rel={affiliateRel} className={`${i || g !== groups[0] ? "btn-outline" : "btn-primary"} gap-2 px-4 py-2.5 font-semibold`} title={`${title} on ${p.name}`}>
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     {p.logo && <img src={p.logo} alt="" width={20} height={20} className="rounded" loading="lazy" />}
                     {p.name}

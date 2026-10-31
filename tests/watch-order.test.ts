@@ -65,3 +65,13 @@ test("runtimeMinutes ignores negative or tiny totalLength", async () => {
   assert.equal(runtimeMinutes({ episodeCount: 1, episodeLength: 24, totalLength: 110 }), 110);
   assert.equal(runtimeMinutes({ episodeCount: null, episodeLength: null, totalLength: null }), 0);
 });
+
+test("orderWindow lists short orders whole and keeps the current entry visible in long ones", async () => {
+  const { orderWindow } = await import("../lib/kitsu");
+  assert.deepEqual(orderWindow(4, 1), [0, 1, 2, 3]);
+  assert.deepEqual(orderWindow(9, 0), [0, 1, 2, 3, null, 8]);
+  assert.deepEqual(orderWindow(9, -1), [0, 1, 2, 3, null, 8]);
+  assert.deepEqual(orderWindow(9, 5), [0, null, 4, 5, 6, null, 8]);
+  assert.deepEqual(orderWindow(9, 7), [0, null, 6, 7, 8]);
+  assert.deepEqual(orderWindow(9, 8), [0, null, 7, 8]);
+});

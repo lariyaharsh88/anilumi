@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "@/components/Link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { getAnimeBySlug, getCharacters, getEpisodes, listAnime, getRelations, getLastAiredBest, getProductions, type LastAired, comparePath, franchiseRoot, airingNotice, episodePath, posterUrl, fmtDate, statusLabel, subtypeLabel, animePath, weekdayOf, runtimeMinutes, fmtMinutes, Anime } from "@/lib/kitsu";
+import { getAnimeBySlug, getCharacters, getEpisodes, listAnime, getRelations, getLastAiredBest, getProductions, buildWatchOrder, type LastAired, type WatchOrder, comparePath, franchiseRoot, airingNotice, episodePath, posterUrl, fmtDate, statusLabel, subtypeLabel, animePath, weekdayOf, runtimeMinutes, fmtMinutes, Anime } from "@/lib/kitsu";
 import { abs } from "@/lib/site";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import JsonLd from "@/components/JsonLd";
@@ -15,6 +15,7 @@ import WatchButton from "@/components/WatchButton";
 import EmbedSnippet from "@/components/EmbedSnippet";
 import CalendarLinks from "@/components/CalendarLinks";
 import WhereToWatch from "@/components/WhereToWatch";
+import WatchOrderCard from "@/components/WatchOrderCard";
 import SpoilerGate from "@/components/SpoilerGate";
 import StoryGuide from "@/components/StoryGuide";
 import EditorNote from "@/components/EditorNote";
@@ -120,6 +121,15 @@ export default async function AnimePage({ params }: Props) {
   const multi = combined && combined.sources.length > 1 ? combined : null;
   const relatedItems = related.items.filter((r) => r.id !== a.id).slice(0, 12);
   const franchise = relations.filter((r) => ["sequel", "prequel", "side_story", "spinoff", "summary", "alternative_version", "other", "character"].includes(r.role));
+  // Full order for the "Watch order" card. It can need a few more Kitsu calls (one per season), so it gets a
+  // short budget; past that the card shows the direct prequel/sequel and the walk finishes in the background,
+  // warming the fetch cache for the next render.
+  const order = relations.some((r) => r.role === "prequel" || r.role === "sequel")
+    ? await Promise.race([
+        buildWatchOrder(a, (id) => (id === a.id ? Promise.resolve(relations) : getRelations(id))).catch(() => null),
+        new Promise<WatchOrder | null>((r) => setTimeout(() => r(null), 4000)),
+      ])
+    : null;
   const runtime = runtimeMinutes(a);
   const dist = a.ratingDist || null;
   const totalRatings = dist ? dist.reduce((n, v) => n + v, 0) : 0;
@@ -318,7 +328,7 @@ export default async function AnimePage({ params }: Props) {
 
               <div className="mt-5 flex flex-wrap justify-center gap-2 md:justify-start">
                 <a href="#watch" className="btn-primary px-5 py-3">▶ Where to watch</a>
-                <Link href={`/watch-order/${a.slug}`} className="btn-outline px-4 py-3">{franchise.length ? `Watch order · ${franchise.length + 1}` : "Watch order"}</Link>
+                <Link href={`/watch-order/${a.slug}`} className="btn-outline px-4 py-3">{order ? `Watch order · ${order.entries.length}` : franchise.length ? `Watch order · ${franchise.length + 1}` : "Watch order"}</Link>
                 <WatchButton item={watchItem} />
                 {community && !released && <HypeButton animeId={a.id} />}
                 <Link href={`/similar/${a.slug}`} className="btn-outline px-4 py-3">More like this</Link>
@@ -326,16 +336,20 @@ export default async function AnimePage({ params }: Props) {
             </div>
           </div>
 
-          <div id="watch" data-section className="mt-6 rounded-2xl border border-white/10 bg-card/70 p-4 backdrop-blur">
+          <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 md:items-start">
+          <div id="watch" data-section className="rounded-2xl border-2 border-accent/50 bg-accent/[.07] p-4 shadow-[0_0_45px_-18px_rgba(255,77,109,.7)] backdrop-blur sm:p-5">
             <WhereToWatch
               animeId={a.id}
               title={a.title}
               links={a.streaming.map((x) => ({ id: x.id, url: x.url, site: x.site, dubs: x.dubs }))}
               extra={<a href={amazonSearch(`${a.title} manga`)} target="_blank" rel={affiliateRel} className="btn-outline">📚 Manga on Amazon</a>}
             />
+            {a.streaming.length > 0 && <p className="mt-3 text-[11px] text-muted">Official, legal streams. Catalogues differ by country.</p>}
             {a.streaming.length === 0 && (
               <p className="mt-2 text-sm text-muted">No licensed streams listed yet. <a href={amazonSearch(`${a.title} manga`)} target="_blank" rel={affiliateRel} className="text-violet hover:underline">Read the manga on Amazon →</a></p>
             )}
+          </div>
+          <WatchOrderCard anime={a} order={order} relations={relations} />
           </div>
           {community && (a.status === "current" || !released) && (
             <LeadForm
