@@ -36,3 +36,12 @@ test("memoized shares one call between concurrent callers and retries after a mi
   assert.equal(await memoized("t:1", 1000, fn), "ok");
   assert.equal(calls, 2);
 });
+
+test("anime snapshot tags drop adult ones and keep the spoiler flag", async () => {
+  const { toRawTags } = await import("../lib/alsnap");
+  const { packJson, unpackJson, IMG_PREFIX } = await import("../lib/snapjson");
+  const t = (name: string, isAdult = false, isMediaSpoiler = false) => ({ name, rank: 80, category: "Theme", isAdult, isMediaSpoiler });
+  assert.deepEqual(toRawTags([t("Gore"), t("Nudity", true), t("Death", false, true)]), [["Gore", 80, "Theme", 0], ["Death", 80, "Theme", 1]]);
+  const v = { a: `${IMG_PREFIX}x.png`, b: ["~not-an-image", 1] };
+  assert.deepEqual(unpackJson(packJson(v)), v);
+});

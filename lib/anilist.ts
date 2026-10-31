@@ -6,6 +6,7 @@
 import { getAniListId, kitsuByAniListIds, ANILIST_MIN_REVALIDATE, UpstreamError, type Anime } from "./kitsu";
 import { castFromSnapshot } from "./castsnap";
 import { popularFromSnapshot, voiceActorFromSnapshot } from "./vasnap";
+import { alAnime } from "./alsnap";
 
 /**
  * How long to wait before retrying, or null to give up. 429s honour Retry-After (capped); network errors,
@@ -325,12 +326,18 @@ export function alSequelFrom(edges: { relationType: string; node: { id: number; 
 export async function getAniListSequel(kitsuId: string): Promise<AlSequel | null> {
   const id = await getAniListId(kitsuId);
   if (!id) return null;
-  const d = await anilist<{ Media: { relations: { edges: Parameters<typeof alSequelFrom>[0] } } | null }>(
-    "query($id:Int){Media(id:$id,type:ANIME){relations{edges{relationType node{id type format status title{romaji english} startDate{year month day}}}}}}",
-    { id },
-    21600,
-  );
-  return d?.Media ? alSequelFrom(d.Media.relations.edges) : null;
+  // Live first, because sequel news changes week to week; the monthly snapshot answers when AniList refuses.
+  try {
+    const d = await anilist<{ Media: { relations: { edges: Parameters<typeof alSequelFrom>[0] } } | null }>(
+      "query($id:Int){Media(id:$id,type:ANIME){relations{edges{relationType node{id type format status title{romaji english} startDate{year month day}}}}}}",
+      { id },
+      21600,
+      { strict: true },
+    );
+    return d?.Media ? alSequelFrom(d.Media.relations.edges) : null;
+  } catch {
+    return alAnime(id)?.q ?? null;
+  }
 }
 
 /* ---------------- fan recommendations ---------------- */
@@ -357,12 +364,12 @@ export function pickRecs(nodes: AlRecNode[], limit = 12): Omit<FanRec, "anime">[
 export async function getFanRecommendations(kitsuId: string, limit = 12): Promise<FanRec[]> {
   const id = await getAniListId(kitsuId);
   if (!id) return [];
-  const d = await anilist<{ Media: { recommendations: { nodes: AlRecNode[] } } | null }>(
+  const snap = alAnime(id);
+  const recs = snap ? snap.r.slice(0, limit) : pickRecs((await anilist<{ Media: { recommendations: { nodes: AlRecNode[] } } | null }>(
     "query($id:Int){Media(id:$id,type:ANIME){recommendations(sort:[RATING_DESC,ID],perPage:25){nodes{rating mediaRecommendation{id type format seasonYear isAdult title{romaji english} coverImage{medium}}}}}}",
     { id },
     86400,
-  );
-  const recs = pickRecs(d?.Media?.recommendations.nodes || [], limit);
+  ))?.Media?.recommendations.nodes || [], limit);
   if (!recs.length) return [];
   const kitsu = await kitsuByAniListIds(recs.map((r) => r.anilistId));
   return recs.map((r) => ({ ...r, anime: kitsu.get(r.anilistId) ?? null }));
@@ -398,6 +405,8 @@ export function keyStaffFrom(edges: { role: string; node: { id: number; name: { 
 export async function getKeyStaff(kitsuId: string): Promise<KeyStaff[]> {
   const id = await getAniListId(kitsuId);
   if (!id) return [];
+  const snap = alAnime(id);
+  if (snap) return snap.k;
   const d = await anilist<{ Media: { staff: { edges: Parameters<typeof keyStaffFrom>[0] } } | null }>(
     "query($id:Int){Media(id:$id,type:ANIME){staff(sort:[RELEVANCE,ID],perPage:50){edges{role node{id name{full} image{medium} primaryOccupations}}}}}",
     { id },
@@ -417,6 +426,8 @@ export const personPath = (p: { id: number; name: string; voices?: boolean }) =>
 export async function getAniListDuration(kitsuId: string): Promise<number | null> {
   const id = await getAniListId(kitsuId).catch(() => null);
   if (!id) return null;
+  const snap = alAnime(id);
+  if (snap?.d) return snap.d;
   const d = await anilist<{ Media: { duration: number | null } | null }>("query($id:Int){Media(id:$id,type:ANIME){duration}}", { id }, 86400 * 7, { strict: true });
   return d?.Media?.duration || null;
 }

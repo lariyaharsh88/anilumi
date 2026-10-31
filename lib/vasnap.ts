@@ -8,9 +8,8 @@ import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import type { PopularVa, VoiceActor } from "./anilist";
 
-/** AniList image URLs are stored without this prefix to keep the file small. */
-export const IMG_PREFIX = "https://s4.anilist.co/file/anilistcdn/";
-const SHORT = "~/";
+import { packJson, unpackJson } from "./snapjson";
+export { IMG_PREFIX } from "./snapjson";
 
 type Snap = { generated: string; hub: PopularVa[]; people: Record<string, VoiceActor> };
 let snap: Snap | null = null;
@@ -26,12 +25,10 @@ function load(): Snap {
 }
 
 /** JSON for the snapshot file, with image URLs shortened. Pure. */
-export const packSnapshot = (s: Snap): string =>
-  JSON.stringify(s, (_k, v) => (typeof v === "string" && v.startsWith(IMG_PREFIX) ? SHORT + v.slice(IMG_PREFIX.length) : v));
+export const packSnapshot = (s: Snap): string => packJson(s);
 
 /** Inverse of packSnapshot. Pure. */
-export const unpackSnapshot = (raw: string): Snap =>
-  JSON.parse(raw, (_k, v) => (typeof v === "string" && v.startsWith(SHORT) ? IMG_PREFIX + v.slice(SHORT.length) : v)) as Snap;
+export const unpackSnapshot = (raw: string): Snap => unpackJson<Snap>(raw);
 
 export const popularFromSnapshot = (): PopularVa[] => load().hub;
 export const voiceActorFromSnapshot = (id: number): VoiceActor | null => load().people[String(id)] ?? null;

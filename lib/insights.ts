@@ -4,6 +4,7 @@
  */
 import { getAniListId } from "./kitsu";
 import { anilist, memoized } from "./anilist";
+import { alAnime, alBench } from "./alsnap";
 
 export type StatusCount = { status: string; amount: number };
 export type AlTag = { name: string; rank: number; category: string; isAdult: boolean; isMediaSpoiler: boolean };
@@ -12,6 +13,8 @@ export type AniListInsight = { genres: string[]; dist: StatusCount[]; tags: AlTa
 export async function getAniListInsight(kitsuId: string, strict = false): Promise<AniListInsight | null> {
   const id = await getAniListId(kitsuId);
   if (!id) return null;
+  const snap = alAnime(id);
+  if (snap) return { genres: snap.g, dist: snap.st, tags: snap.t, anilistId: id, score: snap.s, scoreVotes: snap.sv };
   return memoized(`insight:${id}`, 6 * 3600_000, async () => {
     const d = await anilist<{ Media: { genres: string[]; averageScore: number | null; stats: { statusDistribution: StatusCount[]; scoreDistribution: { score: number; amount: number }[] }; tags: AlTag[] } | null }>(
       "query($id:Int){Media(id:$id,type:ANIME){genres averageScore stats{statusDistribution{status amount} scoreDistribution{score amount}} tags{name rank category isAdult isMediaSpoiler}}}",
@@ -54,6 +57,8 @@ export const median = (xs: number[]) => {
 
 /** Median drop rate of the 50 most popular finished, non-adult anime in an AniList genre. Cached a week. */
 export async function genreDropBenchmark(genre: string): Promise<number | null> {
+  const snap = alBench(genre);
+  if (snap !== null) return snap;
   return memoized(`bench:${genre}`, 7 * 86400_000, async () => {
     const d = await anilist<{ Page: { media: { stats: { statusDistribution: StatusCount[] } }[] } }>(
       "query($g:String){Page(perPage:50){media(genre:$g,type:ANIME,sort:POPULARITY_DESC,status:FINISHED,isAdult:false){stats{statusDistribution{status amount}}}}}",
