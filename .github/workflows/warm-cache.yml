@@ -1,9 +1,9 @@
 name: Warm cache after deploy
 # Render empties the page cache on every deploy, so the first visit to each page renders from scratch (2-7 s).
 # Wait for this commit to go live, then load the 500 most important pages one by one (see scripts/warm-cache.mjs).
+# Manual only: Render's free plan includes 5 GB of bandwidth a month, and warming 500 pages after every push
+# used a large share of it (the workspace was suspended on 31 Oct 2026 at 9.3 GB).
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 concurrency:
   group: warm-cache
@@ -28,4 +28,4 @@ jobs:
           echo "::warning::Commit not live after 20 minutes; skipping warm-up."
       - name: Warm the top pages
         if: steps.wait.outputs.live == '1'
-        run: node scripts/warm-cache.mjs https://anilumi.in
+        run: LIMIT=100 node scripts/warm-cache.mjs https://anilumi.in
