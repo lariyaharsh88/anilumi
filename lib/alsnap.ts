@@ -2,12 +2,11 @@
  * Monthly AniList snapshot for the most-followed anime (data/anime-al.json, built by scripts/fetch-anime-al.mts):
  * score and status counts (drop rates), tags (parents' guide), fan recommendations, key staff, episode length and
  * the direct sequel, plus each genre's median drop rate. From Render's shared IPs AniList often rate-limits, and a
- * failed call used to leave an anime page cached for a day without those sections. Read from disk once per
- * process. Server code only.
+ * failed call used to leave an anime page cached for a day without those sections. Bundled (Workers have no file
+ * system); parsed once per isolate. Server code only.
  */
-import { readFileSync } from "node:fs";
-import { join } from "node:path";
-import { unpackJson } from "./snapjson";
+import data from "@/data/anime-al.json";
+import { unpackInPlace } from "./snapjson";
 import type { AlTag, StatusCount } from "./insights";
 import type { AlSequel, FanRec, KeyStaff } from "./anilist";
 
@@ -23,11 +22,8 @@ type Snap = { generated: string; anime: Record<string, AlAnimeRaw>; bench: Recor
 let snap: Snap | null = null;
 function load(): Snap {
   if (snap) return snap;
-  try {
-    snap = unpackJson<Snap>(readFileSync(join(process.cwd(), "data", "anime-al.json"), "utf8"));
-  } catch {
-    snap = { generated: "", anime: {}, bench: {} }; // no snapshot yet: everything goes to live AniList
-  }
+  const d = data as unknown as Partial<Snap>;
+  snap = d.anime ? unpackInPlace(d as Snap) : { generated: "", anime: {}, bench: {} }; // empty: live AniList
   return snap;
 }
 

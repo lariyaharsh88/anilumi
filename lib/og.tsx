@@ -5,11 +5,27 @@ import { markDataUri, BRAND } from "./brand";
 
 export const OG_SIZE = { width: 1200, height: 630 };
 
-type OgFont = { name: string; data: Buffer; weight: 500 | 800; style: "normal" };
+type OgFont = { name: string; data: ArrayBuffer | Buffer; weight: 500 | 800; style: "normal" };
 let fontsP: Promise<OgFont[]> | null = null;
-/** Inter 500/800, bundled in assets/fonts (Satori's built-in font has no bold and no ★ glyph). */
+
+/**
+ * A file from public/: through the Workers static-assets binding on Cloudflare (Workers have no file system),
+ * from disk on Node.
+ */
+async function publicFile(path: string): Promise<ArrayBuffer | Buffer> {
+  try {
+    const { getCloudflareContext } = await import("@opennextjs/cloudflare");
+    const { env } = await getCloudflareContext({ async: true });
+    const res = await (env as unknown as { ASSETS: { fetch(u: URL): Promise<Response> } }).ASSETS.fetch(new URL(path, "https://assets.local"));
+    if (res.ok) return res.arrayBuffer();
+  } catch { /* not on Workers */ }
+  return readFile(join(process.cwd(), "public", path));
+}
+
+/** Inter 500/800 from public/fonts (Satori's built-in font has no bold and no ★ glyph). */
 export function ogFonts(): Promise<OgFont[]> {
-  fontsP ??= Promise.all(([500, 800] as const).map(async (weight) => ({ name: "Inter", data: await readFile(join(process.cwd(), `assets/fonts/Inter-${weight}.ttf`)), weight, style: "normal" as const })));
+  fontsP ??= Promise.all(([500, 800] as const).map(async (weight) => ({ name: "Inter", data: await publicFile(`/fonts/Inter-${weight}.ttf`), weight, style: "normal" as const })))
+    .catch((err) => { fontsP = null; throw err; }); // retry on the next image
   return fontsP;
 }
 

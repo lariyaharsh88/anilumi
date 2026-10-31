@@ -24,20 +24,44 @@ export async function ensureIndexes(d: Db): Promise<void> {
   ]);
 }
 
-/** The database, or null when MONGODB_URI is unset. Throws if Atlas is unreachable (callers degrade). */
+// Cloudflare Workers can't reuse a socket opened by an earlier request (the later request hangs), so there each
+// request gets its own client, shared only within that request. Node (Render, dev) keeps one per process.
+const onWorkers = typeof navigator !== "undefined" && navigator.userAgent === "Cloudflare-Workers";
+const perRequest = new WeakMap<object, Promise<Db>>();
+let indexed = false;
+
+async function connect(uri: string): Promise<Db> {
+  const client = await new MongoClient(uri, { maxPoolSize: onWorkers ? 2 : 5, serverSelectionTimeoutMS: 6000, appName: "anilumi" }).connect();
+  const d = client.db(process.env.MONGODB_DB || "anilumi");
+  if (!indexed) { await ensureIndexes(d); indexed = true; } // idempotent; once per process or isolate
+  return d;
+}
+
+const logged = (err: unknown) => {
+  console.error("[db] connect failed:", (err as Error).name, String((err as Error).message).replace(/mongodb(\+srv)?:\/\/\S+/g, "<uri>").slice(0, 300));
+  return err;
+};
+
+/**
+ * The database, or null when MONGODB_URI is unset. Throws if Atlas is unreachable (callers degrade). On Workers
+ * the URI must be the standard mongodb://host1,host2,host3 form: mongodb+srv needs an SRV DNS lookup that hangs there.
+ */
 export async function db(): Promise<Db | null> {
   const uri = process.env.MONGODB_URI;
   if (!uri) return null;
-  g.__mongo ??= (async () => {
-    // Render's free instance has 512 MB: a small pool is plenty for this traffic.
-    const client = await new MongoClient(uri, { maxPoolSize: 5, serverSelectionTimeoutMS: 6000, appName: "anilumi" }).connect();
-    const d = client.db(process.env.MONGODB_DB || "anilumi");
-    await ensureIndexes(d); // idempotent; once per process
-    return d;
-  })().catch((err) => {
+  if (onWorkers) {
+    const { getCloudflareContext } = await import("@opennextjs/cloudflare");
+    const { ctx } = getCloudflareContext();
+    let p = perRequest.get(ctx);
+    if (!p) {
+      p = connect(uri).catch((err) => { perRequest.delete(ctx); throw logged(err); });
+      perRequest.set(ctx, p);
+    }
+    return p;
+  }
+  g.__mongo ??= connect(uri).catch((err) => {
     g.__mongo = undefined; // retry on the next request
-    console.error("[db] connect failed:", (err as Error).name, String((err as Error).message).replace(/mongodb(\+srv)?:\/\/\S+/g, "<uri>").slice(0, 300));
-    throw err;
+    throw logged(err);
   });
   return g.__mongo;
 }

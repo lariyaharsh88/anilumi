@@ -8,8 +8,12 @@ const nextConfig: NextConfig = {
   htmlLimitedBots: /.*/,
   // Render's free instance has 512 MB: build with one page-generation worker and leaner webpack.
   ...(process.env.RENDER ? { experimental: { cpus: 1, webpackMemoryOptimizations: true } } : {}),
-  // Inter TTFs for OG images, and the cast snapshot (read with fs, not bundled).
-  outputFileTracingIncludes: { "/**": ["./assets/fonts/*.ttf", "./data/casts.json"] },
+  // Baked in at build: which commit is live (/api/version; Cloudflare Workers Builds sets WORKERS_CI_COMMIT_SHA,
+  // Render RENDER_GIT_COMMIT) and the public GA4 ID on Cloudflare builds (Render sets it in render.yaml).
+  env: {
+    BUILD_COMMIT: process.env.WORKERS_CI_COMMIT_SHA || process.env.RENDER_GIT_COMMIT || process.env.GITHUB_SHA || "",
+    NEXT_PUBLIC_GA_ID: process.env.NEXT_PUBLIC_GA_ID || (process.env.WORKERS_CI ? "G-V7DV9GGSDD" : ""),
+  },
   // One canonical host: www.anilumi.in → anilumi.in (301).
   async redirects() {
     return [

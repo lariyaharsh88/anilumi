@@ -9,9 +9,9 @@
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
     "test": "node --import tsx --test tests/*.test.ts",
-    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
-    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
-    "upload": "opennextjs-cloudflare build && opennextjs-cloudflare upload",
+    "preview": "CF_ALLOW_ENV=1 node scripts/cf-guard.mjs && opennextjs-cloudflare build && opennextjs-cloudflare preview",
+    "deploy": "node scripts/cf-guard.mjs && opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+    "upload": "node scripts/cf-guard.mjs && opennextjs-cloudflare build && opennextjs-cloudflare upload",
     "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
   },
   "dependencies": {
