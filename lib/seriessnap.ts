@@ -1,11 +1,10 @@
 /**
  * Monthly snapshot of each popular series' full main and supporting cast (data/series-characters.json, built by
  * scripts/fetch-series-characters.mts): age, height, birthday, gender, favourites and Japanese voice. Feeds the
- * /anime/[slug]/characters tables. Read from disk once per process. Server code only.
+ * /anime/[slug]/characters tables. Bundled (Cloudflare Workers have no file system); parsed once per isolate, on first use. Server code only.
  */
-import { readFileSync } from "node:fs";
-import { join } from "node:path";
-import { unpackJson } from "./snapjson";
+import data from "@/data/series-characters.json";
+import { unpackInPlace } from "./snapjson";
 
 /** [id, name, image file, age, height, month, day, gender, favourites, M(ain)/S(upporting), [voice id, voice name]] */
 export type SeriesChar = [number, string, string | null, string | null, string | null, number | null, number | null, string | null, number, "M" | "S", [number, string] | null];
@@ -14,11 +13,8 @@ type Snap = { generated: string; series: Record<string, { a: number; t: string; 
 let snap: Snap | null = null;
 function load(): Snap {
   if (snap) return snap;
-  try {
-    snap = unpackJson<Snap>(readFileSync(join(process.cwd(), "data", "series-characters.json"), "utf8"));
-  } catch {
-    snap = { generated: "", series: {} };
-  }
+  const d = data as unknown as Partial<Snap>;
+  snap = d.series ? unpackInPlace(d as Snap) : { generated: "", series: {} };
   return snap;
 }
 

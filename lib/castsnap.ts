@@ -1,9 +1,8 @@
 /**
  * Monthly snapshot of the most-followed anime's casts (data/casts.json, built by scripts/fetch-casts.mts).
- * Read from disk once per process rather than bundled, since it's a couple of megabytes. Server code only.
+ * Bundled (Cloudflare Workers have no file system); parsed once per isolate, on first use. Server code only.
  */
-import { readFileSync } from "node:fs";
-import { join } from "node:path";
+import data from "@/data/casts.json";
 import type { Cast, CastEntry, Va } from "./anilist";
 
 type P = [number, string, string | null, string | null] | null;
@@ -12,11 +11,7 @@ let casts: Record<string, Raw> | null = null;
 
 function load(): Record<string, Raw> {
   if (casts) return casts;
-  try {
-    casts = (JSON.parse(readFileSync(join(process.cwd(), "data", "casts.json"), "utf8")) as { casts: Record<string, Raw> }).casts;
-  } catch {
-    casts = {}; // no snapshot yet: everything falls back to live AniList
-  }
+  casts = (data as unknown as { casts?: Record<string, Raw> }).casts ?? {}; // empty: everything falls back to live AniList
   return casts;
 }
 
