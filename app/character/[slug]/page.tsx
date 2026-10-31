@@ -89,7 +89,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${c.name}${nick ? ` "${nick}"` : ""}${home ? ` (${home.title})` : ""}: ${what ? `${what}` : "Character Profile & Appearances"}`,
     description: ((lead ? `${lead} ` : "") + (bio ? bio.slice(0, 120).replace(/\s+\S*$/, "") + "…" : `Every anime ${c.name} appears in.`)).slice(0, 300),
     alternates: { canonical: `/character/${c.slug}` },
-    openGraph: c.image ? { images: [{ url: c.image }] } : undefined,
   };
 }
 

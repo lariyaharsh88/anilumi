@@ -152,3 +152,17 @@ test("characterTable needs enough people and data, sorted by favourites", async 
   assert.ok(characterTable("show", [mk(1, 1, null, "15"), mk(2, 1, null, "16"), mk(3, 1, null, "17"), mk(4, 1, null)]));
   assert.equal(characterTable("other", four), null);
 });
+
+test("characterTable merges the full cast with popular entries, keeping page slugs", async () => {
+  const { characterTable } = await import("../lib/charsnap");
+  const pop = { id: 1, n: "Pop", f: 100, age: "15", g: null, bt: null, m: null, d: null, l: [["Height", "170 cm"]] as [string, string][], a: 9, s: "show", t: "Show", jp: null, en: null, k: "pop-page" };
+  const series = { a: 9, t: "Show", c: [
+    [1, "Pop", null, "15", "170 cm", null, null, null, 100, "M", null],
+    [2, "Two", "b2.png", "16", "160 cm", 3, 1, "Female", 50, "M", [7, "Voice"]],
+    [3, "Three", null, null, "150 cm", null, null, null, 10, "S", null],
+    [4, "Four", null, "40", null, null, null, null, 5, "S", null],
+  ] as const };
+  const rows = characterTable("show", [pop], series as never)!;
+  assert.deepEqual(rows.map((r) => [r.c.n, r.cm, r.c.k ?? null]), [["Pop", 170, "pop-page"], ["Two", 160, null], ["Three", 150, null], ["Four", null, null]]);
+  assert.deepEqual(rows[1].c.jp, { id: 7, n: "Voice", i: null });
+});

@@ -5,6 +5,7 @@
  */
 import data from "@/data/characters.json";
 import { ageNum, heightCm, type AniListCharacter } from "./charfacts";
+import { seriesCast, seriesSlugs, type SeriesChar } from "./seriessnap";
 
 type Person = { id: number; n: string; i: string | null } | null;
 export type SnapChar = {
@@ -70,6 +71,13 @@ export function characterPathFor(anilistId: number): string | null {
 /** AniList keeps the same file name at /large/ (230px wide) as at /medium/ (100px). */
 export const snapImage = (c: SnapChar, size: "medium" | "large" = "medium"): string | null => (c.i ? (size === "large" ? CHAR_IMG.replace("/medium/", "/large/") : CHAR_IMG) + c.i : null);
 
+let byK: Map<string, SnapChar> | null = null;
+/** Snapshot entry for one of our character pages, by its slug. */
+export function snapByPage(slug: string): SnapChar | null {
+  byK ??= new Map(chars.filter((c) => c.k).map((c) => [c.k!, c]));
+  return byK.get(slug) ?? null;
+}
+
 /** Most-favourited characters that have a page here, for the /characters hub. */
 export const popularCharacters = (limit = 100): SnapChar[] => [...chars].filter((c) => c.k).sort((a, b) => b.f - a.f).slice(0, limit);
 
@@ -83,21 +91,33 @@ function group<K>(xs: SnapChar[], key: (c: SnapChar) => K): Map<K, SnapChar[]> {
 
 export type TableRow = { c: SnapChar; age: string | null; ageN: number | null; height: string | null; cm: number | null };
 let bySlug2: Map<string, SnapChar[]> | null = null;
+let byId: Map<number, SnapChar> | null = null;
+
+/** A full-cast entry (lib/seriessnap) in the popular snapshot's shape, keeping its page slug when it has one. Pure. */
+export function fromSeries(x: SeriesChar, slug: string, a: number, t: string, known?: SnapChar): SnapChar {
+  const [id, n, i, age, h, m, d, g, f, , va] = x;
+  return known ?? { id, n, f, age, g, bt: null, m, d, l: h ? [["Height", h]] : [], a, s: slug, t, jp: va ? { id: va[0], n: va[1], i: null } : null, en: null, ...(i ? { i } : {}) };
+}
 
 /**
- * The snapshot characters of one anime (by its Kitsu slug), most-favourited first, with age and height parsed,
- * or null when there's too little to make a useful table: at least 4 characters with 3 known heights or ages.
+ * The characters of one anime (by its Kitsu slug), most-favourited first, with age and height parsed: the full
+ * main and supporting cast when the series snapshot has it, plus anyone popular it missed. Null when there's too
+ * little for a useful table: at least 4 characters with 3 known heights or ages.
  */
-export function characterTable(animeSlug: string, src: SnapChar[] = chars): TableRow[] | null {
-  if (src === chars) bySlug2 ??= group(chars, (c) => c.s);
-  const list = src === chars ? bySlug2!.get(animeSlug) || [] : src.filter((c) => c.s === animeSlug);
-  const rows = [...list].sort((a, b) => b.f - a.f).map((c) => {
+export function characterTable(animeSlug: string, src: SnapChar[] = chars, series = src === chars ? seriesCast(animeSlug) : null): TableRow[] | null {
+  if (src === chars) { bySlug2 ??= group(chars, (c) => c.s); byId ??= new Map(chars.map((c) => [c.id, c])); }
+  const popular = src === chars ? bySlug2!.get(animeSlug) || [] : src.filter((c) => c.s === animeSlug);
+  const known = (id: number) => (src === chars ? byId!.get(id) : src.find((c) => c.id === id));
+  const merged = new Map<number, SnapChar>();
+  for (const x of series?.c || []) merged.set(x[0], fromSeries(x, animeSlug, series!.a, series!.t, known(x[0])));
+  for (const c of popular) if (!merged.has(c.id)) merged.set(c.id, c);
+  const rows = [...merged.values()].sort((a, b) => b.f - a.f).map((c) => {
     const height = c.l.find(([k]) => k.toLowerCase() === "height")?.[1] ?? null;
     return { c, age: c.age, ageN: ageNum(c.age), height, cm: heightCm(height) };
   });
-  const known = (f: (r: TableRow) => unknown) => rows.filter(f).length;
-  return rows.length >= 4 && (known((r) => r.cm) >= 3 || known((r) => r.ageN !== null) >= 3) ? rows : null;
+  const count = (f: (r: TableRow) => unknown) => rows.filter(f).length;
+  return rows.length >= 4 && (count((r) => r.cm) >= 3 || count((r) => r.ageN !== null) >= 3) ? rows : null;
 }
 
 /** Anime slugs that get a characters table (sitemap, anime page links). */
-export const characterTableSlugs = (): string[] => [...new Set(chars.map((c) => c.s))].filter((s) => characterTable(s));
+export const characterTableSlugs = (): string[] => [...new Set([...chars.map((c) => c.s), ...seriesSlugs()])].filter((s) => characterTable(s));

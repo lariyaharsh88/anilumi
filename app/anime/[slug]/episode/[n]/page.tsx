@@ -68,6 +68,9 @@ export default async function EpisodePage({ params }: Props) {
   const whenTime = airIso && airIso.length > 10 ? fmtDate(airIso, { hour: "numeric", minute: "2-digit", timeZone: "Asia/Tokyo" }) : null;
   const hasPrev = n > 1;
   const hasNext = n < count || (a.status === "current" && n <= lastAired);
+  // "release time india / us": the broadcast in the zones most of our readers search from.
+  const at = (tz: string) => (airIso && airIso.length > 10 ? fmtDate(airIso, { weekday: "short", hour: "numeric", minute: "2-digit", timeZone: tz }) : null);
+  const zones = whenTime ? { ist: at("Asia/Kolkata"), et: at("America/New_York"), pt: at("America/Los_Angeles"), uk: at("Europe/London") } : null;
 
   const ld = {
     "@context": "https://schema.org",
@@ -84,6 +87,7 @@ export default async function EpisodePage({ params }: Props) {
 
   const faq = [
     { q: `When does ${a.title} episode ${n} come out?`, a: when ? `${a.title} episode ${n} ${upcoming ? "is scheduled for" : "aired on"} ${when}${whenTime ? ` at ${whenTime} JST` : ""}.${upcoming ? " Simulcasts usually go live within an hour or two on licensed services." : ""}` : `The release date for ${a.title} episode ${n} has not been announced yet. This page updates automatically when it is.` },
+    ...(zones && upcoming ? [{ q: `What time does ${a.title} episode ${n} come out in India, the US and the UK?`, a: `The Japanese broadcast is ${zones.ist} in India (IST), ${zones.et} Eastern and ${zones.pt} Pacific in the US, and ${zones.uk} in the UK. Streaming services usually add it within an hour or two.` }] : []),
     { q: `What time does ${a.title} episode ${n} release?`, a: whenTime ? `Broadcast is at ${whenTime} Japan Standard Time. The page shows the equivalent in your own time zone and counts down live.` : `Kitsu has the date but not a broadcast time for this episode. Japanese TV anime typically air in the evening or late night JST.` },
     { q: `Where can I watch ${a.title} episode ${n}?`, a: a.streaming.length ? `${a.title} streams on ${a.streaming.map((s) => s.site).join(", ")}. Availability depends on your region.` : `No licensed streaming links are listed yet; check the main ${a.title} page for updates.` },
     ...(a.status === "current" && isNext ? [{ q: `How many episodes of ${a.title} are out?`, a: `${lastAired} episode${lastAired === 1 ? "" : "s"} have aired so far. Episode ${n} is the next one.` }] : []),

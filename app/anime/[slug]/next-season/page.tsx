@@ -34,7 +34,9 @@ async function load(slug: string) {
   }
   const verdict = sequelVerdict(a, next);
   const first = idx <= 0;
-  const label = first ? `${a.title} Season 2` : `${a.title} Next Season`;
+  // The name people search ("Demon Slayer Season 2", not "Kimetsu no Yaiba Season 2").
+  const name = a.titleEn && a.titleEn.length <= 35 ? a.titleEn : a.title;
+  const label = first ? `${name} Season 2` : `${name} Next Season`;
   return { a, chain, idx, next, verdict, label, first };
 }
 
@@ -44,15 +46,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   // The answer goes in the title: "Akame ga Kill Season 2: Not Announced (Oct 2026)" beats a question.
   const asOf = new Date().toLocaleDateString("en-US", { month: "short", year: "numeric", timeZone: "UTC" });
   const movie = next?.anime?.subtype === "movie";
+  // "Release date" is how most of these searches are phrased ("relife season 2 release date"); every answer
+  // carries a date so it reads as current.
+  const outYear = next?.startDate?.slice(0, 4);
   const answer: Record<SequelKind, string> = {
     none: `Not Announced Yet (${asOf})`,
-    dated: next?.startDate ? `Release Date ${fmtDate(next.startDate, { month: "short", day: "numeric", year: "numeric" })}` : "Release Date Confirmed",
-    announced: `Confirmed${next?.expected ? ` for ${next.expected}` : ""}, Date TBA`,
-    out: movie ? `The Story Continues in a Movie` : `Yes, ${next?.title || "It"} Is Out`,
-    airing: movie ? "New Movie in Theaters" : `Airing Now: ${next?.title || "New Season"}`,
+    dated: next?.startDate ? fmtDate(next.startDate, { month: "short", day: "numeric", year: "numeric" })! : "Confirmed",
+    announced: `Confirmed${next?.expected ? ` for ${next.expected}` : ""}, Day TBA (${asOf})`,
+    out: movie ? `The Story Continues in a Movie${outYear ? ` (${outYear})` : ""}` : `Yes, Out Since ${outYear || "Release"} (${asOf})`,
+    airing: movie ? `New Movie in Theaters (${asOf})` : `Airing Now (${asOf})`,
     "still-airing": `Still Airing, No Sequel Yet (${asOf})`,
   };
-  const title = `${label}: ${answer[verdict.kind]}`;
+  const dateQuestion = verdict.kind === "none" || verdict.kind === "dated" || verdict.kind === "announced";
+  const title = `${label}${dateQuestion ? " Release Date" : ""}: ${answer[verdict.kind]}`;
   return {
     title,
     description: `${first ? `Is there a ${a.title} season 2?` : `Will ${a.title} get another season?`} ${verdict.headline} ${verdict.detail}`.slice(0, 300),

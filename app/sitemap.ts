@@ -6,6 +6,7 @@ import { popularVoiceActors, vaPath } from "@/lib/anilist";
 import { allDays, birthdaysOn, bdPath, monthPath } from "@/lib/birthdays";
 import { fillerSlugs, continuationSlugs } from "@/lib/filler";
 import { topCharacterSlugs, characterTableSlugs } from "@/lib/charsnap";
+import aliasData from "@/data/aliases.json";
 
 export const revalidate = 86400;
 
@@ -65,7 +66,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // Kept deliberately small: each URL listed here gets crawled and rendered, and on a metered host
     // every render costs compute and cache writes. Deeper pages stay reachable through internal links.
     const pages = await Promise.all(Array.from({ length: 10 }, (_, i) => listAnime({ sort: "-userCount", limit: 20, offset: i * 20, revalidate: 86400 })));
-    const airing = await listAnime({ filter: { status: "current" }, sort: "-userCount", limit: 20, revalidate: 86400 });
+    // The 60 most-followed airing shows (3 pages): episode pages convert, so every popular airing show gets them.
+    const airingPages = await Promise.all([0, 20, 40].map((offset) => listAnime({ filter: { status: "current" }, sort: "-userCount", limit: 20, offset, revalidate: 86400 })));
+    const airing = { items: airingPages.flatMap((p) => p.items) };
     out.push({ url: abs("/compare"), lastModified: now, changeFrequency: "monthly", priority: 0.5 });
     // Single-episode pages get the best click-through of any page type: list the next episode and the
     // two latest aired ones for every popular airing show (all ISR-cached, so a few dozen URLs is cheap).
@@ -92,8 +95,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       out.push({ url: abs(`${animePath(a)}/cast`), lastModified: now, changeFrequency: "monthly", priority: 0.5 });
       if (released) out.push({ url: abs(`${animePath(a)}/openings-endings`), lastModified: now, changeFrequency: "monthly", priority: 0.5 });
       out.push({ url: abs(`${animePath(a)}/parents-guide`), lastModified: now, changeFrequency: "monthly", priority: 0.5 });
-      out.push({ url: abs(`/similar/${a.slug}`), lastModified: now, changeFrequency: "monthly", priority: 0.4 });
     }
+    // "Anime like X" has the best click-through on the site: list it for the 500 most-followed titles (ranked in
+    // the alias index, so no extra API calls).
+    for (const x of (aliasData as { anime: { s: string }[] }).anime.slice(0, 500)) out.push({ url: abs(`/similar/${x.s}`), lastModified: now, changeFrequency: "monthly", priority: 0.5 });
     // Most-followed voice actors only (the hub's own cached request).
     for (const v of await popularVoiceActors()) out.push({ url: abs(vaPath(v)), lastModified: now, changeFrequency: "monthly", priority: 0.4 });
   } catch {

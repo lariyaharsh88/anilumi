@@ -36,9 +36,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const a = await getAnimeBySlug(decodeURIComponent(slug));
   if (!a) notFound();
+  // English name when it's what people search ("anime like my hero academia"), the real count and the year.
+  const name = a.titleEn && a.titleEn.length <= 40 ? a.titleEn : a.title;
+  const n = (await similarTo(a)).length;
   return {
-    title: `20 Anime Like ${a.title} – Similar Shows to Watch Next`,
-    description: `Finished ${a.title}? These anime share its ${a.categories.slice(0, 3).map((c) => c.title.toLowerCase()).join(", ")} DNA, ranked by how many fans watch them.`,
+    title: `Anime Like ${name}: ${n || 20} Shows to Watch Next (${new Date().getFullYear()})`,
+    description: `Finished ${name}? These anime share its ${a.categories.slice(0, 3).map((c) => c.title.toLowerCase()).join(", ")} DNA, ranked by how many fans watch them.`,
     alternates: { canonical: `/similar/${a.slug}` },
   };
 }

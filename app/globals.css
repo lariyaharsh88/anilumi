@@ -264,4 +264,8 @@ html, body { overflow-x: clip; }
   :root, :root[data-theme="light"] { color-scheme: light; --color-bg: #fff; --color-bg-2: #fff; --color-card: #fff; --color-line: #d4d8e2; --color-ink: #111; --color-muted: #555; --color-accent-2: #b0123b; --color-violet: #3f32b5; --color-violet-2: #3f32b5; }
   [data-chrome] { display: none !important; }
   body { background: #fff; }
+  /* "Print checklist" on watch-order pages: only the checklist. */
+  body.print-checklist * { visibility: hidden; }
+  body.print-checklist #checklist, body.print-checklist #checklist * { visibility: visible; }
+  body.print-checklist #checklist { position: absolute; inset: 0 auto auto 0; width: 100%; margin: 0; }
 }

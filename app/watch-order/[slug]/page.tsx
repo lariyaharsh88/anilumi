@@ -8,6 +8,7 @@ import PageHero from "@/components/PageHero";
 import JsonLd from "@/components/JsonLd";
 import Faq from "@/components/Faq";
 import AdSlot from "@/components/AdSlot";
+import WatchChecklist from "@/components/WatchChecklist";
 import { noteFor } from "@/data/notes";
 import { amazonSearch, affiliateRel } from "@/lib/affiliate";
 import BarChart from "@/components/viz/BarChart";
@@ -71,6 +72,12 @@ export default async function WatchOrderPage({ params }: Props) {
   const skippable = wo.entries.filter((e) => e.kind === "recap" || e.kind === "alt");
   const ordered = wo.entries.filter((e) => e.kind !== "recap" && e.kind !== "alt").map((e, i) => ({ ...e, step: i + 1 }));
   const name = franchiseName(wo);
+  // "Watch order with movies" answers: each movie and the main entry it follows.
+  const mainTitle = new Map(wo.entries.filter((e) => e.kind === "main").map((e) => [e.anime.id, e.anime.title]));
+  const movieList = ordered.filter((e) => e.kind === "movie").map((e) => ({ anime: e.anime, after: e.attachedTo ? mainTitle.get(e.attachedTo) ?? null : null }));
+  const firstMain = ordered.find((e) => e.kind === "main");
+  const mainCount = mainTitle.size;
+  const sideCount = ordered.filter((e) => e.kind === "side").length;
 
   const ld = {
     "@context": "https://schema.org",
@@ -222,11 +229,28 @@ export default async function WatchOrderPage({ params }: Props) {
         </section>
       )}
 
+      {ordered.length > 1 && (
+        <WatchChecklist
+          slug={wo.root.slug}
+          name={name}
+          items={ordered.map((e) => ({
+            id: e.anime.id,
+            title: e.anime.title,
+            label: KIND_LABEL[e.kind],
+            meta: [e.anime.startDate?.slice(0, 4), e.anime.episodeCount && e.anime.subtype !== "movie" ? `${e.anime.episodeCount} ep` : null, runtimeMinutes(e.anime) ? fmtMinutes(runtimeMinutes(e.anime)) : null].filter(Boolean).join(" · "),
+            optional: e.optional && e.kind !== "movie",
+          }))}
+        />
+      )}
+
       <Faq
         title={`${name} watch order FAQ`}
         items={[
           { q: `What order should I watch ${name} in?`, a: wo.intro ? wo.intro : wo.entries.length === 1 ? `${name} has a single entry, so there is nothing to sequence.` : `Follow the recommended order above: ${wo.entries.filter((e) => e.kind === "main").map((e) => e.anime.title).join(" → ")}. Movies and side stories are slotted after the season they relate to.` },
           { q: `How long does it take to watch all of ${name}?`, a: wo.totalMinutes ? `The core story and movies run about ${fmtMinutes(wo.totalMinutes)}. At two hours a day that is roughly ${Math.ceil(wo.totalMinutes / 120)} days.` : "Runtime data is incomplete for this franchise." },
+          ...(firstMain ? [{ q: `Where do I start ${name}?`, a: `Start with ${firstMain.anime.title}${firstMain.anime.startDate ? ` (${firstMain.anime.startDate.slice(0, 4)})` : ""}${wo.intro ? "" : ", then follow the order above"}.` }] : []),
+          ...(mainCount > 1 ? [{ q: `How many seasons does ${name} have?`, a: `${mainCount} parts make up the main story${movieList.length ? `, plus ${movieList.length} movie${movieList.length === 1 ? "" : "s"}` : ""}${sideCount ? ` and ${sideCount} side stor${sideCount === 1 ? "y" : "ies"} or OVAs` : ""}.` }] : []),
+          ...(movieList.length ? [{ q: `Where do the ${name} movies fit in the watch order?`, a: movieList.map((m) => `${m.anime.title}${m.after ? `: after ${m.after}` : ""}`).join("; ") + "." }] : []),
           { q: `Can I skip the recaps?`, a: skippable.length ? `Yes. ${skippable.map((e) => e.anime.title).join(", ")} retell events you have already seen and can be skipped.` : "There are no recap episodes or compilation movies on record for this franchise." },
           { q: "Where does this order come from?", a: "It is built automatically from the sequel, prequel, side-story and spin-off links in the Kitsu database and refreshed daily, so new seasons appear without manual edits." },
         ]}

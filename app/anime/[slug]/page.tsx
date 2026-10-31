@@ -163,6 +163,7 @@ export default async function AnimePage({ params }: Props) {
     ...(franchise.length ? [{ q: "Watch order", a: "Every season, movie and OVA in order", href: `/watch-order/${a.slug}` }] : []),
     ...(cont ? [{ q: `Continue in the ${cont.medium}`, a: cont.chapter ? `From chapter ${cont.chapter}` : `From volume ${cont.volume}`, href: `${base}/manga` }] : []),
     { q: "Cast & voice actors", a: "Who voices who", href: `${base}/cast` },
+    { q: `Anime like ${a.title}`, a: "20 shows to watch next", href: `/similar/${a.slug}` },
     ...(charRows ? [{ q: "Characters' ages & heights", a: charTall ? `Tallest: ${charTall.c.n}, ${charTall.cm} cm` : `${charRows.length} characters compared`, href: `${base}/characters` }] : []),
     ...(a.subtype !== "movie" && a.status === "finished" ? [{ q: "Season 2?", a: "Status and release date", href: `${base}/next-season` }] : []),
   ];
