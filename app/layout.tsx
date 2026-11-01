@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import SiteHeader from "@/components/SiteHeader";
+import NavProgress from "@/components/NavProgress";
 import SiteFooter from "@/components/SiteFooter";
 import JsonLd from "@/components/JsonLd";
 import Analytics from "@/components/Analytics";
@@ -33,6 +34,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="flex min-h-screen flex-col">
         {/* Theme + spoiler shield: run synchronously before any content paints (see lib/prepaint.ts). */}
         <script dangerouslySetInnerHTML={{ __html: THEME_PREPAINT + SPOILER_PREPAINT }} />
+        <NavProgress />
         <JsonLd
           data={{
             "@context": "https://schema.org",

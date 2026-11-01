@@ -32,12 +32,16 @@ async function generation() {
   return value;
 }
 
-/** GET page/asset requests only: never APIs, admin, or Next.js client navigation payloads (RSC). */
+/**
+ * GET pages, assets and Next.js navigation payloads; never APIs or admin. A navigation (RSC) request is cached
+ * only with its `_rsc` parameter, which Next.js derives from the headers that shape the payload (router state,
+ * prefetch kind), so the full URL identifies it. Page HTML is only cached for plain requests without `_rsc`.
+ */
 function cacheable(request, url) {
   if (request.method !== "GET") return false;
   if (url.pathname.startsWith("/api/") || url.pathname.startsWith("/admin")) return false;
-  if (url.searchParams.has("_rsc") || request.headers.has("rsc") || request.headers.has("next-router-prefetch")) return false;
-  return true;
+  const rscRequest = request.headers.has("rsc") || request.headers.has("next-router-prefetch");
+  return rscRequest === url.searchParams.has("_rsc");
 }
 
 async function toOrigin(request, url) {

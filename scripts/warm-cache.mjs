@@ -3,7 +3,8 @@
 // from a Search Console export), then today's and the coming days' birthday pages, then the sitemap by priority.
 // One page at a time with a GAP-second pause: most pages read monthly snapshots now, so AniList's ~30/minute
 // limit is rarely touched.
-// Usage: node scripts/warm-cache.mjs [baseUrl]   (env: LIMIT=500 GAP=3)
+// Usage: node scripts/warm-cache.mjs [baseUrl]   (env: LIMIT=500 GAP=3). Pass https://anilumi.onrender.com to fill
+// Render's own page cache (the edge Worker then fetches pre-built pages) without going through the edge.
 import { readFileSync } from "node:fs";
 
 const base = (process.argv[2] || "https://anilumi.in").replace(/\/$/, "");
@@ -29,7 +30,7 @@ const bySitemap = [...xml.matchAll(/<url>([\s\S]*?)<\/url>/g)]
   .map(([, u]) => ({ loc: u.match(/<loc>([^<]+)<\/loc>/)?.[1], p: Number(u.match(/<priority>([^<]+)<\/priority>/)?.[1] || 0.5) }))
   .filter((u) => u.loc)
   .sort((a, b) => b.p - a.p)
-  .map((u) => u.loc.replace(base, "") || "/");
+  .map((u) => { const x = new URL(u.loc); return x.pathname + x.search; }); // sitemap lists anilumi.in; base may be the origin
 const urls = [...new Set(["/", "/birthdays", ...days, ...priority, ...bySitemap])].slice(0, LIMIT).map((p) => base + p);
 
 async function warm(loc) {
