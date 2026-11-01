@@ -3,6 +3,8 @@ import Link from "@/components/Link";
 import { WATCH_ORDER_OVERRIDES } from "@/data/watch-orders";
 import { HINDI_SLUGS, hindiPath } from "@/lib/hindi";
 import PageHero from "@/components/PageHero";
+import { itemList } from "@/lib/ld";
+import JsonLd from "@/components/JsonLd";
 
 export const revalidate = 86400;
 export const metadata: Metadata = {
@@ -16,6 +18,7 @@ export default function HindiHub() {
   const guides = HINDI_SLUGS.map((slug) => ({ slug, name: WATCH_ORDER_OVERRIDES[slug].label! })).sort((x, y) => x.name.localeCompare(y.name));
   return (
     <div className="container-x pb-8" lang="hi">
+      <JsonLd data={{ ...itemList("Anime watch order guides in Hindi", guides.map((g) => ({ url: hindiPath(g.slug), name: `${g.name} watch order in Hindi` }))), inLanguage: "hi" }} />
       <PageHero
         crumbs={[{ href: "/", label: "Home" }, { href: "/hi", label: "हिंदी गाइड" }]}
         eyebrow="🇮🇳 हिंदी गाइड"

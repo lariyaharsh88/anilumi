@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 import Link from "@/components/Link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { getCharacterBySlug, getCharacterAppearances, getCharacters, animePath, posterUrl, subtypeLabel } from "@/lib/kitsu";
+import { getCharacterBySlug, getCharacterAppearances, getCharacters, animePath, posterUrl, subtypeLabel, cap } from "@/lib/kitsu";
 import { abs } from "@/lib/site";
 import PageHero from "@/components/PageHero";
 import JsonLd from "@/components/JsonLd";
+import { workRef } from "@/lib/ld";
 import Faq from "@/components/Faq";
 import { getCast, getAniListCharacter, sameName, vaPath, type Va } from "@/lib/anilist";
 import { snapFor, showRanking, snapToAniList, characterTable } from "@/lib/charsnap";
@@ -118,7 +119,22 @@ export default async function CharacterPage({ params }: Props) {
   ];
   const voices = voiced ? [voiced.jp && { va: voiced.jp, lang: "Japanese" }, voiced.en && { va: voiced.en, lang: "English dub" }].filter((x): x is NonNullable<typeof x> => Boolean(x)) : [];
   const alternateName = [c.nameJp, ...aliases].filter(Boolean);
-  const ld = { "@context": "https://schema.org", "@type": "Person", name: c.name, alternateName: alternateName.length ? alternateName : undefined, image: c.image || undefined, description: bio || undefined, url: abs(`/character/${c.slug}`) };
+  const gender = fact("gender");
+  // A fictional person: described by the works it appears in (subjectOf), never with real-world facts like birthDate.
+  const ld = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": `${abs(`/character/${c.slug}`)}#character`,
+    name: c.name,
+    alternateName: alternateName.length ? alternateName : undefined,
+    image: c.image || undefined,
+    description: bio || undefined,
+    url: abs(`/character/${c.slug}`),
+    mainEntityOfPage: abs(`/character/${c.slug}`),
+    gender: gender && /^(male|female)$/i.test(gender) ? cap(gender.toLowerCase()) : undefined,
+    subjectOf: apps.length ? apps.slice(0, 6).map((x) => workRef(x.anime)) : undefined,
+    sameAs: voiced?.character.id ? [`https://anilist.co/character/${voiced.character.id}`] : undefined,
+  };
   return (
     <article className="container-x pb-8">
       <JsonLd data={ld} />

@@ -4,6 +4,8 @@ import { animePath, posterUrl, type Anime } from "@/lib/kitsu";
 import { allDays, bdLabel, bdPath } from "@/lib/birthdays";
 import { otdPath, type Premiere } from "@/lib/onthisday";
 import PageHero from "./PageHero";
+import { itemList } from "@/lib/ld";
+import JsonLd from "@/components/JsonLd";
 import Faq from "./Faq";
 
 const ago = (year: number, now: number) => (now - year === 0 ? "this year" : now - year === 1 ? "1 year ago" : `${now - year} years ago`);
@@ -18,6 +20,7 @@ export default function OnThisDayView({ m, d, premieres, pick, today = false }: 
   const oldest = premieres.reduce<Premiere | null>((o, p) => (!o || p.year < o.year ? p : o), null);
   return (
     <div className="container-x pb-8">
+      <JsonLd data={itemList(`Anime that premiered on ${label}`, premieres.flatMap((p) => (p.anime ? [{ url: animePath(p.anime), name: p.anime.title }] : [])))} />
       <PageHero
         crumbs={[{ href: "/", label: "Home" }, { href: "/on-this-day", label: "On this day" }, ...(today ? [] : [{ href: otdPath(m, d), label }])]}
         eyebrow={today ? `📅 Today in Japan · ${label}` : "📅 On this day in anime"}

@@ -6,6 +6,7 @@ import { getAnimeBySlug, getEpisodeByNumber, getLastAiredBest, airingNotice, typ
 import { site, abs } from "@/lib/site";
 import PageHero from "@/components/PageHero";
 import JsonLd from "@/components/JsonLd";
+import { workRef, isoDuration } from "@/lib/ld";
 import Faq from "@/components/Faq";
 import Countdown from "@/components/Countdown";
 import LocalTime from "@/components/LocalTime";
@@ -85,12 +86,15 @@ export default async function EpisodePage({ params }: Props) {
     "@type": "TVEpisode",
     name: episode.title || `${a.title} Episode ${n}`,
     episodeNumber: n,
-    datePublished: episode.airdate || undefined,
+    // Only once it has aired; a scheduled episode carries its date as the broadcast below.
+    datePublished: !upcoming && airIso ? airIso : undefined,
     description: episode.synopsis || undefined,
     image: episode.thumbnail || posterUrl(a, "large") || undefined,
-    timeRequired: episode.length ? `PT${episode.length}M` : undefined,
+    timeRequired: episode.length ? isoDuration(episode.length) : undefined,
+    inLanguage: "ja",
     url: abs(episodePath(a, n)),
-    partOfSeries: { "@type": "TVSeries", name: a.title, url: abs(animePath(a)) },
+    partOfSeries: workRef(a),
+    publication: airIso ? { "@type": "BroadcastEvent", startDate: airIso, isLiveBroadcast: false, ...(episode.length && airIso.length > 10 ? { endDate: new Date(new Date(airIso).getTime() + episode.length * 60_000).toISOString() } : {}) } : undefined,
   };
 
   const faq = [

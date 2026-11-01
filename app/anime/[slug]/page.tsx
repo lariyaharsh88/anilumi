@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { workType, workId, isoDuration } from "@/lib/ld";
 import Link from "@/components/Link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
@@ -183,18 +184,33 @@ export default async function AnimePage({ params }: Props) {
   // Read when the page (re)renders, i.e. at most daily: fresh enough for search engines; the widget shows live numbers.
   const fanRating = community && released ? aggregateRating(summarize(await ratingStats(a.id))) : undefined;
 
+  const director = keyStaff.find((k) => k.role === "Director")?.people ?? [];
+  const creator = keyStaff.find((k) => k.role === "Original creator")?.people ?? [];
+  const music = keyStaff.find((k) => k.role === "Music")?.people ?? [];
+  const person = (p: { id: number; name: string; voices: boolean }) => ({ "@type": "Person", name: p.name, url: abs(personPath(p)) });
+  const isMovie = a.subtype === "movie";
   const ld = {
     "@context": "https://schema.org",
-    "@type": a.subtype === "movie" ? "Movie" : "TVSeries",
+    "@type": workType(a),
+    "@id": workId(a),
     name: a.title,
     alternateName: [a.titleEn, a.titleJp].filter(Boolean),
     url: abs(animePath(a)),
+    mainEntityOfPage: abs(animePath(a)),
     image: posterUrl(a, "large") || undefined,
-    description: a.synopsis,
+    description: a.synopsis || undefined,
     genre: a.categories.map((c) => c.title),
+    inLanguage: "ja",
+    countryOfOrigin: { "@type": "Country", name: "Japan" },
     datePublished: a.startDate || undefined,
-    numberOfEpisodes: a.episodeCount || undefined,
+    // TVSeries is a CreativeWorkSeries: it runs from startDate to endDate.
+    ...(isMovie ? { duration: a.episodeLength ? isoDuration(a.episodeLength) : undefined } : { startDate: a.startDate || undefined, endDate: a.status === "finished" ? a.endDate || undefined : undefined, numberOfEpisodes: a.episodeCount || undefined, timeRequired: runtime ? isoDuration(runtime) : undefined }),
     contentRating: a.ageRating || undefined,
+    productionCompany: studios.length ? studios.map((p) => ({ "@type": "Organization", name: p.producer.name, url: abs(`/studio/${p.producer.slug}`) })) : undefined,
+    director: director.length ? director.map(person) : undefined,
+    creator: creator.length ? creator.map(person) : undefined,
+    musicBy: music.length ? music.map(person) : undefined,
+    character: characters.length ? characters.map((c) => ({ "@type": "Person", name: c.name, url: abs(`/character/${c.slug}`) })) : undefined,
     // Only AniLumi's own fan ratings, and only past RATING_SNIPPET_MIN votes: Google's review-snippet policy
     // requires ratings collected on this site, never scores aggregated from Kitsu/AniList/MAL.
     aggregateRating: fanRating,

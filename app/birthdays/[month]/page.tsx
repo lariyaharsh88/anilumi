@@ -8,6 +8,8 @@ import { characterPathFor } from "@/lib/charsnap";
 import { animePath } from "@/lib/kitsu";
 import { vaPath } from "@/lib/anilist";
 import PageHero from "@/components/PageHero";
+import { itemList } from "@/lib/ld";
+import JsonLd from "@/components/JsonLd";
 import Faq from "@/components/Faq";
 
 // Every 6 hours, so the "Today" marker follows the date.
@@ -64,6 +66,7 @@ export default async function BirthdayMonth({ params }: Props) {
 
   return (
     <div className="container-x pb-8">
+      <JsonLd data={itemList(`Anime characters born in ${name}`, characters.flatMap((c) => { const href = characterPathFor(c.id); return href ? [{ url: href, name: c.n }] : []; }))} />
       <PageHero
         crumbs={[{ href: "/", label: "Home" }, { href: "/birthdays", label: "Birthdays" }, { href: monthPath(m), label: name }]}
         eyebrow={`🎂 ${signs.map((s) => s.sign).join(" & ")}`}

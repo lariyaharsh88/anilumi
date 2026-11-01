@@ -68,7 +68,7 @@ export default async function GenrePage({ params, searchParams }: Props) {
       </PageHero>
       <AdSlot slot="genre-top" />
       <div className="mt-6">
-        <AnimeGrid items={data.items} startRank={(page - 1) * LIMIT + 1} />
+        <AnimeGrid items={data.items} startRank={(page - 1) * LIMIT + 1} ld={`Best ${g.title.toLowerCase()} anime`} />
       </div>
       <Pagination page={page} total={Math.min(data.total, LIMIT * 50)} limit={LIMIT} base={base} />
       <Faq

@@ -1,6 +1,8 @@
 import Link from "@/components/Link";
 import Image from "next/image";
 import { posterUrl, type Anime } from "@/lib/kitsu";
+import JsonLd from "./JsonLd";
+import { itemList } from "@/lib/ld";
 
 export type ToolRow = { a: Anime; href: string; value: string; sub?: string };
 
@@ -9,6 +11,7 @@ export default function ToolList({ title, subtitle, rows }: { title: string; sub
   if (!rows.length) return null;
   return (
     <section className="reveal">
+      <JsonLd data={itemList(title, rows.map((r) => ({ url: r.href, name: r.a.title })))} />
       <h2 className="h-section">{title}</h2>
       {subtitle && <p className="mt-1 text-sm text-muted">{subtitle}</p>}
       <ol className="card mt-3 divide-y divide-line">

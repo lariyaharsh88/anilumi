@@ -4,6 +4,8 @@ import Link from "@/components/Link";
 import { getAnimeBySlug, getLastAiredBest, animePath, episodePath, posterUrl } from "@/lib/kitsu";
 import { fillerFor, fillerSource, formatRanges, kindRuns, type EpisodeKind, type FillerInfo } from "@/lib/filler";
 import PageHero from "@/components/PageHero";
+import { pageAbout } from "@/lib/ld";
+import JsonLd from "@/components/JsonLd";
 import Faq, { type FaqItem } from "@/components/Faq";
 import AdSlot from "@/components/AdSlot";
 import LeadForm from "@/components/LeadForm";
@@ -71,6 +73,7 @@ export default async function FillerListPage({ params }: Props) {
 
   return (
     <div className="container-x pb-8">
+      <JsonLd data={pageAbout(a, `${animePath(a)}/filler-list`, `${a.title} filler list`)} />
       <PageHero
         crumbs={[{ href: "/", label: "Home" }, { href: animePath(a), label: a.title }, { href: `${animePath(a)}/filler-list`, label: "Filler list" }]}
         eyebrow={<><span className="mr-2 inline-flex items-center rounded-full bg-white/10 px-2 py-0.5 text-[11px] tracking-normal text-ink normal-case">{src.label}</span>Filler guide</>}

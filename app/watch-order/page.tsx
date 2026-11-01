@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "@/components/Link";
 import { listAnime, animePath, getRelations, uniqueById, posterUrl } from "@/lib/kitsu";
 import { WATCH_ORDER_OVERRIDES } from "@/data/watch-orders";
+import franchiseData from "@/data/franchises.json";
 import PageHero from "@/components/PageHero";
 import Image from "next/image";
 
@@ -59,6 +60,32 @@ export default async function WatchOrderIndex() {
         </ul>
         <p className="mt-4 text-sm text-muted">Any title has a watch order: open it and press “Watch order”. Example: <Link href={animePath({ slug: "naruto" })} className="text-violet">Naruto</Link>.</p>
       </section>
+
+      {/* Every franchise with more than one entry (data/franchises.json), A to Z: one link to each watch order. */}
+      {(() => {
+        const all = (franchiseData as { franchises: { s: string; t: string; n: number }[] }).franchises.filter((f) => f.n > 1).slice(0, 1000);
+        const groups = new Map<string, typeof all>();
+        for (const f of [...all].sort((x, y) => x.t.localeCompare(y.t))) {
+          const k = /^[a-z]/i.test(f.t) ? f.t[0].toUpperCase() : "#";
+          groups.set(k, [...(groups.get(k) || []), f]);
+        }
+        return all.length > 0 ? (
+          <section className="reveal mt-12" aria-labelledby="az-h">
+            <h2 id="az-h" className="h-section mb-1">All franchise watch orders, A–Z</h2>
+            <p className="mb-4 text-sm text-muted">{all.length} franchises with more than one season, movie or OVA.</p>
+            <div className="space-y-4">
+              {[...groups].map(([k, list]) => (
+                <div key={k}>
+                  <h3 className="mb-1.5 text-sm font-bold text-accent-2">{k}</h3>
+                  <ul className="flex flex-wrap gap-x-4 gap-y-1 text-sm">
+                    {list.map((f) => <li key={f.s}><Link href={`/watch-order/${f.s}`} className="text-ink/85 hover:text-violet-2 hover:underline">{f.t}</Link> <span className="text-xs text-muted">({f.n})</span></li>)}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </section>
+        ) : null;
+      })()}
     </div>
   );
 }

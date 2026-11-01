@@ -7,6 +7,7 @@ import { characterPathFor } from "@/lib/charsnap";
 import { abs } from "@/lib/site";
 import PageHero from "./PageHero";
 import JsonLd from "./JsonLd";
+import { SITE_ID } from "@/lib/ld";
 import BarChart from "./viz/BarChart";
 import Faq, { type FaqItem } from "./Faq";
 import AdSlot from "./AdSlot";
@@ -70,10 +71,14 @@ export default async function PersonProfile({ va, kind }: { va: VoiceActor; kind
   ].filter(Boolean) as { label: string; value: string }[];
   const occupation = kind === "voice" ? `${va.language ? `${va.language} ` : ""}voice actor` : (va.occupations[0] || jobs[0] || "Anime staff").toLowerCase();
 
-  const ld = {
-    "@context": "https://schema.org",
+  const person = {
     "@type": "Person",
+    "@id": `${abs(path)}#person`,
     name: va.name,
+    description: bio ? bio.slice(0, 500) : undefined,
+    gender: va.gender && /^(male|female)$/i.test(va.gender) ? va.gender : undefined,
+    birthPlace: va.homeTown || wd?.birthPlace ? { "@type": "Place", name: va.homeTown || wd!.birthPlace } : undefined,
+    knowsLanguage: kind === "voice" && va.language ? va.language : undefined,
     alternateName: [va.native, ...va.alternative].filter(Boolean),
     jobTitle: kind === "voice" ? "Voice actor" : va.occupations[0] || jobs[0],
     image: va.imageLarge || undefined,
@@ -82,6 +87,8 @@ export default async function PersonProfile({ va, kind }: { va: VoiceActor; kind
     url: abs(path),
     sameAs: [`https://anilist.co/staff/${va.id}`, ...(wd ? [`https://www.wikidata.org/wiki/${wd.qid}`] : []), ...(wd?.website ? [wd.website] : [])],
   };
+  // ProfilePage around the Person: the page's main entity is this one person.
+  const ld = { "@context": "https://schema.org", "@type": "ProfilePage", url: abs(path), name: `${va.name}: ${occupation}`, isPartOf: { "@id": SITE_ID }, mainEntity: person };
   const topWork = va.work.slice(0, 6);
   const faq: FaqItem[] = kind === "voice"
     ? [

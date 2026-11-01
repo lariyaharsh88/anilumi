@@ -4,6 +4,8 @@ import { notFound } from "next/navigation";
 import { getAnimeBySlug, listAnime, animePath, posterUrl } from "@/lib/kitsu";
 import { getAniListInsight, parentsGuide, ageLabel, flaggedShort, preteenAnswer, type ParentsGuide } from "@/lib/insights";
 import PageHero from "@/components/PageHero";
+import { pageAbout } from "@/lib/ld";
+import JsonLd from "@/components/JsonLd";
 import ParentsGuideSection from "@/components/ParentsGuide";
 import AnimeRail from "@/components/AnimeRail";
 import Faq, { type FaqItem } from "@/components/Faq";
@@ -67,6 +69,7 @@ export default async function ParentsGuidePage({ params }: Props) {
 
   return (
     <div className="container-x pb-8">
+      <JsonLd data={pageAbout(a, `${animePath(a)}/parents-guide`, `${a.title} parents guide`)} />
       <PageHero
         crumbs={[{ href: "/", label: "Home" }, { href: animePath(a), label: a.title }, { href: `${animePath(a)}/parents-guide`, label: "Parents' guide" }]}
         eyebrow="👪 Parents' guide"

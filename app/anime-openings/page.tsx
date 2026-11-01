@@ -4,6 +4,8 @@ import Image from "next/image";
 import { listAnime, animePath, posterUrl } from "@/lib/kitsu";
 import { getThemes } from "@/lib/themes";
 import PageHero from "@/components/PageHero";
+import { itemList } from "@/lib/ld";
+import JsonLd from "@/components/JsonLd";
 
 export const revalidate = 86400;
 export const metadata: Metadata = {
@@ -20,6 +22,7 @@ export default async function OpeningsHub() {
   const rows = all.filter((r) => r.t?.themes.some((x) => x.type === "OP"));
   return (
     <div className="container-x pb-8">
+      <JsonLd data={itemList("Anime openings & endings", rows.map(({ a }) => ({ url: `${animePath(a)}/openings-endings`, name: `${a.title} openings & endings` })))} />
       <PageHero
         crumbs={[{ href: "/", label: "Home" }, { href: "/anime-openings", label: "Anime openings" }]}
         eyebrow="🎵 Theme songs"

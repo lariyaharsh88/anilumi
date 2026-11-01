@@ -50,7 +50,7 @@ export default async function TopPage({ params, searchParams }: Props) {
       </PageHero>
       <AdSlot slot="top-top" />
       <div className="mt-6">
-        <AnimeGrid items={data.items} startRank={(page - 1) * LIMIT + 1} />
+        <AnimeGrid items={data.items} startRank={(page - 1) * LIMIT + 1} ld={def.h1} />
       </div>
       <Pagination page={page} total={Math.min(data.total, LIMIT * 50)} limit={LIMIT} base={`/top/${list}`} />
       <Faq

@@ -6,6 +6,8 @@ import { getCast, getKeyStaff, vaPath, sameName } from "@/lib/anilist";
 import { characterPathFor } from "@/lib/charsnap";
 import KeyStaff from "@/components/KeyStaff";
 import PageHero from "@/components/PageHero";
+import { pageAbout } from "@/lib/ld";
+import JsonLd from "@/components/JsonLd";
 import CastGrid from "@/components/CastGrid";
 import Faq, { type FaqItem } from "@/components/Faq";
 import AdSlot from "@/components/AdSlot";
@@ -60,6 +62,7 @@ export default async function CastPage({ params }: Props) {
   ];
   return (
     <div className="container-x pb-8">
+      <JsonLd data={pageAbout(a, `${animePath(a)}/cast`, `${a.title} cast & voice actors`)} />
       <PageHero
         crumbs={[{ href: "/", label: "Home" }, { href: animePath(a), label: a.title }, { href: `${animePath(a)}/cast`, label: "Cast" }]}
         eyebrow="🎙️ Cast & voice actors"

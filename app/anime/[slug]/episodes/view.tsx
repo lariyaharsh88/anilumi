@@ -9,6 +9,8 @@ import SpoilerGate from "@/components/SpoilerGate";
 import FillerToggle from "@/components/FillerToggle";
 import { fillerFor, fillerSource } from "@/lib/filler";
 import PageHero from "@/components/PageHero";
+import { pageAbout, itemList } from "@/lib/ld";
+import JsonLd from "@/components/JsonLd";
 import Pagination from "@/components/Pagination";
 import AdSlot from "@/components/AdSlot";
 
@@ -53,6 +55,8 @@ export async function EpisodesView({ slug, page }: { slug: string; page: number 
 
   return (
     <div className="container-x pb-8">
+      <JsonLd data={pageAbout(a, episodesPath(a.slug, page), `${a.title} episodes${page > 1 ? `, page ${page}` : ""}`)} />
+      <JsonLd data={itemList(`${a.title} episodes`, eps.items.flatMap((e) => (e.number ? [{ url: episodePath(a, e.number), name: e.title ? `Episode ${e.number}: ${e.title}` : `Episode ${e.number}` }] : [])), (page - 1) * LIMIT + 1)} />
       <PageHero
         crumbs={[{ href: "/", label: "Home" }, { href: animePath(a), label: a.title }, { href: `${animePath(a)}/episodes`, label: "Episodes" }]}
         eyebrow="Episode guide"

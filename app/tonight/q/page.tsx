@@ -5,6 +5,8 @@ import Link from "@/components/Link";
 import Image from "next/image";
 import { listAnime, getCategories, runtimeMinutes, fmtMinutes, posterUrl, animePath, subtypeLabel, uniqueById, Anime } from "@/lib/kitsu";
 import PageHero from "@/components/PageHero";
+import { itemList } from "@/lib/ld";
+import JsonLd from "@/components/JsonLd";
 import Faq from "@/components/Faq";
 import AdSlot from "@/components/AdSlot";
 import WatchButton from "@/components/WatchButton";
@@ -71,6 +73,7 @@ export default async function TonightPage({ searchParams }: Props) {
 
   return (
     <div className="container-x pb-8">
+      <JsonLd data={itemList(`Anime you can finish in ${label(v.minutes)}${genreTitle ? `: ${genreTitle}` : ""}`, finish.map(({ a }) => ({ url: animePath(a), name: a.title })))} />
       <PageHero
         crumbs={[{ href: "/", label: "Home" }, { href: "/lists", label: "Lists" }, { href: "/tonight", label: "What to watch tonight" }]}
         eyebrow="🌙 Tonight"

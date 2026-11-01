@@ -67,7 +67,7 @@ export default async function SimilarPage({ params }: Props) {
       <FanRecs title={a.title} recs={recs} heading={`What ${a.title} fans recommend`} />
       <AdSlot slot="similar-top" />
       <h2 className="h-section mb-3 mt-12">Same genres and themes</h2>
-      <div><AnimeGrid items={items} startRank={1} emptyText="Not enough genre data to find matches yet." /></div>
+      <div><AnimeGrid items={items} startRank={1} ld={`Anime like ${a.title}`} emptyText="Not enough genre data to find matches yet." /></div>
       <Faq
         items={[
           ...(recs[0] ? [{ q: `What do ${a.title} fans recommend?`, a: `AniList members most often recommend ${recs.slice(0, 3).map((r) => `${r.title} (${r.votes.toLocaleString("en-US")} votes)`).join(", ")}.` }] : []),

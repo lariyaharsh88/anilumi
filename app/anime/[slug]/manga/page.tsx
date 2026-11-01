@@ -5,6 +5,8 @@ import { getAnimeBySlug, animePath, posterUrl } from "@/lib/kitsu";
 import { continuationFor, continuationSlugs, startAt } from "@/lib/filler";
 import { amazonSearch, affiliateRel } from "@/lib/affiliate";
 import PageHero from "@/components/PageHero";
+import { pageAbout } from "@/lib/ld";
+import JsonLd from "@/components/JsonLd";
 import Faq, { type FaqItem } from "@/components/Faq";
 import AdSlot from "@/components/AdSlot";
 import LeadForm from "@/components/LeadForm";
@@ -49,6 +51,7 @@ export default async function MangaPage({ params }: Props) {
 
   return (
     <div className="container-x pb-8">
+      <JsonLd data={pageAbout(a, `${animePath(a)}/manga`, `Where the ${a.title} anime ends in the ${cont.medium}`)} />
       <PageHero
         crumbs={[{ href: "/", label: "Home" }, { href: animePath(a), label: a.title }, { href: `${animePath(a)}/manga`, label: `Continue in the ${medium}` }]}
         eyebrow={<><span className="mr-2 inline-flex items-center rounded-full bg-white/10 px-2 py-0.5 text-[11px] tracking-normal text-ink normal-case">{draft ? "Draft · being verified" : "Reviewed"}</span>Anime → {medium}</>}

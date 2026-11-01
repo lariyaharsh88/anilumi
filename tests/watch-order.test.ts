@@ -90,3 +90,11 @@ test("franchiseName uses the searched name, not a longer sequel title", async ()
   assert.equal(franchiseName({ root, entries: [en("Hunter x Hunter (2011)", null)] }), "Hunter x Hunter");
   assert.equal(franchiseName({ root, entries: [en("Kimetsu", "x".repeat(46))] }), "Kimetsu");
 });
+
+test("watchOrderSlug: editorial key first, else the entry the franchise is known by", async () => {
+  const { watchOrderSlug } = await import("../lib/kitsu");
+  const e = (slug: string, title: string, userCount: number) => ({ anime: mk(slug, title, { userCount }), step: 1, kind: "main" as const, note: "", optional: false });
+  const root = mk("ep0", "Ansatsu Kyoushitsu: Episode 0");
+  assert.equal(watchOrderSlug({ root, entries: [e("ep0", "Ansatsu Kyoushitsu: Episode 0", 10), e("ansatsu-tv", "Ansatsu Kyoushitsu", 900), e("ansatsu-2", "Ansatsu Kyoushitsu 2", 500)] }), "ansatsu-tv");
+  assert.equal(watchOrderSlug({ root, entries: [e("jjk0", "Jujutsu Kaisen 0", 900)], key: "jujutsu-kaisen" }), "jujutsu-kaisen");
+});

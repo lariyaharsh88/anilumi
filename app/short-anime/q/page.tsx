@@ -53,7 +53,7 @@ export default async function ShortAnime({ searchParams }: Props) {
       </div>
       </PageHero>
       <AdSlot slot="short-top" />
-      <div className="mt-6"><AnimeGrid items={data.items} startRank={(page - 1) * LIMIT + 1} /></div>
+      <div className="mt-6"><AnimeGrid items={data.items} startRank={(page - 1) * LIMIT + 1} ld={`Best short${gTitle ? ` ${gTitle.toLowerCase()}` : ""} anime, ${m} episodes or less`} /></div>
       <Pagination page={page} total={Math.min(data.total, LIMIT * 25)} limit={LIMIT} base={base} />
       <Faq
         items={[

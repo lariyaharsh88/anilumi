@@ -107,7 +107,7 @@ export default async function SeasonPage({ params, searchParams }: Props) {
 
       <AdSlot slot="season-top" />
       <div className="mt-6">
-        <AnimeGrid items={data.items} startRank={(page - 1) * LIMIT + 1} emptyText="No titles listed for this season yet." />
+        <AnimeGrid items={data.items} startRank={(page - 1) * LIMIT + 1} ld={`${cap(season)} ${year} anime`} emptyText="No titles listed for this season yet." />
       </div>
       <Pagination page={page} total={data.total} limit={LIMIT} base={`/season/${year}/${season}`} />
 

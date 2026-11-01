@@ -8,6 +8,8 @@ import { sequelVerdict, seasonGaps, humanMonths, type SequelLike, type SequelKin
 import { continuationFor } from "@/lib/filler";
 import { previewSnapshot } from "@/lib/preview";
 import PageHero from "@/components/PageHero";
+import { pageAbout } from "@/lib/ld";
+import JsonLd from "@/components/JsonLd";
 import Countdown from "@/components/Countdown";
 import Faq, { type FaqItem } from "@/components/Faq";
 import AdSlot from "@/components/AdSlot";
@@ -99,6 +101,7 @@ export default async function NextSeasonPage({ params }: Props) {
 
   return (
     <div className="container-x pb-8">
+      <JsonLd data={pageAbout(a, `${animePath(a)}/next-season`, `${a.title} next season`)} />
       <PageHero
         crumbs={[{ href: "/", label: "Home" }, { href: animePath(a), label: a.title }, { href: `${animePath(a)}/next-season`, label: first ? "Season 2" : "Next season" }]}
         eyebrow={<><span className="mr-2 inline-flex items-center rounded-full bg-white/10 px-2 py-0.5 text-[11px] tracking-normal text-ink normal-case">{BADGE[verdict.kind]}</span>{label}</>}

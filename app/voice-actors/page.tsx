@@ -3,6 +3,8 @@ import Link from "@/components/Link";
 import Image from "next/image";
 import { popularVoiceActors, vaPath } from "@/lib/anilist";
 import PageHero from "@/components/PageHero";
+import { itemList } from "@/lib/ld";
+import JsonLd from "@/components/JsonLd";
 
 // Hourly: if AniList is rate-limiting during a build, the empty state clears quickly.
 export const revalidate = 3600;
@@ -34,6 +36,7 @@ export default async function VoiceActorsHub() {
   );
   return (
     <div className="container-x pb-8">
+      <JsonLd data={itemList("Popular anime voice actors", vas.map((v) => ({ url: vaPath(v), name: v.name, image: v.image })))} />
       <PageHero
         crumbs={[{ href: "/", label: "Home" }, { href: "/voice-actors", label: "Voice actors" }]}
         eyebrow="🎙️ Seiyuu"

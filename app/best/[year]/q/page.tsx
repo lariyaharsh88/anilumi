@@ -61,7 +61,7 @@ export default async function BestOfYear({ params, searchParams }: Props) {
       </div>
       </PageHero>
       <AdSlot slot="best-top" />
-      <div className="mt-6"><AnimeGrid items={data.items} startRank={(page - 1) * LIMIT + 1} /></div>
+      <div className="mt-6"><AnimeGrid items={data.items} startRank={(page - 1) * LIMIT + 1} ld={`Best anime of ${year}: ${SORTS[sortKey].label.toLowerCase()}`} /></div>
       <Pagination page={page} total={Math.min(data.total, LIMIT * 25)} limit={LIMIT} base={`/best/${year}${sortKey !== "rated" ? `?sort=${sortKey}` : ""}`} />
       <Faq
         items={[

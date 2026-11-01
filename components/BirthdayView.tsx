@@ -5,6 +5,8 @@ import { vaPath } from "@/lib/anilist";
 import { characterPathFor } from "@/lib/charsnap";
 import { bdLabel, bdPath, monthPath, nextDays, birthdaysOn, MONTHS, cap, type BdChar, type BdPerson } from "@/lib/birthdays";
 import PageHero from "./PageHero";
+import { itemList } from "@/lib/ld";
+import JsonLd from "@/components/JsonLd";
 import Faq from "./Faq";
 
 /** Shared body for /birthdays (today) and /birthdays/[month]/[day]. */
@@ -14,6 +16,7 @@ export default function BirthdayView({ m, d, characters, people, today = false }
   const year = new Date().getFullYear();
   return (
     <div className="container-x pb-8">
+      <JsonLd data={itemList(`Anime characters born on ${label}`, characters.flatMap((c) => { const href = characterPathFor(c.id); return href ? [{ url: href, name: c.n }] : []; }))} />
       <PageHero
         crumbs={[{ href: "/", label: "Home" }, { href: "/birthdays", label: "Birthdays" }, ...(today ? [] : [{ href: monthPath(m), label: cap(MONTHS[m - 1]) }, { href: bdPath(m, d), label }])]}
         eyebrow={today ? `🎂 Today in Japan · ${label}` : "🎂 Anime birthdays"}

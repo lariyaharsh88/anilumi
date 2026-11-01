@@ -4,6 +4,8 @@ import { notFound } from "next/navigation";
 import { getAnimeBySlug, animePath, posterUrl } from "@/lib/kitsu";
 import { getThemes, themeLabel } from "@/lib/themes";
 import PageHero from "@/components/PageHero";
+import { pageAbout } from "@/lib/ld";
+import JsonLd from "@/components/JsonLd";
 import ThemeList from "@/components/ThemeList";
 import Faq, { type FaqItem } from "@/components/Faq";
 import AdSlot from "@/components/AdSlot";
@@ -48,6 +50,21 @@ export default async function ThemesPage({ params }: Props) {
   ] : [];
   return (
     <div className="container-x pb-8">
+      <JsonLd
+        data={{
+          ...pageAbout(a, `${animePath(a)}/openings-endings`, `${a.title} openings & endings`),
+          // The songs themselves, each credited to its artists.
+          mainEntity: themes.length ? {
+            "@type": "ItemList",
+            name: `${a.title} theme songs`,
+            itemListElement: themes.filter((x) => x.song).map((x, i) => ({
+              "@type": "ListItem",
+              position: i + 1,
+              item: { "@type": "MusicRecording", name: x.song, alternateName: themeLabel(x), byArtist: x.artists.map((name) => ({ "@type": "MusicGroup", name })) },
+            })),
+          } : undefined,
+        }}
+      />
       <PageHero
         crumbs={[{ href: "/", label: "Home" }, { href: animePath(a), label: a.title }, { href: `${animePath(a)}/openings-endings`, label: "Openings & endings" }]}
         eyebrow="🎵 Theme songs"

@@ -94,7 +94,7 @@ export default async function StudioPage({ params }: Props) {
       <AnimeRail title={`Best rated by ${p.name}`} items={rated} rank />
       <section className="mt-10">
         <h2 className="h-section mb-3">Most popular</h2>
-        <AnimeGrid items={items.slice(0, 40)} startRank={1} />
+        <AnimeGrid items={items.slice(0, 40)} startRank={1} ld={`${p.name} anime`} />
       </section>
       <Faq
         items={[

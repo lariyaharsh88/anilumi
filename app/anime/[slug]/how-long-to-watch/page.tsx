@@ -6,6 +6,8 @@ import { fillerFor } from "@/lib/filler";
 import { paces, shortcuts, humanDays, hoursOf, fmtRun, episodeMinutes } from "@/lib/binge";
 import { getAniListDuration } from "@/lib/anilist";
 import PageHero from "@/components/PageHero";
+import { pageAbout } from "@/lib/ld";
+import JsonLd from "@/components/JsonLd";
 import BingePlanner from "@/components/BingePlanner";
 import BarChart from "@/components/viz/BarChart";
 import Faq, { type FaqItem } from "@/components/Faq";
@@ -108,6 +110,7 @@ export default async function HowLongPage({ params }: Props) {
 
   return (
     <div className="container-x pb-8">
+      <JsonLd data={pageAbout(a, `${animePath(a)}/how-long-to-watch`, `How long to watch ${a.title}`)} />
       <PageHero
         crumbs={[{ href: "/", label: "Home" }, { href: animePath(a), label: a.title }, { href: `${animePath(a)}/how-long-to-watch`, label: "How long to watch" }]}
         eyebrow="⏳ Binge-time calculator"

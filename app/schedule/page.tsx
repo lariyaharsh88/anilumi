@@ -1,8 +1,10 @@
 import Link from "@/components/Link";
 import type { Metadata } from "next";
-import { listAnime, Anime, posterUrl, fmtDate, weekdayOf, uniqueById, seasonOf, getWeekBroadcasts, aniListNextEpisodes } from "@/lib/kitsu";
+import { listAnime, Anime, posterUrl, fmtDate, weekdayOf, uniqueById, seasonOf, getWeekBroadcasts, aniListNextEpisodes, animePath } from "@/lib/kitsu";
 import AiringHeatmap from "@/components/viz/AiringHeatmap";
 import PageHero from "@/components/PageHero";
+import { itemList } from "@/lib/ld";
+import JsonLd from "@/components/JsonLd";
 import Faq from "@/components/Faq";
 import AdSlot from "@/components/AdSlot";
 import ScheduleBoard, { BoardDay, BoardItem } from "@/components/ScheduleBoard";
@@ -54,6 +56,7 @@ export default async function SchedulePage() {
 
   return (
     <div className="container-x pb-8">
+      <JsonLd data={itemList("Anime airing this week", days.flatMap((d) => d.items).map((x) => ({ url: animePath(x), name: x.title })))} />
       <PageHero
         crumbs={[{ href: "/", label: "Home" }, { href: "/schedule", label: "Schedule" }]}
         eyebrow={<><span className="live-dot mr-2 inline-block align-middle" aria-hidden />Live · {todayJst} in Tokyo</>}

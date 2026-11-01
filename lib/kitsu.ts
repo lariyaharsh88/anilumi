@@ -494,7 +494,7 @@ export type WatchEntry = {
   attachedTo?: string; // id of main entry this hangs off
 };
 
-export type WatchOrder = { root: Anime; entries: WatchEntry[]; mainCount: number; totalMinutes: number; releaseOrder: Anime[]; intro: string | null; label?: string | null };
+export type WatchOrder = { root: Anime; entries: WatchEntry[]; mainCount: number; totalMinutes: number; releaseOrder: Anime[]; intro: string | null; label?: string | null; key?: string | null };
 
 function kindOf(role: RelationRole, a: Anime): WatchEntry["kind"] {
   if (role === "summary") return "recap";
@@ -562,7 +562,8 @@ export async function buildWatchOrder(start: Anime, fetchRelations: (id: string)
 
   // 4. editorial overrides (data/watch-orders.ts). Keyed by any slug in the franchise, so
   //    a key still matches when Kitsu roots the graph at a prequel film or OVA.
-  const ov = overrides[root.slug] ?? entries.map((e) => overrides[e.anime.slug]).find(Boolean);
+  const ovKey = overrides[root.slug] ? root.slug : entries.map((e) => e.anime.slug).find((s) => overrides[s]) ?? null;
+  const ov = ovKey ? overrides[ovKey] : undefined;
   if (ov?.demote?.length) {
     for (const slug of ov.demote) {
       const i = entries.findIndex((e) => e.anime.slug === slug && e.kind === "main");
@@ -591,22 +592,33 @@ export async function buildWatchOrder(start: Anime, fetchRelations: (id: string)
   const totalMinutes = entries.filter((e) => e.kind === "main" || e.kind === "movie").reduce((n, e) => n + runtimeMinutes(e.anime), 0);
   const releaseOrder = [...entries.map((e) => e.anime)].sort((x, y) => (x.startDate || "9").localeCompare(y.startDate || "9"));
   const firstMain = entries.find((e) => e.kind === "main")?.anime ?? root;
-  return { root: firstMain, entries, mainCount: entries.filter((e) => e.kind === "main").length, totalMinutes, releaseOrder, intro: ov?.intro || null, label: ov?.label || null };
+  return { root: firstMain, entries, mainCount: entries.filter((e) => e.kind === "main").length, totalMinutes, releaseOrder, intro: ov?.intro || null, label: ov?.label || null, key: ovKey };
 }
 
 /**
+ * The entry a franchise is known by: the most-followed main entry ("Nichijou", not its episode-0 prequel),
+ * shortened to an earlier main entry it starts with ("Naruto", not "Naruto: Shippuuden"). Pure.
+ */
+function franchisePick(wo: Pick<WatchOrder, "entries" | "root">): Anime {
+  const mains = wo.entries.filter((e) => e.kind === "main").map((e) => e.anime);
+  const top = [...mains].sort((x, y) => y.userCount - x.userCount)[0];
+  if (!top) return wo.root;
+  const prefix = mains.filter((m) => m.title.length >= 3 && top.title.toLowerCase().startsWith(m.title.toLowerCase())).sort((x, y) => x.title.length - y.title.length)[0];
+  return prefix ?? top;
+}
+
+/** The one URL a franchise's watch order lives at: the editorial key when there is one, else the entry it's known
+ * by ("ansatsu-kyoushitsu-tv", not the episode-0 OVA Kitsu starts the chain with). Pure. */
+export const watchOrderSlug = (wo: Pick<WatchOrder, "entries" | "root"> & { key?: string | null }) => wo.key || franchisePick(wo).slug;
+
+/**
  * The name people search for a franchise: the editorial label ("Demon Slayer") when there is one; otherwise the
- * most-followed main entry ("Nichijou", not its episode-0 prequel), shortened to an earlier main entry it starts
- * with ("Naruto", not "Naruto: Shippuuden"), in English when Kitsu has an English title ("My Hero Academia", not
+ * entry it's known by (see franchisePick), in English when Kitsu has an English title ("My Hero Academia", not
  * "Boku no Hero Academia"), without a year tag ("Hunter x Hunter (2011)"). Pure.
  */
 export function franchiseName(wo: Pick<WatchOrder, "entries" | "root"> & { label?: string | null }): string {
   if (wo.label) return wo.label;
-  const mains = wo.entries.filter((e) => e.kind === "main").map((e) => e.anime);
-  const top = [...mains].sort((x, y) => y.userCount - x.userCount)[0];
-  if (!top) return wo.root.title;
-  const prefix = mains.filter((m) => m.title.length >= 3 && top.title.toLowerCase().startsWith(m.title.toLowerCase())).sort((x, y) => x.title.length - y.title.length)[0];
-  const pick = prefix ?? top;
+  const pick = franchisePick(wo);
   const name = pick.titleEn && pick.titleEn.length <= 45 ? pick.titleEn : pick.title;
   return name.replace(/\s*\((?:\d{4}|TV)\)$/, "").trim();
 }

@@ -7,6 +7,8 @@ import { getAniListSequel } from "@/lib/anilist";
 import { fillerFor } from "@/lib/filler";
 import { KIND_HI, hiDuration, hiDays, hiDate, hiExpected, hiCount, hasHindi, hindiPath } from "@/lib/hindi";
 import PageHero from "@/components/PageHero";
+import JsonLd from "@/components/JsonLd";
+import { pageAbout, itemList } from "@/lib/ld";
 import Faq, { type FaqItem } from "@/components/Faq";
 import AdSlot from "@/components/AdSlot";
 
@@ -85,6 +87,8 @@ export default async function HindiGuide({ params }: Props) {
 
   return (
     <div className="container-x pb-8" lang="hi">
+      <JsonLd data={pageAbout(a, hindiPath(d.slug), `${name} watch order in Hindi`, undefined, "hi")} />
+      <JsonLd data={{ ...itemList(`${name} देखने का सही क्रम`, ordered.map((e) => ({ url: animePath(e.anime), name: e.anime.title }))), inLanguage: "hi" }} />
       <PageHero
         crumbs={[{ href: "/", label: "Home" }, { href: "/hi", label: "हिंदी गाइड" }, { href: hindiPath(d.slug), label: name }]}
         eyebrow="🇮🇳 हिंदी गाइड"

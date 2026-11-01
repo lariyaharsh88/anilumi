@@ -9,6 +9,7 @@ import { topCharacterSlugs, characterTableSlugs } from "@/lib/charsnap";
 import { airing as airingSnapshot, upcomingOf } from "@/lib/airing";
 import { HINDI_SLUGS, hindiPath } from "@/lib/hindi";
 import aliasData from "@/data/aliases.json";
+import franchiseData from "@/data/franchises.json";
 
 export const revalidate = 86400;
 
@@ -22,7 +23,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: abs("/lists"), lastModified: now, changeFrequency: "weekly", priority: 0.6 },
     { url: abs("/trends"), lastModified: now, changeFrequency: "monthly", priority: 0.6 },
     ...TREND_GENRES.map(([g]) => ({ url: abs(`/trends/${g}`), lastModified: now, changeFrequency: "monthly" as const, priority: 0.6 })),
-    ...Object.keys(WATCH_ORDER_OVERRIDES).map((slug) => ({ url: abs(`/watch-order/${slug}`), lastModified: now, changeFrequency: "weekly" as const, priority: 0.8 })),
+    // One watch order per franchise (data/franchises.json, monthly): editorial ones first, then up to 1,000 more
+    // with at least two entries. Season pages point their canonical at these, so they aren't listed.
+    ...[...new Set([...Object.keys(WATCH_ORDER_OVERRIDES), ...(franchiseData as { franchises: { s: string; n: number }[] }).franchises.filter((f) => f.n > 1).slice(0, 1000).map((f) => f.s)])]
+      .map((slug, i) => ({ url: abs(`/watch-order/${slug}`), lastModified: now, changeFrequency: "weekly" as const, priority: i < 100 ? 0.8 : 0.6 })),
     { url: abs("/short-anime"), lastModified: now, changeFrequency: "weekly", priority: 0.7 },
     { url: abs("/how-long-to-watch"), lastModified: now, changeFrequency: "weekly", priority: 0.7 },
     { url: abs("/parents-guide"), lastModified: now, changeFrequency: "weekly", priority: 0.7 },
@@ -99,7 +103,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       if (n > 100) continue;
       if (series && released) out.push({ url: abs(`${animePath(a)}/next-season`), lastModified: now, changeFrequency: "weekly", priority: 0.7 });
       if (released) out.push({ url: abs(`${animePath(a)}/how-long-to-watch`), lastModified: now, changeFrequency: "monthly", priority: 0.6 });
-      if (series) out.push({ url: abs(`/watch-order/${a.slug}`), lastModified: now, changeFrequency: "monthly", priority: 0.6 });
       if (a.subtype !== "movie" && a.status === "current") out.push({ url: abs(`${animePath(a)}/episodes`), lastModified: now, changeFrequency: "daily", priority: 0.5 });
       if (n > 50) continue;
       out.push({ url: abs(`${animePath(a)}/cast`), lastModified: now, changeFrequency: "monthly", priority: 0.5 });

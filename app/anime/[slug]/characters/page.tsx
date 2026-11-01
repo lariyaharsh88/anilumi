@@ -8,6 +8,8 @@ import { zodiac } from "@/lib/charfacts";
 import { bdLabel, bdPath } from "@/lib/birthdays";
 import { vaPath } from "@/lib/anilist";
 import PageHero from "@/components/PageHero";
+import { pageAbout, itemList } from "@/lib/ld";
+import JsonLd from "@/components/JsonLd";
 import StatTiles from "@/components/viz/StatTiles";
 import BarChart from "@/components/viz/BarChart";
 import Faq from "@/components/Faq";
@@ -55,6 +57,8 @@ export default async function CharactersTable({ params }: Props) {
 
   return (
     <div className="container-x pb-8">
+      {anime && <JsonLd data={pageAbout(anime, `${base}/characters`, `${title} characters: ages, heights & birthdays`)} />}
+      <JsonLd data={itemList(`${title} characters`, rows.flatMap((r) => (charPath(r) ? [{ url: charPath(r)!, name: r.c.n }] : [])))} />
       <PageHero
         crumbs={[{ href: "/", label: "Home" }, { href: base, label: title }, { href: `${base}/characters`, label: "Characters" }]}
         eyebrow="📏 Character stats"

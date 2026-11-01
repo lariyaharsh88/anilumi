@@ -4,6 +4,7 @@ import SiteHeader from "@/components/SiteHeader";
 import NavProgress from "@/components/NavProgress";
 import SiteFooter from "@/components/SiteFooter";
 import JsonLd from "@/components/JsonLd";
+import { siteGraph } from "@/lib/ld";
 import Analytics from "@/components/Analytics";
 import MotionProvider from "@/components/MotionProvider";
 import Toaster from "@/components/Toaster";
@@ -35,19 +36,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* Theme + spoiler shield: run synchronously before any content paints (see lib/prepaint.ts). */}
         <script dangerouslySetInnerHTML={{ __html: THEME_PREPAINT + SPOILER_PREPAINT }} />
         <NavProgress />
-        <JsonLd
-          data={{
-            "@context": "https://schema.org",
-            "@type": "WebSite",
-            name: site.name,
-            url: site.url,
-            potentialAction: {
-              "@type": "SearchAction",
-              target: { "@type": "EntryPoint", urlTemplate: `${site.url}/search?q={search_term_string}` },
-              "query-input": "required name=search_term_string",
-            },
-          }}
-        />
+        <JsonLd data={siteGraph()} />
         <Analytics />
         <MotionProvider>
           <SiteHeader />
