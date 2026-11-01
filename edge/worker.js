@@ -60,6 +60,27 @@ async function toOrigin(request, url) {
   return res;
 }
 
+/**
+ * Cache key for a navigation (RSC) request, or null for a page request. Next.js puts a hash of the visitor's
+ * router state in `_rsc`, so every from→to pair got its own entry and clicks rarely hit the cache. This app has
+ * only the root layout, so the payload for a page depends on the destination, the prefetch kind and how many
+ * leading path segments the previous page shares (the payload starts below them). If a cached payload ever
+ * didn't fit, Next.js falls back to a full page load, which is cached too.
+ */
+function rscKey(request, url) {
+  if (!url.searchParams.has("_rsc")) return null;
+  const params = new URLSearchParams(url.search);
+  params.delete("_rsc");
+  const to = url.pathname.split("/").filter(Boolean);
+  let from = [];
+  try { from = new URL(request.headers.get("referer") || "").pathname.split("/").filter(Boolean); } catch { /* none */ }
+  let depth = 0;
+  while (depth < to.length && depth < from.length && to[depth] === from[depth]) depth++;
+  const kind = request.headers.get("next-router-prefetch") ? "p" : "n";
+  const rest = params.toString();
+  return `?__rsc=${kind}${depth}${rest ? `&${rest}` : ""}`;
+}
+
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
@@ -72,7 +93,7 @@ export default {
     const cache = caches.default;
     // Hashed build assets never change; pages are keyed by the live build too.
     const genq = url.pathname.startsWith("/_next/static/") ? "" : `${url.search ? "&" : "?"}__gen=${await generation()}`;
-    const key = new Request(`https://${SITE}${url.pathname}${url.search}${genq}`, { method: "GET" });
+    const key = new Request(`https://${SITE}${url.pathname}${rscKey(request, url) ?? url.search}${genq}`, { method: "GET" });
     const hit = await cache.match(key);
     if (hit) {
       const out = new Response(hit.body, hit);
