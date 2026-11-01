@@ -1,0 +1,9 @@
+# Edge cache in front of Render (see worker.js). Deploy: cd edge && npx wrangler deploy
+name = "anilumi-edge"
+main = "worker.js"
+compatibility_date = "2026-10-19"
+workers_dev = false
+routes = [
+  { pattern = "anilumi.in/*", zone_name = "anilumi.in" },
+  { pattern = "www.anilumi.in/*", zone_name = "anilumi.in" },
+]
