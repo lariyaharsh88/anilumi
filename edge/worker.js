@@ -16,20 +16,20 @@ function ttl(path) {
 }
 
 /**
- * The live build's commit, cached for a minute per location. It goes into page cache keys, so a deploy starts a
- * fresh cache by itself (old pages would point at JS chunks the new build no longer has). "0" if unknown.
+ * The live build's commit, re-checked at most once a minute per Worker instance. It goes into page cache keys,
+ * so a deploy starts a fresh cache by itself (old pages would point at JS chunks the new build no longer has).
+ * Held in memory, not in the Cache API: the zone's cache rules override TTLs there (it stuck for a day). "0" if
+ * unknown.
  */
-async function generation(ctx) {
-  const cache = caches.default;
-  const key = new Request(`https://${SITE}/__edge/generation`);
-  const hit = await cache.match(key);
-  if (hit) return hit.text();
-  const commit = await fetch(`${ORIGIN}/api/version`)
+let gen = { value: "0", at: 0 };
+async function generation() {
+  if (Date.now() - gen.at < 60_000) return gen.value;
+  const value = await fetch(`${ORIGIN}/api/version`, { cf: { cacheTtl: 0 } })
     .then((r) => r.json())
     .then((j) => String(j.commit || "0").slice(0, 12))
-    .catch(() => "0");
-  ctx.waitUntil(cache.put(key, new Response(commit, { headers: { "cache-control": "public, max-age=60" } })));
-  return commit;
+    .catch(() => gen.value);
+  gen = { value, at: Date.now() };
+  return value;
 }
 
 /** GET page/asset requests only: never APIs, admin, or Next.js client navigation payloads (RSC). */
@@ -67,23 +67,23 @@ export default {
 
     const cache = caches.default;
     // Hashed build assets never change; pages are keyed by the live build too.
-    const gen = url.pathname.startsWith("/_next/static/") ? "" : `${url.search ? "&" : "?"}__gen=${await generation(ctx)}`;
-    const key = new Request(`https://${SITE}${url.pathname}${url.search}${gen}`, { method: "GET" });
+    const genq = url.pathname.startsWith("/_next/static/") ? "" : `${url.search ? "&" : "?"}__gen=${await generation()}`;
+    const key = new Request(`https://${SITE}${url.pathname}${url.search}${genq}`, { method: "GET" });
     const hit = await cache.match(key);
     if (hit) {
       const out = new Response(hit.body, hit);
       out.headers.set("x-edge-cache", "HIT");
-      if (gen) out.headers.set("x-edge-gen", gen.slice(gen.indexOf("=") + 1));
+      if (genq) out.headers.set("x-edge-gen", genq.slice(genq.indexOf("=") + 1));
       return out;
     }
 
     const res = await toOrigin(request, url);
     const out = new Response(res.body, res);
     out.headers.set("x-edge-cache", "MISS");
-    if (gen) out.headers.set("x-edge-gen", gen.slice(gen.indexOf("=") + 1));
+    if (genq) out.headers.set("x-edge-gen", genq.slice(genq.indexOf("=") + 1));
     // Pages only from the live build: mid-deploy, the old instance can still answer and would be cached as new.
     const build = res.headers.get("x-build");
-    const sameBuild = !gen || !build || gen.endsWith(`=${build}`);
+    const sameBuild = !genq || !build || genq.endsWith(`=${build}`);
     if (res.status === 200 && !res.headers.has("set-cookie") && sameBuild) {
       const stored = out.clone();
       stored.headers.set("cache-control", `public, max-age=${ttl(url.pathname)}`);
