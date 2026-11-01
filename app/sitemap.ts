@@ -1,11 +1,12 @@
 import type { MetadataRoute } from "next";
 import { abs } from "@/lib/site";
 import { WATCH_ORDER_OVERRIDES } from "@/data/watch-orders";
-import { listAnime, getCategories, seasonOf, shiftSeason, animePath, episodePath, aniListNextEpisodes, TREND_GENRES } from "@/lib/kitsu";
+import { listAnime, getCategories, seasonOf, shiftSeason, animePath, episodePath, TREND_GENRES } from "@/lib/kitsu";
 import { popularVoiceActors, vaPath } from "@/lib/anilist";
 import { allDays, birthdaysOn, bdPath, monthPath } from "@/lib/birthdays";
 import { fillerSlugs, continuationSlugs } from "@/lib/filler";
 import { topCharacterSlugs, characterTableSlugs } from "@/lib/charsnap";
+import { airing as airingSnapshot, upcomingOf } from "@/lib/airing";
 import { HINDI_SLUGS, hindiPath } from "@/lib/hindi";
 import aliasData from "@/data/aliases.json";
 
@@ -75,11 +76,17 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     out.push({ url: abs("/compare"), lastModified: now, changeFrequency: "monthly", priority: 0.5 });
     // Single-episode pages get the best click-through of any page type: list the next episode and the
     // two latest aired ones for every popular airing show (all ISR-cached, so a few dozen URLs is cheap).
-    const nexts = await aniListNextEpisodes(airing.items.map((a) => a.id)).catch(() => new Map<string, { episode: number; at: string }>());
-    for (const a of airing.items) {
-      const n = nexts.get(a.id)?.episode;
-      if (!n) continue;
-      for (const ep of [n, n - 1, n - 2].filter((x) => x >= 1)) out.push({ url: abs(episodePath(a, ep)), lastModified: now, changeFrequency: "daily", priority: ep === n ? 0.6 : 0.5 });
+    // Every show in the airing snapshot: all scheduled upcoming episodes, plus every aired episode of shows that
+    // started in the last 200 days (a current season) or the latest three of long runners (Detective Conan).
+    const snap = await airingSnapshot();
+    for (const show of snap.shows) {
+      if (!show.s) continue;
+      const upcoming = upcomingOf(show);
+      const next = upcoming[0]?.episode;
+      if (!next) continue;
+      const recent = show.d ? Date.now() - new Date(show.d).getTime() < 200 * 86400_000 : false;
+      const aired = Array.from({ length: next - 1 }, (_, i) => i + 1).slice(recent ? -30 : -3);
+      for (const ep of [...aired, ...upcoming.map((u) => u.episode)]) out.push({ url: abs(episodePath({ slug: show.s }, ep)), lastModified: now, changeFrequency: "daily", priority: ep === next ? 0.6 : 0.5 });
     }
     const seen = new Set<string>();
     for (const a of [...airing.items, ...pages.flatMap((p) => p.items)]) {

@@ -9,6 +9,7 @@ import JsonLd from "@/components/JsonLd";
 import Faq from "@/components/Faq";
 import Countdown from "@/components/Countdown";
 import LocalTime from "@/components/LocalTime";
+import { airing, upcomingOf } from "@/lib/airing";
 import AiringNoticeBanner from "@/components/AiringNoticeBanner";
 import SpoilerGate from "@/components/SpoilerGate";
 import WatchedUpTo from "@/components/WatchedUpTo";
@@ -34,14 +35,19 @@ async function load(slug: string, nStr: string) {
   const [ep, { count, lastAired, reliable, nextAt }, skips] = await Promise.all([getEpisodeByNumber(a.id, n), getLastAiredBest(a.id), a.subtype === "movie" ? Promise.resolve(null) : skipTimesFor(a.id, n)]);
   const notice: AiringNotice | null = a.status === "current" ? airingNotice(a.nextRelease, nextAt) : null;
   if (nextAt) a.nextRelease = nextAt;
-  // A not-yet-catalogued next episode of an airing show still gets a page, driven by the series' nextRelease.
-  const synthetic: Episode | null = !ep && a.status === "current" && reliable && n === lastAired + 1 ? { id: `next-${n}`, number: n, title: null, airdate: a.nextRelease ? a.nextRelease.slice(0, 10) : null, synopsis: null, length: a.episodeLength, thumbnail: null } : null;
+  // Not-yet-catalogued episodes still get a page: the next one of an airing show (series nextRelease), and any
+  // episode in the airing snapshot's schedule with its exact air time, so "episode 8 release date" has a page
+  // a week or two ahead, including premieres of shows that haven't started.
+  const schedule = upcomingOf((await airing()).byKitsu.get(a.id));
+  const ahead = schedule.find((u) => u.episode === n) ?? null;
+  const nextScheduled = schedule.some((u) => u.episode === n + 1);
+  const isNext = a.status === "current" && reliable && n === lastAired + 1;
+  const synthetic: Episode | null = !ep && (isNext || ahead) ? { id: `next-${n}`, number: n, title: null, airdate: ahead ? ahead.at.slice(0, 10) : a.nextRelease ? a.nextRelease.slice(0, 10) : null, synopsis: null, length: a.episodeLength, thumbnail: null } : null;
   const episode = ep || synthetic;
   if (!episode) return null;
-  const upcoming = !episode.airdate || isFuture(episode.airdate);
-  const isNext = a.status === "current" && reliable && n === lastAired + 1;
-  const airIso = isNext && a.nextRelease ? a.nextRelease : episode.airdate;
-  return { a, episode, n, count, lastAired, upcoming, isNext, airIso, notice, skips };
+  const airIso = ahead ? ahead.at : isNext && a.nextRelease ? a.nextRelease : episode.airdate;
+  const upcoming = !airIso || isFuture(airIso);
+  return { a, episode, n, count, lastAired, upcoming, isNext, airIso, notice, skips, nextScheduled };
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -50,11 +56,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!d) notFound();
   const { a, episode, upcoming, airIso } = d;
   const when = airIso ? fmtDate(airIso, { month: "long", day: "numeric", year: "numeric" }) : null;
+  // The English name people search ("The Apothecary Diaries Season 3 episode 7"), romaji when there's none.
+  const show = a.titleEn && a.titleEn.length <= 50 ? a.titleEn : a.title;
   const title = upcoming
-    ? `${a.title} Episode ${d.n} Release Date${when ? ` – ${when}` : ""} & Countdown`
-    : `${a.title} Episode ${d.n}${episode.title ? `: ${episode.title}` : ""} – Release Date & Recap`;
+    ? `${show} Episode ${d.n} Release Date & Time${when ? ` – ${when}` : ""}`
+    : `${show} Episode ${d.n}${episode.title ? `: ${episode.title}` : ""} – Release Date & Recap`;
   const description = upcoming
-    ? `${a.title} episode ${d.n} ${when ? `airs on ${when} (JST)` : "release date is not confirmed yet"}. Live countdown, time in your zone, and where to stream it.`
+    ? `${a.title} episode ${d.n} ${when ? `airs on ${when} (JST)` : "release date is not confirmed yet"}. Release time in India (IST), the US (ET/PT) and the UK, a live countdown and where to stream it.`
     : `${a.title} episode ${d.n}${episode.title ? ` "${episode.title}"` : ""} aired on ${when}. ${(episode.synopsis || "").slice(0, 120)}`;
   return { title, description, alternates: { canonical: episodePath(a, d.n) } };
 }
@@ -63,11 +71,11 @@ export default async function EpisodePage({ params }: Props) {
   const { slug, n: nStr } = await params;
   const d = await load(slug, nStr);
   if (!d) notFound();
-  const { a, episode, n, count, lastAired, upcoming, isNext, airIso, notice, skips } = d;
+  const { a, episode, n, count, lastAired, upcoming, isNext, airIso, notice, skips, nextScheduled } = d;
   const when = airIso ? fmtDate(airIso, { weekday: "long", month: "long", day: "numeric", year: "numeric" }) : null;
   const whenTime = airIso && airIso.length > 10 ? fmtDate(airIso, { hour: "numeric", minute: "2-digit", timeZone: "Asia/Tokyo" }) : null;
   const hasPrev = n > 1;
-  const hasNext = n < count || (a.status === "current" && n <= lastAired);
+  const hasNext = n < count || (a.status === "current" && n <= lastAired) || nextScheduled;
   // "release time india / us": the broadcast in the zones most of our readers search from.
   const at = (tz: string) => (airIso && airIso.length > 10 ? fmtDate(airIso, { weekday: "short", hour: "numeric", minute: "2-digit", timeZone: tz }) : null);
   const zones = whenTime ? { ist: at("Asia/Kolkata"), et: at("America/New_York"), pt: at("America/Los_Angeles"), uk: at("Europe/London") } : null;

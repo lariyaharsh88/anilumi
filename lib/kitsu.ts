@@ -5,6 +5,7 @@
  * per hour, not per visitor.
  */
 
+import { airing, upcomingOf } from "./airing";
 import { WATCH_ORDER_OVERRIDES, type WatchOrderOverride } from "@/data/watch-orders";
 
 const BASE = "https://kitsu.io/api/edge";
@@ -789,12 +790,22 @@ export async function getAniListId(animeId: string): Promise<number | null> {
   return Number.isInteger(id) && id > 0 ? id : null;
 }
 
-/** Next airing episode for each AniList id; one request per 50 ids, memoised. */
+/**
+ * Next airing episode for each AniList id: the airing snapshot first (lib/airing.ts, refreshed every 3 hours),
+ * then live AniList for the rest, one request per 50 ids, memoised.
+ */
 export async function aniListNextAiring(ids: number[]): Promise<Map<number, AniListNext>> {
   const out = new Map<number, AniListNext>();
   if (process.env.ANILIST_ENRICH === "0") return out;
   const now = Date.now();
+  const snap = await airing();
   const todo = [...new Set(ids)].filter((id) => {
+    const show = snap.byAniList.get(id);
+    if (show) {
+      const next = upcomingOf(show, now)[0];
+      out.set(id, next ? { episode: next.episode, airingAt: Math.floor(new Date(next.at).getTime() / 1000) } : null);
+      return false;
+    }
     const hit = aniMemo.get(id);
     if (hit && hit.exp > now) { out.set(id, hit.v); return false; }
     return true;

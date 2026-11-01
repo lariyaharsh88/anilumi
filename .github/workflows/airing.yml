@@ -1,0 +1,33 @@
+name: Airing snapshot
+# Every 3 hours: AniList's air times for the next few episodes of every airing anime (scripts/fetch-airing.mts),
+# force-pushed as a single commit to the `airing-data` branch. The site reads it from raw.githubusercontent.com
+# (lib/airing.ts). Not committed to main: that would rebuild Render each time and use up its build minutes.
+on:
+  schedule:
+    - cron: "11 */3 * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency: airing
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Fetch the schedule
+        run: npx tsx scripts/fetch-airing.mts "$RUNNER_TEMP/airing.json"
+      - name: Publish to the airing-data branch
+        run: |
+          node -e "const d=JSON.parse(require('fs').readFileSync(process.env.RUNNER_TEMP+'/airing.json','utf8')); if (d.shows.length < 30) { console.error('only '+d.shows.length+' shows; keeping the old snapshot'); process.exit(1) }"
+          mkdir "$RUNNER_TEMP/out" && cd "$RUNNER_TEMP/out"
+          cp ../airing.json .
+          git init -q && git checkout -q -b airing-data
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" add airing.json
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -qm "Airing snapshot $(date -u +%FT%TZ)"
+          git push -qf "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" airing-data
