@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { streamLink, affiliateRel } from "@/lib/affiliate";
 import type { ProviderGroup } from "@/lib/tmdb";
+import SearchSelect from "@/components/SearchSelect";
 
 type KitsuLink = { id: string; url: string; site: string; dubs: string[] };
 type Resp = { configured: boolean; country: string; match?: { name: string } | null; link?: string | null; groups?: ProviderGroup[]; countries?: string[] };
@@ -60,9 +61,7 @@ export default function WhereToWatch({ animeId, title, links, extra }: { animeId
     <div className={loading ? "opacity-60" : ""} aria-busy={loading}>
       <div className="flex flex-wrap items-center gap-2">
         {heading("Where to watch in")}
-        <select value={country} onChange={(e) => { save(e.target.value); load(e.target.value); }} className="input w-auto py-1 text-xs" aria-label="Country">
-          {options.map((c) => <option key={c} value={c}>{names.of(c) || c}</option>)}
-        </select>
+        <SearchSelect size="sm" label="Country" value={country} onChange={(c) => { save(c); load(c); }} options={options.map((c) => ({ value: c, label: names.of(c) || c }))} />
       </div>
       {groups.length ? (
         <div className="mt-2 space-y-2">

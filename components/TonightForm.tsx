@@ -1,6 +1,13 @@
 "use client";
 
 import { TIMES, type TonightValues } from "@/lib/tonight";
+import SearchSelect from "@/components/SearchSelect";
+
+const FORMATS = [{ value: "any", label: "Series or movies" }, { value: "series", label: "Series only" }, { value: "movies", label: "Movies only" }];
+const SCORES = [{ value: "0", label: "Any score" }, { value: "7", label: "7.0 or higher" }, { value: "8", label: "8.0 or higher" }];
+const field = (title: string, control: React.ReactNode) => (
+  <div className="text-sm"><span className="mb-1 block text-xs font-semibold uppercase tracking-wider text-muted">{title}</span>{control}</div>
+);
 
 /** GET form: works without JS; with JS it re-submits as soon as any control changes. */
 export default function TonightForm({ v, genres }: { v: TonightValues; genres: { slug: string; title: string }[] }) {
@@ -18,29 +25,9 @@ export default function TonightForm({ v, genres }: { v: TonightValues; genres: {
         </div>
       </fieldset>
       <div className="grid gap-3 sm:grid-cols-3">
-        <label className="text-sm">
-          <span className="mb-1 block text-xs font-semibold uppercase tracking-wider text-muted">Genre</span>
-          <select name="genre" defaultValue={v.genre} className="input">
-            <option value="">Any genre</option>
-            {genres.map((g) => <option key={g.slug} value={g.slug}>{g.title}</option>)}
-          </select>
-        </label>
-        <label className="text-sm">
-          <span className="mb-1 block text-xs font-semibold uppercase tracking-wider text-muted">Format</span>
-          <select name="type" defaultValue={v.type} className="input">
-            <option value="any">Series or movies</option>
-            <option value="series">Series only</option>
-            <option value="movies">Movies only</option>
-          </select>
-        </label>
-        <label className="text-sm">
-          <span className="mb-1 block text-xs font-semibold uppercase tracking-wider text-muted">Minimum score</span>
-          <select name="min" defaultValue={String(v.min)} className="input">
-            <option value="0">Any score</option>
-            <option value="7">7.0 or higher</option>
-            <option value="8">8.0 or higher</option>
-          </select>
-        </label>
+        {field("Genre", <SearchSelect name="genre" label="Genre" defaultValue={v.genre} submitOnChange options={[{ value: "", label: "Any genre" }, ...genres.map((g) => ({ value: g.slug, label: g.title }))]} />)}
+        {field("Format", <SearchSelect name="type" label="Format" defaultValue={v.type} submitOnChange options={FORMATS} />)}
+        {field("Minimum score", <SearchSelect name="min" label="Minimum score" defaultValue={String(v.min)} submitOnChange options={SCORES} />)}
       </div>
       <div className="flex flex-wrap items-center justify-between gap-3">
         <label className="flex items-center gap-2 text-sm text-muted">

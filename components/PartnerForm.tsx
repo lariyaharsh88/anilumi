@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import Link from "@/components/Link";
+import SearchSelect from "@/components/SearchSelect";
 import { send } from "@/lib/community-client";
 import { track } from "@/lib/track";
 
@@ -34,8 +35,8 @@ export default function PartnerForm() {
       <label className="text-sm"><span className="mb-1 block text-muted">Work email *</span><input name="email" type="email" required autoComplete="email" className="input" /></label>
       <label className="text-sm"><span className="mb-1 block text-muted">Company or brand</span><input name="company" maxLength={160} autoComplete="organization" className="input" /></label>
       <label className="text-sm"><span className="mb-1 block text-muted">Website</span><input name="site" maxLength={300} inputMode="url" placeholder="https://" className="input" /></label>
-      <label className="text-sm"><span className="mb-1 block text-muted">What are you interested in?</span><select name="type" className="input" defaultValue=""><option value="">Choose one</option>{TYPES.map((t) => <option key={t}>{t}</option>)}</select></label>
-      <label className="text-sm"><span className="mb-1 block text-muted">Budget</span><select name="budget" className="input" defaultValue=""><option value="">Choose one</option>{BUDGETS.map((t) => <option key={t}>{t}</option>)}</select></label>
+      <div className="text-sm"><span className="mb-1 block text-muted">What are you interested in?</span><SearchSelect name="type" label="What are you interested in?" options={TYPES.map((t) => ({ value: t, label: t }))} /></div>
+      <div className="text-sm"><span className="mb-1 block text-muted">Budget</span><SearchSelect name="budget" label="Budget" options={BUDGETS.map((t) => ({ value: t, label: t }))} /></div>
       <label className="text-sm sm:col-span-2"><span className="mb-1 block text-muted">Tell us about your campaign *</span><textarea name="message" required minLength={10} maxLength={3000} rows={5} className="input" /></label>
       <input type="text" name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" className="absolute -left-[9999px] h-0 w-0 opacity-0" />
       <label className="flex items-start gap-2 text-xs text-muted sm:col-span-2">
