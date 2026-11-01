@@ -5,6 +5,8 @@
  */
 import { anilist } from "./anilist";
 import { kitsuByAniListIds, type Anime, type Season } from "./kitsu";
+import snapData from "@/data/season-previews.json";
+import { unpackInPlace } from "./snapjson";
 
 export type PreviewKind = "sequel" | "new" | "movie";
 export type PreviewItem = {
@@ -84,11 +86,22 @@ export function premiereCalendar<T extends { date: PreviewItem["date"] }>(items:
 
 const QUERY = `query($s:MediaSeason,$y:Int,$p:Int){Page(page:$p,perPage:50){pageInfo{hasNextPage} media(type:ANIME,season:$s,seasonYear:$y,isAdult:false,sort:POPULARITY_DESC,format_in:[TV,TV_SHORT,ONA,MOVIE]){id title{romaji english} format episodes source startDate{year month day} popularity genres studios(isMain:true){nodes{name}} coverImage{large} relations{edges{relationType node{id type format title{romaji english}}}}}}}`;
 
+type PreviewSnap = { generated: string; seasons: Record<string, PreviewItem[]> };
+let snap: PreviewSnap | null = null;
+/** Weekly snapshot of the current and next two seasons (scripts/fetch-season-previews.mts). */
+export function previewSnapshot(): PreviewSnap {
+  if (!snap) snap = (snapData as unknown as Partial<PreviewSnap>).seasons ? unpackInPlace(snapData as unknown as PreviewSnap) : { generated: "", seasons: {} };
+  return snap;
+}
+
 /**
- * Strict: if AniList is down or rate-limiting, this throws (UpstreamError) instead of returning [], so an
- * ISR page keeps its last good version rather than caching an empty "line-up not announced" page for a day.
+ * The weekly snapshot when it has this season (AniList rate-limits Render, and the page used to answer 500);
+ * otherwise live. Live is strict: if AniList is down or rate-limiting, this throws (UpstreamError) instead of
+ * returning [], so an ISR page keeps its last good version rather than caching an empty line-up for a day.
  */
-export async function getSeasonPreview(year: number, season: Season, minPopularity = 800): Promise<PreviewItem[]> {
+export async function getSeasonPreview(year: number, season: Season, minPopularity = 800, { live = false } = {}): Promise<PreviewItem[]> {
+  const cached = live ? undefined : previewSnapshot().seasons[`${year}-${season}`];
+  if (cached?.length) return cached;
   const pages = await Promise.all([1, 2].map((p) => anilist<{ Page: { media: Raw[] } }>(QUERY, { s: season.toUpperCase(), y: year, p }, 86400, { strict: true })));
   const raw = pages.flatMap((p) => p?.Page.media ?? []);
   const seen = new Set<number>();

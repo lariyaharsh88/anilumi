@@ -1,0 +1,40 @@
+name: Season previews
+# Weekly: the AniList line-up of the current and next two seasons (data/season-previews.json). Premiere dates
+# and new announcements land every week before a season starts; the page reads this snapshot because AniList
+# rate-limits Render. The push makes Render redeploy, and the edge cache keys on the commit, so it refreshes.
+on:
+  schedule:
+    - cron: "23 2 * * 1" # Mondays 02:23 UTC (07:53 IST)
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency: season-previews
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Fetch the line-ups
+        run: npx tsx scripts/fetch-season-previews.mts
+      - name: Keep the old file if the new one is broken or much smaller
+        run: |
+          f=data/season-previews.json
+          old=$(git show "HEAD:$f" | wc -c); new=$(wc -c < "$f")
+          if ! node -e "JSON.parse(require('fs').readFileSync('$f','utf8'))" || [ "$new" -lt $((old * 6 / 10)) ]; then
+            echo "::warning::$f looks wrong ($old -> $new bytes); keeping the committed version"
+            git checkout -- "$f"
+          fi
+      - run: npm run typecheck
+      - run: npm test
+      - name: Commit changes
+        run: |
+          git add data/season-previews.json
+          if git diff --cached --quiet; then echo "No changes."; exit 0; fi
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -m "Weekly season preview refresh"
+          git push

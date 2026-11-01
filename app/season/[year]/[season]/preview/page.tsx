@@ -11,6 +11,7 @@ import HypeButton, { HypeProvider } from "@/components/HypeButton";
 import HypeBoard from "@/components/HypeBoard";
 import LeadForm from "@/components/LeadForm";
 import { dbEnabled } from "@/lib/db";
+import Countdown from "@/components/Countdown";
 
 export const revalidate = 86400;
 export async function generateStaticParams() { return []; }
@@ -27,7 +28,8 @@ function parse(year: string, season: string) {
 }
 const dayLabel = (iso: string) => new Date(`${iso}T00:00:00Z`).toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric", timeZone: "UTC" });
 const when = (d: PreviewItem["date"]) => (d.day && d.month ? dayLabel(`${d.year}-${String(d.month).padStart(2, "0")}-${String(d.day).padStart(2, "0")}`) : d.month ? `${MON[d.month - 1]} ${d.year}` : "Date TBA");
-const name = (i: PreviewItem) => i.anime?.title || i.title;
+// AniList's English title first: it's what people search ("Sakamoto Days Season 2", not "SAKAMOTO DAYS 2nd Season").
+const name = (i: PreviewItem) => i.title || i.anime?.title || "";
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { year, season } = await params;
@@ -35,8 +37,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const items = await getSeasonPreview(y, s);
   const top = items.slice(0, 3).map(name);
   return {
-    title: `${cap(s)} ${y} Anime Preview: Every New Show, Sequel & Premiere Date`,
-    description: `The ${cap(s)} ${y} anime season at a glance: ${items.length} shows${top.length ? ` including ${top.join(", ")}` : ""}, with premiere dates, studios, source material and which ones are sequels.`,
+    // "winter 2027 anime" searches want the count, the dates and what's worth watching.
+    title: items.length >= 5 ? `${cap(s)} ${y} Anime: ${items.length} Shows, Release Dates & Most Anticipated` : `${cap(s)} ${y} Anime Preview: Every New Show, Sequel & Premiere Date`,
+    description: `${cap(s)} ${y} anime (${MONTHS[s]} ${y}): ${items.length} shows${top.length ? ` including ${top.join(", ")}` : ""}, with premiere dates, studios, source material and which ones are sequels.`,
     alternates: { canonical: `/season/${y}/${s}/preview` },
     ...(items.length >= 5 ? {} : { robots: { index: false } }),
   };
@@ -93,7 +96,15 @@ export default async function SeasonPreview({ params }: Props) {
     { q: `What are the most anticipated anime of ${label}?`, a: items.length ? `By how many AniList users are following them: ${items.slice(0, 5).map(name).join(", ")}.` : "The line-up hasn't been announced yet." },
     { q: `How many ${label} anime are sequels?`, a: `${sequels.length} of the ${items.length - movies.length} series listed here continue an earlier anime; ${fresh.length} are new.` },
     ...(adaptations[0] ? [{ q: `What are most ${label} anime based on?`, a: adaptations.slice(0, 3).map(([k, n]) => `${k}: ${n}`).join("; ") + "." }] : []),
+    // "sakamoto days season 2 release date": one answer per big returning show.
+    ...sequels.slice(0, 5).map((i) => ({
+      q: `When does ${name(i)} come out?`,
+      a: `${name(i)} ${i.date.day ? "premieres on" : "is scheduled for"} ${when(i.date)}${i.date.day ? "" : ` (${label})`} in Japan${i.studio ? `, animated by ${i.studio}` : ""}.${i.prequel ? ` It follows ${i.prequelAnime?.title || i.prequel.title}.` : ""}`,
+    })),
   ];
+  // Countdown to the season's first dated premiere (midnight JST), while it's still ahead.
+  const firstIso = cal[0] ? `${cal[0].date}T00:00:00+09:00` : null;
+  const upcoming = firstIso && new Date(firstIso).getTime() > Date.now();
 
   return (
     <HypeProvider ids={community ? linked.map((i) => i.anime!.id) : []}>
@@ -113,6 +124,12 @@ export default async function SeasonPreview({ params }: Props) {
         hue={HUE[s]}
         posters={items.slice(0, 3).map((i) => i.cover)}
       >
+        {upcoming && cal[0] && (
+          <p className="mb-3 flex flex-wrap items-center gap-2 text-sm text-ink/85">
+            <span>First premiere: <strong className="text-ink">{name(cal[0].items[0])}</strong> on {dayLabel(cal[0].date)} ·</span>
+            <Countdown iso={firstIso!} label="starts in" />
+          </p>
+        )}
         <div className="flex flex-wrap gap-2">
           <Link href={`/season/${prev.year}/${prev.season}/preview`} className="chip">← {cap(prev.season)} {prev.year}</Link>
           <Link href={`/season/${y}/${s}`} className="chip">Full {label} chart</Link>
@@ -176,7 +193,7 @@ export default async function SeasonPreview({ params }: Props) {
       <Group id="new-h" title="New series" sub="First seasons, most-followed first." items={fresh} hype={community} />
       <Group id="mov-h" title="Films" sub="Theatrical releases dated in this season." items={movies} hype={community} />
 
-      <p className="mt-6 text-xs text-muted">Line-up, dates and studios from AniList; titles link to AniLumi pages once Kitsu lists them. Updated daily.</p>
+      <p className="mt-6 text-xs text-muted">Line-up, dates and studios from AniList; titles link to AniLumi pages once Kitsu lists them. Updated weekly.</p>
       <Faq items={faq} />
     </div>
     </HypeProvider>

@@ -1,6 +1,7 @@
 import Link from "@/components/Link";
 import type { Metadata } from "next";
-import { getTrending, listAnime, getSeason, seasonOf, cap, getCategories, animePath, posterUrl, subtypeLabel, MAIN_GENRES } from "@/lib/kitsu";
+import { getTrending, listAnime, getSeason, seasonOf, shiftSeason, cap, getCategories, animePath, posterUrl, subtypeLabel, MAIN_GENRES } from "@/lib/kitsu";
+import { previewSnapshot } from "@/lib/preview";
 import HeroSpotlight, { type Spot } from "@/components/fx/HeroSpotlight";
 import AnimeRail from "@/components/AnimeRail";
 import AdSlot from "@/components/AdSlot";
@@ -28,6 +29,9 @@ export const metadata: Metadata = {
 export default async function Home() {
   const { season, year } = seasonOf();
   const jst = nowJst();
+  // Next season's most anticipated shows (weekly AniList snapshot), linking to its preview page.
+  const nextSeason = shiftSeason(season, year, 1);
+  const nextPreview = (previewSnapshot().seasons[`${nextSeason.year}-${nextSeason.season}`] || []).flatMap((i) => (i.anime ? [i.anime] : [])).slice(0, 12);
   const [trending, airing, seasonal, upcoming, topRated, movies, genres, news, quote, premieres, pick] = await Promise.all([
     getTrending(10),
     listAnime({ filter: { status: "current" }, sort: "-userCount", limit: 12 }),
@@ -96,6 +100,7 @@ export default async function Home() {
       <AnimeRail title="Airing this season" href="/schedule" items={airing.items} />
       <AdSlot slot="home-mid" />
       <AnimeRail title={`${cap(season)} ${year} lineup`} href={`/season/${year}/${season}`} items={seasonal.items} />
+      {nextPreview.length >= 6 && <AnimeRail title={`${cap(nextSeason.season)} ${nextSeason.year} preview: most anticipated`} href={`/season/${nextSeason.year}/${nextSeason.season}/preview`} items={nextPreview} />}
       {news.length > 0 && (
         <section className="reveal mt-12" aria-labelledby="home-news-h">
           <div className="mb-2 flex items-end justify-between">

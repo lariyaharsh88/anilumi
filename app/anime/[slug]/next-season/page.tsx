@@ -6,6 +6,7 @@ import { getAnimeBySlug, buildWatchOrder, getRelations, kitsuByAniListIds, anime
 import { getAniListSequel } from "@/lib/anilist";
 import { sequelVerdict, seasonGaps, humanMonths, type SequelLike, type SequelKind } from "@/lib/sequel";
 import { continuationFor } from "@/lib/filler";
+import { previewSnapshot } from "@/lib/preview";
 import PageHero from "@/components/PageHero";
 import Countdown from "@/components/Countdown";
 import Faq, { type FaqItem } from "@/components/Faq";
@@ -76,6 +77,14 @@ export default async function NextSeasonPage({ params }: Props) {
   const nextAnime = next?.anime;
   const latest = chain[chain.length - 1];
   const upcomingLater = chain.filter((x, i) => i > chain.findIndex((y) => y.id === a.id) && ["upcoming", "unreleased", "tba"].includes(x.status) && x.id !== nextAnime?.id);
+  // The season it premieres in, when that season's preview page has a line-up ("Winter 2027 line-up").
+  const MONTH_NAMES = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"];
+  // The next entry if it's still to come, else the next announced one ("Also announced: Season 2").
+  const ahead = next && (verdict.kind === "dated" || verdict.kind === "announced") ? next : upcomingLater[0];
+  const ym = ahead?.startDate ? { y: Number(ahead.startDate.slice(0, 4)), m: Number(ahead.startDate.slice(5, 7)) }
+    : ahead && "expected" in ahead && ahead.expected ? { y: Number(ahead.expected.match(/\d{4}/)?.[0]), m: MONTH_NAMES.indexOf(ahead.expected.split(" ")[0].toLowerCase()) + 1 } : null;
+  const nextSeason = ym && ym.y && ym.m ? { y: ym.y, s: (["winter", "spring", "summer", "fall"] as const)[Math.floor((ym.m - 1) / 3)] } : null;
+  const seasonLink = nextSeason && previewSnapshot().seasons[`${nextSeason.y}-${nextSeason.s}`]?.length ? `/season/${nextSeason.y}/${nextSeason.s}/preview` : null;
   const then = upcomingLater[0];
   const thenNote = then && (verdict.kind === "out" || verdict.kind === "airing") ? ` After that, ${then.title} is confirmed${then.startDate ? ` for ${fmtDate(then.startDate, { month: "long", year: "numeric" })}` : ""}.` : "";
   const question = first ? `Is there a ${a.title} season 2?` : `Will ${a.title} get another season?`;
@@ -130,6 +139,9 @@ export default async function NextSeasonPage({ params }: Props) {
             </div>
           </div>
         </section>
+      )}
+      {seasonLink && nextSeason && (
+        <p className="mt-4 text-sm"><Link href={seasonLink} className="font-medium text-violet hover:underline">📅 Every {nextSeason.s[0].toUpperCase() + nextSeason.s.slice(1)} {nextSeason.y} anime and its premiere date →</Link></p>
       )}
 
       {chain.length > 1 && (
