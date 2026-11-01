@@ -73,13 +73,18 @@ export default {
     if (hit) {
       const out = new Response(hit.body, hit);
       out.headers.set("x-edge-cache", "HIT");
+      if (gen) out.headers.set("x-edge-gen", gen.slice(gen.indexOf("=") + 1));
       return out;
     }
 
     const res = await toOrigin(request, url);
     const out = new Response(res.body, res);
     out.headers.set("x-edge-cache", "MISS");
-    if (res.status === 200 && !res.headers.has("set-cookie")) {
+    if (gen) out.headers.set("x-edge-gen", gen.slice(gen.indexOf("=") + 1));
+    // Pages only from the live build: mid-deploy, the old instance can still answer and would be cached as new.
+    const build = res.headers.get("x-build");
+    const sameBuild = !gen || !build || gen.endsWith(`=${build}`);
+    if (res.status === 200 && !res.headers.has("set-cookie") && sameBuild) {
       const stored = out.clone();
       stored.headers.set("cache-control", `public, max-age=${ttl(url.pathname)}`);
       stored.headers.delete("vary"); // the key already excludes RSC requests; Vary would split or block caching

@@ -10,6 +10,12 @@ const nextConfig: NextConfig = {
   ...(process.env.RENDER ? { experimental: { cpus: 1, webpackMemoryOptimizations: true } } : {}),
   // Inter TTFs for OG images, and the cast snapshot (read with fs, not bundled).
   outputFileTracingIncludes: { "/**": ["./assets/fonts/*.ttf", "./data/casts.json"] },
+  // Every response names its build, so the edge cache (edge/worker.js) only stores pages from the live build:
+  // during Render's switchover the old instance still answers for a moment.
+  async headers() {
+    const build = (process.env.RENDER_GIT_COMMIT || "").slice(0, 12);
+    return build ? [{ source: "/:path*", headers: [{ key: "x-build", value: build }] }] : [];
+  },
   // One canonical host: www.anilumi.in → anilumi.in (301).
   async redirects() {
     return [
