@@ -9,6 +9,7 @@ import JsonLd from "@/components/JsonLd";
 import Faq from "@/components/Faq";
 import AdSlot from "@/components/AdSlot";
 import WatchChecklist from "@/components/WatchChecklist";
+import { hasHindi, hindiPath } from "@/lib/hindi";
 import { noteFor } from "@/data/notes";
 import { amazonSearch, affiliateRel } from "@/lib/affiliate";
 import BarChart from "@/components/viz/BarChart";
@@ -59,7 +60,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: wo.entries.length > 1
       ? `Watch ${name} in this order: ${order.slice(0, 4).map((e, i) => `${i + 1}. ${e.anime.title}`).join(", ")}${order.length > 4 ? ", …" : ""}. Where every movie and OVA fits, which recaps to skip, and the total time (${fmtMinutes(wo.totalMinutes)}).`.slice(0, 300)
       : `${name} is a standalone title with no sequels, prequels or spin-offs on record.`,
-    alternates: { canonical: `/watch-order/${a.slug}` },
+    alternates: { canonical: `/watch-order/${a.slug}`, ...(hasHindi(a.slug) ? { languages: { en: `/watch-order/${a.slug}`, hi: hindiPath(a.slug), "x-default": `/watch-order/${a.slug}` } } : {}) },
   };
 }
 
@@ -103,7 +104,9 @@ export default async function WatchOrderPage({ params }: Props) {
           ? `${name} is a standalone title with no sequels, prequels or spin-offs on record. Just start with it.`
           : `${wo.mainCount} core ${wo.mainCount === 1 ? "entry" : "entries"}, ${wo.entries.length - wo.mainCount} ${wo.entries.length - wo.mainCount === 1 ? "extra" : "extras"}. Watching only the core story and movies takes about ${fmtMinutes(wo.totalMinutes)}. Generated from the franchise graph, so it updates when new seasons are announced.`}
       </>}
-      />
+      >
+        {hasHindi(a.slug) && <p className="text-sm"><Link href={hindiPath(a.slug)} className="chip" hrefLang="hi">🇮🇳 हिंदी में पढ़ें</Link></p>}
+      </PageHero>
 
       {(() => {
         // Franchise-specific advice: the editor's watch-order intro, else the start tip from AniLumi's take.

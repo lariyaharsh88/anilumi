@@ -6,6 +6,7 @@ import { popularVoiceActors, vaPath } from "@/lib/anilist";
 import { allDays, birthdaysOn, bdPath, monthPath } from "@/lib/birthdays";
 import { fillerSlugs, continuationSlugs } from "@/lib/filler";
 import { topCharacterSlugs, characterTableSlugs } from "@/lib/charsnap";
+import { HINDI_SLUGS, hindiPath } from "@/lib/hindi";
 import aliasData from "@/data/aliases.json";
 
 export const revalidate = 86400;
@@ -31,6 +32,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...continuationSlugs().map((slug) => ({ url: abs(`${animePath({ slug })}/manga`), lastModified: now, changeFrequency: "monthly" as const, priority: 0.6 })),
     { url: abs("/voice-actors"), lastModified: now, changeFrequency: "weekly", priority: 0.6 },
     { url: abs("/characters"), lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: abs("/hi"), lastModified: now, changeFrequency: "weekly", priority: 0.6 },
+    ...HINDI_SLUGS.map((s) => ({ url: abs(hindiPath(s)), lastModified: now, changeFrequency: "weekly" as const, priority: 0.6 })),
     { url: abs("/anime-openings"), lastModified: now, changeFrequency: "weekly", priority: 0.6 },
     { url: abs("/tier-list"), lastModified: now, changeFrequency: "weekly", priority: 0.6 },
     { url: abs("/what-anime-is-this"), lastModified: now, changeFrequency: "monthly", priority: 0.8 },
