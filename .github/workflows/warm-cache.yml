@@ -1,34 +1,22 @@
-name: Warm cache after deploy
-# Render empties the page cache on every deploy, so the first visit to each page renders from scratch (2-7 s).
-# Wait for this commit to go live, then load the 500 most important pages one by one (see scripts/warm-cache.mjs).
-# After each push: load the top 100 pages straight from Render (not through the edge) so its page cache is
-# full and first visits through Cloudflare get a pre-built page. Kept to 100 pages: Render's free plan includes
-# 5 GB of bandwidth a month (500 pages after every push helped suspend it on 31 Oct 2026).
+name: Warm cache
+# Builds every sitemap page through anilumi.in (scripts/warm-cache.mjs) so visitors and Google get cached pages,
+# never a first-time render. Each app deploy starts a fresh page cache: `npm run deploy` (branch
+# cloudflare-workers) triggers this when it finishes. Every 6 hours as well, for pages whose cache expired.
 on:
-  push:
-    branches: [main]
+  schedule:
+    - cron: "41 */6 * * *"
   workflow_dispatch:
 concurrency:
   group: warm-cache
-  cancel-in-progress: true
+  cancel-in-progress: true # a newer deploy supersedes a pass that is still running
 jobs:
   warm:
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    timeout-minutes: 240
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: Wait for the deploy of this commit
-        id: wait
-        run: |
-          for i in $(seq 1 60); do
-            live=$(curl -s -m 20 https://anilumi.in/api/version | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{try{console.log(JSON.parse(s).commit||'')}catch{console.log('')}})")
-            if [ "$live" = "$GITHUB_SHA" ]; then echo "live=1" >> "$GITHUB_OUTPUT"; echo "Deployed."; exit 0; fi
-            sleep 20
-          done
-          echo "::warning::Commit not live after 20 minutes; skipping warm-up."
-      - name: Warm the top pages
-        if: steps.wait.outputs.live == '1'
-        run: LIMIT=100 GAP=2 node scripts/warm-cache.mjs https://anilumi.onrender.com
+      - name: Warm every page
+        run: CONC=3 GAP=1 node scripts/warm-cache.mjs https://anilumi.in
