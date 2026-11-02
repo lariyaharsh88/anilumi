@@ -68,6 +68,18 @@ export async function db(): Promise<Db | null> {
   return g.__mongo;
 }
 
+/**
+ * Let a write finish after the response. Node keeps running it anyway; Workers stop a request's work when the
+ * response is sent unless it is handed to waitUntil.
+ */
+export function background(work: Promise<unknown>): void {
+  const settled = work.catch(() => {});
+  if (!onWorkers) return;
+  import("@opennextjs/cloudflare")
+    .then(({ getCloudflareContext }) => getCloudflareContext().ctx.waitUntil(settled))
+    .catch(() => {});
+}
+
 /** Rating totals for one anime, or null if the database is off or down. */
 export async function ratingStats(animeId: string): Promise<RatingStats | null> {
   try {

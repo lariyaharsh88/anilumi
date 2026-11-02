@@ -11,7 +11,7 @@ import "server-only";
 import { createHash } from "node:crypto";
 import { gzipSync, gunzipSync } from "node:zlib";
 import { Binary } from "mongodb";
-import { db } from "./db";
+import { db, background } from "./db";
 
 export const AL_CACHE = "anilist_cache";
 export const AL_QUEUE = "anilist_queue";
@@ -35,14 +35,10 @@ export async function readCached(key: string): Promise<{ data: unknown; fresh: b
 
 /** Store a response in the background, with its request so the sync can refresh it; failures are ignored. */
 export function writeCached(key: string, op: string, data: unknown, query: string, variables: Record<string, unknown>): void {
-  db()
-    .then((d) => d?.collection<Doc>(AL_CACHE).updateOne({ _id: key }, { $set: { op, at: new Date(), z: new Binary(gzipSync(JSON.stringify(data))), query, variables } }, { upsert: true }))
-    .catch(() => {});
+  background(db().then((d) => d?.collection<Doc>(AL_CACHE).updateOne({ _id: key }, { $set: { op, at: new Date(), z: new Binary(gzipSync(JSON.stringify(data))), query, variables } }, { upsert: true })));
 }
 
 /** Queue a refused request for the background sync (one entry per request; re-queuing just refreshes it). */
 export function enqueue(key: string, op: string, query: string, variables: Record<string, unknown>): void {
-  db()
-    .then((d) => d?.collection<{ _id: string }>(AL_QUEUE).updateOne({ _id: key }, { $set: { op, query, variables, at: new Date() }, $inc: { asks: 1 } }, { upsert: true }))
-    .catch(() => {});
+  background(db().then((d) => d?.collection<{ _id: string }>(AL_QUEUE).updateOne({ _id: key }, { $set: { op, query, variables, at: new Date() }, $inc: { asks: 1 } }, { upsert: true })));
 }
