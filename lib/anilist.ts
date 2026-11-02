@@ -32,9 +32,16 @@ const opName = (q: string) => q.match(/\{\s*(?:Page\([^)]*\)\s*\{\s*)?(\w+)/)?.[
  */
 export async function anilist<T>(query: string, variables: Record<string, unknown>, revalidate: number, { strict = false }: { strict?: boolean } = {}): Promise<T | null> {
   if (process.env.ANILIST_ENRICH === "0") return null;
+  // Slow-changing data (cached a day or more) also lives in MongoDB, which survives deploys: a week-old copy is
+  // used as is, and any older copy stands in when AniList refuses (lib/alcache.ts).
+  const durable = revalidate >= 86400 && process.env.MONGODB_URI ? await import("./alcache").catch(() => null) : null;
+  const key = durable ? durable.cacheKey(query, variables) : "";
+  const saved = durable ? await durable.readCached(key) : null;
+  if (saved?.fresh) return saved.data as T;
   const fail = (why: string) => {
-    console.warn(`[anilist] ${opName(query)} failed: ${why}`);
+    console.warn(`[anilist] ${opName(query)} failed: ${why}${saved ? " (served the stored copy)" : ""}`);
     anilistHealth.lastFailure = { op: opName(query), why, at: new Date().toISOString() };
+    if (saved) return saved.data as T;
     if (strict) throw new UpstreamError(`AniList unavailable: ${why}`);
     return null;
   };
@@ -54,7 +61,10 @@ export async function anilist<T>(query: string, variables: Record<string, unknow
       if (res.ok) {
         const j = (await res.json()) as { data?: T; errors?: { status?: number; message?: string }[] };
         // GraphQL can answer 200 with an internal error and no data: treat that as a 5xx, not "not found".
-        if (j.data || !j.errors?.length) return j.data ?? null;
+        if (j.data || !j.errors?.length) {
+          if (durable && j.data) durable.writeCached(key, opName(query), j.data);
+          return j.data ?? null;
+        }
         const st = j.errors[0].status || 500;
         if (st === 404) return null;
         failure = { status: st, why: `GraphQL ${st}` };

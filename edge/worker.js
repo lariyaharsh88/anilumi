@@ -139,6 +139,15 @@ export default {
       return new Response("AniLumi is busy, please retry in a minute.", { status: 503, headers: { "retry-after": "60", "content-type": "text/plain; charset=utf-8", "cache-control": "no-store" } });
     }
     if (res.status >= 500 && last) return stale("STALE-ERROR");
+    if (res.status >= 500) {
+      // No copy to fall back on: say "temporarily unavailable, retry" (503 + Retry-After), which crawlers treat as
+      // transient, rather than passing on a 500.
+      const out = new Response(res.body, { status: 503, headers: new Headers(res.headers) });
+      out.headers.set("retry-after", "300");
+      out.headers.set("cache-control", "no-store");
+      out.headers.set("x-edge-cache", `ORIGIN-${res.status}`);
+      return out;
+    }
 
     const out = new Response(res.body, res);
     out.headers.set("x-edge-cache", "MISS");
