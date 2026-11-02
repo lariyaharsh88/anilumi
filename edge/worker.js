@@ -139,7 +139,13 @@ export default {
       if (last) return stale("STALE-TIMEOUT");
       return new Response("AniLumi is busy, please retry in a minute.", { status: 503, headers: { "retry-after": "60", "content-type": "text/plain; charset=utf-8", "cache-control": "no-store" } });
     }
-    if (res.status >= 500 && last) return stale("STALE-ERROR");
+    // Render's own Cloudflare sometimes challenges our requests ("Just a moment…", 403/429 + cf-mitigated). That
+    // page is useless to visitors and crawlers alike: treat it as the origin being down.
+    const blocked = res.headers.get("cf-mitigated") === "challenge" || res.status === 429 || res.status === 403;
+    if ((res.status >= 500 || blocked) && last) return stale(blocked ? "STALE-BLOCKED" : "STALE-ERROR");
+    if (blocked) {
+      return new Response("AniLumi is busy, please retry in a few minutes.", { status: 503, headers: { "retry-after": "300", "content-type": "text/plain; charset=utf-8", "cache-control": "no-store", "x-edge-cache": "ORIGIN-BLOCKED" } });
+    }
     if (res.status >= 500) {
       // No copy to fall back on: say "temporarily unavailable, retry" (503 + Retry-After), which crawlers treat as
       // transient, rather than passing on a 500.
