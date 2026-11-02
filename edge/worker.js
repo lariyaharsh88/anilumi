@@ -34,7 +34,8 @@ function refreshGeneration() {
     .then((r) => r.json())
     .then((j) => String(j.commit || "0").slice(0, 12))
     .catch(() => gen.value)
-    .then((value) => { gen = { value, at: Date.now() }; checking = null; return value; });
+    // An unknown build ("0") caches nothing, so retry it after 10 s rather than a minute.
+    .then((value) => { gen = { value, at: value === "0" ? Date.now() - 50_000 : Date.now() }; checking = null; return value; });
   return checking;
 }
 async function generation(ctx) {
