@@ -8,6 +8,11 @@ const SITE = "anilumi.in";
 // Pages that change through the day get an hour; everything else a day. Build assets have hashed names.
 const FRESH = new Set(["/", "/schedule", "/tonight", "/birthdays", "/sitemap.xml", "/feed.xml", "/news", "/hype"]);
 const DAY = 86400;
+// Render free has 0.1 CPU: a dozen uncached pages at once take 5-12 s each, and Googlebot counts slow or failed
+// fetches against the host ("server connectivity"). Past this budget a visitor gets the last good copy instead.
+const ORIGIN_BUDGET_MS = 12_000;
+const LAST_GOOD_TTL = 14 * DAY;
+const CRAWLER = /googlebot|google-inspectiontool|googleother|adsbot-google|mediapartners-google|bingbot|duckduckbot|yandex|applebot|baiduspider/i;
 
 function ttl(path) {
   if (path.startsWith("/_next/static/")) return 365 * DAY;
@@ -44,13 +49,13 @@ function cacheable(request, url) {
   return rscRequest === url.searchParams.has("_rsc");
 }
 
-async function toOrigin(request, url) {
+async function toOrigin(request, url, budgetMs = 0) {
   const init = new Request(ORIGIN + url.pathname + url.search, request);
   const headers = new Headers(init.headers);
   // The app rate-limits by the visitor's IP (first X-Forwarded-For entry).
   const ip = request.headers.get("cf-connecting-ip");
   if (ip) headers.set("x-forwarded-for", ip);
-  const res = await fetch(new Request(init, { headers, redirect: "manual" }));
+  const res = await fetch(new Request(init, { headers, redirect: "manual", ...(budgetMs ? { signal: AbortSignal.timeout(budgetMs) } : {}) }));
   const location = res.headers.get("location");
   if (location && location.startsWith(ORIGIN)) {
     const out = new Response(res.body, res);
@@ -102,20 +107,59 @@ export default {
       return out;
     }
 
-    const res = await toOrigin(request, url);
+    // Last good copy of a page, from any build: survives deploys, which otherwise send every crawler request to
+    // Render at once. Only plain page HTML (an RSC payload from another build would make Next.js hard-reload).
+    const lastKey = genq && !url.searchParams.has("_rsc") ? new Request(`https://${SITE}${url.pathname}${url.search}${url.search ? "&" : "?"}__last=1`, { method: "GET" }) : null;
+    const last = lastKey ? await cache.match(lastKey) : null;
+    const stale = (why) => {
+      const out = new Response(last.body, last);
+      out.headers.set("x-edge-cache", why);
+      return out;
+    };
+
+    // Crawlers get the last good copy straight away; the current build's copy is fetched in the background.
+    if (last && CRAWLER.test(request.headers.get("user-agent") || "")) {
+      ctx.waitUntil(toOrigin(request, url, 30_000).then((res) => store(res, url, genq, key, lastKey)).catch(() => {}));
+      return stale("STALE");
+    }
+
+    let res;
+    try {
+      res = await toOrigin(request, url, last ? ORIGIN_BUDGET_MS : 0); // no fallback: wait as long as Render needs
+    } catch {
+      // Timed out or unreachable: the last good copy, else a retryable 503 (never a hung connection).
+      if (last) return stale("STALE-TIMEOUT");
+      return new Response("AniLumi is busy, please retry in a minute.", { status: 503, headers: { "retry-after": "60", "content-type": "text/plain; charset=utf-8", "cache-control": "no-store" } });
+    }
+    if (res.status >= 500 && last) return stale("STALE-ERROR");
+
     const out = new Response(res.body, res);
     out.headers.set("x-edge-cache", "MISS");
     if (genq) out.headers.set("x-edge-gen", genq.slice(genq.indexOf("=") + 1));
-    // Pages only from the live build: mid-deploy, the old instance can still answer and would be cached as new.
-    const build = res.headers.get("x-build");
-    const sameBuild = !genq || !build || genq.endsWith(`=${build}`);
-    if (res.status === 200 && !res.headers.has("set-cookie") && sameBuild) {
-      const stored = out.clone();
-      stored.headers.set("cache-control", `public, max-age=${ttl(url.pathname)}`);
-      stored.headers.delete("vary"); // the key already excludes RSC requests; Vary would split or block caching
-      stored.headers.delete("x-edge-cache");
-      ctx.waitUntil(cache.put(key, stored));
-    }
+    ctx.waitUntil(store(out, url, genq, key, lastKey));
     return out;
   },
 };
+
+/** Cache a 200 page from the live build under its build key, and as the page's last good copy. Resolves when stored. */
+async function store(res, url, genq, key, lastKey) {
+  // Pages only from the live build: mid-deploy, the old instance can still answer and would be cached as new.
+  const build = res.headers.get("x-build");
+  const sameBuild = !genq || !build || genq.endsWith(`=${build}`);
+  if (res.status !== 200 || res.headers.has("set-cookie") || !sameBuild) return;
+  const puts = [];
+  const stored = new Response(res.clone().body, res); // own copy: headers from fetch() are immutable
+  stored.headers.set("cache-control", `public, max-age=${ttl(url.pathname)}`);
+  stored.headers.delete("vary"); // the key already excludes RSC requests; Vary would split or block caching
+  stored.headers.delete("x-edge-cache");
+  puts.push(caches.default.put(key, stored));
+  if (lastKey) {
+    const kept = new Response(res.clone().body, res);
+    kept.headers.set("cache-control", `public, max-age=${LAST_GOOD_TTL}`);
+    kept.headers.delete("vary");
+    kept.headers.delete("x-edge-cache");
+    puts.push(caches.default.put(lastKey, kept));
+  }
+  await Promise.all(puts);
+}
+
