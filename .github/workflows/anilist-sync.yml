@@ -1,20 +1,22 @@
 name: AniList sync
-# Fills the MongoDB AniList cache in the background (scripts/anilist-sync.mts): requests pages couldn't get, then
-# answers older than 6 days, at ~25 a minute from GitHub's network so the site's own AniList allowance stays free.
-# Needs the repository secret MONGODB_URI (the same URI as on Render); without it the job does nothing.
+# Fills the MongoDB AniList cache (scripts/anilist-sync.mts): requests pages couldn't get, then answers older than
+# 6 days. AniList refuses Cloudflare (where the site runs), so this is the site's only route to AniList data.
+# GitHub's schedule is best effort (runs start late or not at all), so a run that leaves work behind starts the
+# next one itself; the hourly schedule only restarts the chain. Needs the repository secret MONGODB_URI.
 on:
   schedule:
-    - cron: "7,37 * * * *" # every 30 minutes
+    - cron: "23 * * * *"
   workflow_dispatch:
 permissions:
   contents: read
+  actions: write # to start the next run
 concurrency:
   group: anilist-sync
   cancel-in-progress: false
 jobs:
   sync:
     runs-on: ubuntu-latest
-    timeout-minutes: 29
+    timeout-minutes: 58
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -22,7 +24,13 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
-      - run: npx tsx scripts/anilist-sync.mts
+      - id: sync
+        run: npx tsx scripts/anilist-sync.mts
         env:
           MONGODB_URI: ${{ secrets.MONGODB_URI }}
-          MINUTES: "25"
+          MINUTES: "50"
+      - name: Start the next run while work is left
+        if: steps.sync.outputs.more == 'true'
+        run: gh workflow run anilist-sync.yml --ref main --repo "$GITHUB_REPOSITORY"
+        env:
+          GH_TOKEN: ${{ github.token }}

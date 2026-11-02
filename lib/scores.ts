@@ -26,19 +26,24 @@ export function agreement(c: CombinedScore): string {
   return `${c.high.label} rates it ${c.spread.toFixed(1)} points higher than ${c.low.label}.`;
 }
 
-/** MyAnimeList score via Jikan. On unless MAL_SCORE=0; one retry after a 429. */
+// Jikan has been down for weeks at a time; once it fails, skip it for a while instead of making every page wait.
+let jikanDownUntil = 0;
+
+/** MyAnimeList score via Jikan. On unless MAL_SCORE=0; one retry after a 429; skipped for 30 min after a failure. */
 export async function getMalScore(kitsuId: string): Promise<ScoreSource | null> {
-  if (process.env.MAL_SCORE === "0") return null;
+  if (process.env.MAL_SCORE === "0" || Date.now() < jikanDownUntil) return null;
   const malId = (await getMappings(kitsuId))["myanimelist/anime"];
   if (!malId) return null;
   for (let attempt = 0; attempt < 2; attempt++) {
     try {
-      const res = await fetch(`https://api.jikan.moe/v4/anime/${malId}`, { next: { revalidate: 86400 }, signal: AbortSignal.timeout(Number(process.env.JIKAN_TIMEOUT_MS) || 3500) });
+      const res = await fetch(`https://api.jikan.moe/v4/anime/${malId}`, { next: { revalidate: 86400 }, signal: AbortSignal.timeout(Number(process.env.JIKAN_TIMEOUT_MS) || 1500) });
       if (res.status === 429) { await new Promise((r) => setTimeout(r, 1100)); continue; }
+      if (res.status >= 500) jikanDownUntil = Date.now() + 30 * 60_000;
       if (!res.ok) return null;
       const d = ((await res.json()) as { data?: { score: number | null; scored_by: number | null } }).data;
       return d?.score ? { key: "mal", label: "MyAnimeList", score: d.score, votes: d.scored_by ?? null, url: `https://myanimelist.net/anime/${malId}` } : null;
     } catch {
+      jikanDownUntil = Date.now() + 30 * 60_000; // timeout or unreachable
       return null;
     }
   }

@@ -1,15 +1,15 @@
-// Loads the most important pages once after a deploy, so the first real visitor (often Googlebot) gets a cached
-// page instead of a 5-40 s render on Render's free tier. Order: pages Google already shows most (data/warm-priority.json,
-// from a Search Console export), then today's and the coming days' birthday pages, then the sitemap by priority.
-// One page at a time with a GAP-second pause: most pages read monthly snapshots now, so AniList's ~30/minute
-// limit is rarely touched.
-// Usage: node scripts/warm-cache.mjs [baseUrl]   (env: LIMIT=500 GAP=3). Pass https://anilumi.onrender.com to fill
-// Render's own page cache (the edge Worker then fetches pre-built pages) without going through the edge.
+// Builds every page before real visitors or Google ask for it: loads the whole sitemap through anilumi.in (the edge
+// cache and the Workers app), so each page is rendered once and stored (edge cache, saved copy, app page cache).
+// Order: pages Google already shows most (data/warm-priority.json, from a Search Console export), today's and the
+// coming days' birthday pages, then the sitemap by priority. CONC pages at a time; a page that was already cached
+// costs no render, so a full pass over a warm site takes minutes. Runs from .github/workflows/warm-cache.yml.
+// Usage: node scripts/warm-cache.mjs [baseUrl]   (env: LIMIT=all CONC=3 GAP=1)
 import { readFileSync } from "node:fs";
 
 const base = (process.argv[2] || "https://anilumi.in").replace(/\/$/, "");
-const LIMIT = Number(process.env.LIMIT) || 500;
-const GAP = (Number(process.env.GAP) || 3) * 1000;
+const LIMIT = Number(process.env.LIMIT) || Infinity;
+const CONC = Number(process.env.CONC) || 3;
+const GAP = (Number(process.env.GAP) || 1) * 1000;
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 let priority = [];
@@ -33,21 +33,44 @@ const bySitemap = [...xml.matchAll(/<url>([\s\S]*?)<\/url>/g)]
   .map((u) => { const x = new URL(u.loc); return x.pathname + x.search; }); // sitemap lists anilumi.in; base may be the origin
 const urls = [...new Set(["/", "/birthdays", ...days, ...priority, ...bySitemap])].slice(0, LIMIT).map((p) => base + p);
 
+const tally = { cached: 0, built: 0, failed: 0 };
+const slow = [];
 async function warm(loc) {
   const t = Date.now();
   const res = await fetch(loc, { headers: { "User-Agent": "AniLumi cache warmer" }, signal: AbortSignal.timeout(90000) }).catch(() => null);
-  const cache = res?.headers.get("x-nextjs-cache") || "-";
-  console.log(`${res?.status ?? "ERR"} ${cache.padEnd(5)} ${String(Date.now() - t).padStart(5)} ms  ${loc.replace(base, "")}`);
-  await sleep(cache === "HIT" ? 300 : GAP); // already cached: no render, no upstream calls
-  return Boolean(res?.ok) || res?.status === 404; // a 404 is a real answer, not a warm-up failure
+  await res?.arrayBuffer().catch(() => null);
+  const ms = Date.now() - t;
+  const hit = /HIT|STALE/.test(`${res?.headers.get("x-edge-cache") || ""} ${res?.headers.get("x-opennext-cache") || ""}`);
+  const ok = Boolean(res?.ok) || res?.status === 404; // a 404 is a real answer, not a warm-up failure
+  if (!ok) tally.failed++;
+  else if (hit) tally.cached++;
+  else { tally.built++; if (ms > 5000) slow.push(`${ms} ms ${loc.replace(base, "")}`); }
+  if (!ok || !hit) console.log(`${res?.status ?? "ERR"} ${hit ? "cached" : "built "} ${String(ms).padStart(6)} ms  ${loc.replace(base, "")}`);
+  if (!hit) await sleep(GAP); // a fresh render called upstream APIs: give them a breather
+  return ok;
 }
 
-const retry = [];
-for (const loc of urls) if (!(await warm(loc))) retry.push(loc);
-// Pages that error on purpose when AniList is rate-limited (season previews) usually work a minute later.
+/** Run the list CONC at a time; returns the URLs that failed. */
+async function pass(list) {
+  const failed = [];
+  let next = 0;
+  await Promise.all(Array.from({ length: CONC }, async () => {
+    while (next < list.length) {
+      const loc = list[next++];
+      if (!(await warm(loc))) failed.push(loc);
+    }
+  }));
+  return failed;
+}
+
+const started = Date.now();
+let retry = await pass(urls);
+// Pages whose data is still being fetched in the background (AniList queue) usually work a few minutes later.
 if (retry.length) {
   console.log(`\nretrying ${retry.length} after a pause`);
-  await sleep(60000);
-  for (let i = retry.length - 1; i >= 0; i--) if (await warm(retry[i])) retry.splice(i, 1);
+  await sleep(120000);
+  tally.failed -= retry.length;
+  retry = await pass(retry);
 }
-console.log(`\nwarmed ${urls.length - retry.length}, failed ${retry.length} of ${urls.length}`);
+console.log(`\n${urls.length} pages in ${Math.round((Date.now() - started) / 60000)} min: ${tally.cached} already cached, ${tally.built} built now, ${retry.length} failed`);
+if (slow.length) console.log(`slowest builds:\n  ${slow.sort((a, b) => parseInt(b) - parseInt(a)).slice(0, 15).join("\n  ")}`);

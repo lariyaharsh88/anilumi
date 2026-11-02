@@ -123,13 +123,13 @@ export default async function AnimePage({ params }: Props) {
   const multi = combined && combined.sources.length > 1 ? combined : null;
   const relatedItems = related.items.filter((r) => r.id !== a.id).slice(0, 12);
   const franchise = relations.filter((r) => ["sequel", "prequel", "side_story", "spinoff", "summary", "alternative_version", "other", "character"].includes(r.role));
-  // Full order for the "Watch order" card. It can need a few more Kitsu calls (one per season), so it gets a
-  // short budget; past that the card shows the direct prequel/sequel and the walk finishes in the background,
-  // warming the fetch cache for the next render.
+  // Full order for the "Watch order" card. It can need a few more Kitsu calls (one per season, ~10 s for a long
+  // franchise), so it gets 1.5 s; past that the card shows the direct prequel/sequel and the walk finishes in the
+  // background, warming the fetch cache, so the next render (or the cache warmer's) has the full order.
   const order = relations.some((r) => r.role === "prequel" || r.role === "sequel")
     ? await Promise.race([
         buildWatchOrder(a, (id) => (id === a.id ? Promise.resolve(relations) : getRelations(id))).catch(() => null),
-        new Promise<WatchOrder | null>((r) => setTimeout(() => r(null), 4000)),
+        new Promise<WatchOrder | null>((r) => setTimeout(() => r(null), 1500)),
       ])
     : null;
   const runtime = runtimeMinutes(a);
