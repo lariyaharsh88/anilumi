@@ -42,6 +42,7 @@ export async function anilist<T>(query: string, variables: Record<string, unknow
     console.warn(`[anilist] ${opName(query)} failed: ${why}${saved ? " (served the stored copy)" : ""}`);
     anilistHealth.lastFailure = { op: opName(query), why, at: new Date().toISOString() };
     if (saved) return saved.data as T;
+    if (durable) durable.enqueue(key, opName(query), query, variables); // fetched in the background; next ask has it
     if (strict) throw new UpstreamError(`AniList unavailable: ${why}`);
     return null;
   };
@@ -62,7 +63,7 @@ export async function anilist<T>(query: string, variables: Record<string, unknow
         const j = (await res.json()) as { data?: T; errors?: { status?: number; message?: string }[] };
         // GraphQL can answer 200 with an internal error and no data: treat that as a 5xx, not "not found".
         if (j.data || !j.errors?.length) {
-          if (durable && j.data) durable.writeCached(key, opName(query), j.data);
+          if (durable && j.data) durable.writeCached(key, opName(query), j.data, query, variables);
           return j.data ?? null;
         }
         const st = j.errors[0].status || 500;

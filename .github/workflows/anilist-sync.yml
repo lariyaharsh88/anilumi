@@ -1,0 +1,28 @@
+name: AniList sync
+# Fills the MongoDB AniList cache in the background (scripts/anilist-sync.mts): requests pages couldn't get, then
+# answers older than 6 days, at ~25 a minute from GitHub's network so the site's own AniList allowance stays free.
+# Needs the repository secret MONGODB_URI (the same URI as on Render); without it the job does nothing.
+on:
+  schedule:
+    - cron: "7,37 * * * *" # every 30 minutes
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: anilist-sync
+  cancel-in-progress: false
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 29
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npx tsx scripts/anilist-sync.mts
+        env:
+          MONGODB_URI: ${{ secrets.MONGODB_URI }}
+          MINUTES: "25"

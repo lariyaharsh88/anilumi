@@ -22,6 +22,7 @@ export async function ensureIndexes(d: Db): Promise<void> {
     d.collection("partner_leads").createIndex({ createdAt: -1 }),
     d.collection("rate_limits").createIndex({ expiresAt: 1 }, { expireAfterSeconds: 0 }),
     d.collection("anilist_cache").createIndex({ at: 1 }, { expireAfterSeconds: 90 * 86400 }), // lib/alcache.ts
+    d.collection("anilist_queue").createIndex({ at: 1 }, { expireAfterSeconds: 14 * 86400 }),
   ]);
 }
 
