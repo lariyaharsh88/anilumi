@@ -1,8 +1,11 @@
-# Edge cache in front of Render (see worker.js). Deploy: cd edge && npx wrangler deploy
+# Edge cache in front of the app (see worker.js). Deploy: npx wrangler deploy --config edge/wrangler.toml
+# With the APP service binding below, the origin is the "anilumi" Worker (Cloudflare Workers); remove it to fall
+# back to Render.
 name = "anilumi-edge"
 main = "worker.js"
 compatibility_date = "2026-10-19"
 workers_dev = false
+services = [{ binding = "APP", service = "anilumi" }]
 routes = [
   { pattern = "anilumi.in/*", zone_name = "anilumi.in" },
   { pattern = "www.anilumi.in/*", zone_name = "anilumi.in" },

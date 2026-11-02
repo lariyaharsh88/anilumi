@@ -5,6 +5,11 @@
 
 const ORIGIN = "https://anilumi.onrender.com";
 const SITE = "anilumi.in";
+// The app on Cloudflare Workers, through the service binding APP (edge/wrangler.toml) when configured: requests
+// go to it directly, inside Cloudflare, addressed as anilumi.in. Without the binding the origin is Render.
+let app = null;
+const base = () => (app ? `https://${SITE}` : ORIGIN);
+const upstream = (req) => (app ? app.fetch(req) : fetch(req));
 // Pages that change through the day get an hour; everything else a day. Build assets have hashed names.
 const FRESH = new Set(["/", "/schedule", "/tonight", "/birthdays", "/sitemap.xml", "/feed.xml", "/news", "/hype"]);
 const DAY = 86400;
@@ -30,7 +35,7 @@ function ttl(path) {
 let gen = { value: "0", at: 0 };
 let checking = null;
 function refreshGeneration() {
-  checking ??= fetch(`${ORIGIN}/api/version`, { cf: { cacheTtl: 0 }, signal: AbortSignal.timeout(3000) })
+  checking ??= upstream(new Request(`${base()}/api/version`, { cf: { cacheTtl: 0 }, signal: AbortSignal.timeout(3000) }))
     .then((r) => r.json())
     .then((j) => String(j.commit || "0").slice(0, 12))
     .catch(() => gen.value)
@@ -58,12 +63,12 @@ function cacheable(request, url) {
 }
 
 async function toOrigin(request, url, budgetMs = 0) {
-  const init = new Request(ORIGIN + url.pathname + url.search, request);
+  const init = new Request(base() + url.pathname + url.search, request);
   const headers = new Headers(init.headers);
   // The app rate-limits by the visitor's IP (first X-Forwarded-For entry).
   const ip = request.headers.get("cf-connecting-ip");
   if (ip) headers.set("x-forwarded-for", ip);
-  const res = await fetch(new Request(init, { headers, redirect: "manual", ...(budgetMs ? { signal: AbortSignal.timeout(budgetMs) } : {}) }));
+  const res = await upstream(new Request(init, { headers, redirect: "manual", ...(budgetMs ? { signal: AbortSignal.timeout(budgetMs) } : {}) }));
   const location = res.headers.get("location");
   if (location && location.startsWith(ORIGIN)) {
     const out = new Response(res.body, res);
@@ -96,6 +101,7 @@ function rscKey(request, url) {
 
 export default {
   async fetch(request, env, ctx) {
+    app = env.APP || null;
     const url = new URL(request.url);
     if (url.hostname === `www.${SITE}`) {
       url.hostname = SITE;
@@ -133,7 +139,7 @@ export default {
 
     let res;
     try {
-      res = await toOrigin(request, url, last ? ORIGIN_BUDGET_MS : 0); // no fallback: wait as long as Render needs
+      res = await toOrigin(request, url, last ? ORIGIN_BUDGET_MS : 0); // no fallback: wait as long as the app needs
     } catch {
       // Timed out or unreachable: the last good copy, else a retryable 503 (never a hung connection).
       if (last) return stale("STALE-TIMEOUT");

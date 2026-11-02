@@ -73,6 +73,9 @@ export async function anilist<T>(query: string, variables: Record<string, unknow
         const ra = Number(res.headers.get("retry-after")) || undefined;
         failure = { status: res.status, retryAfter: ra, why: `HTTP ${res.status}` };
         if (res.status === 429 && ra && ra > 8) coolUntil = Date.now() + ra * 1000;
+        // AniList refuses Cloudflare's network outright (403). Asking again won't help: stop for 15 minutes and let
+        // the queue + background sync (scripts/anilist-sync.mts, from GitHub) fetch it.
+        if (res.status === 403) coolUntil = Date.now() + 15 * 60_000;
       }
     } catch (err) {
       if (err instanceof UpstreamError) throw err;
