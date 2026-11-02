@@ -1,4 +1,10 @@
 import type { NextConfig } from "next";
+import { execSync } from "node:child_process";
+
+// The commit being built: from the CI (Workers Builds, Render, GitHub), else the local checkout (a manual deploy).
+const COMMIT = process.env.WORKERS_CI_COMMIT_SHA || process.env.RENDER_GIT_COMMIT || process.env.GITHUB_SHA || (() => {
+  try { return execSync("git rev-parse HEAD", { stdio: ["ignore", "pipe", "ignore"] }).toString().trim(); } catch { return ""; }
+})();
 
 const nextConfig: NextConfig = {
   // Lets a production build run alongside the dev server (NEXT_DIST_DIR=.next-prod npm run build).
@@ -8,16 +14,16 @@ const nextConfig: NextConfig = {
   htmlLimitedBots: /.*/,
   // Render's free instance has 512 MB: build with one page-generation worker and leaner webpack.
   ...(process.env.RENDER ? { experimental: { cpus: 1, webpackMemoryOptimizations: true } } : {}),
-  // Baked in at build: which commit is live (/api/version; Cloudflare Workers Builds sets WORKERS_CI_COMMIT_SHA,
-  // Render RENDER_GIT_COMMIT) and the public GA4 ID on Cloudflare builds (Render sets it in render.yaml).
+  // Baked in at build: which commit is live (/api/version) and the public GA4 ID.
   env: {
-    BUILD_COMMIT: process.env.WORKERS_CI_COMMIT_SHA || process.env.RENDER_GIT_COMMIT || process.env.GITHUB_SHA || "",
-    NEXT_PUBLIC_GA_ID: process.env.NEXT_PUBLIC_GA_ID || (process.env.WORKERS_CI ? "G-V7DV9GGSDD" : ""),
+    BUILD_COMMIT: COMMIT,
+    // Public ID; Render sets it in render.yaml, other production builds (Workers) get it here, dev none.
+    NEXT_PUBLIC_GA_ID: process.env.NEXT_PUBLIC_GA_ID || (process.env.NODE_ENV === "production" ? "G-V7DV9GGSDD" : ""),
   },
   // Every response names its build, so the edge cache (edge/worker.js) only stores pages from the live build:
   // during a switchover the old version still answers for a moment.
   async headers() {
-    const build = (process.env.WORKERS_CI_COMMIT_SHA || process.env.RENDER_GIT_COMMIT || process.env.GITHUB_SHA || "").slice(0, 12);
+    const build = COMMIT.slice(0, 12);
     return build ? [{ source: "/:path*", headers: [{ key: "x-build", value: build }] }] : [];
   },
   // One canonical host: www.anilumi.in → anilumi.in (301).

@@ -22,5 +22,8 @@
   "vars": {
     "NEXT_PUBLIC_SITE_URL": "https://anilumi.in"
   },
+  // Uncached renders mostly wait on Kitsu, AniList and MongoDB (Mumbai): let Cloudflare run them near those
+  // instead of near the visitor. Cached pages are still served from the visitor's nearest location.
+  "placement": { "mode": "smart" },
   "observability": { "enabled": true }
 }
