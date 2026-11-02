@@ -16,9 +16,11 @@ export const metadata: Metadata = {
 
 export default async function OpeningsHub() {
   const top = (await listAnime({ sort: "-userCount", limit: 20, filter: { subtype: "TV" }, revalidate: 86400 })).items;
-  // Five at a time keeps us well inside AnimeThemes' rate limit during builds.
+  // Ten at a time stays inside AnimeThemes' rate limit (90/min). Each show gets 6 s: a slow upstream drops that row
+  // instead of stalling the page past the 60 s build limit; the next daily render fills it from the fetch cache.
+  const capped = (id: string) => Promise.race([getThemes(id).catch(() => null), new Promise<null>((r) => setTimeout(() => r(null), 6000))]);
   const all: { a: (typeof top)[number]; t: Awaited<ReturnType<typeof getThemes>> }[] = [];
-  for (let i = 0; i < top.length; i += 5) all.push(...(await Promise.all(top.slice(i, i + 5).map(async (a) => ({ a, t: await getThemes(a.id) })))));
+  for (let i = 0; i < top.length; i += 10) all.push(...(await Promise.all(top.slice(i, i + 10).map(async (a) => ({ a, t: await capped(a.id) })))));
   const rows = all.filter((r) => r.t?.themes.some((x) => x.type === "OP"));
   return (
     <div className="container-x pb-8">

@@ -52,7 +52,7 @@ jobs:
         run: npx tsx scripts/fetch-franchises.mts
         continue-on-error: true
         timeout-minutes: 45
-      - name: Anime AniList snapshot (top 500: scores, tags, recommendations, staff)
+      - name: "Anime AniList snapshot (top 500: scores, tags, recommendations, staff)"
         run: npx tsx scripts/fetch-anime-al.mts
         continue-on-error: true
         timeout-minutes: 25
