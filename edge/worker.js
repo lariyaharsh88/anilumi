@@ -24,17 +24,24 @@ function ttl(path) {
  * The live build's commit, re-checked at most once a minute per Worker instance. It goes into page cache keys,
  * so a deploy starts a fresh cache by itself (old pages would point at JS chunks the new build no longer has).
  * Held in memory, not in the Cache API: the zone's cache rules override TTLs there (it stuck for a day). "0" if
- * unknown.
+ * unknown. Once known, the re-check runs in the background: Render can take seconds to answer, and no request,
+ * cache hits included, should wait on it. Only a fresh instance waits, and at most 3 s.
  */
 let gen = { value: "0", at: 0 };
-async function generation() {
-  if (Date.now() - gen.at < 60_000) return gen.value;
-  const value = await fetch(`${ORIGIN}/api/version`, { cf: { cacheTtl: 0 } })
+let checking = null;
+function refreshGeneration() {
+  checking ??= fetch(`${ORIGIN}/api/version`, { cf: { cacheTtl: 0 }, signal: AbortSignal.timeout(3000) })
     .then((r) => r.json())
     .then((j) => String(j.commit || "0").slice(0, 12))
-    .catch(() => gen.value);
-  gen = { value, at: Date.now() };
-  return value;
+    .catch(() => gen.value)
+    .then((value) => { gen = { value, at: Date.now() }; checking = null; return value; });
+  return checking;
+}
+async function generation(ctx) {
+  if (Date.now() - gen.at < 60_000) return gen.value;
+  if (gen.value === "0") return refreshGeneration();
+  ctx.waitUntil(refreshGeneration());
+  return gen.value;
 }
 
 /**
@@ -97,7 +104,7 @@ export default {
 
     const cache = caches.default;
     // Hashed build assets never change; pages are keyed by the live build too.
-    const genq = url.pathname.startsWith("/_next/static/") ? "" : `${url.search ? "&" : "?"}__gen=${await generation()}`;
+    const genq = url.pathname.startsWith("/_next/static/") ? "" : `${url.search ? "&" : "?"}__gen=${await generation(ctx)}`;
     const key = new Request(`https://${SITE}${url.pathname}${rscKey(request, url) ?? url.search}${genq}`, { method: "GET" });
     const hit = await cache.match(key);
     if (hit) {
