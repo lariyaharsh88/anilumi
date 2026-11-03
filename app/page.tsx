@@ -105,10 +105,10 @@ export default async function Home() {
       <StatTiles
         className="mt-6"
         stats={[
-          { label: "Airing right now", value: airing.total.toLocaleString(), sub: "series with new episodes" },
-          { label: `${cap(season)} ${year} lineup`, value: seasonal.total.toLocaleString(), sub: "titles this season" },
-          { label: "Announced", value: upcoming.total.toLocaleString(), sub: "not aired yet" },
-          { label: "Watch-order guides", value: String(Object.keys(WATCH_ORDER_OVERRIDES).length), sub: "with editor notes" },
+          { label: "Airing right now", value: airing.total.toLocaleString(), sub: "series with new episodes", href: "/schedule", icon: "schedule", hue: 350, live: true },
+          { label: `${cap(season)} ${year} lineup`, value: seasonal.total.toLocaleString(), sub: "titles this season", href: `/season/${year}/${season}`, icon: "season", hue: 140 },
+          { label: "Announced", value: upcoming.total.toLocaleString(), sub: "not aired yet", href: "/top/upcoming", icon: "flame", hue: 40 },
+          { label: "Watch-order guides", value: String(Object.keys(WATCH_ORDER_OVERRIDES).length), sub: "with editor notes", href: "/watch-order", icon: "order", hue: 262 },
         ]}
       />
 
