@@ -8,6 +8,7 @@ import { fillerSlugs, continuationSlugs } from "@/lib/filler";
 import { topCharacterSlugs, characterTableSlugs } from "@/lib/charsnap";
 import { airing as airingSnapshot, upcomingOf } from "@/lib/airing";
 import { HINDI_SLUGS, hindiPath } from "@/lib/hindi";
+import { INDEXED_CHARACTERS, airsSoon, searchShownPaths } from "@/lib/indexing";
 import aliasData from "@/data/aliases.json";
 import franchiseData from "@/data/franchises.json";
 
@@ -48,8 +49,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: abs("/birthdays"), lastModified: now, changeFrequency: "daily", priority: 0.7 },
     ...Array.from({ length: 12 }, (_, i) => ({ url: abs(monthPath(i + 1)), lastModified: now, changeFrequency: "monthly" as const, priority: 0.6 })),
     { url: abs("/on-this-day"), lastModified: now, changeFrequency: "daily", priority: 0.7 },
-    // Character pages bring the most search impressions; list the most-favourited ones (snapshot-backed, so cheap to render).
-    ...topCharacterSlugs(1500).map((s, i) => ({ url: abs(`/character/${s}`), lastModified: now, changeFrequency: "monthly" as const, priority: i < 100 ? 0.6 : 0.4 })),
+    // Only indexed character pages (lib/indexing.ts): the most-favourited ones plus any Google already shows.
+    ...[...new Set([...topCharacterSlugs(INDEXED_CHARACTERS), ...searchShownPaths("/character/").map((p) => p.slice("/character/".length))])]
+      .map((s, i) => ({ url: abs(`/character/${s}`), lastModified: now, changeFrequency: "monthly" as const, priority: i < 100 ? 0.6 : 0.4 })),
     ...characterTableSlugs().map((s) => ({ url: abs(`/anime/${s}/characters`), lastModified: now, changeFrequency: "monthly" as const, priority: 0.5 })),
     { url: abs("/hype"), lastModified: now, changeFrequency: "daily", priority: 0.6 },
     { url: abs("/polls"), lastModified: now, changeFrequency: "weekly", priority: 0.4 },
@@ -78,19 +80,17 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const airingPages = await Promise.all([0, 20, 40].map((offset) => listAnime({ filter: { status: "current" }, sort: "-userCount", limit: 20, offset, revalidate: 86400 })));
     const airing = { items: airingPages.flatMap((p) => p.items) };
     out.push({ url: abs("/compare"), lastModified: now, changeFrequency: "monthly", priority: 0.5 });
-    // Single-episode pages get the best click-through of any page type: list the next episode and the
-    // two latest aired ones for every popular airing show (all ISR-cached, so a few dozen URLs is cheap).
-    // Every show in the airing snapshot: all scheduled upcoming episodes, plus every aired episode of shows that
-    // started in the last 200 days (a current season) or the latest three of long runners (Detective Conan).
+    // Episode pages: each airing show's episodes due in the next two weeks (the snapshot has their exact air
+    // times). Aired ones aren't listed: Kitsu often lacks their dates, and older recaps are noindexed
+    // (lib/indexing.ts). Episode pages Google already shows are listed.
     const snap = await airingSnapshot();
+    for (const p of searchShownPaths("/anime/").filter((p) => p.includes("/episode/"))) out.push({ url: abs(p), lastModified: now, changeFrequency: "weekly", priority: 0.5 });
     for (const show of snap.shows) {
       if (!show.s) continue;
       const upcoming = upcomingOf(show);
       const next = upcoming[0]?.episode;
       if (!next) continue;
-      const recent = show.d ? Date.now() - new Date(show.d).getTime() < 200 * 86400_000 : false;
-      const aired = Array.from({ length: next - 1 }, (_, i) => i + 1).slice(recent ? -30 : -3);
-      for (const ep of [...aired, ...upcoming.map((u) => u.episode)]) out.push({ url: abs(episodePath({ slug: show.s }, ep)), lastModified: now, changeFrequency: "daily", priority: ep === next ? 0.6 : 0.5 });
+      for (const ep of upcoming.filter((u) => airsSoon(u.at)).map((u) => u.episode)) out.push({ url: abs(episodePath({ slug: show.s }, ep)), lastModified: now, changeFrequency: "daily", priority: ep === next ? 0.6 : 0.5 });
     }
     const seen = new Set<string>();
     for (const a of [...airing.items, ...pages.flatMap((p) => p.items)]) {

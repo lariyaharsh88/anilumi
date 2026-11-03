@@ -22,6 +22,7 @@ import AdSlot from "@/components/AdSlot";
 import { streamLink, affiliateRel } from "@/lib/affiliate";
 import SkipGuide from "@/components/SkipGuide";
 import { skipTimesFor } from "@/lib/skip";
+import { episodeIndexed, robotsFor } from "@/lib/indexing";
 
 export const revalidate = 21600;
 // Render on first request, then serve from the ISR cache until revalidated.
@@ -65,7 +66,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const description = upcoming
     ? `${a.title} episode ${d.n} ${when ? `airs on ${when} (JST)` : "release date is not confirmed yet"}. Release time in India (IST), the US (ET/PT) and the UK, a live countdown and where to stream it.`
     : `${a.title} episode ${d.n}${episode.title ? ` "${episode.title}"` : ""} aired on ${when}. ${(episode.synopsis || "").slice(0, 120)}`;
-  return { title, description, alternates: { canonical: episodePath(a, d.n) } };
+  const path = episodePath(a, d.n);
+  const indexed = episodeIndexed({ path, n: d.n, upcoming, next: d.isNext, airIso, airing: a.status === "current", lastAired: d.lastAired });
+  return { title, description, alternates: { canonical: path }, robots: robotsFor(indexed) };
 }
 
 export default async function EpisodePage({ params }: Props) {
