@@ -3,7 +3,7 @@ import { workType, workId, isoDuration } from "@/lib/ld";
 import Link from "@/components/Link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { getAnimeBySlug, getCharacters, getEpisodes, listAnime, getRelations, getLastAiredBest, getProductions, buildWatchOrder, type LastAired, type WatchOrder, comparePath, franchiseRoot, airingNotice, episodePath, posterUrl, fmtDate, statusLabel, subtypeLabel, animePath, weekdayOf, runtimeMinutes, fmtMinutes, Anime } from "@/lib/kitsu";
+import { publicGenres, getAnimeBySlug, getCharacters, getEpisodes, listAnime, getRelations, getLastAiredBest, getProductions, buildWatchOrder, type LastAired, type WatchOrder, comparePath, franchiseRoot, airingNotice, episodePath, posterUrl, fmtDate, statusLabel, subtypeLabel, animePath, weekdayOf, runtimeMinutes, fmtMinutes, Anime } from "@/lib/kitsu";
 import { abs } from "@/lib/site";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import JsonLd from "@/components/JsonLd";
@@ -106,7 +106,7 @@ export default async function AnimePage({ params }: Props) {
   const a = await getAnimeBySlug(decodeURIComponent(slug));
   if (!a) notFound();
 
-  const mainGenre = a.categories[0];
+  const mainGenre = publicGenres(a.categories)[0];
   const [characters, episodes, related, relations, latestInfo, productions, insight, malScore, fanRecs, allNews, keyStaff] = await Promise.all([
     getCharacters(a.id, 12),
     a.subtype === "movie" ? Promise.resolve({ items: [], total: 0, limit: 0, offset: 0 }) : getEpisodes(a.id, 1, 6),
@@ -201,7 +201,7 @@ export default async function AnimePage({ params }: Props) {
     mainEntityOfPage: abs(animePath(a)),
     image: posterUrl(a, "large") || undefined,
     description: excerpt(a.synopsis, 300) || undefined,
-    genre: a.categories.map((c) => c.title),
+    genre: publicGenres(a.categories).map((c) => c.title),
     inLanguage: "ja",
     countryOfOrigin: { "@type": "Country", name: "Japan" },
     datePublished: a.startDate || undefined,
@@ -337,11 +337,11 @@ export default async function AnimePage({ params }: Props) {
               {/* Genres: first few, the rest behind a toggle */}
               {a.categories.length > 0 && (
                 <div className="mt-5 flex flex-wrap items-center justify-center gap-2 md:justify-start">
-                  {a.categories.slice(0, GENRES_SHOWN).map((c) => <Link key={c.id} href={`/genre/${c.slug}`} className="chip">{c.title}</Link>)}
-                  {a.categories.length > GENRES_SHOWN && (
+                  {publicGenres(a.categories).slice(0, GENRES_SHOWN).map((c) => <Link key={c.id} href={`/genre/${c.slug}`} className="chip">{c.title}</Link>)}
+                  {publicGenres(a.categories).length > GENRES_SHOWN && (
                     <details className="group contents">
-                      <summary className="chip cursor-pointer list-none group-open:hidden">+{a.categories.length - GENRES_SHOWN} more</summary>
-                      {a.categories.slice(GENRES_SHOWN).map((c) => <Link key={c.id} href={`/genre/${c.slug}`} className="chip">{c.title}</Link>)}
+                      <summary className="chip cursor-pointer list-none group-open:hidden">+{publicGenres(a.categories).length - GENRES_SHOWN} more</summary>
+                      {publicGenres(a.categories).slice(GENRES_SHOWN).map((c) => <Link key={c.id} href={`/genre/${c.slug}`} className="chip">{c.title}</Link>)}
                     </details>
                   )}
                 </div>

@@ -351,13 +351,22 @@ export async function getCharacters(animeId: string, limit = 12): Promise<Charac
     .sort((a, b) => (a.role === "main" ? -1 : 1) - (b.role === "main" ? -1 : 1));
 }
 
+/**
+ * Kitsu tags AniLumi doesn't give a page, a listing or a link (the site is meant for families too). Titles keep the
+ * tags internally: the parents' guide uses them to rate content.
+ */
+export const HIDDEN_GENRES = new Set(["loli", "shota", "hentai", "ecchi", "harem"]);
+/** Genres safe to list and link to. */
+export const publicGenres = <T extends { slug: string }>(cs: T[]): T[] => cs.filter((c) => !HIDDEN_GENRES.has(c.slug));
+
 export async function getCategories(limit = 40): Promise<Category[]> {
   const doc = await kitsu("/categories", { "page[limit]": limit, sort: "-totalMediaCount", "fields[categories]": "slug,title,totalMediaCount,description" }, 86400);
   if (!doc || !Array.isArray(doc.data)) return [];
-  return doc.data.map((c) => ({ id: c.id, slug: String(c.attributes.slug), title: String(c.attributes.title), count: num(c.attributes.totalMediaCount) || 0, description: str(c.attributes.description) }));
+  return publicGenres(doc.data.map((c) => ({ id: c.id, slug: String(c.attributes.slug), title: String(c.attributes.title), count: num(c.attributes.totalMediaCount) || 0, description: str(c.attributes.description) })));
 }
 
 export async function getCategory(slug: string): Promise<Category | null> {
+  if (HIDDEN_GENRES.has(slug)) return null;
   const doc = await kitsuStrict("/categories", { "filter[slug]": slug, "fields[categories]": "slug,title,totalMediaCount,description" }, 86400);
   if (!doc || !Array.isArray(doc.data) || !doc.data.length) return null;
   const c = doc.data[0];
@@ -961,7 +970,7 @@ export const MAIN_GENRES = new Set([
   "thriller", "sports", "supernatural", "psychological", "mecha", "music", "isekai", "historical", "military", "magic",
   "school-life", "shounen", "shoujo", "seinen", "josei", "ecchi", "harem", "martial-arts", "parody", "space", "super-power",
 ]);
-export const mainGenres = (a: Pick<Anime, "categories">) => a.categories.filter((c) => MAIN_GENRES.has(c.slug));
+export const mainGenres = (a: Pick<Anime, "categories">) => a.categories.filter((c) => MAIN_GENRES.has(c.slug) && !HIDDEN_GENRES.has(c.slug));
 
 /** Canonical compare URL: slugs in alphabetical order so A-vs-B and B-vs-A are one page. */
 export function comparePath(a: Pick<Anime, "slug">, b: Pick<Anime, "slug">) {

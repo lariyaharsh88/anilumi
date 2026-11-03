@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import Link from "@/components/Link";
 import { notFound } from "next/navigation";
-import { getAnimeBySlug, listAnime, uniqueById, animePath, Anime, posterUrl } from "@/lib/kitsu";
+import { getAnimeBySlug, listAnime, uniqueById, animePath, Anime, posterUrl, publicGenres } from "@/lib/kitsu";
 import AnimeGrid from "@/components/AnimeGrid";
 import PageHero from "@/components/PageHero";
 import Faq from "@/components/Faq";
 import AdSlot from "@/components/AdSlot";
 import FanRecs from "@/components/FanRecs";
 import { getFanRecommendations } from "@/lib/anilist";
+import { robotsFor, similarIndexed } from "@/lib/indexing";
 
 export const revalidate = 604800;
 // Render on first request, then serve from the ISR cache until revalidated.
@@ -41,8 +42,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const n = (await similarTo(a)).length;
   return {
     title: `Anime Like ${name}: ${n || 20} Shows to Watch Next (${new Date().getFullYear()})`,
-    description: `Finished ${name}? These anime share its ${a.categories.slice(0, 3).map((c) => c.title.toLowerCase()).join(", ")} DNA, ranked by how many fans watch them.`,
+    description: `Finished ${name}? These anime share its ${publicGenres(a.categories).slice(0, 3).map((c) => c.title.toLowerCase()).join(", ")} DNA, ranked by how many fans watch them.`,
     alternates: { canonical: `/similar/${a.slug}` },
+    robots: robotsFor(similarIndexed(a.slug)),
   };
 }
 
@@ -57,12 +59,12 @@ export default async function SimilarPage({ params }: Props) {
         crumbs={[{ href: "/", label: "Home" }, { href: animePath(a), label: a.title }, { href: `/similar/${a.slug}`, label: "Similar anime" }]}
         eyebrow="What to watch next"
         title={<>Anime like <span className="text-gradient">{a.title}</span></>}
-        subtitle={`Matched on ${a.categories.slice(0, 4).map((c) => c.title).join(", ")}. Titles that share more of these tags rank higher; ties go to the more popular show.`}
+        subtitle={`Matched on ${publicGenres(a.categories).slice(0, 4).map((c) => c.title).join(", ")}. Titles that share more of these tags rank higher; ties go to the more popular show.`}
         hue={262}
         backdrop={a.cover?.large || null}
         posters={[posterUrl(a, "medium"), ...items.slice(0, 2).map((x) => posterUrl(x, "medium"))]}
       >
-        <div className="flex flex-wrap gap-2">{a.categories.slice(0, 6).map((c) => <Link key={c.id} href={`/genre/${c.slug}`} className="chip">{c.title}</Link>)}</div>
+        <div className="flex flex-wrap gap-2">{publicGenres(a.categories).slice(0, 6).map((c) => <Link key={c.id} href={`/genre/${c.slug}`} className="chip">{c.title}</Link>)}</div>
       </PageHero>
       <FanRecs title={a.title} recs={recs} heading={`What ${a.title} fans recommend`} />
       <AdSlot slot="similar-top" />

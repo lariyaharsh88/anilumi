@@ -35,3 +35,19 @@ test("robotsFor", () => {
   assert.equal(robotsFor(true), undefined);
   assert.deepEqual(robotsFor(false), { index: false, follow: true });
 });
+
+test("watch orders: editor guides and 3+ parts indexed, two-part franchises not", async () => {
+  const { watchOrderIndexed, franchiseParts } = await import("../lib/indexing");
+  assert.equal(watchOrderIndexed("naruto", 25), true); // editor guide
+  assert.equal(franchiseParts("attack-on-titan")! >= 3, true);
+  assert.equal(watchOrderIndexed("some-unknown-two-parter", 2), false);
+  assert.equal(watchOrderIndexed("some-unknown-big-franchise", 5), true);
+});
+
+test("similar pages: top titles indexed, the long tail not", async () => {
+  const { similarIndexed, similarSlugs, INDEXED_SIMILAR } = await import("../lib/indexing");
+  const top = similarSlugs();
+  assert.ok(top.length > 200 && top.length <= INDEXED_SIMILAR); // the alias index repeats a few slugs
+  assert.equal(similarIndexed(top[0]), true);
+  assert.equal(similarIndexed("zzz-not-a-real-anime"), false);
+});

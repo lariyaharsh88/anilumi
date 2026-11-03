@@ -8,8 +8,7 @@ import { fillerSlugs, continuationSlugs } from "@/lib/filler";
 import { topCharacterSlugs, characterTableSlugs } from "@/lib/charsnap";
 import { airing as airingSnapshot, upcomingOf } from "@/lib/airing";
 import { HINDI_SLUGS, hindiPath } from "@/lib/hindi";
-import { INDEXED_CHARACTERS, airsSoon, searchShownPaths } from "@/lib/indexing";
-import aliasData from "@/data/aliases.json";
+import { INDEXED_CHARACTERS, INDEXED_MIN_PARTS, airsSoon, searchShownPaths, similarSlugs } from "@/lib/indexing";
 import franchiseData from "@/data/franchises.json";
 
 export const revalidate = 86400;
@@ -24,9 +23,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: abs("/lists"), lastModified: now, changeFrequency: "weekly", priority: 0.6 },
     { url: abs("/trends"), lastModified: now, changeFrequency: "monthly", priority: 0.6 },
     ...TREND_GENRES.map(([g]) => ({ url: abs(`/trends/${g}`), lastModified: now, changeFrequency: "monthly" as const, priority: 0.6 })),
-    // One watch order per franchise (data/franchises.json, monthly): editorial ones first, then up to 1,000 more
-    // with at least two entries. Season pages point their canonical at these, so they aren't listed.
-    ...[...new Set([...Object.keys(WATCH_ORDER_OVERRIDES), ...(franchiseData as { franchises: { s: string; n: number }[] }).franchises.filter((f) => f.n > 1).slice(0, 1000).map((f) => f.s)])]
+    // One watch order per franchise (data/franchises.json, monthly): editorial ones first, then those with at least
+    // INDEXED_MIN_PARTS entries (two-part ones are noindexed, lib/indexing.ts). Season pages point their canonical
+    // at these, so they aren't listed.
+    ...[...new Set([...Object.keys(WATCH_ORDER_OVERRIDES), ...(franchiseData as { franchises: { s: string; n: number }[] }).franchises.filter((f) => f.n >= INDEXED_MIN_PARTS).slice(0, 1000).map((f) => f.s)])]
       .map((slug, i) => ({ url: abs(`/watch-order/${slug}`), lastModified: now, changeFrequency: "weekly" as const, priority: i < 100 ? 0.8 : 0.6 })),
     { url: abs("/short-anime"), lastModified: now, changeFrequency: "weekly", priority: 0.7 },
     { url: abs("/how-long-to-watch"), lastModified: now, changeFrequency: "weekly", priority: 0.7 },
@@ -111,7 +111,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }
     // "Anime like X" has the best click-through on the site: list it for the 500 most-followed titles (ranked in
     // the alias index, so no extra API calls).
-    for (const x of (aliasData as { anime: { s: string }[] }).anime.slice(0, 500)) out.push({ url: abs(`/similar/${x.s}`), lastModified: now, changeFrequency: "monthly", priority: 0.5 });
+    for (const s of similarSlugs()) out.push({ url: abs(`/similar/${s}`), lastModified: now, changeFrequency: "monthly", priority: 0.5 });
     // Most-followed voice actors only (the hub's own cached request).
     for (const v of await popularVoiceActors()) out.push({ url: abs(vaPath(v)), lastModified: now, changeFrequency: "monthly", priority: 0.4 });
   } catch {

@@ -1,4 +1,4 @@
-import { getAnimeBySlug, posterUrl, statusLabel, subtypeLabel } from "@/lib/kitsu";
+import { getAnimeBySlug, posterUrl, statusLabel, subtypeLabel, publicGenres } from "@/lib/kitsu";
 import { posterCard, OG_SIZE } from "@/lib/og";
 
 export const revalidate = 604800;
@@ -17,7 +17,7 @@ export default async function OG({ params }: { params: Promise<{ slug: string }>
     poster: a ? posterUrl(a, "large") : null,
     kicker: a ? `${subtypeLabel(a.subtype)} · ${statusLabel(a.status)}${year ? ` · ${year}` : ""}` : "Anime",
     title: a?.title || "Anime not found",
-    sub: a ? `${a.episodeCount ? `${a.episodeCount} episodes · ` : ""}${a.categories.slice(0, 3).map((c) => c.title).join(", ") || "Episodes, release dates & where to watch"}` : "",
+    sub: a ? `${a.episodeCount ? `${a.episodeCount} episodes · ` : ""}${publicGenres(a.categories).slice(0, 3).map((c) => c.title).join(", ") || "Episodes, release dates & where to watch"}` : "",
     badge: a?.rating ? `★ ${(a.rating / 10).toFixed(1)}` : null,
   });
 }
