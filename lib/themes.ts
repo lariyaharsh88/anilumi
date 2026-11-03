@@ -2,7 +2,8 @@
  * Openings and endings from AnimeThemes (https://animethemes.moe, free, no key), matched by MAL id.
  * We show song data and link out for playback rather than hotlinking their videos.
  */
-import { getMalId } from "./kitsu";
+import { getMalId, UpstreamError } from "./kitsu";
+import snapshot from "@/data/themes.json";
 
 export type ThemeEntry = { version: number | null; episodes: string | null; spoiler: boolean; nsfw: boolean };
 export type Theme = { type: "OP" | "ED"; sequence: number; slug: string; song: string | null; artists: string[]; entries: ThemeEntry[] };
@@ -25,24 +26,35 @@ export function normaliseThemes(raw: AtTheme[]): Theme[] {
     .sort((x, y) => (x.type === y.type ? x.sequence - y.sequence : x.type === "OP" ? -1 : 1));
 }
 
+const SNAP = (snapshot as unknown as { themes: Record<string, { s: string; t: Theme[] }> }).themes;
+
+/**
+ * Openings and endings for a Kitsu anime: the monthly snapshot (data/themes.json, scripts/fetch-themes.mts) for
+ * the most-followed titles, else a live AnimeThemes call. null means AnimeThemes has no entry. A live call that
+ * times out or errors throws UpstreamError, so the page is not cached as empty (and noindexed) while the
+ * service is just slow; AnimeThemes often takes 10–20 s.
+ */
 export async function getThemes(kitsuId: string): Promise<Themes | null> {
+  const snap = SNAP[kitsuId];
+  if (snap) return { atSlug: snap.s, themes: snap.t };
   const mal = await getMalId(kitsuId);
   if (!mal) return null;
   const url = `https://api.animethemes.moe/anime?filter[has]=resources&filter[site]=MyAnimeList&filter[external_id]=${mal}&include=animethemes.animethemeentries,animethemes.song.artists&fields[anime]=slug&fields[song]=title&fields[artist]=name&fields[animetheme]=type,sequence,slug&fields[animethemeentry]=version,episodes,spoiler,nsfw`;
-  // One retry: AnimeThemes allows 90 requests a minute and occasionally times out under build load.
+  // One retry: AnimeThemes allows 90 requests a minute and is slow under load.
   for (let attempt = 0; attempt < 2; attempt++) {
     try {
-      const res = await fetch(url, { headers: { Accept: "application/json", "User-Agent": "AniLumi/1.0 (+https://anilumi.in)" }, next: { revalidate: 86400 * 3 }, signal: AbortSignal.timeout(8000) });
+      const res = await fetch(url, { headers: { Accept: "application/json", "User-Agent": "AniLumi/1.0 (+https://anilumi.in)" }, next: { revalidate: 86400 * 3 }, signal: AbortSignal.timeout(20_000) });
       if (res.status === 429 || res.status >= 500) { await new Promise((r) => setTimeout(r, 1500)); continue; }
-      if (!res.ok) return null;
+      if (res.status === 404) return null;
+      if (!res.ok) break;
       const j = (await res.json()) as { anime?: { slug: string; animethemes: AtTheme[] }[] };
       const a = j.anime?.[0];
       return a ? { atSlug: a.slug, themes: normaliseThemes(a.animethemes || []) } : null;
     } catch {
-      if (attempt) return null;
+      if (attempt) break;
     }
   }
-  return null;
+  throw new UpstreamError(`AnimeThemes unavailable for MAL ${mal}`);
 }
 
 /** "OP2", "ED1" → "Opening 2", "Ending 1". */
