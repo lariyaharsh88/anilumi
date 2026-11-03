@@ -18,8 +18,24 @@ import PollCard from "@/components/PollCard";
 import { currentPoll } from "@/data/polls";
 import { dbEnabled } from "@/lib/db";
 import { excerpt } from "@/lib/excerpt";
+import GenreIcon from "@/components/GenreIcon";
+import ToolBand, { type Tool } from "@/components/ToolBand";
 
 export const revalidate = 1800;
+
+/** Tool cards between the rails (components/ToolBand): planning tools up top, games and comparisons lower down. */
+const PLAN_TOOLS: Tool[] = [
+  { href: "/tonight", title: "What to watch tonight", blurb: "Complete shows that fit the time you have", icon: "tonight", hue: 262 },
+  { href: "/how-long-to-watch", title: "How long to watch", blurb: "Total binge time for any series", icon: "time", hue: 190 },
+  { href: "/filler-lists", title: "Skip the filler", blurb: "Episode lists for Naruto, One Piece and more", icon: "filler", hue: 20 },
+  { href: "/what-anime-is-this", title: "What anime is this?", blurb: "Find a show from a screenshot", icon: "camera", hue: 140 },
+];
+const FUN_TOOLS: Tool[] = [
+  { href: "/quiz", title: "What should I watch?", blurb: "Four quick questions, picks that fit", icon: "quiz", hue: 300 },
+  { href: "/tier-list", title: "Tier list maker", blurb: "Rank your favourites, share the image", icon: "tier", hue: 40 },
+  { href: "/compare", title: "Compare two anime", blurb: "Scores, runtime and genres side by side", icon: "compare", hue: 220 },
+  { href: "/parents-guide", title: "Parents' guide", blurb: "Is it OK for kids? Content notes per show", icon: "parents", hue: 350 },
+];
 
 export const metadata: Metadata = {
   title: `${site.name} – ${site.tagline}`,
@@ -98,7 +114,28 @@ export default async function Home() {
       />
 
       <AnimeRail title="Trending right now" href="/top/popular" items={trending} bigRank eager />
+      <ToolBand eyebrow="Plan your next watch" title="Tools for your next binge" tools={PLAN_TOOLS} />
       <AnimeRail title="Airing this season" href="/schedule" items={airing.items} />
+      <section className="reveal mt-12" aria-labelledby="home-genres-h">
+        <div className="mb-3 flex items-end justify-between">
+          <h2 id="home-genres-h" className="h-section">Browse by genre</h2>
+          <Link href="/genre" className="group text-sm font-medium text-violet hover:text-violet-2">All genres <span className="inline-block transition-transform group-hover:translate-x-1">→</span></Link>
+        </div>
+        <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+          {tiles.map((g, i) => (
+            <li key={g.id} className={i >= 8 ? "hidden sm:block" : undefined}>
+              <Link href={`/genre/${g.slug}`} className="genre-tile card group relative flex items-center gap-3 p-3 transition duration-300 hover:-translate-y-0.5 hover:border-white/20" style={{ ["--h" as string]: String(HUES[i % HUES.length]) }}>
+                <span className="genre-ico grid h-10 w-10 shrink-0 place-items-center rounded-xl transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-6"><GenreIcon slug={g.slug} /></span>
+                <span className="min-w-0">
+                  <span className="block truncate font-semibold text-ink">{g.title}</span>
+                  <span className="block text-xs text-muted">{g.count ? `${g.count.toLocaleString()} titles` : "Browse"}</span>
+                </span>
+                <span aria-hidden className="genre-mark pointer-events-none absolute -bottom-3 -right-3 -rotate-12 transition-transform duration-500 group-hover:-rotate-3 group-hover:scale-110"><GenreIcon slug={g.slug} className="h-16 w-16" /></span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </section>
       <AdSlot slot="home-mid" />
       <AnimeRail title={`${cap(season)} ${year} lineup`} href={`/season/${year}/${season}`} items={seasonal.items} />
       {nextPreview.length >= 6 && <AnimeRail title={`${cap(nextSeason.season)} ${nextSeason.year} preview: most anticipated`} href={`/season/${nextSeason.year}/${nextSeason.season}/preview`} items={nextPreview} />}
@@ -145,6 +182,8 @@ export default async function Home() {
         </section>
       )}
       {dbEnabled() && currentPoll(new Date().toISOString().slice(0, 10)) && <div className="mt-12"><PollCard poll={currentPoll(new Date().toISOString().slice(0, 10))!} /></div>}
+      <AnimeRail title="Top rated of all time" href="/top/rated" items={topRated.items} rank />
+      <ToolBand eyebrow="Play and compare" title="Games and handy tools" tools={FUN_TOOLS} />
       {quote && (
         <figure className="reveal card relative mt-12 overflow-hidden p-6 sm:p-8" aria-label="Anime quote of the day">
           <span aria-hidden className="pointer-events-none absolute -left-2 -top-8 select-none text-[9rem] font-black leading-none text-white/5">“</span>
@@ -155,29 +194,8 @@ export default async function Home() {
           </figcaption>
         </figure>
       )}
-      <AnimeRail title="Top rated of all time" href="/top/rated" items={topRated.items} rank />
       <AnimeRail title="Coming soon" href="/top/upcoming" items={upcoming.items} />
       <AnimeRail title="Best anime movies" href="/top/movies" items={movies.items} />
-
-      <section className="reveal mt-14">
-        <div className="mb-3 flex items-end justify-between">
-          <h2 className="h-section">Browse by genre</h2>
-          <Link href="/genre" className="text-sm font-medium text-violet hover:text-violet-2">All genres →</Link>
-        </div>
-        <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
-          {tiles.map((g, i) => (
-            <li key={g.id}>
-              <Link href={`/genre/${g.slug}`} className="genre-tile card group flex h-20 flex-col justify-between p-3 transition duration-300 hover:-translate-y-0.5 hover:border-white/20" style={{ ["--h" as string]: String(HUES[i % HUES.length]) }}>
-                <span className="font-semibold text-ink">{g.title}</span>
-                <span className="flex items-center justify-between text-xs text-muted">
-                  {g.count ? `${g.count.toLocaleString()} titles` : "Browse"}
-                  <span className="translate-x-0 opacity-0 transition duration-300 group-hover:translate-x-0.5 group-hover:opacity-100" aria-hidden>→</span>
-                </span>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </section>
     </div>
   );
 }

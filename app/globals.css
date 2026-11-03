@@ -269,3 +269,9 @@ html, body { overflow-x: clip; }
   body.print-checklist #checklist, body.print-checklist #checklist * { visibility: visible; }
   body.print-checklist #checklist { position: absolute; inset: 0 auto auto 0; width: 100%; margin: 0; }
 }
+
+/* Tinted icon chip on genre tiles and tool cards: hue from --h (components/GenreIcon, components/ToolBand). */
+.genre-ico { color: hsl(var(--h) 85% 72%); background: hsl(var(--h) 80% 60% / .16); box-shadow: inset 0 0 0 1px hsl(var(--h) 80% 65% / .25); }
+:root[data-theme="light"] .genre-ico { color: hsl(var(--h) 65% 38%); background: hsl(var(--h) 80% 55% / .14); }
+.genre-mark { color: hsl(var(--h) 85% 70% / .14); }
+:root[data-theme="light"] .genre-mark { color: hsl(var(--h) 60% 40% / .12); }
