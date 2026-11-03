@@ -5,6 +5,7 @@ import { WATCH_ORDER_OVERRIDES } from "@/data/watch-orders";
 import franchiseData from "@/data/franchises.json";
 import PageHero from "@/components/PageHero";
 import Image from "next/image";
+import FranchiseIndex, { type FranchiseRow } from "@/components/FranchiseIndex";
 
 export const revalidate = 86400;
 export const metadata: Metadata = {
@@ -19,6 +20,11 @@ export default async function WatchOrderIndex() {
   const rels = await Promise.all(candidates.map((a) => getRelations(a.id)));
   // Only franchise starting points: drop entries that have a prequel on record.
   const items = candidates.filter((_, i) => !rels[i].some((r) => r.role === "prequel")).slice(0, 24);
+  const edited = new Set(Object.keys(WATCH_ORDER_OVERRIDES));
+  const azRows: FranchiseRow[] = (franchiseData as { franchises: { s: string; t: string; n: number }[] }).franchises
+    .filter((f) => f.n > 1).slice(0, 1000)
+    .sort((x, y) => x.t.localeCompare(y.t))
+    .map((f) => ({ s: f.s, t: f.t, n: f.n, ed: edited.has(f.s) }));
   return (
     <div className="container-x pb-8">
       <PageHero
@@ -55,37 +61,25 @@ export default async function WatchOrderIndex() {
           {Object.entries(WATCH_ORDER_OVERRIDES)
             .sort(([, x], [, y]) => (x.label || "").localeCompare(y.label || ""))
             .map(([slug, o]) => (
-              <li key={slug}><Link href={`/watch-order/${slug}`} className="chip">{o.label || slug.replace(/-/g, " ")}</Link></li>
+              <li key={slug}>
+                <Link href={`/watch-order/${slug}`} className="chip gap-1.5 py-1.5 text-sm">
+                  <svg aria-hidden viewBox="0 0 24 24" className="h-3.5 w-3.5 text-violet" fill="none" stroke="currentColor" strokeWidth={2.4} strokeLinecap="round" strokeLinejoin="round"><path d="M20 6 9 17l-5-5" /></svg>
+                  {o.label || slug.replace(/-/g, " ")}
+                </Link>
+              </li>
             ))}
         </ul>
         <p className="mt-4 text-sm text-muted">Any title has a watch order: open it and press “Watch order”. Example: <Link href={animePath({ slug: "naruto" })} className="text-violet">Naruto</Link>.</p>
       </section>
 
-      {/* Every franchise with more than one entry (data/franchises.json), A to Z: one link to each watch order. */}
-      {(() => {
-        const all = (franchiseData as { franchises: { s: string; t: string; n: number }[] }).franchises.filter((f) => f.n > 1).slice(0, 1000);
-        const groups = new Map<string, typeof all>();
-        for (const f of [...all].sort((x, y) => x.t.localeCompare(y.t))) {
-          const k = /^[a-z]/i.test(f.t) ? f.t[0].toUpperCase() : "#";
-          groups.set(k, [...(groups.get(k) || []), f]);
-        }
-        return all.length > 0 ? (
-          <section className="reveal mt-12" aria-labelledby="az-h">
-            <h2 id="az-h" className="h-section mb-1">All franchise watch orders, A–Z</h2>
-            <p className="mb-4 text-sm text-muted">{all.length} franchises with more than one season, movie or OVA.</p>
-            <div className="space-y-4">
-              {[...groups].map(([k, list]) => (
-                <div key={k}>
-                  <h3 className="mb-1.5 text-sm font-bold text-accent-2">{k}</h3>
-                  <ul className="flex flex-wrap gap-x-4 gap-y-1 text-sm">
-                    {list.map((f) => <li key={f.s}><Link href={`/watch-order/${f.s}`} className="text-ink/85 hover:text-violet-2 hover:underline">{f.t}</Link> <span className="text-xs text-muted">({f.n})</span></li>)}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </section>
-        ) : null;
-      })()}
+      {/* Every franchise with more than one entry (data/franchises.json), A to Z, with a filter and a letter bar. */}
+      {azRows.length > 0 && (
+        <section className="reveal mt-12" aria-labelledby="az-h">
+          <h2 id="az-h" className="h-section mb-1">All franchise watch orders, A–Z</h2>
+          <p className="mb-4 text-sm text-muted">{azRows.length} franchises with more than one season, movie or OVA.</p>
+          <FranchiseIndex rows={azRows} />
+        </section>
+      )}
     </div>
   );
 }
