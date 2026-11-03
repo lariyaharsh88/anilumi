@@ -19,6 +19,8 @@ const nextConfig: NextConfig = {
     BUILD_COMMIT: COMMIT,
     // Public ID; Render sets it in render.yaml, other production builds (Workers) get it here, dev none.
     NEXT_PUBLIC_GA_ID: process.env.NEXT_PUBLIC_GA_ID || (process.env.NODE_ENV === "production" ? "G-V7DV9GGSDD" : ""),
+    // Microsoft Clarity project for anilumi.in (heatmaps, session recordings); public, production only.
+    NEXT_PUBLIC_CLARITY_ID: process.env.NEXT_PUBLIC_CLARITY_ID || (process.env.NODE_ENV === "production" ? "z7zf3qpyt9" : ""),
   },
   // Every response names its build, so the edge cache (edge/worker.js) only stores pages from the live build:
   // during a switchover the old version still answers for a moment.
