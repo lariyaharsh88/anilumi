@@ -68,6 +68,10 @@ export function characterPathFor(anilistId: number): string | null {
   return pathById.get(anilistId) ?? null;
 }
 
+let snapIndex: Map<number, SnapChar> | null = null;
+/** Snapshot entry for an AniList character id (birthday pages use it for age, height and voice actors). */
+export const snapById = (anilistId: number): SnapChar | null => (snapIndex ??= new Map(chars.map((c) => [c.id, c]))).get(anilistId) ?? null;
+
 /** AniList keeps the same file name at /large/ (230px wide) as at /medium/ (100px). */
 export const snapImage = (c: SnapChar, size: "medium" | "large" = "medium"): string | null => (c.i ? (size === "large" ? CHAR_IMG.replace("/medium/", "/large/") : CHAR_IMG) + c.i : null);
 

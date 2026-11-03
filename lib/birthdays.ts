@@ -58,6 +58,29 @@ export function nextDays(m: number, d: number, n: number) {
   return Array.from({ length: n }, (_, k) => days[(i + 1 + k) % days.length]);
 }
 
+/** The n days before and after (m, d), wrapping at year ends. */
+export function aroundDays(m: number, d: number, n: number) {
+  const days = allDays();
+  const i = days.findIndex((x) => x.m === m && x.d === d);
+  return [...Array.from({ length: n }, (_, k) => days[(i - n + k + days.length) % days.length]), ...Array.from({ length: n }, (_, k) => days[(i + 1 + k) % days.length])];
+}
+
+/** Western zodiac sign for a birthday (start month/day of each sign). Pure. */
+const ZODIAC: [string, string, number, number][] = [
+  ["Capricorn", "♑", 1, 1], ["Aquarius", "♒", 1, 20], ["Pisces", "♓", 2, 19], ["Aries", "♈", 3, 21], ["Taurus", "♉", 4, 20], ["Gemini", "♊", 5, 21],
+  ["Cancer", "♋", 6, 21], ["Leo", "♌", 7, 23], ["Virgo", "♍", 8, 23], ["Libra", "♎", 9, 23], ["Scorpio", "♏", 10, 23], ["Sagittarius", "♐", 11, 22], ["Capricorn", "♑", 12, 22],
+];
+export function zodiacOf(m: number, d: number): { name: string; symbol: string } {
+  let z = ZODIAC[0];
+  for (const x of ZODIAC) if (m > x[2] || (m === x[2] && d >= x[3])) z = x;
+  return { name: z[0], symbol: z[1] };
+}
+/** Characters born under the same sign, most-favourited first. Pure. */
+export const sameSign = (m: number, d: number, src: BdChar[] = chars) => {
+  const sign = zodiacOf(m, d).name;
+  return src.filter((c) => zodiacOf(c.m, c.d).name === sign).sort((x, y) => y.f - x.f);
+};
+
 /** "Yeager, Eren" and "Eren Yeager" → the same key (accents dropped, word order ignored). Pure. */
 const nameKey = (s: string) => s.normalize("NFKD").replace(/[̀-ͯ]/g, "").toLowerCase().split(/[^a-z0-9]+/).filter(Boolean).sort().join(" ");
 
