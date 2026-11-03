@@ -86,6 +86,10 @@ export function webPage(type: "WebPage" | "CollectionPage" | "AboutPage" | "Cont
   return { "@context": CTX, "@type": type, "@id": abs(path), url: abs(path), name, description, inLanguage: "en", isPartOf: { "@id": SITE_ID }, publisher: { "@id": ORG_ID } };
 }
 
+/** `lastReviewed` + `reviewedBy` for a page a person has checked (spread into a WebPage); empty when unchecked. */
+export const reviewedBy = (iso?: string | null) =>
+  iso ? { lastReviewed: iso, reviewedBy: { "@type": "Person", name: site.founder.name, url: site.founder.url } } : {};
+
 /** "PT1H30M" from minutes. */
 export function isoDuration(min: number): string {
   const h = Math.floor(min / 60), m = Math.round(min % 60);

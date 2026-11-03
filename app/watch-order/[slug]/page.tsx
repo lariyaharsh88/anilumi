@@ -6,6 +6,8 @@ import { getAnimeBySlug, buildWatchOrder, franchiseName, watchOrderSlug, animePa
 import { abs } from "@/lib/site";
 import PageHero from "@/components/PageHero";
 import JsonLd from "@/components/JsonLd";
+import CheckedBy from "@/components/CheckedBy";
+import { webPage, workRef, reviewedBy } from "@/lib/ld";
 import Faq from "@/components/Faq";
 import AdSlot from "@/components/AdSlot";
 import WatchChecklist from "@/components/WatchChecklist";
@@ -93,6 +95,7 @@ export default async function WatchOrderPage({ params }: Props) {
   return (
     <div className="container-x pb-8">
       <JsonLd data={ld} />
+      {wo.checked && <JsonLd data={{ ...webPage("WebPage", `/watch-order/${watchOrderSlug(wo)}`, `${name} watch order`), about: workRef(wo.root), ...reviewedBy(wo.checked) }} />}
       <PageHero
         crumbs={[{ href: "/", label: "Home" }, { href: animePath(a), label: a.title }, { href: `/watch-order/${a.slug}`, label: "Watch order" }]}
         eyebrow="🧭 Watch order guide"
@@ -116,6 +119,7 @@ export default async function WatchOrderPage({ params }: Props) {
           <div className="card mt-5 border-violet/40 bg-violet/10 p-4">
             <p className="text-xs font-semibold uppercase tracking-wider text-violet">How to watch</p>
             <p className="mt-1 text-sm leading-6 text-ink/90">{tip}</p>
+            {wo.checked && tip === wo.intro && <CheckedBy date={wo.checked} className="mt-2" />}
           </div>
         ) : null;
       })()}

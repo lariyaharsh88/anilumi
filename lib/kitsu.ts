@@ -494,7 +494,7 @@ export type WatchEntry = {
   attachedTo?: string; // id of main entry this hangs off
 };
 
-export type WatchOrder = { root: Anime; entries: WatchEntry[]; mainCount: number; totalMinutes: number; releaseOrder: Anime[]; intro: string | null; label?: string | null; key?: string | null };
+export type WatchOrder = { root: Anime; entries: WatchEntry[]; mainCount: number; totalMinutes: number; releaseOrder: Anime[]; intro: string | null; label?: string | null; key?: string | null; checked?: string | null };
 
 function kindOf(role: RelationRole, a: Anime): WatchEntry["kind"] {
   if (role === "summary") return "recap";
@@ -592,7 +592,7 @@ export async function buildWatchOrder(start: Anime, fetchRelations: (id: string)
   const totalMinutes = entries.filter((e) => e.kind === "main" || e.kind === "movie").reduce((n, e) => n + runtimeMinutes(e.anime), 0);
   const releaseOrder = [...entries.map((e) => e.anime)].sort((x, y) => (x.startDate || "9").localeCompare(y.startDate || "9"));
   const firstMain = entries.find((e) => e.kind === "main")?.anime ?? root;
-  return { root: firstMain, entries, mainCount: entries.filter((e) => e.kind === "main").length, totalMinutes, releaseOrder, intro: ov?.intro || null, label: ov?.label || null, key: ovKey };
+  return { root: firstMain, entries, mainCount: entries.filter((e) => e.kind === "main").length, totalMinutes, releaseOrder, intro: ov?.intro || null, label: ov?.label || null, key: ovKey, checked: ov?.checked || null };
 }
 
 /**

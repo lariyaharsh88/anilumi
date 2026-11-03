@@ -41,7 +41,8 @@ test("mergeFiller: curated lists win, empty MAL entries are dropped", () => {
   assert.equal(all["fairy-tail"].recap, "125");
   assert.equal(all.empty, undefined);
   assert.equal(fillerSource(all["fairy-tail"]).label, "From MyAnimeList");
-  assert.equal(fillerSource(FILLER.naruto).label, "Cross-checked");
+  assert.equal(fillerSource({ filler: "1", reviewed: false, checked: "AnimeFillerList, 28 Oct 2026" }).label, "Cross-checked");
+  assert.equal(fillerSource({ filler: "1", reviewed: true, reviewedOn: "2026-11-03" }).label, "Reviewed");
   assert.equal(fillerSource({ filler: "1", reviewed: false }).tone, "draft");
 });
 

@@ -5,7 +5,8 @@ import { getAnimeBySlug, animePath, posterUrl } from "@/lib/kitsu";
 import { continuationFor, continuationSlugs, startAt } from "@/lib/filler";
 import { amazonSearch, affiliateRel } from "@/lib/affiliate";
 import PageHero from "@/components/PageHero";
-import { pageAbout } from "@/lib/ld";
+import { pageAbout, reviewedBy } from "@/lib/ld";
+import CheckedBy from "@/components/CheckedBy";
 import JsonLd from "@/components/JsonLd";
 import Faq, { type FaqItem } from "@/components/Faq";
 import AdSlot from "@/components/AdSlot";
@@ -51,7 +52,7 @@ export default async function MangaPage({ params }: Props) {
 
   return (
     <div className="container-x pb-8">
-      <JsonLd data={pageAbout(a, `${animePath(a)}/manga`, `Where the ${a.title} anime ends in the ${cont.medium}`)} />
+      <JsonLd data={{ ...pageAbout(a, `${animePath(a)}/manga`, `Where the ${a.title} anime ends in the ${cont.medium}`), ...reviewedBy(cont.reviewedOn) }} />
       <PageHero
         crumbs={[{ href: "/", label: "Home" }, { href: animePath(a), label: a.title }, { href: `${animePath(a)}/manga`, label: `Continue in the ${medium}` }]}
         eyebrow={<><span className="mr-2 inline-flex items-center rounded-full bg-white/10 px-2 py-0.5 text-[11px] tracking-normal text-ink normal-case">{draft ? "Draft · being verified" : "Reviewed"}</span>Anime → {medium}</>}
@@ -75,6 +76,7 @@ export default async function MangaPage({ params }: Props) {
           <Link href={`${animePath(a)}/next-season`} className="chip">Next season status</Link>
           <Link href={`/watch-order/${a.slug}`} className="chip">Watch order</Link>
         </div>
+        {cont.reviewedOn && <CheckedBy date={cont.reviewedOn} className="mt-4" />}
         {draft && <p className="mt-4 text-xs text-muted">This continuation point is a draft and is still being checked against the {medium}. Flip back a chapter or two if something feels skipped.</p>}
       </section>
 

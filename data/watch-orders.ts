@@ -4,31 +4,37 @@
  * `intro` is shown under the title; `skip` moves entries to "safe to skip"; `demote` turns a
  * core entry (typically a prequel film/OVA Kitsu roots the graph at) into an optional extra;
  * `mainOrder` forces the core sequence.
- * Drafted 22 Oct 2026 by Claude, pending human review – keep claims factual. Run
+ * Drafted 22 Oct 2026 by Claude; `checked` is the date a person reviewed a guide (shown as "Checked by … on …",
+ * and as lastReviewed in the page's JSON-LD). Keep claims factual. Run
  * `npx tsx scripts/resolve-watch-orders.ts` after editing to confirm every key still matches.
  */
-export type WatchOrderOverride = { label?: string; intro: string; skip?: string[]; demote?: string[]; mainOrder?: string[] };
+export type WatchOrderOverride = { label?: string; intro: string; skip?: string[]; demote?: string[]; mainOrder?: string[]; /** ISO date a person checked the guide (shown as "Checked on"). */ checked?: string };
 
 export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   "attack-on-titan": {
     label: "Attack on Titan",
     intro: "Watch the four TV seasons in release order. Season 3 is split into two parts and The Final Season came out in three batches between 2020 and 2023, ending with the two-part special. Skip the compilation movies, which only retell the series. Of the OVAs, No Regrets (Kuinaki Sentaku) is the one worth adding after Season 1; Junior High is an unrelated comedy spin-off.",
+    checked: "2026-11-03",
   },
   naruto: {
     label: "Naruto",
     intro: "Start with Naruto (2002), then Naruto: Shippuden, then Boruto. Episodes 136 to 219 of the original series are almost entirely filler, so you can go straight from episode 135 to Shippuden. Shippuden has long filler stretches as well, so keep a filler guide open. The films are standalone and optional except The Last, which is canon and sits just before Shippuden's final episodes.",
+    checked: "2026-11-03",
   },
   "one-piece": {
     label: "One Piece",
     intro: "There is one sequence: the TV series in order. Roughly a hundred of its 1,100-plus episodes are filler, but they come in short blocks, so use a filler guide rather than skipping whole arcs. The films are not canon; Strong World, Film Z, Stampede and Film Red are the ones with story ties, and none are required. Episode of East Blue and similar specials are recaps.",
+    checked: "2026-11-03",
   },
   "boku-no-hero-academia": {
     label: "My Hero Academia",
     intro: "Release order is the right order: seasons 1 through 7, then the final season that began airing in October 2025. The three films (Two Heroes, Heroes Rising, World Heroes' Mission) slot after seasons 2, 4 and 5 and are optional. The OVAs are light side stories.",
+    checked: "2026-11-03",
   },
   "kimetsu-no-yaiba": {
     label: "Demon Slayer",
     intro: "Season 1, then the Mugen Train film (or its TV re-cut, which adds one new episode, but not both), then the Entertainment District, Swordsmith Village and Hashira Training arcs, then the Infinity Castle film trilogy that started in 2025.",
+    checked: "2026-11-03",
   },
   "jujutsu-kaisen": {
     label: "Jujutsu Kaisen",

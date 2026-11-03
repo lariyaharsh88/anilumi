@@ -4,7 +4,8 @@ import Link from "@/components/Link";
 import { getAnimeBySlug, getLastAiredBest, animePath, episodePath, posterUrl } from "@/lib/kitsu";
 import { fillerFor, fillerSource, formatRanges, kindRuns, type EpisodeKind, type FillerInfo } from "@/lib/filler";
 import PageHero from "@/components/PageHero";
-import { pageAbout } from "@/lib/ld";
+import { pageAbout, reviewedBy } from "@/lib/ld";
+import CheckedBy from "@/components/CheckedBy";
 import JsonLd from "@/components/JsonLd";
 import Faq, { type FaqItem } from "@/components/Faq";
 import AdSlot from "@/components/AdSlot";
@@ -73,7 +74,7 @@ export default async function FillerListPage({ params }: Props) {
 
   return (
     <div className="container-x pb-8">
-      <JsonLd data={pageAbout(a, `${animePath(a)}/filler-list`, `${a.title} filler list`)} />
+      <JsonLd data={{ ...pageAbout(a, `${animePath(a)}/filler-list`, `${a.title} filler list`), ...reviewedBy(f.entry.reviewedOn) }} />
       <PageHero
         crumbs={[{ href: "/", label: "Home" }, { href: animePath(a), label: a.title }, { href: `${animePath(a)}/filler-list`, label: "Filler list" }]}
         eyebrow={<><span className="mr-2 inline-flex items-center rounded-full bg-white/10 px-2 py-0.5 text-[11px] tracking-normal text-ink normal-case">{src.label}</span>Filler guide</>}
@@ -142,10 +143,11 @@ export default async function FillerListPage({ params }: Props) {
         {f.entry.source === "mal"
           ? <>Generated from MyAnimeList&apos;s episode flags (via the Jikan API) and refreshed monthly.</>
           : f.entry.checked
-            ? <>Curated by AniLumi and cross-checked against {f.entry.checked}.</>
+            ? <>Curated by AniLumi and cross-checked against {f.entry.checked}{f.entry.reviewedOn ? ", then checked again by hand" : ""}.</>
             : <>Draft list, still being verified. Double-check before skipping a long run.</>}
         {f.entry.note ? ` ${f.entry.note}` : ""} Episode numbers follow Kitsu&apos;s numbering for this series.
       </p>
+      {f.entry.reviewedOn && <CheckedBy date={f.entry.reviewedOn} className="mt-2" />}
 
       {dbEnabled() && <LeadForm className="mt-8" kind="guide" source="filler-guide" animeId={a.id} animeTitle={a.title} title={`📬 Get ${a.title} guide updates`} blurb="An email when this filler list changes or the next season's guide is out." button="Keep me posted" />}
 
