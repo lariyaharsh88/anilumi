@@ -3,7 +3,7 @@ import Link from "@/components/Link";
 import { site } from "@/lib/site";
 import PageHero from "@/components/PageHero";
 
-export const metadata: Metadata = { title: "About", description: `How ${site.name} works and where the data comes from.`, alternates: { canonical: "/about" } };
+export const metadata: Metadata = { title: "About", description: `Who runs ${site.name}, how its anime guides are checked and where the data comes from.`, alternates: { canonical: "/about" } };
 
 export default function About() {
   return (
@@ -11,6 +11,9 @@ export default function About() {
       <PageHero eyebrow="About" title={<>About <span className="text-gradient">{site.name}</span></>} subtitle="A fast anime guide for the three questions fans ask most: what's airing, when's the next episode, and where can I legally watch it." hue={262} />
       <div className="prose-anime mt-8 max-w-3xl">
       <p>{site.name} is a fast, ad-light anime guide focused on the three questions fans ask most: what is airing now, when is the next episode, and where can I legally watch it.</p>
+      <h2>Who runs {site.name}</h2>
+      <p>{site.name} is made by <a href={site.founder.url} rel="noopener">{site.founder.name}</a>, an anime fan from India who has watched more than 50 series. I started it because the answers fans need most, like which order to watch a franchise in, which episodes are filler and where the manga picks up, are scattered across forums and wikis, and often out of date.</p>
+      <p>I think anime is one of the best ways for children and adults alike to see life from a new perspective. The best series teach friendship, perseverance, honesty and empathy through stories people actually remember. {site.name} tries to make those stories easier to find and enjoy, with clear watch guides and parents&apos; guides so families can pick what suits them.</p>
       <h2>Data sources</h2>
       <p>All titles, ratings, episode lists, artwork and streaming links come from the open <a href="https://kitsu.io" rel="noopener">Kitsu</a> community database via its public API. Rankings refresh hourly; episode schedules refresh every 30 minutes. Artwork and trademarks belong to their respective studios and licensors.</p>
       <h2>Streaming links</h2>

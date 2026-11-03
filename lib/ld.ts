@@ -21,6 +21,7 @@ export function siteGraph() {
         url: site.url,
         logo: { "@type": "ImageObject", url: abs("/brand/anilumi-mark-1024.png"), width: 1024, height: 1024 },
         description: site.description,
+        founder: { "@type": "Person", name: site.founder.name, url: site.founder.url },
       },
       {
         "@type": "WebSite",
