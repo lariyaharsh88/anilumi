@@ -24,7 +24,8 @@ export default function SiteFooter() {
     <footer data-chrome className="relative mt-20 border-t border-line bg-bg-2">
       <div aria-hidden className="absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-accent/70 to-transparent" />
 
-      {dbEnabled() && <div className="container-x pt-6"><CorrectionForm /></div>}
+      {/* Not gated on dbEnabled(): many pages are prerendered at build time without the database secret. */}
+      <div className="container-x pt-6"><CorrectionForm /></div>
       <div className="container-x grid gap-10 py-12 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,3fr)] lg:gap-16">
         <div className="max-w-sm">
           <Link href="/" className="inline-flex items-center gap-2 text-lg font-extrabold">
