@@ -1,0 +1,33 @@
+name: After deploy
+# Cloudflare Workers Builds deploys the app Worker "anilumi" on every push to main (build command
+# `npx opennextjs-cloudflare build`, deploy command `npx opennextjs-cloudflare deploy`, set in the dashboard).
+# This waits until anilumi.in reports the pushed commit, then starts the cache warm-up so the new build's
+# pages are rendered before visitors or Google ask for them.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+concurrency:
+  group: after-deploy
+  cancel-in-progress: true # only the newest push needs warming
+permissions:
+  contents: read
+  actions: write # gh workflow run warm-cache.yml
+jobs:
+  warm:
+    if: ${{ !contains(github.event.head_commit.message, '[skip render]') && !contains(github.event.head_commit.message, '[skip deploy]') }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    steps:
+      - name: Wait for the new build on anilumi.in
+        run: |
+          for i in $(seq 1 90); do
+            live=$(curl -s --max-time 20 https://anilumi.in/api/version | grep -o '"commit":"[0-9a-f]*"' | cut -d'"' -f4)
+            [ "$live" = "$GITHUB_SHA" ] && { echo "anilumi.in is on $GITHUB_SHA"; exit 0; }
+            sleep 30
+          done
+          echo "::warning::anilumi.in still reports ${live:-nothing} after 45 minutes; check Workers Builds"; exit 1
+      - name: Start the warm-up
+        run: gh workflow run warm-cache.yml --repo "$GITHUB_REPOSITORY"
+        env:
+          GH_TOKEN: ${{ github.token }}
