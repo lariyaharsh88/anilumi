@@ -203,6 +203,8 @@ html, body { overflow-x: clip; }
 
 /* Horizontal rails: soft edge fades. */
 .edge-fade { mask-image: linear-gradient(90deg, transparent 0, #000 24px, #000 calc(100% - 48px), transparent 100%); }
+/* Rows that only scroll on phones (components/ToolBand) drop the fade once they become a grid. */
+@media (min-width: 40rem) { .edge-fade.fade-phone-only { mask-image: none; } }
 
 /* Skeleton shimmer. */
 .shimmer { background: linear-gradient(100deg, var(--color-card) 30%, var(--color-bg-2) 50%, var(--color-card) 70%); background-size: 300% 100%; }
