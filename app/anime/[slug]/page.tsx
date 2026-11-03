@@ -265,7 +265,7 @@ export default async function AnimePage({ params }: Props) {
         <div className="absolute inset-0 -z-10" aria-hidden>
           {cover && (
             <div className="parallax-bg absolute inset-0">
-              <Image src={cover} alt="" fill className="scale-110 object-cover opacity-40 blur-2xl" sizes="96px" quality={40} priority />
+              <Image src={cover} alt="" fill className="scale-110 object-cover opacity-40 blur-2xl" sizes="96px" quality={40} priority fetchPriority="high" />
             </div>
           )}
           {coverLarge && <Backdrop src={coverLarge} className="opacity-[.42] [mask-image:linear-gradient(180deg,#000_55%,transparent)]" position="center 25%" />}

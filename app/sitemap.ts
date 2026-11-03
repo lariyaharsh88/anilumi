@@ -45,7 +45,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: abs("/what-anime-is-this"), lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: abs("/news"), lastModified: now, changeFrequency: "hourly", priority: 0.8 },
     { url: abs("/quiz"), lastModified: now, changeFrequency: "monthly", priority: 0.6 },
-    { url: abs("/my/wrapped"), lastModified: now, changeFrequency: "monthly", priority: 0.5 },
     { url: abs("/birthdays"), lastModified: now, changeFrequency: "daily", priority: 0.7 },
     ...Array.from({ length: 12 }, (_, i) => ({ url: abs(monthPath(i + 1)), lastModified: now, changeFrequency: "monthly" as const, priority: 0.6 })),
     { url: abs("/on-this-day"), lastModified: now, changeFrequency: "daily", priority: 0.7 },
@@ -118,5 +117,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   } catch {
     /* upstream hiccup: ship the static part of the sitemap */
   }
-  return out;
+  // One entry per URL (several sources list the same page, e.g. /similar/… for top anime), first one wins.
+  const seen = new Set<string>();
+  return out.filter((e) => !seen.has(e.url) && Boolean(seen.add(e.url)));
 }

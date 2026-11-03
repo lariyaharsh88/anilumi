@@ -24,7 +24,18 @@ const nextConfig: NextConfig = {
   // during a switchover the old version still answers for a moment.
   async headers() {
     const build = COMMIT.slice(0, 12);
-    return build ? [{ source: "/:path*", headers: [{ key: "x-build", value: build }] }] : [];
+    // Baseline security headers. HSTS makes browsers use https after the first visit; frame-ancestors stays open on
+    // /embed/* (the widget is meant to be framed by other sites) and is limited to this site everywhere else.
+    const security = [
+      { key: "Strict-Transport-Security", value: "max-age=31536000" },
+      { key: "X-Content-Type-Options", value: "nosniff" },
+      { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+      { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=(), interest-cohort=()" },
+    ];
+    return [
+      { source: "/:path*", headers: [...security, ...(build ? [{ key: "x-build", value: build }] : [])] },
+      { source: "/((?!embed/).*)", headers: [{ key: "Content-Security-Policy", value: "frame-ancestors 'self'" }] },
+    ];
   },
   // One canonical host: www.anilumi.in → anilumi.in (301).
   async redirects() {
