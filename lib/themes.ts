@@ -28,6 +28,9 @@ export function normaliseThemes(raw: AtTheme[]): Theme[] {
 
 const SNAP = (snapshot as unknown as { themes: Record<string, { s: string; t: Theme[] }> }).themes;
 
+/** True when the monthly snapshot lists songs for this Kitsu anime (the sitemap only lists those pages). */
+export const hasSnapshotThemes = (kitsuId: string) => (SNAP[kitsuId]?.t.length ?? 0) > 0;
+
 /**
  * Openings and endings for a Kitsu anime: the monthly snapshot (data/themes.json, scripts/fetch-themes.mts) for
  * the most-followed titles, else a live AnimeThemes call. null means AnimeThemes has no entry. A live call that

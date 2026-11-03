@@ -19,6 +19,9 @@ const ROLE = { M: "MAIN", S: "SUPPORTING", B: "BACKGROUND" } as const;
 const va = (p: P): Va | null => (p ? { id: p[0], name: p[1], native: p[2], image: p[3] } : null);
 
 /** The snapshot cast for an AniList anime id (first `perPage` characters), or null if it isn't in the snapshot. */
+/** True when the monthly snapshot has a cast for this AniList id (the sitemap only lists cast pages with data). */
+export const hasSnapshotCast = (anilistId: number) => (load()[String(anilistId)]?.e.length ?? 0) > 0;
+
 export function castFromSnapshot(anilistId: number, perPage = 25): Cast | null {
   const raw = load()[String(anilistId)];
   if (!raw || perPage > 25) return null;

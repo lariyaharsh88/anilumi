@@ -1,11 +1,13 @@
 import type { MetadataRoute } from "next";
 import { abs } from "@/lib/site";
 import { WATCH_ORDER_OVERRIDES } from "@/data/watch-orders";
-import { listAnime, getCategories, seasonOf, shiftSeason, animePath, episodePath, TREND_GENRES } from "@/lib/kitsu";
+import { listAnime, getCategories, getAniListId, seasonOf, shiftSeason, animePath, episodePath, TREND_GENRES } from "@/lib/kitsu";
 import { popularVoiceActors, vaPath } from "@/lib/anilist";
 import { allDays, birthdaysOn, bdPath, monthPath } from "@/lib/birthdays";
 import { fillerSlugs, continuationSlugs } from "@/lib/filler";
 import { topCharacterSlugs, characterTableSlugs } from "@/lib/charsnap";
+import { hasSnapshotCast } from "@/lib/castsnap";
+import { hasSnapshotThemes } from "@/lib/themes";
 import { airing as airingSnapshot, upcomingOf } from "@/lib/airing";
 import { HINDI_SLUGS, hindiPath } from "@/lib/hindi";
 import { INDEXED_CHARACTERS, INDEXED_MIN_PARTS, airsSoon, searchShownPaths, similarSlugs } from "@/lib/indexing";
@@ -93,6 +95,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       for (const ep of upcoming.filter((u) => airsSoon(u.at)).map((u) => u.episode)) out.push({ url: abs(episodePath({ slug: show.s }, ep)), lastModified: now, changeFrequency: "daily", priority: ep === next ? 0.6 : 0.5 });
     }
     const seen = new Set<string>();
+    // Cast and openings pages are listed only when the monthly snapshots have data for them; without it the page
+    // renders empty and noindexes itself. AniList ids for the first 50 titles (Kitsu mappings, cached a week).
+    const top50 = [...new Map([...airing.items, ...pages.flatMap((p) => p.items)].map((a) => [a.id, a])).values()].slice(0, 50);
+    const alIds = new Map(await Promise.all(top50.map(async (a) => [a.id, await getAniListId(a.id).catch(() => null)] as const)));
     for (const a of [...airing.items, ...pages.flatMap((p) => p.items)]) {
       if (seen.has(a.id)) continue;
       seen.add(a.id);
@@ -105,8 +111,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       if (released) out.push({ url: abs(`${animePath(a)}/how-long-to-watch`), lastModified: now, changeFrequency: "monthly", priority: 0.6 });
       if (a.subtype !== "movie" && a.status === "current") out.push({ url: abs(`${animePath(a)}/episodes`), lastModified: now, changeFrequency: "daily", priority: 0.5 });
       if (n > 50) continue;
-      out.push({ url: abs(`${animePath(a)}/cast`), lastModified: now, changeFrequency: "monthly", priority: 0.5 });
-      if (released) out.push({ url: abs(`${animePath(a)}/openings-endings`), lastModified: now, changeFrequency: "monthly", priority: 0.5 });
+      const al = alIds.get(a.id);
+      if (al && hasSnapshotCast(al)) out.push({ url: abs(`${animePath(a)}/cast`), lastModified: now, changeFrequency: "monthly", priority: 0.5 });
+      if (released && hasSnapshotThemes(a.id)) out.push({ url: abs(`${animePath(a)}/openings-endings`), lastModified: now, changeFrequency: "monthly", priority: 0.5 });
       out.push({ url: abs(`${animePath(a)}/parents-guide`), lastModified: now, changeFrequency: "monthly", priority: 0.5 });
     }
     // "Anime like X" has the best click-through on the site: list it for the 500 most-followed titles (ranked in
