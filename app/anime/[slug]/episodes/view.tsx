@@ -13,6 +13,7 @@ import { pageAbout, itemList } from "@/lib/ld";
 import JsonLd from "@/components/JsonLd";
 import Pagination from "@/components/Pagination";
 import AdSlot from "@/components/AdSlot";
+import { excerpt } from "@/lib/excerpt";
 
 const LIMIT = 20;
 
@@ -112,7 +113,7 @@ export async function EpisodesView({ slug, page }: { slug: string; page: number 
               <div className="min-w-0 flex-1">
                 <h2 className="font-semibold">{e.number ? <Link href={episodePath(a, e.number)} className="hover:text-violet"><span className="text-muted">Episode {e.number}</span>{fill?.filler.has(e.number) && <span className="ml-2 rounded bg-white/5 px-1.5 py-0.5 align-middle text-[10px] font-semibold uppercase text-muted">Filler</span>}{fill?.recap.has(e.number) && <span className="ml-2 rounded bg-white/5 px-1.5 py-0.5 align-middle text-[10px] font-semibold uppercase text-muted">Recap</span>}{fill?.mixed.has(e.number) && <span className="ml-2 rounded bg-white/5 px-1.5 py-0.5 align-middle text-[10px] font-semibold uppercase text-muted">Mixed</span>}{e.title ? <> · <SpoilerGate inline animeId={a.id} ep={e.number}>{e.title}</SpoilerGate></> : ""}</Link> : e.title}</h2>
                 <p className="text-xs text-muted">{e.airdate ? `Aired ${fmtDate(e.airdate, { weekday: "long", year: "numeric", month: "long", day: "numeric" })}` : "Air date TBA"}{e.length ? ` · ${e.length} min` : ""}</p>
-                {e.synopsis && (e.number ? <SpoilerGate animeId={a.id} ep={e.number}><p className="mt-1 line-clamp-3 text-sm text-ink/80">{e.synopsis}</p></SpoilerGate> : <p className="mt-1 line-clamp-3 text-sm text-ink/80">{e.synopsis}</p>)}
+                {e.synopsis && (e.number ? <SpoilerGate animeId={a.id} ep={e.number}><p className="mt-1 line-clamp-3 text-sm text-ink/80">{excerpt(e.synopsis, 200)}</p></SpoilerGate> : <p className="mt-1 line-clamp-3 text-sm text-ink/80">{excerpt(e.synopsis, 200)}</p>)}
               </div>
             </li>
           ))}

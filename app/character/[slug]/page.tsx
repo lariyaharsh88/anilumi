@@ -18,6 +18,7 @@ import StackedBar from "@/components/viz/StackedBar";
 import AdSlot from "@/components/AdSlot";
 import { birthdayFor, bdLabel, bdPath } from "@/lib/birthdays";
 import { characterIndexed, robotsFor } from "@/lib/indexing";
+import { excerpt } from "@/lib/excerpt";
 
 export const revalidate = 604800;
 // Render on first request, then serve from the ISR cache until revalidated.
@@ -130,7 +131,7 @@ export default async function CharacterPage({ params }: Props) {
     name: c.name,
     alternateName: alternateName.length ? alternateName : undefined,
     image: c.image || undefined,
-    description: bio || undefined,
+    description: excerpt(bio, 300) || undefined,
     url: abs(`/character/${c.slug}`),
     mainEntityOfPage: abs(`/character/${c.slug}`),
     gender: gender && /^(male|female)$/i.test(gender) ? cap(gender.toLowerCase()) : undefined,
@@ -199,7 +200,8 @@ export default async function CharacterPage({ params }: Props) {
         </section>
         <section className="card reveal p-5 sm:p-6" aria-labelledby="bio-h">
           <h2 id="bio-h" className="h-section mb-2">Who is {c.name}?</h2>
-          <p className="prose-anime whitespace-pre-line">{bio || "No biography has been written for this character yet."}</p>
+          <p className="prose-anime whitespace-pre-line">{excerpt(bio, 520) || "No biography has been written for this character yet."}</p>
+          {bio && <p className="mt-2 text-xs text-muted">Biography excerpt via <a href={home ? `https://kitsu.app/anime/${home.slug}/characters` : "https://kitsu.app"} target="_blank" rel="noopener nofollow" className="underline">Kitsu</a>.</p>}
         </section>
       </div>
       {stats.length >= 2 && (

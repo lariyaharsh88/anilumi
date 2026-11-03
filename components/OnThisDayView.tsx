@@ -7,6 +7,7 @@ import PageHero from "./PageHero";
 import { itemList } from "@/lib/ld";
 import JsonLd from "@/components/JsonLd";
 import Faq from "./Faq";
+import { excerpt } from "@/lib/excerpt";
 
 const ago = (year: number, now: number) => (now - year === 0 ? "this year" : now - year === 1 ? "1 year ago" : `${now - year} years ago`);
 
@@ -40,7 +41,7 @@ export default function OnThisDayView({ m, d, premieres, pick, today = false }: 
           <div className="min-w-0">
             <p className="text-xs font-semibold uppercase tracking-wider text-accent-2">Anime of the day</p>
             <h2 id="aotd-h" className="mt-1 text-xl font-bold text-ink"><Link href={animePath(pick)} className="hover:text-violet-2">{pick.title}</Link></h2>
-            <p className="mt-2 line-clamp-3 text-sm leading-6 text-ink/80">{pick.synopsis}</p>
+            <p className="mt-2 line-clamp-3 text-sm leading-6 text-ink/80">{excerpt(pick.synopsis, 240)}</p>
             <p className="mt-3 flex flex-wrap gap-2 text-sm"><Link href={animePath(pick)} className="chip">Details</Link><Link href={`/similar/${pick.slug}`} className="chip">More like this</Link></p>
           </div>
         </section>

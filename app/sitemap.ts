@@ -56,6 +56,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: abs("/hype"), lastModified: now, changeFrequency: "daily", priority: 0.6 },
     { url: abs("/polls"), lastModified: now, changeFrequency: "weekly", priority: 0.4 },
     { url: abs("/advertise"), lastModified: now, changeFrequency: "monthly", priority: 0.3 },
+    { url: abs("/contact"), lastModified: now, changeFrequency: "yearly", priority: 0.3 },
     { url: abs("/privacy"), lastModified: now, changeFrequency: "yearly", priority: 0.2 },
     ...allDays().filter(({ m, d }) => birthdaysOn(m, d).characters.length).map(({ m, d }) => ({ url: abs(bdPath(m, d)), lastModified: now, changeFrequency: "yearly" as const, priority: 0.4 })),
     // Query-string variants are disallowed in robots.txt, so only the plain URL is listed.

@@ -35,7 +35,7 @@ export default async function Admin({ searchParams }: Props) {
   if (!d) return <div className="container-x py-16"><h1 className="text-2xl font-bold">Admin</h1><p className="mt-4 text-muted">Database not configured or unreachable.</p></div>;
 
   const week = new Date(Date.now() - 7 * 86400000);
-  const [total, lastWeek, byKind, bySource, leads, partners, rated, hyped, votes] = await Promise.all([
+  const [total, lastWeek, byKind, bySource, leads, partners, rated, hyped, votes, fixes] = await Promise.all([
     d.collection("leads").countDocuments(),
     d.collection("leads").countDocuments({ createdAt: { $gte: week } }),
     d.collection("leads").aggregate<Count>([{ $group: { _id: "$kind", n: { $sum: 1 } } }, { $sort: { n: -1 } }]).toArray(),
@@ -45,6 +45,7 @@ export default async function Admin({ searchParams }: Props) {
     d.collection<{ _id: string; count: number; sum: number }>("rating_stats").find({ count: { $gt: 0 } }).sort({ count: -1 }).limit(10).toArray(),
     d.collection<{ _id: string; count: number }>("hype_stats").find({ count: { $gt: 0 } }).sort({ count: -1 }).limit(10).toArray(),
     Promise.all(["ratings", "reactions", "hype", "poll_votes"].map((c) => d.collection(c).estimatedDocumentCount())),
+    d.collection("corrections").find().sort({ createdAt: -1 }).limit(50).toArray(),
   ]);
   const ids = [...new Set([...rated, ...hyped].map((r) => r._id))].slice(0, 20);
   const titles = new Map(ids.length ? (await listAnime({ filter: { id: ids.join(",") }, limit: 20, unrated: true })).items.map((a) => [a.id, a]) : []);
@@ -90,6 +91,27 @@ export default async function Admin({ searchParams }: Props) {
             ))}
           </ul>
         ) : <p className="text-sm text-muted">None yet.</p>}
+      </section>
+
+      <section>
+        <h2 className="h-section mb-3">Reported mistakes and messages</h2>
+        <div className="card overflow-x-auto">
+          <table className="w-full text-left text-sm">
+            <thead className="text-xs text-muted"><tr>{["When (IST)", "Page", "Message", "Reply to", ""].map((h) => <th key={h} className="px-3 py-2 font-medium">{h}</th>)}</tr></thead>
+            <tbody className="divide-y divide-line">
+              {fixes.map((f) => (
+                <tr key={String(f._id)}>
+                  <td className="whitespace-nowrap px-3 py-2">{fmt(f.createdAt)}</td>
+                  <td className="px-3 py-2"><Link href={f.page} className="text-violet hover:underline">{f.kind === "contact" ? "✉ contact" : f.page}</Link></td>
+                  <td className="max-w-md whitespace-pre-line px-3 py-2">{f.message}</td>
+                  <td className="px-3 py-2">{f.email || ""}</td>
+                  <td className="px-3 py-2"><form action="/api/admin/delete" method="post"><input type="hidden" name="type" value="correction" /><input type="hidden" name="id" value={String(f._id)} /><button className="text-xs text-muted hover:text-accent-2">Done</button></form></td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          {!fixes.length && <p className="p-4 text-sm text-muted">None yet.</p>}
+        </div>
       </section>
 
       <section>

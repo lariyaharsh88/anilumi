@@ -17,6 +17,7 @@ import Image from "next/image";
 import PollCard from "@/components/PollCard";
 import { currentPoll } from "@/data/polls";
 import { dbEnabled } from "@/lib/db";
+import { excerpt } from "@/lib/excerpt";
 
 export const revalidate = 1800;
 
@@ -118,7 +119,7 @@ export default async function Home() {
               <div className="min-w-0">
                 <p className="text-xs font-semibold uppercase tracking-wider text-accent-2">Anime of the day</p>
                 <h2 className="mt-1 text-lg font-bold text-ink"><Link href={animePath(pick)} className="hover:text-violet-2">{pick.title}</Link></h2>
-                <p className="mt-1 line-clamp-3 text-sm leading-6 text-ink/75">{pick.synopsis}</p>
+                <p className="mt-1 line-clamp-3 text-sm leading-6 text-ink/75">{excerpt(pick.synopsis, 240)}</p>
               </div>
             </div>
           )}

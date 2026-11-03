@@ -11,6 +11,7 @@ import { SITE_ID } from "@/lib/ld";
 import BarChart from "./viz/BarChart";
 import Faq, { type FaqItem } from "./Faq";
 import AdSlot from "./AdSlot";
+import { excerpt } from "@/lib/excerpt";
 
 const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 export const birthday = (b: VoiceActor["birth"]) => (b?.month ? `${MONTHS[b.month - 1]}${b.day ? ` ${b.day}` : ""}${b.year ? `, ${b.year}` : ""}` : null);
@@ -75,7 +76,7 @@ export default async function PersonProfile({ va, kind }: { va: VoiceActor; kind
     "@type": "Person",
     "@id": `${abs(path)}#person`,
     name: va.name,
-    description: bio ? bio.slice(0, 500) : undefined,
+    description: excerpt(bio, 300) || undefined,
     gender: va.gender && /^(male|female)$/i.test(va.gender) ? va.gender : undefined,
     birthPlace: va.homeTown || wd?.birthPlace ? { "@type": "Place", name: va.homeTown || wd!.birthPlace } : undefined,
     knowsLanguage: kind === "voice" && va.language ? va.language : undefined,
@@ -260,7 +261,7 @@ export default async function PersonProfile({ va, kind }: { va: VoiceActor; kind
           {bio && (
             <div className="card p-4">
               <h2 className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted">About</h2>
-              <p className="whitespace-pre-line text-sm leading-6 text-ink/85">{bio}</p>
+              <p className="whitespace-pre-line text-sm leading-6 text-ink/85">{excerpt(bio, 520)}</p>
               <p className="mt-2 text-xs text-muted">From <a href={`https://anilist.co/staff/${va.id}`} rel="noopener" className="underline">AniList</a>.</p>
             </div>
           )}

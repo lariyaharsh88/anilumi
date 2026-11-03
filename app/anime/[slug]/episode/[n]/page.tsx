@@ -23,6 +23,7 @@ import { streamLink, affiliateRel } from "@/lib/affiliate";
 import SkipGuide from "@/components/SkipGuide";
 import { skipTimesFor } from "@/lib/skip";
 import { episodeIndexed, robotsFor } from "@/lib/indexing";
+import { excerpt } from "@/lib/excerpt";
 
 export const revalidate = 21600;
 // Render on first request, then serve from the ISR cache until revalidated.
@@ -91,7 +92,7 @@ export default async function EpisodePage({ params }: Props) {
     episodeNumber: n,
     // Only once it has aired; a scheduled episode carries its date as the broadcast below.
     datePublished: !upcoming && airIso ? airIso : undefined,
-    description: episode.synopsis || undefined,
+    description: excerpt(episode.synopsis, 300) || undefined,
     image: episode.thumbnail || posterUrl(a, "large") || undefined,
     timeRequired: episode.length ? isoDuration(episode.length) : undefined,
     inLanguage: "ja",
@@ -166,7 +167,8 @@ export default async function EpisodePage({ params }: Props) {
           <section className="mt-6">
             <h2 className="h-section mb-2">{upcoming ? "What to expect" : "Synopsis"}</h2>
             <SpoilerGate animeId={a.id} ep={n}>
-            <p className="prose-anime whitespace-pre-line">{episode.synopsis || (upcoming ? `Episode ${n} of ${a.title} continues the story${lastAired ? ` after episode ${lastAired}` : ""}. The official synopsis is added here as soon as it is published.` : "No synopsis has been added for this episode yet.")}</p>
+            <p className="prose-anime whitespace-pre-line">{excerpt(episode.synopsis, 360) || (upcoming ? `Episode ${n} of ${a.title} continues the story${lastAired ? ` after episode ${lastAired}` : ""}. The official synopsis is added here as soon as it is published.` : "No synopsis has been added for this episode yet.")}</p>
+            {episode.synopsis && <p className="mt-2 text-xs text-muted">Synopsis excerpt via <a href={`https://kitsu.app/anime/${a.slug}/episodes`} target="_blank" rel="noopener nofollow" className="underline">Kitsu</a>.</p>}
             </SpoilerGate>
           </section>
 

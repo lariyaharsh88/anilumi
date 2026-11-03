@@ -52,6 +52,7 @@ import ClampText from "@/components/fx/ClampText";
 import StickyActions from "@/components/fx/StickyActions";
 import TiltCard from "@/components/fx/TiltCard";
 import RailScroller from "@/components/fx/RailScroller";
+import { excerpt } from "@/lib/excerpt";
 
 export const revalidate = 86400;
 export const dynamicParams = true;
@@ -198,7 +199,7 @@ export default async function AnimePage({ params }: Props) {
     url: abs(animePath(a)),
     mainEntityOfPage: abs(animePath(a)),
     image: posterUrl(a, "large") || undefined,
-    description: a.synopsis || undefined,
+    description: excerpt(a.synopsis, 300) || undefined,
     genre: a.categories.map((c) => c.title),
     inLanguage: "ja",
     countryOfOrigin: { "@type": "Country", name: "Japan" },
@@ -398,7 +399,12 @@ export default async function AnimePage({ params }: Props) {
           <section id="overview" data-section aria-labelledby="h-overview">
             {note && <EditorNote title={a.title} note={note} />}
             <h2 id="h-overview" className="h-section mb-3">Synopsis</h2>
-            {a.synopsis ? <ClampText text={a.synopsis} lines={5} /> : <p className="text-muted">No synopsis available yet.</p>}
+            {a.synopsis ? (
+              <>
+                <ClampText text={excerpt(a.synopsis, 480)} lines={5} />
+                <p className="mt-2 text-xs text-muted">Synopsis excerpt via <a href={`https://kitsu.app/anime/${a.slug}`} target="_blank" rel="noopener nofollow" className="underline">Kitsu</a>.</p>
+              </>
+            ) : <p className="text-muted">No synopsis available yet.</p>}
             {a.youtubeVideoId && (
               <div className="mt-8">
                 <h3 className="mb-3 text-lg font-bold">Trailer</h3>

@@ -2,6 +2,7 @@ import Link from "@/components/Link";
 import { site } from "@/lib/site";
 import Logo from "./Logo";
 import LeadForm from "./LeadForm";
+import CorrectionForm from "./CorrectionForm";
 import { dbEnabled } from "@/lib/db";
 import { seasonOf, shiftSeason, cap } from "@/lib/kitsu";
 
@@ -17,12 +18,13 @@ export default function SiteFooter() {
     { h: "Tools", links: [["/what-anime-is-this", "What anime is this?"], ["/tonight", "Watch tonight"], ["/quiz", "What should I watch?"], ["/tier-list", "Tier list maker"], ["/compare", "Compare anime"], ["/trends", "Genre trends"], ["/birthdays", "Birthdays"], ["/on-this-day", "On this day"], ["/hype", "Most hyped"]] },
     { h: "Genres", links: [["/genre/action", "Action"], ["/genre/romance", "Romance"], ["/genre/comedy", "Comedy"], ["/genre/fantasy", "Fantasy"], ["/genre/isekai", "Isekai"], ["/genre", "All genres"]] },
   ];
-  const small: [string, string][] = [["/about", "About"], ["/advertise", "Advertise"], ["/privacy", "Privacy"], ["/my", "My list"], ["/feed.xml", "RSS"]];
+  const small: [string, string][] = [["/about", "About"], ["/contact", "Contact"], ["/advertise", "Advertise"], ["/privacy", "Privacy"], ["/my", "My list"], ["/feed.xml", "RSS"]];
 
   return (
     <footer data-chrome className="relative mt-20 border-t border-line bg-bg-2">
       <div aria-hidden className="absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-accent/70 to-transparent" />
 
+      {dbEnabled() && <div className="container-x pt-6"><CorrectionForm /></div>}
       <div className="container-x grid gap-10 py-12 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,3fr)] lg:gap-16">
         <div className="max-w-sm">
           <Link href="/" className="inline-flex items-center gap-2 text-lg font-extrabold">
