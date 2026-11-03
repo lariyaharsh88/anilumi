@@ -49,6 +49,7 @@ import { getFanRecommendations, getKeyStaff, personPath } from "@/lib/anilist";
 import { combineScores, kitsuScore, aniListScore, getMalScore } from "@/lib/scores";
 import SectionNav, { type NavSection } from "@/components/fx/SectionNav";
 import ClampText from "@/components/fx/ClampText";
+import NavIcon, { type IconName } from "@/components/NavIcon";
 import StickyActions from "@/components/fx/StickyActions";
 import TiltCard from "@/components/fx/TiltCard";
 import RailScroller from "@/components/fx/RailScroller";
@@ -244,12 +245,15 @@ export default async function AnimePage({ params }: Props) {
     { id: "plan", label: "Plan & track" },
     { id: "faq", label: "FAQ" },
   ];
-  const facts2: { k: string; v: string; sub?: string }[] = [
-    ...(a.ratingRank ? [{ k: `#${a.ratingRank.toLocaleString()}`, v: "by score" }] : []),
-    ...(a.popularityRank ? [{ k: `#${a.popularityRank.toLocaleString()}`, v: "popularity" }] : []),
-    ...(a.episodeCount ? [{ k: String(a.episodeCount), v: a.episodeCount === 1 ? "episode" : "episodes", sub: a.episodeLength ? `${a.episodeLength} min each` : undefined }] : a.status === "current" ? [{ k: lastAired ? String(lastAired) : "–", v: "aired so far" }] : []),
-    ...(runtime > 0 ? [{ k: fmtMinutes(runtime), v: "to binge" }] : []),
-    ...(a.userCount ? [{ k: compactN(a.userCount), v: "members" }] : []),
+  // Hero stat tiles: label, value and a short note, so each number says what it measures.
+  const facts2: { k: string; v: string; sub?: string; icon: IconName }[] = [
+    ...(a.ratingRank ? [{ v: "Score rank", k: `#${a.ratingRank.toLocaleString()}`, sub: "of all anime", icon: "top" as const }] : []),
+    ...(a.popularityRank ? [{ v: "Popularity", k: `#${a.popularityRank.toLocaleString()}`, sub: "most followed", icon: "flame" as const }] : []),
+    ...(a.episodeCount
+      ? [{ v: a.episodeCount === 1 ? "Episode" : "Episodes", k: String(a.episodeCount), sub: a.episodeLength ? `${a.episodeLength} min each` : undefined, icon: "play" as const }]
+      : a.status === "current" ? [{ v: "Episodes", k: lastAired ? String(lastAired) : "–", sub: "aired so far", icon: "play" as const }] : []),
+    ...(runtime > 0 ? [{ v: "Binge time", k: fmtMinutes(runtime), sub: "start to finish", icon: "time" as const }] : []),
+    ...(a.userCount ? [{ v: "Members", k: compactN(a.userCount), sub: "tracking it", icon: "characters" as const }] : []),
   ];
 
   return (
@@ -296,14 +300,14 @@ export default async function AnimePage({ params }: Props) {
                 <p className="mt-2 text-base text-ink/70">{[a.titleEn !== a.title ? a.titleEn : null, a.titleJp].filter(Boolean).join(" · ")}</p>
               ) : null}
 
-              {/* Key facts */}
-              <div className="rise mt-5 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 md:justify-start" style={{ ["--d" as string]: "120ms" }}>
+              {/* Key facts: the score, then a grid of labelled stat tiles */}
+              <div className="rise mt-5 flex flex-col items-center gap-4 md:items-start" style={{ ["--d" as string]: "120ms" }}>
                 {multi ? (
                   <a href="#stats" className="flex items-center gap-3">
                     <ScoreRing score={multi.score} label="AniLumi score" />
                     <div className="text-left leading-tight">
                       <p className="text-sm font-semibold text-ink">AniLumi score</p>
-                      <p className="text-xs text-muted">{multi.sources.map((x) => (x.key === "mal" ? "MAL" : x.label)).join(" · ")}</p>
+                      <p className="text-xs text-muted">Average of {multi.sources.map((x) => (x.key === "mal" ? "MAL" : x.label)).join(" · ")}</p>
                     </div>
                   </a>
                 ) : a.rating ? (
@@ -315,16 +319,19 @@ export default async function AnimePage({ params }: Props) {
                     </div>
                   </div>
                 ) : null}
-                {facts2.length > 0 && <span className="hidden h-10 w-px bg-white/10 sm:block" aria-hidden />}
-                <dl className="flex flex-wrap justify-center gap-x-6 gap-y-2 md:justify-start">
-                  {facts2.map((f) => (
-                    <div key={f.v} className="text-left leading-tight">
-                      <dt className="sr-only">{f.v}</dt>
-                      <dd className="text-lg font-bold text-ink">{f.k}</dd>
-                      <dd className="text-xs text-muted">{f.v}{f.sub ? ` · ${f.sub}` : ""}</dd>
-                    </div>
-                  ))}
-                </dl>
+                {facts2.length > 0 && (
+                  <dl className="grid w-full max-w-2xl grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-5">
+                    {facts2.map((f, idx) => (
+                      <div key={f.v} className={`flex flex-col rounded-xl border border-line bg-bg-2/60 px-3 py-2.5 text-left backdrop-blur-sm ${idx === facts2.length - 1 && facts2.length % 2 === 1 ? "col-span-2 sm:col-span-1" : ""}`}>
+                        <dt className="flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wider text-muted">
+                          <NavIcon name={f.icon} className="h-3.5 w-3.5 text-violet" />{f.v}
+                        </dt>
+                        <dd className="mt-1 text-xl font-bold tabular-nums leading-none text-ink">{f.k}</dd>
+                        {f.sub && <dd className="mt-1 text-xs text-muted">{f.sub}</dd>}
+                      </div>
+                    ))}
+                  </dl>
+                )}
               </div>
 
               {/* Genres: first few, the rest behind a toggle */}
