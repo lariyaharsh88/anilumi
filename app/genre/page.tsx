@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import Link from "@/components/Link";
 import { getCategories } from "@/lib/kitsu";
 import PageHero from "@/components/PageHero";
+import GenreTile, { GENRE_HUES } from "@/components/GenreTile";
 
 export const revalidate = 86400;
 export const metadata: Metadata = {
@@ -25,10 +25,7 @@ export default async function GenreIndex() {
       <ul className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4">
         {genres.map((g, i) => (
           <li key={g.id} className="reveal">
-            <Link href={`/genre/${g.slug}`} className="genre-tile card group flex h-24 flex-col justify-between p-4 transition duration-300 hover:-translate-y-0.5 hover:border-white/20" style={{ ["--h" as string]: String([350, 262, 40, 190, 300, 140, 20, 220][i % 8]) }}>
-              <span className="font-semibold text-ink">{g.title}</span>
-              <span className="flex items-center justify-between text-xs text-muted">{g.count?.toLocaleString()} titles<span className="opacity-0 transition group-hover:translate-x-0.5 group-hover:opacity-100" aria-hidden>→</span></span>
-            </Link>
+            <GenreTile slug={g.slug} title={g.title} count={g.count} hue={GENRE_HUES[i % GENRE_HUES.length]} />
           </li>
         ))}
       </ul>

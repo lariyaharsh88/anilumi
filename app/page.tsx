@@ -18,7 +18,7 @@ import PollCard from "@/components/PollCard";
 import { currentPoll } from "@/data/polls";
 import { dbEnabled } from "@/lib/db";
 import { excerpt } from "@/lib/excerpt";
-import GenreIcon from "@/components/GenreIcon";
+import GenreTile, { GENRE_HUES } from "@/components/GenreTile";
 import ToolBand, { type Tool } from "@/components/ToolBand";
 
 export const revalidate = 1800;
@@ -74,7 +74,6 @@ export default async function Home() {
     rank: i + 1,
     meta: [subtypeLabel(a.subtype), a.startDate?.slice(0, 4), a.episodeCount ? `${a.episodeCount} episodes` : null].filter(Boolean).join(" · "),
   }));
-  const HUES = [350, 262, 40, 190, 300, 140, 20, 220];
   // Mainstream genres only on the home page (Kitsu's biggest tags include adult-leaning ones).
   const tiles = genres.filter((g) => MAIN_GENRES.has(g.slug) && !["ecchi", "harem"].includes(g.slug)).slice(0, 12);
 
@@ -124,14 +123,7 @@ export default async function Home() {
         <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
           {tiles.map((g, i) => (
             <li key={g.id} className={i >= 8 ? "hidden sm:block" : undefined}>
-              <Link href={`/genre/${g.slug}`} className="genre-tile card group relative flex items-center gap-3 p-3 transition duration-300 hover:-translate-y-0.5 hover:border-white/20" style={{ ["--h" as string]: String(HUES[i % HUES.length]) }}>
-                <span className="genre-ico grid h-10 w-10 shrink-0 place-items-center rounded-xl transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-6"><GenreIcon slug={g.slug} /></span>
-                <span className="min-w-0">
-                  <span className="block truncate font-semibold text-ink">{g.title}</span>
-                  <span className="block text-xs text-muted">{g.count ? `${g.count.toLocaleString()} titles` : "Browse"}</span>
-                </span>
-                <span aria-hidden className="genre-mark pointer-events-none absolute -bottom-3 -right-3 -rotate-12 transition-transform duration-500 group-hover:-rotate-3 group-hover:scale-110"><GenreIcon slug={g.slug} className="h-16 w-16" /></span>
-              </Link>
+              <GenreTile slug={g.slug} title={g.title} count={g.count} hue={GENRE_HUES[i % GENRE_HUES.length]} />
             </li>
           ))}
         </ul>
