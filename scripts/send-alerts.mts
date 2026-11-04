@@ -16,6 +16,7 @@ import { characterPathFor } from "../lib/charsnap";
 import { emailEnabled, sendMails } from "../lib/email";
 import { confirmMail, digestMail, episodeMail, type LeadDoc } from "../lib/emails";
 import { getNews } from "../lib/news";
+import { kitsuPosters } from "../lib/posters";
 import { VAPID_PUBLIC_KEY } from "../lib/push";
 import { buildDigest, dueBirthdays, dueEpisodes, type Alert } from "../lib/pushplan";
 
@@ -76,10 +77,11 @@ if (mode === "episodes") {
   const snap = await fetch(AIRING_URL, { signal: AbortSignal.timeout(20_000) }).then((r) => r.json());
   const alerts = dueEpisodes(indexAiring(snap).shows);
   await push(d, alerts);
+  const posters = emailEnabled() && alerts.length ? await kitsuPosters(alerts.map((a) => a.topic.slice(2))) : new Map<string, string>();
   for (const a of alerts) {
     const animeId = a.topic.slice(2);
     const to = await leads.find({ kind: "alert", animeId, status: "confirmed" }).toArray();
-    await mail(`mail:${a.key}`, to.map((l) => episodeMail(l, a)));
+    await mail(`mail:${a.key}`, to.map((l) => episodeMail(l, { ...a, poster: posters.get(animeId) })));
   }
   console.log(`episodes: ${alerts.length} due`);
 } else if (mode === "birthdays") {
@@ -89,7 +91,9 @@ if (mode === "episodes") {
 } else if (mode === "digest") {
   const snap = await fetch(AIRING_URL, { signal: AbortSignal.timeout(20_000) }).then((r) => r.json());
   const news = await getNews().catch(() => []);
-  const digest = buildDigest(indexAiring(snap).shows, news.map((n) => ({ title: n.title, url: n.url, source: n.source })));
+  const built = buildDigest(indexAiring(snap).shows, news.map((n) => ({ title: n.title, url: n.url, source: n.source })));
+  const posters = await kitsuPosters([...built.premieres, ...built.episodes].flatMap((x) => (x.k ? [x.k] : [])));
+  const digest = { ...built, premieres: built.premieres.map((x) => ({ ...x, poster: x.k ? posters.get(x.k) : null })), episodes: built.episodes.map((x) => ({ ...x, poster: x.k ? posters.get(x.k) : null })) };
   const to = await leads.find({ kind: "digest", status: "confirmed" }).toArray();
   if (digest.episodes.length + digest.premieres.length === 0) console.log("::warning::Digest is empty (stale airing snapshot?); not sending.");
   else await mail(`mail:digest:${new Date().toISOString().slice(0, 10)}`, to.map((l) => digestMail(l, digest)));

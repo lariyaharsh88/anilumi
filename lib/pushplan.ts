@@ -51,8 +51,8 @@ export function buildDigest(shows: AiringShow[], news: { title: string; url: str
   const range = `${new Date(now).toLocaleDateString("en-GB", { day: "numeric", timeZone: "Asia/Kolkata" })}–${new Date(end).toLocaleDateString("en-GB", { day: "numeric", month: "short", timeZone: "Asia/Kolkata" })}`;
   return {
     week: range,
-    premieres: next.filter((x) => x.episode === 1).slice(0, 8).sort((a, b) => a.at - b.at).map((x) => ({ title: x.s.t, day: dayLabel(x.at), url: `/anime/${x.s.s}` })),
-    episodes: next.filter((x) => x.episode > 1).slice(0, 12).sort((a, b) => a.at - b.at).map((x) => ({ title: x.s.t, episode: x.episode, day: dayLabel(x.at), url: `/anime/${x.s.s}/episode/${x.episode}` })),
+    premieres: next.filter((x) => x.episode === 1).slice(0, 8).sort((a, b) => a.at - b.at).map((x) => ({ k: x.s.k, title: x.s.t, day: dayLabel(x.at), url: `/anime/${x.s.s}` })),
+    episodes: next.filter((x) => x.episode > 1).slice(0, 12).sort((a, b) => a.at - b.at).map((x) => ({ k: x.s.k, title: x.s.t, episode: x.episode, day: dayLabel(x.at), url: `/anime/${x.s.s}/episode/${x.episode}` })),
     news: news.slice(0, 5),
   };
 }
