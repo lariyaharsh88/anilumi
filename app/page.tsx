@@ -20,8 +20,14 @@ import { dbEnabled } from "@/lib/db";
 import { excerpt } from "@/lib/excerpt";
 import GenreTile, { GENRE_HUES } from "@/components/GenreTile";
 import ToolBand, { type Tool } from "@/components/ToolBand";
+import BingeSearch from "@/components/BingeSearch";
+import franchiseData from "@/data/franchises.json";
 
 export const revalidate = 1800;
+
+/** Franchises for the home "Plan your binge" search: every one with 2+ parts, most-followed first. */
+const BINGE_FRANCHISES = (franchiseData as { franchises: { s: string; t: string; n: number }[] }).franchises.filter((f) => f.n > 1).map(({ s, t, n }) => ({ s, t, n }));
+const BINGE_POPULAR = BINGE_FRANCHISES.slice(0, 8);
 
 /** Tool cards between the rails (components/ToolBand): planning tools up top, games and comparisons lower down. */
 const PLAN_TOOLS: Tool[] = [
@@ -112,6 +118,7 @@ export default async function Home() {
         ]}
       />
 
+      <BingeSearch franchises={BINGE_FRANCHISES} popular={BINGE_POPULAR} />
       <AnimeRail title="Trending right now" href="/top/popular" items={trending} bigRank eager />
       <ToolBand eyebrow="Plan your next watch" title="Tools for your next binge" tools={PLAN_TOOLS} />
       <AnimeRail title="Airing this season" href="/schedule" items={airing.items} />

@@ -11,6 +11,7 @@ import JsonLd from "@/components/JsonLd";
 import { pageAbout, itemList } from "@/lib/ld";
 import Faq, { type FaqItem } from "@/components/Faq";
 import AdSlot from "@/components/AdSlot";
+import BingePlan from "@/components/BingePlan";
 
 export const revalidate = 86400;
 export async function generateStaticParams() { return []; }
@@ -125,24 +126,14 @@ export default async function HindiGuide({ params }: Props) {
         {extras.length > 0 && <p className="mt-2 text-sm text-muted">साइड स्टोरी और OVA ऑप्शनल हैं; मुख्य कहानी समझने के लिए ज़रूरी नहीं।</p>}
       </section>
 
-      <section className="reveal mt-10 grid gap-4 md:grid-cols-2">
-        <div className="card p-5">
-          <h2 className="text-lg font-bold">⏱ कितना समय लगेगा</h2>
-          <p className="mt-2 text-ink/85">{wo.totalMinutes ? <>मुख्य कहानी और मूवीज़ मिलाकर लगभग <strong>{hiDuration(wo.totalMinutes)}</strong>। रोज़ 2 घंटे देखें तो करीब <strong>{hiDays(wo.totalMinutes)} दिन</strong>।</> : "पूरा रनटाइम अभी उपलब्ध नहीं है।"}</p>
-          <p className="mt-3 text-sm"><Link href={`${animePath(a)}/how-long-to-watch`} className="text-violet hover:underline" hrefLang="en">Full breakdown (English) →</Link></p>
-        </div>
+      <BingePlan ordered={ordered} lang="hi" />
+
+      <section className="reveal mt-10">
         <div className="card p-5">
           <h2 className="text-lg font-bold">📅 अगला सीज़न कब आएगा</h2>
           <p className="mt-2 text-ink/85">{next}</p>
           <p className="mt-3 text-sm"><Link href={`${animePath(d.latest)}/next-season`} className="text-violet hover:underline" hrefLang="en">Season status (English) →</Link></p>
         </div>
-        {filler && (
-          <div className="card p-5 md:col-span-2">
-            <h2 className="text-lg font-bold">🎬 फ़िलर एपिसोड</h2>
-            <p className="mt-2 text-ink/85">{a.title} के {filler.total} एपिसोड में से <strong>{filler.count} ({filler.share.toFixed(0)}%)</strong> फ़िलर हैं। ये मंगा की कहानी का हिस्सा नहीं हैं, इसलिए जल्दी देखना हो तो इन्हें छोड़ सकते हैं।</p>
-            <p className="mt-3 text-sm"><Link href={`${animePath(a)}/filler-list`} className="text-violet hover:underline" hrefLang="en">Episode-by-episode filler list (English) →</Link></p>
-          </div>
-        )}
       </section>
 
       <AdSlot slot="hindi-mid" />

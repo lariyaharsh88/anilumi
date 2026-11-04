@@ -3,7 +3,8 @@ import Link from "@/components/Link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getAnimeBySlug, buildWatchOrder, franchiseName, watchOrderSlug, animePath, posterUrl, fmtMinutes, runtimeMinutes, subtypeLabel, WatchEntry } from "@/lib/kitsu";
-import { abs } from "@/lib/site";
+import { abs, site } from "@/lib/site";
+import BingePlan from "@/components/BingePlan";
 import PageHero from "@/components/PageHero";
 import JsonLd from "@/components/JsonLd";
 import CheckedBy from "@/components/CheckedBy";
@@ -100,7 +101,7 @@ export default async function WatchOrderPage({ params }: Props) {
       {wo.checked && <JsonLd data={{ ...webPage("WebPage", `/watch-order/${watchOrderSlug(wo)}`, `${name} watch order`), about: workRef(wo.root), ...reviewedBy(wo.checked) }} />}
       <PageHero
         crumbs={[{ href: "/", label: "Home" }, { href: animePath(a), label: a.title }, { href: `/watch-order/${a.slug}`, label: "Watch order" }]}
-        eyebrow="🧭 Watch order guide"
+        eyebrow={wo.checked ? <>🧭 Watch order guide <span className="ml-2 inline-flex items-center gap-1 rounded-full bg-emerald-500/15 px-2 py-0.5 text-[11px] font-semibold normal-case tracking-normal text-emerald-300">✓ Checked by {site.founder.name}</span></> : "🧭 Watch order guide"}
         title={<>{name} <span className="text-gradient">watch order</span></>}
         hue={262}
         backdrop={a.cover?.large || null}
@@ -138,6 +139,8 @@ export default async function WatchOrderPage({ params }: Props) {
           </ol>
         </section>
       )}
+      <BingePlan ordered={ordered} />
+
       <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-4">
         <div className="card p-3"><p className="text-xl font-extrabold text-accent-2">{wo.mainCount}</p><p className="text-xs text-muted">core entries</p></div>
         <div className="card p-3"><p className="text-xl font-extrabold">{required.length - wo.mainCount}</p><p className="text-xs text-muted">movies to include</p></div>
