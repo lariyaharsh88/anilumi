@@ -136,11 +136,14 @@ export function MobileMenu() {
   useDismiss(open, close, ref, sheet);
   useEffect(() => {
     if (!open) return;
-    const prev = document.body.style.overflow;
+    // Lock scrolling on <html>, not <body>: with overflow-x: clip on both, overflow: hidden on <body> makes it the
+    // sticky header's scroll container, so after scrolling down the header (and the close button) jumped off-screen.
+    const root = document.documentElement;
+    const prev = root.style.overflow;
     const trigger = button.current;
-    document.body.style.overflow = "hidden";
+    root.style.overflow = "hidden";
     first.current?.focus();
-    return () => { document.body.style.overflow = prev; trigger?.focus({ preventScroll: true }); };
+    return () => { root.style.overflow = prev; trigger?.focus({ preventScroll: true }); };
   }, [open]);
 
   return (
