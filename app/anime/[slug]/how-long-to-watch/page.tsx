@@ -180,7 +180,7 @@ export default async function HowLongPage({ params }: Props) {
                   </li>
                 ))}
               </ol>
-              <Link href={`/watch-order/${a.slug}`} className="mt-3 inline-block text-sm font-medium text-violet hover:text-violet-2">Full watch order →</Link>
+              <Link href={`/watch-order/${a.slug}`} className="mt-3 inline-block text-sm font-medium text-violet hover:text-violet-2">{a.title} watch order →</Link>
             </section>
           )}
 

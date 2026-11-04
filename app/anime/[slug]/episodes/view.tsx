@@ -103,7 +103,7 @@ export async function EpisodesView({ slug, page }: { slug: string; page: number 
           <p className="text-sm text-ink/90">
             <strong>{fill.count}</strong> of {fill.total} episodes are filler ({fill.share.toFixed(0)}%).
             <span className="ml-1 text-xs text-muted">{fillerSource(fill.entry).label}.</span>{" "}
-            <Link href={`${animePath(a)}/filler-list`} className="text-violet underline underline-offset-2">Full filler list →</Link>
+            <Link href={`${animePath(a)}/filler-list`} className="text-violet underline underline-offset-2">{a.title} filler list →</Link>
           </p>
           <FillerToggle targetId="episode-list" />
         </div>

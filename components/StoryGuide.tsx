@@ -28,8 +28,8 @@ export default function StoryGuide({ title, animeHref, filler, episodeLength, co
             <p className="mt-1 text-muted">{formatRanges(filler.filler)}{filler.mixed.size ? ` · mixed canon/filler: ${formatRanges(filler.mixed)}` : ""}</p>
           </details>
           <p className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-sm">
-            <Link href={`${animeHref}/filler-list`} className="text-violet hover:underline">Full filler list →</Link>
-            <Link href={`${animeHref}/episodes`} className="text-violet hover:underline">Episodes with filler marked</Link>
+            <Link href={`${animeHref}/filler-list`} className="text-violet hover:underline">{title} filler list →</Link>
+            <Link href={`${animeHref}/episodes`} className="text-violet hover:underline">{title} episode list</Link>
           </p>
           {fillerSource(filler.entry).tone === "draft" && <p className="mt-2 text-xs text-muted">This list hasn&apos;t been fully checked yet. Double-check before skipping a long run of episodes.</p>}
         </div>

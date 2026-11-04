@@ -52,7 +52,7 @@ export default function WatchOrderCard({ anime, order, relations, className = ""
           <h2 id="h-order-card" className="flex items-center gap-2 text-lg font-bold text-ink"><span aria-hidden>📺</span> Watch order</h2>
           <p className="mt-0.5 text-xs text-muted">{subtitle}</p>
         </div>
-        {(!standalone || optional > 0) && <Link href={full} className="btn-outline shrink-0 px-3 py-1.5 text-xs">Full order →</Link>}
+        {(!standalone || optional > 0) && <Link href={full} className="btn-outline shrink-0 px-3 py-1.5 text-xs">Full order<span className="sr-only"> to watch {order?.root.title ?? anime.title}</span> →</Link>}
       </div>
 
       {standalone ? (

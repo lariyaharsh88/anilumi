@@ -19,7 +19,7 @@ import EpisodeWatched from "@/components/EpisodeWatched";
 import EpisodeNav from "@/components/EpisodeNav";
 import Refreshed from "@/components/Refreshed";
 import WatchedUpTo from "@/components/WatchedUpTo";
-import { fillerFor, fillerSource } from "@/lib/filler";
+import { fillerFor, fillerSource, continuationFor } from "@/lib/filler";
 import EpisodeReactions from "@/components/EpisodeReactions";
 import LeadForm from "@/components/LeadForm";
 import { dbEnabled } from "@/lib/db";
@@ -167,7 +167,7 @@ export default async function EpisodePage({ params }: Props) {
             <p className="mt-4 flex flex-wrap items-baseline gap-x-2 gap-y-1 text-sm">
               <span aria-hidden>📖</span>
               <span className="text-ink/90"><strong className="font-semibold text-ink">{arc.name} arc</strong>{arc.filler ? " (filler)" : ""} · episode {n - arc.from + 1} {arc.to === null ? "of the arc so far" : `of ${arc.to - arc.from + 1}`}</span>
-              <Link href={`${animePath(a)}#arcs`} className="text-xs font-medium text-violet hover:text-violet-2">All arcs →</Link>
+              <Link href={`${animePath(a)}#arcs`} className="text-xs font-medium text-violet hover:text-violet-2">{a.title} arcs in order →</Link>
             </p>
           )}
           {songs.length > 0 && (
@@ -246,6 +246,17 @@ export default async function EpisodePage({ params }: Props) {
               {a.status === "current" && a.nextRelease && <p className="mt-1 text-xs text-muted">New episodes {weekdayOf(a.nextRelease)}s</p>}
             </div>
           </Link>
+          {/* The show's guide pages, linked by what they are ("Naruto filler list"), not "more". */}
+          <nav aria-label={`${a.title} guides`} className="card mt-3 p-3">
+            <p className="mb-1.5 text-xs font-semibold uppercase tracking-wider text-muted">{a.title} guides</p>
+            <ul className="space-y-1 text-sm">
+              <li><Link href={`${animePath(a)}/episodes`} className="text-violet hover:text-violet-2">{a.title} episode list</Link></li>
+              {fillerFor(a.slug, a.episodeCount ?? (lastAired || null)) && <li><Link href={`${animePath(a)}/filler-list`} className="text-violet hover:text-violet-2">{a.title} filler list</Link></li>}
+              <li><Link href={`/watch-order/${a.slug}`} className="text-violet hover:text-violet-2">{a.title} watch order</Link></li>
+              {continuationFor(a.slug) && <li><Link href={`${animePath(a)}/manga`} className="text-violet hover:text-violet-2">{a.title} manga: where to read on</Link></li>}
+              {a.subtype !== "movie" && a.status === "finished" && <li><Link href={`${animePath(a)}/next-season`} className="text-violet hover:text-violet-2">{a.title} next season</Link></li>}
+            </ul>
+          </nav>
           <AdSlot slot="episode-side" />
         </aside>
       </div>

@@ -479,7 +479,7 @@ export default async function AnimePage({ params }: Props) {
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {sequel?.href && <Link href={sequel.href} className="btn-outline px-3 py-2 text-sm">{sequel.title} →</Link>}
-                  <Link href={`${animePath(a)}/next-season`} className="text-sm font-medium text-violet hover:text-violet-2">Full answer →</Link>
+                  <Link href={`${animePath(a)}/next-season`} className="text-sm font-medium text-violet hover:text-violet-2">{a.title} next season →</Link>
                 </div>
               </div>
             )}
@@ -510,7 +510,7 @@ export default async function AnimePage({ params }: Props) {
               <MobileFold label="franchise" className="mt-8">
                 <div className="mb-3 flex items-end justify-between">
                   <h3 className="text-lg font-bold">Franchise</h3>
-                  <Link href={`/watch-order/${a.slug}`} className="text-sm font-medium text-violet hover:underline">Full watch order →</Link>
+                  <Link href={`/watch-order/${a.slug}`} className="text-sm font-medium text-violet hover:underline">{a.title} watch order →</Link>
                 </div>
                 <ul className="grid gap-2 sm:grid-cols-2">
                   {franchise.slice(0, 8).map((r) => (
@@ -540,7 +540,7 @@ export default async function AnimePage({ params }: Props) {
                   <h2 id="h-episodes" className="h-section">{latestEps.length ? "Latest episodes" : "Episodes"}{epCount ? ` (${epCount.toLocaleString()}${airingList ? (planned ? ` of ${planned} aired` : " aired") : ""})` : ""}</h2>
                   {latestEps.length > 0 && <p className="mt-1 text-xs text-muted">Newest first</p>}
                 </div>
-                <Link href={`${animePath(a)}/episodes`} className="shrink-0 text-sm font-medium text-violet hover:underline">All episodes →</Link>
+                <Link href={`${animePath(a)}/episodes`} className="shrink-0 text-sm font-medium text-violet hover:underline">{a.title} episode list →</Link>
               </div>
               <ol className="grid gap-3 sm:grid-cols-2">
                 {epList.map((e, i) => (
@@ -634,7 +634,7 @@ export default async function AnimePage({ params }: Props) {
             <div id="guide" data-section>
               <MobileFold label="parents' guide">
                 <ParentsGuideSection title={a.title} guide={guide} ageRating={a.ageRating} ageRatingGuide={a.ageRatingGuide} />
-                <Link href={`${animePath(a)}/parents-guide`} className="mt-3 inline-block text-sm font-medium text-violet hover:text-violet-2">Is {a.title} okay for kids? Full guide →</Link>
+                <Link href={`${animePath(a)}/parents-guide`} className="mt-3 inline-block text-sm font-medium text-violet hover:text-violet-2">{a.title} parents&apos; guide: is it okay for kids? →</Link>
               </MobileFold>
             </div>
           )}
