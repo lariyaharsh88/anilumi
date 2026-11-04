@@ -131,8 +131,12 @@ export default {
       return out;
     };
 
-    // Crawlers get the last good copy straight away; the current build's copy is fetched in the background.
-    if (last && CRAWLER.test(request.headers.get("user-agent") || "")) {
+    // Crawlers get the last good copy straight away; the current build's copy is fetched in the background. So does
+    // everyone else when that copy is from the live build (its hour or day ran out, or this colo evicted the key):
+    // same build, same JS chunks, so it's safe to show while the fresh one renders.
+    const lastBuild = last?.headers.get("x-build");
+    const sameBuild = Boolean(lastBuild) && genq.endsWith(`=${lastBuild}`);
+    if (last && (sameBuild || CRAWLER.test(request.headers.get("user-agent") || ""))) {
       ctx.waitUntil(toOrigin(request, url, 30_000).then((res) => store(res, url, genq, key, lastKey)).catch(() => {}));
       return stale("STALE");
     }
