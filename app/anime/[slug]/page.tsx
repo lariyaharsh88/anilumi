@@ -17,6 +17,7 @@ import EmbedSnippet from "@/components/EmbedSnippet";
 import CalendarLinks from "@/components/CalendarLinks";
 import WhereToWatch from "@/components/WhereToWatch";
 import WatchOrderCard from "@/components/WatchOrderCard";
+import { snapshotOrder } from "@/lib/wosnap";
 import SpoilerGate from "@/components/SpoilerGate";
 import StoryGuide from "@/components/StoryGuide";
 import EditorNote from "@/components/EditorNote";
@@ -125,14 +126,14 @@ export default async function AnimePage({ params }: Props) {
   const multi = combined && combined.sources.length > 1 ? combined : null;
   const relatedItems = related.items.filter((r) => r.id !== a.id).slice(0, 12);
   const franchise = relations.filter((r) => ["sequel", "prequel", "side_story", "spinoff", "summary", "alternative_version", "other", "character"].includes(r.role));
-  // Full order for the "Watch order" card. It can need a few more Kitsu calls (one per season, ~10 s for a long
-  // franchise), so it gets 1.5 s; past that the card shows the direct prequel/sequel and the walk finishes in the
-  // background, warming the fetch cache, so the next render (or the cache warmer's) has the full order.
+  // Full order for the "Watch order" card. The live walk needs one Kitsu call per season (~10 s for a long
+  // franchise), so it gets 1.5 s; past that the card uses the monthly snapshot of the same order (lib/wosnap.ts)
+  // rather than shrinking to the direct prequel/sequel, which then stayed cached.
   const order = relations.some((r) => r.role === "prequel" || r.role === "sequel")
-    ? await Promise.race([
+    ? (await Promise.race([
         buildWatchOrder(a, (id) => (id === a.id ? Promise.resolve(relations) : getRelations(id))).catch(() => null),
         new Promise<WatchOrder | null>((r) => setTimeout(() => r(null), 1500)),
-      ])
+      ])) ?? snapshotOrder(a.id)
     : null;
   const runtime = runtimeMinutes(a);
   const dist = a.ratingDist || null;
