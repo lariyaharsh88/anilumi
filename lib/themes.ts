@@ -64,3 +64,23 @@ export async function getThemes(kitsuId: string): Promise<Themes | null> {
 export const themeLabel = (t: Pick<Theme, "type" | "sequence">) => `${t.type === "OP" ? "Opening" : "Ending"} ${t.sequence}`;
 export const youtubeSearch = (q: string) => `https://www.youtube.com/results?search_query=${encodeURIComponent(q)}`;
 export const spotifySearch = (q: string) => `https://open.spotify.com/search/${encodeURIComponent(q)}`;
+
+/** Songs from the monthly snapshot only, never a live call (episode pages can't wait 20 s on AnimeThemes). */
+export const snapshotThemes = (kitsuId: string): Theme[] => SNAP[kitsuId]?.t ?? [];
+
+/** "1-12, 14-25" → does it include `n`? Unparseable parts count as no. Pure. */
+export function inEpisodes(spec: string | null, n: number): boolean {
+  if (!spec) return false;
+  return spec.split(",").some((part) => {
+    const m = part.trim().match(/^(\d+)(?:\s*-\s*(\d+))?$/);
+    return Boolean(m) && n >= Number(m![1]) && n <= Number(m![2] ?? m![1]);
+  });
+}
+
+/**
+ * The opening and ending used in episode `n`: original-broadcast themes only (OP1, ED2…, not dub variants like
+ * OP1-EN), whose episode list includes `n`. Usually one of each; a few episodes have two. Pure.
+ */
+export function themesForEpisode(themes: Theme[], n: number): Theme[] {
+  return themes.filter((t) => /^(OP|ED)\d+$/.test(t.slug) && t.song && t.entries.some((e) => inEpisodes(e.episodes, n)));
+}

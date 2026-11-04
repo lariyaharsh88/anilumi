@@ -28,6 +28,7 @@ import SkipGuide from "@/components/SkipGuide";
 import { skipTimesFor } from "@/lib/skip";
 import { episodeIndexed, robotsFor } from "@/lib/indexing";
 import { excerpt } from "@/lib/excerpt";
+import { snapshotThemes, themesForEpisode } from "@/lib/themes";
 
 export const revalidate = 21600;
 // Render on first request, then serve from the ISR cache until revalidated.
@@ -109,11 +110,15 @@ export default async function EpisodePage({ params }: Props) {
     publication: airIso ? { "@type": "BroadcastEvent", startDate: airIso, isLiveBroadcast: false, ...(episode.length && airIso.length > 10 ? { endDate: new Date(new Date(airIso).getTime() + episode.length * 60_000).toISOString() } : {}) } : undefined,
   };
 
+  // The opening and ending used in this episode (monthly AnimeThemes snapshot; dub-only variants left out).
+  const songs = themesForEpisode(snapshotThemes(a.id), n);
+  const songLine = (type: "OP" | "ED") => songs.filter((t) => t.type === type).map((t) => `“${t.song}”${t.artists[0] ? ` by ${t.artists[0]}` : ""}`).join(" and ");
   const faq = [
     { q: `When does ${a.title} episode ${n} come out?`, a: when ? `${a.title} episode ${n} ${upcoming ? "is scheduled for" : "aired on"} ${when}${whenTime ? ` at ${whenTime} JST` : ""}.${upcoming ? " Simulcasts usually go live within an hour or two on licensed services." : ""}` : `The release date for ${a.title} episode ${n} has not been announced yet. This page updates automatically when it is.` },
     ...(zones && upcoming ? [{ q: `What time does ${a.title} episode ${n} come out in India, the US and the UK?`, a: `The Japanese broadcast is ${zones.ist} in India (IST), ${zones.et} Eastern and ${zones.pt} Pacific in the US, and ${zones.uk} in the UK. Streaming services usually add it within an hour or two.` }] : []),
     { q: `What time does ${a.title} episode ${n} release?`, a: whenTime ? `Broadcast is at ${whenTime} Japan Standard Time. The page shows the equivalent in your own time zone and counts down live.` : `Kitsu has the date but not a broadcast time for this episode. Japanese TV anime typically air in the evening or late night JST.` },
     { q: `Where can I watch ${a.title} episode ${n}?`, a: a.streaming.length ? `${a.title} streams on ${a.streaming.map((s) => s.site).join(", ")}. Availability depends on your region.` : `No licensed streaming links are listed yet; check the main ${a.title} page for updates.` },
+    ...(songs.length ? [{ q: `What are the opening and ending of ${a.title} episode ${n}?`, a: [songLine("OP") && `The opening is ${songLine("OP")}.`, songLine("ED") && `The ending is ${songLine("ED")}.`].filter(Boolean).join(" ") + ` Every ${a.title} opening and ending is listed on the openings & endings page.` }] : []),
     ...(a.status === "current" && isNext ? [{ q: `How many episodes of ${a.title} are out?`, a: `${lastAired} episode${lastAired === 1 ? "" : "s"} have aired so far. Episode ${n} is the next one.` }] : []),
   ];
 
@@ -153,6 +158,18 @@ export default async function EpisodePage({ params }: Props) {
               </div>
             );
           })()}
+          {songs.length > 0 && (
+            <p className="mt-4 flex flex-wrap items-baseline gap-x-4 gap-y-1 text-sm">
+              <span aria-hidden>🎵</span>
+              {songs.map((t) => (
+                <span key={t.slug}>
+                  <span className="text-muted">{t.type === "OP" ? "Opening" : "Ending"}:</span>{" "}
+                  <Link href={`${animePath(a)}/openings-endings`} className="font-medium text-ink hover:text-violet-2">“{t.song}”</Link>
+                  {t.artists[0] && <span className="text-muted"> by {t.artists[0]}</span>}
+                </span>
+              ))}
+            </p>
+          )}
           {!upcoming && <EpisodeWatched className="mt-4" ep={n} item={{ id: a.id, slug: a.slug, title: a.title, poster: posterUrl(a, "small"), status: a.status, nextRelease: a.nextRelease }} />}
           {!upcoming && skips && <SkipGuide s={skips} episode={n} />}
           {dbEnabled() && !upcoming && <EpisodeReactions animeId={a.id} ep={n} />}
