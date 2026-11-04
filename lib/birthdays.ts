@@ -29,6 +29,8 @@ export const allDays = () => MONTHS.flatMap((_, mi) => Array.from({ length: DAYS
 const chars = data.characters as BdChar[];
 const people = data.people as BdPerson[];
 export const bdGenerated = data.generated as string;
+/** Every character in the birthday snapshot (the push sender picks today's). */
+export const birthdayChars = (): BdChar[] => chars;
 
 export function birthdaysOn(m: number, d: number, src: { characters: BdChar[]; people: BdPerson[] } = { characters: chars, people }) {
   return {

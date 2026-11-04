@@ -1,4 +1,7 @@
 import type { Metadata } from "next";
+import PushButton from "@/components/PushButton";
+import { charTopic } from "@/lib/push";
+import { dbEnabled } from "@/lib/db";
 import Link from "@/components/Link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
@@ -191,6 +194,7 @@ export default async function CharacterPage({ params }: Props) {
               </div>
             ))}
           </dl>
+          {bday && dbEnabled() && <PushButton className="mt-3" topic={charTopic(bday.id)} source="character-birthday" label={`Remind me on ${c.name}'s birthday`} onLabel="Birthday reminder on" />}
           <p className="mt-3 flex flex-wrap gap-2 text-sm">
             {bday && <Link href={bdPath(bday.m, bday.d)} className="chip">🎂 Everyone born on {bdLabel(bday.m, bday.d)}</Link>}
             {home && <Link href={`${animePath(home)}/cast`} className="chip">Full {home.title} cast</Link>}

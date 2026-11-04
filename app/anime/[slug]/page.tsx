@@ -18,6 +18,8 @@ import CalendarLinks from "@/components/CalendarLinks";
 import WhereToWatch from "@/components/WhereToWatch";
 import WatchOrderCard from "@/components/WatchOrderCard";
 import { snapshotOrder } from "@/lib/wosnap";
+import PushButton from "@/components/PushButton";
+import { animeTopic } from "@/lib/push";
 import SpoilerGate from "@/components/SpoilerGate";
 import StoryGuide from "@/components/StoryGuide";
 import EditorNote from "@/components/EditorNote";
@@ -383,7 +385,9 @@ export default async function AnimePage({ params }: Props) {
           {/* Fills the space under Where to watch; the watch-order answer is the card beside it. */}
           <QuickAnswers title={a.title} items={glance.filter((x) => !x.href.startsWith("/watch-order/"))} className="md:col-start-1 md:row-start-2" />
           </div>
-          {community && (a.status === "current" || !released) && (
+          {community && (a.status === "current" || !released) && (<>
+            <PushButton className="mt-4" topic={animeTopic(a.id)} source={a.status === "current" ? "anime-alert" : "anime-premiere"}
+              label={a.status === "current" ? "Alert me when new episodes air" : "Alert me when it premieres"} onLabel={a.status === "current" ? "Episode alerts on" : "Premiere alert on"} />
             <LeadForm
               className="mt-4"
               kind="alert"
@@ -393,7 +397,7 @@ export default async function AnimePage({ params }: Props) {
               title={a.status === "current" ? `🔔 Get an email when the next ${a.title} episode airs` : `🔔 Get an email when ${a.title} premieres`}
               blurb="One short email per episode, at air time. Nothing else."
             />
-          )}
+          </>)}
         </div>
       </header>
 
