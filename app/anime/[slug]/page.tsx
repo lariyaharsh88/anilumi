@@ -149,14 +149,16 @@ export default async function AnimePage({ params }: Props) {
   const lastAired = latestInfo.lastAired;
   // Airing shows list their newest aired episodes first. Kitsu's total also counts placeholder records for
   // episodes that haven't aired (One Piece: 1,410 records, 1,180 aired), so the heading uses the aired count.
-  const airingList = a.status === "current" && lastAired > 0;
+  // Only with a reliable count: when AniList is rate-limited the fallback is Kitsu's air dates, which stop at
+  // One Piece episode 743; then the list starts at episode 1 and the heading shows no count.
+  const airingList = a.status === "current" && lastAired > 0 && latestInfo.reliable;
   const latestEps = airingList
     ? (lastAired > episodes.items.length ? (await getEpisodesAt(a.id, Math.max(0, lastAired - 6), 6)).items : episodes.items)
         .filter((e) => e.number !== null && e.number <= lastAired)
         .reverse()
     : [];
   const epList = latestEps.length ? latestEps : episodes.items;
-  const epCount = airingList ? lastAired : a.episodeCount || episodes.total;
+  const epCount = airingList ? lastAired : a.status === "current" ? 0 : a.episodeCount || episodes.total;
   const studios = productions.filter((p) => p.role === "studio");
   const drop = insight ? dropStats(insight.dist) : null;
   const dropOk = drop && drop.started >= 200 ? drop : null;
@@ -269,7 +271,7 @@ export default async function AnimePage({ params }: Props) {
     ...(a.popularityRank ? [{ v: "Popularity", k: `#${a.popularityRank.toLocaleString()}`, sub: "most followed", icon: "flame" as const }] : []),
     ...(a.episodeCount
       ? [{ v: a.episodeCount === 1 ? "Episode" : "Episodes", k: String(a.episodeCount), sub: a.episodeLength ? `${a.episodeLength} min each` : undefined, icon: "play" as const }]
-      : a.status === "current" ? [{ v: "Episodes", k: lastAired ? String(lastAired) : "–", sub: "aired so far", icon: "play" as const }] : []),
+      : a.status === "current" ? [lastAired && latestInfo.reliable ? { v: "Episodes", k: String(lastAired), sub: "aired so far", icon: "play" as const } : { v: "Episodes", k: "Ongoing", sub: "still airing", icon: "play" as const }] : []),
     ...(runtime > 0 ? [{ v: "Binge time", k: fmtMinutes(runtime), sub: "start to finish", icon: "time" as const }] : []),
     ...(a.userCount ? [{ v: "Members", k: compactN(a.userCount), sub: "tracking it", icon: "characters" as const }] : []),
   ];
