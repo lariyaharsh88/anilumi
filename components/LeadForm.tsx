@@ -30,6 +30,7 @@ export default function LeadForm({ kind, source, title, blurb, button = "Notify 
   const [consent, setConsent] = useState(false);
   const [state, setState] = useState<"idle" | "busy" | "ok">("idle");
   const [err, setErr] = useState("");
+  const [confirm, setConfirm] = useState(false);
   // Until hydrated, a submit would do a plain page reload; keep the button off until the handler is attached.
   const [ready, setReady] = useState(false);
   useEffect(() => setReady(true), []);
@@ -38,8 +39,9 @@ export default function LeadForm({ kind, source, title, blurb, button = "Notify 
   if (state === "ok")
     return (
       <div className={`${compact ? "" : "card p-4"} ${className}`} role="status">
-        <p className="font-semibold text-ink">✓ You&apos;re on the list.</p>
-        {done || <p className="mt-1 text-sm text-muted">We&apos;ll only email you about what you signed up for, and every email has a one-click unsubscribe.</p>}
+        <p className="font-semibold text-ink">{confirm ? "📬 Check your inbox to confirm." : "✓ You're on the list."}</p>
+        {done}
+        <p className="mt-1 text-sm text-muted">{confirm ? "Tap the link in the email we just sent (check spam if it's not there in a minute). " : ""}We&apos;ll only email you about what you signed up for, and every email has a one-click unsubscribe.</p>
       </div>
     );
 
@@ -51,8 +53,9 @@ export default function LeadForm({ kind, source, title, blurb, button = "Notify 
         if (!consent) return setErr("Please tick the box to agree to the emails.");
         setState("busy"); setErr("");
         const hp = (e.currentTarget.elements.namedItem("website") as HTMLInputElement | null)?.value || "";
-        const res = await send("/api/lead", { email, kind, source, animeId, animeTitle, consent, website: hp, page: location.pathname, utm: utm() });
+        const res = await send<{ ok: boolean; confirm?: boolean }>("/api/lead", { email, kind, source, animeId, animeTitle, consent, website: hp, page: location.pathname, utm: utm() });
         if (res.error) { setState("idle"); return setErr(res.error); }
+        setConfirm(Boolean(res.confirm));
         setState("ok");
         track("generate_lead", { source, kind, anime_id: animeId });
       }}

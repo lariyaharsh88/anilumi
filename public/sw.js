@@ -80,7 +80,7 @@ self.addEventListener("fetch", (e) => {
   }
 });
 
-/* Push alerts (scripts/send-push.mts): { title, body, url, icon, tag }. Tapping opens the page, reusing a tab. */
+/* Push alerts (scripts/send-alerts.mts): { title, body, url, icon, tag }. Tapping opens the page, reusing a tab. */
 self.addEventListener("push", (e) => {
   let d = {};
   try { d = e.data ? e.data.json() : {}; } catch { d = { body: e.data && e.data.text() }; }

@@ -2,6 +2,8 @@ User-agent: *
 Allow: /
 
 Disallow: /my
+Disallow: /unsubscribe
+Disallow: /subscribed
 Disallow: /admin
 Disallow: /api/
 Disallow: /embed/

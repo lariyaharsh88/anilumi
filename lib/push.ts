@@ -1,6 +1,6 @@
 /**
  * Web push alerts: topics, the push services we accept and the VAPID public key. Shared by the subscribe route
- * (app/api/push), the bell button (components/PushButton.tsx) and the sender (scripts/send-push.mts). Pure.
+ * (app/api/push), the bell button (components/PushButton.tsx) and the sender (scripts/send-alerts.mts). Pure.
  * Topics: "a:<Kitsu anime id>" = a new episode (or the premiere) aired · "c:<AniList character id>" = birthday.
  */
 import vapid from "@/data/vapid.json";

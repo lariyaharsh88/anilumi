@@ -24,7 +24,7 @@ export default function Privacy() {
         <h2>Why</h2>
         <p>To show community scores, send the emails you asked for, reply to enquiries and keep spam out. Your consent is the legal basis for emails; you can withdraw it at any time.</p>
         <h2>Who processes it</h2>
-        <p>Data is stored with MongoDB Atlas. Emails are sent through an email delivery provider. Push alerts go through your browser&apos;s own push service (Google, Mozilla, Apple or Microsoft). Visits are measured with Google Analytics, and Microsoft Clarity records anonymised clicks, scrolling and page interactions (as heatmaps and session replays) so we can see which pages are hard to use. Clarity masks text you type. We don&apos;t sell or rent your data.</p>
+        <p>Data is stored with MongoDB Atlas. Emails are sent through Resend, and you confirm your address before we send anything else. Push alerts go through your browser&apos;s own push service (Google, Mozilla, Apple or Microsoft). Visits are measured with Google Analytics, and Microsoft Clarity records anonymised clicks, scrolling and page interactions (as heatmaps and session replays) so we can see which pages are hard to use. Clarity masks text you type. We don&apos;t sell or rent your data.</p>
         <h2>Your choices</h2>
         <ul>
           <li>Every email has a one-click unsubscribe link.</li>

@@ -1,5 +1,5 @@
 /**
- * Which push alerts are due now (scripts/send-push.mts sends them): episodes that aired in the last few hours,
+ * Which push alerts are due now (scripts/send-alerts.mts sends them): episodes that aired in the last few hours,
  * from the airing snapshot, and today's character birthdays. Each alert has a key so it's sent only once. Pure.
  */
 import type { AiringShow } from "./airing";
@@ -34,4 +34,25 @@ export function dueBirthdays(chars: BdChar[], pathFor: (id: number) => string | 
     url: pathFor(c.id) ?? bdPath(m, d),
     icon: c.i || undefined,
   }));
+}
+
+const dayLabel = (ms: number) => new Date(ms).toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short", timeZone: "Asia/Kolkata" });
+
+/**
+ * The Friday digest (lib/emails.ts digestMail): premieres and the most-followed shows' new episodes in the next
+ * 7 days, from the airing snapshot, plus up to 5 of the week's headlines. Each show appears once.
+ */
+export function buildDigest(shows: AiringShow[], news: { title: string; url: string; source: string }[], now = Date.now()) {
+  const end = now + 7 * 86400_000;
+  const next = shows.filter((s) => s.s).flatMap((s) => {
+    const n = s.n.find(([, t]) => t * 1000 > now && t * 1000 <= end);
+    return n ? [{ s, episode: n[0], at: n[1] * 1000 }] : [];
+  }).sort((a, b) => b.s.p - a.s.p);
+  const range = `${new Date(now).toLocaleDateString("en-GB", { day: "numeric", timeZone: "Asia/Kolkata" })}–${new Date(end).toLocaleDateString("en-GB", { day: "numeric", month: "short", timeZone: "Asia/Kolkata" })}`;
+  return {
+    week: range,
+    premieres: next.filter((x) => x.episode === 1).slice(0, 8).sort((a, b) => a.at - b.at).map((x) => ({ title: x.s.t, day: dayLabel(x.at), url: `/anime/${x.s.s}` })),
+    episodes: next.filter((x) => x.episode > 1).slice(0, 12).sort((a, b) => a.at - b.at).map((x) => ({ title: x.s.t, episode: x.episode, day: dayLabel(x.at), url: `/anime/${x.s.s}/episode/${x.episode}` })),
+    news: news.slice(0, 5),
+  };
 }

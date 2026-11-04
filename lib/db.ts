@@ -23,8 +23,8 @@ export async function ensureIndexes(d: Db): Promise<void> {
     d.collection("rate_limits").createIndex({ expiresAt: 1 }, { expireAfterSeconds: 0 }),
     d.collection("anilist_cache").createIndex({ at: 1 }, { expireAfterSeconds: 90 * 86400 }), // lib/alcache.ts
     d.collection("anilist_queue").createIndex({ at: 1 }, { expireAfterSeconds: 14 * 86400 }),
-    d.collection("push_subs").createIndex({ topics: 1 }), // app/api/push, scripts/send-push.mts
-    d.collection("push_sent").createIndex({ at: 1 }, { expireAfterSeconds: 30 * 86400 }),
+    d.collection("push_subs").createIndex({ topics: 1 }), // app/api/push, scripts/send-alerts.mts
+    d.collection("alerts_sent").createIndex({ at: 1 }, { expireAfterSeconds: 30 * 86400 }),
   ]);
 }
 

@@ -1,0 +1,37 @@
+name: Alerts
+# Episode and birthday alerts by browser push and email, and the Friday digest (scripts/send-alerts.mts):
+# new episodes every hour from the airing snapshot, character birthdays at 03:30 UTC (9 AM in India), the
+# digest at 03:30 UTC on Fridays. Each alert is sent once (alerts_sent in MongoDB). A channel whose secret
+# (VAPID_PRIVATE_KEY, RESEND_API_KEY) is missing is skipped with a notice.
+on:
+  schedule:
+    - cron: "41 * * * *"
+    - cron: "30 3 * * *"
+    - cron: "35 3 * * 5"
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: What to send
+        type: choice
+        options: [episodes, birthdays, digest, confirm-pending]
+        default: episodes
+permissions:
+  contents: read
+concurrency: alerts
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Send
+        run: npx tsx scripts/send-alerts.mts "${{ inputs.mode || (github.event.schedule == '30 3 * * *' && 'birthdays') || (github.event.schedule == '35 3 * * 5' && 'digest') || 'episodes' }}"
+        env:
+          MONGODB_URI: ${{ secrets.MONGODB_URI }}
+          VAPID_PRIVATE_KEY: ${{ secrets.VAPID_PRIVATE_KEY }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}

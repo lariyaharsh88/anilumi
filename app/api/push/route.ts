@@ -4,7 +4,7 @@ import { cleanSub, isTopic, MAX_TOPICS } from "@/lib/push";
 
 /**
  * Turn one push alert on or off for this browser: { sub: PushSubscription JSON, topic, on }. One document per
- * subscription (keyed by a hash of its endpoint) with the topics it follows; scripts/send-push.mts sends them.
+ * subscription (keyed by a hash of its endpoint) with the topics it follows; scripts/send-alerts.mts sends them.
  */
 export async function POST(req: Request) {
   const g = await guard(req, "push", 20);
