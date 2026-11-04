@@ -16,6 +16,7 @@ import { airing, upcomingOf } from "@/lib/airing";
 import AiringNoticeBanner from "@/components/AiringNoticeBanner";
 import SpoilerGate from "@/components/SpoilerGate";
 import EpisodeWatched from "@/components/EpisodeWatched";
+import EpisodeNav from "@/components/EpisodeNav";
 import Refreshed from "@/components/Refreshed";
 import WatchedUpTo from "@/components/WatchedUpTo";
 import { fillerFor, fillerSource } from "@/lib/filler";
@@ -29,6 +30,7 @@ import { skipTimesFor } from "@/lib/skip";
 import { episodeIndexed, robotsFor } from "@/lib/indexing";
 import { excerpt } from "@/lib/excerpt";
 import { snapshotThemes, themesForEpisode } from "@/lib/themes";
+import { arcsFor, arcOf } from "@/lib/arcs";
 
 export const revalidate = 21600;
 // Render on first request, then serve from the ISR cache until revalidated.
@@ -86,6 +88,7 @@ export default async function EpisodePage({ params }: Props) {
   const whenTime = airIso && airIso.length > 10 ? fmtDate(airIso, { hour: "numeric", minute: "2-digit", timeZone: "Asia/Tokyo" }) : null;
   const hasPrev = n > 1;
   const hasNext = n < count || (a.status === "current" && n <= lastAired) || nextScheduled;
+  const watchItem = { id: a.id, slug: a.slug, title: a.title, poster: posterUrl(a, "small"), status: a.status, nextRelease: a.nextRelease };
   // "release time india / us": the broadcast in the zones most of our readers search from.
   const at = (tz: string) => (airIso && airIso.length > 10 ? fmtDate(airIso, { weekday: "short", hour: "numeric", minute: "2-digit", timeZone: tz }) : null);
   const zones = whenTime ? { ist: at("Asia/Kolkata"), et: at("America/New_York"), pt: at("America/Los_Angeles"), uk: at("Europe/London") } : null;
@@ -112,12 +115,14 @@ export default async function EpisodePage({ params }: Props) {
 
   // The opening and ending used in this episode (monthly AnimeThemes snapshot; dub-only variants left out).
   const songs = themesForEpisode(snapshotThemes(a.id), n);
+  const arc = arcOf(arcsFor(a.slug), n);
   const songLine = (type: "OP" | "ED") => songs.filter((t) => t.type === type).map((t) => `“${t.song}”${t.artists[0] ? ` by ${t.artists[0]}` : ""}`).join(" and ");
   const faq = [
     { q: `When does ${a.title} episode ${n} come out?`, a: when ? `${a.title} episode ${n} ${upcoming ? "is scheduled for" : "aired on"} ${when}${whenTime ? ` at ${whenTime} JST` : ""}.${upcoming ? " Simulcasts usually go live within an hour or two on licensed services." : ""}` : `The release date for ${a.title} episode ${n} has not been announced yet. This page updates automatically when it is.` },
     ...(zones && upcoming ? [{ q: `What time does ${a.title} episode ${n} come out in India, the US and the UK?`, a: `The Japanese broadcast is ${zones.ist} in India (IST), ${zones.et} Eastern and ${zones.pt} Pacific in the US, and ${zones.uk} in the UK. Streaming services usually add it within an hour or two.` }] : []),
     { q: `What time does ${a.title} episode ${n} release?`, a: whenTime ? `Broadcast is at ${whenTime} Japan Standard Time. The page shows the equivalent in your own time zone and counts down live.` : `Kitsu has the date but not a broadcast time for this episode. Japanese TV anime typically air in the evening or late night JST.` },
     { q: `Where can I watch ${a.title} episode ${n}?`, a: a.streaming.length ? `${a.title} streams on ${a.streaming.map((s) => s.site).join(", ")}. Availability depends on your region.` : `No licensed streaming links are listed yet; check the main ${a.title} page for updates.` },
+    ...(arc ? [{ q: `Which arc is ${a.title} episode ${n} in?`, a: `Episode ${n} is part of the ${arc.name} arc${arc.filler ? ", a filler arc" : ""}, which runs from episode ${arc.from} to ${arc.to}.` }] : []),
     ...(songs.length ? [{ q: `What are the opening and ending of ${a.title} episode ${n}?`, a: [songLine("OP") && `The opening is ${songLine("OP")}.`, songLine("ED") && `The ending is ${songLine("ED")}.`].filter(Boolean).join(" ") + ` Every ${a.title} opening and ending is listed on the openings & endings page.` }] : []),
     ...(a.status === "current" && isNext ? [{ q: `How many episodes of ${a.title} are out?`, a: `${lastAired} episode${lastAired === 1 ? "" : "s"} have aired so far. Episode ${n} is the next one.` }] : []),
   ];
@@ -158,6 +163,13 @@ export default async function EpisodePage({ params }: Props) {
               </div>
             );
           })()}
+          {arc && (
+            <p className="mt-4 flex flex-wrap items-baseline gap-x-2 gap-y-1 text-sm">
+              <span aria-hidden>📖</span>
+              <span className="text-ink/90"><strong className="font-semibold text-ink">{arc.name} arc</strong>{arc.filler ? " (filler)" : ""} · episode {n - arc.from + 1} of {arc.to - arc.from + 1}</span>
+              <Link href={`${animePath(a)}#arcs`} className="text-xs font-medium text-violet hover:text-violet-2">All arcs →</Link>
+            </p>
+          )}
           {songs.length > 0 && (
             <p className="mt-4 flex flex-wrap items-baseline gap-x-4 gap-y-1 text-sm">
               <span aria-hidden>🎵</span>
@@ -170,7 +182,8 @@ export default async function EpisodePage({ params }: Props) {
               ))}
             </p>
           )}
-          {!upcoming && <EpisodeWatched className="mt-4" ep={n} item={{ id: a.id, slug: a.slug, title: a.title, poster: posterUrl(a, "small"), status: a.status, nextRelease: a.nextRelease }} />}
+          <EpisodeNav n={n} base={`${animePath(a)}/episode/`} hasPrev={hasPrev} hasNext={hasNext} aired={!upcoming} item={watchItem} />
+          {!upcoming && <EpisodeWatched className="mt-4" ep={n} item={watchItem} />}
           {!upcoming && skips && <SkipGuide s={skips} episode={n} />}
           {dbEnabled() && !upcoming && <EpisodeReactions animeId={a.id} ep={n} />}
           {dbEnabled() && upcoming && a.status !== "finished" && (<>
