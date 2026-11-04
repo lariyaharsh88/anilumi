@@ -11,7 +11,7 @@ const cache = new Map<string, Hit[]>(); // per tab: retyping a query is instant
  * Search with suggestions. Typing shows matching anime; pick one (click, or ↑/↓ then Enter) to open its
  * page. Enter without a pick submits the form to /search as before, so it also works without JavaScript.
  */
-export default function SearchBox({ defaultValue = "" }: { defaultValue?: string }) {
+export default function SearchBox({ defaultValue = "", label = "Site search" }: { defaultValue?: string; label?: string }) {
   const router = useRouter();
   const [q, setQ] = useState(defaultValue);
   const [hits, setHits] = useState<Hit[]>([]);
@@ -74,7 +74,7 @@ export default function SearchBox({ defaultValue = "" }: { defaultValue?: string
   };
 
   return (
-    <form ref={boxRef} action="/search" role="search" className="relative" onSubmit={() => { track("search", { search_term: q.trim() }); setOpen(false); }}>
+    <form ref={boxRef} action="/search" role="search" aria-label={label} className="relative" onSubmit={() => { track("search", { search_term: q.trim() }); setOpen(false); }}>
       <input
         name="q"
         type="search"

@@ -103,7 +103,7 @@ export async function EpisodesView({ slug, page }: { slug: string; page: number 
           <p className="text-sm text-ink/90">
             <strong>{fill.count}</strong> of {fill.total} episodes are filler ({fill.share.toFixed(0)}%).
             <span className="ml-1 text-xs text-muted">{fillerSource(fill.entry).label}.</span>{" "}
-            <Link href={`${animePath(a)}/filler-list`} className="text-violet hover:underline">Full filler list →</Link>
+            <Link href={`${animePath(a)}/filler-list`} className="text-violet underline underline-offset-2">Full filler list →</Link>
           </p>
           <FillerToggle targetId="episode-list" />
         </div>
@@ -112,7 +112,7 @@ export async function EpisodesView({ slug, page }: { slug: string; page: number 
         <details className="card group mt-5 p-4" open={page === 1}>
           <summary className="cursor-pointer list-none font-semibold text-ink">📖 Jump to an arc <span className="text-sm font-normal text-muted">· {arcs.length} arcs</span></summary>
           <ul className="mt-3 flex flex-wrap gap-1.5">
-            {arcs.map((x) => <li key={`${x.from}-${x.name}`}><a href={arcHref(x.from)} className={`chip ${x.filler ? "opacity-75" : ""}`}>{x.name}{x.filler ? " · filler" : ""} <span className="ml-1 tabular-nums">{arcRange(x)}</span></a></li>)}
+            {arcs.map((x) => <li key={`${x.from}-${x.name}`}><a href={arcHref(x.from)} className="chip">{x.name}{x.filler ? " · filler" : ""} <span className="ml-1 tabular-nums">{arcRange(x)}</span></a></li>)}
           </ul>
         </details>
       )}
@@ -124,7 +124,7 @@ export async function EpisodesView({ slug, page }: { slug: string; page: number 
             const prev = i > 0 && eps.items[i - 1].number ? arcOf(arcs, eps.items[i - 1].number!) : null;
             return (<Fragment key={e.id}>
             {arc && arc !== prev && (
-              <li className="pt-2"><h3 className="text-sm font-bold uppercase tracking-wider text-violet-2">{arc.name} arc{arc.filler ? " · filler" : ""} <span className="font-normal normal-case tracking-normal text-muted">· episodes {arcRange(arc)}</span></h3></li>
+              <li className="pt-2"><h2 className="text-sm font-bold uppercase tracking-wider text-violet-2">{arc.name} arc{arc.filler ? " · filler" : ""} <span className="font-normal normal-case tracking-normal text-muted">· episodes {arcRange(arc)}</span></h2></li>
             )}
             <li id={e.number ? `ep-${e.number}` : undefined} className="card flex scroll-mt-32 gap-4 p-3" data-filler={e.number && (fill?.filler.has(e.number) || fill?.recap.has(e.number)) ? "" : undefined}>
               <div className="relative hidden aspect-video w-40 shrink-0 overflow-hidden rounded-lg bg-bg-2 sm:block">

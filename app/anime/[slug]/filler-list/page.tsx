@@ -69,7 +69,6 @@ export default async function FillerListPage({ params }: Props) {
     { q: `Which ${a.title} episodes can I skip?`, a: `Filler: ${formatRanges(f.filler) || "none"}.${f.recap.size ? ` Recaps: ${formatRanges(f.recap)}.` : ""}` },
     ...(longest && longest.to > longest.from ? [{ q: `What is the longest filler run in ${a.title}?`, a: `${span(longest.from, longest.to)}: ${longest.to - longest.from + 1} episodes in a row. The story picks up again in episode ${longest.to + 1 <= f.total ? longest.to + 1 : longest.to}.` }] : []),
     ...(saved ? [{ q: `How much time does skipping ${a.title} filler save?`, a: `About ${hours(saved)}, at ${a.episodeLength} minutes an episode.` }] : []),
-    { q: "Is filler bad?", a: "Not always. Filler is anything not adapted from the source manga. Some filler arcs are fan favourites, and mixed episodes often add useful scenes. Skip filler if you want the main story only." },
   ];
 
   return (
@@ -135,7 +134,7 @@ export default async function FillerListPage({ params }: Props) {
 
       <section className="card reveal mt-10 p-4" aria-labelledby="path-h">
         <h2 id="path-h" className="font-semibold">Filler-free watch order</h2>
-        <p className="mt-1 text-sm text-muted">{watch.length} episodes. Copy it into your notes, or turn on &ldquo;Hide filler&rdquo; on the <Link href={`${animePath(a)}/episodes`} className="text-violet hover:underline">episode list</Link>.</p>
+        <p className="mt-1 text-sm text-muted">{watch.length} episodes. Copy it into your notes, or turn on &ldquo;Hide filler&rdquo; on the <Link href={`${animePath(a)}/episodes`} className="text-violet underline underline-offset-2">episode list</Link>.</p>
         <p className="mt-2 text-sm leading-6 text-ink/90">{formatRanges(watch)}</p>
       </section>
 

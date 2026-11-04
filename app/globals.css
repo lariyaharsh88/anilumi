@@ -97,7 +97,7 @@ body { @apply bg-bg text-ink antialiased; }
 .arc-name { @apply min-w-0 flex-1 font-medium text-ink; }
 .arc-ep { @apply shrink-0 text-xs tabular-nums text-muted; }
 .tag-xs { @apply ml-2 rounded bg-white/5 px-1.5 py-0.5 align-middle text-[10px] font-semibold uppercase text-muted; }
-.prose-anime a { @apply text-violet underline-offset-2 hover:underline; }
+.prose-anime a { @apply text-violet underline decoration-violet/40 underline-offset-2 hover:decoration-violet; }
 .line-clamp-3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
 .line-clamp-6 { display: -webkit-box; -webkit-line-clamp: 6; -webkit-box-orient: vertical; overflow: hidden; }
 /* Horizontal rails. `position: relative` matters: it makes the rail the containing block for any

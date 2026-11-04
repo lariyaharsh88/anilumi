@@ -44,7 +44,7 @@ export default function SiteFooter() {
         <nav aria-label="Footer" className="grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-4">
           {cols.map((c) => (
             <div key={c.h} className="min-w-0">
-              <h3 className="mb-3 text-xs font-semibold uppercase tracking-wider text-ink/60">{c.h}</h3>
+              <h2 className="mb-3 text-xs font-semibold uppercase tracking-wider text-ink/60">{c.h}</h2>
               <ul className="space-y-0.5 text-sm sm:space-y-2">
                 {c.links.map(([href, label]) => (
                   <li key={href}>

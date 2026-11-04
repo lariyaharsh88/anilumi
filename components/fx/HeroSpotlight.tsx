@@ -142,8 +142,9 @@ export default function HeroSpotlight({ items, children }: { items: Spot[]; chil
                         tabIndex={on ? 0 : -1}
                         onClick={(e) => { if (!on) { e.preventDefault(); scrollTo(k); } }}
                         className={`group relative block h-full w-full overflow-hidden rounded-2xl border bg-card ${on ? "border-white/15 shadow-[0_25px_60px_-20px_rgba(255,77,109,.45)]" : "border-white/10"}`}
-                        aria-label={`${s.title}, trending number ${s.rank}`}
                       >
+                        {/* The card's name is its own text: the title (for screen readers) plus the visible rank and score. */}
+                        <span className="sr-only">{s.title}, </span>
                         {s.poster ? (
                           <Image src={s.poster} alt="" fill sizes="(max-width: 640px) 160px, 250px" className="object-cover transition duration-500 group-hover:scale-105" priority={k === 0} loading={k === 0 ? undefined : Math.abs(k - i) <= 1 ? "eager" : "lazy"} />
                         ) : <div className="grid h-full place-items-center text-sm text-muted">No image</div>}

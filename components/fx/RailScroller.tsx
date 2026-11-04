@@ -81,7 +81,7 @@ export default function RailScroller({ children, label }: { children: React.Reac
   const btn = "rail-btn absolute top-[40%] z-10 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full border border-white/15 bg-bg/85 text-xl text-ink shadow-[0_10px_30px_-10px_rgba(0,0,0,.9)] backdrop-blur transition duration-200 hover:scale-110 hover:border-violet hover:bg-card focus-visible:opacity-100 disabled:pointer-events-none disabled:opacity-0";
 
   return (
-    <div className="group/rail relative -mx-4 sm:mx-0" role="region" aria-label={label}>
+    <div className="group/rail relative -mx-4 sm:mx-0" role="region" aria-label={`${label}, scrollable row`}>
       <button type="button" onClick={() => page(-1)} disabled={state.atStart} className={`${btn} left-1 opacity-75 group-hover/rail:opacity-100 sm:-left-4`} aria-label={`Scroll ${label} left`}>‹</button>
       <div
         ref={ref}

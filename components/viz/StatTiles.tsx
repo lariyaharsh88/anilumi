@@ -25,11 +25,11 @@ export default function StatTiles({ stats, className = "" }: { stats: Stat[]; cl
           >
             {rich ? (
               <>
-                <div className="flex items-center justify-between gap-2">
-                  {s.icon && <span className="genre-ico grid h-9 w-9 place-items-center rounded-xl transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-6"><NavIcon name={s.icon} className="h-[18px] w-[18px]" /></span>}
-                  {s.live && <span className="inline-flex items-center gap-1.5 rounded-full bg-accent/15 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-accent-2"><span className="live-dot !bg-accent-2" aria-hidden />Live</span>}
-                </div>
-                <dt className="mt-3 text-xs font-medium text-muted">
+                <dt className="text-xs font-medium text-muted">
+                  <span className="mb-3 flex items-center justify-between gap-2">
+                    {s.icon && <span className="genre-ico grid h-9 w-9 place-items-center rounded-xl transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-6"><NavIcon name={s.icon} className="h-[18px] w-[18px]" /></span>}
+                    {s.live && <span className="inline-flex items-center gap-1.5 rounded-full bg-accent/15 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-accent-2"><span className="live-dot !bg-accent-2" aria-hidden />Live</span>}
+                  </span>
                   {s.href ? (
                     // Stretched link: the whole tile is clickable, the markup stays a valid <dl>.
                     <Link href={s.href} className="after:absolute after:inset-0 after:rounded-[inherit] after:content-[''] focus-visible:outline-none focus-visible:after:ring-2 focus-visible:after:ring-violet">{s.label}</Link>

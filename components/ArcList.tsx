@@ -18,7 +18,7 @@ export default function ArcList({ title, arcs, href, checked, reviewed, sources,
       <ol className="grid gap-1.5 sm:grid-cols-2">
         {arcs.map((a, i) => (
           <li key={`${a.from}-${a.name}`}>
-            <Link href={href(a.from)} className={a.filler ? "arc-row opacity-80" : "arc-row"}>
+            <Link href={href(a.from)} className="arc-row">
               <span className="arc-n">{i + 1}</span>
               <span className="arc-name">{a.name}{a.filler && <span className="tag-xs">Filler</span>}</span>
               <span className="arc-ep">Ep {arcRange(a)}</span>
