@@ -6,7 +6,7 @@ const host = (u: string) => { try { return new URL(u).hostname.replace(/^www\./,
 
 /**
  * A show's story arcs in order with episode ranges, each linking to its first episode; filler arcs marked.
- * `href(n)` builds an episode link. Server component.
+ * `href(n)` builds an episode link. Short classes (globals.css): One Piece has 53 rows. Server component.
  */
 export default function ArcList({ title, arcs, href, checked, reviewed, sources, className = "" }: { title: string; arcs: Arc[]; href: (n: number) => string; checked: string | null; reviewed: string | null; sources: string[]; className?: string }) {
   const canon = arcs.filter((a) => !a.filler).length;
@@ -18,10 +18,10 @@ export default function ArcList({ title, arcs, href, checked, reviewed, sources,
       <ol className="grid gap-1.5 sm:grid-cols-2">
         {arcs.map((a, i) => (
           <li key={`${a.from}-${a.name}`}>
-            <Link href={href(a.from)} className={`card flex items-baseline gap-3 px-3 py-2 text-sm transition hover:border-violet/60 ${a.filler ? "opacity-80" : ""}`}>
-              <span className="w-6 shrink-0 text-right text-xs font-bold tabular-nums text-muted">{i + 1}</span>
-              <span className="min-w-0 flex-1 font-medium text-ink">{a.name}{a.filler && <span className="ml-2 rounded bg-white/5 px-1.5 py-0.5 align-middle text-[10px] font-semibold uppercase text-muted">Filler</span>}</span>
-              <span className="shrink-0 text-xs tabular-nums text-muted">Ep {arcRange(a)}</span>
+            <Link href={href(a.from)} className={a.filler ? "arc-row opacity-80" : "arc-row"}>
+              <span className="arc-n">{i + 1}</span>
+              <span className="arc-name">{a.name}{a.filler && <span className="tag-xs">Filler</span>}</span>
+              <span className="arc-ep">Ep {arcRange(a)}</span>
             </Link>
           </li>
         ))}

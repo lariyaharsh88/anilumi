@@ -22,10 +22,10 @@ export default function TiltCard({ children, className = "", max = 9 }: { childr
   const on = fine && !reduce;
 
   return (
-    <div className="[perspective:900px]">
+    <div className="tilt-wrap">
       <m.div
         ref={ref}
-        className={`relative [transform-style:preserve-3d] ${className}`}
+        className={`tilt-body ${className}`}
         style={on ? { rotateX: rx, rotateY: ry } : undefined}
         whileHover={on ? { scale: 1.035, y: -4 } : undefined}
         transition={{ type: "spring", stiffness: 300, damping: 24 }}

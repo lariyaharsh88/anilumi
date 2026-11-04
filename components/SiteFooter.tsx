@@ -49,7 +49,7 @@ export default function SiteFooter() {
                 {c.links.map(([href, label]) => (
                   <li key={href}>
                     {/* Taller tap area on phones (≥ 32px); the desktop list keeps its compact rhythm. */}
-                    <Link href={href} className="inline-block py-1.5 text-ink/75 transition-colors hover:text-ink sm:py-0">{label}</Link>
+                    <Link href={href} className="ft-link">{label}</Link>
                   </li>
                 ))}
               </ul>

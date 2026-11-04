@@ -576,13 +576,13 @@ export default async function AnimePage({ params }: Props) {
                 {characters.map((c) => (
                   <Link key={c.id} href={`/character/${c.slug}`} className="group block w-28 sm:w-32">
                     <TiltCard max={7} className="rounded-xl">
-                      <div className="relative aspect-[5/6] w-full overflow-hidden rounded-xl border border-line bg-bg-2 transition-colors group-hover:border-violet/60">
+                      <div className="cc-frame">
                         {c.image && <Image src={c.image} alt="" fill sizes="128px" className="object-cover" />}
-                        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-black/70 to-transparent" />
-                        {c.role === "main" && <span className="absolute left-1.5 top-1.5 rounded bg-accent-strong px-1.5 py-0.5 text-[9px] font-bold uppercase text-snow">Main</span>}
+                        <div className="cc-shade" />
+                        {c.role === "main" && <span className="cc-main">Main</span>}
                       </div>
                     </TiltCard>
-                    <p className="mt-2 line-clamp-2 text-xs font-semibold group-hover:text-violet-2">{c.name}</p>
+                    <p className="cc-name">{c.name}</p>
                   </Link>
                 ))}
               </RailScroller>

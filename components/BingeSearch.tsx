@@ -1,19 +1,25 @@
 "use client";
 import { useId, useMemo, useState } from "react";
 import Link from "@/components/Link";
-
-export type FranchisePick = { s: string; t: string; n: number };
+import type { FranchisePick } from "@/lib/franchiselist";
 
 /**
  * Home page "Plan your binge": type a franchise and jump to its watch-order guide (order, binge time, filler,
- * where the manga continues). Filters the franchise list in the browser; popular franchises show as chips.
+ * where the manga continues). Filters the franchise list in the browser; popular franchises show as chips. The
+ * full list comes from /api/franchises on first focus, so it isn't part of every home page load.
  */
-export default function BingeSearch({ franchises, popular }: { franchises: FranchisePick[]; popular: FranchisePick[] }) {
+export default function BingeSearch({ popular }: { popular: FranchisePick[] }) {
   const [q, setQ] = useState("");
+  const [franchises, setFranchises] = useState<FranchisePick[] | null>(null);
+  const load = () => {
+    if (franchises) return;
+    setFranchises([]);
+    fetch("/api/franchises").then((r) => r.json()).then((d: { franchises: FranchisePick[] }) => setFranchises(d.franchises)).catch(() => setFranchises(null));
+  };
   const id = useId();
   const needle = q.trim().toLowerCase();
   const hits = useMemo(() => {
-    if (needle.length < 2) return [];
+    if (needle.length < 2 || !franchises) return [];
     const starts = franchises.filter((f) => f.t.toLowerCase().startsWith(needle));
     const has = franchises.filter((f) => !f.t.toLowerCase().startsWith(needle) && (f.t.toLowerCase().includes(needle) || f.s.includes(needle.replace(/\s+/g, "-"))));
     return [...starts, ...has].slice(0, 6);
@@ -29,7 +35,7 @@ export default function BingeSearch({ franchises, popular }: { franchises: Franc
         <div className="relative mt-4 max-w-xl">
           <label htmlFor={`${id}-q`} className="sr-only">Search a franchise</label>
           <svg aria-hidden viewBox="0 0 24 24" className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" /></svg>
-          <input id={`${id}-q`} type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder="Naruto, One Piece, Demon Slayer…" autoComplete="off" className="input w-full" style={{ paddingLeft: "2.25rem" }} />
+          <input id={`${id}-q`} type="search" value={q} onFocus={load} onChange={(e) => { load(); setQ(e.target.value); }} placeholder="Naruto, One Piece, Demon Slayer…" autoComplete="off" className="input w-full" style={{ paddingLeft: "2.25rem" }} />
           {hits.length > 0 && (
             <ul className="absolute inset-x-0 top-full z-20 mt-1.5 overflow-hidden rounded-xl border border-line bg-bg-2 shadow-xl">
               {hits.map((f) => (
@@ -42,7 +48,7 @@ export default function BingeSearch({ franchises, popular }: { franchises: Franc
               ))}
             </ul>
           )}
-          {needle.length >= 2 && hits.length === 0 && <p className="mt-2 text-xs text-muted" aria-live="polite">No franchise matches that. Try the main title, e.g. &ldquo;Naruto&rdquo;.</p>}
+          {needle.length >= 2 && hits.length === 0 && franchises && franchises.length > 0 && <p className="mt-2 text-xs text-muted" aria-live="polite">No franchise matches that. Try the main title, e.g. &ldquo;Naruto&rdquo;.</p>}
         </div>
         <ul className="mt-4 flex flex-wrap gap-2">
           {popular.map((f) => <li key={f.s}><Link href={`/watch-order/${f.s}`} className="chip">{f.t}</Link></li>)}
