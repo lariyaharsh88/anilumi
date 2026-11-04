@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "@/components/Link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { getAnimeBySlug, buildWatchOrder, franchiseName, watchOrderSlug, animePath, posterUrl, fmtMinutes, runtimeMinutes, subtypeLabel, WatchEntry } from "@/lib/kitsu";
+import { getAnimeBySlug, buildWatchOrder, franchiseName, watchOrderSlug, animePath, posterUrl, fmtMinutes, runtimeMinutes, subtypeLabel, getStreamingFor, getProductions, WatchEntry } from "@/lib/kitsu";
 import { abs, site } from "@/lib/site";
 import BingePlan from "@/components/BingePlan";
 import HindiDub from "@/components/HindiDub";
@@ -17,7 +17,9 @@ import AdSlot from "@/components/AdSlot";
 import WatchChecklist from "@/components/WatchChecklist";
 import { hasHindi, hindiPath } from "@/lib/hindi";
 import { noteFor } from "@/data/notes";
-import { amazonSearch, affiliateRel } from "@/lib/affiliate";
+import { amazonSearch, affiliateRel, streamLink } from "@/lib/affiliate";
+import { streamCoverage, oneLinkPerSite } from "@/lib/wostreams";
+import { fillerFor } from "@/lib/filler";
 import BarChart from "@/components/viz/BarChart";
 import LineChart from "@/components/viz/LineChart";
 
@@ -89,6 +91,18 @@ export default async function WatchOrderPage({ params }: Props) {
   const sideCount = ordered.filter((e) => e.kind === "side").length;
   const dub = firstMain ? dubFor(firstMain.anime) : null;
   const dubQ = dubFaq(dub, name);
+  // Where each part streams (Kitsu links, cached a day), and each core season's studio for the comparison table.
+  const mains = ordered.filter((e) => e.kind === "main");
+  const core = ordered.filter((e) => e.kind === "main" || e.kind === "movie");
+  const [streams, studiosOf] = ordered.length > 1
+    ? await Promise.all([
+        getStreamingFor(ordered.map((e) => e.anime.id)),
+        Promise.all(mains.slice(0, 15).map((e) => getProductions(e.anime.id).then((p) => [e.anime.id, p.filter((x) => x.role === "studio").map((x) => x.producer.name)] as const))).then((r) => new Map(r)),
+      ])
+    : [new Map(), new Map<string, string[]>()];
+  const coverage = streamCoverage(core.map((e) => e.anime.id), streams);
+  const seasonRows = mains.map((e) => ({ e, score: e.anime.rating ? e.anime.rating / 10 : null, filler: fillerFor(e.anime.slug, e.anime.episodeCount), studio: studiosOf.get(e.anime.id)?.join(", ") || null }));
+  const bestSeason = seasonRows.filter((r) => r.score).sort((x, y) => y.score! - x.score!)[0] ?? null;
 
   const ld = {
     "@context": "https://schema.org",
@@ -197,6 +211,50 @@ export default async function WatchOrderPage({ params }: Props) {
         );
       })()}
 
+      {seasonRows.length >= 2 && (
+        <section className="mt-8" aria-labelledby="seasons-h">
+          <h2 id="seasons-h" className="h-section mb-1">Compare the seasons</h2>
+          <p className="mb-3 text-sm text-muted">The main story part by part: community score (Kitsu), length, filler share and studio.{bestSeason ? ` Highest rated: ${bestSeason.e.anime.title}.` : ""}</p>
+          <div className="card overflow-x-auto">
+            <table className="w-full min-w-[560px] text-left text-sm">
+              <thead className="text-[11px] uppercase tracking-wider text-muted">
+                <tr className="border-b border-line">
+                  <th scope="col" className="px-3 py-2 font-semibold">Part</th>
+                  <th scope="col" className="px-3 py-2 font-semibold">Year</th>
+                  <th scope="col" className="px-3 py-2 text-right font-semibold">Episodes</th>
+                  <th scope="col" className="px-3 py-2 text-right font-semibold">Score</th>
+                  <th scope="col" className="px-3 py-2 text-right font-semibold">Filler</th>
+                  <th scope="col" className="px-3 py-2 font-semibold">Studio</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-line/60">
+                {seasonRows.map((r) => (
+                  <tr key={r.e.anime.id} className={r === bestSeason ? "bg-violet/10" : ""}>
+                    <th scope="row" className="px-3 py-2 font-medium"><Link href={animePath(r.e.anime)} className="text-ink hover:text-violet-2">{shortTitle(r.e.anime.title, name)}</Link>{r === bestSeason && <span className="ml-2 whitespace-nowrap rounded bg-violet/25 px-1.5 py-0.5 text-[10px] font-bold uppercase text-violet-2">Top score</span>}</th>
+                    <td className="px-3 py-2 tabular-nums text-muted">{r.e.anime.startDate?.slice(0, 4) || "TBA"}</td>
+                    <td className="px-3 py-2 text-right tabular-nums">{r.e.anime.episodeCount ?? (r.e.anime.status === "current" ? "Airing" : "–")}</td>
+                    <td className="px-3 py-2 text-right tabular-nums">{r.score ? r.score.toFixed(2) : "–"}</td>
+                    <td className="px-3 py-2 text-right tabular-nums">{r.filler ? <Link href={`${animePath(r.e.anime)}/filler-list`} className="hover:text-violet-2">{Math.round(r.filler.share)}%</Link> : <span className="text-muted">–</span>}</td>
+                    <td className="px-3 py-2 text-muted">{r.studio || "–"}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-2 text-xs text-muted">Filler shows only for parts with a filler list. Scores move as people rate, so this table refreshes daily.</p>
+        </section>
+      )}
+
+      {coverage.length > 0 && (
+        <section className="card mt-8 p-4" aria-labelledby="streams-h">
+          <h2 id="streams-h" className="font-semibold text-ink">Where to stream {name}</h2>
+          <p className="mt-1 text-sm text-muted">How many of the {core.length} seasons and movies each service lists. Catalogues differ by country; each part&apos;s own links are in the order below.</p>
+          <ul className="mt-3 flex flex-wrap gap-2">
+            {coverage.slice(0, 6).map((c) => <li key={c.site} className="chip"><strong className="mr-1 font-semibold text-ink">{c.site}</strong> {c.n} of {core.length}</li>)}
+          </ul>
+        </section>
+      )}
+
       <section className="mt-8">
         <h2 className="h-section mb-3">Recommended order</h2>
         <ol className="space-y-2">
@@ -214,6 +272,13 @@ export default async function WatchOrderPage({ params }: Props) {
                 <Link href={animePath(e.anime)} className="mt-1 block font-semibold hover:text-violet">{e.anime.title}</Link>
                 <p className="text-xs text-muted">{subtypeLabel(e.anime.subtype)}{e.anime.startDate ? ` · ${e.anime.startDate.slice(0, 4)}` : ""}{e.anime.episodeCount ? ` · ${e.anime.episodeCount} ep` : ""}{runtimeMinutes(e.anime) ? ` · ${fmtMinutes(runtimeMinutes(e.anime))}` : ""}</p>
                 <p className="mt-1 text-xs text-ink/70">{e.note}</p>
+                {oneLinkPerSite(streams.get(e.anime.id) || []).length > 0 && (
+                  <p className="mt-2 flex flex-wrap gap-1.5">
+                    {oneLinkPerSite(streams.get(e.anime.id) || []).slice(0, 4).map((x) => (
+                      <a key={x.id} href={streamLink(x.url)} target="_blank" rel={affiliateRel} className="rounded-md border border-line bg-bg-2 px-2 py-0.5 text-[11px] font-semibold text-ink/90 hover:border-violet/60 hover:text-ink" title={`${e.anime.title} on ${x.site}`}>▶ {x.site}</a>
+                    ))}
+                  </p>
+                )}
               </div>
             </li>
           ))}
@@ -270,6 +335,8 @@ export default async function WatchOrderPage({ params }: Props) {
           ...(mainCount > 1 ? [{ q: `How many seasons does ${name} have?`, a: `${mainCount} parts make up the main story${movieList.length ? `, plus ${movieList.length} movie${movieList.length === 1 ? "" : "s"}` : ""}${sideCount ? ` and ${sideCount} side stor${sideCount === 1 ? "y" : "ies"} or OVAs` : ""}.` }] : []),
           ...(movieList.length ? [{ q: `Where do the ${name} movies fit in the watch order?`, a: movieList.map((m) => `${m.anime.title}${m.after ? `: after ${m.after}` : ""}`).join("; ") + "." }] : []),
           { q: `Can I skip the recaps?`, a: skippable.length ? `Yes. ${skippable.map((e) => e.anime.title).join(", ")} retell events you have already seen and can be skipped.` : "There are no recap episodes or compilation movies on record for this franchise." },
+          ...(coverage.length ? [{ q: `Where can I stream all of ${name}?`, a: `${coverage[0].site} lists ${coverage[0].n} of the ${core.length} seasons and movies${coverage[1] ? `, ${coverage[1].site} ${coverage[1].n}` : ""}${coverage[2] ? ` and ${coverage[2].site} ${coverage[2].n}` : ""}. Catalogues differ by country, so check the links on each part above.` }] : []),
+          ...(bestSeason && seasonRows.filter((r) => r.score).length >= 2 ? [{ q: `Which ${name} season is the best?`, a: `By community score on Kitsu, ${bestSeason.e.anime.title} rates highest at ${bestSeason.score!.toFixed(2)}/10. The comparison table above lists every part's score, length, filler share and studio.` }] : []),
           ...(dubQ ? [dubQ] : []),
           { q: "Where does this order come from?", a: "It is built automatically from the sequel, prequel, side-story and spin-off links in the Kitsu database and refreshed daily, so new seasons appear without manual edits." },
         ]}

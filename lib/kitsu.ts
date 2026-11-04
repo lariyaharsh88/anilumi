@@ -285,6 +285,22 @@ export async function getTrending(limit = 10): Promise<Anime[]> {
   return doc.data.map((r) => normalizeAnime(r)).filter((a) => !a.nsfw && a.ageRating !== "R18");
 }
 
+/** Streaming links for several anime at once (watch-order pages): 20 per request, cached a day. Missing ids are absent. */
+export async function getStreamingFor(ids: string[]): Promise<Map<string, StreamingLink[]>> {
+  const out = new Map<string, StreamingLink[]>();
+  const unique = [...new Set(ids)];
+  const chunks = Array.from({ length: Math.ceil(unique.length / 20) }, (_, i) => unique.slice(i * 20, i * 20 + 20));
+  await Promise.all(chunks.map(async (chunk) => {
+    const doc = await kitsu(
+      "/anime",
+      { "filter[id]": chunk.join(","), "page[limit]": 20, include: "streamingLinks.streamer", "fields[anime]": "slug,streamingLinks", "fields[streamingLinks]": "url,subs,dubs,streamer", "fields[streamers]": "siteName" },
+      86400,
+    );
+    for (const r of (doc && Array.isArray(doc.data) ? doc.data : [])) out.set(r.id, normalizeAnime(r, doc!.included).streaming);
+  }));
+  return out;
+}
+
 export async function getAnimeBySlug(slug: string): Promise<Anime | null> {
   const doc = await kitsuStrict(
     "/anime",
