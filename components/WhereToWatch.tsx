@@ -3,8 +3,9 @@ import { useEffect, useState } from "react";
 import { streamLink, affiliateRel } from "@/lib/affiliate";
 import type { ProviderGroup } from "@/lib/tmdb";
 import SearchSelect from "@/components/SearchSelect";
+import { languageLine } from "@/lib/langs";
 
-type KitsuLink = { id: string; url: string; site: string; dubs: string[] };
+type KitsuLink = { id: string; url: string; site: string; dubs: string[]; subs: string[] };
 type Resp = { configured: boolean; country: string; match?: { name: string } | null; link?: string | null; groups?: ProviderGroup[]; countries?: string[] };
 
 const COMMON = ["US", "CA", "GB", "IE", "AU", "NZ", "IN", "SG", "PH", "MY", "ID", "TH", "JP", "KR", "DE", "FR", "ES", "IT", "NL", "SE", "PL", "BR", "MX", "AR", "CL", "ZA", "AE", "TR"];
@@ -41,12 +42,20 @@ export default function WhereToWatch({ animeId, title, links, extra }: { animeId
       {extra}
     </div>
   );
+  // Audio and subtitle languages per service, where Kitsu lists them.
+  const langs = links.flatMap((s) => { const line = languageLine(s); return line ? [{ id: s.id, site: s.site, line }] : []; });
+  const languages = langs.length ? (
+    <ul className="mt-2 space-y-0.5 text-xs text-muted">
+      {langs.map((x) => <li key={x.id}><span className="font-semibold text-ink/80">{x.site}:</span> {x.line}</li>)}
+    </ul>
+  ) : null;
 
   if (!data?.configured) {
     return links.length || extra ? (
       <div>
         {heading("Where to watch")}
         {kitsuButtons}
+        {languages}
       </div>
     ) : null;
   }
@@ -83,11 +92,13 @@ export default function WhereToWatch({ animeId, title, links, extra }: { animeId
           ))}
           <p className="text-[11px] text-muted">Availability in {names.of(country)} by JustWatch, via TMDB. Catalogues change; check the service before subscribing.</p>
           {extra && <div className="flex flex-wrap gap-2">{extra}</div>}
+          {languages}
         </div>
       ) : (
         <div className="mt-2">
           <p className="text-sm text-muted">{data.match ? `${title} isn't listed on a streaming service in ${names.of(country)} right now.` : `We couldn't find ${title} in streaming catalogues for ${names.of(country)}.`}{links.length ? " Official links below may be region-locked." : ""}</p>
           {kitsuButtons}
+          {languages}
         </div>
       )}
     </div>
