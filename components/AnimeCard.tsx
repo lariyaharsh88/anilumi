@@ -28,6 +28,8 @@ export default function AnimeCard({ a, rank, priority = false, className = "w-fu
       </TiltCard>
       <p className="pc-title">{a.title}</p>
       <p className="pc-meta">{meta}</p>
+      {/* Only lists that fetch streaming links (season charts, top lists) have them. */}
+      {a.streaming?.length > 0 && <p className="pc-meta text-ink/70">▶ {[...new Set(a.streaming.map((s) => s.site))].slice(0, 2).join(" · ")}</p>}
     </Link>
   );
 }

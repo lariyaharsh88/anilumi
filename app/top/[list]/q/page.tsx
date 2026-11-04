@@ -31,7 +31,7 @@ export default async function TopPage({ params, searchParams }: Props) {
   const def = LISTS[list];
   if (!def) notFound();
   const page = Math.min(50, Math.max(1, Number(pageStr) || 1));
-  const data = await listAnime({ ...def.opts, limit: LIMIT, offset: (page - 1) * LIMIT });
+  const data = await listAnime({ ...def.opts, limit: LIMIT, offset: (page - 1) * LIMIT, withStreaming: true });
 
   return (
     <div className="container-x pb-8">

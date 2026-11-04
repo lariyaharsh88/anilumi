@@ -454,7 +454,7 @@ export function shiftSeason(season: Season, year: number, delta: number): { seas
 
 export async function getSeason(year: number, season: Season, page = 1, limit = 20) {
   // Unrated too: most of a current or coming season has no age rating yet (Fall 2026: 86 of 126 titles).
-  return listAnime({ filter: { season, seasonYear: String(year) }, sort: "-userCount", limit, offset: (page - 1) * limit, revalidate: 3600, unrated: true });
+  return listAnime({ filter: { season, seasonYear: String(year) }, sort: "-userCount", limit, offset: (page - 1) * limit, revalidate: 3600, unrated: true, withStreaming: true });
 }
 
 /* ---------------- Helpers ---------------- */
