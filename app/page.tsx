@@ -21,6 +21,8 @@ import { excerpt } from "@/lib/excerpt";
 import GenreTile, { GENRE_HUES } from "@/components/GenreTile";
 import ToolBand, { type Tool } from "@/components/ToolBand";
 import BingeSearch from "@/components/BingeSearch";
+import AiringNext, { type NextEp } from "@/components/AiringNext";
+import { airing as airingSnapshot } from "@/lib/airing";
 import franchiseData from "@/data/franchises.json";
 
 export const revalidate = 1800;
@@ -55,7 +57,7 @@ export default async function Home() {
   // Next season's most anticipated shows (weekly AniList snapshot), linking to its preview page.
   const nextSeason = shiftSeason(season, year, 1);
   const nextPreview = (previewSnapshot().seasons[`${nextSeason.year}-${nextSeason.season}`] || []).flatMap((i) => (i.anime ? [i.anime] : [])).slice(0, 12);
-  const [trending, airing, seasonal, upcoming, topRated, movies, genres, news, quote, premieres, pick] = await Promise.all([
+  const [trending, airing, seasonal, upcoming, topRated, movies, genres, news, quote, premieres, pick, airingSnap] = await Promise.all([
     getTrending(10),
     listAnime({ filter: { status: "current" }, sort: "-userCount", limit: 12 }),
     getSeason(year, season, 1, 12),
@@ -67,7 +69,22 @@ export default async function Home() {
     getQuoteOfDay(),
     premieresOn(jst.m, jst.d, 12),
     animeOfTheDay(jst.y, jst.m, jst.d),
+    airingSnapshot(),
   ]);
+  // "Airing next": the next 36 hours of episodes (and the last 2, for "Out now"), most-followed shows first, shown
+  // in air-time order. Posters and titles from Kitsu, matching the rest of the site.
+  const now = Date.now();
+  const soon = airingSnap.shows
+    .flatMap((x) => (x.k && x.s ? x.n.filter(([, t]) => t * 1000 > now - 2 * 3600_000 && t * 1000 < now + 36 * 3600_000).map(([episode, t]) => ({ x, episode, t })) : []))
+    .sort((p, q) => q.x.p - p.x.p)
+    .slice(0, 14)
+    .sort((p, q) => p.t - q.t);
+  const soonAnime = soon.length ? await listAnime({ filter: { id: [...new Set(soon.map((v) => v.x.k!))].join(",") }, limit: 20, revalidate: 86400 }) : null;
+  const byId = new Map((soonAnime?.items || []).map((a) => [a.id, a]));
+  const nextEps: NextEp[] = soon.map(({ x, episode, t }) => {
+    const a = byId.get(x.k!);
+    return { href: a ? animePath(a) : `/anime/${x.s}`, title: a?.title || x.t, poster: a ? posterUrl(a, "tiny") : null, episode, at: new Date(t * 1000).toISOString() };
+  });
   const onDay = premieres.filter((p) => p.anime).slice(0, 4);
 
   const spots: Spot[] = trending.slice(0, 6).map((a, i) => ({
@@ -85,6 +102,7 @@ export default async function Home() {
 
   return (
     <div className="container-x py-6 sm:py-8">
+      <AiringNext items={nextEps} />
       <HeroSpotlight items={spots}>
         <p className="rise inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-accent-2 backdrop-blur">
           <span className="live-dot !bg-accent-2" aria-hidden /> Updated every hour
@@ -99,7 +117,7 @@ export default async function Home() {
           <Link href="/schedule" className="btn-primary px-5 py-3">This week&apos;s schedule</Link>
           <Link href="/tonight" className="btn-outline px-5 py-3">What to watch tonight</Link>
         </div>
-        <div className="rise mt-5 flex flex-wrap gap-2 text-xs" style={{ ["--d" as string]: "360ms" }}>
+        <div className="rise mt-5 flex flex-wrap gap-2 text-xs max-sm:hidden" style={{ ["--d" as string]: "360ms" }}>
           <Link href={`/season/${year}/${season}`} className="chip">{cap(season)} {year}</Link>
           <Link href="/top/rated" className="chip">Top 100</Link>
           <Link href="/watch-order" className="chip">Watch orders</Link>
@@ -182,7 +200,6 @@ export default async function Home() {
       )}
       {dbEnabled() && currentPoll(new Date().toISOString().slice(0, 10)) && <div className="mt-12"><PollCard poll={currentPoll(new Date().toISOString().slice(0, 10))!} /></div>}
       <AnimeRail title="Top rated of all time" href="/top/rated" items={topRated.items} rank />
-      <ToolBand eyebrow="Play and compare" title="Games and handy tools" tools={FUN_TOOLS} />
       {quote && (
         <figure className="reveal card relative mt-12 overflow-hidden p-6 sm:p-8" aria-label="Anime quote of the day">
           <span aria-hidden className="pointer-events-none absolute -left-2 -top-8 select-none text-[9rem] font-black leading-none text-white/5">“</span>
@@ -195,6 +212,7 @@ export default async function Home() {
       )}
       <AnimeRail title="Coming soon" href="/top/upcoming" items={upcoming.items} />
       <AnimeRail title="Best anime movies" href="/top/movies" items={movies.items} />
+      <ToolBand eyebrow="Play and compare" title="Games and handy tools" tools={FUN_TOOLS} />
     </div>
   );
 }
