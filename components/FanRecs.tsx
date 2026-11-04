@@ -3,11 +3,17 @@ import Link from "@/components/Link";
 import AnimeCard from "./AnimeCard";
 import RailScroller from "./fx/RailScroller";
 import type { FanRec } from "@/lib/anilist";
+import type { AlTag } from "@/lib/insights";
+import { alAnime } from "@/lib/alsnap";
+import { sharedThemes } from "@/lib/similar";
 
 const votes = (n: number) => (n >= 1000 ? `${(n / 1000).toFixed(n >= 10000 ? 0 : 1)}K` : String(n));
 
-/** "Fans who liked X also liked": AniList community recommendations with vote counts. */
-export default function FanRecs({ title, recs, heading }: { title: string; recs: FanRec[]; heading?: string }) {
+/**
+ * "Fans who liked X also liked": AniList community recommendations with vote counts, and what each shares with X
+ * (strong AniList tags in common, from the monthly snapshot) when both are in it.
+ */
+export default function FanRecs({ title, recs, heading, tags = [] }: { title: string; recs: FanRec[]; heading?: string; tags?: AlTag[] }) {
   if (!recs.length) return null;
   const label = heading ?? `Fans of ${title} also love`;
   return (
@@ -31,6 +37,10 @@ export default function FanRecs({ title, recs, heading }: { title: string; recs:
               <span aria-hidden>👍</span>
               <span><strong className="text-ink/90">{votes(r.votes)}</strong> fans recommend</span>
             </p>
+            {(() => {
+              const both = tags.length ? sharedThemes(tags, alAnime(r.anilistId)?.t ?? []) : [];
+              return both.length ? <p className="mt-0.5 line-clamp-2 text-xs text-muted"><span className="text-ink/70">Both:</span> {both.join(", ")}</p> : null;
+            })()}
           </div>
         ))}
       </RailScroller>

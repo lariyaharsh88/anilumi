@@ -56,6 +56,7 @@ import { combineScores, kitsuScore, aniListScore, getMalScore } from "@/lib/scor
 import SectionNav, { type NavSection } from "@/components/fx/SectionNav";
 import MobileFold from "@/components/fx/MobileFold";
 import Refreshed from "@/components/Refreshed";
+import { airing } from "@/lib/airing";
 import ArcList from "@/components/ArcList";
 import { arcsFor, arcSources, arcSummary, ARCS_CHECKED, ARCS_REVIEWED } from "@/lib/arcs";
 import ClampText from "@/components/fx/ClampText";
@@ -100,7 +101,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-function buildFaq(a: Anime, extra: FaqItem[] = []): FaqItem[] {
+function buildFaq(a: Anime, extra: FaqItem[] = [], ep: { planned: number | null; aired: number | null } = { planned: null, aired: null }): FaqItem[] {
   const items: FaqItem[] = [];
   const next = a.nextRelease ? fmtDate(a.nextRelease, { weekday: "long", month: "long", day: "numeric", year: "numeric" }) : null;
   if (a.status === "current") {
@@ -109,7 +110,7 @@ function buildFaq(a: Anime, extra: FaqItem[] = []): FaqItem[] {
   if (a.status === "upcoming") {
     items.push({ q: `When does ${a.title} release?`, a: a.startDate ? `${a.title} is scheduled to premiere on ${fmtDate(a.startDate, { month: "long", day: "numeric", year: "numeric" })}.` : `${a.title} is announced but does not have a confirmed release date yet.` });
   }
-  items.push({ q: `How many episodes does ${a.title} have?`, a: a.episodeCount ? `${a.title} has ${a.episodeCount} episode${a.episodeCount === 1 ? "" : "s"}${a.episodeLength ? `, each around ${a.episodeLength} minutes` : ""}.` : a.status === "current" ? `${a.title} is still airing and the final episode count has not been announced.` : `The episode count for ${a.title} has not been published yet.` });
+  items.push({ q: `How many episodes does ${a.title} have?`, a: a.episodeCount && !(a.status === "current" && ep.aired) ? `${a.title} has ${a.episodeCount} episode${a.episodeCount === 1 ? "" : "s"}${a.episodeLength ? `, each around ${a.episodeLength} minutes` : ""}.` : a.status === "current" && ep.planned ? `${a.title} is planned for ${ep.planned} episodes${ep.aired ? `; ${ep.aired} ${ep.aired === 1 ? "has" : "have"} aired, so ${Math.max(0, ep.planned - ep.aired)} ${ep.planned - ep.aired === 1 ? "is" : "are"} left` : ""}.` : a.status === "current" ? `${a.title} is still airing and the final episode count has not been announced.` : `The episode count for ${a.title} has not been published yet.` });
   if (a.streaming.length) {
     items.push({ q: `Where can I watch ${a.title}?`, a: `${a.title} is available to stream on ${a.streaming.map((s) => s.site).join(", ")}. Availability varies by region.` });
   }
@@ -179,6 +180,9 @@ export default async function AnimePage({ params }: Props) {
   const notice = a.status === "current" ? airingNotice(a.nextRelease, latestInfo.nextAt) : null;
   if (latestInfo.nextAt) a.nextRelease = latestInfo.nextAt; // AniList pair: number and time stay consistent
   const lastAired = latestInfo.lastAired;
+  // An airing season's planned length: Kitsu's count, else AniList's (airing snapshot). Aired only when reliable.
+  const planned = a.status === "current" ? a.episodeCount || (await airing()).byKitsu.get(a.id)?.e || null : null;
+  const airedCount = a.status === "current" && latestInfo.reliable && lastAired > 0 ? lastAired : null;
   // Airing shows list their newest aired episodes first. Kitsu's total also counts placeholder records for
   // episodes that haven't aired (One Piece: 1,410 records, 1,180 aired), so the heading uses the aired count.
   // Only with a reliable count: when AniList is rate-limited the fallback is Kitsu's air dates, which stop at
@@ -233,7 +237,7 @@ export default async function AnimePage({ params }: Props) {
   const dub = dubFor(a);
   const dubQ = dubFaq(dub, a.title);
   if (dubQ) faqExtra.push(dubQ);
-  const faq = buildFaq(a, faqExtra);
+  const faq = buildFaq(a, faqExtra, { planned, aired: airedCount });
   const year = a.startDate?.slice(0, 4);
   // When this render read Kitsu/AniList (pages re-render daily). Shown on every page; given to search engines as
   // dateModified only for airing and upcoming shows, whose details actually change from day to day.
@@ -309,9 +313,11 @@ export default async function AnimePage({ params }: Props) {
   const facts2: { k: string; v: string; sub?: string; icon: IconName }[] = [
     ...(a.ratingRank ? [{ v: "Score rank", k: `#${a.ratingRank.toLocaleString()}`, sub: "of all anime", icon: "top" as const }] : []),
     ...(a.popularityRank ? [{ v: "Popularity", k: `#${a.popularityRank.toLocaleString()}`, sub: "most followed", icon: "flame" as const }] : []),
-    ...(a.episodeCount
-      ? [{ v: a.episodeCount === 1 ? "Episode" : "Episodes", k: String(a.episodeCount), sub: a.episodeLength ? `${a.episodeLength} min each` : undefined, icon: "play" as const }]
-      : a.status === "current" ? [lastAired && latestInfo.reliable ? { v: "Episodes", k: String(lastAired), sub: "aired so far", icon: "play" as const } : { v: "Episodes", k: "Ongoing", sub: "still airing", icon: "play" as const }] : []),
+    ...(a.status === "current" && planned && airedCount
+      ? [{ v: "Episodes", k: `${airedCount} / ${planned}`, sub: planned > airedCount ? `${planned - airedCount} left` : "final one aired", icon: "play" as const }]
+      : a.episodeCount
+      ? [{ v: a.episodeCount === 1 ? "Episode" : "Episodes", k: String(a.episodeCount), sub: a.status === "current" ? "planned" : a.episodeLength ? `${a.episodeLength} min each` : undefined, icon: "play" as const }]
+      : a.status === "current" ? [airedCount ? { v: "Episodes", k: String(airedCount), sub: "aired so far", icon: "play" as const } : { v: "Episodes", k: "Ongoing", sub: "still airing", icon: "play" as const }] : []),
     ...(runtime > 0 ? [{ v: "Binge time", k: fmtMinutes(runtime), sub: "start to finish", icon: "time" as const }] : []),
     ...(a.userCount ? [{ v: "Members", k: compactN(a.userCount), sub: "tracking it", icon: "characters" as const }] : []),
   ];
@@ -409,7 +415,7 @@ export default async function AnimePage({ params }: Props) {
 
               {a.status === "current" && a.nextRelease && (
                 <Link href={nextN ? episodePath(a, nextN) : `${animePath(a)}/episodes`} className="mt-5 flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-accent/40 max-md:col-span-2 bg-accent/10 p-3 text-left text-sm backdrop-blur transition hover:border-accent">
-                  <span><strong className="text-accent-2">{nextN ? `Episode ${nextN}:` : "Next episode:"}</strong> {fmtDate(a.nextRelease, { weekday: "long", month: "long", day: "numeric", hour: "numeric", minute: "2-digit", timeZone: "Asia/Tokyo" })} JST<LocalTime iso={a.nextRelease} /></span>
+                  <span><strong className="text-accent-2">{nextN ? `Episode ${nextN}${planned && nextN <= planned ? ` of ${planned}` : ""}:` : "Next episode:"}</strong> {fmtDate(a.nextRelease, { weekday: "long", month: "long", day: "numeric", hour: "numeric", minute: "2-digit", timeZone: "Asia/Tokyo" })} JST<LocalTime iso={a.nextRelease} /></span>
                   <Countdown iso={a.nextRelease} label="in" />
                 </Link>
               )}
@@ -430,7 +436,7 @@ export default async function AnimePage({ params }: Props) {
             <WhereToWatch
               animeId={a.id}
               title={a.title}
-              links={a.streaming.map((x) => ({ id: x.id, url: x.url, site: x.site, dubs: x.dubs }))}
+              links={a.streaming.map((x) => ({ id: x.id, url: x.url, site: x.site, dubs: x.dubs, subs: x.subs }))}
               extra={<a href={amazonSearch(`${a.title} manga`)} target="_blank" rel={affiliateRel} className="btn-outline">📚 Manga on Amazon</a>}
             />
             {a.streaming.length > 0 && <p className="mt-3 text-[11px] text-muted">Official, legal streams. Catalogues differ by country. · <Refreshed iso={refreshed} /></p>}
@@ -526,7 +532,7 @@ export default async function AnimePage({ params }: Props) {
             <section id="episodes" data-section aria-labelledby="h-episodes">
               <div className="mb-3 flex items-end justify-between gap-3">
                 <div>
-                  <h2 id="h-episodes" className="h-section">{latestEps.length ? "Latest episodes" : "Episodes"}{epCount ? ` (${epCount.toLocaleString()}${airingList ? " aired" : ""})` : ""}</h2>
+                  <h2 id="h-episodes" className="h-section">{latestEps.length ? "Latest episodes" : "Episodes"}{epCount ? ` (${epCount.toLocaleString()}${airingList ? (planned ? ` of ${planned} aired` : " aired") : ""})` : ""}</h2>
                   {latestEps.length > 0 && <p className="mt-1 text-xs text-muted">Newest first</p>}
                 </div>
                 <Link href={`${animePath(a)}/episodes`} className="shrink-0 text-sm font-medium text-violet hover:underline">All episodes →</Link>
@@ -705,7 +711,7 @@ export default async function AnimePage({ params }: Props) {
             <div className="card max-w-3xl px-4 sm:px-5"><NewsList items={news} compact /></div>
           </section>
         )}
-        <FanRecs title={a.title} recs={fanRecs} />
+        <FanRecs title={a.title} recs={fanRecs} tags={insight?.tags} />
         {mainGenre && <AnimeRail title={`More ${mainGenre.title} anime`} href={`/genre/${mainGenre.slug}`} items={relatedItems} />}
       </div>
 

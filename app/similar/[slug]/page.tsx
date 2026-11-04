@@ -8,6 +8,7 @@ import Faq from "@/components/Faq";
 import AdSlot from "@/components/AdSlot";
 import FanRecs from "@/components/FanRecs";
 import { getFanRecommendations } from "@/lib/anilist";
+import { getAniListInsight } from "@/lib/insights";
 import { robotsFor, similarIndexed } from "@/lib/indexing";
 
 export const revalidate = 604800;
@@ -52,7 +53,7 @@ export default async function SimilarPage({ params }: Props) {
   const { slug } = await params;
   const a = await getAnimeBySlug(decodeURIComponent(slug));
   if (!a) notFound();
-  const [items, recs] = await Promise.all([similarTo(a), getFanRecommendations(a.id, 12)]);
+  const [items, recs, insight] = await Promise.all([similarTo(a), getFanRecommendations(a.id, 12), getAniListInsight(a.id)]);
   return (
     <div className="container-x pb-8">
       <PageHero
@@ -66,7 +67,7 @@ export default async function SimilarPage({ params }: Props) {
       >
         <div className="flex flex-wrap gap-2">{publicGenres(a.categories).slice(0, 6).map((c) => <Link key={c.id} href={`/genre/${c.slug}`} className="chip">{c.title}</Link>)}</div>
       </PageHero>
-      <FanRecs title={a.title} recs={recs} heading={`What ${a.title} fans recommend`} />
+      <FanRecs title={a.title} recs={recs} heading={`What ${a.title} fans recommend`} tags={insight?.tags} />
       <AdSlot slot="similar-top" />
       <h2 className="h-section mb-3 mt-12">Same genres and themes</h2>
       <div><AnimeGrid items={items} startRank={1} ld={`Anime like ${a.title}`} emptyText="Not enough genre data to find matches yet." /></div>
