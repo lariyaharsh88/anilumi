@@ -3,7 +3,9 @@ import { POLLS } from "@/data/polls";
 import PageHero from "@/components/PageHero";
 import PollCard from "@/components/PollCard";
 
-export const metadata: Metadata = { title: "Anime Polls: What Fans Think", description: "AniLumi's weekly anime polls and their results.", alternates: { canonical: "/polls" } };
+export const metadata: Metadata = { title: "Anime Polls: What Fans Think", description: "AniLumi's weekly anime polls and their results.", alternates: { canonical: "/polls" },
+  // Results show only after voting, so there is little for search to index: kept for visitors, out of search.
+  robots: { index: false, follow: true } };
 
 export default function Polls() {
   const today = new Date().toISOString().slice(0, 10);
