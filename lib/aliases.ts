@@ -71,3 +71,17 @@ export function aliasLookup(q: string, limit = 5, idx: Index = index()): AliasHi
   }
   return scored.sort((a, b) => a.d - b.d || a.e.r - b.e.r).slice(0, limit).map(({ e }) => hit(e, "fuzzy"));
 }
+
+/**
+ * Re-rank Kitsu text-search results (sorted by popularity) by title: titles containing every query word first,
+ * then the rest. With alias hits already on top, results sharing no word with the query are dropped ("one peice"
+ * found One Piece by typo; Kitsu adds unrelated popular shows). Words under 3 letters are ignored. Pure.
+ */
+export function rankByTitle<T extends { title: string; titleEn?: string | null }>(q: string, items: T[], haveAliases: boolean): T[] {
+  const words = q.toLowerCase().normalize("NFKD").split(/[^a-z0-9]+/).filter((w) => w.length >= 3);
+  if (!words.length) return items;
+  const text = (a: T) => norm(`${a.title} ${a.titleEn || ""}`);
+  const all = items.filter((a) => words.every((w) => text(a).includes(w)));
+  const rest = items.filter((a) => !all.includes(a) && (!haveAliases || words.some((w) => text(a).includes(w))));
+  return [...all, ...rest];
+}

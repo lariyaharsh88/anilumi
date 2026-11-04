@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { norm, editDistance, buildIndex, aliasLookup, type AliasEntry } from "../lib/aliases";
+import { norm, editDistance, buildIndex, aliasLookup, rankByTitle, type AliasEntry } from "../lib/aliases";
 import { parseRss, buildMatchers, animeInHeadline, newsAbout, mergeNews, teaser, type NewsItem } from "../lib/news";
 
 const E = (i: string, t: string, r: number, n: string[]): AliasEntry => ({ i, s: t.toLowerCase().replace(/\W+/g, "-"), t, r, n: n.map(norm) });
@@ -70,4 +70,12 @@ test("teaser keeps one short sentence; mergeNews sorts and drops duplicate headl
   const merged = mergeNews([[item("Frieren S3 Teaser", "2026-10-28T10:00:00Z", "ANN")], [item("Frieren S3 teaser!", "2026-10-28T11:00:00Z", "MAL"), item("Other", "2026-10-28T12:00:00Z", "MAL")]]);
   assert.deepEqual(merged.map((m) => [m.title, m.source]), [["Other", "MAL"], ["Frieren S3 teaser!", "MAL"]]);
   assert.equal(parseRss("<item><title>&amp;#039;Iruma-kun&amp;#039; Staff</title><link>https://m/1</link></item>", "MyAnimeList")[0].title, "'Iruma-kun' Staff");
+});
+
+test("rankByTitle: titles with every query word first; with alias hits, unrelated titles drop out", () => {
+  const items = [{ title: "Nichijou" }, { title: "SAKAMOTO DAYS" }, { title: "Sakamoto desu ga?" }];
+  assert.deepEqual(rankByTitle("sakamoto days", items, false).map((a) => a.title), ["SAKAMOTO DAYS", "Nichijou", "Sakamoto desu ga?"]);
+  const typo = [{ title: "Boku no Hero Academia" }, { title: "One Punch Man" }];
+  assert.deepEqual(rankByTitle("one peice", typo, true).map((a) => a.title), ["One Punch Man"]);
+  assert.deepEqual(rankByTitle("one peice", typo, false).map((a) => a.title), ["Boku no Hero Academia", "One Punch Man"]);
 });
