@@ -18,6 +18,8 @@ type Props = {
   done?: React.ReactNode;
   compact?: boolean;
   className?: string;
+  /** Runs before sending; its fields join the request, or its error is shown (list alerts turn sync on here). */
+  prepare?: () => Promise<Record<string, unknown> | { error: string }>;
 };
 
 const utm = () => {
@@ -25,7 +27,7 @@ const utm = () => {
 };
 
 /** Email signup used by every lead CTA. Only rendered when the database is configured (the server decides). */
-export default function LeadForm({ kind, source, title, blurb, button = "Notify me", animeId, animeTitle, done, compact = false, className = "" }: Props) {
+export default function LeadForm({ kind, source, title, blurb, button = "Notify me", animeId, animeTitle, done, compact = false, className = "", prepare }: Props) {
   const [email, setEmail] = useState("");
   const [consent, setConsent] = useState(false);
   const [state, setState] = useState<"idle" | "busy" | "ok">("idle");
@@ -53,7 +55,9 @@ export default function LeadForm({ kind, source, title, blurb, button = "Notify 
         if (!consent) return setErr("Please tick the box to agree to the emails.");
         setState("busy"); setErr("");
         const hp = (e.currentTarget.elements.namedItem("website") as HTMLInputElement | null)?.value || "";
-        const res = await send<{ ok: boolean; confirm?: boolean }>("/api/lead", { email, kind, source, animeId, animeTitle, consent, website: hp, page: location.pathname, utm: utm() });
+        const extra = prepare ? await prepare() : {};
+        if ("error" in extra && typeof extra.error === "string") { setState("idle"); return setErr(extra.error); }
+        const res = await send<{ ok: boolean; confirm?: boolean }>("/api/lead", { ...extra, email, kind, source, animeId, animeTitle, consent, website: hp, page: location.pathname, utm: utm() });
         if (res.error) { setState("idle"); return setErr(res.error); }
         setConfirm(Boolean(res.confirm));
         setState("ok");

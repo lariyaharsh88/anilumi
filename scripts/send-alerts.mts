@@ -16,6 +16,7 @@ import { characterPathFor } from "../lib/charsnap";
 import { emailEnabled, sendMails } from "../lib/email";
 import { confirmMail, digestMail, episodeMail, type LeadDoc } from "../lib/emails";
 import { getNews } from "../lib/news";
+import { listLeadsByShow, oncePerEmail } from "../lib/listalerts";
 import { kitsuPosters } from "../lib/posters";
 import { VAPID_PUBLIC_KEY } from "../lib/push";
 import { buildDigest, dueBirthdays, dueEpisodes, type Alert } from "../lib/pushplan";
@@ -78,9 +79,15 @@ if (mode === "episodes") {
   const alerts = dueEpisodes(indexAiring(snap).shows);
   await push(d, alerts);
   const posters = emailEnabled() && alerts.length ? await kitsuPosters(alerts.map((a) => a.topic.slice(2))) : new Map<string, string>();
+  // List alerts: confirmed "list" leads, by the shows on their synced list (app/api/sync) right now.
+  const listLeads = alerts.length ? await leads.find({ kind: "list", status: "confirmed", listId: { $exists: true } }).toArray() : [];
+  const lists = d.collection<{ _id: string; items: { id: string }[] }>("lists");
+  const docs = listLeads.length ? await lists.find({ _id: { $in: listLeads.map((l) => l.listId!) } }, { projection: { "items.id": 1 } }).toArray() : [];
+  const byShow = listLeadsByShow(listLeads, new Map(docs.map((x) => [x._id, x.items])));
   for (const a of alerts) {
     const animeId = a.topic.slice(2);
-    const to = await leads.find({ kind: "alert", animeId, status: "confirmed" }).toArray();
+    const own = await leads.find({ kind: "alert", animeId, status: "confirmed" }).toArray();
+    const to = oncePerEmail(byShow.get(animeId) || [], own); // the show's own alert lead wins (its unsubscribe link)
     await mail(`mail:${a.key}`, to.map((l) => episodeMail(l, { ...a, poster: posters.get(animeId) })));
   }
   console.log(`episodes: ${alerts.length} due`);

@@ -16,7 +16,8 @@ export const isReaction = (k: unknown): k is ReactionKey => REACTIONS.some((r) =
 /** Google review snippets only once a title has this many genuine AniLumi ratings. */
 export const RATING_SNIPPET_MIN = 10;
 
-export const LEAD_KINDS = ["alert", "digest", "cheatsheet", "guide"] as const;
+/** list: new episodes of every airing show on the visitor's synced My list (lead.listId, see lib/listid.ts). */
+export const LEAD_KINDS = ["alert", "digest", "cheatsheet", "guide", "list"] as const;
 export type LeadKind = (typeof LEAD_KINDS)[number];
 
 export const isScore = (n: unknown): n is number => Number.isInteger(n) && (n as number) >= 1 && (n as number) <= 10;

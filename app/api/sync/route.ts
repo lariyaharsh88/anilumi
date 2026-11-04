@@ -1,5 +1,6 @@
-import { createHash, randomBytes } from "node:crypto";
+import { randomBytes } from "node:crypto";
 import { guard, reply } from "@/lib/guard";
+import { listIdOf as idOf } from "@/lib/listid";
 import { cleanDoc, formatCode, mergeLists, normalizeCode, type SyncDoc } from "@/lib/syncmerge";
 
 /**
@@ -7,7 +8,6 @@ import { cleanDoc, formatCode, mergeLists, normalizeCode, type SyncDoc } from "@
  * can't be used to open anyone's list. Actions: create, pull, push (server-side merge), delete.
  */
 type Stored = SyncDoc & { _id: string; rev: number; createdAt: Date; updatedAt: Date };
-const idOf = (code: string) => createHash("sha256").update(`anilumi-sync:${code}`).digest("hex");
 const MAX = 600_000; // ~3,000 shows
 
 export async function POST(req: Request) {

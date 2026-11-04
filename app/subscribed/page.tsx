@@ -8,8 +8,8 @@ type Props = { searchParams: Promise<{ ok?: string; k?: string; a?: string; p?: 
 /** Where the confirmation link lands (app/api/lead/confirm). */
 export default async function Subscribed({ searchParams }: Props) {
   const { ok, k, a, p, retry } = await searchParams;
-  const what = k === "alert" ? (a ? `${a} episode alerts` : "episode alerts") : k === "digest" ? "the weekly digest" : k === "cheatsheet" ? "season updates" : k === "guide" ? (a ? `${a} guide updates` : "guide updates") : "AniLumi emails";
-  const when = k === "alert" ? "You'll get one email when each new episode airs." : k === "digest" ? "The first one arrives on Friday." : "We'll email you only when there's something new.";
+  const what = k === "alert" ? (a ? `${a} episode alerts` : "episode alerts") : k === "digest" ? "the weekly digest" : k === "cheatsheet" ? "season updates" : k === "guide" ? (a ? `${a} guide updates` : "guide updates") : k === "list" ? "episode alerts for the shows on your list" : "AniLumi emails";
+  const when = k === "alert" ? "You'll get one email when each new episode airs." : k === "list" ? "You'll get one email as each new episode of a saved show airs. Shows you add on any synced device are included." : k === "digest" ? "The first one arrives on Friday." : "We'll email you only when there's something new.";
   const sheet = p && /^\/season\/\d{4}\/[a-z]+\/cheatsheet$/.test(p) ? p : null;
   return (
     <div className="container-x py-16">

@@ -15,6 +15,7 @@ import LocalTime from "@/components/LocalTime";
 import { airing, upcomingOf } from "@/lib/airing";
 import AiringNoticeBanner from "@/components/AiringNoticeBanner";
 import SpoilerGate from "@/components/SpoilerGate";
+import EpisodeWatched from "@/components/EpisodeWatched";
 import WatchedUpTo from "@/components/WatchedUpTo";
 import { fillerFor, fillerSource } from "@/lib/filler";
 import EpisodeReactions from "@/components/EpisodeReactions";
@@ -146,6 +147,7 @@ export default async function EpisodePage({ params }: Props) {
               </div>
             );
           })()}
+          {!upcoming && <EpisodeWatched className="mt-4" ep={n} item={{ id: a.id, slug: a.slug, title: a.title, poster: posterUrl(a, "small"), status: a.status, nextRelease: a.nextRelease }} />}
           {!upcoming && skips && <SkipGuide s={skips} episode={n} />}
           {dbEnabled() && !upcoming && <EpisodeReactions animeId={a.id} ep={n} />}
           {dbEnabled() && upcoming && a.status !== "finished" && (<>

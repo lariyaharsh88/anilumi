@@ -8,8 +8,16 @@ import { track } from "./track";
 const KEY = "anilumi:sync:v1";
 type Saved = { code: string; last: number; hash: string };
 
+/** Fired when sync is turned on or off here, so every useSync on the page (sync panel, list alerts) agrees. */
+const SYNC_EVENT = "anilumi:sync";
 const load = (): Saved | null => { try { return JSON.parse(localStorage.getItem(KEY) || "null"); } catch { return null; } };
-const save = (s: Saved | null) => { try { if (s) localStorage.setItem(KEY, JSON.stringify(s)); else localStorage.removeItem(KEY); } catch { /* storage blocked */ } };
+const save = (s: Saved | null) => {
+  const was = load()?.code;
+  try { if (s) localStorage.setItem(KEY, JSON.stringify(s)); else localStorage.removeItem(KEY); } catch { /* storage blocked */ }
+  if (was !== s?.code) window.dispatchEvent(new Event(SYNC_EVENT));
+};
+/** Whether this browser syncs its list (for the "use it on your phone too" suggestion). */
+export const syncOn = () => Boolean(load());
 const local = (): SyncDoc => ({ items: readWatchlist(), removed: readRemoved() });
 
 /** Write the merged copy back, keeping details only this device has fetched (runtime, genres…). */
@@ -44,12 +52,15 @@ export function useSync(enabled: boolean) {
     save(next); setSaved(next); setError("");
   }, []);
 
-  // Load the saved code and sync once when the page opens.
+  // Load the saved code and sync once when the page opens; follow it when another useSync turns sync on or off.
   useEffect(() => {
     if (!enabled) return;
     const s = load();
     setSaved(s);
     if (s) run(s);
+    const other = () => setSaved(load());
+    window.addEventListener(SYNC_EVENT, other);
+    return () => window.removeEventListener(SYNC_EVENT, other);
   }, [enabled, run]);
 
   // While a code is set (including one just created or linked), sync on list changes and on returning to the tab.
@@ -69,14 +80,16 @@ export function useSync(enabled: boolean) {
     return () => { clearTimeout(t); window.removeEventListener(WATCHLIST_EVENT, changed); document.removeEventListener("visibilitychange", visible); };
   }, [enabled, active, run]);
 
-  const start = useCallback(async () => {
+  /** Turn sync on; resolves to the new code, or null on failure (the error is in `error`). */
+  const start = useCallback(async (): Promise<string | null> => {
     setBusy(true); setError("");
     const res = await send<Res>("/api/sync", { action: "create", ...local() });
     setBusy(false);
-    if (res.error) return setError(res.error);
+    if (res.error) { setError(res.error); return null; }
     const next = { code: res.code, last: Date.now(), hash: apply(res) };
     save(next); setSaved(next);
     track("sync_start", {});
+    return res.code;
   }, []);
 
   const link = useCallback(async (code: string) => {

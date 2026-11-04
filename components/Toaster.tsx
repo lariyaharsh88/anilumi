@@ -3,7 +3,8 @@ import { useEffect, useState } from "react";
 import Link from "@/components/Link";
 import { AnimatePresence, m } from "motion/react";
 
-export type Toast = { id: number; text: string; href?: string; cta?: string };
+/** ms: how long it stays up (default 3.2 s; longer for a suggestion the visitor has to read). */
+export type Toast = { id: number; text: string; href?: string; cta?: string; ms?: number };
 
 /** Fire from anywhere: window.dispatchEvent(new CustomEvent("anilumi:toast", { detail: { text, href, cta } })) */
 export function toast(t: Omit<Toast, "id">) {
@@ -16,7 +17,7 @@ export default function Toaster() {
     const on = (e: Event) => {
       const t = { ...(e as CustomEvent<Omit<Toast, "id">>).detail, id: Date.now() + Math.random() };
       setItems((xs) => [...xs.slice(-2), t]);
-      setTimeout(() => setItems((xs) => xs.filter((x) => x.id !== t.id)), 3200);
+      setTimeout(() => setItems((xs) => xs.filter((x) => x.id !== t.id)), t.ms || 3200);
     };
     window.addEventListener("anilumi:toast", on);
     return () => window.removeEventListener("anilumi:toast", on);
