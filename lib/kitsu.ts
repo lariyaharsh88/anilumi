@@ -247,6 +247,8 @@ const LIST_FIELDS =
 export type ListOpts = {
   /** Also return each title's genres (one request, via JSON:API include). */
   withCategories?: boolean;
+  /** Also return each title's streaming links (same request). */
+  withStreaming?: boolean;
   sort?: string;
   limit?: number;
   offset?: number;
@@ -256,19 +258,41 @@ export type ListOpts = {
   unrated?: boolean;
 };
 
+/**
+ * Kitsu's filtered /anime listing (any filter[...], including the age-rating filter on almost every list) reads
+ * page[offset] one page back, as seen in Nov 2026: offsets under 2×limit return the first page and larger ones
+ * start a page early, so page 2 repeated page 1. Probed with two tiny requests (cached a day), so the workaround
+ * switches itself off once Kitsu fixes it. Unfiltered listings and nested routes page correctly.
+ */
+let offsetBug: Promise<boolean> | null = null;
+function kitsuOffsetBug(): Promise<boolean> {
+  offsetBug ??= Promise.all([0, 2].map((o) => kitsu("/anime", { "page[limit]": 2, "page[offset]": o, sort: "-userCount", "fields[anime]": "slug", "filter[ageRating]": SAFE_RATINGS }, 86400)))
+    .then(([a, b]) => Boolean(a && b && Array.isArray(a.data) && Array.isArray(b.data) && a.data[0] && b.data[0] && a.data[0].id === b.data[0].id))
+    .catch(() => false);
+  return offsetBug;
+}
+
+/** The page[offset] to send for a wanted offset: a page further on filtered listings while Kitsu's bug lasts. Pure. */
+export const kitsuOffset = (offset: number, limit: number, filtered: boolean, bug: boolean) => (offset > 0 && filtered && bug ? offset + limit : offset);
+
 export async function listAnime(opts: ListOpts = {}): Promise<Paged<Anime>> {
-  const { sort = "-userCount", limit = 20, offset = 0, filter = {}, revalidate = 3600, withCategories = false, unrated = false } = opts;
+  const { sort = "-userCount", limit = 20, offset = 0, filter = {}, revalidate = 3600, withCategories = false, withStreaming = false, unrated = false } = opts;
+  const include = [withCategories && "categories", withStreaming && "streamingLinks.streamer"].filter(Boolean).join(",");
   const params: Record<string, string | number> = {
     "page[limit]": Math.min(limit, 20),
     "page[offset]": offset,
     sort,
-    "fields[anime]": withCategories ? `${LIST_FIELDS},categories` : LIST_FIELDS,
+    "fields[anime]": `${LIST_FIELDS}${withCategories ? ",categories" : ""}${withStreaming ? ",streamingLinks" : ""}`,
     // Kitsu silently drops filter[id] when filter[ageRating] is also present (it switches to its
     // search index), returning the whole catalogue. For id lookups, filter adult titles after the fact.
     ...(filter.id || unrated ? {} : { "filter[ageRating]": SAFE_RATINGS }),
-    ...(withCategories ? { include: "categories", "fields[categories]": "slug,title" } : {}),
+    ...(include ? { include } : {}),
+    ...(withCategories ? { "fields[categories]": "slug,title" } : {}),
+    ...(withStreaming ? { "fields[streamingLinks]": "url,subs,dubs,streamer", "fields[streamers]": "siteName" } : {}),
   };
   for (const [k, v] of Object.entries(filter)) params[`filter[${k}]`] = v;
+  const filtered = Object.keys(params).some((k) => k.startsWith("filter["));
+  if (offset > 0 && filtered) params["page[offset]"] = kitsuOffset(offset, params["page[limit]"] as number, true, await kitsuOffsetBug());
   const doc = await kitsu("/anime", params, revalidate);
   if (!doc || !Array.isArray(doc.data)) return { items: [], total: 0, limit, offset };
   return {
