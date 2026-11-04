@@ -50,7 +50,8 @@ import ScoreCard from "@/components/ScoreCard";
 import FanRecs from "@/components/FanRecs";
 import NewsList from "@/components/NewsList";
 import { getNews, newsAbout } from "@/lib/news";
-import { getFanRecommendations, getKeyStaff, personPath } from "@/lib/anilist";
+import { getFanRecommendations, getKeyStaff, personPath, getAniListSequel } from "@/lib/anilist";
+import { sequelVerdict, type SequelLike, type SequelKind } from "@/lib/sequel";
 import { combineScores, kitsuScore, aniListScore, getMalScore } from "@/lib/scores";
 import SectionNav, { type NavSection } from "@/components/fx/SectionNav";
 import MobileFold from "@/components/fx/MobileFold";
@@ -65,6 +66,16 @@ import RailScroller from "@/components/fx/RailScroller";
 import { excerpt } from "@/lib/excerpt";
 
 export const revalidate = 86400;
+
+/** The "Season 2?" answer in a few words, for At a glance. */
+const SEQUEL_SHORT: Record<SequelKind, (n: SequelLike | null) => string> = {
+  out: (n) => `Yes, out since ${n?.startDate?.slice(0, 4) || "release"}`,
+  airing: () => "Yes, airing now",
+  dated: (n) => `Confirmed for ${n?.startDate ? fmtDate(n.startDate, { month: "short", day: "numeric", year: "numeric" }) : "a set date"}`,
+  announced: (n) => `Confirmed${n?.expected ? ` for ${n.expected}` : ""}, date TBA`,
+  "still-airing": () => "Still airing",
+  none: () => "Not announced yet",
+};
 export const dynamicParams = true;
 
 // Rendered on first request, then cached (ISR). Pre-building trending titles at deploy time made every
@@ -143,6 +154,23 @@ export default async function AnimePage({ params }: Props) {
         new Promise<WatchOrder | null>((r) => setTimeout(() => r(null), 1500)),
       ])) ?? snapshotOrder(a.id)
     : null;
+  // "Season 2?" on finished series: the next main entry in the order, else Kitsu's sequel link, else AniList
+  // (same rule as the next-season page, which has the full answer).
+  let sequel: (SequelLike & { href?: string }) | null = null;
+  const askSequel = a.status === "finished" && (a.subtype === "TV" || a.subtype === "ONA");
+  if (askSequel) {
+    const chain = order?.entries.filter((e) => e.kind === "main").map((e) => e.anime) ?? [];
+    const idx = chain.findIndex((x) => x.id === a.id);
+    const pick = (idx >= 0 ? chain[idx + 1] : undefined) ?? relations.find((r) => r.role === "sequel")?.anime;
+    // Snapshot orders (used when the live walk is slow) carry no status: take the full record from the relations,
+    // else judge by the premiere date.
+    const kNext = pick && !pick.status
+      ? relations.find((r) => r.anime.id === pick.id)?.anime ?? { ...pick, status: pick.startDate && !isFuture(pick.startDate) ? "finished" : "upcoming" }
+      : pick;
+    const al = kNext ? null : await getAniListSequel(a.id).catch(() => null);
+    sequel = kNext ? { ...kNext, href: animePath(kNext) } : al ? { title: al.title, status: al.status, startDate: al.startDate, endDate: null, expected: al.expected } : null;
+  }
+  const verdict = askSequel ? sequelVerdict(a, sequel) : null;
   const runtime = runtimeMinutes(a);
   const dist = a.ratingDist || null;
   const totalRatings = dist ? dist.reduce((n, v) => n + v, 0) : 0;
@@ -189,7 +217,7 @@ export default async function AnimePage({ params }: Props) {
     { q: "Cast & voice actors", a: "Who voices who", href: `${base}/cast` },
     { q: `Anime like ${a.title}`, a: "20 shows to watch next", href: `/similar/${a.slug}` },
     ...(charRows ? [{ q: "Characters' ages & heights", a: charTall ? `Tallest: ${charTall.c.n}, ${charTall.cm} cm` : `${charRows.length} characters compared`, href: `${base}/characters` }] : []),
-    ...(a.subtype !== "movie" && a.status === "finished" ? [{ q: "Season 2?", a: "Status and release date", href: `${base}/next-season` }] : []),
+    ...(a.subtype !== "movie" && a.status === "finished" ? [{ q: "Season 2?", a: verdict ? SEQUEL_SHORT[verdict.kind](sequel) : "Status and release date", href: `${base}/next-season` }] : []),
   ];
   const faqExtra: FaqItem[] = [];
   const note = noteFor(a.slug);
@@ -439,6 +467,19 @@ export default async function AnimePage({ params }: Props) {
         <div className="min-w-0 space-y-14">
           {/* ───────── Overview ───────── */}
           <section id="overview" data-section aria-labelledby="h-overview">
+            {verdict && (
+              <div className={`card mb-6 flex flex-wrap items-center justify-between gap-3 p-4 ${verdict.kind === "none" ? "" : "border-emerald-500/40 bg-emerald-500/[.06]"}`}>
+                <div className="min-w-0">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-muted">Is there a season 2?</p>
+                  <p className="mt-1 font-semibold text-ink">{verdict.headline}</p>
+                  <p className="mt-0.5 text-sm text-muted">{verdict.detail}</p>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {sequel?.href && <Link href={sequel.href} className="btn-outline px-3 py-2 text-sm">{sequel.title} →</Link>}
+                  <Link href={`${animePath(a)}/next-season`} className="text-sm font-medium text-violet hover:text-violet-2">Full answer →</Link>
+                </div>
+              </div>
+            )}
             {note && <EditorNote title={a.title} note={note} />}
             <h2 id="h-overview" className="h-section mb-3">Synopsis</h2>
             {a.synopsis ? (
