@@ -277,3 +277,12 @@ html, body { overflow-x: clip; }
 :root[data-theme="light"] .genre-ico { color: hsl(var(--h) 65% 38%); background: hsl(var(--h) 80% 55% / .14); }
 .genre-mark { color: hsl(var(--h) 85% 70% / .14); }
 :root[data-theme="light"] .genre-mark { color: hsl(var(--h) 60% 40% / .12); }
+
+/*
+ * A grid with no base grid-cols-* (only sm:/lg: ones) gets one implicit `auto` column on phones, which grows to its
+ * widest unbreakable child: a long title pushed list rows past the screen edge (anime franchise list, watch-order
+ * A–Z). In the base layer, so every grid-cols-* utility (prefixed or not) still wins.
+ */
+@layer base {
+  .grid:not([class^="grid-cols-"]):not([class*=" grid-cols-"]) { grid-template-columns: minmax(0, 1fr); }
+}

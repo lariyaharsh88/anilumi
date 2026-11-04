@@ -41,7 +41,8 @@ export default function CorrectionForm({ kind = "correction", className = "" }: 
         setState("busy"); setErr("");
         const hp = (e.currentTarget.elements.namedItem("website") as HTMLInputElement | null)?.value || "";
         const res = await send("/api/correction", { message, email, kind, page, website: hp });
-        if (res.error) { setState("idle"); return setErr(res.error); }
+        // Server-side failures (no database, outage, blocked origin) get one plain message; validation errors pass through.
+        if (res.error) { setState("idle"); return setErr(/^(Not available|Temporarily unavailable|Forbidden|Too large)$/.test(res.error) ? "The form can't be sent right now. Please try again in a few minutes." : res.error); }
         setState("ok");
         track("report_mistake", { kind, page });
       }}
