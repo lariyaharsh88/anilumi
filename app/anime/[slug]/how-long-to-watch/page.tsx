@@ -101,9 +101,9 @@ export default async function HowLongPage({ params }: Props) {
     ? [
         ...(isRoot ? [{ q: `How long is ${a.title}?`, a: `${answer} That's about ${hoursOf(fTotal)} hours non-stop, or ${humanDays(Math.ceil(fTotal / 120))} at two hours a day.` }] : []),
         { q: isRoot && seasonal ? `How long is ${a.title} season 1?` : `How long does it take to watch ${a.title}?`, a: `${own} That's ${h} hour${h === 1 ? "" : "s"} non-stop, or ${humanDays(at2h)} at two hours a day.` },
-        ...(eps > 1 ? [{ q: `How many episodes of ${a.title} are there?`, a: airing ? `${eps} episodes have aired so far, and ${a.title} is still airing.` : `${a.title} has ${eps} episodes${len ? ` of about ${len} minutes each` : ""}.` }] : []),
         ...(fill && fill.count ? [{ q: `How long is ${a.title} without filler?`, a: `Skipping its ${fill.count} filler episodes cuts the watch to about ${fmtRun(total - fill.count * len)}, saving ${fmtRun(fill.count * len)}.` }] : []),
-        ...(franchise ? [{ q: `How long does it take to watch all of ${a.title}?`, a: `The core story plus movies across the franchise runs about ${fmtRun(fTotal)} over ${franchise.mainCount} main entries. The watch order page lists them in sequence.` }] : []),
+        // The franchise total; on the root title "How long is X?" above already gives it.
+        ...(franchise && !isRoot ? [{ q: `How long does it take to watch all of ${a.title}?`, a: `The core story plus movies across the franchise runs about ${fmtRun(fTotal)} over ${franchise.mainCount} main entries. The watch order page lists them in sequence.` }] : []),
         { q: `Can I finish ${a.title} in a weekend?`, a: total <= 1200 ? `Yes. At ten hours across Saturday and Sunday you'd finish ${a.title} in ${Math.max(1, Math.ceil(total / 600))} weekend${Math.ceil(total / 600) === 1 ? "" : "s"}.` : `Not in one. At ten hours a weekend it takes about ${Math.ceil(total / 600)} weekends.` },
       ]
     : [];

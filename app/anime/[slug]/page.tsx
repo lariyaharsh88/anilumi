@@ -57,6 +57,7 @@ import SectionNav, { type NavSection } from "@/components/fx/SectionNav";
 import MobileFold from "@/components/fx/MobileFold";
 import Refreshed from "@/components/Refreshed";
 import { airing } from "@/lib/airing";
+import { adaptationFor, adaptedRange, continueAt, ADAPT_CHECKED, ADAPT_REVIEWED } from "@/lib/mangaseasons";
 import ArcList from "@/components/ArcList";
 import { arcsFor, arcSources, arcSummary, ARCS_CHECKED, ARCS_REVIEWED } from "@/lib/arcs";
 import ClampText from "@/components/fx/ClampText";
@@ -115,11 +116,8 @@ function buildFaq(a: Anime, extra: FaqItem[] = [], ep: { planned: number | null;
     items.push({ q: `Where can I watch ${a.title}?`, a: `${a.title} is available to stream on ${a.streaming.map((s) => s.site).join(", ")}. Availability varies by region.` });
   }
   items.push({ q: `Is ${a.title} finished?`, a: a.status === "finished" ? `Yes. ${a.title} finished airing${a.endDate ? ` on ${fmtDate(a.endDate)}` : ""}.` : a.status === "current" ? `No, ${a.title} is currently airing.` : `${a.title} has not started airing yet.` });
-  const rt = runtimeMinutes(a);
-  if (rt) items.push({ q: `How long does it take to watch ${a.title}?`, a: `${a.title} runs about ${fmtMinutes(rt)} in total${a.episodeCount && a.episodeLength ? ` (${a.episodeCount} episodes of ${a.episodeLength} minutes)` : ""}. At two hours a day you can finish it in ${Math.max(1, Math.ceil(rt / 120))} day${Math.ceil(rt / 120) === 1 ? "" : "s"}.` });
   items.push(...extra);
-  if (a.rating) items.push({ q: `Is ${a.title} worth watching?`, a: `${a.title} holds a community score of ${(a.rating / 10).toFixed(1)}/10 from ${a.userCount.toLocaleString()} Kitsu users${a.ratingRank ? ` and ranks #${a.ratingRank} among all anime by rating` : ""}.` });
-  return items;
+  return items.slice(0, 8);
 }
 
 export default async function AnimePage({ params }: Props) {
@@ -226,12 +224,11 @@ export default async function AnimePage({ params }: Props) {
   const faqExtra: FaqItem[] = [];
   const note = noteFor(a.slug);
   if (note?.start) faqExtra.push({ q: `Where should I start with ${a.title}?`, a: note.start });
-  if (note) faqExtra.push({ q: `What should I watch after ${a.title}?`, a: `If you liked ${a.title}, try ${note.next.map(([, t]) => t).join(", ")}.` });
-  if (guide) {
-    const flagged = guide.areas.filter((x) => x.level === "strong" || x.level === "moderate").map((x) => x.label.toLowerCase());
-    faqExtra.push({ q: `Is ${a.title} appropriate for kids?`, a: `${a.title} is best for ${guide.suitable.toLowerCase()}${a.ageRating ? ` and is rated ${a.ageRating}${a.ageRatingGuide ? ` (${a.ageRatingGuide})` : ""}` : ""}. ${flagged.length ? `Viewers flag ${flagged.join(", ")}.` : "Viewers don't flag any strong content."} See the parents' guide on this page for details.` });
-  }
-  if (dropOk) faqExtra.push({ q: `Do people finish ${a.title}?`, a: `${dropOk.dropRate.toFixed(1)}% of AniList members who start ${a.title} drop it${a.status === "current" ? " so far" : `, and ${dropOk.completionRate.toFixed(0)}% finish it`}${bench && benchGenre ? `. The median for popular ${benchGenre.toLowerCase()} anime is ${bench.toFixed(1)}%` : ""}.` });
+  // Only questions people search for that this page answers best. "Kids?", "worth watching?", "what next?",
+  // "how long?" and "do people finish?" each have their own page or section; repeating them as Q&A read as filler.
+  // Source material this season adapts (data/manga-seasons.json): "Where does X end in the manga?"
+  const adapt = adaptationFor(a.slug);
+  if (adapt) faqExtra.push({ q: `Where does ${a.title} end in the ${adapt.medium}?`, a: `${a.title} adapts ${adaptedRange(adapt)}.${continueAt(adapt) ? ` To carry on with the story, start at ${continueAt(adapt)}.` : ""}${adapt.notes ? ` ${adapt.notes}` : ""}` });
   const arcs = a.subtype === "movie" ? null : arcsFor(a.slug);
   if (arcs) faqExtra.push({ q: `What are the ${a.title} arcs in order?`, a: `${a.title} has ${arcs.length} story arcs: ${arcSummary(arcs)}.` });
   const dub = dubFor(a);
@@ -498,6 +495,14 @@ export default async function AnimePage({ params }: Props) {
               <div className="mt-8">
                 <h3 className="mb-3 text-lg font-bold">Trailer</h3>
                 <YouTubeFacade id={a.youtubeVideoId} title={`${a.title} trailer`} />
+              </div>
+            )}
+            {adapt && (
+              <div className="card mt-8 p-4">
+                <p className="text-xs font-semibold uppercase tracking-wider text-muted">📚 Source material</p>
+                <p className="mt-1 text-sm text-ink/90">This season adapts <strong className="text-ink">{adaptedRange(adapt)}</strong>.{continueAt(adapt) && <> To carry on with the story, start at <strong className="text-ink">{continueAt(adapt)}</strong>.</>}</p>
+                {adapt.notes && <p className="mt-1 text-xs text-muted">{adapt.notes}</p>}
+                <p className="mt-2 text-[11px] text-muted">{ADAPT_REVIEWED ? "Checked" : `Draft${ADAPT_CHECKED ? `, cross-checked on ${new Date(`${ADAPT_CHECKED}T12:00:00Z`).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" })}` : ""}`} against the series wiki and episode lists. <Link href="/how-we-check" className="underline">How we check</Link></p>
               </div>
             )}
             <HindiDub dub={dub} title={a.title} className="mt-8" />

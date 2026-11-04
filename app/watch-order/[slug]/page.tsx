@@ -21,6 +21,7 @@ import { noteFor } from "@/data/notes";
 import { amazonSearch, affiliateRel, streamLink } from "@/lib/affiliate";
 import { streamCoverage, oneLinkPerSite } from "@/lib/wostreams";
 import { fillerFor } from "@/lib/filler";
+import { adaptationFor, shortRange } from "@/lib/mangaseasons";
 import BarChart from "@/components/viz/BarChart";
 import LineChart from "@/components/viz/LineChart";
 
@@ -102,7 +103,8 @@ export default async function WatchOrderPage({ params }: Props) {
       ])
     : [new Map(), new Map<string, string[]>()];
   const coverage = streamCoverage(core.map((e) => e.anime.id), streams);
-  const seasonRows = mains.map((e) => ({ e, score: e.anime.rating ? e.anime.rating / 10 : null, filler: fillerFor(e.anime.slug, e.anime.episodeCount), studio: studiosOf.get(e.anime.id)?.join(", ") || null }));
+  const seasonRows = mains.map((e) => ({ e, score: e.anime.rating ? e.anime.rating / 10 : null, filler: fillerFor(e.anime.slug, e.anime.episodeCount), studio: studiosOf.get(e.anime.id)?.join(", ") || null, adapt: adaptationFor(e.anime.slug) }));
+  const sourceUnit = seasonRows.find((r) => r.adapt)?.adapt?.medium ?? null;
   const bestSeason = seasonRows.filter((r) => r.score).sort((x, y) => y.score! - x.score!)[0] ?? null;
 
   const ld = {
@@ -215,7 +217,7 @@ export default async function WatchOrderPage({ params }: Props) {
       {seasonRows.length >= 2 && (
         <section className="mt-8" aria-labelledby="seasons-h">
           <h2 id="seasons-h" className="h-section mb-1">Compare the seasons</h2>
-          <p className="mb-3 text-sm text-muted">The main story part by part: community score (Kitsu), length, filler share and studio.{bestSeason ? ` Highest rated: ${bestSeason.e.anime.title}.` : ""}</p>
+          <p className="mb-3 text-sm text-muted">The main story part by part: community score (Kitsu), length, filler share, {sourceUnit ? `${sourceUnit === "manga" ? "manga chapters" : "light novel volumes"} adapted, ` : ""}and studio.{bestSeason ? ` Highest rated: ${bestSeason.e.anime.title}.` : ""}</p>
           <div className="card overflow-x-auto">
             <table className="w-full min-w-[560px] text-left text-sm">
               <thead className="text-[11px] uppercase tracking-wider text-muted">
@@ -225,6 +227,7 @@ export default async function WatchOrderPage({ params }: Props) {
                   <th scope="col" className="px-3 py-2 text-right font-semibold">Episodes</th>
                   <th scope="col" className="px-3 py-2 text-right font-semibold">Score</th>
                   <th scope="col" className="px-3 py-2 text-right font-semibold">Filler</th>
+                  {sourceUnit && <th scope="col" className="px-3 py-2 font-semibold">{sourceUnit === "manga" ? "Manga" : "Novel"}</th>}
                   <th scope="col" className="px-3 py-2 font-semibold">Studio</th>
                 </tr>
               </thead>
@@ -236,6 +239,7 @@ export default async function WatchOrderPage({ params }: Props) {
                     <td className="px-3 py-2 text-right tabular-nums">{r.e.anime.episodeCount ?? (r.e.anime.status === "current" ? "Airing" : "–")}</td>
                     <td className="px-3 py-2 text-right tabular-nums">{r.score ? r.score.toFixed(2) : "–"}</td>
                     <td className="px-3 py-2 text-right tabular-nums">{r.filler ? <Link href={`${animePath(r.e.anime)}/filler-list`} className="hover:text-violet-2">{Math.round(r.filler.share)}%</Link> : <span className="text-muted">–</span>}</td>
+                    {sourceUnit && <td className="px-3 py-2 tabular-nums text-muted">{r.adapt ? shortRange(r.adapt) : "–"}</td>}
                     <td className="px-3 py-2 text-muted">{r.studio || "–"}</td>
                   </tr>
                 ))}
@@ -332,14 +336,12 @@ export default async function WatchOrderPage({ params }: Props) {
         items={[
           { q: `What order should I watch ${name} in?`, a: wo.intro ? wo.intro : wo.entries.length === 1 ? `${name} has a single entry, so there is nothing to sequence.` : `Follow the recommended order above: ${wo.entries.filter((e) => e.kind === "main").map((e) => e.anime.title).join(" → ")}. Movies and side stories are slotted after the season they relate to.` },
           { q: `How long does it take to watch all of ${name}?`, a: wo.totalMinutes ? `The core story and movies run about ${fmtMinutes(wo.totalMinutes)}. At two hours a day that is roughly ${Math.ceil(wo.totalMinutes / 120)} days.` : "Runtime data is incomplete for this franchise." },
-          ...(firstMain ? [{ q: `Where do I start ${name}?`, a: `Start with ${firstMain.anime.title}${firstMain.anime.startDate ? ` (${firstMain.anime.startDate.slice(0, 4)})` : ""}${wo.intro ? "" : ", then follow the order above"}.` }] : []),
           ...(mainCount > 1 ? [{ q: `How many seasons does ${name} have?`, a: `${mainCount} parts make up the main story${movieList.length ? `, plus ${movieList.length} movie${movieList.length === 1 ? "" : "s"}` : ""}${sideCount ? ` and ${sideCount} side stor${sideCount === 1 ? "y" : "ies"} or OVAs` : ""}.` }] : []),
           ...(movieList.length ? [{ q: `Where do the ${name} movies fit in the watch order?`, a: movieList.map((m) => `${m.anime.title}${m.after ? `: after ${m.after}` : ""}`).join("; ") + "." }] : []),
-          { q: `Can I skip the recaps?`, a: skippable.length ? `Yes. ${skippable.map((e) => e.anime.title).join(", ")} retell events you have already seen and can be skipped.` : "There are no recap episodes or compilation movies on record for this franchise." },
+          ...(skippable.length ? [{ q: `Can I skip the ${name} recaps?`, a: `Yes. ${skippable.map((e) => e.anime.title).join(", ")} retell events you have already seen and can be skipped.` }] : []),
           ...(coverage.length ? [{ q: `Where can I stream all of ${name}?`, a: `${coverage[0].site} lists ${coverage[0].n} of the ${core.length} seasons and movies${coverage[1] ? `, ${coverage[1].site} ${coverage[1].n}` : ""}${coverage[2] ? ` and ${coverage[2].site} ${coverage[2].n}` : ""}. Catalogues differ by country, so check the links on each part above.` }] : []),
           ...(bestSeason && seasonRows.filter((r) => r.score).length >= 2 ? [{ q: `Which ${name} season is the best?`, a: `By community score on Kitsu, ${bestSeason.e.anime.title} rates highest at ${bestSeason.score!.toFixed(2)}/10. The comparison table above lists every part's score, length, filler share and studio.` }] : []),
           ...(dubQ ? [dubQ] : []),
-          { q: "Where does this order come from?", a: "It is built automatically from the sequel, prequel, side-story and spin-off links in the Kitsu database and refreshed daily, so new seasons appear without manual edits." },
         ]}
       />
     </div>
