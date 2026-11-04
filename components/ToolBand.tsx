@@ -12,7 +12,7 @@ export default function ToolBand({ title, eyebrow, tools }: { title: string; eye
     <section className="reveal mt-12" aria-label={title}>
       <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-accent-2">{eyebrow}</p>
       <h2 className="h-section mt-1">{title}</h2>
-      <ul className="edge-fade fade-phone-only -mx-4 mt-3 flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-1 [scrollbar-width:none] sm:mx-0 sm:grid sm:grid-cols-2 sm:overflow-visible sm:px-0 lg:grid-cols-4 [&::-webkit-scrollbar]:hidden">
+      <ul className="edge-fade fade-phone-only -mx-4 mt-3 flex snap-x snap-mandatory scroll-px-4 gap-3 overflow-x-auto px-4 pb-1 [scrollbar-width:none] sm:mx-0 sm:grid sm:grid-cols-2 sm:overflow-visible sm:px-0 lg:grid-cols-4 [&::-webkit-scrollbar]:hidden">
         {tools.map((t) => (
           <li key={t.href} className="w-[72%] shrink-0 snap-start sm:w-auto">
             <Link href={t.href} className="genre-tile card group flex h-full flex-col gap-3 p-4 transition duration-300 hover:-translate-y-0.5 hover:border-white/20" style={{ ["--h" as string]: String(t.hue) }}>
