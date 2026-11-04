@@ -21,7 +21,7 @@ import { excerpt } from "@/lib/excerpt";
 import GenreTile, { GENRE_HUES } from "@/components/GenreTile";
 import ToolBand, { type Tool } from "@/components/ToolBand";
 import BingeSearch from "@/components/BingeSearch";
-import AiringNext, { type NextEp } from "@/components/AiringNext";
+import AiringNext, { type AirTimes, type NextEp } from "@/components/AiringNext";
 import { airing as airingSnapshot } from "@/lib/airing";
 import franchiseData from "@/data/franchises.json";
 
@@ -81,6 +81,8 @@ export default async function Home() {
     .sort((p, q) => p.t - q.t);
   const soonAnime = soon.length ? await listAnime({ filter: { id: [...new Set(soon.map((v) => v.x.k!))].join(",") }, limit: 20, revalidate: 86400 }) : null;
   const byId = new Map((soonAnime?.items || []).map((a) => [a.id, a]));
+  // Every airing show's upcoming episodes, for the visitor's own saved shows ("Your shows", in the browser).
+  const airTimes: AirTimes = Object.fromEntries(airingSnap.shows.filter((x) => x.k && x.n.length).map((x) => [x.k!, x.n]));
   const nextEps: NextEp[] = soon.map(({ x, episode, t }) => {
     const a = byId.get(x.k!);
     return { href: a ? animePath(a) : `/anime/${x.s}`, title: a?.title || x.t, poster: a ? posterUrl(a, "tiny") : null, episode, at: new Date(t * 1000).toISOString() };
@@ -102,7 +104,7 @@ export default async function Home() {
 
   return (
     <div className="container-x py-6 sm:py-8">
-      <AiringNext items={nextEps} />
+      <AiringNext items={nextEps} times={airTimes} />
       <HeroSpotlight items={spots}>
         <p className="rise inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-accent-2 backdrop-blur">
           <span className="live-dot !bg-accent-2" aria-hidden /> Updated every hour
