@@ -1,6 +1,6 @@
 import Link from "@/components/Link";
 import type { EditorNote as Note } from "@/data/notes";
-import CheckedBy from "./CheckedBy";
+import CheckedBy, { DraftLabel } from "./CheckedBy";
 
 /** "AniLumi's take": a short spoiler-free note, where to start, and three similar shows. */
 export default function EditorNote({ title, note }: { title: string; note: Note }) {
@@ -15,7 +15,7 @@ export default function EditorNote({ title, note }: { title: string; note: Note 
         <span className="text-muted">If you like it, try</span>
         {note.next.map(([slug, t]) => <Link key={slug} href={`/anime/${slug}`} className="chip">{t}</Link>)}
       </p>
-      {note.checked && <CheckedBy date={note.checked} className="mt-3" />}
+      {note.checked ? <CheckedBy date={note.checked} className="mt-3" /> : <DraftLabel className="mt-3" />}
     </aside>
   );
 }

@@ -66,6 +66,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: abs("/tonight"), lastModified: now, changeFrequency: "weekly", priority: 0.7 },
     ...Array.from({ length: now.getFullYear() - 1999 }, (_, i) => ({ url: abs(`/best/${now.getFullYear() - i}`), lastModified: now, changeFrequency: (i === 0 ? "daily" : "monthly") as "daily" | "monthly", priority: i < 3 ? 0.8 : 0.5 })),
     { url: abs("/about"), lastModified: now, changeFrequency: "yearly", priority: 0.2 },
+    { url: abs("/how-we-check"), lastModified: now, changeFrequency: "monthly", priority: 0.2 },
+    { url: abs("/author/harsh-lariya"), lastModified: now, changeFrequency: "monthly", priority: 0.2 },
     ...["rated", "popular", "airing", "upcoming", "movies", "tv"].map((l) => ({ url: abs(`/top/${l}`), lastModified: now, changeFrequency: "daily" as const, priority: 0.8 })),
   ];
   const s = seasonOf(now);

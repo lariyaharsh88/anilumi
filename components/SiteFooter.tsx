@@ -19,7 +19,7 @@ export default function SiteFooter() {
     { h: "Tools", links: [["/what-anime-is-this", "What anime is this?"], ["/tonight", "Watch tonight"], ["/quiz", "What should I watch?"], ["/tier-list", "Tier list maker"], ["/compare", "Compare anime"], ["/trends", "Genre trends"], ["/birthdays", "Birthdays"], ["/on-this-day", "On this day"], ["/hype", "Most hyped"]] },
     { h: "Genres", links: [["/genre/action", "Action"], ["/genre/romance", "Romance"], ["/genre/comedy", "Comedy"], ["/genre/fantasy", "Fantasy"], ["/genre/isekai", "Isekai"], ["/genre", "All genres"]] },
   ];
-  const small: [string, string][] = [["/about", "About"], ["/contact", "Contact"], ["/advertise", "Advertise"], ["/privacy", "Privacy"], ["/my", "My list"], ["/feed.xml", "RSS"]];
+  const small: [string, string][] = [["/about", "About"], ["/how-we-check", "How we check"], ["/contact", "Contact"], ["/advertise", "Advertise"], ["/privacy", "Privacy"], ["/my", "My list"], ["/feed.xml", "RSS"]];
 
   return (
     <footer data-chrome className="relative mt-20 border-t border-line bg-bg-2">

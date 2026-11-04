@@ -4,6 +4,7 @@
  */
 import { site, abs } from "./site";
 import { animePath, type Anime } from "./kitsu";
+import { authorRef } from "./author";
 
 const CTX = "https://schema.org";
 export const SITE_ID = `${site.url}/#website`;
@@ -21,7 +22,7 @@ export function siteGraph() {
         url: site.url,
         logo: { "@type": "ImageObject", url: abs("/brand/anilumi-mark-1024.png"), width: 1024, height: 1024 },
         description: site.description,
-        founder: { "@type": "Person", name: site.founder.name, url: site.founder.url },
+        founder: authorRef(),
       },
       {
         "@type": "WebSite",
@@ -88,7 +89,7 @@ export function webPage(type: "WebPage" | "CollectionPage" | "AboutPage" | "Cont
 
 /** `lastReviewed` + `reviewedBy` for a page a person has checked (spread into a WebPage); empty when unchecked. */
 export const reviewedBy = (iso?: string | null) =>
-  iso ? { lastReviewed: iso, reviewedBy: { "@type": "Person", name: site.founder.name, url: site.founder.url } } : {};
+  iso ? { lastReviewed: iso, reviewedBy: authorRef() } : {};
 
 /** "PT1H30M" from minutes. */
 export function isoDuration(min: number): string {

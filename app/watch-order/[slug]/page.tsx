@@ -3,13 +3,14 @@ import Link from "@/components/Link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getAnimeBySlug, buildWatchOrder, franchiseName, watchOrderSlug, animePath, posterUrl, fmtMinutes, runtimeMinutes, subtypeLabel, getStreamingFor, getProductions, WatchEntry } from "@/lib/kitsu";
-import { abs, site } from "@/lib/site";
+import { abs } from "@/lib/site";
+import { AUTHOR } from "@/lib/author";
 import BingePlan from "@/components/BingePlan";
 import HindiDub from "@/components/HindiDub";
 import { dubFor, dubFaq } from "@/lib/hindidub";
 import PageHero from "@/components/PageHero";
 import JsonLd from "@/components/JsonLd";
-import CheckedBy from "@/components/CheckedBy";
+import CheckedBy, { DraftLabel } from "@/components/CheckedBy";
 import { robotsFor, watchOrderIndexed } from "@/lib/indexing";
 import { webPage, workRef, reviewedBy } from "@/lib/ld";
 import Faq from "@/components/Faq";
@@ -119,7 +120,7 @@ export default async function WatchOrderPage({ params }: Props) {
       {wo.checked && <JsonLd data={{ ...webPage("WebPage", `/watch-order/${watchOrderSlug(wo)}`, `${name} watch order`), about: workRef(wo.root), ...reviewedBy(wo.checked) }} />}
       <PageHero
         crumbs={[{ href: "/", label: "Home" }, { href: animePath(a), label: a.title }, { href: `/watch-order/${a.slug}`, label: "Watch order" }]}
-        eyebrow={wo.checked ? <>🧭 Watch order guide <span className="ml-2 inline-flex items-center gap-1 rounded-full bg-emerald-500/15 px-2 py-0.5 text-[11px] font-semibold normal-case tracking-normal text-emerald-300">✓ Checked by {site.founder.name}</span></> : "🧭 Watch order guide"}
+        eyebrow={wo.checked ? <>🧭 Watch order guide <span className="ml-2 inline-flex items-center gap-1 rounded-full bg-emerald-500/15 px-2 py-0.5 text-[11px] font-semibold normal-case tracking-normal text-emerald-300">✓ Checked by {AUTHOR.name}</span></> : "🧭 Watch order guide"}
         title={<>{name} <span className="text-gradient">watch order</span></>}
         hue={262}
         backdrop={a.cover?.large || null}
@@ -140,7 +141,7 @@ export default async function WatchOrderPage({ params }: Props) {
           <div className="card mt-5 border-violet/40 bg-violet/10 p-4">
             <p className="text-xs font-semibold uppercase tracking-wider text-violet">How to watch</p>
             <p className="mt-1 text-sm leading-6 text-ink/90">{tip}</p>
-            {wo.checked && tip === wo.intro && <CheckedBy date={wo.checked} className="mt-2" />}
+            {wo.checked && tip === wo.intro ? <CheckedBy date={wo.checked} className="mt-2" /> : <DraftLabel className="mt-2" />}
           </div>
         ) : null;
       })()}
