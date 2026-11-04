@@ -3,6 +3,7 @@ import { site } from "@/lib/site";
 import Logo from "./Logo";
 import LeadForm from "./LeadForm";
 import CorrectionForm from "./CorrectionForm";
+import ConsentLink from "./ConsentLink";
 import { dbEnabled } from "@/lib/db";
 import { seasonOf, shiftSeason, cap } from "@/lib/kitsu";
 
@@ -64,6 +65,7 @@ export default function SiteFooter() {
             {small.map(([href, label]) => (
               <li key={href}>{href === "/feed.xml" ? <a href={href} className="inline-block py-1.5 hover:text-ink sm:py-0">{label}</a> : <Link href={href} className="inline-block py-1.5 hover:text-ink sm:py-0">{label}</Link>}</li>
             ))}
+            <li><ConsentLink className="inline-block py-1.5 hover:text-ink sm:py-0" /></li>
           </ul>
         </div>
       </div>

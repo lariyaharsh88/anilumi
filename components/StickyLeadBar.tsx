@@ -19,7 +19,8 @@ export default function StickyLeadBar() {
       sessionStorage.setItem(VIEWS, String(views));
       if (SKIP.test(path) || views < 2 || sessionStorage.getItem(SHOWN) || Number(localStorage.getItem(HIDE) || 0) > Date.now()) return;
       sessionStorage.setItem(SHOWN, "1");
-      const t = setTimeout(() => setShow(true), 4000);
+      // Not while the cookie banner is up (components/Analytics.tsx); a later page can show it.
+      const t = setTimeout(() => { if ((window as unknown as { __alConsentAsk?: boolean }).__alConsentAsk) sessionStorage.removeItem(SHOWN); else setShow(true); }, 4000);
       return () => clearTimeout(t);
     } catch { /* storage blocked: never show */ }
   }, [path]);

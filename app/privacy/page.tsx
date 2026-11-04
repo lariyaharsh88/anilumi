@@ -30,6 +30,7 @@ export default function Privacy() {
           <li>Every email has a one-click unsubscribe link.</li>
           <li>Turn off a push alert by tapping its button again, or block notifications for anilumi.in in your browser; alerts to a blocked or uninstalled browser are deleted automatically.</li>
           <li>To see, correct or delete what we hold about you, reply to any of our emails or use the enquiry form on the Advertise page with the subject &ldquo;Data request&rdquo;. We respond within 30 days.</li>
+          <li>Analytics: visitors in the EU, EEA, UK and Switzerland are asked first, and Google Analytics and Microsoft Clarity load only after &ldquo;Accept&rdquo;. Everyone can turn them off with &ldquo;Cookie choices&rdquo; at the bottom of every page; your choice is kept in your browser for 12 months. To decide whether to ask, we check your country once with Cloudflare and keep only the country code in your browser.</li>
           <li>Clearing your browser data removes your list and your anonymous id.</li>
         </ul>
         <h2>Retention</h2>
