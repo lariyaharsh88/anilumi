@@ -55,6 +55,8 @@ import { combineScores, kitsuScore, aniListScore, getMalScore } from "@/lib/scor
 import SectionNav, { type NavSection } from "@/components/fx/SectionNav";
 import MobileFold from "@/components/fx/MobileFold";
 import Refreshed from "@/components/Refreshed";
+import ArcList from "@/components/ArcList";
+import { arcsFor, arcSources, arcSummary, ARCS_CHECKED, ARCS_REVIEWED } from "@/lib/arcs";
 import ClampText from "@/components/fx/ClampText";
 import NavIcon, { type IconName } from "@/components/NavIcon";
 import StickyActions from "@/components/fx/StickyActions";
@@ -198,6 +200,8 @@ export default async function AnimePage({ params }: Props) {
     faqExtra.push({ q: `Is ${a.title} appropriate for kids?`, a: `${a.title} is best for ${guide.suitable.toLowerCase()}${a.ageRating ? ` and is rated ${a.ageRating}${a.ageRatingGuide ? ` (${a.ageRatingGuide})` : ""}` : ""}. ${flagged.length ? `Viewers flag ${flagged.join(", ")}.` : "Viewers don't flag any strong content."} See the parents' guide on this page for details.` });
   }
   if (dropOk) faqExtra.push({ q: `Do people finish ${a.title}?`, a: `${dropOk.dropRate.toFixed(1)}% of AniList members who start ${a.title} drop it${a.status === "current" ? " so far" : `, and ${dropOk.completionRate.toFixed(0)}% finish it`}${bench && benchGenre ? `. The median for popular ${benchGenre.toLowerCase()} anime is ${bench.toFixed(1)}%` : ""}.` });
+  const arcs = a.subtype === "movie" ? null : arcsFor(a.slug);
+  if (arcs) faqExtra.push({ q: `What are the ${a.title} arcs in order?`, a: `${a.title} has ${arcs.length} story arcs: ${arcSummary(arcs)}.` });
   const dub = dubFor(a);
   const dubQ = dubFaq(dub, a.title);
   if (dubQ) faqExtra.push(dubQ);
@@ -512,6 +516,11 @@ export default async function AnimePage({ params }: Props) {
                 episodeLength={a.episodeLength}
                 cont={continuationFor(a.slug)}
               />
+              {arcs && (
+                <MobileFold label="arcs" className="mt-8">
+                  <ArcList title={a.title} arcs={arcs} href={(n) => episodePath(a, n)} checked={ARCS_CHECKED} reviewed={ARCS_REVIEWED} sources={arcSources(a.slug)} />
+                </MobileFold>
+              )}
             </section>
           )}
 

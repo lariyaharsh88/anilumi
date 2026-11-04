@@ -1,0 +1,1578 @@
+{
+ "checked": "2026-11-04",
+ "reviewed": null,
+ "shows": {
+  "one-piece": {
+   "confidence": "high",
+   "sources": [
+    "https://onepiece.fandom.com/wiki/Story_Arcs",
+    "https://en.wikipedia.org/wiki/List_of_One_Piece_episodes",
+    "https://www.animefillerlist.com/shows/one-piece"
+   ],
+   "notes": "Kitsu episodeCount is null (ongoing; Kitsu has placeholder episode records up to 1410). AnimeFillerList lists aired episodes through 1168. Elbaph is ongoing (to=null). One Piece Wiki gives Romance Dawn 1-4 and Orange Town 4-8 (ep 4 shared); split here as 1-3 / 4-8. Loguetown per wiki is 45 and 48-53 (46-47 adapt the Buggy's Crew cover story) - kept as one range 45-53. Episodes 68-69 (Koby-Meppo cover story), 336, 406-407 and 907 are left as gaps. Enies Lobby (279-283 recaps; 291-292, 303 filler), Post-Enies Lobby (317-319 filler), Post-War (492, 498-499), Fish-Man Island (542), Punk Hazard (590) contain standalone filler but are kept as single ranges. Arcs interrupted by named filler arcs (Impel Down, Wano Country) are split into multiple entries with the same name. Wikipedia's season boundaries (DVD seasons) agree with the arc starts except Wano/Egghead: wiki Wano ends 1085, Egghead starts 1086; Wikipedia season 20 runs to 1088 (season, not arc). Wikipedia season 22 (Elbaph) starts at 1156, matching the wiki.",
+   "arcs": [
+    {
+     "name": "Romance Dawn",
+     "from": 1,
+     "to": 3
+    },
+    {
+     "name": "Orange Town",
+     "from": 4,
+     "to": 8
+    },
+    {
+     "name": "Syrup Village",
+     "from": 9,
+     "to": 18
+    },
+    {
+     "name": "Baratie",
+     "from": 19,
+     "to": 30
+    },
+    {
+     "name": "Arlong Park",
+     "from": 31,
+     "to": 44
+    },
+    {
+     "name": "Loguetown",
+     "from": 45,
+     "to": 53
+    },
+    {
+     "name": "Warship Island",
+     "from": 54,
+     "to": 61,
+     "filler": true
+    },
+    {
+     "name": "Reverse Mountain",
+     "from": 62,
+     "to": 63
+    },
+    {
+     "name": "Whisky Peak",
+     "from": 64,
+     "to": 67
+    },
+    {
+     "name": "Little Garden",
+     "from": 70,
+     "to": 77
+    },
+    {
+     "name": "Drum Island",
+     "from": 78,
+     "to": 91
+    },
+    {
+     "name": "Arabasta",
+     "from": 92,
+     "to": 130
+    },
+    {
+     "name": "Post-Arabasta",
+     "from": 131,
+     "to": 135,
+     "filler": true
+    },
+    {
+     "name": "Goat Island",
+     "from": 136,
+     "to": 138,
+     "filler": true
+    },
+    {
+     "name": "Ruluka Island",
+     "from": 139,
+     "to": 143,
+     "filler": true
+    },
+    {
+     "name": "Jaya",
+     "from": 144,
+     "to": 152
+    },
+    {
+     "name": "Skypiea",
+     "from": 153,
+     "to": 195
+    },
+    {
+     "name": "G-8",
+     "from": 196,
+     "to": 206,
+     "filler": true
+    },
+    {
+     "name": "Long Ring Long Land",
+     "from": 207,
+     "to": 219
+    },
+    {
+     "name": "Ocean's Dream",
+     "from": 220,
+     "to": 224,
+     "filler": true
+    },
+    {
+     "name": "Foxy's Return",
+     "from": 225,
+     "to": 228,
+     "filler": true
+    },
+    {
+     "name": "Water 7",
+     "from": 229,
+     "to": 263
+    },
+    {
+     "name": "Enies Lobby",
+     "from": 264,
+     "to": 312
+    },
+    {
+     "name": "Post-Enies Lobby",
+     "from": 313,
+     "to": 325
+    },
+    {
+     "name": "Ice Hunter",
+     "from": 326,
+     "to": 335,
+     "filler": true
+    },
+    {
+     "name": "Thriller Bark",
+     "from": 337,
+     "to": 381
+    },
+    {
+     "name": "Spa Island",
+     "from": 382,
+     "to": 384,
+     "filler": true
+    },
+    {
+     "name": "Sabaody Archipelago",
+     "from": 385,
+     "to": 405
+    },
+    {
+     "name": "Amazon Lily",
+     "from": 408,
+     "to": 421
+    },
+    {
+     "name": "Impel Down",
+     "from": 422,
+     "to": 425
+    },
+    {
+     "name": "Little East Blue",
+     "from": 426,
+     "to": 429,
+     "filler": true
+    },
+    {
+     "name": "Impel Down",
+     "from": 430,
+     "to": 452
+    },
+    {
+     "name": "Straw Hat's Separation Serial",
+     "from": 453,
+     "to": 456
+    },
+    {
+     "name": "Marineford",
+     "from": 457,
+     "to": 489
+    },
+    {
+     "name": "Post-War",
+     "from": 490,
+     "to": 516
+    },
+    {
+     "name": "Return to Sabaody",
+     "from": 517,
+     "to": 522
+    },
+    {
+     "name": "Fish-Man Island",
+     "from": 523,
+     "to": 574
+    },
+    {
+     "name": "Z's Ambition",
+     "from": 575,
+     "to": 578,
+     "filler": true
+    },
+    {
+     "name": "Punk Hazard",
+     "from": 579,
+     "to": 625
+    },
+    {
+     "name": "Caesar Retrieval",
+     "from": 626,
+     "to": 628,
+     "filler": true
+    },
+    {
+     "name": "Dressrosa",
+     "from": 629,
+     "to": 746
+    },
+    {
+     "name": "Silver Mine",
+     "from": 747,
+     "to": 750,
+     "filler": true
+    },
+    {
+     "name": "Zou",
+     "from": 751,
+     "to": 779
+    },
+    {
+     "name": "Marine Rookie",
+     "from": 780,
+     "to": 782,
+     "filler": true
+    },
+    {
+     "name": "Whole Cake Island",
+     "from": 783,
+     "to": 877
+    },
+    {
+     "name": "Levely",
+     "from": 878,
+     "to": 889
+    },
+    {
+     "name": "Wano Country",
+     "from": 890,
+     "to": 894
+    },
+    {
+     "name": "Cidre Guild",
+     "from": 895,
+     "to": 896,
+     "filler": true
+    },
+    {
+     "name": "Wano Country",
+     "from": 897,
+     "to": 1028
+    },
+    {
+     "name": "Uta's Past",
+     "from": 1029,
+     "to": 1030,
+     "filler": true
+    },
+    {
+     "name": "Wano Country",
+     "from": 1031,
+     "to": 1085
+    },
+    {
+     "name": "Egghead",
+     "from": 1086,
+     "to": 1155
+    },
+    {
+     "name": "Elbaph",
+     "from": 1156,
+     "to": null
+    }
+   ]
+  },
+  "naruto": {
+   "confidence": "high",
+   "sources": [
+    "https://naruto.fandom.com/wiki/Plot_of_Naruto",
+    "https://www.animefillerlist.com/shows/naruto",
+    "https://en.wikipedia.org/wiki/List_of_Naruto_episodes"
+   ],
+   "notes": "Arc names follow Narutopedia (macrons dropped). Wikipedia's Naruto seasons are DVD seasons that do not align with arcs, so boundaries come from Narutopedia; AnimeFillerList's filler list agrees (filler from 136 on, plus 26, 97, 101-106). Gaps (101, 158, 161, 168, 174, 177, 184-186, 192-194, 202, 208) are standalone filler episodes.",
+   "arcs": [
+    {
+     "name": "Land of Waves",
+     "from": 1,
+     "to": 19
+    },
+    {
+     "name": "Chunin Exams",
+     "from": 20,
+     "to": 67
+    },
+    {
+     "name": "Konoha Crush",
+     "from": 68,
+     "to": 80
+    },
+    {
+     "name": "Search for Tsunade",
+     "from": 81,
+     "to": 100
+    },
+    {
+     "name": "Land of Tea Escort Mission",
+     "from": 102,
+     "to": 106,
+     "filler": true
+    },
+    {
+     "name": "Sasuke Recovery Mission",
+     "from": 107,
+     "to": 135
+    },
+    {
+     "name": "Land of Rice Fields Investigation Mission",
+     "from": 136,
+     "to": 141,
+     "filler": true
+    },
+    {
+     "name": "Mizuki Tracking Mission",
+     "from": 142,
+     "to": 147,
+     "filler": true
+    },
+    {
+     "name": "Bikochu Search Mission",
+     "from": 148,
+     "to": 151,
+     "filler": true
+    },
+    {
+     "name": "Kurosuki Family Removal Mission",
+     "from": 152,
+     "to": 157,
+     "filler": true
+    },
+    {
+     "name": "Gosunkugi Capture Mission",
+     "from": 159,
+     "to": 160,
+     "filler": true
+    },
+    {
+     "name": "Cursed Warrior Extermination Mission",
+     "from": 162,
+     "to": 167,
+     "filler": true
+    },
+    {
+     "name": "Kaima Capture Mission",
+     "from": 169,
+     "to": 173,
+     "filler": true
+    },
+    {
+     "name": "Buried Gold Excavation Mission",
+     "from": 175,
+     "to": 176,
+     "filler": true
+    },
+    {
+     "name": "Star Guard Mission",
+     "from": 178,
+     "to": 183,
+     "filler": true
+    },
+    {
+     "name": "Peddlers Escort Mission",
+     "from": 187,
+     "to": 191,
+     "filler": true
+    },
+    {
+     "name": "Third Great Beast",
+     "from": 195,
+     "to": 196,
+     "filler": true
+    },
+    {
+     "name": "Konoha Plans Recapture Mission",
+     "from": 197,
+     "to": 201,
+     "filler": true
+    },
+    {
+     "name": "Yakumo Kurama Rescue Mission",
+     "from": 203,
+     "to": 207,
+     "filler": true
+    },
+    {
+     "name": "Gantetsu Escort Mission",
+     "from": 209,
+     "to": 212,
+     "filler": true
+    },
+    {
+     "name": "Menma Memory Search Mission",
+     "from": 213,
+     "to": 215,
+     "filler": true
+    },
+    {
+     "name": "Sunagakure Support Mission",
+     "from": 216,
+     "to": 220,
+     "filler": true
+    }
+   ]
+  },
+  "naruto-shippuden": {
+   "confidence": "high",
+   "sources": [
+    "https://naruto.fandom.com/wiki/Plot_of_Naruto",
+    "https://en.wikipedia.org/wiki/List_of_Naruto:_Shippuden_episodes",
+    "https://www.animefillerlist.com/shows/naruto-shippuden"
+   ],
+   "notes": "Narutopedia arc ranges match Wikipedia season boundaries at 32/33, 53/54, 71/72, 88/89, 112/113, 143/144, 151/152, 175/176, 196/197, 361/362, 393/394, 413/414, 458/459, 479/480. Minor disagreement: Narutopedia ends Countdown part 1 at 222 and starts Paradise Life on a Boat at 223; Wikipedia season 11 starts at 222. Narutopedia lists Itachi Shinden as 451-458 and Kaguya Otsutsuki Strikes as 458-479 (ep 458 shared); Kaguya starts at 459 here. Itachi Pursuit Mission per Narutopedia is 113-118 and 121-126 (119-120 standalone filler) - kept as one range. Gaps: 257-260, 376-377 (filler). Itachi Shinden (451-458) is a novel adaptation that AnimeFillerList classes as mixed canon/filler; marked filler=false. Episodes 484-500 adapt the Sasuke Shinden / Shikamaru Hiden / Konoha Hiden novels (AnimeFillerList: canon).",
+   "arcs": [
+    {
+     "name": "Kazekage Rescue Mission",
+     "from": 1,
+     "to": 32
+    },
+    {
+     "name": "Tenchi Bridge Reconnaissance Mission",
+     "from": 33,
+     "to": 53
+    },
+    {
+     "name": "Twelve Guardian Ninja",
+     "from": 54,
+     "to": 71,
+     "filler": true
+    },
+    {
+     "name": "Akatsuki Suppression Mission",
+     "from": 72,
+     "to": 88
+    },
+    {
+     "name": "Three-Tails' Appearance",
+     "from": 89,
+     "to": 112,
+     "filler": true
+    },
+    {
+     "name": "Itachi Pursuit Mission",
+     "from": 113,
+     "to": 126
+    },
+    {
+     "name": "Tale of Jiraiya the Gallant",
+     "from": 127,
+     "to": 133
+    },
+    {
+     "name": "Fated Battle Between Brothers",
+     "from": 134,
+     "to": 143
+    },
+    {
+     "name": "Six-Tails Unleashed",
+     "from": 144,
+     "to": 151,
+     "filler": true
+    },
+    {
+     "name": "Pain's Assault",
+     "from": 152,
+     "to": 175
+    },
+    {
+     "name": "Past Arc: The Locus of Konoha",
+     "from": 176,
+     "to": 196,
+     "filler": true
+    },
+    {
+     "name": "Five Kage Summit",
+     "from": 197,
+     "to": 214
+    },
+    {
+     "name": "Fourth Shinobi World War: Countdown",
+     "from": 215,
+     "to": 222
+    },
+    {
+     "name": "Paradise Life on a Boat",
+     "from": 223,
+     "to": 242,
+     "filler": true
+    },
+    {
+     "name": "Fourth Shinobi World War: Countdown",
+     "from": 243,
+     "to": 256
+    },
+    {
+     "name": "Fourth Shinobi World War: Confrontation",
+     "from": 261,
+     "to": 289
+    },
+    {
+     "name": "Power",
+     "from": 290,
+     "to": 295,
+     "filler": true
+    },
+    {
+     "name": "Fourth Shinobi World War: Confrontation",
+     "from": 296,
+     "to": 321
+    },
+    {
+     "name": "Fourth Shinobi World War: Climax",
+     "from": 322,
+     "to": 348
+    },
+    {
+     "name": "Kakashi's Anbu Arc: The Shinobi That Lives in the Darkness",
+     "from": 349,
+     "to": 361,
+     "filler": true
+    },
+    {
+     "name": "Fourth Shinobi World War: Climax",
+     "from": 362,
+     "to": 375
+    },
+    {
+     "name": "Birth of the Ten-Tails' Jinchuriki",
+     "from": 378,
+     "to": 393
+    },
+    {
+     "name": "In Naruto's Footsteps: The Friends' Paths",
+     "from": 394,
+     "to": 413,
+     "filler": true
+    },
+    {
+     "name": "Birth of the Ten-Tails' Jinchuriki",
+     "from": 414,
+     "to": 431
+    },
+    {
+     "name": "Jiraiya Shinobi Handbook: The Tale of Naruto the Hero",
+     "from": 432,
+     "to": 450,
+     "filler": true
+    },
+    {
+     "name": "Itachi Shinden: Light and Darkness",
+     "from": 451,
+     "to": 458
+    },
+    {
+     "name": "Kaguya Otsutsuki Strikes",
+     "from": 459,
+     "to": 479
+    },
+    {
+     "name": "Childhood",
+     "from": 480,
+     "to": 483,
+     "filler": true
+    },
+    {
+     "name": "Sasuke Shinden: Book of Sunrise",
+     "from": 484,
+     "to": 488
+    },
+    {
+     "name": "Shikamaru Hiden: A Cloud Drifting in Silent Darkness",
+     "from": 489,
+     "to": 493
+    },
+    {
+     "name": "Konoha Hiden: The Perfect Day for a Wedding",
+     "from": 494,
+     "to": 500
+    }
+   ]
+  },
+  "boruto-naruto-next-generations": {
+   "confidence": "medium",
+   "sources": [
+    "https://naruto.fandom.com/wiki/Plot_of_Naruto",
+    "https://www.animefillerlist.com/shows/boruto-naruto-next-generations"
+   ],
+   "notes": "Wikipedia's Boruto episode list has no arc or season breakdown, so ranges come from Narutopedia only, checked against AnimeFillerList's canon ranges (Sarada 19-24, Momoshiki 51-66, Steam Ninja Scrolls 106-111, Kawaki 188-220, Sasuke Retsuden/Code 282-293 agree). AnimeFillerList's Ao canon range is 181-189 vs Narutopedia's Ao 178-187 / Kawaki 188-220. Names vary between fan sources: the Kawaki arc is often called the 'Vessel' arc. filler=true only where AnimeFillerList labels the episodes filler (Genin Mission 40-41, Chocho, Konohamaru's Love); most other non-manga arcs (Academy Entrance, School Trip, Mitsuki's Disappearance, Time Slip, Kara Actuation, Chunin Re-Examination, Great Sea Battle, Kawaki & Himawari Academy, Labyrinth Game) are anime-original but labelled 'anime canon' by AnimeFillerList, so filler=false. Gaps are standalone episodes.",
+   "arcs": [
+    {
+     "name": "Academy Entrance",
+     "from": 1,
+     "to": 15
+    },
+    {
+     "name": "Sarada Uchiha",
+     "from": 19,
+     "to": 24
+    },
+    {
+     "name": "School Trip",
+     "from": 25,
+     "to": 32
+    },
+    {
+     "name": "Graduation Exams",
+     "from": 34,
+     "to": 37
+    },
+    {
+     "name": "Genin Mission",
+     "from": 40,
+     "to": 42,
+     "filler": true
+    },
+    {
+     "name": "Byakuya Gang",
+     "from": 43,
+     "to": 47
+    },
+    {
+     "name": "Versus Momoshiki",
+     "from": 51,
+     "to": 66
+    },
+    {
+     "name": "Chocho",
+     "from": 67,
+     "to": 69,
+     "filler": true
+    },
+    {
+     "name": "Mitsuki's Disappearance",
+     "from": 71,
+     "to": 92
+    },
+    {
+     "name": "Parent and Child Day",
+     "from": 93,
+     "to": 95
+    },
+    {
+     "name": "Jugo",
+     "from": 98,
+     "to": 103
+    },
+    {
+     "name": "Steam Ninja Scrolls",
+     "from": 106,
+     "to": 111
+    },
+    {
+     "name": "Konohamaru's Love",
+     "from": 116,
+     "to": 119,
+     "filler": true
+    },
+    {
+     "name": "One-Tail Escort",
+     "from": 120,
+     "to": 126
+    },
+    {
+     "name": "Time Slip",
+     "from": 128,
+     "to": 136
+    },
+    {
+     "name": "Mujina Bandits",
+     "from": 141,
+     "to": 151
+    },
+    {
+     "name": "Kara Actuation",
+     "from": 157,
+     "to": 175
+    },
+    {
+     "name": "Ao",
+     "from": 178,
+     "to": 187
+    },
+    {
+     "name": "Kawaki",
+     "from": 188,
+     "to": 220
+    },
+    {
+     "name": "Chunin Re-Examination",
+     "from": 221,
+     "to": 230
+    },
+    {
+     "name": "Great Sea Battle of Kirigakure",
+     "from": 233,
+     "to": 255
+    },
+    {
+     "name": "Kawaki & Himawari Academy",
+     "from": 261,
+     "to": 273
+    },
+    {
+     "name": "Labyrinth Game",
+     "from": 274,
+     "to": 281
+    },
+    {
+     "name": "Sasuke Retsuden",
+     "from": 282,
+     "to": 286
+    },
+    {
+     "name": "Code's Assault",
+     "from": 287,
+     "to": 293
+    }
+   ]
+  },
+  "bleach": {
+   "confidence": "high",
+   "sources": [
+    "https://bleach.fandom.com/wiki/Episodes",
+    "https://en.wikipedia.org/wiki/List_of_Bleach_episodes",
+    "https://www.animefillerlist.com/shows/bleach"
+   ],
+   "notes": "Bleach Wiki arc ranges match Wikipedia's 16 seasons exactly, except Wikipedia's season 13 (230-265) combines Zanpakuto Unknown Tales (230-255) and Beast Swords (256-265). Names follow the Bleach Wiki; Wikipedia/Viz names: The Substitute, The Entry, The Rescue, The Bount, The Assault, Arrancar: The Appearance, Hueco Mundo Sneak Entry, The Fierce Fight, New Captain Shusuke Amagai, Arrancar vs. Soul Reaper, Turn Back the Pendulum, Battle in Karakura, Zanpakuto: The Alternate Tale, Fall of the Espada, Gotei 13 Invading Army, The Lost Agent. Canon arcs contain some standalone filler (e.g. 128-137, 147-149, 204-205, 213-214, 227-229, 287, 298-299, 303-305) not split out. Thousand-Year Blood War (367+) is a separate Kitsu entry.",
+   "arcs": [
+    {
+     "name": "Agent of the Shinigami",
+     "from": 1,
+     "to": 20
+    },
+    {
+     "name": "Soul Society: The Sneak Entry",
+     "from": 21,
+     "to": 41
+    },
+    {
+     "name": "Soul Society: The Rescue",
+     "from": 42,
+     "to": 63
+    },
+    {
+     "name": "The Bount",
+     "from": 64,
+     "to": 91,
+     "filler": true
+    },
+    {
+     "name": "The Bount: Assault on Soul Society",
+     "from": 92,
+     "to": 109,
+     "filler": true
+    },
+    {
+     "name": "Arrancar: The Arrival",
+     "from": 110,
+     "to": 131
+    },
+    {
+     "name": "Arrancar: The Hueco Mundo Sneak Entry",
+     "from": 132,
+     "to": 151
+    },
+    {
+     "name": "Arrancar: The Fierce Fight",
+     "from": 152,
+     "to": 167
+    },
+    {
+     "name": "The New Captain Shusuke Amagai",
+     "from": 168,
+     "to": 189,
+     "filler": true
+    },
+    {
+     "name": "Arrancar vs. Shinigami",
+     "from": 190,
+     "to": 205
+    },
+    {
+     "name": "The Past (Turn Back the Pendulum)",
+     "from": 206,
+     "to": 212
+    },
+    {
+     "name": "Arrancar: Decisive Battle of Karakura",
+     "from": 213,
+     "to": 229
+    },
+    {
+     "name": "Zanpakuto Unknown Tales",
+     "from": 230,
+     "to": 255,
+     "filler": true
+    },
+    {
+     "name": "Beast Swords",
+     "from": 256,
+     "to": 265,
+     "filler": true
+    },
+    {
+     "name": "Arrancar: Downfall",
+     "from": 266,
+     "to": 316
+    },
+    {
+     "name": "Gotei 13 Invading Army",
+     "from": 317,
+     "to": 342,
+     "filler": true
+    },
+    {
+     "name": "The Lost Substitute Shinigami",
+     "from": 343,
+     "to": 366
+    }
+   ]
+  },
+  "fairy-tail": {
+   "confidence": "medium",
+   "sources": [
+    "https://fairytail.fandom.com/wiki/Story_Arcs",
+    "https://www.animefillerlist.com/shows/fairy-tail"
+   ],
+   "notes": "Arc ranges from the Fairy Tail Wiki (episode lists per arc) cross-checked with AnimeFillerList. Wikipedia's Fairy Tail list has no arc breakdown. The wiki and AnimeFillerList use continuous numbering 1-328; Kitsu splits it into fairy-tail (1-175), fairy-tail-2014 (176-277, numbered 1-102) and fairy-tail-2018 (278-328, numbered 1-51). Ranges here are converted to each Kitsu entry's own numbering. Common alternate names: Eisenwald = Lullaby arc, Sub-Zero Emperor Lyon = Galuna Island arc. Daphne per wiki is 69-75; AnimeFillerList has 69 as mixed and 70-75 filler. Grand Magic Games continues into fairy-tail-2014 episodes 1-28. Standalone fillers 9, 19, 50 are inside the ranges as the wiki lists them.",
+   "arcs": [
+    {
+     "name": "Macao",
+     "from": 1,
+     "to": 2
+    },
+    {
+     "name": "Daybreak",
+     "from": 3,
+     "to": 4
+    },
+    {
+     "name": "Eisenwald",
+     "from": 5,
+     "to": 10
+    },
+    {
+     "name": "Sub-Zero Emperor Lyon",
+     "from": 11,
+     "to": 20
+    },
+    {
+     "name": "Phantom Lord",
+     "from": 21,
+     "to": 29
+    },
+    {
+     "name": "Loke",
+     "from": 30,
+     "to": 32
+    },
+    {
+     "name": "Tower of Heaven",
+     "from": 33,
+     "to": 40
+    },
+    {
+     "name": "Battle of Fairy Tail",
+     "from": 41,
+     "to": 51
+    },
+    {
+     "name": "Oracion Seis",
+     "from": 52,
+     "to": 68
+    },
+    {
+     "name": "Daphne",
+     "from": 69,
+     "to": 75,
+     "filler": true
+    },
+    {
+     "name": "Edolas",
+     "from": 76,
+     "to": 95
+    },
+    {
+     "name": "Tenrou Island",
+     "from": 96,
+     "to": 122
+    },
+    {
+     "name": "X791",
+     "from": 123,
+     "to": 124
+    },
+    {
+     "name": "Key of the Starry Sky",
+     "from": 125,
+     "to": 150,
+     "filler": true
+    },
+    {
+     "name": "Grand Magic Games",
+     "from": 151,
+     "to": 175
+    }
+   ]
+  },
+  "fairy-tail-2014": {
+   "confidence": "medium",
+   "sources": [
+    "https://fairytail.fandom.com/wiki/Story_Arcs",
+    "https://www.animefillerlist.com/shows/fairy-tail"
+   ],
+   "notes": "Arc ranges from the Fairy Tail Wiki (episode lists per arc) cross-checked with AnimeFillerList. Wikipedia's Fairy Tail list has no arc breakdown. The wiki and AnimeFillerList use continuous numbering 1-328; Kitsu splits it into fairy-tail (1-175), fairy-tail-2014 (176-277, numbered 1-102) and fairy-tail-2018 (278-328, numbered 1-51). Ranges here are converted to each Kitsu entry's own numbering. Kitsu ep 1 = overall ep 176. Disagreement: the wiki ends Grand Magic Games at overall 203 (Kitsu 28) and starts Eclipse Celestial Spirits at 204 (Kitsu 29); AnimeFillerList marks filler from overall 202 (Kitsu 27), with 201 mixed. The Avatar arc starts at overall 276 (Kitsu 101) and continues in fairy-tail-2018. Overall ep 268 (Kitsu 93) inside Fairy Tail Zero is filler.",
+   "arcs": [
+    {
+     "name": "Grand Magic Games",
+     "from": 1,
+     "to": 28
+    },
+    {
+     "name": "Eclipse Celestial Spirits",
+     "from": 29,
+     "to": 51,
+     "filler": true
+    },
+    {
+     "name": "Sun Village",
+     "from": 52,
+     "to": 58
+    },
+    {
+     "name": "Tartaros",
+     "from": 59,
+     "to": 90
+    },
+    {
+     "name": "Fairy Tail Zero",
+     "from": 91,
+     "to": 100
+    },
+    {
+     "name": "Avatar",
+     "from": 101,
+     "to": 102
+    }
+   ]
+  },
+  "fairy-tail-2018": {
+   "confidence": "medium",
+   "sources": [
+    "https://fairytail.fandom.com/wiki/Story_Arcs",
+    "https://www.animefillerlist.com/shows/fairy-tail"
+   ],
+   "notes": "Arc ranges from the Fairy Tail Wiki (episode lists per arc) cross-checked with AnimeFillerList. Wikipedia's Fairy Tail list has no arc breakdown. The wiki and AnimeFillerList use continuous numbering 1-328; Kitsu splits it into fairy-tail (1-175), fairy-tail-2014 (176-277, numbered 1-102) and fairy-tail-2018 (278-328, numbered 1-51). Ranges here are converted to each Kitsu entry's own numbering. Kitsu ep 1 = overall ep 278. Avatar arc is overall 276-284 (starts in fairy-tail-2014 eps 101-102). Alvarez Empire is overall 285-328.",
+   "arcs": [
+    {
+     "name": "Avatar",
+     "from": 1,
+     "to": 7
+    },
+    {
+     "name": "Alvarez Empire",
+     "from": 8,
+     "to": 51
+    }
+   ]
+  },
+  "dragon-ball": {
+   "confidence": "medium",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_Dragon_Ball_episodes",
+    "https://dragonball.fandom.com/wiki/List_of_Sagas",
+    "https://www.animefillerlist.com/shows/dragon-ball"
+   ],
+   "notes": "Saga names and ranges from Wikipedia's season/saga table. Disagreement: Dragon Ball Wiki ends Commander Red Saga at 67 and starts Fortuneteller Baba Saga at 68; Wikipedia uses 68/69 (followed here). All other boundaries agree. Filler episodes (30-33, 45, 79-83, 127-132, 149-153) sit inside the sagas and are not split out.",
+   "arcs": [
+    {
+     "name": "Emperor Pilaf Saga",
+     "from": 1,
+     "to": 13
+    },
+    {
+     "name": "Tournament Saga",
+     "from": 14,
+     "to": 28
+    },
+    {
+     "name": "Red Ribbon Army Saga",
+     "from": 29,
+     "to": 45
+    },
+    {
+     "name": "General Blue Saga",
+     "from": 46,
+     "to": 57
+    },
+    {
+     "name": "Commander Red Saga",
+     "from": 58,
+     "to": 68
+    },
+    {
+     "name": "Fortuneteller Baba Saga",
+     "from": 69,
+     "to": 83
+    },
+    {
+     "name": "Tien Shinhan Saga",
+     "from": 84,
+     "to": 101
+    },
+    {
+     "name": "King Piccolo Saga",
+     "from": 102,
+     "to": 122
+    },
+    {
+     "name": "Piccolo Jr. Saga",
+     "from": 123,
+     "to": 153
+    }
+   ]
+  },
+  "dragon-ball-z": {
+   "confidence": "medium",
+   "sources": [
+    "https://dragonball.fandom.com/wiki/List_of_Sagas",
+    "https://en.wikipedia.org/wiki/List_of_Dragon_Ball_Z_episodes",
+    "https://www.animefillerlist.com/shows/dragon-ball-z"
+   ],
+   "notes": "Saga ranges from the Dragon Ball Wiki (Funimation saga names). Wikipedia's 9 seasons agree with every season boundary (74/75, 107/108, 139/140, 165/166, 194/195, 219/220, 253/254) but do not split sagas within a season, so the in-season splits (Raditz/Vegeta 6/7, Namek/Ginyu 67/68, Garlic Jr./Trunks 117/118, Trunks/Androids 125/126, Imperfect/Perfect Cell 152/153, Other World/Great Saiyaman 199/200, Great Saiyaman/World Tournament 209/210, Babidi/Majin Buu 231/232, Fusion/Kid Buu 275/276, Kid Buu/Peaceful World 287/288) rest on the wiki alone. Disagreement: Wikipedia's season 1 'Saiyan Saga' runs 1-39, while the wiki starts the Namek Saga at 36.",
+   "arcs": [
+    {
+     "name": "Raditz Saga",
+     "from": 1,
+     "to": 6
+    },
+    {
+     "name": "Vegeta Saga",
+     "from": 7,
+     "to": 35
+    },
+    {
+     "name": "Namek Saga",
+     "from": 36,
+     "to": 67
+    },
+    {
+     "name": "Captain Ginyu Saga",
+     "from": 68,
+     "to": 74
+    },
+    {
+     "name": "Frieza Saga",
+     "from": 75,
+     "to": 107
+    },
+    {
+     "name": "Garlic Jr. Saga",
+     "from": 108,
+     "to": 117,
+     "filler": true
+    },
+    {
+     "name": "Trunks Saga",
+     "from": 118,
+     "to": 125
+    },
+    {
+     "name": "Androids Saga",
+     "from": 126,
+     "to": 139
+    },
+    {
+     "name": "Imperfect Cell Saga",
+     "from": 140,
+     "to": 152
+    },
+    {
+     "name": "Perfect Cell Saga",
+     "from": 153,
+     "to": 165
+    },
+    {
+     "name": "Cell Games Saga",
+     "from": 166,
+     "to": 194
+    },
+    {
+     "name": "Other World Saga",
+     "from": 195,
+     "to": 199,
+     "filler": true
+    },
+    {
+     "name": "Great Saiyaman Saga",
+     "from": 200,
+     "to": 209
+    },
+    {
+     "name": "World Tournament Saga",
+     "from": 210,
+     "to": 219
+    },
+    {
+     "name": "Babidi Saga",
+     "from": 220,
+     "to": 231
+    },
+    {
+     "name": "Majin Buu Saga",
+     "from": 232,
+     "to": 253
+    },
+    {
+     "name": "Fusion Saga",
+     "from": 254,
+     "to": 275
+    },
+    {
+     "name": "Kid Buu Saga",
+     "from": 276,
+     "to": 287
+    },
+    {
+     "name": "Peaceful World Saga",
+     "from": 288,
+     "to": 291
+    }
+   ]
+  },
+  "dragon-ball-super": {
+   "confidence": "medium",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_Dragon_Ball_Super_episodes",
+    "https://dragonball.fandom.com/wiki/List_of_Sagas",
+    "https://www.animefillerlist.com/shows/dragon-ball-super"
+   ],
+   "notes": "Wikipedia lists 5 sagas: God of Destruction Beerus 1-18, Golden Frieza 19-27, Universe 6 28-46, Goku Black/Zamasu 47-76, Universe Survival 77-131. The Dragon Ball Wiki splits out two anime-only sagas, Copy-Vegeta (42-46) and Paradise Plant (68-76), which are included here as filler (AnimeFillerList: 42-46 filler; 68-70 and 73-76 filler, 71-72 anime canon). Disagreement: the wiki puts the Beerus/Golden Frieza boundary at 15/16; Wikipedia's 18/19 is used.",
+   "arcs": [
+    {
+     "name": "God of Destruction Beerus Saga",
+     "from": 1,
+     "to": 18
+    },
+    {
+     "name": "Golden Frieza Saga",
+     "from": 19,
+     "to": 27
+    },
+    {
+     "name": "Universe 6 Saga",
+     "from": 28,
+     "to": 41
+    },
+    {
+     "name": "Copy-Vegeta Saga",
+     "from": 42,
+     "to": 46,
+     "filler": true
+    },
+    {
+     "name": "Future Trunks Saga",
+     "from": 47,
+     "to": 67
+    },
+    {
+     "name": "Paradise Plant Saga",
+     "from": 68,
+     "to": 76,
+     "filler": true
+    },
+    {
+     "name": "Universe Survival Saga",
+     "from": 77,
+     "to": 131
+    }
+   ]
+  },
+  "hunter-x-hunter-2011": {
+   "confidence": "medium",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_(2011_TV_series)_episodes",
+    "https://hunterxhunter.fandom.com/wiki/Story_Arcs"
+   ],
+   "notes": "No filler. Disagreement: Hunter x Hunter Wiki gives Heavens Arena 27-36 and Yorknew City 37-58; Wikipedia gives Heavens Arena 27-38 and 'Phantom Troupe' 39-58. Wikipedia boundary used, with the fan-standard name 'Yorknew City'. Both sources include the Zoldyck Family episodes (22-26) in the Hunter Exam arc. Wikipedia calls the last arc 'Election'.",
+   "arcs": [
+    {
+     "name": "Hunter Exam",
+     "from": 1,
+     "to": 26
+    },
+    {
+     "name": "Heavens Arena",
+     "from": 27,
+     "to": 38
+    },
+    {
+     "name": "Yorknew City",
+     "from": 39,
+     "to": 58
+    },
+    {
+     "name": "Greed Island",
+     "from": 59,
+     "to": 75
+    },
+    {
+     "name": "Chimera Ant",
+     "from": 76,
+     "to": 136
+    },
+    {
+     "name": "13th Hunter Chairman Election",
+     "from": 137,
+     "to": 148
+    }
+   ]
+  },
+  "black-clover-tv": {
+   "confidence": "medium",
+   "sources": [
+    "https://blackclover.fandom.com/wiki/List_of_Story_Arcs",
+    "https://www.animefillerlist.com/shows/black-clover",
+    "https://www.sportskeeda.com/anime/black-clover-arcs-guide-all-11-arcs-order"
+   ],
+   "notes": "Slug 'black-clover' on Kitsu is the 2016 Jump Festa special (id 12625); the TV series is 'black-clover-tv'. Season 2 (2026, Kitsu id 50024, slug Black-Clover-Season-2) is a separate entry and not covered. Wikipedia has no arc breakdown; ranges from the Black Clover Wiki, matched by secondary arc guides. The wiki lists ep 51 in both Seabed Temple and Witches' Forest, and ep 96 in both Royal Knights and Elf Reincarnation; assigned to the earlier arc here. Spade Kingdom Raid continues past ep 170 (wiki 168-174 in continuous numbering). Elf Reincarnation (97-157) contains filler 123-125, 131, 134-135, 142-149 per AnimeFillerList, not split out because no source names those as arcs.",
+   "arcs": [
+    {
+     "name": "Magic Knights Entrance",
+     "from": 1,
+     "to": 13
+    },
+    {
+     "name": "Dungeon Exploration",
+     "from": 14,
+     "to": 19
+    },
+    {
+     "name": "Royal Capital Assault",
+     "from": 20,
+     "to": 27
+    },
+    {
+     "name": "Eye of the Midnight Sun Encounter",
+     "from": 28,
+     "to": 39
+    },
+    {
+     "name": "Seabed Temple",
+     "from": 40,
+     "to": 51
+    },
+    {
+     "name": "Witches' Forest",
+     "from": 52,
+     "to": 65
+    },
+    {
+     "name": "Royal Knights",
+     "from": 66,
+     "to": 96
+    },
+    {
+     "name": "Elf Reincarnation",
+     "from": 97,
+     "to": 157
+    },
+    {
+     "name": "Heart Kingdom Joint Struggle",
+     "from": 158,
+     "to": 167
+    },
+    {
+     "name": "Spade Kingdom Raid",
+     "from": 168,
+     "to": 170
+    }
+   ]
+  },
+  "yu-yu-hakusho": {
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_Yu_Yu_Hakusho_episodes",
+    "https://yuyuhakusho.fandom.com/wiki/Spirit_Detective_Saga"
+   ],
+   "notes": "Wikipedia's four seasons (Funimation box sets) are the four sagas and match the YuYu Hakusho Wiki saga pages exactly. The wiki also lists sub-arcs inside the Spirit Detective Saga (Yusuke's Ordeal 1-5, Artifacts of Darkness 6-8, Genkai's Tournament 9-13, Maze Castle 14-21, Rescue Yukina 22-25) if finer granularity is wanted.",
+   "arcs": [
+    {
+     "name": "Spirit Detective Saga",
+     "from": 1,
+     "to": 25
+    },
+    {
+     "name": "Dark Tournament Saga",
+     "from": 26,
+     "to": 66
+    },
+    {
+     "name": "Chapter Black Saga",
+     "from": 67,
+     "to": 94
+    },
+    {
+     "name": "Three Kings Saga",
+     "from": 95,
+     "to": 112
+    }
+   ]
+  },
+  "katekyo-hitman-reborn": {
+   "confidence": "high",
+   "sources": [
+    "https://reborn.fandom.com/wiki/Katek%C5%8D_Hitman_Reborn!_Story_Arcs",
+    "https://en.wikipedia.org/wiki/List_of_Reborn!_episodes",
+    "https://www.animefillerlist.com/shows/katekyo-hitman-reborn"
+   ],
+   "notes": "Reborn Wiki arc pages agree with Wikipedia's 9 DVD seasons at every boundary (33/34, 65/66, 73/74, 101/102, 140/141, 153/154, 177/178, 189/190); Kokuyo (20-26) inside season 1 is from the wiki only. Daily Life appears three times (1-19, 27-33, 66-73) as the wiki lists it. Future Arc sub-arcs are given individually. AnimeFillerList marks 142-154 and 179-188 filler (vs arc ranges 141-153 and 178-189).",
+   "arcs": [
+    {
+     "name": "Daily Life",
+     "from": 1,
+     "to": 19
+    },
+    {
+     "name": "Kokuyo",
+     "from": 20,
+     "to": 26
+    },
+    {
+     "name": "Daily Life",
+     "from": 27,
+     "to": 33
+    },
+    {
+     "name": "Varia",
+     "from": 34,
+     "to": 65
+    },
+    {
+     "name": "Daily Life",
+     "from": 66,
+     "to": 73
+    },
+    {
+     "name": "Future: Search for the Guardians / Training",
+     "from": 74,
+     "to": 101
+    },
+    {
+     "name": "Future: Merone Base Invasion",
+     "from": 102,
+     "to": 140
+    },
+    {
+     "name": "Arcobaleno Trials",
+     "from": 141,
+     "to": 153,
+     "filler": true
+    },
+    {
+     "name": "Choice",
+     "from": 154,
+     "to": 177
+    },
+    {
+     "name": "Primo Family",
+     "from": 178,
+     "to": 189,
+     "filler": true
+    },
+    {
+     "name": "Future Final Battle",
+     "from": 190,
+     "to": 203
+    }
+   ]
+  },
+  "sword-art-online": {
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Sword_Art_Online_season_1",
+    "https://swordartonline.fandom.com/wiki/Sword_Art_Online_Episode_15"
+   ],
+   "notes": "Recap special 14.5 is not counted in Kitsu's 25 episodes.",
+   "arcs": [
+    {
+     "name": "Aincrad",
+     "from": 1,
+     "to": 14
+    },
+    {
+     "name": "Fairy Dance",
+     "from": 15,
+     "to": 25
+    }
+   ]
+  },
+  "d-gray-man": {
+   "confidence": "medium",
+   "sources": [
+    "https://dgrayman.fandom.com/wiki/Story_Arcs",
+    "https://www.animefillerlist.com/shows/d-gray-man"
+   ],
+   "notes": "Wikipedia has no arc breakdown; ranges from the D.Gray-man Wiki. The wiki's arcs are not chronological in places: Introduction is 1-2 and 6-7 with Ghost of Mater 3-5 between them (listed here as separate entries), and the wiki's arc order puts General Yeegar Falls (25-26) before Vampire of the Old Castle (19-24). Off-by-one disagreements with AnimeFillerList: wiki Second Filler 27-35 / Order in Crisis 36-39 vs AFL filler 29-36 (ep 36 filler, 37-40 canon); wiki Lulu Bell's Attack 40-50 vs AFL filler 41-50. Filler arcs: First Filler (14-18), Second Filler (27-35), Lulu Bell's Attack (40-50). D.Gray-man Hallow is a separate Kitsu entry.",
+   "arcs": [
+    {
+     "name": "Introduction",
+     "from": 1,
+     "to": 2
+    },
+    {
+     "name": "Ghost of Mater",
+     "from": 3,
+     "to": 5
+    },
+    {
+     "name": "Introduction",
+     "from": 6,
+     "to": 7
+    },
+    {
+     "name": "Destruction of the Black Order Attempt",
+     "from": 8,
+     "to": 8
+    },
+    {
+     "name": "The Rewinding City",
+     "from": 9,
+     "to": 13
+    },
+    {
+     "name": "First Filler Arc",
+     "from": 14,
+     "to": 18,
+     "filler": true
+    },
+    {
+     "name": "The Vampire of the Old Castle",
+     "from": 19,
+     "to": 24
+    },
+    {
+     "name": "General Yeegar Falls",
+     "from": 25,
+     "to": 26
+    },
+    {
+     "name": "Second Filler Arc",
+     "from": 27,
+     "to": 35,
+     "filler": true
+    },
+    {
+     "name": "Order in Crisis",
+     "from": 36,
+     "to": 39
+    },
+    {
+     "name": "Lulu Bell's Attack",
+     "from": 40,
+     "to": 50,
+     "filler": true
+    },
+    {
+     "name": "Suman Dark's Fallen",
+     "from": 51,
+     "to": 56
+    },
+    {
+     "name": "Edo and Asian Branch",
+     "from": 57,
+     "to": 75
+    },
+    {
+     "name": "Noah's Ark",
+     "from": 76,
+     "to": 94
+    },
+    {
+     "name": "Invasion of the Black Order",
+     "from": 95,
+     "to": 103
+    }
+   ]
+  },
+  "yu-gi-oh-duel-monsters": {
+   "confidence": "high",
+   "sources": [
+    "https://yugipedia.com/wiki/Yu-Gi-Oh!_Duel_Monsters",
+    "https://en.wikipedia.org/wiki/List_of_Yu-Gi-Oh!_Duel_Monsters_episodes"
+   ],
+   "notes": "Ranges from Yugipedia arc pages; Wikipedia's 5 seasons agree at 49/50, 97/98, 144/145, 184/185. Yugipedia groups 41-49 as 'Domino City Battles' (Legendary Heroes 43-45 and Dungeon Dice Monsters 47-49 sub-stories); Wikipedia season 1 names them Legendary Heroes and Dungeon Dice Monsters. Battle City Finals (122-144) is called 'Enter the Shadow Realm' (dub) on Wikipedia; Pharaoh's Memories (199-219) is the dub's 'Dawn of the Duel'; the final arc is 'Battle Ritual' / 'Ceremonial Battle'. AnimeFillerList's Yu-Gi-Oh page is the 1998 series, not Duel Monsters, so filler flags follow Yugipedia/Wikipedia's anime-original arcs (Domino City Battles, Virtual World, Waking the Dragons, Grand Championship).",
+   "arcs": [
+    {
+     "name": "Duelist Kingdom",
+     "from": 1,
+     "to": 40
+    },
+    {
+     "name": "Domino City Battles (Legendary Heroes / Dungeon Dice Monsters)",
+     "from": 41,
+     "to": 49,
+     "filler": true
+    },
+    {
+     "name": "Battle City",
+     "from": 50,
+     "to": 97
+    },
+    {
+     "name": "Virtual World",
+     "from": 98,
+     "to": 121,
+     "filler": true
+    },
+    {
+     "name": "Battle City Finals",
+     "from": 122,
+     "to": 144
+    },
+    {
+     "name": "Waking the Dragons",
+     "from": 145,
+     "to": 184,
+     "filler": true
+    },
+    {
+     "name": "Grand Championship",
+     "from": 185,
+     "to": 198,
+     "filler": true
+    },
+    {
+     "name": "Pharaoh's Memories (Dawn of the Duel)",
+     "from": 199,
+     "to": 219
+    },
+    {
+     "name": "Ceremonial Battle",
+     "from": 220,
+     "to": 224
+    }
+   ]
+  }
+ }
+}

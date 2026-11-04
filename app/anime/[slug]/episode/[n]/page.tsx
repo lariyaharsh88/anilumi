@@ -122,7 +122,7 @@ export default async function EpisodePage({ params }: Props) {
     ...(zones && upcoming ? [{ q: `What time does ${a.title} episode ${n} come out in India, the US and the UK?`, a: `The Japanese broadcast is ${zones.ist} in India (IST), ${zones.et} Eastern and ${zones.pt} Pacific in the US, and ${zones.uk} in the UK. Streaming services usually add it within an hour or two.` }] : []),
     { q: `What time does ${a.title} episode ${n} release?`, a: whenTime ? `Broadcast is at ${whenTime} Japan Standard Time. The page shows the equivalent in your own time zone and counts down live.` : `Kitsu has the date but not a broadcast time for this episode. Japanese TV anime typically air in the evening or late night JST.` },
     { q: `Where can I watch ${a.title} episode ${n}?`, a: a.streaming.length ? `${a.title} streams on ${a.streaming.map((s) => s.site).join(", ")}. Availability depends on your region.` : `No licensed streaming links are listed yet; check the main ${a.title} page for updates.` },
-    ...(arc ? [{ q: `Which arc is ${a.title} episode ${n} in?`, a: `Episode ${n} is part of the ${arc.name} arc${arc.filler ? ", a filler arc" : ""}, which runs from episode ${arc.from} to ${arc.to}.` }] : []),
+    ...(arc ? [{ q: `Which arc is ${a.title} episode ${n} in?`, a: `Episode ${n} is part of the ${arc.name} arc${arc.filler ? ", a filler arc" : ""}, ${arc.to === null ? `which started with episode ${arc.from} and is still airing` : `which runs from episode ${arc.from} to ${arc.to}`}.` }] : []),
     ...(songs.length ? [{ q: `What are the opening and ending of ${a.title} episode ${n}?`, a: [songLine("OP") && `The opening is ${songLine("OP")}.`, songLine("ED") && `The ending is ${songLine("ED")}.`].filter(Boolean).join(" ") + ` Every ${a.title} opening and ending is listed on the openings & endings page.` }] : []),
     ...(a.status === "current" && isNext ? [{ q: `How many episodes of ${a.title} are out?`, a: `${lastAired} episode${lastAired === 1 ? "" : "s"} have aired so far. Episode ${n} is the next one.` }] : []),
   ];
@@ -166,7 +166,7 @@ export default async function EpisodePage({ params }: Props) {
           {arc && (
             <p className="mt-4 flex flex-wrap items-baseline gap-x-2 gap-y-1 text-sm">
               <span aria-hidden>📖</span>
-              <span className="text-ink/90"><strong className="font-semibold text-ink">{arc.name} arc</strong>{arc.filler ? " (filler)" : ""} · episode {n - arc.from + 1} of {arc.to - arc.from + 1}</span>
+              <span className="text-ink/90"><strong className="font-semibold text-ink">{arc.name} arc</strong>{arc.filler ? " (filler)" : ""} · episode {n - arc.from + 1} {arc.to === null ? "of the arc so far" : `of ${arc.to - arc.from + 1}`}</span>
               <Link href={`${animePath(a)}#arcs`} className="text-xs font-medium text-violet hover:text-violet-2">All arcs →</Link>
             </p>
           )}

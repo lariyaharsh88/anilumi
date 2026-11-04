@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
@@ -7,6 +8,7 @@ import Countdown from "@/components/Countdown";
 import AiringNoticeBanner from "@/components/AiringNoticeBanner";
 import SpoilerGate from "@/components/SpoilerGate";
 import FillerToggle from "@/components/FillerToggle";
+import { arcsFor, arcOf, arcRange } from "@/lib/arcs";
 import { fillerFor, fillerSource } from "@/lib/filler";
 import PageHero from "@/components/PageHero";
 import { pageAbout, itemList } from "@/lib/ld";
@@ -53,6 +55,10 @@ export async function EpisodesView({ slug, page }: { slug: string; page: number 
   const fill = fillerFor(a.slug, a.episodeCount ?? (lastAired || null));
   if (nextAt) a.nextRelease = nextAt;
   const nextN = a.status === "current" && a.nextRelease && reliable ? lastAired + 1 : null;
+  // Story arcs (data/arcs.json): an index that jumps to each arc's first episode, and a heading in the list
+  // wherever a new arc starts.
+  const arcs = arcsFor(a.slug);
+  const arcHref = (n: number) => `${episodesPath(a.slug, Math.ceil(n / LIMIT))}#ep-${n}`;
 
   return (
     <div className="container-x pb-8">
@@ -102,11 +108,25 @@ export async function EpisodesView({ slug, page }: { slug: string; page: number 
           <FillerToggle targetId="episode-list" />
         </div>
       )}
+      {arcs && (
+        <details className="card group mt-5 p-4" open={page === 1}>
+          <summary className="cursor-pointer list-none font-semibold text-ink">📖 Jump to an arc <span className="text-sm font-normal text-muted">· {arcs.length} arcs</span></summary>
+          <ul className="mt-3 flex flex-wrap gap-1.5">
+            {arcs.map((x) => <li key={`${x.from}-${x.name}`}><a href={arcHref(x.from)} className={`chip ${x.filler ? "opacity-75" : ""}`}>{x.name}{x.filler ? " · filler" : ""} <span className="ml-1 tabular-nums">{arcRange(x)}</span></a></li>)}
+          </ul>
+        </details>
+      )}
       <AdSlot slot="episodes-top" />
       {eps.items.length ? (
         <ol id="episode-list" className="mt-6 space-y-3">
-          {eps.items.map((e) => (
-            <li key={e.id} className="card flex gap-4 p-3" data-filler={e.number && (fill?.filler.has(e.number) || fill?.recap.has(e.number)) ? "" : undefined}>
+          {eps.items.map((e, i) => {
+            const arc = e.number ? arcOf(arcs, e.number) : null;
+            const prev = i > 0 && eps.items[i - 1].number ? arcOf(arcs, eps.items[i - 1].number!) : null;
+            return (<Fragment key={e.id}>
+            {arc && arc !== prev && (
+              <li className="pt-2"><h3 className="text-sm font-bold uppercase tracking-wider text-violet-2">{arc.name} arc{arc.filler ? " · filler" : ""} <span className="font-normal normal-case tracking-normal text-muted">· episodes {arcRange(arc)}</span></h3></li>
+            )}
+            <li id={e.number ? `ep-${e.number}` : undefined} className="card flex scroll-mt-32 gap-4 p-3" data-filler={e.number && (fill?.filler.has(e.number) || fill?.recap.has(e.number)) ? "" : undefined}>
               <div className="relative hidden aspect-video w-40 shrink-0 overflow-hidden rounded-lg bg-bg-2 sm:block">
                 {e.thumbnail && (e.number ? <SpoilerGate animeId={a.id} ep={e.number}><div className="relative aspect-video w-40"><Image src={e.thumbnail} alt="" fill sizes="160px" className="object-cover" /></div></SpoilerGate> : <Image src={e.thumbnail} alt="" fill sizes="160px" className="object-cover" />)}
               </div>
@@ -116,7 +136,8 @@ export async function EpisodesView({ slug, page }: { slug: string; page: number 
                 {e.synopsis && (e.number ? <SpoilerGate animeId={a.id} ep={e.number}><p className="mt-1 line-clamp-3 text-sm text-ink/80">{excerpt(e.synopsis, 200)}</p></SpoilerGate> : <p className="mt-1 line-clamp-3 text-sm text-ink/80">{excerpt(e.synopsis, 200)}</p>)}
               </div>
             </li>
-          ))}
+            </Fragment>);
+          })}
         </ol>
       ) : (
         <p className="card mt-6 p-8 text-center text-muted">No episode data has been added for this title yet.</p>
