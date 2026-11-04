@@ -228,7 +228,7 @@ export default async function AnimePage({ params }: Props) {
   // "how long?" and "do people finish?" each have their own page or section; repeating them as Q&A read as filler.
   // Source material this season adapts (data/manga-seasons.json): "Where does X end in the manga?"
   const adapt = adaptationFor(a.slug);
-  if (adapt) faqExtra.push({ q: `Where does ${a.title} end in the ${adapt.medium}?`, a: `${a.title} adapts ${adaptedRange(adapt)}.${continueAt(adapt) ? ` To carry on with the story, start at ${continueAt(adapt)}.` : ""}${adapt.notes ? ` ${adapt.notes}` : ""}` });
+  if (adapt) faqExtra.push({ q: `Where does ${a.title} end in the ${adapt.medium}?`, a: `${a.title} adapts ${adaptedRange(adapt)}.${continueAt(adapt) ? ` To read on from here in the ${adapt.medium}, start at ${continueAt(adapt)}.` : ""}${adapt.notes ? ` ${adapt.notes}` : ""}` });
   const arcs = a.subtype === "movie" ? null : arcsFor(a.slug);
   if (arcs) faqExtra.push({ q: `What are the ${a.title} arcs in order?`, a: `${a.title} has ${arcs.length} story arcs: ${arcSummary(arcs)}.` });
   const dub = dubFor(a);
@@ -500,7 +500,7 @@ export default async function AnimePage({ params }: Props) {
             {adapt && (
               <div className="card mt-8 p-4">
                 <p className="text-xs font-semibold uppercase tracking-wider text-muted">📚 Source material</p>
-                <p className="mt-1 text-sm text-ink/90">This season adapts <strong className="text-ink">{adaptedRange(adapt)}</strong>.{continueAt(adapt) && <> To carry on with the story, start at <strong className="text-ink">{continueAt(adapt)}</strong>.</>}</p>
+                <p className="mt-1 text-sm text-ink/90">This season adapts <strong className="text-ink">{adaptedRange(adapt)}</strong>.{continueAt(adapt) && <> To read on from here in the {adapt.medium}, start at <strong className="text-ink">{continueAt(adapt)}</strong>.</>}</p>
                 {adapt.notes && <p className="mt-1 text-xs text-muted">{adapt.notes}</p>}
                 <p className="mt-2 text-[11px] text-muted">{ADAPT_REVIEWED ? "Checked" : `Draft${ADAPT_CHECKED ? `, cross-checked on ${new Date(`${ADAPT_CHECKED}T12:00:00Z`).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" })}` : ""}`} against the series wiki and episode lists. <Link href="/how-we-check" className="underline">How we check</Link></p>
               </div>

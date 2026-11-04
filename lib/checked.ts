@@ -10,6 +10,8 @@ import { ARCS_REVIEWED, ARCS_CHECKED } from "./arcs";
 import arcData from "@/data/arcs.json";
 import { DUB_CHECKED, DUB_REVIEWED } from "./hindidub";
 import dubData from "@/data/hindi-dubs.json";
+import { ADAPT_CHECKED, ADAPT_REVIEWED } from "./mangaseasons";
+import mangaData from "@/data/manga-seasons.json";
 
 export type CheckedGuide = { kind: "Watch order" | "Editor's take" | "Filler list"; title: string; href: string; date: string };
 
@@ -35,5 +37,7 @@ export function draftCounts() {
     arcsChecked: ARCS_CHECKED,
     dubs: DUB_REVIEWED ? 0 : (dubData as { entries: unknown[] }).entries.length,
     dubsChecked: DUB_CHECKED,
+    mangaSeasons: ADAPT_REVIEWED ? 0 : Object.keys((mangaData as { seasons: object }).seasons).length,
+    mangaChecked: ADAPT_CHECKED,
   };
 }

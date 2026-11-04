@@ -1,1 +1,1026 @@
-{ "checked": null, "reviewed": null, "seasons": {} }
+{
+ "checked": "2026-11-04",
+ "reviewed": null,
+ "seasons": {
+  "attack-on-titan": {
+   "franchise": "Attack on Titan",
+   "medium": "manga",
+   "unit": "chapter",
+   "from": 1,
+   "to": 34,
+   "continue": 35,
+   "confidence": "high",
+   "notes": "Ch 34 is split: S1 finale adapts it and S2 ep 1 opens with its remainder.",
+   "sources": [
+    "https://www.animefillerguide.com/anime/attack-on-titan/",
+    "https://www.mangaupdates.com/series/aqw5kar/shingeki-no-kyojin",
+    "https://attackontitan.fandom.com/wiki/Wall:_Assault_on_Stohess,_Part_3"
+   ]
+  },
+  "shingeki-no-kyojin-2": {
+   "franchise": "Attack on Titan",
+   "medium": "manga",
+   "unit": "chapter",
+   "from": 35,
+   "to": 50,
+   "continue": 51,
+   "confidence": "high",
+   "notes": "S2 finale also opens ch 51; S3 starts at ch 51.",
+   "sources": [
+    "https://www.animefillerguide.com/anime/attack-on-titan/",
+    "https://www.mangaupdates.com/series/aqw5kar/shingeki-no-kyojin",
+    "https://attackontitan.fandom.com/wiki/Scream_(Episode)"
+   ]
+  },
+  "shingeki-no-kyojin-3": {
+   "franchise": "Attack on Titan",
+   "medium": "manga",
+   "unit": "chapter",
+   "from": 51,
+   "to": 72,
+   "continue": 73,
+   "confidence": "high",
+   "notes": "Adapted out of order in places; the finale also uses flash-forward pages from ch 84.",
+   "sources": [
+    "https://www.animefillerguide.com/anime/attack-on-titan/",
+    "https://www.mangaupdates.com/series/aqw5kar/shingeki-no-kyojin",
+    "https://attackontitan.fandom.com/wiki/Night_of_the_Battle_to_Retake_the_Wall_(Episode)"
+   ]
+  },
+  "shingeki-no-kyojin-3-part-2": {
+   "franchise": "Attack on Titan",
+   "medium": "manga",
+   "unit": "chapter",
+   "from": 73,
+   "to": 90,
+   "continue": 91,
+   "confidence": "high",
+   "sources": [
+    "https://www.animefillerguide.com/anime/attack-on-titan/",
+    "https://www.mangaupdates.com/series/aqw5kar/shingeki-no-kyojin",
+    "https://attackontitan.fandom.com/wiki/The_Other_Side_of_the_Wall"
+   ]
+  },
+  "shingeki-no-kyojin-the-final-season": {
+   "franchise": "Attack on Titan",
+   "medium": "manga",
+   "unit": "chapter",
+   "from": 91,
+   "to": 116,
+   "continue": 117,
+   "confidence": "high",
+   "notes": "Finale touches the start of ch 117; Part 2 re-covers parts of ch 115-116 before continuing from ch 117.",
+   "sources": [
+    "https://www.animefillerguide.com/anime/attack-on-titan/",
+    "https://www.mangaupdates.com/series/aqw5kar/shingeki-no-kyojin",
+    "https://attackontitan.fandom.com/wiki/Above_and_Below_(Episode)"
+   ]
+  },
+  "shingeki-no-kyojin-the-final-season-part-2": {
+   "franchise": "Attack on Titan",
+   "medium": "manga",
+   "unit": "chapter",
+   "from": 117,
+   "to": 130,
+   "continue": 131,
+   "confidence": "high",
+   "notes": "Ep 1 re-adapts parts of ch 115-116. The two 'THE FINAL CHAPTERS' specials (not in this list) adapt ch 131-139, the end of the manga.",
+   "sources": [
+    "https://www.animefillerguide.com/anime/attack-on-titan/",
+    "https://www.mangaupdates.com/series/aqw5kar/shingeki-no-kyojin",
+    "https://attackontitan.fandom.com/wiki/The_Dawn_of_Humanity_(Episode)"
+   ]
+  },
+  "boku-no-hero-academia": {
+   "franchise": "My Hero Academia",
+   "medium": "manga",
+   "unit": "chapter",
+   "from": 1,
+   "to": 21,
+   "continue": 22,
+   "confidence": "high",
+   "notes": "S1 finale covers most of ch 21; S2 ep 1 finishes it.",
+   "sources": [
+    "https://www.animefillerguide.com/anime/my-hero-academia/",
+    "https://www.mangaupdates.com/series/tc9lj22/boku-no-hero-academia",
+    "https://myheroacademia.fandom.com/wiki/Episode_13"
+   ]
+  },
+  "boku-no-hero-academia-2nd-season": {
+   "franchise": "My Hero Academia",
+   "medium": "manga",
+   "unit": "chapter",
+   "from": 22,
+   "to": 69,
+   "continue": 70,
+   "confidence": "high",
+   "notes": "S2 finale adapts the first pages of ch 70; S3 picks up mid-ch 70.",
+   "sources": [
+    "https://www.animefillerguide.com/anime/my-hero-academia/",
+    "https://www.mangaupdates.com/series/tc9lj22/boku-no-hero-academia",
+    "https://myheroacademia.fandom.com/wiki/Episode_38"
+   ]
+  },
+  "boku-no-hero-academia-3rd-season": {
+   "franchise": "My Hero Academia",
+   "medium": "manga",
+   "unit": "chapter",
+   "from": 70,
+   "to": 124,
+   "continue": 125,
+   "confidence": "high",
+   "notes": "S3 ep 1 is mostly anime-original (uses parts of bonus ch 49.5).",
+   "sources": [
+    "https://www.animefillerguide.com/anime/my-hero-academia/",
+    "https://www.mangaupdates.com/series/tc9lj22/boku-no-hero-academia",
+    "https://myheroacademia.fandom.com/wiki/Episode_63"
+   ]
+  },
+  "boku-no-hero-academia-4th-season": {
+   "franchise": "My Hero Academia",
+   "medium": "manga",
+   "unit": "chapter",
+   "from": 125,
+   "to": 190,
+   "continue": 191,
+   "confidence": "high",
+   "notes": "S4 ep 1 is anime-original; finale previews a few pages of ch 192-193.",
+   "sources": [
+    "https://www.animefillerguide.com/anime/my-hero-academia/",
+    "https://www.mangaupdates.com/series/tc9lj22/boku-no-hero-academia",
+    "https://myheroacademia.fandom.com/wiki/Episode_88"
+   ]
+  },
+  "boku-no-hero-academia-5th-season": {
+   "franchise": "My Hero Academia",
+   "medium": "manga",
+   "unit": "chapter",
+   "from": 191,
+   "to": 257,
+   "continue": 258,
+   "confidence": "high",
+   "notes": "Adapted out of order: ch 241-255 air before the flashback My Villain Academia arc (ch 218-240). Finale touches ch 258; S6 starts there.",
+   "sources": [
+    "https://www.animefillerguide.com/anime/my-hero-academia/",
+    "https://www.mangaupdates.com/series/tc9lj22/boku-no-hero-academia",
+    "https://myheroacademia.fandom.com/wiki/Episode_113"
+   ]
+  },
+  "boku-no-hero-academia-6th-season": {
+   "franchise": "My Hero Academia",
+   "medium": "manga",
+   "unit": "chapter",
+   "from": 258,
+   "to": 328,
+   "continue": 329,
+   "confidence": "high",
+   "notes": "MangaUpdates lists the end as ch 327; the fandom wiki and Anime Filler Guide both put the finale at ch 326-328, so 328 used.",
+   "sources": [
+    "https://www.animefillerguide.com/anime/my-hero-academia/",
+    "https://www.mangaupdates.com/series/tc9lj22/boku-no-hero-academia",
+    "https://myheroacademia.fandom.com/wiki/Episode_138"
+   ]
+  },
+  "boku-no-hero-academia-7th-season": {
+   "franchise": "My Hero Academia",
+   "medium": "manga",
+   "unit": "chapter",
+   "from": 329,
+   "to": 398,
+   "continue": 399,
+   "confidence": "high",
+   "sources": [
+    "https://www.animefillerguide.com/anime/my-hero-academia/",
+    "https://www.mangaupdates.com/series/tc9lj22/boku-no-hero-academia",
+    "https://myheroacademia.fandom.com/wiki/Episode_159"
+   ]
+  },
+  "boku-no-hero-academia-final-season": {
+   "franchise": "My Hero Academia",
+   "medium": "manga",
+   "unit": "chapter",
+   "from": 399,
+   "to": 430,
+   "continue": null,
+   "confidence": "high",
+   "notes": "Adaptation complete. The epilogue ch 431 (added in vol 42) is adapted separately as the 'More' OVA per MangaUpdates.",
+   "sources": [
+    "https://www.animefillerguide.com/anime/my-hero-academia/",
+    "https://www.mangaupdates.com/series/tc9lj22/boku-no-hero-academia",
+    "https://myheroacademia.fandom.com/wiki/Episode_170"
+   ]
+  },
+  "one-punch-man": {
+   "franchise": "One Punch Man",
+   "medium": "manga",
+   "unit": "chapter",
+   "from": 1,
+   "to": 37,
+   "continue": 38,
+   "confidence": "high",
+   "notes": "Murata (Young Jump) manga numbering. MangaUpdates puts the S1/S2 split at 36/37; the fandom wiki and Anime Filler Guide both use 37/38.",
+   "sources": [
+    "https://www.animefillerguide.com/anime/one-punch-man/",
+    "https://onepunchman.fandom.com/wiki/Episode_36",
+    "https://www.mangaupdates.com/series/e1096mh/one-punch-man"
+   ]
+  },
+  "one-punch-man-2": {
+   "franchise": "One Punch Man",
+   "medium": "manga",
+   "unit": "chapter",
+   "from": 38,
+   "to": 85,
+   "continue": 86,
+   "confidence": "high",
+   "sources": [
+    "https://www.animefillerguide.com/anime/one-punch-man/",
+    "https://onepunchman.fandom.com/wiki/Episode_36",
+    "https://www.mangaupdates.com/series/e1096mh/one-punch-man"
+   ]
+  },
+  "one-punch-man-3": {
+   "franchise": "One Punch Man",
+   "medium": "manga",
+   "unit": "chapter",
+   "from": 86,
+   "to": 115,
+   "continue": 116,
+   "confidence": "medium",
+   "notes": "Finale adapts ch 115 plus a few pages of ch 116 and 117 (fandom wiki); Anime Filler Guide says ch 116, MangaUpdates says ch 115. Start reading at ch 116 to be safe. Season 3 Part 2 is due in 2027.",
+   "sources": [
+    "https://www.animefillerguide.com/anime/one-punch-man/",
+    "https://onepunchman.fandom.com/wiki/Episode_36",
+    "https://www.mangaupdates.com/series/e1096mh/one-punch-man"
+   ]
+  },
+  "death-note": {
+   "franchise": "Death Note",
+   "medium": "manga",
+   "unit": "chapter",
+   "from": 1,
+   "to": 107,
+   "continue": 108,
+   "confidence": "high",
+   "notes": "Second half (after about ch 59) is abridged and the ending is changed. The epilogue ch 108 is not adapted, so read ch 108 after the anime.",
+   "sources": [
+    "https://www.animefillerguide.com/anime/death-note/",
+    "https://www.mangaupdates.com/series/1ljv3bs/death-note",
+    "https://deathnote.fandom.com/wiki/New_World_(episode)"
+   ]
+  },
+  "fullmetal-alchemist-brotherhood": {
+   "franchise": "Fullmetal Alchemist: Brotherhood",
+   "medium": "manga",
+   "unit": "chapter",
+   "from": 1,
+   "to": 108,
+   "continue": null,
+   "confidence": "high",
+   "notes": "Adapts the whole manga. Vols 1-7 and 15 are abridged and ch 3-4 skipped (MangaUpdates); ep 1 is anime-original.",
+   "sources": [
+    "https://www.animefillerguide.com/anime/fullmetal-alchemist-brotherhood/",
+    "https://www.mangaupdates.com/series/8q91xb4/hagane-no-renkinjutsushi",
+    "https://en.wikipedia.org/wiki/List_of_Fullmetal_Alchemist:_Brotherhood_episodes"
+   ]
+  },
+  "hunter-x-hunter-2011": {
+   "franchise": "Hunter x Hunter",
+   "medium": "manga",
+   "unit": "chapter",
+   "from": 1,
+   "to": 339,
+   "continue": 340,
+   "confidence": "high",
+   "notes": "Ends with the Election arc. Ch 340 starts the Dark Continent Expedition (manga ongoing, irregular).",
+   "sources": [
+    "https://www.animefillerguide.com/anime/hunter-x-hunter-2011/",
+    "https://www.mangaupdates.com/series/mpt5n3o/hunter-x-hunter",
+    "https://hunterxhunter.fandom.com/wiki/Past_×_And_×_Future"
+   ]
+  },
+  "kimetsu-no-yaiba": {
+   "franchise": "Demon Slayer",
+   "medium": "manga",
+   "unit": "chapter",
+   "from": 1,
+   "to": 53,
+   "continue": 54,
+   "confidence": "high",
+   "notes": "Ch 54-66 (Mugen Train) are covered by the Mugen Train film or the 7-episode Mugen Train Arc TV version (not in this list) before Entertainment District.",
+   "sources": [
+    "https://www.animefillerguide.com/anime/demon-slayer/",
+    "https://www.mangaupdates.com/series/gnv09ie/kimetsu-no-yaiba",
+    "https://kimetsu-no-yaiba.fandom.com/wiki/Episode_26"
+   ]
+  },
+  "kimetsu-no-yaiba-yuukaku-hen": {
+   "franchise": "Demon Slayer",
+   "medium": "manga",
+   "unit": "chapter",
+   "from": 67,
+   "to": 97,
+   "continue": 98,
+   "confidence": "high",
+   "notes": "Entertainment District arc only. Ch 54-66 are in the Mugen Train film / TV arc.",
+   "sources": [
+    "https://www.animefillerguide.com/anime/demon-slayer/",
+    "https://www.mangaupdates.com/series/gnv09ie/kimetsu-no-yaiba",
+    "https://kimetsu-no-yaiba.fandom.com/wiki/Episode_44"
+   ]
+  },
+  "kimetsu-no-yaiba-katanakaji-no-satohen": {
+   "franchise": "Demon Slayer",
+   "medium": "manga",
+   "unit": "chapter",
+   "from": 98,
+   "to": 127,
+   "continue": 128,
+   "confidence": "high",
+   "sources": [
+    "https://www.animefillerguide.com/anime/demon-slayer/",
+    "https://www.mangaupdates.com/series/gnv09ie/kimetsu-no-yaiba",
+    "https://kimetsu-no-yaiba.fandom.com/wiki/Episode_55"
+   ]
+  },
+  "Kimetsu-no-Yaiba-Hashira-Geikohen": {
+   "franchise": "Demon Slayer",
+   "medium": "manga",
+   "unit": "chapter",
+   "from": 128,
+   "to": 139,
+   "continue": 140,
+   "confidence": "high",
+   "notes": "Continues in the Infinity Castle film trilogy. Part 1 (2025) adapts ch 140 to about ch 156-157 (MangaUpdates says 156, Anime Filler Guide 157).",
+   "sources": [
+    "https://www.animefillerguide.com/anime/demon-slayer/",
+    "https://www.mangaupdates.com/series/gnv09ie/kimetsu-no-yaiba",
+    "https://kimetsu-no-yaiba.fandom.com/wiki/Episode_63"
+   ]
+  },
+  "nanatsu-no-taizai": {
+   "franchise": "The Seven Deadly Sins",
+   "medium": "manga",
+   "unit": "chapter",
+   "from": 1,
+   "to": 103,
+   "continue": 104,
+   "confidence": "high",
+   "notes": "Finale also previews ch 108. Revival of the Commandments ep 1 re-covers ch 102-103.",
+   "sources": [
+    "https://www.animefillerguide.com/anime/nanatsu-no-taizai/",
+    "https://www.mangaupdates.com/series/stwyptc/nanatsu-no-taizai",
+    "https://nanatsu-no-taizai.fandom.com/wiki/Episode_24"
+   ]
+  },
+  "nanatsu-no-taizai-imashime-no-fukkatsu": {
+   "franchise": "The Seven Deadly Sins",
+   "medium": "manga",
+   "unit": "chapter",
+   "from": 104,
+   "to": 197,
+   "continue": 198,
+   "confidence": "high",
+   "notes": "Episode 1 also re-covers ch 102-103. Finale includes extra ch 11-12.",
+   "sources": [
+    "https://www.animefillerguide.com/anime/nanatsu-no-taizai/",
+    "https://www.mangaupdates.com/series/stwyptc/nanatsu-no-taizai",
+    "https://nanatsu-no-taizai.fandom.com/wiki/Revival_of_The_Commandments_Episode_24"
+   ]
+  },
+  "nanatsu-no-taizai-kamigami-no-gekirin": {
+   "franchise": "The Seven Deadly Sins",
+   "medium": "manga",
+   "unit": "chapter",
+   "from": 198,
+   "to": 267,
+   "continue": 268,
+   "confidence": "high",
+   "notes": "Heavily reordered. The finale borrows pages from ch 272 and 285; Dragon's Judgement starts at ch 268.",
+   "sources": [
+    "https://www.animefillerguide.com/anime/nanatsu-no-taizai/",
+    "https://www.mangaupdates.com/series/stwyptc/nanatsu-no-taizai"
+   ]
+  },
+  "nanatsu-no-taizai-fundo-no-shinpan": {
+   "franchise": "The Seven Deadly Sins",
+   "medium": "manga",
+   "unit": "chapter",
+   "from": 268,
+   "to": 346,
+   "continue": null,
+   "confidence": "high",
+   "notes": "Adaptation complete. The sequel manga Four Knights of the Apocalypse is a separate series.",
+   "sources": [
+    "https://www.animefillerguide.com/anime/nanatsu-no-taizai/",
+    "https://www.mangaupdates.com/series/stwyptc/nanatsu-no-taizai",
+    "https://nanatsu-no-taizai.fandom.com/wiki/Dragon's_Judgement_Episode_24"
+   ]
+  },
+  "ansatsu-kyoushitsu-tv": {
+   "franchise": "Assassination Classroom",
+   "medium": "manga",
+   "unit": "chapter",
+   "from": 1,
+   "to": 73,
+   "continue": 74,
+   "confidence": "high",
+   "notes": "Ep 22 is titled after a much later chapter but adapts ch 71-73.",
+   "sources": [
+    "https://www.mangaupdates.com/series/uxny0vb/ansatsu-kyoushitsu",
+    "https://ansatsukyoshitsu.fandom.com/wiki/Episode_22",
+    "https://en.wikipedia.org/wiki/List_of_Assassination_Classroom_chapters"
+   ]
+  },
+  "ansatsu-kyoushitsu-tv-2": {
+   "franchise": "Assassination Classroom",
+   "medium": "manga",
+   "unit": "chapter",
+   "from": 74,
+   "to": 180,
+   "continue": null,
+   "confidence": "high",
+   "notes": "Adaptation complete, ending with the final ch 180. MangaUpdates lists the end as 184 counting extra chapters and OVA material.",
+   "sources": [
+    "https://www.mangaupdates.com/series/uxny0vb/ansatsu-kyoushitsu",
+    "https://ansatsukyoshitsu.fandom.com/wiki/Episode_22",
+    "https://en.wikipedia.org/wiki/List_of_Assassination_Classroom_chapters",
+    "https://ansatsukyoshitsu.fandom.com/wiki/Episode_47",
+    "https://www.animenewsnetwork.com/news/2016-02-20/assassination-classroom-anime-2nd-season-to-cover-manga-ending/.98897"
+   ]
+  },
+  "haikyuu": {
+   "franchise": "Haikyuu!!",
+   "medium": "manga",
+   "unit": "chapter",
+   "from": 1,
+   "to": 71,
+   "continue": 72,
+   "confidence": "high",
+   "notes": "S2 ep 1 opens by revisiting part of ch 71.",
+   "sources": [
+    "https://www.animefillerguide.com/anime/haikyuu/",
+    "https://www.mangaupdates.com/series/ul2du3n/haikyu"
+   ]
+  },
+  "haikyuu-2": {
+   "franchise": "Haikyuu!!",
+   "medium": "manga",
+   "unit": "chapter",
+   "from": 72,
+   "to": 149,
+   "continue": 150,
+   "confidence": "high",
+   "sources": [
+    "https://www.animefillerguide.com/anime/haikyuu/",
+    "https://www.mangaupdates.com/series/ul2du3n/haikyu",
+    "https://haikyuu.fandom.com/wiki/Declaration_of_War_(Episode)"
+   ]
+  },
+  "haikyuu-karasuno-koukou-vs-shiratorizawa-gakuen-koukou": {
+   "franchise": "Haikyuu!!",
+   "medium": "manga",
+   "unit": "chapter",
+   "from": 150,
+   "to": 190,
+   "continue": 191,
+   "confidence": "high",
+   "notes": "Ch 191-206 are not in the TV series. They are adapted in the OVAs 'Land vs. Air' (ch 190-199) and 'The Path of the Ball'. To the Top starts at ch 207 (the S3 finale previews it).",
+   "sources": [
+    "https://www.animefillerguide.com/anime/haikyuu/",
+    "https://www.mangaupdates.com/series/ul2du3n/haikyu",
+    "https://haikyuu.fandom.com/wiki/Land_VS_Air_(OVA)"
+   ]
+  },
+  "haikyuu-to-the-top": {
+   "franchise": "Haikyuu!!",
+   "medium": "manga",
+   "unit": "chapter",
+   "from": 207,
+   "to": 249,
+   "continue": 250,
+   "confidence": "high",
+   "sources": [
+    "https://www.animefillerguide.com/anime/haikyuu/",
+    "https://www.mangaupdates.com/series/ul2du3n/haikyu",
+    "https://haikyuu.fandom.com/wiki/The_Second_Day_(Episode)"
+   ]
+  },
+  "haikyuu-to-the-top-2": {
+   "franchise": "Haikyuu!!",
+   "medium": "manga",
+   "unit": "chapter",
+   "from": 250,
+   "to": 292,
+   "continue": 293,
+   "confidence": "high",
+   "notes": "The film 'The Dumpster Battle' (2024) adapts ch 293 to about ch 325-326 (MangaUpdates says 325, Anime Filler Guide 326).",
+   "sources": [
+    "https://www.animefillerguide.com/anime/haikyuu/",
+    "https://www.mangaupdates.com/series/ul2du3n/haikyu",
+    "https://haikyuu.fandom.com/wiki/The_Promised_Land_(Episode)"
+   ]
+  },
+  "jujutsu-kaisen": {
+   "franchise": "Jujutsu Kaisen",
+   "medium": "manga",
+   "unit": "chapter",
+   "from": 1,
+   "to": 63,
+   "continue": 64,
+   "confidence": "high",
+   "notes": "The film Jujutsu Kaisen 0 adapts the prequel volume 0 (separate from the main chapter numbering).",
+   "sources": [
+    "https://www.animefillerguide.com/anime/jujutsu-kaisen/",
+    "https://www.mangaupdates.com/series/axmopy6/jujutsu-kaisen",
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_24"
+   ]
+  },
+  "jujutsu-kaisen-2": {
+   "franchise": "Jujutsu Kaisen",
+   "medium": "manga",
+   "unit": "chapter",
+   "from": 64,
+   "to": 137,
+   "continue": 138,
+   "confidence": "high",
+   "notes": "Opens with the Gojo's Past arc (ch 65-79); ch 64 is adapted in ep 30. Finale previews pages of ch 138-139.",
+   "sources": [
+    "https://www.animefillerguide.com/anime/jujutsu-kaisen/",
+    "https://www.mangaupdates.com/series/axmopy6/jujutsu-kaisen",
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_47"
+   ]
+  },
+  "Jujutsu-Kaisen-3": {
+   "franchise": "Jujutsu Kaisen",
+   "medium": "manga",
+   "unit": "chapter",
+   "from": 138,
+   "to": 180,
+   "continue": 181,
+   "confidence": "high",
+   "notes": "Finale adapts only a few pages of ch 181 (MangaUpdates says up to p. 14), so start at ch 181.",
+   "sources": [
+    "https://www.animefillerguide.com/anime/jujutsu-kaisen/",
+    "https://www.mangaupdates.com/series/axmopy6/jujutsu-kaisen",
+    "https://jujutsu-kaisen.fandom.com/wiki/Episode_59"
+   ]
+  },
+  "shigatsu-wa-kimi-no-uso": {
+   "franchise": "Your Lie in April",
+   "medium": "manga",
+   "unit": "chapter",
+   "from": 1,
+   "to": 44,
+   "continue": null,
+   "confidence": "high",
+   "notes": "Adaptation complete.",
+   "sources": [
+    "https://www.mangaupdates.com/series/oxkxafi/shigatsu-wa-kimi-no-uso",
+    "https://shigatsu-wa-kimi-no-uso.fandom.com/wiki/Episode_22:_Spring_Wind",
+    "https://www.animeoshi.com/anime/your-lie-in-april/episode/22"
+   ]
+  },
+  "naruto": {
+   "franchise": "Naruto",
+   "medium": "manga",
+   "unit": "chapter",
+   "from": 1,
+   "to": 238,
+   "continue": 239,
+   "confidence": "high",
+   "notes": "Canon ends at ep 135 (ch 238); eps 136-220 are filler. Ch 239-244 (Kakashi Gaiden) are adapted in Shippuden eps 119-120, and Shippuden's main story starts at ch 245.",
+   "sources": [
+    "https://www.animefillerguide.com/anime/naruto/",
+    "https://www.animefillerguide.com/anime/naruto-shippuden/",
+    "https://www.mangaupdates.com/series/7z3yqqk/naruto",
+    "https://naruto.fandom.com/wiki/The_Promise_That_Could_Not_Be_Kept"
+   ]
+  },
+  "naruto-shippuden": {
+   "franchise": "Naruto",
+   "medium": "manga",
+   "unit": "chapter",
+   "from": 245,
+   "to": 699,
+   "continue": 700,
+   "confidence": "high",
+   "notes": "Ch 239-244 (Kakashi Gaiden) appear in eps 119-120. Heavy filler. The epilogue ch 700 is adapted in Boruto ep 24 per MangaUpdates; Narutopedia ties it to Shippuden ep 500. Sources differ, so ch 700 is given as the place to continue.",
+   "sources": [
+    "https://www.animefillerguide.com/anime/naruto/",
+    "https://www.animefillerguide.com/anime/naruto-shippuden/",
+    "https://www.mangaupdates.com/series/7z3yqqk/naruto",
+    "https://naruto.fandom.com/wiki/Kakashi_Chronicles_~_Boys'_Life_on_the_Battlefield_~_Part_1"
+   ]
+  },
+  "yakusoku-no-neverland": {
+   "franchise": "The Promised Neverland",
+   "medium": "manga",
+   "unit": "chapter",
+   "from": 1,
+   "to": 37,
+   "continue": 38,
+   "confidence": "high",
+   "notes": "Season 2 drops whole arcs and changes the story. Readers should continue from ch 38, not from where S2 ends.",
+   "sources": [
+    "https://www.animefillerguide.com/anime/yakusoku-no-neverland/",
+    "https://www.mangaupdates.com/series/qwxz22l/yakusoku-no-neverland",
+    "https://yakusokunoneverland.fandom.com/wiki/Episode_12"
+   ]
+  },
+  "tokyo-ghoul": {
+   "franchise": "Tokyo Ghoul",
+   "medium": "manga",
+   "unit": "chapter",
+   "from": 1,
+   "to": 66,
+   "continue": 67,
+   "confidence": "medium",
+   "notes": "Abridged and reordered, with parts of ch 54-61 omitted. √A (S2) leaves the manga here and is mostly original, so readers continue from Tokyo Ghoul ch 67. Anime Filler Guide's season header says ch 69, but its per-episode table and MangaUpdates both end at ch 66.",
+   "sources": [
+    "https://www.animefillerguide.com/anime/tokyo-ghoul/",
+    "https://www.mangaupdates.com/series/c2hzbxv/tokyo-ghoul"
+   ]
+  },
+  "tokyo-ghoul-re": {
+   "franchise": "Tokyo Ghoul",
+   "medium": "manga",
+   "unit": "chapter",
+   "from": 1,
+   "to": 58,
+   "continue": 59,
+   "confidence": "medium",
+   "notes": "Uses Tokyo Ghoul:re's own chapter numbering. Heavily abridged with changes. Ch 59 is skipped (:re 2 starts at ch 60).",
+   "sources": [
+    "https://www.animefillerguide.com/anime/tokyo-ghoul/",
+    "https://www.mangaupdates.com/series/kux1tcr/toukyou-ghoul-re"
+   ]
+  },
+  "tokyo-ghoul-re-2": {
+   "franchise": "Tokyo Ghoul",
+   "medium": "manga",
+   "unit": "chapter",
+   "from": 60,
+   "to": 179,
+   "continue": null,
+   "confidence": "medium",
+   "notes": "Uses Tokyo Ghoul:re's own chapter numbering. Covers the rest of :re to the final ch 179, heavily compressed with changes. The manga is the fuller version.",
+   "sources": [
+    "https://www.animefillerguide.com/anime/tokyo-ghoul/",
+    "https://www.mangaupdates.com/series/kux1tcr/toukyou-ghoul-re"
+   ]
+  },
+  "noragami": {
+   "franchise": "Noragami",
+   "medium": "manga",
+   "unit": "chapter",
+   "from": 1,
+   "to": 12,
+   "continue": 13,
+   "confidence": "high",
+   "notes": "Eps 10 (mostly), 11 and 12 are an anime-original ending. Aragoto ignores it and its ep 1 revisits ch 12 before continuing from ch 13.",
+   "sources": [
+    "https://www.mangaupdates.com/series/3dzd5bx/noragami",
+    "https://noragami.fandom.com/wiki/Episode_10",
+    "https://www.animefillerguide.com/anime/noragami/"
+   ]
+  },
+  "noragami-aragoto": {
+   "franchise": "Noragami",
+   "medium": "manga",
+   "unit": "chapter",
+   "from": 13,
+   "to": 39,
+   "continue": 40,
+   "confidence": "high",
+   "notes": "TV ends at ch 39, so start at ch 40. MangaUpdates notes an OAD later adapts ch 41 while skipping ch 40.",
+   "sources": [
+    "https://www.animefillerguide.com/anime/noragami/",
+    "https://www.mangaupdates.com/series/3dzd5bx/noragami",
+    "https://noragami.fandom.com/wiki/Aragoto_Episode_13"
+   ]
+  },
+  "shokugeki-no-souma": {
+   "franchise": "Food Wars! Shokugeki no Soma",
+   "medium": "manga",
+   "unit": "chapter",
+   "from": 1,
+   "to": 60,
+   "continue": 61,
+   "confidence": "high",
+   "sources": [
+    "https://www.mangaupdates.com/series/ztd54k0/shokugeki-no-souma",
+    "https://shokugekinosoma.fandom.com/wiki/Episode_24:_The_Warriors'_Banquet",
+    "https://en.wikipedia.org/wiki/Food_Wars!_Shokugeki_no_Soma_season_1"
+   ]
+  },
+  "shokugeki-no-souma-ni-no-sara": {
+   "franchise": "Food Wars! Shokugeki no Soma",
+   "medium": "manga",
+   "unit": "chapter",
+   "from": 61,
+   "to": 117,
+   "continue": 118,
+   "confidence": "high",
+   "notes": "Ch 118-119 are covered by an OVA (MangaUpdates). Season 3 starts at ch 120.",
+   "sources": [
+    "https://www.mangaupdates.com/series/ztd54k0/shokugeki-no-souma",
+    "https://shokugekinosoma.fandom.com/wiki/Episode_37:_Imposingly"
+   ]
+  },
+  "shokugeki-no-souma-san-no-sara": {
+   "franchise": "Food Wars! Shokugeki no Soma",
+   "medium": "manga",
+   "unit": "chapter",
+   "from": 120,
+   "to": 166,
+   "continue": 167,
+   "confidence": "high",
+   "notes": "First cour of Season 3. The finale mixes in ch 149-151 out of order.",
+   "sources": [
+    "https://www.mangaupdates.com/series/ztd54k0/shokugeki-no-souma",
+    "https://shokugekinosoma.fandom.com/wiki/Episode_49:_The_One_Who_Aims_for_the_Summit"
+   ]
+  },
+  "shokugeki-no-souma-san-no-sara-toutsuki-ressha-hen": {
+   "franchise": "Food Wars! Shokugeki no Soma",
+   "medium": "manga",
+   "unit": "chapter",
+   "from": 167,
+   "to": 217,
+   "continue": 218,
+   "confidence": "high",
+   "notes": "Second cour of Season 3.",
+   "sources": [
+    "https://www.mangaupdates.com/series/ztd54k0/shokugeki-no-souma",
+    "https://shokugekinosoma.fandom.com/wiki/Episode_61:_The_Basis_for_Strength"
+   ]
+  },
+  "shokugeki-no-souma-shin-no-sara": {
+   "franchise": "Food Wars! Shokugeki no Soma",
+   "medium": "manga",
+   "unit": "chapter",
+   "from": 218,
+   "to": 264,
+   "continue": 265,
+   "confidence": "medium",
+   "notes": "MangaUpdates ends it at ch 264; another guide says 263. 264 used. Season 5 skips ch 265-272, so read those after this season.",
+   "sources": [
+    "https://www.mangaupdates.com/series/ztd54k0/shokugeki-no-souma",
+    "https://animegeek.com/?p=811441"
+   ]
+  },
+  "shokugeki-no-souma-gou-no-sara": {
+   "franchise": "Food Wars! Shokugeki no Soma",
+   "medium": "manga",
+   "unit": "chapter",
+   "from": 273,
+   "to": 315,
+   "continue": null,
+   "confidence": "medium",
+   "notes": "Skips ch 265-272 and heavily abridges the BLUE arc, with anime-only changes. The manga's main story ends at ch 315. Readers wanting the full version should read ch 265-315.",
+   "sources": [
+    "https://www.mangaupdates.com/series/ztd54k0/shokugeki-no-souma",
+    "https://myanimepulse.com/manga-after-anime/food-wars-shokugeki-no-soma"
+   ]
+  },
+  "boku-dake-ga-inai-machi": {
+   "franchise": "ERASED",
+   "medium": "manga",
+   "unit": "chapter",
+   "from": 1,
+   "to": 44,
+   "continue": null,
+   "confidence": "medium",
+   "notes": "Covers the whole story, but the last episodes condense and change vol 6-8 (from about ch 36). MangaUpdates also lists ch 28-29, 32 and 34-35 as skipped or abridged. The side-story volume 9 (ERASED Re) is not adapted. To read the manga's version of the ending, start around ch 36.",
+   "sources": [
+    "https://www.animefillerguide.com/anime/boku-dake-ga-inai-machi/",
+    "https://www.mangaupdates.com/series/rz5pjxl/boku-dake-ga-inai-machi",
+    "https://www.animeoshi.com/anime/erased/episode/12"
+   ]
+  },
+  "mob-psycho-100": {
+   "franchise": "Mob Psycho 100",
+   "medium": "manga",
+   "unit": "chapter",
+   "from": 1,
+   "to": 50,
+   "continue": 51,
+   "confidence": "high",
+   "sources": [
+    "https://www.animefillerguide.com/anime/mob-psycho-100/",
+    "https://www.mangaupdates.com/series/0a07j0a/mob-psycho-100",
+    "https://mob-psycho-100.fandom.com/wiki/Episode_12"
+   ]
+  },
+  "mob-psycho-100-ii": {
+   "franchise": "Mob Psycho 100",
+   "medium": "manga",
+   "unit": "chapter",
+   "from": 51,
+   "to": 91,
+   "continue": 92,
+   "confidence": "high",
+   "notes": "Some chapters adapted out of order (e.g. ch 57 in ep 1).",
+   "sources": [
+    "https://www.animefillerguide.com/anime/mob-psycho-100/",
+    "https://www.mangaupdates.com/series/0a07j0a/mob-psycho-100",
+    "https://mob-psycho-100.fandom.com/wiki/Episode_25",
+    "https://www.animeoshi.com/anime/mob-psycho-100-ii/episode/12"
+   ]
+  },
+  "mob-psycho-100-iii": {
+   "franchise": "Mob Psycho 100",
+   "medium": "manga",
+   "unit": "chapter",
+   "from": 92,
+   "to": 101,
+   "continue": null,
+   "confidence": "high",
+   "notes": "Adaptation complete.",
+   "sources": [
+    "https://www.animefillerguide.com/anime/mob-psycho-100/",
+    "https://www.mangaupdates.com/series/0a07j0a/mob-psycho-100",
+    "https://mob-psycho-100.fandom.com/wiki/Episode_37"
+   ]
+  },
+  "sword-art-online": {
+   "franchise": "Sword Art Online",
+   "medium": "light novel",
+   "unit": "volume",
+   "from": 1,
+   "to": 4,
+   "continue": 5,
+   "confidence": "high",
+   "notes": "Aincrad (vol 1, plus side stories from vol 2) and Fairy Dance (vols 3-4).",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Sword_Art_Online_season_1",
+    "https://myanimelist.net/stacks/55072"
+   ]
+  },
+  "sword-art-online-ii": {
+   "franchise": "Sword Art Online",
+   "medium": "light novel",
+   "unit": "volume",
+   "from": 5,
+   "to": 8,
+   "continue": 9,
+   "confidence": "high",
+   "notes": "Phantom Bullet (vols 5-6), then Calibur (only that story is adapted from vol 8), then Mother's Rosario (vol 7). The Ordinal Scale film is an original story.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Sword_Art_Online_II",
+    "https://myanimelist.net/stacks/55072"
+   ]
+  },
+  "sword-art-online-alicization": {
+   "franchise": "Sword Art Online",
+   "medium": "light novel",
+   "unit": "volume",
+   "from": 9,
+   "to": 14,
+   "continue": 15,
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_Sword_Art_Online_episodes",
+    "https://en.wikipedia.org/wiki/Sword_Art_Online:_Alicization",
+    "https://myanimelist.net/stacks/55072"
+   ]
+  },
+  "sword-art-online-alicization-war-of-underworld": {
+   "franchise": "Sword Art Online",
+   "medium": "light novel",
+   "unit": "volume",
+   "from": 15,
+   "to": 17,
+   "continue": 17,
+   "confidence": "medium",
+   "notes": "MAL guide says vols 15-16, but ANN's review places the 2nd cour's opening around pp. 103-141 of vol 17. So this cour also covers the first ~100 pages of vol 17. Continue from vol 17.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Sword_Art_Online:_Alicization",
+    "https://myanimelist.net/stacks/55072",
+    "https://www.animenewsnetwork.com/review/sword-art-online-alicization-war-of-underworld-part-2/episodes-1-2/.161995"
+   ]
+  },
+  "sword-art-online-alicization-war-of-underworld-2nd-season": {
+   "franchise": "Sword Art Online",
+   "medium": "light novel",
+   "unit": "volume",
+   "from": 17,
+   "to": 18,
+   "continue": 19,
+   "confidence": "high",
+   "notes": "Starts partway into vol 17 and finishes Alicization with vol 18. Unadapted material follows (Moon Cradle, then Unital Ring); not checked against two sources.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Sword_Art_Online:_Alicization",
+    "https://myanimelist.net/stacks/55072",
+    "https://AnimeNewsNetwork.com/review/sword-art-online-alicization-war-of-underworld-part-2/episode-5/.162741"
+   ]
+  },
+  "re-zero-kara-hajimeru-isekai-seikatsu": {
+   "franchise": "Re:Zero",
+   "medium": "light novel",
+   "unit": "volume",
+   "from": 1,
+   "to": 9,
+   "continue": 10,
+   "confidence": "high",
+   "notes": "Arcs 1-3. The end of vol 9 (interlude onward) opens Season 2.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Re:Zero_season_1",
+    "https://rezero.fandom.com/wiki/Episode_25"
+   ]
+  },
+  "re-zero-kara-hajimeru-isekai-seikatsu-2": {
+   "franchise": "Re:Zero",
+   "medium": "light novel",
+   "unit": "volume",
+   "from": 10,
+   "to": 13,
+   "continue": 13,
+   "confidence": "medium",
+   "notes": "First half of Arc 4. Ep 1 also adapts the end of vol 9. Ends partway into vol 13 (ch 1-2), so continue from vol 13. The part split is from the fandom wiki only; Wikipedia gives vols 10-15 for the whole season.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Re:Zero_season_2",
+    "https://rezero.fandom.com/wiki/Episode_26",
+    "https://rezero.fandom.com/wiki/Episode_38"
+   ]
+  },
+  "rezero-season-2-part-2": {
+   "franchise": "Re:Zero",
+   "medium": "light novel",
+   "unit": "volume",
+   "from": 13,
+   "to": 15,
+   "continue": 16,
+   "confidence": "medium",
+   "notes": "Second half of Arc 4, from vol 13 (ch 2 onward) to the end of vol 15. The end point is confirmed by two sources; the start point only by the fandom wiki.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Re:Zero_season_2",
+    "https://rezero.fandom.com/wiki/Episode_39",
+    "https://rezero.fandom.com/wiki/Episode_50"
+   ]
+  },
+  "re-zero-kara-hajimeru-isekai-seikatsu-3": {
+   "franchise": "Re:Zero",
+   "medium": "light novel",
+   "unit": "volume",
+   "from": 16,
+   "to": 20,
+   "continue": 20,
+   "confidence": "high",
+   "notes": "Arc 5. The last chapter of vol 20 is adapted at the start of Season 4, so continue from late vol 20 (or vol 21).",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Re:Zero_season_3",
+    "https://rezero.fandom.com/wiki/Episode_51",
+    "https://rezero.fandom.com/wiki/Episode_66",
+    "https://rezerodb.com/series_meta/series_guide"
+   ]
+  },
+  "re-zero-kara-hajimeru-isekai-seikatsu-4": {
+   "franchise": "Re:Zero",
+   "medium": "light novel",
+   "unit": "volume",
+   "from": 21,
+   "to": 25,
+   "continue": 26,
+   "confidence": "high",
+   "notes": "Arc 6. Ep 1 also adapts the final chapter of vol 20. Finale adapts vol 25 ch 9-10; continue from vol 26 (Arc 7).",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Re:Zero_season_4",
+    "https://rezero.fandom.com/wiki/Episode_67",
+    "https://rezero.fandom.com/wiki/Episode_85",
+    "https://www.dexerto.fr/anime/rezero-saison-5-informations-1660219/"
+   ]
+  },
+  "no-game-no-life": {
+   "franchise": "No Game, No Life",
+   "medium": "light novel",
+   "unit": "volume",
+   "from": 1,
+   "to": 3,
+   "continue": 4,
+   "confidence": "high",
+   "notes": "The film No Game No Life: Zero adapts vol 6, a prequel.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/No_Game_No_Life",
+    "https://no-game-no-life.fandom.com/wiki/Rule_Number_10",
+    "https://www.looper.com/400510/no-game-no-life-season-2-release-date-cast-and-plot"
+   ]
+  },
+  "toradora": {
+   "franchise": "Toradora!",
+   "medium": "light novel",
+   "unit": "volume",
+   "from": 1,
+   "to": 10,
+   "continue": null,
+   "confidence": "high",
+   "notes": "Covers the whole story. The anime finished alongside the final volume, cuts material, and its ending differs in details from vol 10.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_Toradora!_episodes",
+    "https://admin.animenewsnetwork.com/news/2009-02-05/toradora-anime-original-novels-to-end-on-march-10",
+    "https://wheredoestheanimeleaveoff.com/?p=7643"
+   ]
+  }
+ }
+}
