@@ -53,6 +53,7 @@ import { getNews, newsAbout } from "@/lib/news";
 import { getFanRecommendations, getKeyStaff, personPath } from "@/lib/anilist";
 import { combineScores, kitsuScore, aniListScore, getMalScore } from "@/lib/scores";
 import SectionNav, { type NavSection } from "@/components/fx/SectionNav";
+import MobileFold from "@/components/fx/MobileFold";
 import ClampText from "@/components/fx/ClampText";
 import NavIcon, { type IconName } from "@/components/NavIcon";
 import StickyActions from "@/components/fx/StickyActions";
@@ -281,7 +282,7 @@ export default async function AnimePage({ params }: Props) {
       <JsonLd data={ld} />
 
       {/* ───────── Hero ───────── */}
-      <header id="hero" className="relative isolate overflow-hidden">
+      <header id="hero" className="relative isolate overflow-clip">
         <div className="absolute inset-0 -z-10" aria-hidden>
           {cover && (
             <div className="parallax-bg absolute inset-0">
@@ -400,7 +401,7 @@ export default async function AnimePage({ params }: Props) {
           </div>
           <WatchOrderCard anime={a} order={order} relations={relations} className="max-md:order-2 max-md:col-span-2 max-md:mt-4 md:col-start-2 md:row-span-2 md:row-start-1" />
           {/* Fills the space under Where to watch; the watch-order answer is the card beside it. */}
-          <QuickAnswers title={a.title} items={glance.filter((x) => !x.href.startsWith("/watch-order/"))} className="max-md:order-2 max-md:col-span-2 max-md:mt-4 md:col-start-1 md:row-start-2" />
+          <MobileFold label="quick answers" className="max-md:order-2 max-md:col-span-2 max-md:mt-4 md:col-start-1 md:row-start-2"><QuickAnswers title={a.title} items={glance.filter((x) => !x.href.startsWith("/watch-order/"))} /></MobileFold>
           </div>
           {community && (a.status === "current" || !released) && (<>
             <PushButton className="mt-4 max-md:order-2 max-md:col-span-2" topic={animeTopic(a.id)} source={a.status === "current" ? "anime-alert" : "anime-premiere"}
@@ -442,7 +443,7 @@ export default async function AnimePage({ params }: Props) {
             )}
             <HindiDub dub={dub} title={a.title} className="mt-8" />
             {franchise.length > 0 && (
-              <div className="mt-8">
+              <MobileFold label="franchise" className="mt-8">
                 <div className="mb-3 flex items-end justify-between">
                   <h3 className="text-lg font-bold">Franchise</h3>
                   <Link href={`/watch-order/${a.slug}`} className="text-sm font-medium text-violet hover:underline">Full watch order →</Link>
@@ -461,7 +462,7 @@ export default async function AnimePage({ params }: Props) {
                     </li>
                   ))}
                 </ul>
-              </div>
+              </MobileFold>
             )}
           </section>
 
@@ -533,88 +534,96 @@ export default async function AnimePage({ params }: Props) {
           {/* ───────── Stats ───────── */}
           {hasStats && (
             <section id="stats" data-section aria-labelledby="h-stats">
-              <h2 id="h-stats" className="h-section mb-3">By the numbers</h2>
-              {multi && <div className="mb-3"><ScoreCard title={a.title} c={multi} /></div>}
-              <StatTiles
-                stats={[
-                  ...(a.rating && !multi ? [{ label: "Community score", value: `${(a.rating / 10).toFixed(1)} / 10`, sub: totalRatings ? `${totalRatings.toLocaleString()} ratings` : undefined }] : []),
-                  ...(a.ratingRank ? [{ label: "Rank by score", value: `#${a.ratingRank.toLocaleString()}`, sub: "of all anime on Kitsu" }] : []),
-                  ...(a.popularityRank ? [{ label: "Popularity rank", value: `#${a.popularityRank.toLocaleString()}`, sub: `${compactN(a.userCount)} members` }] : []),
-                  ...(a.userCount ? [{ label: "Favorited by", value: `${((a.favoritesCount / a.userCount) * 100).toFixed(1)}%`, sub: `${a.favoritesCount.toLocaleString()} of its members` }] : []),
-                ]}
-              />
-              {dist && totalRatings >= 20 && (
-                <div className="mt-3">
-                  <BarChart
-                    title="Score breakdown"
-                    subtitle={`${topShare}% of ${totalRatings.toLocaleString()} ratings are 9★ or 10★`}
-                    valueHeading="Ratings"
-                    data={dist.map((n, i) => ({ key: String(i + 1), label: `${i + 1}★`, value: n, display: n.toLocaleString() }))}
-                  />
-                </div>
-              )}
-              {dropOk && <ViewerBehaviour title={a.title} s={dropOk} airing={a.status === "current"} genre={benchGenre} bench={bench} />}
+              <MobileFold label="the numbers">
+                <h2 id="h-stats" className="h-section mb-3">By the numbers</h2>
+                {multi && <div className="mb-3"><ScoreCard title={a.title} c={multi} /></div>}
+                <StatTiles
+                  stats={[
+                    ...(a.rating && !multi ? [{ label: "Community score", value: `${(a.rating / 10).toFixed(1)} / 10`, sub: totalRatings ? `${totalRatings.toLocaleString()} ratings` : undefined }] : []),
+                    ...(a.ratingRank ? [{ label: "Rank by score", value: `#${a.ratingRank.toLocaleString()}`, sub: "of all anime on Kitsu" }] : []),
+                    ...(a.popularityRank ? [{ label: "Popularity rank", value: `#${a.popularityRank.toLocaleString()}`, sub: `${compactN(a.userCount)} members` }] : []),
+                    ...(a.userCount ? [{ label: "Favorited by", value: `${((a.favoritesCount / a.userCount) * 100).toFixed(1)}%`, sub: `${a.favoritesCount.toLocaleString()} of its members` }] : []),
+                  ]}
+                />
+                {dist && totalRatings >= 20 && (
+                  <div className="mt-3">
+                    <BarChart
+                      title="Score breakdown"
+                      subtitle={`${topShare}% of ${totalRatings.toLocaleString()} ratings are 9★ or 10★`}
+                      valueHeading="Ratings"
+                      data={dist.map((n, i) => ({ key: String(i + 1), label: `${i + 1}★`, value: n, display: n.toLocaleString() }))}
+                    />
+                  </div>
+                )}
+                {dropOk && <ViewerBehaviour title={a.title} s={dropOk} airing={a.status === "current"} genre={benchGenre} bench={bench} />}
+              </MobileFold>
             </section>
           )}
 
           {/* ───────── Parents' guide ───────── */}
           {guide && (
             <div id="guide" data-section>
-              <ParentsGuideSection title={a.title} guide={guide} ageRating={a.ageRating} ageRatingGuide={a.ageRatingGuide} />
-              <Link href={`${animePath(a)}/parents-guide`} className="mt-3 inline-block text-sm font-medium text-violet hover:text-violet-2">Is {a.title} okay for kids? Full guide →</Link>
+              <MobileFold label="parents' guide">
+                <ParentsGuideSection title={a.title} guide={guide} ageRating={a.ageRating} ageRatingGuide={a.ageRatingGuide} />
+                <Link href={`${animePath(a)}/parents-guide`} className="mt-3 inline-block text-sm font-medium text-violet hover:text-violet-2">Is {a.title} okay for kids? Full guide →</Link>
+              </MobileFold>
             </div>
           )}
 
           {/* ───────── Plan & track ───────── */}
           <section id="plan" data-section aria-labelledby="h-plan">
-            <h2 id="h-plan" className="h-section mb-1">Plan &amp; track</h2>
-            {(runtime > 0 || (a.episodeCount && a.episodeLength)) && (
-              <BingePlanner title={a.title} episodes={a.episodeCount || 0} episodeLength={a.episodeLength || 24} totalMinutes={runtime} status={a.status} />
-            )}
-            <div className="card mt-4 space-y-3 p-4">
-              {(a.status === "current" || a.status === "upcoming") && <CalendarLinks compact ids={[a.id]} />}
-              <p className="text-sm text-muted">
-                <a href={`${animePath(a)}/feed.xml`} className="text-violet hover:underline">RSS feed</a> for new episodes ·{" "}
-                <Link href={`/watch-order/${a.slug}`} className="text-violet hover:underline">Watch order</Link> ·{" "}
-                <Link href={`${animePath(a)}/how-long-to-watch`} className="text-violet hover:underline">How long to watch</Link> ·{" "}
-                {a.subtype !== "movie" && <><Link href={`${animePath(a)}/next-season`} className="text-violet hover:underline">{a.status === "finished" ? "Is there a next season?" : "Next season"}</Link> ·{" "}</>}
-                <Link href={`${animePath(a)}/cast`} className="text-violet hover:underline">Voice cast</Link> ·{" "}
-                <Link href={`${animePath(a)}/openings-endings`} className="text-violet hover:underline">Openings &amp; endings</Link> ·{" "}
-                <Link href="/my" className="text-violet hover:underline">My list</Link>
-              </p>
-              {(a.status === "current" || a.status === "upcoming") && <EmbedSnippet slug={a.slug} title={a.title} />}
-            </div>
+            <MobileFold label="binge planner">
+              <h2 id="h-plan" className="h-section mb-1">Plan &amp; track</h2>
+              {(runtime > 0 || (a.episodeCount && a.episodeLength)) && (
+                <BingePlanner title={a.title} episodes={a.episodeCount || 0} episodeLength={a.episodeLength || 24} totalMinutes={runtime} status={a.status} />
+              )}
+              <div className="card mt-4 space-y-3 p-4">
+                {(a.status === "current" || a.status === "upcoming") && <CalendarLinks compact ids={[a.id]} />}
+                <p className="text-sm text-muted">
+                  <a href={`${animePath(a)}/feed.xml`} className="text-violet hover:underline">RSS feed</a> for new episodes ·{" "}
+                  <Link href={`/watch-order/${a.slug}`} className="text-violet hover:underline">Watch order</Link> ·{" "}
+                  <Link href={`${animePath(a)}/how-long-to-watch`} className="text-violet hover:underline">How long to watch</Link> ·{" "}
+                  {a.subtype !== "movie" && <><Link href={`${animePath(a)}/next-season`} className="text-violet hover:underline">{a.status === "finished" ? "Is there a next season?" : "Next season"}</Link> ·{" "}</>}
+                  <Link href={`${animePath(a)}/cast`} className="text-violet hover:underline">Voice cast</Link> ·{" "}
+                  <Link href={`${animePath(a)}/openings-endings`} className="text-violet hover:underline">Openings &amp; endings</Link> ·{" "}
+                  <Link href="/my" className="text-violet hover:underline">My list</Link>
+                </p>
+                {(a.status === "current" || a.status === "upcoming") && <EmbedSnippet slug={a.slug} title={a.title} />}
+              </div>
+            </MobileFold>
           </section>
 
           {/* ───────── FAQ ───────── */}
           <div id="faq" data-section>
-            <Faq items={faq} title={`${a.title} FAQ`} />
+            <MobileFold label="questions"><Faq items={faq} title={`${a.title} FAQ`} /></MobileFold>
           </div>
         </div>
 
         {/* ───────── Sidebar ───────── */}
         <aside className="lg:sticky lg:top-[130px] lg:self-start">
           {community && released && <div className="mb-3"><RatingWidget animeId={a.id} title={a.title} /></div>}
-          <div className="card p-4">
-            <h2 className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted">Details</h2>
-            <dl className="divide-y divide-line/60 text-sm">
-              {facts.filter(([, v]) => v).map(([k, v]) => (
-                <div key={k} className="flex justify-between gap-3 py-2">
-                  <dt className="text-muted">{k}</dt>
-                  <dd className="text-right font-medium">{v}</dd>
-                </div>
-              ))}
-              {studios.length > 0 && (
-                <div className="flex justify-between gap-3 py-2"><dt className="text-muted">Studio</dt><dd className="text-right font-medium">{studios.map((p, i) => <span key={p.producer.id}>{i > 0 && ", "}<Link href={`/studio/${p.producer.slug}`} className="text-violet hover:underline">{p.producer.name}</Link></span>)}</dd></div>
-              )}
-              {keyStaff.filter((k) => k.role !== "Script").map((k) => (
-                <div key={k.role} className="flex justify-between gap-3 py-2"><dt className="text-muted">{k.role}</dt><dd className="text-right font-medium">{k.people.slice(0, 2).map((pp, i) => <span key={pp.id}>{i > 0 && ", "}<Link href={personPath(pp)} className="text-violet hover:underline">{pp.name}</Link></span>)}</dd></div>
-              ))}
-              {licensors.length > 0 && <div className="flex justify-between gap-3 py-2"><dt className="text-muted">Licensor</dt><dd className="text-right font-medium">{licensors.map((p) => p.producer.name).join(", ")}</dd></div>}
-              <div className="flex justify-between gap-3 py-2"><dt className="text-muted">Members</dt><dd className="font-medium">{a.userCount.toLocaleString()}</dd></div>
-              <div className="flex justify-between gap-3 py-2"><dt className="text-muted">Favorites</dt><dd className="font-medium">{a.favoritesCount.toLocaleString()}</dd></div>
-            </dl>
-          </div>
+          <MobileFold label="details">
+            <div className="card p-4">
+              <h2 className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted">Details</h2>
+              <dl className="divide-y divide-line/60 text-sm">
+                {facts.filter(([, v]) => v).map(([k, v]) => (
+                  <div key={k} className="flex justify-between gap-3 py-2">
+                    <dt className="text-muted">{k}</dt>
+                    <dd className="text-right font-medium">{v}</dd>
+                  </div>
+                ))}
+                {studios.length > 0 && (
+                  <div className="flex justify-between gap-3 py-2"><dt className="text-muted">Studio</dt><dd className="text-right font-medium">{studios.map((p, i) => <span key={p.producer.id}>{i > 0 && ", "}<Link href={`/studio/${p.producer.slug}`} className="text-violet hover:underline">{p.producer.name}</Link></span>)}</dd></div>
+                )}
+                {keyStaff.filter((k) => k.role !== "Script").map((k) => (
+                  <div key={k.role} className="flex justify-between gap-3 py-2"><dt className="text-muted">{k.role}</dt><dd className="text-right font-medium">{k.people.slice(0, 2).map((pp, i) => <span key={pp.id}>{i > 0 && ", "}<Link href={personPath(pp)} className="text-violet hover:underline">{pp.name}</Link></span>)}</dd></div>
+                ))}
+                {licensors.length > 0 && <div className="flex justify-between gap-3 py-2"><dt className="text-muted">Licensor</dt><dd className="text-right font-medium">{licensors.map((p) => p.producer.name).join(", ")}</dd></div>}
+                <div className="flex justify-between gap-3 py-2"><dt className="text-muted">Members</dt><dd className="font-medium">{a.userCount.toLocaleString()}</dd></div>
+                <div className="flex justify-between gap-3 py-2"><dt className="text-muted">Favorites</dt><dd className="font-medium">{a.favoritesCount.toLocaleString()}</dd></div>
+              </dl>
+            </div>
+          </MobileFold>
           <AdSlot slot="anime-side" />
         </aside>
       </div>
