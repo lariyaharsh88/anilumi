@@ -27,7 +27,7 @@ export default function HindiHub() {
         facts={[{ value: String(guides.length), label: "एनीमे गाइड" }]}
         hue={20}
       >
-        <p className="text-sm"><Link href="/watch-order" className="chip" hrefLang="en">All watch orders (English)</Link></p>
+        <p className="flex flex-wrap gap-2 text-sm"><Link href="/hi/hindi-dub" className="chip">🇮🇳 हिंदी डब एनीमे की लिस्ट</Link><Link href="/watch-order" className="chip" hrefLang="en">All watch orders (English)</Link></p>
       </PageHero>
       <ul className="reveal mt-10 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
         {guides.map((g) => (

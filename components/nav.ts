@@ -22,6 +22,7 @@ export const EXPLORE: NavItem[] = [
   { href: "/birthdays", label: "Birthdays", icon: "birthday", desc: "Character birthdays today" },
   { href: "/lists", label: "Lists", icon: "lists", desc: "Hand-picked anime lists" },
   { href: "/news", label: "News", icon: "news", desc: "Latest anime news" },
+  { href: "/hindi-dub", label: "Hindi dubbed anime", icon: "hindi", desc: "Anime you can watch in Hindi" },
   { href: "/hi", label: "हिंदी गाइड", icon: "hindi", desc: "Watch guides in Hindi" },
   { href: "/random", label: "Random anime", icon: "random", desc: "Pick something for me" },
 ];

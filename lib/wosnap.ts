@@ -29,3 +29,9 @@ export function snapshotOrder(animeId: string): WatchOrder | null {
   const mains = entries.filter((e) => e.kind === "main");
   return { root: (mains[0] ?? entries[0]).anime, entries, mainCount: mains.length, totalMinutes: o.m, releaseOrder: [], intro: null };
 }
+
+/** Page slugs of every entry in the snapshot order that holds this anime (empty when it has none). */
+export function orderSlugs(animeId: string): string[] {
+  const i = snap.idx[animeId];
+  return i === undefined ? [] : snap.orders[i].e.map((r) => r[1]);
+}

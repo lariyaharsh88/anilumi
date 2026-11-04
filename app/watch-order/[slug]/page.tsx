@@ -5,6 +5,8 @@ import { notFound } from "next/navigation";
 import { getAnimeBySlug, buildWatchOrder, franchiseName, watchOrderSlug, animePath, posterUrl, fmtMinutes, runtimeMinutes, subtypeLabel, WatchEntry } from "@/lib/kitsu";
 import { abs, site } from "@/lib/site";
 import BingePlan from "@/components/BingePlan";
+import HindiDub from "@/components/HindiDub";
+import { dubFor, dubFaq } from "@/lib/hindidub";
 import PageHero from "@/components/PageHero";
 import JsonLd from "@/components/JsonLd";
 import CheckedBy from "@/components/CheckedBy";
@@ -85,6 +87,8 @@ export default async function WatchOrderPage({ params }: Props) {
   const firstMain = ordered.find((e) => e.kind === "main");
   const mainCount = mainTitle.size;
   const sideCount = ordered.filter((e) => e.kind === "side").length;
+  const dub = firstMain ? dubFor(firstMain.anime) : null;
+  const dubQ = dubFaq(dub, name);
 
   const ld = {
     "@context": "https://schema.org",
@@ -140,6 +144,7 @@ export default async function WatchOrderPage({ params }: Props) {
         </section>
       )}
       <BingePlan ordered={ordered} />
+      <HindiDub dub={dub} title={name} className="mt-6" />
 
       <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-4">
         <div className="card p-3"><p className="text-xl font-extrabold text-accent-2">{wo.mainCount}</p><p className="text-xs text-muted">core entries</p></div>
@@ -265,6 +270,7 @@ export default async function WatchOrderPage({ params }: Props) {
           ...(mainCount > 1 ? [{ q: `How many seasons does ${name} have?`, a: `${mainCount} parts make up the main story${movieList.length ? `, plus ${movieList.length} movie${movieList.length === 1 ? "" : "s"}` : ""}${sideCount ? ` and ${sideCount} side stor${sideCount === 1 ? "y" : "ies"} or OVAs` : ""}.` }] : []),
           ...(movieList.length ? [{ q: `Where do the ${name} movies fit in the watch order?`, a: movieList.map((m) => `${m.anime.title}${m.after ? `: after ${m.after}` : ""}`).join("; ") + "." }] : []),
           { q: `Can I skip the recaps?`, a: skippable.length ? `Yes. ${skippable.map((e) => e.anime.title).join(", ")} retell events you have already seen and can be skipped.` : "There are no recap episodes or compilation movies on record for this franchise." },
+          ...(dubQ ? [dubQ] : []),
           { q: "Where does this order come from?", a: "It is built automatically from the sequel, prequel, side-story and spin-off links in the Kitsu database and refreshed daily, so new seasons appear without manual edits." },
         ]}
       />

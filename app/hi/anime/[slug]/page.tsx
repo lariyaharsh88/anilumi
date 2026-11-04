@@ -12,6 +12,8 @@ import { pageAbout, itemList } from "@/lib/ld";
 import Faq, { type FaqItem } from "@/components/Faq";
 import AdSlot from "@/components/AdSlot";
 import BingePlan from "@/components/BingePlan";
+import HindiDub from "@/components/HindiDub";
+import { dubFor, dubFaq } from "@/lib/hindidub";
 
 export const revalidate = 86400;
 export async function generateStaticParams() { return []; }
@@ -78,7 +80,10 @@ export default async function HindiGuide({ params }: Props) {
   const mainTitle = new Map(mains.map((e) => [e.anime.id, e.anime.title]));
   const meta = (e: WatchEntry) => [e.anime.startDate?.slice(0, 4), e.anime.subtype !== "movie" && e.anime.episodeCount ? `${e.anime.episodeCount} एपिसोड` : null, runtimeMinutes(e.anime) ? hiDuration(runtimeMinutes(e.anime)) : null].filter(Boolean).join(" · ");
   const next = nextSeasonText(d);
+  const dub = dubFor(a);
+  const dubQ = dubFaq(dub, name, "hi");
   const faq: FaqItem[] = [
+    ...(dubQ ? [dubQ] : []),
     { q: `${name} किस क्रम में देखें?`, a: `${mains.map((e, i) => `${i + 1}. ${e.anime.title}`).join(", ")}। ${movies.length ? "मूवीज़ उस सीज़न के बाद देखें जिसके बाद वे ऊपर लिस्ट में हैं।" : ""}`.trim() },
     { q: `${name} देखने में कितना समय लगेगा?`, a: wo.totalMinutes ? `मुख्य कहानी और मूवीज़ मिलाकर लगभग ${hiDuration(wo.totalMinutes)}। रोज़ 2 घंटे देखें तो करीब ${hiDays(wo.totalMinutes)} दिन लगेंगे।` : "पूरा रनटाइम अभी उपलब्ध नहीं है।" },
     { q: `${name} का अगला सीज़न कब आएगा?`, a: next },
@@ -127,6 +132,7 @@ export default async function HindiGuide({ params }: Props) {
       </section>
 
       <BingePlan ordered={ordered} lang="hi" />
+      <HindiDub dub={dub} title={name} lang="hi" className="mt-8" />
 
       <section className="reveal mt-10">
         <div className="card p-5">

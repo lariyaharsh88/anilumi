@@ -1,0 +1,2041 @@
+{
+ "checked": "2026-11-04",
+ "reviewed": null,
+ "entries": [
+  {
+   "s": "attack-on-titan",
+   "t": "Attack on Titan",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Anime Times (Prime Video channel)",
+     "scope": "All seasons",
+     "url": "https://animenewsindia.com/2024/12/27/attack-on-titan-season-1-now-streaming-in-hindi-on-prime-video-india"
+    },
+    {
+     "name": "Muse India (YouTube)",
+     "scope": "Season 1-2 (separate dub)",
+     "url": "https://www.animenewsnetwork.com/news/2026-03-16/hindi-tamil-telugu-dubs-of-attack-on-titan-season-1-streams-on-muse-india-youtube-channel/.235358"
+    }
+   ],
+   "sources": [
+    "https://animenewsindia.com/2024/12/27/attack-on-titan-season-1-now-streaming-in-hindi-on-prime-video-india",
+    "https://animenewsnetwork.com/news/2025-03-31/attack-on-titan-the-final-chapters-anime-hindi-dub-streams-on-anime-times/.223050",
+    "https://www.animenewsnetwork.com/news/2026-03-16/hindi-tamil-telugu-dubs-of-attack-on-titan-season-1-streams-on-muse-india-youtube-channel/.235358"
+   ],
+   "note": "Anime Times on Prime Video carries Hindi for all seasons; Muse India later released a separate free Hindi dub of Season 1 (and Season 2 from April 2026) on YouTube."
+  },
+  {
+   "s": "boku-no-hero-academia",
+   "t": "My Hero Academia",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Crunchyroll",
+     "scope": "Season 1-7",
+     "url": "https://www.crunchyroll.com/series/G6NQ5DWZ6/my-hero-academia"
+    },
+    {
+     "name": "JioHotstar",
+     "scope": "Final Season (Season 8)",
+     "url": "https://animenewsindia.com/2026/03/16/my-hero-academia-the-final-season-is-now-streaming-on-jiohotstar-in-hindi-tamil-telugu-dub"
+    },
+    {
+     "name": "Cartoon Network India",
+     "scope": "TV broadcast (from 2023)",
+     "url": "https://cdn.animenewsnetwork.com/news/2023-08-22/my-hero-academia-anime-airs-in-hindi-tamil-telugu-kannada-malayalam-on-cartoon-network-india/.201482"
+    }
+   ],
+   "sources": [
+    "https://www.crunchyroll.com/series/G6NQ5DWZ6/my-hero-academia",
+    "https://www.animenewsnetwork.com/news/2025-10-26/indian-language-dubs-of-tojima-wants-to-be-a-kamen-rider-mechanical-marie-more-anime-stream-on-/.230327",
+    "https://cdn.animenewsnetwork.com/news/2023-08-22/my-hero-academia-anime-airs-in-hindi-tamil-telugu-kannada-malayalam-on-cartoon-network-india/.201482",
+    "https://animenewsindia.com/2026/03/16/my-hero-academia-the-final-season-is-now-streaming-on-jiohotstar-in-hindi-tamil-telugu-dub"
+   ],
+   "note": "Crunchyroll's series page lists Hindi; ANN confirms Hindi through Season 7. Cartoon Network India airs a Hindi dub on TV. The final season's Hindi dub was reported on JioHotstar, while a fan list claims Season 8 on Crunchyroll; which service has Season 8 is unconfirmed."
+  },
+  {
+   "s": "one-punch-man",
+   "t": "One Punch Man",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Crunchyroll",
+     "scope": "Season 1-3",
+     "url": "https://www.crunchyroll.com/series/G63K98PZ6/one-punch-man"
+    },
+    {
+     "name": "Muse India (YouTube)",
+     "scope": "",
+     "url": "https://animenewsnetwork.com/news/2026-05-02/hindi-tamil-telugu-dub-of-one-punch-man-anime-streams-on-muse-india/.237012"
+    },
+    {
+     "name": "Sony YAY!",
+     "scope": "Season 3 (TV)",
+     "url": "https://animenewsindia.com/2026/04/08/sony-yay-to-premiere-one-punch-man-season-3-starting-april-11-2026-in-regional-dubs"
+    }
+   ],
+   "sources": [
+    "https://www.crunchyroll.com/series/G63K98PZ6/one-punch-man",
+    "https://www.animenewsnetwork.com/news/2025-10-28/crunchyroll-streams-one-punch-man-season-3-anime-hindi-dub-on-december-15/.230359",
+    "https://animenewsnetwork.com/news/2026-05-02/hindi-tamil-telugu-dub-of-one-punch-man-anime-streams-on-muse-india/.237012",
+    "https://animenewsindia.com/2026/04/08/sony-yay-to-premiere-one-punch-man-season-3-starting-april-11-2026-in-regional-dubs"
+   ],
+   "note": "Season 3 Hindi dub on Crunchyroll from Dec 2025; Muse India streams a Hindi dub on YouTube; Sony YAY! airs Season 3 on TV."
+  },
+  {
+   "s": "death-note",
+   "t": "Death Note",
+   "status": "available",
+   "confidence": "medium",
+   "platforms": [
+    {
+     "name": "Anime Times (Prime Video channel)",
+     "scope": "All 37 episodes",
+     "url": "https://animenewsindia.com/2025/08/21/anime-times-adds-hindi-tamil-and-telugu-dub-of-critically-acclaimed-series-death-note-on-prime-video-channel"
+    }
+   ],
+   "sources": [
+    "https://animenewsindia.com/2025/08/21/anime-times-adds-hindi-tamil-and-telugu-dub-of-critically-acclaimed-series-death-note-on-prime-video-channel"
+   ],
+   "note": "Hindi dub added to Anime Times on Prime Video in Aug 2025. Netflix India also streams the series, but a Hindi audio track there was not confirmed."
+  },
+  {
+   "s": "fullmetal-alchemist-brotherhood",
+   "t": "Fullmetal Alchemist: Brotherhood",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Crunchyroll",
+     "scope": "Full series (rolled out Jul-Oct 2026)",
+     "url": "https://www.crunchyroll.com/series/GRGGPG93R/fullmetal-alchemist-brotherhood"
+    }
+   ],
+   "sources": [
+    "https://www.crunchyroll.com/series/GRGGPG93R/fullmetal-alchemist-brotherhood",
+    "https://www.animenewsnetwork.com/news/2026-07-24/fullmetal-alchemist-brotherhood-anime-hindi-tamil-telugu-dubs-stream-on-crunchyroll/.239931",
+    "https://respawn.outlookindia.com/pop-culture/pop-culture-news/fullmetal-alchemist-brotherhood-dubs-debut-in-india"
+   ],
+   "note": "Crunchyroll began streaming a new Hindi dub on 27 July 2026, released in batches. Outlook Respawn reports an earlier, separate Hindi dub on Anime Times (Prime Video)."
+  },
+  {
+   "s": "fullmetal-alchemist",
+   "t": "Fullmetal Alchemist (2003)",
+   "status": "none_found",
+   "confidence": "low",
+   "platforms": [],
+   "sources": [
+    "https://www.crunchyroll.com/series/G5PHNM91W/fullmetal-alchemist-2003",
+    "https://animemirchi.com/anime-times-hindi-dubbed-anime-list/"
+   ],
+   "note": "Crunchyroll India streams it without Hindi. Fan trackers list a Hindi dub on Anime Times (Prime Video) from May 2026, but no official source was found."
+  },
+  {
+   "s": "kimi-no-na-wa",
+   "t": "Your Name.",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Crunchyroll",
+     "scope": "Film",
+     "url": "https://www.crunchyroll.com/series/G9VHN9PK3/your-name"
+    }
+   ],
+   "sources": [
+    "https://www.crunchyroll.com/series/G9VHN9PK3/your-name",
+    "https://www.animenewsnetwork.com/press-release/2025-12-02/shinkai-movies-to-now-premiere-weekly-on-crunchyroll-starting-december-4/.231611",
+    "https://animenewsindia.com/2025/11/18/crunchyroll-brings-all-eight-makoto-shinkai-films-exclusively-to-india-for-the-very-first-time-in-december-2025"
+   ],
+   "note": "Hindi dub on Crunchyroll India since Dec 2025."
+  },
+  {
+   "s": "hunter-x-hunter-2011",
+   "t": "Hunter x Hunter",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Muse India (YouTube)",
+     "scope": "2011 series",
+     "url": "https://www.animenewsnetwork.com/news/2025-02-21/muse-india-streams-hunter-x-hunter-anime-hindi-dub/.221297"
+    },
+    {
+     "name": "Cartoon Network India",
+     "scope": "TV broadcast from Aug 2025",
+     "url": "https://www.animenewsnetwork.com/news/2025-08-25/cartoon-network-india-airs-hunter-x-hunter-anime-on-august-25/.228019"
+    }
+   ],
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2025-02-21/muse-india-streams-hunter-x-hunter-anime-hindi-dub/.221297",
+    "https://www.animenewsnetwork.com/news/2026-03-09/muse-india-streams-hindi-dub-of-hunter-x-hunter-anime-greed-island-arc/.235079",
+    "https://www.animenewsnetwork.com/news/2025-08-25/cartoon-network-india-airs-hunter-x-hunter-anime-on-august-25/.228019",
+    "https://www.netflix.com/in/title/70300472",
+    "https://www.crunchyroll.com/series/GY3VKX1MR/hunter-x-hunter-2011"
+   ],
+   "note": "Muse India's Hindi dub streams free on YouTube (fan trackers say the first arcs were later removed); Cartoon Network India began airing it in Aug 2025. Netflix and Crunchyroll India carry the series without Hindi audio."
+  },
+  {
+   "s": "kimetsu-no-yaiba",
+   "t": "Demon Slayer",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Crunchyroll",
+     "scope": "Season 1-4 (Mugen Train, Entertainment District, Swordsmith Village, Hashira Training arcs)",
+     "url": "https://www.crunchyroll.com/series/GY5P48XEY/demon-slayer-kimetsu-no-yaiba"
+    },
+    {
+     "name": "Amazon MX Player",
+     "scope": "Season 1",
+     "url": "https://www.animenewsnetwork.com/news/2025-05-10/amazon-mx-player-adds-hindi-dubs-of-spy-family-demon-slayer-4-more-anime/.224301"
+    }
+   ],
+   "sources": [
+    "https://www.crunchyroll.com/series/GY5P48XEY/demon-slayer-kimetsu-no-yaiba",
+    "https://animenewsnetwork.com/news/2024-08-26/demon-slayer-season-1-anime-hindi-dub-streams-on-crunchyroll/.214764",
+    "https://www.animenewsnetwork.com/news/2022-11-15/crunchyroll-adds-hindi-indian-english-dubs-for-demon-slayer-darling-in-the-franxx-fire-force-more-/.191925",
+    "https://www.animenewsnetwork.com/news/2024-05-31/demon-slayer-hashira-training-arc-anime-hindi-tamil-telugu-dubs-launch-on-june-9/.211404",
+    "https://www.animenewsnetwork.com/news/2025-05-10/amazon-mx-player-adds-hindi-dubs-of-spy-family-demon-slayer-4-more-anime/.224301"
+   ],
+   "note": "Crunchyroll has Hindi for every TV season; Season 1 was the last to be added (Aug 2024)."
+  },
+  {
+   "s": "nanatsu-no-taizai",
+   "t": "The Seven Deadly Sins",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [
+    "https://www.netflix.com/in/title/80050063",
+    "https://www.netflix.com/in/title/81302750"
+   ],
+   "note": "Streams on Netflix India, but its title pages list Japanese/English audio only, no Hindi."
+  },
+  {
+   "s": "koe-no-katachi",
+   "t": "A Silent Voice",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2026-03-27/a-silent-voice-anime-film-streams-in-india-on-crunchyroll/.235679"
+   ],
+   "note": "Crunchyroll added the film in India in March 2026, but no Hindi audio was mentioned."
+  },
+  {
+   "s": "one-piece",
+   "t": "One Piece",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Crunchyroll",
+     "scope": "Egghead arc onward (from Mar 2026); more episodes added Sep-Oct 2026",
+     "url": "https://www.crunchyroll.com/series/GRMG8ZQZR/one-piece"
+    },
+    {
+     "name": "Cartoon Network India",
+     "scope": "Wano arc (TV, from May 2024)",
+     "url": "https://www.animenewsnetwork.com/news/2024-04-21/cartoon-network-announces-indian-language-dubs-for-one-piece-anime-wano-arc/.210059"
+    }
+   ],
+   "sources": [
+    "https://www.crunchyroll.com/series/GRMG8ZQZR/one-piece",
+    "https://www.animenewsnetwork.com/news/2026-03-29/one-piece-anime-egghead-arc-streams-in-hindi-tamil-telugu-on-march-30/.235871",
+    "https://www.animenewsnetwork.com/news/2024-04-21/cartoon-network-announces-indian-language-dubs-for-one-piece-anime-wano-arc/.210059"
+   ],
+   "note": "Crunchyroll began streaming the Egghead arc in Hindi in March 2026; Cartoon Network India aired the Wano arc in Hindi on TV. Which earlier arcs have Hindi on Crunchyroll is not confirmed."
+  },
+  {
+   "s": "spirited-away",
+   "t": "Spirited Away",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Netflix",
+     "scope": "Film",
+     "url": "https://www.netflix.com/in/title/60023642"
+    }
+   ],
+   "sources": [
+    "https://www.netflix.com/in/title/60023642",
+    "https://www.filmcompanion.in/ampstories/web-stories/7-hindi-dubbed-anime-movies-on-netflix"
+   ],
+   "note": "Netflix India lists Hindi audio."
+  },
+  {
+   "s": "ansatsu-kyoushitsu-tv",
+   "t": "Assassination Classroom",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Crunchyroll",
+     "scope": "Season 1-2",
+     "url": "https://www.crunchyroll.com/series/GRE59JGX6/assassination-classroom"
+    },
+    {
+     "name": "Amazon MX Player",
+     "scope": "",
+     "url": "https://animenewsindia.com/2025/05/08/amazon-mx-player-expands-anime-lineup-with-hindi-dubs-of-classroom-of-the-elite-hunter-x-hunter-kaguya-sama-and-mob-psycho-100"
+    },
+    {
+     "name": "Muse India (YouTube)",
+     "scope": "",
+     "url": "https://www.animenewsnetwork.com/news/2026-10-05/hindi-dub-of-assassination-classroom-anime-streams-on-youtube/.242502"
+    }
+   ],
+   "sources": [
+    "https://www.crunchyroll.com/series/GRE59JGX6/assassination-classroom",
+    "https://animenewsnetwork.com/news/2024-08-19/mashle-dr-stone-stone-wars-5-more-anime-get-indian-language-dubs/.214374",
+    "https://animenewsindia.com/2025/05/08/amazon-mx-player-expands-anime-lineup-with-hindi-dubs-of-classroom-of-the-elite-hunter-x-hunter-kaguya-sama-and-mob-psycho-100",
+    "https://www.animenewsnetwork.com/news/2026-10-05/hindi-dub-of-assassination-classroom-anime-streams-on-youtube/.242502"
+   ],
+   "note": "Crunchyroll added Hindi for both seasons in Aug 2024; Muse's separate Hindi dub is on Amazon MX Player and, from Oct 2026, Muse India YouTube."
+  },
+  {
+   "s": "haikyuu",
+   "t": "Haikyuu!!",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Crunchyroll",
+     "scope": "Season 1-4",
+     "url": "https://www.crunchyroll.com/series/GY8VM8MWY/haikyu"
+    }
+   ],
+   "sources": [
+    "https://www.crunchyroll.com/series/GY8VM8MWY/haikyu",
+    "https://animenewsnetwork.com/news/2024-05-17/crunchyroll-adds-hindi-tamil-telugu-dubs-of-dr-stone-haikyu-bluelock-more-anime-in-may-june/.210906",
+    "https://www.animenewsnetwork.com/news/2025-10-27/haikyu-to-the-top-season-4-anime-gets-hindi-tamil-telugu-dubs-on-november-6/.230329"
+   ],
+   "note": "Crunchyroll rolled out Hindi from Season 1 (June 2024) to Season 4 (Nov 2025). A fan tracker also lists a separate JioHotstar dub (unverified)."
+  },
+  {
+   "s": "no-game-no-life",
+   "t": "No Game, No Life",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": "Not found on Crunchyroll India; no Hindi dub found."
+  },
+  {
+   "s": "steins-gate",
+   "t": "Steins;Gate",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [
+    "https://www.justwatch.com/in/tv-show/steins-gate"
+   ],
+   "note": "Not found on Crunchyroll India; no Hindi dub found."
+  },
+  {
+   "s": "jujutsu-kaisen",
+   "t": "Jujutsu Kaisen",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Crunchyroll",
+     "scope": "Season 1-2 (Season 3 reported)",
+     "url": "https://www.crunchyroll.com/series/GRDV0019R/jujutsu-kaisen"
+    },
+    {
+     "name": "Sony YAY!",
+     "scope": "Season 1 (TV, separate dub)",
+     "url": "https://animenewsnetwork.com/news/2025-04-03/sony-yay-airs-jujutsu-kaisen-anime-1st-season-on-indian-tv-from-april-7/.223076"
+    }
+   ],
+   "sources": [
+    "https://www.crunchyroll.com/series/GRDV0019R/jujutsu-kaisen",
+    "https://cdn.animenewsnetwork.com/news/2023-07-21/crunchyroll-adds-hindi-dub-for-jujutsu-kaisen-anime-announces-hindi-dub-for-chainsaw-man-anime/.200528",
+    "https://m.animenewsnetwork.com/news/2023-09-22/crunchyroll-announces-hindi-tamil-dubs-for-jujutsu-kaisen-season-2-frieren-2-more-anime/.202697",
+    "https://animenewsnetwork.com/news/2025-04-03/sony-yay-airs-jujutsu-kaisen-anime-1st-season-on-indian-tv-from-april-7/.223076"
+   ],
+   "note": "Crunchyroll Hindi dub since July 2023; Sony YAY! aired a separate Hindi dub on TV from April 2025 (reportedly also on JioHotstar). Season 3 Hindi on Crunchyroll is reported but not officially confirmed."
+  },
+  {
+   "s": "shigatsu-wa-kimi-no-uso",
+   "t": "Your Lie in April",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [
+    "https://www.crunchyroll.com/series/G63V7KN9Y/your-lie-in-april"
+   ],
+   "note": "Crunchyroll India streams it, but its series page lists no Hindi audio."
+  },
+  {
+   "s": "naruto",
+   "t": "Naruto",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Crunchyroll",
+     "scope": "Naruto (all 220 eps) and Naruto Shippuden (rolling out from July 2026)",
+     "url": "https://www.crunchyroll.com/series/GY9PJ5KWR/naruto"
+    },
+    {
+     "name": "Sony YAY!",
+     "scope": "Naruto and Naruto Shippuden (TV)",
+     "url": "https://animenewsindia.com/2025/04/12/crunchyroll-adds-hindi-tamil-and-telugu-dubs-of-naruto-in-india"
+    }
+   ],
+   "sources": [
+    "https://www.crunchyroll.com/series/GY9PJ5KWR/naruto",
+    "https://www.animenewsnetwork.com/news/2025-06-16/crunchyroll-adds-hindi-tamil-telugu-dubs-for-naruto-seasons-8-9/.225602",
+    "https://www.animenewsnetwork.com/news/2026-07-04/hindi-tamil-telugu-dubs-of-naruto-shippuden-anime-stream-on-crunchyroll-on-july-6/.239253",
+    "https://animenewsindia.com/2025/04/12/crunchyroll-adds-hindi-tamil-and-telugu-dubs-of-naruto-in-india"
+   ],
+   "note": "Hindi dub produced for Sony YAY! (aired from 2022; Shippuden from 2024); Crunchyroll streams the original series in Hindi and began adding Shippuden in July 2026."
+  },
+  {
+   "s": "yakusoku-no-neverland",
+   "t": "The Promised Neverland",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [
+    "https://www.crunchyroll.com/series/GYVD2K1WY/the-promised-neverland"
+   ],
+   "note": "Crunchyroll India streams it, but its series page lists no Hindi audio."
+  },
+  {
+   "s": "toradora",
+   "t": "Toradora!",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": "Not found on Crunchyroll India; no Hindi dub found."
+  },
+  {
+   "s": "sword-art-online",
+   "t": "Sword Art Online",
+   "status": "available",
+   "confidence": "medium",
+   "platforms": [
+    {
+     "name": "Crunchyroll",
+     "scope": "",
+     "url": "https://www.crunchyroll.com/series/GR49G9VP6/sword-art-online"
+    },
+    {
+     "name": "Muse India (YouTube)",
+     "scope": "Season 1-2 (reported removed later)",
+     "url": "https://animenewsnetwork.com/news/2024-10-06/muse-asia-simulcasts-re-zero-anime-3rd-season-in-india/.216376"
+    }
+   ],
+   "sources": [
+    "https://www.crunchyroll.com/series/GR49G9VP6/sword-art-online",
+    "https://animenewsnetwork.com/news/2024-10-06/muse-asia-simulcasts-re-zero-anime-3rd-season-in-india/.216376"
+   ],
+   "note": "Crunchyroll's series page lists Hindi audio (fan trackers date Season 1 to Sept 2026). Muse India streamed a Hindi dub on YouTube from Oct 2024, which fan trackers say was later removed; that dub is reportedly on JioHotstar."
+  },
+  {
+   "s": "code-geass-lelouch-of-the-rebellion",
+   "t": "Code Geass",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Crunchyroll",
+     "scope": "Season 1 (R2 not confirmed)",
+     "url": "https://www.crunchyroll.com/series/GY2P9ED0Y/code-geass"
+    }
+   ],
+   "sources": [
+    "https://www.crunchyroll.com/series/GY2P9ED0Y/code-geass",
+    "https://www.animenewsnetwork.com/news/2023-09-08/hindi-dubs-of-code-geass-the-maid-i-hired-recently-is-mysterious-anime-stream-on-crunchyroll/.202108"
+   ],
+   "note": "Crunchyroll added a Hindi dub in Sept 2023."
+  },
+  {
+   "s": "tokyo-ghoul",
+   "t": "Tokyo Ghoul",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Crunchyroll",
+     "scope": "Season 1, √A, :re",
+     "url": "https://www.crunchyroll.com/series/G6NV7Z50Y/tokyo-ghoul"
+    }
+   ],
+   "sources": [
+    "https://www.crunchyroll.com/series/G6NV7Z50Y/tokyo-ghoul",
+    "https://www.animenewsnetwork.com/news/2026-07-17/hindi-dubs-for-tomb-raider-king-black-torch-more-anime-stream-on-crunchyroll/.239722",
+    "https://animemirchi.com/anime-times-hindi-dubbed-anime-list/"
+   ],
+   "note": "Crunchyroll added Hindi for all three seasons Jul-Sep 2026. Fan trackers also list a separate Anime Times dub (unverified)."
+  },
+  {
+   "s": "noragami",
+   "t": "Noragami",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [
+    "https://www.crunchyroll.com/series/G6WEV3WM6/noragami",
+    "https://www.animenewsnetwork.com/news/2025-11-30/shoshimin-how-to-become-ordinary-noragami-aragoto-anime-stream-on-anime-times-in-india/.231491"
+   ],
+   "note": "Crunchyroll India streams it, but its series page lists no Hindi audio. Noragami Aragoto also streams on Anime Times in India, with no Hindi mentioned."
+  },
+  {
+   "s": "howl-s-moving-castle",
+   "t": "Howl's Moving Castle",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Netflix",
+     "scope": "Film",
+     "url": "https://www.netflix.com/in/title/70028883"
+    }
+   ],
+   "sources": [
+    "https://www.netflix.com/in/title/70028883",
+    "https://www.filmcompanion.in/ampstories/web-stories/7-hindi-dubbed-anime-movies-on-netflix"
+   ],
+   "note": "Netflix India lists Hindi audio."
+  },
+  {
+   "s": "shokugeki-no-souma",
+   "t": "Food Wars! Shokugeki no Soma",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "ZEE5",
+     "scope": "All five seasons",
+     "url": "https://www.zee5.com/global/blog/?p=12424"
+    },
+    {
+     "name": "Zee Café",
+     "scope": "TV broadcast from Oct 2025",
+     "url": "https://animenewsindia.com/2025/09/30/zee-cafe-serves-up-a-fresh-anime-treat-with-the-premiere-of-food-wars-shokugeki-no-soma-in-hindi-for-the-first-time-on-tv-from-october-3-2025"
+    }
+   ],
+   "sources": [
+    "https://www.zee5.com/global/blog/?p=12424",
+    "https://animenewsindia.com/2025/09/30/zee-cafe-serves-up-a-fresh-anime-treat-with-the-premiere-of-food-wars-shokugeki-no-soma-in-hindi-for-the-first-time-on-tv-from-october-3-2025"
+   ],
+   "note": "Hindi dub premiered on Zee Café TV in Oct 2025; ZEE5 says all five seasons stream in Hindi from 16 Jan 2026. Crunchyroll India's version has no Hindi audio."
+  },
+  {
+   "s": "boku-dake-ga-inai-machi",
+   "t": "ERASED",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [
+    "https://www.crunchyroll.com/series/GYGG92K7Y/erased"
+   ],
+   "note": "Crunchyroll India streams it, but its series page lists no Hindi audio."
+  },
+  {
+   "s": "kiseijuu",
+   "t": "Parasyte -the maxim-",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": "Not found on Crunchyroll India; no Hindi dub found."
+  },
+  {
+   "s": "mob-psycho-100",
+   "t": "Mob Psycho 100",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Muse India (YouTube)",
+     "scope": "Season 1-3 and OVA",
+     "url": "https://www.animenewsnetwork.com/news/2026-08-02/hindi-tamil-telugu-dubs-of-mob-psycho-anime-streams-on-muse-india-youtube-channel/.240176"
+    },
+    {
+     "name": "Amazon MX Player",
+     "scope": "Season 1",
+     "url": "https://animenewsindia.com/2025/05/08/amazon-mx-player-expands-anime-lineup-with-hindi-dubs-of-classroom-of-the-elite-hunter-x-hunter-kaguya-sama-and-mob-psycho-100"
+    }
+   ],
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2026-08-02/hindi-tamil-telugu-dubs-of-mob-psycho-anime-streams-on-muse-india-youtube-channel/.240176",
+    "https://www.animenewsnetwork.com/news/2026-08-22/hindi-tamil-telugu-dubs-of-mob-psycho-100-iii-anime-streams-on-muse-india-youtube-channel/.240832",
+    "https://animenewsindia.com/2025/05/08/amazon-mx-player-expands-anime-lineup-with-hindi-dubs-of-classroom-of-the-elite-hunter-x-hunter-kaguya-sama-and-mob-psycho-100"
+   ],
+   "note": "Muse Communication's Hindi dub; free on Muse India YouTube, Season 1 also on Amazon MX Player. Crunchyroll India's version has no Hindi audio."
+  },
+  {
+   "s": "cowboy-bebop",
+   "t": "Cowboy Bebop",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [
+    "https://www.netflix.com/in/title/80001305"
+   ],
+   "note": "The 1998 anime streams on Netflix India with English and Japanese audio only."
+  },
+  {
+   "s": "re-zero-kara-hajimeru-isekai-seikatsu",
+   "t": "Re:Zero",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Crunchyroll",
+     "scope": "Season 4",
+     "url": "https://www.crunchyroll.com/series/GRGG9798R/rezero--starting-life-in-another-world-"
+    },
+    {
+     "name": "Amazon MX Player",
+     "scope": "Season 1",
+     "url": "https://www.animenewsnetwork.com/news/2025-05-10/amazon-mx-player-adds-hindi-dubs-of-spy-family-demon-slayer-4-more-anime/.224301"
+    }
+   ],
+   "sources": [
+    "https://www.crunchyroll.com/series/GRGG9798R/rezero--starting-life-in-another-world-",
+    "https://www.animenewsnetwork.com/news/2025-05-10/amazon-mx-player-adds-hindi-dubs-of-spy-family-demon-slayer-4-more-anime/.224301",
+    "https://animenewsindia.com/2026/07/15/crunchyroll-announces-hindi-tamil-and-telugu-dub-releases-for-naruto-shippuden-tokyo-ghoul-arifureta-and-new-summer-2026-titles/",
+    "https://animemirchi.com/anime-times-hindi-dubbed-anime-list/"
+   ],
+   "note": "Crunchyroll's series page lists Hindi and Crunchyroll announced Hindi for Season 4; Muse's Hindi dub of Season 1 is on Amazon MX Player. Other season coverage (Anime Times, Muse India YouTube) comes from fan trackers."
+  },
+  {
+   "s": "violet-evergarden",
+   "t": "Violet Evergarden",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [
+    "https://www.netflix.com/in/title/80182123"
+   ],
+   "note": "Streams on Netflix India with English and Japanese audio only."
+  },
+  {
+   "s": "fate-zero",
+   "t": "Fate series",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": "No Hindi dub found for Fate/Zero or Fate/stay night."
+  },
+  {
+   "s": "princess-mononoke",
+   "t": "Princess Mononoke",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Netflix",
+     "scope": "Film",
+     "url": "https://www.netflix.com/in/title/28630857"
+    }
+   ],
+   "sources": [
+    "https://www.netflix.com/in/title/28630857",
+    "https://www.filmcompanion.in/ampstories/web-stories/7-hindi-dubbed-anime-movies-on-netflix"
+   ],
+   "note": "Netflix India lists Hindi audio."
+  },
+  {
+   "s": "angel-beats",
+   "t": "Angel Beats!",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [
+    "https://www.crunchyroll.com/series/GY49PW7QR/angel-beats"
+   ],
+   "note": "Crunchyroll India streams it, but its series page lists no Hindi audio."
+  },
+  {
+   "s": "tengen-toppa-gurren-lagann",
+   "t": "Gurren Lagann",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [
+    "https://www.crunchyroll.com/series/GR097JN7R/gurren-lagann"
+   ],
+   "note": "Crunchyroll India streams it, but its series page lists no Hindi audio."
+  },
+  {
+   "s": "avatar-the-last-airbender-book-3-fire",
+   "t": "Avatar: The Last Airbender Book 3: Fire",
+   "status": "none_found",
+   "confidence": "low",
+   "platforms": [],
+   "sources": [
+    "https://filmibeat.com/television/news/2006/avatar-290506.html"
+   ],
+   "note": "Nickelodeon India launched the series on TV in 2006 (Filmibeat), but no source found confirms a Hindi dub or a current Hindi stream."
+  },
+  {
+   "s": "anohana-the-flower-we-saw-that-day",
+   "t": "anohana: The Flower We Saw That Day",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [
+    "https://www.crunchyroll.com/series/GR19X2G26/anohana-the-flower-we-saw-that-day"
+   ],
+   "note": "Crunchyroll India streams it, but its series page lists no Hindi audio."
+  },
+  {
+   "s": "my-neighbor-totoro",
+   "t": "My Neighbor Totoro",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Netflix",
+     "scope": "Film",
+     "url": "https://www.netflix.com/in/title/60032294"
+    }
+   ],
+   "sources": [
+    "https://www.netflix.com/in/title/60032294",
+    "https://www.filmcompanion.in/ampstories/web-stories/7-hindi-dubbed-anime-movies-on-netflix"
+   ],
+   "note": "Netflix India lists Hindi audio."
+  },
+  {
+   "s": "psycho-pass",
+   "t": "Psycho-Pass",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [
+    "https://www.crunchyroll.com/series/GR75253JY/psycho-pass"
+   ],
+   "note": "Crunchyroll India streams it, but its series page lists no Hindi audio. The Psycho-Pass film on Netflix India and the Providence film's Indian theatrical release were not in Hindi."
+  },
+  {
+   "s": "death-parade",
+   "t": "Death Parade",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": ""
+  },
+  {
+   "s": "fairy-tail",
+   "t": "Fairy Tail",
+   "status": "available",
+   "confidence": "medium",
+   "platforms": [
+    {
+     "name": "Muse India (YouTube)",
+     "scope": "Season 1 onward (fan trackers list Seasons 1-8)",
+     "url": "https://animenewsindia.com/2024/12/26/muse-india-streams-fairy-tail-season-1-in-hindi-on-youtube-starting-december-26-2024/"
+    }
+   ],
+   "sources": [
+    "https://animenewsindia.com/2024/12/26/muse-india-streams-fairy-tail-season-1-in-hindi-on-youtube-starting-december-26-2024/",
+    "https://www.animenewsnetwork.com/news/2024-12-31/muse-india-simulcasts-beheneko-anime-on-youtube/.219647",
+    "https://www.crunchyroll.com/series/G6DQDD3WR/fairy-tail"
+   ],
+   "note": "Muse India began a free Hindi dub on YouTube in Dec 2024. Crunchyroll India's version has no Hindi audio."
+  },
+  {
+   "s": "mirai-nikki-tv",
+   "t": "The Future Diary",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": ""
+  },
+  {
+   "s": "kill-la-kill",
+   "t": "Kill la Kill",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [
+    "https://www.crunchyroll.com/series/GY8VM43GY/kill-la-kill"
+   ],
+   "note": "Crunchyroll India streams it, but its series page lists no Hindi audio."
+  },
+  {
+   "s": "wolf-children",
+   "t": "Wolf Children",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": ""
+  },
+  {
+   "s": "ao-no-exorcist",
+   "t": "Blue Exorcist",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [
+    "https://www.crunchyroll.com/series/G649PJ0JY/blue-exorcist"
+   ],
+   "note": "Crunchyroll India streams it, but its series page lists no Hindi audio."
+  },
+  {
+   "s": "dr-stone",
+   "t": "Dr. Stone",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Crunchyroll",
+     "scope": "Season 1-2 confirmed; later seasons per fan trackers",
+     "url": "https://www.crunchyroll.com/series/GYEXQKJG6/dr-stone"
+    }
+   ],
+   "sources": [
+    "https://www.crunchyroll.com/series/GYEXQKJG6/dr-stone",
+    "https://www.animenewsnetwork.com/news/2024-05-17/crunchyroll-adds-hindi-tamil-telugu-dubs-of-dr-stone-haikyu-bluelock-more-anime-in-may-june/.210906",
+    "https://www.animenewsnetwork.com/news/2024-08-19/mashle-dr-stone-stone-wars-5-more-anime-get-indian-language-dubs/.214374"
+   ],
+   "note": "Crunchyroll added Season 1 (May 2024) and Stone Wars (Aug 2024) in Hindi; series page lists Hindi."
+  },
+  {
+   "s": "kono-subarashii-sekai-ni-shukufuku-wo",
+   "t": "KonoSuba",
+   "status": "available",
+   "confidence": "medium",
+   "platforms": [
+    {
+     "name": "Crunchyroll",
+     "scope": "Season 1-2 (Season 3 per fan trackers)",
+     "url": "https://www.crunchyroll.com/series/GYE5K3GQR/konosuba---gods-blessing-on-this-wonderful-world"
+    }
+   ],
+   "sources": [
+    "https://www.crunchyroll.com/series/GYE5K3GQR/konosuba---gods-blessing-on-this-wonderful-world"
+   ],
+   "note": "Crunchyroll's series page lists Hindi audio, including for Seasons 1 and 2. No press announcement found; fan trackers date it to Aug-Sep 2026."
+  },
+  {
+   "s": "bakemonogatari",
+   "t": "Monogatari series",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [
+    "https://www.crunchyroll.com/series/G69PXP1EY/bakemonogatari"
+   ],
+   "note": "Crunchyroll India streams it, but its series page lists no Hindi audio."
+  },
+  {
+   "s": "ouran-koukou-host-club",
+   "t": "Ouran High School Host Club",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [
+    "https://www.crunchyroll.com/series/GRGGJWD2R/ouran-high-school-host-club"
+   ],
+   "note": "Crunchyroll India streams it, but its series page lists no Hindi audio."
+  },
+  {
+   "s": "clannad",
+   "t": "Clannad",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": ""
+  },
+  {
+   "s": "neon-genesis-evangelion",
+   "t": "Evangelion",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [
+    "https://www.netflix.com/in/title/81033445"
+   ],
+   "note": "Streams on Netflix India with English and Japanese audio only."
+  },
+  {
+   "s": "kaguya-sama-wa-kokurasetai-tensai-tachi-no-renai-zunousen",
+   "t": "Kaguya-sama: Love Is War",
+   "status": "available",
+   "confidence": "medium",
+   "platforms": [
+    {
+     "name": "Amazon MX Player",
+     "scope": "Season 1",
+     "url": "https://animenewsindia.com/2025/05/08/amazon-mx-player-expands-anime-lineup-with-hindi-dubs-of-classroom-of-the-elite-hunter-x-hunter-kaguya-sama-and-mob-psycho-100"
+    }
+   ],
+   "sources": [
+    "https://animenewsindia.com/2025/05/08/amazon-mx-player-expands-anime-lineup-with-hindi-dubs-of-classroom-of-the-elite-hunter-x-hunter-kaguya-sama-and-mob-psycho-100",
+    "https://www.crunchyroll.com/series/GRJ0J828Y/kaguya-sama-love-is-war"
+   ],
+   "note": "Muse Communication's Hindi dub of Season 1 is on Amazon MX Player. Crunchyroll India's version has no Hindi audio."
+  },
+  {
+   "s": "the-devil-is-a-part-timer",
+   "t": "The Devil is a Part-Timer!",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [
+    "https://www.crunchyroll.com/series/GR75Z5KKY/the-devil-is-a-part-timer"
+   ],
+   "note": "Crunchyroll India streams it, but its series page lists no Hindi audio."
+  },
+  {
+   "s": "soul-eater",
+   "t": "Soul Eater",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [
+    "https://www.crunchyroll.com/series/GYX0ZW80R/soul-eater"
+   ],
+   "note": "Crunchyroll India streams it, but its series page lists no Hindi audio."
+  },
+  {
+   "s": "akame-ga-kill",
+   "t": "Akame ga Kill!",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": ""
+  },
+  {
+   "s": "durarara",
+   "t": "Durarara!!",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [
+    "https://www.crunchyroll.com/series/G619XVNEY/durarara"
+   ],
+   "note": "Crunchyroll India streams it, but its series page lists no Hindi audio."
+  },
+  {
+   "s": "seishun-buta-yarou-wa-bunny-girl-senpai-no-yume-wo-minai",
+   "t": "Rascal Does Not Dream of Bunny Girl Senpai",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": ""
+  },
+  {
+   "s": "another",
+   "t": "Another",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": ""
+  },
+  {
+   "s": "bleach",
+   "t": "Bleach",
+   "status": "available",
+   "confidence": "medium",
+   "platforms": [
+    {
+     "name": "JioHotstar",
+     "scope": "Thousand-Year Blood War (Parts 1-4)",
+     "url": "https://animenewsindia.com/2026/08/14/bleach-thousand-year-blood-war-the-final-cour-the-calamity-now-streaming-on-jiohotstar-with-brand-new-hindi-dub/"
+    },
+    {
+     "name": "Ani-One India (YouTube)",
+     "scope": "Thousand-Year Blood War: The Calamity (announced)",
+     "url": "https://animenewsindia.com/2026/07/21/anione-india-annouces-new-hindi-dub-for-bleach-thousand-year-blood-war-the-calamity-cour-4-and-dailly-streaming-of-previous-seasons-on-its-youtube-channel/"
+    }
+   ],
+   "sources": [
+    "https://animenewsindia.com/2024/12/21/jiocinema-streams-bleach-thousand-year-blood-war-part-1-in-hindi/",
+    "https://animenewsindia.com/2026/08/14/bleach-thousand-year-blood-war-the-final-cour-the-calamity-now-streaming-on-jiohotstar-with-brand-new-hindi-dub/",
+    "https://animenewsindia.com/2026/07/21/anione-india-annouces-new-hindi-dub-for-bleach-thousand-year-blood-war-the-calamity-cour-4-and-dailly-streaming-of-previous-seasons-on-its-youtube-channel/",
+    "https://www.crunchyroll.com/series/G63VGG2NY/bleach"
+   ],
+   "note": "Only Thousand-Year Blood War has Hindi: JioCinema/JioHotstar from Dec 2024, with a new dub cast for Part 4. The original 2004 series on Crunchyroll India has no Hindi audio."
+  },
+  {
+   "s": "mahou-shoujo-madoka-magica",
+   "t": "Puella Magi Madoka Magica",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [
+    "https://www.crunchyroll.com/series/GRDQK39GY/puella-magi-madoka-magica"
+   ],
+   "note": "Crunchyroll India streams it, but its series page lists no Hindi audio."
+  },
+  {
+   "s": "saiki-kusuo-no-psi-nan-tv",
+   "t": "The Disastrous Life of Saiki K.",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [
+    "https://www.netflix.com/in/title/81054849"
+   ],
+   "note": "Saiki K.: Reawakened streams on Netflix India with English and Japanese audio only."
+  },
+  {
+   "s": "hotarubi-no-mori-e",
+   "t": "To the Forest of the Firefly Lights",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": ""
+  },
+  {
+   "s": "samurai-champloo",
+   "t": "Samurai Champloo",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [
+    "https://www.crunchyroll.com/series/G6WEK0026/samurai-champloo"
+   ],
+   "note": "Crunchyroll India streams it, but its series page lists no Hindi audio."
+  },
+  {
+   "s": "hyouka",
+   "t": "Hyouka",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [
+    "https://www.crunchyroll.com/series/G6P585256/hyouka"
+   ],
+   "note": "Crunchyroll India streams it, but its series page lists no Hindi audio."
+  },
+  {
+   "s": "elfen-lied",
+   "t": "Elfen Lied",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": ""
+  },
+  {
+   "s": "chuunibyou-demo-koi-ga-shitai",
+   "t": "Love, Chunibyo & Other Delusions!",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": ""
+  },
+  {
+   "s": "made-in-abyss",
+   "t": "Made in Abyss",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": ""
+  },
+  {
+   "s": "kuroko-no-basket",
+   "t": "Kuroko's Basketball",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [
+    "https://www.crunchyroll.com/series/G62P48X56/kurokos-basketball",
+    "https://www.netflix.com/in/title/80063153"
+   ],
+   "note": "Crunchyroll India streams it, but its series page lists no Hindi audio. Netflix India also streams it with English and Japanese audio only."
+  },
+  {
+   "s": "kaichou-wa-maid-sama",
+   "t": "Maid Sama!",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": ""
+  },
+  {
+   "s": "tensei-shitara-slime-datta-ken",
+   "t": "That Time I Got Reincarnated as a Slime",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Crunchyroll",
+     "scope": "Season 1-2 confirmed (Aug 2024); later seasons per fan trackers",
+     "url": "https://www.crunchyroll.com/series/GYZJ43JMR/that-time-i-got-reincarnated-as-a-slime"
+    },
+    {
+     "name": "Muse India (YouTube)",
+     "scope": "Season 1-4 (Season 4 from Aug 2026)",
+     "url": "https://www.animenewsnetwork.com/news/2026-08-29/hindi-dubs-of-reincarnated-as-a-slime-season-4-welcome-to-demon-school-iruma-kun-season-3-stream-on-/.241106"
+    }
+   ],
+   "sources": [
+    "https://www.crunchyroll.com/series/GYZJ43JMR/that-time-i-got-reincarnated-as-a-slime",
+    "https://www.animenewsnetwork.com/news/2024-08-19/that-time-i-got-reincarnated-as-a-slime-anime-1st-2nd-seasons-get-indian-language-dubs/.214445",
+    "https://www.animenewsnetwork.com/news/2026-08-29/hindi-dubs-of-reincarnated-as-a-slime-season-4-welcome-to-demon-school-iruma-kun-season-3-stream-on-/.241106"
+   ],
+   "note": "Two Hindi dubs: Crunchyroll's and Muse India's (free on YouTube). Fan trackers also list JioHotstar."
+  },
+  {
+   "s": "sakurasou-no-pet-na-kanojo",
+   "t": "The Pet Girl of Sakurasou",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": ""
+  },
+  {
+   "s": "dungeon-ni-deai-wo-motomeru-no-wa-machigatteiru-no-darou-ka",
+   "t": "DanMachi",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": ""
+  },
+  {
+   "s": "tate-no-yuusha-no-nariagari",
+   "t": "The Rising of the Shield Hero",
+   "status": "available",
+   "confidence": "medium",
+   "platforms": [
+    {
+     "name": "Crunchyroll",
+     "scope": "",
+     "url": "https://www.crunchyroll.com/series/G6W4QKX0R/the-rising-of-the-shield-hero"
+    }
+   ],
+   "sources": [
+    "https://www.crunchyroll.com/series/G6W4QKX0R/the-rising-of-the-shield-hero"
+   ],
+   "note": "Crunchyroll's series page lists Hindi audio; fan trackers date Seasons 1-4 to Mar-Jun 2026."
+  },
+  {
+   "s": "jojo-s-bizarre-adventure-2012",
+   "t": "JoJo's Bizarre Adventure",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Muse India (YouTube)",
+     "scope": "Phantom Blood to Diamond Is Unbreakable (Golden Wind airing per fan trackers)",
+     "url": "https://www.animenewsnetwork.com/news/2026-09-04/hindi-dub-of-jojo-bizarre-adventure-diamond-is-unbreakable-anime-streams-on-muse-india-youtube-/.241369"
+    },
+    {
+     "name": "Amazon MX Player",
+     "scope": "Season 1",
+     "url": "https://www.animenewsnetwork.com/news/2025-05-10/amazon-mx-player-adds-hindi-dubs-of-spy-family-demon-slayer-4-more-anime/.224301"
+    }
+   ],
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2025-04-21/jojo-bizarre-adventure-anime-hindi-dub-streams-on-muse-india/.223753",
+    "https://www.animenewsnetwork.com/news/2026-09-04/hindi-dub-of-jojo-bizarre-adventure-diamond-is-unbreakable-anime-streams-on-muse-india-youtube-/.241369",
+    "https://www.animenewsnetwork.com/news/2025-05-10/amazon-mx-player-adds-hindi-dubs-of-spy-family-demon-slayer-4-more-anime/.224301",
+    "https://www.crunchyroll.com/series/GYP8DP1MY/jojos-bizarre-adventure"
+   ],
+   "note": "Muse Communication's Hindi dub. Crunchyroll India's version has no Hindi audio. A fan tracker lists Steel Ball Run on Netflix in Hindi (unverified)."
+  },
+  {
+   "s": "high-school-of-the-dead",
+   "t": "High School of the Dead",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": ""
+  },
+  {
+   "s": "the-girl-who-leapt-through-time",
+   "t": "The Girl Who Leapt Through Time",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": ""
+  },
+  {
+   "s": "yahari-ore-no-seishun-love-comedy-wa-machigatteiru",
+   "t": "My Teen Romantic Comedy SNAFU",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": ""
+  },
+  {
+   "s": "black-clover-tv",
+   "t": "Black Clover",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Crunchyroll",
+     "scope": "Season 1 (from Oct 2026) and Season 2 (simuldub)",
+     "url": "https://www.crunchyroll.com/series/GRE50KV36/black-clover"
+    }
+   ],
+   "sources": [
+    "https://www.crunchyroll.com/series/GRE50KV36/black-clover",
+    "https://www.animenewsnetwork.com/news/2026-09-15/crunchyroll-announces-release-schedule-for-fall-2026-season/.241811"
+   ],
+   "note": "Crunchyroll began the Season 1 Hindi dub in Oct 2026 (still rolling out) and lists Hindi for Season 2."
+  },
+  {
+   "s": "gintama",
+   "t": "Gintama",
+   "status": "available",
+   "confidence": "medium",
+   "platforms": [
+    {
+     "name": "Amazon MX Player",
+     "scope": "Season 1 (from Mar 2026)",
+     "url": "https://animenewsindia.com/2026/02/26/medialink-announces-hindi-dub-release-of-legendary-anime-series-gintama-on-amazon-mx-player-for-free-in-march-2026/"
+    }
+   ],
+   "sources": [
+    "https://animenewsindia.com/2026/02/26/medialink-announces-hindi-dub-release-of-legendary-anime-series-gintama-on-amazon-mx-player-for-free-in-march-2026/",
+    "https://www.crunchyroll.com/series/GYQ4MKDZ6/gintama"
+   ],
+   "note": "Medialink announced a free Hindi dub on Amazon MX Player from 9 March 2026; launch not separately confirmed. Crunchyroll India's version has no Hindi audio."
+  },
+  {
+   "s": "charlotte",
+   "t": "Charlotte",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [
+    "https://www.crunchyroll.com/series/GYGG99WDY/charlotte"
+   ],
+   "note": "Crunchyroll India streams it, but its series page lists no Hindi audio."
+  },
+  {
+   "s": "kobayashi-san-chi-no-maid-dragon",
+   "t": "Miss Kobayashi's Dragon Maid",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": ""
+  },
+  {
+   "s": "magi-the-kingdom-of-magic",
+   "t": "Magi: The Kingdom of Magic",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": ""
+  },
+  {
+   "s": "nichijou",
+   "t": "Nichijou - My Ordinary Life",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": ""
+  },
+  {
+   "s": "baccano",
+   "t": "Baccano!",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": ""
+  },
+  {
+   "s": "darling-in-the-franxx",
+   "t": "DARLING in the FRANXX",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Crunchyroll",
+     "scope": "",
+     "url": "https://www.crunchyroll.com/series/GY8VEQ95Y/darling-in-the-franxx"
+    }
+   ],
+   "sources": [
+    "https://www.crunchyroll.com/series/GY8VEQ95Y/darling-in-the-franxx",
+    "https://www.animenewsnetwork.com/news/2022-11-15/crunchyroll-adds-hindi-indian-english-dubs-for-demon-slayer-darling-in-the-franxx-fire-force-more-/.191925"
+   ],
+   "note": "Crunchyroll added a Hindi dub in Nov 2022."
+  },
+  {
+   "s": "dragon-ball",
+   "t": "Dragon Ball",
+   "status": "available",
+   "confidence": "medium",
+   "platforms": [
+    {
+     "name": "Crunchyroll",
+     "scope": "Dragon Ball Daima",
+     "url": "https://www.crunchyroll.com/series/GG5H5XQ35/dragon-ball-daima"
+    },
+    {
+     "name": "Crunchyroll",
+     "scope": "Dragon Ball Super: Super Hero (film)",
+     "url": "https://animenewsindia.com/2025/06/18/netflix-india-to-stream-dragon-ball-z-for-the-first-time-starting-july-15-2025/"
+    },
+    {
+     "name": "Cartoon Network India",
+     "scope": "Dragon Ball, Dragon Ball Super (TV)",
+     "url": "https://animenewsindia.com/2025/06/18/netflix-india-to-stream-dragon-ball-z-for-the-first-time-starting-july-15-2025/"
+    },
+    {
+     "name": "Discovery+",
+     "scope": "Dragon Ball Z Kai",
+     "url": "https://animenewsindia.com/2025/06/18/netflix-india-to-stream-dragon-ball-z-for-the-first-time-starting-july-15-2025/"
+    }
+   ],
+   "sources": [
+    "https://www.crunchyroll.com/series/GG5H5XQ35/dragon-ball-daima",
+    "https://www.animenewsnetwork.com/news/2024-11-08/crunchyroll-streams-dragon-ball-daima-anime-hindi-tamil-telugu-dubs-on-november-9/.217575",
+    "https://animenewsindia.com/2025/06/18/netflix-india-to-stream-dragon-ball-z-for-the-first-time-starting-july-15-2025/"
+   ],
+   "note": "Hindi depends on the series: Daima and the Super Hero film on Crunchyroll; Dragon Ball and Dragon Ball Super on Cartoon Network India TV; DBZ Kai on Discovery+. Netflix's DBZ and Crunchyroll's original Dragon Ball/Super have no Hindi."
+  },
+  {
+   "s": "high-school-dxd",
+   "t": "High School DxD",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": ""
+  },
+  {
+   "s": "log-horizon",
+   "t": "Log Horizon",
+   "status": "available",
+   "confidence": "medium",
+   "platforms": [
+    {
+     "name": "Crunchyroll",
+     "scope": "Season 1-2 (per fan trackers)",
+     "url": "https://www.crunchyroll.com/series/GRVNMG93Y/log-horizon"
+    }
+   ],
+   "sources": [
+    "https://www.crunchyroll.com/series/GRVNMG93Y/log-horizon"
+   ],
+   "note": "Crunchyroll's series page lists Hindi audio."
+  },
+  {
+   "s": "deadman-wonderland",
+   "t": "Deadman Wonderland",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": ""
+  },
+  {
+   "s": "overlord",
+   "t": "Overlord",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Crunchyroll",
+     "scope": "Season 1-4 (per fan trackers)",
+     "url": "https://www.crunchyroll.com/series/G69PZ5PDY/overlord"
+    },
+    {
+     "name": "Ani-One India (YouTube)",
+     "scope": "",
+     "url": "https://www.animenewsnetwork.com/news/2026-05-30/ani-one-india-streams-overlord-anime-hindi-dub/.237960"
+    }
+   ],
+   "sources": [
+    "https://www.crunchyroll.com/series/G69PZ5PDY/overlord",
+    "https://www.animenewsnetwork.com/news/2026-05-30/ani-one-india-streams-overlord-anime-hindi-dub/.237960"
+   ],
+   "note": "Crunchyroll's series page lists Hindi; Ani-One India streams a Hindi dub on YouTube from May 2026. Fan trackers also list Anime Times."
+  },
+  {
+   "s": "kyoukai-no-kanata",
+   "t": "Beyond the Boundary",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": ""
+  },
+  {
+   "s": "tokyo-revengers",
+   "t": "Tokyo Revengers",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Muse India (YouTube)",
+     "scope": "Season 1",
+     "url": "https://www.animenewsnetwork.com/news/2024-11-26/muse-india-streams-hindi-dub-of-tokyo-revengers-anime/.218259"
+    }
+   ],
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2024-11-26/muse-india-streams-hindi-dub-of-tokyo-revengers-anime/.218259",
+    "https://www.crunchyroll.com/series/G3KHEVMN1/tokyo-revengers"
+   ],
+   "note": "Muse India streams the Hindi dub on YouTube; fan trackers also list it on JioHotstar. Crunchyroll India's version has no Hindi audio."
+  },
+  {
+   "s": "hellsing-ultimate",
+   "t": "Hellsing Ultimate",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": ""
+  },
+  {
+   "s": "spice-and-wolf",
+   "t": "Spice and Wolf",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": ""
+  },
+  {
+   "s": "guilty-crown",
+   "t": "Guilty Crown",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [
+    "https://www.crunchyroll.com/series/GZJH3D0N5/guilty-crown"
+   ],
+   "note": "Crunchyroll India streams it, but its series page lists no Hindi audio."
+  },
+  {
+   "s": "black-butler",
+   "t": "Black Butler",
+   "status": "available",
+   "confidence": "medium",
+   "platforms": [
+    {
+     "name": "Crunchyroll",
+     "scope": "Public School Arc and Emerald Witch Arc (per fan trackers)",
+     "url": "https://www.crunchyroll.com/series/GYQ43P3E6/black-butler"
+    }
+   ],
+   "sources": [
+    "https://www.crunchyroll.com/series/GYQ43P3E6/black-butler"
+   ],
+   "note": "Crunchyroll's series page lists Hindi audio; fan trackers date it to the 2024 and 2025 seasons."
+  },
+  {
+   "s": "spy-x-family",
+   "t": "Spy x Family",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Crunchyroll",
+     "scope": "Season 1-3",
+     "url": "https://www.crunchyroll.com/series/G4PH0WXVJ/spy-x-family"
+    },
+    {
+     "name": "Muse India (YouTube)",
+     "scope": "Season 1-2",
+     "url": "https://www.animenewsnetwork.com/news/2024-12-01/spy-family-code-white-anime-film-streams-on-youtube-with-hindi-dub/.218454"
+    },
+    {
+     "name": "Amazon MX Player",
+     "scope": "Season 1-2",
+     "url": "https://www.animenewsnetwork.com/news/2025-05-10/amazon-mx-player-adds-hindi-dubs-of-spy-family-demon-slayer-4-more-anime/.224301"
+    }
+   ],
+   "sources": [
+    "https://www.crunchyroll.com/series/G4PH0WXVJ/spy-x-family",
+    "https://www.animenewsnetwork.com/news/2023-11-06/spy-x-family-anime-hindi-dub-premieres-on-november-7/.204154",
+    "https://www.animenewsnetwork.com/news/2025-10-27/crunchyroll-streams-spy-family-season-3-hindi-dub-on-november-30/.230333",
+    "https://www.animenewsnetwork.com/news/2024-12-01/spy-family-code-white-anime-film-streams-on-youtube-with-hindi-dub/.218454",
+    "https://www.animenewsnetwork.com/news/2025-05-10/amazon-mx-player-adds-hindi-dubs-of-spy-family-demon-slayer-4-more-anime/.224301"
+   ],
+   "note": "Crunchyroll has its own Hindi dub (Seasons 1-3); Muse's separate Hindi dub is on Muse India YouTube and Amazon MX Player. Muse's Code: White streamed on YouTube for a limited time."
+  },
+  {
+   "s": "zankyou-no-terror",
+   "t": "Terror in Resonance",
+   "status": "none_found",
+   "confidence": "low",
+   "platforms": [],
+   "sources": [
+    "https://www.crunchyroll.com/series/G675W00MR/terror-in-resonance",
+    "https://animemirchi.com/anime-times-hindi-dubbed-anime-list/"
+   ],
+   "note": "Crunchyroll India streams it, but its series page lists no Hindi audio. Fan trackers list a Hindi dub on Anime Times (Prime Video) from Feb 2026, but no official source was found."
+  },
+  {
+   "s": "the-disappearance-of-haruhi-suzumiya",
+   "t": "The Disappearance of Haruhi Suzumiya",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": ""
+  },
+  {
+   "s": "mahoutsukai-no-yome",
+   "t": "The Ancient Magus' Bride",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Crunchyroll",
+     "scope": "Season 1-2",
+     "url": "https://www.crunchyroll.com/series/GRZXQJJ8Y/the-ancient-magus-bride"
+    }
+   ],
+   "sources": [
+    "https://www.crunchyroll.com/series/GRZXQJJ8Y/the-ancient-magus-bride",
+    "https://www.animenewsnetwork.com/news/2023-03-03/crunchyroll-adds-hindi-dubs-for-the-ancient-magus-bride-a-couple-of-cuckoos-relife-anime/.195551"
+   ],
+   "note": "Crunchyroll added Hindi for Season 1 in March 2023 and later seasons after."
+  },
+  {
+   "s": "owari-no-seraph",
+   "t": "Seraph of the End: Vampire Reign",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": ""
+  },
+  {
+   "s": "my-little-monster",
+   "t": "My Little Monster",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": ""
+  },
+  {
+   "s": "bungou-stray-dogs",
+   "t": "Bungo Stray Dogs",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": ""
+  },
+  {
+   "s": "nisekoi",
+   "t": "Nisekoi: False Love",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": ""
+  },
+  {
+   "s": "kakegurui",
+   "t": "Kakegurui: Compulsive Gambler",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [
+    "https://www.netflix.com/in/title/80175351"
+   ],
+   "note": "Streams on Netflix India with English and Japanese audio only."
+  },
+  {
+   "s": "darker-than-black",
+   "t": "Darker than Black",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": ""
+  },
+  {
+   "s": "mushishi",
+   "t": "Mushi-Shi",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": ""
+  },
+  {
+   "s": "kimi-no-suizou-wo-tabetai",
+   "t": "I Want to Eat Your Pancreas",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": ""
+  },
+  {
+   "s": "five-centimeters-per-second",
+   "t": "5 Centimeters Per Second",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2025-11-21/hindi-dubs-of-weathering-with-you-your-name-more-makoto-shinkai-films-stream-on-crunchyroll-on-/.231155"
+   ],
+   "note": "Crunchyroll India streams the film without a Hindi dub."
+  },
+  {
+   "s": "dororo",
+   "t": "Dororo",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": ""
+  },
+  {
+   "s": "tenki-no-ko-weathering-with-you",
+   "t": "Weathering with You",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Crunchyroll",
+     "scope": "Film",
+     "url": "https://www.crunchyroll.com/series/GMTE00111967/weathering-with-you"
+    }
+   ],
+   "sources": [
+    "https://www.crunchyroll.com/series/GMTE00111967/weathering-with-you",
+    "https://www.animenewsnetwork.com/news/2025-11-21/hindi-dubs-of-weathering-with-you-your-name-more-makoto-shinkai-films-stream-on-crunchyroll-on-/.231155"
+   ],
+   "note": "Crunchyroll added a new Hindi dub in Dec 2025."
+  },
+  {
+   "s": "k-on",
+   "t": "K-ON!",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": ""
+  },
+  {
+   "s": "black-lagoon",
+   "t": "Black Lagoon",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": ""
+  },
+  {
+   "s": "monster",
+   "t": "Monster",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": ""
+  },
+  {
+   "s": "gekkan-shoujo-nozaki-kun",
+   "t": "Monthly Girls' Nozaki-kun",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": ""
+  },
+  {
+   "s": "banana-fish",
+   "t": "Banana Fish",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2026-07-12/netflix-adds-banana-fish-anime-on-august-12/.239519"
+   ],
+   "note": "Netflix's Aug 2026 Banana Fish release did not include India."
+  },
+  {
+   "s": "kiki-s-delivery-service",
+   "t": "Kiki's Delivery Service",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Netflix",
+     "scope": "Film",
+     "url": "https://www.netflix.com/in/title/60027106"
+    }
+   ],
+   "sources": [
+    "https://www.netflix.com/in/title/60027106",
+    "https://www.filmcompanion.in/ampstories/web-stories/7-hindi-dubbed-anime-movies-on-netflix"
+   ],
+   "note": "Netflix India lists Hindi audio."
+  },
+  {
+   "s": "yuri-on-ice",
+   "t": "Yuri!!! On ICE",
+   "status": "available",
+   "confidence": "medium",
+   "platforms": [
+    {
+     "name": "Crunchyroll",
+     "scope": "",
+     "url": "https://www.crunchyroll.com/series/GY2PEJ0MY/yuri-on-ice"
+    }
+   ],
+   "sources": [
+    "https://www.crunchyroll.com/series/GY2PEJ0MY/yuri-on-ice"
+   ],
+   "note": "Crunchyroll's series page lists Hindi audio; fan trackers date it to Feb 2026."
+  },
+  {
+   "s": "shinsekai-yori",
+   "t": "From the New World",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": ""
+  },
+  {
+   "s": "danshi-koukousei-no-nichijou",
+   "t": "Daily Lives of High School Boys",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": ""
+  },
+  {
+   "s": "mahouka-koukou-no-rettousei",
+   "t": "The Irregular at Magic High School",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [
+    "https://www.crunchyroll.com/series/GRMGDGZVR/the-irregular-at-magic-high-school"
+   ],
+   "note": "Crunchyroll India streams it, but its series page lists no Hindi audio."
+  },
+  {
+   "s": "golden-time",
+   "t": "Golden Time",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": ""
+  },
+  {
+   "s": "the-garden-of-words",
+   "t": "The Garden of Words",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2025-11-21/hindi-dubs-of-weathering-with-you-your-name-more-makoto-shinkai-films-stream-on-crunchyroll-on-/.231155"
+   ],
+   "note": "Crunchyroll India streams the film without a Hindi dub."
+  },
+  {
+   "s": "kimi-ni-todoke",
+   "t": "Kimi ni Todoke: From Me to You",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [
+    "https://www.netflix.com/in/title/81483827"
+   ],
+   "note": "Netflix India streams it with English and Japanese audio only."
+  },
+  {
+   "s": "welcome-to-the-n-h-k",
+   "t": "Welcome to the N.H.K.",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [
+    "https://www.crunchyroll.com/series/G6MGNDGW6/welcome-to-the-n-h-k"
+   ],
+   "note": "Crunchyroll India streams it, but its series page lists no Hindi audio."
+  },
+  {
+   "s": "vinland-saga",
+   "t": "Vinland Saga",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Crunchyroll",
+     "scope": "Season 1-2",
+     "url": "https://www.crunchyroll.com/series/GEXH3WKK0/vinland-saga"
+    }
+   ],
+   "sources": [
+    "https://www.crunchyroll.com/series/GEXH3WKK0/vinland-saga",
+    "https://www.animenewsnetwork.com/news/2023-02-03/crunchyroll-streams-vinland-saga-season-2-hindi-dub/.194485",
+    "https://www.animenewsnetwork.com/news/2023-12-17/vinland-saga-season-1-trapped-in-a-dating-sim-anime-get-indian-language-dubs/.205581"
+   ],
+   "note": "Crunchyroll added Hindi for Season 2 (early 2023) and Season 1 (Dec 2023)."
+  },
+  {
+   "s": "danganronpa-kibou-no-gakuen-to-zetsubou-no-koukousei-the-animation",
+   "t": "Danganronpa: The Animation",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": ""
+  },
+  {
+   "s": "akatsuki-no-yona",
+   "t": "Yona of the Dawn",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": ""
+  },
+  {
+   "s": "grave-of-the-fireflies",
+   "t": "Grave of the Fireflies",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [
+    "https://www.netflix.com/in/title/557010"
+   ],
+   "note": "Streams on Netflix India with English and Japanese audio only."
+  },
+  {
+   "s": "flcl",
+   "t": "FLCL",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [
+    "https://www.crunchyroll.com/series/GRDK3DD4Y/flcl"
+   ],
+   "note": "Crunchyroll India streams it, but its series page lists no Hindi audio."
+  },
+  {
+   "s": "date-a-live",
+   "t": "Date A Live",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [
+    "https://www.crunchyroll.com/series/GYEX5E1G6/date-a-live"
+   ],
+   "note": "Crunchyroll India streams it, but its series page lists no Hindi audio."
+  },
+  {
+   "s": "ghost-in-the-shell-2015",
+   "t": "Ghost in the Shell: The New Movie",
+   "status": "none_found",
+   "confidence": "low",
+   "platforms": [],
+   "sources": [
+    "https://animemirchi.com/anime-times-hindi-dubbed-anime-list/"
+   ],
+   "note": "Fan trackers list a Hindi dub on Anime Times (Prime Video) from Sept 2025, but no official source was found."
+  },
+  {
+   "s": "ghost-in-the-shell-stand-alone-complex",
+   "t": "Ghost in the Shell: Stand Alone Complex",
+   "status": "available",
+   "confidence": "medium",
+   "platforms": [
+    {
+     "name": "Netflix",
+     "scope": "SAC_2045 (Season 1-2)",
+     "url": "https://www.netflix.com/in/title/81030224"
+    }
+   ],
+   "sources": [
+    "https://www.netflix.com/in/title/81030224",
+    "https://www.animenewsnetwork.com/news/2020-07-17/netflix-india-releases-hindi-dub-of-ghost-in-the-shell-sac_2045-anime/.161894"
+   ],
+   "note": "Hindi is confirmed only for the SAC_2045 sequel on Netflix. Fan trackers say Anime Times added Hindi for the original Stand Alone Complex and 2nd GIG in 2025 (unverified)."
+  },
+  {
+   "s": "ghost-in-the-shell-2-0",
+   "t": "Ghost in the Shell 2.0",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": ""
+  },
+  {
+   "s": "toaru-majutsu-no-index",
+   "t": "A Certain Magical Index / Railgun",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [
+    "https://www.crunchyroll.com/series/GRVNZK5PY/a-certain-magical-index"
+   ],
+   "note": "Crunchyroll India streams it, but its series page lists no Hindi audio. A Certain Scientific Railgun on Crunchyroll India also has no Hindi audio."
+  },
+  {
+   "s": "relife",
+   "t": "ReLIFE",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Crunchyroll",
+     "scope": "Season 1",
+     "url": "https://www.animenewsnetwork.com/news/2023-03-03/crunchyroll-adds-hindi-dubs-for-the-ancient-magus-bride-a-couple-of-cuckoos-relife-anime/.195551"
+    }
+   ],
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2023-03-03/crunchyroll-adds-hindi-dubs-for-the-ancient-magus-bride-a-couple-of-cuckoos-relife-anime/.195551"
+   ],
+   "note": "Crunchyroll added a Hindi dub in March 2023."
+  },
+  {
+   "s": "jibaku-shounen-hanako-kun",
+   "t": "Toilet-bound Hanako-kun",
+   "status": "available",
+   "confidence": "medium",
+   "platforms": [
+    {
+     "name": "Crunchyroll",
+     "scope": "Season 1-2 (per fan trackers)",
+     "url": "https://www.crunchyroll.com/series/G24H1N3ZP/toilet-bound-hanako-kun"
+    }
+   ],
+   "sources": [
+    "https://www.crunchyroll.com/series/G24H1N3ZP/toilet-bound-hanako-kun"
+   ],
+   "note": "Crunchyroll's series page lists Hindi audio."
+  },
+  {
+   "s": "black-bullet",
+   "t": "Black Bullet",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": ""
+  },
+  {
+   "s": "great-teacher-onizuka",
+   "t": "Great Teacher Onizuka",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": ""
+  },
+  {
+   "s": "trigun",
+   "t": "Trigun",
+   "status": "available",
+   "confidence": "medium",
+   "platforms": [
+    {
+     "name": "Crunchyroll",
+     "scope": "Trigun Stampede / Trigun Stargaze",
+     "url": "https://www.crunchyroll.com/series/GXJHM3PK5/trigun-stampede"
+    }
+   ],
+   "sources": [
+    "https://www.crunchyroll.com/series/GXJHM3PK5/trigun-stampede",
+    "https://www.animenewsnetwork.com/news/2025-12-16/crunchyroll-announces-release-schedule-for-winter-2026-season/.232156"
+   ],
+   "note": "Hindi is on Crunchyroll for the 2023 reboot (Trigun Stampede and its sequel Trigun Stargaze) only; no Hindi dub found for the 1998 Trigun series."
+  },
+  {
+   "s": "kokoro-connect",
+   "t": "Kokoro Connect",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": ""
+  },
+  {
+   "s": "horimiya",
+   "t": "Horimiya",
+   "status": "available",
+   "confidence": "medium",
+   "platforms": [
+    {
+     "name": "Crunchyroll",
+     "scope": "",
+     "url": "https://www.crunchyroll.com/series/G9VHN9P43/horimiya"
+    }
+   ],
+   "sources": [
+    "https://www.crunchyroll.com/series/G9VHN9P43/horimiya"
+   ],
+   "note": "Crunchyroll's series page lists Hindi audio; fan trackers date it to July 2023."
+  },
+  {
+   "s": "fate-kaleid-liner-prisma-illya",
+   "t": "Fate/Kaleid Liner Prisma Illya",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": ""
+  },
+  {
+   "s": "kekkai-sensen",
+   "t": "Blood Blockade Battlefront",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": ""
+  },
+  {
+   "s": "barakamon",
+   "t": "Barakamon",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": ""
+  },
+  {
+   "s": "boku-wa-tomodachi-ga-sukunai",
+   "t": "Haganai: I don't have many friends",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": ""
+  }
+ ]
+}

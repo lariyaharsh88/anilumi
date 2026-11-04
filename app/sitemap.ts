@@ -41,6 +41,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: abs("/voice-actors"), lastModified: now, changeFrequency: "weekly", priority: 0.6 },
     { url: abs("/characters"), lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: abs("/hi"), lastModified: now, changeFrequency: "weekly", priority: 0.6 },
+    { url: abs("/hindi-dub"), lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: abs("/hi/hindi-dub"), lastModified: now, changeFrequency: "monthly", priority: 0.6 },
     ...HINDI_SLUGS.map((s) => ({ url: abs(hindiPath(s)), lastModified: now, changeFrequency: "weekly" as const, priority: 0.6 })),
     { url: abs("/anime-openings"), lastModified: now, changeFrequency: "weekly", priority: 0.6 },
     { url: abs("/tier-list"), lastModified: now, changeFrequency: "weekly", priority: 0.6 },

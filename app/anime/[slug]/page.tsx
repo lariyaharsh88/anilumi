@@ -19,6 +19,8 @@ import WhereToWatch from "@/components/WhereToWatch";
 import WatchOrderCard from "@/components/WatchOrderCard";
 import { snapshotOrder } from "@/lib/wosnap";
 import PushButton from "@/components/PushButton";
+import HindiDub from "@/components/HindiDub";
+import { dubFor, dubFaq } from "@/lib/hindidub";
 import { animeTopic } from "@/lib/push";
 import SpoilerGate from "@/components/SpoilerGate";
 import StoryGuide from "@/components/StoryGuide";
@@ -182,6 +184,9 @@ export default async function AnimePage({ params }: Props) {
     faqExtra.push({ q: `Is ${a.title} appropriate for kids?`, a: `${a.title} is best for ${guide.suitable.toLowerCase()}${a.ageRating ? ` and is rated ${a.ageRating}${a.ageRatingGuide ? ` (${a.ageRatingGuide})` : ""}` : ""}. ${flagged.length ? `Viewers flag ${flagged.join(", ")}.` : "Viewers don't flag any strong content."} See the parents' guide on this page for details.` });
   }
   if (dropOk) faqExtra.push({ q: `Do people finish ${a.title}?`, a: `${dropOk.dropRate.toFixed(1)}% of AniList members who start ${a.title} drop it${a.status === "current" ? " so far" : `, and ${dropOk.completionRate.toFixed(0)}% finish it`}${bench && benchGenre ? `. The median for popular ${benchGenre.toLowerCase()} anime is ${bench.toFixed(1)}%` : ""}.` });
+  const dub = dubFor(a);
+  const dubQ = dubFaq(dub, a.title);
+  if (dubQ) faqExtra.push(dubQ);
   const faq = buildFaq(a, faqExtra);
   const year = a.startDate?.slice(0, 4);
   const community = dbEnabled();
@@ -423,6 +428,7 @@ export default async function AnimePage({ params }: Props) {
                 <YouTubeFacade id={a.youtubeVideoId} title={`${a.title} trailer`} />
               </div>
             )}
+            <HindiDub dub={dub} title={a.title} className="mt-8" />
             {franchise.length > 0 && (
               <div className="mt-8">
                 <div className="mb-3 flex items-end justify-between">
