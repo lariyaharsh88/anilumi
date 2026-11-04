@@ -226,8 +226,9 @@ export function ratingBuckets(freq: unknown): number[] | null {
 }
 
 /** Total matching titles without fetching them (page[limit]=1, read meta.count). */
-export async function countAnime(filter: Record<string, string>, revalidate = 3600): Promise<number> {
-  const params: Record<string, string | number> = { "page[limit]": 1, "fields[anime]": "slug", "filter[ageRating]": SAFE_RATINGS };
+/** `unrated`: also count titles without an age rating (new and announced ones), as listAnime's option. */
+export async function countAnime(filter: Record<string, string>, revalidate = 3600, unrated = false): Promise<number> {
+  const params: Record<string, string | number> = { "page[limit]": 1, "fields[anime]": "slug", ...(unrated ? {} : { "filter[ageRating]": SAFE_RATINGS }) };
   for (const [k, v] of Object.entries(filter)) params[`filter[${k}]`] = v;
   const doc = await kitsu("/anime", params, revalidate);
   return doc?.meta?.count ?? 0;
@@ -452,7 +453,8 @@ export function shiftSeason(season: Season, year: number, delta: number): { seas
 }
 
 export async function getSeason(year: number, season: Season, page = 1, limit = 20) {
-  return listAnime({ filter: { season, seasonYear: String(year) }, sort: "-userCount", limit, offset: (page - 1) * limit, revalidate: 3600 });
+  // Unrated too: most of a current or coming season has no age rating yet (Fall 2026: 86 of 126 titles).
+  return listAnime({ filter: { season, seasonYear: String(year) }, sort: "-userCount", limit, offset: (page - 1) * limit, revalidate: 3600, unrated: true });
 }
 
 /* ---------------- Helpers ---------------- */

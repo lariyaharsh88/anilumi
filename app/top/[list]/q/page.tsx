@@ -9,6 +9,7 @@ import PageHero from "@/components/PageHero";
 import Pagination from "@/components/Pagination";
 import Faq from "@/components/Faq";
 import AdSlot from "@/components/AdSlot";
+import BrowseFilter from "@/components/BrowseFilter";
 import { LISTS } from "./lists";
 
 const LIMIT = 20;
@@ -49,10 +50,12 @@ export default async function TopPage({ params, searchParams }: Props) {
         </div>
       </PageHero>
       <AdSlot slot="top-top" />
-      <div className="mt-6">
-        <AnimeGrid items={data.items} startRank={(page - 1) * LIMIT + 1} ld={def.h1} />
-      </div>
-      <Pagination page={page} total={Math.min(data.total, LIMIT * 50)} limit={LIMIT} base={`/top/${list}`} />
+      <BrowseFilter source={`top=${list}`} label="this list's top 100">
+        <div className="mt-6">
+          <AnimeGrid items={data.items} startRank={(page - 1) * LIMIT + 1} ld={def.h1} />
+        </div>
+        <Pagination page={page} total={Math.min(data.total, LIMIT * 50)} limit={LIMIT} base={`/top/${list}`} />
+      </BrowseFilter>
       <Faq
         items={[
           { q: "How is this ranking calculated?", a: list === "rated" ? "Titles are sorted by their average score from Kitsu community ratings, weighted so that a handful of votes cannot push an obscure title to the top." : "Titles are sorted by the number of Kitsu users who have added them to their library, which reflects real audience size rather than marketing." },

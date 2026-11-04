@@ -12,6 +12,7 @@ import PageHero from "@/components/PageHero";
 import Pagination from "@/components/Pagination";
 import Faq from "@/components/Faq";
 import AdSlot from "@/components/AdSlot";
+import BrowseFilter from "@/components/BrowseFilter";
 
 type Props = { params: Promise<{ year: string; season: string }>; searchParams: Promise<{ page?: string }> };
 const LIMIT = 20;
@@ -44,9 +45,9 @@ export default async function SeasonPage({ params, searchParams }: Props) {
   const FORMATS = [["TV", "TV series"], ["movie", "Movies"], ["ONA", "ONA (web)"], ["OVA", "OVA"], ["special", "Specials"], ["music", "Music"]] as const;
   const [data, formatCounts, airingNow, upcomingCount] = await Promise.all([
     getSeason(y, s, page, LIMIT),
-    page === 1 ? Promise.all(FORMATS.map(([f]) => countAnime({ ...sf, subtype: f }))) : Promise.resolve([] as number[]),
-    page === 1 ? countAnime({ ...sf, status: "current" }) : Promise.resolve(0),
-    page === 1 ? countAnime({ ...sf, status: "upcoming" }) : Promise.resolve(0),
+    page === 1 ? Promise.all(FORMATS.map(([f]) => countAnime({ ...sf, subtype: f }, 3600, true))) : Promise.resolve([] as number[]),
+    page === 1 ? countAnime({ ...sf, status: "current" }, 3600, true) : Promise.resolve(0),
+    page === 1 ? countAnime({ ...sf, status: "upcoming" }, 3600, true) : Promise.resolve(0),
   ]);
   const rated = data.items.filter((a) => a.rating);
   const avgScore = rated.length ? rated.reduce((n, a) => n + (a.rating || 0), 0) / rated.length / 10 : null;
@@ -106,10 +107,12 @@ export default async function SeasonPage({ params, searchParams }: Props) {
       )}
 
       <AdSlot slot="season-top" />
-      <div className="mt-6">
-        <AnimeGrid items={data.items} startRank={(page - 1) * LIMIT + 1} ld={`${cap(season)} ${year} anime`} emptyText="No titles listed for this season yet." />
-      </div>
-      <Pagination page={page} total={data.total} limit={LIMIT} base={`/season/${year}/${season}`} />
+      <BrowseFilter source={`season=${year}-${season}`} label={`${cap(season)} ${year}`}>
+        <div className="mt-6">
+          <AnimeGrid items={data.items} startRank={(page - 1) * LIMIT + 1} ld={`${cap(season)} ${year} anime`} emptyText="No titles listed for this season yet." />
+        </div>
+        <Pagination page={page} total={data.total} limit={LIMIT} base={`/season/${year}/${season}`} />
+      </BrowseFilter>
 
       <Faq
         title={`About the ${cap(season)} ${year} season`}
