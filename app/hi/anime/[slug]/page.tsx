@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import Link from "@/components/Link";
-import { getAnimeBySlug, buildWatchOrder, franchiseName, animePath, posterUrl, runtimeMinutes, type WatchEntry } from "@/lib/kitsu";
+import { getAnimeBySlug, buildWatchOrder, franchiseName, animePath, posterUrl, runtimeMinutes, getStreamingFor, type WatchEntry } from "@/lib/kitsu";
 import { getAniListSequel } from "@/lib/anilist";
 import { fillerFor } from "@/lib/filler";
 import { KIND_HI, hiDuration, hiDays, hiDate, hiExpected, hiCount, hasHindi, hindiPath } from "@/lib/hindi";
@@ -14,6 +14,15 @@ import AdSlot from "@/components/AdSlot";
 import BingePlan from "@/components/BingePlan";
 import HindiDub from "@/components/HindiDub";
 import { dubFor, dubFaq } from "@/lib/hindidub";
+import { streamCoverage, oneLinkPerSite } from "@/lib/wostreams";
+import { streamLink, affiliateRel } from "@/lib/affiliate";
+import { adaptationFor, type Adaptation } from "@/lib/mangaseasons";
+import { arcsFor, type Arc } from "@/lib/arcs";
+
+/** Hindi wording for the new sections (arcs, source material). */
+const hiArcRange = (x: Arc) => (x.to === null ? `${x.from} से आगे` : x.from === x.to ? String(x.from) : `${x.from}–${x.to}`);
+const hiSource = (x: Adaptation) => (x.unit === "chapter" ? "मंगा के चैप्टर" : "लाइट नॉवेल के वॉल्यूम");
+const hiShortRange = (x: Adaptation) => `${x.unit === "chapter" ? "चै." : "वॉ."} ${x.from === x.to ? x.from : `${x.from}–${x.to}`}`;
 
 export const revalidate = 86400;
 export async function generateStaticParams() { return []; }
@@ -82,14 +91,26 @@ export default async function HindiGuide({ params }: Props) {
   const next = nextSeasonText(d);
   const dub = dubFor(a);
   const dubQ = dubFaq(dub, name, "hi");
+  // Same data as the English watch-order page: where each part streams, the season table, arcs.
+  const core = ordered.filter((e) => e.kind === "main" || e.kind === "movie");
+  const streams = await getStreamingFor(ordered.map((e) => e.anime.id));
+  const coverage = streamCoverage(core.map((e) => e.anime.id), streams);
+  const rows = mains.map((e) => ({ e, score: e.anime.rating ? e.anime.rating / 10 : null, filler: fillerFor(e.anime.slug, e.anime.episodeCount), adapt: adaptationFor(e.anime.slug) }));
+  const best = rows.filter((r) => r.score).sort((x, y) => y.score! - x.score!)[0] ?? null;
+  const sourceRow = [...rows].reverse().find((r) => r.adapt) ?? null;
+  const arcGroups = mains.flatMap((e) => { const arcs = arcsFor(e.anime.slug); return arcs ? [{ e, arcs }] : []; });
   const faq: FaqItem[] = [
     ...(dubQ ? [dubQ] : []),
     { q: `${name} किस क्रम में देखें?`, a: `${mains.map((e, i) => `${i + 1}. ${e.anime.title}`).join(", ")}। ${movies.length ? "मूवीज़ उस सीज़न के बाद देखें जिसके बाद वे ऊपर लिस्ट में हैं।" : ""}`.trim() },
     { q: `${name} देखने में कितना समय लगेगा?`, a: wo.totalMinutes ? `मुख्य कहानी और मूवीज़ मिलाकर लगभग ${hiDuration(wo.totalMinutes)}। रोज़ 2 घंटे देखें तो करीब ${hiDays(wo.totalMinutes)} दिन लगेंगे।` : "पूरा रनटाइम अभी उपलब्ध नहीं है।" },
+    ...(coverage.length ? [{ q: `${name} कहाँ देखें?`, a: `${coverage[0].site} पर ${core.length} में से ${coverage[0].n} सीज़न और मूवीज़ हैं${coverage[1] ? `, ${coverage[1].site} पर ${coverage[1].n}` : ""}। हर देश में कैटलॉग अलग होता है, इसलिए ऊपर हर हिस्से के लिंक देखें।` }] : []),
     { q: `${name} का अगला सीज़न कब आएगा?`, a: next },
+    ...(sourceRow?.adapt ? [{ q: `${name} का ${sourceRow.adapt.medium === "manga" ? "मंगा" : "लाइट नॉवेल"} कहाँ से पढ़ें?`, a: `${sourceRow.e.anime.title} में ${hiSource(sourceRow.adapt)} ${sourceRow.adapt.from}–${sourceRow.adapt.to} हैं।${sourceRow.adapt.continue ? ` आगे की कहानी के लिए ${sourceRow.adapt.unit === "chapter" ? "चैप्टर" : "वॉल्यूम"} ${sourceRow.adapt.continue} से पढ़ें।` : ""}` }] : []),
     ...(movies.length ? [{ q: `क्या ${name} की मूवीज़ देखना ज़रूरी है?`, a: `मूवीज़ ज़्यादातर ऑप्शनल हैं, पर कहानी का मज़ा बढ़ाती हैं: ${movies.map((m) => `${m.anime.title}${m.attachedTo && mainTitle.get(m.attachedTo) ? ` (${mainTitle.get(m.attachedTo)} के बाद)` : ""}`).join("; ")}।` }] : []),
     ...(filler ? [{ q: `${a.title} में कितने फ़िलर एपिसोड हैं?`, a: `${filler.total} में से ${filler.count} एपिसोड (${filler.share.toFixed(0)}%) फ़िलर हैं, जिन्हें आप छोड़ सकते हैं।` }] : []),
-  ];
+    ...(arcGroups[0] ? [{ q: `${arcGroups[0].e.anime.title} में कौन-कौन से आर्क हैं?`, a: `${arcGroups[0].arcs.length} आर्क, क्रम से: ${arcGroups[0].arcs.filter((x) => !x.filler).map((x) => x.name).join(", ")}${arcGroups[0].arcs.some((x) => x.filler) ? " (फ़िलर आर्क अलग से ऊपर दिखाए गए हैं)" : ""}।` }] : []),
+    ...(best && rows.filter((r) => r.score).length >= 2 ? [{ q: `${name} का सबसे अच्छा सीज़न कौन सा है?`, a: `Kitsu कम्युनिटी स्कोर के हिसाब से ${best.e.anime.title} (${best.score!.toFixed(2)}/10) सबसे ऊपर है। ऊपर की टेबल में हर सीज़न का स्कोर, एपिसोड और फ़िलर है।` }] : []),
+  ].slice(0, 8);
 
   return (
     <div className="container-x pb-8" lang="hi">
@@ -123,6 +144,13 @@ export default async function HindiGuide({ params }: Props) {
                 <span className="text-[11px] font-bold uppercase tracking-wide text-accent-2">{KIND_HI[e.kind]}{e.optional && e.kind !== "movie" ? " · चाहें तो छोड़ सकते हैं" : ""}</span>
                 <Link href={animePath(e.anime)} className="block font-semibold text-ink hover:text-violet-2">{e.anime.title}</Link>
                 <span className="block text-xs text-muted">{meta(e)}</span>
+                {oneLinkPerSite(streams.get(e.anime.id) || []).length > 0 && (
+                  <span className="mt-1.5 flex flex-wrap gap-1.5">
+                    {oneLinkPerSite(streams.get(e.anime.id) || []).slice(0, 3).map((x) => (
+                      <a key={x.id} href={streamLink(x.url)} target="_blank" rel={affiliateRel} className="rounded-md border border-line bg-bg-2 px-2 py-0.5 text-[11px] font-semibold text-ink/90 hover:border-violet/60" title={`${e.anime.title}: ${x.site}`}>▶ {x.site}</a>
+                    ))}
+                  </span>
+                )}
               </span>
             </li>
           ))}
@@ -130,6 +158,72 @@ export default async function HindiGuide({ params }: Props) {
         {skippable.length > 0 && <p className="mt-3 text-sm text-muted">इन्हें छोड़ सकते हैं (रीकैप या दोबारा बनाए गए वर्ज़न): {skippable.map((e) => e.anime.title).join(", ")}।</p>}
         {extras.length > 0 && <p className="mt-2 text-sm text-muted">साइड स्टोरी और OVA ऑप्शनल हैं; मुख्य कहानी समझने के लिए ज़रूरी नहीं।</p>}
       </section>
+
+      {coverage.length > 0 && (
+        <section className="card mt-8 p-4" aria-labelledby="where-h">
+          <h2 id="where-h" className="font-semibold text-ink">{name} कहाँ देखें</h2>
+          <p className="mt-1 text-sm text-muted">हर सर्विस पर {core.length} में से कितने सीज़न और मूवीज़ हैं। देश के हिसाब से कैटलॉग बदलता है; हर हिस्से के लिंक ऊपर क्रम में हैं।</p>
+          <ul className="mt-3 flex flex-wrap gap-2">
+            {coverage.slice(0, 6).map((c) => <li key={c.site} className="chip"><strong className="mr-1 font-semibold text-ink">{c.site}</strong> {core.length} में से {c.n}</li>)}
+          </ul>
+        </section>
+      )}
+
+      {rows.length >= 2 && (
+        <section className="reveal mt-10" aria-labelledby="compare-h">
+          <h2 id="compare-h" className="h-section mb-1">सीज़न की तुलना</h2>
+          <p className="mb-3 text-sm text-muted">मुख्य कहानी के हर हिस्से का साल, एपिसोड, Kitsu स्कोर{rows.some((r) => r.filler) ? ", फ़िलर" : ""}{sourceRow ? (sourceRow.adapt!.unit === "chapter" ? " और मंगा के चैप्टर" : " और लाइट नॉवेल के वॉल्यूम") : ""}।{best ? ` सबसे ऊँचा स्कोर: ${best.e.anime.title}।` : ""}</p>
+          <div className="card overflow-x-auto">
+            <table className="w-full min-w-[520px] text-left text-sm">
+              <thead className="text-[11px] text-muted">
+                <tr className="border-b border-line">
+                  <th scope="col" className="px-3 py-2 font-semibold">भाग</th>
+                  <th scope="col" className="px-3 py-2 font-semibold">साल</th>
+                  <th scope="col" className="px-3 py-2 text-right font-semibold">एपिसोड</th>
+                  <th scope="col" className="px-3 py-2 text-right font-semibold">स्कोर</th>
+                  {rows.some((r) => r.filler) && <th scope="col" className="px-3 py-2 text-right font-semibold">फ़िलर</th>}
+                  {sourceRow && <th scope="col" className="px-3 py-2 font-semibold">{sourceRow.adapt!.unit === "chapter" ? "मंगा" : "नॉवेल"}</th>}
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-line/60">
+                {rows.map((r) => (
+                  <tr key={r.e.anime.id} className={r === best ? "bg-violet/10" : ""}>
+                    <th scope="row" className="px-3 py-2 font-medium"><Link href={animePath(r.e.anime)} className="text-ink hover:text-violet-2">{r.e.anime.title}</Link></th>
+                    <td className="px-3 py-2 tabular-nums text-muted">{r.e.anime.startDate?.slice(0, 4) || "–"}</td>
+                    <td className="px-3 py-2 text-right tabular-nums">{r.e.anime.episodeCount ?? (r.e.anime.status === "current" ? "चल रहा है" : "–")}</td>
+                    <td className="px-3 py-2 text-right tabular-nums">{r.score ? r.score.toFixed(2) : "–"}</td>
+                    {rows.some((x) => x.filler) && <td className="px-3 py-2 text-right tabular-nums">{r.filler ? `${Math.round(r.filler.share)}%` : "–"}</td>}
+                    {sourceRow && <td className="px-3 py-2 tabular-nums text-muted">{r.adapt ? hiShortRange(r.adapt) : "–"}</td>}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          {sourceRow?.adapt?.continue && <p className="mt-2 text-sm text-ink/90">📚 आगे की कहानी: {sourceRow.e.anime.title} के बाद {hiSource(sourceRow.adapt).replace(/ के .*/, "")} में {sourceRow.adapt.unit === "chapter" ? "चैप्टर" : "वॉल्यूम"} {sourceRow.adapt.continue} से पढ़ें।</p>}
+          <p className="mt-1 text-xs text-muted">चैप्टर और आर्क की जानकारी ड्राफ़्ट है, सीरीज़ विकी और एपिसोड लिस्ट से मिलाकर। <Link href="/how-we-check" className="underline" hrefLang="en">हम कैसे जाँचते हैं</Link></p>
+        </section>
+      )}
+
+      {arcGroups.length > 0 && (
+        <section className="reveal mt-10" aria-labelledby="arcs-h">
+          <h2 id="arcs-h" className="h-section mb-1">आर्क का क्रम</h2>
+          <p className="mb-3 text-sm text-muted">कहानी के बड़े हिस्से (आर्क) और उनके एपिसोड। फ़िलर आर्क छोड़े जा सकते हैं।</p>
+          {arcGroups.map(({ e, arcs }) => (
+            <details key={e.anime.id} className="card mb-3 p-4" open={arcGroups.length === 1 && arcs.length <= 25}>
+              <summary className="cursor-pointer list-none font-semibold text-ink">{e.anime.title} <span className="text-sm font-normal text-muted">· {arcs.length} आर्क</span></summary>
+              <ol className="mt-3 grid gap-1.5 sm:grid-cols-2">
+                {arcs.map((x, i) => (
+                  <li key={`${x.from}-${x.name}`} className="flex items-baseline gap-2 text-sm">
+                    <span className="arc-n">{i + 1}</span>
+                    <span className="min-w-0 flex-1 text-ink">{x.name}{x.filler && <span className="tag-xs">फ़िलर</span>}</span>
+                    <span className="arc-ep">एपिसोड {hiArcRange(x)}</span>
+                  </li>
+                ))}
+              </ol>
+            </details>
+          ))}
+        </section>
+      )}
 
       <BingePlan ordered={ordered} lang="hi" />
       <HindiDub dub={dub} title={name} lang="hi" className="mt-8" />
