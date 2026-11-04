@@ -16,6 +16,7 @@ import { airing, upcomingOf } from "@/lib/airing";
 import AiringNoticeBanner from "@/components/AiringNoticeBanner";
 import SpoilerGate from "@/components/SpoilerGate";
 import EpisodeWatched from "@/components/EpisodeWatched";
+import Refreshed from "@/components/Refreshed";
 import WatchedUpTo from "@/components/WatchedUpTo";
 import { fillerFor, fillerSource } from "@/lib/filler";
 import EpisodeReactions from "@/components/EpisodeReactions";
@@ -88,9 +89,13 @@ export default async function EpisodePage({ params }: Props) {
   const at = (tz: string) => (airIso && airIso.length > 10 ? fmtDate(airIso, { weekday: "short", hour: "numeric", minute: "2-digit", timeZone: tz }) : null);
   const zones = whenTime ? { ist: at("Asia/Kolkata"), et: at("America/New_York"), pt: at("America/Los_Angeles"), uk: at("Europe/London") } : null;
 
+  // Upcoming and recently aired episodes change (air time, title, length) as sources fill in; these show when the
+  // page last re-read them, and give it to search engines as dateModified. Older episodes are settled: no date.
+  const refreshed = upcoming || (airIso && Date.now() - new Date(airIso).getTime() < 14 * 86400_000) ? new Date().toISOString() : null;
   const ld = {
     "@context": "https://schema.org",
     "@type": "TVEpisode",
+    ...(refreshed ? { dateModified: refreshed } : {}),
     name: episode.title || `${a.title} Episode ${n}`,
     episodeNumber: n,
     // Only once it has aired; a scheduled episode carries its date as the broadcast below.
@@ -122,6 +127,7 @@ export default async function EpisodePage({ params }: Props) {
         subtitle={<p>
             {when ? <>{upcoming ? "Airs" : "Aired"} {when}{whenTime ? ` · ${whenTime} JST` : ""}{airIso && airIso.length > 10 && <LocalTime iso={airIso} />}</> : "Release date not announced yet"}
             {episode.length ? ` · ${episode.length} min` : ""}
+            {refreshed && <> · <Refreshed iso={refreshed} label="Updated" /></>}
           </p>}
         hue={upcoming ? 350 : 262}
         backdrop={a.cover?.large || null}

@@ -3,7 +3,7 @@ import { workType, workId, isoDuration } from "@/lib/ld";
 import Link from "@/components/Link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { publicGenres, getAnimeBySlug, getCharacters, getEpisodes, getEpisodesAt, listAnime, getRelations, getLastAiredBest, getProductions, buildWatchOrder, type LastAired, type WatchOrder, comparePath, franchiseRoot, airingNotice, episodePath, posterUrl, fmtDate, statusLabel, subtypeLabel, animePath, weekdayOf, runtimeMinutes, fmtMinutes, Anime } from "@/lib/kitsu";
+import { publicGenres, getAnimeBySlug, getCharacters, getEpisodes, getEpisodesAt, listAnime, getRelations, getLastAiredBest, getProductions, buildWatchOrder, type LastAired, type WatchOrder, comparePath, franchiseRoot, airingNotice, episodePath, posterUrl, fmtDate, statusLabel, subtypeLabel, animePath, weekdayOf, runtimeMinutes, fmtMinutes, isFuture, Anime } from "@/lib/kitsu";
 import { abs } from "@/lib/site";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import JsonLd from "@/components/JsonLd";
@@ -54,6 +54,7 @@ import { getFanRecommendations, getKeyStaff, personPath } from "@/lib/anilist";
 import { combineScores, kitsuScore, aniListScore, getMalScore } from "@/lib/scores";
 import SectionNav, { type NavSection } from "@/components/fx/SectionNav";
 import MobileFold from "@/components/fx/MobileFold";
+import Refreshed from "@/components/Refreshed";
 import ClampText from "@/components/fx/ClampText";
 import NavIcon, { type IconName } from "@/components/NavIcon";
 import StickyActions from "@/components/fx/StickyActions";
@@ -202,6 +203,10 @@ export default async function AnimePage({ params }: Props) {
   if (dubQ) faqExtra.push(dubQ);
   const faq = buildFaq(a, faqExtra);
   const year = a.startDate?.slice(0, 4);
+  // When this render read Kitsu/AniList (pages re-render daily). Shown on every page; given to search engines as
+  // dateModified only for airing and upcoming shows, whose details actually change from day to day.
+  const refreshed = new Date().toISOString();
+  const changing = a.status === "current" || a.status === "upcoming";
   const community = dbEnabled();
   const released = a.status === "current" || a.status === "finished";
   // Read when the page (re)renders, i.e. at most daily: fresh enough for search engines; the widget shows live numbers.
@@ -237,7 +242,9 @@ export default async function AnimePage({ params }: Props) {
     // Only AniLumi's own fan ratings, and only past RATING_SNIPPET_MIN votes: Google's review-snippet policy
     // requires ratings collected on this site, never scores aggregated from Kitsu/AniList/MAL.
     aggregateRating: fanRating,
-    trailer: a.youtubeVideoId ? { "@type": "VideoObject", name: `${a.title} trailer`, embedUrl: `https://www.youtube.com/embed/${a.youtubeVideoId}`, thumbnailUrl: `https://img.youtube.com/vi/${a.youtubeVideoId}/hqdefault.jpg`, uploadDate: a.startDate || undefined, description: `Official trailer for ${a.title}` } : undefined,
+    ...(changing ? { dateModified: refreshed } : {}),
+    // Google needs an upload date; the premiere date stands in for it, so only once the show has started.
+    trailer: a.youtubeVideoId && a.startDate && !isFuture(a.startDate) ? { "@type": "VideoObject", name: `${a.title} trailer`, embedUrl: `https://www.youtube.com/embed/${a.youtubeVideoId}`, thumbnailUrl: `https://img.youtube.com/vi/${a.youtubeVideoId}/hqdefault.jpg`, uploadDate: a.startDate || undefined, description: `Official trailer for ${a.title}` } : undefined,
   };
 
   const facts: [string, string | null][] = [
@@ -394,10 +401,11 @@ export default async function AnimePage({ params }: Props) {
               links={a.streaming.map((x) => ({ id: x.id, url: x.url, site: x.site, dubs: x.dubs }))}
               extra={<a href={amazonSearch(`${a.title} manga`)} target="_blank" rel={affiliateRel} className="btn-outline">📚 Manga on Amazon</a>}
             />
-            {a.streaming.length > 0 && <p className="mt-3 text-[11px] text-muted">Official, legal streams. Catalogues differ by country.</p>}
-            {a.streaming.length === 0 && (
+            {a.streaming.length > 0 && <p className="mt-3 text-[11px] text-muted">Official, legal streams. Catalogues differ by country. · <Refreshed iso={refreshed} /></p>}
+            {a.streaming.length === 0 && (<>
               <p className="mt-2 text-sm text-muted">No licensed streams listed yet. <a href={amazonSearch(`${a.title} manga`)} target="_blank" rel={affiliateRel} className="text-violet hover:underline">Read the manga on Amazon →</a></p>
-            )}
+              <p className="mt-2 text-[11px] text-muted"><Refreshed iso={refreshed} /></p>
+            </>)}
           </div>
           <WatchOrderCard anime={a} order={order} relations={relations} className="max-md:order-2 max-md:col-span-2 max-md:mt-4 md:col-start-2 md:row-span-2 md:row-start-1" />
           {/* Fills the space under Where to watch; the watch-order answer is the card beside it. */}
