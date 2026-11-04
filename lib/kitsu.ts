@@ -303,7 +303,12 @@ export async function getAnimeBySlug(slug: string): Promise<Anime | null> {
 }
 
 export async function getEpisodes(animeId: string, page = 1, limit = 20): Promise<Paged<Episode>> {
-  const offset = (page - 1) * limit;
+  return getEpisodesAt(animeId, (page - 1) * limit, limit);
+}
+
+/** Episodes from a given offset in number order. The nested episodes route ignores sort=-number, so the latest
+ * aired episodes of a long show are read from offset lastAired - n (Kitsu numbers episodes from 1 without gaps). */
+export async function getEpisodesAt(animeId: string, offset: number, limit: number): Promise<Paged<Episode>> {
   const doc = await kitsu(
     `/anime/${animeId}/episodes`,
     { "page[limit]": limit, "page[offset]": offset, sort: "number", "fields[episodes]": "number,canonicalTitle,titles,airdate,synopsis,length,thumbnail" },

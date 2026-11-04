@@ -3,7 +3,7 @@ import { workType, workId, isoDuration } from "@/lib/ld";
 import Link from "@/components/Link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { publicGenres, getAnimeBySlug, getCharacters, getEpisodes, listAnime, getRelations, getLastAiredBest, getProductions, buildWatchOrder, type LastAired, type WatchOrder, comparePath, franchiseRoot, airingNotice, episodePath, posterUrl, fmtDate, statusLabel, subtypeLabel, animePath, weekdayOf, runtimeMinutes, fmtMinutes, Anime } from "@/lib/kitsu";
+import { publicGenres, getAnimeBySlug, getCharacters, getEpisodes, getEpisodesAt, listAnime, getRelations, getLastAiredBest, getProductions, buildWatchOrder, type LastAired, type WatchOrder, comparePath, franchiseRoot, airingNotice, episodePath, posterUrl, fmtDate, statusLabel, subtypeLabel, animePath, weekdayOf, runtimeMinutes, fmtMinutes, Anime } from "@/lib/kitsu";
 import { abs } from "@/lib/site";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import JsonLd from "@/components/JsonLd";
@@ -147,6 +147,16 @@ export default async function AnimePage({ params }: Props) {
   const notice = a.status === "current" ? airingNotice(a.nextRelease, latestInfo.nextAt) : null;
   if (latestInfo.nextAt) a.nextRelease = latestInfo.nextAt; // AniList pair: number and time stay consistent
   const lastAired = latestInfo.lastAired;
+  // Airing shows list their newest aired episodes first. Kitsu's total also counts placeholder records for
+  // episodes that haven't aired (One Piece: 1,410 records, 1,180 aired), so the heading uses the aired count.
+  const airingList = a.status === "current" && lastAired > 0;
+  const latestEps = airingList
+    ? (lastAired > episodes.items.length ? (await getEpisodesAt(a.id, Math.max(0, lastAired - 6), 6)).items : episodes.items)
+        .filter((e) => e.number !== null && e.number <= lastAired)
+        .reverse()
+    : [];
+  const epList = latestEps.length ? latestEps : episodes.items;
+  const epCount = airingList ? lastAired : a.episodeCount || episodes.total;
   const studios = productions.filter((p) => p.role === "studio");
   const drop = insight ? dropStats(insight.dist) : null;
   const dropOk = drop && drop.started >= 200 ? drop : null;
@@ -246,7 +256,7 @@ export default async function AnimePage({ params }: Props) {
   const hasStats = Boolean(a.rating || a.userCount > 0 || dropOk);
   const sections: NavSection[] = [
     { id: "overview", label: "Overview" },
-    ...(episodes.items.length ? [{ id: "episodes", label: "Episodes" }] : []),
+    ...(epList.length ? [{ id: "episodes", label: "Episodes" }] : []),
     ...(characters.length ? [{ id: "characters", label: "Characters" }] : []),
     ...(hasStats ? [{ id: "stats", label: "Stats" }] : []),
     ...(guide ? [{ id: "guide", label: "Parents' guide" }] : []),
@@ -282,10 +292,10 @@ export default async function AnimePage({ params }: Props) {
           <div className="absolute inset-0 veil-side max-lg:hidden" />
         </div>
 
-        <div className="container-x pb-8 pt-6 lg:pt-10">
-          <Breadcrumbs items={[{ href: "/", label: "Home" }, ...(mainGenre ? [{ href: `/genre/${mainGenre.slug}`, label: mainGenre.title }] : []), { href: animePath(a), label: a.title }]} />
-          <div className="mt-2 flex flex-col gap-6 md:flex-row md:items-end lg:gap-10">
-            <div className="rise mx-auto w-44 shrink-0 sm:w-52 md:mx-0 lg:w-60">
+        <div className="container-x pb-8 pt-6 max-md:grid max-md:grid-cols-[6.5rem_1fr] max-md:items-center max-md:gap-x-4 sm:max-md:grid-cols-[8.5rem_1fr] lg:pt-10">
+          <div className="max-md:col-span-2"><Breadcrumbs items={[{ href: "/", label: "Home" }, ...(mainGenre ? [{ href: `/genre/${mainGenre.slug}`, label: mainGenre.title }] : []), { href: animePath(a), label: a.title }]} /></div>
+          <div className="mt-2 flex flex-col gap-6 max-md:contents md:flex-row md:items-end lg:gap-10">
+            <div className="rise w-full shrink-0 max-md:row-span-3 max-md:self-start md:w-52 lg:w-60">
               <TiltCard max={6} className="rounded-2xl">
                 <div className="relative aspect-[2/3] w-full overflow-hidden rounded-2xl border border-white/15 bg-bg-2 shadow-[0_30px_70px_-25px_rgba(255,77,109,.55)]">
                   {poster && <Image src={poster} alt={`${a.title} poster`} fill sizes="(max-width: 640px) 176px, 240px" className="object-cover" priority fetchPriority="high" />}
@@ -293,8 +303,8 @@ export default async function AnimePage({ params }: Props) {
               </TiltCard>
             </div>
 
-            <div className="min-w-0 flex-1 text-center md:text-left">
-              <p className="rise flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-xs font-semibold uppercase tracking-widest text-muted md:justify-start">
+            <div className="min-w-0 flex-1 text-left max-md:contents">
+              <p className="rise flex flex-wrap items-center justify-start gap-x-2 gap-y-1 text-xs font-semibold uppercase tracking-widest text-muted max-md:col-start-2 max-md:mt-1 max-md:text-[11px] max-md:tracking-wider">
                 <span className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 ${a.status === "current" ? "bg-accent-strong text-snow" : "bg-white/10 text-ink"}`}>
                   {a.status === "current" && <span className="live-dot" aria-hidden />}{statusLabel(a.status)}
                 </span>
@@ -303,13 +313,13 @@ export default async function AnimePage({ params }: Props) {
                 {a.ageRating && <><span aria-hidden>·</span><span>{a.ageRating}</span></>}
                 {studios[0] && <><span aria-hidden>·</span><Link href={`/studio/${studios[0].producer.slug}`} className="hover:text-ink">{studios[0].producer.name}</Link></>}
               </p>
-              <h1 className="rise-t mt-3 text-4xl font-black leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl" style={{ ["--d" as string]: "60ms" }}>{a.title}</h1>
+              <h1 className="rise-t mt-3 text-[1.7rem] font-black leading-[1.05] tracking-tight max-md:col-start-2 max-md:mt-2 sm:text-4xl md:text-5xl lg:text-6xl" style={{ ["--d" as string]: "60ms" }}>{a.title}</h1>
               {(a.titleEn && a.titleEn !== a.title) || a.titleJp ? (
-                <p className="mt-2 text-base text-ink/70">{[a.titleEn !== a.title ? a.titleEn : null, a.titleJp].filter(Boolean).join(" · ")}</p>
+                <p className="mt-2 text-base text-ink/70 max-md:col-start-2 max-md:self-start max-md:text-sm">{[a.titleEn !== a.title ? a.titleEn : null, a.titleJp].filter(Boolean).join(" · ")}</p>
               ) : null}
 
               {/* Key facts: the score, then a grid of labelled stat tiles */}
-              <div className="rise mt-5 flex flex-col items-center gap-4 md:items-start" style={{ ["--d" as string]: "120ms" }}>
+              <div className="rise mt-5 flex flex-col items-start gap-4 max-md:order-1 max-md:col-span-2" style={{ ["--d" as string]: "120ms" }}>
                 {multi ? (
                   <a href="#stats" className="flex items-center gap-3">
                     <ScoreRing score={multi.score} label="AniLumi score" />
@@ -344,7 +354,7 @@ export default async function AnimePage({ params }: Props) {
 
               {/* Genres: first few, the rest behind a toggle */}
               {a.categories.length > 0 && (
-                <div className="mt-5 flex flex-wrap items-center justify-center gap-2 md:justify-start">
+                <div className="mt-5 flex flex-wrap items-center justify-start gap-2 max-md:order-1 max-md:col-span-2">
                   {publicGenres(a.categories).slice(0, GENRES_SHOWN).map((c) => <Link key={c.id} href={`/genre/${c.slug}`} className="chip">{c.title}</Link>)}
                   {publicGenres(a.categories).length > GENRES_SHOWN && (
                     <details className="group contents">
@@ -356,15 +366,15 @@ export default async function AnimePage({ params }: Props) {
               )}
 
               {a.status === "current" && a.nextRelease && (
-                <Link href={nextN ? episodePath(a, nextN) : `${animePath(a)}/episodes`} className="mt-5 flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-accent/40 bg-accent/10 p-3 text-left text-sm backdrop-blur transition hover:border-accent">
+                <Link href={nextN ? episodePath(a, nextN) : `${animePath(a)}/episodes`} className="mt-5 flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-accent/40 max-md:col-span-2 bg-accent/10 p-3 text-left text-sm backdrop-blur transition hover:border-accent">
                   <span><strong className="text-accent-2">{nextN ? `Episode ${nextN}:` : "Next episode:"}</strong> {fmtDate(a.nextRelease, { weekday: "long", month: "long", day: "numeric", hour: "numeric", minute: "2-digit", timeZone: "Asia/Tokyo" })} JST<LocalTime iso={a.nextRelease} /></span>
                   <Countdown iso={a.nextRelease} label="in" />
                 </Link>
               )}
-              {notice && <div className="text-left"><AiringNoticeBanner n={notice} title={a.title} /></div>}
+              {notice && <div className="text-left max-md:col-span-2"><AiringNoticeBanner n={notice} title={a.title} /></div>}
 
-              <div className="mt-5 flex flex-wrap justify-center gap-2 md:justify-start">
-                <a href="#watch" className="btn-primary px-5 py-3">▶ Where to watch</a>
+              <div className="mt-5 flex flex-wrap justify-start gap-2 max-md:col-span-2">
+                <a href="#watch" className="btn-primary px-5 py-3 max-md:hidden!">▶ Where to watch</a>
                 <Link href={`/watch-order/${a.slug}`} className="btn-outline px-4 py-3">{order ? `Watch order · ${order.entries.length}` : franchise.length ? `Watch order · ${franchise.length + 1}` : "Watch order"}</Link>
                 <WatchButton item={watchItem} />
                 {community && !released && <HypeButton animeId={a.id} />}
@@ -373,8 +383,8 @@ export default async function AnimePage({ params }: Props) {
             </div>
           </div>
 
-          <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 md:grid-rows-[auto_1fr]">
-          <div id="watch" data-section className="self-start rounded-2xl md:col-start-1 md:row-start-1 border-2 border-accent/50 bg-accent/[.07] p-4 shadow-[0_0_45px_-18px_rgba(255,77,109,.7)] backdrop-blur sm:p-5">
+          <div className="mt-6 grid grid-cols-1 gap-4 max-md:contents md:grid-cols-2 md:grid-rows-[auto_1fr]">
+          <div id="watch" data-section className="self-start rounded-2xl max-md:col-span-2 max-md:mt-6 md:col-start-1 md:row-start-1 border-2 border-accent/50 bg-accent/[.07] p-4 shadow-[0_0_45px_-18px_rgba(255,77,109,.7)] backdrop-blur sm:p-5">
             <WhereToWatch
               animeId={a.id}
               title={a.title}
@@ -386,15 +396,15 @@ export default async function AnimePage({ params }: Props) {
               <p className="mt-2 text-sm text-muted">No licensed streams listed yet. <a href={amazonSearch(`${a.title} manga`)} target="_blank" rel={affiliateRel} className="text-violet hover:underline">Read the manga on Amazon →</a></p>
             )}
           </div>
-          <WatchOrderCard anime={a} order={order} relations={relations} className="md:col-start-2 md:row-span-2 md:row-start-1" />
+          <WatchOrderCard anime={a} order={order} relations={relations} className="max-md:order-2 max-md:col-span-2 max-md:mt-4 md:col-start-2 md:row-span-2 md:row-start-1" />
           {/* Fills the space under Where to watch; the watch-order answer is the card beside it. */}
-          <QuickAnswers title={a.title} items={glance.filter((x) => !x.href.startsWith("/watch-order/"))} className="md:col-start-1 md:row-start-2" />
+          <QuickAnswers title={a.title} items={glance.filter((x) => !x.href.startsWith("/watch-order/"))} className="max-md:order-2 max-md:col-span-2 max-md:mt-4 md:col-start-1 md:row-start-2" />
           </div>
           {community && (a.status === "current" || !released) && (<>
-            <PushButton className="mt-4" topic={animeTopic(a.id)} source={a.status === "current" ? "anime-alert" : "anime-premiere"}
+            <PushButton className="mt-4 max-md:order-2 max-md:col-span-2" topic={animeTopic(a.id)} source={a.status === "current" ? "anime-alert" : "anime-premiere"}
               label={a.status === "current" ? "Alert me when new episodes air" : "Alert me when it premieres"} onLabel={a.status === "current" ? "Episode alerts on" : "Premiere alert on"} />
             <LeadForm
-              className="mt-4"
+              className="mt-4 max-md:order-2 max-md:col-span-2"
               kind="alert"
               source={a.status === "current" ? "anime-alert" : "anime-premiere"}
               animeId={a.id}
@@ -456,14 +466,17 @@ export default async function AnimePage({ params }: Props) {
           <AdSlot slot="anime-mid" />
 
           {/* ───────── Episodes ───────── */}
-          {episodes.items.length > 0 && (
+          {epList.length > 0 && (
             <section id="episodes" data-section aria-labelledby="h-episodes">
-              <div className="mb-3 flex items-end justify-between">
-                <h2 id="h-episodes" className="h-section">Episodes{episodes.total ? ` (${episodes.total})` : ""}</h2>
-                <Link href={`${animePath(a)}/episodes`} className="text-sm font-medium text-violet hover:underline">All episodes →</Link>
+              <div className="mb-3 flex items-end justify-between gap-3">
+                <div>
+                  <h2 id="h-episodes" className="h-section">{latestEps.length ? "Latest episodes" : "Episodes"}{epCount ? ` (${epCount.toLocaleString()}${airingList ? " aired" : ""})` : ""}</h2>
+                  {latestEps.length > 0 && <p className="mt-1 text-xs text-muted">Newest first</p>}
+                </div>
+                <Link href={`${animePath(a)}/episodes`} className="shrink-0 text-sm font-medium text-violet hover:underline">All episodes →</Link>
               </div>
               <ol className="grid gap-3 sm:grid-cols-2">
-                {episodes.items.map((e) => (
+                {epList.map((e, i) => (
                   <li key={e.id}>
                     <Link href={e.number ? episodePath(a, e.number) : `${animePath(a)}/episodes`} className="card group flex gap-3 overflow-hidden p-2 transition hover:-translate-y-0.5 hover:border-violet/60">
                       <span className="relative aspect-video w-32 shrink-0 overflow-hidden rounded-lg bg-bg-2">
@@ -471,10 +484,11 @@ export default async function AnimePage({ params }: Props) {
                           <SpoilerGate animeId={a.id} ep={e.number}><span className="relative block aspect-video w-32"><Image src={e.thumbnail} alt="" fill sizes="128px" className="object-cover transition duration-300 group-hover:scale-105" /></span></SpoilerGate>
                         ) : <span className="grid h-full place-items-center text-xs text-muted">Ep {e.number ?? "–"}</span>}
                         <span className="absolute bottom-1 left-1 rounded bg-black/70 px-1.5 text-[10px] font-bold text-snow">EP {e.number ?? "–"}</span>
+                        {latestEps.length > 0 && i === 0 && <span className="absolute left-1 top-1 rounded bg-accent-strong px-1.5 text-[10px] font-bold uppercase text-snow">Latest</span>}
                       </span>
                       <span className="min-w-0 flex-1 py-1">
                         <span className="line-clamp-2 text-sm font-semibold text-ink group-hover:text-violet-2">{e.title && e.number ? <SpoilerGate inline animeId={a.id} ep={e.number}>{e.title}</SpoilerGate> : e.title || `Episode ${e.number}`}</span>
-                        {e.airdate && <span className="mt-1 block text-xs text-muted">{fmtDate(e.airdate)}{e.length ? ` · ${e.length} min` : ""}</span>}
+                        {(e.airdate || (e.number === lastAired && latestInfo.lastAiredDate)) && <span className="mt-1 block text-xs text-muted">{fmtDate((e.airdate || latestInfo.lastAiredDate)!)}{e.length ? ` · ${e.length} min` : ""}</span>}
                       </span>
                     </Link>
                   </li>
