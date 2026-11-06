@@ -1,9 +1,11 @@
 /**
  * Sends due alerts (lib/pushplan.ts) by browser push (push_subs, from app/api/push) and email (confirmed
  * leads, through Resend). Run by .github/workflows/alerts.yml:
- *   episodes  hourly: new episodes and premieres, push + email
- *   birthdays daily:  character birthdays, push
- *   digest    Friday: the weekly digest email
+ *   auto      every scheduled run: new episodes, plus today's birthdays and the weekly digest once they're due
+ *             (dueJobs), so a cron slot GitHub skips is made up by the next run
+ *   episodes  new episodes and premieres, push + email
+ *   birthdays character birthdays, push
+ *   digest    the weekly digest email (once per ISO week)
  *   confirm-pending (by hand only): one confirmation email to signups from before email was switched on
  * Each alert is claimed in alerts_sent before sending, so reruns never repeat it. A channel without its
  * secrets (VAPID_PRIVATE_KEY + data/vapid.json, RESEND_API_KEY) is skipped with a notice.
@@ -19,10 +21,10 @@ import { getNews } from "../lib/news";
 import { listLeadsByShow, oncePerEmail } from "../lib/listalerts";
 import { kitsuPosters } from "../lib/posters";
 import { VAPID_PUBLIC_KEY } from "../lib/push";
-import { buildDigest, dueBirthdays, dueEpisodes, type Alert } from "../lib/pushplan";
+import { buildDigest, dueBirthdays, dueEpisodes, dueJobs, isoWeek, type Alert } from "../lib/pushplan";
 
 const mode = process.argv[2];
-if (!["episodes", "birthdays", "digest", "confirm-pending"].includes(mode)) throw new Error("usage: send-alerts.mts episodes|birthdays|digest|confirm-pending");
+if (!["auto", "episodes", "birthdays", "digest", "confirm-pending"].includes(mode)) throw new Error("usage: send-alerts.mts auto|episodes|birthdays|digest|confirm-pending");
 const { MONGODB_URI, VAPID_PRIVATE_KEY } = process.env;
 if (!MONGODB_URI) { console.log("::notice::Alerts are off: MONGODB_URI is missing."); process.exit(0); }
 const pushOn = Boolean(VAPID_PRIVATE_KEY && VAPID_PUBLIC_KEY);
@@ -74,7 +76,7 @@ async function mail(key: string, mails: ReturnType<typeof episodeMail>[]) {
   console.log(`email ${key}: ${r.sent}/${mails.length}`);
 }
 
-if (mode === "episodes") {
+async function episodes() {
   const snap = await fetch(AIRING_URL, { signal: AbortSignal.timeout(20_000) }).then((r) => r.json());
   const alerts = dueEpisodes(indexAiring(snap).shows);
   await push(d, alerts);
@@ -91,20 +93,37 @@ if (mode === "episodes") {
     await mail(`mail:${a.key}`, to.map((l) => episodeMail(l, { ...a, poster: posters.get(animeId) })));
   }
   console.log(`episodes: ${alerts.length} due`);
-} else if (mode === "birthdays") {
+}
+
+async function birthdays() {
   const alerts = dueBirthdays(birthdayChars(), characterPathFor);
   await push(d, alerts);
   console.log(`birthdays: ${alerts.length} due`);
-} else if (mode === "digest") {
+}
+
+async function digest() {
   const snap = await fetch(AIRING_URL, { signal: AbortSignal.timeout(20_000) }).then((r) => r.json());
   const news = await getNews().catch(() => []);
   const built = buildDigest(indexAiring(snap).shows, news.map((n) => ({ title: n.title, url: n.url, source: n.source })));
   const posters = await kitsuPosters([...built.premieres, ...built.episodes].flatMap((x) => (x.k ? [x.k] : [])));
-  const digest = { ...built, premieres: built.premieres.map((x) => ({ ...x, poster: x.k ? posters.get(x.k) : null })), episodes: built.episodes.map((x) => ({ ...x, poster: x.k ? posters.get(x.k) : null })) };
+  const dg = { ...built, premieres: built.premieres.map((x) => ({ ...x, poster: x.k ? posters.get(x.k) : null })), episodes: built.episodes.map((x) => ({ ...x, poster: x.k ? posters.get(x.k) : null })) };
   const to = await leads.find({ kind: "digest", status: "confirmed" }).toArray();
-  if (digest.episodes.length + digest.premieres.length === 0) console.log("::warning::Digest is empty (stale airing snapshot?); not sending.");
-  else await mail(`mail:digest:${new Date().toISOString().slice(0, 10)}`, to.map((l) => digestMail(l, digest)));
-  console.log(`digest: ${to.length} subscribers, ${digest.premieres.length} premieres, ${digest.episodes.length} episodes, ${digest.news.length} news`);
+  if (dg.episodes.length + dg.premieres.length === 0) console.log("::warning::Digest is empty (stale airing snapshot?); not sending.");
+  else await mail(`mail:digest:${isoWeek()}`, to.map((l) => digestMail(l, dg)));
+  console.log(`digest: ${to.length} subscribers, ${dg.premieres.length} premieres, ${dg.episodes.length} episodes, ${dg.news.length} news`);
+}
+
+if (mode === "auto") {
+  const due = dueJobs();
+  await episodes();
+  if (due.birthdays) await birthdays();
+  if (due.digest) await digest();
+} else if (mode === "episodes") {
+  await episodes();
+} else if (mode === "birthdays") {
+  await birthdays();
+} else if (mode === "digest") {
+  await digest();
 } else if (mode === "confirm-pending") {
   // Signups from before email existed: one confirmation each, never repeated (confirmSentAt).
   const pending = await leads.find({ status: "pending", confirmSentAt: { $exists: false } }).toArray();

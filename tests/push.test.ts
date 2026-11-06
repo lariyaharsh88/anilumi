@@ -1,7 +1,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { cleanSub, isTopic } from "../lib/push";
-import { dueBirthdays, dueEpisodes, LOOKBACK_MS } from "../lib/pushplan";
+import { dueBirthdays, dueEpisodes, dueJobs, isoWeek, LOOKBACK_MS } from "../lib/pushplan";
 import type { AiringShow } from "../lib/airing";
 import type { BdChar } from "../lib/birthdays";
 
@@ -44,4 +44,19 @@ test("due birthdays: today's characters, linked to their page or the date page",
   assert.deepEqual(due.map((x) => x.key), ["c:1:2026", "c:3:2026"]);
   assert.equal(due[0].url, "/character/char-1");
   assert.equal(due[1].url, "/birthdays/november/4");
+});
+
+test("dueJobs: birthdays from 03:30 UTC; the digest from Friday 03:30 UTC through Sunday", () => {
+  const at = (iso: string) => dueJobs(new Date(iso));
+  assert.deepEqual(at("2026-11-06T03:29:00Z"), { birthdays: false, digest: false }); // Friday, before
+  assert.deepEqual(at("2026-11-06T07:18:00Z"), { birthdays: true, digest: true }); // Friday, after
+  assert.deepEqual(at("2026-11-07T01:00:00Z"), { birthdays: false, digest: true }); // Saturday catch-up
+  assert.deepEqual(at("2026-11-09T12:00:00Z"), { birthdays: true, digest: false }); // Monday
+});
+
+test("isoWeek: one key per Monday-to-Sunday week, across the year boundary", () => {
+  assert.equal(isoWeek(new Date("2026-11-06T07:00:00Z")), "2026-W45");
+  assert.equal(isoWeek(new Date("2026-11-08T23:00:00Z")), "2026-W45"); // Sunday, same week
+  assert.equal(isoWeek(new Date("2026-11-09T00:00:00Z")), "2026-W46");
+  assert.equal(isoWeek(new Date("2027-01-01T00:00:00Z")), "2026-W53");
 });

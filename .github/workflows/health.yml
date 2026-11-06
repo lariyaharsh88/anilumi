@@ -12,10 +12,10 @@ jobs:
       - name: Check pages
         run: |
           fail=0
-          check() { # url, text that must appear
+          check() { # url, text that must appear (any case: headings get recapitalised)
             for try in 1 2 3; do
-              body=$(curl -s -m 60 -w "\n%{http_code}" "https://anilumi.in$1"); code=$(echo "$body" | tail -1)
-              if [ "$code" = "200" ] && echo "$body" | grep -q -- "$2"; then echo "ok   $1"; return; fi
+              body=$(curl -s -m 60 -w "\n%{http_code}" "https://anilumi.in$1"); code=$(tail -1 <<<"$body")
+              if [ "$code" = "200" ] && grep -qi -- "$2" <<<"$body"; then echo "ok   $1"; return; fi
               sleep 20
             done
             echo "::error::$1 returned $code or is missing \"$2\""; fail=1

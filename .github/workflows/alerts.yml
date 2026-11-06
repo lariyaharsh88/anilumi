@@ -1,20 +1,19 @@
 name: Alerts
-# Episode and birthday alerts by browser push and email, and the Friday digest (scripts/send-alerts.mts):
-# new episodes every hour from the airing snapshot, character birthdays at 03:30 UTC (9 AM in India), the
-# digest at 03:30 UTC on Fridays. Each alert is sent once (alerts_sent in MongoDB). A channel whose secret
-# (VAPID_PRIVATE_KEY, RESEND_API_KEY) is missing is skipped with a notice.
+# Episode and birthday alerts by browser push and email, and the Friday digest (scripts/send-alerts.mts).
+# GitHub runs schedules late or skips them (an hourly cron ran 3-7 hours apart in Nov 2026), so every run is
+# "auto": new episodes from the last 12 hours, plus character birthdays once it's 03:30 UTC (9 AM in India) and
+# the weekly digest from Friday 03:30 UTC until it has gone out. Each alert is sent once (alerts_sent in
+# MongoDB). A channel whose secret (VAPID_PRIVATE_KEY, RESEND_API_KEY) is missing is skipped with a notice.
 on:
   schedule:
-    - cron: "41 * * * *"
-    - cron: "30 3 * * *"
-    - cron: "35 3 * * 5"
+    - cron: "11,41 * * * *"
   workflow_dispatch:
     inputs:
       mode:
         description: What to send
         type: choice
-        options: [episodes, birthdays, digest, confirm-pending]
-        default: episodes
+        options: [auto, episodes, birthdays, digest, confirm-pending]
+        default: auto
 permissions:
   contents: read
 concurrency: alerts
@@ -30,7 +29,7 @@ jobs:
           cache: npm
       - run: npm ci
       - name: Send
-        run: npx tsx scripts/send-alerts.mts "${{ inputs.mode || (github.event.schedule == '30 3 * * *' && 'birthdays') || (github.event.schedule == '35 3 * * 5' && 'digest') || 'episodes' }}"
+        run: npx tsx scripts/send-alerts.mts "${{ inputs.mode || 'auto' }}"
         env:
           MONGODB_URI: ${{ secrets.MONGODB_URI }}
           VAPID_PRIVATE_KEY: ${{ secrets.VAPID_PRIVATE_KEY }}

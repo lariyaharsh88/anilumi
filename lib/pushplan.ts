@@ -8,8 +8,29 @@ import { animeTopic, charTopic } from "./push";
 
 export type Alert = { key: string; topic: string; title: string; body: string; url: string; icon?: string };
 
-/** GitHub's hourly schedule can run late, so look back 3 hours; the key stops repeats. */
-export const LOOKBACK_MS = 3 * 3600_000;
+/**
+ * GitHub's schedule runs hours late or skips runs outright (Nov 2026: 3-7 hours apart for an hourly cron), so
+ * look back 12 hours; each alert's key stops repeats.
+ */
+export const LOOKBACK_MS = 12 * 3600_000;
+
+/** What a scheduled run should send besides new episodes, so a skipped cron slot is caught up by the next run. */
+export function dueJobs(now = new Date()): { birthdays: boolean; digest: boolean } {
+  const minutes = now.getUTCHours() * 60 + now.getUTCMinutes();
+  const day = now.getUTCDay(); // 5 = Friday
+  // Birthdays from 03:30 UTC (9 AM in India); the digest from Friday 03:30 UTC until the weekend is over.
+  return { birthdays: minutes >= 210, digest: (day === 5 && minutes >= 210) || day === 6 || day === 0 };
+}
+
+/** ISO week, "2026-W45": the digest's send-once key, so a Friday and a late Saturday run can't both send. */
+export function isoWeek(date = new Date()): string {
+  const d = new Date(Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate()));
+  const day = d.getUTCDay() || 7;
+  d.setUTCDate(d.getUTCDate() + 4 - day);
+  const year = d.getUTCFullYear();
+  const week = Math.ceil(((d.getTime() - Date.UTC(year, 0, 1)) / 86400000 + 1) / 7);
+  return `${year}-W${String(week).padStart(2, "0")}`;
+}
 
 export function dueEpisodes(shows: AiringShow[], now = Date.now()): Alert[] {
   return shows.flatMap((s) => (!s.k || !s.s ? [] : s.n
