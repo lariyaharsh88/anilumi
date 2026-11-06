@@ -3,6 +3,7 @@ name: AniList sync
 # 6 days. AniList refuses Cloudflare (where the site runs), so this is the site's only route to AniList data.
 # GitHub's schedule is best effort (runs start late or not at all), so a run that leaves work behind starts the
 # next one itself; the hourly schedule only restarts the chain. Needs the repository secret MONGODB_URI.
+# The edge Worker's Cloudflare cron also starts this on time (edge/schedule.js); the schedule below is the backup.
 on:
   schedule:
     - cron: "23 * * * *"

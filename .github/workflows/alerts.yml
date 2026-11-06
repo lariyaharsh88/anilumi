@@ -4,6 +4,7 @@ name: Alerts
 # "auto": new episodes from the last 12 hours, plus character birthdays once it's 03:30 UTC (9 AM in India) and
 # the weekly digest from Friday 03:30 UTC until it has gone out. Each alert is sent once (alerts_sent in
 # MongoDB). A channel whose secret (VAPID_PRIVATE_KEY, RESEND_API_KEY) is missing is skipped with a notice.
+# The edge Worker's Cloudflare cron also starts this on time (edge/schedule.js); the schedule below is the backup.
 on:
   schedule:
     - cron: "11,41 * * * *"

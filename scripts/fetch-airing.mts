@@ -31,18 +31,19 @@ type Media = {
 };
 const Q = `query($p:Int,$s:MediaStatus){Page(page:$p,perPage:50){pageInfo{hasNextPage} media(type:ANIME,status:$s,isAdult:false,sort:POPULARITY_DESC,format_in:[TV,TV_SHORT,ONA]){id popularity episodes format title{romaji english} startDate{year month day} airingSchedule(notYetAired:true,perPage:4){nodes{episode airingAt}}}}}`;
 
-const media: Media[] = [];
+const media: (Media & { releasing: boolean })[] = [];
 for (const [status, pages] of [["RELEASING", 6], ["NOT_YET_RELEASED", 4]] as const) {
   for (let p = 1; p <= pages; p++) {
     const d = await ask<{ Page: { pageInfo: { hasNextPage: boolean }; media: Media[] } }>(Q, { p, s: status });
-    media.push(...d.Page.media);
+    media.push(...d.Page.media.map((m) => ({ ...m, releasing: status === "RELEASING" })));
     await sleep(2500);
     if (!d.Page.pageInfo.hasNextPage) break;
   }
 }
 const soon = Date.now() / 1000 + 21 * 86400;
-// Airing now with a schedule, or premiering within three weeks; tiny shows (popularity < 300) skipped.
-const keep = media.filter((m) => m.popularity >= 300 && m.airingSchedule.nodes.length && m.airingSchedule.nodes[0].airingAt < soon);
+// Airing now with a schedule (however far off: a show on a break, like One Piece until January, still needs its
+// return date and aired count), or premiering within three weeks; tiny shows (popularity < 300) skipped.
+const keep = media.filter((m) => m.popularity >= 300 && m.airingSchedule.nodes.length && (m.releasing || m.airingSchedule.nodes[0].airingAt < soon));
 
 // AniList id → Kitsu id and slug (20 per request).
 const kitsu = new Map<number, { id: string; slug: string }>();

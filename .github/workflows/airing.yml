@@ -2,6 +2,7 @@ name: Airing snapshot
 # Every 3 hours: AniList's air times for the next few episodes of every airing anime (scripts/fetch-airing.mts),
 # force-pushed as a single commit to the `airing-data` branch. The site reads it from raw.githubusercontent.com
 # (lib/airing.ts). Not committed to main: that would rebuild Render each time and use up its build minutes.
+# The edge Worker's Cloudflare cron also starts this on time (edge/schedule.js); the schedule below is the backup.
 on:
   schedule:
     - cron: "11 */3 * * *"

@@ -10,3 +10,7 @@ routes = [
   { pattern = "anilumi.in/*", zone_name = "anilumi.in" },
   { pattern = "www.anilumi.in/*", zone_name = "anilumi.in" },
 ]
+# Starts the GitHub workflows on time (edge/schedule.js), since GitHub's own schedules run hours late. Needs the
+# secret GH_DISPATCH_TOKEN: npx wrangler secret put GH_DISPATCH_TOKEN --config edge/wrangler.toml
+[triggers]
+crons = ["5,35 * * * *"]

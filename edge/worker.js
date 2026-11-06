@@ -3,6 +3,8 @@
 // fetches from Render's own hostname and keeps pages in Cloudflare's cache itself, which keeps Render under its
 // 5 GB/month free bandwidth. Pass-through only: ~1 ms of CPU per request.
 
+import { dispatchDue } from "./schedule.js";
+
 const ORIGIN = "https://anilumi.onrender.com";
 const SITE = "anilumi.in";
 // The app on Cloudflare Workers, through the service binding APP (edge/wrangler.toml) when configured: requests
@@ -171,6 +173,11 @@ export default {
     if (genq) out.headers.set("x-edge-gen", genq.slice(genq.indexOf("=") + 1));
     ctx.waitUntil(store(out, url, genq, key, lastKey));
     return out;
+  },
+
+  // Cron triggers (edge/wrangler.toml): start the GitHub workflows on time (edge/schedule.js).
+  async scheduled(event, env, ctx) {
+    ctx.waitUntil(dispatchDue(env, new Date(event.scheduledTime)));
   },
 };
 

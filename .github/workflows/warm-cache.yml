@@ -2,6 +2,7 @@ name: Warm cache
 # Builds every sitemap page through anilumi.in (scripts/warm-cache.mjs) so visitors and Google get cached pages,
 # never a first-time render. Each app deploy starts a fresh page cache: a Workers Builds deploy (via
 # .github/workflows/after-deploy.yml) or a manual `npm run deploy` triggers this when it finishes. Every 6 hours as well, for pages whose cache expired.
+# The edge Worker's Cloudflare cron also starts this on time (edge/schedule.js); the schedule below is the backup.
 on:
   schedule:
     - cron: "41 */6 * * *"
