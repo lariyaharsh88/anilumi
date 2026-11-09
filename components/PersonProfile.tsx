@@ -10,6 +10,7 @@ import JsonLd from "./JsonLd";
 import { SITE_ID } from "@/lib/ld";
 import BarChart from "./viz/BarChart";
 import Faq, { type FaqItem } from "./Faq";
+import VaNotes from "./VaNotes";
 import AdSlot from "./AdSlot";
 import { excerpt } from "@/lib/excerpt";
 
@@ -151,6 +152,8 @@ export default async function PersonProfile({ va, kind }: { va: VoiceActor; kind
       >
         {va.imageLarge && <div className="relative aspect-[5/7] w-32 overflow-hidden rounded-2xl border border-white/15 shadow-2xl lg:hidden"><Image src={va.imageLarge} alt={va.name} fill sizes="128px" className="object-cover" priority /></div>}
       </PageHero>
+
+      {kind === "voice" && <VaNotes id={va.id} />}
 
       {kind === "voice" ? (
         <section className="reveal mt-10" aria-labelledby="sig-h">
