@@ -44,6 +44,7 @@ import StatTiles from "@/components/viz/StatTiles";
 import BarChart from "@/components/viz/BarChart";
 import AmazonLink from "@/components/AmazonLink";
 import AffiliateNote from "@/components/AffiliateNote";
+import MerchBlock from "@/components/MerchBlock";
 import LocalTime from "@/components/LocalTime";
 import Backdrop from "@/components/fx/Backdrop";
 import ScoreRing from "@/components/fx/ScoreRing";
@@ -442,7 +443,7 @@ export default async function AnimePage({ params }: Props) {
               animeId={a.id}
               title={a.title}
               links={a.streaming.map((x) => ({ id: x.id, url: x.url, site: x.site, dubs: x.dubs, subs: x.subs }))}
-              extra={<><AmazonLink query={`${a.title} manga`} source="anime" className="btn-outline">📚 Manga on Amazon</AmazonLink><AmazonLink query={`${a.title} figure`} dept="toys" source="anime-figure" className="btn-outline">🧸 Figures</AmazonLink></>}
+              extra={<AmazonLink query={`${a.title} manga`} source="anime" className="btn-outline">📚 Manga on Amazon</AmazonLink>}
             />
             {a.streaming.length > 0 && <p className="mt-3 text-[11px] text-muted">Official, legal streams. Catalogues differ by country. · <Refreshed iso={refreshed} /></p>}
             <AffiliateNote className="mt-1" />
@@ -522,6 +523,7 @@ export default async function AnimePage({ params }: Props) {
               </div>
             )}
             <HindiDub dub={dub} title={a.title} className="mt-8" />
+            <MerchBlock name={a.title} source="anime" manga={false} className="mt-8" />
             {franchise.length > 0 && (
               <MobileFold label="franchise" className="mt-8">
                 <div className="mb-3 flex items-end justify-between">

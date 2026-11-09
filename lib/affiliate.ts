@@ -15,6 +15,8 @@ const TAGS: Record<Store, string> = {
 };
 const HOST: Record<Store, string> = { us: "www.amazon.com", in: "www.amazon.in" };
 const WRAP = process.env.NEXT_PUBLIC_AFFILIATE_WRAP || "";
+// OneLink instance id (Associates Central → Tools → OneLink, US account): the adInstanceId in its script tag.
+export const ONELINK_ID = process.env.NEXT_PUBLIC_AMAZON_ONELINK_ID || "";
 
 export function streamLink(url: string): string {
   return WRAP ? `${WRAP}${encodeURIComponent(url)}` : url;

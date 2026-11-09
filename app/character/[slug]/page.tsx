@@ -19,8 +19,7 @@ import StatTiles from "@/components/viz/StatTiles";
 import BarChart from "@/components/viz/BarChart";
 import StackedBar from "@/components/viz/StackedBar";
 import AdSlot from "@/components/AdSlot";
-import AmazonLink from "@/components/AmazonLink";
-import AffiliateNote from "@/components/AffiliateNote";
+import MerchBlock from "@/components/MerchBlock";
 import { birthdayFor, bdLabel, bdPath } from "@/lib/birthdays";
 import { characterIndexed, robotsFor } from "@/lib/indexing";
 import { excerpt } from "@/lib/excerpt";
@@ -250,16 +249,8 @@ export default async function CharacterPage({ params }: Props) {
         </section>
       )}
 
-      {/* Fans looking a character up are the likeliest to want their figure: one compact row, store by visitor. */}
-      <section className="card reveal mt-10 p-4" aria-labelledby="merch-h">
-        <h2 id="merch-h" className="text-xs font-semibold uppercase tracking-wider text-muted">{c.name} figures &amp; merch</h2>
-        <div className="mt-3 flex flex-wrap gap-2">
-          <AmazonLink query={`${c.name}${home ? ` ${home.title}` : ""} figure`} dept="toys" source="character-figure" className="btn-outline">🧸 {c.name} figures</AmazonLink>
-          {home && <AmazonLink query={`${home.title} poster`} dept="all" source="character-poster" className="btn-outline">🖼️ {home.title} posters</AmazonLink>}
-          {home && <AmazonLink query={`${home.title} manga`} source="character-manga" className="btn-outline">📚 {home.title} manga</AmazonLink>}
-        </div>
-        <AffiliateNote className="mt-2" />
-      </section>
+      {/* Fans looking a character up are the likeliest to want their figure. */}
+      <MerchBlock name={c.name} show={home?.title} source="character" className="reveal mt-10" />
       <AdSlot slot="character-mid" />
       {apps.length > 0 && (
         <section className="mt-10">
