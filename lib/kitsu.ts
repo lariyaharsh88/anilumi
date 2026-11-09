@@ -1067,6 +1067,18 @@ export function comparePath(a: Pick<Anime, "slug">, b: Pick<Anime, "slug">) {
 }
 
 /** For each title, its closest peers by shared genres (Jaccard), ties to the more popular; deduped pairs. */
+/**
+ * Whether a comparison is worth a search result: both titles well known and sharing a main genre ("Naruto vs
+ * Bleach"). Any two titles can be compared, and each page links to more pairs, so without this the site offered
+ * Google an endless set of random pairs (nanocore vs Tiger & Bunny): thin, near-duplicate pages. Pure.
+ */
+export const COMPARE_MIN_MEMBERS = 30000;
+export function compareIndexable(a: Pick<Anime, "userCount" | "categories">, b: Pick<Anime, "userCount" | "categories">): boolean {
+  if (a.userCount < COMPARE_MIN_MEMBERS || b.userCount < COMPARE_MIN_MEMBERS) return false;
+  const ga = new Set(mainGenres(a).map((c) => c.slug));
+  return mainGenres(b).some((c) => ga.has(c.slug));
+}
+
 export function suggestComparePairs(items: Anime[], perItem = 1): [Anime, Anime][] {
   const g = new Map(items.map((a) => [a.id, new Set(mainGenres(a).map((c) => c.slug))]));
   const seen = new Set<string>();

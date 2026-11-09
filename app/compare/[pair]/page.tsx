@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "@/components/Link";
 import Image from "next/image";
 import { notFound, permanentRedirect } from "next/navigation";
-import { getAnimeBySlug, getProductions, listAnime, runtimeMinutes, fmtMinutes, posterUrl, animePath, comparePath, mainGenres, franchiseRoot, statusLabel, subtypeLabel, Anime } from "@/lib/kitsu";
+import { getAnimeBySlug, getProductions, listAnime, runtimeMinutes, fmtMinutes, posterUrl, animePath, comparePath, compareIndexable, mainGenres, franchiseRoot, statusLabel, subtypeLabel, Anime } from "@/lib/kitsu";
 import { abs } from "@/lib/site";
 import PageHero from "@/components/PageHero";
 import JsonLd from "@/components/JsonLd";
@@ -42,6 +42,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${a.title} vs ${b.title} – Which Is Better? Scores, Length & Popularity`,
     description: `${a.title} vs ${b.title}: community score ${sa ? sa.toFixed(2) : "–"} vs ${sb ? sb.toFixed(2) : "–"}, ${fmtMinutes(runtimeMinutes(a))} vs ${fmtMinutes(runtimeMinutes(b))} to watch, ${a.userCount.toLocaleString()} vs ${b.userCount.toLocaleString()} members. Side-by-side score breakdown and genres.`,
     alternates: { canonical: comparePath(a, b) },
+    // Usable by anyone, but only pairs people search for are offered to search engines (compareIndexable).
+    ...(compareIndexable(a, b) ? {} : { robots: { index: false, follow: true } }),
   };
 }
 
