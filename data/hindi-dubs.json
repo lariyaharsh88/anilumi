@@ -1,5 +1,5 @@
 {
- "checked": "2026-11-04",
+ "checked": "2026-11-09",
  "reviewed": null,
  "entries": [
   {
@@ -10,21 +10,22 @@
    "platforms": [
     {
      "name": "Anime Times (Prime Video channel)",
-     "scope": "All seasons",
+     "scope": "Season 1-4 (all seasons)",
      "url": "https://animenewsindia.com/2024/12/27/attack-on-titan-season-1-now-streaming-in-hindi-on-prime-video-india"
     },
     {
      "name": "Muse India (YouTube)",
-     "scope": "Season 1-2 (separate dub)",
+     "scope": "Season 1-2 (separate dub); Season 3 (16-26 Oct 2026) and Season 4 (from 27 Oct 2026) reported",
      "url": "https://www.animenewsnetwork.com/news/2026-03-16/hindi-tamil-telugu-dubs-of-attack-on-titan-season-1-streams-on-muse-india-youtube-channel/.235358"
     }
    ],
    "sources": [
     "https://animenewsindia.com/2024/12/27/attack-on-titan-season-1-now-streaming-in-hindi-on-prime-video-india",
     "https://animenewsnetwork.com/news/2025-03-31/attack-on-titan-the-final-chapters-anime-hindi-dub-streams-on-anime-times/.223050",
-    "https://www.animenewsnetwork.com/news/2026-03-16/hindi-tamil-telugu-dubs-of-attack-on-titan-season-1-streams-on-muse-india-youtube-channel/.235358"
+    "https://www.animenewsnetwork.com/news/2026-03-16/hindi-tamil-telugu-dubs-of-attack-on-titan-season-1-streams-on-muse-india-youtube-channel/.235358",
+    "https://animemirchi.com/?p=1579"
    ],
-   "note": "Anime Times on Prime Video carries Hindi for all seasons; Muse India later released a separate free Hindi dub of Season 1 (and Season 2 from April 2026) on YouTube."
+   "note": "Anime Times on Prime Video carries Hindi for all four seasons. Muse India released a separate free Hindi dub of Season 1 on YouTube in March 2026 and Season 2 from April 2026; a fan tracker reports Muse's Season 3 (16-26 Oct 2026) and Season 4 (from 27 Oct 2026), not confirmed elsewhere."
   },
   {
    "s": "boku-no-hero-academia",
@@ -39,8 +40,13 @@
     },
     {
      "name": "JioHotstar",
-     "scope": "Final Season (Season 8)",
+     "scope": "Season 8 (from 14 Mar 2026); Season 1-7 with the Cartoon Network dub (added Jan 2026, reported)",
      "url": "https://animenewsindia.com/2026/03/16/my-hero-academia-the-final-season-is-now-streaming-on-jiohotstar-in-hindi-tamil-telugu-dub"
+    },
+    {
+     "name": "Ani-One India (YouTube)",
+     "scope": "Season 1 (from 11 Oct 2026) and Season 2 (from 24 Oct 2026), Cartoon Network dub (reported)",
+     "url": "https://animemirchi.com/ani-one-india-hindi-dubbed-anime-list/"
     },
     {
      "name": "Cartoon Network India",
@@ -52,9 +58,11 @@
     "https://www.crunchyroll.com/series/G6NQ5DWZ6/my-hero-academia",
     "https://www.animenewsnetwork.com/news/2025-10-26/indian-language-dubs-of-tojima-wants-to-be-a-kamen-rider-mechanical-marie-more-anime-stream-on-/.230327",
     "https://cdn.animenewsnetwork.com/news/2023-08-22/my-hero-academia-anime-airs-in-hindi-tamil-telugu-kannada-malayalam-on-cartoon-network-india/.201482",
-    "https://animenewsindia.com/2026/03/16/my-hero-academia-the-final-season-is-now-streaming-on-jiohotstar-in-hindi-tamil-telugu-dub"
+    "https://animenewsindia.com/2026/03/16/my-hero-academia-the-final-season-is-now-streaming-on-jiohotstar-in-hindi-tamil-telugu-dub",
+    "https://animemirchi.com/hindi-dubbed-anime-on-jiohotstar",
+    "https://animemirchi.com/ani-one-india-hindi-dubbed-anime-list/"
    ],
-   "note": "Crunchyroll's series page lists Hindi; ANN confirms Hindi through Season 7. Cartoon Network India airs a Hindi dub on TV. The final season's Hindi dub was reported on JioHotstar, while a fan list claims Season 8 on Crunchyroll; which service has Season 8 is unconfirmed."
+   "note": "Crunchyroll's series page lists Hindi; ANN confirms Hindi through Season 7, and Season 8 Hindi on Crunchyroll could not be confirmed. JioHotstar added the final season (Season 8) in Hindi on 14 Mar 2026; a fan tracker reports it also added Seasons 1-7 with the Cartoon Network India dub in Jan 2026, and that Ani-One India's YouTube channel began streaming that dub in Oct 2026. Cartoon Network India airs it on TV."
   },
   {
    "s": "one-punch-man",
@@ -64,13 +72,18 @@
    "platforms": [
     {
      "name": "Crunchyroll",
-     "scope": "Season 1-3",
+     "scope": "Season 3 (from 15 Dec 2025); Season 1-2 reported",
      "url": "https://www.crunchyroll.com/series/G63K98PZ6/one-punch-man"
     },
     {
      "name": "Muse India (YouTube)",
-     "scope": "",
+     "scope": "From 1 May 2026; Season 1-3 reported (May-Jun 2026)",
      "url": "https://animenewsnetwork.com/news/2026-05-02/hindi-tamil-telugu-dub-of-one-punch-man-anime-streams-on-muse-india/.237012"
+    },
+    {
+     "name": "Amazon MX Player",
+     "scope": "Season 1 (from May 2025)",
+     "url": "https://www.animenewsnetwork.com/news/2025-05-10/amazon-mx-player-adds-hindi-dubs-of-spy-family-demon-slayer-4-more-anime/.224301"
     },
     {
      "name": "Sony YAY!",
@@ -82,9 +95,12 @@
     "https://www.crunchyroll.com/series/G63K98PZ6/one-punch-man",
     "https://www.animenewsnetwork.com/news/2025-10-28/crunchyroll-streams-one-punch-man-season-3-anime-hindi-dub-on-december-15/.230359",
     "https://animenewsnetwork.com/news/2026-05-02/hindi-tamil-telugu-dub-of-one-punch-man-anime-streams-on-muse-india/.237012",
-    "https://animenewsindia.com/2026/04/08/sony-yay-to-premiere-one-punch-man-season-3-starting-april-11-2026-in-regional-dubs"
+    "https://animenewsindia.com/2026/04/08/sony-yay-to-premiere-one-punch-man-season-3-starting-april-11-2026-in-regional-dubs",
+    "https://www.animenewsnetwork.com/news/2025-05-10/amazon-mx-player-adds-hindi-dubs-of-spy-family-demon-slayer-4-more-anime/.224301",
+    "https://animenewsindia.com/2025/04/27/mx-player-anime-hindi-may-2025",
+    "https://animemirchi.com/complete-crunchyroll-hindi-dubbed-anime-list/"
    ],
-   "note": "Season 3 Hindi dub on Crunchyroll from Dec 2025; Muse India streams a Hindi dub on YouTube; Sony YAY! airs Season 3 on TV."
+   "note": "ANN confirms Hindi on Crunchyroll for Season 3 (from 15 Dec 2025); Hindi for Seasons 1-2 there rests on a fan tracker. Muse India began streaming a Hindi dub on YouTube on 1 May 2026 (a fan tracker lists Seasons 1-3). Amazon MX Player has Season 1 in Hindi (May 2025), and Sony YAY! airs Season 3 on TV from 11 Apr 2026."
   },
   {
    "s": "death-note",
@@ -94,14 +110,16 @@
    "platforms": [
     {
      "name": "Anime Times (Prime Video channel)",
-     "scope": "All 37 episodes",
+     "scope": "All 37 episodes (completed 18 Dec 2025, reported)",
      "url": "https://animenewsindia.com/2025/08/21/anime-times-adds-hindi-tamil-and-telugu-dub-of-critically-acclaimed-series-death-note-on-prime-video-channel"
     }
    ],
    "sources": [
-    "https://animenewsindia.com/2025/08/21/anime-times-adds-hindi-tamil-and-telugu-dub-of-critically-acclaimed-series-death-note-on-prime-video-channel"
+    "https://animenewsindia.com/2025/08/21/anime-times-adds-hindi-tamil-and-telugu-dub-of-critically-acclaimed-series-death-note-on-prime-video-channel",
+    "https://animemirchi.com/death-note-in-india-hindi-tamil-telugu/",
+    "https://animenewsnetwork.com/news/2025-01-11/netflix-india-to-remove-death-note-hunter-x-hunter-chainsaw-man-more-anime/.219913"
    ],
-   "note": "Hindi dub added to Anime Times on Prime Video in Aug 2025. Netflix India also streams the series, but a Hindi audio track there was not confirmed."
+   "note": "Anime Times on Prime Video began the Hindi dub in Aug 2025; a fan tracker reports the run finished on 18 Dec 2025 and that the Relight specials were added in Sep 2026. Netflix India listed Death Note as leaving in Jan 2025, and its current availability there could not be confirmed."
   },
   {
    "s": "fullmetal-alchemist-brotherhood",
@@ -113,26 +131,44 @@
      "name": "Crunchyroll",
      "scope": "Full series (rolled out Jul-Oct 2026)",
      "url": "https://www.crunchyroll.com/series/GRGGPG93R/fullmetal-alchemist-brotherhood"
+    },
+    {
+     "name": "Anime Times (Prime Video channel)",
+     "scope": "Separate dub (from 12 Mar 2026)",
+     "url": "https://respawn.outlookindia.com/pop-culture/pop-culture-news/fullmetal-alchemist-brotherhood-dubs-debut-in-india"
     }
    ],
    "sources": [
     "https://www.crunchyroll.com/series/GRGGPG93R/fullmetal-alchemist-brotherhood",
     "https://www.animenewsnetwork.com/news/2026-07-24/fullmetal-alchemist-brotherhood-anime-hindi-tamil-telugu-dubs-stream-on-crunchyroll/.239931",
-    "https://respawn.outlookindia.com/pop-culture/pop-culture-news/fullmetal-alchemist-brotherhood-dubs-debut-in-india"
+    "https://respawn.outlookindia.com/pop-culture/pop-culture-news/fullmetal-alchemist-brotherhood-dubs-debut-in-india",
+    "https://animemirchi.com/anime-times-hindi-dubbed-anime-list/"
    ],
-   "note": "Crunchyroll began streaming a new Hindi dub on 27 July 2026, released in batches. Outlook Respawn reports an earlier, separate Hindi dub on Anime Times (Prime Video)."
+   "note": "Crunchyroll began streaming a new Hindi dub on 27 July 2026, released in batches through Oct 2026. Anime Times (Prime Video) has a separate Hindi dub by BOL Media, which premiered on 12 Mar 2026."
   },
   {
    "s": "fullmetal-alchemist",
    "t": "Fullmetal Alchemist (2003)",
-   "status": "none_found",
-   "confidence": "low",
-   "platforms": [],
+   "status": "available",
+   "confidence": "medium",
+   "platforms": [
+    {
+     "name": "Anime Times (Prime Video channel)",
+     "scope": "Full series (Hindi from 14 May 2026, reported)",
+     "url": "https://animemirchi.com/anime-times-hindi-dubbed-anime-list/"
+    },
+    {
+     "name": "Apple TV",
+     "scope": "Hindi audio listed (India)",
+     "url": "https://tv.apple.com/in/show/fullmetal-alchemist/umc.cmc.7eihp0savplfirj72o5wzq3tv"
+    }
+   ],
    "sources": [
     "https://www.crunchyroll.com/series/G5PHNM91W/fullmetal-alchemist-2003",
-    "https://animemirchi.com/anime-times-hindi-dubbed-anime-list/"
+    "https://animemirchi.com/anime-times-hindi-dubbed-anime-list/",
+    "https://tv.apple.com/in/show/fullmetal-alchemist/umc.cmc.7eihp0savplfirj72o5wzq3tv"
    ],
-   "note": "Crunchyroll India streams it without Hindi. Fan trackers list a Hindi dub on Anime Times (Prime Video) from May 2026, but no official source was found."
+   "note": "Apple TV India lists Hindi audio for the 2003 series, and a fan tracker lists a completed Hindi dub on Anime Times (Prime Video) from 14 May 2026; no official Anime Times announcement was found. Crunchyroll India streams it without Hindi."
   },
   {
    "s": "kimi-no-na-wa",
@@ -161,8 +197,13 @@
    "platforms": [
     {
      "name": "Muse India (YouTube)",
-     "scope": "2011 series",
-     "url": "https://www.animenewsnetwork.com/news/2025-02-21/muse-india-streams-hunter-x-hunter-anime-hindi-dub/.221297"
+     "scope": "Greed Island arc onward (episodes 59-148); earlier arcs removed (reported)",
+     "url": "https://www.animenewsnetwork.com/news/2026-03-09/muse-india-streams-hindi-dub-of-hunter-x-hunter-anime-greed-island-arc/.235079"
+    },
+    {
+     "name": "Amazon MX Player",
+     "scope": "Season 1 (reported as episodes 1-50)",
+     "url": "https://animenewsindia.com/2025/05/08/amazon-mx-player-expands-anime-lineup-with-hindi-dubs-of-classroom-of-the-elite-hunter-x-hunter-kaguya-sama-and-mob-psycho-100"
     },
     {
      "name": "Cartoon Network India",
@@ -174,10 +215,11 @@
     "https://www.animenewsnetwork.com/news/2025-02-21/muse-india-streams-hunter-x-hunter-anime-hindi-dub/.221297",
     "https://www.animenewsnetwork.com/news/2026-03-09/muse-india-streams-hindi-dub-of-hunter-x-hunter-anime-greed-island-arc/.235079",
     "https://www.animenewsnetwork.com/news/2025-08-25/cartoon-network-india-airs-hunter-x-hunter-anime-on-august-25/.228019",
-    "https://www.netflix.com/in/title/70300472",
-    "https://www.crunchyroll.com/series/GY3VKX1MR/hunter-x-hunter-2011"
+    "https://www.crunchyroll.com/series/GY3VKX1MR/hunter-x-hunter-2011",
+    "https://animenewsindia.com/2025/05/08/amazon-mx-player-expands-anime-lineup-with-hindi-dubs-of-classroom-of-the-elite-hunter-x-hunter-kaguya-sama-and-mob-psycho-100",
+    "https://animenewsnetwork.com/news/2025-01-11/netflix-india-to-remove-death-note-hunter-x-hunter-chainsaw-man-more-anime/.219913"
    ],
-   "note": "Muse India's Hindi dub streams free on YouTube (fan trackers say the first arcs were later removed); Cartoon Network India began airing it in Aug 2025. Netflix and Crunchyroll India carry the series without Hindi audio."
+   "note": "Muse's Hindi dub streams free on Muse India YouTube from the Greed Island arc (Mar 2026) onward; the Hunter Exam, Heavens Arena and Yorknew arcs were reportedly removed. Amazon MX Player carries Muse's Hindi dub of the first season (reported as episodes 1-50). Cartoon Network India began airing it in Aug 2025. Crunchyroll India has no Hindi audio; Netflix India listed it as leaving in Jan 2025."
   },
   {
    "s": "kimetsu-no-yaiba",
@@ -191,6 +233,16 @@
      "url": "https://www.crunchyroll.com/series/GY5P48XEY/demon-slayer-kimetsu-no-yaiba"
     },
     {
+     "name": "Anime Times (Prime Video channel)",
+     "scope": "Season 1-4 (added Aug-Sep 2025, reported)",
+     "url": "https://animemirchi.com/anime-times-hindi-dubbed-anime-list/"
+    },
+    {
+     "name": "JioHotstar",
+     "scope": "Season 1-3 (reported)",
+     "url": "https://animemirchi.com/demon-slayer-in-india-hindi-tamil-telugu/"
+    },
+    {
      "name": "Amazon MX Player",
      "scope": "Season 1",
      "url": "https://www.animenewsnetwork.com/news/2025-05-10/amazon-mx-player-adds-hindi-dubs-of-spy-family-demon-slayer-4-more-anime/.224301"
@@ -201,9 +253,11 @@
     "https://animenewsnetwork.com/news/2024-08-26/demon-slayer-season-1-anime-hindi-dub-streams-on-crunchyroll/.214764",
     "https://www.animenewsnetwork.com/news/2022-11-15/crunchyroll-adds-hindi-indian-english-dubs-for-demon-slayer-darling-in-the-franxx-fire-force-more-/.191925",
     "https://www.animenewsnetwork.com/news/2024-05-31/demon-slayer-hashira-training-arc-anime-hindi-tamil-telugu-dubs-launch-on-june-9/.211404",
-    "https://www.animenewsnetwork.com/news/2025-05-10/amazon-mx-player-adds-hindi-dubs-of-spy-family-demon-slayer-4-more-anime/.224301"
+    "https://www.animenewsnetwork.com/news/2025-05-10/amazon-mx-player-adds-hindi-dubs-of-spy-family-demon-slayer-4-more-anime/.224301",
+    "https://animemirchi.com/anime-times-hindi-dubbed-anime-list/",
+    "https://animemirchi.com/demon-slayer-in-india-hindi-tamil-telugu/"
    ],
-   "note": "Crunchyroll has Hindi for every TV season; Season 1 was the last to be added (Aug 2024)."
+   "note": "Crunchyroll has Hindi for every TV season; Season 1 was the last to be added (Aug 2024). A fan tracker reports Hindi for Seasons 1-4 on Anime Times (Aug-Sep 2025) and Seasons 1-3 on JioHotstar, and that Infinity Castle Part 1 joined Crunchyroll India in Jul 2026 with Hindi; these are not confirmed by official sources."
   },
   {
    "s": "nanatsu-no-taizai",
@@ -236,21 +290,24 @@
    "platforms": [
     {
      "name": "Crunchyroll",
-     "scope": "Egghead arc onward (from Mar 2026); more episodes added Sep-Oct 2026",
+     "scope": "Episodes 1089-1155 (Egghead arc, released 30 Mar-1 Jun 2026); Elbaph arc announced, date TBA",
      "url": "https://www.crunchyroll.com/series/GRMG8ZQZR/one-piece"
     },
     {
      "name": "Cartoon Network India",
-     "scope": "Wano arc (TV, from May 2024)",
-     "url": "https://www.animenewsnetwork.com/news/2024-04-21/cartoon-network-announces-indian-language-dubs-for-one-piece-anime-wano-arc/.210059"
+     "scope": "East Blue (episodes 1-61, Dec 2024-Mar 2025) and Wano arc (from May 2024), TV",
+     "url": "https://animenewsindia.com/2024/11/23/cartoon-network-india-to-re-introduce-one-piece-1999-season-1-from-december-8-in-new-regional-dubs"
     }
    ],
    "sources": [
     "https://www.crunchyroll.com/series/GRMG8ZQZR/one-piece",
     "https://www.animenewsnetwork.com/news/2026-03-29/one-piece-anime-egghead-arc-streams-in-hindi-tamil-telugu-on-march-30/.235871",
-    "https://www.animenewsnetwork.com/news/2024-04-21/cartoon-network-announces-indian-language-dubs-for-one-piece-anime-wano-arc/.210059"
+    "https://www.animenewsnetwork.com/news/2024-04-21/cartoon-network-announces-indian-language-dubs-for-one-piece-anime-wano-arc/.210059",
+    "https://animemirchi.com/one-piece-egghead-arc-hindi-tamil-telugu/",
+    "https://animenewsindia.com/2024/11/23/cartoon-network-india-to-re-introduce-one-piece-1999-season-1-from-december-8-in-new-regional-dubs",
+    "https://animemirchi.com/one-piece-east-blue-cartoon-network-india/"
    ],
-   "note": "Crunchyroll began streaming the Egghead arc in Hindi in March 2026; Cartoon Network India aired the Wano arc in Hindi on TV. Which earlier arcs have Hindi on Crunchyroll is not confirmed."
+   "note": "Crunchyroll's Hindi run covers the Egghead arc only (episodes 1089-1155, released in batches on 30 Mar, 27 Apr and 1 Jun 2026); Hindi for the Elbaph arc is announced with no date. The older episodes Crunchyroll added in India in Sep-Oct 2026 have no confirmed Hindi audio. Cartoon Network India aired the Wano arc (from May 2024) and East Blue (Dec 2024-Mar 2025) in Hindi on TV."
   },
   {
    "s": "spirited-away",
@@ -347,8 +404,13 @@
    "platforms": [
     {
      "name": "Crunchyroll",
-     "scope": "Season 1-2 (Season 3 reported)",
+     "scope": "Season 1-3 (Season 3 weekly from Jan 2026)",
      "url": "https://www.crunchyroll.com/series/GRDV0019R/jujutsu-kaisen"
+    },
+    {
+     "name": "JioHotstar",
+     "scope": "Season 1-2 (Sony YAY! dub, from Oct 2025)",
+     "url": "https://respawn.outlookindia.com/pop-culture/pop-culture-news/anime-hit-jujutsu-kaisen-expands-indian-streaming-footprint"
     },
     {
      "name": "Sony YAY!",
@@ -360,9 +422,12 @@
     "https://www.crunchyroll.com/series/GRDV0019R/jujutsu-kaisen",
     "https://cdn.animenewsnetwork.com/news/2023-07-21/crunchyroll-adds-hindi-dub-for-jujutsu-kaisen-anime-announces-hindi-dub-for-chainsaw-man-anime/.200528",
     "https://m.animenewsnetwork.com/news/2023-09-22/crunchyroll-announces-hindi-tamil-dubs-for-jujutsu-kaisen-season-2-frieren-2-more-anime/.202697",
-    "https://animenewsnetwork.com/news/2025-04-03/sony-yay-airs-jujutsu-kaisen-anime-1st-season-on-indian-tv-from-april-7/.223076"
+    "https://animenewsnetwork.com/news/2025-04-03/sony-yay-airs-jujutsu-kaisen-anime-1st-season-on-indian-tv-from-april-7/.223076",
+    "https://animenewsindia.com/2026/01/24/crunchyroll-announces-winter-2026-regional-dubs-lineup/",
+    "https://filmibeat.com/bollywood/ott/2026/jujutsu-kaisen-season-3-ep-4-release-time-in-hindi-heres-how-to-watch-new-episode-in-hindi-498601.html",
+    "https://respawn.outlookindia.com/pop-culture/pop-culture-news/anime-hit-jujutsu-kaisen-expands-indian-streaming-footprint"
    ],
-   "note": "Crunchyroll Hindi dub since July 2023; Sony YAY! aired a separate Hindi dub on TV from April 2025 (reportedly also on JioHotstar). Season 3 Hindi on Crunchyroll is reported but not officially confirmed."
+   "note": "Crunchyroll has had its own Hindi dub since July 2023 and added Season 3 in its Winter 2026 Hindi lineup (weekly from January 2026). Sony YAY! aired a separate Hindi dub on TV from April 2025, and JioHotstar has streamed that dub for Seasons 1-2 since October 2025. A fan tracker also reports the Sony YAY! dub on Ani-One India's YouTube channel (Apr-Jun 2026); not confirmed elsewhere."
   },
   {
    "s": "shigatsu-wa-kimi-no-uso",
@@ -383,7 +448,7 @@
    "platforms": [
     {
      "name": "Crunchyroll",
-     "scope": "Naruto (all 220 eps) and Naruto Shippuden (rolling out from July 2026)",
+     "scope": "Naruto (Seasons 1-9 confirmed) and Naruto Shippuden (rolling out since 6 Jul 2026)",
      "url": "https://www.crunchyroll.com/series/GY9PJ5KWR/naruto"
     },
     {
@@ -398,7 +463,7 @@
     "https://www.animenewsnetwork.com/news/2026-07-04/hindi-tamil-telugu-dubs-of-naruto-shippuden-anime-stream-on-crunchyroll-on-july-6/.239253",
     "https://animenewsindia.com/2025/04/12/crunchyroll-adds-hindi-tamil-and-telugu-dubs-of-naruto-in-india"
    ],
-   "note": "Hindi dub produced for Sony YAY! (aired from 2022; Shippuden from 2024); Crunchyroll streams the original series in Hindi and began adding Shippuden in July 2026."
+   "note": "Hindi dub produced for Sony YAY! (aired from 2022; Shippuden from 2024). Crunchyroll streams the original series in Hindi (Seasons 1-9 confirmed; whether all 220 episodes have Hindi is not confirmed) and began adding Shippuden on 6 Jul 2026. A fan tracker also reports the Sony YAY! dub on Anime Times (episodes 1-80, May 2026), not confirmed elsewhere."
   },
   {
    "s": "yakusoku-no-neverland",
@@ -428,20 +493,22 @@
    "platforms": [
     {
      "name": "Crunchyroll",
-     "scope": "",
+     "scope": "Season 1 (from 9 Sep 2026, reported)",
      "url": "https://www.crunchyroll.com/series/GR49G9VP6/sword-art-online"
     },
     {
-     "name": "Muse India (YouTube)",
-     "scope": "Season 1-2 (reported removed later)",
-     "url": "https://animenewsnetwork.com/news/2024-10-06/muse-asia-simulcasts-re-zero-anime-3rd-season-in-india/.216376"
+     "name": "JioHotstar",
+     "scope": "Season 1-2 (from Dec 2025, reported)",
+     "url": "https://animemirchi.com/hindi-dubbed-anime-on-jiohotstar"
     }
    ],
    "sources": [
     "https://www.crunchyroll.com/series/GR49G9VP6/sword-art-online",
-    "https://animenewsnetwork.com/news/2024-10-06/muse-asia-simulcasts-re-zero-anime-3rd-season-in-india/.216376"
+    "https://animenewsnetwork.com/news/2024-10-06/muse-asia-simulcasts-re-zero-anime-3rd-season-in-india/.216376",
+    "https://animemirchi.com/complete-crunchyroll-hindi-dubbed-anime-list/",
+    "https://animemirchi.com/hindi-dubbed-anime-on-jiohotstar"
    ],
-   "note": "Crunchyroll's series page lists Hindi audio (fan trackers date Season 1 to Sept 2026). Muse India streamed a Hindi dub on YouTube from Oct 2024, which fan trackers say was later removed; that dub is reportedly on JioHotstar."
+   "note": "Crunchyroll's series page lists Hindi audio; a fan tracker dates Season 1 to 9 Sep 2026. Muse India streamed a Hindi dub on YouTube from Oct 2024, which was later removed; the same fan site reports that dub on JioHotstar (Seasons 1-2, Dec 2025). Season scopes rest on that one fan site."
   },
   {
    "s": "code-geass-lelouch-of-the-rebellion",
@@ -568,14 +635,20 @@
      "name": "Amazon MX Player",
      "scope": "Season 1",
      "url": "https://animenewsindia.com/2025/05/08/amazon-mx-player-expands-anime-lineup-with-hindi-dubs-of-classroom-of-the-elite-hunter-x-hunter-kaguya-sama-and-mob-psycho-100"
+    },
+    {
+     "name": "JioHotstar",
+     "scope": "Season 1-2 (from 29 May 2026, reported)",
+     "url": "https://animemirchi.com/hindi-dubbed-anime-on-jiohotstar"
     }
    ],
    "sources": [
     "https://www.animenewsnetwork.com/news/2026-08-02/hindi-tamil-telugu-dubs-of-mob-psycho-anime-streams-on-muse-india-youtube-channel/.240176",
     "https://www.animenewsnetwork.com/news/2026-08-22/hindi-tamil-telugu-dubs-of-mob-psycho-100-iii-anime-streams-on-muse-india-youtube-channel/.240832",
-    "https://animenewsindia.com/2025/05/08/amazon-mx-player-expands-anime-lineup-with-hindi-dubs-of-classroom-of-the-elite-hunter-x-hunter-kaguya-sama-and-mob-psycho-100"
+    "https://animenewsindia.com/2025/05/08/amazon-mx-player-expands-anime-lineup-with-hindi-dubs-of-classroom-of-the-elite-hunter-x-hunter-kaguya-sama-and-mob-psycho-100",
+    "https://animemirchi.com/hindi-dubbed-anime-on-jiohotstar"
    ],
-   "note": "Muse Communication's Hindi dub; free on Muse India YouTube, Season 1 also on Amazon MX Player. Crunchyroll India's version has no Hindi audio."
+   "note": "Muse Communication's Hindi dub; free on Muse India YouTube, Season 1 also on Amazon MX Player. A fan tracker reports Seasons 1-2 on JioHotstar from 29 May 2026. Crunchyroll India's version has no Hindi audio."
   },
   {
    "s": "cowboy-bebop",
@@ -672,17 +745,6 @@
     "https://www.crunchyroll.com/series/GR097JN7R/gurren-lagann"
    ],
    "note": "Crunchyroll India streams it, but its series page lists no Hindi audio."
-  },
-  {
-   "s": "avatar-the-last-airbender-book-3-fire",
-   "t": "Avatar: The Last Airbender Book 3: Fire",
-   "status": "none_found",
-   "confidence": "low",
-   "platforms": [],
-   "sources": [
-    "https://filmibeat.com/television/news/2006/avatar-290506.html"
-   ],
-   "note": "Nickelodeon India launched the series on TV in 2006 (Filmibeat), but no source found confirms a Hindi dub or a current Hindi stream."
   },
   {
    "s": "anohana-the-flower-we-saw-that-day",
@@ -961,7 +1023,7 @@
     },
     {
      "name": "Ani-One India (YouTube)",
-     "scope": "Thousand-Year Blood War: The Calamity (announced)",
+     "scope": "Thousand-Year Blood War Cours 1-3 (daily from 20 Jul 2026) and Cour 4 (new dub, from 25 Jul 2026)",
      "url": "https://animenewsindia.com/2026/07/21/anione-india-annouces-new-hindi-dub-for-bleach-thousand-year-blood-war-the-calamity-cour-4-and-dailly-streaming-of-previous-seasons-on-its-youtube-channel/"
     }
    ],
@@ -969,9 +1031,10 @@
     "https://animenewsindia.com/2024/12/21/jiocinema-streams-bleach-thousand-year-blood-war-part-1-in-hindi/",
     "https://animenewsindia.com/2026/08/14/bleach-thousand-year-blood-war-the-final-cour-the-calamity-now-streaming-on-jiohotstar-with-brand-new-hindi-dub/",
     "https://animenewsindia.com/2026/07/21/anione-india-annouces-new-hindi-dub-for-bleach-thousand-year-blood-war-the-calamity-cour-4-and-dailly-streaming-of-previous-seasons-on-its-youtube-channel/",
-    "https://www.crunchyroll.com/series/G63VGG2NY/bleach"
+    "https://www.crunchyroll.com/series/G63VGG2NY/bleach",
+    "https://animemirchi.com/ani-one-india-hindi-dubbed-anime-list/"
    ],
-   "note": "Only Thousand-Year Blood War has Hindi: JioCinema/JioHotstar from Dec 2024, with a new dub cast for Part 4. The original 2004 series on Crunchyroll India has no Hindi audio."
+   "note": "Only Thousand-Year Blood War has Hindi: JioCinema/JioHotstar from Dec 2024, with a new dub cast for Part 4; Ani-One India's YouTube channel began streaming Cours 1-3 daily from 20 Jul 2026 and premiered its own Hindi dub of Cour 4 on 25 Jul 2026. The original 2004 series on Crunchyroll India has no Hindi audio; a fan tracker reports Ani-One has announced a Hindi dub of it (no date)."
   },
   {
    "s": "mahou-shoujo-madoka-magica",
@@ -1057,13 +1120,14 @@
    "s": "kuroko-no-basket",
    "t": "Kuroko's Basketball",
    "status": "none_found",
-   "confidence": "medium",
+   "confidence": "low",
    "platforms": [],
    "sources": [
     "https://www.crunchyroll.com/series/G62P48X56/kurokos-basketball",
-    "https://www.netflix.com/in/title/80063153"
+    "https://www.netflix.com/in/title/80063153",
+    "https://animemirchi.com/ani-one-india-hindi-dubbed-anime-list/"
    ],
-   "note": "Crunchyroll India streams it, but its series page lists no Hindi audio. Netflix India also streams it with English and Japanese audio only."
+   "note": "Crunchyroll India streams it, but its series page lists no Hindi audio. Netflix India also streams it with English and Japanese audio only. A fan tracker reports that Ani-One India has announced a Hindi dub (no date); no official Ani-One post was found."
   },
   {
    "s": "kaichou-wa-maid-sama",
@@ -1193,15 +1257,16 @@
    "platforms": [
     {
      "name": "Crunchyroll",
-     "scope": "Season 1 (from Oct 2026) and Season 2 (simuldub)",
+     "scope": "Season 1 Part 1 (rolling out since 10 Oct 2026); Season 2 announced, date TBA",
      "url": "https://www.crunchyroll.com/series/GRE50KV36/black-clover"
     }
    ],
    "sources": [
     "https://www.crunchyroll.com/series/GRE50KV36/black-clover",
-    "https://www.animenewsnetwork.com/news/2026-09-15/crunchyroll-announces-release-schedule-for-fall-2026-season/.241811"
+    "https://www.animenewsnetwork.com/news/2026-09-15/crunchyroll-announces-release-schedule-for-fall-2026-season/.241811",
+    "https://otakukart.com/crunchyroll-announces-hindi-tamil-and-telugu-dub-releases-for-black-clover-the-apothecary-diaries-season-3-and-more/"
    ],
-   "note": "Crunchyroll began the Season 1 Hindi dub in Oct 2026 (still rolling out) and lists Hindi for Season 2."
+   "note": "Crunchyroll began releasing Season 1 Part 1 in Hindi on 10 Oct 2026 (still rolling out). A Season 2 Hindi dub is announced, but it is not a simuldub and no start date has been given as of 9 Nov 2026."
   },
   {
    "s": "gintama",
@@ -1463,9 +1528,9 @@
      "url": "https://www.crunchyroll.com/series/G4PH0WXVJ/spy-x-family"
     },
     {
-     "name": "Muse India (YouTube)",
-     "scope": "Season 1-2",
-     "url": "https://www.animenewsnetwork.com/news/2024-12-01/spy-family-code-white-anime-film-streams-on-youtube-with-hindi-dub/.218454"
+     "name": "Muse Hindi Dub (YouTube)",
+     "scope": "Season 1 (from 29 May 2026)",
+     "url": "https://www.animenewsnetwork.com/news/2026-05-29/muse-asia-launches-new-muse-hindi-dub-youtube-channel/.237931"
     },
     {
      "name": "Amazon MX Player",
@@ -1478,21 +1543,34 @@
     "https://www.animenewsnetwork.com/news/2023-11-06/spy-x-family-anime-hindi-dub-premieres-on-november-7/.204154",
     "https://www.animenewsnetwork.com/news/2025-10-27/crunchyroll-streams-spy-family-season-3-hindi-dub-on-november-30/.230333",
     "https://www.animenewsnetwork.com/news/2024-12-01/spy-family-code-white-anime-film-streams-on-youtube-with-hindi-dub/.218454",
-    "https://www.animenewsnetwork.com/news/2025-05-10/amazon-mx-player-adds-hindi-dubs-of-spy-family-demon-slayer-4-more-anime/.224301"
+    "https://www.animenewsnetwork.com/news/2025-05-10/amazon-mx-player-adds-hindi-dubs-of-spy-family-demon-slayer-4-more-anime/.224301",
+    "https://www.animenewsnetwork.com/news/2026-05-29/muse-asia-launches-new-muse-hindi-dub-youtube-channel/.237931"
    ],
-   "note": "Crunchyroll has its own Hindi dub (Seasons 1-3); Muse's separate Hindi dub is on Muse India YouTube and Amazon MX Player. Muse's Code: White streamed on YouTube for a limited time."
+   "note": "Crunchyroll has its own Hindi dub (Seasons 1-3). Muse's separate Hindi dub of Seasons 1-2 is on Amazon MX Player (and was earlier on Anime Times); since 29 May 2026 Season 1 streams free on Muse's new \"Muse Hindi Dub\" YouTube channel. Muse's Code: White film streamed on YouTube for a limited time in Dec 2024. A fan tracker also lists Season 3 in Hindi on Anime Times (27 May 2026), not confirmed elsewhere."
   },
   {
    "s": "zankyou-no-terror",
    "t": "Terror in Resonance",
-   "status": "none_found",
-   "confidence": "low",
-   "platforms": [],
+   "status": "available",
+   "confidence": "medium",
+   "platforms": [
+    {
+     "name": "Anime Times (Prime Video channel)",
+     "scope": "Full series (Hindi from 18 Feb 2026, reported)",
+     "url": "https://animemirchi.com/anime-times-hindi-dubbed-anime-list/"
+    },
+    {
+     "name": "Apple TV",
+     "scope": "Hindi audio listed (India)",
+     "url": "https://tv.apple.com/in/show/terror-in-resonance/umc.cmc.4b7529dn7xiszeomem4d45v4l"
+    }
+   ],
    "sources": [
     "https://www.crunchyroll.com/series/G675W00MR/terror-in-resonance",
-    "https://animemirchi.com/anime-times-hindi-dubbed-anime-list/"
+    "https://animemirchi.com/anime-times-hindi-dubbed-anime-list/",
+    "https://tv.apple.com/in/show/terror-in-resonance/umc.cmc.4b7529dn7xiszeomem4d45v4l"
    ],
-   "note": "Crunchyroll India streams it, but its series page lists no Hindi audio. Fan trackers list a Hindi dub on Anime Times (Prime Video) from Feb 2026, but no official source was found."
+   "note": "Apple TV India lists Hindi audio, and a fan tracker lists the Hindi dub on Anime Times (Prime Video) from 18 Feb 2026; no official Anime Times announcement was found. Crunchyroll India streams it without Hindi."
   },
   {
    "s": "the-disappearance-of-haruhi-suzumiya",
@@ -2036,6 +2114,172 @@
    "platforms": [],
    "sources": [],
    "note": ""
+  },
+  {
+   "s": "solo-leveling",
+   "t": "Solo Leveling",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Crunchyroll",
+     "scope": "Season 1 (from 6 Jan 2024) and Season 2 (from 26 Jan 2025)",
+     "url": "https://www.animenewsnetwork.com/news/2023-12-12/crunchyroll-hosts-screening-of-solo-leveling-anime-in-mumbai-on-december-20-adds-hindi-dub-on-/.205413"
+    }
+   ],
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2023-12-12/crunchyroll-hosts-screening-of-solo-leveling-anime-in-mumbai-on-december-20-adds-hindi-dub-on-/.205413",
+    "https://www.animenewsnetwork.com/news/2025-01-26/2nd-seasons-of-solo-leveling-the-apothecary-diaries-anime-get-indian-dubs/.220462",
+    "https://etvbharat.com/en/!entertainment/solo-leveling-season-2-dubs-to-be-out-on-this-date-rana-daggubati-as-powerful-barca-in-hindi-tamil-and-telugu-version-enn25012101959"
+   ],
+   "note": "Crunchyroll's own Hindi dub launched with the anime's debut on 6 Jan 2024; Season 2 (Arise from the Shadow) got Hindi, Tamil and Telugu dubs weekly from 26 Jan 2025."
+  },
+  {
+   "s": "chainsaw-man",
+   "t": "Chainsaw Man",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Crunchyroll",
+     "scope": "Season 1 (from 29 Jul 2023)",
+     "url": "https://www.animenewsnetwork.com/news/2023-07-28/crunchyroll-adds-hindi-dub-of-chainsaw-man-anime-on-july-29/.200742"
+    }
+   ],
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2023-07-28/crunchyroll-adds-hindi-dub-of-chainsaw-man-anime-on-july-29/.200742",
+    "https://sportskeeda.com/anime/news-crunchyroll-india-confirms-chainsaw-man-hindi-dub-in-mumbai-event"
+   ],
+   "note": "Crunchyroll added its Hindi dub of the TV series on 29 Jul 2023."
+  },
+  {
+   "s": "sousou-no-frieren",
+   "t": "Frieren: Beyond Journey's End",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Crunchyroll",
+     "scope": "Season 1 (from Nov 2023) and Season 2 (from Feb 2026)",
+     "url": "https://www.animenewsnetwork.com/news/2026-02-09/frieren-beyond-journey-end-2nd-season-anime-hindi-tamil-telugu-dubs-stream-on-crunchyroll/.233943"
+    }
+   ],
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2026-02-09/frieren-beyond-journey-end-2nd-season-anime-hindi-tamil-telugu-dubs-stream-on-crunchyroll/.233943",
+    "https://animenewsindia.com/2026/01/24/crunchyroll-announces-winter-2026-regional-dubs-lineup/",
+    "https://m.animenewsnetwork.com/news/2023-09-22/crunchyroll-announces-hindi-tamil-dubs-for-jujutsu-kaisen-season-2-frieren-2-more-anime/.202697"
+   ],
+   "note": "Crunchyroll announced a Hindi dub of Season 1 in Sep 2023 (added Nov 2023), and Season 2 is in its Winter 2026 Hindi, Tamil and Telugu lineup, streaming from Feb 2026."
+  },
+  {
+   "s": "DAN-DA-DAN",
+   "t": "Dan Da Dan",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Anime Times (Prime Video channel)",
+     "scope": "Season 1 (from Oct 2024); Season 2 reported (Jul 2025)",
+     "url": "https://animenewsindia.com/2024/10/18/muse-asia-announces-the-hindi-dub-premiere-date-for-dandadan-on-ott-platforms-updated"
+    },
+    {
+     "name": "Crunchyroll",
+     "scope": "Season 1 (from Oct 2024)",
+     "url": "https://www.animenewsnetwork.com/news/2024-10-27/dan-da-dan-tying-the-knot-with-an-amagami-sister-anime-hindi-dubs-stream-on-crunchyroll/.217207"
+    },
+    {
+     "name": "Muse India (YouTube)",
+     "scope": "Season 1 (from Nov 2024)",
+     "url": "https://animenewsnetwork.com/news/2024-11-18/dan-da-dan-anime-hindi-dub-streams-on-muse-india/.217965"
+    }
+   ],
+   "sources": [
+    "https://animenewsindia.com/2024/10/18/muse-asia-announces-the-hindi-dub-premiere-date-for-dandadan-on-ott-platforms-updated",
+    "https://www.animenewsnetwork.com/news/2024-10-27/dan-da-dan-tying-the-knot-with-an-amagami-sister-anime-hindi-dubs-stream-on-crunchyroll/.217207",
+    "https://animenewsnetwork.com/news/2024-11-18/dan-da-dan-anime-hindi-dub-streams-on-muse-india/.217965"
+   ],
+   "note": "Muse's Hindi dub of Season 1 premiered on Anime Times (Prime Video) and Crunchyroll in Oct 2024, and on Muse India YouTube in Nov 2024. Fan trackers report Season 2 in Hindi on Anime Times and Crunchyroll from Jul 2025, not confirmed by official sources."
+  },
+  {
+   "s": "kaijuu-8-gou",
+   "t": "Kaiju No. 8",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Crunchyroll",
+     "scope": "Season 1 (simuldub from 13 Apr 2024); Season 2 reported (Jul 2025)",
+     "url": "https://www.animenewsnetwork.com/news/2024-03-28/kaiju-no-8-anime-gets-hindi-tamil-telugu-simuldubs/.209286"
+    }
+   ],
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2024-03-28/kaiju-no-8-anime-gets-hindi-tamil-telugu-simuldubs/.209286",
+    "https://sportskeeda.com/anime/news-crunchyroll-brings-kaiju-no-8-wind-breaker-spring-2024-anime-to-india",
+    "https://animemirchi.com/complete-crunchyroll-hindi-dubbed-anime-list/"
+   ],
+   "note": "Crunchyroll streamed Hindi, Tamil and Telugu simuldubs of Season 1 from 13 Apr 2024. A fan tracker lists Season 2 in Hindi from 19 Jul 2025, not confirmed by official sources."
+  },
+  {
+   "s": "blue-lock",
+   "t": "Blue Lock",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Crunchyroll",
+     "scope": "Season 1 (from 12 Jun 2024)",
+     "url": "https://animenewsnetwork.com/news/2024-05-17/crunchyroll-adds-hindi-tamil-telugu-dubs-of-dr-stone-haikyu-bluelock-more-anime-in-may-june/.210906"
+    },
+    {
+     "name": "Zee Café",
+     "scope": "TV broadcast (from 28 Jul 2025)",
+     "url": "https://animenewsindia.com/2025/07/21/zee-cafe-teases-the-indian-television-premiere-of-blue-lock-anime-series-on-its-network"
+    }
+   ],
+   "sources": [
+    "https://animenewsnetwork.com/news/2024-05-17/crunchyroll-adds-hindi-tamil-telugu-dubs-of-dr-stone-haikyu-bluelock-more-anime-in-may-june/.210906",
+    "https://animenewsindia.com/2024/05/17/crunchyroll-announces-exciting-summer-2024-regional-dubs-lineup-for-may-june",
+    "https://www.animenewsnetwork.com/news/2025-07-26/zee-cafe-airs-blue-lock-anime-on-indian-television/.227044",
+    "https://animenewsindia.com/2025/07/21/zee-cafe-teases-the-indian-television-premiere-of-blue-lock-anime-series-on-its-network"
+   ],
+   "note": "Crunchyroll added Hindi, Tamil and Telugu dubs of Season 1 on 12 Jun 2024. Zee Café began airing a Hindi dub on TV on 28 Jul 2025 (weekdays, 6 pm IST)."
+  },
+  {
+   "s": "mashle",
+   "t": "Mashle: Magic and Muscles",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Crunchyroll",
+     "scope": "Season 1 (from 6 May 2023) and Season 2 (from Jan 2024)",
+     "url": "https://www.animenewsnetwork.com/daily-briefs/2023-05-07/crunchyroll-adds-hindi-dub-for-mashle-magic-and-muscles-anime/.197833"
+    }
+   ],
+   "sources": [
+    "https://www.animenewsnetwork.com/daily-briefs/2023-05-07/crunchyroll-adds-hindi-dub-for-mashle-magic-and-muscles-anime/.197833",
+    "https://animenewsnetwork.com/news/2023-12-23/crunchyroll-simulcasts-sasaki-and-peeps-the-demon-prince-of-momochi-house-4-more-anime-in-india/.205703",
+    "https://animemirchi.com/complete-crunchyroll-hindi-dubbed-anime-list/"
+   ],
+   "note": "Crunchyroll added a Hindi dub of Season 1 on 6 May 2023 and announced one for Season 2 (Divine Visionary Candidate Exam Arc) in Dec 2023; a fan tracker dates Season 2 Hindi to 28 Jan 2024."
+  },
+  {
+   "s": "suzume-no-tojimari",
+   "t": "Suzume",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Crunchyroll",
+     "scope": "Film (from 4 Dec 2025)",
+     "url": "https://www.animenewsnetwork.com/news/2025-12-04/weathering-with-you-hindi-dub-streams-on-december-11-your-name-hindi-dub-on-december-18/.231614"
+    }
+   ],
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2025-12-04/weathering-with-you-hindi-dub-streams-on-december-11-your-name-hindi-dub-on-december-18/.231614",
+    "https://animenewsindia.com/2025/11/18/crunchyroll-brings-all-eight-makoto-shinkai-films-exclusively-to-india-for-the-very-first-time-in-december-2025"
+   ],
+   "note": "The Hindi dub has streamed on Crunchyroll India since 4 Dec 2025, as part of its Makoto Shinkai collection."
   }
  ]
 }
