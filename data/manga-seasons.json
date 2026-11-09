@@ -1,5 +1,5 @@
 {
- "checked": "2026-11-04",
+ "checked": "2026-11-09",
  "reviewed": null,
  "seasons": {
   "attack-on-titan": {
@@ -636,10 +636,13 @@
    "to": 66,
    "continue": 67,
    "confidence": "medium",
-   "notes": "Abridged and reordered, with parts of ch 54-61 omitted. √A (S2) leaves the manga here and is mostly original, so readers continue from Tokyo Ghoul ch 67. Anime Filler Guide's season header says ch 69, but its per-episode table and MangaUpdates both end at ch 66.",
+   "notes": "Abridged and reordered, with parts of ch 54-61 omitted. √A (S2) leaves the manga here and is mostly original, so readers continue from Tokyo Ghoul ch 67. Anime Filler Guide's season header says ch 69 because it counts √A's first episode, which uses ch 67 and 69 onward (skipping 68). Its per-episode table, the fandom wiki (ep 12 = ch 61-66) and MangaUpdates all end Season 1 at ch 66; √A diverges from ch 67, so read on from there.",
    "sources": [
     "https://www.animefillerguide.com/anime/tokyo-ghoul/",
-    "https://www.mangaupdates.com/series/c2hzbxv/tokyo-ghoul"
+    "https://www.mangaupdates.com/series/c2hzbxv/tokyo-ghoul",
+    "https://tokyoghoul.fandom.com/wiki/Episode_12",
+    "https://tokyoghoul.fandom.com/wiki/Episode_13",
+    "https://en.wikipedia.org/wiki/List_of_Tokyo_Ghoul_chapters"
    ]
   },
   "tokyo-ghoul-re": {

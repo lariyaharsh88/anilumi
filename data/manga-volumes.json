@@ -136,12 +136,15 @@
   "boku-no-hero-academia-6th-season": {
    "vol": 34,
    "startsAt": "start",
-   "confidence": "medium",
+   "confidence": "high",
    "sources": [
     "https://en.wikipedia.org/wiki/List_of_My_Hero_Academia_chapters",
-    "https://myheroacademia.fandom.com/wiki/Chapter_329"
+    "https://myheroacademia.fandom.com/wiki/Chapter_329",
+    "https://myheroacademia.fandom.com/wiki/Episode_138",
+    "https://myheroacademia.fandom.com/wiki/Episode_139",
+    "https://www.animefillerguide.com/anime/my-hero-academia/"
    ],
-   "notes": "Vol 34 starts at ch 329. Upstream end point is disputed (MangaUpdates says ch 327); if so, ch 328 is the last chapter of vol 33."
+   "notes": "Vol 34 starts at ch 329. Season 6 ends at ch 328 (fandom wiki ep 138 and Anime Filler Guide), the last chapter of vol 33."
   },
   "boku-no-hero-academia-7th-season": {
    "vol": 40,
@@ -438,9 +441,12 @@
    "confidence": "medium",
    "sources": [
     "https://en.wikipedia.org/wiki/List_of_Tokyo_Ghoul_chapters",
-    "https://tokyoghoul.fandom.com/wiki/Chapter_67"
+    "https://tokyoghoul.fandom.com/wiki/Chapter_67",
+    "https://tokyoghoul.fandom.com/wiki/Episode_12",
+    "https://tokyoghoul.fandom.com/wiki/Episode_13",
+    "https://www.animefillerguide.com/anime/tokyo-ghoul/"
    ],
-   "notes": "Vol 7 = ch 59-68. Upstream end point is disputed (one guide says ch 69); if so, continue from vol 8 (ch 69-79)."
+   "notes": "Vol 7 = ch 59-68; vol 8 starts at ch 69. Season 1 ends at ch 66. One guide's 'ch 69' counts √A's first episode, which uses ch 67 and 69 onward, so it does not move the read-on point out of vol 7."
   },
   "tokyo-ghoul-re": {
    "vol": 6,
@@ -539,7 +545,7 @@
     "https://en.wikipedia.org/wiki/List_of_Food_Wars!:_Shokugeki_no_Soma_chapters",
     "https://www.mangaupdates.com/series/ztd54k0/shokugeki-no-souma"
    ],
-   "notes": "Story finished in anime, but Season 5 skips ch 265-272 (vol 31) and abridges the rest; vol 31 is where the full manga version diverges."
+   "notes": "Story finished in anime, but Season 5 skips ch 265-272 (the end of vol 31 and the first chapter of vol 32) and abridges the rest; vol 31 is where the full manga version diverges."
   },
   "boku-dake-ga-inai-machi": {
    "vol": null,
@@ -564,12 +570,16 @@
   "mob-psycho-100-ii": {
    "vol": 13,
    "startsAt": "middle",
-   "confidence": "medium",
+   "confidence": "high",
    "sources": [
     "https://mob-psycho-100.fandom.com/wiki/Chapters",
-    "https://otakumode.com/shop/5f9f513f4d9fe9075f3e79c5/Mob-Psycho-100-Vol-13"
+    "https://otakumode.com/shop/5f9f513f4d9fe9075f3e79c5/Mob-Psycho-100-Vol-13",
+    "https://mob-psycho-100.fandom.com/wiki/Chapter_92",
+    "https://mob-psycho-100.fandom.com/wiki/Chapter_90",
+    "https://mob-psycho-100.fandom.com/wiki/Chapter_96",
+    "https://www.darkhorse.com/newsfeed/dark-horse-manga-presents-april-27/"
    ],
-   "notes": "Vol 13 = ch 91-95. Wikipedia has no per-volume chapter list; the second source (a Japanese-edition store listing) uses the same titles as the fandom wiki and may be derived from it."
+   "notes": "Vol 13 = ch 91-95: the fandom chapter pages put ch 90 in vol 12, ch 91-95 in vol 13 and ch 96 in vol 14. Dark Horse's English vol 13 listing opens after the Claw battle, which confirms the split. Wikipedia has no per-volume chapter list."
   },
   "mob-psycho-100-iii": {
    "vol": null,
@@ -612,12 +622,14 @@
   "sword-art-online-alicization-war-of-underworld": {
    "vol": 17,
    "startsAt": "middle",
-   "confidence": "medium",
+   "confidence": "high",
    "sources": [
     "https://en.wikipedia.org/wiki/List_of_Sword_Art_Online_light_novels",
-    "https://www.animenewsnetwork.com/review/sword-art-online-alicization-war-of-underworld-part-2/episodes-1-2/.161995"
+    "https://www.animenewsnetwork.com/review/sword-art-online-alicization-war-of-underworld-part-2/episodes-1-2/.161995",
+    "https://swordartonline.fandom.com/wiki/Sword_Art_Online_Alicization_Episode_36",
+    "https://swordartonline.fandom.com/wiki/Sword_Art_Online_Alicization_Episode_37"
    ],
-   "notes": "Cour ends partway into vol 17 per ANN; MAL guide says vols 15-16 only."
+   "notes": "Vol 17 begins with ch 20, and the cour ends partway into it: the fandom wiki's adaptation notes put the Part 1 finale at vol 17 ch 20 parts 1-2 and the Part 2 opener at ch 20 parts 2-4, and ANN places Part 2's opening around pp. 103-141 of vol 17. MAL's guide (vols 15-16 only) is rounded."
   },
   "sword-art-online-alicization-war-of-underworld-2nd-season": {
    "vol": 19,
@@ -642,12 +654,14 @@
   "re-zero-kara-hajimeru-isekai-seikatsu-2": {
    "vol": 13,
    "startsAt": "middle",
-   "confidence": "medium",
+   "confidence": "high",
    "sources": [
     "https://en.wikipedia.org/wiki/List_of_Re:Zero_volumes",
-    "https://rezero.fandom.com/wiki/Episode_38"
+    "https://rezero.fandom.com/wiki/Episode_38",
+    "https://rezero.fandom.com/wiki/Episode_39",
+    "https://en.wikipedia.org/wiki/Re:Zero_season_2"
    ],
-   "notes": "Part 1 ends early in vol 13; that split point is from the fandom wiki only."
+   "notes": "Part 1 ends early in vol 13: the fandom wiki gives ep 38 as vol 13 ch 1-2, and on Wikipedia ep 37 shares its title with vol 12's last chapter and ep 38 with vol 13's first chapter."
   },
   "rezero-season-2-part-2": {
    "vol": 16,

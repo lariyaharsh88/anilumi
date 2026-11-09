@@ -1,5 +1,5 @@
 {
- "checked": "2026-11-04",
+ "checked": "2026-11-09",
  "reviewed": null,
  "shows": {
   "one-piece": {
@@ -7,9 +7,10 @@
    "sources": [
     "https://onepiece.fandom.com/wiki/Story_Arcs",
     "https://en.wikipedia.org/wiki/List_of_One_Piece_episodes",
-    "https://www.animefillerlist.com/shows/one-piece"
+    "https://www.animefillerlist.com/shows/one-piece",
+    "https://en.wikipedia.org/wiki/One_Piece_season_13"
    ],
-   "notes": "Kitsu episodeCount is null (ongoing; Kitsu has placeholder episode records up to 1410). AnimeFillerList lists aired episodes through 1168. Elbaph is ongoing (to=null). One Piece Wiki gives Romance Dawn 1-4 and Orange Town 4-8 (ep 4 shared); split here as 1-3 / 4-8. Loguetown per wiki is 45 and 48-53 (46-47 adapt the Buggy's Crew cover story) - kept as one range 45-53. Episodes 68-69 (Koby-Meppo cover story), 336, 406-407 and 907 are left as gaps. Enies Lobby (279-283 recaps; 291-292, 303 filler), Post-Enies Lobby (317-319 filler), Post-War (492, 498-499), Fish-Man Island (542), Punk Hazard (590) contain standalone filler but are kept as single ranges. Arcs interrupted by named filler arcs (Impel Down, Wano Country) are split into multiple entries with the same name. Wikipedia's season boundaries (DVD seasons) agree with the arc starts except Wano/Egghead: wiki Wano ends 1085, Egghead starts 1086; Wikipedia season 20 runs to 1088 (season, not arc). Wikipedia season 22 (Elbaph) starts at 1156, matching the wiki.",
+   "notes": "Kitsu episodeCount is null (ongoing; Kitsu has placeholder episode records up to 1410). AnimeFillerList lists aired episodes through 1168. Elbaph is ongoing (to=null). One Piece Wiki gives Romance Dawn 1-4 and Orange Town 4-8 (ep 4 shared); split here as 1-3 / 4-8. Loguetown per wiki is 45 and 48-53 (46-47 adapt the Buggy's Crew cover story) - kept as one range 45-53. Episodes 68-69 (Koby-Meppo cover story), 336, 406-407 and 907 are left as gaps. Enies Lobby (279-283 recaps; 291-292, 303 filler), Post-Enies Lobby (317-319 filler), Post-War (492, 498-499), Fish-Man Island (542), Punk Hazard (590) contain standalone filler but are kept as single ranges. Arcs interrupted by filler (Impel Down, Wano Country) are split into multiple entries with the same name; Wano is 890-894, 897-906, 908-1028 and 1031-1085, with 907 a filler gap. Straw Hat's Separation Serial (453-456) is not a story arc on the wiki: these episodes adapt a manga cover-page serial (the wiki lists it under Cover Stories), and Wikipedia counts them in season 13 (Impel Down). It is kept as its own entry so the episodes are labelled. Wikipedia's seasons (DVD seasons) do not always start where arcs do: season 4 (Alabasta) starts at 93, not 92; season 20 (Wano) starts at 892, because season 19 runs 783-891 and takes in Levely plus 890-891; season 21 (Egghead) starts at 1089, while the wiki ends Wano at 1085 and starts Egghead at 1086. Arc ranges here follow the wiki. Wikipedia season 22 (Elbaph) starts at 1156, matching the wiki.",
    "arcs": [
     {
      "name": "Romance Dawn",
@@ -269,6 +270,11 @@
     {
      "name": "Wano Country",
      "from": 897,
+     "to": 906
+    },
+    {
+     "name": "Wano Country",
+     "from": 908,
      "to": 1028
     },
     {
@@ -437,7 +443,8 @@
    "sources": [
     "https://naruto.fandom.com/wiki/Plot_of_Naruto",
     "https://en.wikipedia.org/wiki/List_of_Naruto:_Shippuden_episodes",
-    "https://www.animefillerlist.com/shows/naruto-shippuden"
+    "https://www.animefillerlist.com/shows/naruto-shippuden",
+    "https://naruto.fandom.com/wiki/Itachi_Shinden_Book:_Light_and_Darkness"
    ],
    "notes": "Narutopedia arc ranges match Wikipedia season boundaries at 32/33, 53/54, 71/72, 88/89, 112/113, 143/144, 151/152, 175/176, 196/197, 361/362, 393/394, 413/414, 458/459, 479/480. Minor disagreement: Narutopedia ends Countdown part 1 at 222 and starts Paradise Life on a Boat at 223; Wikipedia season 11 starts at 222. Narutopedia lists Itachi Shinden as 451-458 and Kaguya Otsutsuki Strikes as 458-479 (ep 458 shared); Kaguya starts at 459 here. Itachi Pursuit Mission per Narutopedia is 113-118 and 121-126 (119-120 standalone filler) - kept as one range. Gaps: 257-260, 376-377 (filler). Itachi Shinden (451-458) is a novel adaptation that AnimeFillerList classes as mixed canon/filler; marked filler=false. Episodes 484-500 adapt the Sasuke Shinden / Shikamaru Hiden / Konoha Hiden novels (AnimeFillerList: canon).",
    "arcs": [
@@ -576,7 +583,7 @@
      "filler": true
     },
     {
-     "name": "Itachi Shinden: Light and Darkness",
+     "name": "Itachi Shinden Book: Light and Darkness",
      "from": 451,
      "to": 458
     },
@@ -1519,9 +1526,11 @@
    "confidence": "high",
    "sources": [
     "https://yugipedia.com/wiki/Yu-Gi-Oh!_Duel_Monsters",
-    "https://en.wikipedia.org/wiki/List_of_Yu-Gi-Oh!_Duel_Monsters_episodes"
+    "https://en.wikipedia.org/wiki/List_of_Yu-Gi-Oh!_Duel_Monsters_episodes",
+    "https://yugipedia.com/wiki/Battle_City_(part_2)",
+    "https://yugipedia.com/wiki/Battle_Ritual_(arc)"
    ],
-   "notes": "Ranges from Yugipedia arc pages; Wikipedia's 5 seasons agree at 49/50, 97/98, 144/145, 184/185. Yugipedia groups 41-49 as 'Domino City Battles' (Legendary Heroes 43-45 and Dungeon Dice Monsters 47-49 sub-stories); Wikipedia season 1 names them Legendary Heroes and Dungeon Dice Monsters. Battle City Finals (122-144) is called 'Enter the Shadow Realm' (dub) on Wikipedia; Pharaoh's Memories (199-219) is the dub's 'Dawn of the Duel'; the final arc is 'Battle Ritual' / 'Ceremonial Battle'. AnimeFillerList's Yu-Gi-Oh page is the 1998 series, not Duel Monsters, so filler flags follow Yugipedia/Wikipedia's anime-original arcs (Domino City Battles, Virtual World, Waking the Dragons, Grand Championship).",
+   "notes": "Ranges from Yugipedia arc pages; Wikipedia's 5 seasons agree at 49/50, 97/98, 144/145, 184/185. Yugipedia groups 41-49 as 'Domino City Battles' (Legendary Heroes 43-45 and Dungeon Dice Monsters 47-49 sub-stories); Wikipedia season 1 names them Legendary Heroes and Dungeon Dice Monsters. Battle City is split as Yugipedia does (part 1: 50-97, part 2: 122-144); Wikipedia calls part 2 'Enter the Shadow Realm' (dub). Pharaoh's Memories (199-219) is the dub's 'Dawn of the Duel'; the final arc is Yugipedia's 'Battle Ritual', also called 'Ceremonial Battle', which Wikipedia folds into season 5. AnimeFillerList's Yu-Gi-Oh page is the 1998 series, not Duel Monsters, so filler flags follow Yugipedia/Wikipedia's anime-original arcs (Domino City Battles, Virtual World, Waking the Dragons, Grand Championship).",
    "arcs": [
     {
      "name": "Duelist Kingdom",
@@ -1535,7 +1544,7 @@
      "filler": true
     },
     {
-     "name": "Battle City",
+     "name": "Battle City (Part 1)",
      "from": 50,
      "to": 97
     },
@@ -1546,7 +1555,7 @@
      "filler": true
     },
     {
-     "name": "Battle City Finals",
+     "name": "Battle City (Part 2)",
      "from": 122,
      "to": 144
     },
@@ -1568,7 +1577,7 @@
      "to": 219
     },
     {
-     "name": "Ceremonial Battle",
+     "name": "Battle Ritual",
      "from": 220,
      "to": 224
     }

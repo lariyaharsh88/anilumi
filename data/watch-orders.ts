@@ -18,8 +18,7 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   },
   naruto: {
     label: "Naruto",
-    intro: "Start with Naruto (2002), then Naruto: Shippuden, then Boruto. Episodes 136 to 219 of the original series are almost entirely filler, so you can go straight from episode 135 to Shippuden. Shippuden has long filler stretches as well, so keep a filler guide open. The films are standalone and optional except The Last, which is canon and sits just before Shippuden's final episodes.",
-    checked: "2026-11-03",
+    intro: "Start with Naruto (2002), then Naruto: Shippuden, then Boruto. Episodes 136 to 219 of the original series are almost entirely filler, so you can go from episode 135 to episode 220, where Naruto leaves with Jiraiya, and then start Shippuden. Shippuden has long filler stretches as well, so keep a filler guide open. The films are standalone and optional except two canon ones: The Last, which sits just before Shippuden's final episodes, and Boruto: Naruto the Movie, which leads into Boruto.",
   },
   "one-piece": {
     label: "One Piece",
@@ -28,8 +27,7 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   },
   "boku-no-hero-academia": {
     label: "My Hero Academia",
-    intro: "Release order is the right order: seasons 1 through 7, then the final season that began airing in October 2025. The three films (Two Heroes, Heroes Rising, World Heroes' Mission) slot after seasons 2, 4 and 5 and are optional. The OVAs are light side stories.",
-    checked: "2026-11-03",
+    intro: "Release order is the right order: seasons 1 through 7, then the final season that began airing in October 2025. The four films (Two Heroes, Heroes Rising, World Heroes' Mission and You're Next) slot after seasons 2, 4, 5 and 6 and are optional. The OVAs are light side stories.",
   },
   "kimetsu-no-yaiba": {
     label: "Demon Slayer",
@@ -38,7 +36,7 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   },
   "jujutsu-kaisen": {
     label: "Jujutsu Kaisen",
-    intro: "Jujutsu Kaisen 0 is a prequel film and works either before Season 1 or right after it, but it must come before Season 2, which refers to it directly. Then Season 2 (Hidden Inventory and Shibuya Incident) and Season 3, the Culling Game, from January 2026.",
+    intro: "Jujutsu Kaisen 0 is a prequel film and works either before Season 1 or right after it, but it must come before Season 2, which refers to it directly. Then Season 2 (Hidden Inventory and Shibuya Incident) and Season 3 (The Culling Game Part 1, January–March 2026). Part 2, the fourth season, has been announced.",
   },
   "fullmetal-alchemist-brotherhood": {
     label: "Fullmetal Alchemist: Brotherhood",
@@ -63,7 +61,7 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   "re-zero-kara-hajimeru-isekai-seikatsu": {
     label: "Re:Zero",
     demote: ["re-zero-kara-hajimeru-isekai-seikatsu-hyouketsu-no-kizuna"],
-    intro: "Season 1 (25 episodes), then Season 2 in two halves, then Season 3. The Director's Cut is Season 1 re-edited into double-length episodes, so pick one version. Of the OVAs, The Frozen Bond is a prequel and Memory Snow a light interlude set after episode 11; both are optional.",
+    intro: "Season 1 (25 episodes), then Season 2 in two halves, then Season 3, then Season 4 (April–September 2026). The Director's Cut is Season 1 re-edited into double-length episodes, so pick one version. Of the OVAs, The Frozen Bond is a prequel and Memory Snow a light interlude set after episode 11; both are optional.",
   },
   "steins-gate": {
     label: "Steins;Gate",
@@ -79,7 +77,7 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   },
   bleach: {
     label: "Bleach",
-    intro: "Watch episodes 1 to 366 of the original series, then Thousand-Year Blood War, which has been released in parts since 2022. The filler arcs (64–109, 128–137, 168–189, 204–205, 213–214, 227–266, 287, 298–299, 303–305 and 311–342) can be skipped without losing anything.",
+    intro: "Watch episodes 1 to 366 of the original series, then Thousand-Year Blood War (50 episodes in four parts, 2022–2026), which adapts the final arc to the end. The filler episodes (33, 50, 64–108, 128–137, 147–149, 168–189, 204–205, 213–214, 228–266, 287, 298–299, 303–305, 311–341 and 355) can be skipped without losing anything; 109 and 342 mix canon and filler.",
   },
   "mob-psycho-100": {
     label: "Mob Psycho 100",
@@ -95,7 +93,7 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   },
   "sousou-no-frieren": {
     label: "Frieren",
-    intro: "Season 1 (28 episodes), then Season 2 from January 2026. There are no films or recaps to worry about.",
+    intro: "Season 1 (28 episodes), then Season 2 (January–March 2026). Season 3 is announced for October 2027. There are no films or recaps to worry about.",
   },
   "fate-zero": {
     label: "Fate series",
@@ -111,7 +109,7 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   },
   "chainsaw-man": {
     label: "Chainsaw Man",
-    intro: "Season 1, then the 2025 film Reze Arc, which picks up directly where the series ends.",
+    intro: "Season 1, then the 2025 film Reze Arc, which picks up directly where the series ends. A continuation, the Assassins Arc, was announced in December 2025.",
   },
   "vinland-saga": {
     label: "Vinland Saga",
@@ -119,7 +117,7 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   },
   "made-in-abyss": {
     label: "Made in Abyss",
-    intro: "Season 1, then the film Dawn of the Deep Soul, which continues the story, then Season 2 (The Golden City of the Scorching Sun). The two compilation films retell Season 1 and can be skipped. A new film, Mezameru Shinpi, is due in 2026.",
+    intro: "Season 1, then the film Dawn of the Deep Soul, which continues the story, then Season 2 (The Golden City of the Scorching Sun). The two compilation films retell Season 1 and can be skipped. The film Awakening Mystery (Mezameru Shinpi), which opened in Japan in October 2026, continues after Season 2 and is the first of a new film series.",
   },
   "code-geass-lelouch-of-the-rebellion": {
     label: "Code Geass",
@@ -127,7 +125,7 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   },
   "jojo-s-bizarre-adventure-2012": {
     label: "JoJo's Bizarre Adventure",
-    intro: "Watch the parts in order: the 2012 series (Parts 1 and 2, Phantom Blood and Battle Tendency), Stardust Crusaders (two cours), Diamond Is Unbreakable, Golden Wind, then Stone Ocean (released in three batches). Each part has a new lead but builds on the previous ones, so don't skip ahead. The Thus Spoke Kishibe Rohan OVAs are optional side stories best watched after Diamond Is Unbreakable. The 2000 Stardust Crusaders OVA and the 2007 Phantom Blood film are older, partial adaptations you can ignore. Part 7, Steel Ball Run, follows Stone Ocean.",
+    intro: "Watch the parts in order: the 2012 series (Parts 1 and 2, Phantom Blood and Battle Tendency), Stardust Crusaders (two cours), Diamond Is Unbreakable, Golden Wind, then Stone Ocean (released in three batches). Each part has a new lead but builds on the previous ones, so don't skip ahead. The Thus Spoke Kishibe Rohan OVAs are optional side stories best watched after Diamond Is Unbreakable. The 2000 Stardust Crusaders OVA and the 2007 Phantom Blood film are older, partial adaptations you can ignore. Part 7, Steel Ball Run, follows Stone Ocean; it began streaming on Netflix in March 2026.",
   },
   "neon-genesis-evangelion": {
     label: "Evangelion",
@@ -136,7 +134,7 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   },
   gintama: {
     label: "Gintama",
-    intro: "Gintama (2006), Gintama' (2011), Enchousen, then the film Be Forever Yorozuya (2013), Gintama° (2015), Gintama. (2017), Porori-hen, the two Silver Soul cours (2018) and finally the film Gintama: The Final (2021), which is the real ending. Be Forever Yorozuya is an alternate-future story released before the manga ended; it is well loved but optional. The first film (Benizakura) retells an arc from the TV series and can be skipped.",
+    intro: "Gintama (2006), Gintama' (2011), Enchousen, then the film Be Forever Yorozuya (2013), Gintama° (2015), Gintama. (2017), Porori-hen, the two Silver Soul cours (2018) and finally the film Gintama: The Final (2021), which is the real ending. Be Forever Yorozuya is an alternate-future story released before the manga ended; it is well loved but optional. The first film (Benizakura) and Yoshiwara in Flames (2026) retell arcs from the TV series and can be skipped, and the 2025 spin-off series Mr. Ginpachi's Zany Class is optional.",
   },
   "fairy-tail": {
     label: "Fairy Tail",
@@ -144,11 +142,11 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   },
   "mushoku-tensei-isekai-ittara-honki-dasu": {
     label: "Mushoku Tensei",
-    intro: "Season 1 in two cours (2021), then Season 2 in two cours (2023–2024). Season 2 opens with an episode 0 (Guardian Fitz) that is a required prologue, not a recap. The OVA episodes are optional side stories. Later seasons appear in the list below as they are announced.",
+    intro: "Season 1 in two cours (2021), then Season 2 in two cours (2023–2024). Season 2 opens with an episode 0 (Guardian Fitz) that is a required prologue, not a recap. The OVA episodes are optional side stories. Season 3 Part 1 aired July–September 2026, with Part 2 due in 2027.",
   },
   "tensei-shitara-slime-datta-ken": {
     label: "That Time I Got Reincarnated as a Slime",
-    intro: "Season 1 (2018), Season 2 in two parts (2021), the film Scarlet Bond (2022), then Season 3 (2024). The Slime Diaries (2021) is a comedy spin-off you can watch any time after Season 1, and the Visions of Coleus OVAs are optional. Newer seasons and films are added below as they are announced.",
+    intro: "Season 1 (2018), Season 2 in two parts (2021), the film Scarlet Bond (2022), Season 3 (2024), the film Tears of the Azure Sea (February 2026), then Season 4 (from April 2026, planned as five cours). The Slime Diaries (2021) is a comedy spin-off you can watch any time after Season 1, and the Visions of Coleus OVAs are optional.",
   },
   "tate-no-yuusha-no-nariagari": {
     label: "The Rising of the Shield Hero",
@@ -169,11 +167,11 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   },
   "kaguya-sama-wa-kokurasetai-tensai-tachi-no-renai-zunousen": {
     label: "Kaguya-sama: Love Is War",
-    intro: "Season 1, Season 2, Season 3 (Ultra Romantic), then the film The First Kiss Never Ends, which adapts the next arc and continues straight on from Season 3. The 2025 special Stairway to Adulthood comes after the film.",
+    intro: "Season 1, Season 2, Season 3 (Ultra Romantic), then the film The First Kiss That Never Ends, which adapts the next arc and continues straight on from Season 3. The 2025 special Stairway to Adulthood comes after the film, and a concluding film, The Final Chapter, was announced in early 2026.",
   },
   "oshi-no-ko": {
     label: "Oshi no Ko",
-    intro: "Season 1, Season 2, then Season 3. The first episode is a 90-minute prologue that the whole story depends on, so don't skip it. There are no films or OVAs to slot in.",
+    intro: "Season 1, Season 2, then Season 3 (January–March 2026); a fourth and final season was announced in March 2026. The first episode is a 90-minute prologue that the whole story depends on, so don't skip it. There are no films or OVAs to slot in.",
   },
   "solo-leveling": {
     label: "Solo Leveling",
@@ -191,7 +189,7 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   },
   "tokyo-revengers": {
     label: "Tokyo Revengers",
-    intro: "Season 1, then Christmas Showdown (Season 2) and the Tenjiku arc (Season 3). The continuation adapting the final arcs follows them. Chibi Reve is a set of comedy shorts and is optional.",
+    intro: "Season 1, then Christmas Showdown (Season 2) and the Tenjiku arc (Season 3). Season 4, the War of the Three Titans arc, follows; it premiered in October 2026. Chibi Reve is a set of comedy shorts and is optional.",
   },
   "one-punch-man": {
     label: "One Punch Man",
@@ -216,7 +214,7 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   },
   "toaru-majutsu-no-index": {
     label: "A Certain Magical Index / Railgun",
-    intro: "Index and Railgun share a world and overlap in time. Release order works well: Index (2008), Railgun (2009), Index II (2010), Railgun S (2013), the film Miracle of Endymion (2013), Index III (2018), Accelerator (2019) and Railgun T (2020). Railgun also stands on its own if you only want Misaka's story.",
+    intro: "Index and Railgun share a world and overlap in time. Release order works well: Index (2008), Railgun (2009), Index II (2010), the film Miracle of Endymion (February 2013), Railgun S (April 2013), Index III (2018), Accelerator (2019) and Railgun T (2020). Railgun also stands on its own if you only want Misaka's story.",
   },
   "natsume-yuujinchou": {
     label: "Natsume's Book of Friends",
@@ -229,7 +227,7 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   },
   clannad: {
     label: "Clannad",
-    intro: "Clannad (24 episodes), then After Story. The two OVAs, Another World: Tomoyo Chapter and Kyou Chapter, are optional what-if routes; watch them after the first season. The 2007 film is a separate adaptation and not part of this story.",
+    intro: "Clannad (23 episodes), then After Story. The two OVAs, Another World: Tomoyo Chapter and Kyou Chapter, are optional what-if routes; watch them after the first season. The 2007 film is a separate adaptation and not part of this story.",
   },
   "tengen-toppa-gurren-lagann": {
     label: "Gurren Lagann",
