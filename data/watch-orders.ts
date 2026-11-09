@@ -685,4 +685,589 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
     promote: ["seitokai-yakuindomo-movie", "seitokai-yakuindomo-movie-2"],
     mainOrder: ["seitokai-yakuindomo", "seitokai-yakuindomo-ova", "seitokai-yakuindomo-2nd-season", "seitokai-yakuindomo-2nd-season-ova", "seitokai-yakuindomo-movie", "seitokai-yakuindomo-movie-2"],
   },
+  "death-note": {
+    label: "Death Note",
+    intro: "Death Note is one 37-episode series (October 2006–June 2007), so there is only one thing to watch. The two Relight TV films, Visions of a God (August 31, 2007) and L's Successors (August 2008), are compilations of the series, listed under safe to skip. Watch the series instead; there are no OVAs, sequels or canon films.",
+  },
+  toradora: {
+    label: "Toradora!",
+    intro: "Toradora! is one 25-episode series (October 2008–March 2009). The OVA Bento Battle, released on December 21, 2011, is an optional extra episode. The Toradora! SOS! shorts, which came with the DVD volumes in 2009, are optional, and the April 2009 recap can be skipped.",
+  },
+  "angel-beats": {
+    label: "Angel Beats!",
+    intro: "Angel Beats! is a 13-episode original series (April–June 2010). Its OVA episodes, one on the seventh Blu-ray and DVD volume in December 2010 and a second in June 2015, are grouped as Specials. The same December 2010 volume added Another Epilogue, a short bonus scene that serves as a second epilogue; watch it after the finale.",
+  },
+  "death-parade": {
+    label: "Death Parade",
+    intro: "Death Parade is one 12-episode series (January–March 2015). It grew out of Death Billiards, a short film Madhouse made for the Anime Mirai 2013 young-animator project (March 2013). The short is optional, a pilot with the same setting; it is listed below as an alternative version and can be watched before or after the series.",
+  },
+  "ouran-koukou-host-club": {
+    label: "Ouran High School Host Club",
+    intro: "Ouran High School Host Club is a single 26-episode series (April–September 2006) and there is nothing else to watch: no second season, films or OVAs. The Japanese TV drama (2011) and the live-action film (2012) are separate adaptations.",
+  },
+  "akame-ga-kill": {
+    label: "Akame ga Kill!",
+    intro: "Akame ga Kill! is one 24-episode series (July–December 2014). It follows the first eight manga volumes, then the last episodes tell an original story with a different ending from the manga. The AkaKill! Theater shorts are optional, and the August 2014 recap can be skipped.",
+  },
+  hyouka: {
+    label: "Hyouka",
+    intro: "Hyouka is one 22-episode series (April–September 2012). The bonus episode What Should Be Had, first streamed online on July 8, 2012 while the series was airing, is an optional side episode. There is no second season, film or other anime, so the TV series is the whole watch.",
+  },
+  "elfen-lied": {
+    label: "Elfen Lied",
+    intro: "Elfen Lied is one 13-episode series (July–October 2004). The single OVA, In the Passing Rain (April 21, 2005), is often called episode 10.5 because its events take place within episode 11, so watch it between episodes 10 and 11 or after the series. The anime ended before the manga was finished, so its story and ending differ from the manga.",
+  },
+  "kaichou-wa-maid-sama": {
+    label: "Maid Sama!",
+    intro: "Maid Sama! is one 26-episode series (April–September 2010). The two specials, the LaLa special from July 2010 and Omake dayo! from May 2011, are short optional extras; watch them after the series. There is no second season, film or OVA, so the TV series is the whole watch.",
+  },
+  "high-school-of-the-dead": {
+    label: "Highschool of the Dead",
+    intro: "Highschool of the Dead is one 12-episode series (July–September 2010), followed by the OVA Drifters of the Dead (April 26, 2011), an extra episode that goes after the series. Both were made by Madhouse. No second season was made, so the OVA is the last Highschool of the Dead anime.",
+  },
+  charlotte: {
+    label: "Charlotte",
+    intro: "Charlotte is a 13-episode original series (July–September 2015). The OVA The Strong Ones came on the seventh Blu-ray and DVD volume on March 30, 2016; it is an optional extra episode to watch after the finale. There are no other seasons or films. The story was written by Jun Maeda, who also created Angel Beats!.",
+  },
+  "darling-in-the-franxx": {
+    label: "Darling in the Franxx",
+    intro: "Darling in the Franxx is a single 24-episode original series (January–July 2018) with no sequels, films or OVAs, so the TV series is the whole watch. It was co-produced by Trigger and A-1 Pictures, with animation by Trigger and CloverWorks, and is not based on a manga.",
+  },
+  "deadman-wonderland": {
+    label: "Deadman Wonderland",
+    intro: "Deadman Wonderland is one 12-episode series (April–July 2011), followed by the OVA The Red Knife Wielder, released on October 8, 2011 alongside the eleventh manga volume. The OVA is an extra episode; watch it after the series. No second season was made, so the anime only covers the early part of the manga.",
+  },
+  "my-little-monster": {
+    label: "My Little Monster",
+    intro: "My Little Monster is one 13-episode series (October–December 2012). The OVA, bundled on DVD with the limited edition of the twelfth and final manga volume on August 12, 2013, is an optional extra episode to watch after the series. There is no second season.",
+  },
+  dororo: {
+    label: "Dororo (2019)",
+    intro: "The 2019 Dororo (24 episodes, January–June 2019, by MAPPA and Tezuka Productions) is the second anime adaptation of Osamu Tezuka's manga, after the 1969 series Dororo to Hyakkimaru. They are separate versions of the same story, so watch either one; the 1969 series and its 1968 pilot are listed under alternative versions.",
+  },
+  monster: {
+    label: "Monster",
+    intro: "Monster is one 74-episode series (April 2004–September 2005) by Madhouse, with no second season, films or OVAs, so there is only one thing to watch. The two TV specials, Monster Extra (September 2004) and Monster Special Edition (December 2005), are recaps listed under safe to skip.",
+  },
+  "banana-fish": {
+    label: "Banana Fish",
+    intro: "Banana Fish is one 24-episode series (July–December 2018) by MAPPA, and there are no OVAs, films or second season to fit in. Prayer X, listed below, is a music video, not an episode. The whole story is in the TV series, so start at episode 1 and watch straight through to episode 24.",
+  },
+  "grand-blue": {
+    label: "Grand Blue Dreaming",
+    intro: "Watch the seasons in order: Grand Blue Dreaming (12 episodes, July–September 2018), Season 2 (July–September 2025) and Season 3 (July–September 2026). A fourth season has been announced with no date yet. There are no anime films or OVAs to fit in, so release order is the whole guide.",
+  },
+  "hataraku-saibou-tv": {
+    label: "Cells at Work!",
+    intro: "Watch Cells at Work! (13 episodes, July–September 2018) and the special episode from December 27, 2018, then Cells at Work!! (8 episodes, January–February 2021), the second season. The theatrical film from September 2020, which adapts material from the fifth manga volume, came out between the two seasons and is optional. Cells at Work! Code Black (January–March 2021) is a spin-off series.",
+  },
+  "mekaku-city-actors": {
+    label: "Mekakucity Actors",
+    intro: "Mekakucity Actors is one 12-episode series by Shaft (April–June 2014), the anime of the Kagerou Project songs and novels. The short film Kagerou Daze: In a Day's (November 2016) is an optional side story, and the other entries are music videos. Mekakucity Reload is a 2018 Kagerou Project album, not an anime, so it was removed from the list.",
+    exclude: ["mekakucity-reload"],
+  },
+  beastars: {
+    label: "Beastars",
+    intro: "Watch the three seasons in order: Beastars (12 episodes, October–December 2019), Season 2 (January–March 2021) and the Final Season, which Netflix released in two parts, in December 2024 and March 2026. There are no films, OVAs or recaps; the Yasashii Suisei entry is a music video, not an episode.",
+  },
+  "kara-no-kyoukai-1-fukan-fuukei": {
+    label: "The Garden of Sinners (Kara no Kyoukai)",
+    intro: "The Garden of Sinners is seven ufotable films (December 2007–August 2009) that tell the story out of chronological order; watch them in release order, as listed below. Then watch the Chapter 8 epilogue (February 2011) and the film Future Gospel (September 2013). Remix: Gate of Seventh Heaven (March 2009) is a compilation of the first six films, and the manner movies are pre-show clips.",
+    skip: ["kara-no-kyoukai-cinema-intros", "kara-no-kyoukai-manner-movie"],
+  },
+  "tower-of-god": {
+    label: "Tower of God",
+    intro: "Watch Season 1 (13 episodes, April–June 2020, by Telecom Animation Film), then Season 2 (July–December 2024, by The Answer Studio), which aired in two cours: Return of the Prince (July–September) and Workshop Battle (October–December). Kitsu lists the two cours separately. There are no films, OVAs or recaps to fit in.",
+  },
+  "heaven-s-lost-property": {
+    label: "Heaven's Lost Property",
+    intro: "Watch Heaven's Lost Property (13 episodes, October–December 2009), the OVA Project Pink (September 2010), Forte (12 episodes, October–December 2010), the film The Angeloid of Clockwork (June 2011), then the final film, Eternally My Master (April 26, 2014). Release order is the watch order, and there are no recaps to skip.",
+  },
+  "drifters-tv": {
+    label: "Drifters",
+    intro: "Watch the 12-episode TV series (October–December 2016), then the three OVA episodes that continue it: two released in December 2017 and The Outlandish Knight (November 2018). Special Edition (June 2016), listed as an alternative version, is a 36-minute edit of the first two episodes that came with a manga volume, so skip it if you watch the series. No second season has been made.",
+  },
+  "5-toubun-no-hanayome": {
+    label: "The Quintessential Quintuplets",
+    intro: "Watch Season 1 (12 episodes, January–March 2019), Season 2 (January–March 2021), then The Quintessential Quintuplets Movie (May 2022), the sequel to Season 2. Then the two TV specials: ∽ (two episodes, September 2023, by Shaft) and * (December 24, 2024). Kitsu files ∽ next to Season 1, but it came out after the film. An anime of the sequel novels, The Four Seasons, and a new OVA have been announced.",
+  },
+  "isekai-maou-to-shoukan-shoujo-no-dorei-majutsu": {
+    label: "How Not to Summon a Demon Lord",
+    intro: "Watch Season 1 (12 episodes, July–September 2018), then Season 2, How Not to Summon a Demon Lord Ω (10 episodes, April–June 2021). A third season, produced by Tezuka Productions, has been announced with no date yet. The Ω mini anime shorts that streamed online alongside Season 2 are optional.",
+  },
+  "hibike-euphonium": {
+    label: "Sound! Euphonium",
+    intro: "Watch Season 1 (April–July 2015), Season 2 (October–December 2016), the film Our Promise: A Brand New Day (April 2019) on Kumiko's second year, the theatrical OVA Ensemble Contest (August 2023), then Season 3 (April–June 2024), her third year. Liz and the Blue Bird (2018) is an optional film set in the same second year. The 2016 and 2017 films recap the two seasons, and the two-part Final Movie (2026) is a film version of Season 3.",
+    promote: ["hibike-euphonium-ensemble-contest-hen", "hibike-euphonium-kumiko-3-nensei-hen"],
+    optional: ["saishuu-gakushou-hibike-euphonium-zenpen", "saishuu-gakushou-hibike-euphonium-kouhen"],
+    mainOrder: ["hibike-euphonium", "hibike-euphonium-2", "hibike-euphonium-movie-2-nensei-ni-natta-kumiko-tachi", "hibike-euphonium-ensemble-contest-hen", "hibike-euphonium-kumiko-3-nensei-hen"],
+  },
+  "working-1": {
+    label: "Working!!",
+    intro: "Watch the three seasons in order: Working!! (13 episodes, April–June 2010), Working'!! (October–December 2011) and Working!!! (July–September 2015), then Lord of the Takanashi, the one-hour finale broadcast on December 26, 2015. WWW.Working!! (October–December 2016) is a spin-off that adapts the separate web manga of the same name.",
+  },
+  "detective-conan": {
+    label: "Detective Conan (Case Closed)",
+    intro: "Detective Conan is one TV series that has aired since January 8, 1996, with more than 1,200 episodes, so watch it in broadcast order. A new film has opened in April almost every year since 1997 (none in 2020); each has an original story rather than one adapted from the manga, so they are optional. It is easiest to watch each film after the episodes from around its release. The OVAs are optional too.",
+  },
+  "non-non-biyori": {
+    label: "Non Non Biyori",
+    intro: "Watch the three seasons in order: Non Non Biyori (12 episodes, October–December 2013), Repeat (July–September 2015) and Nonstop (January–March 2021), with the film Vacation (August 2018) between Repeat and Nonstop. The first two OVAs came with manga volumes in July 2014 and September 2016, and the third, from March 2022, serves as Nonstop's 13th episode.",
+  },
+  "cardcaptor-sakura": {
+    label: "Cardcaptor Sakura",
+    intro: "Watch the 70-episode series (April 1998–March 2000), then the second film, The Sealed Card (July 2000), which gives the original anime its ending. The first film (August 1999) is an optional side story. Then watch Clear Card (22 episodes, January–June 2018), the sequel set in junior high, with the original cast and staff back. The prologue OVA Sakura and the Two Bears (2017) is optional. A continuation of Clear Card was announced in April 2023.",
+  },
+  "love-live-school-idol-project": {
+    label: "Love Live! School Idol Project",
+    intro: "Watch Season 1 (13 episodes, January–March 2013), Season 2 (April–June 2014), then Love Live! The School Idol Movie (June 13, 2015), which concludes the μ's story. The November 2013 OVA and the short specials are optional, and the recap specials can be skipped. Love Live! Sunshine!! (2016), Nijigasaki (2020) and Superstar!! (2021) are separate series about other school idol groups and can be started on their own.",
+  },
+  "shingeki-no-bahamut-genesis": {
+    label: "Rage of Bahamut",
+    intro: "Watch Rage of Bahamut: Genesis (12 episodes, October–December 2014), then Virgin Soul (24 episodes, April–September 2017), the second season. The two Short Story episodes (December 2016–February 2017) are optional side stories set between the two seasons. The November 2014 roundup is a recap, and Manaria Friends (January–March 2019) is a spin-off.",
+    demote: ["shingeki-no-bahamut-genesis-short-story"],
+  },
+  "yuru-camp": {
+    label: "Laid-Back Camp",
+    intro: "Watch the seasons in order: Laid-Back Camp (12 episodes, January–March 2018), Season 2 (January–April 2021) and Season 3 (April–June 2024). The film (July 1, 2022) is set years later, when the girls are working adults, so it can be watched after Season 2 or at the end. Room Camp (January–March 2020) is a short spin-off, and each season's specials are optional. Season 4 is set for April 2027.",
+  },
+  "fumetsu-no-anata-e": {
+    label: "To Your Eternity",
+    intro: "Watch the three seasons in order: To Your Eternity (20 episodes, April–August 2021, by Brain's Base), Season 2 (October 2022–March 2023) and Season 3 (October 2025–March 2026), made by Drive, the third with Studio Massket. The July 2021 special Fushi no Tabiji is a recap of the first twelve episodes and can be skipped. There are no films or OVAs.",
+  },
+  "kanojo-okarishimasu": {
+    label: "Rent-a-Girlfriend",
+    intro: "Watch the five seasons in order: Season 1 (12 episodes, July–September 2020), Season 2 (July–September 2022), Season 3 (July–September 2023), Season 4 (July–September 2025) and Season 5 (April–June 2026). A sixth season has been announced. The Petit shorts, the Date Movie clips and the Kanokari Call specials are short extras, not episodes, and can be skipped.",
+  },
+  "kino-no-tabi-the-beautiful-world": {
+    label: "Kino's Journey",
+    intro: "Start with the 2003 series (13 episodes, April–July 2003), then the two 30-minute films, Life Goes On (February 2005), which shows Kino's past, and Country of Illness: For You (April 2007). Kitsu puts Life Goes On first because it is a prequel, but it was made after the series. The 2017 series (12 episodes, October–December 2017) is a new adaptation with a new cast, not a sequel, so it can be watched on its own.",
+    demote: ["kino-no-tabi-nanika-wo-suru-tame-ni-life-goes-on"],
+  },
+  "karakai-jouzu-no-takagi-san": {
+    label: "Teasing Master Takagi-san",
+    intro: "Watch the three seasons in order: Season 1 (12 episodes, January–March 2018), Season 2 (July–September 2019) and Season 3 (January–March 2022), then the anime film (June 10, 2022), released three months after Season 3 ended. The Water Slide OVA (July 2018) is an optional extra episode that came out between the first two seasons.",
+  },
+  "sayonara-zetsubou-sensei": {
+    label: "Sayonara, Zetsubou-Sensei",
+    intro: "Watch the three Shaft TV seasons in order, Sayonara Zetsubou Sensei (12 episodes, July–September 2007), Zoku (13 episodes, January–March 2008) and Zan (July–September 2009), with the Goku OVAs (October 2008–February 2009) between Zoku and Zan and the Zan Bangaichi OVAs (November 2009–February 2010) at the end. The two Jo DVD specials from 2008 are summary episodes and can be skipped.",
+  },
+  "yuru-yuri": {
+    label: "YuruYuri",
+    intro: "Watch YuruYuri (July–September 2011) and YuruYuri♪♪ (July–September 2012), both by Doga Kobo, then the OVA Nachuyachumi! (February 2015) and its follow-up Nachuyachumi!+ (August–September 2015), then San☆Hai! (October–December 2015, by TYO Animations) and the tenth-anniversary OVA from 2019. The 2011 special is an optional extra. The two Ōmuro-ke films (2024) are a spin-off about the Ōmuro sisters.",
+  },
+  "haiyore-nyaruko-san": {
+    label: "Nyaruko: Crawling with Love",
+    intro: "Watch Nyaruko: Crawling with Love (12 episodes, April–June 2012) and Season 2, W (April–July 2013), both by Xebec, then the OVA F (June 2015). The OVA episodes from November 2012 and April 2014 are optional extras. The earlier Haiyoru! Nyaruani shorts (2010–2011), made by DLE, are a separate short adaptation, so they are listed as alternative versions.",
+  },
+  "world-trigger": {
+    label: "World Trigger",
+    intro: "Watch Season 1 (73 episodes, October 2014–April 2016), then Season 2 (January–April 2021) and Season 3 (October 2021–January 2022), all by Toei Animation. The Fugitive Arc (episodes 49–63) is an anime-original story not in the manga and can be skipped. A remake that re-adapts the first season's story was announced in December 2025; it is listed as an alternative version.",
+  },
+  "nodame-cantabile": {
+    label: "Nodame Cantabile",
+    intro: "Watch the three seasons in order: Nodame Cantabile (23 episodes, January–June 2007), Paris Chapter (11 episodes, October–December 2008) and Finale (11 episodes, January–March 2010). The OVA from August 2009 fits between Paris Chapter and Finale, and the Finale special and OVA from April 2010 come last. Kitsu lists the Finale special before Finale itself; the order below is fixed to match release dates.",
+    mainOrder: ["nodame-cantabile", "nodame-cantabile-paris-chapter", "nodame-cantabile-finale", "nodame-cantabile-finale-special", "nodame-cantabile-ova-2"],
+  },
+  "arifureta-shokugyou-de-sekai-saikyou": {
+    label: "Arifureta",
+    intro: "Watch the three seasons in order: Arifureta (13 episodes, July–October 2019), Season 2 (January–March 2022) and Season 3 (October 2024–February 2025). The Episode 0 prologue, first screened at an event in January 2020 after Season 1 had ended, is optional; Kitsu put it first. The picture dramas, specials and the September 2022 OVA are extras, and the August 2019 recap can be skipped.",
+    demote: ["arifureta-shokugyou-de-sekai-saikyou-prologue"],
+  },
+  "maou-gakuin-no-futekigousha-shijou-saikyou-no-maou-no-shiso-tensei-shite-shison-tachi-no-gakkou-e-kayou": {
+    label: "The Misfit of Demon King Academy",
+    intro: "Watch Season 1 (13 episodes, July–September 2020), then Season 2, which aired as two cours: the first from January to September 2023, after a COVID-19 pause from its seventh episode, and the second from April to July 2024. Kitsu lists the two cours as separate entries. There are no films, OVAs or recaps to fit in.",
+  },
+  "bishoujo-senshi-sailor-moon": {
+    label: "Sailor Moon",
+    intro: "The original anime is five seasons, aired from March 1992 to February 1997: Sailor Moon, R, S, SuperS and Sailor Stars. Watch them in order; the three films, R (December 1993), S (December 1994) and SuperS (December 1995), are optional side stories that fit after their seasons. Sailor Moon Crystal (2014–2016) and its film sequels Eternal (2021) and Cosmos (2023) are a reboot that follows the manga more faithfully; watch it as a separate version.",
+  },
+  "amagami-ss": {
+    label: "Amagami SS",
+    intro: "Watch Amagami SS (25 episodes, July–December 2010), which tells each heroine's story in a separate arc, then the sequel Amagami SS+ plus (January–March 2012). The Miya special and the 2011 OVA episodes are optional extras. Seiren (January–March 2017) is listed as the next entry, but it is set in the same high school nine years later, with a new lead and the same one-arc-per-heroine structure.",
+  },
+  "zombieland-saga": {
+    label: "Zombie Land Saga",
+    intro: "Watch Zombie Land Saga (12 episodes, October–December 2018), then Revenge (April–June 2021), the second season, then the film Yumeginga Paradise (October 24, 2025). It is an original anime by MAPPA, Avex Pictures and Cygames, so there is no source manga to read ahead; the manga came later and loosely follows the anime. The specials and music videos listed below are optional.",
+  },
+  "jigoku-shoujo": {
+    label: "Hell Girl",
+    intro: "Watch the four seasons in order: Hell Girl (26 episodes, October 2005–April 2006), Two Mirrors (October 2006–April 2007), Three Vessels (October 2008–April 2009) and The Fourth Twilight (July–September 2017). The Fourth Twilight ran 12 weeks, but only the first six episodes were new; the rest were rebroadcasts of older episodes. The January 2006 recap can be skipped.",
+  },
+  "little-busters": {
+    label: "Little Busters!",
+    intro: "Watch Little Busters! (26 episodes, October 2012–April 2013), then the second season, Little Busters! Refrain (13 episodes, October–December 2013), then the eight Little Busters! EX episodes (January–July 2014). All three are by J.C.Staff. The November 2013 OVA is an optional extra. Kud Wafter, a spin-off about Kudryavka, and Kaginado are separate.",
+  },
+  "digimon-adventure": {
+    label: "Digimon Adventure",
+    intro: "Start with the short film Digimon Adventure (March 6, 1999), released the day before the 54-episode series (March 1999–March 2000). Then watch the film Our War Game! (March 2000), Digimon Adventure 02 (April 2000–March 2001), the 02 film Revenge of Diaboromon, the six tri. films (2015–2018) and Last Evolution Kizuna (February 2020). Digimon: The Movie is an English edit of the early films, and the 2020 Digimon Adventure: is a reboot.",
+  },
+  mononoke: {
+    label: "Mononoke",
+    intro: "Mononoke (12 episodes, July–September 2007) is a spin-off of the 2006 anthology Ayakashi: Samurai Horror Tales, following the Medicine Seller from its Bakeneko story; that story is an optional prequel, and the other Ayakashi stories are separate tales. After the series, watch the film trilogy: The Phantom in the Rain (July 2024), Hinezumi (March 2025) and Hebigami (May 2026). Kitsu only links the first film, so the other two were added.",
+    demote: ["ayakashi-japanese-classic-horror"],
+    promote: ["Mononoke-Karakasa", "Mononoke-Hinezumi", "Mononoke-Hebigami"],
+    mainOrder: ["mononoke", "Mononoke-Karakasa", "Mononoke-Hinezumi", "Mononoke-Hebigami"],
+  },
+  "school-rumble": {
+    label: "School Rumble",
+    intro: "Watch School Rumble (26 episodes, October 2004–March 2005), the two-part OVA Extra Class (December 2005), the second season, 2nd Semester (26 episodes, April–September 2006), then 3rd Semester, two OVA episodes released from July to September 2008. 3rd Semester is the last School Rumble anime, so the story continues only in the manga.",
+  },
+  "ginga-eiyuu-densetsu": {
+    label: "Legend of the Galactic Heroes",
+    intro: "Start with the film My Conquest Is the Sea of Stars (February 1988), which shows the first clash between Reinhard and Yang, then the 110-episode OVA series (1988–1997), which picks up where the film ends. Overture to a New War (1993) expands the first two OVA episodes and Golden Wings (1992) adapts a side story; both are optional. The Gaiden OVAs (1998–2000) are prequel side stories. Die Neue These (2018 onward, Production I.G) is a remake.",
+    demote: ["ginga-eiyuu-densetsu-gaiden-ougon-no-tsubasa", "ginga-eiyuu-densetsu-arata-naru-tatakai-no-overture"],
+    mainOrder: ["ginga-eiyuu-densetsu-waga-yuku-wa-hoshi-no-taikai", "ginga-eiyuu-densetsu"],
+  },
+  gantz: {
+    label: "Gantz",
+    intro: "The Gonzo anime is 26 episodes split into two seasons in 2004: Gantz (April–June) and Gantz 2nd Stage (August–November). Watch them in that order. Gantz:O (October 2016) is a full-CG film by Digital Frontier that starts the story over with Katou and moves the mission to Osaka; it is not a sequel and can be watched on its own.",
+  },
+  "tales-of-zestiria-the-x": {
+    label: "Tales of Zestiria the X",
+    intro: "Watch the prologue, The Age of Chaos (July 3, 2016), then the first season (July–September 2016) and the second season (13 episodes, January–April 2017), all by ufotable. The series adapts the game Tales of Zestiria and includes events tied to Tales of Berseria. Dawn of the Shepherd (December 2014) is an earlier one-off special and is listed as an alternative version.",
+  },
+  "ef-a-tale-of-memories": {
+    label: "ef: A Tale of Memories",
+    intro: "Watch ef: A Tale of Memories (12 episodes, October–December 2007), then the second season, ef: A Tale of Melodies (12 episodes, October–December 2008), both by Shaft. The short Memories prologue special (August 2007), which Kitsu lists first, is optional. Recollections (September 2008) is a recap of the first season and can be skipped before Melodies.",
+    demote: ["ef-a-tale-of-memories-prologue"],
+  },
+  "girls-und-panzer": {
+    label: "Girls und Panzer",
+    intro: "Watch the 12-episode TV series (October 2012–March 2013; the last two episodes aired in March), the OVA This Is the Real Anzio Battle! (July 2014), then Girls und Panzer der Film (November 2015). Then the das Finale films, planned as six parts: Part 1 (December 2017), Part 2 (June 2019), Part 3 (March 2021), Part 4 (October 2023) and Part 5 (October 9, 2026). The disc specials and Yukari's tank lectures are optional.",
+  },
+  xxxholic: {
+    label: "xxxHolic",
+    intro: "Watch xxxHolic (24 episodes, April–September 2006), then the second season, xxxHolic Kei (13 episodes, April–June 2008), then the OVAs Shunmuki (2009), bundled with manga volumes 14 and 15, and Rou (April 2010–March 2011). The film A Midsummer Night's Dream (August 2005), made by Production I.G before the series, is an optional standalone story. The story crosses over with Clamp's Tsubasa: Reservoir Chronicle.",
+  },
+  "initial-d-first-stage": {
+    label: "Initial D",
+    intro: "Watch the Stages in order: First Stage (26 episodes, 1998), Second Stage (1999–2000), the film Third Stage (January 2001), Fourth Stage (2004–2006), Fifth Stage (2012–2013) and Final Stage (May–June 2014). The Extra Stage OVAs are optional side stories; the Battle Stage videos and New Initial D the Movie (2014–2016), a film trilogy that retells the start, can be skipped. MF Ghost (from October 2023) is a sequel series set years later.",
+  },
+  dorohedoro: {
+    label: "Dorohedoro",
+    intro: "Watch Season 1 (12 episodes, January–March 2020, by MAPPA), then Season 2 (April–May 2026). A third season has been announced with no date yet. Bonus Curse (Ma no Omake), six mini-episodes bundled with the second Blu-ray box in June 2020, is an optional extra. There are no films or recaps to fit in.",
+  },
+  "gatchaman-crowds": {
+    label: "Gatchaman Crowds",
+    intro: "Watch Gatchaman Crowds (12 episodes, July–September 2013), then the prologue episode Insight: Inbound, first streamed on Hulu on June 20, 2015, then the second season, Gatchaman Crowds Insight (July–September 2015). Embrace (January 2014), listed as an alternative version, is the Japan-only director's cut of the first season's final episode, with an extended ending; watch it in place of episode 12 if you can.",
+  },
+  "tiger-bunny": {
+    label: "Tiger & Bunny",
+    intro: "Watch Tiger & Bunny (25 episodes, April–September 2011), then the film The Rising (February 2014), which continues the story, then Tiger & Bunny 2, released on Netflix in two parts (April and October 2022). The first film, The Beginning (September 2012), is based on the first two episodes with new scenes, so it is optional. The pilot, which Kitsu lists first, was a bonus on the first disc volume.",
+    demote: ["tiger-bunny-pilot"],
+  },
+  "mairimashita-iruma-kun": {
+    label: "Welcome to Demon School! Iruma-kun",
+    intro: "Watch the four seasons in order: Season 1 (23 episodes, October 2019–March 2020), Season 2 (April–September 2021), Season 3 (October 2022–March 2023) and Season 4 (April–September 2026), all by BN Pictures. A new film has been announced. IruMafia Edition (from January 2027) is an anime of the mafia spin-off manga, separate from the main story.",
+  },
+  "uchuu-kyoudai": {
+    label: "Space Brothers",
+    intro: "Watch the 99-episode series by A-1 Pictures (April 2012–March 2014), then the prequel film Space Brothers #0 (August 9, 2014), which was made after the series ended; Kitsu lists it first because it is set earlier. The planetarium special One Point of Light (summer 2012), the OVA Apo's Dream and the 2017 Space Dreamers film are optional extras. There are no further seasons.",
+    demote: ["uchuu-kyoudai-number-zero"],
+  },
+  "golden-kamuy": {
+    label: "Golden Kamuy",
+    intro: "Watch Seasons 1 and 2 (April–December 2018, by Geno Studio) and Season 3 (October–December 2020), then Season 4 (October 2022–June 2023, by Brain's Base), the two-part prologue film Sapporo Beer Brewery Arc (October 2025), and the final season (January–March 2026). A sequel adapting the rest of the final arc, the Runaway Train arc, has been announced. The OVAs and the Golden Douga Gekijou shorts are optional.",
+  },
+  "sidonia-no-kishi": {
+    label: "Knights of Sidonia",
+    intro: "Watch Knights of Sidonia (12 episodes, April–June 2014), then Battle for Planet Nine (April–June 2015), then the sequel film Love Woven in the Stars (June 2021). The two TV seasons are full-CG series by Polygon Pictures. The March 2015 film, listed under safe to skip, is a compilation of the first season.",
+  },
+  "maken-ki": {
+    label: "Maken-ki!",
+    intro: "Watch Maken-ki! (12 episodes, October–December 2011), the two OVA episodes (February 2012 and September 2013), then the second season, Maken-ki! Two (10 episodes, January–March 2014). The Secret Training specials released with each season's disc volumes are optional extras.",
+  },
+  "slam-dunk": {
+    label: "Slam Dunk",
+    intro: "Watch the 101-episode series by Toei Animation (October 1993–March 1996), then The First Slam Dunk (December 2022), written and directed by creator Takehiko Inoue. The TV series stops before the National Tournament, and the film adapts part of that later arc, so watch it after the series. The four short films from 1994 and 1995 are optional side stories.",
+  },
+  "gochuumon-wa-usagi-desu-ka": {
+    label: "Is the Order a Rabbit?",
+    intro: "Watch Season 1 (12 episodes, April–June 2014), Season 2 (October–December 2015), the OVA films Dear My Sister (November 2017) and Sing for You (September 2019), then Season 3, BLOOM (October–December 2020). The two OVA films were animated by production doA and fit between Seasons 2 and 3. A new film, by Bibury Animation Studios, has been announced.",
+  },
+  "kantai-collection": {
+    label: "KanColle",
+    intro: "Watch KanColle (12 episodes, January–March 2015), then KanColle: The Movie (November 26, 2016), released after it. KanColle: Let's Meet at Sea (November 2022–March 2023), made by ENGI, is a second anime with the destroyer Shigure as the lead; Kitsu lists it as the next season. All of it is based on the browser game by Kadokawa Games and DMM.com.",
+  },
+  "yowamushi-pedal": {
+    label: "Yowamushi Pedal",
+    intro: "Watch the five seasons in order: Yowamushi Pedal (38 episodes, October 2013–July 2014), Grande Road (October 2014–March 2015), New Generation (January–June 2017), Glory Line (January–June 2018) and Limit Break (October 2022–March 2023). The August 2015 film is optional and fits after Grande Road. Re:Ride, Re:Road and Re:Generation are compilation films and can be skipped, and Spare Bike is a spin-off.",
+  },
+  "otome-game-no-hametsu-flag-shika-nai-akuyaku-reijou-ni-tensei-shiteshimatta": {
+    label: "My Next Life as a Villainess",
+    intro: "Watch Season 1 (12 episodes, April–June 2020) and Season 2 (July–September 2021), both by Silver Link, then the film (December 8, 2023). The OVA bundled with the special edition of manga volume 7 (September 30, 2021) is an extra episode that fits after Season 2. Katarina's Brain Conference and the other web shorts are optional.",
+  },
+  "squid-girl": {
+    label: "Squid Girl",
+    intro: "Watch Squid Girl (12 episodes, October–December 2010), then the second season (12 episodes, September–December 2011), both by Diomedéa, then the three OVA episodes released between 2012 and 2014. The two specials from May 2011 are optional extras. There are no films or recaps, and no third TV season was made.",
+  },
+  "mobile-suit-gundam-00": {
+    label: "Mobile Suit Gundam 00",
+    intro: "Watch Season 1 (25 episodes, October 2007–March 2008), Season 2 (25 episodes, October 2008–March 2009), then the sequel film A Wakening of the Trailblazer (September 18, 2010), where the story continues. Gundam 00 is set in its own Anno Domini timeline, so no other Gundam series is needed first. The Special Edition films are compilations with new scenes and can be skipped.",
+  },
+  "gunslinger-girl": {
+    label: "Gunslinger Girl",
+    intro: "Watch Gunslinger Girl (13 episodes, October 2003–February 2004, by Madhouse), then the sequel Il Teatrino (13 episodes, January–April 2008, by Artland), then the two Il Teatrino OVA episodes released on DVD in October 2008. Each season adapts the manga, and Il Teatrino continues the story with a new studio.",
+  },
+  "hayate-no-gotoku-1": {
+    label: "Hayate the Combat Butler",
+    intro: "Watch Season 1 (52 episodes, April 2007–March 2008, by SynergySP), the OVA from March 2009, Season 2 (25 episodes, April–September 2009, by J.C.Staff), the film Heaven Is a Place on Earth (August 2011), then Can't Take My Eyes Off You (October–December 2012), which follows the film, and Cuties (April–July 2013). The 2014 OVAs are optional.",
+  },
+  "hetalia-axis-powers": {
+    label: "Hetalia",
+    intro: "Watch the seasons in release order: Axis Powers (January 2009–March 2010), World Series (March 2010–March 2011), The Beautiful World (January–June 2013), The World Twinkle (July–October 2015) and World★Stars (April–June 2021). The film Paint It, White! (June 2010), the fan disc and the extra episodes are optional. Kitsu files World★Stars as a side entry, so it was moved into the main order; the 2026 World★Stars ONA is listed as an extra.",
+    promote: ["hetalia-world-stars"],
+    mainOrder: ["hetalia-axis-powers", "hetalia-world-series", "hetalia-the-beautiful-world", "hetalia-the-world-twinkle", "hetalia-world-stars"],
+    optional: ["hetalia-world-stars-2026"],
+  },
+  "ousama-ranking": {
+    label: "Ranking of Kings",
+    intro: "Watch Ranking of Kings (23 episodes, October 2021–March 2022, by Wit Studio), then The Treasure Chest of Courage (10 episodes, April–June 2023), a spin-off series set in the same world. An anime film has been announced with no release date yet. There are no recaps or OVAs to fit in.",
+  },
+  "diamond-no-ace": {
+    label: "Ace of Diamond",
+    intro: "Watch Ace of Diamond (75 episodes, October 2013–March 2015) and Second Season (51 episodes, April 2015–March 2016), then Act II (52 episodes, April 2019–March 2020), which adapts the sequel manga. Act II's second season, made by OLM, is split in two cours: the first aired from April to June 2026 and the second began on October 11, 2026. The OVAs are optional extras.",
+  },
+  "kiniro-mosaic": {
+    label: "Kiniro Mosaic (Kinmoza!)",
+    intro: "Watch Kiniro Mosaic (12 episodes, July–September 2013) and Hello!! Kiniro Mosaic (April–June 2015), both by Studio Gokumi, then the OVA film Pretty Days (November 2016) and the film Thank You!! (August 20, 2021), which continues the story after it. There are no recaps or alternative versions to skip.",
+  },
+  "tsubasa-chronicle": {
+    label: "Tsubasa: Reservoir Chronicle",
+    intro: "Watch Tsubasa Chronicle (26 episodes, April–October 2005), the film The Princess in the Birdcage Kingdom (August 2005), released between the two seasons, and Season 2 (April–November 2006). Then watch the OVAs Tokyo Revelations (November 2007–March 2008) and Spring Thunder Chronicle (March–May 2009), which continue the story. Kitsu files the OVAs as alternatives, so they were added to the core order.",
+    promote: ["tsubasa-tokyo-revelations", "tsubasa-shunraiki"],
+  },
+  genshiken: {
+    label: "Genshiken",
+    intro: "Watch Genshiken (12 episodes, October–December 2004), the three-episode OVA (December 2006–April 2007), Genshiken 2 (October–December 2007), then Genshiken Second Generation (July–September 2013) and its OVA (December 2013), which adapt the sequel manga, Genshiken: Second Season. Kujibiki Unbalance is the club's in-universe anime, released as a spin-off. Kitsu lists the 2013 OVA before the series it follows, so the order is fixed.",
+    mainOrder: ["genshiken", "genshiken-ova", "genshiken-2", "genshiken-nidaime", "genshiken-nidaime-ova"],
+  },
+  "ranma-nettou-hen": {
+    label: "Ranma ½",
+    intro: "Watch the Studio Deen TV anime (April 1989–September 1992), broadcast first as Ranma ½ and then as Ranma ½ Nettōhen; Kitsu counts both as one entry. Then the OVAs (1993–1996), the 1994 film Team Ranma vs. the Legendary Phoenix and the 2008 OVA; the 1991 and 1992 films are optional side stories. The 2024 MAPPA series is a new adaptation: Season 1 (October–December 2024), Season 2 (October–December 2025) and Season 3, which began in October 2026.",
+    optional: ["Ranma-12-2024-2", "Ranma-12-2024-3"],
+  },
+  "aria-the-animation": {
+    label: "Aria",
+    intro: "Watch Aria the Animation (13 episodes, October–December 2005), Aria the Natural (26 episodes, April–September 2006), the OVA Arietta (September 2007) and Aria the Origination (January–April 2008), then the later entries: Aria the Avvenire (2015) and the films Aria the Crepuscolo (March 5, 2021) and Aria the Benedizione (December 3, 2021). Kitsu doesn't link Benedizione, so it was added.",
+    promote: ["aria-the-crepuscolo", "aria-the-benedizione"],
+    mainOrder: ["aria-the-animation", "aria-the-natural", "aria-the-ova-arietta", "aria-the-origination", "aria-the-avvenire", "aria-the-crepuscolo", "aria-the-benedizione"],
+  },
+  "kage-no-jitsuryokusha-ni-naritakute": {
+    label: "The Eminence in Shadow",
+    intro: "Watch Season 1 (20 episodes, October 2022–February 2023), then Season 2 (12 episodes, October–December 2023), both by Nexus. The anime film Lost Echoes is set to open in 2027. The Kage-Jitsu! chibi shorts that streamed alongside each season are optional.",
+  },
+  gokushufudou: {
+    label: "The Way of the Househusband",
+    intro: "The Way of the Househusband is a Netflix series by J.C.Staff with three batches of five episodes: Part 1 (April 2021), Part 2 (October 2021) and Season 2 (January 2023). Watch them in that order; there are no films, OVAs or recaps. Part 1 and Part 2 together make up the first season.",
+  },
+  "selector-infected-wixoss": {
+    label: "WIXOSS",
+    intro: "Watch selector infected WIXOSS (12 episodes, April–June 2014), then selector spread WIXOSS (October–December 2014), then the sequel Lostorage incited WIXOSS (October–December 2016) and its second season, Lostorage conflated WIXOSS (April–June 2018), all by J.C.Staff. The film selector destructed WIXOSS (February 2016) is a compilation and can be skipped. WIXOSS Diva(A)Live (2021) is a separate series.",
+  },
+  "shugo-chara": {
+    label: "Shugo Chara!",
+    intro: "Watch the three Satelight series in order: Shugo Chara! (51 episodes, October 2007–September 2008), Shugo Chara!! Doki (51 episodes, October 2008–September 2009) and Shugo Chara! Party! (October 2009–March 2010), the final part. There are no films, OVAs or recaps to fit in, so broadcast order is the whole guide.",
+  },
+  "junjou-romantica": {
+    label: "Junjo Romantica",
+    intro: "Watch the three seasons in order: Junjo Romantica (12 episodes, April–June 2008), Junjo Romantica 2 (October–December 2008) and Junjo Romantica 3 (July–September 2015). The January 2008 special and the OVA episodes from 2012 and 2015 are optional extras. Sekaiichi Hatsukoi (2011) is a spin-off by the same author, Shungiku Nakamura, with its own couples.",
+  },
+  "sekaiichi-hatsukoi": {
+    label: "Sekaiichi Hatsukoi",
+    intro: "Watch Sekaiichi Hatsukoi (12 episodes, April–June 2011) and its second season (October–December 2011), both by Studio Deen, then the Proposal Arc (February 2020). The OVAs from 2011 are optional, as is the March 2014 film The Case of Takafumi Yokozawa. Junjo Romantica is an earlier, separate series by the same author.",
+  },
+  "hyakka-ryouran-samurai-girls": {
+    label: "Samurai Girls",
+    intro: "Watch Samurai Girls (12 episodes, 2010, by Arms), then the second season, Samurai Bride (April–June 2013), then the two-episode OVA Samurai After (January–July 2015). Each season's specials, released on its disc volumes, are optional extras. There are no films or recaps.",
+  },
+  "aggressive-retsuko-ona": {
+    label: "Aggretsuko",
+    intro: "Watch the five Netflix seasons in order: Season 1 (April 2018), Season 2 (June 2019), Season 3 (August 2020), Season 4 (December 2021) and Season 5 (February 2023), the final season. The Christmas special We Wish You a Metal Christmas (December 2018) fits between Seasons 1 and 2. The 100 short TBS episodes (2016–2018) came first; they are separate short episodes, listed as an alternative version.",
+  },
+  kingdom: {
+    label: "Kingdom",
+    intro: "Watch the six seasons in order: Season 1 (38 episodes, June 2012–February 2013), Season 2 (39 episodes, June 2013–March 2014), Season 3 (April 2020–October 2021), Season 4 (April–October 2022), Season 5 (January–March 2024) and Season 6 (October–December 2025), produced by studio Pierrot. A continuation of Season 6 has been announced. The five-minute recap videos can be skipped.",
+  },
+  "yuuki-yuuna-wa-yuusha-de-aru": {
+    label: "Yuki Yuna Is a Hero",
+    intro: "Start with Yuki Yuna Is a Hero (12 episodes, October–December 2014). The second season has two parts: Washio Sumi Chapter (October–November 2017), a prequel set two years earlier, and Hero Chapter (November 2017–January 2018), the sequel. Then watch the third season, Great Mankai Chapter (October–December 2021). Kitsu puts the prequel first; this guide follows release order. Churutto! (2021) is a short spin-off series.",
+    demote: ["yuuki-yuuna-wa-yuusha-de-aru-hidamari"],
+    promote: ["yuuki-yuuna-wa-yuusha-de-aru-dai-mankai-no-shou"],
+    mainOrder: ["yuuki-yuuna-wa-yuusha-de-aru", "yuuki-yuuna-wa-yuusha-de-aru-washio-sumi-no-shou", "yuuki-yuuna-wa-yuusha-de-aru-yuusha-no-shou-tv", "yuuki-yuuna-wa-yuusha-de-aru-dai-mankai-no-shou"],
+  },
+  "honzuki-no-gekujou-shisho-ni-naru-tame-niwa-shudan-o-erandeiramasen": {
+    label: "Ascendance of a Bookworm",
+    intro: "Watch Season 1 (14 episodes, October–December 2019), Season 2 (April–June 2020) and Season 3 (April–June 2022), all by Ajiado, then Season 4 (April–October 2026, by Wit Studio). The two-part OVA from March 2020 is optional and fits between Seasons 1 and 2. The March 2022 special is a recap. A fifth season has been announced.",
+  },
+  "osomatsu-san": {
+    label: "Mr. Osomatsu (Osomatsu-san)",
+    intro: "Mr. Osomatsu (Osomatsu-san) follows the sextuplets of the 1962 manga Osomatsu-kun as adults, so you can start with it. Watch Season 1 (October 2015–March 2016), Season 2 (October 2017–March 2018), the film (March 2019), Season 3 (October 2020–March 2021) and Season 4 (July–September 2025; its final episode aired in June 2026). The 1966 and 1988 Osomatsu-kun series are optional, and the many shorts are extras.",
+    demote: ["osomatsu-kun-1988"],
+    promote: ["osomatsu-san-3", "osomatsu-san-4"],
+    mainOrder: ["osomatsu-san", "osomatsu-san-2", "osomatsu-san-the-movie", "osomatsu-san-3", "osomatsu-san-4"],
+  },
+  "bocchi-the-rock": {
+    label: "Bocchi the Rock!",
+    intro: "Bocchi the Rock! has one 12-episode season by CloverWorks (October–December 2022) as of November 2026. The two compilation films from June and August 2024 retell the series and can be skipped. A second season has been announced, and a prequel film, Starry Footprints, is set for 2027; Kitsu lists the film first, but start with the series.",
+    demote: ["Bocchi-the-Rock-Hoshi-no-Ashiato"],
+  },
+  "high-score-girl": {
+    label: "Hi Score Girl",
+    intro: "Watch Hi Score Girl (12 episodes, July–September 2018), the three-episode OVA Extra Stage (March 20, 2019), then High Score Girl II (9 episodes, October–December 2019), all by J.C.Staff and SMDE. Extra Stage came out between the two seasons, so watch it before the second. There are no films or recaps.",
+  },
+  utawarerumono: {
+    label: "Utawarerumono",
+    intro: "Watch Utawarerumono (26 episodes, April–September 2006) and the OVAs (2009–2010), then The False Faces (October 2015–March 2016) and Mask of Truth (July–December 2022), which adapt the sequel games Mask of Deception and Mask of Truth. The 2006 specials are optional and the recaps can be skipped.",
+  },
+  "prince-of-tennis": {
+    label: "The Prince of Tennis",
+    intro: "Watch the 178-episode TV series (October 2001–March 2005), then the OVA sequel in three parts, The National Tournament, Semifinals and Finals (26 episodes, March 2006–January 2009). The films and the Another Story OVAs (2009 and 2011), which are side stories, are optional. The New Prince of Tennis (2012) and its U-17 World Cup seasons adapt the sequel manga; Kitsu doesn't link them, so they were added as extras.",
+    demote: ["prince-of-tennis-another-story-messages-from-past-and-future", "prince-of-tennis-another-story-ii-ano-toki-no-bokura"],
+    optional: ["new-prince-of-tennis", "new-prince-of-tennis-ova-vs-genius10", "shin-tennis-no-oujisama-u17-world-cup", "shin-tennis-no-ouji-sama-u-17-world-cup-semifinal", "shin-tennis-no-ouji-sama-u-17-world-cup-kesshou-member-ketteisen"],
+  },
+  "uta-no-prince-sama-maji-love-1000": {
+    label: "Uta no Prince-sama",
+    intro: "Watch the four seasons by A-1 Pictures in order: Maji Love 1000% (July–September 2011), Maji Love 2000% (April–June 2013), Maji Love Revolutions (April–June 2015) and Maji Love Legend Star (October–December 2016). Then the films Maji Love Kingdom (June 2019) and Maji Love ST☆RISH Tours (September 2022). The 2013 Christmas special and the July 2022 Tours special are optional extras.",
+    demote: ["uta-no-prince-sama-maji-love-2000-special", "uta-no-prince-sama-maji-love-st-rish-tours-tabi-no-hajimari"],
+  },
+  macross: {
+    label: "Macross",
+    intro: "Watch in release order: Super Dimension Fortress Macross (October 1982–June 1983), Macross Plus (OVA, 1994–1995), Macross 7 (1994–1995), the Dynamite 7 OVA, Macross Zero (OVA, 2002–2004), Macross Frontier (2008), Macross Delta (2016) and the Delta film Absolute Live!!!!!! (October 2021). Zero is a prequel, which is why Kitsu lists it first. Do You Remember Love? (1984) and the two Frontier films retell their series and are optional.",
+    mainOrder: ["macross", "macross-plus", "macross-7", "macross-dynamite-7", "macross-zero", "macross-frontier", "macross-delta", "macross-zettai-live"],
+  },
+  "top-wo-nerae": {
+    label: "Gunbuster (Aim for the Top!)",
+    intro: "Watch Gunbuster, Gainax's six-episode OVA (October 1988–July 1989), then its sequel Diebuster (Gunbuster 2, October 2004–August 2006), which has new characters and mecha but keeps the original's format. The Gattai!! film (2006) is a compilation of both, and the Science Lesson shorts are extras. Kitsu lists an Aim for the Top! 3 entry that neither Wikipedia nor MyAnimeList records as an anime, so it was removed.",
+    exclude: ["top-wo-nerae-3"],
+  },
+  "mobile-suit-gundam-seed": {
+    label: "Mobile Suit Gundam SEED",
+    intro: "Watch Gundam SEED (50 episodes, October 2002–September 2003), the special After-Phase: Between the Stars (2004), Gundam SEED Destiny (50 episodes, October 2004–October 2005) and Final Plus (December 2005), then the follow-up film SEED Freedom (January 2024). SEED is set in its own Cosmic Era timeline, so the 1979 Mobile Suit Gundam was removed from the list. The Special Editions are compilations; Astray and Stargazer are side stories.",
+    promote: ["mobile-suit-gundam-seed-freedom"],
+    exclude: ["mobile-suit-gundam-0079"],
+  },
+  "fate-grand-order-zettai-majuu-sensen-babylonia": {
+    label: "Fate/Grand Order",
+    intro: "Story order: the TV special First Order (December 31, 2016), the two Camelot films (December 2020 and May 2021), which adapt the game's sixth chapter, then Babylonia (21 episodes, October 2019–March 2020), the seventh, with its Episode 0, Initium Iter, and the film Solomon (July 30, 2021), the final chapter of Part 1. Babylonia came out before Camelot, so release order also works. Moonlight/Lostroom and the short specials are optional.",
+    promote: ["fate-grand-order-first-order", "fate-grand-order-shinsei-entaku-ryouiki-camelot-wandering-agateram", "fate-grand-order-shinsei-entaku-ryouiki-camelot-paladin-agateram"],
+    mainOrder: ["fate-grand-order-first-order", "fate-grand-order-shinsei-entaku-ryouiki-camelot-wandering-agateram", "fate-grand-order-shinsei-entaku-ryouiki-camelot-paladin-agateram", "fate-grand-order-zettai-majuu-sensen-babylonia-initium-iter", "fate-grand-order-zettai-majuu-sensen-babylonia", "fate-grand-order-shuukyoku-tokuiten-kani-jikan-shinden-solomon"],
+  },
+  "tsuki-ga-michibiku-isekai-douchuu": {
+    label: "Tsukimichi: Moonlit Fantasy",
+    intro: "Watch Season 1 (12 episodes, July–September 2021, by C2C), then Season 2 (25 episodes, January–June 2024, by J.C.Staff), a two-cour season. A third season has been announced with no release date yet. There are no films, OVAs or recaps to fit in.",
+  },
+  "sengoku-basara": {
+    label: "Sengoku Basara: Samurai Kings",
+    intro: "Watch Sengoku Basara (12 episodes, April–June 2009), Sengoku Basara II (July–September 2010), then the film The Last Party (June 4, 2011), the finale of that story. The specials and the Mini Sengoku Basara shorts are optional. Judge End (July–September 2014) is a separate adaptation of the third game, listed as an alternative version, and Gakuen Basara (2018) is based on a separate spin-off manga.",
+  },
+  cencoroll: {
+    label: "Cencoroll",
+    intro: "Cencoroll is a short film written, designed, directed and animated by Atsuya Uki, which premiered in July 2009. Its sequel, Cencoroll 2, was released on June 29, 2019, shown together with the first film as Cencoroll Connect. A third film, Cencoroll 3, has been announced with no date yet. Watch them in order.",
+  },
+  "garo-honoo-no-kokuin": {
+    label: "Garo: The Animation",
+    intro: "Watch Garo: The Carved Seal of Flames (24 episodes, October 2014–March 2015), its 25th episode Home (September 2015), then the film Divine Flame (May 21, 2016), set four years after the series. Crimson Moon (October 2015–April 2016), set in the Heian period, and Vanishing Line (October 2017–March 2018) are separate series in different settings, so they are listed as spin-offs. The YuruGaro shorts are optional.",
+  },
+  "uchuu-senkan-yamato-2199": {
+    label: "Space Battleship Yamato 2199",
+    intro: "Space Battleship Yamato 2199 (26 episodes) is a remake of the 1974 series. It was shown in theatres in seven chapters (2012–2013), then aired on TV from April to September 2013, so watch the episodes, not the chapter films. Odyssey of the Celestial Ark (December 2014) is an original film; A Voyage to Remember is a compilation. Then watch the sequels 2202 (2017–2019), 2205: The New Voyage (2021–2022) and Rebel 3199 (from July 2024).",
+    optional: ["space-battleship-yamato-2205-a-new-journey", "uchuu-senkan-yamato-2205-aratanaru-tabidachi-koushou-stasha", "yamato-yo-towa-ni-rebel3199"],
+  },
+  "uq-holder": {
+    label: "UQ Holder! (and Negima!)",
+    intro: "UQ Holder! (12 episodes, October–December 2017) is set several generations after Ken Akamatsu's Negima!, and its OVAs are extras. Kitsu builds this list from the Negima! OVAs that come before it: Ala Alba (2008–2009), Another World (2009–2010) and the film Anime Final (August 2011). The 2005 Negima! TV series and the 2006 retelling Negima!? have plots different from the manga, so they are listed as alternatives.",
+  },
+  ikkitousen: {
+    label: "Ikki Tousen",
+    intro: "Watch the four TV seasons in order: Ikki Tousen (13 episodes, July–October 2003), Dragon Destiny (February–May 2007), Great Guardians (June–August 2008) and Xtreme Xecutor (March–June 2010). Then the OVAs Shūgaku Tōshi Keppu-roku (November 2011), Extravaganza Epoch (December 2014) and Western Wolves (January–February 2019), and Shin Ikki Tousen (May 2022).",
+  },
+  "aa-megami-sama-tv": {
+    label: "Ah! My Goddess",
+    intro: "Watch the TV series Ah! My Goddess (24 episodes, January–July 2005), its sequel Flights of Fancy (April–September 2006) and the TV special Fighting Wings (December 9, 2007), then the OVAs released from 2011 to 2013. The 1993 OVA is an earlier, separate adaptation by the same studio, AIC, listed as an alternative. The Adventures of Mini-Goddess (1998–1999) is a spin-off.",
+  },
+  hakuouki: {
+    label: "Hakuoki",
+    intro: "Watch Hakuoki (12 episodes, April–June 2010) and Hekketsuroku (October–December 2010), then Reimeiroku (July–September 2012), which adapts the prequel game; Kitsu lists Reimeiroku first. The OVA series A Memory of Snow Flowers (August 2011–July 2012) is optional. The two films (August 2013 and March 2014) retell the first two seasons. Otogisōshi (2016) is a short spin-off, and the 2021–2022 OVA is a new series.",
+    mainOrder: ["hakuouki", "hakuouki-hekketsuroku", "hakuouki-reimeiroku"],
+  },
+  "senki-zesshou-symphogear-meteoroid-falling-burning-and-disappear-then": {
+    label: "Symphogear",
+    intro: "Watch the five Satelight seasons in order: Symphogear (13 episodes, January–March 2012), G (July–September 2013), GX (July–September 2015), AXZ (July–September 2017) and XV (July–September 2019), the final season. Each season after the first has a set of short specials released on its disc volumes; they are optional extras. There are no films or recaps.",
+  },
+  "hoozuki-no-reitetsu": {
+    label: "Hozuki's Coolheadedness",
+    intro: "Watch Season 1 (13 episodes, January–April 2014, by Wit Studio), then Season 2, which Studio Deen made in two cours: October–December 2017 and April–July 2018. The OVAs are optional: three by Wit Studio (2015) and one by Studio Deen (2017), grouped together, and three more by Pine Jam (2019–2020).",
+  },
+  noblesse: {
+    label: "Noblesse",
+    intro: "Start with the 13-episode TV series by Production I.G (October–December 2020), which adapts the Korean webtoon. Two earlier one-shots are optional and listed after it: the 2015 Korean animation Noblesse: The Beginning of Destruction and the 2016 ONA Noblesse: Awakening, also by Production I.G. Kitsu lists both before the series, so they were moved.",
+    demote: ["noblesse-pamyeol-ui-sijak", "noblesse-awakening"],
+  },
+  "dies-irae": {
+    label: "Dies irae",
+    intro: "Watch Episode 0, The Dawning Days (October 7, 2017), then the 11 TV episodes by A.C.G.T (October–December 2017), then To the Ring Reincarnation (July 2018), the six final episodes, numbered 12 to 17, which were released only online. Together they adapt the visual novel. The Irasshai Sonnenji shorts are optional extras.",
+  },
+  slayers: {
+    label: "Slayers",
+    intro: "Watch the five TV seasons in order: Slayers (26 episodes, April–September 1995), Next (1996), Try (1997), Revolution (July–September 2008) and Evolution-R (January–April 2009), 104 episodes in all. The OVAs The Book of Spells (1996–1997) and Excellent (1998–1999) are side stories that Kitsu lists first because they are set earlier; they are optional, as are the theatrical films.",
+    demote: ["slayers-excellent", "slayers-special"],
+    mainOrder: ["slayers", "slayers-next", "slayers-try", "slayers-revolution", "slayers-evolution-r"],
+  },
+  "nogizaka-haruka-no-himitsu": {
+    label: "Haruka Nogizaka's Secret",
+    intro: "Watch Haruka Nogizaka's Secret (12 episodes, July–September 2008, by Studio Barcelona), the second season Purezza (October–December 2009), then the four-episode OVA Finale (August–November 2012), the last part. Release order is the watch order, and there are no films or recaps to skip.",
+  },
+  "baki-the-grappler": {
+    label: "Baki",
+    intro: "Watch Grappler Baki (24 episodes, January–June 2001) and Maximum Tournament (24 episodes, July–December 2001), then the Netflix series Baki (June–December 2018) and its Great Raitai Tournament arc (June 2020), Baki Hanma (2021 and 2023) and Baki-Dou (February and June 2026). Kitsu stops at the 2016 special, so the Netflix seasons were added. The 1994 OVA is a separate adaptation, and Hanma Baki vs. Kengan Ashura (2024) is a crossover.",
+    demote: ["baki"],
+    promote: ["baki-ona", "baki-2nd-season", "hanma-baki-son-of-ogre", "hanma-baki-son-of-ogre-2", "baki-dou", "baki-dou-part-2"],
+    mainOrder: ["baki-the-grappler", "baki-the-grappler-ii", "baki-ona", "baki-2nd-season", "hanma-baki-son-of-ogre", "hanma-baki-son-of-ogre-2", "baki-dou", "baki-dou-part-2"],
+    optional: ["baki-hanma-vs-kengan-ashura"],
+  },
+  "persona-5-the-animation": {
+    label: "Persona 5: The Animation",
+    intro: "Watch the 26-episode series by CloverWorks (April–September 2018), then the two TV specials that continue it, Dark Sun (December 31, 2018) and Stars and Ours (March 2019). The two specials bundled with the Blu-ray volumes in May and June 2019 are optional extras. The Day Breakers (September 2016), made by A-1 Pictures before the game came out, is a separate one-off special.",
+  },
+  "the-idolm-ster": {
+    label: "The Idolmaster",
+    intro: "Watch The Idolmaster (25 episodes, July–December 2011, by A-1 Pictures), then the film Beyond the Brilliant Future! (January 25, 2014). The June 2012 special and the Shiny Festa OVA from October 2012 are optional extras. Xenoglossia (2007, by Sunrise) is a separate mecha series that re-imagines the idols as robot pilots, and Cinderella Girls, SideM and Million Live follow other idol groups.",
+    demote: ["the-idolm-ster-765-pro-to-iu-monogatari", "the-idolm-ster-shiny-festa"],
+  },
+  "papa-no-iukoto-wo-kikinasai": {
+    label: "Listen to Me, Girls. I Am Your Father!",
+    intro: "Listen to Me, Girls. I Am Your Father! is one 12-episode series by Feel (January–March 2012). The special Pokkapoka (July 2012) and the two OVA episodes released in 2013 and 2015 are extra episodes that go after the series. There is no second season or film.",
+  },
+  "horizon-in-the-middle-of-nowhere": {
+    label: "Horizon in the Middle of Nowhere",
+    intro: "Watch Horizon in the Middle of Nowhere (13 episodes, October–December 2011), then Season 2 (July–September 2012), both by Sunrise. Kitsu lists the Owari no Chronicle special first, but it is a separate 2012 special tied to the author's earlier novels, so it was moved after the series. The short specials released online in 2011 are optional.",
+    demote: ["owari-no-chronicle"],
+  },
+  "strike-witches": {
+    label: "Strike Witches",
+    intro: "Watch Strike Witches (12 episodes, July–September 2008), Strike Witches 2 (July–September 2010), the film (March 2012), which continues the story, the three-part OVA Operation Victory Arrow (2014–2015), then Road to Berlin (October–December 2020), the third season. The 2007 OVA was a preview episode, listed as an alternative. Brave Witches (2016) and Luminous Witches (2022) are spin-offs with new casts.",
+    mainOrder: ["strike-witches", "strike-witches-2", "strike-witches-the-movie", "strike-witches-operation-victory-arrow", "dai-501-sougou-sentou-kuukoudan-strike-witches-road-to-berlin"],
+  },
+  "princess-principal": {
+    label: "Princess Principal",
+    intro: "Watch the 12-episode TV series by Studio 3Hz and Actas (July–September 2017), then the Crown Handler sequel films, planned as six parts: Chapter 1 (February 2021), Chapter 2 (September 2021), Chapter 3 (April 2023) and Chapter 4 (May 2025). Chapters 5 and 6 have no release date yet. The Ange Report recap can be skipped, and the picture dramas and short OVAs released with the films are optional.",
+  },
+  "minami-ke": {
+    label: "Minami-ke",
+    intro: "Watch the four seasons in order: Minami-ke (October–December 2007, by Daume), Okawari (January–March 2008) and Okaeri (January–March 2009), both by Asread, and Tadaima (January–March 2013, by Feel). The OVAs Betsubara (2009), Omatase (2012) and Natsuyasumi (2013) are extra episodes. A fifth series, Minami-ke: Korekara, by Liden Films, is set for April 2027.",
+  },
+  "terra-formars": {
+    label: "Terra Formars",
+    intro: "Watch the two-episode OVA Bugs 2 Arc (August–November 2014), which tells the earlier expedition, then the TV series (13 episodes, September–December 2014), which covers the Annex 1 arc, then Terra Formars: Revenge (April–June 2016). Then watch the two Earth Arc OVA episodes, released after Revenge. There is no third season.",
+  },
+  "dog-days": {
+    label: "Dog Days",
+    intro: "Watch the three seasons in order: Dog Days (13 episodes, April–June 2011), Dog Days' (13 episodes, July–September 2012) and Dog Days'' (12 episodes, January–March 2015), then the special Limone Resort Tenbou Onsen! (August 2015). It is an original series created by Masaki Tsuzuki and produced by Seven Arcs. The January 2015 recap and the disc specials can be skipped.",
+  },
+  "hack-sign": {
+    label: ".hack//Sign",
+    intro: "Watch .hack//Sign (26 episodes, April–September 2002, by Bee Train), then .hack//Legend of the Twilight (12 episodes, January–March 2003). The four Liminality OVAs came one with each of the .hack PS2 games (June 2002–April 2003) and are optional, as is the Gift OVA (November 2003). .hack//Roots (2006) and Quantum (2010–2011) are separate .hack stories.",
+  },
 };
