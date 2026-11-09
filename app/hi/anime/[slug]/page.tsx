@@ -62,7 +62,7 @@ async function load(raw: string) {
 function nextSeasonText(d: Awaited<ReturnType<typeof load>>): string {
   if (d.latest.status === "current" && d.notice?.onBreak && d.notice.next) {
     const when = hiDate(new Date(d.notice.next).toLocaleDateString("en-CA", { timeZone: "Asia/Kolkata" }));
-    return `${d.latest.title} अभी ब्रेक पर है।${d.next ? ` एपिसोड ${d.next.episode}` : " अगला एपिसोड"} ${when} को आएगा, यानी करीब ${Math.round((d.notice.breakDays ?? 0) / 7)} हफ़्ते बाद।`;
+    return `${d.latest.title} अभी ब्रेक पर है। AniList के शेड्यूल में${d.next ? ` एपिसोड ${d.next.episode}` : " अगला एपिसोड"} ${when} को दिखाया गया है, यानी करीब ${Math.round((d.notice.breakDays ?? 0) / 7)} हफ़्ते बाद। इतनी आगे की तारीख आधिकारिक घोषणा तक बदल सकती है।`;
   }
   if (d.latest.status === "current") return `${d.latest.title} अभी चल रहा है। नए एपिसोड हर हफ़्ते आते हैं।`;
   if (d.announced) {

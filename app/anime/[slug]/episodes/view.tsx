@@ -68,7 +68,7 @@ export async function EpisodesView({ slug, page }: { slug: string; page: number 
         crumbs={[{ href: "/", label: "Home" }, { href: animePath(a), label: a.title }, { href: `${animePath(a)}/episodes`, label: "Episodes" }]}
         eyebrow="Episode guide"
         title={<>{a.title} <span className="text-gradient">episodes</span></>}
-        subtitle={`${eps.total ? `${eps.total} episodes` : "Episode list"}${a.nextRelease ? ` · next episode ${fmtDate(a.nextRelease, { weekday: "short", month: "short", day: "numeric" })}` : ""}`}
+        subtitle={`${eps.total ? `${eps.total} episodes` : "Episode list"}${a.nextRelease ? ` · next episode ${fmtDate(a.nextRelease, { weekday: "short", month: "short", day: "numeric", timeZone: "Asia/Tokyo" })}` : ""}`}
         facts={[
           ...(eps.total ? [{ value: String(eps.total), label: "episodes listed" }] : []),
           ...(a.status === "current" && lastAired ? [{ value: String(lastAired), label: "aired so far" }] : []),
@@ -83,7 +83,7 @@ export async function EpisodesView({ slug, page }: { slug: string; page: number 
           <Link href={episodePath(a, nextN)} className="card mt-5 flex flex-wrap items-center justify-between gap-3 border-accent/40 bg-accent/10 p-4 transition hover:border-accent">
             <div>
               <p className="text-xs font-semibold uppercase tracking-wider text-accent-2">Next episode</p>
-              <p className="font-semibold">Episode {nextN} · {fmtDate(a.nextRelease, { weekday: "long", month: "long", day: "numeric" })} JST</p>
+              <p className="font-semibold">Episode {nextN} · {fmtDate(a.nextRelease, { weekday: "long", month: "long", day: "numeric", timeZone: "Asia/Tokyo" })} JST</p>
             </div>
             <Countdown iso={a.nextRelease} big label="Airs in" />
           </Link>
@@ -91,7 +91,7 @@ export async function EpisodesView({ slug, page }: { slug: string; page: number 
           <div className="card mt-5 flex flex-wrap items-center justify-between gap-3 border-accent/40 bg-accent/10 p-4">
             <div>
               <p className="text-xs font-semibold uppercase tracking-wider text-accent-2">Next episode</p>
-              <p className="font-semibold">{fmtDate(a.nextRelease, { weekday: "long", month: "long", day: "numeric" })} JST</p>
+              <p className="font-semibold">{fmtDate(a.nextRelease, { weekday: "long", month: "long", day: "numeric", timeZone: "Asia/Tokyo" })} JST</p>
             </div>
             <Countdown iso={a.nextRelease} big label="Airs in" />
           </div>

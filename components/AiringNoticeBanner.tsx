@@ -12,7 +12,7 @@ export default function AiringNoticeBanner({ n, title }: { n: AiringNotice; titl
         <p>
           <span aria-hidden className="mr-1.5">⏸</span>
           <strong className="text-ink">On a break.</strong>{" "}
-          <span className="text-ink/90">No new episode of {title} until {fmt(n.next)}, about {weeks > 1 ? `${weeks} weeks` : `${n.breakDays} days`} away. It normally airs weekly.</span>
+          <span className="text-ink/90">{title} normally airs weekly. {n.source === "AniList" ? "AniList's schedule" : "Kitsu"} lists the next episode for {fmt(n.next)}, about {weeks > 1 ? `${weeks} weeks` : `${n.breakDays} days`} away; a date this far ahead can change until the broadcaster confirms it.</span>
         </p>
       )}
       {n.disagree && (

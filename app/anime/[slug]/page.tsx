@@ -3,7 +3,7 @@ import { workType, workId, isoDuration } from "@/lib/ld";
 import Link from "@/components/Link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { publicGenres, getAnimeBySlug, getCharacters, getEpisodes, getEpisodesAt, listAnime, getRelations, getLastAiredBest, getProductions, buildWatchOrder, type LastAired, type WatchOrder, comparePath, franchiseRoot, airingNotice, episodePath, posterUrl, fmtDate, statusLabel, subtypeLabel, animePath, weekdayOf, runtimeMinutes, fmtMinutes, isFuture, Anime } from "@/lib/kitsu";
+import { publicGenres, getAnimeBySlug, getCharacters, getEpisodes, getEpisodesAt, listAnime, getRelations, getLastAiredBest, getProductions, buildWatchOrder, type LastAired, type WatchOrder, comparePath, franchiseRoot, airingNotice, episodePath, posterUrl, fmtDate, statusLabel, subtypeLabel, animePath, weekdayOf, runtimeMinutes, fmtMinutes, isFuture, Anime, airedOnly, type AiringNotice } from "@/lib/kitsu";
 import { abs } from "@/lib/site";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import JsonLd from "@/components/JsonLd";
@@ -104,11 +104,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-function buildFaq(a: Anime, extra: FaqItem[] = [], ep: { planned: number | null; aired: number | null } = { planned: null, aired: null }): FaqItem[] {
+function buildFaq(a: Anime, extra: FaqItem[] = [], ep: { planned: number | null; aired: number | null } = { planned: null, aired: null }, notice: AiringNotice | null = null): FaqItem[] {
   const items: FaqItem[] = [];
-  const next = a.nextRelease ? fmtDate(a.nextRelease, { weekday: "long", month: "long", day: "numeric", year: "numeric" }) : null;
+  // Japan time throughout: a late-night slot (00:56 JST) falls on the previous day in UTC.
+  const next = a.nextRelease ? fmtDate(a.nextRelease, { weekday: "long", month: "long", day: "numeric", year: "numeric", timeZone: "Asia/Tokyo" }) : null;
   if (a.status === "current") {
-    items.push({ q: `When does the next episode of ${a.title} come out?`, a: next ? `The next episode of ${a.title} is scheduled for ${next} (Japan time). New episodes air weekly on ${weekdayOf(a.nextRelease)}s.` : `${a.title} is currently airing. Check the episode list for the latest air dates.` });
+    // On a break, the far-off date is a listing (AniList's schedule), which can move, not a confirmed broadcast.
+    const answer = !next ? `${a.title} is currently airing. Check the episode list for the latest air dates.`
+      : notice?.onBreak ? `${a.title} is on a break. ${notice.source === "AniList" ? "AniList's schedule" : "Kitsu"} lists the next episode for ${next} (Japan time), about ${Math.round((notice.breakDays ?? 0) / 7)} weeks away. Dates this far ahead can change until the broadcaster confirms them.`
+      : `The next episode of ${a.title} is scheduled for ${next} (Japan time). New episodes air weekly on ${weekdayOf(a.nextRelease)}s.`;
+    items.push({ q: `When does the next episode of ${a.title} come out?`, a: answer });
   }
   if (a.status === "upcoming") {
     items.push({ q: `When does ${a.title} release?`, a: a.startDate ? `${a.title} is scheduled to premiere on ${fmtDate(a.startDate, { month: "long", day: "numeric", year: "numeric" })}.` : `${a.title} is announced but does not have a confirmed release date yet.` });
@@ -172,7 +177,6 @@ export default async function AnimePage({ params }: Props) {
     sequel = kNext ? { ...kNext, href: animePath(kNext) } : al ? { title: al.title, status: al.status, startDate: al.startDate, endDate: null, expected: al.expected } : null;
   }
   const verdict = askSequel ? sequelVerdict(a, sequel) : null;
-  const runtime = runtimeMinutes(a);
   const dist = a.ratingDist || null;
   const totalRatings = dist ? dist.reduce((n, v) => n + v, 0) : 0;
   const topShare = dist && totalRatings ? Math.round(((dist[8] + dist[9]) / totalRatings) * 100) : 0;
@@ -183,6 +187,7 @@ export default async function AnimePage({ params }: Props) {
   // An airing season's planned length: Kitsu's count, else AniList's (airing snapshot). Aired only when reliable.
   const planned = a.status === "current" ? a.episodeCount || (await airing()).byKitsu.get(a.id)?.e || null : null;
   const airedCount = a.status === "current" && latestInfo.reliable && lastAired > 0 ? lastAired : null;
+  const runtime = runtimeMinutes(airedOnly(a, airedCount)); // aired episodes only, for a show still airing
   // Airing shows list their newest aired episodes first. Kitsu's total also counts placeholder records for
   // episodes that haven't aired (One Piece: 1,410 records, 1,180 aired), so the heading uses the aired count.
   // Only with a reliable count: when AniList is rate-limited the fallback is Kitsu's air dates, which stop at
@@ -237,7 +242,7 @@ export default async function AnimePage({ params }: Props) {
   const dub = dubFor(a);
   const dubQ = dubFaq(dub, a.title);
   if (dubQ) faqExtra.push(dubQ);
-  const faq = buildFaq(a, faqExtra, { planned, aired: airedCount });
+  const faq = buildFaq(a, faqExtra, { planned, aired: airedCount }, notice);
   const year = a.startDate?.slice(0, 4);
   // When this render read Kitsu/AniList (pages re-render daily). Shown on every page; given to search engines as
   // dateModified only for airing and upcoming shows, whose details actually change from day to day.

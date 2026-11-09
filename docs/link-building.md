@@ -36,7 +36,7 @@ as yourself: no paid links, link swaps or posting the same thing in many places 
 
 > Hi! I run AniLumi (anilumi.in), a free anime guide. I made a small countdown box for **<show>** that shows
 > the next episode's time in the visitor's own timezone and updates itself every week, including breaks
-> (like One Piece's, back on 3 January). If it's useful for your site or server, the code is on
+> (like One Piece's current one). If it's useful for your site or server, the code is on
 > anilumi.in/anime/<slug> under "Embed this countdown". No ads or tracking in the box. Happy to make one for any
 > other show you cover.
 

@@ -645,6 +645,9 @@ export async function buildWatchOrder(start: Anime, fetchRelations: (id: string)
   }
   entries.forEach((e, i) => (e.step = i + 1));
 
+  // Airing entries count only what has aired (airedOnly), so the total matches the how-long-to-watch page.
+  const aired = entries.some((e) => e.anime.status === "current") ? await airedCounts().catch(() => new Map<string, number>()) : new Map<string, number>();
+  for (const e of entries) if (e.anime.status === "current") e.anime = airedOnly(e.anime, aired.get(e.anime.id) ?? null);
   const totalMinutes = entries.filter((e) => e.kind === "main" || e.kind === "movie").reduce((n, e) => n + runtimeMinutes(e.anime), 0);
   const releaseOrder = [...entries.map((e) => e.anime)].sort((x, y) => (x.startDate || "9").localeCompare(y.startDate || "9"));
   const firstMain = entries.find((e) => e.kind === "main")?.anime ?? root;
@@ -701,6 +704,28 @@ export function orderWindow(n: number, cur: number, max = 5): (number | null)[] 
 export function runtimeMinutes(a: Pick<Anime, "episodeCount" | "episodeLength" | "totalLength">): number {
   const byEpisode = a.episodeCount && a.episodeLength ? a.episodeCount * a.episodeLength : 0;
   return Math.max(byEpisode, a.totalLength && a.totalLength > 0 ? a.totalLength : 0);
+}
+
+/**
+ * An airing show counted by its aired episodes. Kitsu's totalLength for a show still airing also counts episode
+ * records for episodes that haven't aired (One Piece: 1,410 records, 1,180 aired, ~92 hours too many). Pure.
+ */
+export function airedOnly<T extends Pick<Anime, "status" | "episodeCount" | "episodeLength" | "totalLength">>(a: T, aired: number | null): T {
+  if (a.status !== "current" || !aired || !a.episodeLength) return a;
+  return { ...a, episodeCount: a.episodeCount ? Math.min(a.episodeCount, aired) : aired, totalLength: null };
+}
+
+/** Aired episodes per airing show (Kitsu id), from the airing snapshot's next episode number. */
+export async function airedCounts(): Promise<Map<string, number>> {
+  const snap = await airing();
+  const now = Date.now();
+  const out = new Map<string, number>();
+  for (const [k, show] of snap.byKitsu) {
+    const next = upcomingOf(show, now)[0];
+    const aired = next ? next.episode - 1 : show.n.length ? show.n[show.n.length - 1][0] : 0;
+    if (aired > 0) out.set(k, aired);
+  }
+  return out;
 }
 
 export function fmtMinutes(min: number): string {

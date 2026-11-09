@@ -86,7 +86,8 @@ export default async function EpisodePage({ params }: Props) {
   const { a, episode, n, count, lastAired, reliable, upcoming, isNext, airIso, notice, skips, nextScheduled } = d;
   // One of the latest few episodes: name the next one in the alert offer (older episodes get a general offer).
   const nextUp = reliable && n <= lastAired && n >= lastAired - 2 ? lastAired + 1 : null;
-  const when = airIso ? fmtDate(airIso, { weekday: "long", month: "long", day: "numeric", year: "numeric" }) : null;
+  // The day in Japan, matching the JST time beside it (a 00:56 JST slot is the previous day in UTC).
+  const when = airIso ? fmtDate(airIso, { weekday: "long", month: "long", day: "numeric", year: "numeric", ...(airIso.length > 10 ? { timeZone: "Asia/Tokyo" } : {}) }) : null;
   const whenTime = airIso && airIso.length > 10 ? fmtDate(airIso, { hour: "numeric", minute: "2-digit", timeZone: "Asia/Tokyo" }) : null;
   const hasPrev = n > 1;
   const hasNext = n < count || (a.status === "current" && n <= lastAired) || nextScheduled;

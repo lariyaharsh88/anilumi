@@ -18,7 +18,7 @@ export async function GET() {
       title: `${a.title} – next episode ${fmtDate(a.nextRelease, { weekday: "short", month: "short", day: "numeric", hour: "numeric", minute: "2-digit", timeZone: "Asia/Tokyo" })} JST`,
       link: abs(animePath(a)),
       guid: `${a.id}:${a.nextRelease}`,
-      description: `${a.title} airs its next episode on ${fmtDate(a.nextRelease, { weekday: "long", month: "long", day: "numeric" })} (Japan time). ${a.streaming.length ? `Streaming on ${a.streaming.map((s) => s.site).join(", ")}.` : ""}`.trim(),
+      description: `${a.title} airs its next episode on ${fmtDate(a.nextRelease, { weekday: "long", month: "long", day: "numeric", timeZone: "Asia/Tokyo" })} (Japan time). ${a.streaming.length ? `Streaming on ${a.streaming.map((s) => s.site).join(", ")}.` : ""}`.trim(),
       date: new Date(a.nextRelease!),
     }))
     .sort((x, y) => x.date.getTime() - y.date.getTime());
