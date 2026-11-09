@@ -8,7 +8,7 @@
 export type Store = "us" | "in";
 
 // From Associates Central (affiliate-program.amazon.com and affiliate.amazon.in), once the accounts are approved.
-const DEFAULT_TAGS: Record<Store, string> = { us: "", in: "harshmedia98-21" };
+const DEFAULT_TAGS: Record<Store, string> = { us: "harshmedia98-20", in: "harshmedia98-21" };
 const TAGS: Record<Store, string> = {
   us: process.env.NEXT_PUBLIC_AMAZON_TAG || DEFAULT_TAGS.us,
   in: process.env.NEXT_PUBLIC_AMAZON_TAG_IN || DEFAULT_TAGS.in,
