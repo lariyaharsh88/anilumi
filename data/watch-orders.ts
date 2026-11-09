@@ -8,7 +8,7 @@
  * and as lastReviewed in the page's JSON-LD). Keep claims factual. Run
  * `npx tsx scripts/resolve-watch-orders.ts` after editing to confirm every key still matches.
  */
-export type WatchOrderOverride = { label?: string; intro: string; skip?: string[]; demote?: string[]; mainOrder?: string[]; /** Slugs to make core entries (fetched when Kitsu doesn't link them). */ promote?: string[]; /** Slugs to drop (unrelated crossovers). */ exclude?: string[]; /** ISO date a person checked the guide (shown as "Checked on"). */ checked?: string };
+export type WatchOrderOverride = { label?: string; intro: string; skip?: string[]; demote?: string[]; mainOrder?: string[]; /** Slugs to make core entries (fetched when Kitsu doesn't link them). */ promote?: string[]; /** Slugs to drop (unrelated crossovers). */ exclude?: string[]; /** Slugs shown as optional extras (retellings, reboots, sequel series), fetched when Kitsu doesn't link them. */ optional?: string[]; /** ISO date a person checked the guide (shown as "Checked on"). */ checked?: string };
 
 export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   "attack-on-titan": {
@@ -57,6 +57,8 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   "sword-art-online": {
     label: "Sword Art Online",
     intro: "Release order works: Season 1 (Aincrad and Fairy Dance), Season 2, the canon film Ordinal Scale, then Alicization and War of Underworld. The Progressive films retell the Aincrad arc in more detail and are optional. Alternative: Gun Gale Online is a separate spin-off with no shared cast.",
+    optional: ["sword-art-online-progressive-movie-hoshi-naki-yoru-no-aria", "sword-art-online-progressive-movie-kuraki-yuuyami-no-scherzo"],
+    exclude: ["sword-art-online-movie-movie"],
   },
   "re-zero-kara-hajimeru-isekai-seikatsu": {
     label: "Re:Zero",
@@ -66,10 +68,15 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   "steins-gate": {
     label: "Steins;Gate",
     intro: "Steins;Gate (24 episodes), then episode 23β, an alternate episode 23 that leads into Steins;Gate 0, then Steins;Gate 0, then the film Load Region of Déjà Vu as an epilogue. Watch 23β only after you have finished the original series.",
+    promote: ["steins-gate-episode-23", "steins-gate-0"],
+    demote: ["steins-gate-egoistic-poriomania"],
+    mainOrder: ["steins-gate", "steins-gate-episode-23", "steins-gate-0", "steins-gate-fuka-ryouiki-no-deja-vu"],
   },
   haikyuu: {
     label: "Haikyuu!!",
     intro: "Seasons 1 to 4 in order (Season 4 is split in two), then the 2024 film Decisive Battle at the Garbage Dump, which continues the story; a final film is planned. The OVAs are side matches and the recap films can be skipped.",
+    promote: ["Haikyuu-Gomi-Suteba-no-Kessen"],
+    mainOrder: ["haikyuu", "haikyuu-2", "haikyuu-karasuno-koukou-vs-shiratorizawa-gakuen-koukou", "haikyuu-to-the-top", "haikyuu-to-the-top-2", "Haikyuu-Gomi-Suteba-no-Kessen"],
   },
   "tokyo-ghoul": {
     label: "Tokyo Ghoul",
@@ -242,6 +249,7 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
     label: "The Seven Deadly Sins",
     intro: "TV seasons in order: The Seven Deadly Sins (2014–2015), Signs of Holy War (2016), Revival of the Commandments (2018), Imperial Wrath of the Gods (2019–2020) and Dragon's Judgement (2021). The film Prisoners of the Sky came out between the third and fourth seasons, and Cursed by Light followed the final season in July 2021. Grudge of Edinburgh (2022–2023) is a spin-off, and the sequel series Four Knights of the Apocalypse began in October 2023.",
     skip: ["nanatsu-no-taizai-ensa-no-edinburgh", "nanatsu-no-taizai-ensa-no-edinburgh-kouhen"],
+    optional: ["Nanatsu-no-Taizai-Mokushiroku-no-Yonkishi", "Nanatsu-no-Taizai-Mokushiroku-no-Yonkishi-2nd-season"],
   },
   "ansatsu-kyoushitsu-tv": {
     label: "Assassination Classroom",
@@ -411,6 +419,9 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
     label: "The Irregular at Magic High School",
     intro: "Season 1 (26 episodes, 2014), the film The Girl Who Summons the Stars (2017), the Visitor Arc (October–December 2020), the Reminiscence Arc special (December 31, 2021), Season 3 (April–June 2024), then the film Yotsuba Succession Arc (May 8, 2026). Reminiscence Arc is a prequel about Tatsuya and Miyuki's past; it aired after the Visitor Arc. A further part was announced in June 2026. The Honor Student at Magic High School (2021) is a spin-off.",
     demote: ["mahouka-koukou-no-rettousei-tsuioku-hen"],
+    promote: ["mahouka-koukou-no-rettousei-raihousha-hen", "mahouka-koukou-no-rettousei-3rd-season", "mahouka-koukou-no-rettousei-yotsuba-keishou-hen"],
+    exclude: ["mahouka-koukou-no-rettousei-anime-part-2"],
+    mainOrder: ["mahouka-koukou-no-rettousei", "mahouka-koukou-no-rettousei-movie-hoshi-wo-yobu-shoujo", "mahouka-koukou-no-rettousei-raihousha-hen", "mahouka-koukou-no-rettousei-3rd-season", "mahouka-koukou-no-rettousei-yotsuba-keishou-hen"],
   },
   "kimi-ni-todoke": {
     label: "Kimi ni Todoke",
@@ -428,7 +439,9 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   },
   "date-a-live": {
     label: "Date A Live",
-    intro: "Watch the seasons in order: Date A Live (2013), Date A Live II (2014), the film Mayuri Judgment (August 2015), then III (January–March 2019), IV (April–June 2022) and V (April–June 2024). Each of the first two seasons has an OVA that fits after it. A theatrical film, Date A Live F: Last Date, is set for March 26, 2027. Date A Bullet is a spin-off. Seasons III to V are not linked on Kitsu, so they are missing from the list below.",
+    intro: "Watch the seasons in order: Date A Live (2013), Date A Live II (2014), the film Mayuri Judgment (August 2015), then III (January–March 2019), IV (April–June 2022) and V (April–June 2024). Each of the first two seasons has an OVA that fits after it. A theatrical film, Date A Live F: Last Date, is set for March 26, 2027. Date A Bullet is a spin-off.",
+    promote: ["date-a-live-III", "date-a-live-iv", "date-a-live-v"],
+    mainOrder: ["date-a-live", "date-a-live-ova", "date-a-live-ii", "date-a-live-mayuri-judgement", "date-a-live-III", "date-a-live-iv", "date-a-live-v"],
   },
   "ghost-in-the-shell-2015": {
     label: "Ghost in the Shell: Arise",
@@ -441,6 +454,7 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   trigun: {
     label: "Trigun",
     intro: "The 1998 series (26 episodes) is the original adaptation, and the film Badlands Rumble (2010) is an optional side story for it. Trigun Stampede (January–March 2023) is a separate, reimagined adaptation, not a sequel; its continuation Trigun Stargaze aired from January to March 2026. Watch either the 1998 series or Stampede and Stargaze; they do not share a continuity.",
+    optional: ["trigun-stargaze"],
   },
   "fate-kaleid-liner-prisma-illya": {
     label: "Fate/kaleid liner Prisma Illya",
@@ -667,6 +681,8 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   },
   "seitokai-yakuindomo": {
     label: "Seitokai Yakuindomo",
-    intro: "Watch Seitokai Yakuindomo (13 episodes, July–September 2010) and its OVAs, then Seitokai Yakuindomo* (13 episodes, January–March 2014) and its OVAs, then the films from July 2017 and January 2021. The OVAs were released with limited editions of the manga. The two films are not linked on Kitsu, so they are missing from the list below.",
+    intro: "Watch Seitokai Yakuindomo (13 episodes, July–September 2010) and its OVAs, then Seitokai Yakuindomo* (13 episodes, January–March 2014) and its OVAs, then the films from July 2017 and January 2021. The OVAs were released with limited editions of the manga.",
+    promote: ["seitokai-yakuindomo-movie", "seitokai-yakuindomo-movie-2"],
+    mainOrder: ["seitokai-yakuindomo", "seitokai-yakuindomo-ova", "seitokai-yakuindomo-2nd-season", "seitokai-yakuindomo-2nd-season-ova", "seitokai-yakuindomo-movie", "seitokai-yakuindomo-movie-2"],
   },
 };

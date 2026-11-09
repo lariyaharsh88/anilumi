@@ -1,0 +1,1574 @@
+{
+ "generated": "2026-11-09T16:07:42.543Z",
+ "source": "AniList status for shows Kitsu marks current",
+ "shows": {
+  "5007": {
+   "slug": "knyacki",
+   "title": "Knyacki!",
+   "status": "finished",
+   "endDate": "2020-01-17",
+   "episodes": 49
+  },
+  "12401": {
+   "slug": "ponkotsu-quest-maou-to-haken-no-mamono-tachi",
+   "title": "Ponkotsu Quest: Maou to Haken no Mamono-tachi",
+   "status": "finished",
+   "endDate": "2014-08-01",
+   "episodes": 12
+  },
+  "12638": {
+   "slug": "gj8-man",
+   "title": "GJ8man",
+   "status": "finished",
+   "endDate": "2021-08-08",
+   "episodes": 73
+  },
+  "42337": {
+   "slug": "mobius-dust",
+   "title": "Mebius Dust",
+   "status": "finished",
+   "endDate": "2026-09-24",
+   "episodes": 12
+  },
+  "43256": {
+   "slug": "fushigi-dagashiya-zenitendou",
+   "title": "Fushigi Dagashiya: Zenitendou",
+   "status": "finished",
+   "endDate": "2025-03-14",
+   "episodes": 148
+  },
+  "43543": {
+   "slug": "ling-jian-zun-4th-season",
+   "title": "Ling Jian Zun 4th Season",
+   "status": "finished",
+   "endDate": "2025-11-18",
+   "episodes": 560
+  },
+  "44931": {
+   "slug": "tabihani",
+   "title": "Tabihani",
+   "status": "finished",
+   "endDate": "2023-04-08",
+   "episodes": 1
+  },
+  "45605": {
+   "slug": "yu-gi-oh-go-rush",
+   "title": "Yu☆Gi☆Oh! Go Rush!!",
+   "status": "finished",
+   "endDate": "2025-03-30",
+   "episodes": 151
+  },
+  "45670": {
+   "slug": "shen-wu-tianzun-2",
+   "title": "Shen Wu Tianzun 2",
+   "status": "finished",
+   "endDate": "2024-01-29",
+   "episodes": 227
+  },
+  "45728": {
+   "slug": "chang-ge-xing",
+   "title": "Chang Ge Xing",
+   "status": "finished",
+   "endDate": "2025-06-01",
+   "episodes": 16
+  },
+  "46271": {
+   "slug": "yeosingangnim",
+   "title": "Yeosingangnim",
+   "status": "finished",
+   "endDate": "2024-10-30",
+   "episodes": 13
+  },
+  "46334": {
+   "slug": "danjo-no-yuujou-wa-seiritsu-suru-iya-shinai",
+   "title": "Danjo no Yuujou wa Seiritsu suru? (Iya, Shinai!!)",
+   "status": "finished",
+   "endDate": "2025-06-20",
+   "episodes": 12
+  },
+  "46552": {
+   "slug": "shen-yin-wangzuo-2",
+   "title": "Shen Yin Wangzuo 2",
+   "status": "finished",
+   "endDate": "2025-04-23",
+   "episodes": 130
+  },
+  "46806": {
+   "slug": "hidarikiki-no-eren",
+   "title": "Hidarikiki no Eren",
+   "status": "finished",
+   "endDate": "2026-07-01",
+   "episodes": 13
+  },
+  "46925": {
+   "slug": "otomege-sekai-wa-mob-ni-kibishii-sekai-desu-2nd-season",
+   "title": "Otomege Sekai wa Mob ni Kibishii Sekai desu 2nd Season",
+   "status": "finished",
+   "endDate": "2026-09-23",
+   "episodes": 12
+  },
+  "46932": {
+   "slug": "tousouchuu-great-mission",
+   "title": "Tousouchuu: Great Mission",
+   "status": "finished",
+   "endDate": "2025-03-30",
+   "episodes": 97
+  },
+  "47658": {
+   "slug": "cocoon",
+   "title": "Cocoon",
+   "status": "finished",
+   "endDate": "2025-03-30",
+   "episodes": 1
+  },
+  "47881": {
+   "slug": "maou-sama-retry-r",
+   "title": "Maou-sama, Retry! R",
+   "status": "finished",
+   "endDate": "2024-12-14",
+   "episodes": 12
+  },
+  "47886": {
+   "slug": "haigakura",
+   "title": "Haigakura",
+   "status": "finished",
+   "endDate": "2025-09-26",
+   "episodes": 13
+  },
+  "47929": {
+   "slug": "azur-lane-bisoku-zenshin-2nd-season",
+   "title": "Azur Lane Bisoku Zenshin! 2nd Season",
+   "status": "finished",
+   "endDate": "2026-09-21",
+   "episodes": 12
+  },
+  "47963": {
+   "slug": "watari-kun-no-xx-ga-houkai-sunzen",
+   "title": "Watari-kun no xx ga Houkai Sunzen",
+   "status": "finished",
+   "endDate": "2025-12-27",
+   "episodes": 26
+  },
+  "48034": {
+   "slug": "moffun-to-issho",
+   "title": "Moffun to Issho",
+   "status": "finished",
+   "endDate": "2023-10-08",
+   "episodes": 5
+  },
+  "48057": {
+   "slug": "xingchen-bian-6",
+   "title": "Xingchen Bian 6",
+   "status": "finished",
+   "endDate": "2025-07-17",
+   "episodes": 28
+  },
+  "48070": {
+   "slug": "ao-no-orchestra-2nd-season",
+   "title": "Ao no Orchestra 2nd Season",
+   "status": "finished",
+   "endDate": "2026-03-01",
+   "episodes": 21
+  },
+  "48105": {
+   "slug": "sousou-no-frieren-marumaru-no-mahou",
+   "title": "Sousou no Frieren: Marumaru no Mahou",
+   "status": "finished",
+   "endDate": "2024-03-24",
+   "episodes": 12
+  },
+  "48205": {
+   "slug": "xian-wu-chuan-2",
+   "title": "Xian Wu Chuan 2",
+   "status": "finished",
+   "endDate": "2024-09-15",
+   "episodes": 52
+  },
+  "48314": {
+   "slug": "youkai-gakkou-no-sensei-hajimemashita",
+   "title": "Youkai Gakkou no Sensei Hajimemashita!",
+   "status": "finished",
+   "endDate": "2025-03-25",
+   "episodes": 24
+  },
+  "48386": {
+   "slug": "shadowverse-flame-arc-hen",
+   "title": "Shadowverse Flame: Arc-hen",
+   "status": "finished",
+   "endDate": "2024-09-28",
+   "episodes": 23
+  },
+  "48417": {
+   "slug": "touhai-ura-rate-mahjong-touhai-roku",
+   "title": "Touhai: Ura Rate Mahjong Touhai Roku",
+   "status": "finished",
+   "endDate": "2025-04-05",
+   "episodes": 25
+  },
+  "48433": {
+   "slug": "egao-no-taenai-shokuba-desu",
+   "title": "Egao no Taenai Shokuba desu.",
+   "status": "finished",
+   "endDate": "2025-12-29",
+   "episodes": 13
+  },
+  "48448": {
+   "slug": "chichi-wa-eiyuu-haha-wa-seirei-musume-no-watashi-wa-tenseisha",
+   "title": "Chichi wa Eiyuu, Haha wa Seirei, Musume no Watashi wa Tenseisha.",
+   "status": "finished",
+   "endDate": "2025-12-21",
+   "episodes": 12
+  },
+  "48460": {
+   "slug": "tono-to-inu",
+   "title": "Tono to Inu",
+   "status": "finished",
+   "endDate": "2025-03-27",
+   "episodes": 24
+  },
+  "48464": {
+   "slug": "himitsu-no-aipri",
+   "title": "Himitsu no AiPri",
+   "status": "finished",
+   "endDate": "2025-03-30",
+   "episodes": 51
+  },
+  "48485": {
+   "slug": "jiu-tian-xuan-di-jue-5th-season",
+   "title": "Jiu Tian Xuan Di Jue 5th Season",
+   "status": "finished",
+   "endDate": "2024-05-17",
+   "episodes": 52
+  },
+  "48546": {
+   "slug": "tensei-akujo-no-kuro-rekishi",
+   "title": "Tensei Akujo no Kuro Rekishi",
+   "status": "finished",
+   "endDate": "2025-12-25",
+   "episodes": 12
+  },
+  "48589": {
+   "slug": "baban-baban-ban-vampire",
+   "title": "Babanbabanban Vampire",
+   "status": "finished",
+   "endDate": "2025-03-29",
+   "episodes": 12
+  },
+  "48620": {
+   "slug": "botsuraku-yotei-no-kizoku-dakedo-hima-datta-kara-mahou-wo-kiwamete-mita",
+   "title": "Botsuraku Yotei no Kizoku dakedo, Hima Datta kara Mahou wo Kiwamete mita",
+   "status": "finished",
+   "endDate": "2025-03-18",
+   "episodes": 12
+  },
+  "48627": {
+   "slug": "bai-yao-pu-si-fu-pian",
+   "title": "Bai Yao Pu: Si Fu Pian",
+   "status": "finished",
+   "endDate": "2024-05-03",
+   "episodes": 12
+  },
+  "48644": {
+   "slug": "neko-ni-tensei-shita-oji-san",
+   "title": "Neko ni Tensei Shita Oji-san",
+   "status": "finished",
+   "endDate": "2025-09-08",
+   "episodes": 48
+  },
+  "48666": {
+   "slug": "30-sai-made-doutei-da-to-mahou-tsukai-ni-nareru-rashii-tokubetsu-hen",
+   "title": "30-sai made Doutei da to Mahou Tsukai ni Nareru Rashii: Tokubetsu-hen",
+   "status": "finished",
+   "endDate": "2024-12-13",
+   "episodes": 1
+  },
+  "48809": {
+   "slug": "yin-shizong-men-zhang-jiao",
+   "title": "Yin Shizong Men Zhang Jiao",
+   "status": "finished",
+   "endDate": "2024-09-07",
+   "episodes": 52
+  },
+  "48822": {
+   "slug": "kakuriyo-no-yadomeshi-2nd-season",
+   "title": "Kakuriyo no Yadomeshi 2nd Season",
+   "status": "finished",
+   "endDate": "2025-12-18",
+   "episodes": 12
+  },
+  "48845": {
+   "slug": "kujima-utaeba-ie-hororo",
+   "title": "Kujima Utaeba Ie Hororo",
+   "status": "finished",
+   "endDate": "2026-06-25",
+   "episodes": 12
+  },
+  "48932": {
+   "slug": "osomatsu-san-4",
+   "title": "Osomatsu-san 4",
+   "status": "finished",
+   "endDate": "2026-06-13",
+   "episodes": 13
+  },
+  "48999": {
+   "slug": "douwa-revenger",
+   "title": "Douwa Revenger",
+   "status": "finished",
+   "endDate": "2025-08-02",
+   "episodes": 18
+  },
+  "49035": {
+   "slug": "naoe-kun-wa-yasesasetai",
+   "title": "Naoe-kun wa Yasesasetai.",
+   "status": "finished",
+   "endDate": "2024-09-22",
+   "episodes": 12
+  },
+  "49036": {
+   "slug": "cang-yuan-tu-2",
+   "title": "Cang Yuan Tu 2",
+   "status": "finished",
+   "endDate": "2025-06-13",
+   "episodes": 29
+  },
+  "49054": {
+   "slug": "rock-wa-lady-no-tashina-mideshite",
+   "title": "Rock wa Lady no Tashinami Deshite",
+   "status": "finished",
+   "endDate": "2025-06-26",
+   "episodes": 13
+  },
+  "49071": {
+   "slug": "niwatori-fighter",
+   "title": "Niwatori Fighter",
+   "status": "finished",
+   "endDate": "2026-05-31",
+   "episodes": 12
+  },
+  "49089": {
+   "slug": "thunderbolt-fantasy-touriken-yuuki-4",
+   "title": "Thunderbolt Fantasy: Touriken Yuuki 4",
+   "status": "finished",
+   "endDate": "2024-12-21",
+   "episodes": 12
+  },
+  "49120": {
+   "slug": "kikaijikake-no-marie",
+   "title": "Kikaijikake no Marie",
+   "status": "finished",
+   "endDate": "2025-12-21",
+   "episodes": 12
+  },
+  "49122": {
+   "slug": "chitose-kun-wa-ramune-bin-no-naka",
+   "title": "Chitose-kun wa Ramune Bin no Naka",
+   "status": "finished",
+   "endDate": "2026-03-31",
+   "episodes": 13
+  },
+  "49125": {
+   "slug": "mirai-no-kuromakukei-akuyaku-reijou-moriarty-no-isekai-kanzen-hanzai-hakusho",
+   "title": "Mirai no Kuromakukei Akuyaku Reijou Moriarty no Isekai Kanzen Hanzai Hakusho",
+   "status": "finished",
+   "endDate": "2024-08-30",
+   "episodes": 6
+  },
+  "49130": {
+   "slug": "asatir-2-mirai-no-mukashi-banashi",
+   "title": "Asatir 2: Mirai no Mukashi Banashi",
+   "status": "finished",
+   "endDate": "2025-02-02",
+   "episodes": 13
+  },
+  "49147": {
+   "slug": "yasei-no-last-boss-ga-arawareta",
+   "title": "Yasei no Last Boss ga Arawareta!",
+   "status": "finished",
+   "endDate": "2025-12-13",
+   "episodes": 12
+  },
+  "49157": {
+   "slug": "dubu-wangu-2nd-season",
+   "title": "Dubu Wangu 2nd Season",
+   "status": "finished",
+   "endDate": "2025-01-17",
+   "episodes": 90
+  },
+  "49171": {
+   "slug": "dongitsune-season-2",
+   "title": "Dongitsune Season 2",
+   "status": "finished",
+   "endDate": "2024-02-28",
+   "episodes": 10
+  },
+  "49179": {
+   "slug": "a-rank-party-wo-ridatsu-shita-ore-wa-moto-oshiegotachi-to-meikyuu-shinbu-wo-mezasu",
+   "title": "A-Rank Party wo Ridatsu Shita Ore wa, Moto Oshiegotachi to Meikyuu Shinbu wo Mezasu.",
+   "status": "finished",
+   "endDate": "2025-06-29",
+   "episodes": 24
+  },
+  "49226": {
+   "slug": "kinnikuman-kanpeki-choujin-shiso-hen-season-2",
+   "title": "Kinnikuman: Kanpeki Choujin Shiso-hen Season 2",
+   "status": "finished",
+   "endDate": "2025-03-30",
+   "episodes": 11
+  },
+  "49258": {
+   "slug": "re-zero-kara-hajimeru-kyuukei-jikan-break-time-3rd-season",
+   "title": "Re:Zero kara Hajimeru Kyuukei Jikan (Break Time) 3rd Season",
+   "status": "finished",
+   "endDate": "2025-03-26",
+   "episodes": 16
+  },
+  "49276": {
+   "slug": "liella-no-uta-3",
+   "title": "Liella no Uta 3",
+   "status": "finished",
+   "endDate": "2024-12-22",
+   "episodes": 12
+  },
+  "49296": {
+   "slug": "eris-no-seihai",
+   "title": "Eris no Seihai",
+   "status": "finished",
+   "endDate": "2026-03-26",
+   "episodes": 12
+  },
+  "49297": {
+   "slug": "akujiki-reijou-to-kyouketsu-koushaku-sono-mamono-watashi-ga-oishiku-itadakimasu",
+   "title": "Akujiki Reijou to Kyouketsu Koushaku: Sono Mamono, Watashi ga Oishiku Itadakimasu!",
+   "status": "finished",
+   "endDate": "2025-12-19",
+   "episodes": 12
+  },
+  "49298": {
+   "slug": "kanpeki-sugite-kawai-ge-ga-nai-to-konyaku-haki-sareta-seijo-wa-ringoku-ni-ura-reru",
+   "title": "Kanpeki Sugite Kawai-ge ga Nai to Konyaku Haki Sareta Seijo wa Ringoku ni Ura Reru",
+   "status": "finished",
+   "endDate": "2025-06-19",
+   "episodes": 12
+  },
+  "49307": {
+   "slug": "changsheng-jie",
+   "title": "Changsheng Jie",
+   "status": "finished",
+   "endDate": "2025-03-08",
+   "episodes": 26
+  },
+  "49308": {
+   "slug": "huangshen-lu-zhi-linglong-shan",
+   "title": "Huangshen Lu Zhi Linglong Shan",
+   "status": "finished",
+   "endDate": "2025-05-02",
+   "episodes": 12
+  },
+  "49324": {
+   "slug": "kagakuxbouken-survival",
+   "title": "Kagaku×Bouken Survival!",
+   "status": "finished",
+   "endDate": "2025-03-15",
+   "episodes": 21
+  },
+  "49328": {
+   "slug": "agent-blue",
+   "title": "Agent Blue",
+   "status": "finished",
+   "endDate": "2025-04-29",
+   "episodes": 3
+  },
+  "49348": {
+   "slug": "xian-ni-shenlin-zhi-zhan",
+   "title": "Xian Ni: Shenlin Zhi Zhan",
+   "status": "finished",
+   "endDate": "2025-05-30",
+   "episodes": 1
+  },
+  "49349": {
+   "slug": "zhen-hun-jie-4th-season",
+   "title": "Zhen Hun Jie 4th Season",
+   "status": "finished",
+   "endDate": "2025-05-10",
+   "episodes": 26
+  },
+  "49353": {
+   "slug": "himitsu-no-aipri-ring-hen",
+   "title": "Himitsu no AiPri: Ring-hen",
+   "status": "finished",
+   "endDate": "2026-03-29",
+   "episodes": 51
+  },
+  "49373": {
+   "slug": "nazotoki-wa-dinner-no-ato-de",
+   "title": "Nazotoki wa Dinner no Ato de",
+   "status": "finished",
+   "endDate": "2025-06-20",
+   "episodes": 12
+  },
+  "49379": {
+   "slug": "uchuujin-muumuu",
+   "title": "Uchuujin MuuMuu",
+   "status": "finished",
+   "endDate": "2025-09-18",
+   "episodes": 24
+  },
+  "49405": {
+   "slug": "0-saiji-Start-Dash-Monogatari-Season-2",
+   "title": "0-saiji Start Dash Monogatari Season 2",
+   "status": "finished",
+   "endDate": "2025-03-23",
+   "episodes": 12
+  },
+  "49418": {
+   "slug": "bukiyou-na-senpai",
+   "title": "Bukiyou na Senpai.",
+   "status": "finished",
+   "endDate": "2025-12-18",
+   "episodes": 12
+  },
+  "49449": {
+   "slug": "magical-girl-lyrical-nanoha-exceeds-gun-blaze-vengeance",
+   "title": "Magical Girl Lyrical Nanoha EXCEEDS Gun Blaze Vengeance",
+   "status": "finished",
+   "endDate": "2026-09-20",
+   "episodes": 12
+  },
+  "49494": {
+   "slug": "maomao-no-hitorigoto-2nd-season",
+   "title": "Maomao no Hitorigoto 2nd season",
+   "status": "finished",
+   "endDate": "2025-07-07",
+   "episodes": 24
+  },
+  "49501": {
+   "slug": "shaonian-ge-xing-xue-ran-tianqi-pian",
+   "title": "Shaonian Ge Xing: Xue Ran Tianqi Pian",
+   "status": "finished",
+   "endDate": "2025-07-25",
+   "episodes": 26
+  },
+  "49502": {
+   "slug": "mashin-souzouden-wataru",
+   "title": "Mashin Souzouden Wataru",
+   "status": "finished",
+   "endDate": "2025-06-22",
+   "episodes": 24
+  },
+  "49503": {
+   "slug": "kirio-fanclub",
+   "title": "Kirio Fanclub",
+   "status": "finished",
+   "endDate": "2026-06-19",
+   "episodes": 12
+  },
+  "49511": {
+   "slug": "fanren-xiu-xian-chuan-4th-season",
+   "title": "Fanren Xiu Xian Chuan 4th Season",
+   "status": "finished",
+   "endDate": "2026-01-03",
+   "episodes": 52
+  },
+  "49519": {
+   "slug": "huo-feng-liao-yuan-2nd-season",
+   "title": "Huo Feng Liao Yuan 2nd Season",
+   "status": "finished",
+   "endDate": "2025-04-24",
+   "episodes": 16
+  },
+  "49525": {
+   "slug": "monpoke",
+   "title": "Monpoke",
+   "status": "finished",
+   "endDate": "2025-04-16",
+   "episodes": 10
+  },
+  "49527": {
+   "slug": "cardfight-vanguard-divinez-deluxe-arc",
+   "title": "CARDFIGHT!! VANGUARD Divinez DELUXE Arc",
+   "status": "finished",
+   "endDate": "2025-04-19",
+   "episodes": 13
+  },
+  "49538": {
+   "slug": "chanto-suenai-kyuuketsuki-chan",
+   "title": "Chanto Suenai Kyuuketsuki-chan",
+   "status": "finished",
+   "endDate": "2025-12-28",
+   "episodes": 12
+  },
+  "49669": {
+   "slug": "shuumatsu-no-valkyrie-iii",
+   "title": "Shuumatsu no Valkyrie III",
+   "status": "finished",
+   "endDate": "2025-12-10",
+   "episodes": 15
+  },
+  "49677": {
+   "slug": "mahou-no-shimai-lulutto-lilly",
+   "title": "Mahou no Shimai Lulutto Lilly",
+   "status": "finished",
+   "endDate": "2026-06-21",
+   "episodes": 12
+  },
+  "49681": {
+   "slug": "yuusha-no-kuzu",
+   "title": "Yuusha no Kuzu",
+   "status": "finished",
+   "endDate": "2026-06-28",
+   "episodes": 24
+  },
+  "49690": {
+   "slug": "binan-koukou-chikyuu-bouei-bu-haikara",
+   "title": "Binan Koukou Chikyuu Bouei-bu Haikara!",
+   "status": "finished",
+   "endDate": "2025-09-22",
+   "episodes": 12
+  },
+  "49691": {
+   "slug": "chikuwa-senki-ore-no-kawaii-de-chikyuu-shinryaku",
+   "title": "Chikuwa Senki: Ore no Kawaii de Chikyuu Shinryaku",
+   "status": "finished",
+   "endDate": "2025-06-24",
+   "episodes": 12
+  },
+  "49693": {
+   "slug": "transformers-wild-king",
+   "title": "Transformers: Wild King",
+   "status": "finished",
+   "endDate": "2026-01-07",
+   "episodes": 14
+  },
+  "49700": {
+   "slug": "digimon-beatbreak",
+   "title": "Digimon Beatbreak",
+   "status": "finished",
+   "endDate": "2026-09-27",
+   "episodes": 49
+  },
+  "49701": {
+   "slug": "petitcure-precure-fairies",
+   "title": "PetitCure: Precure Fairies",
+   "status": "finished",
+   "endDate": "2025-09-25",
+   "episodes": 27
+  },
+  "49705": {
+   "slug": "go-go-vehicle-zoo-vehicle-star-hen",
+   "title": "Go! Go! Vehicle Zoo: Vehicle Star-hen",
+   "status": "finished",
+   "endDate": "2025-06-29",
+   "episodes": 13
+  },
+  "49735": {
+   "slug": "okaimono-panda-ona",
+   "title": "Okaimono Panda! (ONA)",
+   "status": "finished",
+   "endDate": "2025-03-25",
+   "episodes": 4
+  },
+  "49739": {
+   "slug": "chao-neng-lifang-chaofan-pian",
+   "title": "Chao Neng Lifang: Chaofan Pian",
+   "status": "finished",
+   "endDate": "2025-05-23",
+   "episodes": 12
+  },
+  "49768": {
+   "slug": "douse-koishite-shimaunda-season-2",
+   "title": "Douse, Koishite Shimaunda. Season 2",
+   "status": "finished",
+   "endDate": "2026-03-27",
+   "episodes": 12
+  },
+  "49776": {
+   "slug": "jibaku-shounen-hanako-kun-2-2nd-season",
+   "title": "Jibaku Shounen Hanako-kun 2 2nd Season",
+   "status": "finished",
+   "endDate": "2025-09-21",
+   "episodes": 12
+  },
+  "49824": {
+   "slug": "chotto-dake-ai-ga-omoi-dark-elf-ga-isekai-kara-oikakete-kita-mini-anime-gekijou",
+   "title": "Chotto dake Ai ga Omoi Dark Elf ga Isekai kara Oikakete Kita Mini Anime Gekijou",
+   "status": "finished",
+   "endDate": "2025-06-23",
+   "episodes": 12
+  },
+  "49826": {
+   "slug": "chuuzenji-sensei-mononoke-kougiroku-sensei-ga-nazo-wo-hodoite-shimau-kara",
+   "title": "Chuuzenji-sensei Mononoke Kougiroku: Sensei ga Nazo wo Hodoite Shimau kara.",
+   "status": "finished",
+   "endDate": "2025-06-23",
+   "episodes": 12
+  },
+  "49827": {
+   "slug": "petit-forma-denhan-kyoku-nisshi",
+   "title": "Petit Forma: Denhan Kyoku Nisshi",
+   "status": "finished",
+   "endDate": "2025-06-24",
+   "episodes": 5
+  },
+  "49843": {
+   "slug": "kaijuu-sekai-seifuku-tv",
+   "title": "Kaijuu Sekai Seifuku (TV)",
+   "status": "finished",
+   "endDate": "2026-03-21",
+   "episodes": 50
+  },
+  "49847": {
+   "slug": "steel-ball-run-jojo-no-kimyou-na-bouken",
+   "title": "Steel Ball Run: JoJo no Kimyou na Bouken",
+   "status": "finished",
+   "endDate": "2026-03-19",
+   "episodes": 1
+  },
+  "49861": {
+   "slug": "kingdom-6th-season",
+   "title": "Kingdom 6th Season",
+   "status": "finished",
+   "endDate": "2025-12-28",
+   "episodes": 13
+  },
+  "49867": {
+   "slug": "kizoku-tensei-megumareta-umare-kara-saikyou-no-chikara-wo-eru",
+   "title": "Kizoku Tensei: Megumareta Umare kara Saikyou no Chikara wo Eru",
+   "status": "finished",
+   "endDate": "2026-03-23",
+   "episodes": 12
+  },
+  "49868": {
+   "slug": "araiguma-calcal-dan",
+   "title": "Araiguma Calcal-dan",
+   "status": "finished",
+   "endDate": "2025-09-12",
+   "episodes": 24
+  },
+  "49872": {
+   "slug": "taiyou-yori-mo-mabushii-hoshi",
+   "title": "Taiyou yori mo Mabushii Hoshi",
+   "status": "finished",
+   "endDate": "2025-12-18",
+   "episodes": 12
+  },
+  "49889": {
+   "slug": "shiguang-dailiren-iii",
+   "title": "Shiguang Dailiren III Part 1",
+   "status": "finished",
+   "endDate": "2026-10-23",
+   "episodes": 12
+  },
+  "49892": {
+   "slug": "kun-tun-tianxia-zhi-zhang-men-guilai",
+   "title": "Kun Tun Tianxia Zhi Zhang Men Guilai",
+   "status": "finished",
+   "endDate": "2025-07-10",
+   "episodes": 12
+  },
+  "49894": {
+   "slug": "masuda-kousuke-gekijou-gag-manga-biyori-go",
+   "title": "Masuda Kousuke Gekijou Gag Manga Biyori GO",
+   "status": "finished",
+   "endDate": "2025-06-21",
+   "episodes": 12
+  },
+  "49901": {
+   "slug": "utagoe-wa-mille-feuille",
+   "title": "Utagoe wa Mille-Feuille",
+   "status": "finished",
+   "endDate": "2025-09-18",
+   "episodes": 10
+  },
+  "49910": {
+   "slug": "uruwashi-no-yoi-no-tsuki",
+   "title": "Uruwashi no Yoi no Tsuki",
+   "status": "finished",
+   "endDate": "2026-03-29",
+   "episodes": 12
+  },
+  "49922": {
+   "slug": "red-fox",
+   "title": "Red Fox",
+   "status": "finished",
+   "endDate": "2025-06-01",
+   "episodes": 10
+  },
+  "49926": {
+   "slug": "ninja-to-gokudou",
+   "title": "Ninja to Gokudou",
+   "status": "finished",
+   "endDate": "2025-12-24",
+   "episodes": 12
+  },
+  "49931": {
+   "slug": "watashi-wo-tabetai-hitodenashi",
+   "title": "Watashi wo Tabetai, Hitodenashi",
+   "status": "finished",
+   "endDate": "2025-12-25",
+   "episodes": 13
+  },
+  "49960": {
+   "slug": "tsurezure-popipa",
+   "title": "Tsurezure PoPiPa",
+   "status": "finished",
+   "endDate": "2025-08-27",
+   "episodes": 10
+  },
+  "49962": {
+   "slug": "chibi-godzilla-no-gyakushuu-3",
+   "title": "Chibi Godzilla no Gyakushuu 3",
+   "status": "finished",
+   "endDate": "2026-03-25",
+   "episodes": 39
+  },
+  "49967": {
+   "slug": "yami-shibai-15",
+   "title": "Yami Shibai 15",
+   "status": "finished",
+   "endDate": "2025-10-06",
+   "episodes": 13
+  },
+  "49973": {
+   "slug": "nmeneko",
+   "title": "Nmeneko",
+   "status": "finished",
+   "endDate": "2026-03-13",
+   "episodes": 48
+  },
+  "49975": {
+   "slug": "da-yuan-hun",
+   "title": "Da Yuan Hun",
+   "status": "finished",
+   "endDate": "2025-09-02",
+   "episodes": 12
+  },
+  "49989": {
+   "slug": "pyramid-game",
+   "title": "Pyramid Game",
+   "status": "finished",
+   "endDate": "2025-07-19",
+   "episodes": 9
+  },
+  "49992": {
+   "slug": "maou-no-musume-wa-yasashi-sugiru",
+   "title": "Maou no Musume wa Yasashi Sugiru!!",
+   "status": "finished",
+   "endDate": "2026-03-17",
+   "episodes": 12
+  },
+  "49993": {
+   "slug": "shinsei-galverse",
+   "title": "Shinsei Galverse",
+   "status": "finished",
+   "endDate": "2025-06-25",
+   "episodes": 1
+  },
+  "49995": {
+   "slug": "katainaka-no-ossan-kensei-ni-naru-2nd-season",
+   "title": "Katainaka no Ossan, Kensei ni Naru 2nd Season",
+   "status": "finished",
+   "endDate": "2026-09-23",
+   "episodes": 12
+  },
+  "49996": {
+   "slug": "terra-live",
+   "title": "Terra Live",
+   "status": "finished",
+   "endDate": "2025-06-27",
+   "episodes": 8
+  },
+  "50028": {
+   "slug": "kizu-darake-seijo-yori-houfuku-wo-komete",
+   "title": "Kizu darake Seijo yori Houfuku wo Komete",
+   "status": "finished",
+   "endDate": "2025-09-25",
+   "episodes": 12
+  },
+  "50031": {
+   "slug": "mo-tian-ji",
+   "title": "Mo Tian Ji",
+   "status": "finished",
+   "endDate": "2025-09-15",
+   "episodes": 16
+  },
+  "50038": {
+   "slug": "xin-yichang-shengwu-jianwen-lu-xu",
+   "title": "Xin Yichang Shengwu Jianwen Lu: Xu",
+   "status": "finished",
+   "endDate": "2025-08-13",
+   "episodes": 7
+  },
+  "50048": {
+   "slug": "mujikaku-seijo-wa-kyou-mo-muishiki-ni-chikara-wo-tare-nagasu",
+   "title": "Mujikaku Seijo wa Kyou mo Muishiki ni Chikara wo Tare Nagasu",
+   "status": "finished",
+   "endDate": "2026-09-15",
+   "episodes": 12
+  },
+  "50055": {
+   "slug": "ibitte-konai-gibo-to-gishi",
+   "title": "Ibitte Konai Gibo to Gishi",
+   "status": "finished",
+   "endDate": "2026-09-26",
+   "episodes": 12
+  },
+  "50059": {
+   "slug": "tomica-to-tom-tv",
+   "title": "Tomica to Tom",
+   "status": "finished",
+   "endDate": "2026-03-15",
+   "episodes": 9
+  },
+  "50073": {
+   "slug": "higeki-no-genkyou-to-naru-saikyou-gedou-last-boss-joou-wa-tami-no-tame-ni-tsukushimasu-season-2",
+   "title": "Higeki no Genkyou to Naru Saikyou Gedou Last Boss Joou wa Tami no Tame ni Tsukushimasu. Season 2",
+   "status": "finished",
+   "endDate": "2026-06-23",
+   "episodes": 12
+  },
+  "50079": {
+   "slug": "kuroneko-to-majo-no-kyoushitsu",
+   "title": "Kuroneko to Majo no Kyoushitsu",
+   "status": "finished",
+   "endDate": "2026-09-20",
+   "episodes": 24
+  },
+  "50090": {
+   "slug": "Iya-na-Kao-sare-nagara-Opantsu-Misete-Moraitai-Returns",
+   "title": "Iya na Kao sare nagara Opantsu Misete Moraitai Returns",
+   "status": "finished",
+   "endDate": "2026-06-04",
+   "episodes": 6
+  },
+  "50106": {
+   "slug": "xian-wang-de-richang-shenghuo-5",
+   "title": "Xian Wang de Richang Shenghuo 5",
+   "status": "finished",
+   "endDate": "2026-02-22",
+   "episodes": 12
+  },
+  "50119": {
+   "slug": "maid-san-wa-taberu-dake",
+   "title": "Maid-san wa Taberu dake",
+   "status": "finished",
+   "endDate": "2026-06-14",
+   "episodes": 12
+  },
+  "50135": {
+   "slug": "heika-watashi-wo-wasurete-kudasai",
+   "title": "Heika Watashi wo Wasurete Kudasai",
+   "status": "finished",
+   "endDate": "2025-12-23",
+   "episodes": 12
+  },
+  "50137": {
+   "slug": "bang-dream-yume-mita",
+   "title": "Bang Dream! Yume∞Mita",
+   "status": "finished",
+   "endDate": "2026-09-10",
+   "episodes": 13
+  },
+  "50151": {
+   "slug": "shuukan-ranobe-anime",
+   "title": "Shuukan Ranobe Anime",
+   "status": "finished",
+   "endDate": "2025-09-28",
+   "episodes": 12
+  },
+  "50168": {
+   "slug": "2200-nen-neko-no-kuni-nippon",
+   "title": "2200-nen Neko no Kuni Nippon",
+   "status": "finished",
+   "endDate": "2025-12-16",
+   "episodes": 12
+  },
+  "50169": {
+   "slug": "kanagawa-ni-sunderu-elf",
+   "title": "#Kanagawa ni Sunderu Elf",
+   "status": "finished",
+   "endDate": "2025-03-17",
+   "episodes": 12
+  },
+  "50177": {
+   "slug": "zhen-dao-ge-3rd-season",
+   "title": "Zhen Dao Ge 3rd Season",
+   "status": "finished",
+   "endDate": "2025-12-12",
+   "episodes": 14
+  },
+  "50178": {
+   "slug": "chou-futsuu-mahou-shoujo-asumi-toruverse",
+   "title": "Chou Futsuu Mahou Shoujo Asumi Toruverse",
+   "status": "finished",
+   "endDate": "2025-12-25",
+   "episodes": 13
+  },
+  "50185": {
+   "slug": "yao-shen-ji-9th-season",
+   "title": "Yao Shen Ji 9th Season",
+   "status": "finished",
+   "endDate": "2025-10-04",
+   "episodes": 52
+  },
+  "50186": {
+   "slug": "mofa-gongzhu-de-xiao-fannao",
+   "title": "Mofa Gongzhu De Xiao Fannao",
+   "status": "finished",
+   "endDate": "2025-12-29",
+   "episodes": 16
+  },
+  "50194": {
+   "slug": "alma-chan-wa-kazoku-ni-naritai",
+   "title": "Alma-chan wa Kazoku ni Naritai",
+   "status": "finished",
+   "endDate": "2025-12-14",
+   "episodes": 11
+  },
+  "50195": {
+   "slug": "let-s-play-quest-darake-no-my-life",
+   "title": "Let's Play: Quest-darake no My Life",
+   "status": "finished",
+   "endDate": "2025-12-18",
+   "episodes": 12
+  },
+  "50196": {
+   "slug": "potion-wagami-wo-tasukeru",
+   "title": "Potion, Wagami wo Tasukeru",
+   "status": "finished",
+   "endDate": "2025-12-19",
+   "episodes": 12
+  },
+  "50197": {
+   "slug": "ganzo-bandori-chan",
+   "title": "Ganzo! Bandori-chan",
+   "status": "finished",
+   "endDate": "2026-10-01",
+   "episodes": 52
+  },
+  "50198": {
+   "slug": "wei-miao-rensheng",
+   "title": "Wei Miao Rensheng",
+   "status": "finished",
+   "endDate": "2026-06-30",
+   "episodes": 36
+  },
+  "50199": {
+   "slug": "yonghansonyeo",
+   "title": "Yonghansonyeo",
+   "status": "finished",
+   "endDate": "2025-11-21",
+   "episodes": 10
+  },
+  "50202": {
+   "slug": "nohara-hiroshi-hiru-meshi-no-ryuugi",
+   "title": "Nohara Hiroshi: Hiru Meshi no Ryuugi",
+   "status": "finished",
+   "endDate": "2025-12-19",
+   "episodes": 12
+  },
+  "50231": {
+   "slug": "wanmei-shijie-6",
+   "title": "Wanmei Shijie 6",
+   "status": "finished",
+   "endDate": "2026-09-11",
+   "episodes": 52
+  },
+  "50238": {
+   "slug": "shen-mu-3rd-season",
+   "title": "Shen Mu 3rd Season",
+   "status": "finished",
+   "endDate": "2026-07-23",
+   "episodes": 52
+  },
+  "50253": {
+   "slug": "koala-enikki",
+   "title": "Koala Enikki",
+   "status": "finished",
+   "endDate": "2026-09-17",
+   "episodes": 49
+  },
+  "50258": {
+   "slug": "let-s-go-kaiki-gumi",
+   "title": "Let's Go Kaiki-gumi",
+   "status": "finished",
+   "endDate": "2026-09-27",
+   "episodes": 12
+  },
+  "50275": {
+   "slug": "saikyou-no-shokugyou-wa-yuusha-demo-kenja-demo-naku-kanteishi-kari-rashii-desu-yo",
+   "title": "Saikyou no Shokugyou wa Yuusha demo Kenja demo Naku Kanteishi (Kari) Rashii desu yo?",
+   "status": "finished",
+   "endDate": "2026-06-13",
+   "episodes": 12
+  },
+  "50289": {
+   "slug": "shen-yin-wangzuo-3",
+   "title": "Shen Yin Wangzuo 3",
+   "status": "finished",
+   "endDate": "2026-04-23",
+   "episodes": 52
+  },
+  "50319": {
+   "slug": "mu-shen-ji-2",
+   "title": "Mu Shen Ji 2",
+   "status": "finished",
+   "endDate": "2025-10-12",
+   "episodes": 26
+  },
+  "50320": {
+   "slug": "nigashita-sakana-wa-ookikatta-ga-tsuriageta-sakana-ga-ookisugita-ken",
+   "title": "Nigashita Sakana wa Ookikatta ga Tsuriageta Sakana ga Ookisugita Ken",
+   "status": "finished",
+   "endDate": "2026-06-18",
+   "episodes": 12
+  },
+  "50324": {
+   "slug": "kaiju-ditan-mai-dali",
+   "title": "Kaiju Ditan Mai Dali",
+   "status": "finished",
+   "endDate": "2026-02-03",
+   "episodes": 24
+  },
+  "50331": {
+   "slug": "poketoon-2025",
+   "title": "POKÉTOON (2025)",
+   "status": "finished",
+   "endDate": "2026-02-13",
+   "episodes": 3
+  },
+  "50332": {
+   "slug": "the-lenticulars",
+   "title": "THE LENTICULARS",
+   "status": "finished",
+   "endDate": "2025-12-19",
+   "episodes": 8
+  },
+  "50334": {
+   "slug": "omae-gotoki-ga-maou-ni-kateru-to-omou-na-to-yuusha-party-wo-tsuihou-sareta-node-outo-de-kimama-ni-kurashitai",
+   "title": "\"Omae Gotoki ga Maou ni Kateru to Omou na\" to Yuusha Party wo Tsuihou Sareta node, Outo de Kimama ni Kurashitai",
+   "status": "finished",
+   "endDate": "2026-03-27",
+   "episodes": 12
+  },
+  "50341": {
+   "slug": "needy-girl-overdose",
+   "title": "NEEDY GIRL OVERDOSE",
+   "status": "finished",
+   "endDate": "2026-06-28",
+   "episodes": 13
+  },
+  "50353": {
+   "slug": "omae-wa-mada-gunma-wo-shiranai-reiwa-ban",
+   "title": "Omae wa Mada Gunma wo Shiranai: Reiwa-ban",
+   "status": "finished",
+   "endDate": "2026-03-14",
+   "episodes": 12
+  },
+  "50370": {
+   "slug": "princess-catch-tiniping",
+   "title": "Princess Catch! Tiniping",
+   "status": "finished",
+   "endDate": "2026-05-21",
+   "episodes": 26
+  },
+  "50374": {
+   "slug": "haibara-kun-no-tsuyokute-seishun-new-game",
+   "title": "Haibara-kun no Tsuyokute Seishun New Game",
+   "status": "finished",
+   "endDate": "2026-06-19",
+   "episodes": 12
+  },
+  "50390": {
+   "slug": "yami-shibai-16",
+   "title": "Yami Shibai 16",
+   "status": "finished",
+   "endDate": "2026-04-06",
+   "episodes": 13
+  },
+  "50409": {
+   "slug": "chopper-s",
+   "title": "CHOPPER's",
+   "status": "finished",
+   "endDate": "2026-03-23",
+   "episodes": 12
+  },
+  "50425": {
+   "slug": "isekai-no-sata-wa-shachiku-shidai",
+   "title": "Isekai no Sata wa Shachiku Shidai",
+   "status": "finished",
+   "endDate": "2026-03-24",
+   "episodes": 12
+  },
+  "50426": {
+   "slug": "goumon-baito-kun-no-nichijou",
+   "title": "Goumon Baito-kun no Nichijou",
+   "status": "finished",
+   "endDate": "2026-03-23",
+   "episodes": 12
+  },
+  "50427": {
+   "slug": "yoroi-shinden-samurai-troopers",
+   "title": "Yoroi Shinden Samurai Troopers",
+   "status": "finished",
+   "endDate": "2026-03-24",
+   "episodes": 12
+  },
+  "50428": {
+   "slug": "gelpiyo",
+   "title": "Gelpiyo",
+   "status": "finished",
+   "endDate": "2026-03-25",
+   "episodes": 10
+  },
+  "50429": {
+   "slug": "hokuto-no-ken-ken-ougun-zako-tachi-no-banka",
+   "title": "Hokuto no Ken: Ken'ougun Zako-tachi no Banka",
+   "status": "finished",
+   "endDate": "2026-03-23",
+   "episodes": 12
+  },
+  "50433": {
+   "slug": "jigoku-sensei-nube-2025-part-2",
+   "title": "Jigoku Sensei Nube (2025) Part 2",
+   "status": "finished",
+   "endDate": "2026-03-25",
+   "episodes": 13
+  },
+  "50435": {
+   "slug": "cardfight-vanguard-divinez-genma-seisen-hen",
+   "title": "Cardfight!! Vanguard: Divinez Genma Seisen-hen",
+   "status": "finished",
+   "endDate": "2026-04-11",
+   "episodes": 12
+  },
+  "50436": {
+   "slug": "hoppe-chan-sun-oukoku-to-kuro-hoppe-dan-no-himitsu",
+   "title": "Hoppe-chan: Sun Oukoku to Kuro Hoppe-dan no Himitsu",
+   "status": "finished",
+   "endDate": "2026-03-28",
+   "episodes": 12
+  },
+  "50442": {
+   "slug": "odayaka-kizoku-no-kyuuka-no-susume",
+   "title": "Odayaka Kizoku no Kyuuka no Susume.",
+   "status": "finished",
+   "endDate": "2026-03-26",
+   "episodes": 12
+  },
+  "50458": {
+   "slug": "yong-sheng-tai-yuan-xian-fu",
+   "title": "Yong Sheng: Tai Yuan Xian Fu",
+   "status": "finished",
+   "endDate": "2026-05-30",
+   "episodes": 26
+  },
+  "50466": {
+   "slug": "tensei-shitara-dragon-no-tamago-datta",
+   "title": "Tensei Shitara Dragon no Tamago Datta",
+   "status": "finished",
+   "endDate": "2026-03-28",
+   "episodes": 12
+  },
+  "50470": {
+   "slug": "hikuidori-ushuu-boro-tobi-gumi",
+   "title": "Hikuidori: Ushuu Boro Tobi-gumi",
+   "status": "finished",
+   "endDate": "2026-04-05",
+   "episodes": 12
+  },
+  "50480": {
+   "slug": "dogul-wang",
+   "title": "Dogul Wang",
+   "status": "finished",
+   "endDate": "2026-10-01",
+   "episodes": 12
+  },
+  "50483": {
+   "slug": "iwamoto-senpai-no-suisen",
+   "title": "Iwamoto-senpai no Suisen",
+   "status": "finished",
+   "endDate": "2026-09-19",
+   "episodes": 12
+  },
+  "50484": {
+   "slug": "saioshi-no-gikei-mederu-tame-nagaikishimasu",
+   "title": "Saioshi no Gikei Mederu Tame, Nagaikishimasu!",
+   "status": "finished",
+   "endDate": "2026-03-21",
+   "episodes": 12
+  },
+  "50552": {
+   "slug": "yani-neko-mini",
+   "title": "Yani Neko Mini",
+   "status": "finished",
+   "endDate": "2026-11-07",
+   "episodes": 22
+  },
+  "50554": {
+   "slug": "mata-korosarete-shimatta-no-desu-ne-tantei-sama",
+   "title": "Mata Korosarete Shimatta no desu ne, Tantei-sama",
+   "status": "finished",
+   "endDate": "2026-06-19",
+   "episodes": 12
+  },
+  "50570": {
+   "slug": "mamonogurai-no-boukensha-ore-dake-mamono-wo-kuratte-tsuyoku-naru",
+   "title": "Mamonogurai no Boukensha: Ore Dake Mamono wo Kuratte Tsuyoku Naru",
+   "status": "finished",
+   "endDate": "2026-06-19",
+   "episodes": 12
+  },
+  "50576": {
+   "slug": "nezumi-kun-no-chokki-tv",
+   "title": "Nezumi-kun no Chokki (TV)",
+   "status": "finished",
+   "endDate": "2026-06-27",
+   "episodes": 13
+  },
+  "50580": {
+   "slug": "marika-chan-no-koukando-wa-bukkowareteiru",
+   "title": "Marika-chan no Koukando wa Bukkowareteiru",
+   "status": "finished",
+   "endDate": "2026-06-08",
+   "episodes": 8
+  },
+  "50581": {
+   "slug": "ze-tian-ji-2026",
+   "title": "Ze Tian Ji (2026)",
+   "status": "finished",
+   "endDate": "2026-07-11",
+   "episodes": 26
+  },
+  "50593": {
+   "slug": "yu-ling-shi",
+   "title": "Yu Ling Shi",
+   "status": "finished",
+   "endDate": "2026-06-11",
+   "episodes": 18
+  },
+  "50611": {
+   "slug": "petitcure-precure-fairies-season-3",
+   "title": "PetitCure: Precure Fairies Season 3",
+   "status": "finished",
+   "endDate": "2026-09-24",
+   "episodes": 27
+  },
+  "50614": {
+   "slug": "hyakki-yakoushou",
+   "title": "Hyakki Yakoushou",
+   "status": "finished",
+   "endDate": "2026-06-23",
+   "episodes": 12
+  },
+  "50622": {
+   "slug": "yoroi-shinden-samurai-troopers-part-2",
+   "title": "Yoroi-Shinden Samurai Troopers Part 2",
+   "status": "finished",
+   "endDate": "2026-09-22",
+   "episodes": 12
+  },
+  "50643": {
+   "slug": "tadaima-ojamasaremasu",
+   "title": "Tadaima, Ojamasaremasu!",
+   "status": "finished",
+   "endDate": "2026-06-24",
+   "episodes": 12
+  },
+  "50647": {
+   "slug": "komekami-girls",
+   "title": "Komekami! Girls",
+   "status": "finished",
+   "endDate": "2026-06-24",
+   "episodes": 12
+  },
+  "50649": {
+   "slug": "migawari-reijou-wo-sukutta-no-wa-reikoku-mujihi-na-koori-no-ouji-no-ai-deshita",
+   "title": "Migawari Reijou wo Sukutta no wa Reikoku Mujihi na Koori no Ouji no Ai deshita",
+   "status": "finished",
+   "endDate": "2026-09-22",
+   "episodes": 12
+  },
+  "50665": {
+   "slug": "re-zero-kara-hajimeru-kyuukei-jikan-break-time-4th-season",
+   "title": "Re:Zero kara Hajimeru Kyuukei Jikan (Break Time) 4th Season",
+   "status": "finished",
+   "endDate": "2026-09-30",
+   "episodes": 19
+  },
+  "50670": {
+   "slug": "cat-tales",
+   "title": "Cat Tales",
+   "status": "finished",
+   "endDate": "2026-09-23",
+   "episodes": 50
+  },
+  "50673": {
+   "slug": "sou-shen-ji-ona",
+   "title": "Sou Shen Ji (ONA)",
+   "status": "finished",
+   "endDate": "2026-08-16",
+   "episodes": 24
+  },
+  "50675": {
+   "slug": "panlong",
+   "title": "Panlong",
+   "status": "finished",
+   "endDate": "2026-07-09",
+   "episodes": 20
+  },
+  "50676": {
+   "slug": "xuan-jie-zhi-men",
+   "title": "Xuan Jie Zhi Men",
+   "status": "finished",
+   "endDate": "2026-05-06",
+   "episodes": 26
+  },
+  "50691": {
+   "slug": "shiguang-xiao-juchang",
+   "title": "Shiguang Xiao Juchang",
+   "status": "finished",
+   "endDate": "2026-05-23",
+   "episodes": 8
+  },
+  "50694": {
+   "slug": "grow-up-show-himawari-no-circus-dan",
+   "title": "Grow Up Show: Himawari no Circus-dan",
+   "status": "finished",
+   "endDate": "2026-09-27",
+   "episodes": 13
+  },
+  "50707": {
+   "slug": "kai-pai-la-guaishou-da-dianying",
+   "title": "Kai Pai La! Guaishou Da Dianying",
+   "status": "finished",
+   "endDate": "2026-07-03",
+   "episodes": 12
+  },
+  "50755": {
+   "slug": "cheng-huang-lu",
+   "title": "Cheng Huang Lu",
+   "status": "finished",
+   "endDate": "2026-07-07",
+   "episodes": 6
+  },
+  "50760": {
+   "slug": "hell-mode-yarikomi-zuki-no-gamer-wa-haisettei-no-isekai-de-musou-suru-2nd-season",
+   "title": "Hell Mode: Yarikomi-zuki no Gamer wa Haisettei no Isekai de Musou Suru 2nd Season",
+   "status": "finished",
+   "endDate": "2026-09-26",
+   "episodes": 13
+  },
+  "50767": {
+   "slug": "kimi-wo-aisuru-ki-wa-nai-to-itta-jiki-koushaku-sama-ga-naze-ka-dekiai-shitekimasu",
+   "title": "\"Kimi wo Aisuru Ki wa nai\" to Itta Jiki Koushaku-sama ga Naze ka Dekiai Shitekimasu",
+   "status": "finished",
+   "endDate": "2026-09-20",
+   "episodes": 12
+  },
+  "50768": {
+   "slug": "suterare-seijo-no-isekai-gohantabi-kakure-skill-de-camping-car-wo-shoukan-shimashita",
+   "title": "Suterare Seijo no Isekai Gohantabi: Kakure Skill de Camping Car wo Shoukan Shimashita",
+   "status": "finished",
+   "endDate": "2026-09-21",
+   "episodes": 12
+  },
+  "50769": {
+   "slug": "perfect-addiction",
+   "title": "Perfect Addiction",
+   "status": "finished",
+   "endDate": "2026-09-23",
+   "episodes": 12
+  },
+  "50773": {
+   "slug": "yami-shibai-17",
+   "title": "Yami Shibai 17",
+   "status": "finished",
+   "endDate": "2026-10-12",
+   "episodes": 13
+  },
+  "50793": {
+   "slug": "rakudai-kenja-no-gakuin-musou-nidome-no-tensei-s-rank-cheat-majutsushi-boukenroku",
+   "title": "Rakudai Kenja no Gakuin Musou: Nidome no Tensei, S-Rank Cheat Majutsushi Boukenroku",
+   "status": "finished",
+   "endDate": "2026-09-11",
+   "episodes": 12
+  },
+  "50801": {
+   "slug": "tetsunabe-no-jan",
+   "title": "Tetsunabe no Jan!",
+   "status": "finished",
+   "endDate": "2026-09-20",
+   "episodes": 12
+  },
+  "50802": {
+   "slug": "tomica-tom-season-2",
+   "title": "TOMICA & TOM Season 2",
+   "status": "finished",
+   "endDate": "2026-09-27",
+   "episodes": 13
+  },
+  "50804": {
+   "slug": "aware-meisaku-kun-2026",
+   "title": "Aware! Meisaku-kun (2026)",
+   "status": "finished",
+   "endDate": "2026-09-21",
+   "episodes": 12
+  },
+  "50805": {
+   "slug": "tefuda-ga-oume-no-victoria",
+   "title": "Tefuda ga Oome no Victoria",
+   "status": "finished",
+   "endDate": "2026-09-02",
+   "episodes": 9
+  },
+  "50811": {
+   "slug": "bananya-at-home-party",
+   "title": "Bananya At-Home Party",
+   "status": "finished",
+   "endDate": "2026-07-10",
+   "episodes": 1
+  },
+  "50815": {
+   "slug": "you-shou-yan-6th-season",
+   "title": "You Shou Yan 6th Season",
+   "status": "finished",
+   "endDate": "2026-10-14",
+   "episodes": 12
+  },
+  "50828": {
+   "slug": "bai-ri-cheng-wang",
+   "title": "Bai Ri Cheng Wang",
+   "status": "finished",
+   "endDate": "2026-09-15",
+   "episodes": 25
+  },
+  "50833": {
+   "slug": "let-s-roll-cinnamoroll-2",
+   "title": "Let's Roll, Cinnamoroll! 2",
+   "status": "finished",
+   "endDate": "2026-09-16",
+   "episodes": 12
+  },
+  "50846": {
+   "slug": "youjo-shenki-2",
+   "title": "Youjo Shenki 2",
+   "status": "finished",
+   "endDate": "2026-09-24",
+   "episodes": 12
+  },
+  "50978": {
+   "slug": "cheng-ye-xiao-he",
+   "title": "Cheng Ye Xiao He",
+   "status": "finished",
+   "endDate": "2026-11-02",
+   "episodes": 16
+  },
+  "51045": {
+   "slug": "plannosaurus-gachi-koseibutsu-bu",
+   "title": "Plannosaurus Gachi Koseibutsu-bu",
+   "status": "finished",
+   "endDate": "2026-09-27",
+   "episodes": 12
+  }
+ }
+}

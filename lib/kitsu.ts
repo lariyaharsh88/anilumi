@@ -7,6 +7,7 @@
 
 import { airing, upcomingOf } from "./airing";
 import { WATCH_ORDER_OVERRIDES, type WatchOrderOverride } from "@/data/watch-orders";
+import statusFixes from "@/data/status-fixes.json";
 
 const BASE = "https://kitsu.io/api/edge";
 /**
@@ -133,7 +134,20 @@ async function kitsu(path: string, params: Record<string, string | number> = {},
 const str = (v: unknown): string | null => (typeof v === "string" && v.length ? v : null);
 const num = (v: unknown): number | null => (typeof v === "number" ? v : typeof v === "string" && v !== "" && !isNaN(Number(v)) ? Number(v) : null);
 
+/**
+ * Kitsu keeps some finished shows at "current" for months; data/status-fixes.json (scripts/fix-stale-status.mts,
+ * from AniList, monthly) holds the ones that have ended, with the end date. Pure.
+ */
+export function withStatusFix<T extends Pick<Anime, "id" | "status" | "endDate" | "nextRelease" | "episodeCount">>(a: T): T {
+  const fix = a.status === "current" ? (statusFixes as { shows: Record<string, { endDate: string; episodes: number | null }> }).shows[a.id] : undefined;
+  return fix ? { ...a, status: "finished", endDate: a.endDate || fix.endDate, nextRelease: null, episodeCount: a.episodeCount || fix.episodes } : a;
+}
+
 function normalizeAnime(r: JsonApiResource, included: JsonApiResource[] = []): Anime {
+  return withStatusFix(normalizeRaw(r, included));
+}
+
+function normalizeRaw(r: JsonApiResource, included: JsonApiResource[] = []): Anime {
   const a = r.attributes;
   const titles = (a.titles as Record<string, string>) || {};
   const byId = new Map(included.map((i) => [`${i.type}:${i.id}`, i]));
@@ -297,7 +311,8 @@ export async function listAnime(opts: ListOpts = {}): Promise<Paged<Anime>> {
   const doc = await kitsu("/anime", params, revalidate);
   if (!doc || !Array.isArray(doc.data)) return { items: [], total: 0, limit, offset };
   return {
-    items: uniqueById(doc.data.map((r) => normalizeAnime(r, doc.included)).filter((a) => !a.nsfw && a.ageRating !== "R18")),
+    // An "airing" list drops shows that have ended though Kitsu still lists them (withStatusFix).
+    items: uniqueById(doc.data.map((r) => normalizeAnime(r, doc.included)).filter((a) => !a.nsfw && a.ageRating !== "R18" && (opts.filter?.status !== "current" || a.status === "current"))),
     total: doc.meta?.count ?? 0,
     limit,
     offset,
@@ -634,6 +649,21 @@ export async function buildWatchOrder(start: Anime, fetchRelations: (id: string)
         entries.push(e);
       }
       Object.assign(e, { kind: "main", note: NOTES.main, optional: false, attachedTo: undefined });
+    }
+  }
+  if (ov?.optional?.length) {
+    // Optional extras Kitsu doesn't link or files as core: a retelling (SAO Progressive), a reboot's sequel.
+    const lastMain = [...entries].reverse().find((e) => e.kind === "main");
+    for (const slug of ov.optional) {
+      let e = entries.find((x) => x.anime.slug === slug);
+      if (!e) {
+        const a = await getAnimeBySlug(slug).catch(() => null);
+        if (!a) continue;
+        e = { anime: a, step: entries.length + 1, kind: "side", note: NOTES.side, optional: true };
+        entries.push(e);
+      }
+      const kind = e.anime.subtype === "movie" ? "movie" : "side";
+      Object.assign(e, { kind, note: NOTES[kind], optional: true, attachedTo: e.attachedTo ?? lastMain?.anime.id });
     }
   }
   if (ov?.demote?.length) {
