@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { fitTitle } from "@/lib/titles";
 import { workType, workId, isoDuration } from "@/lib/ld";
 import Link from "@/components/Link";
 import Image from "next/image";
@@ -94,7 +95,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const a = await getAnimeBySlug(decodeURIComponent(slug));
   if (!a) notFound();
   const year = a.startDate?.slice(0, 4);
-  const title = `${a.title}${year ? ` (${year})` : ""} – Episodes, Release Date & Where to Watch`;
+  const live = a.status === "current" || a.status === "upcoming";
+  const title = fitTitle(live
+    ? [`${a.title}${year ? ` (${year})` : ""} – Episodes, Release Date & Where to Watch`, `${a.title} – Release Date, Episodes & Where to Watch`, `${a.title} – Next Episode & Where to Watch`, `${a.title} – Release Date`, a.title]
+    : [`${a.title}${year ? ` (${year})` : ""} – Episodes & Where to Watch`, `${a.title} – Episodes & Where to Watch`, `${a.title} – Where to Watch`, a.title]);
   const description = `${a.title}: ${a.episodeCount ? `${a.episodeCount} episodes` : subtypeLabel(a.subtype)}, ${statusLabel(a.status).toLowerCase()}${a.rating ? `, rated ${(a.rating / 10).toFixed(1)}/10` : ""}. ${a.synopsis.slice(0, 120).replace(/\s+\S*$/, "")}…`;
   return {
     title,

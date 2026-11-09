@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { fitTitle } from "@/lib/titles";
 import PushButton from "@/components/PushButton";
 import { charTopic } from "@/lib/push";
 import { dbEnabled } from "@/lib/db";
@@ -95,7 +96,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     aliases.length > 0 && `Also known as ${aliases.slice(0, 2).join(" and ")}.`,
   ].filter(Boolean).join(" ");
   return {
-    title: `${c.name}${nick ? ` "${nick}"` : ""}${home ? ` (${home.title})` : ""}: ${what ? `${what}` : "Character Profile & Appearances"}`,
+    // Most informative title that fits a search result (lib/titles.ts): the name and the searched facts first.
+    title: fitTitle([
+      `${c.name}${nick ? ` "${nick}"` : ""}${home ? ` (${home.title})` : ""}: ${what || "Character Profile & Appearances"}`,
+      home && `${c.name} (${home.title}): ${what || "Character Profile"}`,
+      `${c.name}: ${what || "Character Profile & Appearances"}`,
+      what.includes("Voice Actor") && `${c.name}: ${what.replace(/,? ?(& )?Voice Actor$/, "").replace(/, ([^,]+)$/, " & $1")}`,
+      `${c.name}: Age, Birthday & More`,
+    ]),
     description: ((lead ? `${lead} ` : "") + (bio ? bio.slice(0, 120).replace(/\s+\S*$/, "") + "…" : `Every anime ${c.name} appears in.`)).slice(0, 300),
     alternates: { canonical: `/character/${c.slug}` },
     robots: robotsFor(characterIndexed(c.slug)),

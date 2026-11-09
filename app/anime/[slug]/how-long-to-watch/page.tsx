@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { fitTitle } from "@/lib/titles";
 import Link from "@/components/Link";
 import { notFound } from "next/navigation";
 import { getAnimeBySlug, getLastAiredBest, buildWatchOrder, listAnime, animePath, posterUrl, runtimeMinutes, subtypeLabel, type Anime } from "@/lib/kitsu";
@@ -55,11 +56,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { a, airing, eps, len, total, franchise, fTotal, isRoot, seasonal, part } = await load(slug);
   const h = hoursOf(total), fh = hoursOf(fTotal);
   const own = `${h} Hour${h === 1 ? "" : "s"}${eps > 1 ? ` (${eps} Episodes${airing ? " So Far" : ""})` : ""}`;
-  const title = !total
-    ? `How Long Is ${a.title}? Runtime & Binge Time`
+  const title = fitTitle(!total
+    ? [`How Long Is ${a.title}? Runtime & Binge Time`, `How Long Is ${a.title}?`]
     : isRoot
-      ? `How Long Is ${a.title}? ${fh} Hours for ${seasonal ? "All Seasons" : "the Whole Franchise"} (${part}: ${h}h)`
-      : `How Long Is ${a.title}? ${own}`;
+      ? [`How Long Is ${a.title}? ${fh} Hours for ${seasonal ? "All Seasons" : "the Whole Franchise"} (${part}: ${h}h)`, `How Long Is ${a.title}? ${fh} Hours for ${seasonal ? "All Seasons" : "the Whole Franchise"}`, `How Long Is ${a.title}? ${fh} Hours`, `${a.title}: ${fh} Hours to Watch`]
+      : [`How Long Is ${a.title}? ${own}`, `How Long Is ${a.title}? ${h} Hours`, `${a.title}: ${h} Hours to Watch`]);
   const description = total
     ? isRoot
       ? `All of ${a.title} takes about ${fmtRun(fTotal)} across ${franchise!.mainCount} main parts${franchise!.entries.some((e) => e.kind === "movie") ? " plus films" : ""}. ${seasonal ? `${a.title} season 1` : a.title} alone is ${fmtRun(total)}${eps > 1 && len ? ` (${eps} episodes × ${len} min)` : ""}. At 2 hours a day the whole series takes ${humanDays(Math.ceil(fTotal / 120))}.`

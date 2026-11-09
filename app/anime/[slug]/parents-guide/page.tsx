@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { fitTitle } from "@/lib/titles";
 import Link from "@/components/Link";
 import { notFound } from "next/navigation";
 import { getAnimeBySlug, listAnime, animePath, posterUrl } from "@/lib/kitsu";
@@ -32,9 +33,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { a, guide } = await load(slug);
   // Lead with the answer people search for ("madoka magica age rating", "deadman wonderland nudity").
   const flags = guide ? flaggedShort(guide) : [];
-  const title = guide
-    ? `${a.title} Age Rating: ${ageLabel(guide.suitable)}${flags.length ? ` (${flags.join(", ")})` : ""} · Parents' Guide`
-    : `${a.title} Age Rating & Parents' Guide`;
+  const title = fitTitle(guide
+    ? [`${a.title} Age Rating: ${ageLabel(guide.suitable)}${flags.length ? ` (${flags.join(", ")})` : ""} · Parents' Guide`, `${a.title} Age Rating: ${ageLabel(guide.suitable)}${flags.length ? ` (${flags.join(", ")})` : ""}`, `${a.title} Age Rating: ${ageLabel(guide.suitable)}`, `${a.title} Age Rating`]
+    : [`${a.title} Age Rating & Parents' Guide`, `${a.title} Age Rating`]);
   const description = guide
     ? `${a.title} is best for ${guide.suitable.toLowerCase()}${a.ageRating ? `; officially rated ${a.ageRating}` : ""}. ${guide.areas.filter((x) => x.key !== "sexual-violence" || x.level !== "none").map((x) => `${x.label}: ${LEVEL_WORD[x.level].toLowerCase()}`).join(" · ")}. Spoiler-free, from viewer tags.`
     : `Age rating and content notes for ${a.title}.`;
