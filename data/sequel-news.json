@@ -1,0 +1,478 @@
+{
+  "checked": "2026-11-09",
+  "reviewed": null,
+  "shows": {
+    "one-piece": {
+      "status": "dated",
+      "what": "The TV anime returns in 2027 after its 2026 run ended with episode 1180 on 2026-09-27; separately, 'One Piece Film: God Valley' is set for summer 2027",
+      "announced": "2026-09-27",
+      "by": "Official One Piece anime accounts (Toei Animation); the film was announced at One Piece Day 2026 (Aug 22-23)",
+      "window": "2027 (TV, no exact date); summer 2027 (film)",
+      "confidence": "high",
+      "sources": [
+        "https://www.complex.com/pop-culture/a/treyalston/one-piece-anime-2027-return-episode-1181",
+        "https://www.levelup.com/en/news/one-piece-is-taking-a-major-break-for-many-months-when-will-the-anime-return-with-episode-1181/",
+        "https://www.animenewsnetwork.com/encyclopedia/anime.php?id=40592",
+        "https://animecorner.me/one-piece-god-valley-anime-movie-officially-announced-for-2027-baad-film-for-2029/",
+        "https://www.animenewsnetwork.com/encyclopedia/anime.php?id=40461"
+      ],
+      "notes": "PAGE VERDICT WRONG: the page says 'still airing' and 'no sequel announced'. The TV anime has been on a scheduled break since 2026-09-27, with its return announced for 2027 and a new film dated for summer 2027. A second film, 'One Piece Film BAAD', is set for 2029."
+    },
+    "attack-on-titan": {
+      "status": "none",
+      "what": "No new anime announced; the last release was the compilation film 'Attack on Titan: The Last Attack' (2024-11-08)",
+      "announced": "2024-11-08",
+      "by": null,
+      "window": null,
+      "confidence": "high",
+      "sources": [
+        "https://www.animenewsnetwork.com/encyclopedia/anime.php?id=33310",
+        "https://en.wikipedia.org/wiki/Attack_on_Titan:_The_Last_Attack"
+      ],
+      "notes": "The page's verdict (Season 2 already out) is correct. The 2026 Attack on Titan news was a café, illustrations and a game's opening animation, not new anime."
+    },
+    "boku-no-hero-academia": {
+      "status": "none",
+      "what": "No new season or film announced; the last new anime was the short 'I Am a Hero Too' (2026-08-03), after the 'More' special (2026-05-02) and the final season (ended 2025-12-13)",
+      "announced": "2026-08-03",
+      "by": null,
+      "window": null,
+      "confidence": "high",
+      "sources": [
+        "https://www.animenewsnetwork.com/encyclopedia/anime.php?id=39364",
+        "https://www.animenewsnetwork.com/encyclopedia/anime.php?id=38146",
+        "https://en.wikipedia.org/wiki/My_Hero_Academia_(TV_series)"
+      ]
+    },
+    "boku-no-hero-academia-2nd-season": {
+      "status": "none",
+      "what": "No new season or film announced; the last new anime was the short 'I Am a Hero Too' (2026-08-03), after the 'More' special (2026-05-02) and the final season (ended 2025-12-13)",
+      "announced": "2026-08-03",
+      "by": null,
+      "window": null,
+      "confidence": "high",
+      "sources": [
+        "https://www.animenewsnetwork.com/encyclopedia/anime.php?id=39364",
+        "https://www.animenewsnetwork.com/encyclopedia/anime.php?id=38146",
+        "https://en.wikipedia.org/wiki/My_Hero_Academia_(TV_series)"
+      ],
+      "notes": "This page covers an earlier entry. Its next season (Season 3) has already aired, and the page says so correctly. The franchise-level news is below."
+    },
+    "one-punch-man": {
+      "status": "dated",
+      "what": "Season 3 Part 2 (second cour) premieres January 2027",
+      "announced": "2025-12-28",
+      "by": "Bandai Namco Filmworks / official One-Punch Man anime, after the Season 3 Part 1 finale",
+      "window": "January 2027",
+      "confidence": "high",
+      "sources": [
+        "https://finalweapon.net/2026/10/10/one-punch-man-season-3-part-2-january-2027-release-date/",
+        "https://animecorner.me/one-punch-man-season-3-cour-2-visual-and-trailer-revealed-sets-january-2027-release/",
+        "https://www.animenewsnetwork.com/encyclopedia/anime.php?id=38200"
+      ],
+      "notes": "Part 2 was first announced for 2027. The January 2027 month was announced on about 2026-10-10, with a trailer. The page's 'January 2027' matches."
+    },
+    "boku-no-hero-academia-3rd-season": {
+      "status": "none",
+      "what": "No new season or film announced; the last new anime was the short 'I Am a Hero Too' (2026-08-03), after the 'More' special (2026-05-02) and the final season (ended 2025-12-13)",
+      "announced": "2026-08-03",
+      "by": null,
+      "window": null,
+      "confidence": "high",
+      "sources": [
+        "https://www.animenewsnetwork.com/encyclopedia/anime.php?id=39364",
+        "https://www.animenewsnetwork.com/encyclopedia/anime.php?id=38146",
+        "https://en.wikipedia.org/wiki/My_Hero_Academia_(TV_series)"
+      ],
+      "notes": "This page covers an earlier entry. Its next season (Season 4) has already aired, and the page says so correctly. The franchise-level news is below."
+    },
+    "death-note": {
+      "status": "none",
+      "what": "No sequel announced; the TV anime ended 2007-06-27",
+      "announced": "2007-06-27",
+      "by": null,
+      "window": null,
+      "confidence": "high",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Death_Note_(2006_TV_series)",
+        "https://www.animenewsnetwork.com/encyclopedia/anime.php?id=6592"
+      ]
+    },
+    "fullmetal-alchemist-brotherhood": {
+      "status": "none",
+      "what": "No sequel announced; the TV anime ended 2010-07-04",
+      "announced": "2010-07-04",
+      "by": null,
+      "window": null,
+      "confidence": "high",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Fullmetal_Alchemist:_Brotherhood",
+        "https://www.animenewsnetwork.com/encyclopedia/anime.php?id=10216"
+      ]
+    },
+    "hunter-x-hunter-2011": {
+      "status": "none",
+      "what": "No anime continuation announced; the 2011 TV anime ended 2014-09-24",
+      "announced": "2014-09-24",
+      "by": null,
+      "window": null,
+      "confidence": "high",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Hunter_%C3%97_Hunter_(2011_TV_series)",
+        "https://www.animenewsnetwork.com/encyclopedia/anime.php?id=13262"
+      ]
+    },
+    "kimetsu-no-yaiba": {
+      "status": "announced",
+      "what": "Infinity Castle Part 2, the second of three Infinity Castle films, is confirmed with no release date",
+      "announced": "2024-06-30",
+      "by": "Aniplex / ufotable, at the end of the Hashira Training Arc finale broadcast",
+      "window": "TBA",
+      "confidence": "high",
+      "sources": [
+        "https://www.animenewsnetwork.com/news/2024-06-30/demon-slayer-gets-anime-film-trilogy-adapting-infinity-castle-arc/.212639",
+        "https://en.wikipedia.org/wiki/Demon_Slayer:_Kimetsu_no_Yaiba_%E2%80%93_The_Movie:_Infinity_Castle",
+        "https://screenrant.com/demon-slayer-infinity-castle-part-2-release-date-not-2026/"
+      ],
+      "notes": "Part 1 opened 2025-07-18. ufotable's 2026 lineup video listed Part 2 under future projects, not 2026. The page's 'Movie 2 is confirmed' matches."
+    },
+    "nanatsu-no-taizai": {
+      "status": "none",
+      "what": "No new anime announced; the latest franchise anime was the sequel series 'Four Knights of the Apocalypse' Season 2 (ended 2024-12-29)",
+      "announced": "2024-12-29",
+      "by": null,
+      "window": null,
+      "confidence": "high",
+      "sources": [
+        "https://en.wikipedia.org/wiki/The_Seven_Deadly_Sins:_Four_Knights_of_the_Apocalypse",
+        "https://www.animenewsnetwork.com/encyclopedia/anime.php?id=32543"
+      ],
+      "notes": "The page's main-story list ends at Ensa no Edinburgh Part 2 (2023) and does not mention the sequel series Four Knights of the Apocalypse."
+    },
+    "shingeki-no-kyojin-2": {
+      "status": "none",
+      "what": "No new anime announced; the last release was the compilation film 'Attack on Titan: The Last Attack' (2024-11-08)",
+      "announced": "2024-11-08",
+      "by": null,
+      "window": null,
+      "confidence": "high",
+      "sources": [
+        "https://www.animenewsnetwork.com/encyclopedia/anime.php?id=33310",
+        "https://en.wikipedia.org/wiki/Attack_on_Titan:_The_Last_Attack"
+      ],
+      "notes": "This page covers an earlier entry. Its next season (Season 3) has already aired, and the page says so correctly. The franchise-level news is below."
+    },
+    "shingeki-no-kyojin-3": {
+      "status": "none",
+      "what": "No new anime announced; the last release was the compilation film 'Attack on Titan: The Last Attack' (2024-11-08)",
+      "announced": "2024-11-08",
+      "by": null,
+      "window": null,
+      "confidence": "high",
+      "sources": [
+        "https://www.animenewsnetwork.com/encyclopedia/anime.php?id=33310",
+        "https://en.wikipedia.org/wiki/Attack_on_Titan:_The_Last_Attack"
+      ],
+      "notes": "This page covers an earlier entry. Its next season (Season 3 Part 2) has already aired, and the page says so correctly. The franchise-level news is below."
+    },
+    "shingeki-no-kyojin-3-part-2": {
+      "status": "none",
+      "what": "No new anime announced; the last release was the compilation film 'Attack on Titan: The Last Attack' (2024-11-08)",
+      "announced": "2024-11-08",
+      "by": null,
+      "window": null,
+      "confidence": "high",
+      "sources": [
+        "https://www.animenewsnetwork.com/encyclopedia/anime.php?id=33310",
+        "https://en.wikipedia.org/wiki/Attack_on_Titan:_The_Last_Attack"
+      ],
+      "notes": "This page covers an earlier entry. Its next season (The Final Season) has already aired, and the page says so correctly. The franchise-level news is below."
+    },
+    "ansatsu-kyoushitsu-tv-2": {
+      "status": "none",
+      "what": "No further sequel announced; the new film 'Assassination Classroom the Movie: Minna no Jikan' (announced 2025-09-07) opened in Japan on 2026-03-20",
+      "announced": "2026-03-20",
+      "by": null,
+      "window": null,
+      "confidence": "high",
+      "sources": [
+        "https://www.animenewsnetwork.com/news/2025-09-07/assassination-classroom-manga-gets-new-anime-film-in-2026/.228514",
+        "https://animecorner.me/assassination-classroom-movie-2026-release-date/"
+      ],
+      "notes": "PAGE VERDICT WRONG: the page says 'No sequel has been announced' and dates the ending to 2016. A new anime film, which the author calls a continuation of the main story, was announced on 2025-09-07 and released 2026-03-20. Nothing newer is announced."
+    },
+    "haikyuu": {
+      "status": "dated",
+      "what": "The second 'Final' film, 'Haikyu!! The Movie: VS the Little Giant', is set for 2027 together with the short 'Where Monsters Go'",
+      "announced": "2025-12-21",
+      "by": "Official Haikyu!! anime, on the Jump Festa 2026 stage",
+      "window": "2027",
+      "confidence": "high",
+      "sources": [
+        "https://www.anitrendz.com/news/2025/12/21/haikyu-vs-little-giants-premieres-in-2027",
+        "https://en.mantan-web.jp/article/20251220dog00m200017000c.html",
+        "https://en.wikipedia.org/wiki/Haikyu!!"
+      ],
+      "notes": "The two final films were first announced on 2022-08-13, and this film's title was revealed on 2025-03-02. There is no exact date yet. The page's main-story list stops at TO THE TOP 2 and leaves out The Dumpster Battle (2024) and this 2027 film."
+    },
+    "ansatsu-kyoushitsu-tv": {
+      "status": "none",
+      "what": "No further sequel announced; the new film 'Assassination Classroom the Movie: Minna no Jikan' (announced 2025-09-07) opened in Japan on 2026-03-20",
+      "announced": "2026-03-20",
+      "by": null,
+      "window": null,
+      "confidence": "high",
+      "sources": [
+        "https://www.animenewsnetwork.com/news/2025-09-07/assassination-classroom-manga-gets-new-anime-film-in-2026/.228514",
+        "https://animecorner.me/assassination-classroom-movie-2026-release-date/"
+      ],
+      "notes": "This page covers an earlier entry. Its next season (2nd Season) has already aired, and the page says so correctly. The franchise-level news is below. The page's list leaves out the 2026 film."
+    },
+    "nanatsu-no-taizai-imashime-no-fukkatsu": {
+      "status": "none",
+      "what": "No new anime announced; the latest franchise anime was the sequel series 'Four Knights of the Apocalypse' Season 2 (ended 2024-12-29)",
+      "announced": "2024-12-29",
+      "by": null,
+      "window": null,
+      "confidence": "high",
+      "sources": [
+        "https://en.wikipedia.org/wiki/The_Seven_Deadly_Sins:_Four_Knights_of_the_Apocalypse",
+        "https://www.animenewsnetwork.com/encyclopedia/anime.php?id=32543"
+      ],
+      "notes": "This page covers an earlier entry. Its next season (Kamigami no Gekirin) has already aired, and the page says so correctly. The franchise-level news is below."
+    },
+    "no-game-no-life": {
+      "status": "none",
+      "what": "No sequel announced; the last anime was the film 'No Game No Life: Zero' (2017-07-15)",
+      "announced": "2017-07-15",
+      "by": null,
+      "window": null,
+      "confidence": "high",
+      "sources": [
+        "https://en.wikipedia.org/wiki/No_Game_No_Life",
+        "https://www.animenewsnetwork.com/encyclopedia/anime.php?id=19405"
+      ]
+    },
+    "steins-gate": {
+      "status": "none",
+      "what": "No new anime announced; the last TV anime was Steins;Gate 0 (ended 2018-09-27). The 15th-anniversary project (from 2026-04-05) announced an exhibition, not new anime",
+      "announced": "2018-09-27",
+      "by": null,
+      "window": null,
+      "confidence": "high",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Steins;Gate_0",
+        "https://www.animenewsnetwork.com/encyclopedia/anime.php?id=20446"
+      ],
+      "notes": "Misleading page: it calls the one-off OVA 'Egoistic Poriomania' the season 2 and leaves out the 2018 TV sequel Steins;Gate 0."
+    },
+    "shigatsu-wa-kimi-no-uso": {
+      "status": "none",
+      "what": "No sequel announced; the TV anime ended 2015-03-20",
+      "announced": "2015-03-20",
+      "by": null,
+      "window": null,
+      "confidence": "high",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Your_Lie_in_April",
+        "https://www.animenewsnetwork.com/encyclopedia/anime.php?id=16108"
+      ]
+    },
+    "jujutsu-kaisen": {
+      "status": "announced",
+      "what": "Season 4, 'The Culling Game Part 2', is announced; there is no premiere date",
+      "announced": "2026-03-27",
+      "by": "Official Jujutsu Kaisen anime (TOHO Animation / MAPPA), right after the Season 3 finale",
+      "window": "TBA",
+      "confidence": "high",
+      "sources": [
+        "https://en.wikipedia.org/wiki/List_of_Jujutsu_Kaisen_episodes",
+        "https://finalweapon.net/2026/03/26/jujutsu-kaisen-season-4-will-be-the-culling-game-part-2/",
+        "https://www.animenewsnetwork.com/encyclopedia/anime.php?id=40050"
+      ],
+      "notes": "English outlets date the announcement 2026-03-26 (US time). A teaser was shown 2026-06-19 at a MAPPA event. Reports of a January 2027 premiere are not official. The page's 'Kōhen is confirmed' matches."
+    },
+    "shingeki-no-kyojin-the-final-season": {
+      "status": "none",
+      "what": "No new anime announced; the last release was the compilation film 'Attack on Titan: The Last Attack' (2024-11-08)",
+      "announced": "2024-11-08",
+      "by": null,
+      "window": null,
+      "confidence": "high",
+      "sources": [
+        "https://www.animenewsnetwork.com/encyclopedia/anime.php?id=33310",
+        "https://en.wikipedia.org/wiki/Attack_on_Titan:_The_Last_Attack"
+      ],
+      "notes": "This page covers an earlier entry. Its next season (The Final Season Part 2) has already aired, and the page says so correctly. The franchise-level news is below."
+    },
+    "naruto-shippuden": {
+      "status": "announced",
+      "what": "Part II of the Boruto anime (the Two Blue Vortex story) is confirmed in production; no date",
+      "announced": "2023-03-09",
+      "by": "Studio Pierrot / official Boruto anime, alongside the end of Boruto Part I",
+      "window": "TBA",
+      "confidence": "medium",
+      "sources": [
+        "https://www.animenewsnetwork.com/news/2023-03-09/boruto-anime-ends-part-i-on-march-26-with-part-ii-confirmed/.195736",
+        "https://finalweapon.net/2023/03/09/boruto-naruto-next-generations-anime-part-1-ends-march-26-part-2-in-production",
+        "https://www.theouterhaven.net/boruto-two-blue-vortex-receives-tv-anime"
+      ],
+      "notes": "This is the Boruto sequel series, not a new Naruto Shippuden season. The Two Blue Vortex title comes only from secondary April 2025 reports about Pierrot's website. The page's verdict (Boruto: Naruto the Movie already out) is correct."
+    },
+    "yakusoku-no-neverland": {
+      "status": "none",
+      "what": "No sequel announced; Season 2 ended 2021-03-26",
+      "announced": "2021-03-26",
+      "by": null,
+      "window": null,
+      "confidence": "high",
+      "sources": [
+        "https://en.wikipedia.org/wiki/The_Promised_Neverland",
+        "https://www.animenewsnetwork.com/encyclopedia/anime.php?id=23263"
+      ]
+    },
+    "toradora": {
+      "status": "none",
+      "what": "No sequel announced; the TV anime ended in March 2009",
+      "announced": "2009-03-26",
+      "by": null,
+      "window": null,
+      "confidence": "high",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Toradora!",
+        "https://www.animenewsnetwork.com/encyclopedia/anime.php?id=10050"
+      ],
+      "notes": "ANN lists the final broadcast as 2009-03-25; the 26th is the page's date, from the late-night slot."
+    },
+    "haikyuu-2": {
+      "status": "dated",
+      "what": "The second 'Final' film, 'Haikyu!! The Movie: VS the Little Giant', is set for 2027 together with the short 'Where Monsters Go'",
+      "announced": "2025-12-21",
+      "by": "Official Haikyu!! anime, on the Jump Festa 2026 stage",
+      "window": "2027",
+      "confidence": "high",
+      "sources": [
+        "https://www.anitrendz.com/news/2025/12/21/haikyu-vs-little-giants-premieres-in-2027",
+        "https://en.mantan-web.jp/article/20251220dog00m200017000c.html",
+        "https://en.wikipedia.org/wiki/Haikyu!!"
+      ],
+      "notes": "This page covers an earlier entry. Its next season (Karasuno vs Shiratorizawa) has already aired, and the page says so correctly. The franchise-level news is below. The two final films were first announced on 2022-08-13, and this film's title was revealed on 2025-03-02. There is no exact date yet. The page's main-story list stops at TO THE TOP 2 and leaves out The Dumpster Battle (2024) and this 2027 film."
+    },
+    "sword-art-online": {
+      "status": "dated",
+      "what": "New original film 'Sword Art Online -Integral Domain-' (set after Alicization) is scheduled for 2028",
+      "announced": "2026-04-29",
+      "by": "Official SAO anime project (Aniplex); title, staff and 2028 window revealed 2026-07-06",
+      "window": "2028",
+      "confidence": "high",
+      "sources": [
+        "https://www.animenewsnetwork.com/news/2026-07-06/new-sword-art-online-film-reveals-title-cast-staff-2028-debut/.239360",
+        "https://finalweapon.net/2026/04/29/new-sword-art-online-original-film-is-in-the-works/",
+        "https://www.animenewsnetwork.com/encyclopedia/anime.php?id=40306"
+      ],
+      "notes": "The page's main-story list ends with Alicization War of Underworld and does not mention the Progressive films (2021-2022) or this 2028 film."
+    },
+    "code-geass-lelouch-of-the-rebellion": {
+      "status": "dated",
+      "what": "New anime 'Code Geass: Star Chaser Aspal' (Hoshi Oi no Aspal), a 20th-anniversary project",
+      "announced": "2025-12-07",
+      "by": "Bandai Namco Filmworks, at the 'Code Geass Project To 20th' event",
+      "window": "2027 (advance event screenings in Japan from January 2027)",
+      "confidence": "high",
+      "sources": [
+        "https://www.animenewsnetwork.com/.231788",
+        "https://animecorner.me/code-geass-new-anime-announced-for-2027-with-teaser-trailer-visual-and-staff/",
+        "https://www.animenewsnetwork.com/encyclopedia/anime.php?id=38116"
+      ],
+      "notes": "This is a new story in the franchise, not a direct Lelouch sequel. The 2027 window was revealed 2026-09-26. The page's verdict (R2 already out) is correct but it does not list Lelouch of the Re;surrection (2019) or Rozé of the Recapture."
+    },
+    "noragami": {
+      "status": "none",
+      "what": "No sequel announced; Noragami Aragoto (season 2) ended 2015-12-26",
+      "announced": "2015-12-26",
+      "by": null,
+      "window": null,
+      "confidence": "high",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Noragami",
+        "https://www.animenewsnetwork.com/encyclopedia/anime.php?id=16906"
+      ],
+      "notes": "This page covers an earlier entry. Its next season (Aragoto) has already aired, and the page says so correctly. The franchise-level news is below."
+    },
+    "tokyo-ghoul": {
+      "status": "none",
+      "what": "No new anime announced; Tokyo Ghoul:re season 2 ended 2018-12-25",
+      "announced": "2018-12-25",
+      "by": null,
+      "window": null,
+      "confidence": "high",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Tokyo_Ghoul",
+        "https://www.animenewsnetwork.com/encyclopedia/anime.php?id=21116"
+      ],
+      "notes": "Official 2024-2025 anniversary items were free streaming, exhibitions and an art book, not new anime."
+    },
+    "shokugeki-no-souma": {
+      "status": "none",
+      "what": "No sequel announced; the fifth and final season ended 2020-09-26",
+      "announced": "2020-09-26",
+      "by": null,
+      "window": null,
+      "confidence": "high",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Food_Wars!:_Shokugeki_no_Soma",
+        "https://www.animenewsnetwork.com/encyclopedia/anime.php?id=23036"
+      ]
+    },
+    "noragami-aragoto": {
+      "status": "none",
+      "what": "No sequel announced; Noragami Aragoto (season 2) ended 2015-12-26",
+      "announced": "2015-12-26",
+      "by": null,
+      "window": null,
+      "confidence": "high",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Noragami",
+        "https://www.animenewsnetwork.com/encyclopedia/anime.php?id=16906"
+      ]
+    },
+    "boku-dake-ga-inai-machi": {
+      "status": "none",
+      "what": "No sequel announced; the TV anime ended 2016-03-25",
+      "announced": "2016-03-25",
+      "by": null,
+      "window": null,
+      "confidence": "high",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Erased_(manga)",
+        "https://www.animenewsnetwork.com/encyclopedia/anime.php?id=17217"
+      ]
+    },
+    "haikyuu-karasuno-koukou-vs-shiratorizawa-gakuen-koukou": {
+      "status": "dated",
+      "what": "The second 'Final' film, 'Haikyu!! The Movie: VS the Little Giant', is set for 2027 together with the short 'Where Monsters Go'",
+      "announced": "2025-12-21",
+      "by": "Official Haikyu!! anime, on the Jump Festa 2026 stage",
+      "window": "2027",
+      "confidence": "high",
+      "sources": [
+        "https://www.anitrendz.com/news/2025/12/21/haikyu-vs-little-giants-premieres-in-2027",
+        "https://en.mantan-web.jp/article/20251220dog00m200017000c.html",
+        "https://en.wikipedia.org/wiki/Haikyu!!"
+      ],
+      "notes": "This page covers an earlier entry. Its next season (To the Top) has already aired, and the page says so correctly. The franchise-level news is below. The two final films were first announced on 2022-08-13, and this film's title was revealed on 2025-03-02. There is no exact date yet. The page's main-story list stops at TO THE TOP 2 and leaves out The Dumpster Battle (2024) and this 2027 film."
+    },
+    "kiseijuu": {
+      "status": "none",
+      "what": "No sequel announced; the TV anime ended 2015-03-26",
+      "announced": "2015-03-26",
+      "by": null,
+      "window": null,
+      "confidence": "high",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Parasyte",
+        "https://www.animenewsnetwork.com/encyclopedia/anime.php?id=15855"
+      ]
+    }
+  }
+}

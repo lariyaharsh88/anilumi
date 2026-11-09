@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { fitTitle } from "@/lib/titles";
+import { sequelNews, newsOverrides, NEWS_CHECKED, NEWS_REVIEWED } from "@/lib/sequelnews";
 import { robotsFor, nextSeasonIndexed } from "@/lib/indexing";
 import Link from "@/components/Link";
 import Image from "next/image";
@@ -62,13 +64,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     "still-airing": `Still Airing, No Sequel Yet (${asOf})`,
   };
   const dateQuestion = verdict.kind === "none" || verdict.kind === "dated" || verdict.kind === "announced";
-  const title = `${label}${dateQuestion ? " Release Date" : ""}: ${answer[verdict.kind]}`;
+  // Official news beats a database status that hasn't caught up (lib/sequelnews.ts).
+  const news = sequelNews(a.slug);
+  const override = newsOverrides(news, verdict.kind);
+  const title = override ? fitTitle([news!.window && news!.window !== "TBA" ? `${label}: Announced for ${news!.window}` : null, `${label}: Announced (${asOf})`, `${label}: Announced`]) : `${label}${dateQuestion ? " Release Date" : ""}: ${answer[verdict.kind]}`;
   return {
     title,
-    description: `${first ? `Is there a ${a.title} season 2?` : `Will ${a.title} get another season?`} ${verdict.headline} ${verdict.detail}`.slice(0, 300),
+    description: `${first ? `Is there a ${a.title} season 2?` : `Will ${a.title} get another season?`} ${override ? `${news!.what}${news!.announced ? ` (announced ${fmtDate(news!.announced, { month: "long", day: "numeric", year: "numeric" })})` : ""}.` : `${verdict.headline} ${verdict.detail}`}`.slice(0, 300),
     alternates: { canonical: `${animePath(a)}/next-season` },
     // Films and OVAs never; a series when there's news, or it's popular enough that people ask anyway.
-    ...(a.subtype === "TV" || a.subtype === "ONA" ? { robots: robotsFor(nextSeasonIndexed(`${animePath(a)}/next-season`, verdict.kind !== "none" && verdict.kind !== "still-airing", a.userCount)) } : { robots: { index: false } }),
+    ...(a.subtype === "TV" || a.subtype === "ONA" ? { robots: robotsFor(nextSeasonIndexed(`${animePath(a)}/next-season`, override || (verdict.kind !== "none" && verdict.kind !== "still-airing"), a.userCount)) } : { robots: { index: false } }),
   };
 }
 
@@ -92,9 +97,12 @@ export default async function NextSeasonPage({ params }: Props) {
   const then = upcomingLater[0];
   const thenNote = then && (verdict.kind === "out" || verdict.kind === "airing") ? ` After that, ${then.title} is confirmed${then.startDate ? ` for ${fmtDate(then.startDate, { month: "long", year: "numeric" })}` : ""}.` : "";
   const question = first ? `Is there a ${a.title} season 2?` : `Will ${a.title} get another season?`;
+  const news = sequelNews(a.slug);
+  const override = newsOverrides(news, verdict.kind);
+  const newsLine = news ? `${news.what}${news.announced && news.status !== "none" ? `, announced ${fmtDate(news.announced, { month: "long", day: "numeric", year: "numeric" })}${news.by ? ` by ${news.by}` : ""}` : ""}${news.window && news.window !== "TBA" && news.status !== "none" ? `; expected ${news.window}` : ""}.` : "";
 
   const faq: FaqItem[] = [
-    { q: question, a: `${verdict.headline} ${verdict.detail}${thenNote}` },
+    { q: question, a: override ? newsLine : `${verdict.headline} ${verdict.detail}${thenNote}` },
     ...(verdict.kind === "dated" && next?.startDate ? [{ q: `When does ${next.title} come out?`, a: `${next.title} is scheduled to premiere on ${fmtDate(next.startDate, { month: "long", day: "numeric", year: "numeric" })} in Japan.` }] : []),
     ...(avgGap !== null ? [{ q: `How long is the wait between ${a.title} seasons?`, a: `Across ${gaps.length} gap${gaps.length === 1 ? "" : "s"} so far, new entries in the main story have arrived on average ${humanMonths(avgGap)} after the previous one ended. That's a pattern, not an announcement.` }] : []),
     ...(cont ? [{ q: `Where does the ${a.title} anime end in the ${cont.medium}?`, a: `To keep going, start the ${cont.medium} from ${cont.chapter ? `chapter ${cont.chapter}` : `volume ${cont.volume}`}.${cont.note ? ` ${cont.note}` : ""}` }] : []),
@@ -108,7 +116,7 @@ export default async function NextSeasonPage({ params }: Props) {
         crumbs={[{ href: "/", label: "Home" }, { href: animePath(a), label: a.title }, { href: `${animePath(a)}/next-season`, label: first ? "Season 2" : "Next season" }]}
         eyebrow={<><span className="mr-2 inline-flex items-center rounded-full bg-white/10 px-2 py-0.5 text-[11px] tracking-normal text-ink normal-case">{BADGE[verdict.kind]}</span>{label}</>}
         title={question}
-        subtitle={<><strong className="text-ink">{verdict.headline}</strong> {verdict.detail}{thenNote}</>}
+        subtitle={override ? <><strong className="text-ink">{newsLine}</strong></> : <><strong className="text-ink">{verdict.headline}</strong> {verdict.detail}{thenNote}</>}
         facts={[
           { value: String(chain.length || 1), label: chain.length === 1 ? "season so far" : "entries in the main story" },
           ...(avgGap !== null ? [{ value: humanMonths(avgGap), label: "typical wait between seasons" }] : []),
@@ -120,6 +128,17 @@ export default async function NextSeasonPage({ params }: Props) {
       >
         {verdict.kind === "dated" && next?.startDate && <Countdown iso={`${next.startDate.slice(0, 10)}T00:00:00+09:00`} big label="Premieres in" />}
       </PageHero>
+
+      {news && (
+        <section className="card reveal mt-8 p-4" aria-labelledby="news-h">
+          <h2 id="news-h" className="text-xs font-semibold uppercase tracking-wider text-muted">Latest official news</h2>
+          <p className="mt-1 text-sm text-ink/90">{newsLine}</p>
+          <p className="mt-2 flex flex-wrap gap-x-3 gap-y-1 text-[11px] text-muted">
+            <span>{NEWS_REVIEWED ? "Checked" : `Draft, checked${NEWS_CHECKED ? ` on ${fmtDate(NEWS_CHECKED, { day: "numeric", month: "short", year: "numeric" })}` : ""}`} against official announcements and news reports.</span>
+            {news.sources.slice(0, 3).map((u, i) => <a key={u} href={u} target="_blank" rel="noopener nofollow" className="underline">Source {i + 1}</a>)}
+          </p>
+        </section>
+      )}
 
       {next && (
         <section className="reveal mt-10" aria-labelledby="next-h">
