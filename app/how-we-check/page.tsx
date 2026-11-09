@@ -39,6 +39,7 @@ export default function HowWeCheck() {
           <li><strong>{d.watchOrders}</strong> watch-order notes and <strong>{d.takes}</strong> editor&apos;s takes, built on Kitsu&apos;s sequel and prequel links, with every linked title checked against Kitsu.</li>
           {d.arcShows > 0 && <li>Story arcs for <strong>{d.arcShows}</strong> long-running shows, cross-checked against Wikipedia&apos;s episode lists, the series wikis and AnimeFillerList{d.arcsChecked ? ` on ${fmt(d.arcsChecked)}` : ""}.</li>}
           {d.mangaSeasons > 0 && <li>Which manga chapters or light-novel volumes <strong>{d.mangaSeasons}</strong> TV seasons adapt, cross-checked against the series wikis, MangaUpdates and per-episode chapter guides{d.mangaChecked ? ` on ${fmt(d.mangaChecked)}` : ""}.</li>}
+          {d.volumes > 0 && <li>Which printed volume to buy to read on after <strong>{d.volumes}</strong> of those seasons, from Wikipedia&apos;s chapter-by-volume lists cross-checked against the series wikis{d.volumesChecked ? ` on ${fmt(d.volumesChecked)}` : ""}.</li>}
           {d.dubs > 0 && <li><strong>{d.dubs}</strong> entries in the <Link href="/hindi-dub">Hindi dub list</Link>, from Crunchyroll&apos;s audio listings, Netflix India and Indian news reports, each with a confidence level{d.dubsChecked ? ` (checked ${fmt(d.dubsChecked)})` : ""}.</li>}
           <li>Filler lists for most shows come from the filler flags on MyAnimeList&apos;s episode lists; hand-made lists are cross-checked against AnimeFillerList.</li>
         </ul>

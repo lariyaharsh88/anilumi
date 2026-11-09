@@ -12,6 +12,7 @@ import { DUB_CHECKED, DUB_REVIEWED } from "./hindidub";
 import dubData from "@/data/hindi-dubs.json";
 import { ADAPT_CHECKED, ADAPT_REVIEWED } from "./mangaseasons";
 import mangaData from "@/data/manga-seasons.json";
+import { VOL_CHECKED, VOL_REVIEWED, VOL_COUNT } from "./mangavolumes";
 
 export type CheckedGuide = { kind: "Watch order" | "Editor's take" | "Filler list"; title: string; href: string; date: string };
 
@@ -39,5 +40,7 @@ export function draftCounts() {
     dubsChecked: DUB_CHECKED,
     mangaSeasons: ADAPT_REVIEWED ? 0 : Object.keys((mangaData as { seasons: object }).seasons).length,
     mangaChecked: ADAPT_CHECKED,
+    volumes: VOL_REVIEWED ? 0 : VOL_COUNT,
+    volumesChecked: VOL_CHECKED,
   };
 }

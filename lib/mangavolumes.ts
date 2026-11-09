@@ -8,6 +8,9 @@ import type { Adaptation } from "./mangaseasons";
 
 type Entry = { vol: number | null; startsAt: "start" | "middle" | null; confidence: string; printTitle?: string; notes?: string };
 const DATA = data as unknown as { checked: string | null; reviewed: string | null; printTitles: Record<string, string>; seasons: Record<string, Entry> };
+export const VOL_CHECKED = DATA.checked;
+export const VOL_REVIEWED = DATA.reviewed;
+export const VOL_COUNT = Object.values(DATA.seasons).filter((e) => e.vol).length;
 
 export type BuyVolume = { vol: number; startsAt: "start" | "middle" | null; search: string };
 

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import Link from "@/components/Link";
-import { getAnimeBySlug, buildWatchOrder, franchiseName, animePath, posterUrl, runtimeMinutes, getStreamingFor, type WatchEntry } from "@/lib/kitsu";
+import { getAnimeBySlug, buildWatchOrder, franchiseName, animePath, posterUrl, runtimeMinutes, getStreamingFor, aniListNextEpisodes, airingNotice, type WatchEntry } from "@/lib/kitsu";
 import { getAniListSequel } from "@/lib/anilist";
 import { fillerFor } from "@/lib/filler";
 import { KIND_HI, hiDuration, hiDays, hiDate, hiExpected, hiCount, hasHindi, hindiPath } from "@/lib/hindi";
@@ -53,10 +53,17 @@ async function load(raw: string) {
   const announced = (wo.entries.find((e) => e.kind === "main" && upcoming(e)) ?? wo.entries.find((e) => e.kind === "movie" && upcoming(e)))?.anime ?? null;
   const al = announced ? null : await getAniListSequel(latest.id).catch(() => null);
   const filler = fillerFor(slug, a.episodeCount ?? null);
-  return { slug, a, wo, name, ordered, mains, movies, extras, skippable, latest, announced, al, filler };
+  // An airing show can be on a break (One Piece until January): AniList's next air time, from the airing snapshot.
+  const next = latest.status === "current" ? (await aniListNextEpisodes([latest.id]).catch(() => new Map())).get(latest.id) ?? null : null;
+  const notice = latest.status === "current" ? airingNotice(latest.nextRelease, next?.at) : null;
+  return { slug, a, wo, name, ordered, mains, movies, extras, skippable, latest, announced, al, filler, next, notice };
 }
 
 function nextSeasonText(d: Awaited<ReturnType<typeof load>>): string {
+  if (d.latest.status === "current" && d.notice?.onBreak && d.notice.next) {
+    const when = hiDate(new Date(d.notice.next).toLocaleDateString("en-CA", { timeZone: "Asia/Kolkata" }));
+    return `${d.latest.title} अभी ब्रेक पर है।${d.next ? ` एपिसोड ${d.next.episode}` : " अगला एपिसोड"} ${when} को आएगा, यानी करीब ${Math.round((d.notice.breakDays ?? 0) / 7)} हफ़्ते बाद।`;
+  }
   if (d.latest.status === "current") return `${d.latest.title} अभी चल रहा है। नए एपिसोड हर हफ़्ते आते हैं।`;
   if (d.announced) {
     // Month and year only: Kitsu's exact days for unreleased shows are sometimes placeholders.
@@ -122,7 +129,7 @@ export default async function HindiGuide({ params }: Props) {
         title={<><span className="text-gradient">{name}</span> किस क्रम में देखें</>}
         subtitle={`${name} देखने का सही क्रम, कुल समय, फ़िलर और अगले सीज़न की जानकारी, सब एक जगह।`}
         facts={[
-          { value: String(mains.length), label: "मुख्य हिस्से" },
+          { value: String(mains.length), label: mains.length === 1 ? "मुख्य हिस्सा" : "मुख्य हिस्से" },
           ...(movies.length ? [{ value: String(movies.length), label: "मूवीज़" }] : []),
           ...(wo.totalMinutes ? [{ value: hiDuration(wo.totalMinutes), label: "कुल समय" }] : []),
         ]}
