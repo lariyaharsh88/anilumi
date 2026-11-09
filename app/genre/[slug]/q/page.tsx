@@ -1,4 +1,6 @@
 // Query-string variants (?page=, ?sort=, filters). Reached only through the rewrites in next.config.ts;
+import { MAIN_GENRES } from "@/lib/kitsu";
+import { robotsFor, genreIndexed } from "@/lib/indexing";
 // the plain URL is served by ../page.tsx from the ISR cache.
 import type { Metadata } from "next";
 import Link from "@/components/Link";
@@ -32,6 +34,8 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
     title: `Best ${g.title} Anime – ${SORTS[s].label}${Number(page) > 1 ? ` (Page ${page})` : ""}`,
     description: `The best ${g.title.toLowerCase()} anime ranked by ${SORTS[s].label.toLowerCase()}. ${g.count?.toLocaleString()} titles with ratings, episode counts and where to watch.`,
     alternates: { canonical: `/genre/${slug}${qs ? `?${qs}` : ""}` },
+    // Main genres and any search already shows; never the sorted or paged copies.
+    robots: robotsFor(!qs && genreIndexed(slug, MAIN_GENRES.has(slug))),
   };
 }
 

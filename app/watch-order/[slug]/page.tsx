@@ -16,7 +16,7 @@ import { webPage, workRef, reviewedBy } from "@/lib/ld";
 import Faq from "@/components/Faq";
 import AdSlot from "@/components/AdSlot";
 import WatchChecklist from "@/components/WatchChecklist";
-import { hasHindi, hindiPath } from "@/lib/hindi";
+import { hasHindi, hindiIndexed, hindiPath } from "@/lib/hindi";
 import { noteFor } from "@/data/notes";
 import { affiliateRel, streamLink } from "@/lib/affiliate";
 import AmazonLink from "@/components/AmazonLink";
@@ -74,7 +74,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       : `${name} is a standalone title with no sequels, prequels or spin-offs on record.`,
     // One URL per franchise: every season's watch-order page points at it, so ranking signals aren't split.
     robots: robotsFor(watchOrderIndexed(watchOrderSlug(wo), wo.entries.length, wo.entries.filter((e) => e.kind === "main" || e.kind === "movie").length)),
-    alternates: { canonical: `/watch-order/${watchOrderSlug(wo)}`, ...(hasHindi(watchOrderSlug(wo)) ? { languages: { en: `/watch-order/${watchOrderSlug(wo)}`, hi: hindiPath(watchOrderSlug(wo)), "x-default": `/watch-order/${watchOrderSlug(wo)}` } } : {}) },
+    alternates: { canonical: `/watch-order/${watchOrderSlug(wo)}`, ...(hindiIndexed(watchOrderSlug(wo)) ? { languages: { en: `/watch-order/${watchOrderSlug(wo)}`, hi: hindiPath(watchOrderSlug(wo)), "x-default": `/watch-order/${watchOrderSlug(wo)}` } } : {}) },
   };
 }
 

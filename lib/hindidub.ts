@@ -5,7 +5,7 @@
  */
 import data from "@/data/hindi-dubs.json";
 import franchises from "@/data/franchises.json";
-import { orderSlugs } from "./wosnap";
+import { orderSlugs, snapshotId } from "./wosnap";
 
 export type DubPlatform = { name: string; scope: string; url: string };
 export type Dub = {
@@ -73,4 +73,10 @@ export function dubFaq(d: Dub | null, title: string, lang: "en" | "hi" = "en"): 
   return lang === "hi"
     ? { q: `क्या ${title} हिंदी डब में है?`, a: yes ? `हाँ, ${title} का आधिकारिक हिंदी डब यहाँ है: ${platformList(d, "hi")}।` : `${dubDate("hi")} तक ${title} का कोई आधिकारिक हिंदी डब नहीं मिला।` }
     : { q: `Is ${title} dubbed in Hindi?`, a: yes ? `Yes. ${title} has an official Hindi dub on ${platformList(d, "en")}.` : `No official Hindi dub has been released as of ${dubDate("en")}. ${d.note}` };
+}
+
+/** Whether a franchise (by any of its slugs) has an official Hindi dub on record. */
+export function hasHindiDub(slug: string): boolean {
+  const id = snapshotId(slug);
+  return dubFor({ id: id ?? "", slug })?.status === "available";
 }

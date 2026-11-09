@@ -1,17 +1,17 @@
 import type { MetadataRoute } from "next";
 import { abs } from "@/lib/site";
 import { WATCH_ORDER_OVERRIDES } from "@/data/watch-orders";
-import { listAnime, getCategories, getAniListId, seasonOf, shiftSeason, animePath, episodePath, runtimeMinutes, TREND_GENRES } from "@/lib/kitsu";
+import { listAnime, getCategories, getAniListId, seasonOf, shiftSeason, animePath, episodePath, runtimeMinutes, TREND_GENRES, MAIN_GENRES } from "@/lib/kitsu";
 import { episodeMinutes } from "@/lib/binge";
 import { popularVoiceActors, vaPath } from "@/lib/anilist";
 import { allDays, birthdaysOn, bdPath, monthPath } from "@/lib/birthdays";
 import { fillerSlugs, continuationSlugs } from "@/lib/filler";
-import { topCharacterSlugs, characterTableSlugs } from "@/lib/charsnap";
+import { characterTableSlugs } from "@/lib/charsnap";
 import { hasSnapshotCast } from "@/lib/castsnap";
 import { hasSnapshotThemes } from "@/lib/themes";
 import { airing as airingSnapshot, upcomingOf } from "@/lib/airing";
-import { HINDI_SLUGS, hindiPath } from "@/lib/hindi";
-import { INDEXED_CHARACTERS, airsSoon, searchShownPaths, similarSlugs, watchOrderIndexed, characterTableIndexed, NEXT_SEASON_MIN_MEMBERS } from "@/lib/indexing";
+import { HINDI_SLUGS, hindiPath, hindiIndexed } from "@/lib/hindi";
+import { airsSoon, searchShownPaths, similarSlugs, watchOrderIndexed, characterTableIndexed, notedCharacters, genreIndexed, bestYearIndexed, trendIndexed, voiceActorIndexed, NEXT_SEASON_MIN_MEMBERS } from "@/lib/indexing";
 import franchiseData from "@/data/franchises.json";
 import { DATA_DATES as D, STATIC_UPDATED, latest, weekStart, monthStart } from "@/lib/lastmod";
 import { FILLER } from "@/data/filler";
@@ -32,7 +32,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: abs("/watch-order"), lastModified: at(D.watchOrders), changeFrequency: "weekly", priority: 0.7 },
     { url: abs("/lists"), lastModified: weekly, changeFrequency: "weekly", priority: 0.6 },
     { url: abs("/trends"), lastModified: monthly, changeFrequency: "monthly", priority: 0.6 },
-    ...TREND_GENRES.map(([g]) => ({ url: abs(`/trends/${g}`), lastModified: monthly, changeFrequency: "monthly" as const, priority: 0.6 })),
+    ...TREND_GENRES.filter(([g]) => trendIndexed(g)).map(([g]) => ({ url: abs(`/trends/${g}`), lastModified: monthly, changeFrequency: "monthly" as const, priority: 0.6 })),
     // One watch order per franchise (data/franchises.json, monthly): editorial ones first, then the ones the page
     // itself indexes (lib/indexing.ts watchOrderIndexed: enough parts, two of them core). Season pages point their
     // canonical at these, so they aren't listed.
@@ -51,7 +51,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: abs("/hi"), lastModified: weekly, changeFrequency: "weekly", priority: 0.6 },
     { url: abs("/hindi-dub"), lastModified: at(D.dubs), changeFrequency: "monthly", priority: 0.7 },
     { url: abs("/hi/hindi-dub"), lastModified: at(D.dubs), changeFrequency: "monthly", priority: 0.6 },
-    ...HINDI_SLUGS.map((s) => ({ url: abs(hindiPath(s)), lastModified: at(D.watchOrders, D.dubs), changeFrequency: "weekly" as const, priority: 0.6 })),
+    ...HINDI_SLUGS.filter(hindiIndexed).map((s) => ({ url: abs(hindiPath(s)), lastModified: at(D.watchOrders, D.dubs), changeFrequency: "weekly" as const, priority: 0.6 })),
     { url: abs("/anime-openings"), lastModified: at(D.themes), changeFrequency: "weekly", priority: 0.6 },
     { url: abs("/tier-list"), lastModified: weekly, changeFrequency: "weekly", priority: 0.6 },
     { url: abs("/what-anime-is-this"), lastModified: at(), changeFrequency: "monthly", priority: 0.8 },
@@ -60,8 +60,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: abs("/birthdays"), lastModified: now, changeFrequency: "daily", priority: 0.7 },
     ...Array.from({ length: 12 }, (_, i) => ({ url: abs(monthPath(i + 1)), lastModified: at(D.birthdays), changeFrequency: "monthly" as const, priority: 0.6 })),
     { url: abs("/on-this-day"), lastModified: now, changeFrequency: "daily", priority: 0.7 },
-    // Only indexed character pages (lib/indexing.ts): the most-favourited ones plus any Google already shows.
-    ...[...new Set([...topCharacterSlugs(INDEXED_CHARACTERS), ...searchShownPaths("/character/").map((p) => p.slice("/character/".length))])]
+    // Only indexed character pages (lib/indexing.ts): those with verified notes plus any Google already shows.
+    ...[...new Set([...notedCharacters(), ...searchShownPaths("/character/").map((p) => p.slice("/character/".length))])]
       .map((s, i) => ({ url: abs(`/character/${s}`), lastModified: at(D.characters), changeFrequency: "monthly" as const, priority: i < 100 ? 0.6 : 0.4 })),
     ...characterTableSlugs().filter(characterTableIndexed).map((s) => ({ url: abs(`/anime/${s}/characters`), lastModified: at(D.seriesCharacters), changeFrequency: "monthly" as const, priority: 0.5 })),
     { url: abs("/hype"), lastModified: now, changeFrequency: "daily", priority: 0.6 },
@@ -71,7 +71,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...allDays().filter(({ m, d }) => birthdaysOn(m, d).characters.length).map(({ m, d }) => ({ url: abs(bdPath(m, d)), lastModified: at(D.birthdays), changeFrequency: "yearly" as const, priority: 0.4 })),
     // Query-string variants are disallowed in robots.txt, so only the plain URL is listed.
     { url: abs("/tonight"), lastModified: now, changeFrequency: "weekly", priority: 0.7 },
-    ...Array.from({ length: now.getFullYear() - 1999 }, (_, i) => ({ url: abs(`/best/${now.getFullYear() - i}`), lastModified: i === 0 ? now : monthly, changeFrequency: (i === 0 ? "daily" : "monthly") as "daily" | "monthly", priority: i < 3 ? 0.8 : 0.5 })),
+    ...Array.from({ length: now.getFullYear() - 1999 }, (_, i) => now.getFullYear() - i).filter((y) => bestYearIndexed(y, now)).map((y, i) => ({ url: abs(`/best/${y}`), lastModified: i === 0 ? now : monthly, changeFrequency: (i === 0 ? "daily" : "monthly") as "daily" | "monthly", priority: i < 3 ? 0.8 : 0.5 })),
     { ...info("/about"), changeFrequency: "yearly", priority: 0.2 },
     { ...info("/how-we-check"), changeFrequency: "monthly", priority: 0.2 },
     { ...info("/author/harsh-lariya"), changeFrequency: "monthly", priority: 0.2 },
@@ -85,7 +85,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }
   try {
     const genres = await getCategories(60);
-    for (const g of genres) out.push({ url: abs(`/genre/${g.slug}`), lastModified: weekly, changeFrequency: "weekly", priority: 0.6 });
+    for (const g of genres) if (genreIndexed(g.slug, MAIN_GENRES.has(g.slug))) out.push({ url: abs(`/genre/${g.slug}`), lastModified: weekly, changeFrequency: "weekly", priority: 0.6 });
     // Kept deliberately small: each URL listed here gets crawled and rendered, and on a metered host
     // every render costs compute and cache writes. Deeper pages stay reachable through internal links.
     const pages = await Promise.all(Array.from({ length: 10 }, (_, i) => listAnime({ sort: "-userCount", limit: 20, offset: i * 20, revalidate: 86400 })));
@@ -136,7 +136,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // the alias index, so no extra API calls).
     for (const s of similarSlugs()) out.push({ url: abs(`/similar/${s}`), lastModified: at(D.anilist, D.aliases), changeFrequency: "monthly", priority: 0.5 });
     // Most-followed voice actors only (the hub's own cached request).
-    for (const v of await popularVoiceActors()) out.push({ url: abs(vaPath(v)), lastModified: at(D.voiceActors), changeFrequency: "monthly", priority: 0.4 });
+    for (const [i, v] of (await popularVoiceActors()).entries()) if (voiceActorIndexed(vaPath(v), i)) out.push({ url: abs(vaPath(v)), lastModified: at(D.voiceActors), changeFrequency: "monthly", priority: 0.4 });
   } catch {
     /* upstream hiccup: ship the static part of the sitemap */
   }

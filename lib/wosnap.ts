@@ -48,3 +48,10 @@ export function snapshotCore(slug: string): number | undefined {
   }
   return coreBySlug.get(slug);
 }
+
+let idBySlug: Map<string, string> | null = null;
+/** Kitsu id of a title in any snapshot franchise, by slug. */
+export function snapshotId(slug: string): string | undefined {
+  if (!idBySlug) { idBySlug = new Map(); for (const o of snap.orders) for (const r of o.e) idBySlug.set(r[1], r[0]); }
+  return idBySlug.get(slug);
+}

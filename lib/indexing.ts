@@ -7,11 +7,9 @@
 import priority from "@/data/warm-priority.json";
 import franchiseData from "@/data/franchises.json";
 import { WATCH_ORDER_OVERRIDES } from "@/data/watch-orders";
-import { topCharacterSlugs } from "./charsnap";
 import { snapshotCore } from "./wosnap";
+import notes from "@/data/character-notes.json";
 
-/** Most-favourited characters (AniList) whose pages are indexed. */
-export const INDEXED_CHARACTERS = 300;
 /** Aired episodes of an airing show that stay indexed, counting back from the latest. */
 export const INDEXED_AIRED_EPISODES = 2;
 /** A franchise watch order is indexed with an editor guide or at least this many parts ("watch A, then B" is thin). */
@@ -35,11 +33,30 @@ let shown: Set<string> | null = null;
 export const searchShown = (path: string) => (shown ??= new Set(shownList())).has(path);
 export const searchShownPaths = (prefix: string) => shownList().filter((p) => p.startsWith(prefix));
 
-let topChars: Set<string> | null = null;
+/** Characters with verified notes (data/character-notes.json): role, debut, arcs, family. */
+export const notedCharacters = () => Object.keys((notes as { characters: Record<string, unknown> }).characters);
+let noted: Set<string> | null = null;
+/**
+ * A character page is indexed when it has verified notes or search already shows it. Pages with only the shared
+ * AniList facts and a quoted bio (what every database has) stay for visitors, noindexed.
+ */
 export function characterIndexed(slug: string): boolean {
-  topChars ??= new Set(topCharacterSlugs(INDEXED_CHARACTERS));
-  return topChars.has(slug) || searchShown(`/character/${slug}`);
+  noted ??= new Set(notedCharacters());
+  return noted.has(slug) || searchShown(`/character/${slug}`);
 }
+
+/** Voice actors: the most-favourited (people search them by name) and any search already shows. */
+export const INDEXED_VOICE_ACTORS = 20;
+export const voiceActorIndexed = (path: string, rank: number | null) => (rank !== null && rank < INDEXED_VOICE_ACTORS) || searchShown(path);
+
+/** Genre lists: the main genres, plus any other search already shows. Pagination and sorts are never indexed. */
+export const genreIndexed = (slug: string, main: boolean) => main || searchShown(`/genre/${slug}`);
+
+/** "Best anime of <year>": the last ten years, plus older years search already shows. */
+export const bestYearIndexed = (year: number, now = new Date()) => year > now.getFullYear() - 10 || searchShown(`/best/${year}`);
+
+/** Genre trend charts: only where search already shows them (the /trends hub stays). */
+export const trendIndexed = (genre: string) => searchShown(`/trends/${genre}`);
 
 /** The next episode, episodes airing within two weeks and the latest aired ones of an airing show; older recaps
  * are mostly the shared synopsis, and pages weeks ahead (or with no date) are only a placeholder. */
@@ -57,8 +74,10 @@ export const franchiseParts = (slug: string) => (parts ??= new Map((franchiseDat
  */
 export function watchOrderIndexed(slug: string, liveParts: number, liveCore?: number): boolean {
   if (slug in WATCH_ORDER_OVERRIDES || searchShown(`/watch-order/${slug}`)) return true;
+  // Without an editor guide the list is Kitsu's links: worth a search result only when there's a real order to
+  // explain (three or more core seasons and films). "Watch season 1, then season 2" is thin.
   const core = liveCore ?? snapshotCore(slug);
-  return (franchiseParts(slug) ?? liveParts) >= INDEXED_MIN_PARTS && (core === undefined || core >= 2);
+  return (franchiseParts(slug) ?? liveParts) >= INDEXED_MIN_PARTS && (core === undefined || core >= 3);
 }
 
 /** "Anime like X" lists are generated, so only the ones search already shows are listed and indexed. */

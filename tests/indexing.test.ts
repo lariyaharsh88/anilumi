@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { episodeIndexed, characterIndexed, robotsFor, searchShown, INDEXED_CHARACTERS } from "../lib/indexing";
+import { episodeIndexed, characterIndexed, robotsFor, searchShown, notedCharacters } from "../lib/indexing";
 import { topCharacterSlugs } from "../lib/charsnap";
 
 const ep = (n: number, over: Partial<Parameters<typeof episodeIndexed>[0]> = {}) =>
@@ -22,13 +22,27 @@ test("episode pages Google already shows stay indexed", () => {
   assert.equal(ep(5, { path: "/anime/Black-Clover-Season-2/episode/5", airing: false }), true);
 });
 
-test("characters: top favourites indexed, the long tail not", () => {
+test("characters: pages with verified notes or already in search are indexed, plain database pages not", () => {
   const all = topCharacterSlugs(5000);
-  assert.ok(all.length > INDEXED_CHARACTERS);
-  assert.equal(characterIndexed(all[0]), true);
-  assert.equal(characterIndexed("eren-jager"), true); // shown in Search Console
-  const tail = all.slice(INDEXED_CHARACTERS).find((s) => !searchShown(`/character/${s}`))!;
-  assert.equal(characterIndexed(tail), false);
+  for (const s of notedCharacters()) assert.equal(characterIndexed(s), true, s);
+  assert.equal(characterIndexed("eren-jager"), true); // notes, and shown in Search Console
+  const plain = all.find((s) => !searchShown(`/character/${s}`) && !notedCharacters().includes(s))!;
+  assert.equal(characterIndexed(plain), false);
+});
+
+test("voice actors, genres, best-of years and trends: popular or already in search", async () => {
+  const { voiceActorIndexed, genreIndexed, bestYearIndexed, trendIndexed, watchOrderIndexed } = await import("../lib/indexing");
+  assert.equal(voiceActorIndexed("/voice-actor/1-x", 3), true);
+  assert.equal(voiceActorIndexed("/voice-actor/1-x", 50), false);
+  assert.equal(genreIndexed("action", true), true);
+  assert.equal(genreIndexed("zzz-tiny-genre", false), false);
+  const now = new Date("2026-11-09");
+  assert.equal(bestYearIndexed(2020, now), true);
+  assert.equal(bestYearIndexed(2003, now), false);
+  assert.equal(trendIndexed("zzz-genre"), false);
+  // Without a guide, two core entries is "watch A then B": not indexed; three is.
+  assert.equal(watchOrderIndexed("some-unknown-big-franchise", 5, 2), false);
+  assert.equal(watchOrderIndexed("some-unknown-big-franchise", 5, 3), true);
 });
 
 test("robotsFor", () => {
@@ -44,7 +58,6 @@ test("watch orders: editor guides and 3+ parts indexed, two-part franchises not"
   assert.equal(watchOrderIndexed("some-unknown-big-franchise", 5), true);
   // One season plus recaps and OVAs: nothing to order.
   assert.equal(watchOrderIndexed("some-unknown-big-franchise", 5, 1), false);
-  assert.equal(watchOrderIndexed("some-unknown-big-franchise", 5, 2), true);
 });
 
 test("similar pages and character tables: only the ones search already shows", async () => {

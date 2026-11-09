@@ -5,7 +5,7 @@ import Link from "@/components/Link";
 import { getAnimeBySlug, buildWatchOrder, franchiseName, animePath, posterUrl, runtimeMinutes, getStreamingFor, aniListNextEpisodes, airingNotice, type WatchEntry } from "@/lib/kitsu";
 import { getAniListSequel } from "@/lib/anilist";
 import { fillerFor } from "@/lib/filler";
-import { KIND_HI, hiDuration, hiDays, hiDate, hiExpected, hiCount, hasHindi, hindiPath } from "@/lib/hindi";
+import { KIND_HI, hiDuration, hiDays, hiDate, hiExpected, hiCount, hasHindi, hindiIndexed, hindiPath } from "@/lib/hindi";
 import PageHero from "@/components/PageHero";
 import JsonLd from "@/components/JsonLd";
 import { pageAbout, itemList } from "@/lib/ld";
@@ -87,6 +87,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       canonical: hindiPath(d.slug),
       languages: { en: `/watch-order/${d.slug}`, hi: hindiPath(d.slug), "x-default": `/watch-order/${d.slug}` },
     },
+    // Offered to search engines when the franchise has an official Hindi dub (lib/hindi.ts hindiIndexed).
+    ...(hindiIndexed(d.slug) ? {} : { robots: { index: false, follow: true } }),
   };
 }
 

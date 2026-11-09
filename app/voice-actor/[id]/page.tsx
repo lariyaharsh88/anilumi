@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
+import { robotsFor, voiceActorIndexed } from "@/lib/indexing";
 import { notFound, permanentRedirect } from "next/navigation";
-import { getVoiceActor, vaIdFromParam, vaPath, staffPath } from "@/lib/anilist";
+import { getVoiceActor, vaIdFromParam, vaPath, staffPath, popularVoiceActors } from "@/lib/anilist";
 import PersonProfile, { signatureRoles } from "@/components/PersonProfile";
 
 export const revalidate = 604800;
@@ -23,6 +24,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${va.name}${va.native ? ` (${va.native})` : ""} – Voice Actor Roles & Characters`,
     description: `${va.name} is a ${va.language ? `${va.language} ` : ""}voice actor known for ${top.map((r) => `${r.character.name} in ${r.media[0].title}`).join(", ")}. Every anime role by year, with signature characters.`,
     alternates: { canonical: vaPath(va) },
+    // The most-favourited voice actors and any search already shows (lib/indexing.ts).
+    robots: robotsFor(voiceActorIndexed(vaPath(va), await popularVoiceActors().then((xs) => { const i = xs.findIndex((x) => x.id === va.id); return i < 0 ? null : i; }).catch(() => null))),
     openGraph: va.imageLarge ? { images: [{ url: va.imageLarge }] } : undefined,
   };
 }

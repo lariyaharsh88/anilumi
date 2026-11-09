@@ -3,12 +3,19 @@
  * pages already use (no Hindi dub claims: no free source records them). Pure helpers.
  */
 import { WATCH_ORDER_OVERRIDES } from "@/data/watch-orders";
+import { hasHindiDub } from "./hindidub";
+import { searchShown } from "./indexing";
 import type { WatchEntry } from "./kitsu";
 
 /** Franchises that get a Hindi guide: every editorial watch order with a searched name. */
 export const HINDI_SLUGS: string[] = Object.entries(WATCH_ORDER_OVERRIDES).filter(([, o]) => o.label).map(([slug]) => slug);
 export const hindiPath = (slug: string) => `/hi/anime/${slug}`;
 export const hasHindi = (slug: string) => HINDI_SLUGS.includes(slug);
+/**
+ * A Hindi guide is offered to search engines when the franchise has an official Hindi dub (what Hindi searchers
+ * need, and what the English pages don't answer in Hindi) or search already shows it. The others stay for visitors.
+ */
+export const hindiIndexed = (slug: string) => hasHindi(slug) && (hasHindiDub(slug) || searchShown(hindiPath(slug)));
 
 export const KIND_HI: Record<WatchEntry["kind"], string> = {
   main: "मुख्य सीरीज़",
