@@ -2,11 +2,15 @@ import Link from "@/components/Link";
 import type { EditorNote as Note } from "@/data/notes";
 import CheckedBy, { DraftLabel } from "./CheckedBy";
 
-/** "AniLumi's take": a short spoiler-free note, where to start, and three similar shows. */
+/**
+ * A short spoiler-free note, where to start, and three similar shows. "In short" (premise and facts) until the
+ * author signs it off; a signed-off note is "AniLumi's take", the author's own view.
+ */
 export default function EditorNote({ title, note }: { title: string; note: Note }) {
+  const label = note.reviewed ? "AniLumi's take" : "In short";
   return (
-    <aside className="card mb-8 border-violet/30 p-4 sm:p-5" aria-label={`AniLumi's take on ${title}`}>
-      <p className="text-xs font-semibold uppercase tracking-wider text-violet-2">AniLumi&apos;s take</p>
+    <aside className="card mb-8 border-violet/30 p-4 sm:p-5" aria-label={`${label} on ${title}`}>
+      <p className="text-xs font-semibold uppercase tracking-wider text-violet-2">{label}</p>
       <p className="mt-2 text-[15px] leading-7 text-ink/90">{note.take}</p>
       {note.start && (
         <p className="mt-3 text-sm leading-6 text-ink/85"><strong className="text-ink">Where to start:</strong> {note.start}</p>
