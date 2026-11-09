@@ -117,6 +117,8 @@ export type Digest = {
   episodes: { title: string; episode: number; day: string; url: string; poster?: string | null }[];
   premieres: { title: string; day: string; url: string; poster?: string | null }[];
   news: { title: string; url: string; source: string }[];
+  /** Popular characters' birthdays in the coming week (lib/pushplan.ts weekBirthdays). */
+  birthdays?: { name: string; show: string; day: string; url: string }[];
 };
 
 const stat = (n: number, label: string, color: string) => `<td width="33%" valign="top" style="padding:0 4px"><div style="padding:14px 12px;border-radius:14px;background:${C.bg2};border:1px solid ${C.line};text-align:center">
@@ -150,18 +152,24 @@ const episodeRow = (x: Digest["episodes"][number]) => `<tr>
 const newsRow = (x: Digest["news"][number]) => `<tr><td style="padding:10px 0;border-bottom:1px solid ${C.line}">
   <a href="${esc(x.url)}" style="font-size:15px;line-height:1.45;font-weight:600;color:${C.ink};text-decoration:none">${esc(x.title)}</a><br><span style="font-size:12px;color:${C.muted}">${esc(x.source)}</span></td></tr>`;
 
-/** The Friday digest: the week's premieres and new episodes, plus the week's news. */
+const birthdayRow = (x: NonNullable<Digest["birthdays"]>[number]) => `<tr><td style="padding:8px 0;border-bottom:1px solid ${C.line}">
+  <a href="${esc(abs(x.url))}" style="text-decoration:none"><span style="font-size:15px;font-weight:700;color:${C.ink}">${esc(x.name)}</span><br><span style="font-size:13px;color:${C.muted}">${esc(x.show)}</span></a></td>
+  <td align="right" valign="middle" style="padding:8px 0 8px 10px;border-bottom:1px solid ${C.line}">${chip(x.day)}</td></tr>`;
+
+/** The Friday digest: the week's premieres and new episodes, popular characters' birthdays, and the week's news. */
 export function digestMail(l: LeadDoc, d: Digest): Mail {
   const content = kicker(`Weekly digest · ${d.week}`) + `<div class="h1">${h1("This week in anime")}</div>` +
     p("Here&rsquo;s what&rsquo;s airing over the next seven days and the news worth catching up on.") +
     `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:6px -4px 4px"><tr>${stat(d.premieres.length, d.premieres.length === 1 ? "premiere" : "premieres", C.accent)}${stat(d.episodes.length, d.episodes.length === 1 ? "new episode" : "new episodes", C.violet)}${stat(d.news.length, d.news.length === 1 ? "headline" : "headlines", C.gold)}</tr></table>` +
     (d.premieres.length ? h2("🎬", "Premiering this week", d.premieres.length) + premiereGrid(d.premieres) : "") +
     (d.episodes.length ? h2("📺", "New episodes", d.episodes.length) + `<table role="presentation" width="100%" cellpadding="0" cellspacing="0">${d.episodes.map(episodeRow).join("")}</table>` : "") +
+    (d.birthdays?.length ? h2("🎂", "Birthdays this week", d.birthdays.length) + `<table role="presentation" width="100%" cellpadding="0" cellspacing="0">${d.birthdays.map(birthdayRow).join("")}</table>` : "") +
     (d.news.length ? h2("📰", "This week's news") + `<table role="presentation" width="100%" cellpadding="0" cellspacing="0">${d.news.map(newsRow).join("")}</table>` : "") +
     button("See the full schedule", "/schedule");
   const text = [
     d.premieres.length ? `PREMIERING THIS WEEK\n${d.premieres.map((x) => `- ${x.title} (${x.day}) ${abs(x.url)}`).join("\n")}` : "",
     d.episodes.length ? `NEW EPISODES THIS WEEK\n${d.episodes.map((x) => `- ${x.title} ep ${x.episode} (${x.day}) ${abs(x.url)}`).join("\n")}` : "",
+    d.birthdays?.length ? `BIRTHDAYS THIS WEEK\n${d.birthdays.map((x) => `- ${x.name}, ${x.show} (${x.day}) ${abs(x.url)}`).join("\n")}` : "",
     d.news.length ? `NEWS\n${d.news.map((x) => `- ${x.title} (${x.source}) ${x.url}`).join("\n")}` : "",
   ].filter(Boolean).join("\n\n");
   return {

@@ -11,6 +11,8 @@ import PageHero from "@/components/PageHero";
 import { itemList } from "@/lib/ld";
 import JsonLd from "@/components/JsonLd";
 import Faq from "@/components/Faq";
+import LeadForm from "@/components/LeadForm";
+import { dbEnabled } from "@/lib/db";
 
 // Every 6 hours, so the "Today" marker follows the date.
 export const revalidate = 21600;
@@ -129,6 +131,9 @@ export default async function BirthdayMonth({ params }: Props) {
         <Link href="/birthdays" className="chip">🎂 Birthdays today</Link>
         <Link href={monthPath(next)} className="chip">{cap(MONTHS[next - 1])} →</Link>
       </nav>
+
+      {/* Birthday pages bring most of the search clicks but nobody back: the Friday digest now lists the week's birthdays. */}
+      {dbEnabled() && <LeadForm className="mt-10" kind="digest" source="birthday-digest" title="🎂 Next week's anime birthdays, every Friday" blurb="Popular characters' birthdays for the week ahead, plus new episodes and premieres, in one short email." button="Subscribe" />}
 
       <Faq
         title={`${name} anime birthdays FAQ`}

@@ -9,6 +9,8 @@ import PageHero from "./PageHero";
 import { itemList } from "@/lib/ld";
 import JsonLd from "@/components/JsonLd";
 import Faq from "./Faq";
+import LeadForm from "./LeadForm";
+import { dbEnabled } from "@/lib/db";
 
 const fans = (n: number) => (n >= 1000 ? `${(n / 1000).toFixed(n >= 10000 ? 0 : 1)}K` : String(n));
 const height = (s: SnapChar | null) => s?.l.find(([k]) => /height/i.test(k))?.[1] ?? null;
@@ -218,6 +220,9 @@ export default async function BirthdayView({ m, d, characters, people, today = f
         <ul className="flex flex-wrap gap-2">{MONTHS.map((mo, i) => <li key={mo}><Link href={monthPath(i + 1)} className={`chip ${i + 1 === m ? "chip-active" : ""}`}>{cap(mo)}</Link></li>)}</ul>
         <p className="mt-4 text-sm"><Link href={monthPath(m)} className="text-violet hover:underline">Every anime character born in {cap(MONTHS[m - 1])}, day by day →</Link></p>
       </section>
+
+      {/* Birthday pages bring most of the search clicks but nobody back: the Friday digest now lists the week's birthdays. */}
+      {dbEnabled() && <LeadForm className="mt-10" kind="digest" source="birthday-digest" title="🎂 Next week's anime birthdays, every Friday" blurb="Popular characters' birthdays for the week ahead, plus new episodes and premieres, in one short email." button="Subscribe" />}
 
       <Faq items={[
         { q: `Which anime characters have a birthday on ${label}?`, a: characters.length ? `${characters.slice(0, 8).map((c) => `${c.n} (${c.t})`).join(", ")}${characters.length > 8 ? `, and ${characters.length - 8} more` : ""}.` : `None of the most popular characters on record were born on ${label}.` },

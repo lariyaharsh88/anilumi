@@ -21,7 +21,7 @@ import { getNews } from "../lib/news";
 import { listLeadsByShow, oncePerEmail } from "../lib/listalerts";
 import { kitsuPosters } from "../lib/posters";
 import { VAPID_PUBLIC_KEY } from "../lib/push";
-import { buildDigest, dueBirthdays, dueEpisodes, dueJobs, isoWeek, type Alert } from "../lib/pushplan";
+import { buildDigest, dueBirthdays, dueEpisodes, dueJobs, isoWeek, weekBirthdays, type Alert } from "../lib/pushplan";
 
 const mode = process.argv[2];
 if (!["auto", "episodes", "birthdays", "digest", "confirm-pending"].includes(mode)) throw new Error("usage: send-alerts.mts auto|episodes|birthdays|digest|confirm-pending");
@@ -106,7 +106,7 @@ async function digest() {
   const news = await getNews().catch(() => []);
   const built = buildDigest(indexAiring(snap).shows, news.map((n) => ({ title: n.title, url: n.url, source: n.source })));
   const posters = await kitsuPosters([...built.premieres, ...built.episodes].flatMap((x) => (x.k ? [x.k] : [])));
-  const dg = { ...built, premieres: built.premieres.map((x) => ({ ...x, poster: x.k ? posters.get(x.k) : null })), episodes: built.episodes.map((x) => ({ ...x, poster: x.k ? posters.get(x.k) : null })) };
+  const dg = { ...built, birthdays: weekBirthdays(birthdayChars(), characterPathFor), premieres: built.premieres.map((x) => ({ ...x, poster: x.k ? posters.get(x.k) : null })), episodes: built.episodes.map((x) => ({ ...x, poster: x.k ? posters.get(x.k) : null })) };
   const to = await leads.find({ kind: "digest", status: "confirmed" }).toArray();
   if (dg.episodes.length + dg.premieres.length === 0) console.log("::warning::Digest is empty (stale airing snapshot?); not sending.");
   else await mail(`mail:digest:${isoWeek()}`, to.map((l) => digestMail(l, dg)));

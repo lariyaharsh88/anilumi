@@ -60,6 +60,25 @@ export function dueBirthdays(chars: BdChar[], pathFor: (id: number) => string | 
 const dayLabel = (ms: number) => new Date(ms).toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short", timeZone: "Asia/Kolkata" });
 
 /**
+ * The most-favourited characters with a birthday in the next 7 days (days in Japan), for the digest: at most 8,
+ * soonest first. Pure.
+ */
+export function weekBirthdays(chars: BdChar[], pathFor: (id: number) => string | null, now = Date.now()): { name: string; show: string; day: string; url: string }[] {
+  const days = Array.from({ length: 7 }, (_, i) => {
+    const t = now + i * 86400_000;
+    const p = new Intl.DateTimeFormat("en-US", { timeZone: "Asia/Tokyo", month: "numeric", day: "numeric" }).formatToParts(new Date(t));
+    return { m: Number(p.find((x) => x.type === "month")!.value), d: Number(p.find((x) => x.type === "day")!.value), i, t };
+  });
+  const label = (t: number) => new Date(t).toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short", timeZone: "Asia/Tokyo" });
+  return chars
+    .flatMap((c) => { const day = days.find((x) => x.m === c.m && x.d === c.d); return day ? [{ c, day }] : []; })
+    .sort((a, b) => b.c.f - a.c.f)
+    .slice(0, 8)
+    .sort((a, b) => a.day.i - b.day.i || b.c.f - a.c.f)
+    .map(({ c, day }) => ({ name: c.n, show: c.t, day: label(day.t), url: pathFor(c.id) ?? bdPath(day.m, day.d) }));
+}
+
+/**
  * The Friday digest (lib/emails.ts digestMail): premieres and the most-followed shows' new episodes in the next
  * 7 days, from the airing snapshot, plus up to 5 of the week's headlines. Each show appears once.
  */
