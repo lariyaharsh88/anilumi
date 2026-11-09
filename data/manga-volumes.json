@@ -1,0 +1,703 @@
+{
+ "checked": "2026-11-09",
+ "reviewed": null,
+ "printTitles": {
+  "Attack on Titan": "Attack on Titan",
+  "My Hero Academia": "My Hero Academia",
+  "One Punch Man": "One-Punch Man",
+  "Death Note": "Death Note",
+  "Fullmetal Alchemist: Brotherhood": "Fullmetal Alchemist",
+  "Hunter x Hunter": "Hunter x Hunter",
+  "Demon Slayer": "Demon Slayer: Kimetsu no Yaiba",
+  "The Seven Deadly Sins": "The Seven Deadly Sins",
+  "Assassination Classroom": "Assassination Classroom",
+  "Haikyuu!!": "Haikyu!!",
+  "Jujutsu Kaisen": "Jujutsu Kaisen",
+  "Your Lie in April": "Your Lie in April",
+  "Naruto": "Naruto",
+  "The Promised Neverland": "The Promised Neverland",
+  "Tokyo Ghoul": "Tokyo Ghoul",
+  "Noragami": "Noragami: Stray God",
+  "Food Wars! Shokugeki no Soma": "Food Wars!: Shokugeki no Soma",
+  "ERASED": "ERASED",
+  "Mob Psycho 100": "Mob Psycho 100",
+  "Sword Art Online": "Sword Art Online",
+  "Re:Zero": "Re:ZERO -Starting Life in Another World-",
+  "No Game, No Life": "No Game No Life",
+  "Toradora!": "Toradora!"
+ },
+ "seasons": {
+  "attack-on-titan": {
+   "vol": 9,
+   "startsAt": "start",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_Attack_on_Titan_chapters",
+    "https://attackontitan.fandom.com/wiki/The_Beast_Titan"
+   ]
+  },
+  "shingeki-no-kyojin-2": {
+   "vol": 13,
+   "startsAt": "start",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_Attack_on_Titan_chapters",
+    "https://attackontitan.fandom.com/wiki/Squad_Levi"
+   ]
+  },
+  "shingeki-no-kyojin-3": {
+   "vol": 18,
+   "startsAt": "middle",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_Attack_on_Titan_chapters",
+    "https://attackontitan.fandom.com/wiki/The_Town_Where_Everything_Began_(Chapter)"
+   ],
+   "notes": "Vol 18 = ch 71-74."
+  },
+  "shingeki-no-kyojin-3-part-2": {
+   "vol": 23,
+   "startsAt": "start",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_Attack_on_Titan_chapters",
+    "https://attackontitan.fandom.com/wiki/The_Other_Side_of_the_Ocean"
+   ]
+  },
+  "shingeki-no-kyojin-the-final-season": {
+   "vol": 29,
+   "startsAt": "middle",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_Attack_on_Titan_chapters",
+    "https://attackontitan.fandom.com/wiki/Judgment_(Chapter)"
+   ],
+   "notes": "Vol 29 = ch 115-118."
+  },
+  "shingeki-no-kyojin-the-final-season-part-2": {
+   "vol": 33,
+   "startsAt": "start",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_Attack_on_Titan_chapters",
+    "https://attackontitan.fandom.com/wiki/The_Rumbling_(Chapter)"
+   ]
+  },
+  "boku-no-hero-academia": {
+   "vol": 3,
+   "startsAt": "middle",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_My_Hero_Academia_chapters",
+    "https://myheroacademia.fandom.com/wiki/Chapter_22"
+   ],
+   "notes": "Vol 3 = ch 18-26."
+  },
+  "boku-no-hero-academia-2nd-season": {
+   "vol": 8,
+   "startsAt": "middle",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_My_Hero_Academia_chapters",
+    "https://myheroacademia.fandom.com/wiki/Chapter_70"
+   ],
+   "notes": "Vol 8 = ch 63-71."
+  },
+  "boku-no-hero-academia-3rd-season": {
+   "vol": 14,
+   "startsAt": "middle",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_My_Hero_Academia_chapters",
+    "https://myheroacademia.fandom.com/wiki/Chapter_125"
+   ],
+   "notes": "Vol 14 = ch 119-128."
+  },
+  "boku-no-hero-academia-4th-season": {
+   "vol": 21,
+   "startsAt": "middle",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_My_Hero_Academia_chapters",
+    "https://myheroacademia.fandom.com/wiki/Chapter_191"
+   ],
+   "notes": "Vol 21 = ch 189-200."
+  },
+  "boku-no-hero-academia-5th-season": {
+   "vol": 26,
+   "startsAt": "middle",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_My_Hero_Academia_chapters",
+    "https://myheroacademia.fandom.com/wiki/Chapter_258"
+   ],
+   "notes": "Continue chapter is the last chapter of this volume. Vol 26 = ch 247-258."
+  },
+  "boku-no-hero-academia-6th-season": {
+   "vol": 34,
+   "startsAt": "start",
+   "confidence": "medium",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_My_Hero_Academia_chapters",
+    "https://myheroacademia.fandom.com/wiki/Chapter_329"
+   ],
+   "notes": "Vol 34 starts at ch 329. Upstream end point is disputed (MangaUpdates says ch 327); if so, ch 328 is the last chapter of vol 33."
+  },
+  "boku-no-hero-academia-7th-season": {
+   "vol": 40,
+   "startsAt": "start",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_My_Hero_Academia_chapters",
+    "https://myheroacademia.fandom.com/wiki/Chapter_399"
+   ]
+  },
+  "boku-no-hero-academia-final-season": {
+   "vol": null,
+   "startsAt": null,
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_My_Hero_Academia_chapters",
+    "https://www.mangaupdates.com/series/tc9lj22/boku-no-hero-academia"
+   ],
+   "notes": "Story finished. Epilogue ch 431 is in vol 42 (ch 423-431) if wanted."
+  },
+  "one-punch-man": {
+   "vol": 8,
+   "startsAt": "start",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_One-Punch_Man_chapters",
+    "https://onepunchman.fandom.com/wiki/Chapter_38"
+   ]
+  },
+  "one-punch-man-2": {
+   "vol": 17,
+   "startsAt": "middle",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_One-Punch_Man_chapters",
+    "https://onepunchman.fandom.com/wiki/Chapter_86"
+   ],
+   "notes": "Vol 17 = ch 85-87."
+  },
+  "one-punch-man-3": {
+   "vol": 24,
+   "startsAt": "middle",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_One-Punch_Man_chapters",
+    "https://onepunchman.fandom.com/wiki/Chapter_116"
+   ],
+   "notes": "Vol 24 = ch 113-118, so the disputed end point (ch 115-117) falls in the same volume."
+  },
+  "death-note": {
+   "vol": 12,
+   "startsAt": "middle",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_Death_Note_chapters",
+    "https://deathnote.fandom.com/wiki/Finis_(chapter)"
+   ],
+   "notes": "Continue chapter is the last chapter of this volume. Vol 12 = ch 99-108."
+  },
+  "fullmetal-alchemist-brotherhood": {
+   "vol": null,
+   "startsAt": null,
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_Fullmetal_Alchemist_chapters",
+    "https://www.mangaupdates.com/series/8q91xb4/hagane-no-renkinjutsushi"
+   ]
+  },
+  "hunter-x-hunter-2011": {
+   "vol": 32,
+   "startsAt": "middle",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_chapters",
+    "https://hunterxhunter.fandom.com/wiki/Chapter_340"
+   ],
+   "notes": "Continue chapter is the last chapter of this volume. Vol 32 = ch 331-340; vol 33 starts at ch 341."
+  },
+  "kimetsu-no-yaiba": {
+   "vol": 7,
+   "startsAt": "middle",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_chapters",
+    "https://kimetsu-no-yaiba.fandom.com/wiki/Chapter_54"
+   ],
+   "notes": "Vol 7 = ch 53-61."
+  },
+  "kimetsu-no-yaiba-yuukaku-hen": {
+   "vol": 12,
+   "startsAt": "start",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_chapters",
+    "https://kimetsu-no-yaiba.fandom.com/wiki/Chapter_98"
+   ]
+  },
+  "kimetsu-no-yaiba-katanakaji-no-satohen": {
+   "vol": 15,
+   "startsAt": "middle",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_chapters",
+    "https://kimetsu-no-yaiba.fandom.com/wiki/Chapter_128"
+   ],
+   "notes": "Vol 15 = ch 125-133."
+  },
+  "Kimetsu-no-Yaiba-Hashira-Geikohen": {
+   "vol": 16,
+   "startsAt": "middle",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_chapters",
+    "https://kimetsu-no-yaiba.fandom.com/wiki/Chapter_140"
+   ],
+   "notes": "Vol 16 = ch 134-142."
+  },
+  "nanatsu-no-taizai": {
+   "vol": 13,
+   "startsAt": "middle",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_The_Seven_Deadly_Sins_chapters",
+    "https://nanatsu-no-taizai.fandom.com/wiki/Chapter_104"
+   ],
+   "notes": "Continue chapter is the last chapter of this volume. Vol 13 = ch 96-104."
+  },
+  "nanatsu-no-taizai-imashime-no-fukkatsu": {
+   "vol": 25,
+   "startsAt": "start",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_The_Seven_Deadly_Sins_chapters",
+    "https://nanatsu-no-taizai.fandom.com/wiki/Chapter_198"
+   ]
+  },
+  "nanatsu-no-taizai-kamigami-no-gekirin": {
+   "vol": 33,
+   "startsAt": "middle",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_The_Seven_Deadly_Sins_chapters",
+    "https://nanatsu-no-taizai.fandom.com/wiki/Chapter_268"
+   ],
+   "notes": "Vol 33 = ch 267-275."
+  },
+  "nanatsu-no-taizai-fundo-no-shinpan": {
+   "vol": null,
+   "startsAt": null,
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_The_Seven_Deadly_Sins_chapters",
+    "https://www.mangaupdates.com/series/stwyptc/nanatsu-no-taizai"
+   ]
+  },
+  "ansatsu-kyoushitsu-tv": {
+   "vol": 9,
+   "startsAt": "middle",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_Assassination_Classroom_chapters",
+    "https://ansatsukyoshitsu.fandom.com/wiki/Chapter_74"
+   ],
+   "notes": "Vol 9 = ch 71-79."
+  },
+  "ansatsu-kyoushitsu-tv-2": {
+   "vol": null,
+   "startsAt": null,
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_Assassination_Classroom_chapters",
+    "https://www.mangaupdates.com/series/uxny0vb/ansatsu-kyoushitsu"
+   ]
+  },
+  "haikyuu": {
+   "vol": 9,
+   "startsAt": "start",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_Haikyu!!_chapters",
+    "https://haikyuu.fandom.com/wiki/Haiky%C5%AB!!_Volumes"
+   ]
+  },
+  "haikyuu-2": {
+   "vol": 17,
+   "startsAt": "middle",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_Haikyu!!_chapters",
+    "https://haikyuu.fandom.com/wiki/Haiky%C5%AB!!_Volumes"
+   ],
+   "notes": "Vol 17 = ch 145-153."
+  },
+  "haikyuu-karasuno-koukou-vs-shiratorizawa-gakuen-koukou": {
+   "vol": 22,
+   "startsAt": "start",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_Haikyu!!_chapters",
+    "https://haikyuu.fandom.com/wiki/Haiky%C5%AB!!_Volumes"
+   ]
+  },
+  "haikyuu-to-the-top": {
+   "vol": 28,
+   "startsAt": "middle",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_Haikyu!!_chapters",
+    "https://haikyuu.fandom.com/wiki/Haiky%C5%AB!!_Volumes"
+   ],
+   "notes": "Vol 28 = ch 243-251."
+  },
+  "haikyuu-to-the-top-2": {
+   "vol": 33,
+   "startsAt": "middle",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_Haikyu!!_chapters",
+    "https://haikyuu.fandom.com/wiki/Haiky%C5%AB!!_Volumes"
+   ],
+   "notes": "Vol 33 = ch 288-296."
+  },
+  "jujutsu-kaisen": {
+   "vol": 8,
+   "startsAt": "middle",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_Jujutsu_Kaisen_chapters",
+    "https://jujutsu-kaisen.fandom.com/wiki/Chapter_64"
+   ],
+   "notes": "Vol 8 = ch 62-70."
+  },
+  "jujutsu-kaisen-2": {
+   "vol": 16,
+   "startsAt": "middle",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_Jujutsu_Kaisen_chapters",
+    "https://jujutsu-kaisen.fandom.com/wiki/Chapter_138"
+   ],
+   "notes": "Vol 16 = ch 134-142."
+  },
+  "Jujutsu-Kaisen-3": {
+   "vol": 21,
+   "startsAt": "start",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_Jujutsu_Kaisen_chapters",
+    "https://jujutsu-kaisen.fandom.com/wiki/Chapter_181"
+   ]
+  },
+  "shigatsu-wa-kimi-no-uso": {
+   "vol": null,
+   "startsAt": null,
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Your_Lie_in_April#Volumes",
+    "https://www.mangaupdates.com/series/oxkxafi/shigatsu-wa-kimi-no-uso"
+   ]
+  },
+  "naruto": {
+   "vol": 27,
+   "startsAt": "middle",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_Naruto_chapters_(Part_I)",
+    "https://naruto.fandom.com/wiki/Side_Story_1:_Mission_Start%E2%80%A6!!"
+   ],
+   "notes": "Vol 27 = ch 236-244; ch 239 opens the Kakashi Gaiden."
+  },
+  "naruto-shippuden": {
+   "vol": 72,
+   "startsAt": "middle",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_Naruto_chapters_(Part_II,_volumes_49%E2%80%9372)",
+    "https://naruto.fandom.com/wiki/Naruto_Uzumaki!!_(chapter_700)"
+   ],
+   "notes": "Continue chapter is the last chapter of this volume. Vol 72 = ch 691-700 (final volume)."
+  },
+  "yakusoku-no-neverland": {
+   "vol": 5,
+   "startsAt": "middle",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_The_Promised_Neverland_chapters",
+    "https://yakusokunoneverland.fandom.com/wiki/Chapter_38"
+   ],
+   "notes": "Vol 5 = ch 35-43."
+  },
+  "tokyo-ghoul": {
+   "vol": 7,
+   "startsAt": "middle",
+   "confidence": "medium",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_Tokyo_Ghoul_chapters",
+    "https://tokyoghoul.fandom.com/wiki/Chapter_67"
+   ],
+   "notes": "Vol 7 = ch 59-68. Upstream end point is disputed (one guide says ch 69); if so, continue from vol 8 (ch 69-79)."
+  },
+  "tokyo-ghoul-re": {
+   "vol": 6,
+   "startsAt": "middle",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_Tokyo_Ghoul_chapters",
+    "https://tokyoghoul.fandom.com/wiki/Re:_Chapter_59"
+   ],
+   "notes": "Buy Tokyo Ghoul:re (separate English series, title \"Tokyo Ghoul: re\"), not Tokyo Ghoul. :re vol 6 = ch 53-63.",
+   "printTitle": "Tokyo Ghoul: re"
+  },
+  "tokyo-ghoul-re-2": {
+   "vol": null,
+   "startsAt": null,
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_Tokyo_Ghoul_chapters",
+    "https://www.mangaupdates.com/series/kux1tcr/toukyou-ghoul-re"
+   ],
+   "notes": "Finished. English title is \"Tokyo Ghoul: re\"."
+  },
+  "noragami": {
+   "vol": 4,
+   "startsAt": "middle",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_Noragami_chapters",
+    "https://noragami.fandom.com/wiki/Chapter_13"
+   ],
+   "notes": "Vol 4 = ch 12-15."
+  },
+  "noragami-aragoto": {
+   "vol": 11,
+   "startsAt": "start",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_Noragami_chapters",
+    "https://noragami.fandom.com/wiki/Chapter_40"
+   ]
+  },
+  "shokugeki-no-souma": {
+   "vol": 8,
+   "startsAt": "middle",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_Food_Wars!:_Shokugeki_no_Soma_chapters",
+    "https://shokugekinosoma.fandom.com/wiki/Chapter_61:_Putting_Your_Heart_Into_It"
+   ],
+   "notes": "Vol 8 = ch 58-65."
+  },
+  "shokugeki-no-souma-ni-no-sara": {
+   "vol": 14,
+   "startsAt": "middle",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_Food_Wars!:_Shokugeki_no_Soma_chapters",
+    "https://shokugekinosoma.fandom.com/wiki/Chapter_118:_T%C5%8Dtsuki%27s_Elite_Ten"
+   ],
+   "notes": "Continue chapter is the last chapter of this volume. Vol 14 = ch 110-118; Season 3 resumes at ch 120 in vol 15."
+  },
+  "shokugeki-no-souma-san-no-sara": {
+   "vol": 20,
+   "startsAt": "middle",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_Food_Wars!:_Shokugeki_no_Soma_chapters",
+    "https://shokugekinosoma.fandom.com/wiki/Chapter_167:_Familiar_and_Forlorn_Faces"
+   ],
+   "notes": "Vol 20 = ch 164-172."
+  },
+  "shokugeki-no-souma-san-no-sara-toutsuki-ressha-hen": {
+   "vol": 26,
+   "startsAt": "start",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_Food_Wars!:_Shokugeki_no_Soma_chapters",
+    "https://shokugekinosoma.fandom.com/wiki/Chapter_218:_2nd_Bout"
+   ]
+  },
+  "shokugeki-no-souma-shin-no-sara": {
+   "vol": 31,
+   "startsAt": "middle",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_Food_Wars!:_Shokugeki_no_Soma_chapters",
+    "https://shokugekinosoma.fandom.com/wiki/Chapter_264:_From:_Megumi_Tadokoro"
+   ],
+   "notes": "Vol 31 = ch 263-271, so the disputed end point (ch 263/264) falls in the same volume."
+  },
+  "shokugeki-no-souma-gou-no-sara": {
+   "vol": null,
+   "startsAt": null,
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_Food_Wars!:_Shokugeki_no_Soma_chapters",
+    "https://www.mangaupdates.com/series/ztd54k0/shokugeki-no-souma"
+   ],
+   "notes": "Story finished in anime, but Season 5 skips ch 265-272 (vol 31) and abridges the rest; vol 31 is where the full manga version diverges."
+  },
+  "boku-dake-ga-inai-machi": {
+   "vol": null,
+   "startsAt": null,
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Erased_(manga)",
+    "https://www.mangaupdates.com/series/rz5pjxl/boku-dake-ga-inai-machi"
+   ],
+   "notes": "English Yen Press edition is 2-in-1 hardcovers (JP vols 1-8 in 4 books), so numbering differs from Japanese."
+  },
+  "mob-psycho-100": {
+   "vol": 6,
+   "startsAt": "middle",
+   "confidence": "high",
+   "sources": [
+    "https://mob-psycho-100.fandom.com/wiki/Chapters",
+    "https://comicvine.gamespot.com/mob-psycho-100-6-volume-6/4000-810548/"
+   ],
+   "notes": "Vol 6 = ch 44-52. Wikipedia does not list chapters per volume for this series."
+  },
+  "mob-psycho-100-ii": {
+   "vol": 13,
+   "startsAt": "middle",
+   "confidence": "medium",
+   "sources": [
+    "https://mob-psycho-100.fandom.com/wiki/Chapters",
+    "https://otakumode.com/shop/5f9f513f4d9fe9075f3e79c5/Mob-Psycho-100-Vol-13"
+   ],
+   "notes": "Vol 13 = ch 91-95. Wikipedia has no per-volume chapter list; the second source (a Japanese-edition store listing) uses the same titles as the fandom wiki and may be derived from it."
+  },
+  "mob-psycho-100-iii": {
+   "vol": null,
+   "startsAt": null,
+   "confidence": "high",
+   "sources": [
+    "https://mob-psycho-100.fandom.com/wiki/Chapters",
+    "https://mob-psycho-100.fandom.com/wiki/Chapter_101"
+   ]
+  },
+  "sword-art-online": {
+   "vol": 5,
+   "startsAt": "start",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_Sword_Art_Online_light_novels",
+    "https://en.wikipedia.org/wiki/Sword_Art_Online_season_1"
+   ],
+   "notes": "Yen Press numbering matches Japanese. Buy the light novel, not the manga adaptations."
+  },
+  "sword-art-online-ii": {
+   "vol": 9,
+   "startsAt": "start",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_Sword_Art_Online_light_novels",
+    "https://en.wikipedia.org/wiki/Sword_Art_Online_II"
+   ],
+   "notes": "Vol 9 starts Alicization. Only the Calibur story of vol 8 is adapted; the rest of vol 8 is optional side material."
+  },
+  "sword-art-online-alicization": {
+   "vol": 15,
+   "startsAt": "start",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_Sword_Art_Online_light_novels",
+    "https://en.wikipedia.org/wiki/Sword_Art_Online:_Alicization"
+   ]
+  },
+  "sword-art-online-alicization-war-of-underworld": {
+   "vol": 17,
+   "startsAt": "middle",
+   "confidence": "medium",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_Sword_Art_Online_light_novels",
+    "https://www.animenewsnetwork.com/review/sword-art-online-alicization-war-of-underworld-part-2/episodes-1-2/.161995"
+   ],
+   "notes": "Cour ends partway into vol 17 per ANN; MAL guide says vols 15-16 only."
+  },
+  "sword-art-online-alicization-war-of-underworld-2nd-season": {
+   "vol": 19,
+   "startsAt": "start",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_Sword_Art_Online_light_novels",
+    "https://en.wikipedia.org/wiki/Sword_Art_Online:_Alicization"
+   ],
+   "notes": "Vol 18 ends Alicization; vol 19 starts Moon Cradle."
+  },
+  "re-zero-kara-hajimeru-isekai-seikatsu": {
+   "vol": 10,
+   "startsAt": "start",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_Re:Zero_volumes",
+    "https://en.wikipedia.org/wiki/Re:Zero_season_1"
+   ],
+   "notes": "Vol 10 starts Arc 4 (Wikipedia). The interlude at the end of vol 9 is only adapted in Season 2 ep 1."
+  },
+  "re-zero-kara-hajimeru-isekai-seikatsu-2": {
+   "vol": 13,
+   "startsAt": "middle",
+   "confidence": "medium",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_Re:Zero_volumes",
+    "https://rezero.fandom.com/wiki/Episode_38"
+   ],
+   "notes": "Part 1 ends early in vol 13; that split point is from the fandom wiki only."
+  },
+  "rezero-season-2-part-2": {
+   "vol": 16,
+   "startsAt": "start",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_Re:Zero_volumes",
+    "https://en.wikipedia.org/wiki/Re:Zero_season_2"
+   ],
+   "notes": "Arc 4 = vols 10-15; vol 16 starts Arc 5 (Wikipedia)."
+  },
+  "re-zero-kara-hajimeru-isekai-seikatsu-3": {
+   "vol": 20,
+   "startsAt": "middle",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_Re:Zero_volumes",
+    "https://rezero.fandom.com/wiki/Episode_66"
+   ],
+   "notes": "Last chapter of vol 20 is adapted at the start of Season 4; Arc 6 starts at vol 21 (Wikipedia)."
+  },
+  "re-zero-kara-hajimeru-isekai-seikatsu-4": {
+   "vol": 26,
+   "startsAt": "start",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_Re:Zero_volumes",
+    "https://en.wikipedia.org/wiki/Re:Zero_season_4"
+   ],
+   "notes": "Arc 7 starts at vol 26 (Wikipedia); English vol 26 released Nov 2024."
+  },
+  "no-game-no-life": {
+   "vol": 4,
+   "startsAt": "start",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/No_Game_No_Life",
+    "https://no-game-no-life.fandom.com/wiki/Rule_Number_10"
+   ],
+   "notes": "Yen Press numbering matches Japanese."
+  },
+  "toradora": {
+   "vol": null,
+   "startsAt": null,
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_Toradora!_episodes",
+    "https://en.wikipedia.org/wiki/Toradora!"
+   ],
+   "notes": "English print is Seven Seas \"Toradora! (Light Novel)\"."
+  }
+ }
+}

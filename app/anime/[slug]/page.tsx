@@ -59,6 +59,7 @@ import MobileFold from "@/components/fx/MobileFold";
 import Refreshed from "@/components/Refreshed";
 import { airing } from "@/lib/airing";
 import { adaptationFor, adaptedRange, continueAt, ADAPT_CHECKED, ADAPT_REVIEWED } from "@/lib/mangaseasons";
+import { volumeFor, volumeLine } from "@/lib/mangavolumes";
 import ArcList from "@/components/ArcList";
 import { arcsFor, arcSources, arcSummary, ARCS_CHECKED, ARCS_REVIEWED } from "@/lib/arcs";
 import ClampText from "@/components/fx/ClampText";
@@ -229,7 +230,8 @@ export default async function AnimePage({ params }: Props) {
   // "how long?" and "do people finish?" each have their own page or section; repeating them as Q&A read as filler.
   // Source material this season adapts (data/manga-seasons.json): "Where does X end in the manga?"
   const adapt = adaptationFor(a.slug);
-  if (adapt) faqExtra.push({ q: `Where does ${a.title} end in the ${adapt.medium}?`, a: `${a.title} adapts ${adaptedRange(adapt)}.${continueAt(adapt) ? ` To read on from here in the ${adapt.medium}, start at ${continueAt(adapt)}.` : ""}${adapt.notes ? ` ${adapt.notes}` : ""}` });
+  const buyVol = volumeFor(a.slug, adapt);
+  if (adapt) faqExtra.push({ q: `Where does ${a.title} end in the ${adapt.medium}?`, a: `${a.title} adapts ${adaptedRange(adapt)}.${continueAt(adapt) ? ` To read on from here in the ${adapt.medium}, start at ${continueAt(adapt)}.${buyVol && adapt.unit === "chapter" ? ` That's in volume ${buyVol.vol}.` : ""}` : ""}${adapt.notes ? ` ${adapt.notes}` : ""}` });
   const arcs = a.subtype === "movie" ? null : arcsFor(a.slug);
   if (arcs) faqExtra.push({ q: `What are the ${a.title} arcs in order?`, a: `${a.title} has ${arcs.length} story arcs: ${arcSummary(arcs)}.` });
   const dub = dubFor(a);
@@ -504,6 +506,13 @@ export default async function AnimePage({ params }: Props) {
                 <p className="text-xs font-semibold uppercase tracking-wider text-muted">📚 Source material</p>
                 <p className="mt-1 text-sm text-ink/90">This season adapts <strong className="text-ink">{adaptedRange(adapt)}</strong>.{continueAt(adapt) && <> To read on from here in the {adapt.medium}, start at <strong className="text-ink">{continueAt(adapt)}</strong>.</>}</p>
                 {adapt.notes && <p className="mt-1 text-xs text-muted">{adapt.notes}</p>}
+                {buyVol && (
+                  <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-2">
+                    <AmazonLink query={buyVol.search} source="buy-volume" className="btn-primary">📖 Get volume {buyVol.vol}</AmazonLink>
+                    {volumeLine(adapt, buyVol) && <span className="text-xs text-muted">{volumeLine(adapt, buyVol)}</span>}
+                  </div>
+                )}
+                {buyVol && <AffiliateNote className="mt-2" />}
                 <p className="mt-2 text-[11px] text-muted">{ADAPT_REVIEWED ? "Checked" : `Draft${ADAPT_CHECKED ? `, cross-checked on ${new Date(`${ADAPT_CHECKED}T12:00:00Z`).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" })}` : ""}`} against the series wiki and episode lists. <Link href="/how-we-check" className="underline">How we check</Link></p>
               </div>
             )}
