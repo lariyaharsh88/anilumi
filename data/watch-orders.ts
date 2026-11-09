@@ -19,15 +19,18 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   naruto: {
     label: "Naruto",
     intro: "Start with Naruto (2002), then Naruto: Shippuden, then Boruto. Episodes 136 to 219 of the original series are almost entirely filler, so you can go from episode 135 to episode 220, where Naruto leaves with Jiraiya, and then start Shippuden. Shippuden has long filler stretches as well, so keep a filler guide open. The films are standalone and optional except two canon ones: The Last, which sits just before Shippuden's final episodes, and Boruto: Naruto the Movie, which leads into Boruto.",
+    promote: ["boruto-naruto-next-generations"],
   },
   "one-piece": {
     label: "One Piece",
     intro: "There is one sequence: the TV series in order. Roughly a hundred of its 1,100-plus episodes are filler, but they come in short blocks, so use a filler guide rather than skipping whole arcs. The films are not canon; Strong World, Film Z, Stampede and Film Red are the ones with story ties, and none are required. Episode of East Blue and similar specials are recaps.",
+    optional: ["one-piece-strong-world", "one-piece-film-z", "one-piece-film-gold", "one-piece-stampede", "one-piece-film-red"],
+    skip: ["one-piece-episode-of-east-blue-luffy-to-4-nin-no-nakama-no-daibouken"],
     checked: "2026-11-03",
   },
   "boku-no-hero-academia": {
     label: "My Hero Academia",
-    intro: "Release order is the right order: seasons 1 through 7, then the final season that began airing in October 2025. The four films (Two Heroes, Heroes Rising, World Heroes' Mission and You're Next) slot after seasons 2, 4, 5 and 6 and are optional. The OVAs are light side stories.",
+    intro: "Release order is the right order: seasons 1 through 7, then the final season that began airing in October 2025, then the bonus episode No. 170+1: More (May 2026), an epilogue set years later. The four films (Two Heroes, Heroes Rising, World Heroes' Mission and You're Next) fit after seasons 3, 4, 5 and 7 and are optional; Two Heroes is set just after the Season 2 exams, so it also works before Season 3. The OVAs are light side stories.",
   },
   "kimetsu-no-yaiba": {
     label: "Demon Slayer",
@@ -45,6 +48,7 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   "fullmetal-alchemist": {
     label: "Fullmetal Alchemist (2003)",
     intro: "The 2003 series follows the manga for its first half, then tells an original story that concludes in the film Conqueror of Shamballa, so watch series then film. If you only have time for one version, Brotherhood is the complete story.",
+    optional: ["fullmetal-alchemist-brotherhood"],
   },
   "hunter-x-hunter-2011": {
     label: "Hunter x Hunter",
@@ -56,13 +60,15 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   },
   "sword-art-online": {
     label: "Sword Art Online",
-    intro: "Release order works: Season 1 (Aincrad and Fairy Dance), Season 2, the canon film Ordinal Scale, then Alicization and War of Underworld. The Progressive films retell the Aincrad arc in more detail and are optional. Alternative: Gun Gale Online is a separate spin-off with no shared cast.",
-    optional: ["sword-art-online-progressive-movie-hoshi-naki-yoru-no-aria", "sword-art-online-progressive-movie-kuraki-yuuyami-no-scherzo"],
+    intro: "Release order works: Season 1 (Aincrad and Fairy Dance), Season 2, the canon film Ordinal Scale, then Alicization and War of Underworld. The Progressive films retell the Aincrad arc in more detail and are optional. Extra Edition is mostly a recap of Season 1 with a short new story, and Unanswered//butterfly (July 2026) is a side-story film; both are optional. Alternative: Gun Gale Online is a separate spin-off with no shared cast.",
+    optional: ["sword-art-online-progressive-movie-hoshi-naki-yoru-no-aria", "sword-art-online-progressive-movie-kuraki-yuuyami-no-scherzo", "unanswered-butterfly-sword-art-online"],
+    demote: ["sword-art-online-extra-edition"],
     exclude: ["sword-art-online-movie-movie"],
   },
   "re-zero-kara-hajimeru-isekai-seikatsu": {
     label: "Re:Zero",
     demote: ["re-zero-kara-hajimeru-isekai-seikatsu-hyouketsu-no-kizuna"],
+    skip: ["re-zero-kara-hajimeru-isekai-seikatsu-hyouketsu-no-kizuna-manner-movie"],
     intro: "Season 1 (25 episodes), then Season 2 in two halves, then Season 3, then Season 4 (April–September 2026). The Director's Cut is Season 1 re-edited into double-length episodes, so pick one version. Of the OVAs, The Frozen Bond is a prequel and Memory Snow a light interlude set after episode 11; both are optional.",
   },
   "steins-gate": {
@@ -74,7 +80,7 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   },
   haikyuu: {
     label: "Haikyuu!!",
-    intro: "Seasons 1 to 4 in order (Season 4 is split in two), then the 2024 film Decisive Battle at the Garbage Dump, which continues the story; a final film is planned. The OVAs are side matches and the recap films can be skipped.",
+    intro: "Seasons 1 to 4 in order (Season 4 is split in two), then the 2024 film Decisive Battle at the Garbage Dump, which continues the story; the second film, Haikyu!! vs. The Little Giant, is due in 2027. The OVAs are side matches and the recap films can be skipped.",
     promote: ["Haikyuu-Gomi-Suteba-no-Kessen"],
     mainOrder: ["haikyuu", "haikyuu-2", "haikyuu-karasuno-koukou-vs-shiratorizawa-gakuen-koukou", "haikyuu-to-the-top", "haikyuu-to-the-top-2", "Haikyuu-Gomi-Suteba-no-Kessen"],
   },
@@ -134,6 +140,7 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   "code-geass-lelouch-of-the-rebellion": {
     label: "Code Geass",
     intro: "Watch Lelouch of the Rebellion (2006), then R2 (2008): that is the complete original story. Lelouch of the Re;surrection (2019) is a sequel film, but it follows the continuity of the 2017–2018 compilation trilogy, which changes a few key events, so watch the third compilation film (Glorification) or read a summary of the changes before it. Akito the Exiled is a five-part side story set between the two seasons with a separate cast, and Roze of the Recapture (2024) is a later standalone spin-off. Both are optional.",
+    optional: ["code-geass-hangyaku-no-lelouch-iii-oudou", "code-geass-akito-the-exiled-2-the-torn-up-wyvern", "code-geass-akito-the-exiled-3", "code-geass-akito-the-exiled-4", "code-geass-akito-the-exiled-5-to-those-who-are-precious", "code-geass-dakkan-no-z"],
   },
   "jojo-s-bizarre-adventure-2012": {
     label: "JoJo's Bizarre Adventure",
@@ -248,12 +255,11 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   "nanatsu-no-taizai": {
     label: "The Seven Deadly Sins",
     intro: "TV seasons in order: The Seven Deadly Sins (2014–2015), Signs of Holy War (2016), Revival of the Commandments (2018), Imperial Wrath of the Gods (2019–2020) and Dragon's Judgement (2021). The film Prisoners of the Sky came out between the third and fourth seasons, and Cursed by Light followed the final season in July 2021. Grudge of Edinburgh (2022–2023) is a spin-off, and the sequel series Four Knights of the Apocalypse began in October 2023.",
-    skip: ["nanatsu-no-taizai-ensa-no-edinburgh", "nanatsu-no-taizai-ensa-no-edinburgh-kouhen"],
-    optional: ["Nanatsu-no-Taizai-Mokushiroku-no-Yonkishi", "Nanatsu-no-Taizai-Mokushiroku-no-Yonkishi-2nd-season"],
+    optional: ["nanatsu-no-taizai-ensa-no-edinburgh", "nanatsu-no-taizai-ensa-no-edinburgh-kouhen", "Nanatsu-no-Taizai-Mokushiroku-no-Yonkishi", "Nanatsu-no-Taizai-Mokushiroku-no-Yonkishi-2nd-season"],
   },
   "ansatsu-kyoushitsu-tv": {
     label: "Assassination Classroom",
-    intro: "Season 1 (22 episodes, 2015) and Season 2 (25 episodes, 2016) tell the whole story; watch them in order. The 2014 special Meeting Time is an optional extra. The films 365 Days' Time (2016) and Our Time (March 2026), which adds manga chapters the TV series left out, both belong after Season 2. Koro-sensei Q! (2016) is a separate spin-off.",
+    intro: "Season 1 (22 episodes, 2015) and Season 2 (25 episodes, 2016) tell the whole story; watch them in order. The 2014 special Meeting Time is an optional extra. After Season 2 comes the film Our Time (March 2026), which adds manga chapters the TV series left out and continues the main story. 365 Days' Time (2016) is a compilation film that retells the series, so you can skip it. Koro-sensei Q! (2016) is a separate comedy spin-off.",
     demote: ["ansatsu-kyoushitsu-tv-episode-0"],
     promote: ["ansatsu-kyoushitsu-minna-no-jikan"],
     mainOrder: ["ansatsu-kyoushitsu-tv", "ansatsu-kyoushitsu-tv-2", "ansatsu-kyoushitsu-minna-no-jikan"],
