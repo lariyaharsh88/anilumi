@@ -20,3 +20,9 @@ function load(): Snap {
 
 export const seriesCast = (kitsuSlug: string) => load().series[kitsuSlug] ?? null;
 export const seriesSlugs = () => Object.keys(load().series);
+
+/** A character's role in a series ("main" / "supporting"), from that series' snapshot cast, or null. */
+export function roleIn(kitsuSlug: string | null | undefined, characterId: number): "main" | "supporting" | null {
+  const row = kitsuSlug ? seriesCast(kitsuSlug)?.c.find((c) => c[0] === characterId) : undefined;
+  return row ? (row[9] === "M" ? "main" : "supporting") : null;
+}

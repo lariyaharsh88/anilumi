@@ -3,6 +3,7 @@ import Image from "next/image";
 import { animePath, getAnimeBySlug, posterUrl, type Anime } from "@/lib/kitsu";
 import { vaPath } from "@/lib/anilist";
 import { characterPathFor, snapById, type SnapChar } from "@/lib/charsnap";
+import { roleIn } from "@/lib/seriessnap";
 import { premieresOn, otdPath, type Premiere } from "@/lib/onthisday";
 import { bdLabel, bdPath, monthPath, nextDays, aroundDays, birthdaysOn, zodiacOf, sameSign, MONTHS, cap, type BdChar, type BdPerson } from "@/lib/birthdays";
 import PageHero from "./PageHero";
@@ -103,12 +104,14 @@ export default async function BirthdayView({ m, d, characters, people, today = f
               const s = snapById(c.id);
               const href = hrefOf(c);
               const facts = factsOf(s);
+              // "Main character in One Piece": the role from the series cast snapshot, the show linked to its page.
+              const role = roleIn(c.s, c.id);
               const body = (
                 <>
-                  <span className="relative h-24 w-[68px] shrink-0 overflow-hidden rounded-lg border border-line bg-bg-2">{c.i && <Image src={c.i} alt="" fill sizes="68px" className="object-cover transition duration-500 group-hover:scale-105" />}</span>
+                  {(() => { const pic = <span className="relative block h-24 w-[68px] shrink-0 overflow-hidden rounded-lg border border-line bg-bg-2">{c.i && <Image src={c.i} alt="" fill sizes="68px" className="object-cover transition duration-500 group-hover:scale-105" />}</span>; return href ? <Link href={href} tabIndex={-1} aria-hidden className="shrink-0">{pic}</Link> : pic; })()}
                   <span className="min-w-0 flex-1">
-                    <span className="flex items-baseline gap-2"><span className="text-xs font-bold tabular-nums text-muted">#{i + 1}</span><span className="truncate font-semibold text-ink group-hover:text-violet-2">{c.n}</span></span>
-                    <span className="block truncate text-xs text-muted">{c.t}</span>
+                    <span className="flex items-baseline gap-2"><span className="text-xs font-bold tabular-nums text-muted">#{i + 1}</span>{href ? <Link href={href} className="truncate font-semibold text-ink hover:text-violet-2">{c.n}</Link> : <span className="truncate font-semibold text-ink">{c.n}</span>}</span>
+                    <span className="block truncate text-xs text-muted">{role ? `${role === "main" ? "Main" : "Supporting"} character in ` : ""}{c.s ? <Link href={animePath({ slug: c.s })} className="underline decoration-line underline-offset-2 hover:text-violet-2">{c.t}</Link> : c.t}</span>
                     {facts.length > 0 && <span className="mt-1 block truncate text-xs text-ink/80">{facts.join(" · ")}</span>}
                     <span className="mt-1 flex flex-wrap items-center gap-x-2 text-xs text-muted">
                       <span>❤ {fans(c.f)} fans</span>
@@ -117,7 +120,7 @@ export default async function BirthdayView({ m, d, characters, people, today = f
                   </span>
                 </>
               );
-              return <li key={c.id}>{href ? <Link href={href} className="card group flex gap-3 p-2.5 transition hover:border-violet/60">{body}</Link> : <div className="card flex gap-3 p-2.5">{body}</div>}</li>;
+              return <li key={c.id}><div className="card group flex gap-3 p-2.5 transition hover:border-violet/60">{body}</div></li>;
             })}
           </ul>
         </section>
