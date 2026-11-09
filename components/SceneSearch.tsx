@@ -5,7 +5,7 @@ import { toMatches, traceError, timecode, CONFIDENT, type Match, type TraceHit }
 import { track } from "@/lib/track";
 
 const API = "https://api.trace.moe";
-type Mapped = Record<string, { slug: string; title: string; poster: string | null; episodes: number | null }>;
+type Mapped = Record<string, { slug: string; title: string; poster: string | null; episodes: number | null; watchOrder?: boolean; hindi?: string | null }>;
 type State =
   | { kind: "idle" }
   | { kind: "busy" }
@@ -167,9 +167,12 @@ export default function SceneSearch() {
                         <p className="mt-3 flex flex-wrap gap-2 text-sm">
                           {page ? (
                             <>
-                              <Link href={`/anime/${page.slug}`} className="chip chip-active">Open on AniLumi</Link>
-                              {m.episode && <Link href={`/anime/${page.slug}/episode/${m.episode}`} className="chip">Episode {m.episode} page</Link>}
-                              <Link href={`/anime/${page.slug}/next-season`} className="chip">Next season?</Link>
+                              {/* What people ask once they know the title: where to watch it, in what order, in Hindi. */}
+                              <Link href={`/anime/${page.slug}#watch`} className="chip chip-active" onClick={() => track("scene_result_click", { to: "watch" })}>▶ Where to watch</Link>
+                              {page.hindi && <Link href={page.hindi} className="chip" onClick={() => track("scene_result_click", { to: "hindi" })}>🇮🇳 Hindi dub</Link>}
+                              {page.watchOrder && <Link href={`/watch-order/${page.slug}`} className="chip" onClick={() => track("scene_result_click", { to: "watch-order" })}>Watch order</Link>}
+                              {m.episode && <Link href={`/anime/${page.slug}/episode/${m.episode}`} className="chip" onClick={() => track("scene_result_click", { to: "episode" })}>Episode {m.episode} page</Link>}
+                              <Link href={`/anime/${page.slug}/next-season`} className="chip" onClick={() => track("scene_result_click", { to: "next-season" })}>Next season?</Link>
                             </>
                           ) : (
                             <a href={`https://anilist.co/anime/${m.anilistId}`} target="_blank" rel="noopener nofollow" className="chip">View on AniList</a>
