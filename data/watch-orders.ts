@@ -455,4 +455,218 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
     intro: "Barakamon is a single 12-episode series (July–September 2014). Handa-kun (July–September 2016) is a prequel spin-off about Seishu Handa's high school days; it is optional and was made after Barakamon, so watch it afterwards. The Mijikamon shorts are optional extras.",
     demote: ["handa-kun"],
   },
+  "boku-wa-tomodachi-ga-sukunai": {
+    label: "Haganai: I Don't Have Many Friends",
+    intro: "Watch Haganai (12 episodes, October–December 2011), then the OVA released on September 26, 2012, then Haganai NEXT (12 episodes, January–March 2013), the second season. The Episode 0 OVA came bundled with the seventh light novel on September 22, 2011, two weeks before the TV series began; it is optional.",
+    demote: ["boku-wa-tomodachi-ga-sukunai-episode-0"],
+  },
+  "higurashi-no-naku-koro-ni": {
+    label: "Higurashi: When They Cry",
+    intro: "Watch Higurashi (26 episodes, April–September 2006), Kai (24 episodes, July–December 2007) and the Rei OVA (2009), then Gou (24 episodes, October 2020–March 2021) and its sequel Sotsu (July–September 2021). Gou was first promoted as a remake, but it continues from the earlier anime, so do not start with it. Kira (2011), Outbreak (2013) and the Nekogoroshi-hen special are optional extras.",
+    promote: ["higurashi-no-naku-koro-ni-gou", "higurashi-no-naku-koro-ni-sotsu"],
+    mainOrder: ["higurashi-no-naku-koro-ni", "higurashi-no-naku-koro-ni-kai", "higurashi-no-naku-koro-ni-rei", "higurashi-no-naku-koro-ni-gou", "higurashi-no-naku-koro-ni-sotsu"],
+  },
+  "k-project": {
+    label: "K (K Project)",
+    intro: "Watch K (October–December 2012), then the film K: Missing Kings (July 2014), which is set a year after the series, then K: Return of Kings (13 episodes, October–December 2015). The six K: Seven Stories films came out once a month from July to December 2018; watch them after Return of Kings. The Missing Kings manner movie can be skipped, and The Idol K shorts are optional.",
+    skip: ["k-missing-kings-manner-movie"],
+  },
+  oreimo: {
+    label: "Oreimo",
+    intro: "Watch episodes 1 to 11 of Oreimo (October–December 2010), then the four web episodes released in 2011; they replace the broadcast episode 12 with an ending that follows the light novels. Oreimo 2 has 13 TV episodes (April–June 2013) and three more web episodes, 14 to 16, released on August 18, 2013, which finish the story. The commentary specials, SD shorts and music videos are optional.",
+  },
+  free: {
+    label: "Free!",
+    intro: "Watch Free! (July–September 2013), Eternal Summer (July–September 2014), the film Take Your Marks (October 2017), which is set between the second and third seasons, Dive to the Future (July–September 2018), then the two-part film The Final Stroke (September 2021 and April 2022). The Timeless Medley films (2017) and Road to the World (2019) are compilations. Starting Days (2015) is an optional prequel film set in middle school.",
+    demote: ["free-starting-days"],
+    skip: ["free-timeless-melody-kizuna"],
+  },
+  given: {
+    label: "Given",
+    intro: "Watch the TV series (July–September 2019), then Given the Movie (August 2020), which continues it directly, then the two-part film project Hiiragi Mix (January 2024) and To the Sea (September 2024). The OVAs from December 2021 and October 2025 were bundled with manga volumes and are optional, as are the Hiiragi Mix specials.",
+  },
+  "yu-yu-hakusho": {
+    label: "Yu Yu Hakusho",
+    intro: "Yu Yu Hakusho is one 112-episode TV series (October 1992–January 1995), so start there. The films The Golden Seal (July 1993) and Poltergeist Report (April 1994) have original stories and are optional. Two Shots / All or Nothing (October 2018) adapts a bonus chapter about how Hiei and Kurama met and a chapter from the end of the manga; watch it after the series. The Eizou Hakusho videos and the 2009 picture drama are short extras.",
+  },
+  "youkoso-jitsuryoku-shijou-shugi-no-kyoushitsu-e-tv": {
+    label: "Classroom of the Elite",
+    intro: "Watch the four seasons in order: Classroom of the Elite (July–September 2017), II (July–September 2022), III (January–March 2024) and the 4th Season (16 episodes, April–June 2026), subtitled Second Year, First Semester, which starts the second-year story. A fifth season was announced after the fourth season's final episode and has no release date yet.",
+  },
+  "zero-no-tsukaima": {
+    label: "The Familiar of Zero",
+    intro: "Watch the four seasons in order: The Familiar of Zero (13 episodes, July–September 2006), Knight of the Twin Moons (12 episodes, July–September 2007), Rondo of Princesses (12 episodes, July–September 2008) and F (12 episodes, January–March 2012). Rondo of Princesses has one OVA episode, released in December 2008, that is optional and fits after it. The picture drama shorts are optional extras.",
+  },
+  berserk: {
+    label: "Berserk",
+    intro: "The 1997 series (25 episodes) and the Golden Age Arc film trilogy (2012–2013) both adapt the Golden Age arc, so watch one of them; the films are listed under safe to skip for that reason. Then watch Berserk (July–September 2016) and its second season (April–June 2017), which continue from the end of the films. The Memorial Edition (October–December 2022) is a 13-episode TV re-edit of the films.",
+  },
+  inuyasha: {
+    label: "InuYasha",
+    intro: "Watch InuYasha (167 episodes, October 2000–September 2004), then InuYasha: The Final Act (26 episodes, October 2009–March 2010). The four films (December 2001 to December 2004) have original stories and are optional; the first three came out while the first series was airing, the fourth after it ended. Yashahime: Princess Half-Demon (two seasons, October 2020–March 2022) is an anime-original sequel about the next generation.",
+    skip: ["shounen-sunday-cm-gekijou-inuyasha-hen"],
+  },
+  "the-world-god-only-knows": {
+    label: "The World God Only Knows",
+    intro: "Watch Season 1 (12 episodes, October–December 2010), Season 2 (April–June 2011), the OVA Four Girls and an Idol (September 2011), the two-part OVA Tenri Arc (October and December 2012), then Goddesses (July–September 2013). Tenri Arc introduces the goddess story that Goddesses continues, so do not skip it. Flag 0 (September 2010) is a short prologue OVA bundled with manga volume 10 and is optional.",
+    demote: ["kami-nomi-zo-shiru-sekai-flag-0"],
+  },
+  "accel-world": {
+    label: "Accel World",
+    intro: "Watch the 24-episode series (April–September 2012), then the film Accel World: Infinite Burst (July 2016). The two-episode EX OVA (September 2012 and January 2013) is a pair of side episodes, one about a thief in the school network and one about Haruyuki's diet. The Accel World specials are optional too.",
+  },
+  "youjo-senki": {
+    label: "The Saga of Tanya the Evil",
+    intro: "Watch Season 1 (12 episodes, January–March 2017), then Saga of Tanya the Evil: The Movie (February 2019), a direct sequel to the first season, then Saga of Tanya the Evil II (12 episodes, July–September 2026). The Youjo Shenki chibi shorts, Operation Desert Pasta (2021) and Isekai Quartet are optional extras. The manner movie is a cinema-etiquette clip and the Isekai Quartet relay PV is a trailer.",
+    skip: ["youjo-senki-movie-manner-eizou", "isekai-quartet-relay-pv"],
+  },
+  "eden-of-the-east": {
+    label: "Eden of the East",
+    intro: "Watch the 11-episode series (April–June 2009), then the two films The King of Eden (November 2009) and Paradise Lost (March 2010), which continue the story from the end of the series and conclude it. Air Communication (September 2009) is a re-edit of the TV episodes and can be skipped. Falling Down is the music video for the opening theme by Oasis.",
+  },
+  "gate-jieitai-kanochi-nite-kaku-tatakaeri": {
+    label: "GATE",
+    intro: "Watch GATE (12 episodes, July–September 2015) and GATE Part 2 (12 episodes, January–March 2016); they are the two halves of one 24-episode series. Gate 2: Tides of Conflict, an adaptation of the sequel novels, is set to premiere in 2027. There are no OVAs, films or recap episodes to fit in.",
+  },
+  "trinity-seven": {
+    label: "Trinity Seven",
+    intro: "Watch the 12-episode series (October–December 2014), then the films Eternity Library & Alchemic Girl (February 2017) and Heavens Library & Crimson Lord (March 2019). The OVA (March 2015) is a side episode that fits after the series. The second film is not linked on Kitsu, so it is missing from the list below.",
+  },
+  "akagami-no-shirayuki-hime": {
+    label: "Snow White with the Red Hair",
+    intro: "Watch Season 1 (12 episodes, July–September 2015), then Season 2 (12 episodes, January–March 2016). The OVA, bundled with a limited edition of manga volume 15, adapts three manga chapters, including chapter 41, that the TV series did not cover; it is optional.",
+  },
+  "goblin-slayer": {
+    label: "Goblin Slayer",
+    intro: "Watch Season 1 (12 episodes, October–December 2018), the film Goblin's Crown (February 2020), then Season 2 (October–December 2023). Season 2 is not linked to the rest on Kitsu, so it was added to the list below by hand. Adventure Sheet (December 2018), listed under safe to skip, is a recap special.",
+    promote: ["goblin-slayer-2nd-season"],
+  },
+  sk8: {
+    label: "SK8 the Infinity",
+    intro: "Watch the 12-episode series (January–April 2021), then the OVA SK8 the Infinity Extra Part, screened in theatres from January 24, 2025 and released on home video on March 19, 2025. A second season has been announced but had no release date as of November 2026. Crazy Rock Jam (March 2021) is a recap special and can be skipped.",
+  },
+  "blood-lad": {
+    label: "Blood Lad",
+    intro: "Blood Lad is a single 10-episode series (July–September 2013). The OVA released in December 2013 is an extra episode that goes after the series. The 2017 Kanketsu Kinen video is a short promotional clip, not an episode, so it can be skipped. There is no second season.",
+    skip: ["blood-lad-kanketsu-kinen"],
+  },
+  "koutetsujou-no-kabaneri": {
+    label: "Kabaneri of the Iron Fortress",
+    intro: "Watch the 12-episode series (April–June 2016), then the film The Battle of Unato (May 2019), which is set six months after the series. The two compilation films (December 2016 and January 2017) recap the first and second halves of the series and can be skipped. The Ran and Mumei Ranman specials and the Sakaseyasakase music video are optional extras.",
+  },
+  "lucky-star": {
+    label: "Lucky Star",
+    intro: "Lucky Star is one 24-episode series (April–September 2007), followed by a single OVA (September 2008), released a year after the TV series ended; there is no second season. Miyakawa-ke no Kūfuku (April–July 2013), streamed online, is a spin-off and is listed separately below.",
+  },
+  "baka-to-test-to-shoukanjuu": {
+    label: "Baka and Test: Summon the Beasts",
+    intro: "Watch Baka and Test (13 episodes, January–March 2010), the two-episode OVA Matsuri (February–March 2011), then Baka and Test 2 (13 episodes, July–September 2011). The Matsuri OVA sits between the two seasons. The short specials and the LIPS video are optional extras.",
+  },
+  "dragon-ball-z-movie-14-kami-to-kami": {
+    label: "Dragon Ball Z: Battle of Gods",
+    intro: "Watch Battle of Gods (March 2013), then its sequel Resurrection 'F' (April 2015); both are set after the defeat of Majin Buu. Episodes 1 to 27 of Dragon Ball Super retell both films with extra scenes, so watch the films or those episodes, not both; that is why Super appears under safe to skip. Dragon Ball Super: Beerus, a TV series that began on October 11, 2026, covers the same events.",
+  },
+  "amagi-brilliant-park": {
+    label: "Amagi Brilliant Park",
+    intro: "Amagi Brilliant Park is one 13-episode series (October–December 2014). The OVA No Time to Take It Easy!, bundled with the seventh DVD and Blu-ray volume, is an unaired extra episode that goes after the series. The seven Wakuwaku Mini Theater shorts also came with the disc volumes and are optional.",
+  },
+  "sukitte-ii-na-yo": {
+    label: "Say \"I Love You\".",
+    intro: "Say \"I Love You\". is one TV series (October–December 2012). The OVA, bundled with a limited edition of manga volume 11 in July 2013, is an extra episode that goes after the series; the Mei and Marshmallow shorts are optional. The 2014 film is live action and separate from the anime.",
+  },
+  "kore-wa-zombie-desu-ka": {
+    label: "Is This a Zombie?",
+    intro: "Watch Is This a Zombie? (12 episodes, January–March 2011) and its OVA episodes, then Is This a Zombie? of the Dead (10 episodes, April–June 2012) and its OVA from October 2012. The OVAs were released with light novel and manga volumes as extra episodes.",
+  },
+  bakuman: {
+    label: "Bakuman.",
+    intro: "Watch the three seasons in order: Bakuman. (25 episodes, October 2010–April 2011), Season 2 (25 episodes, October 2011–March 2012) and Season 3 (25 episodes, October 2012–March 2013). The specials are optional. Deraman, listed under safe to skip, is a recap of the first two seasons.",
+  },
+  "masamune-kun-no-revenge": {
+    label: "Masamune-kun's Revenge",
+    intro: "Watch Season 1 (12 episodes, January–March 2017), then Masamune-kun's Revenge R (July–September 2023), the second season. The OVA (July 2018) is an optional extra episode released between the two seasons. R came out six years after Season 1 and continues its story, so start with Season 1. Twilight Little Star is a music video.",
+  },
+  sankarea: {
+    label: "Sankarea: Undying Love",
+    intro: "Sankarea is one 12-episode series (April–June 2012). Two OVA episodes came with manga volumes 6 and 7 (June and November 2012), and a special episode came with the sixth Blu-ray and DVD volume (November 2012); all three are extra episodes that go after the series. There is no second season.",
+  },
+  "rurouni-kenshin": {
+    label: "Rurouni Kenshin (1996)",
+    intro: "Watch the TV series (January 1996–September 1998), then the OVA Trust & Betrayal (1999), a prequel about Kenshin's past made after the series, then the OVA Reflection (2001–2002), set after the series. The 1997 film is optional. New Kyoto Arc (2011–2012) retells the Kyoto arc and can be skipped. The 2023 series and its second season, Kyoto Disturbance (2024–2025), are a separate new adaptation.",
+    demote: ["rurouni-kenshin-tsuiokuhen"],
+  },
+  "aldnoah-zero": {
+    label: "Aldnoah.Zero",
+    intro: "Watch Season 1 (12 episodes, July–September 2014), then Season 2 (12 episodes, January–March 2015). The Penultimate Truth, an extra episode numbered 24.5, was first shown inside the compilation film Aldnoah.Zero (Re+) in February 2025 and released on its own in March 2025; watch it after Season 2. Extra Archives is a recap special.",
+  },
+  "3-gatsu-no-lion": {
+    label: "March Comes In Like a Lion",
+    intro: "Watch Season 1 (22 episodes, October 2016–March 2017), then Season 2 (22 episodes, October 2017–March 2018). The omnibus special from December 2016 is a recap and can be skipped. The music videos and the Lion meets HachiClo clips are optional extras, not episodes.",
+    skip: ["lion-meets-hachiclo"],
+  },
+  "is-infinite-stratos": {
+    label: "Infinite Stratos",
+    intro: "Watch Infinite Stratos (12 episodes, January–April 2011) and the OVA Encore (December 2011), then Infinite Stratos 2 (12 episodes, October–December 2013) and the OVA World Purge (November 2014). The Long Vacation OVA from October 2013 is listed under safe to skip, and the Infinite Wedding special is an optional extra.",
+  },
+  "strike-the-blood": {
+    label: "Strike the Blood",
+    intro: "Watch the 24-episode TV series (October 2013–March 2014), then the OVA seasons in order: II (8 episodes, November 2016–May 2017), III (10 episodes, December 2018–September 2019), IV (April 2020–June 2021) and FINAL (4 episodes, March–July 2022). After the TV series the story continues only as OVAs. Kingdom of the Valkyria (2015) and The Lost Holy Spear (January 2020) are optional side OVAs.",
+  },
+  "91-days": {
+    label: "91 Days",
+    intro: "91 Days is one 12-episode series (July–October 2016). The 2017 special is a side story that goes after the series. Brief Candle (August 2016) is a recap episode that aired mid-season and can be skipped, and the 91 Daze shorts are optional. There is no second season.",
+  },
+  "hajime-no-ippo": {
+    label: "Hajime no Ippo (Fighting Spirit)",
+    intro: "Watch Hajime no Ippo (75 episodes, October 2000–March 2002) and episode 76, which was only on the last DVD, then the TV film Champion Road (April 2003), the OVA Mashiba vs. Kimura (September 2003), New Challenger (26 episodes, January–June 2009) and Rising (25 episodes, October 2013–March 2014). The Boxer's Fist special from 2003 is optional.",
+  },
+  "eureka-seven": {
+    label: "Eureka Seven",
+    intro: "Watch Eureka Seven (50 episodes, April 2005–April 2006), then the sequel Eureka Seven AO (24 episodes, 2012), whose last two episodes aired together in November 2012, and its OVA. The 2009 film and the Hi-Evolution trilogy (2017–2021) are alternative versions of the original series and are listed under safe to skip. The AO Aratanari Fukaki Ao shorts are optional.",
+  },
+  "himouto-umaru-chan": {
+    label: "Himouto! Umaru-chan",
+    intro: "Watch Himouto! Umaru-chan (12 episodes, July–September 2015), then Umaru-chan R (October–December 2017), the second season. The two OVAs were bundled with manga volumes 7 (October 2015) and 10 (April 2017) and are extra episodes. The Umaru-chanS shorts (2015–2016) are optional too.",
+  },
+  "to-love-ru": {
+    label: "To Love Ru",
+    intro: "Watch To Love Ru (26 episodes, April–September 2008), Motto To Love Ru (12 episodes, October–December 2010), To Love Ru Darkness (12 episodes, October–December 2012) and Darkness 2nd (July–October 2015). The OVA episodes, most of them bundled with manga volumes, are extra stories. The 2017 OVA came with To Love Ru Chronicles, a book for the franchise's 10th anniversary.",
+  },
+  "saenai-heroine-no-sodate-kata": {
+    label: "Saekano: How to Raise a Boring Girlfriend",
+    intro: "Watch Saekano (January–March 2015), whose broadcast began with episode 0 on January 9, then Saekano Flat (April–June 2017), then the film Saekano the Movie: Finale (October 2019). Flat also has an episode 0, streamed online a week before its TV broadcast began; it is optional. Kitsu lists the first season's episode 0 separately, at the top of the list.",
+  },
+  chihayafuru: {
+    label: "Chihayafuru",
+    intro: "Watch the three seasons in order: Chihayafuru (25 episodes, October 2011–March 2012), Chihayafuru 2 (25 episodes, January–June 2013) and Chihayafuru 3 (24 episodes, October 2019–March 2020). The OVA bundled with manga volume 22 in September 2013 belongs to the second season and fits after it. The January 2020 special listed under safe to skip is a recap.",
+  },
+  "shakugan-no-shana": {
+    label: "Shakugan no Shana",
+    intro: "Watch the three TV seasons in order: Shakugan no Shana (24 episodes, October 2005–March 2006), Second (24 episodes, October 2007–March 2008) and Final (24 episodes, October 2011–March 2012), with the four-episode OVA Shakugan no Shana S (October 2009–September 2010) between Second and Final. The SP OVA (December 2006) is optional. The 2007 film is listed under safe to skip.",
+  },
+  "the-tatami-galaxy": {
+    label: "The Tatami Galaxy",
+    intro: "The Tatami Galaxy is one 11-episode series (April–July 2010); the three seven-minute shorts on its DVD and Blu-ray volumes are optional. Then watch The Tatami Time Machine Blues (six episodes, September–October 2022). Its theatrical compilation leaves out the sixth episode, so watch the series version. The Night Is Short, Walk On Girl (April 2017) is a separate film.",
+  },
+  "full-metal-panic": {
+    label: "Full Metal Panic!",
+    intro: "Watch Full Metal Panic! (24 episodes, January–June 2002), Fumoffu (12 episodes, August–November 2003), The Second Raid (13 episodes, July–October 2005) and Invisible Victory (12 episodes, April–July 2018). Fumoffu is a comedy set between the first season and The Second Raid and is optional; Invisible Victory continues from The Second Raid. The three 2017–2018 films are director's cuts of the first season.",
+    promote: ["full-metal-panic-invisible-victory"],
+  },
+  shirobako: {
+    label: "Shirobako",
+    intro: "Shirobako is one 24-episode series (October 2014–March 2015), followed by Shirobako: The Movie (February 2020), an all-new story. The two OVA episodes on the third and seventh disc volumes show the fictional anime that the characters work on and are optional, as are the other specials.",
+  },
+  "grisaia-no-kajitsu": {
+    label: "The Fruit of Grisaia",
+    intro: "Watch The Fruit of Grisaia (13 episodes, October–December 2014), the TV film The Labyrinth of Grisaia (April 12, 2015), then The Eden of Grisaia (10 episodes, April–June 2015). The shorts released with the disc volumes are optional. Grisaia: Phantom Trigger (films from 2019 and a TV series from January 2025) is based on a separate game series.",
+  },
+  "shinmai-maou-no-testament": {
+    label: "The Testament of Sister New Devil",
+    intro: "Watch The Testament of Sister New Devil (12 episodes, January–March 2015) and its OVA (June 2015), then Burst (10 episodes, October–December 2015) and its OVA (January 2016), then the OVA Departures (2018). The specials released with the disc volumes are optional.",
+  },
+  "seitokai-yakuindomo": {
+    label: "Seitokai Yakuindomo",
+    intro: "Watch Seitokai Yakuindomo (13 episodes, July–September 2010) and its OVAs, then Seitokai Yakuindomo* (13 episodes, January–March 2014) and its OVAs, then the films from July 2017 and January 2021. The OVAs were released with limited editions of the manga. The two films are not linked on Kitsu, so they are missing from the list below.",
+  },
 };
