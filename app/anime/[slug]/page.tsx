@@ -62,6 +62,7 @@ import Refreshed from "@/components/Refreshed";
 import { airing } from "@/lib/airing";
 import { adaptationFor, adaptedRange, continueAt, ADAPT_CHECKED, ADAPT_REVIEWED } from "@/lib/mangaseasons";
 import { volumeFor, volumeLine } from "@/lib/mangavolumes";
+import { summaryFor, SUMMARIES_REVIEWED } from "@/lib/summaries";
 import ArcList from "@/components/ArcList";
 import { arcsFor, arcSources, arcSummary, ARCS_CHECKED, ARCS_REVIEWED } from "@/lib/arcs";
 import ClampText from "@/components/fx/ClampText";
@@ -99,7 +100,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const title = fitTitle(live
     ? [`${a.title}${year ? ` (${year})` : ""} – Episodes, Release Date & Where to Watch`, `${a.title} – Release Date, Episodes & Where to Watch`, `${a.title} – Next Episode & Where to Watch`, `${a.title} – Release Date`, a.title]
     : [`${a.title}${year ? ` (${year})` : ""} – Episodes & Where to Watch`, `${a.title} – Episodes & Where to Watch`, `${a.title} – Where to Watch`, a.title]);
-  const description = `${a.title}: ${a.episodeCount ? `${a.episodeCount} episodes` : subtypeLabel(a.subtype)}, ${statusLabel(a.status).toLowerCase()}${a.rating ? `, rated ${(a.rating / 10).toFixed(1)}/10` : ""}. ${a.synopsis.slice(0, 120).replace(/\s+\S*$/, "")}…`;
+  // Our own summary where there is one, not Kitsu's synopsis (lib/summaries.ts).
+  const blurb = summaryFor(a.slug)?.summary ?? a.synopsis;
+  const description = `${a.title}: ${a.episodeCount ? `${a.episodeCount} episodes` : subtypeLabel(a.subtype)}, ${statusLabel(a.status).toLowerCase()}${a.rating ? `, rated ${(a.rating / 10).toFixed(1)}/10` : ""}. ${blurb.slice(0, 120).replace(/\s+\S*$/, "")}…`;
   return {
     title,
     description,
@@ -272,7 +275,7 @@ export default async function AnimePage({ params }: Props) {
     url: abs(animePath(a)),
     mainEntityOfPage: abs(animePath(a)),
     image: posterUrl(a, "large") || undefined,
-    description: excerpt(a.synopsis, 300) || undefined,
+    description: excerpt(summaryFor(a.slug)?.summary ?? a.synopsis, 300) || undefined,
     genre: publicGenres(a.categories).map((c) => c.title),
     inLanguage: "ja",
     countryOfOrigin: { "@type": "Country", name: "Japan" },
@@ -498,8 +501,13 @@ export default async function AnimePage({ params }: Props) {
               </div>
             )}
             {note && <EditorNote title={a.title} note={note} />}
-            <h2 id="h-overview" className="h-section mb-3">Synopsis</h2>
-            {a.synopsis ? (
+            <h2 id="h-overview" className="h-section mb-3">{summaryFor(a.slug) ? "What it's about" : "Synopsis"}</h2>
+            {summaryFor(a.slug) ? (
+              <>
+                <p className="prose-anime">{summaryFor(a.slug)!.summary}</p>
+                <p className="mt-2 text-xs text-muted">Spoiler-free summary by AniLumi, {SUMMARIES_REVIEWED ? "checked" : "draft"}; facts checked against {summaryFor(a.slug)!.sources.length} sources. <Link href="/how-we-check" className="underline">How we check</Link></p>
+              </>
+            ) : a.synopsis ? (
               <>
                 <ClampText text={excerpt(a.synopsis, 480)} lines={5} />
                 <p className="mt-2 text-xs text-muted">Synopsis excerpt via <a href={`https://kitsu.app/anime/${a.slug}`} target="_blank" rel="noopener nofollow" className="underline">Kitsu</a>.</p>

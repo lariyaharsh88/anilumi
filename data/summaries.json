@@ -1,0 +1,783 @@
+{
+  "checked": "2026-11-09",
+  "reviewed": null,
+  "anime": {
+    "one-piece": {
+      "summary": "Years after the execution of Gol D. Roger, the Pirate King, his last words have sent countless pirates to sea in search of his legendary treasure, the One Piece. Monkey D. Luffy, a cheerful, reckless boy whose body stretches like rubber after he ate a mysterious Devil Fruit, sets out from his village in a small boat, determined to find it and become King of the Pirates. First he needs a crew, starting with the swordsman Roronoa Zoro. Toei Animation's adaptation of Eiichiro Oda's manga has been running weekly since 1999, with more than 1,100 episodes of adventure, comedy and big battles.",
+      "sources": [
+        "https://myanimelist.net/anime/21",
+        "https://en.wikipedia.org/wiki/One_Piece_(1999_TV_series)"
+      ],
+      "confidence": "high",
+      "notes": "Ongoing; summary says 'more than 1,100 episodes' so it does not go stale quickly."
+    },
+    "detective-conan": {
+      "summary": "Shinichi Kudo is a seventeen-year-old high school detective already famous for solving cases the police could not. While following two suspicious men in black, he is caught and forced to swallow an experimental poison, but instead of killing him it shrinks him into the body of a small child. Hiding his identity under the name Conan Edogawa, he moves in with his childhood friend Ran Mori and her father Kogoro, a hapless private investigator, and secretly solves cases through him while searching for the organisation that did this. TMS Entertainment's series has aired since 1996 and is mostly made up of standalone mysteries.",
+      "sources": [
+        "https://myanimelist.net/anime/235",
+        "https://en.wikipedia.org/wiki/Case_Closed_(TV_series)"
+      ],
+      "confidence": "high"
+    },
+    "crayon-shin-chan": {
+      "summary": "Shinnosuke 'Shin-chan' Nohara is a five-year-old kindergartner in Kasukabe, Saitama, who says and does exactly what he likes. His cheeky remarks, silly dances and habit of embarrassing adults wear out his mother Misae and his salaryman father Hiroshi, and later his baby sister Himawari joins the family, along with their dog Shiro. Each episode is split into short comedy stories about everyday life at home, at kindergarten and around town. Shin-Ei Animation has produced the TV series since 1992, based on Yoshito Usui's manga, and its humour includes plenty of jokes aimed at adults.",
+      "sources": [
+        "https://myanimelist.net/anime/966",
+        "https://en.wikipedia.org/wiki/Crayon_Shin-chan_(TV_series)"
+      ],
+      "confidence": "high"
+    },
+    "doraemon-2005": {
+      "summary": "Nobita Nobi is a lazy, clumsy schoolboy who is bad at tests and sports and often bullied by Gian and Suneo. To change his future, his descendant sends Doraemon, a blue robot cat from the 22nd century, back in time to live with him. Doraemon pulls futuristic gadgets out of his four-dimensional pocket to help Nobita out of trouble, though Nobita usually finds a way to misuse them. This is the third TV adaptation of Fujiko F. Fujio's manga, made by Shin-Ei Animation for TV Asahi since 2005 with a new voice cast, and it is told mostly in short, self-contained stories.",
+      "sources": [
+        "https://myanimelist.net/anime/8687",
+        "https://en.wikipedia.org/wiki/Doraemon_(2005_TV_series)"
+      ],
+      "confidence": "high"
+    },
+    "steel-ball-run-jojo-no-kimyou-na-bouken": {
+      "summary": "In 1890, crowds gather in San Diego for the start of the Steel Ball Run, a horse race across the United States to New York with a fifty-million-dollar prize. Johnny Joestar, a former star jockey left paralysed from the waist down, has come only to watch. There he sees Gyro Zeppeli, a racer who carries two steel balls instead of a gun, use one to uncanny effect, and a brief touch of it gives Johnny a reason to enter the race himself. David Production's adaptation of the seventh part of JoJo's Bizarre Adventure premiered on Netflix in March 2026, with a new setting and cast of characters.",
+      "sources": [
+        "https://myanimelist.net/anime/61469",
+        "https://en.wikipedia.org/wiki/Steel_Ball_Run"
+      ],
+      "confidence": "high"
+    },
+    "otomege-sekai-wa-mob-ni-kibishii-sekai-desu-2nd-season": {
+      "summary": "The second season of Trapped in a Dating Sim continues the story of Leon Fou Bartfort, an office worker reborn as a minor noble in the Holfort Kingdom, the setting of an otome game his sister once forced him to finish. There, women hold power and background men, the 'mobs', have it hard. Using his memory of the game and Luxion, a powerful artificial intelligence, Leon has already thrown the original story off course while befriending heroine Olivia and supposed villainess Angelica. Now his meddling pulls him into a plot against the kingdom. ENGI returns with the same staff and cast for this 12-episode season, from July 2026.",
+      "sources": [
+        "https://myanimelist.net/anime/54000",
+        "https://en.wikipedia.org/wiki/Trapped_in_a_Dating_Sim_(novel)"
+      ],
+      "confidence": "medium",
+      "notes": "Season-specific plot is barely described in sources yet; summary recaps the setup and frames this entry as a continuation."
+    },
+    "touhou-gensou-mangekyou-the-memories-of-phantasm": {
+      "summary": "Fantasy Kaleidoscope: The Memories of Phantasm is an unofficial fan-made animation based on the Touhou Project games, produced by the doujin circle Manpuku Jinja and released in parts since 2011. It is set in Gensokyo, a hidden land where humans live alongside youkai and other spirits. The first story follows the magician Marisa Kirisame, who suspects that a youkai is to blame when winter refuses to end even though spring should have come, and she sets off to find the culprit as the shrine maiden Reimu Hakurei is also drawn in. Later episodes retell other incidents from the games. Episodes run about fifteen minutes each.",
+      "sources": [
+        "https://myanimelist.net/anime/55315",
+        "https://en.wikipedia.org/wiki/Touhou_Project",
+        "https://en.wikipedia.org/wiki/Perfect_Cherry_Blossom"
+      ],
+      "confidence": "medium",
+      "notes": "Unofficial doujin (fan-made) anime. Premise of the first story checked against the Perfect Cherry Blossom game article."
+    },
+    "Kusuriya-no-Hitorigoto-3rd-season": {
+      "summary": "The third season of The Apothecary Diaries begins after the Shi clan rebellion has been put down. Maomao, the sharp-tongued young apothecary with a fascination for poisons, has gone back to her old work making medicine in the capital's pleasure district. Something about a breakfast at the Verdigris House, the brothel where she grew up, strikes her as wrong, and she starts digging into why. At the same time, rumours spread of a shrine maiden who is misleading the public, and Jinshi carries a warning about trouble ahead for the country. Toho Animation Studio and OLM continue the historical court mystery from October 2026, following on from season two.",
+      "sources": [
+        "https://myanimelist.net/anime/61987",
+        "https://en.wikipedia.org/wiki/The_Apothecary_Diaries"
+      ],
+      "confidence": "medium",
+      "notes": "Airing now; season premise comes from the official (Crunchyroll) synopsis quoted on MAL, rewritten."
+    },
+    "Pocket-Monsters-2023": {
+      "summary": "This series opens a new chapter of Pokemon without Ash. Liko is a shy girl from the Paldea region who moves to Kanto to study at Indigo Academy, carrying a pendant her grandmother gave her, and her first partner is the grass-type cat Sprigatito. When a mysterious group tries to take the pendant, the Rising Volt Tacklers, a band of adventurers led by Friede and his Pikachu, come to her rescue, and she ends up joining them on their airship. Roy, a boy who owns an ancient Poke Ball, soon joins too. OLM produces the series, known in English as Pokemon Horizons: The Series.",
+      "sources": [
+        "https://myanimelist.net/anime/53876",
+        "https://en.wikipedia.org/wiki/Pok%C3%A9mon_Horizons:_The_Series"
+      ],
+      "confidence": "high"
+    },
+    "kikansha-no-mahou-wa-tokubetsu-desu-2nd-season": {
+      "summary": "In the first season of A Returner's Magic Should Be Special, the mage Desir Herrman was among the last survivors fighting the Shadow Labyrinth, an alternate dimension swallowing the world, until the final battle went wrong and he woke up thirteen years in the past, on the day of his entrance exam for Hebrion Academy. Keeping his memories of the future, he began building a party with classmates such as Romantica to prepare for the disaster he knows is coming. Season two continues his attempt to change that future. Based on Usonan's Korean web novel, Arvo Animation's fantasy action series premiered on Fuji TV's +Ultra block in October 2026.",
+      "sources": [
+        "https://myanimelist.net/anime/57612",
+        "https://en.wikipedia.org/wiki/A_Returner%27s_Magic_Should_Be_Special"
+      ],
+      "confidence": "medium",
+      "notes": "Season-specific plot is barely described in sources yet; summary recaps the setup and frames this entry as a continuation."
+    },
+    "tantei-wa-mou-shindeiru-season-2": {
+      "summary": "The Detective Is Already Dead returns for a second season. Kimihiko Kimizuka is a high school student who has always attracted trouble. Years ago, a hijacking on a flight made him the reluctant sidekick of Siesta, a self-proclaimed legendary detective, and the two spent three years solving cases and confronting secret organisations together before her death. Now in his final year of high school, he is surrounded by new partners, including Nagisa Natsunagi, idol Yui Saikawa and the young operative Charlotte, and is still caught up in the fight Siesta left unfinished. ENGI animates this 13-episode mystery action season, which began in October 2026 and assumes viewers know the first.",
+      "sources": [
+        "https://myanimelist.net/anime/52480",
+        "https://en.wikipedia.org/wiki/The_Detective_Is_Already_Dead"
+      ],
+      "confidence": "medium",
+      "notes": "Season-specific plot is barely described in sources yet; summary recaps the setup and frames this entry as a continuation."
+    },
+    "Black-Clover-Season-2": {
+      "summary": "Black Clover returns in October 2026 with a second season from Studio Pierrot, continuing the story where the first 170-episode run stopped. Asta, a boy born without any magic in a world where everyone has it, fights with anti-magic swords and still intends to become the Wizard King, alongside his rival and childhood friend Yuno. The Clover Kingdom is under threat from the Dark Triad, the rulers of the Spade Kingdom, who have captured several Magic Knight captains. Asta and the other knights prepare a raid deep into enemy territory to bring them back. The season assumes viewers know the first series.",
+      "sources": [
+        "https://myanimelist.net/anime/61967",
+        "https://en.wikipedia.org/wiki/Black_Clover"
+      ],
+      "confidence": "medium",
+      "notes": "Kitsu has no MAL mapping; MAL 61967 used. Season premise (Spade Kingdom raid) comes from the official synopsis on Kitsu plus franchise facts on Wikipedia."
+    },
+    "sazae-san": {
+      "summary": "Sazae Fuguta is a cheerful, scatterbrained housewife living in a Tokyo suburb in a three-generation household with her husband Masuo, their small son Tarao, her parents Namihei and Fune, and her younger siblings Katsuo and Wakame. Each episode tells three short, gentle stories about ordinary family life, school, neighbours and the changing seasons. Based on Machiko Hasegawa's newspaper comic strip, the series has been made by Eiken and broadcast on Sunday evenings on Fuji TV since 1969, and it holds the Guinness World Record as the longest-running animated television series.",
+      "sources": [
+        "https://myanimelist.net/anime/2406",
+        "https://en.wikipedia.org/wiki/Sazae-san"
+      ],
+      "confidence": "high"
+    },
+    "nintama-rantarou": {
+      "summary": "Rantaro, Kirimaru and Shinbei are first-year students at a ninja academy in Japan's warring-states era, learning the skills a ninja needs. Rantaro comes from a family of low-ranking ninja, Kirimaru is an orphan obsessed with making money from side jobs, and Shinbei is a merchant's son who loves to eat. They are not very good students, and most episodes are short slapstick comedies about their lessons, teachers, missions gone wrong and everyday trouble. Based on Sobe Amako's manga Rakudai Ninja Rantaro, the series has been made by Ajia-do for NHK since 1993 in short episodes aimed at children.",
+      "sources": [
+        "https://myanimelist.net/anime/1199",
+        "https://en.wikipedia.org/wiki/Nintama_Rantar%C5%8D"
+      ],
+      "confidence": "high"
+    },
+    "chibi-maruko-chan-1995": {
+      "summary": "Momoko Sakura, known to everyone as Maruko, is a third-grade girl growing up in Shimizu, Shizuoka, in the mid-1970s. She is lazy, easily distracted and fond of manga and idol singers, and she lives with her parents, her older sister and her grandparents, including her doting grandfather Tomozo. Episodes tell short, gentle comic stories about home, school and her classmates. Based on Momoko Sakura's semi-autobiographical manga, this is the second TV series, made by Nippon Animation and shown on Fuji TV since 1995 as a long-running family program.",
+      "sources": [
+        "https://myanimelist.net/anime/6149",
+        "https://en.wikipedia.org/wiki/Chibi_Maruko-chan"
+      ],
+      "confidence": "high"
+    },
+    "mobius-dust": {
+      "summary": "A decade after a strange meteorite struck Earth, some people have developed superhuman abilities called Rams. These Rams Carriers can only stay alive near the Mebius Dust given off by a giant crystal, so they are forbidden to leave the town of Shinkatsushika. Bored and fenced in, teenagers with Rams play a territory-capture game against each other. High school student Araki forms the team Polis Hopper with Stella, his younger sister, and Olga, a childhood friend, and their lives start to change when a researcher, Professor Yuda, asks them to take part in an experiment. Mebius Dust is a 12-episode original science fiction action series from Doga Kobo.",
+      "sources": [
+        "https://myanimelist.net/anime/63802",
+        "https://en.wikipedia.org/wiki/Mebius_Dust"
+      ],
+      "confidence": "medium",
+      "notes": "Kitsu's synopsis (Feb 2000 meteorites, terrorist alliance, police academy) describes the 2019 pitch concept; summary follows the broadcast premise from the official site via MAL and Wikipedia. Kitsu's MAL mapping (39473) is dead; correct MAL id is 63802."
+    },
+    "danjo-no-yuujou-wa-seiritsu-suru-iya-shinai": {
+      "summary": "Yuu Natsume makes flower accessories and dreams of opening his own shop. Since middle school his best friend Himari Inuzuka has helped him, modelling and promoting his work online, and the two now run their high school's gardening club together. They have even joked that if his dream fails by thirty, she will marry him. In their second year, Yuu is reunited with Enomoto, the girl who was his first love, who is still wearing one of his early creations. Himari encourages the pair, but watching them grow closer forces her to question how she really feels. J.C.Staff adapted the light novels as a 12-episode romantic comedy in 2025.",
+      "sources": [
+        "https://myanimelist.net/anime/52709",
+        "https://en.wikipedia.org/wiki/Can_a_Boy-Girl_Friendship_Survive%3F"
+      ],
+      "confidence": "high"
+    },
+    "maou-sama-retry-r": {
+      "summary": "Maou-sama, Retry! R continues the story of Hakuto Kunai, a man who found himself inside a game world wearing the body of its feared Demon Lord. Rabbi Village, the settlement he helped build, is now growing quickly under his allies' management, which leaves him free to travel again in search of items that can counter magic. His search starts in a deep dungeon called the Prison Labyrinth, and he gains a newly summoned aide, the relentlessly upbeat Akane. Meanwhile, a new nation, the Queendom of Xenobia, takes an unwelcome interest in the village. This 12-episode fantasy comedy by Gekkou aired in late 2024.",
+      "sources": [
+        "https://myanimelist.net/anime/56400",
+        "https://en.wikipedia.org/wiki/Demon_Lord,_Retry!"
+      ],
+      "confidence": "high"
+    },
+    "hotaru-no-yomeiri": {
+      "summary": "In Meiji-era Japan, Satoko Kirigaya, the daughter of an earl, is admired for her beauty and manners, yet she turns down every marriage offer because she secretly has a weak heart and may not live long. Hoping to put her father's mind at rest, she resolves to marry after all. Then she is kidnapped by hired killers, among them Shinpei Goto, a feared assassin sent to end her life. With no other way out, Satoko proposes to him, claiming it was love at first sight, and he accepts, swearing to protect her. David Production's 12-episode adaptation of the manga, from October 2026, is a dark period romance.",
+      "sources": [
+        "https://myanimelist.net/anime/63293",
+        "https://en.wikipedia.org/wiki/Firefly_Wedding"
+      ],
+      "confidence": "high"
+    },
+    "sasaki-to-pii-chan-2nd-season": {
+      "summary": "Sasaki is a middle-aged office worker whose dull routine changed when he adopted a small bird from a pet shop. The bird turned out to be Piercarlo, a sage from another world reborn as a small bird, whom Sasaki renamed Peeps. With the magic Peeps taught him, Sasaki now lives a double life: travelling to a fantasy kingdom on one side, and working on Earth for a government group of psychics who deal with dangerous 'Irregulars' on the other. The second season continues both lives as trouble grows in each world. Silver Link returns with the same cast for this 12-episode season, from October 2026.",
+      "sources": [
+        "https://myanimelist.net/anime/58518",
+        "https://en.wikipedia.org/wiki/Sasaki_and_Peeps"
+      ],
+      "confidence": "medium",
+      "notes": "Season-specific plot is barely described in sources yet; summary recaps the setup and frames this entry as a continuation."
+    },
+    "yeosingangnim": {
+      "summary": "Lim Jugyeong was bullied in middle school for her looks, so she teaches herself makeup and transfers to a new high school to start over, where her classmates now treat her as a beauty. Jugyeong's new life depends on no one ever seeing her bare face, but Lee Suho, a handsome and aloof classmate, catches sight of it by chance. Based on Yaongyi's Korean webtoon True Beauty, this 13-episode Korean animated series from Studio N was released online in 2024 and is a romantic comedy drama.",
+      "sources": [
+        "https://myanimelist.net/anime/57192",
+        "https://en.wikipedia.org/wiki/True_Beauty_(webtoon)"
+      ],
+      "confidence": "high"
+    },
+    "kanpeki-sugite-kawai-ge-ga-nai-to-konyaku-haki-sareta-seijo-wa-ringoku-ni-ura-reru": {
+      "summary": "The Adenauer family of the kingdom of Girtonia has produced holy saints for generations, and Philia is said to be the most capable of them all. But she rarely shows emotion, and her parents, the public and her fiance, Second Prince Julius, find her cold. Julius breaks off the engagement, calling her too perfect to be lovable, and Philia is handed over to the neighbouring kingdom of Parnacorta, which has lost its own saint, in exchange for payment. Her younger sister Mia is the only one who truly cares about her. TROYCA's 12-episode fantasy romance, released in 2025, follows Philia's new life abroad.",
+      "sources": [
+        "https://myanimelist.net/anime/60157",
+        "https://en.wikipedia.org/wiki/The_Too-Perfect_Saint"
+      ],
+      "confidence": "high"
+    },
+    "sore-ike-anpanman": {
+      "summary": "In a forest bakery, a falling star brings a bean-paste bun to life as Anpanman, a hero whose head is made of bread. With Uncle Jam the baker and his assistant Batako, he flies around helping anyone in trouble, even letting hungry people eat part of his face, after which Uncle Jam bakes him a new one. His regular foe is Baikinman, a mischievous germ who keeps causing trouble with his inventions. Based on Takashi Yanase's picture books, TMS Entertainment has made the series for Nippon TV since 1988, and it is aimed at very young children.",
+      "sources": [
+        "https://myanimelist.net/anime/1960",
+        "https://en.wikipedia.org/wiki/Anpanman"
+      ],
+      "confidence": "high"
+    },
+    "bonobono-2016": {
+      "summary": "Bonobono is a young sea otter who lives by the sea next to a forest and spends his days thinking about small questions in life. His friends Shimarisu, an excitable chipmunk, and Araiguma, a short-tempered raccoon, join him in playing, wandering and talking with the other animals of the forest. Each episode is a quiet, gentle comedy with a slightly philosophical streak. This 2016 TV series, based on Mikio Igarashi's long-running manga, is made by Eiken for Fuji TV in short episodes of about five minutes.",
+      "sources": [
+        "https://myanimelist.net/anime/32353",
+        "https://en.wikipedia.org/wiki/Bonobono"
+      ],
+      "confidence": "high",
+      "notes": "Short-format (about 5 min) TV series, included as a story anime."
+    },
+    "niwatori-fighter": {
+      "summary": "Keiji looks like an ordinary rooster, but he is a fierce fighter who wanders from city to city across Japan battling demons, giant monsters born from people overwhelmed by distress or trauma. The tone plays this completely straight: a small bird with a big ego trades blows with enormous monsters while bystanders look on in confusion. Based on Shu Sakuratani's web manga, this 12-episode action comedy was animated by Sanzigen with Viz Media and premiered in March 2026, first in English on Toonami and then in Japan.",
+      "sources": [
+        "https://myanimelist.net/anime/59393",
+        "https://en.wikipedia.org/wiki/Rooster_Fighter"
+      ],
+      "confidence": "high"
+    },
+    "chiikawa": {
+      "summary": "Chiikawa is a small, round, timid creature who lives with friends such as the cat-like Hachiware and the hyperactive, rabbit-like Usagi. Their days are a mix of tasty food, part-time jobs and certification exams for weeding and monster-hunting work, along with bigger and sometimes frightening problems they face together. Based on Nagano's manga that began as posts on social media, the anime by Doga Kobo has aired since 2022 as very short episodes of about one to two minutes, with a cute look and occasional darker moments.",
+      "sources": [
+        "https://myanimelist.net/anime/50250",
+        "https://en.wikipedia.org/wiki/Chiikawa"
+      ],
+      "confidence": "high",
+      "notes": "Very short episodes (1-2 min) but a narrative TV series, so included."
+    },
+    "youkai-gakkou-no-sensei-hajimemashita": {
+      "summary": "Haruaki Abe is a timid young teacher who took a break from work after a rough time at an ordinary public school. Eager for a fresh start, he takes a job at Hyakki Academy and becomes a homeroom teacher, only to discover that every student and staff member there is a yokai, a supernatural creature from Japanese folklore, and that he is the only human in the building. Easily frightened, he becomes an instant target for his students' pranks. Satelight adapted Mai Tanaka's manga as a 24-episode supernatural school comedy, broadcast from October 2024 to March 2025.",
+      "sources": [
+        "https://myanimelist.net/anime/57533",
+        "https://en.wikipedia.org/wiki/A_Terrified_Teacher_at_Ghoul_School!"
+      ],
+      "confidence": "high",
+      "notes": "Kitsu has no MAL mapping; MAL 57533 used."
+    },
+    "chichi-wa-eiyuu-haha-wa-seirei-musume-no-watashi-wa-tenseisha": {
+      "summary": "Ellen was born to Rovel, a celebrated hero who was gravely wounded in battle and rescued by Origin, ruler of the spirits, whom he later married. Ellen is half spirit and also remembers a previous life in modern Japan, and combined with her mother's power, that knowledge lets her control the elements with extraordinary results. When her father returns to the human world after a decade away, Ellen comes too, but her abilities are the kind that powerful people would want to exploit, so the family has to keep her nature hidden. J.C.Staff adapted the light novels as a 12-episode isekai fantasy that aired from October 2025.",
+      "sources": [
+        "https://myanimelist.net/anime/57888",
+        "https://en.wikipedia.org/wiki/Reincarnated_as_the_Daughter_of_the_Legendary_Hero_and_the_Queen_of_Spirits"
+      ],
+      "confidence": "high"
+    },
+    "rock-wa-lady-no-tashina-mideshite": {
+      "summary": "Lilisa Suzunomiya grew up ordinary, but her mother's remarriage to a real estate tycoon has placed her at Oushin Girls' Academy, a school for wealthy young ladies. Hoping to be named a Noble Maiden, the school's ideal of refined womanhood, she has given up her guitar and the rock music she loves. Then she hears drumming from an abandoned school building and finds Otoha Kurogane, a politician's daughter, playing wildly. The two clash at first but start secretly playing together while keeping up their polished image. Bandai Namco Pictures adapted Hiroshi Fukuda's manga as a 13-episode music comedy in spring 2025.",
+      "sources": [
+        "https://myanimelist.net/anime/59360",
+        "https://en.wikipedia.org/wiki/Rock_Is_a_Lady%27s_Modesty"
+      ],
+      "confidence": "high"
+    },
+    "yasei-no-last-boss-ga-arawareta": {
+      "summary": "Lufas Maphaahl, the Black-Winged Tyrant, was a character in the online game Exgate who conquered its world, until seven heroes brought her down in a player event. The man who played her is then pulled into that world for real and wakes up in her body, two centuries after her fall. The world now faces destruction from the Demon King, and Lufas is remembered as a tyrant. To find out why he was brought there, he sets out to track down the Twelve Heavenly Stars, Lufas's loyal followers, now scattered. WAO World adapted the light novels as a 12-episode fantasy in autumn 2025.",
+      "sources": [
+        "https://myanimelist.net/anime/59644",
+        "https://en.wikipedia.org/wiki/A_Wild_Last_Boss_Appeared!"
+      ],
+      "confidence": "high"
+    },
+    "haigakura": {
+      "summary": "In a world held up by four dangerous gods, some of these pillars have escaped into other realms along with many lesser gods, and the land is starting to fail. Kashi are officials who capture runaway gods by charming them with dance and song. Ichiyou is a superb dancer but tone-deaf, and other kashi treat him as a dropout, yet he is assigned to bring the runaway gods back. With help from the minor god Tenkou, his search leads him into other realms, including modern-day Japan. Typhoon Graphics adapted the manga as a fantasy adventure that began in October 2024.",
+      "sources": [
+        "https://myanimelist.net/anime/56420",
+        "https://en.wikipedia.org/wiki/Haigakura"
+      ],
+      "confidence": "medium",
+      "notes": "Sources disagree on how many of the four gods escaped (MAL: all four; Wikipedia: two); summary avoids the number."
+    },
+    "fushigi-dagashiya-zenitendou": {
+      "summary": "Zenitendo is a mysterious old-fashioned sweet shop that only lucky people stumble upon. Its owner, a large, imposing woman named Beniko, helped by her black cat Sumimaru, offers each visitor a sweet or toy that seems made for their exact problem, paid for with a single coin. Whether the item brings happiness or trouble depends on how carefully the customer follows the instructions. Each short episode tells a self-contained story about a different customer. Toei Animation adapted Reiko Hiroshima's children's novels from 2020 in episodes of about ten minutes, and the series is aimed at children and families.",
+      "sources": [
+        "https://myanimelist.net/anime/42295",
+        "https://en.wikipedia.org/wiki/The_Supernatural_Sweet_Shop"
+      ],
+      "confidence": "high"
+    },
+    "yuusha-no-kuzu": {
+      "summary": "In an alternate present-day Tokyo, criminal bosses use a procedure called ether augmentation to gain powers and become 'Dark Lords', and licensed bounty hunters called Braves take them down. Yashiro claims to be a first-rate Brave, but he is broke and mostly cares about pizza, beer and gambling at cards. After he helps Aki Jougamine, a student at Shibuya's Brave Academy, rescue her friend Saera from a Dark Lord, Aki, Saera and their classmate Yukine insist on becoming his apprentices. He agrees mainly for the money. This 24-episode action series by OLM aired from January to June 2026.",
+      "sources": [
+        "https://myanimelist.net/anime/61217",
+        "https://en.wikipedia.org/wiki/Scum_of_the_Brave"
+      ],
+      "confidence": "high"
+    },
+    "touhai-ura-rate-mahjong-touhai-roku": {
+      "summary": "Kei is a quiet high school student who has recently moved into a place of his own and is looking for excitement. He finds it at an underground mahjong parlour, where he is drawn into a game with criminals, and his cold, calculating style earns him a reputation. Instead of taking cash for one win, he takes in a girl named Amina who had been abducted, and he now has someone to protect. A mysterious man named Hideharu Seki starts steering him toward bigger, more dangerous games. East Fish Studio adapted the manga as a 25-episode high-stakes gambling drama, aired from October 2024.",
+      "sources": [
+        "https://myanimelist.net/anime/57796",
+        "https://anilist.co/anime/173263"
+      ],
+      "confidence": "medium",
+      "notes": "No English Wikipedia article; checked against MAL and AniList."
+    },
+    "tensei-akujo-no-kuro-rekishi": {
+      "summary": "In middle school, Konoha Sato wrote an embarrassing fantasy romance about a count's daughter adored by handsome knights. When her mother is about to discover the notebook, Konoha panics, is hit by a car, and wakes up inside her own story, not as the heroine but as Iana Magnolia, the cruellest villainess she ever invented, whose fate she wrote to be miserable. Now she has to use what she remembers of her old writing to avoid her own doom, while facing characters she created at her most dramatic. Studio Deen adapted the manga as a 12-episode comedy fantasy in autumn 2025.",
+      "sources": [
+        "https://myanimelist.net/anime/58146",
+        "https://en.wikipedia.org/wiki/The_Dark_History_of_the_Reincarnated_Villainess"
+      ],
+      "confidence": "high"
+    },
+    "chitose-kun-wa-ramune-bin-no-naka": {
+      "summary": "Saku Chitose is the most popular boy at Fuji High School: confident, sociable and surrounded by attractive friends, though plenty of people resent him for it. He holds himself to a strict personal code about living well. As his second year begins, his homeroom teacher asks him to coax back Kenta Yamazaki, a classmate who has shut himself in his room and openly despises popular students like Saku. What starts as a quick favour turns into something more complicated. Studio Feel adapted Hiromu's light novels in two parts; this first part of 13 episodes began in October 2025.",
+      "sources": [
+        "https://myanimelist.net/anime/59517",
+        "https://en.wikipedia.org/wiki/Chitose_Is_in_the_Ramune_Bottle"
+      ],
+      "confidence": "high"
+    },
+    "xian-ni": {
+      "summary": "Wang Lin is a clever boy from a poor branch of his family, looked down on by his relatives, while his parents hope he will one day make them proud. He hopes to join the Heng Yue Sect, a school for cultivators who seek immortality through spiritual training, but his talent turns out to be poor. He refuses to give up and sets out on the long, dangerous road of cultivation anyway. Renegade Immortal is a Chinese 3D animated web series by Build Dream Animation and Tencent Penguin Pictures, based on Er Gen's web novel, released weekly on Tencent Video since September 2023.",
+      "sources": [
+        "https://myanimelist.net/anime/55809",
+        "https://en.wikipedia.org/wiki/Renegade_Immortal"
+      ],
+      "confidence": "high"
+    },
+    "ninja-to-gokudou": {
+      "summary": "For centuries, the ninja and the gokudo, the yakuza, have waged a hidden war: ninja hunt evil from the shadows, while the gokudo gather outcasts and commit crimes. In present-day Tokyo, a young ninja named Shinoha meets Kiwami, a yakuza who looks like a polite businessman, and the two hit it off over their shared love of a children's anime, neither knowing who the other really is. Meanwhile, the conflict between their two sides is heating up again. Studio Deen adapted the manga as a 12-episode action series in autumn 2025, with heavy bloodshed and dark humour.",
+      "sources": [
+        "https://myanimelist.net/anime/61067",
+        "https://en.wikipedia.org/wiki/Ninja_vs._Gokudo"
+      ],
+      "confidence": "high"
+    },
+    "watari-kun-no-xx-ga-houkai-sunzen": {
+      "summary": "Naoto Watari lost his parents two years ago, and since then he and his younger sister Suzushiro have been passed between relatives. Now they live with their aunt, and Naoto has made looking after his sister the centre of his life. That fragile calm is shaken when Satsuki Tachibana, a childhood friend who once ruined his family's garden and then vanished, enrols at his school and starts approaching him. Other people around him turn out to have secrets of their own. Staple Entertainment adapted the manga as a 26-episode romantic comedy drama, aired from July to December 2025.",
+      "sources": [
+        "https://myanimelist.net/anime/56693",
+        "https://en.wikipedia.org/wiki/Watari-kun%27s_******_Is_About_to_Collapse"
+      ],
+      "confidence": "high"
+    },
+    "watashi-wo-tabetai-hitodenashi": {
+      "summary": "Hinako Yaotose lives alone in a seaside town after losing her family in an accident at sea, and she quietly wishes she could sink into the sea and disappear. Her friend Miko is her one real anchor. One summer, a strange girl named Shiori Oumi saves her from a monstrous creature from the deep, then reveals that she is a mermaid who intends to eat Hinako herself once she is at her best. Hinako has a body that draws such monsters, and Shiori will protect her until then. Studio Lings adapted the manga as a 13-episode supernatural drama with a slow, melancholy tone and a girls' love theme.",
+      "sources": [
+        "https://myanimelist.net/anime/60168",
+        "https://en.wikipedia.org/wiki/This_Monster_Wants_to_Eat_Me"
+      ],
+      "confidence": "high"
+    },
+    "tousouchuu-great-mission": {
+      "summary": "In a future where climate change has driven humanity to colonies on the Moon, courier Tomura Sawyer saves every coin for his younger brother Haru, sick with an illness caused by the smoke and pollution of the poorer lower districts. Their only hope of a better life is prize money, so Tomura forces his way into Run for Money, a hugely popular televised game of tag where contestants must escape android Hunters until time runs out. Toei Animation's children's action series is based on the Fuji TV game show of the same name and ran for two years from April 2023.",
+      "sources": [
+        "https://myanimelist.net/anime/54040",
+        "https://en.wikipedia.org/wiki/Run_for_Money:_The_Great_Mission"
+      ],
+      "confidence": "high"
+    },
+    "ojarumaru": {
+      "summary": "Ojarumaru is a pampered little prince from a noble family in Heian-era Japan, about a thousand years ago. Bored with court life, he gets hold of the scepter belonging to Enma, the king of the underworld, and slips through time into a present-day town, where a kind schoolboy named Kazuma takes him in. Three small oni sent by Enma keep trying to get the scepter back, but Ojarumaru has no intention of handing it over. NHK has broadcast this gentle comedy for children since 1998, in short episodes about his laid-back life in the modern town.",
+      "sources": [
+        "https://myanimelist.net/anime/4459",
+        "https://en.wikipedia.org/wiki/Ojarumaru"
+      ],
+      "confidence": "medium",
+      "notes": "Sources differ on how Ojarumaru ends up with Enma's scepter (stolen by him vs found after the oni lose it); summary stays neutral."
+    },
+    "dragon-ball-super-beerus": {
+      "summary": "Several years after the fight against Majin Buu, Earth is at peace. Far away, Beerus, the God of Destruction, wakes from a very long sleep, and even the Supreme Kai fears what he might do. Beerus is searching for a 'Super Saiyan God' he saw in a premonition, and when he hears about the Saiyan who beat Frieza, he goes looking for Goku. Dragon Ball Super: Beerus is a visually enhanced new edition by Toei Animation that retells the opening of Dragon Ball Super, and it began airing in October 2026.",
+      "sources": [
+        "https://myanimelist.net/anime/63367",
+        "https://en.wikipedia.org/wiki/Dragon_Ball_Super"
+      ],
+      "confidence": "medium",
+      "notes": "Kitsu has no MAL mapping; MAL 63367 used. Enhanced re-edition of Dragon Ball Super's opening; exact arc coverage of the 19 episodes not confirmed."
+    },
+    "egao-no-taenai-shokuba-desu": {
+      "summary": "Nana Futami has just debuted as a professional shoujo manga artist. She works hard every day with the help of her older editor, Kaede Sato, and her assistant, Mizuki Hazama, and she has a habit of drifting into vivid, over-the-top daydreams that she blames on the job. The series is a gentle workplace comedy about the everyday side of making manga: deadlines, meetings, ideas and the friendships between the three women. Studio Voil adapted the manga as a 13-episode slice-of-life comedy in autumn 2025.",
+      "sources": [
+        "https://myanimelist.net/anime/57859",
+        "https://en.wikipedia.org/wiki/A_Mangaka%27s_Weirdly_Wonderful_Workplace"
+      ],
+      "confidence": "high"
+    },
+    "tabihani": {
+      "summary": "Tabi Hani is a crowdfunded original anime project built around travel in Japan, made by studio hb, with short episodes of about thirteen minutes. Its first story takes place in Kyoto during the summer holidays after two girls start high school. Akari is quiet and loves travelling, a passion she picked up from the older sister who looked after her, and Nagi is her cheerful classmate who is curious about her. The two come to Kyoto with a particular destination in mind, but while Akari wants to head straight there, Nagi insists on sightseeing along the way, and Akari slowly starts to enjoy the trip.",
+      "sources": [
+        "https://myanimelist.net/anime/49743",
+        "https://anilist.co/anime/134226"
+      ],
+      "confidence": "medium",
+      "notes": "Crowdfunded travel-themed shorts; Kitsu lists 3 planned episodes, MAL/AniList list only the Kyoto episode. No Wikipedia or ANN entry."
+    },
+    "hifuu-club-activity-record-the-sealed-esoteric-history": {
+      "summary": "Hifuu Club Activity Record: The Sealed Esoteric History is an unofficial fan-made animation based on the Touhou Project, produced by the Chinese doujin circle Kyoto Fantasy Troupe and released from 2015. It follows Renko Usami and Maribel Hearn, who make up the whole of the Secret Sealing Club in Kyoto, a tiny club devoted to the paranormal. They are fascinated by Gensokyo, a hidden world most people do not know exists, and much of the series consists of their conversations as they research its history and look into people who might be connected to it. The episodes are long and talk-driven, and they assume some familiarity with Touhou.",
+      "sources": [
+        "https://myanimelist.net/anime/36686",
+        "https://en.wikipedia.org/wiki/Touhou_Project"
+      ],
+      "confidence": "medium",
+      "notes": "Unofficial doujin (fan-made) anime by a Chinese circle; little reliable detail available."
+    },
+    "akujiki-reijou-to-kyouketsu-koushaku-sono-mamono-watashi-ga-oishiku-itadakimasu": {
+      "summary": "Melphiera Marchalrayd, daughter of a count, studies how to cook monster meat, carrying on research her late mother began in the hope of protecting her home region from famine. High society thinks it is disgusting and calls her the 'Voracious Villainess', so she has no marriage prospects. At a palace banquet meant to find her a husband, monsters attack, and Aristide, the crown prince's younger brother and a famously ruthless monster hunter known as the Blood-Mad Duke, comes to her aid and takes an interest in her. Asahi Production adapted the light novels as a 12-episode fantasy romance with cooking, from October 2025.",
+      "sources": [
+        "https://myanimelist.net/anime/60162",
+        "https://en.wikipedia.org/wiki/Pass_the_Monster_Meat,_Milady!"
+      ],
+      "confidence": "high"
+    },
+    "kanojo-no-tomodachi": {
+      "summary": "High school student Takeru Hidaka is newly going out with Kaori Koga, a classmate, and they have agreed to take things slowly. The problem is Kaori's best friend, Tomoko Yoshioka, who sets out to seduce Takeru and push him into cheating, since nothing else excites her. Takeru wants to stay faithful while her pressure and manipulation keep escalating. My Girlfriend's Friend is a 12-episode adaptation of the web manga by studio Quad, with short episodes of about twelve minutes, that began in October 2026. It is an erotic drama intended for adult viewers.",
+      "sources": [
+        "https://myanimelist.net/anime/64131",
+        "https://en.wikipedia.org/wiki/My_Girlfriend%27s_Friend"
+      ],
+      "confidence": "high",
+      "notes": "Erotic short series for adults; summary kept non-explicit. Kitsu has no MAL mapping; MAL 64131 used."
+    },
+    "Ranma-12-2024-3": {
+      "summary": "The third season of the 2024 Ranma 1/2 remake continues Rumiko Takahashi's martial arts comedy. Teenage martial artist Ranma Saotome was cursed during training in China so that cold water turns him into a girl and hot water turns him back, while his father Genma becomes a giant panda. The pair live at the Tendo family dojo, where Ranma has been engaged against his will to the short-tempered Akane Tendo. Rivals, suitors and cursed fighters keep turning up to cause chaos. MAPPA produces this season, which began in October 2026 and follows directly on from the first two.",
+      "sources": [
+        "https://myanimelist.net/anime/63801",
+        "https://en.wikipedia.org/wiki/Ranma_%C2%BD_(2024_TV_series)"
+      ],
+      "confidence": "medium",
+      "notes": "Season-specific plot is barely described in sources yet; summary recaps the setup and frames this entry as a continuation."
+    },
+    "ao-no-orchestra-2nd-season": {
+      "summary": "The second season of The Blue Orchestra picks up after the summer concert, when the third-years in the orchestra club at Umimaku High School retire. The club now rebuilds around its second-years and sets its sights on a national competition, but players differ wildly in motivation and in how they understand the music, and the ensemble struggles to find a shared sound. Violinist Hajime Aono and his fellow first-years are part of that new line-up. Nippon Animation produced this 21-episode continuation, which aired from October 2025 to March 2026.",
+      "sources": [
+        "https://myanimelist.net/anime/56877",
+        "https://en.wikipedia.org/wiki/Blue_Orchestra"
+      ],
+      "confidence": "high"
+    },
+    "kakuriyo-no-yadomeshi-2nd-season": {
+      "summary": "The second season of Kakuriyo: Bed and Breakfast for Spirits continues straight on from the first. Aoi Tsubaki, a college student who can see ayakashi, spirits from Japanese folklore, was taken to their hidden world and told she must marry the ogre who runs the inn Tenjin-ya to repay her late grandfather's debt. She refused and chose to work off the debt instead, running a small restaurant inside the inn. She is still there, cooking for spirits and getting pulled into their affairs, when new trouble arrives. This 12-episode season aired from October 2025, produced by Gonzo and Makaria.",
+      "sources": [
+        "https://myanimelist.net/anime/58772",
+        "https://en.wikipedia.org/wiki/Kakuriyo:_Bed_%26_Breakfast_for_Spirits"
+      ],
+      "confidence": "medium",
+      "notes": "Season-specific plot is barely described in sources yet; summary recaps the setup and frames this entry as a continuation."
+    },
+    "knyacki": {
+      "summary": "Knyacki is a small mint-green caterpillar who is easygoing, does things at his own pace and is curious about everything around him. In these clay-animation shorts he explores the human world from his own tiny point of view, crawling over everyday objects, food and household items that are huge to him, and getting into small adventures and squabbles with other creatures. The characters make only cries and sound effects rather than speaking. Created by Yuichi Ito, the series has appeared on NHK's educational channel since 1995 in episodes of about five minutes, with only a few new episodes made each year.",
+      "sources": [
+        "https://myanimelist.net/anime/7505",
+        "https://ja.wikipedia.org/wiki/%E3%83%8B%E3%83%A3%E3%83%83%E3%82%AD!"
+      ],
+      "confidence": "medium",
+      "notes": "Wordless clay-animation short series (about 5 min). Included because it is an episodic story series, not an ad."
+    },
+    "ninjala": {
+      "summary": "Ninjala is a children's action comedy based on GungHo Online's video game. In the near future, descendants of Japan's old ninja clans have formed the World Ninja Association and created Ninja-Gum, a special gum that awakens ninja abilities in whoever chews it. To find the strongest ninja, the association holds the Ninjala tournament, where young fighters battle with gum-powered weapons and techniques. OLM produces the TV series, which began in January 2022 and follows a group of young ninja, including Burton, Van and Jane, and their adventures.",
+      "sources": [
+        "https://myanimelist.net/anime/50418",
+        "https://en.wikipedia.org/wiki/Ninjala"
+      ],
+      "confidence": "medium",
+      "notes": "Anime-specific plot detail is thin in sources; summary sticks to the game's premise and main cast names."
+    },
+    "doumo-suki-na-hito-ni-horegusuri-wo-irai-sareta-majo-desu": {
+      "summary": "Rose is known as the Witch of the Lake and lives alone in a cluttered cottage by a forest lake, making potions with skills learned from her grandmother. For four years she has secretly loved Harij Azm, a royal knight she once saw, but witches are expected to stay apart from human affairs. One day Harij turns up at her door asking for a love potion, meant for someone else. Heartbroken but unwilling to lose him, Rose agrees and sends him off to fetch a series of absurd ingredients so she can see him a little longer. Diomedea adapted the light novel as a 12-episode romantic comedy from October 2026.",
+      "sources": [
+        "https://myanimelist.net/anime/63409",
+        "https://en.wikipedia.org/wiki/Hello,_I_am_a_Witch,_and_My_Crush_Wants_Me_to_Make_a_Love_Potion!"
+      ],
+      "confidence": "high"
+    },
+    "attack-on-titan": {
+      "summary": "For a hundred years, what is left of humanity has lived inside three huge concentric walls, safe from the Titans, giant humanoids that devour people. In the outer town of Shiganshina, young Eren Yeager resents that caged life and dreams of seeing the world beyond, while his adoptive sister Mikasa and his friend Armin stay close by. When a Titan taller than the wall itself appears and breaks through, Eren's world collapses, and he swears to wipe the Titans out, enlisting in the military's cadet corps. This first season runs 25 episodes, animated by Wit Studio, and is a grim, violent action drama.",
+      "sources": [
+        "https://myanimelist.net/anime/16498",
+        "https://en.wikipedia.org/wiki/Attack_on_Titan_season_1"
+      ],
+      "confidence": "high"
+    },
+    "boku-no-hero-academia": {
+      "summary": "In this world roughly four out of five people develop a superpower, called a Quirk, in early childhood, and professional hero is a licensed career. Izuku Midoriya, a nervous middle schooler who fills notebooks with hero analysis, is one of the few born without any power at all. He still wants to be a hero like All Might, the top hero and the symbol of peace. A chance meeting with his idol opens an unexpected path, and Izuku sets out to pass the punishing entrance exam for U.A. High School's hero course. This 13-episode first season from studio Bones is the origin story of a long-running superhero series.",
+      "sources": [
+        "https://myanimelist.net/anime/31964",
+        "https://en.wikipedia.org/wiki/My_Hero_Academia_season_1"
+      ],
+      "confidence": "high"
+    },
+    "boku-no-hero-academia-2nd-season": {
+      "summary": "The second season continues straight on from the first. Izuku Midoriya and his classmates in U.A. High's Class 1-A have just survived their first brush with real villains, and the school pushes ahead with its annual Sports Festival, a televised tournament where first-years compete in front of the whole country and the pro heroes who will offer them internships. Izuku still cannot use his power without hurting himself, and rivals such as Katsuki Bakugo and Shoto Todoroki are determined to beat him. The festival is followed by the students' first work placements with professional heroes. It runs 25 episodes and is again made by Bones.",
+      "sources": [
+        "https://myanimelist.net/anime/33486",
+        "https://en.wikipedia.org/wiki/My_Hero_Academia_season_2"
+      ],
+      "confidence": "high"
+    },
+    "one-punch-man": {
+      "summary": "Saitama is a hero for fun: after three years of a ridiculously simple training routine, he can beat any monster or villain with a single punch, and lost all his hair along the way. The problem is that no fight is a challenge any more, and the boredom is crushing him. Living in a city constantly attacked by monsters, he picks up a devoted student, a cyborg named Genos, and learns that heroes are supposed to register with the official Hero Association to be taken seriously. This 12-episode first season by Madhouse is an action comedy that parodies superhero stories while staging full-scale fights.",
+      "sources": [
+        "https://myanimelist.net/anime/30276",
+        "https://en.wikipedia.org/wiki/One-Punch_Man"
+      ],
+      "confidence": "high"
+    },
+    "boku-no-hero-academia-3rd-season": {
+      "summary": "Season three opens as Class 1-A leaves the city for a summer training camp in the mountains, run by a team of pro heroes, to push their Quirks past their current limits before the provisional hero licence exam. Izuku Midoriya is still learning to control his power without breaking his own body, and the League of Villains has grown bolder since its earlier attacks on the school. The season then follows the fallout and the students' first steps toward becoming licensed heroes. It is a 25-episode continuation from studio Bones that assumes you have seen the first two seasons.",
+      "sources": [
+        "https://myanimelist.net/anime/36456",
+        "https://en.wikipedia.org/wiki/My_Hero_Academia_season_3"
+      ],
+      "confidence": "high"
+    },
+    "death-note": {
+      "summary": "Light Yagami is a brilliant, bored high school student in Japan. One day he picks up a black notebook dropped into the human world by Ryuk, a death god looking for amusement: write a person's name in it and that person dies. Light decides to use it to rid the world of criminals and build a world in his image. As criminals start dying of heart attacks across the globe, the police call in L, a reclusive detective who has never shown his face, to find the killer. Madhouse adapted the full manga in 37 episodes, a psychological thriller built on a battle of wits between the two.",
+      "sources": [
+        "https://myanimelist.net/anime/1535",
+        "https://en.wikipedia.org/wiki/Death_Note_(2006_TV_series)"
+      ],
+      "confidence": "high"
+    },
+    "fullmetal-alchemist-brotherhood": {
+      "summary": "In the country of Amestris, alchemy is a science with one strict rule: to gain something, you must give something of equal value. As children, brothers Edward and Alphonse Elric broke the greatest taboo and tried to bring their dead mother back to life. It cost Edward an arm and a leg and left Alphonse's soul bound to a suit of armour. Now Edward serves the military as a State Alchemist, the 'Fullmetal Alchemist', while the brothers hunt for the Philosopher's Stone to restore their bodies. Bones made this 64-episode series as a second, faithful adaptation of Hiromu Arakawa's complete manga.",
+      "sources": [
+        "https://myanimelist.net/anime/5114",
+        "https://en.wikipedia.org/wiki/Fullmetal_Alchemist:_Brotherhood"
+      ],
+      "confidence": "high"
+    },
+    "kimi-no-na-wa": {
+      "summary": "Mitsuha Miyamizu is a high school girl in Itomori, a small mountain town, who is tired of rural life and her family's shrine duties and wishes she could be a boy in Tokyo. Taki Tachibana is a high school boy in Tokyo who works part time at an Italian restaurant. Without warning, the two start waking up in each other's bodies on random days, and they begin leaving notes and diary entries on each other's phones to get through the confusion. This feature film from Makoto Shinkai and CoMix Wave Films, released in 2016, is a romantic fantasy drama of about 106 minutes.",
+      "sources": [
+        "https://myanimelist.net/anime/32281",
+        "https://en.wikipedia.org/wiki/Your_Name"
+      ],
+      "confidence": "high"
+    },
+    "hunter-x-hunter-2011": {
+      "summary": "Gon Freecss, aged twelve, grows up on Whale Island believing his father is gone, until he learns that the man is alive and a famous Hunter, one of an elite class of licensed adventurers who track down treasure, creatures and criminals. Gon leaves home to sit the dangerous Hunter Exam and find him, and on the way meets Kurapika, Leorio and Killua, a boy from a family of assassins. Madhouse produced this 148-episode adaptation of Yoshihiro Togashi's manga, a new version of the story first animated in 1999. It is an adventure series that shifts into several long, distinct arcs.",
+      "sources": [
+        "https://myanimelist.net/anime/11061",
+        "https://en.wikipedia.org/wiki/Hunter_%C3%97_Hunter_(2011_TV_series)"
+      ],
+      "confidence": "high"
+    },
+    "kimetsu-no-yaiba": {
+      "summary": "In Taisho-era Japan, kind-hearted Tanjiro Kamado sells charcoal to support his family in the mountains. He comes home one morning to find his family attacked by a demon; his younger sister Nezuko is the only one left, and she has become a demon too, though she still seems to recognise him. Determined to make her human again and track down the demon responsible, Tanjiro begins the gruelling training needed to join the Demon Slayer Corps, a secret group that hunts demons with swords. This first season of 26 episodes is animated by ufotable and covers the start of Koyoharu Gotouge's manga.",
+      "sources": [
+        "https://myanimelist.net/anime/38000",
+        "https://en.wikipedia.org/wiki/Demon_Slayer:_Kimetsu_no_Yaiba_season_1"
+      ],
+      "confidence": "high"
+    },
+    "nanatsu-no-taizai": {
+      "summary": "The Seven Deadly Sins used to be an order of knights in the kingdom of Liones, until they were accused of plotting against the throne and scattered. A decade on, the Holy Knights have seized power and rule harshly. Princess Elizabeth slips out of the castle to find the Sins, believing they are the only ones who can stop the Holy Knights. She collapses in a small travelling tavern run by a cheerful young man named Meliodas and his talking pig, Hawk, and the hunt for the rest of the group begins. This 24-episode fantasy adventure from A-1 Pictures adapts the start of Nakaba Suzuki's manga.",
+      "sources": [
+        "https://myanimelist.net/anime/23755",
+        "https://en.wikipedia.org/wiki/List_of_The_Seven_Deadly_Sins_episodes"
+      ],
+      "confidence": "high"
+    },
+    "shingeki-no-kyojin-2": {
+      "summary": "The second season of Attack on Titan picks up immediately after the first. Titans have been sighted inside Wall Rose, yet no one can find a hole in the wall, and the soldiers of the Survey Corps and the newly graduated cadets are sent out to warn villages and locate the breach before the next line of defence falls. Eren Yeager, Mikasa and Armin are scattered across the countryside while the military tries to make sense of what Eren has become. This season is 12 episodes long, again animated by Wit Studio, and is meant to be watched after season one.",
+      "sources": [
+        "https://myanimelist.net/anime/25777",
+        "https://en.wikipedia.org/wiki/Attack_on_Titan_season_2"
+      ],
+      "confidence": "high"
+    },
+    "koe-no-katachi": {
+      "summary": "In elementary school, Shoya Ishida was the ringleader in bullying Shoko Nishimiya, a deaf girl who transferred into his class, until the class turned on him and he became an outcast himself. Years later, as a lonely high school student who can barely look people in the eye, he learns sign language and seeks Shoko out to try to make amends. The film follows his clumsy attempt to reconnect with her and with the classmates from those years. This 2016 feature from Kyoto Animation, directed by Naoko Yamada, runs a little over two hours and is a drama about guilt, disability and forgiveness.",
+      "sources": [
+        "https://myanimelist.net/anime/28851",
+        "https://en.wikipedia.org/wiki/A_Silent_Voice_(film)"
+      ],
+      "confidence": "high"
+    },
+    "shingeki-no-kyojin-3": {
+      "summary": "Season three of Attack on Titan moves the conflict inside the walls. After the events of season two, Captain Levi forms a new squad around Eren and Historia, and the Survey Corps goes into hiding as the Military Police and the royal government come after them. The early episodes are less about fighting Titans and more about political plotting, interrogations and a dangerous enemy who hunts soldiers. This first half of the third season is 12 episodes long, animated by Wit Studio, and continues directly from the earlier seasons.",
+      "sources": [
+        "https://myanimelist.net/anime/35760",
+        "https://en.wikipedia.org/wiki/Attack_on_Titan_season_3"
+      ],
+      "confidence": "high"
+    },
+    "spirited-away": {
+      "summary": "Ten-year-old Chihiro is sulking in the back of the car as her family moves to a new town. Her father takes a wrong turn, and the family ends up exploring what looks like an abandoned theme park. When night falls, it turns out to be a town for spirits, her parents are transformed, and Chihiro has to take a job at a vast bathhouse run by the witch Yubaba in order to survive and find a way to rescue them. A mysterious boy named Haku is the first to help her. This 2001 Studio Ghibli feature, written and directed by Hayao Miyazaki, is a fantasy of about two hours.",
+      "sources": [
+        "https://myanimelist.net/anime/199",
+        "https://en.wikipedia.org/wiki/Spirited_Away"
+      ],
+      "confidence": "high"
+    },
+    "shingeki-no-kyojin-3-part-2": {
+      "summary": "The second half of Attack on Titan's third season turns back toward the Titans. With the political turmoil inside the walls settled, the Survey Corps prepares its most ambitious mission yet: retaking Wall Maria and reaching Eren's old home in Shiganshina, where the basement of the Yeager house may hold answers about the Titans. The squad sets out knowing the enemy will be waiting. This part runs 10 episodes, is animated by Wit Studio, and follows straight on from part one of season three.",
+      "sources": [
+        "https://myanimelist.net/anime/38524",
+        "https://en.wikipedia.org/wiki/Attack_on_Titan_season_3"
+      ],
+      "confidence": "high",
+      "notes": "Wikipedia article covers all of season 3."
+    },
+    "ansatsu-kyoushitsu-tv-2": {
+      "summary": "The second season of Assassination Classroom begins as Class 3-E of Kunugigaoka Junior High returns for the second term. Their teacher, the yellow tentacled creature they call Koro-sensei, has promised to destroy the Earth in March, and the class still has a government bounty to collect if they can kill him first. Meanwhile, he keeps teaching them, and the school's top students keep looking down on the class. The season covers the rest of the school year, with new assassination attempts, exams and school events. It is 25 episodes long, made by Lerche, and continues the first season's mix of comedy and action.",
+      "sources": [
+        "https://myanimelist.net/anime/30654",
+        "https://en.wikipedia.org/wiki/List_of_Assassination_Classroom_episodes"
+      ],
+      "confidence": "high"
+    },
+    "haikyuu": {
+      "summary": "Shoyo Hinata is short, but ever since he saw a small player called the 'Little Giant' star for Karasuno High School on television, he has wanted to play volleyball. His middle school barely had a team, and his one official match ended in a heavy defeat to a team led by Tobio Kageyama, a gifted but domineering setter. When Hinata joins Karasuno's volleyball club in high school, he discovers Kageyama has enrolled there too, and the two rivals have to learn to play together. This 25-episode first season from Production I.G is a sports series that follows the team's early matches.",
+      "sources": [
+        "https://myanimelist.net/anime/20583",
+        "https://en.wikipedia.org/wiki/Haikyu!!"
+      ],
+      "confidence": "high"
+    },
+    "ansatsu-kyoushitsu-tv": {
+      "summary": "A tentacled yellow creature has blown away most of the moon and announced that he will destroy the Earth next March. Before then, though, he wants to teach Class 3-E of Kunugigaoka Junior High, the school's lowest-ranked class, which the rest of the school treats as rejects. The government agrees and offers a huge reward to anyone who can kill him, so the students spend their days trying to assassinate a teacher who dodges at Mach 20 and still gives them good lessons. Nagisa Shiota is the student at the centre. This 22-episode first season by Lerche mixes school comedy with action.",
+      "sources": [
+        "https://myanimelist.net/anime/24833",
+        "https://en.wikipedia.org/wiki/Assassination_Classroom"
+      ],
+      "confidence": "high"
+    },
+    "nanatsu-no-taizai-imashime-no-fukkatsu": {
+      "summary": "Revival of the Commandments is the second season of The Seven Deadly Sins and follows on from the first. The kingdom of Liones has been freed and most of the Sins have reunited, though one member is still missing. Peace does not last: an ancient group of powerful demons, the Ten Commandments, has been released, and they begin moving across Britannia. Meliodas, Elizabeth and the rest of the group have to face an enemy far stronger than anything they have fought so far. This 24-episode season is again animated by A-1 Pictures.",
+      "sources": [
+        "https://myanimelist.net/anime/34577",
+        "https://en.wikipedia.org/wiki/List_of_The_Seven_Deadly_Sins_episodes"
+      ],
+      "confidence": "high"
+    },
+    "no-game-no-life": {
+      "summary": "Step-siblings Sora and Shiro are shut-in gamers who share a single online identity, Blank, which has never lost a game. One day a god named Tet invites them into Disboard, a world where war is forbidden and every dispute, from personal bets to borders between nations, is decided by games. Humans, called Imanity there, are the weakest of the sixteen races and have lost nearly all their territory. The siblings decide to take back humanity's land and challenge Tet himself. Madhouse made this 12-episode fantasy comedy, based on Yuu Kamiya's light novels, and it is known for its bright colours and game-themed battles.",
+      "sources": [
+        "https://myanimelist.net/anime/19815",
+        "https://en.wikipedia.org/wiki/No_Game_No_Life"
+      ],
+      "confidence": "high"
+    },
+    "steins-gate": {
+      "summary": "In Akihabara, self-proclaimed mad scientist Rintaro Okabe runs a cramped 'Future Gadget Laboratory' with his childhood friend Mayuri and a hacker named Daru, building odd inventions from junk. One of them, a microwave connected to a mobile phone, turns out to deliver text messages to the past. With help from Kurisu Makise, a young neuroscience researcher, the group starts experimenting, while a secretive organisation may be watching. This 24-episode science fiction thriller from White Fox, based on the visual novel, starts slowly as a character comedy before its time-travel plot builds up.",
+      "sources": [
+        "https://myanimelist.net/anime/9253",
+        "https://en.wikipedia.org/wiki/Steins;Gate_(TV_series)"
+      ],
+      "confidence": "high"
+    },
+    "kimetsu-no-yaiba-movie-mugen-ressha-hen": {
+      "summary": "The Mugen Train film picks up right after the first season of Demon Slayer. Tanjiro Kamado, his demon sister Nezuko, and fellow slayers Zenitsu and Inosuke are sent to a train on which passengers keep disappearing. On board they meet Kyojuro Rengoku, the Flame Hashira, one of the Corps' strongest swordsmen, and the group sets out to find the demon behind the vanishings. This 2020 feature by ufotable runs about two hours and covers the next arc of the manga, so it should be watched before the second season.",
+      "sources": [
+        "https://myanimelist.net/anime/40456",
+        "https://en.wikipedia.org/wiki/Demon_Slayer:_Kimetsu_no_Yaiba_%E2%80%93_The_Movie:_Mugen_Train"
+      ],
+      "confidence": "high"
+    },
+    "shigatsu-wa-kimi-no-uso": {
+      "summary": "Kosei Arima was a child piano prodigy who won competitions under his mother's strict teaching. After her death he stopped playing, because he can no longer hear his own notes when he performs. In April of his second year of middle school he is introduced to Kaori Miyazono, a carefree violinist who plays however she likes, and she pulls him back toward music by making him her accompanist. His childhood friends Tsubaki and Watari are part of the story too. This 22-episode drama from A-1 Pictures is about music, grief and first love.",
+      "sources": [
+        "https://myanimelist.net/anime/23273",
+        "https://en.wikipedia.org/wiki/Your_Lie_in_April"
+      ],
+      "confidence": "high"
+    },
+    "jujutsu-kaisen": {
+      "summary": "Yuji Itadori is a high school student with superhuman physical strength who spends his time in his school's occult club. When the club unseals a cursed object, a mummified finger of Ryomen Sukuna, a legendary demon, the school is overrun by curses, and Yuji swallows the finger to protect his friends. He survives as a host to Sukuna. Instead of being executed, he is enrolled at Tokyo Jujutsu High by Satoru Gojo, a powerful sorcerer, on the condition that he find and eat Sukuna's other fingers. This 24-episode first season by MAPPA is a dark supernatural action series.",
+      "sources": [
+        "https://myanimelist.net/anime/40748",
+        "https://en.wikipedia.org/wiki/Jujutsu_Kaisen_season_1"
+      ],
+      "confidence": "high"
+    },
+    "shingeki-no-kyojin-the-final-season": {
+      "summary": "The final season of Attack on Titan opens with a time skip and a change of perspective. Instead of the walls, the first episodes follow soldiers on a battlefield overseas, fighting a war for the nation of Marley, before the story returns to characters viewers already know. The scale of the conflict has grown, and old questions about the Titans now play out between nations. This first part runs 16 episodes; it is the first season animated by MAPPA, which took over from Wit Studio, and it assumes you have watched all of the earlier seasons.",
+      "sources": [
+        "https://myanimelist.net/anime/40028",
+        "https://en.wikipedia.org/wiki/Attack_on_Titan_season_4"
+      ],
+      "confidence": "high"
+    },
+    "naruto-shippuden": {
+      "summary": "Naruto Shippuden starts two and a half years after the original Naruto. Naruto Uzumaki returns to the Hidden Leaf Village after training on the road with the sage Jiraiya, and finds his friends promoted and the village changed. He still intends to bring back Sasuke, who left to seek power from Orochimaru, but a new threat is moving: Akatsuki, a group of rogue ninja hunting the tailed beasts sealed inside people like Naruto. The first arc sends him to the Hidden Sand Village. Studio Pierrot's sequel runs 500 episodes, including many filler episodes.",
+      "sources": [
+        "https://myanimelist.net/anime/1735",
+        "https://en.wikipedia.org/wiki/Naruto_(TV_series)"
+      ],
+      "confidence": "high"
+    },
+    "yakusoku-no-neverland": {
+      "summary": "Grace Field House is an orphanage surrounded by forest, where children live happy, comfortable lives under a caring woman they call Mom, take daily tests and wait to be adopted before they turn twelve. Emma, Norman and Ray are the oldest and brightest of the children. One evening the three break a rule and learn what really happens to the children who leave, and they begin quietly planning an escape without letting the adults find out. This 12-episode first season from CloverWorks adapts the opening of the manga as a tense thriller of planning and deception.",
+      "sources": [
+        "https://myanimelist.net/anime/37779",
+        "https://en.wikipedia.org/wiki/The_Promised_Neverland"
+      ],
+      "confidence": "high"
+    },
+    "toradora": {
+      "summary": "Ryuji Takasu is a kind teenager who loves cleaning and cooking, but his sharp eyes make everyone think he is a delinquent. Taiga Aisaka is tiny, short-tempered and feared around school as the 'Palmtop Tiger'. After an awkward mix-up, the two learn that each is in love with the other's best friend: Ryuji likes the cheerful Minori, and Taiga likes Yusaku Kitamura, the class representative. They agree to work together to help each other, which means spending a lot of time together. J.C.Staff adapted the light novels as a 25-episode romantic comedy drama covering one school year.",
+      "sources": [
+        "https://myanimelist.net/anime/4224",
+        "https://en.wikipedia.org/wiki/Toradora!"
+      ],
+      "confidence": "high"
+    },
+    "haikyuu-2": {
+      "summary": "The second season of Haikyu!! continues after Karasuno High's run at the Inter-High tournament ended. The team now has its sights on the Spring tournament qualifiers, and Shoyo Hinata and setter Tobio Kageyama want to improve their signature quick attack. Karasuno joins a summer training group in Tokyo with Nekoma and several powerhouse schools, where they lose again and again while the players try to find new strengths. Production I.G returns for this 25-episode season, which follows directly from the first.",
+      "sources": [
+        "https://myanimelist.net/anime/28891",
+        "https://en.wikipedia.org/wiki/Haikyu!!"
+      ],
+      "confidence": "high"
+    },
+    "sword-art-online": {
+      "summary": "In 2022, a virtual reality game, Sword Art Online, launches with a headset that connects directly to the brain. On launch day, ten thousand players discover that they cannot log out. The game's creator announces that the only way out is to clear all one hundred floors of the floating castle Aincrad, and that dying in the game will kill them in real life. Kirito, a solo player who tested the game before release, sets out to survive and reach the top. A-1 Pictures made this 25-episode first season, which covers two story arcs from Reki Kawahara's light novels.",
+      "sources": [
+        "https://myanimelist.net/anime/11757",
+        "https://en.wikipedia.org/wiki/Sword_Art_Online"
+      ],
+      "confidence": "high"
+    },
+    "code-geass-lelouch-of-the-rebellion": {
+      "summary": "In an alternate history, the Holy Britannian Empire has conquered Japan, renamed it Area 11, and reduced its people to second-class 'Elevens'. Lelouch Lamperouge, an exiled Britannian prince living under a false name, is a student at Ashford Academy who hates the empire. When he is caught in a clash between the army and resistance fighters, an enigmatic girl called C.C. gives him Geass, the power to make anyone obey a single command. Masked as 'Zero', Lelouch begins organising a rebellion. This 25-episode first season by Sunrise blends mecha battles with political strategy.",
+      "sources": [
+        "https://myanimelist.net/anime/1575",
+        "https://en.wikipedia.org/wiki/Code_Geass"
+      ],
+      "confidence": "high"
+    },
+    "noragami": {
+      "summary": "Yato is a minor god with no shrine and no worshippers, who wears a tracksuit and takes any job for a five-yen fee, hoping one day to have millions of followers. His weapon spirit has just quit, so he is also without a partner. When high school girl Hiyori Iki pushes him out of the way of a bus, her soul starts slipping out of her body at random, and she demands that Yato fix it. To keep working, he also needs a new spirit weapon, and finds a boy named Yukine. Studio Bones made this 12-episode supernatural action comedy.",
+      "sources": [
+        "https://myanimelist.net/anime/20507",
+        "https://en.wikipedia.org/wiki/Noragami"
+      ],
+      "confidence": "high"
+    },
+    "tokyo-ghoul": {
+      "summary": "In this version of Tokyo, ghouls are creatures that look human but can only survive by eating human flesh, and they hide among the population while government investigators hunt them. Ken Kaneki is a shy, bookish university student who finally gets a date with Rize, a woman he has noticed at his favourite café. The evening ends in violence, and an emergency operation leaves him half ghoul. Struggling with hunger he cannot control and a life he no longer fits into, Kaneki finds an uneasy refuge at the café Anteiku. This 12-episode first season by Studio Pierrot is a violent horror action series.",
+      "sources": [
+        "https://myanimelist.net/anime/22319",
+        "https://en.wikipedia.org/wiki/Tokyo_Ghoul"
+      ],
+      "confidence": "high"
+    },
+    "howl-s-moving-castle": {
+      "summary": "Sophie is a quiet young woman who works in her late father's hat shop in a town preparing for war. After a brief encounter with the wizard Howl, she is cursed by the Witch of the Waste and turned into an old woman. Unable to explain herself at home, she leaves and talks her way into Howl's moving castle, a huge walking machine, where she strikes a deal with the fire demon Calcifer who powers it. This 2004 Studio Ghibli feature, directed by Hayao Miyazaki and based on Diana Wynne Jones's novel, is a fantasy romance of about two hours.",
+      "sources": [
+        "https://myanimelist.net/anime/431",
+        "https://en.wikipedia.org/wiki/Howl%27s_Moving_Castle_(film)"
+      ],
+      "confidence": "high"
+    },
+    "shokugeki-no-souma": {
+      "summary": "Soma Yukihira works in his father's small family diner and is determined to one day out-cook him. Instead, his father closes the restaurant and enrols him at Totsuki Culinary Academy, an elite cooking school where only a small fraction of students graduate. Disputes there are settled through formal cooking duels called shokugeki, and the first classmate Soma meets is Erina Nakiri, granddaughter of the director, who has an extraordinary palate. This 24-episode first season by J.C.Staff is a school cooking competition series with exaggerated, often suggestive reactions to the food.",
+      "sources": [
+        "https://myanimelist.net/anime/28171",
+        "https://en.wikipedia.org/wiki/Food_Wars!:_Shokugeki_no_Soma"
+      ],
+      "confidence": "high"
+    },
+    "noragami-aragoto": {
+      "summary": "Noragami Aragoto is the second season and follows on from the first. Yato, Hiyori and Yukine have settled into a working partnership, but Bishamon, a powerful war goddess with many spirit weapons, holds a deep grudge against Yato and is determined to destroy him. As old conflicts between gods resurface, questions about Yato's past start to come up. This 13-episode season is again produced by Bones and is a supernatural action series with comedy.",
+      "sources": [
+        "https://myanimelist.net/anime/30503",
+        "https://en.wikipedia.org/wiki/Noragami"
+      ],
+      "confidence": "high"
+    },
+    "boku-dake-ga-inai-machi": {
+      "summary": "Satoru Fujinuma is a 29-year-old struggling manga artist who delivers pizza to get by. He has a strange ability he calls Revival: when something terrible is about to happen nearby, he is sent back a few minutes, and must work out what to change. After a crime in the present, Revival throws him back eighteen years to 1988, when he was in fifth grade, weeks before a classmate, Kayo Hinazuki, became the first victim of a serial kidnapping. Satoru sets out to save her. This 12-episode mystery thriller by A-1 Pictures adapts Kei Sanbe's manga.",
+      "sources": [
+        "https://myanimelist.net/anime/31043",
+        "https://en.wikipedia.org/wiki/Erased_(manga)"
+      ],
+      "confidence": "high"
+    },
+    "haikyuu-karasuno-koukou-vs-shiratorizawa-gakuen-koukou": {
+      "summary": "The third season of Haikyu!! covers a single match. Karasuno High has reached the final of the Miyagi Prefecture qualifier for the national Spring tournament, where it faces Shiratorizawa Academy, the reigning champion of the prefecture, built around its ace Wakatoshi Ushijima. Shoyo Hinata, Tobio Kageyama and the rest of the team are clear underdogs in a best-of-five-sets game. Production I.G made this 10-episode season, which continues directly from the second.",
+      "sources": [
+        "https://myanimelist.net/anime/32935",
+        "https://en.wikipedia.org/wiki/Haikyu!!"
+      ],
+      "confidence": "high"
+    },
+    "kiseijuu": {
+      "summary": "Small parasitic creatures arrive on Earth and burrow into people's heads, taking over their bodies and feeding on other humans. The one that targets teenager Shinichi Izumi fails to reach his brain and takes over his right hand instead. It develops its own personality and calls itself Migi. Bound together, the two have to work out how to coexist, while other parasites start to notice them. This 24-episode series by Madhouse adapts Hitoshi Iwaaki's manga with a modern setting, and it is a horror and science fiction drama with graphic violence.",
+      "sources": [
+        "https://myanimelist.net/anime/22535",
+        "https://en.wikipedia.org/wiki/Parasyte"
+      ],
+      "confidence": "high"
+    }
+  }
+}
