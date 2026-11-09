@@ -1,0 +1,26 @@
+# AniLumi
+
+> AniLumi (https://anilumi.in) is a free anime guide run by Harsh Lariya in India. It answers practical questions: which anime a screenshot is from, whether a show has an official Hindi dub and where to watch it in India, what order to watch a franchise in, when the next episode airs, and where the anime ends in the manga. Facts are cross-checked against two sources (official sites, Anime News Network, Wikipedia, MyAnimeList); pages show when they were checked and what is still a draft (https://anilumi.in/how-we-check).
+
+## Tools
+
+- [What anime is this? (screenshot search)](https://anilumi.in/what-anime-is-this): upload, paste or link a screenshot to get the anime, the episode and the timestamp, with a preview clip; each match links to where to watch, the watch order and the Hindi dub. Free, no sign-up; matching by trace.moe, and the image is sent from the visitor's browser and not stored by AniLumi.
+
+## Hindi dubs (India)
+
+- [Hindi dubbed anime list](https://anilumi.in/hindi-dub): which anime have an official Hindi dub, which seasons, and on which platform (Crunchyroll, Netflix India, JioHotstar, Prime Video / Anime Times, Sony YAY!, TV), including free and legal YouTube channels (Muse India, Ani-One India) and MX Player. Each entry links to its source; anime checked and found without a Hindi dub are listed too.
+- [Hindi guides](https://anilumi.in/hi): watch order, where to watch and Hindi dub status in Hindi, for franchises with an official Hindi dub.
+
+## Guides
+
+- [Watch orders](https://anilumi.in/watch-order): the order to watch each franchise, which films and OVAs matter and what is safe to skip, with editor notes for 150+ franchises.
+- Anime pages (https://anilumi.in/anime/<slug>): spoiler-free summary, episodes and air times (Japan time), where to watch, where the season ends in the manga and which volume to read next, story arcs, Hindi dub status.
+- [Airing schedule](https://anilumi.in/schedule) and [tonight](https://anilumi.in/tonight): this week's episodes with countdowns; next-season pages give the latest official sequel announcement with its source.
+- [Filler lists](https://anilumi.in/filler-lists), [how long to watch](https://anilumi.in/how-long-to-watch) and [parents' guides](https://anilumi.in/parents-guide) (with official Indian and US age ratings where platforms publish them).
+- [Character birthdays](https://anilumi.in/birthdays): anime characters born on each day of the year, with their role and show.
+
+## About
+
+- [How AniLumi checks its guides](https://anilumi.in/how-we-check)
+- [Author: Harsh Lariya](https://anilumi.in/author/harsh-lariya)
+- [Sitemap](https://anilumi.in/sitemap.xml)

@@ -1,11 +1,12 @@
 "use client";
 import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "@/components/Link";
+import LeadForm from "@/components/LeadForm";
 import { toMatches, traceError, timecode, CONFIDENT, type Match, type TraceHit } from "@/lib/scene";
 import { track } from "@/lib/track";
 
 const API = "https://api.trace.moe";
-type Mapped = Record<string, { slug: string; title: string; poster: string | null; episodes: number | null; watchOrder?: boolean; hindi?: string | null }>;
+type Mapped = Record<string, { id?: string; status?: string; slug: string; title: string; poster: string | null; episodes: number | null; watchOrder?: boolean; hindi?: string | null }>;
 type State =
   | { kind: "idle" }
   | { kind: "busy" }
@@ -39,6 +40,7 @@ export default function SceneSearch() {
   const [quota, setQuota] = useState<{ used: number; total: number } | null>(null);
   const [drag, setDrag] = useState(false);
   const fileRef = useRef<HTMLInputElement>(null);
+  const cameraRef = useRef<HTMLInputElement>(null);
 
   const refreshQuota = useCallback(() => {
     fetch(`${API}/me`).then((r) => r.json()).then((d: { quota: number; quotaUsed: number }) => setQuota({ used: d.quotaUsed, total: d.quota })).catch(() => {});
@@ -111,8 +113,13 @@ export default function SceneSearch() {
             <p className="text-4xl" aria-hidden>🔍</p>
             <p className="mt-2 font-semibold text-ink">{busy ? "Searching 30,000+ hours of anime…" : "Drop a screenshot here"}</p>
             <p className="mt-1 text-sm text-muted">or paste it with <kbd className="rounded bg-white/10 px-1.5 py-0.5 text-xs">Ctrl</kbd>/<kbd className="rounded bg-white/10 px-1.5 py-0.5 text-xs">⌘</kbd>+<kbd className="rounded bg-white/10 px-1.5 py-0.5 text-xs">V</kbd></p>
-            <button type="button" disabled={busy} onClick={() => fileRef.current?.click()} className="btn-primary mt-4">{busy ? "Searching…" : "Choose image"}</button>
+            <div className="mt-4 flex flex-wrap justify-center gap-2">
+              <button type="button" disabled={busy} onClick={() => fileRef.current?.click()} className="btn-primary">{busy ? "Searching…" : "Choose image"}</button>
+              {/* Phones: photograph the TV or laptop screen directly (crop to the picture for the best match). */}
+              <button type="button" disabled={busy} onClick={() => cameraRef.current?.click()} className="btn-outline md:hidden">📷 Take a photo</button>
+            </div>
             <input ref={fileRef} type="file" accept="image/*" className="sr-only" onChange={(e) => searchFile(e.target.files?.[0])} />
+            <input ref={cameraRef} type="file" accept="image/*" capture="environment" className="sr-only" onChange={(e) => searchFile(e.target.files?.[0])} />
           </div>
         </div>
 
@@ -143,7 +150,7 @@ export default function SceneSearch() {
         {state.kind === "busy" && <div className="card animate-pulse p-6 text-sm text-muted">Matching your frame against every episode…</div>}
         {state.kind === "error" && <div className="card border-accent/40 bg-accent/10 p-5 text-sm text-ink" role="alert">{state.message}</div>}
         {state.kind === "done" && state.matches.length > 0 && state.matches[0].similarity < CONFIDENT && (
-          <p className="mb-3 rounded-lg bg-white/5 p-3 text-sm text-ink/85">No confident match. These are the closest guesses; try a cleaner frame from the same scene for a better result.</p>
+          <div className="mb-3 rounded-lg bg-white/5 p-3 text-sm text-ink/85"><p>No confident match. These are the closest guesses.</p><MatchTips /></div>
         )}
         {state.kind === "done" && (
           state.matches.length ? (
@@ -200,13 +207,40 @@ export default function SceneSearch() {
                   </details>
                 </li>
               )}
+              {(() => {
+                // A confident match: offer to follow that show, so a one-off visit can become a returning reader.
+                const top = state.matches[0];
+                const page = top && top.similarity >= CONFIDENT ? state.mapped[String(top.anilistId)] : undefined;
+                if (!page) return null;
+                return (
+                  <li>
+                    {page.status === "current" && page.id
+                      ? <LeadForm compact kind="alert" source="scene-alert" animeId={page.id} animeTitle={page.title} title={`🔔 Email me when the next ${page.title} episode is out`} button="Notify me" />
+                      : <LeadForm compact kind="digest" source="scene-digest" title="📰 New episodes and premieres, every Friday" button="Subscribe" />}
+                  </li>
+                );
+              })()}
               {state.hiddenAdult > 0 && <li className="text-xs text-muted">{state.hiddenAdult} adult-only result{state.hiddenAdult === 1 ? " was" : "s were"} hidden.</li>}
             </ol>
           ) : (
-            <div className="card p-5 text-sm text-muted">No match found. Try a different frame from the same scene, ideally without subtitles or overlays.</div>
+            <div className="card p-5 text-sm text-muted"><p className="font-semibold text-ink">No match found.</p><MatchTips /></div>
           )
         )}
       </div>
     </div>
+  );
+}
+
+/** What to try when a screenshot doesn't match: the usual reasons, most common first. */
+function MatchTips() {
+  return (
+    <ul className="mt-2 list-disc space-y-1 pl-5 text-xs leading-5 text-muted">
+      <li>Use the whole frame. Crops, zoomed clips and mirrored videos rarely match.</li>
+      <li>Pick a moment without big subtitles, logos or a phone&apos;s on-screen buttons over the picture.</li>
+      <li>A photo of a screen works best when you crop it to just the picture and hold the phone straight.</li>
+      <li>Try a frame a second before or after: still scenes and fast motion both match less often.</li>
+      <li>Fan art and edits are not in the index. For those, try <a href="https://saucenao.com" target="_blank" rel="noopener nofollow" className="underline">SauceNAO</a>.</li>
+      <li>Episodes from the last few days may not be indexed yet.</li>
+    </ul>
   );
 }

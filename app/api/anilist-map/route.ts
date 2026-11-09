@@ -14,7 +14,7 @@ export async function GET(req: Request) {
   const found = await kitsuByAniListIds(ids);
   const map = Object.fromEntries([...found].map(([id, a]) => {
     const dub = dubFor(a);
-    return [id, { slug: a.slug, title: a.title, poster: posterUrl(a, "small"), episodes: a.episodeCount, watchOrder: Boolean(snapshotOrder(a.id)), hindi: dub?.status === "available" ? (hasHindi(dub.s) ? hindiPath(dub.s) : `/anime/${a.slug}`) : null }];
+    return [id, { id: a.id, status: a.status, slug: a.slug, title: a.title, poster: posterUrl(a, "small"), episodes: a.episodeCount, watchOrder: Boolean(snapshotOrder(a.id)), hindi: dub?.status === "available" ? (hasHindi(dub.s) ? hindiPath(dub.s) : `/anime/${a.slug}`) : null }];
   }));
   return NextResponse.json({ map }, { headers: { "Cache-Control": "public, s-maxage=86400, stale-while-revalidate=604800" } });
 }

@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import SceneSearch from "@/components/SceneSearch";
 import Faq from "@/components/Faq";
+import JsonLd from "@/components/JsonLd";
+import { abs } from "@/lib/site";
+import { ORG_ID, SITE_ID } from "@/lib/ld";
 
 export const metadata: Metadata = {
   title: "What Anime Is This? Find Any Anime From a Screenshot",
@@ -12,6 +15,24 @@ export const metadata: Metadata = {
 export default function WhatAnimeIsThis() {
   return (
     <div className="container-x pb-8">
+      {/* A free web app, stated plainly for search engines and AI assistants that recommend tools. */}
+      <JsonLd data={{
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "@id": `${abs("/what-anime-is-this")}#app`,
+        name: "AniLumi: What Anime Is This?",
+        url: abs("/what-anime-is-this"),
+        description: "Find the anime, the episode and the timestamp from a screenshot, with a preview clip, then where to watch it, its watch order and whether it has an official Hindi dub.",
+        applicationCategory: "MultimediaApplication",
+        operatingSystem: "Any (web browser)",
+        browserRequirements: "Requires JavaScript",
+        isAccessibleForFree: true,
+        offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+        featureList: ["Paste, drop, upload or link a screenshot", "Anime title, episode and timestamp with a preview clip", "Where to watch, watch order and Hindi dub for each match", "No sign-up; the image is not stored"],
+        isPartOf: { "@id": SITE_ID },
+        publisher: { "@id": ORG_ID },
+        inLanguage: "en",
+      }} />
       <PageHero
         crumbs={[{ href: "/", label: "Home" }, { href: "/what-anime-is-this", label: "What anime is this?" }]}
         eyebrow="🔍 Scene search"
