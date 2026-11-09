@@ -130,7 +130,7 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   },
   "jojo-s-bizarre-adventure-2012": {
     label: "JoJo's Bizarre Adventure",
-    intro: "Watch the parts in order: the 2012 series (Parts 1 and 2, Phantom Blood and Battle Tendency), Stardust Crusaders (two cours), Diamond Is Unbreakable, Golden Wind, then Stone Ocean (released in three batches). Each part has a new lead but builds on the previous ones, so don't skip ahead. The Thus Spoke Kishibe Rohan OVAs are optional side stories best watched after Diamond Is Unbreakable. The 2000 Stardust Crusaders OVA and the 2007 Phantom Blood film are older, partial adaptations you can ignore. Part 7, Steel Ball Run, follows Stone Ocean; it began streaming on Netflix in March 2026.",
+    intro: "Watch the parts in order: the 2012 series (Parts 1 and 2, Phantom Blood and Battle Tendency), Stardust Crusaders (two cours), Diamond Is Unbreakable, Golden Wind, then Stone Ocean (released in three batches). Each part has a new lead but builds on the previous ones, so don't skip ahead. The Thus Spoke Kishibe Rohan OVAs are optional side stories best watched after Diamond Is Unbreakable. The 1993–2002 Stardust Crusaders OVA and the 2007 Phantom Blood film are older, partial adaptations you can ignore. Part 7, Steel Ball Run, follows Stone Ocean; it began streaming on Netflix in March 2026.",
   },
   "neon-genesis-evangelion": {
     label: "Evangelion",
@@ -198,7 +198,7 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   },
   "one-punch-man": {
     label: "One Punch Man",
-    intro: "Season 1 (2015), Season 2 (2019), then Season 3 (2025). The studio changed after Season 1 and the animation style is noticeably different, but the story continues directly. The OVAs and specials are short comedy extras.",
+    intro: "Season 1 (2015), Season 2 (2019), then Season 3 (part 1 October–December 2025; part 2 set for January 2027). The studio changed after Season 1 and the animation style is noticeably different, but the story continues directly. The OVAs and specials are short comedy extras.",
   },
   "yakusoku-no-neverland": {
     label: "The Promised Neverland",
@@ -223,7 +223,7 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   },
   "natsume-yuujinchou": {
     label: "Natsume's Book of Friends",
-    intro: "Watch the seasons in order, from the first through Zoku, San, Shi, Go, Roku and Shichi, with the film Ephemeral Bond after the sixth season. Most episodes are self-contained, but character relationships build across seasons. Kitsu's sequel links stop after Shi, so the later seasons are not in the list below.",
+    intro: "Watch the seasons in order, from the first through Zoku, San, Shi, Go, Roku and Shichi, with the film Ephemeral Bond after the sixth season and the 2021 film The Waking Rock and the Strange Visitor as an optional extra after it. Most episodes are self-contained, but character relationships build across seasons. Kitsu's sequel links stop after Shi, so the later seasons are not in the list below.",
   },
   "kuroko-no-basket": {
     label: "Kuroko's Basketball",
