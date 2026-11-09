@@ -2,13 +2,14 @@
 import { useEffect, useState } from "react";
 import Script from "next/script";
 import Link from "@/components/Link";
-import { mustAsk, OPEN_EVENT, readChoice, saveChoice, withdraw, type Choice } from "@/lib/consent";
+import { isAutomated, mustAsk, OPEN_EVENT, readChoice, saveChoice, withdraw, type Choice } from "@/lib/consent";
 
 /**
  * Plausible (NEXT_PUBLIC_PLAUSIBLE_DOMAIN, cookieless, always on), GA4 (NEXT_PUBLIC_GA_ID) and Microsoft Clarity
  * (NEXT_PUBLIC_CLARITY_ID). GA and Clarity wait for consent where the law asks for it (EEA, UK, Switzerland:
  * lib/consent.ts) and load straight away elsewhere; anyone can refuse from "Cookie choices" in the footer.
- * Clarity loads when the browser is idle, so it never competes with the page's main image.
+ * Clarity loads when the browser is idle, so it never competes with the page's main image. Neither loads for
+ * crawlers or automated browsers (isAutomated), which would otherwise show up as direct visits.
  */
 export default function Analytics() {
   const plausible = process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN;
@@ -18,7 +19,7 @@ export default function Analytics() {
   const [ask, setAsk] = useState(false);
 
   useEffect(() => {
-    if (!ga && !clarity) return;
+    if ((!ga && !clarity) || isAutomated()) return;
     let live = true;
     const choice = readChoice();
     if (choice === "granted") setAllowed(true);

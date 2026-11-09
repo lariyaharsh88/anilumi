@@ -18,6 +18,12 @@ export function tzNeedsConsent(tz: string | null | undefined): boolean {
 
 export const needsConsent = (country: string | null | undefined, tz?: string | null) => (country ? CONSENT_COUNTRIES.has(country.toUpperCase()) : tzNeedsConsent(tz));
 
+/** Crawlers and automated browsers that run scripts (search renderers, AI fetchers): never load GA or Clarity for them. */
+export const BOT_UA = /bot|crawl|spider|slurp|headless|lighthouse|preview|fetcher|bytespider|petal|yandex|baidu/i;
+export function isAutomated(): boolean {
+  try { return navigator.webdriver === true || BOT_UA.test(navigator.userAgent); } catch { return false; }
+}
+
 export type Choice = "granted" | "denied";
 const CHOICE = "al_consent", REGION = "al_region";
 const YEAR = 365 * 86400_000, MONTH = 30 * 86400_000;
