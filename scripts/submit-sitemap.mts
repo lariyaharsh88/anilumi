@@ -13,7 +13,7 @@ import { createSign } from "node:crypto";
 const SITE = "https://anilumi.in";
 const SITEMAP = `${SITE}/sitemap.xml`;
 const PROPERTY = "sc-domain:anilumi.in";
-const INDEXNOW_KEY = "68544ff79b7f30720459e815497d5462";
+const INDEXNOW_KEY = "67e58fb83b0e42898f42b207fa29073d";
 const LOOKBACK_HOURS = Number(process.env.LOOKBACK_HOURS) || 26;
 let problems = 0;
 
