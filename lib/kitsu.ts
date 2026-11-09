@@ -579,7 +579,7 @@ function kindOf(role: RelationRole, a: Anime): WatchEntry["kind"] {
 
 const NOTES: Record<WatchEntry["kind"] | "skipped", string> = {
   main: "Core story – watch in this order.",
-  movie: "Movie – canon side content, best watched here.",
+  movie: "Movie – watch it here; the guide above says whether it's part of the main story.",
   side: "Side story / OVA – optional but adds context.",
   recap: "Recap – skip unless you need a refresher.",
   spinoff: "Spin-off – optional, different tone or cast.",
