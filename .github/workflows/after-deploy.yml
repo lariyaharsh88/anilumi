@@ -2,7 +2,7 @@ name: After deploy
 # Cloudflare Workers Builds deploys the app Worker "anilumi" on every push to main (build command
 # `npx opennextjs-cloudflare build`, deploy command `npx opennextjs-cloudflare deploy`, set in the dashboard).
 # This waits until anilumi.in reports the pushed commit, then starts the cache warm-up so the new build's
-# pages are rendered before visitors or Google ask for them.
+# pages are rendered before visitors or Google ask for them, and resubmits the sitemap (sitemap.yml).
 on:
   push:
     branches: [main]
@@ -27,7 +27,9 @@ jobs:
             sleep 30
           done
           echo "::warning::anilumi.in still reports ${live:-nothing} after 45 minutes; check Workers Builds"; exit 1
-      - name: Start the warm-up
-        run: gh workflow run warm-cache.yml --repo "$GITHUB_REPOSITORY"
+      - name: Start the warm-up and tell search engines about the new sitemap
+        run: |
+          gh workflow run warm-cache.yml --repo "$GITHUB_REPOSITORY"
+          gh workflow run sitemap.yml --repo "$GITHUB_REPOSITORY"
         env:
           GH_TOKEN: ${{ github.token }}

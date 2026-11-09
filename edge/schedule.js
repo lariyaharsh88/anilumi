@@ -12,6 +12,7 @@ export const REPO = "lariyaharsh88/anilumi";
  *   airing      every 3 hours: next air times for airing shows
  *   warm-cache  every 6 hours, after that hour's airing snapshot
  *   health      daily at 05:35 UTC (11:05 IST)
+ *   sitemap     daily at 06:05 UTC: resubmit the sitemap to Google, changed URLs to IndexNow
  */
 export function dueWorkflows(date) {
   const h = date.getUTCHours();
@@ -21,6 +22,7 @@ export function dueWorkflows(date) {
   if (first && h % 3 === 0) out.push("airing.yml");
   if (!first && h % 6 === 0) out.push("warm-cache.yml");
   if (!first && h === 5) out.push("health.yml");
+  if (first && h === 6) out.push("sitemap.yml");
   return out;
 }
 

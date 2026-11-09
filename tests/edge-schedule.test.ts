@@ -10,10 +10,11 @@ test("edge cron: alerts every tick, AniList hourly, airing every 3 h, warm-up ev
   assert.deepEqual(at("2026-11-06T03:05:00Z"), ["alerts.yml", "anilist-sync.yml", "airing.yml"]);
   assert.deepEqual(at("2026-11-06T06:35:00Z"), ["alerts.yml", "warm-cache.yml"]);
   assert.deepEqual(at("2026-11-06T05:35:00Z"), ["alerts.yml", "health.yml"]);
-  // Over a day: 48 alert runs, 24 AniList syncs, 8 airing snapshots, 4 warm-ups, 1 health check.
+  assert.deepEqual(at("2026-11-06T06:05:00Z"), ["alerts.yml", "anilist-sync.yml", "airing.yml", "sitemap.yml"]);
+  // Over a day: 48 alert runs, 24 AniList syncs, 8 airing snapshots, 4 warm-ups, 1 health check, 1 sitemap.
   const day = Array.from({ length: 48 }, (_, i) => at(new Date(Date.UTC(2026, 10, 6, Math.floor(i / 2), i % 2 ? 35 : 5)).toISOString())).flat();
   const n = (f: string) => day.filter((x) => x === f).length;
-  assert.deepEqual([n("alerts.yml"), n("anilist-sync.yml"), n("airing.yml"), n("warm-cache.yml"), n("health.yml")], [48, 24, 8, 4, 1]);
+  assert.deepEqual([n("alerts.yml"), n("anilist-sync.yml"), n("airing.yml"), n("warm-cache.yml"), n("health.yml"), n("sitemap.yml")], [48, 24, 8, 4, 1, 1]);
 });
 
 test("edge cron: dispatches each due workflow on main, and nothing without a token", async () => {
