@@ -29,6 +29,7 @@ jobs:
           check "/anime/naruto/filler-list" "filler list"
           check "/season/2027/winter/preview" "anime preview"
           check "/api/community?anime=7442" "\"enabled\":true"
-          check "/sitemap.xml" "<urlset"
+          check "/sitemap.xml" "<sitemapindex"
+          check "/sitemaps/anime.xml" "<urlset"
           check "/robots.txt" "Sitemap"
           exit $fail

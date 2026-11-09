@@ -54,7 +54,10 @@ async function google() {
 }
 
 async function indexNow() {
-  const xml = await (await fetch(SITEMAP, { signal: AbortSignal.timeout(60_000) })).text();
+  // The sitemap is an index of one sitemap per page type: read every child.
+  const index = await (await fetch(SITEMAP, { signal: AbortSignal.timeout(60_000) })).text();
+  const children = [...index.matchAll(/<sitemap><loc>([^<]+)<\/loc>/g)].map(([, loc]) => loc);
+  const xml = children.length ? (await Promise.all(children.map((u) => fetch(u, { signal: AbortSignal.timeout(60_000) }).then((r) => r.text())))).join("\n") : index;
   const since = Date.now() - LOOKBACK_HOURS * 3600_000;
   const urls = [...xml.matchAll(/<url>([\s\S]*?)<\/url>/g)]
     .map(([, u]) => ({ loc: u.match(/<loc>([^<]+)<\/loc>/)?.[1], mod: Date.parse(u.match(/<lastmod>([^<]+)<\/lastmod>/)?.[1] || "") }))

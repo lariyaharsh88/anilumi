@@ -25,7 +25,10 @@ const days = Array.from({ length: 4 }, (_, i) => {
   return `/birthdays/${MONTHS[m - 1]}/${d}`;
 });
 
-const xml = await (await fetch(`${base}/sitemap.xml`)).text();
+// /sitemap.xml is an index of one sitemap per page type: read each child.
+const index = await (await fetch(`${base}/sitemap.xml`)).text();
+const children = [...index.matchAll(/<sitemap><loc>([^<]+)<\/loc>/g)].map(([, loc]) => base + new URL(loc).pathname);
+const xml = children.length ? (await Promise.all(children.map((u) => fetch(u).then((r) => r.text())))).join("\n") : index;
 const bySitemap = [...xml.matchAll(/<url>([\s\S]*?)<\/url>/g)]
   .map(([, u]) => ({ loc: u.match(/<loc>([^<]+)<\/loc>/)?.[1], p: Number(u.match(/<priority>([^<]+)<\/priority>/)?.[1] || 0.5) }))
   .filter((u) => u.loc)

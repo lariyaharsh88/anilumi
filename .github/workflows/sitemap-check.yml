@@ -1,0 +1,22 @@
+name: Sitemap check
+# Weekly: every URL in the live sitemap must return 200 without a redirect, be indexable and be its own canonical
+# (scripts/check-sitemap.mts). A failure lists the bad URLs by kind; fix the page or the rule in lib/indexing.ts.
+on:
+  schedule:
+    - cron: "23 7 * * 1" # Mondays 07:23 UTC
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency: sitemap-check
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: CONC=4 npx tsx scripts/check-sitemap.mts https://anilumi.in
