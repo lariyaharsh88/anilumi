@@ -1,0 +1,673 @@
+{
+  "checked": "2026-11-09",
+  "reviewed": null,
+  "notes": "Crunchyroll and Netflix ratings were read from the India storefront (Indian U/A system: U, U/A 7+, U/A 13+, U/A 16+, A); Crunchyroll 'reasons' are its Content Advisory labels. TV (US) ratings come from JustWatch US or Rotten Tomatoes listings, because US platform pages could not be reached from India.",
+  "shows": {
+    "one-piece": {
+      "ratings": [
+        {
+          "body": "Crunchyroll",
+          "rating": "U/A 16+",
+          "reasons": "Violence, Smoking, Drug/Alcohol Use, Profanity",
+          "url": "https://www.crunchyroll.com/series/GRMG8ZQZR/one-piece"
+        },
+        {
+          "body": "Netflix India",
+          "rating": "U/A 16+",
+          "reasons": null,
+          "url": "https://www.netflix.com/in/title/80107103"
+        },
+        {
+          "body": "TV (US)",
+          "rating": "TV-14",
+          "reasons": null,
+          "url": "https://www.justwatch.com/us/tv-show/one-piece"
+        }
+      ],
+      "confidence": "high",
+      "sources": [
+        "https://www.crunchyroll.com/series/GRMG8ZQZR/one-piece",
+        "https://www.netflix.com/in/title/80107103",
+        "https://www.justwatch.com/us/tv-show/one-piece",
+        "https://www.rottentomatoes.com/tv/one_piece"
+      ]
+    },
+    "detective-conan": {
+      "ratings": [
+        {
+          "body": "Netflix India",
+          "rating": "U/A 16+",
+          "reasons": null,
+          "url": "https://www.netflix.com/in/title/80090370"
+        },
+        {
+          "body": "TV (US)",
+          "rating": "TV-14",
+          "reasons": null,
+          "url": "https://www.justwatch.com/us/tv-show/case-closed-1996"
+        }
+      ],
+      "confidence": "high",
+      "sources": [
+        "https://www.netflix.com/in/title/80090370",
+        "https://www.justwatch.com/us/tv-show/case-closed-1996",
+        "https://www.rottentomatoes.com/tv/detective_conan"
+      ]
+    },
+    "crayon-shin-chan": {
+      "ratings": [
+        {
+          "body": "TV (US)",
+          "rating": "TV-MA",
+          "reasons": "strong language, sexual innuendo, comical nudity",
+          "url": "https://videolibrarian.com/reviews/tv/shin-chan-season-one-part-1/"
+        }
+      ],
+      "confidence": "medium",
+      "sources": [
+        "https://videolibrarian.com/reviews/tv/shin-chan-season-one-part-1/"
+      ],
+      "notes": "The TV-MA rating applies to Funimation's rewritten adult English dub (Adult Swim, 2006-2011), not to the Japanese original."
+    },
+    "doraemon-2005": {
+      "ratings": [
+        {
+          "body": "TV (US)",
+          "rating": "TV-Y7",
+          "reasons": null,
+          "url": "https://www.rottentomatoes.com/tv/doraemon"
+        }
+      ],
+      "confidence": "medium",
+      "sources": [
+        "https://www.rottentomatoes.com/tv/doraemon"
+      ],
+      "notes": "US rating is for the Disney XD English dub (from 2014) of the 2005 series."
+    },
+    "steel-ball-run-jojo-no-kimyou-na-bouken": {
+      "ratings": [
+        {
+          "body": "Netflix India",
+          "rating": "U/A 16+",
+          "reasons": null,
+          "url": "https://www.netflix.com/in/title/82116553"
+        },
+        {
+          "body": "TV (US)",
+          "rating": "TV-MA",
+          "reasons": null,
+          "url": "https://www.justwatch.com/us/tv-show/steel-ball-run-jojos-bizarre-adventure"
+        }
+      ],
+      "confidence": "medium",
+      "sources": [
+        "https://www.netflix.com/in/title/82116553",
+        "https://www.justwatch.com/us/tv-show/steel-ball-run-jojos-bizarre-adventure"
+      ]
+    },
+    "otomege-sekai-wa-mob-ni-kibishii-sekai-desu-2nd-season": {
+      "ratings": [
+        {
+          "body": "Crunchyroll",
+          "rating": "U/A 16+",
+          "reasons": "Violence, Profanity",
+          "url": "https://www.crunchyroll.com/series/G0XHWM0D3/trapped-in-a-dating-sim-the-world-of-otome-games-is-tough-for-mobs"
+        },
+        {
+          "body": "TV (US)",
+          "rating": "TV-14",
+          "reasons": null,
+          "url": "https://www.justwatch.com/us/tv-show/trapped-in-a-dating-sim-the-world-of-otome-games-is-tough-for-mobs"
+        }
+      ],
+      "confidence": "medium",
+      "sources": [
+        "https://www.crunchyroll.com/series/G0XHWM0D3/trapped-in-a-dating-sim-the-world-of-otome-games-is-tough-for-mobs",
+        "https://www.justwatch.com/us/tv-show/trapped-in-a-dating-sim-the-world-of-otome-games-is-tough-for-mobs"
+      ],
+      "notes": "Ratings are from the franchise's series page, which covers all seasons; no separate rating is published for this season."
+    },
+    "Kusuriya-no-Hitorigoto-3rd-season": {
+      "ratings": [
+        {
+          "body": "Crunchyroll",
+          "rating": "U/A 16+",
+          "reasons": "Suggestive Dialogue, Sexualized Imagery, Drug/Alcohol Use, Violence, Suicide, Smoking",
+          "url": "https://www.crunchyroll.com/series/G3KHEVDJ7/the-apothecary-diaries"
+        },
+        {
+          "body": "Netflix India",
+          "rating": "U/A 16+",
+          "reasons": null,
+          "url": "https://www.netflix.com/in/title/81712068"
+        },
+        {
+          "body": "TV (US)",
+          "rating": "TV-14",
+          "reasons": null,
+          "url": "https://www.justwatch.com/us/tv-show/the-apothecary-diaries"
+        }
+      ],
+      "confidence": "high",
+      "sources": [
+        "https://www.crunchyroll.com/series/G3KHEVDJ7/the-apothecary-diaries",
+        "https://www.netflix.com/in/title/81712068",
+        "https://www.justwatch.com/us/tv-show/the-apothecary-diaries",
+        "https://www.rottentomatoes.com/tv/the_apothecary_diaries"
+      ],
+      "notes": "Ratings are from the franchise's series page, which covers all seasons; no separate rating is published for this season."
+    },
+    "Pocket-Monsters-2023": {
+      "ratings": [
+        {
+          "body": "TV (US)",
+          "rating": "TV-Y7",
+          "reasons": null,
+          "url": "https://www.rottentomatoes.com/tv/pokemon_horizons_the_series"
+        }
+      ],
+      "confidence": "medium",
+      "sources": [
+        "https://www.rottentomatoes.com/tv/pokemon_horizons_the_series"
+      ]
+    },
+    "kikansha-no-mahou-wa-tokubetsu-desu-2nd-season": {
+      "ratings": [
+        {
+          "body": "Crunchyroll",
+          "rating": "U/A 16+",
+          "reasons": "Violence",
+          "url": "https://www.crunchyroll.com/series/GEXH3W207/a-returners-magic-should-be-special"
+        },
+        {
+          "body": "TV (US)",
+          "rating": "TV-14",
+          "reasons": null,
+          "url": "https://www.justwatch.com/us/tv-show/a-returners-magic-should-be-special"
+        }
+      ],
+      "confidence": "medium",
+      "sources": [
+        "https://www.crunchyroll.com/series/GEXH3W207/a-returners-magic-should-be-special",
+        "https://www.justwatch.com/us/tv-show/a-returners-magic-should-be-special"
+      ],
+      "notes": "Ratings are from the franchise's series page, which covers all seasons; no separate rating is published for this season."
+    },
+    "tantei-wa-mou-shindeiru-season-2": {
+      "ratings": [
+        {
+          "body": "Crunchyroll",
+          "rating": "U/A 16+",
+          "reasons": "Violence, Sexualized Imagery, Drug/Alcohol Use, Smoking",
+          "url": "https://www.crunchyroll.com/series/G24H1N334/the-detective-is-already-dead"
+        },
+        {
+          "body": "TV (US)",
+          "rating": "TV-14",
+          "reasons": null,
+          "url": "https://www.justwatch.com/us/tv-show/the-detective-is-already-dead"
+        }
+      ],
+      "confidence": "medium",
+      "sources": [
+        "https://www.crunchyroll.com/series/G24H1N334/the-detective-is-already-dead",
+        "https://www.justwatch.com/us/tv-show/the-detective-is-already-dead"
+      ],
+      "notes": "Ratings are from the franchise's series page, which covers all seasons; no separate rating is published for this season."
+    },
+    "Black-Clover-Season-2": {
+      "ratings": [
+        {
+          "body": "Crunchyroll",
+          "rating": "U/A 16+",
+          "reasons": "Violence, Profanity, Suggestive Dialogue, Sexualized Imagery, Smoking",
+          "url": "https://www.crunchyroll.com/series/GRE50KV36/black-clover"
+        },
+        {
+          "body": "Netflix India",
+          "rating": "U/A 16+",
+          "reasons": null,
+          "url": "https://www.netflix.com/in/title/80238012"
+        }
+      ],
+      "confidence": "high",
+      "sources": [
+        "https://www.crunchyroll.com/series/GRE50KV36/black-clover",
+        "https://www.netflix.com/in/title/80238012",
+        "https://www.justwatch.com/us/tv-show/black-clover",
+        "https://www.rottentomatoes.com/tv/black_clover"
+      ],
+      "notes": "Ratings are from the franchise's series page, which covers all seasons; no separate rating is published for this season. US TV rating left out: JustWatch lists TV-PG and Rotten Tomatoes lists TV-14 for the 2017 series."
+    },
+    "mobius-dust": {
+      "ratings": [
+        {
+          "body": "Crunchyroll",
+          "rating": "U/A 16+",
+          "reasons": "Profanity, Nudity",
+          "url": "https://www.crunchyroll.com/series/GT00379439/mebius-dust"
+        }
+      ],
+      "confidence": "high",
+      "sources": [
+        "https://www.crunchyroll.com/series/GT00379439/mebius-dust"
+      ]
+    },
+    "danjo-no-yuujou-wa-seiritsu-suru-iya-shinai": {
+      "ratings": [
+        {
+          "body": "Crunchyroll",
+          "rating": "U/A 16+",
+          "reasons": "Sexualized Imagery, Suggestive Dialogue, Profanity",
+          "url": "https://www.crunchyroll.com/series/G1XHJV0D8/can-a-boy-girl-friendship-survive"
+        },
+        {
+          "body": "TV (US)",
+          "rating": "TV-14",
+          "reasons": null,
+          "url": "https://www.justwatch.com/us/tv-show/can-a-boy-girl-friendship-survive"
+        }
+      ],
+      "confidence": "medium",
+      "sources": [
+        "https://www.crunchyroll.com/series/G1XHJV0D8/can-a-boy-girl-friendship-survive",
+        "https://www.justwatch.com/us/tv-show/can-a-boy-girl-friendship-survive"
+      ]
+    },
+    "maou-sama-retry-r": {
+      "ratings": [
+        {
+          "body": "Crunchyroll",
+          "rating": "U/A 16+",
+          "reasons": "Violence, Profanity, Sexualized Imagery, Smoking",
+          "url": "https://www.crunchyroll.com/series/GXJHM37KD/demon-lord-retry"
+        }
+      ],
+      "confidence": "high",
+      "sources": [
+        "https://www.crunchyroll.com/series/GXJHM37KD/demon-lord-retry"
+      ],
+      "notes": "Ratings are from the franchise's series page, which covers all seasons; no separate rating is published for this season."
+    },
+    "hotaru-no-yomeiri": {
+      "ratings": [
+        {
+          "body": "Crunchyroll",
+          "rating": "A",
+          "reasons": "Violence, Profanity, Sexual Violence, Smoking",
+          "url": "https://www.crunchyroll.com/series/GT00383999/firefly-wedding"
+        },
+        {
+          "body": "TV (US)",
+          "rating": "TV-MA",
+          "reasons": null,
+          "url": "https://www.justwatch.com/us/tv-show/hotaru-no-yomeiri"
+        }
+      ],
+      "confidence": "medium",
+      "sources": [
+        "https://www.crunchyroll.com/series/GT00383999/firefly-wedding",
+        "https://www.justwatch.com/us/tv-show/hotaru-no-yomeiri"
+      ]
+    },
+    "sasaki-to-pii-chan-2nd-season": {
+      "ratings": [
+        {
+          "body": "Crunchyroll",
+          "rating": "U/A 16+",
+          "reasons": "Violence",
+          "url": "https://www.crunchyroll.com/series/G5PHNM935/sasaki-and-peeps"
+        },
+        {
+          "body": "Netflix India",
+          "rating": "U/A 13+",
+          "reasons": null,
+          "url": "https://www.netflix.com/in/title/81768306"
+        },
+        {
+          "body": "TV (US)",
+          "rating": "TV-14",
+          "reasons": null,
+          "url": "https://www.justwatch.com/us/tv-show/sasaki-and-peeps"
+        }
+      ],
+      "confidence": "medium",
+      "sources": [
+        "https://www.crunchyroll.com/series/G5PHNM935/sasaki-and-peeps",
+        "https://www.netflix.com/in/title/81768306",
+        "https://www.justwatch.com/us/tv-show/sasaki-and-peeps"
+      ],
+      "notes": "Ratings are from the franchise's series page, which covers all seasons; no separate rating is published for this season. Crunchyroll and Netflix give different India ratings."
+    },
+    "yeosingangnim": {
+      "ratings": [
+        {
+          "body": "Crunchyroll",
+          "rating": "U/A 16+",
+          "reasons": "Violence, Profanity, Suicide",
+          "url": "https://www.crunchyroll.com/series/GMEHME741/true-beauty"
+        }
+      ],
+      "confidence": "high",
+      "sources": [
+        "https://www.crunchyroll.com/series/GMEHME741/true-beauty"
+      ]
+    },
+    "kanpeki-sugite-kawai-ge-ga-nai-to-konyaku-haki-sareta-seijo-wa-ringoku-ni-ura-reru": {
+      "ratings": [
+        {
+          "body": "Crunchyroll",
+          "rating": "U/A 16+",
+          "reasons": "Violence",
+          "url": "https://www.crunchyroll.com/series/GP5HJ8477/the-too-perfect-saint-tossed-aside-by-my-fianc-and-sold-to-another-kingdom"
+        },
+        {
+          "body": "TV (US)",
+          "rating": "TV-14",
+          "reasons": null,
+          "url": "https://www.justwatch.com/us/tv-show/the-too-perfect-saint-tossed-aside-by-my-fiance-and-sold-to-another-kingdom"
+        }
+      ],
+      "confidence": "medium",
+      "sources": [
+        "https://www.crunchyroll.com/series/GP5HJ8477/the-too-perfect-saint-tossed-aside-by-my-fianc-and-sold-to-another-kingdom",
+        "https://www.justwatch.com/us/tv-show/the-too-perfect-saint-tossed-aside-by-my-fiance-and-sold-to-another-kingdom"
+      ]
+    },
+    "niwatori-fighter": {
+      "ratings": [
+        {
+          "body": "Crunchyroll",
+          "rating": "A",
+          "reasons": "Violence, Sexual Content",
+          "url": "https://www.crunchyroll.com/series/GT00365727/rooster-fighter"
+        },
+        {
+          "body": "Netflix India",
+          "rating": "U/A 16+",
+          "reasons": null,
+          "url": "https://www.netflix.com/in/title/82647303"
+        },
+        {
+          "body": "TV (US)",
+          "rating": "TV-MA",
+          "reasons": null,
+          "url": "https://www.justwatch.com/us/tv-show/rooster-fighter"
+        }
+      ],
+      "confidence": "medium",
+      "sources": [
+        "https://www.crunchyroll.com/series/GT00365727/rooster-fighter",
+        "https://www.netflix.com/in/title/82647303",
+        "https://www.justwatch.com/us/tv-show/rooster-fighter"
+      ],
+      "notes": "Crunchyroll and Netflix give different India ratings."
+    },
+    "youkai-gakkou-no-sensei-hajimemashita": {
+      "ratings": [
+        {
+          "body": "Crunchyroll",
+          "rating": "U/A 16+",
+          "reasons": "Violence, Profanity, Smoking",
+          "url": "https://www.crunchyroll.com/series/GVDHX85QN/a-terrified-teacher-at-ghoul-school"
+        },
+        {
+          "body": "TV (US)",
+          "rating": "TV-14",
+          "reasons": null,
+          "url": "https://www.justwatch.com/us/tv-show/a-terrified-teacher-at-ghoul-school"
+        }
+      ],
+      "confidence": "medium",
+      "sources": [
+        "https://www.crunchyroll.com/series/GVDHX85QN/a-terrified-teacher-at-ghoul-school",
+        "https://www.justwatch.com/us/tv-show/a-terrified-teacher-at-ghoul-school"
+      ]
+    },
+    "chichi-wa-eiyuu-haha-wa-seirei-musume-no-watashi-wa-tenseisha": {
+      "ratings": [
+        {
+          "body": "Crunchyroll",
+          "rating": "U/A 13+",
+          "reasons": "Profanity, Suggestive Dialogue, Violence",
+          "url": "https://www.crunchyroll.com/series/GT00364479/dad-is-a-hero-mom-is-a-spirit-im-a-reincarnator"
+        },
+        {
+          "body": "TV (US)",
+          "rating": "TV-14",
+          "reasons": null,
+          "url": "https://www.justwatch.com/us/tv-show/dad-is-a-hero-mom-is-a-spirit-im-a-reincarnator"
+        }
+      ],
+      "confidence": "medium",
+      "sources": [
+        "https://www.crunchyroll.com/series/GT00364479/dad-is-a-hero-mom-is-a-spirit-im-a-reincarnator",
+        "https://www.justwatch.com/us/tv-show/dad-is-a-hero-mom-is-a-spirit-im-a-reincarnator"
+      ]
+    },
+    "rock-wa-lady-no-tashina-mideshite": {
+      "ratings": [
+        {
+          "body": "TV (US)",
+          "rating": "TV-14",
+          "reasons": null,
+          "url": "https://www.justwatch.com/us/tv-show/rock-is-a-ladys-modesty"
+        }
+      ],
+      "confidence": "medium",
+      "sources": [
+        "https://www.justwatch.com/us/tv-show/rock-is-a-ladys-modesty"
+      ]
+    },
+    "yasei-no-last-boss-ga-arawareta": {
+      "ratings": [
+        {
+          "body": "Crunchyroll",
+          "rating": "U/A 16+",
+          "reasons": "Violence, Sexualized Imagery, Profanity",
+          "url": "https://www.crunchyroll.com/series/GT00361955/a-wild-last-boss-appeared"
+        },
+        {
+          "body": "TV (US)",
+          "rating": "TV-14",
+          "reasons": null,
+          "url": "https://www.justwatch.com/us/tv-show/a-wild-last-boss-appeared"
+        }
+      ],
+      "confidence": "medium",
+      "sources": [
+        "https://www.crunchyroll.com/series/GT00361955/a-wild-last-boss-appeared",
+        "https://www.justwatch.com/us/tv-show/a-wild-last-boss-appeared"
+      ]
+    },
+    "haigakura": {
+      "ratings": [
+        {
+          "body": "TV (US)",
+          "rating": "TV-14",
+          "reasons": null,
+          "url": "https://www.justwatch.com/us/tv-show/haigakura"
+        }
+      ],
+      "confidence": "medium",
+      "sources": [
+        "https://www.justwatch.com/us/tv-show/haigakura"
+      ]
+    },
+    "yuusha-no-kuzu": {
+      "ratings": [
+        {
+          "body": "Crunchyroll",
+          "rating": "A",
+          "reasons": "Violence, Profanity, Drug/Alcohol Use, Smoking",
+          "url": "https://www.crunchyroll.com/series/GT00365730/scum-of-the-brave"
+        },
+        {
+          "body": "TV (US)",
+          "rating": "TV-14",
+          "reasons": null,
+          "url": "https://www.justwatch.com/us/tv-show/scum-of-the-brave"
+        }
+      ],
+      "confidence": "medium",
+      "sources": [
+        "https://www.crunchyroll.com/series/GT00365730/scum-of-the-brave",
+        "https://www.justwatch.com/us/tv-show/scum-of-the-brave"
+      ]
+    },
+    "tensei-akujo-no-kuro-rekishi": {
+      "ratings": [
+        {
+          "body": "Crunchyroll",
+          "rating": "U/A 16+",
+          "reasons": "Suggestive Dialogue, Violence, Sexualized Imagery",
+          "url": "https://www.crunchyroll.com/series/GG5H5XQZQ/the-dark-history-of-the-reincarnated-villainess"
+        },
+        {
+          "body": "TV (US)",
+          "rating": "TV-14",
+          "reasons": null,
+          "url": "https://www.justwatch.com/us/tv-show/the-dark-history-of-the-reincarnated-villainess"
+        }
+      ],
+      "confidence": "medium",
+      "sources": [
+        "https://www.crunchyroll.com/series/GG5H5XQZQ/the-dark-history-of-the-reincarnated-villainess",
+        "https://www.justwatch.com/us/tv-show/the-dark-history-of-the-reincarnated-villainess"
+      ]
+    },
+    "chitose-kun-wa-ramune-bin-no-naka": {
+      "ratings": [
+        {
+          "body": "Crunchyroll",
+          "rating": "A",
+          "reasons": "Profanity, Smoking, Sexual Violence",
+          "url": "https://www.crunchyroll.com/series/GT00364783/chitose-is-in-the-ramune-bottle"
+        }
+      ],
+      "confidence": "high",
+      "sources": [
+        "https://www.crunchyroll.com/series/GT00364783/chitose-is-in-the-ramune-bottle"
+      ]
+    },
+    "xian-ni": {
+      "ratings": [
+        {
+          "body": "Crunchyroll",
+          "rating": "U/A 16+",
+          "reasons": "Flashing Lights, Violence",
+          "url": "https://www.crunchyroll.com/series/GKEH2G0MN/renegade-immortal"
+        },
+        {
+          "body": "TV (US)",
+          "rating": "TV-14",
+          "reasons": null,
+          "url": "https://www.justwatch.com/us/tv-show/renegade-immortal"
+        }
+      ],
+      "confidence": "medium",
+      "sources": [
+        "https://www.crunchyroll.com/series/GKEH2G0MN/renegade-immortal",
+        "https://www.justwatch.com/us/tv-show/renegade-immortal"
+      ]
+    },
+    "watari-kun-no-xx-ga-houkai-sunzen": {
+      "ratings": [
+        {
+          "body": "Crunchyroll",
+          "rating": "U/A 16+",
+          "reasons": "Suggestive Dialogue, Sexualized Imagery",
+          "url": "https://www.crunchyroll.com/series/G0XHWM18X/watari-kuns--is-about-to-collapse"
+        },
+        {
+          "body": "TV (US)",
+          "rating": "TV-14",
+          "reasons": null,
+          "url": "https://www.justwatch.com/us/tv-show/watari-kuns-is-about-to-collapse"
+        }
+      ],
+      "confidence": "medium",
+      "sources": [
+        "https://www.crunchyroll.com/series/G0XHWM18X/watari-kuns--is-about-to-collapse",
+        "https://www.justwatch.com/us/tv-show/watari-kuns-is-about-to-collapse"
+      ]
+    },
+    "watashi-wo-tabetai-hitodenashi": {
+      "ratings": [
+        {
+          "body": "Crunchyroll",
+          "rating": "U/A 16+",
+          "reasons": "Violence, Sexualized Imagery, Suicide",
+          "url": "https://www.crunchyroll.com/series/GT00362279/this-monster-wants-to-eat-me"
+        }
+      ],
+      "confidence": "high",
+      "sources": [
+        "https://www.crunchyroll.com/series/GT00362279/this-monster-wants-to-eat-me"
+      ]
+    },
+    "dragon-ball-super-beerus": {
+      "ratings": [
+        {
+          "body": "Crunchyroll",
+          "rating": "U/A 13+",
+          "reasons": "Violence, Sexualized Imagery, Suggestive Dialogue, Profanity",
+          "url": "https://www.crunchyroll.com/series/GT00389311/dragon-ball-super-beerus"
+        },
+        {
+          "body": "Netflix India",
+          "rating": "U/A 13+",
+          "reasons": null,
+          "url": "https://www.netflix.com/in/title/83189604"
+        },
+        {
+          "body": "TV (US)",
+          "rating": "TV-PG",
+          "reasons": null,
+          "url": "https://www.justwatch.com/us/tv-show/dragon-ball-super-beerus"
+        }
+      ],
+      "confidence": "medium",
+      "sources": [
+        "https://www.crunchyroll.com/series/GT00389311/dragon-ball-super-beerus",
+        "https://www.netflix.com/in/title/83189604",
+        "https://www.justwatch.com/us/tv-show/dragon-ball-super-beerus"
+      ]
+    },
+    "egao-no-taenai-shokuba-desu": {
+      "ratings": [
+        {
+          "body": "Crunchyroll",
+          "rating": "U/A 16+",
+          "reasons": "Smoking, Suggestive Dialogue, Sexualized Imagery",
+          "url": "https://www.crunchyroll.com/series/GT00361926/a-mangakas-weirdly-wonderful-workplace"
+        }
+      ],
+      "confidence": "high",
+      "sources": [
+        "https://www.crunchyroll.com/series/GT00361926/a-mangakas-weirdly-wonderful-workplace"
+      ]
+    },
+    "chiikawa": {
+      "ratings": [
+        {
+          "body": "Netflix India",
+          "rating": "U/A 7+",
+          "reasons": null,
+          "url": "https://www.netflix.com/in/title/81753363"
+        },
+        {
+          "body": "TV (US)",
+          "rating": "TV-G",
+          "reasons": null,
+          "url": "https://www.justwatch.com/us/tv-show/chiikawa"
+        }
+      ],
+      "confidence": "medium",
+      "sources": [
+        "https://www.netflix.com/in/title/81753363",
+        "https://www.justwatch.com/us/tv-show/chiikawa"
+      ]
+    }
+  }
+}

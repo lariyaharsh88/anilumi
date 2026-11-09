@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import OfficialRatings from "@/components/OfficialRatings";
+import { officialRatings, ratingsLine } from "@/lib/ageratings";
 import { fitTitle } from "@/lib/titles";
 import Link from "@/components/Link";
 import { notFound } from "next/navigation";
@@ -37,9 +39,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     ? [`${a.title} Age Rating: ${ageLabel(guide.suitable)}${flags.length ? ` (${flags.join(", ")})` : ""} · Parents' Guide`, `${a.title} Age Rating: ${ageLabel(guide.suitable)}${flags.length ? ` (${flags.join(", ")})` : ""}`, `${a.title} Age Rating: ${ageLabel(guide.suitable)}`, `${a.title} Age Rating`]
     : [`${a.title} Age Rating & Parents' Guide`, `${a.title} Age Rating`]);
   const description = guide
-    ? `${a.title} is best for ${guide.suitable.toLowerCase()}${a.ageRating ? `; officially rated ${a.ageRating}` : ""}. ${guide.areas.filter((x) => x.key !== "sexual-violence" || x.level !== "none").map((x) => `${x.label}: ${LEVEL_WORD[x.level].toLowerCase()}`).join(" · ")}. Spoiler-free, from viewer tags.`
+    ? `${a.title} is best for ${guide.suitable.toLowerCase()}${a.ageRating ? `; Kitsu lists it as ${a.ageRating}` : ""}. ${guide.areas.filter((x) => x.key !== "sexual-violence" || x.level !== "none").map((x) => `${x.label}: ${LEVEL_WORD[x.level].toLowerCase()}`).join(" · ")}. Spoiler-free, from viewer tags.`
     : `Age rating and content notes for ${a.title}.`;
-  return { title, description, alternates: { canonical: `${animePath(a)}/parents-guide` }, ...(guide ? {} : { robots: { index: false } }) };
+  // Official ratings lead the snippet where a platform rates the show: the answer to "<show> age rating".
+  const official = officialRatings(a.slug);
+  const desc = official ? `${a.title} official age rating: ${ratingsLine(official)}. ${description}`.slice(0, 300) : description;
+  return { title, description: desc, alternates: { canonical: `${animePath(a)}/parents-guide` }, ...(guide ? {} : { robots: { index: false } }) };
 }
 
 export default async function ParentsGuidePage({ params }: Props) {
@@ -85,6 +90,8 @@ export default async function ParentsGuidePage({ params }: Props) {
         backdrop={a.cover?.large || null}
         posters={[posterUrl(a, "medium")]}
       />
+
+      <OfficialRatings slug={a.slug} title={a.title} />
 
       {guide && <div className="reveal"><ParentsGuideSection title={a.title} guide={guide} ageRating={a.ageRating} ageRatingGuide={a.ageRatingGuide} /></div>}
 
