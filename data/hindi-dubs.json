@@ -2280,6 +2280,864 @@
     "https://animenewsindia.com/2025/11/18/crunchyroll-brings-all-eight-makoto-shinkai-films-exclusively-to-india-for-the-very-first-time-in-december-2025"
    ],
    "note": "The Hindi dub has streamed on Crunchyroll India since 4 Dec 2025, as part of its Makoto Shinkai collection."
+  },
+  {
+   "s": "youkoso-jitsuryoku-shijou-shugi-no-kyoushitsu-e-tv",
+   "t": "Classroom of the Elite",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Amazon MX Player",
+     "scope": "Season 1 (from 7 May 2025); Season 2 (from 20 Oct 2025) and Season 3 (from 19 Mar 2026) reported",
+     "url": "https://animenewsindia.com/2025/05/08/amazon-mx-player-expands-anime-lineup-with-hindi-dubs-of-classroom-of-the-elite-hunter-x-hunter-kaguya-sama-and-mob-psycho-100"
+    },
+    {
+     "name": "Muse India (YouTube)",
+     "scope": "Season 1-3 (18 Jun-25 Jul 2026, reported)",
+     "url": "https://animemirchi.com/muse-india-hindi-dubbed-anime-list/"
+    }
+   ],
+   "sources": [
+    "https://animenewsindia.com/2025/05/08/amazon-mx-player-expands-anime-lineup-with-hindi-dubs-of-classroom-of-the-elite-hunter-x-hunter-kaguya-sama-and-mob-psycho-100",
+    "https://animemirchi.com/hindi-dubbed-anime-on-mx-player/",
+    "https://animemirchi.com/muse-india-hindi-dubbed-anime-list/"
+   ],
+   "note": "Muse's Hindi dub of Season 1 came to Amazon MX Player (free) on 7 May 2025; a fan tracker lists Seasons 2 and 3 there and a free Muse India YouTube run of Seasons 1-3 in Jun-Jul 2026, not confirmed elsewhere. Crunchyroll's version has no Hindi audio."
+  },
+  {
+   "s": "goblin-slayer",
+   "t": "Goblin Slayer",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Amazon MX Player",
+     "scope": "Season 1 (from May 2025)",
+     "url": "https://animenewsindia.com/2025/05/12/amazon-mx-player-to-release-more-hindi-dubbed-anime-from-may-15-in-india"
+    },
+    {
+     "name": "JioHotstar",
+     "scope": "Season 1 (from 12 Dec 2025, Muse dub, reported)",
+     "url": "https://animemirchi.com/hindi-dubbed-anime-on-jiohotstar/"
+    }
+   ],
+   "sources": [
+    "https://animenewsindia.com/2025/05/12/amazon-mx-player-to-release-more-hindi-dubbed-anime-from-may-15-in-india",
+    "https://animemirchi.com/hindi-dubbed-anime-on-mx-player/",
+    "https://animemirchi.com/hindi-dubbed-anime-on-jiohotstar/"
+   ],
+   "note": "Muse's Hindi dub of Season 1 streams free on Amazon MX Player from May 2025; a fan tracker also lists it on JioHotstar from 12 Dec 2025. Crunchyroll's version and Goblin Slayer II have no Hindi audio."
+  },
+  {
+   "s": "mushoku-tensei-isekai-ittara-honki-dasu",
+   "t": "Mushoku Tensei: Jobless Reincarnation",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Crunchyroll",
+     "scope": "Season 1 and Season 2 Part 1 (from 23 Aug 2024); Season 3 (from 30 Aug 2026); Season 2 Part 2 reported (18 Aug 2026)",
+     "url": "https://www.crunchyroll.com/series/G24H1N3MP"
+    },
+    {
+     "name": "Muse India (YouTube)",
+     "scope": "Season 1 (Jul-Aug 2024), OVA and Season 2 (Oct 2024), reported",
+     "url": "https://animemirchi.com/muse-india-hindi-dubbed-anime-list/"
+    },
+    {
+     "name": "JioHotstar",
+     "scope": "Season 1 (from 14 May 2024 on JioCinema, reported)",
+     "url": "https://animemirchi.com/hindi-dubbed-anime-on-jiohotstar/"
+    }
+   ],
+   "sources": [
+    "https://animenewsnetwork.com/news/2024-08-19/mashle-dr-stone-stone-wars-5-more-anime-get-indian-language-dubs/.214374",
+    "https://www.animenewsnetwork.com/news/2026-07-17/hindi-dubs-for-tomb-raider-king-black-torch-more-anime-stream-on-crunchyroll/.239722",
+    "https://animemirchi.com/complete-crunchyroll-hindi-dubbed-anime-list/",
+    "https://www.livechart.me/anime/11115/streams",
+    "https://animemirchi.com/muse-india-hindi-dubbed-anime-list/",
+    "https://animemirchi.com/hindi-dubbed-anime-on-jiohotstar/"
+   ],
+   "note": "Crunchyroll added Hindi for Season 1 and Season 2 on 23 Aug 2024 and streams Season 3 in Hindi from 30 Aug 2026; a fan tracker dates Season 2 Part 2 Hindi to 18 Aug 2026. The same Muse dub is reported on Muse India YouTube (2024) and on JioCinema, now JioHotstar (Season 1, May 2024)."
+  },
+  {
+   "s": "masamune-kun-no-revenge",
+   "t": "Masamune-kun's Revenge",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Crunchyroll",
+     "scope": "Season 2, Masamune-kun's Revenge R (simuldub from 3 Jul 2023)",
+     "url": "https://www.crunchyroll.com/series/GYX02P3MR"
+    }
+   ],
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2024-04-05/netflix-adds-masamune-kun-revenge-gto-great-teacher-onizuka-anime-in-india/.209486",
+    "https://animemirchi.com/complete-crunchyroll-hindi-dubbed-anime-list/",
+    "https://www.livechart.me/anime/11170/streams"
+   ],
+   "note": "Crunchyroll streamed Season 2 (R) in India with a Hindi dub as it aired, from 3 Jul 2023. No Hindi dub was found for Season 1."
+  },
+  {
+   "s": "sk8",
+   "t": "SK8 the Infinity",
+   "status": "available",
+   "confidence": "medium",
+   "platforms": [
+    {
+     "name": "Crunchyroll",
+     "scope": "Season 1 (from 12 Jun 2025, reported)",
+     "url": "https://www.crunchyroll.com/series/G5PHNM434"
+    }
+   ],
+   "sources": [
+    "https://animemirchi.com/complete-crunchyroll-hindi-dubbed-anime-list/",
+    "https://www.livechart.me/anime/10149/streams"
+   ],
+   "note": "A fan tracker lists Crunchyroll's Hindi dub from 12 Jun 2025 and LiveChart lists Hindi among Crunchyroll's audio tracks; no official announcement was found. The Extra Part OVA has no Hindi."
+  },
+  {
+   "s": "dragon-ball-z-movie-14-kami-to-kami",
+   "t": "Dragon Ball Z: Battle of Gods",
+   "status": "available",
+   "confidence": "medium",
+   "platforms": [
+    {
+     "name": "Cartoon Network India",
+     "scope": "Battle of Gods (film), TV premiere 13 Oct 2024",
+     "url": "https://indiantelevision.com/?p=3636"
+    }
+   ],
+   "sources": [
+    "https://indiantelevision.com/?p=3636",
+    "https://animemirchi.com/anime-movies-on-cartoon-network-india/"
+   ],
+   "note": "Cartoon Network India gave the film its Indian TV premiere on 13 Oct 2024; a fan tracker says it aired in Hindi, Tamil, Telugu, Kannada and Malayalam. No Hindi release of Resurrection 'F' was found."
+  },
+  {
+   "s": "rurouni-kenshin-meiji-kenkaku-romantan-2023",
+   "t": "Rurouni Kenshin (2023)",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Crunchyroll",
+     "scope": "Season 1 (from 4 Aug 2023); Season 2, Kyoto Disturbance (from 25 Oct 2024, reported)",
+     "url": "https://www.crunchyroll.com/series/G0XHWM1NK"
+    }
+   ],
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2023-08-05/crunchyroll-adds-hindi-dubs-for-new-rurouni-kenshin-reign-of-the-seven-spellblades-anime/.200989",
+    "https://animemirchi.com/complete-crunchyroll-hindi-dubbed-anime-list/",
+    "https://www.livechart.me/anime/10958/streams",
+    "https://www.livechart.me/anime/12458/streams"
+   ],
+   "note": "Crunchyroll began streaming a Hindi dub of the 2023 series on 4 Aug 2023; a fan tracker and LiveChart list Hindi for Season 2 (Kyoto Disturbance) from 25 Oct 2024. The 1996 series has no Hindi dub."
+  },
+  {
+   "s": "btooom",
+   "t": "BTOOOM!",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": "No official Hindi dub found; it isn't on any official Indian streaming service."
+  },
+  {
+   "s": "higurashi-no-naku-koro-ni",
+   "t": "Higurashi: When They Cry",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": "No official Hindi dub found for any season."
+  },
+  {
+   "s": "prison-school",
+   "t": "Prison School",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": "No official Hindi dub found."
+  },
+  {
+   "s": "wotaku-ni-koi-wa-muzukashii",
+   "t": "Wotakoi: Love Is Hard for Otaku",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": "No official Hindi dub found."
+  },
+  {
+   "s": "akira",
+   "t": "Akira",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": "No official Hindi dub found for the 1988 film."
+  },
+  {
+   "s": "k-project",
+   "t": "K",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": "No official Hindi dub found."
+  },
+  {
+   "s": "oreimo",
+   "t": "Oreimo",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [
+    "https://www.livechart.me/anime/3251/streams"
+   ],
+   "note": "Streams on Crunchyroll in Japanese with subtitles; no Hindi dub found."
+  },
+  {
+   "s": "devilman-crybaby",
+   "t": "Devilman: Crybaby",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [
+    "https://www.livechart.me/anime/2585/streams",
+    "https://animemirchi.com/hindi-dubbed-anime-on-netflix-india/"
+   ],
+   "note": "Streams on Netflix India, but its dubs do not include Hindi."
+  },
+  {
+   "s": "kamisama-hajimemashita-kiss",
+   "t": "Kamisama Kiss",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": "No official Hindi dub found."
+  },
+  {
+   "s": "plastic-memories",
+   "t": "Plastic Memories",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": "No official Hindi dub found."
+  },
+  {
+   "s": "fruits-basket-2019",
+   "t": "Fruits Basket",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [
+    "https://www.livechart.me/anime/8356/streams",
+    "https://www.livechart.me/anime/9605/streams"
+   ],
+   "note": "Streams in India on Crunchyroll, Netflix and Prime Video, but none lists a Hindi dub."
+  },
+  {
+   "s": "free",
+   "t": "Free! - Iwatobi Swim Club",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [
+    "https://www.livechart.me/anime/18/streams"
+   ],
+   "note": "Streams on Crunchyroll; its dubs do not include Hindi."
+  },
+  {
+   "s": "serial-experiments-lain",
+   "t": "Serial Experiments Lain",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": "No official Hindi dub found."
+  },
+  {
+   "s": "given",
+   "t": "Given",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": "No official Hindi dub found for the series or films."
+  },
+  {
+   "s": "yu-yu-hakusho",
+   "t": "Yu Yu Hakusho",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": "No official Hindi dub found for the anime. Netflix's live-action series is a separate show."
+  },
+  {
+   "s": "ao-haru-ride",
+   "t": "Blue Spring Ride",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [
+    "https://animemirchi.com/ani-one-india-anime-list/"
+   ],
+   "note": "Ani-One India streamed it on YouTube with English subtitles only (2025); no Hindi dub found."
+  },
+  {
+   "s": "zero-no-tsukaima",
+   "t": "The Familiar of Zero",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [
+    "https://www.livechart.me/anime/3592/streams"
+   ],
+   "note": "Muse Asia streams it with subtitles only; no Hindi dub found."
+  },
+  {
+   "s": "summer-wars",
+   "t": "Summer Wars",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": "No official Hindi dub found."
+  },
+  {
+   "s": "berserk",
+   "t": "Berserk",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [
+    "https://www.livechart.me/anime/3627/streams"
+   ],
+   "note": "No official Hindi dub found for the 1997 series, the films or the 2016 series. Berserk of Gluttony, which has a Hindi dub, is an unrelated anime."
+  },
+  {
+   "s": "inuyasha",
+   "t": "InuYasha",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [
+    "https://www.livechart.me/anime/3684/streams"
+   ],
+   "note": "Streams on Netflix India, but its dubs do not include Hindi."
+  },
+  {
+   "s": "the-world-god-only-knows",
+   "t": "The World God Only Knows",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": "No official Hindi dub found."
+  },
+  {
+   "s": "watashi-ga-motenai-no-wa-dou-kangaetemo-omaera-ga-warui",
+   "t": "WataMote: No Matter How I Look at It, It's You Guys' Fault I'm Not Popular!",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": "No official Hindi dub found."
+  },
+  {
+   "s": "katanagatari",
+   "t": "Katanagatari",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": "No official Hindi dub found."
+  },
+  {
+   "s": "accel-world",
+   "t": "Accel World",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [
+    "https://www.livechart.me/anime/1095/streams"
+   ],
+   "note": "Muse Asia streams it with subtitles only; no Hindi dub found."
+  },
+  {
+   "s": "laputa-castle-in-the-sky",
+   "t": "Castle in the Sky",
+   "status": "none_found",
+   "confidence": "high",
+   "platforms": [],
+   "sources": [
+    "https://www.netflix.com/in/title/60027393",
+    "https://animemirchi.com/hindi-dubbed-anime-on-netflix-india/"
+   ],
+   "note": "Streams on Netflix India with English and Japanese audio only; it is not one of the six Ghibli films Netflix dubbed in Hindi."
+  },
+  {
+   "s": "youjo-senki",
+   "t": "Saga of Tanya the Evil",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [
+    "https://www.livechart.me/anime/10651/streams"
+   ],
+   "note": "No official Hindi dub found; Season 2 streams on Crunchyroll and Anime Times without Hindi audio."
+  },
+  {
+   "s": "eden-of-the-east",
+   "t": "Eden of the East",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [
+    "https://www.livechart.me/anime/3622/streams"
+   ],
+   "note": "Streams on Crunchyroll with an English dub only."
+  },
+  {
+   "s": "gate-jieitai-kanochi-nite-kaku-tatakaeri",
+   "t": "GATE",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [
+    "https://www.livechart.me/anime/1335/streams"
+   ],
+   "note": "Streams on Netflix India without a Hindi dub."
+  },
+  {
+   "s": "rakudai-kishi-no-cavalry",
+   "t": "Chivalry of a Failed Knight",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": "No official Hindi dub found."
+  },
+  {
+   "s": "trinity-seven",
+   "t": "Trinity Seven",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [
+    "https://www.livechart.me/anime/441/streams"
+   ],
+   "note": "Streams on Anime Times (Prime Video), but not in Hindi."
+  },
+  {
+   "s": "akagami-no-shirayuki-hime",
+   "t": "Snow White with the Red Hair",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": "No official Hindi dub found."
+  },
+  {
+   "s": "kiznaiver",
+   "t": "KIZNAIVER",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": "No official Hindi dub found."
+  },
+  {
+   "s": "shimoneta-to-iu-gainen-ga-sonzai-shinai-taikutsu-na-sekai",
+   "t": "Shimoneta: A Boring World Where the Concept of Dirty Jokes Doesn't Exist",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": "No official Hindi dub found."
+  },
+  {
+   "s": "perfect-blue",
+   "t": "Perfect Blue",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": "No official Hindi dub found."
+  },
+  {
+   "s": "blood-lad",
+   "t": "Blood Lad",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": "No official Hindi dub found."
+  },
+  {
+   "s": "orange",
+   "t": "Orange",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [
+    "https://animemirchi.com/ani-one-india-anime-list/"
+   ],
+   "note": "Ani-One India streamed it on YouTube with English subtitles only (2025); no Hindi dub found."
+  },
+  {
+   "s": "koutetsujou-no-kabaneri",
+   "t": "Kabaneri of the Iron Fortress",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": "No official Hindi dub found."
+  },
+  {
+   "s": "nagi-no-asukara",
+   "t": "A Lull in the Sea",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": "No official Hindi dub found."
+  },
+  {
+   "s": "yamada-kun-to-7-nin-no-majo-tv",
+   "t": "Yamada-kun and the Seven Witches",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": "Ani-One Asia streams it with subtitles; no Hindi dub found."
+  },
+  {
+   "s": "lucky-star",
+   "t": "Lucky Star",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": "No official Hindi dub found."
+  },
+  {
+   "s": "baka-to-test-to-shoukanjuu",
+   "t": "Baka and Test: Summon the Beasts",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": "No official Hindi dub found."
+  },
+  {
+   "s": "claymore",
+   "t": "Claymore",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [
+    "https://www.livechart.me/anime/3620/streams"
+   ],
+   "note": "Streams on Netflix India without a Hindi dub."
+  },
+  {
+   "s": "ore-monogatari",
+   "t": "My Love Story!!",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [
+    "https://www.livechart.me/anime/1289/streams"
+   ],
+   "note": "Streams on Crunchyroll in Japanese with subtitles; no Hindi dub found."
+  },
+  {
+   "s": "amagi-brilliant-park",
+   "t": "Amagi Brilliant Park",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": "No official Hindi dub found."
+  },
+  {
+   "s": "ergo-proxy",
+   "t": "Ergo Proxy",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [
+    "https://www.livechart.me/anime/3603/streams"
+   ],
+   "note": "Streams on Netflix India; its dubs do not include Hindi."
+  },
+  {
+   "s": "d-gray-man",
+   "t": "D.Gray-man",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": "No official Hindi dub found."
+  },
+  {
+   "s": "sakamoto-desu-ga",
+   "t": "Haven't You Heard? I'm Sakamoto",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": "No official Hindi dub found. Sakamoto Days, which has a Hindi dub on Netflix, is a different anime."
+  },
+  {
+   "s": "hai-to-gensou-no-grimgar",
+   "t": "Grimgar, Ashes and Illusions",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": "No official Hindi dub found."
+  },
+  {
+   "s": "sukitte-ii-na-yo",
+   "t": "Say \"I Love You\".",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": "No official Hindi dub found."
+  },
+  {
+   "s": "natsume-yuujinchou",
+   "t": "Natsume's Book of Friends",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [
+    "https://www.livechart.me/anime/1154/streams"
+   ],
+   "note": "Streams on Crunchyroll with an English dub only."
+  },
+  {
+   "s": "kore-wa-zombie-desu-ka",
+   "t": "Is This a Zombie?",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [
+    "https://www.livechart.me/anime/3300/streams"
+   ],
+   "note": "Streams on Netflix India without a Hindi dub."
+  },
+  {
+   "s": "bakuman",
+   "t": "Bakuman.",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": "No official Hindi dub found."
+  },
+  {
+   "s": "zetsuen-no-tempest",
+   "t": "Blast of Tempest",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [
+    "https://www.livechart.me/anime/965/streams",
+    "https://animemirchi.com/hindi-dubbed-anime-on-jiohotstar/"
+   ],
+   "note": "Streams on JioHotstar and Muse Asia with subtitles; no Hindi dub found."
+  },
+  {
+   "s": "rosario-vampire",
+   "t": "Rosario + Vampire",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": "No official Hindi dub found."
+  },
+  {
+   "s": "bunny-drop",
+   "t": "Bunny Drop",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": "No official Hindi dub found."
+  },
+  {
+   "s": "sankarea",
+   "t": "Sankarea: Undying Love",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": "No official Hindi dub found."
+  },
+  {
+   "s": "rurouni-kenshin",
+   "t": "Rurouni Kenshin (1996)",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": "No official Hindi dub found for the 1996 series or its OVAs. The 2023 remake has a Hindi dub on Crunchyroll."
+  },
+  {
+   "s": "bakemono-no-ko",
+   "t": "The Boy and the Beast",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": "No official Hindi dub found."
+  },
+  {
+   "s": "little-witch-academia-tv",
+   "t": "Little Witch Academia",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [
+    "https://www.livechart.me/anime/2227/streams",
+    "https://animemirchi.com/hindi-dubbed-anime-on-netflix-india/"
+   ],
+   "note": "Streams on Netflix India, but its dubs do not include Hindi."
+  },
+  {
+   "s": "aldnoah-zero",
+   "t": "Aldnoah.Zero",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [
+    "https://www.livechart.me/anime/443/streams",
+    "https://animemirchi.com/complete-crunchyroll-hindi-dubbed-anime-list/"
+   ],
+   "note": "Streams on Crunchyroll; no Hindi dub found."
+  },
+  {
+   "s": "monster-musume-no-iru-nichijou",
+   "t": "Monster Musume: Everyday Life with Monster Girls",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": "No official Hindi dub found."
+  },
+  {
+   "s": "3-gatsu-no-lion",
+   "t": "March Comes In Like a Lion",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [
+    "https://www.livechart.me/anime/1835/streams",
+    "https://animemirchi.com/complete-crunchyroll-hindi-dubbed-anime-list/"
+   ],
+   "note": "Streams on Crunchyroll; no Hindi dub found."
+  },
+  {
+   "s": "is-infinite-stratos",
+   "t": "Infinite Stratos",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": "No official Hindi dub found."
+  },
+  {
+   "s": "strike-the-blood",
+   "t": "Strike the Blood",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": "No official Hindi dub found."
+  },
+  {
+   "s": "shiki-anime",
+   "t": "Shiki",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": "No official Hindi dub found."
+  },
+  {
+   "s": "nana",
+   "t": "Nana",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [
+    "https://www.livechart.me/anime/3640/streams"
+   ],
+   "note": "Streams on Netflix India without a Hindi dub."
+  },
+  {
+   "s": "91-days",
+   "t": "91 Days",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": "No official Hindi dub found."
+  },
+  {
+   "s": "school-days",
+   "t": "School Days",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [
+    "https://www.livechart.me/anime/3625/streams"
+   ],
+   "note": "Streams on Crunchyroll in Japanese with subtitles; no Hindi dub found."
+  },
+  {
+   "s": "nausicaa-of-the-valley-of-the-wind",
+   "t": "Nausicaä of the Valley of the Wind",
+   "status": "none_found",
+   "confidence": "high",
+   "platforms": [],
+   "sources": [
+    "https://www.netflix.com/in/title/70019062",
+    "https://animemirchi.com/hindi-dubbed-anime-on-netflix-india/"
+   ],
+   "note": "Streams on Netflix India with English and Japanese audio only; it is not one of the six Ghibli films Netflix dubbed in Hindi."
+  },
+  {
+   "s": "problem-children-are-coming-from-another-world-aren-t-they",
+   "t": "Problem Children Are Coming from Another World, Aren't They?",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [],
+   "note": "No official Hindi dub found."
+  },
+  {
+   "s": "hajime-no-ippo",
+   "t": "Hajime no Ippo",
+   "status": "none_found",
+   "confidence": "medium",
+   "platforms": [],
+   "sources": [
+    "https://www.livechart.me/anime/3731/streams"
+   ],
+   "note": "Streams on Netflix India; its dubs do not include Hindi."
   }
  ]
 }
