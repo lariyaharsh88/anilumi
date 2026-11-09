@@ -3,7 +3,8 @@ import { notFound } from "next/navigation";
 import Link from "@/components/Link";
 import { getAnimeBySlug, animePath, posterUrl } from "@/lib/kitsu";
 import { continuationFor, continuationSlugs, startAt } from "@/lib/filler";
-import { amazonSearch, affiliateRel } from "@/lib/affiliate";
+import AmazonLink from "@/components/AmazonLink";
+import AffiliateNote from "@/components/AffiliateNote";
 import PageHero from "@/components/PageHero";
 import { pageAbout, reviewedBy } from "@/lib/ld";
 import CheckedBy from "@/components/CheckedBy";
@@ -72,10 +73,11 @@ export default async function MangaPage({ params }: Props) {
         <h2 id="start-h" className="mt-1 text-2xl font-bold text-ink">{start.replace(/^./, (c) => c.toUpperCase())}</h2>
         <p className="mt-2 max-w-2xl text-sm leading-6 text-ink/90">That&apos;s the first {cont.chapter ? "chapter" : "volume"} the {a.title} anime hasn&apos;t adapted yet.{cont.note ? ` ${cont.note}` : ""}</p>
         <div className="mt-4 flex flex-wrap items-center gap-3">
-          <a href={amazonSearch(cont.search)} target="_blank" rel={affiliateRel} className="btn-outline">📚 Find the {medium}</a>
+          <AmazonLink query={cont.search} source="manga-page" className="btn-outline">📚 Find the {medium}</AmazonLink>
           <Link href={`${animePath(a)}/next-season`} className="chip">Next season status</Link>
           <Link href={`/watch-order/${a.slug}`} className="chip">Watch order</Link>
         </div>
+        <AffiliateNote className="mt-3" />
         {cont.reviewedOn && <CheckedBy date={cont.reviewedOn} className="mt-4" />}
         {draft && <p className="mt-4 text-xs text-muted">This continuation point is a draft and is still being checked against the {medium}. Flip back a chapter or two if something feels skipped.</p>}
       </section>

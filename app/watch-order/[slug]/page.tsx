@@ -18,7 +18,9 @@ import AdSlot from "@/components/AdSlot";
 import WatchChecklist from "@/components/WatchChecklist";
 import { hasHindi, hindiPath } from "@/lib/hindi";
 import { noteFor } from "@/data/notes";
-import { amazonSearch, affiliateRel, streamLink } from "@/lib/affiliate";
+import { affiliateRel, streamLink } from "@/lib/affiliate";
+import AmazonLink from "@/components/AmazonLink";
+import AffiliateNote from "@/components/AffiliateNote";
 import { streamCoverage, oneLinkPerSite } from "@/lib/wostreams";
 import { fillerFor } from "@/lib/filler";
 import { adaptationFor, shortRange } from "@/lib/mangaseasons";
@@ -171,9 +173,10 @@ export default async function WatchOrderPage({ params }: Props) {
       </div>
 
       <div className="mt-4 flex flex-wrap gap-2">
-        <a href={amazonSearch(`${name} manga`)} target="_blank" rel={affiliateRel} className="btn-outline">📚 Read the manga</a>
-        <a href={amazonSearch(`${name} blu-ray`)} target="_blank" rel={affiliateRel} className="btn-outline">💿 Blu-ray box sets</a>
+        <AmazonLink query={`${name} manga`} source="watch-order" className="btn-outline">📚 Read the manga</AmazonLink>
+        <AmazonLink query={`${name} blu-ray`} dept="video" source="watch-order" className="btn-outline">💿 Blu-ray box sets</AmazonLink>
       </div>
+      <AffiliateNote className="mt-2" />
       <AdSlot slot="watch-order-top" />
 
       {(() => {

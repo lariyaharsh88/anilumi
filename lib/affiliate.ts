@@ -1,21 +1,41 @@
 /**
- * Affiliate plumbing. Everything is env-driven so links degrade to plain URLs when unset.
- *  NEXT_PUBLIC_AMAZON_TAG       e.g. anilumi-20  → manga / Blu-ray search links carry the tag
+ * Affiliate plumbing. Links degrade to plain URLs while a tag is unset.
+ *  Amazon Associates tags, one per store (they're public, so they live here; env overrides for testing):
+ *    NEXT_PUBLIC_AMAZON_TAG       amazon.com, e.g. anilumi-20
+ *    NEXT_PUBLIC_AMAZON_TAG_IN    amazon.in,  e.g. anilumi-21
  *  NEXT_PUBLIC_AFFILIATE_WRAP   e.g. https://go.skimresources.com/?id=XXX&url=  → wraps streaming URLs
  */
-const AMAZON_TAG = process.env.NEXT_PUBLIC_AMAZON_TAG || "";
+export type Store = "us" | "in";
+
+// From Associates Central (affiliate-program.amazon.com and affiliate.amazon.in), once the accounts are approved.
+const DEFAULT_TAGS: Record<Store, string> = { us: "", in: "" };
+const TAGS: Record<Store, string> = {
+  us: process.env.NEXT_PUBLIC_AMAZON_TAG || DEFAULT_TAGS.us,
+  in: process.env.NEXT_PUBLIC_AMAZON_TAG_IN || DEFAULT_TAGS.in,
+};
+const HOST: Record<Store, string> = { us: "www.amazon.com", in: "www.amazon.in" };
 const WRAP = process.env.NEXT_PUBLIC_AFFILIATE_WRAP || "";
 
 export function streamLink(url: string): string {
   return WRAP ? `${WRAP}${encodeURIComponent(url)}` : url;
 }
 
-export function amazonSearch(query: string): string {
-  const u = new URL("https://www.amazon.com/s");
+// Search departments: books (manga, light novels) and video (Blu-ray), which each store names differently.
+const DEPT: Record<"books" | "video", Record<Store, string>> = { books: { us: "stripbooks", in: "stripbooks" }, video: { us: "movies-tv", in: "dvd" } };
+
+/** A books (or video) search on one Amazon store, with that store's tag when set. Pure. */
+export function amazonSearch(query: string, store: Store = "us", dept: "books" | "video" = "books"): string {
+  const u = new URL(`https://${HOST[store]}/s`);
   u.searchParams.set("k", query);
-  u.searchParams.set("i", "stripbooks");
-  if (AMAZON_TAG) u.searchParams.set("tag", AMAZON_TAG);
+  u.searchParams.set("i", DEPT[dept][store]);
+  if (TAGS[store]) u.searchParams.set("tag", TAGS[store]);
   return u.toString();
 }
+
+/** Whether any Amazon link earns a commission (then the Associates disclosure must show). */
+export const amazonTagged = () => Boolean(TAGS.us || TAGS.in);
+
+/** Amazon store for a visitor's time zone: India gets amazon.in, everyone else amazon.com. Pure. */
+export const storeForZone = (tz: string | undefined): Store => (tz === "Asia/Kolkata" || tz === "Asia/Calcutta" ? "in" : "us");
 
 export const affiliateRel = "noopener nofollow sponsored";

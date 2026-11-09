@@ -25,6 +25,8 @@ export default function Privacy() {
         <p>To show community scores, send the emails you asked for, reply to enquiries and keep spam out. Your consent is the legal basis for emails; you can withdraw it at any time.</p>
         <h2>Who processes it</h2>
         <p>Data is stored with MongoDB Atlas. Emails are sent through Resend, and you confirm your address before we send anything else. Push alerts go through your browser&apos;s own push service (Google, Mozilla, Apple or Microsoft). Visits are measured with Google Analytics, and Microsoft Clarity records anonymised clicks, scrolling and page interactions (as heatmaps and session replays) so we can see which pages are hard to use. Clarity masks text you type. We don&apos;t sell or rent your data.</p>
+        <h2>Affiliate links</h2>
+        <p>Some links to Amazon (manga, light novels, Blu-ray) are affiliate links: as an Amazon Associate, AniLumi earns from qualifying purchases, at no extra cost to you. Amazon may set its own cookies when you follow one. Visitors in India are sent to amazon.in and everyone else to amazon.com, based on your device&apos;s time zone, which never leaves your browser.</p>
         <h2>Your choices</h2>
         <ul>
           <li>Every email has a one-click unsubscribe link.</li>
@@ -35,7 +37,7 @@ export default function Privacy() {
         </ul>
         <h2>Retention</h2>
         <p>Email addresses are kept until you unsubscribe or ask us to delete them. Push alert addresses are kept until you turn alerts off or your browser stops accepting them. Enquiries are kept for up to two years.</p>
-        <p className="text-sm text-muted">Last updated 4 November 2026.</p>
+        <p className="text-sm text-muted">Last updated 9 November 2026.</p>
       </div>
     </div>
   );

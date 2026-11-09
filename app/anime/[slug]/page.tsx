@@ -42,7 +42,8 @@ import { getAniListInsight, dropStats, genreDropBenchmark, parentsGuide, type Pa
 import YouTubeFacade from "@/components/YouTubeFacade";
 import StatTiles from "@/components/viz/StatTiles";
 import BarChart from "@/components/viz/BarChart";
-import { amazonSearch, affiliateRel } from "@/lib/affiliate";
+import AmazonLink from "@/components/AmazonLink";
+import AffiliateNote from "@/components/AffiliateNote";
 import LocalTime from "@/components/LocalTime";
 import Backdrop from "@/components/fx/Backdrop";
 import ScoreRing from "@/components/fx/ScoreRing";
@@ -434,11 +435,12 @@ export default async function AnimePage({ params }: Props) {
               animeId={a.id}
               title={a.title}
               links={a.streaming.map((x) => ({ id: x.id, url: x.url, site: x.site, dubs: x.dubs, subs: x.subs }))}
-              extra={<a href={amazonSearch(`${a.title} manga`)} target="_blank" rel={affiliateRel} className="btn-outline">📚 Manga on Amazon</a>}
+              extra={<AmazonLink query={`${a.title} manga`} source="anime" className="btn-outline">📚 Manga on Amazon</AmazonLink>}
             />
             {a.streaming.length > 0 && <p className="mt-3 text-[11px] text-muted">Official, legal streams. Catalogues differ by country. · <Refreshed iso={refreshed} /></p>}
+            <AffiliateNote className="mt-1" />
             {a.streaming.length === 0 && (<>
-              <p className="mt-2 text-sm text-muted">No licensed streams listed yet. <a href={amazonSearch(`${a.title} manga`)} target="_blank" rel={affiliateRel} className="text-violet hover:underline">Read the manga on Amazon →</a></p>
+              <p className="mt-2 text-sm text-muted">No licensed streams listed yet. <AmazonLink query={`${a.title} manga`} source="anime" className="text-violet hover:underline">Read the manga on Amazon →</AmazonLink></p>
               <p className="mt-2 text-[11px] text-muted"><Refreshed iso={refreshed} /></p>
             </>)}
           </div>

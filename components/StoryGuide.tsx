@@ -2,7 +2,8 @@ import Link from "@/components/Link";
 import type { FillerInfo } from "@/lib/filler";
 import type { ContinueEntry } from "@/data/filler";
 import { formatRanges, fillerSource } from "@/lib/filler";
-import { amazonSearch, affiliateRel } from "@/lib/affiliate";
+import AmazonLink from "@/components/AmazonLink";
+import AffiliateNote from "@/components/AffiliateNote";
 
 const Badge = ({ label, tone }: { label: string; tone: "ok" | "draft" }) => (
   <span className={`ml-2 rounded px-1.5 py-0.5 text-[10px] font-semibold uppercase ${tone === "draft" ? "bg-[#fab219]/15 text-[#fab219]" : "bg-emerald-400/15 text-emerald-300"}`}>{label}</span>
@@ -42,9 +43,10 @@ export default function StoryGuide({ title, animeHref, filler, episodeLength, co
           </p>
           {cont.note && <p className="mt-1 text-sm text-muted">{cont.note}</p>}
           <div className="mt-3 flex flex-wrap items-center gap-3">
-            <a href={amazonSearch(cont.search)} target="_blank" rel={affiliateRel} className="btn-outline">📚 Get the {cont.medium}</a>
+            <AmazonLink query={cont.search} source="story-guide" className="btn-outline">📚 Get the {cont.medium}</AmazonLink>
             <Link href={`${animeHref}/manga`} className="text-sm text-violet hover:underline">Where the anime ends →</Link>
           </div>
+          <AffiliateNote className="mt-2" />
           {!cont.reviewed && <p className="mt-2 text-xs text-muted">Chapter numbers are being verified against the {cont.medium}.</p>}
         </div>
       )}

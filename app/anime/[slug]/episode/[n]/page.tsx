@@ -57,7 +57,7 @@ async function load(slug: string, nStr: string) {
   if (!episode) return null;
   const airIso = ahead ? ahead.at : isNext && a.nextRelease ? a.nextRelease : episode.airdate;
   const upcoming = !airIso || isFuture(airIso);
-  return { a, episode, n, count, lastAired, upcoming, isNext, airIso, notice, skips, nextScheduled };
+  return { a, episode, n, count, lastAired, reliable, upcoming, isNext, airIso, notice, skips, nextScheduled };
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -83,7 +83,9 @@ export default async function EpisodePage({ params }: Props) {
   const { slug, n: nStr } = await params;
   const d = await load(slug, nStr);
   if (!d) notFound();
-  const { a, episode, n, count, lastAired, upcoming, isNext, airIso, notice, skips, nextScheduled } = d;
+  const { a, episode, n, count, lastAired, reliable, upcoming, isNext, airIso, notice, skips, nextScheduled } = d;
+  // One of the latest few episodes: name the next one in the alert offer (older episodes get a general offer).
+  const nextUp = reliable && n <= lastAired && n >= lastAired - 2 ? lastAired + 1 : null;
   const when = airIso ? fmtDate(airIso, { weekday: "long", month: "long", day: "numeric", year: "numeric" }) : null;
   const whenTime = airIso && airIso.length > 10 ? fmtDate(airIso, { hour: "numeric", minute: "2-digit", timeZone: "Asia/Tokyo" }) : null;
   const hasPrev = n > 1;
@@ -186,6 +188,11 @@ export default async function EpisodePage({ params }: Props) {
           {!upcoming && <EpisodeWatched className="mt-4" ep={n} item={watchItem} />}
           {!upcoming && skips && <SkipGuide s={skips} episode={n} />}
           {dbEnabled() && !upcoming && <EpisodeReactions animeId={a.id} ep={n} />}
+          {/* Just watched an episode of a show still airing: the moment to offer the next one. */}
+          {dbEnabled() && !upcoming && a.status === "current" && (<>
+            <PushButton className="mt-5" topic={animeTopic(a.id)} source="episode-next-alert" label={nextUp ? `Alert me when episode ${nextUp} airs` : "Alert me when new episodes air"} onLabel="Episode alerts on" />
+            <LeadForm className="mt-4" kind="alert" source="episode-next-alert" animeId={a.id} animeTitle={a.title} title={nextUp ? `🔔 Email me when episode ${nextUp} is out` : `🔔 Email me when a new ${a.title} episode is out`} blurb={`One email per new ${a.title} episode, at air time. Unsubscribe any time.`} />
+          </>)}
           {dbEnabled() && upcoming && a.status !== "finished" && (<>
             <PushButton className="mt-5" topic={animeTopic(a.id)} source="episode-alert" label={`Alert me when episode ${n} airs`} onLabel="Episode alerts on" />
             <LeadForm className="mt-4" kind="alert" source="episode-alert" animeId={a.id} animeTitle={a.title} title={`🔔 Email me when episode ${n} airs`} blurb={`One email when ${a.title} episode ${n} is out, then one per new episode. Unsubscribe any time.`} />
