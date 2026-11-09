@@ -17,3 +17,8 @@ test("amazon: books and Blu-ray searches use each store's department", () => {
   assert.equal(new URL(amazonSearch("Naruto blu-ray", "us", "video")).searchParams.get("i"), "movies-tv");
   assert.equal(new URL(amazonSearch("Naruto blu-ray", "in", "video")).searchParams.get("i"), "dvd");
 });
+
+test("amazon: the amazon.in tag rides on India links only", () => {
+  assert.equal(new URL(amazonSearch("Naruto", "in")).searchParams.get("tag"), "harshmedia98-21");
+  assert.equal(new URL(amazonSearch("Naruto", "us")).searchParams.get("tag"), process.env.NEXT_PUBLIC_AMAZON_TAG || null);
+});
