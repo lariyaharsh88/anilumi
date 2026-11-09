@@ -7,15 +7,18 @@ import { KIND_CLASS } from "@/components/HindiDub";
 import { getAnimeBySlug, posterUrl } from "@/lib/kitsu";
 import { itemList } from "@/lib/ld";
 import { byPlatform, dubDate, dubHref, hindiDubbed, notDubbed, platformKind, type PlatformKind } from "@/lib/hindidub";
+import { fitTitle } from "@/lib/titles";
 
 export const revalidate = 86400;
 const KIND: Record<PlatformKind, string> = { free: "Free", subscription: "Subscription", tv: "TV channel" };
 
 export function generateMetadata(): Metadata {
   const n = hindiDubbed().length;
+  const free = hindiDubbed().filter((d) => d.platforms.some((p) => platformKind(p.name) === "free")).length;
+  // Searchers ask "where to watch anime in Hindi for free": the title answers that the list includes free, legal options.
   return {
-    title: `Hindi Dubbed Anime List (${new Date().getFullYear()}): ${n} Anime and Where to Watch Them`,
-    description: `${n} popular anime with an official Hindi dub and the platform for each: Crunchyroll, Netflix, Prime Video, JioHotstar, free YouTube channels and TV. Checked ${dubDate()}.`,
+    title: fitTitle([`Hindi Dubbed Anime List (${new Date().getFullYear()}): ${n} Anime, ${free} Free`, `Hindi Dubbed Anime (${new Date().getFullYear()}): ${n} Anime, ${free} Free`, `Hindi Dubbed Anime List (${new Date().getFullYear()})`]),
+    description: `${n} anime with an official Hindi dub and where to watch each: ${free} free and legal on YouTube (Muse India, Ani-One India) and MX Player, the rest on Crunchyroll, Netflix, Prime Video, JioHotstar and TV. Checked ${dubDate()}.`,
     alternates: { canonical: "/hindi-dub", languages: { en: "/hindi-dub", hi: "/hi/hindi-dub", "x-default": "/hindi-dub" } },
   };
 }
@@ -53,10 +56,26 @@ export default async function HindiDubHub() {
       >
         <p className="flex flex-wrap gap-2 text-sm">
           <Link href="/hi/hindi-dub" className="chip" hrefLang="hi">हिंदी में देखें</Link>
+          {free.length > 0 && <a href="#free" className="chip">Free and legal ({free.length})</a>}
           <a href="#by-platform" className="chip">By platform</a>
           <a href="#no-dub" className="chip">No Hindi dub yet</a>
         </p>
       </PageHero>
+
+      {free.length > 0 && (
+        <section id="free" className="card reveal mt-10 scroll-mt-24 border-emerald-500/40 bg-emerald-500/[.06] p-4" aria-labelledby="free-h">
+          <h2 id="free-h" className="font-semibold text-ink">Watch anime in Hindi for free, legally</h2>
+          <p className="mt-1 text-sm text-ink/80">These {free.length} official Hindi dubs cost nothing: they stream on the licensors&apos; own YouTube channels or ad-supported MX Player. Sites offering &ldquo;free Hindi anime&rdquo; beyond these are unlicensed uploads.</p>
+          <ul className="mt-3 grid gap-x-4 gap-y-1.5 text-sm sm:grid-cols-2">
+            {free.map((d) => (
+              <li key={d.s} className="min-w-0">
+                <Link href={dubHref(d)} className="font-medium text-ink hover:text-violet-2">{d.t}</Link>
+                <span className="text-muted"> · {d.platforms.filter((p) => platformKind(p.name) === "free").map((p, i) => <span key={p.name}>{i ? ", " : ""}<a href={p.url} target="_blank" rel="noopener nofollow" className="hover:text-violet-2 hover:underline">{p.name}{p.scope ? ` (${p.scope})` : ""}</a></span>)}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       <section className="reveal mt-10" aria-labelledby="list-h">
         <h2 id="list-h" className="h-section mb-1">Hindi dubbed anime, most-watched first</h2>

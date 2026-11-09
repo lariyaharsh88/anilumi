@@ -1,4 +1,5 @@
 // Query-string variants (?page=, ?sort=, filters). Reached only through the rewrites in next.config.ts;
+import { fitTitle } from "@/lib/titles";
 // the plain URL is served by ../page.tsx from the ISR cache.
 import type { Metadata } from "next";
 import Link from "@/components/Link";
@@ -27,9 +28,19 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
   const { page } = await searchParams;
   if (!valid(year, season)) notFound();
   const p = Number(page) > 1 ? ` – Page ${page}` : "";
+  // The searched answer up front ("anime airing in fall 2026"): how many, whether they're airing now, the top titles.
+  const now = seasonOf();
+  const current = now.season === season && now.year === Number(year);
+  const first = Number(page) > 1 ? null : await getSeason(Number(year), season as Season, 1, 3).catch(() => null);
+  const total = first?.total ?? 0;
+  const tops = (first?.items ?? []).slice(0, 3).map((a) => a.title);
   return {
-    title: `${cap(season)} ${year} Anime – Full Season Chart${p}`,
-    description: `Every anime airing in ${cap(season)} ${year}: new series, sequels and movies ranked by popularity, with release dates, ratings and streaming links.`,
+    title: p ? `${cap(season)} ${year} Anime – Full Season Chart${p}` : fitTitle([
+      total ? `${cap(season)} ${year} Anime: All ${total} Shows${current ? " Airing Now" : ""}, Ranked` : null,
+      total ? `${cap(season)} ${year} Anime: All ${total} Shows, Ranked` : null,
+      `${cap(season)} ${year} Anime – Full Season Chart`,
+    ]),
+    description: `${total ? `All ${total} anime ${current ? "airing" : "of"} ${cap(season)} ${year}` : `Every anime airing in ${cap(season)} ${year}`}${tops.length ? `, led by ${tops.join(", ")}` : ""}: new series, sequels and movies ranked by popularity, with air times, scores and where to stream each.`,
     alternates: { canonical: `/season/${year}/${season}${Number(page) > 1 ? `?page=${page}` : ""}` },
   };
 }
