@@ -37,7 +37,9 @@ let indexed = false;
 async function connect(uri: string): Promise<Db> {
   const client = await new MongoClient(uri, { maxPoolSize: onWorkers ? 2 : 5, serverSelectionTimeoutMS: 6000, appName: "anilumi" }).connect();
   const d = client.db(process.env.MONGODB_DB || "anilumi");
-  if (!indexed) { await ensureIndexes(d); indexed = true; } // idempotent; once per process or isolate
+  // Idempotent; once per process or isolate. On Workers, isolates start often and this is 13 round trips to
+  // Atlas, so it runs after the response instead of in front of the first render (the indexes already exist).
+  if (!indexed) { indexed = true; if (onWorkers) background(ensureIndexes(d)); else await ensureIndexes(d); }
   return d;
 }
 

@@ -46,6 +46,8 @@ async function load(slug: string) {
   // everyone else falls back to live AniList, which may be missing on a bad minute.
   const snap = snapFor(c.name, apps.map((x) => x.anime.slug));
   const person = (p: { id: number; n: string; i: string | null } | null): Va | null => (p ? { id: p.id, name: p.n, native: null, image: p.i } : null);
+  // The rest of the cast doesn't depend on the voice lookups below: start it now, in parallel.
+  const othersP = home ? getCharacters(home.id, 13) : Promise.resolve([]);
   let voiced: { character: { id: number }; jp: Va | null; en: Va | null } | undefined;
   let al, cast = null, ranking: { id: number; name: string; favourites: number }[] = [], rankShow: string | null = null;
   if (snap) {
@@ -61,7 +63,7 @@ async function load(slug: string) {
     ranking = (cast?.entries || []).map((e) => e.character);
     rankShow = home?.title ?? null;
   }
-  const others = home ? await getCharacters(home.id, 13) : [];
+  const others = await othersP;
   const { facts: kitsuFacts, bio } = parseKitsuBio(c.description);
   const facts = mergeFacts(al, kitsuFacts);
   // The birthday snapshot links to a date page; fall back to it when neither source lists a birthday.
