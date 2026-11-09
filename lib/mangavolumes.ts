@@ -6,7 +6,7 @@
 import data from "@/data/manga-volumes.json";
 import type { Adaptation } from "./mangaseasons";
 
-type Entry = { vol: number | null; startsAt: "start" | "middle" | null; confidence: string; printTitle?: string; notes?: string };
+type Entry = { vol: number | null; startsAt: "start" | "middle" | null; confidence: string; printTitle?: string; notes?: string; /** false: that volume has no English edition yet (no buy link). */ english?: boolean };
 const DATA = data as unknown as { checked: string | null; reviewed: string | null; printTitles: Record<string, string>; seasons: Record<string, Entry> };
 export const VOL_CHECKED = DATA.checked;
 export const VOL_REVIEWED = DATA.reviewed;
@@ -17,7 +17,8 @@ export type BuyVolume = { vol: number; startsAt: "start" | "middle" | null; sear
 /** The volume to buy after this season, with the Amazon search for it, or null (finished story, no data). Pure. */
 export function volumeFor(slug: string, adapt: Adaptation | null): BuyVolume | null {
   const e = DATA.seasons[slug];
-  if (!e?.vol || !adapt) return null;
+  // No English edition of that volume yet: the page still says where to continue, but offers nothing to buy.
+  if (!e?.vol || !adapt || e.english === false) return null;
   const title = e.printTitle || (adapt.franchise && DATA.printTitles[adapt.franchise]);
   if (!title) return null;
   return { vol: e.vol, startsAt: e.startsAt, search: `${title}${adapt.medium === "light novel" ? " Light Novel" : ""} Vol. ${e.vol}` };

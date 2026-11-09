@@ -1024,6 +1024,410 @@
     "https://admin.animenewsnetwork.com/news/2009-02-05/toradora-anime-original-novels-to-end-on-march-10",
     "https://wheredoestheanimeleaveoff.com/?p=7643"
    ]
+  },
+  "danjo-no-yuujou-wa-seiritsu-suru-iya-shinai": {
+   "franchise": "Can a Boy-Girl Friendship Survive?",
+   "medium": "light novel",
+   "unit": "volume",
+   "from": 1,
+   "to": 3,
+   "continue": 4,
+   "confidence": "medium",
+   "notes": "One source only (Where Does the Anime Leave Off: start at vol 4). The anime rushes the novels and gives the season a more conclusive ending. Vol 4 is published in two parts.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Can_a_Boy-Girl_Friendship_Survive%3F",
+    "https://wheredoestheanimeleaveoff.com/?p=13818"
+   ]
+  },
+  "maou-sama-retry-r": {
+   "franchise": "Demon Lord, Retry!",
+   "medium": "manga",
+   "unit": "chapter",
+   "from": 1,
+   "to": 31,
+   "continue": 32,
+   "confidence": "medium",
+   "notes": "Chapters are from the sequel manga Demon Lord, Retry! R. Eps 1-3 mostly finish the original manga (vol 4 ch 19 to vol 5 ch 25). The end point rests on MangaUpdates alone; the fan wiki has ep 11 at R ch 26-27.",
+   "sources": [
+    "https://www.mangaupdates.com/series/x4ij43o/maou-sama-retry-r",
+    "https://www.mangaupdates.com/series/tp3tyaa/maou-sama-retry",
+    "https://demon-lord-retry.fandom.com/wiki/Manga_Volume_06_R"
+   ]
+  },
+  "kanpeki-sugite-kawai-ge-ga-nai-to-konyaku-haki-sareta-seijo-wa-ringoku-ni-ura-reru": {
+   "franchise": "The Too-Perfect Saint",
+   "medium": "light novel",
+   "unit": "volume",
+   "from": 1,
+   "to": 2,
+   "continue": 3,
+   "confidence": "high",
+   "notes": "Eps 1-10 adapt vol 1; eps 11-12 squeeze vol 2 into two episodes, so vol 2 is worth reading before vol 3.",
+   "sources": [
+    "https://www.mangaupdates.com/series/es68u19/kanpekisugite-kawaige-ga-nai-to-kon-yaku-haki-sareta-seijo-wa-ringoku-ni-urareru-novel",
+    "https://wheredoestheanimeleaveoff.com/?p=13814",
+    "https://en.wikipedia.org/wiki/The_Too-Perfect_Saint"
+   ]
+  },
+  "niwatori-fighter": {
+   "franchise": "Rooster Fighter",
+   "medium": "manga",
+   "unit": "chapter",
+   "from": 1,
+   "to": 30,
+   "continue": 31,
+   "confidence": "high",
+   "notes": "Skips ch 3-4 and 11. The finale touches the end of ch 31 but mostly skips it; continue from ch 31.",
+   "sources": [
+    "https://www.animefillerguide.com/?p=4176",
+    "https://www.mangaupdates.com/series/97dl87y/niwatori-fighter",
+    "https://en.wikipedia.org/wiki/Rooster_Fighter"
+   ]
+  },
+  "youkai-gakkou-no-sensei-hajimemashita": {
+   "franchise": "A Terrified Teacher at Ghoul School!",
+   "medium": "manga",
+   "unit": "chapter",
+   "from": 1,
+   "to": 77,
+   "continue": 78,
+   "confidence": "medium",
+   "notes": "Two cours (Oct 2024-Mar 2025), adapted out of order with many chapters skipped. MangaUpdates ends it at ch 77; another guide says ch 78.",
+   "sources": [
+    "https://www.mangaupdates.com/series/byns604/youkai-gakkou-no-sensei-hajimemashita",
+    "https://mangashed.com/where-does-the-a-terrified-teacher-at-ghoul-school-anime-end-in-the-manga/",
+    "https://en.wikipedia.org/wiki/A_Terrified_Teacher_at_Ghoul_School!"
+   ]
+  },
+  "chichi-wa-eiyuu-haha-wa-seirei-musume-no-watashi-wa-tenseisha": {
+   "franchise": "Reincarnated as the Daughter of the Legendary Hero and the Queen of Spirits",
+   "medium": "light novel",
+   "unit": "volume",
+   "from": 1,
+   "to": 2,
+   "continue": 3,
+   "confidence": "medium",
+   "notes": "Novel volumes rest on one source (Where Does the Anime Leave Off). MangaUpdates puts the end at manga vol 7 ch 38.",
+   "sources": [
+    "https://wheredoestheanimeleaveoff.com/?p=15033",
+    "https://www.mangaupdates.com/series/j0l1rvs/chichi-wa-eiyuu-haha-wa-seirei-musume-no-watashi-wa-tenseisha",
+    "https://en.wikipedia.org/wiki/Reincarnated_as_the_Daughter_of_the_Legendary_Hero_and_the_Queen_of_Spirits"
+   ]
+  },
+  "rock-wa-lady-no-tashina-mideshite": {
+   "franchise": "Rock Is a Lady's Modesty",
+   "medium": "manga",
+   "unit": "chapter",
+   "from": 1,
+   "to": 29,
+   "continue": 30,
+   "confidence": "medium",
+   "notes": "Sources disagree: one guide says start at ch 30 (the anime ends differently after the concert), MangaUpdates ends it at ch 30, Animeoshi at ch 26. Both main sources put the end in vol 5.",
+   "sources": [
+    "https://wheredoestheanimeleaveoff.com/?p=13949",
+    "https://www.mangaupdates.com/series/qidx3vw/rock-wa-lady-no-tashinami-deshite",
+    "https://www.animeoshi.com/anime/rock-is-a-ladys-modesty/episode/13"
+   ]
+  },
+  "yasei-no-last-boss-ga-arawareta": {
+   "franchise": "A Wild Last Boss Appeared!",
+   "medium": "light novel",
+   "unit": "volume",
+   "from": 1,
+   "to": 2,
+   "continue": 3,
+   "confidence": "high",
+   "notes": "Season 1. Season 2 airs from Oct 2026. One weaker guide claims vols 1-3.",
+   "sources": [
+    "https://www.mangaupdates.com/series/da22rk3/yasei-no-last-boss-ga-arawareta-novel",
+    "https://wheredoestheanimeleaveoff.com/?p=14934",
+    "https://en.wikipedia.org/wiki/A_Wild_Last_Boss_Appeared!"
+   ]
+  },
+  "tensei-akujo-no-kuro-rekishi": {
+   "franchise": "The Dark History of the Reincarnated Villainess",
+   "medium": "manga",
+   "unit": "chapter",
+   "from": 1,
+   "to": 18,
+   "continue": 19,
+   "confidence": "high",
+   "notes": "Ends with the elf village vampire arc (Death Flags 14-18). Ep 13 adapts bonus chapters from the Ex volume. Death Flag 19 (Iana goes to Ginoford's family home) starts the next arc.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/The_Dark_History_of_the_Reincarnated_Villainess",
+    "https://ja.wikipedia.org/wiki/転生悪女の黒歴史",
+    "https://mangashed.com/where-does-the-dark-history-of-the-reincarnated-villainess-anime-end-in-the-manga/"
+   ]
+  },
+  "chitose-kun-wa-ramune-bin-no-naka": {
+   "franchise": "Chitose Is in the Ramune Bottle",
+   "medium": "light novel",
+   "unit": "volume",
+   "from": 1,
+   "to": 3,
+   "continue": 4,
+   "confidence": "high",
+   "notes": "First cour (eps 1-13). Eps 11-13 finish the vol 3 Asuka arc. The second cour (from Oct 13, 2026) starts at vol 4.",
+   "sources": [
+    "https://chiramune.fandom.com/wiki/Episode_13",
+    "https://chiramune.fandom.com/wiki/Episode_14",
+    "https://www.anitrendz.com/news/2026/03/08/chitose-is-in-the-ramune-bottle-reveals-asuka-arc-trailer-and-visual-march-return",
+    "https://yenpress.com/9781975339074/chitose-is-in-the-ramune-bottle-vol-3"
+   ]
+  },
+  "watashi-wo-tabetai-hitodenashi": {
+   "franchise": "This Monster Wants to Eat Me",
+   "medium": "manga",
+   "unit": "chapter",
+   "from": 1,
+   "to": 31,
+   "continue": 32,
+   "confidence": "medium",
+   "notes": "Covers vols 1-7. The finale leaves out the last pages of ch 31. The range rests on two where-does-the-anime-end guides; no chapter-by-episode list was found to check it against.",
+   "sources": [
+    "https://mangashed.com/where-does-the-this-monster-wants-to-eat-me-anime-end-in-the-manga/",
+    "https://wheredoestheanimeleaveoff.com/?p=15095",
+    "https://en.wikipedia.org/wiki/List_of_This_Monster_Wants_to_Eat_Me_volumes"
+   ]
+  },
+  "kakuriyo-no-yadomeshi-2nd-season": {
+   "franchise": "Kakuriyo: Bed & Breakfast for Spirits",
+   "medium": "light novel",
+   "unit": "volume",
+   "from": 6,
+   "to": 8,
+   "continue": 9,
+   "confidence": "medium",
+   "notes": "Season 1 covers vols 1-5; the author said season 2 starts at vol 6. The end at vol 8 (the Northern Land arc) comes from matching episode titles to the wiki's volume summaries on one wiki only.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Kakuriyo:_Bed_%26_Breakfast_for_Spirits",
+    "https://www.sportskeeda.com/anime/news-kakuriyo-bed-breakfast-spirits-season-2-announced-fall-2025",
+    "https://kakuriyo.fandom.com/wiki/Kakuriyo_no_Yadomeshi_Ni",
+    "https://kakuriyo.fandom.com/wiki/Light_Novel_Volume_8"
+   ]
+  },
+  "kiseijuu": {
+   "franchise": "Parasyte",
+   "medium": "manga",
+   "unit": "chapter",
+   "from": 1,
+   "to": 64,
+   "continue": null,
+   "confidence": "high",
+   "notes": "Covers the whole manga (64 chapters, 10 volumes), moved to the 2010s. The finale adapts ch 63-64.",
+   "sources": [
+    "https://www.animefillerguide.com/anime/kiseijuu-sei-no-kakuritsu/",
+    "https://parasyte.fandom.com/wiki/Episode_24",
+    "https://en.wikipedia.org/wiki/Parasyte"
+   ]
+  },
+  "fairy-tail-2018": {
+   "franchise": "Fairy Tail",
+   "medium": "manga",
+   "unit": "chapter",
+   "from": 420,
+   "to": 545,
+   "continue": null,
+   "confidence": "high",
+   "notes": "Final Series (eps 278-328): the end of the Avatar arc and the Alvarez Empire arc, through the last chapter. The sequel manga Fairy Tail: 100 Years Quest has its own anime.",
+   "sources": [
+    "https://www.animefillerguide.com/anime/fairy-tail/",
+    "https://fairytail.fandom.com/wiki/Episode_278",
+    "https://fairytail.fandom.com/wiki/Episode_328"
+   ]
+  },
+  "mirai-nikki-tv": {
+   "franchise": "Future Diary",
+   "medium": "manga",
+   "unit": "chapter",
+   "from": 1,
+   "to": 59,
+   "continue": null,
+   "confidence": "high",
+   "notes": "Covers the whole manga (59 chapters, 12 volumes). The last pages of ch 59 (the epilogue) are left out; the Redial OVA covers them.",
+   "sources": [
+    "https://www.animefillerguide.com/anime/mirai-nikki/",
+    "https://en.wikipedia.org/wiki/Future_Diary"
+   ]
+  },
+  "ao-no-exorcist": {
+   "franchise": "Blue Exorcist",
+   "medium": "manga",
+   "unit": "chapter",
+   "from": 1,
+   "to": 15,
+   "continue": 16,
+   "confidence": "high",
+   "notes": "Eps 1-17 loosely follow ch 1-15; eps 18-25 are an anime-original story and ending. Kyoto Saga (S2) ignores them and resumes the manga, so continue from ch 16.",
+   "sources": [
+    "https://www.animefillerguide.com/anime/blue-exorcist/",
+    "https://aonoexorcist.fandom.com/wiki/Episode_17",
+    "https://aonoexorcist.fandom.com/wiki/Episode_26"
+   ]
+  },
+  "dr-stone": {
+   "franchise": "Dr. Stone",
+   "medium": "manga",
+   "unit": "chapter",
+   "from": 1,
+   "to": 60,
+   "continue": 61,
+   "confidence": "high",
+   "notes": "The S1 finale adapts most of ch 60; S2 (Stone Wars) opens with its last pages and continues from ch 61.",
+   "sources": [
+    "https://www.animefillerguide.com/anime/dr-stone/",
+    "https://dr-stone.fandom.com/wiki/Episode_24",
+    "https://dr-stone.fandom.com/wiki/Episode_25"
+   ]
+  },
+  "kono-subarashii-sekai-ni-shukufuku-wo": {
+   "franchise": "KonoSuba",
+   "medium": "light novel",
+   "unit": "volume",
+   "from": 1,
+   "to": 2,
+   "continue": 3,
+   "confidence": "high",
+   "notes": "Vol 1 and vol 2 (ending with the Destroyer). Season 2 starts at vol 3.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_KonoSuba_episodes",
+    "https://konosuba.fandom.com/wiki/Konosuba_Episode_10",
+    "https://konosuba.fandom.com/wiki/Konosuba_Episode_11"
+   ]
+  },
+  "kono-subarashii-sekai-ni-shukufuku-wo-2": {
+   "franchise": "KonoSuba",
+   "medium": "light novel",
+   "unit": "volume",
+   "from": 3,
+   "to": 4,
+   "continue": 5,
+   "confidence": "high",
+   "notes": "Vols 3-4. The film Legend of Crimson adapts vol 5, so film viewers continue from vol 6.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_KonoSuba_episodes",
+    "https://konosuba.fandom.com/wiki/Konosuba_Episode_11",
+    "https://konosuba.fandom.com/wiki/Konosuba_Episode_20"
+   ]
+  },
+  "fairy-tail": {
+   "franchise": "Fairy Tail",
+   "medium": "manga",
+   "unit": "chapter",
+   "from": 1,
+   "to": 297,
+   "continue": 298,
+   "confidence": "high",
+   "notes": "2009 series (eps 1-175), ending mid Grand Magic Games. Ch 298-299 (Ryuzetsu Land) are adapted as OVA 5; the 2014 series resumes at ch 300.",
+   "sources": [
+    "https://www.animefillerguide.com/anime/fairy-tail/",
+    "https://fairytail.fandom.com/wiki/Episode_175",
+    "https://fairytail.fandom.com/wiki/Episode_176",
+    "https://fairytail.fandom.com/wiki/Chapter_298"
+   ]
+  },
+  "kaguya-sama-wa-kokurasetai-tensai-tachi-no-renai-zunousen": {
+   "franchise": "Kaguya-sama: Love Is War",
+   "medium": "manga",
+   "unit": "chapter",
+   "from": 1,
+   "to": 46,
+   "continue": 47,
+   "confidence": "medium",
+   "notes": "Adapted out of order and selectively: ep 12 ends with ch 44-46, and skipped earlier chapters (e.g. ch 30) turn up in S2. The second source is a guide table only.",
+   "sources": [
+    "https://kaguyasama-wa-kokurasetai.fandom.com/wiki/Episode_12",
+    "https://kaguyasama-wa-kokurasetai.fandom.com/wiki/Episode_13",
+    "https://mangashed.com/did-love-is-war-manga-end/"
+   ]
+  },
+  "the-devil-is-a-part-timer": {
+   "franchise": "The Devil Is a Part-Timer!",
+   "medium": "light novel",
+   "unit": "volume",
+   "from": 1,
+   "to": 2,
+   "continue": 3,
+   "confidence": "high",
+   "notes": "Vol 1 and vol 2 (ending with the Sariel fight). Season 2 (2022) starts at vol 3 with Alas Ramus.",
+   "sources": [
+    "https://hataraku.fandom.com/wiki/Episode_12_-_The_Devil_Carries_Out_His_Duties",
+    "https://hataraku.fandom.com/wiki/Episode_14_-_The_Devil_Screams_in_Sasazuka",
+    "https://en.wikipedia.org/wiki/The_Devil_Is_a_Part-Timer!_season_2"
+   ]
+  },
+  "durarara": {
+   "franchise": "Durarara!!",
+   "medium": "light novel",
+   "unit": "volume",
+   "from": 1,
+   "to": 3,
+   "continue": 4,
+   "confidence": "high",
+   "notes": "Covers the first three novels; the finale adapts vol 3.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Durarara!!",
+    "https://durarara.fandom.com/wiki/Durarara!!_Episode_24"
+   ]
+  },
+  "hunter-x-hunter": {
+   "franchise": "Hunter x Hunter",
+   "medium": "manga",
+   "unit": "chapter",
+   "from": 1,
+   "to": 101,
+   "continue": 102,
+   "confidence": "high",
+   "notes": "1999 TV series (62 eps), stopping mid Yorknew City; ep 62 also takes a few pages of ch 102. The 1999 OVAs continue from ch 102 through Greed Island (ch 184).",
+   "sources": [
+    "https://hunterxhunter.fandom.com/wiki/Episode_62_(1999)",
+    "https://hunterxhunter.fandom.com/wiki/Chapter_101",
+    "https://myanimelist.net/stacks/70737"
+   ]
+  },
+  "seishun-buta-yarou-wa-bunny-girl-senpai-no-yume-wo-minai": {
+   "franchise": "Rascal Does Not Dream",
+   "medium": "light novel",
+   "unit": "volume",
+   "from": 1,
+   "to": 5,
+   "continue": 6,
+   "confidence": "high",
+   "notes": "The TV series adapts vols 1-5. The film Rascal Does Not Dream of a Dreaming Girl adapts vols 6-7, so film viewers continue from vol 8.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_Rascal_Does_Not_Dream_episodes",
+    "https://www.animefillerguide.com/anime/seishun-buta-yarou-wa-bunny-girl-senpai-no-yume-wo-minai/"
+   ]
+  },
+  "bleach": {
+   "franchise": "Bleach",
+   "medium": "manga",
+   "unit": "chapter",
+   "from": 1,
+   "to": 479,
+   "continue": 480,
+   "confidence": "high",
+   "notes": "Original series (eps 1-366), ending with the Lost Agent arc. Ch 480 starts the Thousand-Year Blood War arc, adapted by the 2022 series.",
+   "sources": [
+    "https://www.animefillerguide.com/anime/bleach/",
+    "https://bleach.fandom.com/wiki/Episode_366",
+    "https://en.wikipedia.org/wiki/List_of_Bleach_episodes"
+   ]
+  },
+  "hyouka": {
+   "franchise": "Hyouka",
+   "medium": "light novel",
+   "unit": "volume",
+   "from": 1,
+   "to": 4,
+   "continue": 5,
+   "confidence": "medium",
+   "notes": "Covers the first four Classic Literature Club books (vol 4 is the short-story collection The Doll That Took a Detour). Vols 5-6 are unadapted. From guides and episode titles; no per-episode source list.",
+   "sources": [
+    "https://wheredoestheanimeleaveoff.com/?p=356",
+    "https://myanimelist.net/forum/message/59397072?goto=topic",
+    "https://en.wikipedia.org/wiki/Hyouka"
+   ]
   }
  }
 }

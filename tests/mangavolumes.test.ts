@@ -3,6 +3,7 @@ import assert from "node:assert/strict";
 import { adaptationFor } from "../lib/mangaseasons";
 import { volumeFor, volumeLine } from "../lib/mangavolumes";
 import seasons from "../data/manga-seasons.json";
+import volData from "../data/manga-volumes.json";
 
 const at = (slug: string) => volumeFor(slug, adaptationFor(slug));
 
@@ -17,7 +18,8 @@ test("volumes: the season's continue chapter → the volume to buy, searched by 
 test("volumes: every season with a continue point has a volume and a title; finished stories have none", () => {
   for (const [slug, s] of Object.entries((seasons as { seasons: Record<string, { continue: number | null; medium: string }> }).seasons)) {
     const v = at(slug);
-    if (s.continue === null) assert.equal(v, null, slug);
+    const vols = (volData as { seasons: Record<string, { english?: boolean }> }).seasons;
+    if (s.continue === null || vols[slug]?.english === false) assert.equal(v, null, slug);
     else {
       assert.ok(v && v.vol > 0 && !v.search.includes("undefined"), slug);
       if (s.medium === "light novel") assert.match(v.search, /Light Novel Vol\. \d+$/, slug);

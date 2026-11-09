@@ -24,7 +24,27 @@
   "Sword Art Online": "Sword Art Online",
   "Re:Zero": "Re:ZERO -Starting Life in Another World-",
   "No Game, No Life": "No Game No Life",
-  "Toradora!": "Toradora!"
+  "Toradora!": "Toradora!",
+  "Demon Lord, Retry!": "Demon Lord, Retry!",
+  "The Too-Perfect Saint": "The Too-Perfect Saint: Tossed Aside by My Fiancé and Sold to Another Kingdom",
+  "Rooster Fighter": "Rooster Fighter",
+  "A Terrified Teacher at Ghoul School!": "A Terrified Teacher at Ghoul School!",
+  "Rock Is a Lady's Modesty": "Rock Is a Lady's Modesty",
+  "A Wild Last Boss Appeared!": "A Wild Last Boss Appeared!",
+  "The Dark History of the Reincarnated Villainess": "The Dark History of the Reincarnated Villainess",
+  "Chitose Is in the Ramune Bottle": "Chitose Is in the Ramune Bottle",
+  "This Monster Wants to Eat Me": "This Monster Wants to Eat Me",
+  "Parasyte": "Parasyte",
+  "Future Diary": "Future Diary",
+  "Blue Exorcist": "Blue Exorcist",
+  "Dr. Stone": "Dr. STONE",
+  "KonoSuba": "Konosuba: God's Blessing on This Wonderful World!",
+  "Fairy Tail": "Fairy Tail",
+  "Kaguya-sama: Love Is War": "Kaguya-sama: Love Is War",
+  "The Devil Is a Part-Timer!": "The Devil Is a Part-Timer!",
+  "Durarara!!": "Durarara!!",
+  "Rascal Does Not Dream": "Rascal Does Not Dream",
+  "Bleach": "Bleach"
  },
  "seasons": {
   "attack-on-titan": {
@@ -712,6 +732,281 @@
     "https://en.wikipedia.org/wiki/Toradora!"
    ],
    "notes": "English print is Seven Seas \"Toradora! (Light Novel)\"."
+  },
+  "danjo-no-yuujou-wa-seiritsu-suru-iya-shinai": {
+   "vol": 4,
+   "startsAt": "start",
+   "confidence": "medium",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Can_a_Boy-Girl_Friendship_Survive%3F"
+   ],
+   "notes": "No English edition of this volume as of Nov 2026; Japanese volume (Dengeki Bunko). Vol 4 comes in two parts; start with the first.",
+   "printTitle": "男女の友情は成立する？（いや、しないっ!!）",
+   "english": false
+  },
+  "maou-sama-retry-r": {
+   "vol": 7,
+   "startsAt": "middle",
+   "confidence": "medium",
+   "sources": [
+    "https://demon-lord-retry.fandom.com/wiki/Manga_Volume_07_R",
+    "https://en.wikipedia.org/wiki/Demon_Lord,_Retry!"
+   ],
+   "notes": "Buy Demon Lord, Retry! R (separate J-Novel Club manga series), not the original. R vol 7 = ch 31-35; English vol 7 out June 2025 (digital).",
+   "printTitle": "Demon Lord, Retry! R"
+  },
+  "kanpeki-sugite-kawai-ge-ga-nai-to-konyaku-haki-sareta-seijo-wa-ringoku-ni-ura-reru": {
+   "vol": 3,
+   "startsAt": "start",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/The_Too-Perfect_Saint"
+   ],
+   "notes": "Seven Seas numbering matches Japanese; English vol 3 out Aug 2025."
+  },
+  "niwatori-fighter": {
+   "vol": 7,
+   "startsAt": "middle",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Rooster_Fighter",
+    "https://www.animefillerguide.com/?p=4176"
+   ],
+   "notes": "Vol 7 = ch 29-32."
+  },
+  "youkai-gakkou-no-sensei-hajimemashita": {
+   "vol": 12,
+   "startsAt": "middle",
+   "confidence": "medium",
+   "sources": [
+    "https://www.mangaupdates.com/series/byns604/youkai-gakkou-no-sensei-hajimemashita",
+    "https://mangashed.com/where-does-the-a-terrified-teacher-at-ghoul-school-anime-end-in-the-manga/"
+   ],
+   "notes": "Both sources put the end in vol 12; no chapter list per volume found. Yen Press vol 12 out Dec 2022."
+  },
+  "chichi-wa-eiyuu-haha-wa-seirei-musume-no-watashi-wa-tenseisha": {
+   "vol": 3,
+   "startsAt": "start",
+   "confidence": "medium",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Reincarnated_as_the_Daughter_of_the_Legendary_Hero_and_the_Queen_of_Spirits"
+   ],
+   "notes": "No English edition of this volume as of Nov 2026; Japanese volume (Kadokawa Books). Only the manga is in English (digital).",
+   "printTitle": "父は英雄、母は精霊、娘の私は転生者。",
+   "english": false
+  },
+  "rock-wa-lady-no-tashina-mideshite": {
+   "vol": 5,
+   "startsAt": "middle",
+   "confidence": "medium",
+   "sources": [
+    "https://wheredoestheanimeleaveoff.com/?p=13949",
+    "https://en.wikipedia.org/wiki/Rock_Is_a_Lady%27s_Modesty"
+   ],
+   "notes": "No English edition of this volume as of Nov 2026; Japanese volume (Yen Press is at vol 3, vol 4 due Mar 2027).",
+   "printTitle": "ロックは淑女の嗜みでして",
+   "english": false
+  },
+  "yasei-no-last-boss-ga-arawareta": {
+   "vol": 3,
+   "startsAt": "start",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/A_Wild_Last_Boss_Appeared!"
+   ],
+   "notes": "J-Novel Club numbering matches Japanese."
+  },
+  "tensei-akujo-no-kuro-rekishi": {
+   "vol": 5,
+   "startsAt": "middle",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/The_Dark_History_of_the_Reincarnated_Villainess"
+   ],
+   "notes": "Vol 5 = Death Flags 18-22 (Yen Press, May 2022)."
+  },
+  "chitose-kun-wa-ramune-bin-no-naka": {
+   "vol": 4,
+   "startsAt": "start",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Chitose_Is_in_the_Ramune_Bottle",
+    "https://chiramune.fandom.com/wiki/Episode_14"
+   ],
+   "notes": "Yen Press vol 4 released June 2023; numbering matches Japanese."
+  },
+  "watashi-wo-tabetai-hitodenashi": {
+   "vol": 8,
+   "startsAt": "start",
+   "confidence": "medium",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_This_Monster_Wants_to_Eat_Me_volumes"
+   ],
+   "notes": "Vol 8 = ch 32-36. No English edition of this volume as of Nov 2026 (Yen Press is at vol 6); Japanese volume.",
+   "printTitle": "私を喰べたい、ひとでなし",
+   "english": false
+  },
+  "kakuriyo-no-yadomeshi-2nd-season": {
+   "vol": 9,
+   "startsAt": "start",
+   "confidence": "medium",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Kakuriyo:_Bed_%26_Breakfast_for_Spirits",
+    "https://kakuriyo.fandom.com/wiki/Light_Novel_Volume_9"
+   ],
+   "notes": "No English edition of this volume as of Nov 2026; Japanese volume. The light novel is unlicensed; only the manga is in English (Viz).",
+   "printTitle": "かくりよの宿飯",
+   "english": false
+  },
+  "kiseijuu": {
+   "vol": null,
+   "startsAt": null,
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Parasyte",
+    "https://parasyte.fandom.com/wiki/Episode_24"
+   ],
+   "notes": "The anime finishes the story; nothing to continue."
+  },
+  "fairy-tail-2018": {
+   "vol": null,
+   "startsAt": null,
+   "confidence": "high",
+   "sources": [
+    "https://fairytail.fandom.com/wiki/Episode_328",
+    "https://www.animefillerguide.com/anime/fairy-tail/"
+   ],
+   "notes": "The anime adapts the whole manga (545 chapters, 63 volumes)."
+  },
+  "mirai-nikki-tv": {
+   "vol": null,
+   "startsAt": null,
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Future_Diary",
+    "https://www.animefillerguide.com/anime/mirai-nikki/"
+   ],
+   "notes": "The anime finishes the story; read the last pages of vol 12 (ch 59) for the epilogue."
+  },
+  "ao-no-exorcist": {
+   "vol": 5,
+   "startsAt": "start",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_Blue_Exorcist_chapters",
+    "https://aonoexorcist.fandom.com/wiki/Episode_26"
+   ],
+   "notes": "Vol 5 = ch 16-19."
+  },
+  "dr-stone": {
+   "vol": 7,
+   "startsAt": "middle",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_Dr._Stone_chapters",
+    "https://dr-stone.fandom.com/wiki/Episode_25"
+   ],
+   "notes": "Vol 7 = ch 53-61; ch 61 is its last chapter and vol 8 starts at ch 62."
+  },
+  "kono-subarashii-sekai-ni-shukufuku-wo": {
+   "vol": 3,
+   "startsAt": "start",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_KonoSuba_episodes",
+    "https://konosuba.fandom.com/wiki/Konosuba_Episode_11"
+   ],
+   "notes": "Yen Press numbering matches Japanese. Buy the light novel, not the manga."
+  },
+  "kono-subarashii-sekai-ni-shukufuku-wo-2": {
+   "vol": 5,
+   "startsAt": "start",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_KonoSuba_episodes",
+    "https://konosuba.fandom.com/wiki/Konosuba_Episode_20"
+   ],
+   "notes": "Yen Press numbering matches Japanese. Vol 5 is the Legend of Crimson film's story."
+  },
+  "fairy-tail": {
+   "vol": 35,
+   "startsAt": "middle",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_Fairy_Tail_chapters_(volumes_31%E2%80%9345)",
+    "https://fairytail.fandom.com/wiki/Chapter_298"
+   ],
+   "notes": "Vol 35 = ch 292-299; vol 36 starts at ch 300, where the 2014 series picks up."
+  },
+  "kaguya-sama-wa-kokurasetai-tensai-tachi-no-renai-zunousen": {
+   "vol": 5,
+   "startsAt": "middle",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_Kaguya-sama:_Love_Is_War_chapters"
+   ],
+   "notes": "Vol 5 = ch 41-50."
+  },
+  "the-devil-is-a-part-timer": {
+   "vol": 3,
+   "startsAt": "start",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/The_Devil_Is_a_Part-Timer!",
+    "https://en.wikipedia.org/wiki/The_Devil_Is_a_Part-Timer!_season_2"
+   ],
+   "notes": "Yen Press numbering matches Japanese. Buy the light novel, not the manga."
+  },
+  "durarara": {
+   "vol": 4,
+   "startsAt": "start",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Durarara!!",
+    "https://durarara.fandom.com/wiki/Durarara!!_Episode_24"
+   ],
+   "notes": "Yen Press numbering matches Japanese."
+  },
+  "hunter-x-hunter": {
+   "vol": 11,
+   "startsAt": "middle",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_chapters",
+    "https://hunterxhunter.fandom.com/wiki/Episode_63_(1999)"
+   ],
+   "notes": "Vol 11 = ch 94-103."
+  },
+  "seishun-buta-yarou-wa-bunny-girl-senpai-no-yume-wo-minai": {
+   "vol": 6,
+   "startsAt": "start",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_Rascal_Does_Not_Dream_episodes",
+    "https://en.wikipedia.org/wiki/Rascal_Does_Not_Dream"
+   ],
+   "notes": "Yen Press numbering matches Japanese. Vol 6 is the Dreaming Girl film's story."
+  },
+  "bleach": {
+   "vol": 55,
+   "startsAt": "start",
+   "confidence": "high",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_Bleach_chapters_(424%E2%80%93686)",
+    "https://bleach.fandom.com/wiki/Episode_366"
+   ],
+   "notes": "Vol 55 = ch 480-489, opening the Thousand-Year Blood War arc."
+  },
+  "hyouka": {
+   "vol": 5,
+   "startsAt": "start",
+   "confidence": "medium",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Hyouka"
+   ],
+   "notes": "Vol 5 is ふたりの距離の概算 (Futari no Kyori no Gaisan). No English edition of this volume as of Nov 2026; Japanese volume.",
+   "printTitle": "古典部シリーズ",
+   "english": false
   }
  }
 }
