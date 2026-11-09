@@ -40,7 +40,7 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
       total ? `${cap(season)} ${year} Anime: All ${total} Shows, Ranked` : null,
       `${cap(season)} ${year} Anime – Full Season Chart`,
     ]),
-    description: `${total ? `All ${total} anime ${current ? "airing" : "of"} ${cap(season)} ${year}` : `Every anime airing in ${cap(season)} ${year}`}${tops.length ? `, led by ${tops.join(", ")}` : ""}: new series, sequels and movies ranked by popularity, with air times, scores and where to stream each.`,
+    description: `${total ? `All ${total} anime ${current ? "airing in" : "of"} ${cap(season)} ${year}` : `Every anime airing in ${cap(season)} ${year}`}${tops.length ? `, led by ${tops.join(", ")}` : ""}: new series, sequels and movies ranked by popularity, with air times, scores and where to stream each.`,
     alternates: { canonical: `/season/${year}/${season}${Number(page) > 1 ? `?page=${page}` : ""}` },
   };
 }
