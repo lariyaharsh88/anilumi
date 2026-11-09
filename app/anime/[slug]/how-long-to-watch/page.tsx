@@ -152,7 +152,7 @@ export default async function HowLongPage({ params }: Props) {
                     <p className="font-semibold text-ink">{f.label}</p>
                     <p className="mt-2 text-2xl font-black tracking-tight text-accent-2">{fmtRun(f.minutes)}</p>
                     <p className="text-xs text-muted">saves {fmtRun(f.saved)}</p>
-                    <p className="mt-2 text-xs leading-5 text-ink/70">{f.note}{f.key === "filler" && <> <Link href={`${animePath(a)}/episodes`} className="text-violet hover:underline">See which episodes</Link></>}{f.key === "oped" && skipAvg && <> Opening ~{fmtSec(skipAvg.opSec)}, ending ~{fmtSec(skipAvg.edSec)} (<a href="https://aniskip.com" target="_blank" rel="noopener" className="underline">AniSkip</a>).</>}</p>
+                    <p className="mt-2 text-xs leading-5 text-ink/70">{f.note}{f.key === "filler" && <> <Link href={`${animePath(a)}/episodes`} className="text-violet hover:underline">See which episodes</Link></>}{f.key === "oped" && skipAvg && <> Opening ~{fmtSec(skipAvg.opSec)}, ending ~{fmtSec(skipAvg.edSec)} (<a href="https://aniskip.com" target="_blank" rel="noopener nofollow" className="underline">AniSkip</a>).</>}</p>
                   </li>
                 ))}
               </ul>

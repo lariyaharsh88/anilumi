@@ -60,7 +60,7 @@ export default function SiteFooter() {
 
       <div className="border-t border-line">
         <div className="container-x flex flex-col gap-3 py-5 text-xs text-muted sm:flex-row sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} {site.name} · Data and images from <a className="underline hover:text-ink" href="https://kitsu.io" rel="noopener">Kitsu</a>, owned by their rights holders. Not affiliated with any studio or streaming service.</p>
+          <p>© {new Date().getFullYear()} {site.name} · Data and images from <a className="underline hover:text-ink" href="https://kitsu.io" rel="noopener nofollow">Kitsu</a>, owned by their rights holders. Not affiliated with any studio or streaming service.</p>
           <ul className="flex shrink-0 flex-wrap gap-x-4 gap-y-0 sm:gap-y-1">
             {small.map(([href, label]) => (
               <li key={href}>{href === "/feed.xml" ? <a href={href} className="inline-block py-1.5 hover:text-ink sm:py-0">{label}</a> : <Link href={href} className="inline-block py-1.5 hover:text-ink sm:py-0">{label}</Link>}</li>

@@ -84,7 +84,7 @@ export default async function ThemesPage({ params }: Props) {
         <Link href="/anime-openings" className="text-violet hover:underline">Popular anime openings</Link>
       </p>
       <Faq items={faq} />
-      <p className="mt-6 text-xs text-muted">Song data from <a href="https://animethemes.moe" rel="noopener" className="underline">AnimeThemes</a>.</p>
+      <p className="mt-6 text-xs text-muted">Song data from <a href="https://animethemes.moe" rel="noopener nofollow" className="underline">AnimeThemes</a>.</p>
     </div>
   );
 }

@@ -125,7 +125,7 @@ export default function SceneSearch() {
         <p className="text-xs leading-5 text-muted">
           Works best with a clean, full-frame screenshot from the episode itself (no fan art, edits or heavy crops).
           {quota ? ` You have ${Math.max(0, quota.total - quota.used)} of ${quota.total} free searches left this month.` : ""}
-          {" "}Your image goes straight to <a href="https://trace.moe" target="_blank" rel="noopener" className="underline">trace.moe</a> for matching; AniLumi doesn&apos;t store it.
+          {" "}Your image goes straight to <a href="https://trace.moe" target="_blank" rel="noopener nofollow" className="underline">trace.moe</a> for matching; AniLumi doesn&apos;t store it.
         </p>
       </div>
 
@@ -172,7 +172,7 @@ export default function SceneSearch() {
                               <Link href={`/anime/${page.slug}/next-season`} className="chip">Next season?</Link>
                             </>
                           ) : (
-                            <a href={`https://anilist.co/anime/${m.anilistId}`} target="_blank" rel="noopener" className="chip">View on AniList</a>
+                            <a href={`https://anilist.co/anime/${m.anilistId}`} target="_blank" rel="noopener nofollow" className="chip">View on AniList</a>
                           )}
                         </p>
                       </div>

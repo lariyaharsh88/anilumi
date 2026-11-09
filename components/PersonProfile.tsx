@@ -255,14 +255,14 @@ export default async function PersonProfile({ va, kind }: { va: VoiceActor; kind
               <h2 className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted">Awards & links</h2>
               {wd.awards.length > 0 && <ul className="space-y-1 text-sm text-ink/90">{wd.awards.map((a) => <li key={a}>🏆 {a}</li>)}</ul>}
               {wd.website && <a href={wd.website} target="_blank" rel="noopener nofollow" className="mt-3 inline-block text-sm text-violet hover:text-violet-2">Official website →</a>}
-              <p className="mt-2 text-xs text-muted">From <a href={`https://www.wikidata.org/wiki/${wd.qid}`} target="_blank" rel="noopener" className="underline">Wikidata</a>.</p>
+              <p className="mt-2 text-xs text-muted">From <a href={`https://www.wikidata.org/wiki/${wd.qid}`} target="_blank" rel="noopener nofollow" className="underline">Wikidata</a>.</p>
             </div>
           )}
           {bio && (
             <div className="card p-4">
               <h2 className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted">About</h2>
               <p className="whitespace-pre-line text-sm leading-6 text-ink/85">{excerpt(bio, 520)}</p>
-              <p className="mt-2 text-xs text-muted">From <a href={`https://anilist.co/staff/${va.id}`} rel="noopener" className="underline">AniList</a>.</p>
+              <p className="mt-2 text-xs text-muted">From <a href={`https://anilist.co/staff/${va.id}`} rel="noopener nofollow" className="underline">AniList</a>.</p>
             </div>
           )}
         </aside>

@@ -28,7 +28,7 @@ export default function FanRecs({ title, recs, heading, tags = [] }: { title: st
             {r.anime ? (
               <AnimeCard a={r.anime} className="w-full" />
             ) : (
-              <a href={`https://anilist.co/anime/${r.anilistId}`} target="_blank" rel="noopener" className="group block">
+              <a href={`https://anilist.co/anime/${r.anilistId}`} target="_blank" rel="noopener nofollow" className="group block">
                 <span className="relative block aspect-[2/3] overflow-hidden rounded-xl border border-line bg-bg-2">{r.cover && <Image src={r.cover} alt="" fill sizes="176px" className="object-cover" />}</span>
                 <span className="mt-2 line-clamp-2 block text-sm font-semibold group-hover:text-violet-2">{r.title}</span>
               </a>

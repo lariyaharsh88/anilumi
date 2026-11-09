@@ -20,7 +20,7 @@ export default function ScoreCard({ title, c }: { title: string; c: CombinedScor
         <ul className="space-y-2.5">
           {c.sources.map((s) => (
             <li key={s.key} className="grid grid-cols-[96px_1fr_auto] items-center gap-3 text-sm">
-              {s.url ? <a href={s.url} rel="noopener" target="_blank" className="truncate text-ink/90 hover:text-ink hover:underline">{s.label}</a> : <span className="truncate text-ink/90">{s.label}</span>}
+              {s.url ? <a href={s.url} rel="noopener nofollow" target="_blank" className="truncate text-ink/90 hover:text-ink hover:underline">{s.label}</a> : <span className="truncate text-ink/90">{s.label}</span>}
               <span className="relative h-2 overflow-hidden rounded-full bg-white/8" aria-hidden>
                 <span className="grow-x absolute inset-y-0 left-0 rounded-full" style={{ width: `${(s.score / 10) * 100}%`, background: HUE[s.key] }} />
               </span>

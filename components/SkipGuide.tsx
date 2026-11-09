@@ -21,7 +21,7 @@ export default function SkipGuide({ s, episode }: { s: SkipTimes; episode: numbe
           </div>
         ))}
       </dl>
-      <p className="mt-2 text-xs text-muted">Community timestamps from <a href="https://aniskip.com" target="_blank" rel="noopener" className="underline">AniSkip</a>; they can be a few seconds off depending on the streaming service.</p>
+      <p className="mt-2 text-xs text-muted">Community timestamps from <a href="https://aniskip.com" target="_blank" rel="noopener nofollow" className="underline">AniSkip</a>; they can be a few seconds off depending on the streaming service.</p>
     </section>
   );
 }

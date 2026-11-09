@@ -29,7 +29,7 @@ export default async function NewsPage() {
       <div className="mt-10 max-w-3xl">
         {items.length ? <NewsList items={items} /> : <p className="card p-8 text-center text-muted">News is taking a moment to load. Check back shortly.</p>}
         {dbEnabled() && <LeadForm className="mt-8" kind="digest" source="news-digest" title="📰 The week's anime news, every Friday" blurb="The biggest stories plus new episodes and premieres, in one short email." button="Subscribe" />}
-        <p className="mt-6 text-xs text-muted">News from <a href="https://www.animenewsnetwork.com" target="_blank" rel="noopener" className="underline">Anime News Network</a> and <a href="https://myanimelist.net/news" target="_blank" rel="noopener" className="underline">MyAnimeList</a>. Headlines and summaries belong to their publishers; every story links to the original article.</p>
+        <p className="mt-6 text-xs text-muted">News from <a href="https://www.animenewsnetwork.com" target="_blank" rel="noopener nofollow" className="underline">Anime News Network</a> and <a href="https://myanimelist.net/news" target="_blank" rel="noopener nofollow" className="underline">MyAnimeList</a>. Headlines and summaries belong to their publishers; every story links to the original article.</p>
       </div>
     </div>
   );

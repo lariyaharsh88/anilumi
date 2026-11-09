@@ -29,7 +29,7 @@ export default function WhatAnimeIsThis() {
           { q: "Do you keep my screenshot?", a: "No. Your browser sends the image straight to trace.moe for matching. AniLumi never receives or stores it." },
         ]}
       />
-      <p className="mt-6 text-xs text-muted">Scene matching by <a href="https://trace.moe" target="_blank" rel="noopener" className="underline">trace.moe</a>. Titles from AniList.</p>
+      <p className="mt-6 text-xs text-muted">Scene matching by <a href="https://trace.moe" target="_blank" rel="noopener nofollow" className="underline">trace.moe</a>. Titles from AniList.</p>
     </div>
   );
 }

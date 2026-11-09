@@ -16,7 +16,7 @@ export default function CalendarLinks({ ids, compact = false }: { ids: string[];
     <div className={compact ? "text-sm" : "mt-3"}>
       <div className={compact ? "flex flex-wrap items-center gap-x-3 gap-y-1" : "flex flex-wrap gap-2"}>
         {compact && <span className="text-muted">Add to calendar:</span>}
-        <a href={origin ? google : "#"} target="_blank" rel="noopener" className={cls}>Google Calendar</a>
+        <a href={origin ? google : "#"} target="_blank" rel="noopener nofollow" className={cls}>Google Calendar</a>
         <a href={origin ? webcal : "#"} className={cls}>Apple / Outlook</a>
         <a href={path} download className={cls}>Download .ics</a>
       </div>

@@ -37,7 +37,7 @@ export default function ImportMal({ compact = false }: { compact?: boolean }) {
       {!compact && (
         <>
           <h2 className="font-semibold">Import from MyAnimeList</h2>
-          <p className="mt-1 text-sm text-muted">On MAL, open <a href="https://myanimelist.net/panel.php?go=export" target="_blank" rel="noopener" className="text-violet hover:underline">Export</a>, download your anime list, then pick the file here. It&apos;s read in your browser; only titles and progress are matched, and nothing is stored on our side.</p>
+          <p className="mt-1 text-sm text-muted">On MAL, open <a href="https://myanimelist.net/panel.php?go=export" target="_blank" rel="noopener nofollow" className="text-violet hover:underline">Export</a>, download your anime list, then pick the file here. It&apos;s read in your browser; only titles and progress are matched, and nothing is stored on our side.</p>
         </>
       )}
       <label className={`btn-outline mt-3 inline-flex cursor-pointer ${busy ? "pointer-events-none opacity-60" : ""}`}>
