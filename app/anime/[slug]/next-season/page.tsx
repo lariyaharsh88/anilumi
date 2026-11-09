@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { robotsFor, nextSeasonIndexed } from "@/lib/indexing";
 import Link from "@/components/Link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
@@ -66,7 +67,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title,
     description: `${first ? `Is there a ${a.title} season 2?` : `Will ${a.title} get another season?`} ${verdict.headline} ${verdict.detail}`.slice(0, 300),
     alternates: { canonical: `${animePath(a)}/next-season` },
-    ...(a.subtype === "TV" || a.subtype === "ONA" ? {} : { robots: { index: false } }),
+    // Films and OVAs never; a series when there's news, or it's popular enough that people ask anyway.
+    ...(a.subtype === "TV" || a.subtype === "ONA" ? { robots: robotsFor(nextSeasonIndexed(`${animePath(a)}/next-season`, verdict.kind !== "none" && verdict.kind !== "still-airing", a.userCount)) } : { robots: { index: false } }),
   };
 }
 

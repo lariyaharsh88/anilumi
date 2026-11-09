@@ -35,3 +35,16 @@ export function orderSlugs(animeId: string): string[] {
   const i = snap.idx[animeId];
   return i === undefined ? [] : snap.orders[i].e.map((r) => r[1]);
 }
+
+let coreBySlug: Map<string, number> | null = null;
+/** Core entries (main seasons and canon movies) of the franchise containing this slug, from the snapshot. */
+export function snapshotCore(slug: string): number | undefined {
+  if (!coreBySlug) {
+    coreBySlug = new Map();
+    for (const o of snap.orders) {
+      const core = o.e.filter((r) => r[6] === "main" || r[6] === "movie").length;
+      for (const r of o.e) coreBySlug.set(r[1], core);
+    }
+  }
+  return coreBySlug.get(slug);
+}

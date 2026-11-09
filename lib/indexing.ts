@@ -6,9 +6,9 @@
  */
 import priority from "@/data/warm-priority.json";
 import franchiseData from "@/data/franchises.json";
-import aliasData from "@/data/aliases.json";
 import { WATCH_ORDER_OVERRIDES } from "@/data/watch-orders";
 import { topCharacterSlugs } from "./charsnap";
+import { snapshotCore } from "./wosnap";
 
 /** Most-favourited characters (AniList) whose pages are indexed. */
 export const INDEXED_CHARACTERS = 300;
@@ -16,8 +16,9 @@ export const INDEXED_CHARACTERS = 300;
 export const INDEXED_AIRED_EPISODES = 2;
 /** A franchise watch order is indexed with an editor guide or at least this many parts ("watch A, then B" is thin). */
 export const INDEXED_MIN_PARTS = 3;
-/** "Anime like X" pages indexed for the most-followed titles (alias index rank). */
-export const INDEXED_SIMILAR = 250;
+/** "Next season" pages with no sequel news stay indexed for titles at least this followed (people search
+ * "<popular show> season 2" whatever the answer; for obscure titles "not announced" is a thin page). */
+export const NEXT_SEASON_MIN_MEMBERS = 100_000;
 /** Upcoming episodes stay indexed this far ahead ("episode 8 release date" is searched a week or two out). */
 export const INDEXED_DAYS_AHEAD = 14;
 
@@ -26,10 +27,13 @@ export const airsSoon = (airIso: string | null, now = Date.now()) => Boolean(air
 
 const NOINDEX = { index: false, follow: true } as const;
 
+// `shown`: pages with impressions in the latest Search Console export. `paths` is the warm-up order, which also
+// lists pages Google is re-checking; older files have only `paths`.
+const shownList = () => (priority as { paths: string[]; shown?: string[] }).shown ?? (priority as { paths: string[] }).paths;
 let shown: Set<string> | null = null;
 /** Pages Google already shows in search (Search Console export). */
-export const searchShown = (path: string) => (shown ??= new Set((priority as { paths: string[] }).paths)).has(path);
-export const searchShownPaths = (prefix: string) => (priority as { paths: string[] }).paths.filter((p) => p.startsWith(prefix));
+export const searchShown = (path: string) => (shown ??= new Set(shownList())).has(path);
+export const searchShownPaths = (prefix: string) => shownList().filter((p) => p.startsWith(prefix));
 
 let topChars: Set<string> | null = null;
 export function characterIndexed(slug: string): boolean {
@@ -47,17 +51,25 @@ let parts: Map<string, number> | null = null;
 /** Entries in a franchise (data/franchises.json), when known. */
 export const franchiseParts = (slug: string) => (parts ??= new Map((franchiseData as { franchises: { s: string; n: number }[] }).franchises.map((f) => [f.s, f.n]))).get(slug);
 
-export function watchOrderIndexed(slug: string, liveParts: number): boolean {
-  return slug in WATCH_ORDER_OVERRIDES || (franchiseParts(slug) ?? liveParts) >= INDEXED_MIN_PARTS || searchShown(`/watch-order/${slug}`);
+/**
+ * A watch order is worth indexing with an editor guide, or with at least INDEXED_MIN_PARTS entries of which two are
+ * core (seasons or canon films): one season plus recaps and OVAs leaves nothing to order.
+ */
+export function watchOrderIndexed(slug: string, liveParts: number, liveCore?: number): boolean {
+  if (slug in WATCH_ORDER_OVERRIDES || searchShown(`/watch-order/${slug}`)) return true;
+  const core = liveCore ?? snapshotCore(slug);
+  return (franchiseParts(slug) ?? liveParts) >= INDEXED_MIN_PARTS && (core === undefined || core >= 2);
 }
 
-let topSimilar: Set<string> | null = null;
-/** The "anime like X" slugs listed and indexed: the most-followed titles. */
-export const similarSlugs = () => [...(topSimilar ??= new Set((aliasData as { anime: { s: string }[] }).anime.slice(0, INDEXED_SIMILAR).map((x) => x.s)))];
-export function similarIndexed(slug: string): boolean {
-  if (!topSimilar) similarSlugs();
-  return topSimilar!.has(slug) || searchShown(`/similar/${slug}`);
-}
+/** "Anime like X" lists are generated, so only the ones search already shows are listed and indexed. */
+export const similarSlugs = () => searchShownPaths("/similar/").map((p) => p.slice("/similar/".length));
+export const similarIndexed = (slug: string) => searchShown(`/similar/${slug}`);
+
+/** Character tables repeat what the character pages say: indexed only where search already shows them. */
+export const characterTableIndexed = (slug: string) => searchShown(`/anime/${slug}/characters`);
+
+/** "Next season" pages: indexed when there's news, or the title is popular enough that people ask anyway. */
+export const nextSeasonIndexed = (path: string, hasNews: boolean, members: number) => hasNews || members >= NEXT_SEASON_MIN_MEMBERS || searchShown(path);
 
 /** `robots` metadata for a page: undefined (indexable) or noindex, follow. */
 export const robotsFor = (indexed: boolean) => (indexed ? undefined : NOINDEX);

@@ -11,7 +11,7 @@ import { hasSnapshotCast } from "@/lib/castsnap";
 import { hasSnapshotThemes } from "@/lib/themes";
 import { airing as airingSnapshot, upcomingOf } from "@/lib/airing";
 import { HINDI_SLUGS, hindiPath } from "@/lib/hindi";
-import { INDEXED_CHARACTERS, INDEXED_MIN_PARTS, airsSoon, searchShownPaths, similarSlugs } from "@/lib/indexing";
+import { INDEXED_CHARACTERS, airsSoon, searchShownPaths, similarSlugs, watchOrderIndexed, characterTableIndexed, NEXT_SEASON_MIN_MEMBERS } from "@/lib/indexing";
 import franchiseData from "@/data/franchises.json";
 import { DATA_DATES as D, STATIC_UPDATED, latest, weekStart, monthStart } from "@/lib/lastmod";
 import { FILLER } from "@/data/filler";
@@ -33,10 +33,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: abs("/lists"), lastModified: weekly, changeFrequency: "weekly", priority: 0.6 },
     { url: abs("/trends"), lastModified: monthly, changeFrequency: "monthly", priority: 0.6 },
     ...TREND_GENRES.map(([g]) => ({ url: abs(`/trends/${g}`), lastModified: monthly, changeFrequency: "monthly" as const, priority: 0.6 })),
-    // One watch order per franchise (data/franchises.json, monthly): editorial ones first, then those with at least
-    // INDEXED_MIN_PARTS entries (two-part ones are noindexed, lib/indexing.ts). Season pages point their canonical
-    // at these, so they aren't listed.
-    ...[...new Set([...Object.keys(WATCH_ORDER_OVERRIDES), ...(franchiseData as { franchises: { s: string; n: number }[] }).franchises.filter((f) => f.n >= INDEXED_MIN_PARTS).slice(0, 1000).map((f) => f.s)])]
+    // One watch order per franchise (data/franchises.json, monthly): editorial ones first, then the ones the page
+    // itself indexes (lib/indexing.ts watchOrderIndexed: enough parts, two of them core). Season pages point their
+    // canonical at these, so they aren't listed.
+    ...[...new Set([...Object.keys(WATCH_ORDER_OVERRIDES), ...(franchiseData as { franchises: { s: string; n: number }[] }).franchises.filter((f) => watchOrderIndexed(f.s, f.n)).slice(0, 1000).map((f) => f.s)])]
       .map((slug, i) => ({ url: abs(`/watch-order/${slug}`), lastModified: at(D.watchOrders, WATCH_ORDER_OVERRIDES[slug]?.checked, D.arcs, D.manga), changeFrequency: "weekly" as const, priority: i < 100 ? 0.8 : 0.6 })),
     { url: abs("/short-anime"), lastModified: weekly, changeFrequency: "weekly", priority: 0.7 },
     { url: abs("/how-long-to-watch"), lastModified: weekly, changeFrequency: "weekly", priority: 0.7 },
@@ -63,7 +63,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // Only indexed character pages (lib/indexing.ts): the most-favourited ones plus any Google already shows.
     ...[...new Set([...topCharacterSlugs(INDEXED_CHARACTERS), ...searchShownPaths("/character/").map((p) => p.slice("/character/".length))])]
       .map((s, i) => ({ url: abs(`/character/${s}`), lastModified: at(D.characters), changeFrequency: "monthly" as const, priority: i < 100 ? 0.6 : 0.4 })),
-    ...characterTableSlugs().map((s) => ({ url: abs(`/anime/${s}/characters`), lastModified: at(D.seriesCharacters), changeFrequency: "monthly" as const, priority: 0.5 })),
+    ...characterTableSlugs().filter(characterTableIndexed).map((s) => ({ url: abs(`/anime/${s}/characters`), lastModified: at(D.seriesCharacters), changeFrequency: "monthly" as const, priority: 0.5 })),
     { url: abs("/hype"), lastModified: now, changeFrequency: "daily", priority: 0.6 },
     { ...info("/advertise"), changeFrequency: "monthly", priority: 0.3 },
     { ...info("/contact"), changeFrequency: "yearly", priority: 0.3 },
@@ -118,7 +118,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       const series = a.subtype === "TV" || a.subtype === "ONA";
       out.push({ url: abs(animePath(a)), lastModified: a.status === "current" ? now : at(D.anilist, D.arcs, D.manga), changeFrequency: a.status === "current" ? "daily" : "weekly", priority: a.status === "current" ? 0.8 : 0.7 });
       if (n > 100) continue;
-      if (series && released) out.push({ url: abs(`${animePath(a)}/next-season`), lastModified: weekly, changeFrequency: "weekly", priority: 0.7 });
+      // Popular series only: the page noindexes "no news" answers for less-followed titles (lib/indexing.ts).
+      if (series && released && a.userCount >= NEXT_SEASON_MIN_MEMBERS) out.push({ url: abs(`${animePath(a)}/next-season`), lastModified: weekly, changeFrequency: "weekly", priority: 0.7 });
       // Same test as the page, which noindexes itself without a trustworthy runtime (AniList can rescue some later).
       // Airing shows count aired episodes only, so they need a known next episode past the first.
       const aired = a.status === "current" ? Math.max(0, (upcomingOf(snap.byKitsu.get(a.id))[0]?.episode ?? 1) - 1) : a.episodeCount || 0;

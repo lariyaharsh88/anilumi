@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { robotsFor, characterTableIndexed } from "@/lib/indexing";
 import Link from "@/components/Link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
@@ -40,6 +41,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${title} Characters: Ages, Heights & Birthdays`,
     description: `How old and how tall are the ${title} characters? Ages, heights, birthdays and voice actors of ${rows.length} characters: ${lead} and more, with a height chart.`,
     alternates: { canonical: `/anime/${slug}/characters` },
+    robots: robotsFor(characterTableIndexed(slug)),
   };
 }
 
