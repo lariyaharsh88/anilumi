@@ -26,7 +26,7 @@ export default function Privacy() {
         <h2>Who processes it</h2>
         <p>Data is stored with MongoDB Atlas. Emails are sent through Resend, and you confirm your address before we send anything else. Push alerts go through your browser&apos;s own push service (Google, Mozilla, Apple or Microsoft). Visits are measured with Google Analytics, and Microsoft Clarity records anonymised clicks, scrolling and page interactions (as heatmaps and session replays) so we can see which pages are hard to use. Clarity masks text you type. We don&apos;t sell or rent your data.</p>
         <h2>Affiliate links</h2>
-        <p>Some links to Amazon (manga, light novels, Blu-ray) are affiliate links: as an Amazon Associate, AniLumi earns from qualifying purchases, at no extra cost to you. Amazon may set its own cookies when you follow one. Visitors in India are sent to amazon.in and everyone else to amazon.com, based on your device&apos;s time zone, which never leaves your browser.</p>
+        <p>Some links to Amazon (manga, light novels, Blu-ray, figures and posters) are affiliate links: as an Amazon Associate, AniLumi earns from qualifying purchases, at no extra cost to you. Amazon may set its own cookies when you follow one. Visitors in India are sent to amazon.in and everyone else to amazon.com, based on your device&apos;s time zone, which never leaves your browser.</p>
         <h2>Your choices</h2>
         <ul>
           <li>Every email has a one-click unsubscribe link.</li>

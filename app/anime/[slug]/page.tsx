@@ -442,7 +442,7 @@ export default async function AnimePage({ params }: Props) {
               animeId={a.id}
               title={a.title}
               links={a.streaming.map((x) => ({ id: x.id, url: x.url, site: x.site, dubs: x.dubs, subs: x.subs }))}
-              extra={<AmazonLink query={`${a.title} manga`} source="anime" className="btn-outline">📚 Manga on Amazon</AmazonLink>}
+              extra={<><AmazonLink query={`${a.title} manga`} source="anime" className="btn-outline">📚 Manga on Amazon</AmazonLink><AmazonLink query={`${a.title} figure`} dept="toys" source="anime-figure" className="btn-outline">🧸 Figures</AmazonLink></>}
             />
             {a.streaming.length > 0 && <p className="mt-3 text-[11px] text-muted">Official, legal streams. Catalogues differ by country. · <Refreshed iso={refreshed} /></p>}
             <AffiliateNote className="mt-1" />

@@ -20,14 +20,16 @@ export function streamLink(url: string): string {
   return WRAP ? `${WRAP}${encodeURIComponent(url)}` : url;
 }
 
-// Search departments: books (manga, light novels) and video (Blu-ray), which each store names differently.
-const DEPT: Record<"books" | "video", Record<Store, string>> = { books: { us: "stripbooks", in: "stripbooks" }, video: { us: "movies-tv", in: "dvd" } };
+// Search departments, which each store names differently: books (manga, light novels), video (Blu-ray), toys
+// (figures). "all" searches every department (posters, apparel).
+export type Dept = "books" | "video" | "toys" | "all";
+const DEPT: Record<Exclude<Dept, "all">, Record<Store, string>> = { books: { us: "stripbooks", in: "stripbooks" }, video: { us: "movies-tv", in: "dvd" }, toys: { us: "toys-and-games", in: "toys" } };
 
-/** A books (or video) search on one Amazon store, with that store's tag when set. Pure. */
-export function amazonSearch(query: string, store: Store = "us", dept: "books" | "video" = "books"): string {
+/** A search on one Amazon store and department, with that store's tag when set. Pure. */
+export function amazonSearch(query: string, store: Store = "us", dept: Dept = "books"): string {
   const u = new URL(`https://${HOST[store]}/s`);
   u.searchParams.set("k", query);
-  u.searchParams.set("i", DEPT[dept][store]);
+  if (dept !== "all") u.searchParams.set("i", DEPT[dept][store]);
   if (TAGS[store]) u.searchParams.set("tag", TAGS[store]);
   return u.toString();
 }

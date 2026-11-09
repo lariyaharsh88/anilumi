@@ -22,3 +22,9 @@ test("amazon: each store carries its own Associates tag", () => {
   assert.equal(new URL(amazonSearch("Naruto", "in")).searchParams.get("tag"), "harshmedia98-21");
   assert.equal(new URL(amazonSearch("Naruto", "us")).searchParams.get("tag"), "harshmedia98-20");
 });
+
+test("amazon: figures search each store's toys department; posters search everything", () => {
+  assert.equal(new URL(amazonSearch("Saitama figure", "us", "toys")).searchParams.get("i"), "toys-and-games");
+  assert.equal(new URL(amazonSearch("Saitama figure", "in", "toys")).searchParams.get("i"), "toys");
+  assert.equal(new URL(amazonSearch("One Piece poster", "in", "all")).searchParams.has("i"), false);
+});
