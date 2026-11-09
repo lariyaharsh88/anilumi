@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { posterUrl } from "@/lib/kitsu";
+import { alAnime } from "@/lib/alsnap";
 import { abs } from "@/lib/site";
 import { WATCH_ORDER_OVERRIDES } from "@/data/watch-orders";
 import { listAnime, getCategories, getAniListId, seasonOf, shiftSeason, animePath, episodePath, runtimeMinutes, TREND_GENRES, MAIN_GENRES } from "@/lib/kitsu";
@@ -137,7 +138,10 @@ export async function sitemapEntries(): Promise<MetadataRoute.Sitemap> {
       const al = alIds.get(a.id);
       if (al && hasSnapshotCast(al)) out.push({ url: abs(`${animePath(a)}/cast`), lastModified: at(D.casts), changeFrequency: "monthly", priority: 0.5 });
       if (released && hasSnapshotThemes(a.id)) out.push({ url: abs(`${animePath(a)}/openings-endings`), lastModified: at(D.themes), changeFrequency: "monthly", priority: 0.5 });
-      out.push({ url: abs(`${animePath(a)}/parents-guide`), lastModified: at(D.anilist), changeFrequency: "monthly", priority: 0.5 });
+      // Same test as the page (which noindexes itself without a guide): AniList tags in the monthly snapshot. Shorts,
+      // ads and music clips don't need a parents' guide.
+      const story = (a.subtype === "TV" || a.subtype === "movie" || a.subtype === "ONA" || a.subtype === "OVA") && (a.episodeLength ?? 24) >= 10;
+      if (story && al && (alAnime(al)?.t.length ?? 0) > 0) out.push({ url: abs(`${animePath(a)}/parents-guide`), lastModified: at(D.anilist), changeFrequency: "monthly", priority: 0.5 });
     }
     // "Anime like X" has the best click-through on the site: list it for the 500 most-followed titles (ranked in
     // the alias index, so no extra API calls).
