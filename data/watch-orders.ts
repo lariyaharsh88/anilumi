@@ -238,4 +238,221 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
     label: "Gurren Lagann",
     intro: "Watch the 27-episode series. The two films, Childhood's End and The Lights in the Sky Are Stars, retell it in condensed form; the second adds substantial new animation in its final act, so it is worth watching afterwards, but it is not a substitute for the series.",
   },
+  "nanatsu-no-taizai": {
+    label: "The Seven Deadly Sins",
+    intro: "TV seasons in order: The Seven Deadly Sins (2014–2015), Signs of Holy War (2016), Revival of the Commandments (2018), Imperial Wrath of the Gods (2019–2020) and Dragon's Judgement (2021). The film Prisoners of the Sky came out between the third and fourth seasons, and Cursed by Light followed the final season in July 2021. Grudge of Edinburgh (2022–2023) is a spin-off, and the sequel series Four Knights of the Apocalypse began in October 2023.",
+    skip: ["nanatsu-no-taizai-ensa-no-edinburgh", "nanatsu-no-taizai-ensa-no-edinburgh-kouhen"],
+  },
+  "ansatsu-kyoushitsu-tv": {
+    label: "Assassination Classroom",
+    intro: "Season 1 (22 episodes, 2015) and Season 2 (25 episodes, 2016) tell the whole story; watch them in order. The 2014 special Meeting Time is an optional extra. The films 365 Days' Time (2016) and Our Time (March 2026), which adds manga chapters the TV series left out, both belong after Season 2. Koro-sensei Q! (2016) is a separate spin-off.",
+    demote: ["ansatsu-kyoushitsu-tv-episode-0"],
+    promote: ["ansatsu-kyoushitsu-minna-no-jikan"],
+    mainOrder: ["ansatsu-kyoushitsu-tv", "ansatsu-kyoushitsu-tv-2", "ansatsu-kyoushitsu-minna-no-jikan"],
+  },
+  "no-game-no-life": {
+    label: "No Game No Life",
+    intro: "Watch the 12-episode series (2014) first, then the film No Game No Life: Zero (2017). Zero is a prequel set 6,000 years before the series and was released three years after it; it does not continue the TV story. The six specials released with the Blu-rays are optional, and the manners short and the Jibril promo video can be skipped.",
+    demote: ["no-game-no-life-zero"],
+    skip: ["no-game-no-life-zero-manner-movie", "satsuriku-tenshi-jibril-pv"],
+  },
+  noragami: {
+    label: "Noragami",
+    intro: "Noragami (January–March 2014), then Noragami Aragoto (October–December 2015). Each season has a two-episode OVA that was released with limited editions of the manga; they are optional side episodes and fit after the season they belong to. There are no films, and no recap episodes to skip.",
+  },
+  "shokugeki-no-souma": {
+    label: "Food Wars!",
+    intro: "Watch the five seasons in order: Food Wars! (2015), The Second Plate (2016), The Third Plate (two halves, October 2017 and April 2018, listed separately below), The Fourth Plate (2019) and The Fifth Plate (2020), the final season. The OVAs were released with manga volumes and are optional extras; watch each after the season it sits next to.",
+  },
+  "violet-evergarden": {
+    label: "Violet Evergarden",
+    intro: "Watch the 13-episode series (2018) and its extra episode from the final Blu-ray volume, then the side-story film Eternity and the Auto Memory Doll (2019), then Violet Evergarden: The Movie (2020), the sequel film. The commercials are promotional clips and can be skipped.",
+  },
+  "anohana-the-flower-we-saw-that-day": {
+    label: "Anohana",
+    intro: "Watch the 11-episode series (2011), then the 2013 film. The film is set a year after the series and revisits its events through each character's memories, so watch the series first. The short 2012 special and the promotional campaign clip are optional.",
+  },
+  "mirai-nikki-tv": {
+    label: "Future Diary",
+    intro: "Watch the 26-episode series (October 2011–April 2012), then the OVA Redial (2013), a short epilogue set after the final episode. The Ura Mirai Nikki shorts released alongside the series are optional. The 2010 pilot OVA is an earlier, separate version and is not needed.",
+  },
+  "ao-no-exorcist": {
+    label: "Blue Exorcist",
+    intro: "Watch Blue Exorcist (25 episodes, 2011), then Kyoto Saga (2017), Shimane Illuminati Saga (January 2024), Beyond the Snow Saga (October 2024) and The Blue Night Saga (January 2025); the last two are the two halves of the fourth season. Blue Exorcist: The Movie (2012) and the Kuro Runs Away From Home OVA are optional side stories that fit after the first season.",
+  },
+  "the-devil-is-a-part-timer": {
+    label: "The Devil Is a Part-Timer!",
+    intro: "Watch the 2013 series, then Season 2 (July–September 2022) and its second part (July–September 2023). Season 2 arrived nine years after the first season and continues its story. The Chiichai! Maou-sama!! shorts are optional, and the 2023 recap special can be skipped.",
+  },
+  "soul-eater": {
+    label: "Soul Eater and Fire Force",
+    intro: "These are two separate series by the same creator, Atsushi Ohkubo; Kitsu links them, so both appear below. Fire Force: Season 1 (2019), Season 2 (2020) and the final Season 3, which aired in two parts (April 2025 and January 2026). Soul Eater: one 51-episode series (April 2008–March 2009). The Late Night Show version is the same episodes with extra footage, and Soul Eater Not! (2014) is a spin-off.",
+  },
+  durarara: {
+    label: "Durarara!!",
+    intro: "Durarara!! (24 episodes, 2010), then Durarara!!×2, which aired as three parts: Shō (January 2015), Ten (July 2015) and Ketsu (January 2016). Watch the three parts in that order; they are one continuous season. The specials released between episodes and parts are optional extras.",
+  },
+  "seishun-buta-yarou-wa-bunny-girl-senpai-no-yume-wo-minai": {
+    label: "Rascal Does Not Dream (Bunny Girl Senpai)",
+    intro: "Release order is story order: the TV series (2018), the films Dreaming Girl (2019), Sister Venturing Out (June 2023) and Knapsack Kid (December 2023), the second TV series Santa Claus (July–September 2025), then the film Dear Friend (October 16, 2026). The films are not side stories; they continue the main story between the two TV series, so do not skip them.",
+  },
+  another: {
+    label: "Another",
+    intro: "Another is a single 12-episode series (January–March 2012). The OVA The Other: Inga is set before the series but was released two months after it ended, as a bonus with the manga; it is optional and can be watched after the series. There are no sequels.",
+    demote: ["another-the-other-inga"],
+  },
+  "mahou-shoujo-madoka-magica": {
+    label: "Madoka Magica",
+    intro: "Watch the 12-episode series (2011), then the sequel film Rebellion (2013), then Walpurgisnacht: Rising, which opened on August 28, 2026. The 2012 films Beginnings and Eternal retell the series and can be skipped if you watched it. Magia Record is a separate spin-off. The concept film, the manners short and the Sonico and Nisioisin collaboration clips are not part of the story.",
+    skip: ["mahou-shoujo-madoka-magica-concept-movie", "mahou-shoujo-sonico-magica"],
+    exclude: ["minna-to-manner-wo-manabou", "mahou-shoujo-madoka-magica-movie-3-hangyaku-no-monogatari-magica-quartet-x-nisioisin", "magia-record-mahou-shoujo-madoka-magica-gaiden"],
+  },
+  "saiki-kusuo-no-psi-nan-tv": {
+    label: "The Disastrous Life of Saiki K.",
+    intro: "Season 1 (2016), Season 2 (2018), the Final Arc special (December 28, 2018), then Reawakened, six episodes released on Netflix on December 30, 2019. Season 1 aired as 120 short daily episodes that were also put together into 24 half-hour episodes, so pick one version, not both. The 2013 web shorts are optional.",
+  },
+  "chuunibyou-demo-koi-ga-shitai": {
+    label: "Love, Chunibyo & Other Delusions",
+    intro: "Season 1 (2012) and its OVA episode, then Season 2, Heart Throb (2014), the special The Rikka Wars, and the film Take On Me (2018), which is set after Season 2 and ends the anime. The 2013 film Rikka Version retells Season 1 and can be skipped. The Lite, Depth of Field and other shorts are optional extras.",
+  },
+  "yahari-ore-no-seishun-love-comedy-wa-machigatteiru": {
+    label: "My Teen Romantic Comedy SNAFU (Oregairu)",
+    intro: "SNAFU (2013), SNAFU Too! (2015), then SNAFU Climax! (July–September 2020), the third and final season. Each season has one OVA, released with a video game; they are optional and fit after their season. Kitsu lists the seasons by their Japanese titles: Yahari Ore no Seishun Love Comedy wa Machigatteiru, Zoku and Kan.",
+  },
+  "black-clover-tv": {
+    label: "Black Clover",
+    intro: "Watch the 170-episode series (October 2017–March 2021), then Season 2, which premiered on October 3, 2026. The film Sword of the Wizard King (June 2023) is an optional side story released between the two. The Jump Festa specials and the Petit Clover shorts are optional extras.",
+  },
+  "kobayashi-san-chi-no-maid-dragon": {
+    label: "Miss Kobayashi's Dragon Maid",
+    intro: "Season 1 (2017) and its OVA, then Dragon Maid S (July–September 2021) and its OVA, then the film A Lonely Dragon Wants to Be Loved (June 27, 2025), the sequel film. The Mini Dragon shorts and other specials are optional.",
+  },
+  "magi-the-kingdom-of-magic": {
+    label: "Magi",
+    intro: "Start with Magi: The Labyrinth of Magic (2012–2013), then The Kingdom of Magic (2013–2014). Magi: Adventure of Sinbad (TV, 2016) is a prequel spin-off about Sinbad's youth; it was made after the main series and is optional, so watch it afterwards. A five-episode Adventure of Sinbad OVA (2014–2015) also exists and is optional.",
+    demote: ["magi-sinbad-no-bouken-tv"],
+  },
+  nichijou: {
+    label: "Nichijou",
+    intro: "Nichijou is one 26-episode series (April–September 2011). The Episode 0 OVA, released with manga volume 6 shortly before the TV series, is optional. There are no other seasons or films. It was released in English as Nichijou: My Ordinary Life.",
+    demote: ["nichijou-episode-0"],
+  },
+  "high-school-dxd": {
+    label: "High School DxD",
+    intro: "Watch the four seasons in order: High School DxD (2012), New (2013), BorN (2015) and Hero (2018), each followed by the OVA episodes listed after it. The first season's two OVAs were released as episodes 13 and 14, after the TV run ended. The short specials that came with the Blu-ray volumes are optional extras.",
+  },
+  "log-horizon": {
+    label: "Log Horizon",
+    intro: "Season 1 (25 episodes, 2013–2014), Season 2 (25 episodes, 2014–2015), then Destruction of the Round Table (12 episodes, January–March 2021), the third season, which came out six years after the second. All three seasons follow one continuous story, so do not start with the third.",
+  },
+  "kyoukai-no-kanata": {
+    label: "Beyond the Boundary",
+    intro: "Watch the 12-episode series (October–December 2013), then the OVA Daybreak (Shinonome, July 2014), then the film I'll Be Here – Future (April 2015), which is set one year after the series. The first film, I'll Be Here – Past (March 2015), retells the TV series and can be skipped. The Idol Trial and Mini Theater shorts are optional.",
+    demote: ["kyoukai-no-kanata-shinonome"],
+  },
+  "hellsing-ultimate": {
+    label: "Hellsing",
+    intro: "Watch Hellsing Ultimate, the 10-episode OVA series released from 2006 to 2012. The 2001 TV series Hellsing uses the same characters but tells a different story from the manga, so it is a separate adaptation, not a prequel or sequel. Hellsing: The Dawn, three short episodes included with Ultimate episodes 8 to 10, is an optional prequel side story and can be watched after Ultimate. Digest for Freaks is a recap.",
+    demote: ["hellsing-the-dawn"],
+  },
+  "spice-and-wolf": {
+    label: "Spice and Wolf",
+    intro: "The original adaptation is Spice and Wolf (2008), the OVA The Wolf and the Amber Melancholy (April 2009), then Spice and Wolf II (July–September 2009). Spice and Wolf: Merchant Meets the Wise Wolf (25 episodes, April–September 2024) is a remake that starts the story over from the beginning; a second season of the remake is set for 2027. Pick one version and watch it from its first episode.",
+  },
+  "guilty-crown": {
+    label: "Guilty Crown",
+    intro: "Guilty Crown is a single 22-episode series (October 2011–March 2012). Lost Christmas, a short OVA bundled with a spin-off visual novel in 2012, is a prequel about the Lost Christmas incident; it is optional and can be watched after the series. Reassortment is a recap special, and the 4-koma shorts are optional extras.",
+    demote: ["guilty-crown-lost-christmas"],
+  },
+  "the-disappearance-of-haruhi-suzumiya": {
+    label: "Haruhi Suzumiya",
+    intro: "Watch both TV seasons before the film: the 14 episodes from 2006 and the 14 new episodes from 2009, which Kitsu lists separately below. In 2009 the old and new episodes were broadcast together in story order, and that combined order is the easiest way to watch. Then watch The Disappearance of Haruhi Suzumiya (2010), which follows the 2009 episodes. Haruhi-chan and Nagato Yuki-chan are spin-offs.",
+    promote: ["the-melancholy-of-haruhi-suzumiya-2009"],
+  },
+  "mahoutsukai-no-yome": {
+    label: "The Ancient Magus' Bride",
+    intro: "Those Awaiting a Star, a three-part prequel OVA (2016–2017), came out before the TV series; watch it first or after Season 1. Then watch Season 1 (24 episodes, 2017–2018), the three-part OVA The Boy from the West and the Knight of the Blue Storm (2021–2022) and Season 2, which aired in two parts in April and October 2023. The December 2017 special is a recap and can be skipped.",
+  },
+  "owari-no-seraph": {
+    label: "Seraph of the End",
+    intro: "Seraph of the End: Vampire Reign (April–June 2015), then Battle in Nagoya (October–December 2015); together they are one 24-episode series split into two halves. The OVA Vampire Shahar (2016) is an optional side story. The Seraph of the Endless omake shorts from the Blu-ray volumes are optional.",
+  },
+  nisekoi: {
+    label: "Nisekoi",
+    intro: "Season 1 (20 episodes, January–May 2014), then Season 2 (April–June 2015), whose title is written Nisekoi: with a colon. The OVAs were released with limited editions of the manga and are optional; watch each one after the season it is listed with.",
+  },
+  kakegurui: {
+    label: "Kakegurui",
+    intro: "Kakegurui (12 episodes, July–September 2017), then Kakegurui×× (12 episodes, January–March 2019). Kakegurui Twin (Netflix, August 2022) is a spin-off centred on Mary Saotome; it is optional and can be watched after the two seasons.",
+    demote: ["kakegurui-twin"],
+  },
+  "darker-than-black": {
+    label: "Darker than Black",
+    intro: "Watch Darker than Black (25 episodes, 2007), then the four-episode Gaiden OVA, then Gemini of the Meteor (October–December 2009). Gaiden was released in 2010 with Gemini of the Meteor's home video volumes, but it is set between the two seasons. Episode 26, Beneath the Fully Bloomed Cherry Blossoms, is an optional extra from the first season's final DVD.",
+  },
+  mushishi: {
+    label: "Mushishi",
+    intro: "Watch the 26-episode first season (2005–2006), then the special The Shadow That Devours the Sun (January 2014), Next Passage part 1 (April–June 2014), the special Path of Thorns (August 2014), Next Passage part 2 (October–December 2014) and the film Bell Droplets (May 2015), the final entry. The 2006 digest broadcast is a recap and can be skipped.",
+  },
+  "k-on": {
+    label: "K-On!",
+    intro: "K-On! (13 episodes, 2009), then K-On!! (26 episodes, April–September 2010), then K-On! The Movie (December 2011), an original story about the band's graduation trip to London. Each season has one OVA episode from its final Blu-ray volume (Live House! and Plan!) that is optional and fits after it. The Ura-On! shorts are optional extras.",
+  },
+  "black-lagoon": {
+    label: "Black Lagoon",
+    intro: "Black Lagoon (12 episodes, April–June 2006), then The Second Barrage (12 episodes, October–December 2006), then the five-episode OVA Roberta's Blood Trail (2010–2011), which continues the story. There are no films or recap episodes to skip.",
+  },
+  "yuri-on-ice": {
+    label: "Yuri!!! on Ice",
+    intro: "Yuri!!! on Ice is a single 12-episode series (October–December 2016). The short Welcome to The Madness, released with the final Blu-ray volume in May 2017, shows Yuri Plisetsky's exhibition skate and is an optional extra. The announced film Ice Adolescence was cancelled in April 2024, so there is nothing else to watch.",
+    exclude: ["yuri-on-ice-movie-ice-adolescence"],
+  },
+  "mahouka-koukou-no-rettousei": {
+    label: "The Irregular at Magic High School",
+    intro: "Season 1 (26 episodes, 2014), the film The Girl Who Summons the Stars (2017), the Visitor Arc (October–December 2020), the Reminiscence Arc special (December 31, 2021), Season 3 (April–June 2024), then the film Yotsuba Succession Arc (May 8, 2026). Reminiscence Arc is a prequel about Tatsuya and Miyuki's past; it aired after the Visitor Arc. A further part was announced in June 2026. The Honor Student at Magic High School (2021) is a spin-off.",
+    demote: ["mahouka-koukou-no-rettousei-tsuioku-hen"],
+  },
+  "kimi-ni-todoke": {
+    label: "Kimi ni Todoke",
+    intro: "Season 1 (25 episodes, October 2009–March 2010), Season 2 (12 episodes, January–March 2011), then Season 3, which came out on Netflix in August 2024, more than 13 years later. The specials released alongside Season 2 are optional, and the recap specials can be skipped.",
+  },
+  "danganronpa-kibou-no-gakuen-to-zetsubou-no-koukousei-the-animation": {
+    label: "Danganronpa",
+    intro: "Danganronpa: The Animation (13 episodes, 2013) adapts the first game. Then watch Danganronpa 3: Future Arc and Despair Arc, which aired in parallel, alternating episodes, from July to September 2016, and finish with Hope Arc (September 29, 2016), the single-episode ending to both. Despair Arc is set in the past, during the characters' school days. Danganronpa 3 is an original story written for the anime as a sequel to the games.",
+    promote: ["danganronpa-3-the-end-of-kibougamine-gakuen-zetsubou-hen"],
+    mainOrder: ["danganronpa-kibou-no-gakuen-to-zetsubou-no-koukousei-the-animation", "danganronpa-3-the-end-of-kibougamine-gakuen-mirai-hen", "danganronpa-3-the-end-of-kibougamine-gakuen-zetsubou-hen", "danganronpa-3-the-end-of-kibougamine-gakuen-kibou-hen"],
+  },
+  flcl: {
+    label: "FLCL",
+    intro: "Start with the original six-episode FLCL (2000–2001). Then watch the sequels in release order: Progressive (June 2018), Alternative (September 2018), Grunge and Shoegaze (both 2023). Each sequel follows a new cast, with Haruko as the link. Shoegaze is set ten years after Alternative. In Japan, Progressive and Alternative were first shown as compilation films in 2018; the TV versions are the same story.",
+  },
+  "date-a-live": {
+    label: "Date A Live",
+    intro: "Watch the seasons in order: Date A Live (2013), Date A Live II (2014), the film Mayuri Judgment (August 2015), then III (January–March 2019), IV (April–June 2022) and V (April–June 2024). Each of the first two seasons has an OVA that fits after it. A theatrical film, Date A Live F: Last Date, is set for March 26, 2027. Date A Bullet is a spin-off. Seasons III to V are not linked on Kitsu, so they are missing from the list below.",
+  },
+  "ghost-in-the-shell-2015": {
+    label: "Ghost in the Shell: Arise",
+    intro: "Arise is a reboot with its own continuity, separate from Stand Alone Complex and the 1995 film. Watch either the four OVA Borders (June 2013–September 2014) or Alternative Architecture (TV, April–June 2015), which re-edits them as a TV series and adds two new episodes, Pyrophoric Cult. Then watch Ghost in the Shell: The New Movie (June 2015), which follows on from Arise.",
+  },
+  "ghost-in-the-shell-stand-alone-complex": {
+    label: "Ghost in the Shell: Stand Alone Complex",
+    intro: "Watch Stand Alone Complex (26 episodes, 2002–2003), 2nd GIG (26 episodes, 2004–2005) and the TV film Solid State Society (2006), then SAC_2045 Season 1 (Netflix, April 2020) and Season 2 (May 2022). The Laughing Man and Individual Eleven are compilation films of the first two seasons, and Sustainable War and The Last Human recut SAC_2045; skip all four if you watch the series. The Tachikomatic Days shorts are optional.",
+  },
+  trigun: {
+    label: "Trigun",
+    intro: "The 1998 series (26 episodes) is the original adaptation, and the film Badlands Rumble (2010) is an optional side story for it. Trigun Stampede (January–March 2023) is a separate, reimagined adaptation, not a sequel; its continuation Trigun Stargaze aired from January to March 2026. Watch either the 1998 series or Stampede and Stargaze; they do not share a continuity.",
+  },
+  "fate-kaleid-liner-prisma-illya": {
+    label: "Fate/kaleid liner Prisma Illya",
+    intro: "Watch the TV seasons in order: Prisma Illya (2013), 2wei! (2014), 2wei Herz! (2015) and 3rei!! (2016), then the films Vow in the Snow (August 2017) and Licht – The Nameless Girl (August 2021). A fifth and final season, Prisma Illya Finale, is set for 2027. The shorts and OVAs released with each season, and the 2019 OVA Prisma Phantasm, are optional extras. It is an alternate-universe spin-off of Fate/stay night.",
+  },
+  "kekkai-sensen": {
+    label: "Blood Blockade Battlefront",
+    intro: "Blood Blockade Battlefront (12 episodes; it began in April 2015 and its final episode aired in October 2015), then Blood Blockade Battlefront & Beyond (12 episodes, October–December 2017). Each season has one OVA, released in 2016 and 2018; both are optional side episodes that fit after their season.",
+  },
+  barakamon: {
+    label: "Barakamon",
+    intro: "Barakamon is a single 12-episode series (July–September 2014). Handa-kun (July–September 2016) is a prequel spin-off about Seishu Handa's high school days; it is optional and was made after Barakamon, so watch it afterwards. The Mijikamon shorts are optional extras.",
+    demote: ["handa-kun"],
+  },
 };
