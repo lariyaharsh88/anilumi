@@ -21,6 +21,7 @@ import BarChart from "@/components/viz/BarChart";
 import StackedBar from "@/components/viz/StackedBar";
 import AdSlot from "@/components/AdSlot";
 import MerchBlock from "@/components/MerchBlock";
+import CharacterNotes from "@/components/CharacterNotes";
 import { birthdayFor, bdLabel, bdPath } from "@/lib/birthdays";
 import { characterIndexed, robotsFor } from "@/lib/indexing";
 import { excerpt } from "@/lib/excerpt";
@@ -213,6 +214,7 @@ export default async function CharacterPage({ params }: Props) {
             <Link href="/characters" className="chip">👤 Most popular characters</Link>
           </p>
         </section>
+        <CharacterNotes slug={c.slug} show={home ? { slug: home.slug, title: home.title } : null} />
         <section className="card reveal p-5 sm:p-6" aria-labelledby="bio-h">
           <h2 id="bio-h" className="h-section mb-2">Who is {c.name}?</h2>
           <p className="prose-anime whitespace-pre-line">{excerpt(bio, 520) || "No biography has been written for this character yet."}</p>

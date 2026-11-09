@@ -1,0 +1,1541 @@
+{
+ "checked": "2026-11-09",
+ "reviewed": null,
+ "characters": {
+  "eren-jager": {
+   "name": "Eren Yeager",
+   "role": "Protagonist; member of the Survey Corps",
+   "debut": {
+    "anime": "Attack on Titan",
+    "episode": 1,
+    "episodeTitle": "To You, in 2000 Years: The Fall of Shiganshina, Part 1",
+    "source": "manga",
+    "chapter": 1,
+    "volume": null
+   },
+   "arcs": [
+    "The Struggle for Trost arc",
+    "Clash of the Titans arc",
+    "Royal Government arc",
+    "Return to Shiganshina arc",
+    "Marley arc",
+    "War for Paradis arc"
+   ],
+   "affiliations": [
+    "104th Training Corps",
+    "Survey Corps"
+   ],
+   "relatives": [
+    {
+     "name": "Grisha Yeager",
+     "relation": "father"
+    },
+    {
+     "name": "Carla Yeager",
+     "relation": "mother"
+    }
+   ],
+   "confidence": "high",
+   "sources": [
+    "https://attackontitan.fandom.com/wiki/Eren_Jaeger_(Anime)",
+    "https://attackontitan.fandom.com/wiki/Eren_Yeager",
+    "https://en.wikipedia.org/wiki/Eren_Yeager",
+    "https://en.wikipedia.org/wiki/Attack_on_Titan_season_1"
+   ],
+   "notes": "Arc names follow the Attack on Titan Wiki anime arc pages."
+  },
+  "l-lawliet": {
+   "name": "L Lawliet",
+   "role": "Detective leading the investigation into Kira",
+   "debut": {
+    "anime": "Death Note",
+    "episode": 2,
+    "episodeTitle": "Confrontation",
+    "source": "manga",
+    "chapter": 1,
+    "volume": null
+   },
+   "arcs": [
+    "Part I"
+   ],
+   "affiliations": [
+    "Wammy's House",
+    "Japanese Task Force"
+   ],
+   "relatives": [],
+   "confidence": "high",
+   "sources": [
+    "https://deathnote.fandom.com/wiki/L_Lawliet",
+    "https://en.wikipedia.org/wiki/L_(Death_Note)",
+    "https://en.wikipedia.org/wiki/List_of_Death_Note_episodes"
+   ]
+  },
+  "saitama": {
+   "name": "Saitama",
+   "role": "Protagonist; hero who can defeat any opponent with one punch",
+   "debut": {
+    "anime": "One Punch Man",
+    "episode": 1,
+    "episodeTitle": "The Strongest Man",
+    "source": "manga",
+    "chapter": 1,
+    "volume": null
+   },
+   "arcs": [],
+   "affiliations": [
+    "Hero Association"
+   ],
+   "relatives": [],
+   "confidence": "high",
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Saitama",
+    "https://en.wikipedia.org/wiki/Saitama_(One-Punch_Man)",
+    "https://en.wikipedia.org/wiki/One-Punch_Man_season_1"
+   ],
+   "notes": "Chapter number refers to the Yusuke Murata manga; he also debuts in chapter 1 of ONE's webcomic."
+  },
+  "ken-kaneki": {
+   "name": "Ken Kaneki",
+   "role": "Protagonist; university student who becomes a half-ghoul",
+   "debut": {
+    "anime": "Tokyo Ghoul",
+    "episode": 1,
+    "episodeTitle": "Tragedy",
+    "source": "manga",
+    "chapter": 1,
+    "volume": 1
+   },
+   "arcs": [],
+   "affiliations": [
+    "Kamii University",
+    "Anteiku"
+   ],
+   "relatives": [],
+   "confidence": "high",
+   "sources": [
+    "https://tokyoghoul.fandom.com/wiki/Ken_Kaneki",
+    "https://en.wikipedia.org/wiki/Tokyo_Ghoul",
+    "https://en.wikipedia.org/wiki/Tokyo_Ghoul_season_1"
+   ],
+   "notes": "Chapter 1 per the Tokyo Ghoul Wiki; Wikipedia confirms he appears on the volume 1 cover. Relatives left out to avoid spoilers."
+  },
+  "mikasa-ackerman": {
+   "name": "Mikasa Ackerman",
+   "role": "Eren Yeager's adoptive sister; member of the Survey Corps",
+   "debut": {
+    "anime": "Attack on Titan",
+    "episode": 1,
+    "episodeTitle": "To You, in 2000 Years: The Fall of Shiganshina, Part 1",
+    "source": "manga",
+    "chapter": 1,
+    "volume": null
+   },
+   "arcs": [
+    "The Struggle for Trost arc",
+    "The 57th Exterior Scouting Mission arc",
+    "Clash of the Titans arc",
+    "Royal Government arc",
+    "Return to Shiganshina arc",
+    "War for Paradis arc"
+   ],
+   "affiliations": [
+    "104th Training Corps",
+    "Survey Corps"
+   ],
+   "relatives": [
+    {
+     "name": "Grisha Yeager",
+     "relation": "adoptive father"
+    },
+    {
+     "name": "Carla Yeager",
+     "relation": "adoptive mother"
+    }
+   ],
+   "confidence": "high",
+   "sources": [
+    "https://attackontitan.fandom.com/wiki/Mikasa_Ackermann_(Anime)",
+    "https://attackontitan.fandom.com/wiki/Mikasa_Ackerman",
+    "https://en.wikipedia.org/wiki/Mikasa_Ackerman",
+    "https://en.wikipedia.org/wiki/Attack_on_Titan_season_1"
+   ]
+  },
+  "sakura-haruno": {
+   "name": "Sakura Haruno",
+   "role": "Member of Team 7; medical ninja",
+   "debut": {
+    "anime": "Naruto",
+    "episode": 1,
+    "episodeTitle": "Enter: Naruto Uzumaki!",
+    "source": "manga",
+    "chapter": 3,
+    "volume": null
+   },
+   "arcs": [
+    "Land of Waves",
+    "Chunin Exams",
+    "Kazekage Rescue Mission",
+    "Tenchi Bridge Reconnaissance Mission",
+    "Five Kage Summit",
+    "Fourth Shinobi World War: Climax"
+   ],
+   "affiliations": [
+    "Konohagakure",
+    "Team 7"
+   ],
+   "relatives": [
+    {
+     "name": "Kizashi Haruno",
+     "relation": "father"
+    },
+    {
+     "name": "Mebuki Haruno",
+     "relation": "mother"
+    }
+   ],
+   "confidence": "medium",
+   "sources": [
+    "https://naruto.fandom.com/wiki/Sakura_Haruno",
+    "https://en.wikipedia.org/wiki/Sakura_Haruno",
+    "https://en.wikipedia.org/wiki/Naruto_season_1"
+   ],
+   "notes": "Chapter 3 is confirmed by both sources. The episode 1 anime debut rests on Narutopedia; Wikipedia episode summaries first name her in episode 3. Arcs from Kazekage Rescue Mission on are in Naruto: Shippuuden."
+  },
+  "kakashi-hatake": {
+   "name": "Kakashi Hatake",
+   "role": "Jonin leader of Team 7",
+   "debut": {
+    "anime": "Naruto",
+    "episode": 3,
+    "episodeTitle": "Sasuke and Sakura: Friends or Foes?",
+    "source": "manga",
+    "chapter": 3,
+    "volume": null
+   },
+   "arcs": [
+    "Land of Waves",
+    "Chunin Exams",
+    "Search for Tsunade",
+    "Kazekage Rescue Mission",
+    "Pain's Assault",
+    "Fourth Shinobi World War: Climax"
+   ],
+   "affiliations": [
+    "Konohagakure",
+    "Team 7"
+   ],
+   "relatives": [
+    {
+     "name": "Sakumo Hatake",
+     "relation": "father"
+    }
+   ],
+   "confidence": "medium",
+   "sources": [
+    "https://naruto.fandom.com/wiki/Kakashi_Hatake",
+    "https://en.wikipedia.org/wiki/Kakashi_Hatake",
+    "https://en.wikipedia.org/wiki/Naruto_season_1"
+   ],
+   "notes": "Chapter 3 is confirmed by both sources. Episode 3 rests on Narutopedia; the Wikipedia summary of episode 3 mentions the team's jonin instructor without naming him. Arcs from Kazekage Rescue Mission on are in Naruto: Shippuuden."
+  },
+  "asahi-azumane": {
+   "name": "Asahi Azumane",
+   "role": "Ace wing spiker of Karasuno High's volleyball team",
+   "debut": {
+    "anime": "Haikyuu!!",
+    "episode": 8,
+    "episodeTitle": "The One They Call \"Ace\"",
+    "source": "manga",
+    "chapter": 17,
+    "volume": null
+   },
+   "arcs": [
+    "Karasuno High Team Formation Arc",
+    "Interhigh Arc",
+    "Tokyo Expedition Arc",
+    "Spring High Preliminary Arc",
+    "Tokyo Nationals Arc",
+    "Final Arc"
+   ],
+   "affiliations": [
+    "Karasuno High"
+   ],
+   "relatives": [],
+   "confidence": "medium",
+   "sources": [
+    "https://haikyuu.fandom.com/wiki/Asahi_Azumane",
+    "https://en.wikipedia.org/wiki/Haikyu!!_season_1",
+    "https://en.wikipedia.org/wiki/List_of_Haikyu!!_characters"
+   ],
+   "notes": "Chapter rests on the Haikyuu!! Wiki: briefly seen in chapter 17 (\"Storm\"), properly introduced in chapter 18. The wiki titles episode 8 \"He Who Is Called 'Ace'\"."
+  },
+  "nate-river": {
+   "name": "Nate River",
+   "role": "Successor to L; head of the SPK",
+   "debut": {
+    "anime": "Death Note",
+    "episode": 26,
+    "episodeTitle": "Renewal",
+    "source": "manga",
+    "chapter": 59,
+    "volume": null
+   },
+   "arcs": [
+    "Part II"
+   ],
+   "affiliations": [
+    "Wammy's House",
+    "SPK (Special Provision for Kira)"
+   ],
+   "relatives": [],
+   "confidence": "medium",
+   "sources": [
+    "https://deathnote.fandom.com/wiki/Near",
+    "https://en.wikipedia.org/wiki/List_of_Death_Note_characters",
+    "https://en.wikipedia.org/wiki/List_of_Death_Note_episodes"
+   ],
+   "notes": "Episode 26 and chapter 59 (\"Zero\") rest on the Death Note Wiki; the Wikipedia summary of episode 26 shows two unnamed children and first names Near in episode 27."
+  },
+  "touka-kirishima": {
+   "name": "Touka Kirishima",
+   "role": "Ghoul who works as a waitress at the Anteiku café",
+   "debut": {
+    "anime": "Tokyo Ghoul",
+    "episode": 1,
+    "episodeTitle": "Tragedy",
+    "source": "manga",
+    "chapter": 1,
+    "volume": null
+   },
+   "arcs": [],
+   "affiliations": [
+    "Anteiku",
+    "Kiyomi High School"
+   ],
+   "relatives": [
+    {
+     "name": "Ayato Kirishima",
+     "relation": "younger brother"
+    }
+   ],
+   "confidence": "medium",
+   "sources": [
+    "https://tokyoghoul.fandom.com/wiki/Touka_Kirishima",
+    "https://en.wikipedia.org/wiki/List_of_Tokyo_Ghoul_characters",
+    "https://en.wikipedia.org/wiki/Tokyo_Ghoul_season_1"
+   ],
+   "notes": "Episode 1 and chapter 1 debut rest on the Tokyo Ghoul Wiki; Wikipedia episode summaries first name her in episode 3."
+  },
+  "lelouch-lamperouge": {
+   "name": "Lelouch Lamperouge",
+   "role": "Exiled Britannian prince who leads the Black Knights as Zero",
+   "debut": {
+    "anime": "Code Geass: Lelouch of the Rebellion",
+    "episode": 1,
+    "episodeTitle": "The Day a New Demon was Born",
+    "source": null,
+    "chapter": null,
+    "volume": null
+   },
+   "arcs": [],
+   "affiliations": [
+    "Ashford Academy",
+    "Black Knights"
+   ],
+   "relatives": [
+    {
+     "name": "Charles zi Britannia",
+     "relation": "father"
+    },
+    {
+     "name": "Marianne vi Britannia",
+     "relation": "mother"
+    },
+    {
+     "name": "Nunnally vi Britannia",
+     "relation": "younger sister"
+    }
+   ],
+   "confidence": "high",
+   "sources": [
+    "https://codegeass.fandom.com/wiki/Lelouch_Lamperouge",
+    "https://en.wikipedia.org/wiki/Lelouch_Lamperouge",
+    "https://en.wikipedia.org/wiki/List_of_Code_Geass_episodes",
+    "https://en.wikipedia.org/wiki/List_of_Code_Geass_characters"
+   ],
+   "notes": "Code Geass is an original anime, so there is no source chapter."
+  },
+  "franky": {
+   "name": "Franky",
+   "role": "Shipwright of the Straw Hat Pirates",
+   "debut": {
+    "anime": "One Piece",
+    "episode": 233,
+    "episodeTitle": "Pirate Abduction Incident! A Pirate Ship That Can Only Await Her End!",
+    "source": "manga",
+    "chapter": 329,
+    "volume": null
+   },
+   "arcs": [
+    "Water 7",
+    "Enies Lobby",
+    "Thriller Bark",
+    "Sabaody Archipelago"
+   ],
+   "affiliations": [
+    "Straw Hat Pirates",
+    "Franky Family (former)",
+    "Tom's Workers (former)"
+   ],
+   "relatives": [
+    {
+     "name": "Tom",
+     "relation": "mentor and foster father"
+    },
+    {
+     "name": "Iceburg",
+     "relation": "fellow apprentice under Tom"
+    }
+   ],
+   "confidence": "high",
+   "sources": [
+    "https://onepiece.fandom.com/wiki/Franky",
+    "https://onepiece.fandom.com/wiki/Franky/History",
+    "https://en.wikipedia.org/wiki/Franky_(One_Piece)",
+    "https://en.wikipedia.org/wiki/One_Piece_season_8"
+   ],
+   "notes": "Arcs listed are those covered on the wiki's pre-timeskip history page; he also takes part in every later Straw Hat arc."
+  },
+  "light-yagami": {
+   "name": "Light Yagami",
+   "role": "Protagonist; student who uses the Death Note as Kira",
+   "debut": {
+    "anime": "Death Note",
+    "episode": 1,
+    "episodeTitle": "Rebirth",
+    "source": "manga",
+    "chapter": 1,
+    "volume": null
+   },
+   "arcs": [
+    "Part I",
+    "Part II"
+   ],
+   "affiliations": [
+    "Japanese Task Force"
+   ],
+   "relatives": [
+    {
+     "name": "Soichiro Yagami",
+     "relation": "father"
+    },
+    {
+     "name": "Sachiko Yagami",
+     "relation": "mother"
+    },
+    {
+     "name": "Sayu Yagami",
+     "relation": "younger sister"
+    }
+   ],
+   "confidence": "high",
+   "sources": [
+    "https://deathnote.fandom.com/wiki/Light_Yagami",
+    "https://en.wikipedia.org/wiki/Light_Yagami",
+    "https://en.wikipedia.org/wiki/List_of_Death_Note_episodes"
+   ]
+  },
+  "ryuk": {
+   "name": "Ryuk",
+   "role": "Shinigami who drops the Death Note into the human world",
+   "debut": {
+    "anime": "Death Note",
+    "episode": 1,
+    "episodeTitle": "Rebirth",
+    "source": "manga",
+    "chapter": 1,
+    "volume": null
+   },
+   "arcs": [
+    "Part I",
+    "Part II"
+   ],
+   "affiliations": [],
+   "relatives": [],
+   "confidence": "high",
+   "sources": [
+    "https://deathnote.fandom.com/wiki/Ryuk",
+    "https://en.wikipedia.org/wiki/Ryuk_(Death_Note)",
+    "https://en.wikipedia.org/wiki/List_of_Death_Note_episodes"
+   ],
+   "notes": "He also appears in the 2003 one-shot pilot chapter, before the serialized chapter 1."
+  },
+  "rintarou-okabe": {
+   "name": "Rintarou Okabe",
+   "role": "Protagonist; self-styled mad scientist who founded the Future Gadget Laboratory",
+   "debut": {
+    "anime": "Steins;Gate",
+    "episode": 1,
+    "episodeTitle": "Turning Point",
+    "source": null,
+    "chapter": null,
+    "volume": null
+   },
+   "arcs": [],
+   "affiliations": [
+    "Future Gadget Laboratory",
+    "Tokyo Denki University"
+   ],
+   "relatives": [],
+   "confidence": "high",
+   "sources": [
+    "https://steins-gate.fandom.com/wiki/Rintaro_Okabe",
+    "https://en.wikipedia.org/wiki/Steins;Gate",
+    "https://en.wikipedia.org/wiki/List_of_Steins;Gate_episodes"
+   ],
+   "notes": "Steins;Gate is adapted from a visual novel (not a manga or light novel), so source is null; the character appears from the start of the game. The wiki gives episode 1 as \"Prologue of the Beginning and the End -Turning Point-\"."
+  },
+  "meliodas": {
+   "name": "Meliodas",
+   "role": "Captain of the Seven Deadly Sins; owner of the Boar Hat tavern",
+   "debut": {
+    "anime": "Nanatsu no Taizai",
+    "episode": 1,
+    "episodeTitle": "The Seven Deadly Sins",
+    "source": "manga",
+    "chapter": 1,
+    "volume": 1
+   },
+   "arcs": [
+    "Introduction Arc",
+    "Vaizel Arc",
+    "Kingdom Infiltration Arc",
+    "Istar Arc",
+    "Great Fight Festival Arc",
+    "Defensive Battle for Liones Arc"
+   ],
+   "affiliations": [
+    "Seven Deadly Sins",
+    "Boar Hat"
+   ],
+   "relatives": [],
+   "confidence": "high",
+   "sources": [
+    "https://nanatsu-no-taizai.fandom.com/wiki/Meliodas",
+    "https://en.wikipedia.org/wiki/The_Seven_Deadly_Sins_(manga)",
+    "https://en.wikipedia.org/wiki/The_Seven_Deadly_Sins_season_1"
+   ],
+   "notes": "Chapter 1 per the wiki; Wikipedia confirms he is on the volume 1 cover. Relatives left out to avoid spoilers."
+  },
+  "kishou-arima": {
+   "name": "Kishou Arima",
+   "role": "Special Class Ghoul Investigator of the CCG",
+   "debut": {
+    "anime": "Tokyo Ghoul",
+    "episode": 9,
+    "episodeTitle": "Birdcage",
+    "source": "manga",
+    "chapter": 29,
+    "volume": null
+   },
+   "arcs": [
+    "Aogiri Arc",
+    "Owl Suppression Operation",
+    "Auction",
+    "Rose Extermination",
+    "Third Cochlea Raid"
+   ],
+   "affiliations": [
+    "CCG",
+    "Arima Squad"
+   ],
+   "relatives": [],
+   "confidence": "medium",
+   "sources": [
+    "https://tokyoghoul.fandom.com/wiki/Kishou_Arima",
+    "https://en.wikipedia.org/wiki/List_of_Tokyo_Ghoul_characters",
+    "https://en.wikipedia.org/wiki/Tokyo_Ghoul_season_1"
+   ],
+   "notes": "Episode 9 and chapter 29 debut rest on the Tokyo Ghoul Wiki; the Wikipedia summary of episode 9 does not name him. Relatives left out to avoid spoilers."
+  },
+  "killua-zoldyck": {
+   "name": "Killua Zoldyck",
+   "role": "Former assassin of the Zoldyck family; Gon's best friend",
+   "debut": {
+    "anime": "Hunter x Hunter (2011)",
+    "episode": 3,
+    "episodeTitle": "Rivals × for × Survival",
+    "source": "manga",
+    "chapter": 6,
+    "volume": null
+   },
+   "arcs": [
+    "Hunter Exam",
+    "Heavens Arena",
+    "Yorknew City",
+    "Greed Island",
+    "Chimera Ant",
+    "13th Hunter Chairman Election"
+   ],
+   "affiliations": [
+    "Zoldyck Family (former)",
+    "Hunter Association"
+   ],
+   "relatives": [
+    {
+     "name": "Silva Zoldyck",
+     "relation": "father"
+    },
+    {
+     "name": "Kikyo Zoldyck",
+     "relation": "mother"
+    },
+    {
+     "name": "Illumi Zoldyck",
+     "relation": "elder brother"
+    },
+    {
+     "name": "Zeno Zoldyck",
+     "relation": "grandfather"
+    }
+   ],
+   "confidence": "medium",
+   "sources": [
+    "https://hunterxhunter.fandom.com/wiki/Killua_Zoldyck",
+    "https://en.wikipedia.org/wiki/Killua_Zoldyck",
+    "https://en.wikipedia.org/wiki/List_of_Hunter_×_Hunter_(2011_TV_series)_episodes",
+    "https://en.wikipedia.org/wiki/List_of_Hunter_×_Hunter_characters"
+   ],
+   "notes": "Chapter 6 is confirmed by both sources. Episode 3 is from the Hunter x Hunter Wiki; the Wikipedia summary introduces him in episode 4 (\"Hope × and × Ambition\")."
+  },
+  "gabi-braun": {
+   "name": "Gabi Braun",
+   "role": "Eldian Warrior candidate in Marley; Reiner Braun's cousin",
+   "debut": {
+    "anime": "Attack on Titan: The Final Season",
+    "episode": 1,
+    "episodeTitle": "The Other Side of the Sea",
+    "source": "manga",
+    "chapter": 91,
+    "volume": null
+   },
+   "arcs": [
+    "Marley arc",
+    "War for Paradis arc"
+   ],
+   "affiliations": [
+    "Marleyan Warrior Unit"
+   ],
+   "relatives": [
+    {
+     "name": "Reiner Braun",
+     "relation": "cousin"
+    }
+   ],
+   "confidence": "medium",
+   "sources": [
+    "https://attackontitan.fandom.com/wiki/Gabi_Braun_(Anime)",
+    "https://attackontitan.fandom.com/wiki/Gabi_Braun",
+    "https://en.wikipedia.org/wiki/List_of_Attack_on_Titan_characters",
+    "https://en.wikipedia.org/wiki/Attack_on_Titan_season_4"
+   ],
+   "notes": "Episode 1 of The Final Season is episode 60 overall. Chapter 91 (\"The Other Side of the Ocean\") rests on the Attack on Titan Wiki only."
+  },
+  "osamu-dazai-5df9c678-bb69-4154-84e6-62ec3186738c": {
+   "name": "Osamu Dazai",
+   "role": "Member of the Armed Detective Agency; former Port Mafia executive",
+   "debut": {
+    "anime": "Bungou Stray Dogs",
+    "episode": 1,
+    "episodeTitle": "Fortune Is Unpredictable and Mutable",
+    "source": "manga",
+    "chapter": 1,
+    "volume": null
+   },
+   "arcs": [],
+   "affiliations": [
+    "Armed Detective Agency",
+    "Port Mafia (former)"
+   ],
+   "relatives": [],
+   "confidence": "high",
+   "sources": [
+    "https://bungostraydogs.fandom.com/wiki/Osamu_Dazai",
+    "https://en.wikipedia.org/wiki/Osamu_Dazai_(Bungo_Stray_Dogs)",
+    "https://en.wikipedia.org/wiki/Bungo_Stray_Dogs_season_1"
+   ]
+  },
+  "taiga-aisaka": {
+   "name": "Taiga Aisaka",
+   "role": "Female lead; Ryuuji Takasu's classmate, nicknamed the Palmtop Tiger",
+   "debut": {
+    "anime": "Toradora!",
+    "episode": 1,
+    "episodeTitle": "Tiger and Dragon",
+    "source": "light novel",
+    "chapter": null,
+    "volume": 1
+   },
+   "arcs": [
+    "Love Letter Arc",
+    "Ryuuji and Taiga's Plan Arc",
+    "Meeting Ami Arc",
+    "Christmas Party Arc",
+    "Ski Trip Arc",
+    "Valentine's Day Arc"
+   ],
+   "affiliations": [
+    "Ohashi High School"
+   ],
+   "relatives": [],
+   "confidence": "high",
+   "sources": [
+    "https://tora-dora.fandom.com/wiki/Taiga_Aisaka",
+    "https://en.wikipedia.org/wiki/Toradora!",
+    "https://en.wikipedia.org/wiki/List_of_Toradora!_episodes"
+   ],
+   "notes": "The wiki gives chapter 1 of the first light novel; Wikipedia confirms she is on the volume 1 cover."
+  },
+  "kurisu-makise": {
+   "name": "Kurisu Makise",
+   "role": "Neuroscience researcher who joins the Future Gadget Laboratory",
+   "debut": {
+    "anime": "Steins;Gate",
+    "episode": 1,
+    "episodeTitle": "Turning Point",
+    "source": null,
+    "chapter": null,
+    "volume": null
+   },
+   "arcs": [],
+   "affiliations": [
+    "Future Gadget Laboratory",
+    "Viktor Chondria University"
+   ],
+   "relatives": [],
+   "confidence": "high",
+   "sources": [
+    "https://steins-gate.fandom.com/wiki/Kurisu_Makise",
+    "https://en.wikipedia.org/wiki/Steins;Gate",
+    "https://en.wikipedia.org/wiki/List_of_Steins;Gate_episodes"
+   ],
+   "notes": "Steins;Gate is adapted from a visual novel (not a manga or light novel), so source is null; the character appears from the start of the game. The wiki gives episode 1 as \"Prologue of the Beginning and the End -Turning Point-\". Relatives left out to avoid spoilers."
+  },
+  "kenny-ackerman": {
+   "name": "Kenny Ackerman",
+   "role": "Leader of the Anti-Personnel Control Squad serving the Reiss family",
+   "debut": {
+    "anime": "Attack on Titan Season 3",
+    "episode": 1,
+    "episodeTitle": "Smoke Signal",
+    "source": "manga",
+    "chapter": 52,
+    "volume": null
+   },
+   "arcs": [
+    "Royal Government arc"
+   ],
+   "affiliations": [
+    "Anti-Personnel Control Squad"
+   ],
+   "relatives": [],
+   "confidence": "medium",
+   "sources": [
+    "https://attackontitan.fandom.com/wiki/Kenny_Ackermann_(Anime)",
+    "https://attackontitan.fandom.com/wiki/Kenny_Ackerman",
+    "https://en.wikipedia.org/wiki/List_of_Attack_on_Titan_characters",
+    "https://en.wikipedia.org/wiki/Attack_on_Titan_season_3"
+   ],
+   "notes": "Season 3 episode 1 is episode 38 overall. Chapter 52 (\"Krista Lenz\") rests on the Attack on Titan Wiki only. Relatives left out to avoid spoilers."
+  },
+  "gowther": {
+   "name": "Gowther",
+   "role": "The Goat's Sin of Lust of the Seven Deadly Sins",
+   "debut": {
+    "anime": "Nanatsu no Taizai",
+    "episode": 14,
+    "episodeTitle": "A Reader of Books",
+    "source": "manga",
+    "chapter": 53,
+    "volume": null
+   },
+   "arcs": [
+    "Armor Giant Arc",
+    "Kingdom Infiltration Arc",
+    "Great Fight Festival Arc",
+    "Corand Arc",
+    "New Holy War Arc",
+    "Demon King Arc"
+   ],
+   "affiliations": [
+    "Seven Deadly Sins",
+    "Boar Hat"
+   ],
+   "relatives": [],
+   "confidence": "medium",
+   "sources": [
+    "https://nanatsu-no-taizai.fandom.com/wiki/Gowther",
+    "https://en.wikipedia.org/wiki/The_Seven_Deadly_Sins_season_1",
+    "https://en.wikipedia.org/wiki/The_Seven_Deadly_Sins_(manga)"
+   ],
+   "notes": "Episode 14 is where he is revealed (confirmed by both sources); the wiki also lists a brief cameo in episode 2. Chapter 53 rests on the wiki only."
+  },
+  "koutaro-bokuto": {
+   "name": "Koutarou Bokuto",
+   "role": "Captain and ace of Fukurodani Academy's volleyball team",
+   "debut": {
+    "anime": "Haikyuu!! Second Season",
+    "episode": 4,
+    "episodeTitle": "Center Ace",
+    "source": "manga",
+    "chapter": 78,
+    "volume": null
+   },
+   "arcs": [
+    "Tokyo Expedition Arc",
+    "Spring High Preliminary Arc",
+    "Tokyo Nationals Arc",
+    "Final Arc"
+   ],
+   "affiliations": [
+    "Fukurodani Academy"
+   ],
+   "relatives": [],
+   "confidence": "medium",
+   "sources": [
+    "https://haikyuu.fandom.com/wiki/Kōtarō_Bokuto",
+    "https://en.wikipedia.org/wiki/Haikyu!!_season_2",
+    "https://en.wikipedia.org/wiki/List_of_Haikyu!!_characters"
+   ],
+   "notes": "Second Season episode 4 is episode 29 overall. Episode and chapter 78 debut rest on the Haikyuu!! Wiki; the Wikipedia summary of that episode does not name him. He appears earlier in the OVA \"Lev Genzan!\"."
+  },
+  "naruto-uzumaki": {
+   "name": "Naruto Uzumaki",
+   "role": "Protagonist; ninja of Konohagakure who aims to become Hokage",
+   "debut": {
+    "anime": "Naruto",
+    "episode": 1,
+    "episodeTitle": "Enter: Naruto Uzumaki!",
+    "source": "manga",
+    "chapter": 1,
+    "volume": null
+   },
+   "arcs": [
+    "Land of Waves",
+    "Chunin Exams",
+    "Search for Tsunade",
+    "Sasuke Recovery Mission",
+    "Pain's Assault",
+    "Fourth Shinobi World War: Climax"
+   ],
+   "affiliations": [
+    "Konohagakure",
+    "Team 7"
+   ],
+   "relatives": [
+    {
+     "name": "Minato Namikaze",
+     "relation": "father"
+    },
+    {
+     "name": "Kushina Uzumaki",
+     "relation": "mother"
+    }
+   ],
+   "confidence": "high",
+   "sources": [
+    "https://naruto.fandom.com/wiki/Naruto_Uzumaki",
+    "https://en.wikipedia.org/wiki/Naruto_Uzumaki",
+    "https://en.wikipedia.org/wiki/Naruto_season_1"
+   ],
+   "notes": "The last two arcs are in Naruto: Shippuuden."
+  },
+  "sweet-mask": {
+   "name": "Amai Mask",
+   "role": "Top-ranked A-Class hero who is also an idol",
+   "debut": {
+    "anime": "One Punch Man",
+    "episode": 5,
+    "episodeTitle": "The Ultimate Master",
+    "source": "manga",
+    "chapter": null,
+    "volume": null
+   },
+   "arcs": [],
+   "affiliations": [
+    "Hero Association"
+   ],
+   "relatives": [],
+   "confidence": "high",
+   "sources": [
+    "https://onepunchman.fandom.com/wiki/Amai_Mask",
+    "https://en.wikipedia.org/wiki/One-Punch_Man_season_1",
+    "https://en.wikipedia.org/wiki/List_of_One-Punch_Man_episodes"
+   ],
+   "notes": "Manga chapter left blank: the One Punch Man Wiki lists both chapter 25 and a separate titled chapter as his manga debut."
+  },
+  "chikara-ennoshita": {
+   "name": "Chikara Ennoshita",
+   "role": "Second-year wing spiker of Karasuno High's volleyball team",
+   "debut": {
+    "anime": "Haikyuu!!",
+    "episode": 2,
+    "episodeTitle": "Karasuno High School Volleyball Team",
+    "source": "manga",
+    "chapter": 10,
+    "volume": null
+   },
+   "arcs": [
+    "Karasuno High Team Formation Arc",
+    "Interhigh Arc",
+    "Tokyo Expedition Arc",
+    "Spring High Preliminary Arc",
+    "Tokyo Nationals Arc",
+    "Final Arc"
+   ],
+   "affiliations": [
+    "Karasuno High"
+   ],
+   "relatives": [],
+   "confidence": "medium",
+   "sources": [
+    "https://haikyuu.fandom.com/wiki/Chikara_Ennoshita",
+    "https://en.wikipedia.org/wiki/Haikyu!!_season_1",
+    "https://en.wikipedia.org/wiki/List_of_Haikyu!!_characters"
+   ],
+   "notes": "Episode 2 and chapter 10 (\"Rookie Nerves\") debut rest on the Haikyuu!! Wiki; the Wikipedia summary of episode 2 does not name him."
+  },
+  "kaoru-hitachiin": {
+   "name": "Kaoru Hitachiin",
+   "role": "Host Club member; one of the Hitachiin twins",
+   "debut": {
+    "anime": "Ouran High School Host Club",
+    "episode": 1,
+    "episodeTitle": "Starting Today, You Are a Host!",
+    "source": "manga",
+    "chapter": 1,
+    "volume": null
+   },
+   "arcs": [],
+   "affiliations": [
+    "Ouran Academy",
+    "Host Club"
+   ],
+   "relatives": [
+    {
+     "name": "Hikaru Hitachiin",
+     "relation": "twin brother"
+    }
+   ],
+   "confidence": "medium",
+   "sources": [
+    "https://ouran.fandom.com/wiki/Kaoru_Hitachiin",
+    "https://en.wikipedia.org/wiki/List_of_Ouran_High_School_Host_Club_characters",
+    "https://en.wikipedia.org/wiki/List_of_Ouran_High_School_Host_Club_episodes"
+   ],
+   "notes": "Episode 1 and chapter 1 debut rest on the Ouran Wiki; the Wikipedia summary of episode 1 refers to the Hosts without naming them."
+  },
+  "shiro-2": {
+   "name": "Shiro",
+   "role": "Co-protagonist; half of the undefeated gamer duo Blank",
+   "debut": {
+    "anime": "No Game No Life",
+    "episode": 1,
+    "episodeTitle": "Beginner",
+    "source": "light novel",
+    "chapter": null,
+    "volume": 1
+   },
+   "arcs": [],
+   "affiliations": [
+    "Blank",
+    "Kingdom of Elkia"
+   ],
+   "relatives": [
+    {
+     "name": "Sora",
+     "relation": "stepbrother"
+    }
+   ],
+   "confidence": "high",
+   "sources": [
+    "https://no-game-no-life.fandom.com/wiki/Shiro",
+    "https://en.wikipedia.org/wiki/No_Game_No_Life"
+   ],
+   "notes": "The light novel debut is volume 1; Wikipedia confirms she is on the volume 1 cover."
+  },
+  "orihime-inoue": {
+   "name": "Orihime Inoue",
+   "role": "Ichigo Kurosaki's classmate with healing powers",
+   "debut": {
+    "anime": "BLEACH",
+    "episode": 2,
+    "episodeTitle": "A Shinigami's Work",
+    "source": "manga",
+    "chapter": 2,
+    "volume": 1
+   },
+   "arcs": [
+    "Agent of the Shinigami",
+    "Soul Society: The Sneak Entry",
+    "Arrancar: The Arrival",
+    "Arrancar: The Hueco Mundo Sneak Entry",
+    "Arrancar: The Fierce Fight",
+    "The Lost Substitute Shinigami"
+   ],
+   "affiliations": [],
+   "relatives": [
+    {
+     "name": "Sora Inoue",
+     "relation": "older brother"
+    }
+   ],
+   "confidence": "medium",
+   "sources": [
+    "https://bleach.fandom.com/wiki/Orihime_Inoue",
+    "https://en.wikipedia.org/wiki/Orihime_Inoue",
+    "https://en.wikipedia.org/wiki/Bleach_season_1"
+   ],
+   "notes": "Chapter 2 is confirmed by both sources. Episode 2 rests on the Bleach Wiki; the Wikipedia summary of episode 2 does not name her. Arc names are mapped from the Bleach Wiki's manga arcs to the anime arcs in arcs.json."
+  },
+  "tenya-iida": {
+   "name": "Tenya Iida",
+   "role": "Student in U.A. High School's Class 1-A",
+   "debut": {
+    "anime": "Boku no Hero Academia",
+    "episode": 3,
+    "episodeTitle": "Roaring Muscles",
+    "source": "manga",
+    "chapter": 3,
+    "volume": null
+   },
+   "arcs": [],
+   "affiliations": [
+    "U.A. High School",
+    "Class 1-A"
+   ],
+   "relatives": [
+    {
+     "name": "Tensei Iida",
+     "relation": "older brother"
+    }
+   ],
+   "confidence": "medium",
+   "sources": [
+    "https://myheroacademia.fandom.com/wiki/Tenya_Iida",
+    "https://en.wikipedia.org/wiki/List_of_My_Hero_Academia_characters",
+    "https://en.wikipedia.org/wiki/My_Hero_Academia_season_1"
+   ],
+   "notes": "Episode 3 and chapter 3 debut rest on the My Hero Academia Wiki; the Wikipedia summary of episode 3 does not name him."
+  },
+  "diego-brando": {
+   "name": "Diego Brando",
+   "role": "British jockey and rival racer in the Steel Ball Run",
+   "debut": {
+    "anime": "Steel Ball Run: JoJo no Kimyou na Bouken",
+    "episode": 1,
+    "episodeTitle": "Steel Ball Run",
+    "source": "manga",
+    "chapter": 1,
+    "volume": null
+   },
+   "arcs": [],
+   "affiliations": [],
+   "relatives": [],
+   "confidence": "medium",
+   "sources": [
+    "https://jojo.fandom.com/wiki/Diego_Brando",
+    "https://en.wikipedia.org/wiki/Steel_Ball_Run:_JoJo's_Bizarre_Adventure",
+    "https://en.wikipedia.org/wiki/Steel_Ball_Run"
+   ],
+   "notes": "Episode 1 (a 47-minute special that premiered on Netflix on 19 March 2026; episode 191 of the JoJo anime overall) is confirmed by both sources. Chapter 1 of Steel Ball Run rests on the JoJo Wiki only."
+  },
+  "itaru-hashida": {
+   "name": "Itaru Hashida",
+   "role": "Hacker and Lab Member 003 of the Future Gadget Laboratory",
+   "debut": {
+    "anime": "Steins;Gate",
+    "episode": 1,
+    "episodeTitle": "Turning Point",
+    "source": null,
+    "chapter": null,
+    "volume": null
+   },
+   "arcs": [],
+   "affiliations": [
+    "Future Gadget Laboratory",
+    "Tokyo Denki University"
+   ],
+   "relatives": [],
+   "confidence": "high",
+   "sources": [
+    "https://steins-gate.fandom.com/wiki/Itaru_Hashida",
+    "https://en.wikipedia.org/wiki/Steins;Gate",
+    "https://en.wikipedia.org/wiki/List_of_Steins;Gate_episodes"
+   ],
+   "notes": "Steins;Gate is adapted from a visual novel (not a manga or light novel), so source is null; the character appears from the start of the game. The wiki gives episode 1 as \"Prologue of the Beginning and the End -Turning Point-\". Relatives left out to avoid spoilers."
+  },
+  "kurapika": {
+   "name": "Kurapika",
+   "role": "Last survivor of the Kurta Clan, hunting the Phantom Troupe",
+   "debut": {
+    "anime": "Hunter x Hunter (2011)",
+    "episode": 1,
+    "episodeTitle": "Departure × and × Friends",
+    "source": "manga",
+    "chapter": 2,
+    "volume": null
+   },
+   "arcs": [
+    "Hunter Exam",
+    "Yorknew City"
+   ],
+   "affiliations": [
+    "Hunter Association",
+    "Nostrade Family"
+   ],
+   "relatives": [],
+   "confidence": "high",
+   "sources": [
+    "https://hunterxhunter.fandom.com/wiki/Kurapika",
+    "https://en.wikipedia.org/wiki/Kurapika",
+    "https://en.wikipedia.org/wiki/List_of_Hunter_×_Hunter_(2011_TV_series)_episodes"
+   ]
+  },
+  "alois-trancy": {
+   "name": "Alois Trancy",
+   "role": "Earl of the Trancy household and master of the butler Claude Faustus",
+   "debut": {
+    "anime": "Black Butler II",
+    "episode": 1,
+    "episodeTitle": "Clawed Butler",
+    "source": null,
+    "chapter": null,
+    "volume": null
+   },
+   "arcs": [
+    "Trancy Arc"
+   ],
+   "affiliations": [
+    "Trancy household"
+   ],
+   "relatives": [],
+   "confidence": "high",
+   "sources": [
+    "https://kuroshitsuji.fandom.com/wiki/Alois_Trancy",
+    "https://en.wikipedia.org/wiki/List_of_Black_Butler_episodes",
+    "https://en.wikipedia.org/wiki/List_of_Black_Butler_characters"
+   ],
+   "notes": "Created for the Black Butler II anime; the wiki lists no manga debut. Black Butler II episode 1 is episode 25 overall. Relatives left out to avoid spoilers."
+  },
+  "reiner-braun": {
+   "name": "Reiner Braun",
+   "role": "Eren's fellow trainee in the 104th Training Corps",
+   "debut": {
+    "anime": "Attack on Titan",
+    "episode": 2,
+    "episodeTitle": "That Day: The Fall of Shiganshina, Part 2",
+    "source": "manga",
+    "chapter": 2,
+    "volume": null
+   },
+   "arcs": [
+    "The 57th Exterior Scouting Mission arc",
+    "Clash of the Titans arc",
+    "Return to Shiganshina arc",
+    "Marley arc",
+    "War for Paradis arc"
+   ],
+   "affiliations": [
+    "104th Training Corps",
+    "Survey Corps"
+   ],
+   "relatives": [],
+   "confidence": "medium",
+   "sources": [
+    "https://attackontitan.fandom.com/wiki/Reiner_Braun_(Anime)",
+    "https://attackontitan.fandom.com/wiki/Reiner_Braun",
+    "https://en.wikipedia.org/wiki/List_of_Attack_on_Titan_characters",
+    "https://en.wikipedia.org/wiki/Attack_on_Titan_season_1"
+   ],
+   "notes": "Episode 2 and chapter 2 debut rest on the Attack on Titan Wiki; Wikipedia episode summaries first name him in episode 3. Relatives left out to avoid spoilers."
+  },
+  "olivier-mira-armstrong": {
+   "name": "Olivier Mira Armstrong",
+   "role": "Major General in command of Fort Briggs",
+   "debut": {
+    "anime": "Fullmetal Alchemist: Brotherhood",
+    "episode": 33,
+    "episodeTitle": "The Northern Wall of Briggs",
+    "source": "manga",
+    "chapter": 63,
+    "volume": null
+   },
+   "arcs": [
+    "The Northern Wall of Briggs",
+    "The Promised Day"
+   ],
+   "affiliations": [
+    "Amestrian State Military",
+    "Fort Briggs",
+    "Armstrong family"
+   ],
+   "relatives": [
+    {
+     "name": "Alex Louis Armstrong",
+     "relation": "younger brother"
+    }
+   ],
+   "confidence": "medium",
+   "sources": [
+    "https://fma.fandom.com/wiki/Olivier_Mira_Armstrong",
+    "https://en.wikipedia.org/wiki/List_of_Fullmetal_Alchemist_characters",
+    "https://en.wikipedia.org/wiki/List_of_Fullmetal_Alchemist:_Brotherhood_episodes"
+   ],
+   "notes": "Chapter 63 rests on the Fullmetal Alchemist Wiki only. Arc names follow the wiki's story sections."
+  },
+  "asuna-yuuki": {
+   "name": "Asuna Yuuki",
+   "role": "Female lead; sub-leader of the Knights of the Blood guild",
+   "debut": {
+    "anime": "Sword Art Online",
+    "episode": 2,
+    "episodeTitle": "Beater",
+    "source": "light novel",
+    "chapter": 5,
+    "volume": 1
+   },
+   "arcs": [
+    "Aincrad",
+    "Fairy Dance"
+   ],
+   "affiliations": [
+    "Knights of the Blood"
+   ],
+   "relatives": [
+    {
+     "name": "Kyouko Yuuki",
+     "relation": "mother"
+    }
+   ],
+   "confidence": "high",
+   "sources": [
+    "https://swordartonline.fandom.com/wiki/Asuna",
+    "https://en.wikipedia.org/wiki/Asuna_(Sword_Art_Online)",
+    "https://en.wikipedia.org/wiki/Sword_Art_Online_season_1",
+    "https://en.wikipedia.org/wiki/List_of_Sword_Art_Online_characters"
+   ],
+   "notes": "Light novel debut is volume 1, chapter 5 (confirmed by both sources). Episode 2 is her first full appearance; the wiki also lists a brief cameo in episode 1."
+  },
+  "all-might": {
+   "name": "All Might",
+   "role": "Symbol of Peace; top Pro Hero and mentor to Izuku Midoriya",
+   "debut": {
+    "anime": "Boku no Hero Academia",
+    "episode": 1,
+    "episodeTitle": "Izuku Midoriya: Origin",
+    "source": "manga",
+    "chapter": 1,
+    "volume": 1
+   },
+   "arcs": [],
+   "affiliations": [
+    "U.A. High School"
+   ],
+   "relatives": [],
+   "confidence": "high",
+   "sources": [
+    "https://myheroacademia.fandom.com/wiki/All_Might",
+    "https://en.wikipedia.org/wiki/My_Hero_Academia",
+    "https://en.wikipedia.org/wiki/My_Hero_Academia_season_1"
+   ],
+   "notes": "Chapter 1 per the wiki; Wikipedia confirms he is on the volume 1 cover."
+  },
+  "yuzuru-nishimiya": {
+   "name": "Yuzuru Nishimiya",
+   "role": "Shouko Nishimiya's protective younger sister",
+   "debut": {
+    "anime": "Koe no Katachi",
+    "episode": null,
+    "episodeTitle": null,
+    "source": "manga",
+    "chapter": 8,
+    "volume": null
+   },
+   "arcs": [],
+   "affiliations": [],
+   "relatives": [
+    {
+     "name": "Shouko Nishimiya",
+     "relation": "older sister"
+    },
+    {
+     "name": "Yaeko Nishimiya",
+     "relation": "mother"
+    }
+   ],
+   "confidence": "medium",
+   "sources": [
+    "https://koenokatachi.fandom.com/wiki/Yuzuru_Nishimiya",
+    "https://en.wikipedia.org/wiki/A_Silent_Voice_(manga)",
+    "https://en.wikipedia.org/wiki/A_Silent_Voice_(film)"
+   ],
+   "notes": "There is no TV anime: Koe no Katachi (A Silent Voice) is a 2016 film, so episode is null. Chapter 8 rests on the Koe no Katachi Wiki only."
+  },
+  "shouhei-fukunaga": {
+   "name": "Shouhei Fukunaga",
+   "role": "Wing spiker of Nekoma High's volleyball team",
+   "debut": {
+    "anime": "Haikyuu!!",
+    "episode": 11,
+    "episodeTitle": "The Decision",
+    "source": "manga",
+    "chapter": 27,
+    "volume": null
+   },
+   "arcs": [
+    "Karasuno High Team Formation Arc",
+    "Tokyo Expedition Arc",
+    "Spring High Preliminary Arc",
+    "Tokyo Nationals Arc",
+    "Final Arc"
+   ],
+   "affiliations": [
+    "Nekoma High"
+   ],
+   "relatives": [],
+   "confidence": "medium",
+   "sources": [
+    "https://haikyuu.fandom.com/wiki/Shōhei_Fukunaga",
+    "https://en.wikipedia.org/wiki/Haikyu!!_season_1",
+    "https://en.wikipedia.org/wiki/List_of_Haikyu!!_characters"
+   ],
+   "notes": "Episode 11 and chapter 27 (\"The Cat-Crow Reunion\") debut rest on the Haikyuu!! Wiki; the Wikipedia summary of episode 11 does not name him."
+  },
+  "hayase-nagatoro": {
+   "name": "Hayase Nagatoro",
+   "role": "Title character; first-year student who teases her senpai",
+   "debut": {
+    "anime": "Ijiranaide, Nagatoro-san",
+    "episode": 1,
+    "episodeTitle": "Senpai is a bit... / Senpai, don't you ever get angry?",
+    "source": "manga",
+    "chapter": 1,
+    "volume": null
+   },
+   "arcs": [],
+   "affiliations": [],
+   "relatives": [],
+   "confidence": "medium",
+   "sources": [
+    "https://nagatoro.fandom.com/wiki/Hayase_Nagatoro",
+    "https://en.wikipedia.org/wiki/Don't_Toy_with_Me,_Miss_Nagatoro"
+   ],
+   "notes": "Episode 1 has two segments; both titles are given. Chapter 1 rests on the Nagatoro Wiki only (she also appears in issue 1 of the original webcomic)."
+  },
+  "c-c": {
+   "name": "C.C.",
+   "role": "Immortal witch who grants Lelouch the power of Geass",
+   "debut": {
+    "anime": "Code Geass: Lelouch of the Rebellion",
+    "episode": 1,
+    "episodeTitle": "The Day a New Demon was Born",
+    "source": null,
+    "chapter": null,
+    "volume": null
+   },
+   "arcs": [],
+   "affiliations": [
+    "Black Knights"
+   ],
+   "relatives": [],
+   "confidence": "high",
+   "sources": [
+    "https://codegeass.fandom.com/wiki/C.C.",
+    "https://en.wikipedia.org/wiki/C.C._(Code_Geass)",
+    "https://en.wikipedia.org/wiki/List_of_Code_Geass_episodes"
+   ],
+   "notes": "Code Geass is an original anime, so there is no source chapter."
+  },
+  "caster-ddbb69e1-54df-4a04-b1c3-767126bbb685": {
+   "name": "Caster",
+   "role": "Caster-class Servant of Ryuunosuke Uryuu in the Fourth Holy Grail War",
+   "debut": {
+    "anime": "Fate/Zero",
+    "episode": 2,
+    "episodeTitle": "The Fake First Shot",
+    "source": "light novel",
+    "chapter": null,
+    "volume": null
+   },
+   "arcs": [],
+   "affiliations": [],
+   "relatives": [],
+   "confidence": "medium",
+   "sources": [
+    "https://typemoon.fandom.com/wiki/Gilles_de_Rais_(Caster)",
+    "https://en.wikipedia.org/wiki/List_of_Fate/Zero_episodes"
+   ],
+   "notes": "His true identity is Gilles de Rais. Episode 2 rests on the Wikipedia episode summary; the TYPE-MOON Wiki confirms him as the Fate/Zero Caster summoned by Ryuunosuke Uryuu but gives no episode. Light novel chapter not confirmed."
+  },
+  "ban-b502349e-2c23-449b-82d8-995b8f5f67f6": {
+   "name": "Ban",
+   "role": "The Fox's Sin of Greed of the Seven Deadly Sins",
+   "debut": {
+    "anime": "Nanatsu no Taizai",
+    "episode": 4,
+    "episodeTitle": "A Little Girl's Dream",
+    "source": "manga",
+    "chapter": 7,
+    "volume": null
+   },
+   "arcs": [
+    "Baste Dungeon Arc",
+    "Capital of the Dead Arc",
+    "Vaizel Arc",
+    "Kingdom Infiltration Arc",
+    "Great Fight Festival Arc",
+    "New Holy War Arc"
+   ],
+   "affiliations": [
+    "Seven Deadly Sins",
+    "Boar Hat"
+   ],
+   "relatives": [],
+   "confidence": "medium",
+   "sources": [
+    "https://nanatsu-no-taizai.fandom.com/wiki/Ban",
+    "https://en.wikipedia.org/wiki/The_Seven_Deadly_Sins_season_1",
+    "https://en.wikipedia.org/wiki/The_Seven_Deadly_Sins_(manga)"
+   ],
+   "notes": "Chapter 7 rests on the Seven Deadly Sins Wiki only."
+  },
+  "tobio-kageyama": {
+   "name": "Tobio Kageyama",
+   "role": "Setter for Karasuno High's volleyball team",
+   "debut": {
+    "anime": "Haikyuu!!",
+    "episode": 1,
+    "episodeTitle": "The End and The Beginning",
+    "source": "manga",
+    "chapter": 1,
+    "volume": 1
+   },
+   "arcs": [
+    "Karasuno High Team Formation Arc",
+    "Interhigh Arc",
+    "Tokyo Expedition Arc",
+    "Spring High Preliminary Arc",
+    "Tokyo Nationals Arc",
+    "Final Arc"
+   ],
+   "affiliations": [
+    "Karasuno High",
+    "Kitagawa Daiichi (former)"
+   ],
+   "relatives": [
+    {
+     "name": "Miwa Kageyama",
+     "relation": "older sister"
+    }
+   ],
+   "confidence": "high",
+   "sources": [
+    "https://haikyuu.fandom.com/wiki/Tobio_Kageyama",
+    "https://en.wikipedia.org/wiki/Haikyu!!",
+    "https://en.wikipedia.org/wiki/Haikyu!!_season_1",
+    "https://en.wikipedia.org/wiki/List_of_Haikyu!!_characters"
+   ],
+   "notes": "Wikipedia notes his sister Miwa appears only in the manga."
+  },
+  "suguha-kirigaya": {
+   "name": "Suguha Kirigaya",
+   "role": "Kirito's younger sister; plays ALfheim Online as Leafa",
+   "debut": {
+    "anime": "Sword Art Online",
+    "episode": 15,
+    "episodeTitle": "Return",
+    "source": "light novel",
+    "chapter": null,
+    "volume": 3
+   },
+   "arcs": [
+    "Fairy Dance"
+   ],
+   "affiliations": [],
+   "relatives": [
+    {
+     "name": "Kazuto Kirigaya",
+     "relation": "cousin, raised as her older brother"
+    }
+   ],
+   "confidence": "medium",
+   "sources": [
+    "https://swordartonline.fandom.com/wiki/Kirigaya_Suguha",
+    "https://en.wikipedia.org/wiki/List_of_Sword_Art_Online_characters",
+    "https://en.wikipedia.org/wiki/Sword_Art_Online_season_1"
+   ],
+   "notes": "Episode 15 is her first full appearance (confirmed by both sources); the wiki also lists a brief cameo in episode 1. Light novel volume 3 (prologue) rests on the wiki only."
+  },
+  "armin-arelet": {
+   "name": "Armin Arlert",
+   "role": "Childhood friend of Eren and Mikasa; member of the Survey Corps",
+   "debut": {
+    "anime": "Attack on Titan",
+    "episode": 1,
+    "episodeTitle": "To You, in 2000 Years: The Fall of Shiganshina, Part 1",
+    "source": "manga",
+    "chapter": 1,
+    "volume": null
+   },
+   "arcs": [
+    "The Struggle for Trost arc",
+    "The 57th Exterior Scouting Mission arc",
+    "Clash of the Titans arc",
+    "Royal Government arc",
+    "Return to Shiganshina arc",
+    "War for Paradis arc"
+   ],
+   "affiliations": [
+    "104th Training Corps",
+    "Survey Corps"
+   ],
+   "relatives": [],
+   "confidence": "medium",
+   "sources": [
+    "https://attackontitan.fandom.com/wiki/Armin_Arlelt_(Anime)",
+    "https://attackontitan.fandom.com/wiki/Armin_Arlert",
+    "https://en.wikipedia.org/wiki/List_of_Attack_on_Titan_characters",
+    "https://en.wikipedia.org/wiki/Attack_on_Titan_season_1"
+   ],
+   "notes": "Episode 1 and chapter 1 debut rest on the Attack on Titan Wiki; Wikipedia episode summaries first name him in episode 2."
+  },
+  "karma-akabane": {
+   "name": "Karma Akabane",
+   "role": "Student of Class 3-E at Kunugigaoka Junior High School",
+   "debut": {
+    "anime": "Ansatsu Kyoushitsu",
+    "episode": 3,
+    "episodeTitle": "Karma Time",
+    "source": "manga",
+    "chapter": 3,
+    "volume": null
+   },
+   "arcs": [
+    "Assassination Island Arc"
+   ],
+   "affiliations": [
+    "Kunugigaoka Junior High School",
+    "Class 3-E"
+   ],
+   "relatives": [],
+   "confidence": "medium",
+   "sources": [
+    "https://ansatsukyoshitsu.fandom.com/wiki/Karma_Akabane",
+    "https://en.wikipedia.org/wiki/Assassination_Classroom_season_1",
+    "https://en.wikipedia.org/wiki/List_of_Assassination_Classroom_characters"
+   ],
+   "notes": "Episode 3 is his proper introduction (confirmed by both sources); the wiki also lists a cameo in episode 2. Chapter 3 rests on the wiki only."
+  }
+ }
+}
