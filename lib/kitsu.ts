@@ -555,7 +555,9 @@ export type WatchOrder = { root: Anime; entries: WatchEntry[]; mainCount: number
 function kindOf(role: RelationRole, a: Anime): WatchEntry["kind"] {
   if (role === "summary") return "recap";
   if (role === "spinoff" || role === "character") return "spinoff";
-  if (role === "alternative_version" || role === "alternative_setting") return "alt";
+  // A remake or retelling of the same story is skippable; another continuity (Fate/Apocrypha, Prisma Illya) is a spin-off.
+  if (role === "alternative_setting") return "spinoff";
+  if (role === "alternative_version") return "alt";
   if (a.subtype === "movie") return "movie";
   return "side";
 }
@@ -620,6 +622,20 @@ export async function buildWatchOrder(start: Anime, fetchRelations: (id: string)
   //    a key still matches when Kitsu roots the graph at a prequel film or OVA.
   const ovKey = overrides[root.slug] ? root.slug : entries.map((e) => e.anime.slug).find((s) => overrides[s]) ?? null;
   const ov = ovKey ? overrides[ovKey] : undefined;
+  if (ov?.exclude?.length) for (let i = entries.length - 1; i >= 0; i--) if (ov.exclude.includes(entries[i].anime.slug)) entries.splice(i, 1);
+  if (ov?.promote?.length) {
+    // Core entries Kitsu files as alternate versions or doesn't link at all (Fate's 2014 UBW, Heaven's Feel II–III).
+    for (const slug of ov.promote) {
+      let e = entries.find((x) => x.anime.slug === slug);
+      if (!e) {
+        const a = await getAnimeBySlug(slug).catch(() => null);
+        if (!a) continue;
+        e = { anime: a, step: entries.length + 1, kind: "main", note: NOTES.main, optional: false };
+        entries.push(e);
+      }
+      Object.assign(e, { kind: "main", note: NOTES.main, optional: false, attachedTo: undefined });
+    }
+  }
   if (ov?.demote?.length) {
     for (const slug of ov.demote) {
       const i = entries.findIndex((e) => e.anime.slug === slug && e.kind === "main");

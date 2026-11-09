@@ -98,3 +98,17 @@ test("watchOrderSlug: editorial key first, else the entry the franchise is known
   assert.equal(watchOrderSlug({ root, entries: [e("ep0", "Ansatsu Kyoushitsu: Episode 0", 10), e("ansatsu-tv", "Ansatsu Kyoushitsu", 900), e("ansatsu-2", "Ansatsu Kyoushitsu 2", 500)] }), "ansatsu-tv");
   assert.equal(watchOrderSlug({ root, entries: [e("jjk0", "Jujutsu Kaisen 0", 900)], key: "jujutsu-kaisen" }), "jujutsu-kaisen");
 });
+
+test("overrides: promote an alternate version into the core story, exclude a crossover; another continuity is a spin-off", async () => {
+  const remake = mk("7", "Remake"), crossover = mk("8", "Crossover short", { subtype: "special" }), otherWorld = mk("9", "Other continuity");
+  const g: Record<string, Relation[]> = {
+    "1": [{ role: "alternative_version", anime: remake }, { role: "other", anime: crossover }, { role: "alternative_setting", anime: otherWorld }],
+    "7": [], "8": [], "9": [],
+  };
+  const plain = await buildWatchOrder(s1, async (id) => g[id] || [], {});
+  assert.equal(plain.entries.find((e) => e.anime.id === "7")?.kind, "alt");
+  assert.equal(plain.entries.find((e) => e.anime.id === "9")?.kind, "spinoff");
+  const wo = await buildWatchOrder(s1, async (id) => g[id] || [], { "1": { intro: "x", promote: ["7"], exclude: ["8"], mainOrder: ["7", "1"] } });
+  assert.deepEqual(wo.entries.filter((e) => e.kind === "main").map((e) => e.anime.id), ["7", "1"]);
+  assert.ok(!wo.entries.some((e) => e.anime.id === "8"));
+});

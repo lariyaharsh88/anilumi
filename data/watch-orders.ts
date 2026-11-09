@@ -8,7 +8,7 @@
  * and as lastReviewed in the page's JSON-LD). Keep claims factual. Run
  * `npx tsx scripts/resolve-watch-orders.ts` after editing to confirm every key still matches.
  */
-export type WatchOrderOverride = { label?: string; intro: string; skip?: string[]; demote?: string[]; mainOrder?: string[]; /** ISO date a person checked the guide (shown as "Checked on"). */ checked?: string };
+export type WatchOrderOverride = { label?: string; intro: string; skip?: string[]; demote?: string[]; mainOrder?: string[]; /** Slugs to make core entries (fetched when Kitsu doesn't link them). */ promote?: string[]; /** Slugs to drop (unrelated crossovers). */ exclude?: string[]; /** ISO date a person checked the guide (shown as "Checked on"). */ checked?: string };
 
 export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   "attack-on-titan": {
@@ -98,10 +98,15 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   "fate-zero": {
     label: "Fate series",
     intro: "Fate/Zero is the prequel, but it spoils parts of Fate/stay night. The usual advice is Fate/stay night: Unlimited Blade Works first, then Fate/Zero, then the Heaven's Feel film trilogy. Start with Zero only if you insist on chronological order. The 2006 Fate/stay night series is skippable.",
+    promote: ["fate-stay-night-unlimited-blade-works-2014", "fate-stay-night-unlimited-blade-works-tv-2", "fate-stay-night-movie-heaven-s-feel", "fate-stay-night-movie-heaven-s-feel-2", "fate-stay-night-movie-heaven-s-feel-3"],
+    mainOrder: ["fate-stay-night-unlimited-blade-works-2014", "fate-stay-night-unlimited-blade-works-tv-2", "fate-zero", "fate-zero-2nd-season", "fate-stay-night-movie-heaven-s-feel", "fate-stay-night-movie-heaven-s-feel-2", "fate-stay-night-movie-heaven-s-feel-3"],
+    skip: ["fate-stay-night", "fate-stay-night-unlimited-blade-works", "fate-stay-night-tv-reproduction", "fate-zero-remix"],
   },
   bakemonogatari: {
     label: "Monogatari series",
     intro: "Release order is the intended order: Bakemonogatari, Nisemonogatari, Nekomonogatari (Black), Second Season, Hanamonogatari, Tsukimonogatari, Owarimonogatari, Koyomimonogatari, the Kizumonogatari films, Owarimonogatari II, Zoku Owarimonogatari, then Off & Monster Season (2024). Kizumonogatari is a prequel but lands best after Second Season.",
+    promote: ["monogatari-series-off-monster-season"],
+    exclude: ["mahou-shoujo-madoka-magica-movie-3-hangyaku-no-monogatari-magica-quartet-x-nisioisin", "nisekoimonogatari", "okitegami-kyouko-no-bibouroku-x-monogatari", "minna-to-manner-wo-manabou", "naisho-no-hanashi"],
   },
   "spy-x-family": {
     label: "Spy x Family",
