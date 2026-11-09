@@ -6,15 +6,14 @@ import { topCharacterSlugs } from "../lib/charsnap";
 const ep = (n: number, over: Partial<Parameters<typeof episodeIndexed>[0]> = {}) =>
   episodeIndexed({ path: `/anime/some-show/episode/${n}`, n, upcoming: false, next: false, airIso: null, airing: true, lastAired: 10, ...over });
 
-test("episode pages: upcoming and the latest two aired stay indexed", () => {
+test("episode pages: upcoming and the newest aired stay indexed", () => {
   const inDays = (d: number) => new Date(Date.now() + d * 86400_000).toISOString();
   assert.equal(ep(11, { upcoming: true, airIso: inDays(6) }), true);
   assert.equal(ep(14, { upcoming: true, airIso: inDays(27) }), false); // weeks away: only a date so far
   assert.equal(ep(15, { upcoming: true }), false); // no date yet
   assert.equal(ep(11, { upcoming: true, next: true }), true); // the next episode, even before its date is known
-  assert.equal(ep(10), true);
-  assert.equal(ep(9), true);
-  assert.equal(ep(8), false);
+  assert.equal(ep(10), true); // the newest aired
+  assert.equal(ep(9), false);
   assert.equal(ep(10, { airing: false }), false); // finished show: recaps are noindexed
 });
 

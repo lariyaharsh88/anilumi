@@ -10,8 +10,9 @@ import { WATCH_ORDER_OVERRIDES } from "@/data/watch-orders";
 import { snapshotCore } from "./wosnap";
 import notes from "@/data/character-notes.json";
 
-/** Aired episodes of an airing show that stay indexed, counting back from the latest. */
-export const INDEXED_AIRED_EPISODES = 2;
+/** Aired episodes of an airing show that stay indexed, counting back from the latest: just the newest. Older
+ * episode pages are the shared synopsis plus a date, which every database has. */
+export const INDEXED_AIRED_EPISODES = 1;
 /** A franchise watch order is indexed with an editor guide or at least this many parts ("watch A, then B" is thin). */
 export const INDEXED_MIN_PARTS = 3;
 /** "Next season" pages with no sequel news stay indexed for titles at least this followed (people search

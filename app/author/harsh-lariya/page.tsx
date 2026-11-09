@@ -49,7 +49,7 @@ export default function AuthorPage() {
         hue={262}
       />
       <div className="prose-anime mt-8 max-w-3xl">
-        <p>I&apos;m {AUTHOR.name}, an anime fan from India who has watched more than 50 series. I started {site.name} because the answers fans need most, like which order to watch a franchise in, which episodes are filler and where the manga picks up, are scattered across forums and wikis, and often out of date.</p>
+        <p>I&apos;m {AUTHOR.name}, an anime fan from India who has watched more than 80 series, short and long. I started {site.name} because the answers fans need most, like which order to watch a franchise in, which episodes are filler and where the manga picks up, are scattered across forums and wikis, and often out of date.</p>
         <h2>What I check</h2>
         <ul>
           <li><strong>Watch orders:</strong> that the order makes sense for a first-time viewer, which movies and OVAs belong where, and what is safe to skip.</li>
