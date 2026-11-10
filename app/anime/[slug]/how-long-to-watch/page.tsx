@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import MadeBy from "@/components/MadeBy";
 import EditorWatched from "@/components/EditorWatched";
 import { fitTitle } from "@/lib/titles";
 import Link from "@/components/Link";
@@ -130,6 +131,7 @@ export default async function HowLongPage({ params }: Props) {
         posters={[posterUrl(a, "medium")]}
       />
       <EditorWatched anime={a} className="mt-4" />
+      <MadeBy className="mt-3" method="Runtimes come from Kitsu and AniList episode lengths; filler skips use our checked filler lists." />
 
       {total > 0 && (
         <>

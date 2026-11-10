@@ -65,3 +65,14 @@ export function similarStrength(anilistId: number): { recs: number; reasoned: nu
 
 /** AniList ids in the snapshot whose "anime like" page is strong. */
 export const strongSimilarIds = (): number[] => Object.keys(SNAP).map(Number).filter((id) => similarStrength(id).strong);
+
+export type FanTier = { tier: "S" | "A" | "B" | "C"; min: number; ids: number[] };
+/**
+ * A tier list of the most-watched anime (100,000+ AniList scores) by their average score: S 8.6+, A 8.2+, B 7.8+,
+ * C below. Facts, not taste: the cut-offs are stated on the page.
+ */
+export function fanTiers(minVotes = 100000): FanTier[] {
+  const rows = Object.entries(SNAP).filter(([, a]) => a.s && a.sv >= minVotes && !a.g.includes("Ecchi")).map(([id, a]) => ({ id: Number(id), s: a.s! })).sort((x, y) => y.s - x.s);
+  const cuts: [FanTier["tier"], number][] = [["S", 8.6], ["A", 8.2], ["B", 7.8], ["C", 0]];
+  return cuts.map(([tier, min], i) => ({ tier, min, ids: rows.filter((r) => r.s >= min && (i === 0 || r.s < cuts[i - 1][1])).map((r) => r.id) }));
+}

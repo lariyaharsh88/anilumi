@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { animeIndexed, robotsFor } from "@/lib/indexing";
+import { WATCH_ORDER_OVERRIDES } from "@/data/watch-orders";
 import { fitTitle } from "@/lib/titles";
 import { workType, workId, isoDuration } from "@/lib/ld";
 import Link from "@/components/Link";
@@ -109,6 +111,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title,
     description,
     alternates: { canonical: animePath(a) },
+    robots: robotsFor(animeIndexed(a, Boolean(summaryFor(a.slug) || streamsFor(a) || dubFor(a) || WATCH_ORDER_OVERRIDES[a.slug]))),
     openGraph: { title, description, type: "video.tv_show" },
     twitter: { card: "summary_large_image", title, description },
   };

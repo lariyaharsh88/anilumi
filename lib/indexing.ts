@@ -93,3 +93,13 @@ export const nextSeasonIndexed = (path: string, hasNews: boolean, members: numbe
 
 /** `robots` metadata for a page: undefined (indexable) or noindex, follow. */
 export const robotsFor = (indexed: boolean) => (indexed ? undefined : NOINDEX);
+
+/**
+ * Anime pages: Kitsu lists ~20,000 titles, most with nothing beyond the shared database text. Indexed: titles with at
+ * least ANIME_MIN_MEMBERS followers (about the top 3,500), anything airing or announced, anything with our own
+ * content (summary, guide, where-to-watch or dub research), and anything search already shows. The rest stay
+ * reachable for visitors.
+ */
+export const ANIME_MIN_MEMBERS = 3000;
+export const animeIndexed = (a: { slug: string; userCount: number; status: string }, ownContent: boolean) =>
+  a.userCount >= ANIME_MIN_MEMBERS || a.status === "current" || a.status === "upcoming" || ownContent || searchShown(`/anime/${a.slug}`);

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import MadeBy from "@/components/MadeBy";
 import EditorWatched from "@/components/EditorWatched";
 import OfficialRatings from "@/components/OfficialRatings";
 import { officialRatings, ratingsLine } from "@/lib/ageratings";
@@ -92,6 +93,7 @@ export default async function ParentsGuidePage({ params }: Props) {
         posters={[posterUrl(a, "medium")]}
       />
       <EditorWatched anime={a} className="mt-4" />
+      <MadeBy className="mt-3" method="Official age ratings where a rating board published one, plus AniList's community content tags; nothing is guessed." />
 
       <OfficialRatings slug={a.slug} title={a.title} />
 

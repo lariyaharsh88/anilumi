@@ -1,4 +1,5 @@
 // Query-string variants (?page=, ?sort=, filters). Reached only through the rewrites in next.config.ts;
+import { DUBS_SEASON, dubShows, type DubShow } from "@/lib/dubschedule";
 import MadeBy from "@/components/MadeBy";
 import { fitTitle } from "@/lib/titles";
 // the plain URL is served by ../page.tsx from the ISR cache.
@@ -95,6 +96,20 @@ export default async function SeasonPage({ params, searchParams }: Props) {
       </div>
       </PageHero>
       <MadeBy className="mt-4" method="The season list comes from Kitsu and AniList, ranked by how many people follow each show; air times are checked against the broadcast schedule." />
+
+      {page === 1 && `${cap(season)} ${year}` === DUBS_SEASON && (() => {
+        const live = dubShows().filter((e) => e.status !== "complete");
+        const en = live.filter((e) => e.lang === "en"), hi = live.filter((e) => e.lang === "hi");
+        const row = (e: DubShow) => <li key={`${e.t}-${e.lang}-${e.service}`}><Link href={e.slug ? `/anime/${e.slug}` : "/dub-schedule"} className="chip text-xs">{e.t}<span className="text-muted"> · {e.service}{e.weekday ? `, ${e.weekday}s` : ""}{e.status === "announced" ? " (soon)" : ""}</span></Link></li>;
+        return live.length ? (
+          <section className="card mt-6 p-4" aria-labelledby="dubbed-h">
+            <h2 id="dubbed-h" className="font-semibold text-ink">Dubbed this season: {en.length} in English, {hi.length} in Hindi</h2>
+            <p className="mt-1 text-sm text-muted">Which {cap(season)} {year} shows you can watch dubbed, on which service and which day new dubbed episodes land. <Link href="/dub-schedule" className="text-violet hover:underline">Full dub schedule with next-episode dates →</Link></p>
+            {en.length > 0 && <><h3 className="mt-3 text-xs font-semibold uppercase tracking-wide text-muted">English dubs</h3><ul className="mt-1.5 flex flex-wrap gap-1.5">{en.map(row)}</ul></>}
+            {hi.length > 0 && <><h3 className="mt-3 text-xs font-semibold uppercase tracking-wide text-muted">🇮🇳 Hindi dubs</h3><ul className="mt-1.5 flex flex-wrap gap-1.5">{hi.map(row)}</ul></>}
+          </section>
+        ) : null;
+      })()}
 
       {page === 1 && data.total > 0 && (
         <section className="mt-6 space-y-3" aria-label="Season at a glance">

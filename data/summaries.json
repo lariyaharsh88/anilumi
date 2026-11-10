@@ -1,5 +1,5 @@
 {
-  "checked": "2026-11-09",
+  "checked": "2026-11-10",
   "reviewed": null,
   "anime": {
     "one-piece": {
@@ -776,6 +776,886 @@
       "sources": [
         "https://myanimelist.net/anime/22535",
         "https://en.wikipedia.org/wiki/Parasyte"
+      ],
+      "confidence": "high"
+    },
+    "naruto": {
+      "summary": "Naruto Uzumaki is the loudest troublemaker in the Hidden Leaf Village, a ninja settlement where most adults keep him at a distance. The reason traces back to his birth, when a destructive nine-tailed fox was sealed inside him. Naruto answers the cold shoulder with pranks and one big promise: he will become Hokage, the village's leader and strongest ninja, and make everyone acknowledge him. After scraping through the academy he joins Team 7 with the gifted, aloof Sasuke Uchiha and the clever Sakura Haruno, under the laid-back Kakashi Hatake. Studio Pierrot adapted Masashi Kishimoto's manga into 220 episodes from 2002 to 2007; the story continues in Naruto: Shippuden.",
+      "sources": [
+        "https://myanimelist.net/anime/20",
+        "https://en.wikipedia.org/wiki/Naruto"
+      ],
+      "confidence": "high"
+    },
+    "chainsaw-man": {
+      "summary": "Denji is a teenager crushed by his father's unpaid debts. To pay it off he hunts devils for the yakuza alongside Pochita, a small dog-like chainsaw devil who is his only friend, and he dreams of nothing grander than decent food and a girlfriend. When a betrayal leaves him for dead, Pochita fuses with him, turning Denji into a hybrid who can sprout chainsaws from his body. The government's Public Safety devil hunters, led by the composed Makima, take him in on strict terms. MAPPA's 12-episode adaptation of Tatsuki Fujimoto's manga aired in late 2022; it is violent, darkly funny and continues in the film Chainsaw Man – The Movie: Reze Arc.",
+      "sources": [
+        "https://myanimelist.net/anime/44511",
+        "https://en.wikipedia.org/wiki/Chainsaw_Man_(TV_series)"
+      ],
+      "confidence": "high"
+    },
+    "mob-psycho-100": {
+      "summary": "Shigeo Kageyama, called Mob, is a quiet middle schooler with enormous psychic powers that he tries hard not to use. He would rather fit in, get stronger the ordinary way and be noticed by the girl he likes. Instead he spends his afternoons working for Arataka Reigen, a smooth-talking self-proclaimed psychic who pays him pocket change to deal with real ghosts and evil spirits. Mob keeps his emotions bottled up, and when they build too far his power becomes hard to control. Bones adapted the web manga by ONE, the creator of One-Punch Man, into a 12-episode first season in 2016, followed by second and third seasons in 2019 and 2022.",
+      "sources": [
+        "https://myanimelist.net/anime/32182",
+        "https://en.wikipedia.org/wiki/Mob_Psycho_100"
+      ],
+      "confidence": "high"
+    },
+    "re-zero-kara-hajimeru-isekai-seikatsu": {
+      "summary": "Subaru Natsuki, a shut-in teenager, steps out of a convenience store and finds himself in a fantasy kingdom with nothing but a bag of snacks and a dead phone. A kind silver-haired girl helps him out of trouble, and he offers to help her recover a stolen insignia in return. He soon discovers a frightening ability: whenever he dies, he wakes up again at an earlier point in time, carrying memories nobody else shares. Subaru must use these painful retries to protect the people he cares about. White Fox's 25-episode first season (2016) adapts Tappei Nagatsuki's light novels, and further seasons followed. The tone is darker and more psychological than most isekai stories.",
+      "sources": [
+        "https://myanimelist.net/anime/31240",
+        "https://en.wikipedia.org/wiki/Re:Zero"
+      ],
+      "confidence": "high"
+    },
+    "black-clover-tv": {
+      "summary": "In the Clover Kingdom nearly everyone can use magic, except Asta, an orphan raised in a village church. His rival and foster brother Yuno is a natural talent, but the two share the same dream: to become the Wizard King, the strongest mage in the land. Asta makes up for his missing magic with relentless physical training and sheer volume. When a rare grimoire grants him anti-magic powers, he joins the Black Bulls, the most chaotic squad of the Magic Knights, and starts working his way up. Studio Pierrot adapted Yuki Tabata's manga into a 170-episode series that aired from 2017 to 2021, later followed by a film and a new season.",
+      "sources": [
+        "https://myanimelist.net/anime/34572",
+        "https://en.wikipedia.org/wiki/Black_Clover"
+      ],
+      "confidence": "high"
+    },
+    "seishun-buta-yarou-wa-bunny-girl-senpai-no-yume-wo-minai": {
+      "summary": "High schooler Sakuta Azusagawa lives with his younger sister and knows that Puberty Syndrome, a set of strange supernatural events most people treat as an internet rumour, is real. One day in the library he meets Mai Sakurajima, an older student and former child actress, walking around in a bunny girl costume that nobody else seems to notice. Mai is slowly becoming invisible to the people around her, and Sakuta sets out to help. Each arc of this 13-episode 2018 series by CloverWorks follows a different girl affected by the syndrome. It adapts Hajime Kamoshida's light novels and mixes romance, dry banter and teenage anxieties.",
+      "sources": [
+        "https://myanimelist.net/anime/37450",
+        "https://en.wikipedia.org/wiki/Rascal_Does_Not_Dream"
+      ],
+      "confidence": "high"
+    },
+    "spy-x-family": {
+      "summary": "Twilight, a master spy working to keep peace between the rival nations of Westalis and Ostania, gets a mission that requires a family. To get close to a reclusive politician, he must enroll a child at the elite Eden Academy. As psychiatrist Loid Forger, he adopts a little girl named Anya and enters a marriage of convenience with Yor, a quiet city hall clerk. None of them knows the others' secrets: Anya can read minds, and Yor works as an assassin. The result is a warm comedy about a fake family slowly becoming a real one. Wit Studio and CloverWorks adapted Tatsuya Endo's manga; this 12-episode first cour aired in spring 2022.",
+      "sources": [
+        "https://myanimelist.net/anime/50265",
+        "https://en.wikipedia.org/wiki/Spy_×_Family"
+      ],
+      "confidence": "high"
+    },
+    "kaguya-sama-wa-kokurasetai-tensai-tachi-no-renai-zunousen": {
+      "summary": "At the elite Shuchiin Academy, student council president Miyuki Shirogane and vice president Kaguya Shinomiya are the school's brightest stars, and everyone assumes they are a couple. In truth each has a crush on the other, but both are too proud to say so. Whoever confesses first loses, so they wage a daily war of schemes, mind games and over-thought tactics to make the other one confess. Their council colleagues, including the cheerful Chika Fujiwara, often wreck their plans without meaning to. A-1 Pictures adapted Aka Akasaka's manga into this 12-episode romantic comedy in 2019, followed by two more seasons and a film.",
+      "sources": [
+        "https://myanimelist.net/anime/37999",
+        "https://en.wikipedia.org/wiki/Kaguya-sama:_Love_Is_War"
+      ],
+      "confidence": "high"
+    },
+    "dr-stone": {
+      "summary": "A mysterious flash of light turns every human on Earth to stone. Thousands of years later, the teenage science genius Senku Ishigami breaks free and finds a world where cities have been swallowed by forest. Joined by his strong, good-hearted friend Taiju, Senku sets out to rebuild civilization from scratch, one discovery at a time, starting with fire, soap and the chemicals needed to revive others. Not everyone they wake shares his vision for the future. Based on the manga written by Riichiro Inagaki and drawn by Boichi, TMS Entertainment's 24-episode first season aired in 2019 and is packed with real chemistry and engineering; several sequel seasons followed.",
+      "sources": [
+        "https://myanimelist.net/anime/38691",
+        "https://en.wikipedia.org/wiki/Dr._Stone"
+      ],
+      "confidence": "high"
+    },
+    "vinland-saga": {
+      "summary": "Early 11th-century Europe is torn by war between the Danes and the English, and Viking mercenaries profit from every raid. Thorfinn, a boy from a quiet Icelandic village who grew up hearing tales of Vinland, a peaceful land across the sea, now fights in a mercenary band led by the cunning Askeladd, a man Thorfinn has sworn to defeat. He carries out dangerous missions for Askeladd in exchange for the right to challenge him to a duel. Wit Studio adapted Makoto Yukimura's historical manga into this 24-episode first season in 2019, directed by Shuhei Yabuta. A second season, made by MAPPA, followed in 2023 and changes the story's setting and focus.",
+      "sources": [
+        "https://myanimelist.net/anime/37521",
+        "https://en.wikipedia.org/wiki/Vinland_Saga_(TV_series)"
+      ],
+      "confidence": "high"
+    },
+    "violet-evergarden": {
+      "summary": "When a long war ends, Violet Evergarden, a young woman raised only to fight, has to find a place in a peaceful world. She holds on to the last words of Major Gilbert, the officer who looked after her, without understanding what they meant. She takes a job at a postal company as an Auto Memory Doll, a ghostwriter who turns clients' feelings into letters. Each client teaches her something about the emotions she struggles to name. Kyoto Animation adapted Kana Akatsuki's light novels into 13 episodes in 2018, and the story was later continued in a side-story film and a final feature film. Most episodes work as self-contained stories.",
+      "sources": [
+        "https://myanimelist.net/anime/33352",
+        "https://en.wikipedia.org/wiki/Violet_Evergarden"
+      ],
+      "confidence": "high"
+    },
+    "horimiya": {
+      "summary": "Kyoko Hori is popular and well liked at school, but at home she spends her time cooking, cleaning and looking after her little brother while her parents work. Izumi Miyamura is the quiet classmate everyone overlooks, yet outside school he has piercings and tattoos nobody would expect. When the two run into each other's private selves, they quickly become friends, and Miyamura starts spending his afternoons at Hori's house. The 13-episode series by CloverWorks aired in early 2021 and adapts the manga drawn by Daisuke Hagiwara from Hero's webcomic. It is a gentle romantic comedy about high school life, friends and slowly opening up, followed in 2023 by Horimiya: The Missing Pieces.",
+      "sources": [
+        "https://myanimelist.net/anime/42897",
+        "https://en.wikipedia.org/wiki/Hori-san_to_Miyamura-kun"
+      ],
+      "confidence": "high"
+    },
+    "akame-ga-kill": {
+      "summary": "Tatsumi, a skilled young swordsman from a poor village, travels to the Capital hoping to earn money for his home. He soon finds that the city is rotten: the child emperor is controlled by a greedy Prime Minister, and the powerful prey on the weak. Tatsumi is recruited by Night Raid, a band of assassins working for a rebel army, including the quiet swordswoman Akame. They fight the Empire's enforcers, many of whom wield ancient weapons called Teigu. White Fox's 24-episode series aired in 2014, adapting the manga written by Takahiro and drawn by Tetsuya Tashiro. It is violent and does not spare its cast.",
+      "sources": [
+        "https://myanimelist.net/anime/22199",
+        "https://en.wikipedia.org/wiki/Akame_ga_Kill!"
+      ],
+      "confidence": "high"
+    },
+    "bleach": {
+      "summary": "Ichigo Kurosaki is a hot-tempered high school student who has always been able to see ghosts. His life changes when he meets Rukia Kuchiki, a Soul Reaper who guides departed spirits to the afterlife and fights Hollows, corrupted souls that devour others. When a Hollow attacks his family, Ichigo takes on Rukia's powers and inherits her job, defending his town alongside classmates with unusual gifts of their own. Studio Pierrot's adaptation of Tite Kubo's manga ran for 366 episodes from 2004 to 2012, including some anime-only filler arcs. The manga's final arc was later adapted as Bleach: Thousand-Year Blood War, which began in 2022.",
+      "sources": [
+        "https://myanimelist.net/anime/269",
+        "https://en.wikipedia.org/wiki/Bleach_(TV_series)"
+      ],
+      "confidence": "high"
+    },
+    "kono-subarashii-sekai-ni-shukufuku-wo": {
+      "summary": "Shut-in gamer Kazuma Satou's life ends in an embarrassing accident, and the vain goddess Aqua offers him a new start in a fantasy world with a Demon King to defeat. Allowed to take one item with him, he picks Aqua herself, which turns out to be a mistake. Instead of an epic quest, Kazuma ends up doing cheap jobs to pay for food and lodging, leading a party of misfits that also includes Megumin, a wizard who only knows one explosive spell, and Darkness, a crusader who loves taking hits. Studio Deen adapted Natsume Akatsuki's light novels into this 10-episode comedy in 2016, the first of several seasons and films parodying fantasy games.",
+      "sources": [
+        "https://myanimelist.net/anime/30831",
+        "https://en.wikipedia.org/wiki/KonoSuba"
+      ],
+      "confidence": "high"
+    },
+    "darling-in-the-franxx": {
+      "summary": "In a distant future, humanity survives in mobile fortress cities, defended by children raised for a single purpose: piloting giant mechs called Franxx in boy-girl pairs against monsters known as klaxosaurs. Hiro was once a prodigy but failed to sync with a partner, leaving him feeling useless. Then he meets Zero Two, a horned elite pilot with a fearsome reputation, and the two may be able to pilot together. The story follows Hiro, Zero Two and their squad of young pilots. This 24-episode original anime aired in 2018, co-produced by Trigger and A-1 Pictures, with animation by Trigger and CloverWorks. It blends mecha action, romance and coming-of-age drama.",
+      "sources": [
+        "https://myanimelist.net/anime/35849",
+        "https://en.wikipedia.org/wiki/Darling_in_the_Franxx"
+      ],
+      "confidence": "high"
+    },
+    "neon-genesis-evangelion": {
+      "summary": "In 2015, fifteen years after a global catastrophe, the fortified city of Tokyo-3 faces attacks from colossal beings called Angels. Fourteen-year-old Shinji Ikari is summoned there by his estranged father Gendo, who commands the secret organisation Nerv and wants Shinji to pilot Evangelion Unit-01, a giant bio-mechanical robot. Shinji reluctantly agrees, fighting alongside fellow pilots Rei Ayanami and, later, Asuka Langley Soryu. The series looks closely at the fears and loneliness of its characters as much as at the battles. Directed by Hideaki Anno and produced by Gainax and Tatsunoko Production, the 26-episode original series aired from 1995 to 1996 and was later followed by films and the Rebuild of Evangelion tetralogy.",
+      "sources": [
+        "https://myanimelist.net/anime/30",
+        "https://en.wikipedia.org/wiki/Neon_Genesis_Evangelion"
+      ],
+      "confidence": "high"
+    },
+    "sousou-no-frieren": {
+      "summary": "The elf mage Frieren and her companions, the hero Himmel, the priest Heiter and the warrior Eisen, have defeated the Demon King after a ten-year quest. For Frieren, a long-lived elf, those ten years felt like a brief moment. As time passes and her human friends grow old, she realises how little she tried to understand them. She sets out on a new journey, now with a young apprentice named Fern, retracing old roads and learning about people. Madhouse's 28-episode first season (2023 to 2024) adapts the manga written by Kanehito Yamada and drawn by Tsukasa Abe. It is a calm, reflective fantasy; a second season aired in early 2026.",
+      "sources": [
+        "https://myanimelist.net/anime/52991",
+        "https://en.wikipedia.org/wiki/Frieren"
+      ],
+      "confidence": "high"
+    },
+    "enen-no-shouboutai": {
+      "summary": "In a city where people can suddenly burst into flames and turn into raging fire monsters called Infernals, the Special Fire Force exists to stop them and send their souls to peace. Shinra Kusakabe, a teenager who can ignite his feet and fly, joins Special Fire Force Company 8 hoping to become a hero. Because of a nervous grin, people have long called him a devil. He also wants the truth about a fire that tore his family apart twelve years earlier. David Production adapted Atsushi Ohkubo's manga, which is set in the same world as his earlier Soul Eater, into a 24-episode first season in 2019; later seasons followed.",
+      "sources": [
+        "https://myanimelist.net/anime/38671",
+        "https://en.wikipedia.org/wiki/Fire_Force"
+      ],
+      "confidence": "high"
+    },
+    "jojo-s-bizarre-adventure-2012": {
+      "summary": "In Victorian England, kind-hearted noble heir Jonathan Joestar gains an adopted brother, Dio Brando, a ruthless young man who wants the Joestar fortune for himself. Their rivalry grows into something far stranger when an ancient stone mask with terrifying powers enters the story, and Jonathan learns Hamon, a breathing technique that channels the energy of sunlight. The second half jumps to 1938 and follows his brash, quick-witted grandson Joseph. David Production's 26-episode series (2012 to 2013) adapts the first two parts of Hirohiko Araki's manga, Phantom Blood and Battle Tendency. Each later season follows a new member of the Joestar family, starting with Stardust Crusaders.",
+      "sources": [
+        "https://myanimelist.net/anime/14719",
+        "https://en.wikipedia.org/wiki/JoJo%27s_Bizarre_Adventure_(TV_series)"
+      ],
+      "confidence": "high"
+    },
+    "cowboy-bebop": {
+      "summary": "In 2071, humanity has spread across the solar system, and bounty hunters chase criminals between planets for a living. Spike Spiegel, a laid-back former gangster, and Jet Black, an ex-cop, travel on their ship, the Bebop, rarely earning enough to eat. Along the way they pick up a gambler with a mysterious past named Faye Valentine, an eccentric young hacker called Ed and Ein, a very clever corgi. Most of the 26 episodes, called sessions, are stand-alone stories mixing science fiction, westerns and film noir, with a jazz-heavy score by Yoko Kanno. Sunrise produced this original series, directed by Shinichiro Watanabe, which aired from 1998 to 1999 and was followed by a film in 2001.",
+      "sources": [
+        "https://myanimelist.net/anime/1",
+        "https://en.wikipedia.org/wiki/Cowboy_Bebop"
+      ],
+      "confidence": "high"
+    },
+    "tensei-shitara-slime-datta-ken": {
+      "summary": "Satoru Mikami is an ordinary 37-year-old office worker until a street attack ends his life. He wakes up in a fantasy world reborn as a slime, with no eyes or mouth but with the skill to absorb things and copy their abilities. After befriending Veldora, a powerful dragon sealed in a cave, he takes the name Rimuru Tempest and starts helping the goblins, wolves and other monsters he meets. Gradually, he finds himself building a peaceful nation where different races can live together. 8bit adapted the light novel series by Fuse into a 24-episode first season (2018 to 2019); more seasons, spin-offs and a film followed.",
+      "sources": [
+        "https://myanimelist.net/anime/37430",
+        "https://en.wikipedia.org/wiki/That_Time_I_Got_Reincarnated_as_a_Slime"
+      ],
+      "confidence": "high"
+    },
+    "death-parade": {
+      "summary": "When people die, some of them do not go straight to the afterlife. Instead they arrive in pairs at Quindecim, a quiet bar run by a white-haired bartender named Decim. With no memory of how they got there, the guests must play a game, such as darts or bowling, with their lives supposedly at stake. As the pressure builds, their true characters come out, and Decim, an arbiter, judges what will happen to their souls. A dark-haired woman who assists him begins to question how this judgement works. Madhouse's 12-episode original series, written and directed by Yuzuru Tachikawa, aired in 2015 and grew out of his 2013 short film Death Billiards.",
+      "sources": [
+        "https://myanimelist.net/anime/28223",
+        "https://en.wikipedia.org/wiki/Death_Parade"
+      ],
+      "confidence": "high"
+    },
+    "mushoku-tensei-isekai-ittara-honki-dasu": {
+      "summary": "A 34-year-old jobless shut-in, full of regret about his wasted life, dies in an accident and is reborn as a baby in a world of magic and swords. Now named Rudeus Greyrat, he keeps all the memories of his previous life and resolves to live this one properly. He quickly shows a gift for magic, studying under his tutor Roxy, and makes friends such as the elf-blooded girl Sylphiette. Studio Bind's adaptation of the light novels by Rifujin na Magonote began with this 11-episode first cour in early 2021 and continued in later parts and seasons. The series spans many years of Rudeus's life and includes adult themes.",
+      "sources": [
+        "https://myanimelist.net/anime/39535",
+        "https://en.wikipedia.org/wiki/Mushoku_Tensei"
+      ],
+      "confidence": "high"
+    },
+    "tate-no-yuusha-no-nariagari": {
+      "summary": "College student Naofumi Iwatani is pulled into a fantasy kingdom along with three other young men from other versions of Japan, each chosen as one of the Cardinal Heroes destined to protect it from waves of monsters. His weapon is a shield, which earns him little respect, as he cannot attack. Soon after setting out, he is falsely accused of a crime and left alone and distrusted. Bitter and short of money, he takes in Raphtalia, a young raccoon demi-human girl, as his first companion, and slowly builds his strength. Kinema Citrus adapted Aneko Yusagi's light novels into a 25-episode first season in 2019, followed by further seasons.",
+      "sources": [
+        "https://myanimelist.net/anime/35790",
+        "https://en.wikipedia.org/wiki/The_Rising_of_the_Shield_Hero"
+      ],
+      "confidence": "high"
+    },
+    "ao-no-exorcist": {
+      "summary": "Rin Okumura is a hot-headed teenager who keeps getting into fights, while his twin brother Yukio is a polite top student. Raised by a priest, Father Shiro Fujimoto, Rin learns that he is the son of Satan and has inherited demonic power, which shows itself as blue flames. When demons upend his life, Rin decides to become an exorcist and fight Satan himself. He enrolls at True Cross Academy, where he discovers that his own brother is already an exorcist and will be one of his teachers. A-1 Pictures adapted Kazue Kato's manga into 25 episodes in 2011; a film followed, and later seasons continued the manga's story.",
+      "sources": [
+        "https://myanimelist.net/anime/9919",
+        "https://en.wikipedia.org/wiki/Blue_Exorcist"
+      ],
+      "confidence": "high"
+    },
+    "kakegurui": {
+      "summary": "Hyakkaou Private Academy teaches the children of Japan's wealthy elite, and its pecking order is decided entirely by gambling. Winners rise in the student council's eyes, while students who fall into debt become 'pets' who are bullied and ordered around. Into this world comes transfer student Yumeko Jabami, a polite girl who turns out to love gambling for the thrill of the risk rather than the money. Her reckless style quickly threatens the council's control. Ryota Suzui, a classmate stuck in debt, becomes her ally. MAPPA adapted the manga written by Homura Kawamoto and drawn by Toru Naomura into 12 episodes in 2017, followed by the second season Kakegurui xx.",
+      "sources": [
+        "https://myanimelist.net/anime/34933",
+        "https://en.wikipedia.org/wiki/Kakegurui"
+      ],
+      "confidence": "high"
+    },
+    "solo-leveling": {
+      "summary": "Years ago, gates opened across the world, linking it to dungeons full of monsters, and some people awakened as hunters with special powers. Sung Jinwoo is known as the weakest hunter of all, an E-rank who risks his life on low-level raids just to make a living. After a raid in a hidden double dungeon goes terribly wrong, he finds that he alone can see a mysterious System that gives him quests and lets him level up like a game character. A-1 Pictures adapted the South Korean webtoon based on Chugong's web novel into 12 episodes, aired from January to March 2024; a second season followed in 2025.",
+      "sources": [
+        "https://myanimelist.net/anime/52299",
+        "https://en.wikipedia.org/wiki/Solo_Leveling"
+      ],
+      "confidence": "high"
+    },
+    "youkoso-jitsuryoku-shijou-shugi-no-kyoushitsu-e-tv": {
+      "summary": "Advanced Nurturing High School is a government-run elite school that promises its graduates almost any university or job they want. Students live on campus and receive monthly points they can spend like money, but the amount depends on how each class performs. Kiyotaka Ayanokoji, a quiet boy who avoids attention, is placed in Class D, where the school sends those it considers its worst. He is drawn into the class's struggle to climb the rankings alongside the cold, proud Suzune Horikita and the friendly Kikyo Kushida. Lerche adapted Shogo Kinugasa's light novels into 12 episodes in 2017; more seasons followed years later.",
+      "sources": [
+        "https://myanimelist.net/anime/35507",
+        "https://en.wikipedia.org/wiki/Classroom_of_the_Elite"
+      ],
+      "confidence": "high"
+    },
+    "tokyo-revengers": {
+      "summary": "Takemichi Hanagaki is 26, working a dead-end job and feeling that his life peaked in middle school. Then he hears on the news that Hinata Tachibana, the only girlfriend he ever had, has been killed in an incident linked to the Tokyo Manji Gang, a violent criminal group. Soon after, he is pushed in front of a train and wakes up twelve years in the past, back in his delinquent middle-school days. Realising he can travel between the two times, Takemichi tries to change the future by getting close to the gang's leaders, Mikey and Draken. LIDENFILMS adapted Ken Wakui's manga into 24 episodes in 2021; more seasons followed.",
+      "sources": [
+        "https://myanimelist.net/anime/42249",
+        "https://en.wikipedia.org/wiki/Tokyo_Revengers"
+      ],
+      "confidence": "high"
+    },
+    "angel-beats": {
+      "summary": "A boy named Otonashi wakes up at a strange high school with no memory of who he was. A girl called Yuri tells him he has died, and that this school is a kind of afterlife. She leads the Afterlife Battlefront, a group of students who refuse to accept their fate and fight against a quiet girl they call Angel, whom they believe serves the god who decides what happens to them. Otonashi joins them while trying to recover his memories. The 13-episode original series by P.A. Works aired in 2010; it was written by Jun Maeda of the visual novel brand Key, who also composed its music. It mixes comedy, action and drama.",
+      "sources": [
+        "https://myanimelist.net/anime/6547",
+        "https://en.wikipedia.org/wiki/Angel_Beats!"
+      ],
+      "confidence": "high"
+    },
+    "sono-bisque-doll-wa-koi-wo-suru": {
+      "summary": "Wakana Gojo is a shy high schooler who wants to become a craftsman of traditional hina dolls, like his grandfather, and keeps his hobby secret after being teased as a child. Marin Kitagawa is a popular, outgoing classmate who loves anime and games and wants to try cosplay but cannot sew. When she discovers his skill with fabric, she asks him to make her a costume, and the two start working on outfits together. CloverWorks adapted Shinichi Fukuda's manga into 12 episodes, aired from January to March 2022, with a second season in 2025. The series is a romantic comedy with detailed looks at costume making and cosplay.",
+      "sources": [
+        "https://myanimelist.net/anime/48736",
+        "https://en.wikipedia.org/wiki/My_Dress-Up_Darling"
+      ],
+      "confidence": "high"
+    },
+    "charlotte": {
+      "summary": "In a world where a small number of teenagers develop special abilities at puberty, Yuu Otosaka discovers that he can take over another person's body for five seconds. He uses the trick to cheat his way into a top school, until student council president Nao Tomori catches him. She forces him to transfer to Hoshinoumi Academy, a school that shelters students with powers, and to join the student council, which tracks down other ability users before they can be exploited. Yuu's younger sister Ayumi moves with him. P.A. Works produced this 13-episode original series in 2015, created and written by Jun Maeda of Key, who also wrote Angel Beats!.",
+      "sources": [
+        "https://myanimelist.net/anime/28999",
+        "https://en.wikipedia.org/wiki/Charlotte_(TV_series)"
+      ],
+      "confidence": "high"
+    },
+    "mirai-nikki-tv": {
+      "summary": "Yukiteru Amano is a lonely middle schooler who records everything around him in a diary on his phone and talks to Deus Ex Machina, the god of time and space, whom he believes is imaginary. Then his diary starts predicting the future. Yuki learns he is one of twelve people given Future Diaries and forced into a survival game, with the last diary holder left standing set to become Deus's successor. His classmate Yuno Gasai, who holds a diary that tracks his every move, offers to protect him, though her devotion is unsettling. Asread adapted Sakae Esuno's manga into 26 episodes from 2011 to 2012, in a tense and violent thriller.",
+      "sources": [
+        "https://myanimelist.net/anime/10620",
+        "https://en.wikipedia.org/wiki/Future_Diary"
+      ],
+      "confidence": "high"
+    },
+    "bungou-stray-dogs": {
+      "summary": "Atsushi Nakajima has been thrown out of his orphanage and is starving by a river in Yokohama when he rescues a strange man who is trying to drown himself. The man, Osamu Dazai, belongs to the Armed Detective Agency, a group of people with supernatural abilities who take on cases too dangerous for the police. Atsushi soon learns he has a power of his own and is pulled into the agency's work and its conflict with the Port Mafia. Each character is named after a famous writer, and their abilities are inspired by that writer's work. Bones adapted the manga by Kafka Asagiri and Sango Harukawa into this 12-episode first season in 2016.",
+      "sources": [
+        "https://myanimelist.net/anime/31478",
+        "https://en.wikipedia.org/wiki/Bungo_Stray_Dogs"
+      ],
+      "confidence": "high"
+    },
+    "kill-la-kill": {
+      "summary": "Ryuko Matoi, a wandering transfer student carrying half of a giant scissor blade, arrives at Honnouji Academy looking for answers about her father's murder. The school is ruled by student council president Satsuki Kiryuin, whose elite students wear Goku Uniforms, clothing that grants superhuman strength. Ryuko is outmatched at first, until she finds Senketsu, a talking sailor uniform that gives her enormous power when she wears it. Loud, fast and over the top, the series packs in comedy and stylish fights. Trigger's first original TV anime, it was directed by Hiroyuki Imaishi and written by Kazuki Nakashima, the pair behind Gurren Lagann, and ran for 24 episodes from 2013 to 2014.",
+      "sources": [
+        "https://myanimelist.net/anime/18679",
+        "https://en.wikipedia.org/wiki/Kill_la_Kill"
+      ],
+      "confidence": "high"
+    },
+    "overlord": {
+      "summary": "The online game YGGDRASIL is shutting down, and Momonga, leader of a once-great guild, stays logged in to the very end. When the servers should go dark, he finds himself still inside, stuck in the body of his skeletal undead sorcerer and transported, together with his guild's headquarters, the Great Tomb of Nazarick, into a new world. The game's characters have come to life as his devoted, often fearsome servants. Unsure whether other players are here too, he starts to explore and expand his influence. Madhouse adapted Kugane Maruyama's light novels into this 13-episode first season in 2015; four seasons and films followed.",
+      "sources": [
+        "https://myanimelist.net/anime/29803",
+        "https://en.wikipedia.org/wiki/Overlord_(novel_series)"
+      ],
+      "confidence": "high"
+    },
+    "made-in-abyss": {
+      "summary": "The town of Orth sits on the edge of the Abyss, an enormous chasm full of strange creatures and ancient relics that no one has fully explored. Riko, an orphan training as a Cave Raider, dreams of following her mother, a legendary explorer, into its depths. While exploring the upper layers she finds Reg, a boy who appears to be a robot and has no memories. When a message seems to call her down, Riko sets off with Reg on a dangerous descent. Kinema Citrus adapted Akihito Tsukushi's web manga into 13 episodes in 2017, followed by a film and a second season. Its soft art style hides some very dark and intense moments.",
+      "sources": [
+        "https://myanimelist.net/anime/34599",
+        "https://en.wikipedia.org/wiki/Made_in_Abyss"
+      ],
+      "confidence": "high"
+    },
+    "cyberpunk-edgerunners": {
+      "summary": "In Night City, a megacity run by corporations and gangs, David Martinez is a teenager from the slums attending a prestigious corporate academy that his mother works hard to pay for. When his life falls apart, he gets an illegal military-grade cybernetic implant and turns to the underworld, becoming an edgerunner, a mercenary for hire. He falls in with a crew of outlaws that includes Lucy, a skilled netrunner who dreams of going to the Moon. The 10-episode miniseries was co-produced by Trigger and CD Projekt Red and released on Netflix on 13 September 2022. It is a stand-alone tie-in to the video game Cyberpunk 2077, with lots of violence and adult content.",
+      "sources": [
+        "https://myanimelist.net/anime/42310",
+        "https://en.wikipedia.org/wiki/Cyberpunk:_Edgerunners"
+      ],
+      "confidence": "high"
+    },
+    "dungeon-ni-deai-wo-motomeru-no-wa-machigatteiru-no-darou-ka": {
+      "summary": "In the city of Orario, built above a vast dungeon, adventurers join familias, groups led by gods who have come down to live among mortals. Bell Cranel is a rookie adventurer and the only member of the familia of Hestia, a small, cheerful goddess. After the elite swordswoman Ais Wallenstein saves him from a monster, Bell becomes determined to grow strong enough to stand by her, and he starts improving at an unusual speed. Fujino Omori's light novels were adapted by J.C.Staff into this 13-episode first season in 2015, known as DanMachi. Several seasons, spin-offs and a film followed.",
+      "sources": [
+        "https://myanimelist.net/anime/28121",
+        "https://en.wikipedia.org/wiki/Is_It_Wrong_to_Try_to_Pick_Up_Girls_in_a_Dungeon%3F"
+      ],
+      "confidence": "high"
+    },
+    "the-devil-is-a-part-timer": {
+      "summary": "Satan, the Demon King of the fantasy world Ente Isla, is on the verge of conquering it when the hero Emilia drives him back. He escapes through a portal with his loyal general and lands in modern-day Tokyo, where his magic barely works. To survive, he takes the name Sadao Maou, rents a tiny apartment and starts a part-time job at a fast-food restaurant, where he turns out to be a model employee with ambitions of promotion. Emilia soon follows him to Japan, also stuck living as an ordinary office worker. White Fox adapted Satoshi Wagahara's light novels into this 13-episode comedy in 2013; a second season came out in 2022.",
+      "sources": [
+        "https://myanimelist.net/anime/15809",
+        "https://en.wikipedia.org/wiki/The_Devil_Is_a_Part-Timer!"
+      ],
+      "confidence": "high"
+    },
+    "soul-eater": {
+      "summary": "At the Death Weapon Meister Academy, run by the Grim Reaper himself, students train in pairs: a meister who fights and a partner who can transform into a weapon. To turn a weapon into a Death Scythe, a pair has to gather 99 souls taken from wicked humans, followed by the soul of a witch. The story follows three teams, led by the serious Maka Albarn and her scythe partner Soul Eater Evans, alongside the loud ninja Black Star and the symmetry-obsessed Death the Kid. Their missions grow more dangerous as a threat to the whole academy appears. Bones adapted Atsushi Ohkubo's manga into 51 episodes from 2008 to 2009, with a stylish, gothic look and lots of comedy.",
+      "sources": [
+        "https://myanimelist.net/anime/3588",
+        "https://en.wikipedia.org/wiki/Soul_Eater"
+      ],
+      "confidence": "high"
+    },
+    "anohana-the-flower-we-saw-that-day": {
+      "summary": "As children, six friends who called themselves the Super Peace Busters spent their days together, until the death of one of them, a cheerful girl nicknamed Menma, drove the group apart. Years later, their former leader Jinta Yadomi has withdrawn from school and spends his days at home. One summer, Menma appears to him as a grown-up version of herself, asking him to grant a wish she cannot remember. To help her, Jinta has to reach out to the friends he lost touch with. A-1 Pictures produced this 11-episode original drama in 2011, created by director Tatsuyuki Nagai, writer Mari Okada and designer Masayoshi Tanaka; a film followed in 2013.",
+      "sources": [
+        "https://myanimelist.net/anime/9989",
+        "https://en.wikipedia.org/wiki/Anohana"
+      ],
+      "confidence": "high"
+    },
+    "DAN-DA-DAN": {
+      "summary": "High schooler Momo Ayase believes in ghosts but not aliens, while her nerdy classmate, whom she nicknames Okarun, believes in aliens but not ghosts. To settle their argument, each visits a place linked to the other's beliefs, and both turn out to be right. Momo is kidnapped by aliens and discovers psychic powers, while Okarun is cursed by a yokai called Turbo Granny and gains her speed. Teaming up, the two take on spirits, aliens and other strange threats while growing closer. Science SARU's 12-episode first season aired from October to December 2024, adapting Yukinobu Tatsu's manga; a second season followed in 2025. It mixes action, comedy, romance and weird horror.",
+      "sources": [
+        "https://myanimelist.net/anime/57334",
+        "https://en.wikipedia.org/wiki/Dandadan"
+      ],
+      "confidence": "high"
+    },
+    "another": {
+      "summary": "In spring, Koichi Sakakibara transfers to Yomiyama North Middle School and joins class 3-3. He notices a quiet girl with an eyepatch named Mei Misaki, but his classmates act as if she is not there, and nobody will explain why. Soon after he arrives, students and people connected to the class begin to die in strange, violent accidents. Koichi and Mei try to uncover what happened to the class years earlier and how the curse might be stopped. P.A. Works adapted Yukito Ayatsuji's mystery horror novel into 12 episodes, aired from January to March 2012. The series builds tension slowly and includes graphic death scenes.",
+      "sources": [
+        "https://myanimelist.net/anime/11111",
+        "https://en.wikipedia.org/wiki/Another_(novel)"
+      ],
+      "confidence": "high"
+    },
+    "yahari-ore-no-seishun-love-comedy-wa-machigatteiru": {
+      "summary": "Hachiman Hikigaya is a cynical high schooler who believes youth is a lie and that friendship is not worth the trouble. After he hands in an essay mocking teenage life, his teacher forces him to join the Service Club, whose only member is Yukino Yukinoshita, a brilliant, sharp-tongued girl who is just as isolated as he is. They are soon joined by the friendly Yui Yuigahama, and together the club takes requests from students who need help with personal problems. Hachiman's methods are rarely kind but often effective. Brain's Base adapted Wataru Watari's light novels into this 13-episode first season in 2013, followed by two further seasons.",
+      "sources": [
+        "https://myanimelist.net/anime/14813",
+        "https://en.wikipedia.org/wiki/My_Youth_Romantic_Comedy_Is_Wrong,_as_I_Expected"
+      ],
+      "confidence": "high"
+    },
+    "tengen-toppa-gurren-lagann": {
+      "summary": "In a future where humanity lives in underground villages, Simon is a shy boy who spends his days digging tunnels. His best friend Kamina, a loud dreamer, wants to reach the surface that everyone says is only a legend. When Simon digs up a small drill-shaped key that starts an ancient robot, which they name Lagann, the two break through to the surface, helped by Yoko, a sharpshooter from another village. Above ground, they find a world ruled by the Spiral King Lordgenome, whose beastmen fight in giant mechs. Gainax produced this 27-episode original series in 2007, directed by Hiroyuki Imaishi and written by Kazuki Nakashima. It is famous for its escalating scale and bold energy.",
+      "sources": [
+        "https://myanimelist.net/anime/2001",
+        "https://en.wikipedia.org/wiki/Gurren_Lagann"
+      ],
+      "confidence": "high"
+    },
+    "fairy-tail": {
+      "summary": "Lucy Heartfilia, a young celestial wizard who summons spirits with magical keys, dreams of joining Fairy Tail, a famous and famously destructive wizard guild. She gets her wish after meeting Natsu Dragneel, a fire-eating Dragon Slayer searching for Igneel, the dragon who raised him, and his flying talking cat Happy. Together with guild members such as the ice wizard Gray and the armoured swordswoman Erza, they take on jobs, fight dark guilds and protect each other. Satelight and A-1 Pictures adapted Hiro Mashima's manga into 175 episodes from 2009 to 2013. The story then continued in a 2014 series and a final season in 2018.",
+      "sources": [
+        "https://myanimelist.net/anime/6702",
+        "https://en.wikipedia.org/wiki/Fairy_Tail"
+      ],
+      "confidence": "high"
+    },
+    "kimi-no-suizou-wo-tabetai": {
+      "summary": "A reserved high school boy who prefers books to people finds a diary in a hospital waiting room. It belongs to Sakura Yamauchi, a bright, popular girl from his class, and it reveals that she has a serious illness of the pancreas that she has kept from everyone. Instead of keeping her distance, Sakura drags him into spending time with her, and an unlikely friendship grows between two people who could not be more different. This anime film, made by Studio VOLN and released in Japan on 1 September 2018, adapts Yoru Sumino's best-selling novel, which had also been made into a live-action film in 2017. It is a quiet, emotional drama.",
+      "sources": [
+        "https://myanimelist.net/anime/36098",
+        "https://en.wikipedia.org/wiki/I_Want_to_Eat_Your_Pancreas"
+      ],
+      "confidence": "high"
+    },
+    "dororo": {
+      "summary": "In Sengoku-era Japan, the warlord Daigo Kagemitsu makes a pact with demons to bring prosperity to his lands, and the price is paid by his newborn son, who is born without most of his body. The child survives, and years later he is a wandering swordsman called Hyakkimaru, fighting with prosthetic limbs and blades. Each demon he defeats returns a part of his body. He is joined by Dororo, a loud, street-smart young thief. Tezuka Productions and MAPPA produced this 24-episode series in 2019, the second anime version of Osamu Tezuka's 1960s manga after the 1969 series. It is dark, violent and often sad.",
+      "sources": [
+        "https://myanimelist.net/anime/37520",
+        "https://en.wikipedia.org/wiki/Dororo_(2019_TV_series)"
+      ],
+      "confidence": "high"
+    },
+    "jigokuraku": {
+      "summary": "Gabimaru the Hollow, a feared ninja of the Edo period, sits on death row, but every attempt to execute him fails. The executioner Yamada Asaemon Sagiri offers him a deal: he will be pardoned if he travels to a mysterious island rumoured to be paradise and brings back the elixir of immortality. Gabimaru agrees because he wants to return to his wife. He and Sagiri join other condemned criminals, each paired with an executioner, on an island full of strange creatures and beauty that hides danger. MAPPA adapted Yuji Kaku's manga into 13 episodes, aired from April to July 2023, and the story continues in a second season.",
+      "sources": [
+        "https://myanimelist.net/anime/46569",
+        "https://en.wikipedia.org/wiki/Hell%27s_Paradise:_Jigokuraku"
+      ],
+      "confidence": "high"
+    },
+    "tenki-no-ko-weathering-with-you": {
+      "summary": "Sixteen-year-old Hodaka Morishima runs away from his rural home to Tokyo, a city where it never seems to stop raining. Broke and alone, he ends up working for a small publisher of occult magazines. Then he meets Hina Amano, a girl who can make the rain stop and the sun shine for a while by praying. The two, along with Hina's younger brother, turn her ability into a small business, bringing sunshine to people who need it. Written and directed by Makoto Shinkai and animated by CoMix Wave Films, this film was released in Japan on 19 July 2019. It followed Shinkai's Your Name and has music by Radwimps.",
+      "sources": [
+        "https://myanimelist.net/anime/38826",
+        "https://en.wikipedia.org/wiki/Weathering_with_You"
+      ],
+      "confidence": "high"
+    },
+    "psycho-pass": {
+      "summary": "In a future Japan, the Sibyl System constantly scans citizens' minds and gives each a Crime Coefficient, a number that measures how likely they are to commit a crime. People whose numbers run too high are arrested before they do anything. Akane Tsunemori, a new Inspector at the Public Safety Bureau, is put in charge of Enforcers, latent criminals allowed to hunt others like them, such as the experienced Shinya Kogami. Her first cases force her to think about what justice means in such a society. Production I.G made this 22-episode original series (2012 to 2013), written by Gen Urobuchi; sequels and films followed.",
+      "sources": [
+        "https://myanimelist.net/anime/13601",
+        "https://en.wikipedia.org/wiki/Psycho-Pass"
+      ],
+      "confidence": "high"
+    },
+    "chuunibyou-demo-koi-ga-shitai": {
+      "summary": "In middle school, Yuta Togashi believed he was the Dark Flame Master, a warrior with secret powers. Now embarrassed by those fantasies, a condition known in Japan as chunibyo, he starts high school hoping to leave that past behind. His plan falls apart when he meets Rikka Takanashi, a girl in his class who lives upstairs and still fully believes in her own magical delusions, eyepatch and all. She becomes attached to him and pulls him into a club full of odd characters. Kyoto Animation adapted the light novels by Torako into this 12-episode romantic comedy in 2012, followed by a second season and a film.",
+      "sources": [
+        "https://myanimelist.net/anime/14741",
+        "https://en.wikipedia.org/wiki/Love,_Chunibyo_%26_Other_Delusions"
+      ],
+      "confidence": "high"
+    },
+    "devilman-crybaby": {
+      "summary": "Akira Fudo is a gentle, kind-hearted teenager who cries easily at other people's pain. His childhood friend Ryo Asuka, a cold young genius, returns with a warning: ancient demons are coming back to take over the human world, and they can possess people. To fight them, Ryo leads Akira to a place where he merges with the powerful demon Amon. Akira becomes Devilman, with a demon's strength but a human heart. Directed by Masaaki Yuasa and animated by Science SARU, this 10-episode adaptation of Go Nagai's 1970s manga was released on Netflix on 5 January 2018. It is extremely violent and contains explicit sexual content.",
+      "sources": [
+        "https://myanimelist.net/anime/35120",
+        "https://en.wikipedia.org/wiki/Devilman_Crybaby"
+      ],
+      "confidence": "high"
+    },
+    "hyouka": {
+      "summary": "Hotaro Oreki lives by a simple rule: if he does not have to do something, he will not. At his older sister's request, he joins his high school's Classic Literature Club to keep it from closing. There he meets Eru Chitanda, a curious, polite girl who cannot stop wondering about little mysteries, and his friends Satoshi Fukube and Mayaka Ibara soon join too. Whenever Eru says she is curious, Hotaro ends up solving puzzles of everyday school life, including one tied to the club's past. Kyoto Animation adapted Honobu Yonezawa's Classic Literature Club novels into 22 episodes in 2012, directed by Yasuhiro Takemoto.",
+      "sources": [
+        "https://myanimelist.net/anime/12189",
+        "https://en.wikipedia.org/wiki/Hyouka"
+      ],
+      "confidence": "high"
+    },
+    "fate-zero": {
+      "summary": "Every few decades in the Japanese city of Fuyuki, seven mages called Masters each summon a Servant, the spirit of a legendary hero, and fight a secret war for the Holy Grail, a relic said to grant any wish. Fate/Zero follows the Fourth Holy Grail War. At its centre is Kiritsugu Emiya, a ruthless mercenary mage hired by the Einzbern family, who is paired with the knightly Servant Saber, while rival Masters and their Servants pursue their own goals. Written by Gen Urobuchi as a prequel to Type-Moon's visual novel Fate/stay night, it was adapted by ufotable; this 13-episode first season aired in late 2011, and a second season followed in 2012.",
+      "sources": [
+        "https://myanimelist.net/anime/10087",
+        "https://en.wikipedia.org/wiki/Fate/Zero"
+      ],
+      "confidence": "high"
+    },
+    "monster": {
+      "summary": "Kenzo Tenma is a gifted Japanese neurosurgeon working at a hospital in Düsseldorf, West Germany, with a bright career ahead of him. After being made to put a celebrity's operation before a poor worker's, he is troubled by what his job asks of him. When he next faces a choice, he ignores orders and operates on a young boy with a gunshot wound instead of the town's mayor. That decision costs him his position and, years later, pulls him into a series of murders. Tenma sets out across Germany on a long, dangerous search. Madhouse adapted Naoki Urasawa's manga into 74 episodes from 2004 to 2005, in a slow-burning psychological thriller.",
+      "sources": [
+        "https://myanimelist.net/anime/19",
+        "https://en.wikipedia.org/wiki/Monster_(manga)"
+      ],
+      "confidence": "high"
+    },
+    "bakemonogatari": {
+      "summary": "High school senior Koyomi Araragi has recently survived a vampire attack and is human again, though he still heals unusually fast. One day he catches his classmate Hitagi Senjougahara when she falls down the stairs and finds that she weighs almost nothing. Her condition is caused by an oddity, a supernatural phenomenon tied to her emotions, and with help from the strange expert Meme Oshino, Araragi tries to help her. Each arc focuses on a different girl and her own oddity. Shaft adapted Nisio Isin's light novels into 15 episodes, starting in 2009 on TV and finishing online in 2010. It is dialogue-heavy, with a striking visual style, and starts the long Monogatari series.",
+      "sources": [
+        "https://myanimelist.net/anime/5081",
+        "https://en.wikipedia.org/wiki/Monogatari_(series)"
+      ],
+      "confidence": "high"
+    },
+    "kusuriya-no-hitorigoto": {
+      "summary": "Maomao grew up in the pleasure district, learning medicine and poisons from her apothecary father. Kidnapped and sold into service as a low-ranking maid in the emperor's inner palace, she keeps her head down and plans to wait out her contract. When the emperor's infant children fall mysteriously ill, she quietly works out the cause and leaves an anonymous warning, but the handsome, sharp-eyed eunuch Jinshi tracks her down. Soon she is solving one palace mystery after another. Set in a land inspired by imperial China, the series adapts the light novels by Hyuganatsu. OLM and TOHO animation STUDIO made this 24-episode first season (2023 to 2024); further seasons followed.",
+      "sources": [
+        "https://myanimelist.net/anime/54492",
+        "https://en.wikipedia.org/wiki/The_Apothecary_Diaries_(TV_series)"
+      ],
+      "confidence": "high"
+    },
+    "tower-of-god": {
+      "summary": "A mysterious Tower is said to grant anything to those who reach its top, and it chooses certain people, called Regulars, to climb it. Twenty-Fifth Bam spent his life alone in a dark place until a girl named Rachel befriended him. When Rachel enters the Tower to see the stars, Bam follows her inside, even though he was not chosen. On each floor, climbers face tests set by the Tower's administrators, and Bam makes allies such as the scheming Khun Aguero Agnes and the warrior Rak Wraithraiser. Telecom Animation Film adapted SIU's South Korean webtoon into 13 episodes, aired from April to June 2020; a second season followed in 2024.",
+      "sources": [
+        "https://myanimelist.net/anime/40221",
+        "https://en.wikipedia.org/wiki/Tower_of_God"
+      ],
+      "confidence": "high"
+    },
+    "oshi-no-ko": {
+      "summary": "Gorou Amamiya is a doctor at a rural hospital and a devoted fan of Ai Hoshino, a hugely popular teenage idol. One day Ai turns up as his patient, secretly pregnant with twins. Through a strange twist of fate, Gorou and a former patient of his are reborn as those twins, Aqua and Ruby, keeping the memories of their past lives. Growing up close to the entertainment industry, they see both its glamour and its darker side, from idol groups to acting and reality TV. Doga Kobo adapted the manga written by Aka Akasaka and drawn by Mengo Yokoyari into this 11-episode first season in 2023, and later seasons followed.",
+      "sources": [
+        "https://myanimelist.net/anime/52034",
+        "https://en.wikipedia.org/wiki/Oshi_no_Ko"
+      ],
+      "confidence": "high"
+    },
+    "owari-no-seraph": {
+      "summary": "A mysterious virus wipes out everyone over the age of thirteen, and vampires emerge from hiding to take over what is left of the world. Orphans Yuichiro Hyakuya and Mikaela Hyakuya are taken to an underground vampire city, where children are kept and drained of blood like livestock. Years later, Yu is on the surface and joins the Moon Demon Company, a unit of the Japanese Imperial Demon Army, which uses cursed weapons to fight vampires. He wants to wipe them out and makes new friends along the way. Wit Studio adapted the manga by Takaya Kagami, Yamato Yamamoto and Daisuke Furuya into this 12-episode first season in 2015; Battle in Nagoya followed later that year.",
+      "sources": [
+        "https://myanimelist.net/anime/26243",
+        "https://en.wikipedia.org/wiki/Seraph_of_the_End"
+      ],
+      "confidence": "high"
+    },
+    "kobayashi-san-chi-no-maid-dragon": {
+      "summary": "Kobayashi is an ordinary office worker and programmer. After a drunken night out in the mountains, she wakes up to find a dragon at her door, which turns into a young woman in a maid outfit. The dragon, Tohru, was helped by Kobayashi the night before and has decided to repay her by moving in and serving as her maid. Before long, other dragons arrive, including Kanna, a small dragon who starts going to elementary school. The series is a gentle slice-of-life comedy about an unusual found family. Kyoto Animation adapted coolkyousinnjya's manga into 13 episodes in 2017, followed by a second season in 2021.",
+      "sources": [
+        "https://myanimelist.net/anime/33206",
+        "https://en.wikipedia.org/wiki/Miss_Kobayashi%27s_Dragon_Maid"
+      ],
+      "confidence": "high"
+    },
+    "blue-lock": {
+      "summary": "Japan's national football team keeps falling short at the World Cup, and the Japan Football Union decides the country needs a true egoist striker. It launches Blue Lock, a training facility where 300 young forwards compete in brutal elimination games run by the coach Jinpachi Ego. Only one will become the national team's striker, while those who are eliminated lose the chance to play for Japan. Yoichi Isagi, a high school forward still stung by a missed opportunity, is one of those invited. Based on the manga by Muneyuki Kaneshiro and Yusuke Nomura, 8bit's 24-episode first season aired from October 2022 to March 2023, followed by a second season and a film.",
+      "sources": [
+        "https://myanimelist.net/anime/49596",
+        "https://en.wikipedia.org/wiki/Blue_Lock"
+      ],
+      "confidence": "high"
+    },
+    "eighty-six": {
+      "summary": "The Republic of San Magnolia claims it is fighting the Giadian Empire's robot army, the Legion, with unmanned drones and no human losses. The truth is that the drones are piloted by the Eighty-Six, people of other ethnic backgrounds who were stripped of their rights and sent to an unrecognised 86th district. Vladilena Milizé, an idealistic young officer, becomes the Handler of the Spearhead squadron, guiding them by radio link from safety, and gets to know its captain, Shinei Nouzen. A-1 Pictures adapted Asato Asato's light novels into this 11-episode first part, aired from April to June 2021, and a second part followed. It is a war drama about prejudice.",
+      "sources": [
+        "https://myanimelist.net/anime/41457",
+        "https://en.wikipedia.org/wiki/86_(novel_series)"
+      ],
+      "confidence": "high"
+    },
+    "wotaku-ni-koi-wa-muzukashii": {
+      "summary": "Narumi Momose has started a new office job and is determined to keep her otaku hobbies secret, since past boyfriends broke up with her over them. Her plan wobbles when she discovers that a coworker is Hirotaka Nifuji, a childhood friend and a hardcore gaming otaku. Over drinks, they decide to start dating, since dating another otaku might be easier. The series follows their relationship, along with that of their coworkers Hanako Koyanagi and Taro Kabakura, who share their own fandoms. A-1 Pictures adapted Fujita's web manga into 11 episodes in 2018. It is a light romantic comedy about adults balancing work, love and hobbies.",
+      "sources": [
+        "https://myanimelist.net/anime/35968",
+        "https://en.wikipedia.org/wiki/Wotakoi:_Love_Is_Hard_for_Otaku"
+      ],
+      "confidence": "high"
+    },
+    "mahou-shoujo-madoka-magica": {
+      "summary": "Madoka Kaname is a kind, ordinary middle school student who lives a happy life with her family and friends. Things change when she meets Kyubey, a small cat-like creature who offers to grant her any wish in exchange for becoming a magical girl and fighting witches, beings that spread despair from hidden labyrinths. A mysterious transfer student, Homura Akemi, seems set on stopping her from accepting. Madoka and her friend Sayaka Miki soon learn that the role is more dangerous and complicated than it first looks. Shaft produced this 12-episode original series in 2011, directed by Akiyuki Shinbo and written by Gen Urobuchi; films followed.",
+      "sources": [
+        "https://myanimelist.net/anime/9756",
+        "https://en.wikipedia.org/wiki/Puella_Magi_Madoka_Magica"
+      ],
+      "confidence": "high"
+    },
+    "5-toubun-no-hanayome": {
+      "summary": "Futaro Uesugi is a top student from a poor family with no friends and no interest in socialising. Needing money, he takes a well-paid job as private tutor to the daughters of a wealthy family, only to discover they are identical quintuplets who are all failing their classes. Ichika, Nino, Miku, Yotsuba and Itsuki each have a distinct personality, and most of them do not want his help at first. The series opens years later on Futaro's wedding day to one of the sisters, without revealing which one. Tezuka Productions adapted Negi Haruba's manga into this 12-episode romantic comedy in 2019; a second season and a film followed.",
+      "sources": [
+        "https://myanimelist.net/anime/38101",
+        "https://en.wikipedia.org/wiki/The_Quintessential_Quintuplets"
+      ],
+      "confidence": "high"
+    },
+    "komi-san-wa-komyushou-desu": {
+      "summary": "Shoko Komi is admired by everyone at her high school for her beauty and calm, elegant manner, but nobody realises that she has extreme social anxiety and can barely speak to people. On the first day, the very ordinary Hitohito Tadano, who sits next to her, discovers this when they talk by writing on the blackboard. Komi tells him her dream is to make 100 friends, and Tadano decides to help her, starting with being the first. Along the way they meet a cast of very eccentric classmates. OLM adapted Tomohito Oda's manga into this 12-episode comedy, aired from October to December 2021, and a second season followed in 2022.",
+      "sources": [
+        "https://myanimelist.net/anime/48926",
+        "https://en.wikipedia.org/wiki/Komi_Can%27t_Communicate"
+      ],
+      "confidence": "high"
+    },
+    "kage-no-jitsuryokusha-ni-naritakute": {
+      "summary": "Minoru Kagenou has never wanted to be a hero or a villain. He wants to be the hidden mastermind who quietly controls events from the shadows, and he trains obsessively for the role. After he dies in a truck accident, he is reborn in a fantasy world as Cid Kagenou, a noble's son with real magic. To play his part, he founds Shadow Garden, a secret organisation, and makes up a story about a sinister cult for its members to fight. What he does not know is that the cult actually exists. Nexus adapted the light novels by Daisuke Aizawa into this 20-episode first season (2022 to 2023), and a second season followed.",
+      "sources": [
+        "https://myanimelist.net/anime/48316",
+        "https://en.wikipedia.org/wiki/The_Eminence_in_Shadow"
+      ],
+      "confidence": "high"
+    },
+    "fumetsu-no-anata-e": {
+      "summary": "A being known only as 'It' is sent to Earth by a mysterious figure to observe the world. It can take the form of anything it has had contact with, starting as a simple orb, then a rock, then moss, and later a wolf. Through these forms, it meets a lonely boy waiting for his people to return, and begins to learn about emotions, pain and what it means to be alive. Over time, it becomes known as Fushi and travels the world, meeting people and growing more human. Brain's Base adapted the manga by Yoshitoki Oima, creator of A Silent Voice, into this 20-episode first season in 2021; later seasons followed.",
+      "sources": [
+        "https://myanimelist.net/anime/41025",
+        "https://en.wikipedia.org/wiki/To_Your_Eternity"
+      ],
+      "confidence": "high"
+    },
+    "high-school-dxd": {
+      "summary": "Issei Hyodo is a lecherous student at Kuoh Academy whose biggest dream is to have a harem. When he finally gets asked out on a date, his date reveals herself as a fallen angel and attacks him. He is brought back as a devil by Rias Gremory, a red-haired upperclassman who is secretly a devil of noble blood, and he becomes a servant in her household and a member of her Occult Research Club at school. Issei soon gets caught up in the old conflicts between devils, angels and fallen angels. TNK adapted the light novels by Ichiei Ishibumi into this 12-episode first season in 2012. It is an action comedy with heavy fan service.",
+      "sources": [
+        "https://myanimelist.net/anime/11617",
+        "https://en.wikipedia.org/wiki/High_School_DxD"
+      ],
+      "confidence": "high"
+    },
+    "fruits-basket-2019": {
+      "summary": "High schooler Tohru Honda has lost her mother and, to avoid troubling anyone, is secretly living in a tent in the woods. The land belongs to the wealthy Sohma family, and when her classmate Yuki Sohma and his older cousin Shigure discover her, they invite her to live with them in exchange for housework. Soon she learns the family's secret: some members are possessed by animals of the Chinese zodiac and turn into them when hugged by someone of the opposite sex. Directed by Yoshihide Ibata at TMS Entertainment, this new adaptation of Natsuki Takaya's manga covers the whole story across three seasons and 63 episodes, starting with this 25-episode season in 2019.",
+      "sources": [
+        "https://myanimelist.net/anime/38680",
+        "https://en.wikipedia.org/wiki/Fruits_Basket_(2019_TV_series)"
+      ],
+      "confidence": "high"
+    },
+    "banana-fish": {
+      "summary": "Ash Lynx is a 17-year-old gang leader in New York City, raised in the criminal underworld by the mafia boss Dino Golzine. His older brother, who returned from war with severe trauma, keeps repeating the words 'banana fish', and when a dying man passes Ash the same phrase, he begins to dig into what it means. At the same time, he meets Eiji Okumura, a kind young assistant to a Japanese photographer who has come to New York to report on street gangs. A deep bond forms between them as the danger grows. MAPPA adapted Akimi Yoshida's 1980s manga into 24 episodes in 2018, moving the story into the present day. It is a violent crime drama.",
+      "sources": [
+        "https://myanimelist.net/anime/36649",
+        "https://en.wikipedia.org/wiki/Banana_Fish"
+      ],
+      "confidence": "high"
+    },
+    "kanojo-okarishimasu": {
+      "summary": "Twenty-year-old college student Kazuya Kinoshita is dumped by his first girlfriend and, feeling miserable, hires a rental girlfriend through an app. His date is Chizuru Mizuhara, who seems perfect, but after reading reviews from other customers he decides her charm is an act and gives her a bad rating. Things get complicated when he learns she lives next door and goes to his university, and when both of their grandmothers come to believe they are a real couple. To keep the lie alive, they have to keep pretending. TMS Entertainment adapted Reiji Miyajima's manga into 12 episodes in 2020; several more seasons followed.",
+      "sources": [
+        "https://myanimelist.net/anime/40839",
+        "https://en.wikipedia.org/wiki/Rent-A-Girlfriend"
+      ],
+      "confidence": "high"
+    },
+    "goblin-slayer": {
+      "summary": "Goblins are seen as the weakest monsters, and most adventurers ignore them for better-paying work. On her first day as an adventurer, a young girl known only as Priestess joins a group of eager rookies on a goblin-hunting job, and it goes terribly wrong. She is rescued by Goblin Slayer, a silver-ranked adventurer in battered armour who hunts nothing but goblins, methodically and without mercy. She begins working alongside him, and other adventurers join them. White Fox adapted Kumo Kagyu's light novels into 12 episodes in 2018, followed by a film and a second season. It is a dark fantasy with graphic violence, including sexual violence.",
+      "sources": [
+        "https://myanimelist.net/anime/37349",
+        "https://en.wikipedia.org/wiki/Goblin_Slayer"
+      ],
+      "confidence": "high"
+    },
+    "princess-mononoke": {
+      "summary": "In Muromachi-era Japan, Ashitaka, a young prince of the Emishi people, is cursed while defending his village from a raging boar god. To seek a cure, he travels west and arrives at Irontown, an ironworks led by the determined Lady Eboshi, who is clearing the forest for its resources. The forest's animal gods are fighting back, and among them is San, a young woman raised by the wolf goddess Moro. Ashitaka finds himself caught between the town and the forest. Written and directed by Hayao Miyazaki and animated by Studio Ghibli, the film was released in Japan on 12 July 1997. It is an epic fantasy about people and nature.",
+      "sources": [
+        "https://myanimelist.net/anime/164",
+        "https://en.wikipedia.org/wiki/Princess_Mononoke"
+      ],
+      "confidence": "high"
+    },
+    "clannad": {
+      "summary": "Tomoya Okazaki is a high school delinquent who skips classes with his friend Youhei Sunohara and expects nothing from the future, partly because of a difficult relationship with his father. One morning, on the hill leading up to school, he meets Nagisa Furukawa, a shy girl repeating her final year who wants to bring the school's drama club back to life. Tomoya ends up helping her, and through her meets several other students with their own problems. Kyoto Animation adapted Key's visual novel into 23 episodes from 2007 to 2008, directed by Tatsuya Ishihara. The story continues in the sequel series Clannad: After Story.",
+      "sources": [
+        "https://myanimelist.net/anime/2167",
+        "https://en.wikipedia.org/wiki/Clannad_(video_game)"
+      ],
+      "confidence": "high"
+    },
+    "the-god-of-highschool-series": {
+      "summary": "The God of High School is a tournament to find the strongest high school fighter in Korea, where any martial art, weapon or tactic is allowed, and the winner gets any wish granted. Jin Mo-Ri, a cheerful taekwondo expert, enters, and soon befriends two other competitors, the karate fighter Han Dae-Wi and the swordswoman Yu Mi-Ra, each with personal reasons for wanting to win. As the matches grow more extreme, the three discover that the tournament hides a much bigger purpose. MAPPA adapted Yongje Park's South Korean webtoon into 13 episodes, aired from July to September 2020. The series focuses on fast, heavily animated fights.",
+      "sources": [
+        "https://myanimelist.net/anime/41353",
+        "https://en.wikipedia.org/wiki/The_God_of_High_School"
+      ],
+      "confidence": "high"
+    },
+    "gintama": {
+      "summary": "In an alternate Edo period, aliens called the Amanto have taken over Japan and banned the samurai from carrying swords. Gintoki Sakata, a lazy, sweet-loving former warrior, still carries a wooden one and runs Yorozuya, an odd-jobs business that takes almost any request to pay the rent. He works with Shinpachi Shimura, a sensible young man, and Kagura, a super-strong alien girl. Most episodes are absurd comedies full of parodies and fourth-wall jokes, but some arcs turn into serious sword-fighting drama. Sunrise adapted Hideaki Sorachi's manga into 201 episodes from 2006 to 2010, followed by several sequel series and films.",
+      "sources": [
+        "https://myanimelist.net/anime/918",
+        "https://en.wikipedia.org/wiki/Gintama"
+      ],
+      "confidence": "high"
+    },
+    "durarara": {
+      "summary": "Mikado Ryugamine, a quiet teenager from the countryside, moves to Ikebukuro in Tokyo to attend high school with his childhood friend Masaomi Kida. Masaomi warns him about the people to avoid there: a violent man who throws vending machines, a manipulative information broker, a mysterious online gang called the Dollars and a headless rider on a black motorcycle. That rider is Celty Sturluson, a dullahan from Irish legend who works as an underground courier while searching for her lost head. The story jumps between many characters whose lives cross in surprising ways. Brain's Base adapted Ryohgo Narita's light novels into 24 episodes in 2010, followed by the sequel Durarara!!x2.",
+      "sources": [
+        "https://myanimelist.net/anime/6746",
+        "https://en.wikipedia.org/wiki/Durarara!!"
+      ],
+      "confidence": "high"
+    },
+    "mashle": {
+      "summary": "In a world where magic decides a person's place in society and those without it are hunted down, Mash Burnedead was born with no magic at all. Raised quietly in a forest by his adoptive father, he made up for it by training his body until he became absurdly strong, and he loves cream puffs. When the authorities discover him, he makes a deal: he will enroll at the elite Easton Magic Academy and try to become a Divine Visionary, the school's top honour. Mash then gets through magic lessons and duels using pure muscle. A-1 Pictures adapted Hajime Komoto's manga into this 12-episode comedy in 2023; a second season followed in 2024.",
+      "sources": [
+        "https://myanimelist.net/anime/52211",
+        "https://en.wikipedia.org/wiki/Mashle"
+      ],
+      "confidence": "high"
+    },
+    "zankyou-no-terror": {
+      "summary": "Months after a mysterious raid on a nuclear facility in Japan, a video appears online in which two masked teenagers calling themselves Sphinx challenge the police with riddles and threaten attacks across Tokyo. The pair, known as Nine and Twelve, are high school students. Their bombings put detective Kenjiro Shibazaki on their trail, while a lonely, bullied girl named Lisa Mishima is pulled into their plans. Created and directed by Shinichiro Watanabe, with music by Yoko Kanno, this 11-episode original series was made by MAPPA and aired from July to September 2014. It is a tense, serious thriller.",
+      "sources": [
+        "https://myanimelist.net/anime/23283",
+        "https://en.wikipedia.org/wiki/Terror_in_Resonance"
+      ],
+      "confidence": "high"
+    },
+    "kaichou-wa-maid-sama": {
+      "summary": "Misaki Ayuzawa is the first female student council president of Seika High, a rowdy former boys' school, and she is so strict with the boys that they call her the Demon President. She also has a secret: to help support her family, she works part-time at a maid café, the kind of place she would never want her classmates to know about. Then Takumi Usui, the school's most popular boy, discovers her job. Instead of exposing her, he keeps showing up, teasing her and helping her out. J.C.Staff adapted Hiro Fujiwara's shojo manga into 26 episodes in 2010. It is a romantic comedy.",
+      "sources": [
+        "https://myanimelist.net/anime/7054",
+        "https://en.wikipedia.org/wiki/Maid_Sama!"
+      ],
+      "confidence": "high"
+    },
+    "kuroko-no-basket": {
+      "summary": "Teiko Middle School's basketball team was famous for the Generation of Miracles, five prodigies who dominated the sport before going to different high schools. Seirin High's young team recruits two first-years: Taiga Kagami, a powerful player who has just returned from the United States, and Tetsuya Kuroko, a small, quiet boy so easy to overlook that he can vanish on court. Kuroko was the mysterious sixth man of the Generation of Miracles, and he and Kagami set out to defeat his former teammates. Production I.G adapted Tadatoshi Fujimaki's manga into this 25-episode first season in 2012; two more seasons and films followed.",
+      "sources": [
+        "https://myanimelist.net/anime/11771",
+        "https://en.wikipedia.org/wiki/Kuroko%27s_Basketball"
+      ],
+      "confidence": "high"
+    },
+    "kaijuu-8-gou": {
+      "summary": "Japan is regularly attacked by giant monsters called kaiju, which are fought by the Defense Force. As children, Kafka Hibino and Mina Ashiro promised each other they would join it. Now 32, Kafka works on a crew that cleans up kaiju remains, while Mina has become a celebrated captain. Encouraged by his young coworker Reno Ichikawa, Kafka decides to try again, but then a small creature enters his body and he gains the power to turn into a kaiju himself. Production I.G adapted Naoya Matsumoto's manga into 12 episodes, aired from April to June 2024, followed by a second season in 2025. It mixes action with comedy.",
+      "sources": [
+        "https://myanimelist.net/anime/52588",
+        "https://en.wikipedia.org/wiki/Kaiju_No._8"
+      ],
+      "confidence": "high"
+    },
+    "high-school-of-the-dead": {
+      "summary": "A sudden outbreak turns people into zombies, and Fujimi High School is overrun in a matter of minutes. Student Takashi Komuro escapes with his childhood friend Rei Miyamoto, and they gather a small group of survivors, including the sword-wielding Saeko Busujima, the clever Saya Takagi, the gun-loving Kohta Hirano and the school nurse Shizuka Marikawa. Together they try to get out of the city and find their families as society breaks down around them. Madhouse adapted the manga by Daisuke Sato and Shoji Sato into 12 episodes in 2010, directed by Tetsuro Araki, with an extra OVA. It combines horror action with heavy fan service.",
+      "sources": [
+        "https://myanimelist.net/anime/8074",
+        "https://en.wikipedia.org/wiki/Highschool_of_the_Dead"
+      ],
+      "confidence": "high"
+    },
+    "yofukashi-no-uta": {
+      "summary": "Ko Yamori is a middle schooler who has stopped going to school and cannot sleep at night, so he starts wandering the empty streets after dark. One night he meets Nazuna Nanakusa, a playful, carefree girl who turns out to be a vampire. Fascinated by the freedom of the night, Ko decides he wants to become a vampire too, but there is a condition: he has to fall in love with Nazuna first. The two spend their nights together while Ko tries to work out what love even is. LIDENFILMS adapted Kotoyama's manga into 13 episodes in 2022, directed by Tomoyuki Itamura, and a second season followed in 2025.",
+      "sources": [
+        "https://myanimelist.net/anime/50346",
+        "https://en.wikipedia.org/wiki/Call_of_the_Night"
+      ],
+      "confidence": "high"
+    },
+    "wonder-egg-priority": {
+      "summary": "Fourteen-year-old Ai Ohto has stopped going to school after the suicide of her friend Koito. One night she follows a strange voice and buys an egg from a capsule machine. When she sleeps, the egg takes her into a dream world, where it hatches into a girl who is being chased by monsters, and Ai must protect her. Through this, Ai hopes she might be able to bring Koito back. She soon meets three other girls doing the same thing for their own reasons. Created and written by Shinji Nojima and animated by CloverWorks, this 12-episode original series aired in early 2021, followed by a special. It deals directly with suicide and abuse.",
+      "sources": [
+        "https://myanimelist.net/anime/43299",
+        "https://en.wikipedia.org/wiki/Wonder_Egg_Priority"
+      ],
+      "confidence": "high"
+    },
+    "youjo-senki": {
+      "summary": "A cold, rational Japanese salaryman is pushed in front of a train by a man he fired. Before he can move on, he argues with a being claiming to be God, whom he calls Being X, and as punishment for his lack of faith he is reborn as an orphan girl in a world resembling early 20th-century Europe, where magic is used in war. Now named Tanya Degurechaff, she joins the Empire's army as a mage, planning to climb to a safe desk job far from the front, but her ruthless skill keeps sending her into combat. NUT adapted the light novels by Carlo Zen into 12 episodes in 2017, followed by a film in 2019.",
+      "sources": [
+        "https://myanimelist.net/anime/32615",
+        "https://en.wikipedia.org/wiki/The_Saga_of_Tanya_the_Evil"
+      ],
+      "confidence": "high"
+    },
+    "my-neighbor-totoro": {
+      "summary": "In postwar rural Japan, Satsuki and her little sister Mei move with their father to an old house in the countryside, to be close to the hospital where their mother is recovering. The girls explore their new surroundings and discover that the woods nearby are home to friendly spirits, including the huge, furry Totoro and a bus shaped like a cat. With no villains and very little danger, the film follows the sisters' everyday life, their worries about their mother and their meetings with the spirits. Written and directed by Hayao Miyazaki and made by Studio Ghibli, it was released in Japan on 16 April 1988 and is suitable for all ages.",
+      "sources": [
+        "https://myanimelist.net/anime/523",
+        "https://en.wikipedia.org/wiki/My_Neighbor_Totoro"
+      ],
+      "confidence": "high"
+    },
+    "samurai-champloo": {
+      "summary": "In a loose version of Edo-period Japan, Fuu, a young teahouse waitress, gets into trouble and is saved by two swordsmen who are busy trying to fight each other: Mugen, a wild drifter with a breakdance-like fighting style, and Jin, a calm, traditional ronin. When a chance comes, Fuu gets them to promise to help her find 'the samurai who smells of sunflowers'. The three set off across Japan, short of money and often arguing, running into trouble in every town. The 26-episode original series, directed by Shinichiro Watanabe and the first TV series from the studio Manglobe, aired from 2004 to 2005 and mixes samurai action with hip-hop music.",
+      "sources": [
+        "https://myanimelist.net/anime/205",
+        "https://en.wikipedia.org/wiki/Samurai_Champloo"
+      ],
+      "confidence": "high"
+    },
+    "k-on": {
+      "summary": "Yui Hirasawa is starting high school with no idea what club to join. She signs up for the light music club, thinking it sounds easy, without knowing that it is a band club or how to play any instrument. The club's three members, the energetic drummer Ritsu, the shy bassist Mio and the gentle keyboardist Tsumugi, need a fourth to keep it running, so Yui decides to learn the guitar. The series follows the girls' relaxed club life, with tea and cake taking up as much time as practice. Kyoto Animation adapted Kakifly's four-panel manga into 13 episodes in 2009, directed by Naoko Yamada; a second season and a film followed.",
+      "sources": [
+        "https://myanimelist.net/anime/5680",
+        "https://en.wikipedia.org/wiki/K-On!"
+      ],
+      "confidence": "high"
+    },
+    "kyoukai-no-kanata": {
+      "summary": "Akihito Kanbara looks like an ordinary high schooler, but he is half youmu, a supernatural creature, which makes him almost impossible to kill. One day he spots a first-year girl standing at the edge of the school roof and rushes to stop her. She is Mirai Kuriyama, a shy, clumsy Spirit World Warrior who can turn her own blood into a weapon and has been sent to the town to hunt youmu. Their meeting ties their lives together, and Akihito gets pulled into her dangerous work. Kyoto Animation adapted Nagomu Torii's light novel into 12 episodes in 2013, directed by Taichi Ishidate, followed by two films in 2015.",
+      "sources": [
+        "https://myanimelist.net/anime/18153",
+        "https://en.wikipedia.org/wiki/Beyond_the_Boundary"
+      ],
+      "confidence": "high"
+    },
+    "sakurasou-no-pet-na-kanojo": {
+      "summary": "Sorata Kanda, a student at Suimei High, an arts-focused school, is moved to Sakura Hall, a dormitory known for housing the school's most eccentric students, after refusing to give up the stray cats he keeps rescuing. He plans to get out as soon as he can. Then his teacher asks him to look after Mashiro Shiina, a new transfer student who is a world-famous painter but cannot handle everyday tasks on her own. Living with her and the other talented, strange residents makes Sorata question his own ambitions. J.C.Staff adapted Hajime Kamoshida's light novels into 24 episodes from 2012 to 2013, directed by Atsuko Ishizuka.",
+      "sources": [
+        "https://myanimelist.net/anime/13759",
+        "https://en.wikipedia.org/wiki/The_Pet_Girl_of_Sakurasou"
+      ],
+      "confidence": "high"
+    },
+    "elfen-lied": {
+      "summary": "Diclonii are a mutant species who look human apart from two small horns on their heads, but they can use invisible arms called vectors to tear things apart. Lucy, a Diclonius held in a secret research facility, escapes in a bloody breakout. She is injured on the way and later washes up on a beach in Kamakura, where two cousins, Kouta and Yuka, find her. She now has a childlike personality and can only say one word, 'nyu', so they take her in and call her Nyu. Arms adapted Lynn Okamoto's manga into 13 episodes in 2004, plus an OVA. The series is extremely violent and includes a lot of nudity.",
+      "sources": [
+        "https://myanimelist.net/anime/226",
+        "https://en.wikipedia.org/wiki/Elfen_Lied"
+      ],
+      "confidence": "high"
+    },
+    "bocchi-the-rock": {
+      "summary": "Hitori Gotoh is so shy that talking to people terrifies her. She spent her middle school years practising the guitar alone and posting skilled covers online, hoping to join a band someday, but never managed to make a friend. In high school, the cheerful drummer Nijika Ijichi finds her and drags her into her band, Kessoku Band, along with the cool, quiet bassist Ryo Yamada. Nicknamed Bocchi, Hitori now has to perform in front of people. CloverWorks adapted Aki Hamaji's four-panel manga into 12 episodes, aired from October to December 2022. It is a comedy with lots of visual gags and original rock songs.",
+      "sources": [
+        "https://myanimelist.net/anime/47917",
+        "https://en.wikipedia.org/wiki/Bocchi_the_Rock!"
+      ],
+      "confidence": "high"
+    },
+    "maou-gakuin-no-futekigousha-shijou-saikyou-no-maou-no-shiso-tensei-shite-shison-tachi-no-gakkou-e-kayou": {
+      "summary": "Two thousand years ago, the Demon King Anos Voldigoad brought a long human-demon war to a close by sacrificing himself, planning to return in a calmer age. When he is reborn, he enrolls at the Demon King Academy, a school built to find his successor and identify his reincarnation. To his surprise, magic in this era is much weaker, the academy's aptitude test cannot measure his power and he is labelled a misfit. Supremely confident, Anos sets out to put things right, making friends with a quiet girl named Misha. SILVER LINK. adapted Shu's light novels into 13 episodes in 2020, followed by a second season.",
+      "sources": [
+        "https://myanimelist.net/anime/40496",
+        "https://en.wikipedia.org/wiki/The_Misfit_of_Demon_King_Academy"
+      ],
+      "confidence": "high"
+    },
+    "nisekoi": {
+      "summary": "Raku Ichijo is the son of a yakuza boss, but all he wants is a normal life. He also wears a locket from a childhood promise to a girl he can no longer remember, who holds the key that opens it. When his family's gang is about to go to war with a rival gang, Raku is forced to pretend to date Chitoge Kirisaki, the hot-tempered daughter of the other gang's boss, to keep the peace, even though they cannot stand each other. Meanwhile, he has a crush on his gentle classmate Kosaki Onodera. Shaft adapted Naoshi Komi's manga into this 20-episode romantic comedy in 2014; a second season followed in 2015.",
+      "sources": [
+        "https://myanimelist.net/anime/18897",
+        "https://en.wikipedia.org/wiki/Nisekoi"
+      ],
+      "confidence": "high"
+    },
+    "ijiranaide-nagatoro-san": {
+      "summary": "Naoto Hachiouji is a quiet second-year student who likes to draw alone in his school's art club room. One day, a group of first-year girls finds his manga, and one of them, Hayase Nagatoro, decides that teasing him is her new favourite hobby. She drops by the club room again and again, mocking him and calling him 'Senpai', but she also keeps coming back and pushes him to step out of his shell. Telecom Animation Film adapted the web manga by Nanashi, also known as 774, into 12 episodes, aired from April to June 2021. A second season, made by OLM, followed in 2023. The series is a teasing romantic comedy.",
+      "sources": [
+        "https://myanimelist.net/anime/42361",
+        "https://en.wikipedia.org/wiki/Don%27t_Toy_with_Me,_Miss_Nagatoro"
+      ],
+      "confidence": "high"
+    },
+    "golden-time": {
+      "summary": "After an accident wipes out his memories, Banri Tada moves to Tokyo to start a fresh life as a law student. On his first day he becomes friends with fellow student Mitsuo Yanagisawa, and soon after meets Koko Kaga, a striking, intense young woman who has followed Mitsuo to the school. Banri joins clubs, makes friends and falls in love, but his forgotten past does not stay away entirely, and the story includes a touch of the supernatural. J.C.Staff adapted Yuyuko Takemiya's light novels into 24 episodes from 2013 to 2014, directed by Chiaki Kon. Takemiya also wrote Toradora!. It is a college romantic drama.",
+      "sources": [
+        "https://myanimelist.net/anime/17895",
+        "https://en.wikipedia.org/wiki/Golden_Time_(novel_series)"
+      ],
+      "confidence": "high"
+    },
+    "fullmetal-alchemist": {
+      "summary": "Brothers Edward and Alphonse Elric break alchemy's greatest taboo when they try to bring their mother back to life. The attempt fails: Edward loses an arm and a leg, and Alphonse loses his entire body, his soul now bound to a suit of armour. Edward becomes a State Alchemist for the military, known as the Fullmetal Alchemist, and the two set out to find the Philosopher's Stone, which might restore their bodies. Bones produced this 51-episode series from 2003 to 2004, directed by Seiji Mizushima and loosely based on Hiromu Arakawa's manga, with its own original second half. It is separate from 2009's Fullmetal Alchemist: Brotherhood.",
+      "sources": [
+        "https://myanimelist.net/anime/121",
+        "https://en.wikipedia.org/wiki/Fullmetal_Alchemist_(TV_series)"
+      ],
+      "confidence": "high"
+    },
+    "gachiakuta": {
+      "summary": "In a wealthy town that throws things away without a thought, Rudo, a boy from the slums who is descended from criminals, collects discarded objects he believes still have value. Waste and criminals alike are dumped into the Pit, a giant abyss from which nobody returns. When Rudo is falsely accused of a crime, he is thrown in. He survives in a polluted world below, full of monsters born from trash, and joins the Cleaners, fighters who use cherished objects called Vital Instruments as weapons, while seeking the truth about who framed him. Bones Film adapted Kei Urana's manga into 24 episodes, aired from July to December 2025.",
+      "sources": [
+        "https://myanimelist.net/anime/59062",
+        "https://en.wikipedia.org/wiki/Gachiakuta"
+      ],
+      "confidence": "high"
+    },
+    "my-little-monster": {
+      "summary": "Shizuku Mizutani cares about nothing except studying and getting good grades. Her teacher asks her to deliver some printouts to Haru Yoshida, the student who sits next to her but has been suspended after a fight on the first day of school and never shows up. Haru is unpredictable, violent at times and naive about people, and after one visit he decides that Shizuku is his first friend. He returns to school and soon falls for her, pulling her into a group of friends she never planned to have. Brain's Base adapted Robico's manga into 13 episodes, aired from October to December 2012. It is a romantic comedy-drama.",
+      "sources": [
+        "https://myanimelist.net/anime/14227",
+        "https://en.wikipedia.org/wiki/My_Little_Monster"
+      ],
+      "confidence": "high"
+    },
+    "black-butler": {
+      "summary": "In Victorian London, 12-year-old Ciel Phantomhive is the head of a noble family and of a successful toy company. Secretly, he also serves as the Queen's Watchdog, investigating crimes in the city's underworld. He is helped by his butler Sebastian Michaelis, who can do anything perfectly, from cooking to fighting, because he is actually a demon. Ciel made a contract with him to take revenge on those who destroyed his family, and in return Sebastian will claim his soul. A-1 Pictures adapted Yana Toboso's manga into this 24-episode first season (2008 to 2009), directed by Toshiya Shinohara, and several sequels followed.",
+      "sources": [
+        "https://myanimelist.net/anime/4898",
+        "https://en.wikipedia.org/wiki/Black_Butler"
+      ],
+      "confidence": "high"
+    },
+    "relife": {
+      "summary": "Arata Kaizaki is 27 and unemployed after leaving his first job, and his family and friends think he is a failure. Then a man named Ryo Yoake from the ReLIFE Research Institute offers him a deal: take a pill that will make him look 17 again, and spend a year as a high school student as part of an experiment. Arata accepts, and finds that school is harder than he remembered, especially the tests. He also makes new friends, including the socially awkward top student Chizuru Hishiro. TMS Entertainment adapted the webcomic by Yayoiso into 13 episodes in 2016, and four final episodes were released in 2018.",
+      "sources": [
+        "https://myanimelist.net/anime/30015",
+        "https://en.wikipedia.org/wiki/ReLIFE"
+      ],
+      "confidence": "high"
+    },
+    "mahouka-koukou-no-rettousei": {
+      "summary": "In the late 21st century, magic is a real technology taught at special schools. First High School splits students by their entrance scores into first-course 'Blooms' and second-course 'Weeds', and resentment between the two groups runs high. Siblings Tatsuya and Miyuki Shiba enroll together: Miyuki is the top new student, while Tatsuya is a Weed because of his weak practical scores, even though he shows unusual knowledge and skill. Miyuki adores her brother and is frustrated by how he is treated. Madhouse adapted Tsutomu Sato's light novels into 26 episodes in 2014, directed by Manabu Ono; later seasons were made by another studio.",
+      "sources": [
+        "https://myanimelist.net/anime/20785",
+        "https://en.wikipedia.org/wiki/The_Irregular_at_Magic_High_School"
+      ],
+      "confidence": "high"
+    },
+    "plastic-memories": {
+      "summary": "In the near future, the company SAI Corp makes Giftias, androids that look and feel almost human and live with families as helpers and companions. However, a Giftia only lasts about nine years, and when its time runs out it must be collected. Eighteen-year-old Tsukasa Mizugaki, who failed his college exams, gets a job at the company's Terminal Service One, the team that collects Giftias and helps their owners say goodbye. He is paired with Isla, a quiet Giftia. Doga Kobo produced this 13-episode original series in 2015, written by Naotaka Hayashi and directed by Yoshiyuki Fujiwara. It is a gentle, bittersweet drama.",
+      "sources": [
+        "https://myanimelist.net/anime/27775",
+        "https://en.wikipedia.org/wiki/Plastic_Memories"
+      ],
+      "confidence": "high"
+    },
+    "ouran-koukou-host-club": {
+      "summary": "Haruhi Fujioka is a scholarship student at Ouran Academy, a school for the children of the very rich. Looking for a quiet place to study, she walks into an empty music room and finds the Host Club, a group of handsome boys who entertain the school's female students. Because of her short hair and baggy clothes, they assume she is a boy. When Haruhi accidentally breaks an expensive vase, the club's president Tamaki Suou has her pay off the debt by working as a host. Bones adapted Bisco Hatori's shojo manga into 26 episodes in 2006, directed by Takuya Igarashi. It is a comedy that pokes fun at shojo romance clichés.",
+      "sources": [
+        "https://myanimelist.net/anime/853",
+        "https://en.wikipedia.org/wiki/Ouran_High_School_Host_Club"
       ],
       "confidence": "high"
     }

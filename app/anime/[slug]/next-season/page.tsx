@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import MadeBy from "@/components/MadeBy";
 import EditorWatched from "@/components/EditorWatched";
 import { fitTitle } from "@/lib/titles";
 import { sequelNews, newsOverrides, NEWS_CHECKED, NEWS_REVIEWED } from "@/lib/sequelnews";
@@ -130,6 +131,7 @@ export default async function NextSeasonPage({ params }: Props) {
         {verdict.kind === "dated" && next?.startDate && <Countdown iso={`${next.startDate.slice(0, 10)}T00:00:00+09:00`} big label="Premieres in" />}
       </PageHero>
       <EditorWatched anime={a} className="mt-4" />
+      <MadeBy className="mt-3" method="Sequel status comes from the studio's and publisher's own announcements and anime news, two sources where possible; release dates from AniList." />
 
       {news && (
         <section className="card reveal mt-8 p-4" aria-labelledby="news-h">
