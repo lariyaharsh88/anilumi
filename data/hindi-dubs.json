@@ -1,5 +1,5 @@
 {
- "checked": "2026-11-09",
+ "checked": "2026-11-10",
  "reviewed": null,
  "entries": [
   {
@@ -246,6 +246,11 @@
      "name": "Amazon MX Player",
      "scope": "Season 1",
      "url": "https://www.animenewsnetwork.com/news/2025-05-10/amazon-mx-player-adds-hindi-dubs-of-spy-family-demon-slayer-4-more-anime/.224301"
+    },
+    {
+     "name": "Netflix",
+     "scope": "All TV arcs (Seasons 1-5)",
+     "url": "https://www.netflix.com/in/title/81091393"
     }
    ],
    "sources": [
@@ -255,7 +260,8 @@
     "https://www.animenewsnetwork.com/news/2024-05-31/demon-slayer-hashira-training-arc-anime-hindi-tamil-telugu-dubs-launch-on-june-9/.211404",
     "https://www.animenewsnetwork.com/news/2025-05-10/amazon-mx-player-adds-hindi-dubs-of-spy-family-demon-slayer-4-more-anime/.224301",
     "https://animemirchi.com/anime-times-hindi-dubbed-anime-list/",
-    "https://animemirchi.com/demon-slayer-in-india-hindi-tamil-telugu/"
+    "https://animemirchi.com/demon-slayer-in-india-hindi-tamil-telugu/",
+    "https://www.netflix.com/in/title/81091393"
    ],
    "note": "Crunchyroll has Hindi for every TV season; Season 1 was the last to be added (Aug 2024). A fan tracker reports Hindi for Seasons 1-4 on Anime Times (Aug-Sep 2025) and Seasons 1-3 on JioHotstar, and that Infinity Castle Part 1 joined Crunchyroll India in Jul 2026 with Hindi; these are not confirmed by official sources."
   },
@@ -432,13 +438,20 @@
   {
    "s": "shigatsu-wa-kimi-no-uso",
    "t": "Your Lie in April",
-   "status": "none_found",
+   "status": "available",
    "confidence": "medium",
-   "platforms": [],
-   "sources": [
-    "https://www.crunchyroll.com/series/G63V7KN9Y/your-lie-in-april"
+   "platforms": [
+    {
+     "name": "Amazon MX Player",
+     "scope": "Season 1 (free with ads)",
+     "url": "https://www.primevideo.com/detail?gti=amzn1.dv.gti.4f75748b-eca8-40ec-87f7-e98f49e4e67b"
+    }
    ],
-   "note": "Crunchyroll India streams it, but its series page lists no Hindi audio."
+   "sources": [
+    "https://www.crunchyroll.com/series/G63V7KN9Y/your-lie-in-april",
+    "https://www.primevideo.com/detail?gti=amzn1.dv.gti.4f75748b-eca8-40ec-87f7-e98f49e4e67b"
+   ],
+   "note": "Hindi audio is listed on the series' Amazon MX Player / Prime Video India page (checked 10 Nov 2026); no announcement found, so check the audio menu."
   },
   {
    "s": "naruto",
@@ -1025,6 +1038,11 @@
      "name": "Ani-One India (YouTube)",
      "scope": "Thousand-Year Blood War Cours 1-3 (daily from 20 Jul 2026) and Cour 4 (new dub, from 25 Jul 2026)",
      "url": "https://animenewsindia.com/2026/07/21/anione-india-annouces-new-hindi-dub-for-bleach-thousand-year-blood-war-the-calamity-cour-4-and-dailly-streaming-of-previous-seasons-on-its-youtube-channel/"
+    },
+    {
+     "name": "Amazon MX Player",
+     "scope": "Original series Season 1 (free with ads)",
+     "url": "https://www.primevideo.com/detail?gti=amzn1.dv.gti.81422a5b-d642-499c-8bfa-823ba07410b2"
     }
    ],
    "sources": [
@@ -1032,7 +1050,8 @@
     "https://animenewsindia.com/2026/08/14/bleach-thousand-year-blood-war-the-final-cour-the-calamity-now-streaming-on-jiohotstar-with-brand-new-hindi-dub/",
     "https://animenewsindia.com/2026/07/21/anione-india-annouces-new-hindi-dub-for-bleach-thousand-year-blood-war-the-calamity-cour-4-and-dailly-streaming-of-previous-seasons-on-its-youtube-channel/",
     "https://www.crunchyroll.com/series/G63VGG2NY/bleach",
-    "https://animemirchi.com/ani-one-india-hindi-dubbed-anime-list/"
+    "https://animemirchi.com/ani-one-india-hindi-dubbed-anime-list/",
+    "https://www.primevideo.com/detail?gti=amzn1.dv.gti.81422a5b-d642-499c-8bfa-823ba07410b2"
    ],
    "note": "Only Thousand-Year Blood War has Hindi: JioCinema/JioHotstar from Dec 2024, with a new dub cast for Part 4; Ani-One India's YouTube channel began streaming Cours 1-3 daily from 20 Jul 2026 and premiered its own Hindi dub of Cour 4 on 25 Jul 2026. The original 2004 series on Crunchyroll India has no Hindi audio; a fan tracker reports Ani-One has announced a Hindi dub of it (no date)."
   },
@@ -1536,6 +1555,11 @@
      "name": "Amazon MX Player",
      "scope": "Season 1-2",
      "url": "https://www.animenewsnetwork.com/news/2025-05-10/amazon-mx-player-adds-hindi-dubs-of-spy-family-demon-slayer-4-more-anime/.224301"
+    },
+    {
+     "name": "Netflix",
+     "scope": "Season 3 and the CODE: White film",
+     "url": "https://www.netflix.com/in/title/81511410"
     }
    ],
    "sources": [
@@ -1544,7 +1568,8 @@
     "https://www.animenewsnetwork.com/news/2025-10-27/crunchyroll-streams-spy-family-season-3-hindi-dub-on-november-30/.230333",
     "https://www.animenewsnetwork.com/news/2024-12-01/spy-family-code-white-anime-film-streams-on-youtube-with-hindi-dub/.218454",
     "https://www.animenewsnetwork.com/news/2025-05-10/amazon-mx-player-adds-hindi-dubs-of-spy-family-demon-slayer-4-more-anime/.224301",
-    "https://www.animenewsnetwork.com/news/2026-05-29/muse-asia-launches-new-muse-hindi-dub-youtube-channel/.237931"
+    "https://www.animenewsnetwork.com/news/2026-05-29/muse-asia-launches-new-muse-hindi-dub-youtube-channel/.237931",
+    "https://www.netflix.com/in/title/81511410"
    ],
    "note": "Crunchyroll has its own Hindi dub (Seasons 1-3). Muse's separate Hindi dub of Seasons 1-2 is on Amazon MX Player (and was earlier on Anime Times); since 29 May 2026 Season 1 streams free on Muse's new \"Muse Hindi Dub\" YouTube channel. Muse's Code: White film streamed on YouTube for a limited time in Dec 2024. A fan tracker also lists Season 3 in Hindi on Anime Times (27 May 2026), not confirmed elsewhere."
   },
@@ -2162,12 +2187,18 @@
      "name": "Crunchyroll",
      "scope": "Season 1 (from Nov 2023) and Season 2 (from Feb 2026)",
      "url": "https://www.animenewsnetwork.com/news/2026-02-09/frieren-beyond-journey-end-2nd-season-anime-hindi-tamil-telugu-dubs-stream-on-crunchyroll/.233943"
+    },
+    {
+     "name": "Netflix",
+     "scope": "Season 1",
+     "url": "https://www.netflix.com/in/title/81726714"
     }
    ],
    "sources": [
     "https://www.animenewsnetwork.com/news/2026-02-09/frieren-beyond-journey-end-2nd-season-anime-hindi-tamil-telugu-dubs-stream-on-crunchyroll/.233943",
     "https://animenewsindia.com/2026/01/24/crunchyroll-announces-winter-2026-regional-dubs-lineup/",
-    "https://m.animenewsnetwork.com/news/2023-09-22/crunchyroll-announces-hindi-tamil-dubs-for-jujutsu-kaisen-season-2-frieren-2-more-anime/.202697"
+    "https://m.animenewsnetwork.com/news/2023-09-22/crunchyroll-announces-hindi-tamil-dubs-for-jujutsu-kaisen-season-2-frieren-2-more-anime/.202697",
+    "https://www.netflix.com/in/title/81726714"
    ],
    "note": "Crunchyroll announced a Hindi dub of Season 1 in Sep 2023 (added Nov 2023), and Season 2 is in its Winter 2026 Hindi, Tamil and Telugu lineup, streaming from Feb 2026."
   },
@@ -3138,6 +3169,29 @@
     "https://www.livechart.me/anime/3731/streams"
    ],
    "note": "Streams on Netflix India; its dubs do not include Hindi."
+  },
+  {
+   "s": "kusuriya-no-hitorigoto",
+   "t": "The Apothecary Diaries",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Netflix",
+     "scope": "Seasons 1-3",
+     "url": "https://www.netflix.com/in/title/81712068"
+    },
+    {
+     "name": "Crunchyroll",
+     "scope": "Seasons 1-3",
+     "url": "https://www.crunchyroll.com/watch/GE00325115ARSA"
+    }
+   ],
+   "sources": [
+    "https://www.netflix.com/in/title/81712068",
+    "https://www.crunchyroll.com/watch/GE00325115ARSA"
+   ],
+   "note": "Netflix India's page lists Hindi, Tamil and Telugu audio for all three seasons (checked 10 Nov 2026); Crunchyroll India also lists Hindi."
   }
  ]
 }
