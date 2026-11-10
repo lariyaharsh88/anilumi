@@ -9,7 +9,7 @@ import { STREAM_KIND_CLASS } from "@/components/StreamServices";
 import { getAnimeBySlug, posterUrl } from "@/lib/kitsu";
 import { itemList } from "@/lib/ld";
 import { fitTitle } from "@/lib/titles";
-import { REGIONS, REGION_FLAG, REGION_NAME, REGION_SHORT, KIND_LABEL, allStreams, audioLine, catalogue, freeIn, safeUrl, servicesIn, streamsDate, streamsPath, type Region } from "@/lib/streams";
+import { REGIONS, REGION_FLAG, REGION_NAME, REGION_SHORT, KIND_LABEL, allStreams, audioLine, catalogue, freeIn, servicesIn, streamsDate, streamsPath, type Region } from "@/lib/streams";
 
 export const revalidate = 86400;
 
@@ -84,21 +84,13 @@ export default async function WhereToWatchHub() {
                   <h2 id={`shows-${r}`} className="h-section mb-1">Where each anime streams in {REGION_NAME[r]}</h2>
                   <p className="mb-4 text-sm text-muted">Most-watched first. Checked {streamsDate()}.</p>
                   <ListFilter target={`shows-list-${r}`} placeholder="Find an anime" />
-                  <ul id={`shows-list-${r}`} className="grid gap-2 md:grid-cols-2">
+                  <ul id={`shows-list-${r}`} className="card divide-y divide-line text-sm">
                     {all.map((e) => {
                       const list = servicesIn(e, r).filter((x) => x.kind !== "buy");
                       return (
-                        <li key={e.s} data-filter={e.t.toLowerCase()} className="card min-w-0 p-3">
+                        <li key={e.s} data-filter={e.t.toLowerCase()} className="flex flex-wrap gap-x-2 px-3 py-2">
                           <Link href={streamsPath(e.s)} className="font-semibold text-ink hover:text-violet-2">{e.t}</Link>
-                          {list.length ? (
-                            <ul className="mt-1.5 flex flex-wrap gap-1.5">
-                              {list.map((x) => {
-                                const url = safeUrl(x.url);
-                                const label = <>{x.service}<span className="text-muted"> · {audioLine(x) || KIND_LABEL[x.kind]}</span></>;
-                                return <li key={x.service + x.scope} className={`rounded-full border px-2 py-0.5 text-xs ${STREAM_KIND_CLASS[x.kind]}`}>{url ? <a href={url} target="_blank" rel="noopener nofollow" className="hover:underline">{label}</a> : label}</li>;
-                              })}
-                            </ul>
-                          ) : <p className="mt-1 text-xs text-muted">{servicesIn(e, r).length ? "Buy or rent only" : "Not streaming legally here"}</p>}
+                          <span className="text-ink/75">{list.length ? list.map((x) => `${x.service}${x.kind === "free" ? " (free)" : ""}${audioLine(x) ? ` · ${audioLine(x)}` : ""}`).join("; ") : servicesIn(e, r).length ? "Buy or rent only" : "Not streaming legally here"}</span>
                         </li>
                       );
                     })}
