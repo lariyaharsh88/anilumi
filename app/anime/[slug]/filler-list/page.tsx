@@ -11,6 +11,8 @@ import Faq, { type FaqItem } from "@/components/Faq";
 import AdSlot from "@/components/AdSlot";
 import LeadForm from "@/components/LeadForm";
 import { dbEnabled } from "@/lib/db";
+import { fitTitle } from "@/lib/titles";
+import { arcsFor, arcOf, arcRange, type Arc } from "@/lib/arcs";
 
 export const revalidate = 604800;
 export async function generateStaticParams() { return []; }
@@ -36,7 +38,25 @@ async function load(slug: string) {
   const f = fillerFor(a.slug, airing ? aired || null : a.episodeCount);
   if (!f) notFound();
   const skip = f.count + f.recap.size;
-  return { a, f, skip, airing, saved: a.episodeLength ? skip * a.episodeLength : 0 };
+  // The name people search ("Naruto Shippuden", "Bleach"), not Kitsu's canonical romaji ("Naruto: Shippuuden", "BLEACH").
+  const name = f.entry.name ?? a.titleEn ?? a.title;
+  return { a, f, skip, airing, name, saved: a.episodeLength ? skip * a.episodeLength : 0 };
+}
+
+/** Per arc: how many of its episodes are filler, mixed or canon, and what to do with it. Pure. */
+function arcRows(f: FillerInfo, arcs: Arc[]) {
+  return arcs.filter((x) => x.from <= f.total).map((x) => {
+    const to = Math.min(x.to ?? f.total, f.total);
+    let filler = 0, recap = 0, mixed = 0;
+    const skips: number[] = [];
+    for (let n = x.from; n <= to; n++) {
+      if (f.filler.has(n)) { filler++; skips.push(n); } else if (f.recap.has(n)) { recap++; skips.push(n); } else if (f.mixed.has(n)) mixed++;
+    }
+    const len = to - x.from + 1;
+    // "Skip the arc" only when every episode in it is filler or recap; a filler arc with a mixed episode lists what to skip.
+    const verdict = filler + recap === len ? "skip" : filler + recap ? "partial" : "watch";
+    return { arc: x, to, len, filler, recap, mixed, skips, verdict } as const;
+  });
 }
 
 function counts(f: FillerInfo) {
@@ -47,17 +67,20 @@ function counts(f: FillerInfo) {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const { a, f, skip, saved } = await load(slug);
+  const { a, f, skip, saved, name } = await load(slug);
   return {
-    title: `${a.title} Filler List: ${skip} Episodes You Can Skip`,
-    description: `${a.title} has ${f.count} filler episodes out of ${f.total} (${f.share.toFixed(0)}%)${f.recap.size ? ` plus ${f.recap.size} recaps` : ""}. Full list of filler, mixed and canon episodes${saved ? `; skipping saves about ${hours(saved)}` : ""}.`,
+    title: fitTitle([`${name} Filler List (${new Date().getFullYear()}): ${skip} Episodes to Skip`, `${name} Filler List: ${skip} Episodes to Skip`, `${name} Filler List (${new Date().getFullYear()})`, `${name} Filler List`]),
+    description: `${name} has ${f.count} filler episodes out of ${f.total} (${f.share.toFixed(0)}%)${f.recap.size ? ` plus ${f.recap.size} recaps` : ""}. Full list of filler, mixed and canon episodes${saved ? `; skipping saves about ${hours(saved)}` : ""}.`,
     alternates: { canonical: `${animePath(a)}/filler-list` },
   };
 }
 
 export default async function FillerListPage({ params }: Props) {
   const { slug } = await params;
-  const { a, f, airing, saved } = await load(slug);
+  const { a, f, airing, saved, name } = await load(slug);
+  const arcs = arcsFor(a.slug);
+  const byArc = arcs ? arcRows(f, arcs) : [];
+  const skipArcs = byArc.filter((r) => r.verdict === "skip");
   const c = counts(f);
   const runs = kindRuns(f);
   const src = fillerSource(f.entry);
@@ -65,19 +88,19 @@ export default async function FillerListPage({ params }: Props) {
   const longest = runs.filter((r) => r.kind === "filler" || r.kind === "recap").sort((x, y) => y.to - y.from - (x.to - x.from))[0];
 
   const faq: FaqItem[] = [
-    { q: `How many filler episodes does ${a.title} have?`, a: `${f.count} of its ${f.total} episodes${airing ? " aired so far" : ""} are filler (${f.share.toFixed(0)}%)${f.recap.size ? `, and ${f.recap.size} more are recaps` : ""}. ${f.mixed.size ? `Another ${f.mixed.size} mix adapted story with new material, so they're worth watching.` : ""}`.trim() },
-    { q: `Which ${a.title} episodes can I skip?`, a: `Filler: ${formatRanges(f.filler) || "none"}.${f.recap.size ? ` Recaps: ${formatRanges(f.recap)}.` : ""}` },
-    ...(longest && longest.to > longest.from ? [{ q: `What is the longest filler run in ${a.title}?`, a: `${span(longest.from, longest.to)}: ${longest.to - longest.from + 1} episodes in a row. The story picks up again in episode ${longest.to + 1 <= f.total ? longest.to + 1 : longest.to}.` }] : []),
-    ...(saved ? [{ q: `How much time does skipping ${a.title} filler save?`, a: `About ${hours(saved)}, at ${a.episodeLength} minutes an episode.` }] : []),
+    { q: `How many filler episodes does ${name} have?`, a: `${f.count} of its ${f.total} episodes${airing ? " aired so far" : ""} are filler (${f.share.toFixed(0)}%)${f.recap.size ? `, and ${f.recap.size} more are recaps` : ""}. ${f.mixed.size ? `Another ${f.mixed.size} mix adapted story with new material, so they're worth watching.` : ""}`.trim() },
+    { q: `Which ${name} episodes can I skip?`, a: `Filler: ${formatRanges(f.filler) || "none"}.${f.recap.size ? ` Recaps: ${formatRanges(f.recap)}.` : ""}` },
+    ...(longest && longest.to > longest.from ? [{ q: `What is the longest filler run in ${name}?`, a: `${span(longest.from, longest.to)}: ${longest.to - longest.from + 1} episodes in a row. The story picks up again in episode ${longest.to + 1 <= f.total ? longest.to + 1 : longest.to}.` }] : []),
+    ...(saved ? [{ q: `How much time does skipping ${name} filler save?`, a: `About ${hours(saved)}, at ${a.episodeLength} minutes an episode.` }] : []),
   ];
 
   return (
     <div className="container-x pb-8">
-      <JsonLd data={{ ...pageAbout(a, `${animePath(a)}/filler-list`, `${a.title} filler list`), ...reviewedBy(f.entry.reviewedOn) }} />
+      <JsonLd data={{ ...pageAbout(a, `${animePath(a)}/filler-list`, `${name} filler list`), ...reviewedBy(f.entry.reviewedOn) }} />
       <PageHero
         crumbs={[{ href: "/", label: "Home" }, { href: animePath(a), label: a.title }, { href: `${animePath(a)}/filler-list`, label: "Filler list" }]}
         eyebrow={<><span className="mr-2 inline-flex items-center rounded-full bg-white/10 px-2 py-0.5 text-[11px] tracking-normal text-ink normal-case">{src.label}</span>Filler guide</>}
-        title={`${a.title} filler list`}
+        title={`${name} filler list`}
         subtitle={<>{f.count} of {f.total} episodes{airing ? " so far" : ""} are filler{f.recap.size ? ` and ${f.recap.size} are recaps` : ""}. {saved ? <>Skip them and you save about <strong className="text-ink">{hours(saved)}</strong>.</> : null}</>}
         facts={[
           { value: String(f.count), label: "filler episodes" },
@@ -89,6 +112,37 @@ export default async function FillerListPage({ params }: Props) {
         backdrop={a.cover?.large || null}
         posters={[posterUrl(a, "medium")]}
       />
+
+      <section className="card reveal mt-8 border-[#f43f5e]/40 bg-[#f43f5e]/[.05] p-4" aria-labelledby="quick-h">
+        <h2 id="quick-h" className="font-semibold text-ink">Short answer: which {name} episodes to skip</h2>
+        <p className="mt-2 text-sm leading-6 text-ink/90"><strong className="text-ink">Filler ({f.count}):</strong> {formatRanges(f.filler) || "none"}.</p>
+        {f.recap.size > 0 && <p className="mt-1 text-sm leading-6 text-ink/90"><strong className="text-ink">Recaps ({f.recap.size}):</strong> {formatRanges(f.recap)}.</p>}
+        {skipArcs.length > 0 && <p className="mt-1 text-sm leading-6 text-ink/90"><strong className="text-ink">Whole arcs you can skip:</strong> {skipArcs.map((r) => `${r.arc.name} (${arcRange({ ...r.arc, to: r.to })})`).join(", ")}.</p>}
+        {longest && longest.to > longest.from && <p className="mt-1 text-sm text-muted">Longest filler stretch: {span(longest.from, longest.to)} ({longest.to - longest.from + 1} in a row); the story resumes at episode {longest.to + 1}.</p>}
+        {f.mixed.size > 0 && <p className="mt-1 text-sm text-muted">Mixed episodes ({f.mixed.size}) contain story you need, so watch them.</p>}
+      </section>
+
+      {byArc.length > 0 && (
+        <section className="reveal mt-10" aria-labelledby="arcs-h">
+          <h2 id="arcs-h" className="h-section mb-1">{name} filler by arc</h2>
+          <p className="mb-4 text-sm text-muted">Each story arc with how much of it is filler. Arc names and ranges follow the episode numbering used on this page.</p>
+          <div className="card overflow-x-auto">
+            <table className="w-full min-w-[560px] text-left text-sm">
+              <thead className="text-xs uppercase tracking-wide text-muted"><tr><th className="px-3 py-2">Arc</th><th className="px-3 py-2">Episodes</th><th className="px-3 py-2">Filler</th><th className="px-3 py-2">Verdict</th></tr></thead>
+              <tbody className="divide-y divide-line">
+                {byArc.map((r) => (
+                  <tr key={r.arc.name + r.arc.from}>
+                    <td className="px-3 py-2 font-medium text-ink">{r.arc.name}{r.arc.filler && <span className="ml-2 text-xs text-[#fb7185]">filler arc</span>}</td>
+                    <td className="px-3 py-2 tabular-nums text-ink/85">{arcRange({ ...r.arc, to: r.to })}{r.arc.to === null ? " (airing)" : ""}</td>
+                    <td className="px-3 py-2 tabular-nums text-ink/85">{r.filler + r.recap ? `${r.filler + r.recap} of ${r.len}` : "None"}</td>
+                    <td className="px-3 py-2">{r.verdict === "skip" ? <span className="rounded bg-[#f43f5e]/15 px-2 py-0.5 text-xs font-semibold text-[#fb7185]">Skip the arc</span> : r.verdict === "partial" ? <span className="text-xs text-ink/85">Watch, skip {formatRanges(r.skips)}</span> : <span className="rounded bg-white/5 px-2 py-0.5 text-xs font-semibold text-ink/80">Watch</span>}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+      )}
 
       <section className="reveal mt-10" aria-labelledby="map-h">
         <h2 id="map-h" className="h-section mb-1">Episode map</h2>
@@ -123,7 +177,7 @@ export default async function FillerListPage({ params }: Props) {
                 <span aria-hidden className="h-5 w-1.5 shrink-0 rounded-full" style={{ background: KIND[r.kind].color }} />
                 <span className="min-w-0 flex-1">
                   <span className="font-semibold text-ink">{span(r.from, r.to)}</span>
-                  <span className="ml-2 text-muted">{KIND[r.kind].label}{r.to > r.from ? ` · ${r.to - r.from + 1} episodes` : ""}</span>
+                  <span className="ml-2 text-muted">{KIND[r.kind].label}{r.to > r.from ? ` · ${r.to - r.from + 1} episodes` : ""}{arcOf(arcs, r.from) ? ` · ${arcOf(arcs, r.from)!.name}` : ""}</span>
                 </span>
                 <span className={`shrink-0 rounded px-2 py-0.5 text-xs font-semibold ${KIND[r.kind].verdict === "Skip" ? "bg-[#f43f5e]/15 text-[#fb7185]" : "bg-white/5 text-ink/80"}`}>{KIND[r.kind].verdict}</span>
               </Link>

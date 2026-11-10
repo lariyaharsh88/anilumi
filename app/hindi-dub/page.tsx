@@ -6,7 +6,7 @@ import JsonLd from "@/components/JsonLd";
 import { KIND_CLASS } from "@/components/HindiDub";
 import { getAnimeBySlug, posterUrl } from "@/lib/kitsu";
 import { itemList } from "@/lib/ld";
-import { byPlatform, dubDate, dubHref, hindiDubbed, notDubbed, platformKind, type PlatformKind } from "@/lib/hindidub";
+import { HINDI_PLATFORMS, byPlatform, dubDate, dubHref, hindiDubbed, notDubbed, platformKind, type PlatformKind } from "@/lib/hindidub";
 import { fitTitle } from "@/lib/titles";
 
 export const revalidate = 86400;
@@ -107,7 +107,7 @@ export default async function HindiDubHub() {
           {platforms.map((p) => (
             <div key={p.name} className="card p-4">
               <div className="flex items-center justify-between gap-2">
-                <h3 className="font-semibold text-ink">{p.name}</h3>
+                <h3 className="font-semibold text-ink">{(() => { const page = HINDI_PLATFORMS.find((x) => x.match.test(p.name)); return page ? <Link href={`/hindi-dub/${page.slug}`} className="hover:text-violet-2 hover:underline">{p.name}</Link> : p.name; })()}</h3>
                 <span className={`rounded-full border px-2 py-0.5 text-[11px] font-medium ${KIND_CLASS[p.kind]}`}>{KIND[p.kind]}</span>
               </div>
               <p className="text-xs text-muted">{p.titles.length} anime</p>

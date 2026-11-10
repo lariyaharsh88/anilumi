@@ -56,7 +56,10 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   },
   "dragon-ball": {
     label: "Dragon Ball",
-    intro: "Dragon Ball, then Dragon Ball Z, then Dragon Ball Super, with Daima (2024) set between Z and Super, followed by the films Broly (2018) and Super Hero (2022). Kai is a trimmed re-edit of Z, so choose Z or Kai, not both. GT is a non-canon ending; watch it last or skip it.",
+    intro: "Dragon Ball, then Dragon Ball Z, then Dragon Ball Super, with Daima (2024) set between Z and Super, followed by the films Broly (2018) and Super Hero (2022). Kai is a trimmed re-edit of Z, so choose Z or Kai, not both. GT is a non-canon ending; watch it last or skip it. The films Battle of Gods and Resurrection 'F' are retold in Super's first two arcs, so they are optional too.",
+    promote: ["dragon-ball-daima", "dragon-ball-super", "dragon-ball-super-broly", "dragon-ball-super-super-hero"],
+    optional: ["dragon-ball-gt", "dragon-ball-gt-goku-gaiden-yuuki-no-akashi-wa-suushinchuu", "dragon-ball-kai", "dragon-ball-z-movie-14-kami-to-kami", "dragon-ball-z-movie-15"],
+    mainOrder: ["dragon-ball", "dragon-ball-z", "dragon-ball-daima", "dragon-ball-super", "dragon-ball-super-broly", "dragon-ball-super-super-hero"],
   },
   "sword-art-online": {
     label: "Sword Art Online",

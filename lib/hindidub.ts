@@ -80,3 +80,21 @@ export function hasHindiDub(slug: string): boolean {
   const id = snapshotId(slug);
   return dubFor({ id: id ?? "", slug })?.status === "available";
 }
+
+/** Platform pages (/hindi-dub/<slug>): the platforms people search with "hindi dubbed anime". */
+export const HINDI_PLATFORMS = [
+  { slug: "crunchyroll", label: "Crunchyroll", match: /^crunchyroll/i, how: "Open the episode, then pick Hindi under Audio in the settings menu (the gear icon on the web, the three dots in the app)." },
+  { slug: "youtube", label: "YouTube (free)", match: /youtube/i, how: "Search the channel name on YouTube; full episodes are free with ads and stay up for months, though some playlists are removed when the licence ends." },
+  { slug: "netflix", label: "Netflix India", match: /^netflix/i, how: "Open the title, start an episode, then choose Hindi under Audio & Subtitles." },
+  { slug: "prime-video", label: "Prime Video (Anime Times)", match: /prime video|anime times/i, how: "Anime Times is a paid channel inside Prime Video India; subscribe to the channel, then pick Hindi in the audio menu." },
+  { slug: "jiohotstar", label: "JioHotstar", match: /hotstar/i, how: "Open the series and choose Hindi in the language menu before you press play." },
+  { slug: "mx-player", label: "Amazon MX Player", match: /mx player/i, how: "Free with ads in the MX Player app and website; the Hindi version is usually listed as its own show." },
+  { slug: "cartoon-network", label: "Cartoon Network India", match: /cartoon network/i, how: "A TV channel: check its schedule; some shows also stream on JioHotstar." },
+] as const;
+export type HindiPlatform = (typeof HINDI_PLATFORMS)[number];
+export const hindiPlatform = (slug: string) => HINDI_PLATFORMS.find((p) => p.slug === slug) ?? null;
+
+/** Every dub on a platform page, most-watched first, with that platform's rows. */
+export function dubsOn(p: HindiPlatform): { d: Dub; rows: DubPlatform[] }[] {
+  return hindiDubbed().flatMap((d) => { const rows = d.platforms.filter((x) => p.match.test(x.name)); return rows.length ? [{ d, rows }] : []; });
+}

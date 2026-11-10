@@ -8,7 +8,7 @@
  * `checked`: where and when the lists were cross-checked; `animeCanon`: anime-original episodes that still count as canon;
  * `recap`: clip shows; `source: "mal"` marks entries generated from MyAnimeList flags (data/filler-mal.json).
  */
-export type FillerEntry = { filler: string; mixed?: string; animeCanon?: string; recap?: string; reviewed: boolean; /** ISO date a person reviewed it. */ reviewedOn?: string; checked?: string; note?: string; source?: "mal" };
+export type FillerEntry = { /** The name people search, when Kitsu's English title differs. */ name?: string; filler: string; mixed?: string; animeCanon?: string; recap?: string; reviewed: boolean; /** ISO date a person reviewed it. */ reviewedOn?: string; checked?: string; note?: string; source?: "mal" };
 
 export const FILLER: Record<string, FillerEntry> = {
   naruto: {
@@ -20,6 +20,7 @@ export const FILLER: Record<string, FillerEntry> = {
     note: "Almost everything after episode 135 is filler; you can jump from 135 straight to Shippuden.",
   },
   "naruto-shippuden": {
+    name: "Naruto Shippuden",
     filler: "57-71, 91-112, 144-151, 170-171, 176-196, 223-242, 257-260, 271, 279-281, 284-295, 303-320, 347-361, 376-377, 388-390, 394-413, 416-417, 422-423, 427-450, 464-468, 480-483",
     mixed: "1-19, 24-25, 45, 49-50, 54, 56, 89-90, 113, 115, 127-128, 213, 254, 296, 324, 327-328, 330-331, 338, 346, 362, 385-386, 415, 419, 426, 451-458, 460-462, 469, 471-472, 478-479",
     animeCanon: "28",
