@@ -11,6 +11,8 @@ export type DubShow = {
   t: string; slug: string | null; lang: string; service: string; region: string; status: DubStatus;
   premiere: string | null; weekday: string | null; episodes: number | null; released: number | null;
   delay: string | null; note: string; url: string; confidence: "high" | "medium"; sources: string[];
+  /** Episode number of the first dub in this run, for long-runners dubbed from mid-series (One Piece from 1156). */
+  firstEpisode?: number;
 };
 
 const D = data as { checked: string; reviewed: string | null; season: string; entries: DubShow[] };
@@ -44,7 +46,7 @@ export function releasedBy(e: DubShow, now: number): number | null {
 export function nextDub(e: DubShow, now: number): { episode: number; at: number; timed: boolean } | null {
   const start = premiereAt(e);
   if (e.status === "complete" || isNaN(start)) return null;
-  if (start > now) return { episode: 1, at: start, timed: hasTime(e) };
+  if (start > now) return { episode: e.firstEpisode ?? 1, at: start, timed: hasTime(e) };
   const wd = dayIndex(e.weekday);
   if (wd < 0) return null;
   const out = releasedBy(e, now) ?? 0;
@@ -53,7 +55,7 @@ export function nextDub(e: DubShow, now: number): { episode: number; at: number;
   const p = new Date(start);
   let at = Date.UTC(new Date(now).getUTCFullYear(), new Date(now).getUTCMonth(), new Date(now).getUTCDate(), p.getUTCHours(), p.getUTCMinutes());
   while (new Date(at).getUTCDay() !== wd || at <= now) at += DAY;
-  return { episode: out + 1, at, timed: hasTime(e) };
+  return { episode: (e.firstEpisode ?? 1) + out, at, timed: hasTime(e) };
 }
 
 /** Dubbed episodes due in the next `days` days, soonest first. */

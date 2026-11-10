@@ -30,6 +30,10 @@ test("dub schedule: upcoming premiere, finished dubs and batch drops", () => {
   assert.equal(nextDub(show({ weekday: null }), at("2026-11-10T00:00:00Z")), null, "no weekly day: no guess");
 });
 
+test("dub schedule: a run dubbed from mid-series counts from its first episode", () => {
+  assert.equal(nextDub(show({ firstEpisode: 1156, episodes: null }), at("2026-11-10T12:00:00Z"))!.episode, 1160);
+});
+
 test("dub schedule: dubbed-so-far uses the larger of the source count and the weekly count", () => {
   assert.equal(releasedBy(show({}), at("2026-11-10T00:00:00Z")), 4);
   assert.equal(releasedBy(show({ released: 6 }), at("2026-11-10T00:00:00Z")), 6, "double-episode premiere");

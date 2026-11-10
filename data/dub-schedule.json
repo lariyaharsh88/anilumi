@@ -1,6 +1,1646 @@
 {
-  "checked": "2026-11-10",
-  "reviewed": null,
-  "season": "Fall 2026",
-  "entries": []
+ "checked": "2026-11-10",
+ "reviewed": null,
+ "season": "Fall 2026",
+ "entries": [
+  {
+   "t": "The Exiled Heavy Knight Knows How to Game the System",
+   "slug": "tsuihou-sareta-tensei-juukishi-wa-game-sashiki-de-musou-suru",
+   "lang": "en",
+   "service": "Crunchyroll",
+   "region": "US",
+   "status": "airing",
+   "premiere": "2026-07-16T16:00Z",
+   "weekday": "Thursday",
+   "episodes": 26,
+   "released": null,
+   "delay": "1 week after the subtitled episode (subs from 9 Jul)",
+   "note": "Summer 2026 holdover, still running. Episodes post Thursdays 9:00 a.m. PT. The season is 26 episodes over two cours; the subtitled finale is listed for 24 Dec 2026, so the dub should end about a week later. Dub-specific episode dates are not published.",
+   "url": "https://www.crunchyroll.com/news/announcements/2026/7/16/the-exiled-heavy-knight-knows-how-to-game-the-system-anime-english-dub-release-date-cast-crew",
+   "confidence": "medium",
+   "sources": [
+    "https://finalweapon.net/2026/07/16/the-exiled-heavy-knight-knows-how-to-game-the-system-english-dub-crunchyroll/",
+    "https://finalweapon.net/2026/11/05/the-exiled-heavy-knight-knows-how-to-game-the-system-release-dates-schedule-episodes/",
+    "https://www.bubbleblabber.com/2026/11/crunchyroll-details-fall-2026-english-dub-slate/"
+   ]
+  },
+  {
+   "t": "Saga of Tanya the Evil II",
+   "slug": "youjo-senki-ii",
+   "lang": "en",
+   "service": "Crunchyroll",
+   "region": "US",
+   "status": "airing",
+   "premiere": "2026-09-09",
+   "weekday": null,
+   "episodes": 12,
+   "released": null,
+   "delay": null,
+   "note": "Summer 2026 holdover: dub began 9 Sep 2026, two months after the 8 Jul Japanese premiere. Season is 12 episodes; whether the dub is weekly or caught up in batches was not stated. Tanya movie dub added 15 Oct 2026.",
+   "url": "https://www.animenewsnetwork.com/news/2026-09-10/saga-of-tanya-the-evil-ii-anime-gets-english-dub/.241592",
+   "confidence": "medium",
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2026-09-10/saga-of-tanya-the-evil-ii-anime-gets-english-dub/.241592",
+    "https://finalweapon.net/2026/09/10/saga-of-tanya-the-evil-season-2-gets-an-english-dub/",
+    "https://www.bubbleblabber.com/2026/09/crunchyroll-announces-summer-2026-english-dub-slate/"
+   ]
+  },
+  {
+   "t": "STEEL BALL RUN JoJo's Bizarre Adventure (2nd & 3rd STAGE)",
+   "slug": "steel-ball-run-jojo-no-kimyou-na-bouken",
+   "lang": "en",
+   "service": "Netflix",
+   "region": "US",
+   "status": "airing",
+   "premiere": "2026-09-25T08:00Z",
+   "weekday": "Friday",
+   "episodes": 11,
+   "released": null,
+   "delay": null,
+   "note": "Netflix exclusive, one episode every Friday from 25 Sep 2026 at 1:00 a.m. PDT (now 1:00 a.m. PST = 09:00 UTC); 11 episodes, finale listed for 4 Dec 2026. The English dub cast (Daman Mills, Kaiji Tang, Damien Haas) is official, but Netflix's pages do not say the dub drops the same day; one secondary source says it does.",
+   "url": "https://www.netflix.com/tudum/articles/steel-ball-run-jojos-bizarre-adventure-2nd-3rd-stage-how-to-watch",
+   "confidence": "medium",
+   "sources": [
+    "https://www.netflix.com/tudum/articles/steel-ball-run-jojos-bizarre-adventure-2nd-3rd-stage-how-to-watch",
+    "https://www.whats-on-netflix.com/news/anime/new-anime-netflix-november-2026-fool-night-bass-x-machina/",
+    "https://nerdsnack.com/?p=6050"
+   ]
+  },
+  {
+   "t": "Overgeared",
+   "slug": "temppal-item-no-chikara",
+   "lang": "en",
+   "service": "Crunchyroll",
+   "region": "US",
+   "status": "airing",
+   "premiere": "2026-09-27T14:30Z",
+   "weekday": "Sunday",
+   "episodes": 12,
+   "released": null,
+   "delay": "same day as Japan (simuldub)",
+   "note": "Same-day English dub; episodes post Sundays 7:30 a.m. PT (15:30 UTC since US clocks changed on 1 Nov). 12 episodes per Final Weapon.",
+   "url": "https://finalweapon.net/2026/09/27/overgeared-english-dub/",
+   "confidence": "high",
+   "sources": [
+    "https://jeu.video/en/article/overgeared-english-dub-episode-1-release-date",
+    "https://finalweapon.net/2026/11/01/overgeared-anime-release-dates-schedule-episodes-crunchyroll-streaming-time/",
+    "https://www.animenewsnetwork.com/news/2026-09-15/crunchyroll-announces-release-schedule-for-fall-2026-season/.241811"
+   ]
+  },
+  {
+   "t": "FX Fighter Kurumi-chan",
+   "slug": "fx-fighter-kurumi-chan",
+   "lang": "en",
+   "service": "Crunchyroll",
+   "region": "US",
+   "status": "airing",
+   "premiere": "2026-10-01",
+   "weekday": "Thursday",
+   "episodes": null,
+   "released": null,
+   "delay": "same day as Japan (simuldub)",
+   "note": "",
+   "url": "https://www.animenewsnetwork.com/news/2026-10-02/fx-fighter-kurumi-chan-im-looking-for-zombie-reborn-as-a-space-mercenary-anime-get-same-day-english-/.242425",
+   "confidence": "high",
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2026-10-02/fx-fighter-kurumi-chan-im-looking-for-zombie-reborn-as-a-space-mercenary-anime-get-same-day-english-/.242425",
+    "https://www.bubbleblabber.com/2026/11/crunchyroll-details-fall-2026-english-dub-slate/"
+   ]
+  },
+  {
+   "t": "#I'm Looking For a Zombie",
+   "slug": "zombie-sagashitemasu",
+   "lang": "en",
+   "service": "Crunchyroll",
+   "region": "US",
+   "status": "airing",
+   "premiere": "2026-10-03",
+   "weekday": "Saturday",
+   "episodes": null,
+   "released": null,
+   "delay": "same day as Japan (simuldub)",
+   "note": "Not in Crunchyroll's original fall dub list; added as a same-day dub on 2 Oct.",
+   "url": "https://www.animenewsnetwork.com/news/2026-10-02/fx-fighter-kurumi-chan-im-looking-for-zombie-reborn-as-a-space-mercenary-anime-get-same-day-english-/.242425",
+   "confidence": "high",
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2026-10-02/fx-fighter-kurumi-chan-im-looking-for-zombie-reborn-as-a-space-mercenary-anime-get-same-day-english-/.242425",
+    "https://www.bubbleblabber.com/2026/11/crunchyroll-details-fall-2026-english-dub-slate/"
+   ]
+  },
+  {
+   "t": "Reborn as a Space Mercenary: I Woke Up Piloting the Strongest Starship!",
+   "slug": "mezametara-saikyou-soubi-to-uchuusen-mochi-datta-node-ikkodate-mezashite-youhei-to-shite-jiyuu-ni-ikitai",
+   "lang": "en",
+   "service": "Crunchyroll",
+   "region": "US",
+   "status": "airing",
+   "premiere": "2026-10-04",
+   "weekday": "Sunday",
+   "episodes": null,
+   "released": null,
+   "delay": "same day as Japan (simuldub)",
+   "note": "",
+   "url": "https://www.animenewsnetwork.com/news/2026-10-02/fx-fighter-kurumi-chan-im-looking-for-zombie-reborn-as-a-space-mercenary-anime-get-same-day-english-/.242425",
+   "confidence": "high",
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2026-10-02/fx-fighter-kurumi-chan-im-looking-for-zombie-reborn-as-a-space-mercenary-anime-get-same-day-english-/.242425",
+    "https://www.bubbleblabber.com/2026/11/crunchyroll-details-fall-2026-english-dub-slate/",
+    "https://fandomwire.com/reborn-as-a-space-mercenary-anime-crunchyroll-streaming-hit/"
+   ]
+  },
+  {
+   "t": "Magical Explorer",
+   "slug": "magical-explorer-eroge-no-yuujin-chara-ni-tensei-shitakedo-game-chishiki-tsukatte-jiyuu-ni-ikiru",
+   "lang": "en",
+   "service": "Crunchyroll",
+   "region": "US",
+   "status": "airing",
+   "premiere": "2026-10-04",
+   "weekday": "Saturday",
+   "episodes": 12,
+   "released": null,
+   "delay": "about 1 day after Japan",
+   "note": "Dub launched with episodes 1-2 (the show premiered with two episodes on 3 Oct). Bubbleblabber lists 4 Oct; Crunchyroll's post is dated 5 Oct. Subtitled episodes post Saturdays 9:30 a.m. PT; weekly dub day assumed to follow the Saturday schedule per Final Weapon. 12 episodes.",
+   "url": "https://www.crunchyroll.com/news/latest/2026/10/5/magical-explorer-anime-english-dub-now-streaming-on-crunchyroll",
+   "confidence": "medium",
+   "sources": [
+    "https://finalweapon.net/2026/10/05/magical-explorer-gets-an-english-dub-on-crunchyroll/",
+    "https://finalweapon.net/2026/11/07/magical-explorer-anime-release-dates-schedule-episodes-crunchyroll/",
+    "https://www.bubbleblabber.com/2026/11/crunchyroll-details-fall-2026-english-dub-slate/"
+   ]
+  },
+  {
+   "t": "The Laid-Off Cheat-Granting Mage Enjoys a Second Lease on Life",
+   "slug": "tsuihou-sareta-cheat-fuyo-majutsushi-wa-kimama-na-second-life-wo-ouka-suru-ore-wa-buki-dake-ja-naku-arayuru-mono-ni-kyouka-point-wo-fuyo-dekiru-shi-ore-no-ishi-de-itsudemo-kouka-wo-kaijo-dekiru-kedo-nokotta-hitotachi-daijoubu",
+   "lang": "en",
+   "service": "Crunchyroll",
+   "region": "US",
+   "status": "airing",
+   "premiere": "2026-10-06T15:30Z",
+   "weekday": "Tuesday",
+   "episodes": null,
+   "released": null,
+   "delay": "same day as Japan (simuldub)",
+   "note": "Episodes post Tuesdays 8:30 a.m. PT (Final Weapon). Hindi, Tamil and Telugu dubs also listed.",
+   "url": "https://finalweapon.net/2026/11/03/the-laid-off-cheat-granting-mage-enjoys-a-second-lease-on-life-anime-release-dates-schedule-episodes/",
+   "confidence": "high",
+   "sources": [
+    "https://fandomwire.com/the-laid-off-cheat-granting-mage-beats-black-clover-crunchyroll/",
+    "https://finalweapon.net/2026/11/03/the-laid-off-cheat-granting-mage-enjoys-a-second-lease-on-life-anime-release-dates-schedule-episodes/",
+    "https://www.bubbleblabber.com/2026/11/crunchyroll-details-fall-2026-english-dub-slate/"
+   ]
+  },
+  {
+   "t": "A Returner's Magic Should Be Special Season 2",
+   "slug": "kikansha-no-mahou-wa-tokubetsu-desu-2nd-season",
+   "lang": "en",
+   "service": "Crunchyroll",
+   "region": "US",
+   "status": "airing",
+   "premiere": "2026-10-07T17:15Z",
+   "weekday": "Wednesday",
+   "episodes": null,
+   "released": null,
+   "delay": "same day as Japan (simuldub)",
+   "note": "Episodes post Wednesdays 10:15 a.m. PT with subs and dub together (Final Weapon).",
+   "url": "https://finalweapon.net/2026/10/06/a-returners-magic-should-be-special-season-2-same-day-english-dub/",
+   "confidence": "high",
+   "sources": [
+    "https://finalweapon.net/2026/10/06/a-returners-magic-should-be-special-season-2-same-day-english-dub/",
+    "https://otakukart.com/a-returners-magic-should-be-special-season-2-release-schedule-when-new-episodes-arrive-on-crunchyroll/",
+    "https://www.bubbleblabber.com/2026/11/crunchyroll-details-fall-2026-english-dub-slate/"
+   ]
+  },
+  {
+   "t": "The Apothecary Diaries Season 3",
+   "slug": "Kusuriya-no-Hitorigoto-3rd-season",
+   "lang": "en",
+   "service": "Crunchyroll",
+   "region": "US",
+   "status": "airing",
+   "premiere": "2026-10-16",
+   "weekday": "Friday",
+   "episodes": null,
+   "released": null,
+   "delay": "about 2 weeks after the subtitled episode (subs from 2 Oct)",
+   "note": "Season 3 is 24 episodes over two cours. Subtitled cour 1 ends with episode 12 on 18 Dec 2026, so at a 2-week lag the dub cour 1 should end around 1 Jan 2027; cour 2 is listed for April 2027. Subtitled episodes post Fridays 8:00 a.m. PT; no separate dub time was published.",
+   "url": "https://www.crunchyroll.com/news/announcements/2026/10/15/the-apothecary-diaries-season-3-anime-english-dub-release-date-cast-crew",
+   "confidence": "high",
+   "sources": [
+    "https://finalweapon.net/2026/10/15/the-apothecary-diaries-season-3-english-dub-premieres-on-october-16/",
+    "https://www.bubbleblabber.com/2026/11/crunchyroll-details-fall-2026-english-dub-slate/",
+    "https://www.animenewsnetwork.com/news/2026-09-15/crunchyroll-announces-release-schedule-for-fall-2026-season/.241811"
+   ]
+  },
+  {
+   "t": "Black Clover Season 2",
+   "slug": "Black-Clover-Season-2",
+   "lang": "en",
+   "service": "Crunchyroll",
+   "region": "US",
+   "status": "airing",
+   "premiere": "2026-10-17",
+   "weekday": "Saturday",
+   "episodes": null,
+   "released": null,
+   "delay": "2 weeks after the subtitled episode (subs from 3 Oct)",
+   "note": "Original English cast returns (Dallas Reid as Asta). Season 2 is reported as 24-26 episodes over two cours (unofficial).",
+   "url": "https://www.crunchyroll.com/news/announcements/2026/10/17/black-clover-season-2-anime-english-dub-release-date-cast-crew",
+   "confidence": "high",
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2026-10-18/crunchyroll-reveals-english-dub-cast-staff-for-2nd-seasons-of-black-clover-aoashi-anime/.242948",
+    "https://www.complex.com/pop-culture/a/treyalston/black-clover-season-2-english-dub-crunchyroll-cast",
+    "https://www.bubbleblabber.com/2026/11/crunchyroll-details-fall-2026-english-dub-slate/"
+   ]
+  },
+  {
+   "t": "Aoashi Season 2",
+   "slug": "aoashi-2nd-season",
+   "lang": "en",
+   "service": "Crunchyroll",
+   "region": "US",
+   "status": "airing",
+   "premiere": "2026-10-18",
+   "weekday": null,
+   "episodes": null,
+   "released": null,
+   "delay": "2 weeks after the subtitled episode (subs from 4 Oct)",
+   "note": "First dub episode streamed Sunday 18 Oct; weekly release day not stated in the sources found.",
+   "url": "https://www.crunchyroll.com/news/announcements/2026/10/17/aoashi-season-2-anime-english-dub-release-date-cast-crew",
+   "confidence": "high",
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2026-10-18/crunchyroll-reveals-english-dub-cast-staff-for-2nd-seasons-of-black-clover-aoashi-anime/.242948",
+    "https://www.bubbleblabber.com/2026/11/crunchyroll-details-fall-2026-english-dub-slate/"
+   ]
+  },
+  {
+   "t": "PSYREN",
+   "slug": "psyren",
+   "lang": "en",
+   "service": "Crunchyroll",
+   "region": "US",
+   "status": "airing",
+   "premiere": "2026-10-19",
+   "weekday": null,
+   "episodes": null,
+   "released": null,
+   "delay": null,
+   "note": "Crunchyroll announced the dub on Sunday 18 Oct and began streaming it Monday 19 Oct. Weekly day not stated.",
+   "url": "https://www.animenewsnetwork.com/news/2026-10-19/crunchyroll-adds-psyren-anime-english-dub/.242968",
+   "confidence": "high",
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2026-10-19/crunchyroll-adds-psyren-anime-english-dub/.242968",
+    "https://www.bubbleblabber.com/2026/11/crunchyroll-details-fall-2026-english-dub-slate/"
+   ]
+  },
+  {
+   "t": "One Piece",
+   "slug": "one-piece",
+   "lang": "en",
+   "service": "Crunchyroll",
+   "region": "US/CA/AU/NZ/ZA/IN",
+   "status": "airing",
+   "premiere": "2026-10-20T16:00Z",
+   "weekday": "Tuesday",
+   "episodes": null,
+   "released": null,
+   "delay": null,
+   "note": "Elbaph arc English dub, starting with episode 1156 on 20 Oct 2026 at 9:00 a.m. PT, then one episode every Tuesday at 9:00 a.m. PT (17:00 UTC after 1 Nov). This replaces the old multi-episode batch drops. Also streams in Southeast Asia and Latin America. The dub was complete through episode 1155 before this arc.",
+   "url": "https://www.theouterhaven.net/one-piece-english-dub-sets-sail-for-the-elbaph-arc-on-crunchyroll-beginning-october-20/",
+   "confidence": "high",
+   "sources": [
+    "https://www.theouterhaven.net/one-piece-english-dub-sets-sail-for-the-elbaph-arc-on-crunchyroll-beginning-october-20/",
+    "https://animecorner.me/one-piece-elbaph-arc-english-dub-begins-october-20-with-new-weekly-release-schedule-heroines-dub-also-announced/",
+    "https://finalweapon.net/2026/08/24/one-piece-elbaph-arc-english-dub-premieres-on-october-20/",
+    "https://gizmodo.com/one-piece-is-changing-its-dub-release-schedule-for-the-elbaph-arc-2000802571"
+   ],
+   "firstEpisode": 1156
+  },
+  {
+   "t": "Magic Knight Rayearth",
+   "slug": "magical-knight-rayearth-2026",
+   "lang": "en",
+   "service": "Crunchyroll",
+   "region": "US",
+   "status": "airing",
+   "premiere": "2026-10-21",
+   "weekday": "Wednesday",
+   "episodes": null,
+   "released": null,
+   "delay": "2 weeks after the subtitled episode (subs from 7 Oct)",
+   "note": "New 2026 TV anime (not the 1994 series). The series is planned as two cours, 24 episodes. Dub produced by Crunchyroll.",
+   "url": "https://finalweapon.net/2026/10/21/magic-knight-rayearth-english-dub-now-streaming-on-crunchyroll/",
+   "confidence": "high",
+   "sources": [
+    "https://finalweapon.net/2026/10/21/magic-knight-rayearth-english-dub-now-streaming-on-crunchyroll/",
+    "https://samlover.com/2026/10/22/magic-knight-rayearth-english-dub/amp/",
+    "https://www.bubbleblabber.com/2026/11/crunchyroll-details-fall-2026-english-dub-slate/"
+   ]
+  },
+  {
+   "t": "Sasaki and Peeps Season 2",
+   "slug": "sasaki-to-pii-chan-2nd-season",
+   "lang": "en",
+   "service": "Crunchyroll",
+   "region": "US",
+   "status": "airing",
+   "premiere": "2026-10-21",
+   "weekday": "Wednesday",
+   "episodes": null,
+   "released": null,
+   "delay": "2 weeks after the subtitled episode (subs from 7 Oct)",
+   "note": "",
+   "url": "https://finalweapon.net/2026/10/21/sasaki-and-peeps-season-2-english-dub-now-streaming-on-crunchyroll/",
+   "confidence": "high",
+   "sources": [
+    "https://finalweapon.net/2026/10/21/sasaki-and-peeps-season-2-english-dub-now-streaming-on-crunchyroll/",
+    "https://jeu.video/en/article/sasaki-and-peeps-season-2-english-dub-october-21",
+    "https://www.bubbleblabber.com/2026/11/crunchyroll-details-fall-2026-english-dub-slate/"
+   ]
+  },
+  {
+   "t": "The World's Strongest Witch",
+   "slug": "sekai-saikyou-no-majo-hajimemashita",
+   "lang": "en",
+   "service": "Crunchyroll",
+   "region": "US",
+   "status": "airing",
+   "premiere": "2026-10-21",
+   "weekday": null,
+   "episodes": null,
+   "released": null,
+   "delay": "2 weeks after the subtitled episode (subs from 7 Oct)",
+   "note": "First dub episode streamed Wednesday 21 Oct; weekly day not stated.",
+   "url": "https://www.animenewsnetwork.com/news/2026-10-22/crunchyroll-reveals-english-dub-cast-staff-members-for-the-world-strongest-witch-anime/.243103",
+   "confidence": "high",
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2026-10-22/crunchyroll-reveals-english-dub-cast-staff-members-for-the-world-strongest-witch-anime/.243103",
+    "https://www.bubbleblabber.com/2026/11/crunchyroll-details-fall-2026-english-dub-slate/"
+   ]
+  },
+  {
+   "t": "The Detective Is Already Dead Season 2",
+   "slug": "tantei-wa-mou-shindeiru-season-2",
+   "lang": "en",
+   "service": "Crunchyroll",
+   "region": "US",
+   "status": "airing",
+   "premiere": "2026-10-21",
+   "weekday": "Wednesday",
+   "episodes": null,
+   "released": null,
+   "delay": "2 weeks after the subtitled episode (subs from 7 Oct)",
+   "note": "",
+   "url": "https://finalweapon.net/2026/10/20/the-detective-is-already-dead-season-2-english-dub-date/",
+   "confidence": "high",
+   "sources": [
+    "https://finalweapon.net/2026/10/20/the-detective-is-already-dead-season-2-english-dub-date/",
+    "https://jeu.video/en/article/the-detective-is-already-dead-season-2-english-dub-october-21",
+    "https://www.bubbleblabber.com/2026/11/crunchyroll-details-fall-2026-english-dub-slate/"
+   ]
+  },
+  {
+   "t": "Firefly Wedding",
+   "slug": "hotaru-no-yomeiri",
+   "lang": "en",
+   "service": "Crunchyroll",
+   "region": "US",
+   "status": "airing",
+   "premiere": "2026-10-23",
+   "weekday": "Friday",
+   "episodes": null,
+   "released": null,
+   "delay": "2 weeks after the subtitled episode (subs from 9 Oct)",
+   "note": "English audio availability in France was reported as unconfirmed.",
+   "url": "https://finalweapon.net/2026/10/22/firefly-wedding-english-dub-release-date-crunchyroll/",
+   "confidence": "high",
+   "sources": [
+    "https://finalweapon.net/2026/10/22/firefly-wedding-english-dub-release-date-crunchyroll/",
+    "https://samlover.com/2026/10/23/firefly-wedding-english-dub-premiere/amp/",
+    "https://www.bubbleblabber.com/2026/11/crunchyroll-details-fall-2026-english-dub-slate/"
+   ]
+  },
+  {
+   "t": "The Prince of Tennis II U-17 WORLD CUP: Final Member Selection Match",
+   "slug": "shin-tennis-no-ouji-sama-u-17-world-cup-kesshou-member-ketteisen",
+   "lang": "en",
+   "service": "Crunchyroll",
+   "region": "US",
+   "status": "airing",
+   "premiere": "2026-10-23",
+   "weekday": "Wednesday",
+   "episodes": null,
+   "released": null,
+   "delay": null,
+   "note": "Dub launched with episodes 1-2 together, then weekly on Wednesdays. ANN says it began Friday (23 Oct); Crunchyroll's post is dated 24 Oct; Bubbleblabber's slate listed 14 Oct, which did not happen as listed.",
+   "url": "https://www.crunchyroll.com/news/announcements/2026/10/24/the-prince-of-tennis-ii-u-17-world-cup-final-member-selection-match-english-dub-now-streaming-on-crunchyroll",
+   "confidence": "medium",
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2026-10-25/crunchyroll-reveals-english-dub-casts-for-full-clearing-another-world-under-a-goddess-with-zero-/.243169",
+    "https://finalweapon.net/2026/10/25/the-prince-of-tennis-ii-u-17-world-cup-final-member-selection-match-english-dub-crunchyroll/"
+   ]
+  },
+  {
+   "t": "The Iceblade Sorcerer Shall Rule the World II",
+   "slug": "hyouken-no-majutsushi-ga-sekai-wo-suberu-ii",
+   "lang": "en",
+   "service": "Crunchyroll",
+   "region": "US",
+   "status": "airing",
+   "premiere": "2026-10-23",
+   "weekday": "Thursday",
+   "episodes": null,
+   "released": null,
+   "delay": null,
+   "note": "ANN says the dub began Friday (23 Oct) and Crunchyroll's post is dated 24 Oct; Bubbleblabber listed 22 Oct. New dub episodes follow on Thursdays.",
+   "url": "https://www.crunchyroll.com/news/announcements/2026/10/24/the-iceblade-sorcerer-shall-rule-the-world-season-2-english-dub-now-streaming-on-crunchyroll",
+   "confidence": "medium",
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2026-10-25/crunchyroll-reveals-english-dub-casts-for-full-clearing-another-world-under-a-goddess-with-zero-/.243169",
+    "https://finalweapon.net/2026/10/25/the-iceblade-sorcerer-shall-rule-the-world-season-2-english-dub/",
+    "https://www.bubbleblabber.com/2026/11/crunchyroll-details-fall-2026-english-dub-slate/"
+   ]
+  },
+  {
+   "t": "Horror Collector",
+   "slug": "kyoufu-collector",
+   "lang": "en",
+   "service": "Crunchyroll",
+   "region": "US",
+   "status": "airing",
+   "premiere": "2026-10-24",
+   "weekday": "Saturday",
+   "episodes": 12,
+   "released": null,
+   "delay": "2 weeks after the subtitled episode (subs from 10 Oct)",
+   "note": "12 episodes.",
+   "url": "https://www.crunchyroll.com/news/announcements/2026/10/23/horror-collector-anime-english-dub-release-date-cast-crew",
+   "confidence": "high",
+   "sources": [
+    "https://finalweapon.net/2026/10/23/horror-collector-anime-gets-an-english-dub-on-october-24/",
+    "https://www.bubbleblabber.com/2026/11/crunchyroll-details-fall-2026-english-dub-slate/"
+   ]
+  },
+  {
+   "t": "Full Clearing Another World under a Goddess with Zero Believers",
+   "slug": "shinja-zero-no-megami-sama-to-hajimeru-isekai-kouryaku",
+   "lang": "en",
+   "service": "Crunchyroll",
+   "region": "US",
+   "status": "airing",
+   "premiere": "2026-10-25",
+   "weekday": null,
+   "episodes": null,
+   "released": null,
+   "delay": "2 weeks after the subtitled episode (subs from 11 Oct)",
+   "note": "",
+   "url": "https://finalweapon.net/2026/10/25/full-clearing-another-world-under-a-goddess-with-zero-believers-english-dub-crunchyroll/",
+   "confidence": "high",
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2026-10-25/crunchyroll-reveals-english-dub-casts-for-full-clearing-another-world-under-a-goddess-with-zero-/.243169",
+    "https://finalweapon.net/2026/10/25/full-clearing-another-world-under-a-goddess-with-zero-believers-english-dub-crunchyroll/",
+    "https://www.bubbleblabber.com/2026/11/crunchyroll-details-fall-2026-english-dub-slate/"
+   ]
+  },
+  {
+   "t": "Reincarnated as a Sword Season 2",
+   "slug": "tensei-shitara-ken-deshita-2nd-season",
+   "lang": "en",
+   "service": "HIDIVE",
+   "region": "US",
+   "status": "airing",
+   "premiere": null,
+   "weekday": "Wednesday",
+   "episodes": 12,
+   "released": null,
+   "delay": null,
+   "note": "HIDIVE's 21 Oct dub schedule says the Season 2 dub is already airing, Wednesdays at 1:00 p.m. Eastern; the dub start date was not found. Subtitled episodes began 30 Sep 2026; 12 episodes per Final Weapon.",
+   "url": "https://news.hidive.com/2026/10/21/hidive-reveals-the-fall-2026-dub-schedule",
+   "confidence": "medium",
+   "sources": [
+    "https://news.hidive.com/2026/10/21/hidive-reveals-the-fall-2026-dub-schedule",
+    "https://finalweapon.net/2026/10/28/reincarnated-as-a-sword-season-2-release-dates-schedule-episodes-hidive/"
+   ]
+  },
+  {
+   "t": "Dragon Ball Super: Beerus",
+   "slug": "dragon-ball-super-beerus",
+   "lang": "en",
+   "service": "Crunchyroll",
+   "region": "US/CA/AU/NZ",
+   "status": "announced",
+   "premiere": "2026-11-12T16:00Z",
+   "weekday": null,
+   "episodes": null,
+   "released": 0,
+   "delay": "subs began 11 Oct; dub about a month later",
+   "note": "English dub (with returning cast: Sean Schemmel, Christopher R. Sabat) premieres 12 Nov at 8:00 a.m. PT on Crunchyroll in the US, Canada, Australia, New Zealand and Latin America, then weekly. The subtitled version also streams on Netflix; no Netflix dub date was found.",
+   "url": "https://finalweapon.net/2026/11/05/dragon-ball-super-beerus-english-dub-premieres-on-november-12/",
+   "confidence": "high",
+   "sources": [
+    "https://finalweapon.net/2026/11/05/dragon-ball-super-beerus-english-dub-premieres-on-november-12/",
+    "https://otakukart.com/dragon-ball-super-beerus-english-spanish-and-portuguese-dubs-premiere-on-crunchyroll-on-november-12/",
+    "https://animehunch.com/dragon-ball-super-beerus-english-spanish-and-portuguese-dubs-release-date-revealed/",
+    "https://www.bubbleblabber.com/2026/11/crunchyroll-details-fall-2026-english-dub-slate/"
+   ]
+  },
+  {
+   "t": "Nia Liston: The Merciless Maiden",
+   "slug": "kyouran-reijou-nia-liston",
+   "lang": "en",
+   "service": "HIDIVE",
+   "region": "US",
+   "status": "announced",
+   "premiere": "2026-11-18",
+   "weekday": "Wednesday",
+   "episodes": null,
+   "released": 0,
+   "delay": null,
+   "note": "HIDIVE lists the dub for Wednesdays from 18 Nov 2026 at 1:00 p.m. Eastern (its post says EDT; US clocks are on EST by then, so 1:00 p.m. EST = 18:00 UTC).",
+   "url": "https://news.hidive.com/2026/10/21/hidive-reveals-the-fall-2026-dub-schedule",
+   "confidence": "high",
+   "sources": [
+    "https://news.hidive.com/2026/10/21/hidive-reveals-the-fall-2026-dub-schedule",
+    "https://www.bubbleblabber.com/2026/10/hidive-announces-fall-2026-english-dub-slate/"
+   ]
+  },
+  {
+   "t": "MAO (Part 2)",
+   "slug": "mao-2026",
+   "lang": "en",
+   "service": "Hulu",
+   "region": "US",
+   "status": "announced",
+   "premiere": "2026-11-23",
+   "weekday": null,
+   "episodes": null,
+   "released": 0,
+   "delay": null,
+   "note": "VIZ Media's English dub of cour 2; Hulu in the US, Disney+ in Canada, Australia/NZ and Latin America. VIZ said only 'November'; the 23 Nov date comes from Cord Cutters News' Hulu schedule. Part 1 dub premiered 24 Aug 2026.",
+   "url": "https://www.bubbleblabber.com/2026/08/rumiko-takahashis-mao-anime-english-dub-makes-official-premiere-debut-on-hulu-and-disney/",
+   "confidence": "medium",
+   "sources": [
+    "https://www.bubbleblabber.com/2026/08/rumiko-takahashis-mao-anime-english-dub-makes-official-premiere-debut-on-hulu-and-disney/",
+    "https://cordcuttersnews.com/?p=258973"
+   ]
+  },
+  {
+   "t": "Fool Night",
+   "slug": "fool-night",
+   "lang": "en",
+   "service": "Netflix",
+   "region": "US",
+   "status": "announced",
+   "premiere": "2026-11-26",
+   "weekday": null,
+   "episodes": null,
+   "released": 0,
+   "delay": "full season at once",
+   "note": "Netflix original (Sunrise x Shaft). Whole season drops worldwide on 26 Nov 2026. English dub announced with Adam McArthur and Olivia Liang; a day-one dub is reported but Netflix's own listing was not checked.",
+   "url": "https://www.whats-on-netflix.com/news/fool-night-anime-netflix-release-date-trailer-images/",
+   "confidence": "medium",
+   "sources": [
+    "https://www.whats-on-netflix.com/news/fool-night-anime-netflix-release-date-trailer-images/",
+    "https://www.whats-on-netflix.com/news/anime/new-anime-netflix-november-2026-fool-night-bass-x-machina/",
+    "https://hoshika.app/en/blog/fool-night-hits-netflix-worldwide-on-november-26-as-a-full-series-drop-8a64"
+   ]
+  },
+  {
+   "t": "TETSURYO! Meet with Tetsudou Musume",
+   "slug": "tetsuryou-meet-with-tetsudou-musume",
+   "lang": "en",
+   "service": "HIDIVE",
+   "region": "US",
+   "status": "announced",
+   "premiere": "2026-12-16",
+   "weekday": "Wednesday",
+   "episodes": null,
+   "released": 0,
+   "delay": null,
+   "note": "HIDIVE lists the dub for Wednesdays from 16 Dec 2026 at 1:00 p.m. Eastern.",
+   "url": "https://news.hidive.com/2026/10/21/hidive-reveals-the-fall-2026-dub-schedule",
+   "confidence": "high",
+   "sources": [
+    "https://news.hidive.com/2026/10/21/hidive-reveals-the-fall-2026-dub-schedule",
+    "https://www.bubbleblabber.com/2026/10/hidive-announces-fall-2026-english-dub-slate/"
+   ]
+  },
+  {
+   "t": "As a Reincarnated Aristocrat, I'll Use My Appraisal Skill to Rise in the World Season 3",
+   "slug": "Tensei-Kizoku-Kantei-Skill-de-Nariagaru-3rd-Season",
+   "lang": "en",
+   "service": "Crunchyroll",
+   "region": "US",
+   "status": "announced",
+   "premiere": null,
+   "weekday": null,
+   "episodes": null,
+   "released": 0,
+   "delay": null,
+   "note": "English dub confirmed in Crunchyroll's fall lineup; dub date still TBA in Bubbleblabber's 5 Nov slate.",
+   "url": "https://www.animenewsnetwork.com/news/2026-09-15/crunchyroll-announces-release-schedule-for-fall-2026-season/.241811",
+   "confidence": "high",
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2026-09-15/crunchyroll-announces-release-schedule-for-fall-2026-season/.241811",
+    "https://www.bubbleblabber.com/2026/11/crunchyroll-details-fall-2026-english-dub-slate/"
+   ]
+  },
+  {
+   "t": "ONE PIECE HEROINES",
+   "slug": "ONE-PIECE-HEROINES",
+   "lang": "en",
+   "service": "Crunchyroll",
+   "region": "US/CA/AU/NZ/ZA/IN",
+   "status": "complete",
+   "premiere": "2026-10-13T16:00Z",
+   "weekday": null,
+   "episodes": null,
+   "released": null,
+   "delay": "subs from 5 Jul 2026",
+   "note": "English, Spanish and Portuguese dubs released 13 Oct 2026 at 9:00 a.m. PT. No weekly schedule was described; episode count not confirmed.",
+   "url": "https://www.theouterhaven.net/one-piece-english-dub-sets-sail-for-the-elbaph-arc-on-crunchyroll-beginning-october-20/",
+   "confidence": "high",
+   "sources": [
+    "https://www.theouterhaven.net/one-piece-english-dub-sets-sail-for-the-elbaph-arc-on-crunchyroll-beginning-october-20/",
+    "https://animecorner.me/one-piece-elbaph-arc-english-dub-begins-october-20-with-new-weekly-release-schedule-heroines-dub-also-announced/",
+    "https://animehunch.com/one-piece-heroines-elbaph-arc-english-dubs-get-october-release-dates-on-crunchyroll/"
+   ]
+  },
+  {
+   "t": "Cyberpunk: Edgerunners 2",
+   "slug": "Cyberpunk-Edgerunners-II",
+   "lang": "en",
+   "service": "Netflix",
+   "region": "US",
+   "status": "complete",
+   "premiere": "2026-10-20",
+   "weekday": null,
+   "episodes": 10,
+   "released": 10,
+   "delay": "full season at once",
+   "note": "Netflix original; all 10 episodes released worldwide on 20 Oct 2026. English dub cast (Valeria Rodriguez, Kimoy Lee, Nazeeh Tarsha, Clancy Brown) was announced before launch; no source states a separate dub date, so it is assumed to have launched with the season.",
+   "url": "https://www.whats-on-netflix.com/news/anime/new-anime-on-netflix-october-2026/",
+   "confidence": "high",
+   "sources": [
+    "https://www.whats-on-netflix.com/news/anime/new-anime-on-netflix-october-2026/",
+    "https://finalweapon.net/2026/06/30/cyberpunk-edgerunners-2-english-dub-cast/",
+    "https://www.sneakzandbeatz.com/the-lane/cyberpunk-edgerunners-2-english-dub-cast-clancy-brown-october-20-2026"
+   ]
+  },
+  {
+   "t": "My Happy Marriage (Special)",
+   "slug": "watashi-no-shiawase-na-kekkon-shinsaku-anime",
+   "lang": "en",
+   "service": "Netflix",
+   "region": "US",
+   "status": "complete",
+   "premiere": "2026-10-25",
+   "weekday": null,
+   "episodes": 3,
+   "released": 3,
+   "delay": "same day as Japan, all at once",
+   "note": "Three-episode special; ANN reports Hindi and English dubs on day one (checked for India). English dub availability in the US assumed, not separately confirmed.",
+   "url": "https://www.animenewsnetwork.com/news/2026-11-02/my-happy-marriage-anime-special-streams-in-india-with-hindi-english-dubs/.243434",
+   "confidence": "medium",
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2026-11-02/my-happy-marriage-anime-special-streams-in-india-with-hindi-english-dubs/.243434",
+    "https://www.whats-on-netflix.com/news/anime/new-anime-on-netflix-october-2026/"
+   ]
+  },
+  {
+   "t": "Naruto Shippuden",
+   "slug": "naruto-shippuden",
+   "lang": "hi",
+   "service": "Crunchyroll",
+   "region": "IN",
+   "status": "airing",
+   "premiere": "2026-07-06T01:30Z",
+   "weekday": "Monday",
+   "episodes": null,
+   "released": 220,
+   "delay": "catalogue dub in batches",
+   "note": "Hindi, Tamil and Telugu batches on Mondays 7:00 a.m. IST: eps 1-32 (6 Jul), 33-71 (20 Jul), 72-112 (3 Aug), 113-175 (17 Aug), 176-196 (7 Sep), 197-220 (28 Sep 2026). Anime News India confirms Crunchyroll India has dubs up to episode 220; next batch not announced.",
+   "url": "https://animemirchi.com/crunchyroll-summer-2026-hindi-tamil-telugu-lineup/",
+   "confidence": "high",
+   "sources": [
+    "https://animemirchi.com/crunchyroll-summer-2026-hindi-tamil-telugu-lineup/",
+    "https://animenewsindia.com/2026/10/11/naruto-shippuden-returns-to-sony-yay-with-brand-new-episodes-starting-october-192026/",
+    "https://animenewsindia.com/2026/07/15/crunchyroll-announces-hindi-tamil-and-telugu-dub-releases-for-naruto-shippuden-tokyo-ghoul-arifureta-and-new-summer-2026-titles/"
+   ]
+  },
+  {
+   "t": "The Elusive Samurai Season 2",
+   "slug": "nige-jouzu-no-wakagimi-2nd-season",
+   "lang": "hi",
+   "service": "Crunchyroll",
+   "region": "IN",
+   "status": "airing",
+   "premiere": "2026-08-07T16:00Z",
+   "weekday": "Friday",
+   "episodes": null,
+   "released": null,
+   "delay": null,
+   "note": "Hindi only; Fridays 9:30 p.m. IST.",
+   "url": "https://www.animenewsnetwork.com/news/2026-07-17/hindi-dubs-for-tomb-raider-king-black-torch-more-anime-stream-on-crunchyroll/.239722",
+   "confidence": "high",
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2026-07-17/hindi-dubs-for-tomb-raider-king-black-torch-more-anime-stream-on-crunchyroll/.239722",
+    "https://animemirchi.com/crunchyroll-summer-2026-hindi-tamil-telugu-lineup/"
+   ]
+  },
+  {
+   "t": "The Exiled Heavy Knight Knows How to Game the System",
+   "slug": "tsuihou-sareta-tensei-juukishi-wa-game-sashiki-de-musou-suru",
+   "lang": "hi",
+   "service": "Crunchyroll",
+   "region": "IN",
+   "status": "airing",
+   "premiere": "2026-08-13T16:00Z",
+   "weekday": "Thursday",
+   "episodes": 26,
+   "released": null,
+   "delay": null,
+   "note": "Hindi, Tamil and Telugu; Thursdays 9:30 p.m. IST. Anime Mirchi marks an end date of 14 Oct 2026, which looks like the end of cour 1; the 26-episode season continues in Japan into late Dec, and the Hindi cour 2 schedule was not found.",
+   "url": "https://animemirchi.com/crunchyroll-summer-2026-hindi-tamil-telugu-lineup/",
+   "confidence": "medium",
+   "sources": [
+    "https://animemirchi.com/crunchyroll-summer-2026-hindi-tamil-telugu-lineup/"
+   ]
+  },
+  {
+   "t": "That Time I Got Reincarnated as a Slime Season 4",
+   "slug": "tensei-shitara-slime-datta-ken-4th-season",
+   "lang": "hi",
+   "service": "Muse India (YouTube)",
+   "region": "IN",
+   "status": "airing",
+   "premiere": "2026-08-29",
+   "weekday": "Saturday",
+   "episodes": null,
+   "released": null,
+   "delay": null,
+   "note": "Free Hindi dub on Muse India YouTube, weekly on Saturdays from 29 Aug 2026. Crunchyroll India also has a separate Hindi dub of Season 4 (Fridays 8:30 p.m. IST from 31 Jul 2026, eps 1-10 listed).",
+   "url": "https://www.animenewsnetwork.com/news/2026-08-29/hindi-dubs-of-reincarnated-as-a-slime-season-4-welcome-to-demon-school-iruma-kun-season-3-stream-on-/.241106",
+   "confidence": "high",
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2026-08-29/hindi-dubs-of-reincarnated-as-a-slime-season-4-welcome-to-demon-school-iruma-kun-season-3-stream-on-/.241106",
+    "https://animemirchi.com/crunchyroll-summer-2026-hindi-tamil-telugu-lineup/"
+   ]
+  },
+  {
+   "t": "BLACK TORCH",
+   "slug": "black-torch",
+   "lang": "hi",
+   "service": "Crunchyroll",
+   "region": "IN",
+   "status": "airing",
+   "premiere": "2026-08-29T13:00Z",
+   "weekday": "Saturday",
+   "episodes": null,
+   "released": null,
+   "delay": null,
+   "note": "Hindi only; Saturdays 6:30 p.m. IST.",
+   "url": "https://www.animenewsnetwork.com/news/2026-07-17/hindi-dubs-for-tomb-raider-king-black-torch-more-anime-stream-on-crunchyroll/.239722",
+   "confidence": "high",
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2026-07-17/hindi-dubs-for-tomb-raider-king-black-torch-more-anime-stream-on-crunchyroll/.239722",
+    "https://animemirchi.com/crunchyroll-summer-2026-hindi-tamil-telugu-lineup/"
+   ]
+  },
+  {
+   "t": "Mushoku Tensei: Jobless Reincarnation Season 3",
+   "slug": "Mushoku-Tensei-Isekai-Ittara-Honki-Dasu-Season-3",
+   "lang": "hi",
+   "service": "Crunchyroll",
+   "region": "IN",
+   "status": "airing",
+   "premiere": "2026-08-30T11:00Z",
+   "weekday": "Sunday",
+   "episodes": null,
+   "released": null,
+   "delay": null,
+   "note": "Hindi only; Sundays 4:30 p.m. IST. Season 3 is 27 episodes over two cours; cour 2 dates not announced.",
+   "url": "https://www.animenewsnetwork.com/news/2026-07-17/hindi-dubs-for-tomb-raider-king-black-torch-more-anime-stream-on-crunchyroll/.239722",
+   "confidence": "high",
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2026-07-17/hindi-dubs-for-tomb-raider-king-black-torch-more-anime-stream-on-crunchyroll/.239722",
+    "https://animemirchi.com/crunchyroll-summer-2026-hindi-tamil-telugu-lineup/"
+   ]
+  },
+  {
+   "t": "STEEL BALL RUN JoJo's Bizarre Adventure (2nd & 3rd STAGE)",
+   "slug": "steel-ball-run-jojo-no-kimyou-na-bouken",
+   "lang": "hi",
+   "service": "Netflix",
+   "region": "IN",
+   "status": "airing",
+   "premiere": "2026-09-25T08:00Z",
+   "weekday": "Friday",
+   "episodes": 11,
+   "released": null,
+   "delay": null,
+   "note": "Hindi, Tamil and Telugu listed by Anime Mirchi at Fridays 1:30 p.m. IST (same time as the worldwide release); not confirmed by Netflix.",
+   "url": "https://animemirchi.com/netflix-fall-2026-hindi-tamil-telugu-dub-anime/",
+   "confidence": "medium",
+   "sources": [
+    "https://animemirchi.com/netflix-fall-2026-hindi-tamil-telugu-dub-anime/",
+    "https://www.netflix.com/tudum/articles/steel-ball-run-jojos-bizarre-adventure-2nd-3rd-stage-how-to-watch"
+   ]
+  },
+  {
+   "t": "Overgeared",
+   "slug": "temppal-item-no-chikara",
+   "lang": "hi",
+   "service": "Crunchyroll",
+   "region": "IN",
+   "status": "airing",
+   "premiere": "2026-09-27T14:30Z",
+   "weekday": "Sunday",
+   "episodes": 12,
+   "released": null,
+   "delay": "same day as Japan (simuldub)",
+   "note": "Hindi, Tamil and Telugu simuldub; new episodes Sundays 8:00 p.m. IST.",
+   "url": "https://otakukart.com/crunchyroll-announces-hindi-tamil-and-telugu-dub-releases-for-black-clover-the-apothecary-diaries-season-3-and-more/",
+   "confidence": "high",
+   "sources": [
+    "https://otakukart.com/crunchyroll-announces-hindi-tamil-and-telugu-dub-releases-for-black-clover-the-apothecary-diaries-season-3-and-more/",
+    "https://animemirchi.com/crunchyroll-fall-2026-hindi-tamil-telugu-lineup/",
+    "https://animehunch.com/crunchyroll-unveils-fall-2026-anime-lineup-for-india-featuring-the-apothecary-diaries-season-3-black-clover-season-2-more/"
+   ]
+  },
+  {
+   "t": "The Ramparts of Ice Season 2",
+   "slug": "koori-no-jouheki-2nd-season",
+   "lang": "hi",
+   "service": "Netflix",
+   "region": "IN",
+   "status": "airing",
+   "premiere": "2026-10-01T15:30Z",
+   "weekday": "Thursday",
+   "episodes": null,
+   "released": null,
+   "delay": null,
+   "note": "Hindi, Tamil and Telugu listed by Anime Mirchi at Thursdays 9:00 p.m. IST; What's on Netflix lists weekly Thursday episodes with a finale around 31 Dec 2026.",
+   "url": "https://animemirchi.com/netflix-fall-2026-hindi-tamil-telugu-dub-anime/",
+   "confidence": "medium",
+   "sources": [
+    "https://animemirchi.com/netflix-fall-2026-hindi-tamil-telugu-dub-anime/",
+    "https://www.whats-on-netflix.com/news/anime/new-anime-netflix-november-2026-fool-night-bass-x-machina/"
+   ]
+  },
+  {
+   "t": "Assassination Classroom",
+   "slug": "ansatsu-kyoushitsu-tv",
+   "lang": "hi",
+   "service": "Muse India (YouTube)",
+   "region": "IN",
+   "status": "airing",
+   "premiere": "2026-10-03T15:00Z",
+   "weekday": null,
+   "episodes": null,
+   "released": null,
+   "delay": "daily uploads",
+   "note": "Free Hindi dub (Muse's own dub, also on Amazon MX Player), one episode a day at 8:30 p.m. IST from Saturday 3 Oct 2026. Seasons covered not stated.",
+   "url": "https://www.animenewsnetwork.com/news/2026-10-05/hindi-dub-of-assassination-classroom-anime-streams-on-youtube/.242502",
+   "confidence": "high",
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2026-10-05/hindi-dub-of-assassination-classroom-anime-streams-on-youtube/.242502",
+    "https://animemirchi.com/muse-india-hindi-dubbed-anime-list/"
+   ]
+  },
+  {
+   "t": "Ranma 1/2 Season 3",
+   "slug": "Ranma-12-2024-3",
+   "lang": "hi",
+   "service": "Netflix",
+   "region": "IN",
+   "status": "airing",
+   "premiere": "2026-10-03T17:00Z",
+   "weekday": "Saturday",
+   "episodes": 12,
+   "released": null,
+   "delay": null,
+   "note": "Hindi only, listed by Anime Mirchi at Saturdays 10:30 p.m. IST; earlier seasons have a Netflix Hindi dub. Finale listed for 19 Dec 2026.",
+   "url": "https://animemirchi.com/netflix-fall-2026-hindi-tamil-telugu-dub-anime/",
+   "confidence": "medium",
+   "sources": [
+    "https://animemirchi.com/netflix-fall-2026-hindi-tamil-telugu-dub-anime/",
+    "https://www.whats-on-netflix.com/news/anime/new-anime-netflix-november-2026-fool-night-bass-x-machina/"
+   ]
+  },
+  {
+   "t": "Blue Box Season 2",
+   "slug": "ao-no-hako-2",
+   "lang": "hi",
+   "service": "Netflix",
+   "region": "IN",
+   "status": "airing",
+   "premiere": "2026-10-04T08:00Z",
+   "weekday": "Sunday",
+   "episodes": null,
+   "released": null,
+   "delay": null,
+   "note": "Hindi, Tamil and Telugu listed by Anime Mirchi at Sundays 1:30 p.m. IST; not confirmed elsewhere. Weekly through about March 2027 (24-25 episodes).",
+   "url": "https://animemirchi.com/netflix-fall-2026-hindi-tamil-telugu-dub-anime/",
+   "confidence": "medium",
+   "sources": [
+    "https://animemirchi.com/netflix-fall-2026-hindi-tamil-telugu-dub-anime/"
+   ]
+  },
+  {
+   "t": "The Laid-Off Cheat-Granting Mage Enjoys a Second Lease on Life",
+   "slug": "tsuihou-sareta-cheat-fuyo-majutsushi-wa-kimama-na-second-life-wo-ouka-suru-ore-wa-buki-dake-ja-naku-arayuru-mono-ni-kyouka-point-wo-fuyo-dekiru-shi-ore-no-ishi-de-itsudemo-kouka-wo-kaijo-dekiru-kedo-nokotta-hitotachi-daijoubu",
+   "lang": "hi",
+   "service": "Crunchyroll",
+   "region": "IN",
+   "status": "airing",
+   "premiere": "2026-10-06T15:30Z",
+   "weekday": "Tuesday",
+   "episodes": null,
+   "released": null,
+   "delay": "same day as Japan (simuldub)",
+   "note": "Hindi, Tamil and Telugu dubs on release day; Tuesdays 9:00 p.m. IST.",
+   "url": "https://www.animenewsnetwork.com/news/2026-10-17/indian-language-dubs-for-the-laid-off-cheat-granting-mage-enjoys-a-second-lease-on-life-more-anime-/.242893",
+   "confidence": "high",
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2026-10-17/indian-language-dubs-for-the-laid-off-cheat-granting-mage-enjoys-a-second-lease-on-life-more-anime-/.242893",
+    "https://otakukart.com/crunchyroll-announces-hindi-tamil-and-telugu-dub-releases-for-black-clover-the-apothecary-diaries-season-3-and-more/",
+    "https://animemirchi.com/crunchyroll-fall-2026-hindi-tamil-telugu-lineup/"
+   ]
+  },
+  {
+   "t": "Re:ZERO -Starting Life in Another World- Season 4 Part 2",
+   "slug": "re-zero-kara-hajimeru-isekai-seikatsu-4",
+   "lang": "hi",
+   "service": "Crunchyroll",
+   "region": "IN",
+   "status": "airing",
+   "premiere": "2026-10-07T14:00Z",
+   "weekday": "Wednesday",
+   "episodes": null,
+   "released": null,
+   "delay": null,
+   "note": "Hindi only; Wednesdays 7:30 p.m. IST (time from Anime Mirchi).",
+   "url": "https://www.animenewsnetwork.com/news/2026-07-17/hindi-dubs-for-tomb-raider-king-black-torch-more-anime-stream-on-crunchyroll/.239722",
+   "confidence": "high",
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2026-07-17/hindi-dubs-for-tomb-raider-king-black-torch-more-anime-stream-on-crunchyroll/.239722",
+    "https://animemirchi.com/crunchyroll-fall-2026-hindi-tamil-telugu-lineup/",
+    "https://animenewsindia.com/2026/07/15/crunchyroll-announces-hindi-tamil-and-telugu-dub-releases-for-naruto-shippuden-tokyo-ghoul-arifureta-and-new-summer-2026-titles/"
+   ]
+  },
+  {
+   "t": "A Wild Last Boss Appeared! Season 2",
+   "slug": "yasei-no-last-boss-ga-arawareta-2nd-season",
+   "lang": "hi",
+   "service": "Crunchyroll",
+   "region": "IN",
+   "status": "airing",
+   "premiere": "2026-10-17T13:30Z",
+   "weekday": "Saturday",
+   "episodes": null,
+   "released": null,
+   "delay": "3 weeks after the subtitled premiere (26 Sep)",
+   "note": "Hindi, Tamil and Telugu; Saturdays 7:00 p.m. IST. No English dub for this season.",
+   "url": "https://www.animenewsnetwork.com/news/2026-10-17/indian-language-dubs-for-the-laid-off-cheat-granting-mage-enjoys-a-second-lease-on-life-more-anime-/.242893",
+   "confidence": "high",
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2026-10-17/indian-language-dubs-for-the-laid-off-cheat-granting-mage-enjoys-a-second-lease-on-life-more-anime-/.242893",
+    "https://otakukart.com/crunchyroll-announces-hindi-tamil-and-telugu-dub-releases-for-black-clover-the-apothecary-diaries-season-3-and-more/",
+    "https://animemirchi.com/crunchyroll-fall-2026-hindi-tamil-telugu-lineup/"
+   ]
+  },
+  {
+   "t": "Naruto Shippuden",
+   "slug": "naruto-shippuden",
+   "lang": "hi",
+   "service": "Sony YAY!",
+   "region": "IN",
+   "status": "airing",
+   "premiere": "2026-10-19T15:30Z",
+   "weekday": null,
+   "episodes": null,
+   "released": null,
+   "delay": null,
+   "note": "TV broadcast: new episodes (from about episode 361, Season 17) daily at 9:00 p.m. from 19 Oct 2026, in Hindi, Tamil, Telugu, Malayalam and Bangla.",
+   "url": "https://animenewsindia.com/2026/10/11/naruto-shippuden-returns-to-sony-yay-with-brand-new-episodes-starting-october-192026/",
+   "confidence": "medium",
+   "sources": [
+    "https://animenewsindia.com/2026/10/11/naruto-shippuden-returns-to-sony-yay-with-brand-new-episodes-starting-october-192026/"
+   ]
+  },
+  {
+   "t": "The Apothecary Diaries Season 3",
+   "slug": "Kusuriya-no-Hitorigoto-3rd-season",
+   "lang": "hi",
+   "service": "Crunchyroll",
+   "region": "IN",
+   "status": "airing",
+   "premiere": "2026-10-23T15:00Z",
+   "weekday": "Friday",
+   "episodes": null,
+   "released": null,
+   "delay": "3 weeks after the subtitled episode (subs from 2 Oct)",
+   "note": "Hindi, Tamil and Telugu; Fridays 8:30 p.m. IST. Season 3 splits into two cours, with cour 2 listed for April 2027.",
+   "url": "https://www.animenewsnetwork.com/news/2026-10-17/indian-language-dubs-for-the-laid-off-cheat-granting-mage-enjoys-a-second-lease-on-life-more-anime-/.242893",
+   "confidence": "high",
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2026-10-17/indian-language-dubs-for-the-laid-off-cheat-granting-mage-enjoys-a-second-lease-on-life-more-anime-/.242893",
+    "https://otakukart.com/crunchyroll-announces-hindi-tamil-and-telugu-dub-releases-for-black-clover-the-apothecary-diaries-season-3-and-more/",
+    "https://animemirchi.com/crunchyroll-fall-2026-hindi-tamil-telugu-lineup/"
+   ]
+  },
+  {
+   "t": "Even Though I'm a Super Timid Noble Girl, I Accepted the Bet From My Cunning Fiancé",
+   "slug": "yowaki-max-reijou-nano-ni-ratsuwan-konyakusha-sama-no-kake-ni-notte-shimatta",
+   "lang": "hi",
+   "service": "Crunchyroll",
+   "region": "IN",
+   "status": "airing",
+   "premiere": "2026-10-25T14:30Z",
+   "weekday": "Sunday",
+   "episodes": null,
+   "released": null,
+   "delay": "3 weeks after the subtitled premiere (4 Oct)",
+   "note": "Hindi, Tamil and Telugu; Sundays 8:00 p.m. IST.",
+   "url": "https://www.animenewsnetwork.com/news/2026-10-17/indian-language-dubs-for-the-laid-off-cheat-granting-mage-enjoys-a-second-lease-on-life-more-anime-/.242893",
+   "confidence": "high",
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2026-10-17/indian-language-dubs-for-the-laid-off-cheat-granting-mage-enjoys-a-second-lease-on-life-more-anime-/.242893",
+    "https://otakukart.com/crunchyroll-announces-hindi-tamil-and-telugu-dub-releases-for-black-clover-the-apothecary-diaries-season-3-and-more/",
+    "https://animemirchi.com/crunchyroll-fall-2026-hindi-tamil-telugu-lineup/"
+   ]
+  },
+  {
+   "t": "PSYREN",
+   "slug": "psyren",
+   "lang": "hi",
+   "service": "Crunchyroll",
+   "region": "IN",
+   "status": "airing",
+   "premiere": "2026-10-26T14:30Z",
+   "weekday": "Monday",
+   "episodes": null,
+   "released": null,
+   "delay": null,
+   "note": "Hindi only; Mondays 8:00 p.m. IST.",
+   "url": "https://www.animenewsnetwork.com/news/2026-10-17/indian-language-dubs-for-the-laid-off-cheat-granting-mage-enjoys-a-second-lease-on-life-more-anime-/.242893",
+   "confidence": "high",
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2026-10-17/indian-language-dubs-for-the-laid-off-cheat-granting-mage-enjoys-a-second-lease-on-life-more-anime-/.242893",
+    "https://otakukart.com/crunchyroll-announces-hindi-tamil-and-telugu-dub-releases-for-black-clover-the-apothecary-diaries-season-3-and-more/",
+    "https://animemirchi.com/crunchyroll-fall-2026-hindi-tamil-telugu-lineup/"
+   ]
+  },
+  {
+   "t": "Attack on Titan: The Final Season",
+   "slug": "shingeki-no-kyojin-the-final-season",
+   "lang": "hi",
+   "service": "Muse India (YouTube)",
+   "region": "IN",
+   "status": "airing",
+   "premiere": "2026-10-27",
+   "weekday": null,
+   "episodes": null,
+   "released": null,
+   "delay": "two episodes daily",
+   "note": "Free on YouTube; Muse India streams two episodes a day from Tuesday 27 Oct 2026. Separate from the Anime Times (Prime Video) Hindi dub.",
+   "url": "https://www.animenewsnetwork.com/news/2026-11-02/attack-on-titan-the-final-season-anime-hindi-dub-streams-on-muse-india-youtube-channel/.243438",
+   "confidence": "high",
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2026-11-02/attack-on-titan-the-final-season-anime-hindi-dub-streams-on-muse-india-youtube-channel/.243438",
+    "https://animemirchi.com/?p=1579"
+   ]
+  },
+  {
+   "t": "The Detective Is Already Dead Season 2",
+   "slug": "tantei-wa-mou-shindeiru-season-2",
+   "lang": "hi",
+   "service": "Crunchyroll",
+   "region": "IN",
+   "status": "airing",
+   "premiere": "2026-10-28T13:30Z",
+   "weekday": "Wednesday",
+   "episodes": null,
+   "released": null,
+   "delay": "3 weeks after the subtitled episode (subs from 7 Oct)",
+   "note": "Hindi only; Wednesdays 7:00 p.m. IST.",
+   "url": "https://www.animenewsnetwork.com/news/2026-10-17/indian-language-dubs-for-the-laid-off-cheat-granting-mage-enjoys-a-second-lease-on-life-more-anime-/.242893",
+   "confidence": "high",
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2026-10-17/indian-language-dubs-for-the-laid-off-cheat-granting-mage-enjoys-a-second-lease-on-life-more-anime-/.242893",
+    "https://otakukart.com/crunchyroll-announces-hindi-tamil-and-telugu-dub-releases-for-black-clover-the-apothecary-diaries-season-3-and-more/",
+    "https://animemirchi.com/crunchyroll-fall-2026-hindi-tamil-telugu-lineup/"
+   ]
+  },
+  {
+   "t": "The Iceblade Sorcerer Shall Rule the World II",
+   "slug": "hyouken-no-majutsushi-ga-sekai-wo-suberu-ii",
+   "lang": "hi",
+   "service": "Crunchyroll",
+   "region": "IN",
+   "status": "airing",
+   "premiere": "2026-10-29T17:00Z",
+   "weekday": "Thursday",
+   "episodes": null,
+   "released": null,
+   "delay": "3 weeks after the subtitled episode (subs from 8 Oct)",
+   "note": "Hindi only; Thursdays 10:30 p.m. IST.",
+   "url": "https://www.animenewsnetwork.com/news/2026-10-17/indian-language-dubs-for-the-laid-off-cheat-granting-mage-enjoys-a-second-lease-on-life-more-anime-/.242893",
+   "confidence": "high",
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2026-10-17/indian-language-dubs-for-the-laid-off-cheat-granting-mage-enjoys-a-second-lease-on-life-more-anime-/.242893",
+    "https://otakukart.com/crunchyroll-announces-hindi-tamil-and-telugu-dub-releases-for-black-clover-the-apothecary-diaries-season-3-and-more/",
+    "https://animemirchi.com/crunchyroll-fall-2026-hindi-tamil-telugu-lineup/"
+   ]
+  },
+  {
+   "t": "Firefly Wedding",
+   "slug": "hotaru-no-yomeiri",
+   "lang": "hi",
+   "service": "Crunchyroll",
+   "region": "IN",
+   "status": "airing",
+   "premiere": "2026-10-30T16:00Z",
+   "weekday": "Friday",
+   "episodes": null,
+   "released": null,
+   "delay": "3 weeks after the subtitled episode (subs from 9 Oct)",
+   "note": "Hindi, Tamil and Telugu; Fridays 9:30 p.m. IST.",
+   "url": "https://www.animenewsnetwork.com/news/2026-10-17/indian-language-dubs-for-the-laid-off-cheat-granting-mage-enjoys-a-second-lease-on-life-more-anime-/.242893",
+   "confidence": "high",
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2026-10-17/indian-language-dubs-for-the-laid-off-cheat-granting-mage-enjoys-a-second-lease-on-life-more-anime-/.242893",
+    "https://otakukart.com/crunchyroll-announces-hindi-tamil-and-telugu-dub-releases-for-black-clover-the-apothecary-diaries-season-3-and-more/",
+    "https://animemirchi.com/crunchyroll-fall-2026-hindi-tamil-telugu-lineup/"
+   ]
+  },
+  {
+   "t": "Fool Night",
+   "slug": "fool-night",
+   "lang": "hi",
+   "service": "Netflix",
+   "region": "IN",
+   "status": "announced",
+   "premiere": "2026-11-26",
+   "weekday": null,
+   "episodes": null,
+   "released": 0,
+   "delay": "full season at once",
+   "note": "Hindi, Tamil and Telugu dubs listed for the worldwide 26 Nov batch drop (Anime Mirchi only).",
+   "url": "https://animemirchi.com/netflix-fall-2026-hindi-tamil-telugu-dub-anime/",
+   "confidence": "medium",
+   "sources": [
+    "https://animemirchi.com/netflix-fall-2026-hindi-tamil-telugu-dub-anime/",
+    "https://www.whats-on-netflix.com/news/fool-night-anime-netflix-release-date-trailer-images/"
+   ]
+  },
+  {
+   "t": "Black Clover Season 2",
+   "slug": "Black-Clover-Season-2",
+   "lang": "hi",
+   "service": "Crunchyroll",
+   "region": "IN",
+   "status": "announced",
+   "premiere": null,
+   "weekday": null,
+   "episodes": null,
+   "released": 0,
+   "delay": null,
+   "note": "Hindi, Tamil and Telugu dubs announced, but not as a simuldub; no start date as of 10 Nov 2026.",
+   "url": "https://www.animenewsnetwork.com/news/2026-10-02/crunchyroll-streams-a-tale-of-the-secret-saint-psyren-more-anime-in-india/.242409",
+   "confidence": "high",
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2026-10-02/crunchyroll-streams-a-tale-of-the-secret-saint-psyren-more-anime-in-india/.242409",
+    "https://animemirchi.com/crunchyroll-fall-2026-hindi-tamil-telugu-lineup/"
+   ]
+  },
+  {
+   "t": "Hello, I Am a Witch and My Crush Wants Me to Make a Love Potion!",
+   "slug": "doumo-suki-na-hito-ni-horegusuri-wo-irai-sareta-majo-desu",
+   "lang": "hi",
+   "service": "Crunchyroll",
+   "region": "IN",
+   "status": "announced",
+   "premiere": null,
+   "weekday": null,
+   "episodes": null,
+   "released": 0,
+   "delay": null,
+   "note": "Hindi dub listed in Crunchyroll's fall lineup; date TBA.",
+   "url": "https://www.animenewsnetwork.com/news/2026-09-15/crunchyroll-announces-release-schedule-for-fall-2026-season/.241811",
+   "confidence": "high",
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2026-09-15/crunchyroll-announces-release-schedule-for-fall-2026-season/.241811",
+    "https://animemirchi.com/crunchyroll-fall-2026-hindi-tamil-telugu-lineup/"
+   ]
+  },
+  {
+   "t": "One Piece (Elbaph arc)",
+   "slug": "one-piece",
+   "lang": "hi",
+   "service": "Crunchyroll",
+   "region": "IN",
+   "status": "announced",
+   "premiere": null,
+   "weekday": null,
+   "episodes": null,
+   "released": null,
+   "delay": null,
+   "note": "Anime News India (25 Oct 2026) says Crunchyroll India lists the Elbaph arc (episode 1156 on) with English, Hindi, Tamil and Telugu dubs, but gives no Hindi start date or schedule. Hindi before episode 1089 does not exist on Crunchyroll; episodes 1089-1155 have Hindi.",
+   "url": "https://animenewsindia.com/2026/10/25/crunchyroll-brings-complete-catalogue-of-one-piece-to-india-in-sub-dub/",
+   "confidence": "medium",
+   "sources": [
+    "https://animenewsindia.com/2026/10/25/crunchyroll-brings-complete-catalogue-of-one-piece-to-india-in-sub-dub/"
+   ]
+  },
+  {
+   "t": "Fullmetal Alchemist: Brotherhood",
+   "slug": "fullmetal-alchemist-brotherhood",
+   "lang": "hi",
+   "service": "Crunchyroll",
+   "region": "IN",
+   "status": "complete",
+   "premiere": "2026-07-27T02:00Z",
+   "weekday": "Monday",
+   "episodes": 64,
+   "released": 64,
+   "delay": "catalogue dub in batches",
+   "note": "New Hindi/Tamil/Telugu dub released in batches on Mondays 7:30 a.m. IST: eps 1-14 (27 Jul), 15-27 (17 Aug), 28-39 (7 Sep), 40-51 (28 Sep), 51-64 (19 Oct 2026). Separate from Anime Times' Hindi dub.",
+   "url": "https://animemirchi.com/crunchyroll-fall-2026-hindi-tamil-telugu-lineup/",
+   "confidence": "medium",
+   "sources": [
+    "https://animemirchi.com/crunchyroll-summer-2026-hindi-tamil-telugu-lineup/",
+    "https://animemirchi.com/crunchyroll-fall-2026-hindi-tamil-telugu-lineup/"
+   ]
+  },
+  {
+   "t": "Hanaori-san Still Wants to Fight in the Next Life",
+   "slug": "hanaori-san-wa-tensei-shite-mo-kenka-ga-shitai",
+   "lang": "hi",
+   "service": "Crunchyroll",
+   "region": "IN",
+   "status": "complete",
+   "premiere": "2026-08-01T17:30Z",
+   "weekday": "Saturday",
+   "episodes": null,
+   "released": null,
+   "delay": null,
+   "note": "Hindi, Tamil and Telugu; Saturdays 11:00 p.m. IST; ended 17 Oct 2026.",
+   "url": "https://animemirchi.com/crunchyroll-summer-2026-hindi-tamil-telugu-lineup/",
+   "confidence": "medium",
+   "sources": [
+    "https://animemirchi.com/crunchyroll-summer-2026-hindi-tamil-telugu-lineup/"
+   ]
+  },
+  {
+   "t": "Arifureta: From Commonplace to World's Strongest Season 3",
+   "slug": "arifureta-shokugyou-de-sekai-saikyou-3rd-season",
+   "lang": "hi",
+   "service": "Crunchyroll",
+   "region": "IN",
+   "status": "complete",
+   "premiere": "2026-08-05T13:00Z",
+   "weekday": null,
+   "episodes": null,
+   "released": null,
+   "delay": "catalogue batch release",
+   "note": "Hindi, Tamil and Telugu batch, 6:30 p.m. IST.",
+   "url": "https://www.animenewsnetwork.com/news/2026-07-17/hindi-dubs-for-tomb-raider-king-black-torch-more-anime-stream-on-crunchyroll/.239722",
+   "confidence": "high",
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2026-07-17/hindi-dubs-for-tomb-raider-king-black-torch-more-anime-stream-on-crunchyroll/.239722",
+    "https://animemirchi.com/crunchyroll-summer-2026-hindi-tamil-telugu-lineup/"
+   ]
+  },
+  {
+   "t": "Tokyo Ghoul √A",
+   "slug": "tokyo-ghoul-2",
+   "lang": "hi",
+   "service": "Crunchyroll",
+   "region": "IN",
+   "status": "complete",
+   "premiere": "2026-08-12T09:00Z",
+   "weekday": null,
+   "episodes": null,
+   "released": null,
+   "delay": "catalogue batch release",
+   "note": "Hindi, Tamil and Telugu batch, 2:30 p.m. IST (Crunchyroll's second Hindi dub of Tokyo Ghoul).",
+   "url": "https://www.animenewsnetwork.com/news/2026-07-17/hindi-dubs-for-tomb-raider-king-black-torch-more-anime-stream-on-crunchyroll/.239722",
+   "confidence": "high",
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2026-07-17/hindi-dubs-for-tomb-raider-king-black-torch-more-anime-stream-on-crunchyroll/.239722",
+    "https://animemirchi.com/crunchyroll-summer-2026-hindi-tamil-telugu-lineup/"
+   ]
+  },
+  {
+   "t": "Oshi no Ko Season 3",
+   "slug": "oshi-no-ko-season-3",
+   "lang": "hi",
+   "service": "Crunchyroll",
+   "region": "IN",
+   "status": "complete",
+   "premiere": "2026-08-13T15:00Z",
+   "weekday": null,
+   "episodes": null,
+   "released": null,
+   "delay": "catalogue batch release",
+   "note": "Hindi, Tamil and Telugu batch, 8:30 p.m. IST.",
+   "url": "https://animemirchi.com/crunchyroll-summer-2026-hindi-tamil-telugu-lineup/",
+   "confidence": "medium",
+   "sources": [
+    "https://animemirchi.com/crunchyroll-summer-2026-hindi-tamil-telugu-lineup/"
+   ]
+  },
+  {
+   "t": "Jaadugar: A Witch in Mongolia",
+   "slug": "tenmaku-no-jaadugar",
+   "lang": "hi",
+   "service": "Crunchyroll",
+   "region": "IN",
+   "status": "complete",
+   "premiere": "2026-08-15T16:00Z",
+   "weekday": "Saturday",
+   "episodes": null,
+   "released": null,
+   "delay": null,
+   "note": "Hindi only; Saturdays 9:30 p.m. IST; ended 31 Oct 2026.",
+   "url": "https://animemirchi.com/crunchyroll-summer-2026-hindi-tamil-telugu-lineup/",
+   "confidence": "medium",
+   "sources": [
+    "https://animemirchi.com/crunchyroll-summer-2026-hindi-tamil-telugu-lineup/"
+   ]
+  },
+  {
+   "t": "Mushoku Tensei: Jobless Reincarnation Season 2 Part 2",
+   "slug": "Mushoku-Tensei-Isekai-Ittara-Honki-Dasu-Season-2-Part-2",
+   "lang": "hi",
+   "service": "Crunchyroll",
+   "region": "IN",
+   "status": "complete",
+   "premiere": "2026-08-18T15:00Z",
+   "weekday": null,
+   "episodes": null,
+   "released": null,
+   "delay": "catalogue batch release",
+   "note": "Hindi-only batch release, 8:30 p.m. IST.",
+   "url": "https://animemirchi.com/crunchyroll-summer-2026-hindi-tamil-telugu-lineup/",
+   "confidence": "medium",
+   "sources": [
+    "https://animemirchi.com/crunchyroll-summer-2026-hindi-tamil-telugu-lineup/"
+   ]
+  },
+  {
+   "t": "KonoSuba: God's Blessing on This Wonderful World!",
+   "slug": "kono-subarashii-sekai-ni-shukufuku-wo",
+   "lang": "hi",
+   "service": "Crunchyroll",
+   "region": "IN",
+   "status": "complete",
+   "premiere": "2026-08-20T15:00Z",
+   "weekday": null,
+   "episodes": null,
+   "released": null,
+   "delay": "catalogue batch releases",
+   "note": "Hindi, Tamil and Telugu batches at 8:30 p.m. IST: Season 1 on 20 Aug, Season 2 on 10 Sep, Season 3 on 23 Sep 2026.",
+   "url": "https://animemirchi.com/crunchyroll-summer-2026-hindi-tamil-telugu-lineup/",
+   "confidence": "medium",
+   "sources": [
+    "https://animemirchi.com/crunchyroll-summer-2026-hindi-tamil-telugu-lineup/"
+   ]
+  },
+  {
+   "t": "Overlord",
+   "slug": "overlord",
+   "lang": "hi",
+   "service": "Crunchyroll",
+   "region": "IN",
+   "status": "complete",
+   "premiere": "2026-08-20T15:00Z",
+   "weekday": "Thursday",
+   "episodes": null,
+   "released": null,
+   "delay": "catalogue batch releases",
+   "note": "Hindi, Tamil and Telugu batches on Thursdays 8:30 p.m. IST: Season 1 (20 Aug), 2 (27 Aug), 3 (3 Sep), 4 (10 Sep 2026).",
+   "url": "https://animemirchi.com/crunchyroll-summer-2026-hindi-tamil-telugu-lineup/",
+   "confidence": "medium",
+   "sources": [
+    "https://animemirchi.com/crunchyroll-summer-2026-hindi-tamil-telugu-lineup/"
+   ]
+  },
+  {
+   "t": "Hana-Kimi Season 2",
+   "slug": "hanazakari-no-kimitachi-e-2nd-season",
+   "lang": "hi",
+   "service": "Crunchyroll",
+   "region": "IN",
+   "status": "complete",
+   "premiere": "2026-08-27T16:00Z",
+   "weekday": null,
+   "episodes": null,
+   "released": null,
+   "delay": null,
+   "note": "Hindi, Tamil and Telugu; 9:30 p.m. IST (Anime Mirchi lists both Wednesday and Thursday); ended 7 Oct 2026.",
+   "url": "https://animemirchi.com/crunchyroll-summer-2026-hindi-tamil-telugu-lineup/",
+   "confidence": "medium",
+   "sources": [
+    "https://animemirchi.com/crunchyroll-summer-2026-hindi-tamil-telugu-lineup/"
+   ]
+  },
+  {
+   "t": "Welcome to Demon School! Iruma-kun Season 3",
+   "slug": "mairimashita-iruma-kun-3rd-season",
+   "lang": "hi",
+   "service": "Muse India (YouTube)",
+   "region": "IN",
+   "status": "complete",
+   "premiere": "2026-08-30",
+   "weekday": null,
+   "episodes": null,
+   "released": null,
+   "delay": "daily uploads",
+   "note": "Free Hindi dub, one episode a day from 30 Aug 2026; at that pace the season would have finished by late September (end date not published).",
+   "url": "https://www.animenewsnetwork.com/news/2026-08-29/hindi-dubs-of-reincarnated-as-a-slime-season-4-welcome-to-demon-school-iruma-kun-season-3-stream-on-/.241106",
+   "confidence": "medium",
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2026-08-29/hindi-dubs-of-reincarnated-as-a-slime-season-4-welcome-to-demon-school-iruma-kun-season-3-stream-on-/.241106"
+   ]
+  },
+  {
+   "t": "Tokyo Ghoul:re",
+   "slug": "tokyo-ghoul-re",
+   "lang": "hi",
+   "service": "Crunchyroll",
+   "region": "IN",
+   "status": "complete",
+   "premiere": "2026-09-02T09:00Z",
+   "weekday": null,
+   "episodes": null,
+   "released": null,
+   "delay": "catalogue batch release",
+   "note": "Hindi, Tamil and Telugu batch, 2:30 p.m. IST.",
+   "url": "https://www.animenewsnetwork.com/news/2026-07-17/hindi-dubs-for-tomb-raider-king-black-torch-more-anime-stream-on-crunchyroll/.239722",
+   "confidence": "high",
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2026-07-17/hindi-dubs-for-tomb-raider-king-black-torch-more-anime-stream-on-crunchyroll/.239722",
+    "https://animemirchi.com/crunchyroll-summer-2026-hindi-tamil-telugu-lineup/"
+   ]
+  },
+  {
+   "t": "JoJo's Bizarre Adventure: Diamond Is Unbreakable",
+   "slug": "jojo-s-bizarre-adventure-diamond-is-unbreakable",
+   "lang": "hi",
+   "service": "Muse India (YouTube)",
+   "region": "IN",
+   "status": "complete",
+   "premiere": "2026-09-02T14:30Z",
+   "weekday": null,
+   "episodes": 39,
+   "released": null,
+   "delay": "daily uploads",
+   "note": "Free Hindi dub of Part 4, daily at 8:00 p.m. IST from Wednesday 2 Sep 2026; 39 episodes, so the run should have ended around 10 Oct (end date not published). Fan trackers say Golden Wind followed.",
+   "url": "https://www.animenewsnetwork.com/news/2026-09-04/hindi-dub-of-jojo-bizarre-adventure-diamond-is-unbreakable-anime-streams-on-muse-india-youtube-/.241369",
+   "confidence": "medium",
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2026-09-04/hindi-dub-of-jojo-bizarre-adventure-diamond-is-unbreakable-anime-streams-on-muse-india-youtube-/.241369"
+   ]
+  },
+  {
+   "t": "Sword Art Online",
+   "slug": "sword-art-online",
+   "lang": "hi",
+   "service": "Crunchyroll",
+   "region": "IN",
+   "status": "complete",
+   "premiere": "2026-09-09T09:00Z",
+   "weekday": null,
+   "episodes": null,
+   "released": null,
+   "delay": "catalogue batch release",
+   "note": "Season 1 Hindi, Tamil and Telugu batch, 2:30 p.m. IST.",
+   "url": "https://animemirchi.com/crunchyroll-summer-2026-hindi-tamil-telugu-lineup/",
+   "confidence": "medium",
+   "sources": [
+    "https://animemirchi.com/crunchyroll-summer-2026-hindi-tamil-telugu-lineup/"
+   ]
+  },
+  {
+   "t": "Mononoke the Movie: Chapter III - The Curse of the Serpent",
+   "slug": "Mononoke-Hebigami",
+   "lang": "hi",
+   "service": "Netflix",
+   "region": "IN",
+   "status": "complete",
+   "premiere": "2026-09-29",
+   "weekday": null,
+   "episodes": null,
+   "released": null,
+   "delay": "film",
+   "note": "Hindi dub listed by Anime Mirchi only.",
+   "url": "https://animemirchi.com/netflix-fall-2026-hindi-tamil-telugu-dub-anime/",
+   "confidence": "medium",
+   "sources": [
+    "https://animemirchi.com/netflix-fall-2026-hindi-tamil-telugu-dub-anime/"
+   ]
+  },
+  {
+   "t": "Demon Slayer: Kimetsu no Yaiba (Season 1, Muse dub)",
+   "slug": "kimetsu-no-yaiba",
+   "lang": "hi",
+   "service": "Netflix",
+   "region": "IN",
+   "status": "complete",
+   "premiere": "2026-10-02",
+   "weekday": null,
+   "episodes": null,
+   "released": null,
+   "delay": "catalogue batch release",
+   "note": "Muse Communication's Hindi/Tamil/Telugu dub of Season 1 added as a batch (Anime Mirchi only). Crunchyroll has had its own Hindi dub since 2024.",
+   "url": "https://animemirchi.com/netflix-fall-2026-hindi-tamil-telugu-dub-anime/",
+   "confidence": "medium",
+   "sources": [
+    "https://animemirchi.com/netflix-fall-2026-hindi-tamil-telugu-dub-anime/"
+   ]
+  },
+  {
+   "t": "KonoSuba: An Explosion on This Wonderful World!",
+   "slug": "kono-subarashii-sekai-ni-bakuen-wo",
+   "lang": "hi",
+   "service": "Crunchyroll",
+   "region": "IN",
+   "status": "complete",
+   "premiere": "2026-10-08T15:00Z",
+   "weekday": null,
+   "episodes": null,
+   "released": null,
+   "delay": "catalogue batch release",
+   "note": "Hindi, Tamil and Telugu batch release on 8 Oct 2026 at 8:30 p.m. IST (Anime Mirchi only).",
+   "url": "https://animemirchi.com/crunchyroll-fall-2026-hindi-tamil-telugu-lineup/",
+   "confidence": "medium",
+   "sources": [
+    "https://animemirchi.com/crunchyroll-fall-2026-hindi-tamil-telugu-lineup/"
+   ]
+  },
+  {
+   "t": "Black Clover (Season 1 Part 1)",
+   "slug": "black-clover-tv",
+   "lang": "hi",
+   "service": "Crunchyroll",
+   "region": "IN",
+   "status": "complete",
+   "premiere": "2026-10-10T15:00Z",
+   "weekday": "Saturday",
+   "episodes": 51,
+   "released": 51,
+   "delay": "catalogue dub in weekly batches",
+   "note": "Sony YAY! dub added to Crunchyroll: Hindi and Tamil episodes 1-40 from 10 Oct 2026, episodes 41-51 on 7 Nov; batches land Saturdays 8:30 p.m. IST. Telugu started separately on 24 Oct and is still rolling out. Season 2 Indian dubs 'will be added soon' (no date).",
+   "url": "https://animenewsindia.com/2026/10/29/black-clover-season-1-part-1-is-now-streaming-on-crunchyroll-india-in-hindi-tamil-and-telugu-dubs/",
+   "confidence": "high",
+   "sources": [
+    "https://animenewsindia.com/2026/10/29/black-clover-season-1-part-1-is-now-streaming-on-crunchyroll-india-in-hindi-tamil-and-telugu-dubs/",
+    "https://www.animenewsnetwork.com/news/2026-10-17/indian-language-dubs-for-the-laid-off-cheat-granting-mage-enjoys-a-second-lease-on-life-more-anime-/.242893",
+    "https://animemirchi.com/crunchyroll-fall-2026-hindi-tamil-telugu-lineup/"
+   ]
+  },
+  {
+   "t": "My Happy Marriage (Special)",
+   "slug": "watashi-no-shiawase-na-kekkon-shinsaku-anime",
+   "lang": "hi",
+   "service": "Netflix",
+   "region": "IN",
+   "status": "complete",
+   "premiere": "2026-10-25",
+   "weekday": null,
+   "episodes": 3,
+   "released": 3,
+   "delay": "same day as Japan, all at once",
+   "note": "Three-episode special released with Hindi and English dubs on 25 Oct 2026.",
+   "url": "https://www.animenewsnetwork.com/news/2026-11-02/my-happy-marriage-anime-special-streams-in-india-with-hindi-english-dubs/.243434",
+   "confidence": "high",
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2026-11-02/my-happy-marriage-anime-special-streams-in-india-with-hindi-english-dubs/.243434",
+    "https://animemirchi.com/netflix-fall-2026-hindi-tamil-telugu-dub-anime/"
+   ]
+  },
+  {
+   "t": "Bleach: Thousand-Year Blood War - The Calamity",
+   "slug": "bleach-sennen-kessen-hen-kashintan",
+   "lang": "hi",
+   "service": "JioHotstar",
+   "region": "IN",
+   "status": "complete",
+   "premiere": null,
+   "weekday": "Monday",
+   "episodes": 10,
+   "released": null,
+   "delay": null,
+   "note": "New Hindi dub (Sound Realm Studios, recast) of the final cour, weekly on Mondays; streaming by 14 Aug 2026. With 10 weekly episodes it should have finished by mid-Oct, but no end date was published. Ani-One India's YouTube channel also carries a cour 4 Hindi dub (from 25 Jul, reported).",
+   "url": "https://animenewsindia.com/2026/08/14/bleach-thousand-year-blood-war-the-final-cour-the-calamity-now-streaming-on-jiohotstar-with-brand-new-hindi-dub/",
+   "confidence": "medium",
+   "sources": [
+    "https://animenewsindia.com/2026/08/14/bleach-thousand-year-blood-war-the-final-cour-the-calamity-now-streaming-on-jiohotstar-with-brand-new-hindi-dub/",
+    "https://animenewsindia.com/2026/07/21/anione-india-annouces-new-hindi-dub-for-bleach-thousand-year-blood-war-the-calamity-cour-4-and-dailly-streaming-of-previous-seasons-on-its-youtube-channel/"
+   ]
+  }
+ ]
 }

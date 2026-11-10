@@ -120,6 +120,7 @@ export default async function FillerListPage({ params }: Props) {
         {skipArcs.length > 0 && <p className="mt-1 text-sm leading-6 text-ink/90"><strong className="text-ink">Whole arcs you can skip:</strong> {skipArcs.map((r) => `${r.arc.name} (${arcRange({ ...r.arc, to: r.to })})`).join(", ")}.</p>}
         {longest && longest.to > longest.from && <p className="mt-1 text-sm text-muted">Longest filler stretch: {span(longest.from, longest.to)} ({longest.to - longest.from + 1} in a row); the story resumes at episode {longest.to + 1}.</p>}
         {f.mixed.size > 0 && <p className="mt-1 text-sm text-muted">Mixed episodes ({f.mixed.size}) contain story you need, so watch them.</p>}
+        {f.animeCanon.size >= 10 && <p className="mt-1 text-sm leading-6 text-ink/90"><strong className="text-ink">Anime-only story ({f.animeCanon.size}):</strong> {formatRanges(f.animeCanon)}. Not in the manga but not filler either: later episodes build on it. Manga readers who only want the adapted story can skip these too.</p>}
       </section>
 
       {byArc.length > 0 && (
