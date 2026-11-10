@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { characterNote } from "@/lib/charnotes";
 import { fitTitle } from "@/lib/titles";
 import PushButton from "@/components/PushButton";
 import { charTopic } from "@/lib/push";
@@ -88,24 +89,26 @@ async function load(slug: string) {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const { c, home, voiced, facts, fact, bio, aliases, nick } = await load(slug);
+  // The checked name from the notes when there is one ("Monkey D. Luffy", not AniList's "Luffy Monkey D.").
+  const name = characterNote(c.slug)?.name ?? c.name;
   // Searchers want quick facts (age, height, birthday, voice actor), so the title and snippet lead with them.
   const what = factsTitle(facts.map((f) => f.key), Boolean(voiced?.jp));
   const brief = [fact("age") && `age ${fact("age")}`, fact("height") && `${fact("height")} tall`, fact("birthday") && `birthday ${fact("birthday")}`].filter(Boolean).join(", ");
   const lead = [
-    home && `${c.name} from ${home.title}${brief ? `: ${brief}` : ""}.`,
+    home && `${name} from ${home.title}${brief ? `: ${brief}` : ""}.`,
     voiced?.jp && `Voiced by ${voiced.jp.name} (Japanese)${voiced.en ? ` and ${voiced.en.name} (English)` : ""}.`,
     aliases.length > 0 && `Also known as ${aliases.slice(0, 2).join(" and ")}.`,
   ].filter(Boolean).join(" ");
   return {
     // Most informative title that fits a search result (lib/titles.ts): the name and the searched facts first.
     title: fitTitle([
-      `${c.name}${nick ? ` "${nick}"` : ""}${home ? ` (${home.title})` : ""}: ${what || "Character Profile & Appearances"}`,
-      home && `${c.name} (${home.title}): ${what || "Character Profile"}`,
-      `${c.name}: ${what || "Character Profile & Appearances"}`,
-      what.includes("Voice Actor") && `${c.name}: ${what.replace(/,? ?(& )?Voice Actor$/, "").replace(/, ([^,]+)$/, " & $1")}`,
-      `${c.name}: Age, Birthday & More`,
+      `${name}${nick ? ` "${nick}"` : ""}${home ? ` (${home.title})` : ""}: ${what || "Character Profile & Appearances"}`,
+      home && `${name} (${home.title}): ${what || "Character Profile"}`,
+      `${name}: ${what || "Character Profile & Appearances"}`,
+      what.includes("Voice Actor") && `${name}: ${what.replace(/,? ?(& )?Voice Actor$/, "").replace(/, ([^,]+)$/, " & $1")}`,
+      `${name}: Age, Birthday & More`,
     ]),
-    description: ((lead ? `${lead} ` : "") + (bio ? bio.slice(0, 120).replace(/\s+\S*$/, "") + "…" : `Every anime ${c.name} appears in.`)).slice(0, 300),
+    description: ((lead ? `${lead} ` : "") + (bio ? bio.slice(0, 120).replace(/\s+\S*$/, "") + "…" : `Every anime ${name} appears in.`)).slice(0, 300),
     alternates: { canonical: `/character/${c.slug}` },
     robots: robotsFor(characterIndexed(c.slug)),
   };

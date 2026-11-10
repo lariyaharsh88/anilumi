@@ -1,5 +1,5 @@
 {
- "checked": "2026-11-09",
+ "checked": "2026-11-10",
  "reviewed": null,
  "characters": {
   "eren-jager": {
@@ -4274,6 +4274,1389 @@
     "https://en.wikipedia.org/wiki/Attack_on_Titan_season_2"
    ],
    "notes": "Season 2 episode 1 is episode 26 overall; Wikipedia's summary has the Beast Titan appear there. Chapter 34 (\"Soldiers Dance\", end of volume 8) rests on the Attack on Titan Wiki; Wikipedia only says he is introduced around volume 9. Relatives left out to avoid spoilers."
+  },
+  "jujutsu-kaisen-satoru-gojou": {
+   "name": "Satoru Gojou",
+   "role": "Special grade jujutsu sorcerer and teacher at Tokyo Jujutsu High; Megumi Fushiguro's mentor",
+   "debut": {
+    "anime": "Jujutsu Kaisen",
+    "episode": 1,
+    "episodeTitle": "Ryomen Sukuna",
+    "source": "manga",
+    "chapter": 1,
+    "volume": null
+   },
+   "arcs": [],
+   "affiliations": [
+    "Tokyo Jujutsu High",
+    "Gojo Clan"
+   ],
+   "relatives": [],
+   "confidence": "medium",
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Satoru_Gojo",
+    "https://en.wikipedia.org/wiki/Satoru_Gojo",
+    "https://en.wikipedia.org/wiki/Jujutsu_Kaisen_season_1"
+   ],
+   "notes": "Both sources agree he first appeared in chapter 1 of the prequel Jujutsu Kaisen 0 (2017). The main-series chapter 1 rests on the Jujutsu Kaisen Wiki, which says he is only heard and seen on the cover there and appears in full in chapter 2. Episode 1 rests on the wiki; the Wikipedia summaries first name him in episode 2. Relatives left out to avoid spoilers."
+  },
+  "luffy-monkey-d": {
+   "name": "Monkey D. Luffy",
+   "role": "Protagonist; captain of the Straw Hat Pirates who wants to become King of the Pirates",
+   "debut": {
+    "anime": "One Piece",
+    "episode": 1,
+    "episodeTitle": "I'm Gonna Be King of the Pirates!",
+    "source": "manga",
+    "chapter": 1,
+    "volume": null
+   },
+   "arcs": [
+    "Romance Dawn",
+    "Orange Town",
+    "Syrup Village",
+    "Baratie",
+    "Arlong Park",
+    "Loguetown"
+   ],
+   "affiliations": [
+    "Straw Hat Pirates"
+   ],
+   "relatives": [],
+   "confidence": "high",
+   "sources": [
+    "https://onepiece.fandom.com/wiki/Monkey_D._Luffy",
+    "https://en.wikipedia.org/wiki/Monkey_D._Luffy",
+    "https://en.wikipedia.org/wiki/One_Piece_season_1"
+   ],
+   "notes": "Arcs listed are the East Blue arcs; he is in every arc of the series. Episode title as in the Wikipedia season 1 list. Family left out to avoid spoilers."
+  },
+  "zoro-roronoa": {
+   "name": "Roronoa Zoro",
+   "role": "Swordsman of the Straw Hat Pirates; former pirate hunter",
+   "debut": {
+    "anime": "One Piece",
+    "episode": 1,
+    "episodeTitle": "I'm Gonna Be King of the Pirates!",
+    "source": "manga",
+    "chapter": 3,
+    "volume": null
+   },
+   "arcs": [
+    "Romance Dawn",
+    "Orange Town",
+    "Syrup Village",
+    "Baratie",
+    "Arlong Park",
+    "Loguetown"
+   ],
+   "affiliations": [
+    "Straw Hat Pirates"
+   ],
+   "relatives": [],
+   "confidence": "medium",
+   "sources": [
+    "https://onepiece.fandom.com/wiki/Roronoa_Zoro",
+    "https://en.wikipedia.org/wiki/Roronoa_Zoro",
+    "https://en.wikipedia.org/wiki/One_Piece_season_1"
+   ],
+   "notes": "Chapter 3 (\"Introducing Pirate Hunter Zoro\") is confirmed by both sources. Episode 1 rests on the One Piece Wiki; the Wikipedia summary of episode 1 does not name him. Arcs listed are the East Blue arcs. Family left out."
+  },
+  "arataka-reigen": {
+   "name": "Arataka Reigen",
+   "role": "Self-proclaimed psychic who runs the Spirits and Such Consultation Office; Mob's boss and mentor",
+   "debut": {
+    "anime": "Mob Psycho 100",
+    "episode": 1,
+    "episodeTitle": "Self-Proclaimed Psychic: Arataka Reigen ~And Mob~",
+    "source": "manga",
+    "chapter": 1,
+    "volume": null
+   },
+   "arcs": [],
+   "affiliations": [
+    "Spirits and Such Consultation Office"
+   ],
+   "relatives": [],
+   "confidence": "medium",
+   "sources": [
+    "https://mob-psycho-100.fandom.com/wiki/Arataka_Reigen",
+    "https://en.wikipedia.org/wiki/List_of_Mob_Psycho_100_characters",
+    "https://en.wikipedia.org/wiki/List_of_Mob_Psycho_100_episodes"
+   ],
+   "notes": "Episode 1 is confirmed by both sources. Chapter 1 rests on the Mob Psycho 100 Wiki; Wikipedia's character list gives no chapter."
+  },
+  "guts": {
+   "name": "Guts",
+   "role": "Protagonist; wandering swordsman known as the Black Swordsman",
+   "debut": {
+    "anime": "Kenpuu Denki Berserk",
+    "episode": 1,
+    "episodeTitle": "The Black Swordsman",
+    "source": "manga",
+    "chapter": null,
+    "volume": null
+   },
+   "arcs": [
+    "Black Swordsman Arc",
+    "Golden Age Arc",
+    "Conviction Arc",
+    "Millennium Falcon Arc",
+    "Fantasia Arc"
+   ],
+   "affiliations": [
+    "Band of the Falcon"
+   ],
+   "relatives": [],
+   "confidence": "medium",
+   "sources": [
+    "https://berserk.fandom.com/wiki/Guts",
+    "https://en.wikipedia.org/wiki/Guts_(Berserk)",
+    "https://en.wikipedia.org/wiki/List_of_Berserk_(1997_TV_series)_episodes"
+   ],
+   "notes": "Episode 1 is confirmed by both sources. His manga debut is the opening \"The Black Swordsman\" chapter, which Wikipedia numbers A0 and the Berserk Wiki numbers 0-1, so chapter is null. The 1997 anime covers only the Black Swordsman and Golden Age arcs; arc names follow the Berserk Wiki. Relatives left out to avoid spoilers."
+  },
+  "chainsaw-man-makima": {
+   "name": "Makima",
+   "role": "High-ranking Public Safety Devil Hunter who takes Denji in and recruits him",
+   "debut": {
+    "anime": "Chainsaw Man",
+    "episode": 1,
+    "episodeTitle": "Dog & Chainsaw",
+    "source": "manga",
+    "chapter": 1,
+    "volume": null
+   },
+   "arcs": [],
+   "affiliations": [
+    "Public Safety Devil Hunters",
+    "Tokyo Special Division 4"
+   ],
+   "relatives": [],
+   "confidence": "high",
+   "sources": [
+    "https://chainsaw-man.fandom.com/wiki/Makima",
+    "https://en.wikipedia.org/wiki/Makima",
+    "https://en.wikipedia.org/wiki/List_of_Chainsaw_Man_episodes"
+   ],
+   "notes": "Relatives and her other affiliations are left out to avoid spoilers."
+  },
+  "mai-sakurajima": {
+   "name": "Mai Sakurajima",
+   "role": "Teenage actress at Sakuta's high school whom he meets in a library dressed as a bunny girl, unseen by everyone else",
+   "debut": {
+    "anime": "Seishun Buta Yarou wa Bunny Girl Senpai no Yume wo Minai",
+    "episode": 1,
+    "episodeTitle": "My Senpai is a Bunny Girl",
+    "source": "light novel",
+    "chapter": null,
+    "volume": 1
+   },
+   "arcs": [],
+   "affiliations": [],
+   "relatives": [],
+   "confidence": "high",
+   "sources": [
+    "https://aobuta.fandom.com/wiki/Mai_Sakurajima",
+    "https://en.wikipedia.org/wiki/Rascal_Does_Not_Dream",
+    "https://en.wikipedia.org/wiki/List_of_Rascal_Does_Not_Dream_episodes"
+   ],
+   "notes": "Light novel volume 1 per the Rascal Does Not Dream Wiki; Wikipedia confirms she is on the volume 1 cover. Relatives left out to avoid spoilers."
+  },
+  "chainsaw-man-denji": {
+   "name": "Denji",
+   "role": "Protagonist; indebted young devil hunter who merges with his chainsaw devil Pochita",
+   "debut": {
+    "anime": "Chainsaw Man",
+    "episode": 1,
+    "episodeTitle": "Dog & Chainsaw",
+    "source": "manga",
+    "chapter": 1,
+    "volume": null
+   },
+   "arcs": [],
+   "affiliations": [
+    "Public Safety Devil Hunters",
+    "Tokyo Special Division 4"
+   ],
+   "relatives": [],
+   "confidence": "high",
+   "sources": [
+    "https://chainsaw-man.fandom.com/wiki/Denji",
+    "https://en.wikipedia.org/wiki/Denji_(Chainsaw_Man)",
+    "https://en.wikipedia.org/wiki/List_of_Chainsaw_Man_episodes"
+   ],
+   "notes": "Relatives left out to avoid spoilers."
+  },
+  "shigeo-kageyama": {
+   "name": "Shigeo Kageyama",
+   "role": "Protagonist; middle schooler nicknamed Mob who holds immense psychic power and suppresses his emotions",
+   "debut": {
+    "anime": "Mob Psycho 100",
+    "episode": 1,
+    "episodeTitle": "Self-Proclaimed Psychic: Arataka Reigen ~And Mob~",
+    "source": "manga",
+    "chapter": 1,
+    "volume": null
+   },
+   "arcs": [],
+   "affiliations": [
+    "Salt Middle School",
+    "Body Improvement Club",
+    "Spirits and Such Consultation Office"
+   ],
+   "relatives": [
+    {
+     "name": "Ritsu Kageyama",
+     "relation": "younger brother"
+    }
+   ],
+   "confidence": "high",
+   "sources": [
+    "https://mob-psycho-100.fandom.com/wiki/Shigeo_Kageyama",
+    "https://en.wikipedia.org/wiki/Shigeo_Kageyama",
+    "https://en.wikipedia.org/wiki/List_of_Mob_Psycho_100_characters",
+    "https://en.wikipedia.org/wiki/List_of_Mob_Psycho_100_episodes"
+   ]
+  },
+  "chainsaw-man-power": {
+   "name": "Power",
+   "role": "Blood Fiend and Public Safety Devil Hunter assigned as Denji's partner",
+   "debut": {
+    "anime": "Chainsaw Man",
+    "episode": 2,
+    "episodeTitle": "Arrival in Tokyo",
+    "source": "manga",
+    "chapter": 4,
+    "volume": null
+   },
+   "arcs": [],
+   "affiliations": [
+    "Public Safety Devil Hunters",
+    "Tokyo Special Division 4"
+   ],
+   "relatives": [],
+   "confidence": "high",
+   "sources": [
+    "https://chainsaw-man.fandom.com/wiki/Power",
+    "https://en.wikipedia.org/wiki/Power_(Chainsaw_Man)",
+    "https://en.wikipedia.org/wiki/List_of_Chainsaw_Man_episodes"
+   ]
+  },
+  "violet-evergarden": {
+   "name": "Violet Evergarden",
+   "role": "Protagonist; former child soldier who becomes an Auto Memory Doll writing letters for clients",
+   "debut": {
+    "anime": "Violet Evergarden",
+    "episode": 1,
+    "episodeTitle": "\"I Love You\" and Auto Memory Dolls",
+    "source": "light novel",
+    "chapter": null,
+    "volume": 1
+   },
+   "arcs": [],
+   "affiliations": [
+    "CH Postal Company",
+    "Leidenschaftlich Army (former)"
+   ],
+   "relatives": [],
+   "confidence": "high",
+   "sources": [
+    "https://violet-evergarden.fandom.com/wiki/Violet_Evergarden_(anime_character)",
+    "https://violet-evergarden.fandom.com/wiki/Violet_Evergarden_(LN)",
+    "https://en.wikipedia.org/wiki/Violet_Evergarden"
+   ],
+   "notes": "Light novel volume 1 per the Violet Evergarden Wiki; she is the title character of the first volume (Wikipedia). Relatives left out to avoid spoilers."
+  },
+  "edward-elric": {
+   "name": "Edward Elric",
+   "role": "Protagonist; State Alchemist known as the Fullmetal Alchemist who searches for the Philosopher's Stone with his brother",
+   "debut": {
+    "anime": "Fullmetal Alchemist: Brotherhood",
+    "episode": 1,
+    "episodeTitle": "Fullmetal Alchemist",
+    "source": "manga",
+    "chapter": 1,
+    "volume": null
+   },
+   "arcs": [],
+   "affiliations": [
+    "Amestris State Military"
+   ],
+   "relatives": [
+    {
+     "name": "Van Hohenheim",
+     "relation": "father"
+    },
+    {
+     "name": "Trisha Elric",
+     "relation": "mother"
+    },
+    {
+     "name": "Alphonse Elric",
+     "relation": "younger brother"
+    }
+   ],
+   "confidence": "high",
+   "sources": [
+    "https://fma.fandom.com/wiki/Edward_Elric",
+    "https://en.wikipedia.org/wiki/Edward_Elric",
+    "https://en.wikipedia.org/wiki/List_of_Fullmetal_Alchemist:_Brotherhood_episodes"
+   ],
+   "notes": "Chapter 1 is \"The Two Alchemists\" (Wikipedia)."
+  },
+  "sakura-matou": {
+   "name": "Sakura Matou",
+   "role": "Younger daughter of the Tohsaka family who has been adopted into the Matou family",
+   "debut": {
+    "anime": "Fate/Zero",
+    "episode": 1,
+    "episodeTitle": "The Summoning of Heroes",
+    "source": "light novel",
+    "chapter": null,
+    "volume": null
+   },
+   "arcs": [],
+   "affiliations": [
+    "Matou family"
+   ],
+   "relatives": [
+    {
+     "name": "Tokiomi Tohsaka",
+     "relation": "biological father"
+    },
+    {
+     "name": "Aoi Tohsaka",
+     "relation": "biological mother"
+    },
+    {
+     "name": "Rin Tohsaka",
+     "relation": "biological older sister"
+    }
+   ],
+   "confidence": "high",
+   "sources": [
+    "https://typemoon.fandom.com/wiki/Sakura_Matou",
+    "https://en.wikipedia.org/wiki/Sakura_Matou",
+    "https://en.wikipedia.org/wiki/List_of_Fate/Zero_episodes"
+   ],
+   "notes": "Episode 1 is confirmed by the Wikipedia episode summary and a TYPE-MOON Wiki quote attributed to Fate/Zero episode 1. She first appeared in the Fate/stay night visual novel (2004); Fate/Zero light novel volume and chapter not confirmed."
+  },
+  "jujutsu-kaisen-megumi-fushiguro": {
+   "name": "Megumi Fushiguro",
+   "role": "First-year student at Tokyo Jujutsu High who fights with shikigami summoned from shadows",
+   "debut": {
+    "anime": "Jujutsu Kaisen",
+    "episode": 1,
+    "episodeTitle": "Ryomen Sukuna",
+    "source": "manga",
+    "chapter": 1,
+    "volume": null
+   },
+   "arcs": [],
+   "affiliations": [
+    "Tokyo Jujutsu High"
+   ],
+   "relatives": [
+    {
+     "name": "Tsumiki Fushiguro",
+     "relation": "stepsister"
+    }
+   ],
+   "confidence": "high",
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro",
+    "https://en.wikipedia.org/wiki/Megumi_Fushiguro",
+    "https://en.wikipedia.org/wiki/Jujutsu_Kaisen_season_1"
+   ],
+   "notes": "Other relatives are left out to avoid spoilers."
+  },
+  "joseph-joestar": {
+   "name": "Joseph Joestar",
+   "role": "Protagonist of Part 2, Battle Tendency; Jonathan Joestar's grandson, living in New York",
+   "debut": {
+    "anime": "JoJo no Kimyou na Bouken (TV)",
+    "episode": 10,
+    "episodeTitle": "New York's JoJo",
+    "source": "manga",
+    "chapter": 45,
+    "volume": null
+   },
+   "arcs": [],
+   "affiliations": [],
+   "relatives": [
+    {
+     "name": "Jonathan Joestar",
+     "relation": "grandfather"
+    },
+    {
+     "name": "Erina Joestar",
+     "relation": "grandmother"
+    },
+    {
+     "name": "George Joestar II",
+     "relation": "father"
+    }
+   ],
+   "confidence": "high",
+   "sources": [
+    "https://jojo.fandom.com/wiki/Joseph_Joestar",
+    "https://en.wikipedia.org/wiki/Joseph_Joestar",
+    "https://en.wikipedia.org/wiki/JoJo's_Bizarre_Adventure_season_1"
+   ],
+   "notes": "Chapter 45 (\"New York's JoJo\") is the first chapter of Battle Tendency. He returns as an older ally in Part 3, Stardust Crusaders. His mother and descendants are left out to avoid spoilers."
+  },
+  "shouto-todoroki": {
+   "name": "Shouto Todoroki",
+   "role": "Student in U.A. High School's Class 1-A who can create ice and fire",
+   "debut": {
+    "anime": "Boku no Hero Academia",
+    "episode": 5,
+    "episodeTitle": "What I Can Do For Now",
+    "source": "manga",
+    "chapter": 6,
+    "volume": null
+   },
+   "arcs": [],
+   "affiliations": [
+    "U.A. High School",
+    "Class 1-A"
+   ],
+   "relatives": [
+    {
+     "name": "Enji Todoroki",
+     "relation": "father"
+    }
+   ],
+   "confidence": "medium",
+   "sources": [
+    "https://myheroacademia.fandom.com/wiki/Shoto_Todoroki",
+    "https://myheroacademia.fandom.com/wiki/Episode_5",
+    "https://en.wikipedia.org/wiki/Shoto_Todoroki",
+    "https://en.wikipedia.org/wiki/My_Hero_Academia_season_1"
+   ],
+   "notes": "Chapter 6 is confirmed by both sources. Episode 5 rests on the My Hero Academia Wiki; the Wikipedia summaries of episodes 5 and 6 do not name him. His father is the pro hero Endeavor; other relatives left out to avoid spoilers."
+  },
+  "megumin": {
+   "name": "Megumin",
+   "role": "Crimson Demon archwizard who only uses Explosion magic; joins Kazuma's party",
+   "debut": {
+    "anime": "Kono Subarashii Sekai ni Shukufuku wo!",
+    "episode": 2,
+    "episodeTitle": "An Explosion for This Chunibyo!",
+    "source": "light novel",
+    "chapter": null,
+    "volume": 1
+   },
+   "arcs": [],
+   "affiliations": [
+    "Crimson Demons",
+    "Adventurer Guild"
+   ],
+   "relatives": [
+    {
+     "name": "Komekko",
+     "relation": "younger sister"
+    }
+   ],
+   "confidence": "medium",
+   "sources": [
+    "https://konosuba.fandom.com/wiki/Megumin",
+    "https://en.wikipedia.org/wiki/List_of_KonoSuba_characters",
+    "https://en.wikipedia.org/wiki/KonoSuba_season_1"
+   ],
+   "notes": "Episode 2 is confirmed by both sources. Light novel volume 1 rests on the KonoSuba Wiki."
+  },
+  "rem-3": {
+   "name": "Rem",
+   "role": "Maid at Roswaal L. Mathers's mansion and twin sister of Ram",
+   "debut": {
+    "anime": "Re:Zero kara Hajimeru Isekai Seikatsu",
+    "episode": 4,
+    "episodeTitle": "The Happy Roswaal Mansion Family",
+    "source": "light novel",
+    "chapter": null,
+    "volume": 2
+   },
+   "arcs": [],
+   "affiliations": [
+    "House Mathers",
+    "Emilia Camp"
+   ],
+   "relatives": [
+    {
+     "name": "Ram",
+     "relation": "older twin sister"
+    }
+   ],
+   "confidence": "medium",
+   "sources": [
+    "https://rezero.fandom.com/wiki/Rem",
+    "https://en.wikipedia.org/wiki/Rem_(Re:Zero)",
+    "https://en.wikipedia.org/wiki/Re:Zero_season_1"
+   ],
+   "notes": "Episode 4 is confirmed by both sources. Light novel volume 2 rests on the Re:Zero Wiki; Wikipedia gives her web novel debut chapter, \"The Road to Redemption Begins\". Parents left out to avoid spoilers."
+  },
+  "gintoki-sakata": {
+   "name": "Gintoki Sakata",
+   "role": "Protagonist; silver-haired samurai who runs the Yorozuya odd-jobs business in Edo",
+   "debut": {
+    "anime": "Gintama",
+    "episode": 1,
+    "episodeTitle": "You Guys!! Do You Even Have Gintama?!",
+    "source": "manga",
+    "chapter": 1,
+    "volume": null
+   },
+   "arcs": [],
+   "affiliations": [
+    "Yorozuya"
+   ],
+   "relatives": [],
+   "confidence": "high",
+   "sources": [
+    "https://gintama.fandom.com/wiki/Gintoki_Sakata",
+    "https://en.wikipedia.org/wiki/Gintoki_Sakata",
+    "https://en.wikipedia.org/wiki/Gintama_season_1"
+   ],
+   "notes": "Episodes 1 and 2 aired together as a one-hour anime-original special; the first manga chapter (Lesson 1, \"Nobody with Natural Wavy Hair Can Be That Bad\") is adapted in episode 3. Relatives left out to avoid spoilers."
+  },
+  "subaru-natsuki": {
+   "name": "Subaru Natsuki",
+   "role": "Protagonist; teenager suddenly transported to another world on his way home from a convenience store",
+   "debut": {
+    "anime": "Re:Zero kara Hajimeru Isekai Seikatsu",
+    "episode": 1,
+    "episodeTitle": "The End of the Beginning and the Beginning of the End",
+    "source": "light novel",
+    "chapter": null,
+    "volume": 1
+   },
+   "arcs": [],
+   "affiliations": [
+    "Emilia Camp"
+   ],
+   "relatives": [],
+   "confidence": "high",
+   "sources": [
+    "https://rezero.fandom.com/wiki/Subaru_Natsuki",
+    "https://en.wikipedia.org/wiki/Subaru_Natsuki",
+    "https://en.wikipedia.org/wiki/Re:Zero_season_1"
+   ],
+   "notes": "Light novel volume 1 per the Re:Zero Wiki; Wikipedia gives his web novel debut in the prologue (2014). Relatives left out."
+  },
+  "ichigo-f875b8ab-821d-4659-8d8e-5f79e5fd32a8": {
+   "name": "Ichigo",
+   "role": "Leader of Squad 13 and pistil who pilots the Franxx Delphinium with Goro",
+   "debut": {
+    "anime": "Darling in the FranXX",
+    "episode": 1,
+    "episodeTitle": "Alone and Lonesome",
+    "source": null,
+    "chapter": null,
+    "volume": null
+   },
+   "arcs": [],
+   "affiliations": [
+    "Squad 13"
+   ],
+   "relatives": [],
+   "confidence": "medium",
+   "sources": [
+    "https://darling-in-the-franxx.fandom.com/wiki/Ichigo",
+    "https://en.wikipedia.org/wiki/List_of_Darling_in_the_Franxx_characters",
+    "https://en.wikipedia.org/wiki/List_of_Darling_in_the_Franxx_episodes"
+   ],
+   "notes": "Darling in the Franxx is an original anime (the manga runs alongside it), so source is null. Episode 1 rests on the Darling in the Franxx Wiki; the Wikipedia summary of episode 1 does not name her. Code number 015 (both sources). Relatives left out to avoid spoilers."
+  },
+  "kiyotaka-ayanokouji": {
+   "name": "Kiyotaka Ayanokouji",
+   "role": "Protagonist; quiet, low-key student in Class 1-D at the Advanced Nurturing High School",
+   "debut": {
+    "anime": "Youkoso Jitsuryoku Shijou Shugi no Kyoushitsu e",
+    "episode": 1,
+    "episodeTitle": "What is Evil? Whatever Springs from Weakness.",
+    "source": "light novel",
+    "chapter": null,
+    "volume": 1
+   },
+   "arcs": [],
+   "affiliations": [
+    "Advanced Nurturing High School",
+    "Class 1-D"
+   ],
+   "relatives": [],
+   "confidence": "high",
+   "sources": [
+    "https://you-zitsu.fandom.com/wiki/Kiyotaka_Ayanokōji",
+    "https://en.wikipedia.org/wiki/List_of_Classroom_of_the_Elite_characters",
+    "https://en.wikipedia.org/wiki/Classroom_of_the_Elite_season_1"
+   ],
+   "notes": "Light novel volume 1 per the Classroom of the Elite Wiki; Wikipedia's episode 1 summary introduces him joining Class 1-D. Relatives left out to avoid spoilers."
+  },
+  "zero-two": {
+   "name": "Zero Two",
+   "role": "Horned pistil known as the \"Partner Killer\" who pairs with Hiro to pilot the Franxx Strelizia",
+   "debut": {
+    "anime": "Darling in the FranXX",
+    "episode": 1,
+    "episodeTitle": "Alone and Lonesome",
+    "source": null,
+    "chapter": null,
+    "volume": null
+   },
+   "arcs": [],
+   "affiliations": [],
+   "relatives": [],
+   "confidence": "high",
+   "sources": [
+    "https://darling-in-the-franxx.fandom.com/wiki/Zero_Two",
+    "https://en.wikipedia.org/wiki/Zero_Two",
+    "https://en.wikipedia.org/wiki/List_of_Darling_in_the_Franxx_episodes"
+   ],
+   "notes": "Darling in the Franxx is an original anime (the Kentaro Yabuki manga runs alongside it), so source is null. Her code is 002. Relatives and affiliations left out to avoid spoilers."
+  },
+  "hitagi-senjougahara": {
+   "name": "Hitagi Senjougahara",
+   "role": "Koyomi Araragi's classmate, afflicted by an oddity that has taken away her weight",
+   "debut": {
+    "anime": "Bakemonogatari",
+    "episode": 1,
+    "episodeTitle": "Hitagi Crab, Part 1",
+    "source": "light novel",
+    "chapter": null,
+    "volume": null
+   },
+   "arcs": [],
+   "affiliations": [
+    "Naoetsu Private High School"
+   ],
+   "relatives": [],
+   "confidence": "high",
+   "sources": [
+    "https://bakemonogatari.fandom.com/wiki/Hitagi_Senjougahara",
+    "https://bakemonogatari.fandom.com/wiki/Bakemonogatari_Episode_01:_Hitagi_Crab,_Part_1",
+    "https://en.wikipedia.org/wiki/List_of_Monogatari_characters",
+    "https://en.wikipedia.org/wiki/List_of_Monogatari_episodes"
+   ],
+   "notes": "Wikipedia titles episode 1 \"Hitagi Crab, Part One\". She debuts in \"Hitagi Crab\", the first story of the Bakemonogatari light novel; volume and chapter numbers not confirmed. Relatives left out."
+  },
+  "shouyou-hinata": {
+   "name": "Shouyou Hinata",
+   "role": "Protagonist; short middle blocker with a huge jump on Karasuno High's volleyball team",
+   "debut": {
+    "anime": "Haikyuu!!",
+    "episode": 1,
+    "episodeTitle": "The End and The Beginning",
+    "source": "manga",
+    "chapter": 1,
+    "volume": null
+   },
+   "arcs": [
+    "Karasuno High Team Formation Arc",
+    "Interhigh Arc",
+    "Tokyo Expedition Arc",
+    "Spring High Preliminary Arc",
+    "Tokyo Nationals Arc",
+    "Final Arc"
+   ],
+   "affiliations": [
+    "Karasuno High",
+    "Yukigaoka Junior High (former)"
+   ],
+   "relatives": [
+    {
+     "name": "Natsu Hinata",
+     "relation": "younger sister"
+    }
+   ],
+   "confidence": "high",
+   "sources": [
+    "https://haikyuu.fandom.com/wiki/Shōyō_Hinata",
+    "https://en.wikipedia.org/wiki/Shoyo_Hinata",
+    "https://en.wikipedia.org/wiki/List_of_Haikyu!!_characters",
+    "https://en.wikipedia.org/wiki/Haikyu!!_season_1"
+   ],
+   "notes": "Chapter 1 is \"Endings and Beginnings\" (both sources). Arc names follow the Haikyu!! Wiki."
+  },
+  "ichigo-kurosaki": {
+   "name": "Ichigo Kurosaki",
+   "role": "Protagonist; teenager who can see ghosts and gains the powers of a Shinigami",
+   "debut": {
+    "anime": "BLEACH",
+    "episode": 1,
+    "episodeTitle": "The Day I Became a Shinigami",
+    "source": "manga",
+    "chapter": 1,
+    "volume": 1
+   },
+   "arcs": [],
+   "affiliations": [
+    "Kurosaki Clinic",
+    "Karakura Town"
+   ],
+   "relatives": [
+    {
+     "name": "Isshin Kurosaki",
+     "relation": "father"
+    },
+    {
+     "name": "Masaki Kurosaki",
+     "relation": "mother"
+    },
+    {
+     "name": "Karin Kurosaki",
+     "relation": "younger sister"
+    },
+    {
+     "name": "Yuzu Kurosaki",
+     "relation": "younger sister"
+    }
+   ],
+   "confidence": "high",
+   "sources": [
+    "https://bleach.fandom.com/wiki/Ichigo_Kurosaki",
+    "https://en.wikipedia.org/wiki/Ichigo_Kurosaki",
+    "https://en.wikipedia.org/wiki/Bleach_season_1"
+   ],
+   "notes": "Chapter 1 is \"Death & Strawberry\" (Wikipedia; the Bleach Wiki places it in volume 1). Other relatives left out to avoid spoilers."
+  },
+  "asuka-langley": {
+   "name": "Asuka Langley Souryuu",
+   "role": "Pilot of Evangelion Unit-02 who transfers to Japan from Germany",
+   "debut": {
+    "anime": "Neon Genesis Evangelion",
+    "episode": 8,
+    "episodeTitle": "Asuka Strikes!",
+    "source": null,
+    "chapter": null,
+    "volume": null
+   },
+   "arcs": [],
+   "affiliations": [
+    "Nerv"
+   ],
+   "relatives": [],
+   "confidence": "high",
+   "sources": [
+    "https://evangelion.fandom.com/wiki/Asuka_Langley_Soryu",
+    "https://en.wikipedia.org/wiki/Asuka_Langley_Soryu",
+    "https://en.wikipedia.org/wiki/List_of_Neon_Genesis_Evangelion_episodes"
+   ],
+   "notes": "Episode 8 is confirmed by both sources; the Wikipedia episode list renders its title \"Asuka Arrives in Japan\". Neon Genesis Evangelion is an original anime, so source is null; she first appears in volume 4 of the Sadamoto manga. Relatives left out to avoid spoilers."
+  },
+  "spike-spiegel": {
+   "name": "Spike Spiegel",
+   "role": "Protagonist; laid-back bounty hunter aboard the spaceship Bebop",
+   "debut": {
+    "anime": "Cowboy Bebop",
+    "episode": 1,
+    "episodeTitle": "Asteroid Blues",
+    "source": null,
+    "chapter": null,
+    "volume": null
+   },
+   "arcs": [],
+   "affiliations": [
+    "Bebop crew"
+   ],
+   "relatives": [],
+   "confidence": "high",
+   "sources": [
+    "https://cowboybebop.fandom.com/wiki/Spike_Spiegel",
+    "https://en.wikipedia.org/wiki/Spike_Spiegel",
+    "https://en.wikipedia.org/wiki/List_of_Cowboy_Bebop_episodes"
+   ],
+   "notes": "Cowboy Bebop is an original anime, so source is null. \"Asteroid Blues\" is session 1 in the series order; the 1998 TV Tokyo broadcast aired \"Stray Dog Strut\" first (Wikipedia). His past is left out to avoid spoilers."
+  },
+  "shinobu-oshino": {
+   "name": "Shinobu Oshino",
+   "role": "Silent blonde girl who lives in the abandoned cram school with Meme Oshino",
+   "debut": {
+    "anime": "Bakemonogatari",
+    "episode": 1,
+    "episodeTitle": "Hitagi Crab, Part 1",
+    "source": "light novel",
+    "chapter": null,
+    "volume": null
+   },
+   "arcs": [],
+   "affiliations": [],
+   "relatives": [],
+   "confidence": "medium",
+   "sources": [
+    "https://bakemonogatari.fandom.com/wiki/Shinobu_Oshino",
+    "https://bakemonogatari.fandom.com/wiki/Bakemonogatari_Episode_01:_Hitagi_Crab,_Part_1",
+    "https://en.wikipedia.org/wiki/List_of_Monogatari_characters",
+    "https://en.wikipedia.org/wiki/List_of_Monogatari_episodes"
+   ],
+   "notes": "Episode 1 rests on the Monogatari Wiki episode page; the Wikipedia summaries first name her in later episodes. She first appears in the Bakemonogatari light novel (\"Hitagi Crab\"); volume and chapter not confirmed. Her past and relationship to Koyomi are left out to avoid spoilers."
+  },
+  "jujutsu-kaisen-kento-nanami": {
+   "name": "Kento Nanami",
+   "role": "Grade 1 jujutsu sorcerer and former salaryman who works alongside Yuji Itadori",
+   "debut": {
+    "anime": "Jujutsu Kaisen",
+    "episode": 8,
+    "episodeTitle": "Boredom",
+    "source": "manga",
+    "chapter": 18,
+    "volume": null
+   },
+   "arcs": [],
+   "affiliations": [
+    "Tokyo Jujutsu High"
+   ],
+   "relatives": [],
+   "confidence": "medium",
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami",
+    "https://en.wikipedia.org/wiki/List_of_Jujutsu_Kaisen_characters",
+    "https://en.wikipedia.org/wiki/Jujutsu_Kaisen_season_1"
+   ],
+   "notes": "Episode 8 and chapter 18 rest on the Jujutsu Kaisen Wiki; the Wikipedia summaries first name him in episode 9, \"Small Fry and Reverse Retribution\"."
+  },
+  "rimuru-tempest": {
+   "name": "Rimuru Tempest",
+   "role": "Protagonist; office worker reborn as a slime in another world who befriends the Storm Dragon Veldora",
+   "debut": {
+    "anime": "Tensei shitara Slime Datta Ken",
+    "episode": 1,
+    "episodeTitle": "The Storm Dragon, Veldora",
+    "source": "light novel",
+    "chapter": null,
+    "volume": 1
+   },
+   "arcs": [],
+   "affiliations": [
+    "Jura Tempest Federation"
+   ],
+   "relatives": [],
+   "confidence": "high",
+   "sources": [
+    "https://tensura.fandom.com/wiki/Rimuru_Tempest",
+    "https://en.wikipedia.org/wiki/List_of_That_Time_I_Got_Reincarnated_as_a_Slime_characters",
+    "https://en.wikipedia.org/wiki/That_Time_I_Got_Reincarnated_as_a_Slime_season_1"
+   ],
+   "notes": "Light novel volume 1 per the Tensura Wiki; the series began as a web novel. In his previous life he was Satoru Mikami (Wikipedia episode 1 summary). Manga debut is chapter 1, \"Death and Reincarnation\" (wiki)."
+  },
+  "sasuke-uchiha": {
+   "name": "Sasuke Uchiha",
+   "role": "Member of Team 7 and one of the last of the Uchiha clan; Naruto's rival",
+   "debut": {
+    "anime": "Naruto",
+    "episode": 1,
+    "episodeTitle": "Enter: Naruto Uzumaki!",
+    "source": "manga",
+    "chapter": 3,
+    "volume": null
+   },
+   "arcs": [
+    "Land of Waves",
+    "Chunin Exams"
+   ],
+   "affiliations": [
+    "Konohagakure",
+    "Team 7"
+   ],
+   "relatives": [
+    {
+     "name": "Fugaku Uchiha",
+     "relation": "father"
+    },
+    {
+     "name": "Mikoto Uchiha",
+     "relation": "mother"
+    },
+    {
+     "name": "Itachi Uchiha",
+     "relation": "older brother"
+    }
+   ],
+   "confidence": "medium",
+   "sources": [
+    "https://naruto.fandom.com/wiki/Sasuke_Uchiha",
+    "https://en.wikipedia.org/wiki/Sasuke_Uchiha",
+    "https://en.wikipedia.org/wiki/Naruto_season_1"
+   ],
+   "notes": "Chapter 3 (\"Enter Sasuke!\") is confirmed by both sources. Episode 1 rests on Narutopedia; the Wikipedia summaries first name him in episode 3, \"Sasuke and Sakura: Friends or Foes?\". Arcs listed are Part I arcs; later arcs and his own family left out to avoid spoilers."
+  },
+  "erwin-smith": {
+   "name": "Erwin Smith",
+   "role": "Commander of the Survey Corps",
+   "debut": {
+    "anime": "Attack on Titan",
+    "episode": 1,
+    "episodeTitle": "To You, in 2000 Years: The Fall of Shiganshina, Part 1",
+    "source": "manga",
+    "chapter": 1,
+    "volume": null
+   },
+   "arcs": [],
+   "affiliations": [
+    "Survey Corps"
+   ],
+   "relatives": [],
+   "confidence": "medium",
+   "sources": [
+    "https://attackontitan.fandom.com/wiki/Erwin_Smith_(Anime)",
+    "https://attackontitan.fandom.com/wiki/Erwin_Smith",
+    "https://en.wikipedia.org/wiki/List_of_Attack_on_Titan_characters",
+    "https://en.wikipedia.org/wiki/Attack_on_Titan_season_1"
+   ],
+   "notes": "Episode 1 and chapter 1 (\"To You, 2,000 Years From Now\") rest on the Attack on Titan Wiki; Wikipedia's episode 1 summary does not name him. Wikipedia confirms he succeeds Keith Shadis as commander."
+  },
+  "hachiman-hikigaya": {
+   "name": "Hachiman Hikigaya",
+   "role": "Protagonist; cynical loner at Sobu High School who is made to join the Service Club",
+   "debut": {
+    "anime": "Yahari Ore no Seishun Love Comedy wa Machigatteiru.",
+    "episode": 1,
+    "episodeTitle": "Youth Romantic Comedy Is Wrong, as I Expected",
+    "source": "light novel",
+    "chapter": null,
+    "volume": 1
+   },
+   "arcs": [],
+   "affiliations": [
+    "Sobu High School",
+    "Service Club"
+   ],
+   "relatives": [
+    {
+     "name": "Komachi Hikigaya",
+     "relation": "younger sister"
+    }
+   ],
+   "confidence": "high",
+   "sources": [
+    "https://oregairu.fandom.com/wiki/Hachiman_Hikigaya",
+    "https://en.wikipedia.org/wiki/My_Youth_Romantic_Comedy_Is_Wrong,_as_I_Expected",
+    "https://en.wikipedia.org/wiki/My_Teen_Romantic_Comedy_SNAFU_season_1"
+   ],
+   "notes": "Episode title as in the Wikipedia episode list; the Oregairu Wiki calls episode 1 \"And Thus Their Mistaken Youth Begins.\" Light novel volume 1, chapter 1 per the wiki."
+  },
+  "koyomi-araragi": {
+   "name": "Koyomi Araragi",
+   "role": "Protagonist; third-year at Naoetsu Private High School who helps girls afflicted by oddities",
+   "debut": {
+    "anime": "Bakemonogatari",
+    "episode": 1,
+    "episodeTitle": "Hitagi Crab, Part 1",
+    "source": "light novel",
+    "chapter": null,
+    "volume": null
+   },
+   "arcs": [],
+   "affiliations": [
+    "Naoetsu Private High School"
+   ],
+   "relatives": [
+    {
+     "name": "Karen Araragi",
+     "relation": "younger sister"
+    },
+    {
+     "name": "Tsukihi Araragi",
+     "relation": "younger sister"
+    }
+   ],
+   "confidence": "high",
+   "sources": [
+    "https://bakemonogatari.fandom.com/wiki/Koyomi_Araragi",
+    "https://en.wikipedia.org/wiki/Koyomi_Araragi",
+    "https://en.wikipedia.org/wiki/List_of_Monogatari_episodes"
+   ],
+   "notes": "Wikipedia titles episode 1 \"Hitagi Crab, Part One\". First appears in the Bakemonogatari light novel (2006); volume and chapter not confirmed."
+  },
+  "akemi-homura": {
+   "name": "Homura Akemi",
+   "role": "Mysterious transfer student at Mitakihara Middle School who is a magical girl",
+   "debut": {
+    "anime": "Mahou Shoujo Madoka★Magica",
+    "episode": 1,
+    "episodeTitle": "I First Met Her in a Dream... or Something.",
+    "source": null,
+    "chapter": null,
+    "volume": null
+   },
+   "arcs": [],
+   "affiliations": [
+    "Mitakihara Middle School"
+   ],
+   "relatives": [],
+   "confidence": "high",
+   "sources": [
+    "https://madoka.fandom.com/wiki/Homura_Akemi",
+    "https://en.wikipedia.org/wiki/Homura_Akemi",
+    "https://en.wikipedia.org/wiki/List_of_Puella_Magi_Madoka_Magica_episodes"
+   ],
+   "notes": "Madoka Magica is an original anime (the manga adapts it), so source is null. Her article renders the episode title \"As If I Met Her in My Dream...\". Her past is left out to avoid spoilers."
+  },
+  "saber": {
+   "name": "Artoria Pendragon",
+   "role": "Saber-class Servant summoned by Kiritsugu Emiya for the Fourth Holy Grail War",
+   "debut": {
+    "anime": "Fate/Zero",
+    "episode": 1,
+    "episodeTitle": "The Summoning of Heroes",
+    "source": "light novel",
+    "chapter": null,
+    "volume": null
+   },
+   "arcs": [],
+   "affiliations": [],
+   "relatives": [],
+   "confidence": "medium",
+   "sources": [
+    "https://typemoon.fandom.com/wiki/Artoria_Pendragon",
+    "https://en.wikipedia.org/wiki/Saber_(Fate/stay_night)",
+    "https://en.wikipedia.org/wiki/List_of_Fate/Zero_episodes"
+   ],
+   "notes": "Episode 1 rests on the Wikipedia episode summary; the TYPE-MOON Wiki gives no episode. She first appeared in the Fate/stay night visual novel (2004); Fate/Zero light novel volume not confirmed. Usually called Saber."
+  },
+  "jujutsu-kaisen-sukuna": {
+   "name": "Sukuna",
+   "role": "The King of Curses; ancient sorcerer whose twenty severed fingers survive as cursed objects",
+   "debut": {
+    "anime": "Jujutsu Kaisen",
+    "episode": 1,
+    "episodeTitle": "Ryomen Sukuna",
+    "source": "manga",
+    "chapter": 1,
+    "volume": null
+   },
+   "arcs": [],
+   "affiliations": [],
+   "relatives": [],
+   "confidence": "high",
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Sukuna",
+    "https://en.wikipedia.org/wiki/Ryomen_Sukuna",
+    "https://en.wikipedia.org/wiki/Jujutsu_Kaisen_season_1"
+   ],
+   "notes": "Full name Ryomen Sukuna. Relatives and later events left out to avoid spoilers."
+  },
+  "rei-ayanami": {
+   "name": "Rei Ayanami",
+   "role": "Reserved pilot of Evangelion Unit-00",
+   "debut": {
+    "anime": "Neon Genesis Evangelion",
+    "episode": 1,
+    "episodeTitle": "Angel Attack",
+    "source": null,
+    "chapter": null,
+    "volume": null
+   },
+   "arcs": [],
+   "affiliations": [
+    "Nerv"
+   ],
+   "relatives": [],
+   "confidence": "high",
+   "sources": [
+    "https://evangelion.fandom.com/wiki/Rei_Ayanami",
+    "https://evangelion.fandom.com/wiki/Angel_Attack",
+    "https://en.wikipedia.org/wiki/Rei_Ayanami",
+    "https://en.wikipedia.org/wiki/List_of_Neon_Genesis_Evangelion_episodes"
+   ],
+   "notes": "Neon Genesis Evangelion is an original anime, so source is null; Wikipedia notes the Sadamoto manga, published first, introduces her in chapter 2 (\"Reunion\"). Her background is left out to avoid spoilers."
+  },
+  "johan-liebert": {
+   "name": "Johan Liebert",
+   "role": "Boy whose life Dr. Kenzo Tenma saves after he is shot in the head",
+   "debut": {
+    "anime": "Monster",
+    "episode": 1,
+    "episodeTitle": "Herr Dr. Tenma",
+    "source": "manga",
+    "chapter": 1,
+    "volume": null
+   },
+   "arcs": [],
+   "affiliations": [],
+   "relatives": [],
+   "confidence": "medium",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_Monster_characters",
+    "https://en.wikipedia.org/wiki/List_of_Monster_episodes",
+    "https://anilist.co/character/719"
+   ],
+   "notes": "Episode 1 is confirmed by the Wikipedia episode summary. Chapter 1 rests on the Wikipedia character list (Tenma saves him at the start of the story); no Monster fan wiki could be reached, and the chapter number was not confirmed by a second source. Everything else left out to avoid spoilers."
+  },
+  "misato-katsuragi": {
+   "name": "Misato Katsuragi",
+   "role": "Nerv officer who takes Shinji Ikari in as her ward",
+   "debut": {
+    "anime": "Neon Genesis Evangelion",
+    "episode": 1,
+    "episodeTitle": "Angel Attack",
+    "source": null,
+    "chapter": null,
+    "volume": null
+   },
+   "arcs": [],
+   "affiliations": [
+    "Nerv"
+   ],
+   "relatives": [],
+   "confidence": "high",
+   "sources": [
+    "https://evangelion.fandom.com/wiki/Misato_Katsuragi",
+    "https://evangelion.fandom.com/wiki/Angel_Attack",
+    "https://en.wikipedia.org/wiki/Misato_Katsuragi",
+    "https://en.wikipedia.org/wiki/List_of_Neon_Genesis_Evangelion_episodes"
+   ],
+   "notes": "Neon Genesis Evangelion is an original anime, so source is null; Wikipedia notes she also opens chapter 1 (\"Angel Attack\") of the Sadamoto manga, published first. Her background is left out to avoid spoilers."
+  },
+  "yami-sukehiro": {
+   "name": "Yami Sukehiro",
+   "role": "Captain of the Black Bulls, the Magic Knights squad Asta joins",
+   "debut": {
+    "anime": "Black Clover",
+    "episode": 4,
+    "episodeTitle": "The Magic Knights Entrance Exam",
+    "source": "manga",
+    "chapter": 2,
+    "volume": null
+   },
+   "arcs": [],
+   "affiliations": [
+    "Black Bulls",
+    "Magic Knights"
+   ],
+   "relatives": [],
+   "confidence": "medium",
+   "sources": [
+    "https://blackclover.fandom.com/wiki/Yami_Sukehiro",
+    "https://blackclover.fandom.com/wiki/Episode_4",
+    "https://en.wikipedia.org/wiki/Yami_Sukehiro",
+    "https://en.wikipedia.org/wiki/Black_Clover_season_1"
+   ],
+   "notes": "Chapter 2 (\"The Magic Knights Entrance Exam\") is confirmed by both sources. Episode 4 rests on the Black Clover Wiki; the Wikipedia summary of episode 4 does not name him. Relatives left out to avoid spoilers."
+  },
+  "shouya-ishida": {
+   "name": "Shouya Ishida",
+   "role": "Protagonist; former elementary school bully who seeks to reconnect with Shouko Nishimiya, a deaf girl he tormented",
+   "debut": {
+    "anime": "Koe no Katachi",
+    "episode": null,
+    "episodeTitle": null,
+    "source": "manga",
+    "chapter": 1,
+    "volume": 1
+   },
+   "arcs": [],
+   "affiliations": [],
+   "relatives": [
+    {
+     "name": "Miyako Ishida",
+     "relation": "mother"
+    }
+   ],
+   "confidence": "high",
+   "sources": [
+    "https://koenokatachi.fandom.com/wiki/Shōya_Ishida",
+    "https://en.wikipedia.org/wiki/A_Silent_Voice_(manga)",
+    "https://en.wikipedia.org/wiki/A_Silent_Voice_(film)"
+   ],
+   "notes": "There is no TV anime: Koe no Katachi (A Silent Voice) is a 2016 film, so episode is null. Chapter 1 per the Koe no Katachi Wiki; Wikipedia confirms he is on the volume 1 cover and opens the story. Mother named in the wiki infobox and the Wikipedia character list."
+  },
+  "sakuta-azusagawa": {
+   "name": "Sakuta Azusagawa",
+   "role": "Protagonist; high school student who looks into cases of Adolescence Syndrome after meeting Mai Sakurajima",
+   "debut": {
+    "anime": "Seishun Buta Yarou wa Bunny Girl Senpai no Yume wo Minai",
+    "episode": 1,
+    "episodeTitle": "My Senpai is a Bunny Girl",
+    "source": "light novel",
+    "chapter": null,
+    "volume": 1
+   },
+   "arcs": [],
+   "affiliations": [],
+   "relatives": [
+    {
+     "name": "Kaede Azusagawa",
+     "relation": "younger sister"
+    }
+   ],
+   "confidence": "high",
+   "sources": [
+    "https://aobuta.fandom.com/wiki/Sakuta_Azusagawa",
+    "https://en.wikipedia.org/wiki/Rascal_Does_Not_Dream",
+    "https://en.wikipedia.org/wiki/List_of_Rascal_Does_Not_Dream_episodes"
+   ],
+   "notes": "Light novel volume 1 per the Rascal Does Not Dream Wiki; Wikipedia's synopsis of the first volume centres on him. Other family left out to avoid spoilers."
+  },
+  "yuu-nishinoya": {
+   "name": "Yuu Nishinoya",
+   "role": "Second-year libero of Karasuno High's volleyball team",
+   "debut": {
+    "anime": "Haikyuu!!",
+    "episode": 7,
+    "episodeTitle": "Versus the Great King",
+    "source": "manga",
+    "chapter": 15,
+    "volume": null
+   },
+   "arcs": [],
+   "affiliations": [
+    "Karasuno High"
+   ],
+   "relatives": [],
+   "confidence": "medium",
+   "sources": [
+    "https://haikyuu.fandom.com/wiki/Yū_Nishinoya",
+    "https://haikyuu.fandom.com/wiki/Versus_the_Great_King_(Episode)",
+    "https://en.wikipedia.org/wiki/List_of_Haikyu!!_characters",
+    "https://en.wikipedia.org/wiki/Haikyu!!_season_1"
+   ],
+   "notes": "Episode 7 and chapter 15 (\"Chemical Reaction\", a brief appearance; he appears properly in chapter 16, \"Another Prodigy\") rest on the Haikyu!! Wiki. The Wikipedia summary of episode 7 mentions Karasuno's returning libero without naming him; episode 8 is the first to name him."
+  },
+  "chainsaw-man-reze": {
+   "name": "Reze",
+   "role": "Girl working at a cafe who befriends Denji",
+   "debut": {
+    "anime": "Chainsaw Man",
+    "episode": 12,
+    "episodeTitle": "Katana vs. Chainsaw",
+    "source": "manga",
+    "chapter": 40,
+    "volume": null
+   },
+   "arcs": [
+    "Bomb Girl Arc"
+   ],
+   "affiliations": [],
+   "relatives": [],
+   "confidence": "medium",
+   "sources": [
+    "https://chainsaw-man.fandom.com/wiki/Reze",
+    "https://chainsaw-man.fandom.com/wiki/Episode_12",
+    "https://en.wikipedia.org/wiki/Reze_(Chainsaw_Man)",
+    "https://anilist.co/character/148740"
+   ],
+   "notes": "Chapter 40 is confirmed by both sources. Her episode 12 appearance is a short scene at the end of the TV series per the Chainsaw Man Wiki (AniList also lists her in the TV series); Wikipedia's episode summary does not name her. Her main anime appearance is the 2025 film Chainsaw Man – The Movie: Reze Arc. Affiliations left out to avoid spoilers."
+  },
+  "nami": {
+   "name": "Nami",
+   "role": "Navigator of the Straw Hat Pirates and a skilled thief",
+   "debut": {
+    "anime": "One Piece",
+    "episode": 1,
+    "episodeTitle": "I'm Gonna Be King of the Pirates!",
+    "source": "manga",
+    "chapter": 8,
+    "volume": null
+   },
+   "arcs": [
+    "Orange Town",
+    "Syrup Village",
+    "Baratie",
+    "Arlong Park",
+    "Loguetown"
+   ],
+   "affiliations": [
+    "Straw Hat Pirates"
+   ],
+   "relatives": [
+    {
+     "name": "Bell-mère",
+     "relation": "adoptive mother"
+    },
+    {
+     "name": "Nojiko",
+     "relation": "adoptive sister"
+    }
+   ],
+   "confidence": "medium",
+   "sources": [
+    "https://onepiece.fandom.com/wiki/Nami",
+    "https://en.wikipedia.org/wiki/Nami_(One_Piece)",
+    "https://en.wikipedia.org/wiki/One_Piece_season_1"
+   ],
+   "notes": "Chapter 8 (\"Nami\") is confirmed by both sources; she is also on the chapter 1 cover. Episode 1 rests on the One Piece Wiki; the Wikipedia summary of episode 1 does not name her. Arcs listed are the East Blue arcs. Her earlier affiliation is left out to avoid spoilers."
+  },
+  "gyro-zeppeli": {
+   "name": "Gyro Zeppeli",
+   "role": "Neapolitan rider in the Steel Ball Run race who fights with spinning steel balls",
+   "debut": {
+    "anime": "Steel Ball Run: JoJo no Kimyou na Bouken",
+    "episode": 1,
+    "episodeTitle": "Steel Ball Run",
+    "source": "manga",
+    "chapter": 1,
+    "volume": null
+   },
+   "arcs": [],
+   "affiliations": [
+    "Zeppeli Family"
+   ],
+   "relatives": [
+    {
+     "name": "Gregorio Zeppeli",
+     "relation": "father"
+    }
+   ],
+   "confidence": "medium",
+   "sources": [
+    "https://jojo.fandom.com/wiki/Gyro_Zeppeli",
+    "https://jojo.fandom.com/wiki/Steel_Ball_Run:_JoJo's_Bizarre_Adventure",
+    "https://en.wikipedia.org/wiki/Steel_Ball_Run:_JoJo's_Bizarre_Adventure",
+    "https://en.wikipedia.org/wiki/Steel_Ball_Run"
+   ],
+   "notes": "Episode 1 (the \"1st Stage\", released on Netflix on March 19, 2026) is confirmed by both sources. Chapter 1 of Steel Ball Run and his father rest on the JoJo Wiki."
+  },
+  "ray-cc6835fa-42f9-482a-b3d8-ba3d9ea23727": {
+   "name": "Ray",
+   "role": "One of the three eldest and smartest orphans at Grace Field House, with Emma and Norman",
+   "debut": {
+    "anime": "Yakusoku no Neverland",
+    "episode": 1,
+    "episodeTitle": "121045",
+    "source": "manga",
+    "chapter": 1,
+    "volume": null
+   },
+   "arcs": [],
+   "affiliations": [
+    "Grace Field House"
+   ],
+   "relatives": [],
+   "confidence": "medium",
+   "sources": [
+    "https://yakusokunoneverland.fandom.com/wiki/Ray",
+    "https://yakusokunoneverland.fandom.com/wiki/Episode_1",
+    "https://en.wikipedia.org/wiki/Ray_(The_Promised_Neverland)",
+    "https://en.wikipedia.org/wiki/The_Promised_Neverland_season_1"
+   ],
+   "notes": "Chapter 1 (\"Grace Field House\") is confirmed by both sources. Episode 1 rests on the Promised Neverland Wiki episode page; the Wikipedia summary of episode 1 names only Emma and Norman. Relatives left out to avoid spoilers."
+  },
+  "jujutsu-kaisen-toge-inumaki": {
+   "name": "Toge Inumaki",
+   "role": "Second-year student at Tokyo Jujutsu High who uses Cursed Speech and talks only in rice ball ingredients",
+   "debut": {
+    "anime": "Jujutsu Kaisen",
+    "episode": 5,
+    "episodeTitle": "Curse Womb Must Die -II-",
+    "source": "manga",
+    "chapter": 10,
+    "volume": null
+   },
+   "arcs": [],
+   "affiliations": [
+    "Tokyo Jujutsu High",
+    "Inumaki Clan"
+   ],
+   "relatives": [],
+   "confidence": "medium",
+   "sources": [
+    "https://jujutsu-kaisen.fandom.com/wiki/Toge_Inumaki",
+    "https://en.wikipedia.org/wiki/List_of_Jujutsu_Kaisen_characters",
+    "https://en.wikipedia.org/wiki/Jujutsu_Kaisen_season_1"
+   ],
+   "notes": "Episode 5 is confirmed by both sources. Chapter 10 rests on the Jujutsu Kaisen Wiki; both sources agree he first appeared in the prequel Jujutsu Kaisen 0."
   }
  }
 }
