@@ -3,6 +3,7 @@ import Link from "@/components/Link";
 import { animePath, posterUrl, subtypeLabel, type Anime } from "@/lib/kitsu";
 import { streamsFor, streamsPath, servicesIn } from "@/lib/streams";
 import { dubFor } from "@/lib/hindidub";
+import { editorWatched } from "@/lib/editor";
 
 export type Pick = { anime: Anime; why: string; votes?: number; score?: number };
 
@@ -38,6 +39,7 @@ export default function PickList({ picks, start = 1, compact = false }: { picks:
                 {us.length > 0 && <Link href={streamsPath(streams!.s)} className="text-violet hover:underline">▶ {us.join(", ")} (US)</Link>}
                 {!us.length && streams && <Link href={streamsPath(streams.s)} className="text-violet hover:underline">▶ Where to watch</Link>}
                 {hindi && <Link href="/hindi-dub" className="text-[#fbbf24] hover:underline">🇮🇳 Hindi dub</Link>}
+                {editorWatched(a) && <Link href="/author/harsh-lariya" rel="author" className="text-emerald-300 hover:underline">✓ Harsh has watched it</Link>}
               </p>
             </div>
           </li>

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import MadeBy from "@/components/MadeBy";
 import Link from "@/components/Link";
 import PageHero from "@/components/PageHero";
 import Faq from "@/components/Faq";
@@ -10,6 +11,7 @@ import { kitsuByAniListIds, posterUrl } from "@/lib/kitsu";
 import { snapshotOrder } from "@/lib/wosnap";
 import { dubFor } from "@/lib/hindidub";
 import { themesOf } from "@/lib/picks";
+import { editorWatched } from "@/lib/editor";
 
 export const revalidate = 86400;
 
@@ -34,7 +36,7 @@ async function pool(): Promise<RandomItem[]> {
     out.push({
       slug: a.slug, title: a.titleEn && a.titleEn.length <= 50 ? a.titleEn : a.title, poster: posterUrl(a, "small"), genres: al.g,
       eps: a.episodeCount ?? null, movie: a.subtype === "movie", year: a.startDate ? Number(a.startDate.slice(0, 4)) : null,
-      score: al.s, themes: themesOf(al.t), hindi: dubFor(a)?.status === "available",
+      score: al.s, themes: themesOf(al.t), hindi: dubFor(a)?.status === "available", watched: editorWatched(a),
     });
   }
   return out.sort((x, y) => x.title.localeCompare(y.title));
@@ -54,6 +56,7 @@ export default async function RandomGenerator() {
         facts={[{ value: String(items.length), label: "anime to pick from" }, { value: String(items.filter((x) => x.hindi).length), label: "with a Hindi dub" }]}
         hue={300}
       />
+      <MadeBy className="mt-4" method="The pool is the most-watched anime on AniList, trimmed to first seasons and standalone films; a tick marks the ones I have watched myself." />
       <section className="mt-8" aria-label="Random anime picker">
         <RandomPicker items={items} genres={genres} />
       </section>

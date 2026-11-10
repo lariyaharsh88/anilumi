@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import EditorWatched from "@/components/EditorWatched";
 import { fitTitle } from "@/lib/titles";
 import Link from "@/components/Link";
 import { notFound } from "next/navigation";
@@ -128,6 +129,7 @@ export default async function HowLongPage({ params }: Props) {
         backdrop={a.cover?.large || null}
         posters={[posterUrl(a, "medium")]}
       />
+      <EditorWatched anime={a} className="mt-4" />
 
       {total > 0 && (
         <>

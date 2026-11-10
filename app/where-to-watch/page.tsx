@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import MadeBy from "@/components/MadeBy";
 import Link from "@/components/Link";
 import PageHero from "@/components/PageHero";
 import Faq from "@/components/Faq";
@@ -9,7 +10,7 @@ import { STREAM_KIND_CLASS } from "@/components/StreamServices";
 import { getAnimeBySlug, posterUrl } from "@/lib/kitsu";
 import { itemList } from "@/lib/ld";
 import { fitTitle } from "@/lib/titles";
-import { REGIONS, REGION_FLAG, REGION_NAME, REGION_SHORT, KIND_LABEL, allStreams, audioLine, catalogue, freeIn, servicesIn, streamsDate, streamsPath, type Region } from "@/lib/streams";
+import { STREAMS_CHECKED, REGIONS, REGION_FLAG, REGION_NAME, REGION_SHORT, KIND_LABEL, allStreams, audioLine, catalogue, freeIn, servicesIn, streamsDate, streamsPath, type Region } from "@/lib/streams";
 
 export const revalidate = 86400;
 
@@ -57,6 +58,7 @@ export default async function WhereToWatchHub() {
           <Link href="/hindi-dub" className="chip">Hindi dubbed anime</Link>
         </p>
       </PageHero>
+      <MadeBy className="mt-4" method="Each service is checked on JustWatch's country pages and the service's own title page (Netflix and Prime Video India read from India), with AniList links and news as a second source." date={STREAMS_CHECKED} />
 
       <div className="mt-8">
         <RegionTabs regions={[...REGIONS]} labels={Object.fromEntries(REGIONS.map((r) => [r, `${REGION_FLAG[r]} ${REGION_NAME[r]}`]))}>

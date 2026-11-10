@@ -29,7 +29,7 @@ export const SITE_UPDATED = "2026-11-04";
 
 /** Info pages, by the date their text last changed. */
 export const STATIC_UPDATED: Record<string, string> = {
-  "/about": "2026-11-04", "/how-we-check": "2026-11-04", "/author/harsh-lariya": "2026-11-04",
+  "/about": "2026-11-10", "/how-we-check": "2026-11-04", "/author/harsh-lariya": "2026-11-10",
   "/privacy": "2026-11-04", "/contact": "2026-11-03", "/advertise": "2026-10-28",
 };
 

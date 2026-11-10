@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import MadeBy from "@/components/MadeBy";
 import Link from "@/components/Link";
 import PageHero from "@/components/PageHero";
 import Faq from "@/components/Faq";
@@ -6,7 +7,7 @@ import JsonLd from "@/components/JsonLd";
 import { itemList } from "@/lib/ld";
 import { fitTitle } from "@/lib/titles";
 import { animePath } from "@/lib/kitsu";
-import { DUBS_SEASON, LANG_NAME, dubShows, dubWhen, dubsDate, dueWithin, nextDub, releasedBy, type DubShow } from "@/lib/dubschedule";
+import { DUBS_CHECKED, DUBS_SEASON, LANG_NAME, dubShows, dubWhen, dubsDate, dueWithin, nextDub, releasedBy, type DubShow } from "@/lib/dubschedule";
 import { safeUrl } from "@/lib/streams";
 
 // Next-episode dates move every day; an hourly refresh keeps "this week" honest.
@@ -95,6 +96,7 @@ export default function DubSchedule() {
           <Link href="/where-to-watch" className="chip">Where to watch</Link>
         </p>
       </PageHero>
+      <MadeBy className="mt-4" method="Each dub is taken from the service's own announcement or Indian and US anime news, two sources where possible; next-episode dates are worked out from the weekly release day." date={DUBS_CHECKED} />
 
       <section id="week" className="reveal mt-10 scroll-mt-24" aria-labelledby="week-h">
         <h2 id="week-h" className="h-section mb-1">Dubbed episodes in the next 7 days</h2>

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import EditorWatched from "@/components/EditorWatched";
 import OfficialRatings from "@/components/OfficialRatings";
 import { officialRatings, ratingsLine } from "@/lib/ageratings";
 import { fitTitle } from "@/lib/titles";
@@ -90,6 +91,7 @@ export default async function ParentsGuidePage({ params }: Props) {
         backdrop={a.cover?.large || null}
         posters={[posterUrl(a, "medium")]}
       />
+      <EditorWatched anime={a} className="mt-4" />
 
       <OfficialRatings slug={a.slug} title={a.title} />
 

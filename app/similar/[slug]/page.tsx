@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import EditorWatched from "@/components/EditorWatched";
 import Link from "@/components/Link";
 import { notFound } from "next/navigation";
 import { getAnimeBySlug, listAnime, uniqueById, animePath, Anime, posterUrl, publicGenres } from "@/lib/kitsu";
@@ -103,6 +104,7 @@ export default async function SimilarPage({ params }: Props) {
       >
         <div className="flex flex-wrap gap-2">{publicGenres(a.categories).slice(0, 6).map((c) => <Link key={c.id} href={`/genre/${c.slug}`} className="chip">{c.title}</Link>)}</div>
       </PageHero>
+      <EditorWatched anime={a} className="mt-4" />
       {picks.length >= 4 ? (
         <section className="reveal mt-10" aria-labelledby="picks-h">
           <h2 id="picks-h" className="h-section mb-1">{picks.length} anime {name} fans recommend, and why</h2>

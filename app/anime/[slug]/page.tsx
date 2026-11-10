@@ -17,6 +17,7 @@ import WatchButton from "@/components/WatchButton";
 import EmbedSnippet from "@/components/EmbedSnippet";
 import CalendarLinks from "@/components/CalendarLinks";
 import WhereToWatch from "@/components/WhereToWatch";
+import EditorWatched from "@/components/EditorWatched";
 import { streamsFor, streamsPath } from "@/lib/streams";
 import WatchOrderCard from "@/components/WatchOrderCard";
 import { snapshotOrder } from "@/lib/wosnap";
@@ -447,6 +448,7 @@ export default async function AnimePage({ params }: Props) {
             </div>
           </div>
 
+          <EditorWatched anime={a} className="mt-5" />
           <div className="mt-6 grid grid-cols-1 gap-4 max-md:contents md:grid-cols-2 md:grid-rows-[auto_1fr]">
           <div id="watch" data-section className="self-start rounded-2xl max-md:col-span-2 max-md:mt-6 md:col-start-1 md:row-start-1 border-2 border-accent/50 bg-accent/[.07] p-4 shadow-[0_0_45px_-18px_rgba(255,77,109,.7)] backdrop-blur sm:p-5">
             <WhereToWatch

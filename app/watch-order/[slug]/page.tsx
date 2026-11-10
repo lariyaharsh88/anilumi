@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import EditorWatched from "@/components/EditorWatched";
 import Link from "@/components/Link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
@@ -139,6 +140,7 @@ export default async function WatchOrderPage({ params }: Props) {
       >
         {hasHindi(watchOrderSlug(wo)) && <p className="text-sm"><Link href={hindiPath(watchOrderSlug(wo))} className="chip" hrefLang="hi">🇮🇳 हिंदी में पढ़ें</Link></p>}
       </PageHero>
+      <EditorWatched anime={wo.root} className="mt-4" />
 
       {(() => {
         // Franchise-specific advice: the editor's watch-order intro, else the start tip from AniLumi's take.

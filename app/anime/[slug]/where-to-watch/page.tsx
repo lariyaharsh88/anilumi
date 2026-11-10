@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import EditorWatched from "@/components/EditorWatched";
 import { notFound } from "next/navigation";
 import Link from "@/components/Link";
 import PageHero from "@/components/PageHero";
@@ -67,6 +68,7 @@ export default async function WhereToWatchPage({ params }: Props) {
         hue={200}
         posters={poster ? [poster] : []}
       />
+      <EditorWatched anime={{ id: a?.id ?? "", slug: e.s }} className="mt-4" />
 
       <section className="reveal mt-8" aria-labelledby="wtw-h">
         <h2 id="wtw-h" className="sr-only">Streaming by country</h2>

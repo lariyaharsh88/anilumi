@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import EditorWatched from "@/components/EditorWatched";
 import { notFound } from "next/navigation";
 import Link from "@/components/Link";
 import { getAnimeBySlug, getLastAiredBest, animePath, episodePath, posterUrl } from "@/lib/kitsu";
@@ -112,6 +113,7 @@ export default async function FillerListPage({ params }: Props) {
         backdrop={a.cover?.large || null}
         posters={[posterUrl(a, "medium")]}
       />
+      <EditorWatched anime={a} className="mt-4" />
 
       <section className="card reveal mt-8 border-[#f43f5e]/40 bg-[#f43f5e]/[.05] p-4" aria-labelledby="quick-h">
         <h2 id="quick-h" className="font-semibold text-ink">Short answer: which {name} episodes to skip</h2>

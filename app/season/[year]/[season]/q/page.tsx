@@ -1,4 +1,5 @@
 // Query-string variants (?page=, ?sort=, filters). Reached only through the rewrites in next.config.ts;
+import MadeBy from "@/components/MadeBy";
 import { fitTitle } from "@/lib/titles";
 // the plain URL is served by ../page.tsx from the ISR cache.
 import type { Metadata } from "next";
@@ -93,6 +94,7 @@ export default async function SeasonPage({ params, searchParams }: Props) {
         ))}
       </div>
       </PageHero>
+      <MadeBy className="mt-4" method="The season list comes from Kitsu and AniList, ranked by how many people follow each show; air times are checked against the broadcast schedule." />
 
       {page === 1 && data.total > 0 && (
         <section className="mt-6 space-y-3" aria-label="Season at a glance">

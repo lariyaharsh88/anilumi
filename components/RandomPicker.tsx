@@ -3,7 +3,7 @@ import { useMemo, useState } from "react";
 import Image from "next/image";
 import Link from "@/components/Link";
 
-export type RandomItem = { slug: string; title: string; poster: string | null; genres: string[]; eps: number | null; movie: boolean; year: number | null; score: number | null; themes: string[]; hindi: boolean };
+export type RandomItem = { slug: string; title: string; poster: string | null; genres: string[]; eps: number | null; movie: boolean; year: number | null; score: number | null; themes: string[]; hindi: boolean; watched: boolean };
 
 const LENGTHS = { any: "Any length", movie: "Movie", short: "Up to 13 episodes", medium: "14–26 episodes", long: "27+ episodes" } as const;
 type Len = keyof typeof LENGTHS;
@@ -16,8 +16,9 @@ export default function RandomPicker({ items, genres }: { items: RandomItem[]; g
   const [len, setLen] = useState<Len>("any");
   const [min, setMin] = useState(0);
   const [hindi, setHindi] = useState(false);
+  const [mine, setMine] = useState(false);
   const [pick, setPick] = useState<RandomItem | null>(null);
-  const pool = useMemo(() => items.filter((x) => (!genre || x.genres.includes(genre)) && fits(x, len) && (x.score ?? 0) >= min && (!hindi || x.hindi)), [items, genre, len, min, hindi]);
+  const pool = useMemo(() => items.filter((x) => (!genre || x.genres.includes(genre)) && fits(x, len) && (x.score ?? 0) >= min && (!hindi || x.hindi) && (!mine || x.watched)), [items, genre, len, min, hindi, mine]);
   const roll = () => {
     if (!pool.length) { setPick(null); return; }
     let next = pool[Math.floor(Math.random() * pool.length)];
@@ -48,6 +49,9 @@ export default function RandomPicker({ items, genres }: { items: RandomItem[]; g
         <label className="flex items-center gap-2 self-end pb-2 text-sm text-ink">
           <input id="rnd-hindi" type="checkbox" checked={hindi} onChange={(e) => setHindi(e.target.checked)} className="h-4 w-4 accent-violet" /> Has a Hindi dub
         </label>
+        <label className="flex items-center gap-2 self-end pb-2 text-sm text-ink">
+          <input id="rnd-mine" type="checkbox" checked={mine} onChange={(e) => setMine(e.target.checked)} className="h-4 w-4 accent-violet" /> Only ones Harsh has watched
+        </label>
       </div>
       <div className="mt-4 flex flex-wrap items-center gap-3">
         <button type="button" onClick={roll} disabled={!pool.length} className="btn-primary px-5 py-2.5 font-semibold disabled:opacity-50">🎲 {pick ? "Pick another" : "Pick a random anime"}</button>
@@ -58,7 +62,7 @@ export default function RandomPicker({ items, genres }: { items: RandomItem[]; g
           {pick.poster && <Image src={pick.poster} alt="" width={96} height={144} className="h-36 w-24 shrink-0 rounded-lg object-cover" />}
           <div className="min-w-0">
             <Link href={`/anime/${pick.slug}`} className="text-lg font-bold text-ink hover:text-violet-2">{pick.title}</Link>
-            <p className="text-sm text-muted">{[pick.movie ? "Movie" : pick.eps ? `${pick.eps} episodes` : null, pick.year, pick.score ? `${pick.score.toFixed(1)}/10 on AniList` : null, pick.hindi ? "🇮🇳 Hindi dub" : null].filter(Boolean).join(" · ")}</p>
+            <p className="text-sm text-muted">{[pick.movie ? "Movie" : pick.eps ? `${pick.eps} episodes` : null, pick.year, pick.score ? `${pick.score.toFixed(1)}/10 on AniList` : null, pick.hindi ? "🇮🇳 Hindi dub" : null, pick.watched ? "✓ Harsh has watched it" : null].filter(Boolean).join(" · ")}</p>
             <p className="mt-2 text-sm text-ink/85">{pick.genres.slice(0, 3).join(", ")}{pick.themes.length ? `. Themes: ${pick.themes.join(", ")}.` : "."}</p>
             <p className="mt-3 flex flex-wrap gap-2 text-sm">
               <Link href={`/anime/${pick.slug}`} className="chip">About it</Link>

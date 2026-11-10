@@ -1,0 +1,572 @@
+{
+ "updated": "2026-11-10",
+ "by": "Harsh Lariya",
+ "count": 113,
+ "items": [
+  {
+   "al": 154965,
+   "slug": "yamada-kun-to-lv999-no-koi-wo-suru",
+   "title": "100 METERS"
+  },
+  {
+   "al": 1689,
+   "slug": "five-centimeters-per-second",
+   "title": "5 Centimeters per Second"
+  },
+  {
+   "al": 142769,
+   "slug": "natsu-e-no-tunnel-sayonara-no-deguchi",
+   "title": "A Couple of Cuckoos"
+  },
+  {
+   "al": 187264,
+   "slug": "jack-of-all-trades-party-of-none",
+   "title": "A Returner's Magic Should Be Special"
+  },
+  {
+   "al": 20954,
+   "slug": "koe-no-katachi",
+   "title": "A Silent Voice"
+  },
+  {
+   "al": 105228,
+   "slug": "dorohedoro",
+   "title": "A Whisker Away"
+  },
+  {
+   "al": 212888,
+   "slug": "temppal-item-no-chikara",
+   "title": "Ahiru no Sora"
+  },
+  {
+   "al": 20613,
+   "slug": "akame-ga-kill",
+   "title": "Akame ga Kill!"
+  },
+  {
+   "al": 178869,
+   "slug": "clevatess-majuu-no-ou-to-akago-to-kabane-no-yuusha",
+   "title": "Aoashi"
+  },
+  {
+   "al": 20755,
+   "slug": "ansatsu-kyoushitsu-tv",
+   "title": "Assassination Classroom"
+  },
+  {
+   "al": 16498,
+   "slug": "attack-on-titan",
+   "title": "Attack on Titan"
+  },
+  {
+   "al": 163142,
+   "slug": "kikansha-no-mahou-wa-tokubetsu-desu",
+   "title": "BLACK TORCH"
+  },
+  {
+   "al": 137822,
+   "slug": "blue-lock",
+   "title": "BLUE LOCK"
+  },
+  {
+   "al": 146493,
+   "slug": "ragna-crimson",
+   "title": "Banished from the Hero’s Party, I Decided to Live a Quiet Life in the Countryside"
+  },
+  {
+   "al": 158028,
+   "slug": "sokushi-cheat-ga-saikyou-sugite-isekai-no-yatsura-ga-marude-aite-ni-naranai-n-desu-ga",
+   "title": "Beast Tamer"
+  },
+  {
+   "al": 156039,
+   "slug": "boushoku-no-berserk",
+   "title": "Beelzebub"
+  },
+  {
+   "al": 145260,
+   "slug": "kuro-no-shoukanshi",
+   "title": "Berserk of Gluttony"
+  },
+  {
+   "al": 97940,
+   "slug": "black-clover-tv",
+   "title": "Black Clover"
+  },
+  {
+   "al": 173694,
+   "slug": "hazure-waku-no-joutai-ijou-skill-de-saikyou-ni-natta-ore-ga-subete-wo-juurin-suru-made",
+   "title": "Black Summoner"
+  },
+  {
+   "al": 153845,
+   "slug": "isekai-de-cheat-skill-wo-te-ni-shita-ore-wa-genjitsu-sekai-wo-mo-musou-suru-level-up-wa-jinsei-wo-kaeta",
+   "title": "Blue Box"
+  },
+  {
+   "al": 127230,
+   "slug": "chainsaw-man",
+   "title": "Chainsaw Man"
+  },
+  {
+   "al": 98659,
+   "slug": "youkoso-jitsuryoku-shijou-shugi-no-kyoushitsu-e-tv",
+   "title": "Classroom of the Elite"
+  },
+  {
+   "al": 170695,
+   "slug": "ore-wa-subete-wo-parry-suru-gyaku-kanchigai-no-sekai-saikyou-wa-boukensha-ni-naritai",
+   "title": "Clevatess"
+  },
+  {
+   "al": 1575,
+   "slug": "code-geass-lelouch-of-the-rebellion",
+   "title": "Code Geass: Lelouch of the Rebellion"
+  },
+  {
+   "al": 114121,
+   "slug": "xian-wang-de-richang-shenghuo",
+   "title": "Daemons of the Shadow Realm"
+  },
+  {
+   "al": 1535,
+   "slug": "death-note",
+   "title": "Death Note"
+  },
+  {
+   "al": 101922,
+   "slug": "kimetsu-no-yaiba",
+   "title": "Demon Slayer: Kimetsu no Yaiba"
+  },
+  {
+   "al": 178548,
+   "slug": "fuguushoku-kanteishi-ga-jitsu-wa-saikyou-datta-naraku-de-kitaeta-saikyou-no-shingan-de-musou-suru",
+   "title": "Devil May Cry"
+  },
+  {
+   "al": 98460,
+   "slug": "devilman-crybaby",
+   "title": "Devilman Crybaby"
+  },
+  {
+   "al": 21595,
+   "slug": "sakamoto-desu-ga",
+   "title": "Dorohedoro"
+  },
+  {
+   "al": 101347,
+   "slug": "dororo",
+   "title": "Dororo"
+  },
+  {
+   "al": 5231,
+   "slug": "inazuma-eleven",
+   "title": "Even Given the Worthless “Appraiser” Class, I’m Actually the Strongest"
+  },
+  {
+   "al": 134732,
+   "slug": "ao-ashi",
+   "title": "Failure Frame: I Became the Strongest and Annihilated Everything with Low-Level Spells"
+  },
+  {
+   "al": 6702,
+   "slug": "fairy-tail",
+   "title": "Fairy Tail"
+  },
+  {
+   "al": 105310,
+   "slug": "enen-no-shouboutai",
+   "title": "Fire Force"
+  },
+  {
+   "al": 154587,
+   "slug": "sousou-no-frieren",
+   "title": "Frieren: Beyond Journey’s End"
+  },
+  {
+   "al": 121,
+   "slug": "fullmetal-alchemist",
+   "title": "Fullmetal Alchemist"
+  },
+  {
+   "al": 5114,
+   "slug": "fullmetal-alchemist-brotherhood",
+   "title": "Fullmetal Alchemist: Brotherhood"
+  },
+  {
+   "al": 101165,
+   "slug": "goblin-slayer",
+   "title": "GOBLIN SLAYER"
+  },
+  {
+   "al": 178025,
+   "slug": "gachiakuta",
+   "title": "Gachiakuta"
+  },
+  {
+   "al": 136,
+   "slug": "hunter-x-hunter",
+   "title": "Golden Kamuy"
+  },
+  {
+   "al": 20464,
+   "slug": "haikyuu",
+   "title": "HAIKYU!!"
+  },
+  {
+   "al": 174576,
+   "slug": "tsue-to-tsurugi-no-wistoria",
+   "title": "Haven't You Heard? I'm Sakamoto"
+  },
+  {
+   "al": 128893,
+   "slug": "jigokuraku",
+   "title": "Hell’s Paradise"
+  },
+  {
+   "al": 124080,
+   "slug": "horimiya",
+   "title": "Horimiya"
+  },
+  {
+   "al": 127399,
+   "slug": "shuumatsu-no-walkure",
+   "title": "Hunter x Hunter"
+  },
+  {
+   "al": 11061,
+   "slug": "hunter-x-hunter-2011",
+   "title": "Hunter x Hunter (2011)"
+  },
+  {
+   "al": 527,
+   "slug": "pokemon",
+   "title": "I Got a Cheat Skill in Another World and Became Unrivaled in The Real World, Too"
+  },
+  {
+   "al": 123802,
+   "slug": "seijo-no-maryoku-wa-bannou-desu",
+   "title": "I Parry Everything"
+  },
+  {
+   "al": 99750,
+   "slug": "kimi-no-suizou-wo-tabetai",
+   "title": "I Want to Eat Your Pancreas"
+  },
+  {
+   "al": 142877,
+   "slug": "rurouni-kenshin-meiji-kenkaku-romantan-2023",
+   "title": "Inazuma Eleven"
+  },
+  {
+   "al": 113415,
+   "slug": "jujutsu-kaisen",
+   "title": "JUJUTSU KAISEN"
+  },
+  {
+   "al": 173693,
+   "slug": "hitoribocchi-no-isekai-kouryaku",
+   "title": "Jack-of-All-Trades, Party of None"
+  },
+  {
+   "al": 177687,
+   "slug": "hyakuemu",
+   "title": "KILL BLUE"
+  },
+  {
+   "al": 153288,
+   "slug": "kaijuu-8-gou",
+   "title": "Kaiju No. 8"
+  },
+  {
+   "al": 11771,
+   "slug": "kuroko-no-basket",
+   "title": "Kuroko's Basketball"
+  },
+  {
+   "al": 184322,
+   "slug": "shinjiteita-nakamatachi-ni-dungeon-okuchi-de-korosarekaketa-ga-gift-mugen-gacha-de-level-9999-no-nakamatachi-wo-te-ni-irete-moto-party-member-to-sekai-ni-fukushuu-zamaa-shimasu",
+   "title": "Loner Life in Another World"
+  },
+  {
+   "al": 198113,
+   "slug": "kill-ao",
+   "title": "Lookism"
+  },
+  {
+   "al": 151801,
+   "slug": "mashle",
+   "title": "MASHLE: MAGIC AND MUSCLES"
+  },
+  {
+   "al": 21507,
+   "slug": "mob-psycho-100",
+   "title": "Mob Psycho 100"
+  },
+  {
+   "al": 170942,
+   "slug": "ao-no-hako",
+   "title": "Moriarty the Patriot"
+  },
+  {
+   "al": 108465,
+   "slug": "mushoku-tensei-isekai-ittara-honki-dasu",
+   "title": "Mushoku Tensei: Jobless Reincarnation"
+  },
+  {
+   "al": 1726,
+   "slug": "devil-may-cry",
+   "title": "My Gift Lvl 9999 Unlimited Gacha: Backstabbed in a Backwater Dungeon, I'm Out for Revenge!"
+  },
+  {
+   "al": 195600,
+   "slug": "daemons-of-the-shadow-realm",
+   "title": "My Happy Marriage"
+  },
+  {
+   "al": 21459,
+   "slug": "boku-no-hero-academia",
+   "title": "My Hero Academia"
+  },
+  {
+   "al": 187538,
+   "slug": "black-torch",
+   "title": "My Instant Death Ability is Overpowered"
+  },
+  {
+   "al": 142770,
+   "slug": "suzume-no-tojimari",
+   "title": "My Love Story with Yamada-kun at Lv999"
+  },
+  {
+   "al": 20,
+   "slug": "naruto",
+   "title": "Naruto"
+  },
+  {
+   "al": 21,
+   "slug": "one-piece",
+   "title": "ONE PIECE"
+  },
+  {
+   "al": 179068,
+   "slug": "omniscient-reader",
+   "title": "Omniscient Reader"
+  },
+  {
+   "al": 21087,
+   "slug": "one-punch-man",
+   "title": "One-Punch Man"
+  },
+  {
+   "al": 173584,
+   "slug": "maou-gun-saikyou-no-majutsushi-wa-ningen-datta",
+   "title": "Overgeared"
+  },
+  {
+   "al": 20832,
+   "slug": "overlord",
+   "title": "Overlord"
+  },
+  {
+   "al": 99699,
+   "slug": "golden-kamuy",
+   "title": "Plunderer"
+  },
+  {
+   "al": 147103,
+   "slug": "watashi-no-shiawase-na-kekkon",
+   "title": "Pokémon"
+  },
+  {
+   "al": 132052,
+   "slug": "kakkou-no-iinazuke",
+   "title": "Ragna Crimson"
+  },
+  {
+   "al": 128712,
+   "slug": "tantei-wa-mou-shindeiru",
+   "title": "Record of Ragnarok"
+  },
+  {
+   "al": 101239,
+   "slug": "ahiru-no-sora",
+   "title": "Rurouni Kenshin (2023)"
+  },
+  {
+   "al": 140960,
+   "slug": "spy-x-family",
+   "title": "SPY x FAMILY"
+  },
+  {
+   "al": 163270,
+   "slug": "wind-breaker",
+   "title": "Shangri-La Frontier"
+  },
+  {
+   "al": 151807,
+   "slug": "solo-leveling",
+   "title": "Solo Leveling"
+  },
+  {
+   "al": 151970,
+   "slug": "shangri-la-frontier",
+   "title": "Suzume"
+  },
+  {
+   "al": 11757,
+   "slug": "sword-art-online",
+   "title": "Sword Art Online"
+  },
+  {
+   "al": 107693,
+   "slug": "mairimashita-iruma-kun",
+   "title": "TSUKIMICHI -Moonlit Fantasy-"
+  },
+  {
+   "al": 101280,
+   "slug": "tensei-shitara-slime-datta-ken",
+   "title": "That Time I Got Reincarnated as a Slime"
+  },
+  {
+   "al": 161645,
+   "slug": "kusuriya-no-hitorigoto",
+   "title": "The Apothecary Diaries"
+  },
+  {
+   "al": 101168,
+   "slug": "plunderer",
+   "title": "The Daily Life of the Immortal King"
+  },
+  {
+   "al": 137908,
+   "slug": "chiyu-mahou-no-machigatta-tsukaikata-senjou-wo-kakeru-kaifuku-youin",
+   "title": "The Detective Is Already Dead"
+  },
+  {
+   "al": 162896,
+   "slug": "nige-jouzu-no-wakagimi",
+   "title": "The Elusive Samurai"
+  },
+  {
+   "al": 130298,
+   "slug": "kage-no-jitsuryokusha-ni-naritakute",
+   "title": "The Eminence in Shadow"
+  },
+  {
+   "al": 16782,
+   "slug": "the-garden-of-words",
+   "title": "The Garden of Words"
+  },
+  {
+   "al": 116006,
+   "slug": "the-god-of-highschool-series",
+   "title": "The God of High School"
+  },
+  {
+   "al": 20458,
+   "slug": "mahouka-koukou-no-rettousei",
+   "title": "The Irregular at Magic High School"
+  },
+  {
+   "al": 112301,
+   "slug": "maou-gakuin-no-futekigousha-shijou-saikyou-no-maou-no-shiso-tensei-shite-shison-tachi-no-gakkou-e-kayou",
+   "title": "The Misfit of Demon King Academy: History’s Strongest Demon King Reincarnates and Goes to School with His Descendants"
+  },
+  {
+   "al": 99263,
+   "slug": "tate-no-yuusha-no-nariagari",
+   "title": "The Rising of the Shield Hero"
+  },
+  {
+   "al": 150695,
+   "slug": "yuusha-party-wo-tsuihou-sareta-beast-tamer-saikyoushu-no-nekomimi-shoujo-to-deau",
+   "title": "The Saint's Magic Power is Omnipotent"
+  },
+  {
+   "al": 158539,
+   "slug": "oemojisangjuui",
+   "title": "The Strongest Magician in the Demon Lord's Army was a Human"
+  },
+  {
+   "al": 9513,
+   "slug": "beelzebub",
+   "title": "The Tunnel to Summer, the Exit of Goodbyes"
+  },
+  {
+   "al": 126213,
+   "slug": "shin-no-nakama-ja-nai-to-yuusha-no-party-wo-oidasareta-node-henkyou-de-slow-life-suru-koto-ni-shima",
+   "title": "The Wrong Way to Use Healing Magic"
+  },
+  {
+   "al": 20605,
+   "slug": "tokyo-ghoul",
+   "title": "Tokyo Ghoul"
+  },
+  {
+   "al": 120120,
+   "slug": "tokyo-revengers",
+   "title": "Tokyo Revengers"
+  },
+  {
+   "al": 184356,
+   "slug": "dogul-wang",
+   "title": "Tomb Raider King"
+  },
+  {
+   "al": 125206,
+   "slug": "tsuki-ga-michibiku-isekai-douchuu",
+   "title": "Tomo-chan Is a Girl!"
+  },
+  {
+   "al": 115230,
+   "slug": "tower-of-god",
+   "title": "Tower of God"
+  },
+  {
+   "al": 101348,
+   "slug": "vinland-saga",
+   "title": "Vinland Saga"
+  },
+  {
+   "al": 174653,
+   "slug": "kenka-dokugaku",
+   "title": "Viral Hit"
+  },
+  {
+   "al": 114963,
+   "slug": "nakitai-watashi-wa-neko-wo-kaburu",
+   "title": "WIND BREAKER"
+  },
+  {
+   "al": 106286,
+   "slug": "tenki-no-ko-weathering-with-you",
+   "title": "Weathering With You"
+  },
+  {
+   "al": 114124,
+   "slug": "yuukoku-no-moriarty",
+   "title": "Welcome to Demon School! Iruma-kun"
+  },
+  {
+   "al": 151806,
+   "slug": "tomo-chan-wa-onna-no-ko",
+   "title": "Wistoria: Wand and Sword"
+  },
+  {
+   "al": 21519,
+   "slug": "kimi-no-na-wa",
+   "title": "Your Name."
+  },
+  {
+   "al": 20665,
+   "slug": "shigatsu-wa-kimi-no-uso",
+   "title": "Your lie in April"
+  },
+  {
+   "al": 159831,
+   "slug": "zom-100-zombie-ni-naru-made-ni-shitai-100-no-koto",
+   "title": "Zom 100: Bucket List of the Dead"
+  }
+ ]
+}

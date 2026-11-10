@@ -6,6 +6,7 @@ import { site, abs } from "@/lib/site";
 import { AUTHOR, AUTHOR_ID } from "@/lib/author";
 import { ORG_ID } from "@/lib/ld";
 import { checkedGuides } from "@/lib/checked";
+import { WATCHED_COUNT, watchedList } from "@/lib/editor";
 
 export const metadata: Metadata = {
   title: `${AUTHOR.name}, who checks AniLumi's guides`,
@@ -49,7 +50,7 @@ export default function AuthorPage() {
         hue={262}
       />
       <div className="prose-anime mt-8 max-w-3xl">
-        <p>I&apos;m {AUTHOR.name}, an anime fan from India who has watched more than 80 series, short and long. I started {site.name} because the answers fans need most, like which order to watch a franchise in, which episodes are filler and where the manga picks up, are scattered across forums and wikis, and often out of date.</p>
+        <p>I&apos;m {AUTHOR.name}, an anime fan from India who has watched {WATCHED_COUNT} series so far, short and long (the full list is below). I started {site.name} because the answers fans need most, like which order to watch a franchise in, which episodes are filler and where the manga picks up, are scattered across forums and wikis, and often out of date.</p>
         <h2>What I check</h2>
         <ul>
           <li><strong>Watch orders:</strong> that the order makes sense for a first-time viewer, which movies and OVAs belong where, and what is safe to skip.</li>
@@ -71,6 +72,13 @@ export default function AuthorPage() {
           ))}
         </ul>
       ) : <p className="mt-3 text-sm text-muted">None yet.</p>}
+      <div className="prose-anime mt-8 max-w-3xl">
+        <h2>Anime I&apos;ve watched ({WATCHED_COUNT})</h2>
+        <p>One entry per series, from my own list. Pages for these shows carry a &ldquo;✓ Harsh has watched this series&rdquo; mark, so you can tell which guides come from first-hand viewing.</p>
+      </div>
+      <ul className="mt-3 flex max-w-3xl flex-wrap gap-1.5">
+        {watchedList().map((w) => <li key={w.slug}><Link href={`/anime/${w.slug}`} className="chip text-xs">{w.title}</Link></li>)}
+      </ul>
       <div className="prose-anime mt-8 max-w-3xl">
         <h2>Elsewhere</h2>
         <p>My own site: <a href={AUTHOR.home} rel="me noopener">{AUTHOR.home.replace(/^https?:\/\//, "")}</a>. Spotted a mistake in a guide? <Link href="/contact">Tell me</Link>, or use the &ldquo;Spotted a mistake?&rdquo; link on any page.</p>
