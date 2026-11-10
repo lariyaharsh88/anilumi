@@ -9,6 +9,7 @@ import franchiseData from "@/data/franchises.json";
 import { WATCH_ORDER_OVERRIDES } from "@/data/watch-orders";
 import { snapshotCore } from "./wosnap";
 import notes from "@/data/character-notes.json";
+import vaNotes from "@/data/va-notes.json";
 
 /** Aired episodes of an airing show that stay indexed, counting back from the latest: just the newest. Older
  * episode pages are the shared synopsis plus a date, which every database has. */
@@ -48,7 +49,10 @@ export function characterIndexed(slug: string): boolean {
 
 /** Voice actors: the most-favourited (people search them by name) and any search already shows. */
 export const INDEXED_VOICE_ACTORS = 20;
-export const voiceActorIndexed = (path: string, rank: number | null) => (rank !== null && rank < INDEXED_VOICE_ACTORS) || searchShown(path);
+/** Voice actors with verified notes (data/va-notes.json): debut, awards, agency, signature roles. */
+const vaNoted = new Set(Object.keys((vaNotes as { people: Record<string, unknown> }).people));
+export const voiceActorIndexed = (path: string, rank: number | null) =>
+  (rank !== null && rank < INDEXED_VOICE_ACTORS) || searchShown(path) || vaNoted.has(path.match(/\/voice-actor\/(\d+)/)?.[1] ?? "");
 
 /** Genre lists: the main genres, plus any other search already shows. Pagination and sorts are never indexed. */
 export const genreIndexed = (slug: string, main: boolean) => main || searchShown(`/genre/${slug}`);

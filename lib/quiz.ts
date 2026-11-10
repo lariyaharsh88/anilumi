@@ -8,9 +8,10 @@ export const QUIZ = [
   { key: "len", q: "How much time do you have?", options: [["movie", "🎬 One evening (a movie)", ""], ["short", "📺 A weekend (≤ 13 episodes)", ""], ["medium", "🗓️ A few weeks (14–30)", ""], ["long", "🏔️ I want a long journey (30+)", ""]] },
   { key: "era", q: "New or classic?", options: [["new", "✨ Recent (2018+)", ""], ["mid", "📼 2000s–2010s", ""], ["classic", "🏛️ Classic (before 2005)", ""], ["any", "🤷 Don't mind", ""]] },
   { key: "tone", q: "How intense?", options: [["light", "🌤️ Keep it light", ""], ["any", "⚖️ Either", ""], ["dark", "🌑 Dark and mature", ""]] },
+  { key: "audio", q: "Subtitles or dubbed?", options: [["sub", "🇯🇵 Japanese with subtitles", ""], ["en", "🇺🇸 English dub", ""], ["hi", "🇮🇳 Hindi dub", ""], ["any", "🤷 Either", ""]] },
 ] as const;
 
-export type Answers = { mood?: string; len?: string; era?: string; tone?: string };
+export type Answers = { mood?: string; len?: string; era?: string; tone?: string; audio?: string };
 
 /** Kitsu list filters for a set of answers; unknown values are ignored. */
 export function quizFilter(a: Answers): Record<string, string> {
@@ -34,5 +35,5 @@ export function quizFilter(a: Answers): Record<string, string> {
 
 export function describe(a: Answers): string {
   const pick = (i: number, v?: string) => QUIZ[i].options.find((o) => o[0] === v)?.[1].replace(/^\S+\s/, "").toLowerCase();
-  return [pick(0, a.mood), pick(1, a.len), a.era !== "any" ? pick(2, a.era) : null, a.tone !== "any" ? pick(3, a.tone) : null].filter(Boolean).join(" · ");
+  return [pick(0, a.mood), pick(1, a.len), a.era !== "any" ? pick(2, a.era) : null, a.tone !== "any" ? pick(3, a.tone) : null, a.audio && a.audio !== "any" && a.audio !== "sub" ? pick(4, a.audio) : null].filter(Boolean).join(" · ");
 }

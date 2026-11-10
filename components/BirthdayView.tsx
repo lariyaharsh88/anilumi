@@ -1,4 +1,8 @@
 import Link from "@/components/Link";
+import { editorWatched } from "@/lib/editor";
+import { snapshotId } from "@/lib/wosnap";
+import { vaNote, roleLine } from "@/lib/vanotes";
+import MadeBy from "@/components/MadeBy";
 import Image from "next/image";
 import { animePath, getAnimeBySlug, posterUrl, type Anime } from "@/lib/kitsu";
 import { vaPath } from "@/lib/anilist";
@@ -65,6 +69,7 @@ export default async function BirthdayView({ m, d, characters, people, today = f
         hue={330}
         posters={characters.slice(0, 3).map((c) => c.i)}
       />
+      <MadeBy className="mt-4" method="Birthdays come from AniList's character and staff records, ranked by fans; roles, arcs and voice-actor facts come from our checked notes where we have them." />
 
       {top && (
         <section className="reveal mt-10" aria-labelledby="spot-h">
@@ -121,6 +126,7 @@ export default async function BirthdayView({ m, d, characters, people, today = f
                     <span className="mt-1 flex flex-wrap items-center gap-x-2 text-xs text-muted">
                       <span>❤ {fans(c.f)} fans</span>
                       {s?.jp && <span className="truncate">· VA {s.jp.n}</span>}
+                      {c.s && editorWatched({ id: snapshotId(c.s) ?? "", slug: c.s }) && <span className="text-emerald-300">· ✓ Harsh has watched this series</span>}
                     </span>
                   </span>
                 </>
@@ -160,6 +166,8 @@ export default async function BirthdayView({ m, d, characters, people, today = f
                   <span className="min-w-0">
                     <span className="block truncate font-semibold text-ink group-hover:text-violet-2">{p.n}</span>
                     <span className="block truncate text-xs text-muted">{[p.j, p.l, p.y ? `turns ${year - p.y} in ${year}` : null].filter(Boolean).join(" · ")}</span>
+                    {vaNote(p.id)?.signature.length ? <span className="mt-0.5 block truncate text-xs text-ink/80">Known for {vaNote(p.id)!.signature.slice(0, 2).map(roleLine).join("; ")}</span> : null}
+                    {vaNote(p.id)?.awards.length ? <span className="block truncate text-xs text-muted">🏆 {vaNote(p.id)!.awards[0].award} ({vaNote(p.id)!.awards[0].year})</span> : null}
                   </span>
                 </Link>
               </li>
