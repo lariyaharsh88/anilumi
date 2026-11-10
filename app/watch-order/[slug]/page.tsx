@@ -23,6 +23,7 @@ import AmazonLink from "@/components/AmazonLink";
 import AffiliateNote from "@/components/AffiliateNote";
 import { streamCoverage, oneLinkPerSite } from "@/lib/wostreams";
 import { fillerFor } from "@/lib/filler";
+import { timelineFor } from "@/lib/timeline";
 import { adaptationFor, shortRange } from "@/lib/mangaseasons";
 import BarChart from "@/components/viz/BarChart";
 import LineChart from "@/components/viz/LineChart";
@@ -90,6 +91,7 @@ export default async function WatchOrderPage({ params }: Props) {
   // "Watch order with movies" answers: each movie and the main entry it follows.
   const mainTitle = new Map(wo.entries.filter((e) => e.kind === "main").map((e) => [e.anime.id, e.anime.title]));
   const movieList = ordered.filter((e) => e.kind === "movie").map((e) => ({ anime: e.anime, after: e.attachedTo ? mainTitle.get(e.attachedTo) ?? null : null }));
+  const timeline = timelineFor(wo.key);
   const firstMain = ordered.find((e) => e.kind === "main");
   const mainCount = mainTitle.size;
   const sideCount = ordered.filter((e) => e.kind === "side").length;
@@ -305,6 +307,29 @@ export default async function WatchOrderPage({ params }: Props) {
         </section>
       )}
 
+      {timeline && (
+        <section className="mt-10" aria-labelledby="chrono-h">
+          <h2 id="chrono-h" className="h-section mb-1">{name} chronological order: where each film fits</h2>
+          <p className="mb-3 text-sm text-muted">In story order, with the episode each film follows. Non-canon films don&apos;t change the story; watch them for fun at the point shown.</p>
+          <ol className="card divide-y divide-line">
+            {timeline.map((f, i) => {
+              const e = wo.entries.find((x) => x.anime.slug === f.slug);
+              return (
+                <li key={f.slug} className="flex items-start gap-3 p-3 text-sm">
+                  <span className="w-6 shrink-0 text-right font-bold text-muted">{i + 1}</span>
+                  <span className="min-w-0 flex-1">
+                    {e ? <Link href={animePath(e.anime)} className="font-medium text-ink hover:text-violet">{e.anime.title}</Link> : <span className="font-medium text-ink">{f.title}</span>}
+                    <span className="block text-ink/80">{f.when}</span>
+                    {f.note && <span className="block text-xs text-muted">{f.note}</span>}
+                  </span>
+                  <span className={`shrink-0 rounded px-2 py-0.5 text-xs font-semibold ${f.canon ? "bg-violet/15 text-violet-2" : "bg-white/5 text-muted"}`}>{f.canon ? "Canon" : "Non-canon"}</span>
+                </li>
+              );
+            })}
+          </ol>
+        </section>
+      )}
+
       {wo.entries.length > 1 && (
         <section className="mt-10">
           <h2 className="h-section mb-3">Release order</h2>
@@ -340,7 +365,7 @@ export default async function WatchOrderPage({ params }: Props) {
           { q: `What order should I watch ${name} in?`, a: wo.intro ? wo.intro : wo.entries.length === 1 ? `${name} has a single entry, so there is nothing to sequence.` : `Follow the recommended order above: ${wo.entries.filter((e) => e.kind === "main").map((e) => e.anime.title).join(" → ")}. Movies and side stories are slotted after the season they relate to.` },
           { q: `How long does it take to watch all of ${name}?`, a: wo.totalMinutes ? `The core story and movies run about ${fmtMinutes(wo.totalMinutes)}. At two hours a day that is roughly ${Math.ceil(wo.totalMinutes / 120)} days.` : "Runtime data is incomplete for this franchise." },
           ...(mainCount > 1 ? [{ q: `How many seasons does ${name} have?`, a: `${mainCount} parts make up the main story${movieList.length ? `, plus ${movieList.length} movie${movieList.length === 1 ? "" : "s"}` : ""}${sideCount ? ` and ${sideCount} side stor${sideCount === 1 ? "y" : "ies"} or OVAs` : ""}.` }] : []),
-          ...(movieList.length ? [{ q: `Where do the ${name} movies fit in the watch order?`, a: movieList.map((m) => `${m.anime.title}${m.after ? `: after ${m.after}` : ""}`).join("; ") + "." }] : []),
+          ...(timeline ? [{ q: `What is the ${name} chronological order, with the movies?`, a: timeline.map((f) => `${f.title}: ${f.when}${f.canon ? " (canon)" : ""}`).join("; ") + "." }] : movieList.length ? [{ q: `Where do the ${name} movies fit in the watch order?`, a: movieList.map((m) => `${m.anime.title}${m.after ? `: after ${m.after}` : ""}`).join("; ") + "." }] : []),
           ...(skippable.length ? [{ q: `Can I skip the ${name} recaps?`, a: `Yes. ${skippable.map((e) => e.anime.title).join(", ")} retell events you have already seen and can be skipped.` }] : []),
           ...(coverage.length ? [{ q: `Where can I stream all of ${name}?`, a: `${coverage[0].site} lists ${coverage[0].n} of the ${core.length} seasons and movies${coverage[1] ? `, ${coverage[1].site} ${coverage[1].n}` : ""}${coverage[2] ? ` and ${coverage[2].site} ${coverage[2].n}` : ""}. Catalogues differ by country, so check the links on each part above.` }] : []),
           ...(bestSeason && seasonRows.filter((r) => r.score).length >= 2 ? [{ q: `Which ${name} season is the best?`, a: `By community score on Kitsu, ${bestSeason.e.anime.title} rates highest at ${bestSeason.score!.toFixed(2)}/10. The comparison table above lists every part's score, length, filler share and studio.` }] : []),
