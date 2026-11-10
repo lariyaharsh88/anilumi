@@ -69,7 +69,12 @@ export default async function SchedulePage() {
         ]}
         hue={350}
         posters={days.flatMap((d) => d.items).sort((x, y) => y.userCount - x.userCount).slice(0, 3).map((x) => x.poster)}
-      />
+      >
+        <p className="flex flex-wrap gap-2 text-sm">
+          <Link href="/dub-schedule" className="chip">🎙 Dub schedule (English &amp; Hindi)</Link>
+          <Link href="/where-to-watch" className="chip">Where to watch</Link>
+        </p>
+      </PageHero>
       <div className="reveal mt-8">
         <BarChart
           title="Episodes this week"

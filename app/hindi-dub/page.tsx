@@ -59,6 +59,8 @@ export default async function HindiDubHub() {
           {free.length > 0 && <a href="#free" className="chip">Free and legal ({free.length})</a>}
           <a href="#by-platform" className="chip">By platform</a>
           <a href="#no-dub" className="chip">No Hindi dub yet</a>
+          <Link href="/dub-schedule#hindi" className="chip">New Hindi dubs</Link>
+          <Link href="/where-to-watch" className="chip">Where to watch in India</Link>
         </p>
       </PageHero>
 

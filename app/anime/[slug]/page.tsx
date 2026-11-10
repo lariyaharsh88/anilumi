@@ -17,6 +17,7 @@ import WatchButton from "@/components/WatchButton";
 import EmbedSnippet from "@/components/EmbedSnippet";
 import CalendarLinks from "@/components/CalendarLinks";
 import WhereToWatch from "@/components/WhereToWatch";
+import { streamsFor, streamsPath } from "@/lib/streams";
 import WatchOrderCard from "@/components/WatchOrderCard";
 import { snapshotOrder } from "@/lib/wosnap";
 import PushButton from "@/components/PushButton";
@@ -255,6 +256,8 @@ export default async function AnimePage({ params }: Props) {
   // When this render read Kitsu/AniList (pages re-render daily). Shown on every page; given to search engines as
   // dateModified only for airing and upcoming shows, whose details actually change from day to day.
   const refreshed = new Date().toISOString();
+  // Researched per-country streaming (US, India, UK) for this franchise, when we have it.
+  const streams = streamsFor(a);
   const changing = a.status === "current" || a.status === "upcoming";
   const community = dbEnabled();
   const released = a.status === "current" || a.status === "finished";
@@ -450,7 +453,7 @@ export default async function AnimePage({ params }: Props) {
               animeId={a.id}
               title={a.title}
               links={a.streaming.map((x) => ({ id: x.id, url: x.url, site: x.site, dubs: x.dubs, subs: x.subs }))}
-              extra={<AmazonLink query={`${a.title} manga`} source="anime" className="btn-outline">📚 Manga on Amazon</AmazonLink>}
+              extra={<>{streams && <Link href={streamsPath(streams.s)} className="btn-outline">🌍 Where to watch in the US, India &amp; UK</Link>}<AmazonLink query={`${a.title} manga`} source="anime" className="btn-outline">📚 Manga on Amazon</AmazonLink></>}
             />
             {a.streaming.length > 0 && <p className="mt-3 text-[11px] text-muted">Official, legal streams. Catalogues differ by country. · <Refreshed iso={refreshed} /></p>}
             <AffiliateNote className="mt-1" />

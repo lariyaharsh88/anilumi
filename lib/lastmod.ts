@@ -13,6 +13,8 @@ import casts from "@/data/casts.json";
 import characters from "@/data/characters.json";
 import franchises from "@/data/franchises.json";
 import dubs from "@/data/hindi-dubs.json";
+import dubSchedule from "@/data/dub-schedule.json";
+import streams from "@/data/where-to-watch.json";
 import manga from "@/data/manga-seasons.json";
 import seriesChars from "@/data/series-characters.json";
 import themes from "@/data/themes.json";
@@ -36,7 +38,7 @@ export const DATA_DATES = {
   aliases: g(aliases).generated, anilist: g(animeAl).generated, arcs: g(arcs).checked, birthdays: g(birthdays).generated,
   casts: g(casts).generated, characters: g(characters).generated, franchises: g(franchises).generated, dubs: g(dubs).checked,
   manga: g(manga).checked, seriesCharacters: g(seriesChars).generated, themes: g(themes).generated, voiceActors: g(vas).generated,
-  watchOrders: g(woSnap).generated,
+  watchOrders: g(woSnap).generated, streams: g(streams).checked, dubSchedule: g(dubSchedule).checked,
 };
 
 const toTime = (d: string | Date | null | undefined) => (d ? (d instanceof Date ? d.getTime() : Date.parse(d.length === 10 ? `${d}T00:00:00Z` : d)) : NaN);

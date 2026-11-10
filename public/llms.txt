@@ -9,6 +9,8 @@
 ## Hindi dubs (India)
 
 - [Hindi dubbed anime list](https://anilumi.in/hindi-dub): which anime have an official Hindi dub, which seasons, and on which platform (Crunchyroll, Netflix India, JioHotstar, Prime Video / Anime Times, Sony YAY!, TV), including free and legal YouTube channels (Muse India, Ani-One India) and MX Player. Each entry links to its source; anime checked and found without a Hindi dub are listed too.
+- [Where to watch anime, by country](https://anilumi.in/where-to-watch): for the most popular anime, which legal service streams it in the US, India and the UK (Crunchyroll, Netflix, Prime Video, Hulu, HIDIVE, JioHotstar, free official YouTube channels and more), with sub, English dub or Hindi dub and which seasons each has. One page per show at /anime/<slug>/where-to-watch; each lists its sources and the date checked.
+- [Anime dub schedule](https://anilumi.in/dub-schedule): English and Hindi dubs airing this season, the weekday each new dubbed episode releases, how many are dubbed so far and the next date, from the services' own announcements.
 - [Hindi guides](https://anilumi.in/hi): watch order, where to watch and Hindi dub status in Hindi, for franchises with an official Hindi dub.
 
 ## Guides

@@ -13,6 +13,7 @@ import { hasSnapshotCast } from "@/lib/castsnap";
 import { hasSnapshotThemes } from "@/lib/themes";
 import { airing as airingSnapshot, upcomingOf } from "@/lib/airing";
 import { HINDI_SLUGS, hindiPath, hindiIndexed } from "@/lib/hindi";
+import { allStreams, streamsPath } from "@/lib/streams";
 import { airsSoon, searchShownPaths, similarSlugs, watchOrderIndexed, characterTableIndexed, notedCharacters, genreIndexed, bestYearIndexed, trendIndexed, voiceActorIndexed, NEXT_SEASON_MIN_MEMBERS } from "@/lib/indexing";
 import franchiseData from "@/data/franchises.json";
 import { DATA_DATES as D, STATIC_UPDATED, latest, weekStart, monthStart } from "@/lib/lastmod";
@@ -58,6 +59,9 @@ export async function sitemapEntries(): Promise<MetadataRoute.Sitemap> {
     { url: abs("/hi"), lastModified: weekly, changeFrequency: "weekly", priority: 0.6 },
     { url: abs("/hindi-dub"), lastModified: at(D.dubs), changeFrequency: "monthly", priority: 0.7 },
     { url: abs("/hi/hindi-dub"), lastModified: at(D.dubs), changeFrequency: "monthly", priority: 0.6 },
+    { url: abs("/where-to-watch"), lastModified: at(D.streams), changeFrequency: "monthly", priority: 0.8 },
+    ...allStreams().map((e) => ({ url: abs(streamsPath(e.s)), lastModified: at(D.streams), changeFrequency: "monthly" as const, priority: 0.7 })),
+    { url: abs("/dub-schedule"), lastModified: now, changeFrequency: "daily", priority: 0.8 },
     ...HINDI_SLUGS.filter(hindiIndexed).map((s) => ({ url: abs(hindiPath(s)), lastModified: at(D.watchOrders, D.dubs), changeFrequency: "weekly" as const, priority: 0.6, alternates: { languages: { en: abs(`/watch-order/${s}`), hi: abs(hindiPath(s)) } } })),
     { url: abs("/anime-openings"), lastModified: at(D.themes), changeFrequency: "weekly", priority: 0.6 },
     { url: abs("/tier-list"), lastModified: weekly, changeFrequency: "weekly", priority: 0.6 },
