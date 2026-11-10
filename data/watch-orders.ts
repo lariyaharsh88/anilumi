@@ -93,7 +93,7 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   },
   bleach: {
     label: "Bleach",
-    intro: "Watch episodes 1 to 366 of the original series, then Thousand-Year Blood War (50 episodes in four parts, 2022–2026), which adapts the final arc to the end. The filler episodes (33, 50, 64–108, 128–137, 147–149, 168–189, 204–205, 213–214, 228–266, 287, 298–299, 303–305, 311–341 and 355) can be skipped without losing anything; 109 and 342 mix canon and filler.",
+    intro: "Watch episodes 1 to 366 of the original series, then Thousand-Year Blood War (50 episodes in four parts, 2022–2026), which adapts the final arc to the end. The filler episodes (33, 50, 64–108, 128–137, 147–149, 168–189, 204–205, 213–214, 228–266, 287, 298–299, 303–305, 311–341 and 355) can be skipped without losing anything; 109 and 342 mix canon and filler. The four films (Memories of Nobody, The DiamondDust Rebellion, Fade to Black and Hell Verse) are non-canon side stories and optional.",
   },
   "mob-psycho-100": {
     label: "Mob Psycho 100",
@@ -105,7 +105,8 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   },
   "kono-subarashii-sekai-ni-shukufuku-wo": {
     label: "KonoSuba",
-    intro: "Season 1, Season 2, the film Legend of Crimson, then Season 3. An Explosion on This Wonderful World! is a prequel spin-off about Megumin and can be watched at any point. Each season has an optional OVA episode.",
+    intro: "Season 1, Season 2, the film Legend of Crimson, then Season 3. Season 4 was announced in January 2026 and is due in 2027. An Explosion on This Wonderful World! (2023) is a prequel spin-off about Megumin and can be watched at any point. Each season has optional OVA episodes.",
+    optional: ["kono-subarashii-sekai-ni-bakuen-wo"],
   },
   "sousou-no-frieren": {
     label: "Frieren",
@@ -116,11 +117,11 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
     intro: "Fate/Zero is the prequel, but it spoils parts of Fate/stay night. The usual advice is Fate/stay night: Unlimited Blade Works first, then Fate/Zero, then the Heaven's Feel film trilogy. Start with Zero only if you insist on chronological order. The 2006 Fate/stay night series is skippable.",
     promote: ["fate-stay-night-unlimited-blade-works-2014", "fate-stay-night-unlimited-blade-works-tv-2", "fate-stay-night-movie-heaven-s-feel", "fate-stay-night-movie-heaven-s-feel-2", "fate-stay-night-movie-heaven-s-feel-3"],
     mainOrder: ["fate-stay-night-unlimited-blade-works-2014", "fate-stay-night-unlimited-blade-works-tv-2", "fate-zero", "fate-zero-2nd-season", "fate-stay-night-movie-heaven-s-feel", "fate-stay-night-movie-heaven-s-feel-2", "fate-stay-night-movie-heaven-s-feel-3"],
-    skip: ["fate-stay-night", "fate-stay-night-unlimited-blade-works", "fate-stay-night-tv-reproduction", "fate-zero-remix"],
+    skip: ["fate-stay-night", "fate-stay-night-unlimited-blade-works", "fate-stay-night-tv-reproduction", "fate-zero-remix", "fate-zero-cafe"],
   },
   bakemonogatari: {
     label: "Monogatari series",
-    intro: "Release order is the intended order: Bakemonogatari, Nisemonogatari, Nekomonogatari (Black), Second Season, Hanamonogatari, Tsukimonogatari, Owarimonogatari, Koyomimonogatari, the Kizumonogatari films, Owarimonogatari II, Zoku Owarimonogatari, then Off & Monster Season (2024). Kizumonogatari is a prequel but lands best after Second Season.",
+    intro: "Release order is the intended order: Bakemonogatari, Nisemonogatari, Nekomonogatari (Black), Second Season, Hanamonogatari, Tsukimonogatari, Owarimonogatari, Koyomimonogatari, the Kizumonogatari films, Owarimonogatari II, Zoku Owarimonogatari, then Off & Monster Season (2024). Kizumonogatari is a prequel but lands best after Second Season. Kizumonogatari: Koyomi Vamp (2024) re-edits the three Kizumonogatari films into one, so watch one or the other. A new Off & Monster Season episode, Wazamonogatari: Karen Ogre, has been announced for a winter broadcast.",
     promote: ["monogatari-series-off-monster-season"],
     exclude: ["mahou-shoujo-madoka-magica-movie-3-hangyaku-no-monogatari-magica-quartet-x-nisioisin", "nisekoimonogatari", "okitegami-kyouko-no-bibouroku-x-monogatari", "minna-to-manner-wo-manabou", "naisho-no-hanashi"],
   },
@@ -151,8 +152,11 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   },
   "neon-genesis-evangelion": {
     label: "Evangelion",
-    intro: "Watch the 26-episode TV series, then The End of Evangelion. The film shows the outside events that episodes 25 and 26 depict as an inner monologue; the TV ending and the film are two views of the same conclusion, so watch both. Death & Rebirth is mostly a recap plus an early cut of End of Evangelion's first half, so skip it. The Rebuild films (1.0, 2.0, 3.0, 3.0+1.0) are a separate retelling with their own continuity; watch them afterwards, in order.",
+    intro: "Watch the 26-episode TV series, then The End of Evangelion. The film shows the outside events that episodes 25 and 26 depict as an inner monologue; the TV ending and the film are two views of the same conclusion, so watch both. Death & Rebirth is mostly a recap plus an early cut of End of Evangelion's first half, so skip it. The Rebuild films (1.0, 2.0, 3.0, 3.0+1.0) are a separate retelling with their own continuity; watch them afterwards, in order. A new Evangelion TV series from Studio Khara and CloverWorks, written by Yoko Taro, was announced in February 2026 and has no release date yet.",
     skip: ["neon-genesis-evangelion-death-rebirth"],
+    promote: ["evangelion-1-0-you-are-not-alone", "evangelion-2-0-you-can-not-advance", "evangelion-3-0-you-can-not-redo", "evangelion-3-0-1-0"],
+    exclude: ["evangelion-shito-hakata-shuurai"],
+    mainOrder: ["neon-genesis-evangelion", "neon-genesis-evangelion-the-end-of-evangelion", "evangelion-1-0-you-are-not-alone", "evangelion-2-0-you-can-not-advance", "evangelion-3-0-you-can-not-redo", "evangelion-3-0-1-0"],
   },
   gintama: {
     label: "Gintama",
@@ -182,8 +186,9 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   },
   "psycho-pass": {
     label: "Psycho-Pass",
-    intro: "Season 1, Season 2, the 2015 film, the three Sinners of the System films (2019), Season 3, then First Inspector (2020), which finishes Season 3's story. Providence (2023) is set between the 2015 film and Season 3, but it works best watched last. Psycho-Pass: New Edit is Season 1 re-cut into double-length episodes, so pick one version.",
+    intro: "Season 1, Season 2, the 2015 film, the three Sinners of the System films (2019), Season 3, then First Inspector (2020), which finishes Season 3's story. Providence (2023) is set between Sinners of the System and Season 3, but it works best watched last. Psycho-Pass: New Edit is Season 1 re-cut into double-length episodes, so pick one version.",
     skip: ["psycho-pass-re-start"],
+    promote: ["psycho-pass-providence"],
   },
   "cowboy-bebop": {
     label: "Cowboy Bebop",
@@ -191,7 +196,7 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   },
   "kaguya-sama-wa-kokurasetai-tensai-tachi-no-renai-zunousen": {
     label: "Kaguya-sama: Love Is War",
-    intro: "Season 1, Season 2, Season 3 (Ultra Romantic), then the film The First Kiss That Never Ends, which adapts the next arc and continues straight on from Season 3. The 2025 special Stairway to Adulthood comes after the film, and a concluding film, The Final Chapter, was announced in early 2026.",
+    intro: "Season 1, Season 2, Season 3 (Ultra Romantic), then the film The First Kiss That Never Ends, which adapts the next arc and continues straight on from Season 3. The 2025 special Stairway to Adulthood (December 31, 2025) comes after the film, and a concluding film, The Final Chapter, with an original story by Aka Akasaka, was announced the same night.",
   },
   "oshi-no-ko": {
     label: "Oshi no Ko",
@@ -204,7 +209,7 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   },
   "dr-stone": {
     label: "Dr. Stone",
-    intro: "Season 1, Stone Wars, the Ryusui special, New World (two cours), then Science Future, the final season, released in parts from 2025. Ryusui is a full-length episode that introduces a major character, so treat it as part of the main story.",
+    intro: "Season 1, Stone Wars, the Ryusui special, New World (two cours), then Science Future, the final season, which aired in three parts from January 2025 to June 2026. Ryusui is a full-length episode that introduces a major character, so treat it as part of the main story. Dr. Stone: Terraforming, which adapts the manga's epilogue set after the finale, was announced in October 2026; its date and format are not yet known.",
   },
   "blue-lock": {
     label: "Blue Lock",
@@ -256,6 +261,7 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   "tengen-toppa-gurren-lagann": {
     label: "Gurren Lagann",
     intro: "Watch the 27-episode series. The two films, Childhood's End and The Lights in the Sky Are Stars, retell it in condensed form; the second adds substantial new animation in its final act, so it is worth watching afterwards, but it is not a substitute for the series.",
+    optional: ["tengen-toppa-gurren-lagann-movie-lagann-hen"],
   },
   "nanatsu-no-taizai": {
     label: "The Seven Deadly Sins",
@@ -305,7 +311,7 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   },
   "soul-eater": {
     label: "Soul Eater and Fire Force",
-    intro: "These are two separate series by the same creator, Atsushi Ohkubo; Kitsu links them, so both appear below. Fire Force: Season 1 (2019), Season 2 (2020) and the final Season 3, which aired in two parts (April 2025 and January 2026). Soul Eater: one 51-episode series (April 2008–March 2009). The Late Night Show version is the same episodes with extra footage, and Soul Eater Not! (2014) is a spin-off.",
+    intro: "Fire Force and Soul Eater are both by Atsushi Ohkubo, and the two series are connected in a way Fire Force's ending reveals, which is why both appear below; release order (Soul Eater first) works fine. Fire Force: Season 1 (2019), Season 2 (2020) and the final Season 3, which aired in two parts (April 2025 and January 2026). Soul Eater: one 51-episode series (April 2008–March 2009) that stands on its own. The Late Night Show version is the same episodes with extra footage, and Soul Eater Not! (2014) is a spin-off.",
   },
   durarara: {
     label: "Durarara!!",
@@ -716,7 +722,8 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   },
   "death-parade": {
     label: "Death Parade",
-    intro: "Death Parade is one 12-episode series (January–March 2015). It grew out of Death Billiards, a short film Madhouse made for the Anime Mirai 2013 young-animator project (March 2013). The short is optional, a pilot with the same setting; it is listed below as an alternative version and can be watched before or after the series.",
+    intro: "Death Parade is one 12-episode series (January–March 2015). It grew out of Death Billiards, a short film Madhouse made for the Anime Mirai 2013 young-animator project (March 2013). The short is an optional pilot with the same setting and a different story; watch it before or after the series.",
+    optional: ["death-billiards"],
   },
   "ouran-koukou-host-club": {
     label: "Ouran High School Host Club",
