@@ -21,9 +21,10 @@ test("fillerFor counts within the series and finds the next canon episode", () =
 test("data sanity: ranges parse, ascending, no overlap with mixed, entries start unreviewed", () => {
   for (const [slug, e] of Object.entries(FILLER)) {
     const f = parseRanges(e.filler), m = parseRanges(e.mixed);
-    assert.ok(f.size > 0, slug);
+    // A list with no filler still answers "does it have filler?" when it records recaps or mixed episodes (Hunter x Hunter).
+    assert.ok(f.size > 0 || parseRanges(e.recap).size > 0 || m.size > 0, slug);
     assert.ok(![...m].some((n) => f.has(n)), `${slug}: an episode is both filler and mixed`);
-    const starts = e.filler.split(",").map((p) => Number(p.trim().split("-")[0]));
+    const starts = e.filler.split(",").filter((p) => p.trim()).map((p) => Number(p.trim().split("-")[0]));
     assert.deepEqual(starts, [...starts].sort((a, b) => a - b), `${slug}: ranges out of order`);
   }
   for (const [slug, c] of Object.entries(CONTINUE)) assert.ok(c.chapter || c.volume, slug);
@@ -32,15 +33,15 @@ test("data sanity: ranges parse, ascending, no overlap with mixed, entries start
 test("mergeFiller: curated lists win, empty MAL entries are dropped", () => {
   const mal: Record<string, MalFiller> = {
     naruto: { mal: 20, title: "Naruto", episodes: 220, filler: "1-200", fetched: "1 Nov 2026" },
-    "fairy-tail": { mal: 6702, title: "Fairy Tail", episodes: 175, filler: "9, 19-20", recap: "125", fetched: "1 Nov 2026" },
+    "uncurated-show": { mal: 6702, title: "Uncurated", episodes: 175, filler: "9, 19-20", recap: "125", fetched: "1 Nov 2026" },
     empty: { mal: 1, title: "x", episodes: 12, filler: "", fetched: "1 Nov 2026" },
   };
   const all = mergeFiller(FILLER, mal);
   assert.equal(all.naruto, FILLER.naruto);
-  assert.equal(all["fairy-tail"].source, "mal");
-  assert.equal(all["fairy-tail"].recap, "125");
+  assert.equal(all["uncurated-show"].source, "mal");
+  assert.equal(all["uncurated-show"].recap, "125");
   assert.equal(all.empty, undefined);
-  assert.equal(fillerSource(all["fairy-tail"]).label, "From MyAnimeList");
+  assert.equal(fillerSource(all["uncurated-show"]).label, "From MyAnimeList");
   assert.equal(fillerSource({ filler: "1", reviewed: false, checked: "AnimeFillerList, 28 Oct 2026" }).label, "Cross-checked");
   assert.equal(fillerSource({ filler: "1", reviewed: true, reviewedOn: "2026-11-03" }).label, "Reviewed");
   assert.equal(fillerSource({ filler: "1", reviewed: false }).tone, "draft");
