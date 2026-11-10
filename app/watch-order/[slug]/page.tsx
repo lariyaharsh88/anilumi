@@ -320,7 +320,8 @@ export default async function WatchOrderPage({ params }: Props) {
                   <span className="min-w-0 flex-1">
                     {e ? <Link href={animePath(e.anime)} className="font-medium text-ink hover:text-violet">{e.anime.title}</Link> : <span className="font-medium text-ink">{f.title}</span>}
                     <span className="block text-ink/80">{f.when}</span>
-                    {f.note && <span className="block text-xs text-muted">{f.note}</span>}
+                    {f.note && <span className="block text-xs text-muted">{f.note}{f.confidence === "medium" ? " (one source)" : ""}</span>}
+                    {!f.note && f.confidence === "medium" && <span className="block text-xs text-muted">One source</span>}
                   </span>
                   <span className={`shrink-0 rounded px-2 py-0.5 text-xs font-semibold ${f.canon ? "bg-violet/15 text-violet-2" : "bg-white/5 text-muted"}`}>{f.canon ? "Canon" : "Non-canon"}</span>
                 </li>

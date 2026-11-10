@@ -1,5 +1,791 @@
 {
-  "checked": "2026-11-10",
-  "reviewed": null,
-  "franchises": {}
+ "checked": "2026-11-10",
+ "reviewed": null,
+ "franchises": {
+  "naruto": [
+   {
+    "slug": "naruto-the-movie-ninja-clash-in-the-land-of-snow",
+    "title": "Naruto the Movie: Ninja Clash in the Land of Snow",
+    "when": "After Naruto episode 101 (before 102)",
+    "canon": false,
+    "afterEpisode": {
+     "series": "naruto",
+     "episode": 101
+    },
+    "note": "Narutopedia places it between episodes 101 and 102; it must come before Sasuke leaves the village.",
+    "confidence": "high",
+    "sources": [
+     "https://naruto.fandom.com/wiki/Naruto_the_Movie:_Ninja_Clash_in_the_Land_of_Snow",
+     "https://www.looper.com/394804/the-correct-order-in-which-to-watch-the-naruto-franchise",
+     "https://thepopverse.com/naruto-anime-movies-episodes-watch-order-shippuden-boruto"
+    ]
+   },
+   {
+    "slug": "naruto-movie-2-daigekitotsu-maboroshi-no-chiteiiseki-dattebayo",
+    "title": "Naruto the Movie: Legend of the Stone of Gelel",
+    "when": "Non-canon; best after Naruto episode 160",
+    "canon": false,
+    "afterEpisode": {
+     "series": "naruto",
+     "episode": 160
+    },
+    "note": "Set after Sasuke has left the village; some guides put it after episode 147 instead.",
+    "confidence": "high",
+    "sources": [
+     "https://www.looper.com/394804/the-correct-order-in-which-to-watch-the-naruto-franchise",
+     "https://thepopverse.com/naruto-anime-movies-episodes-watch-order-shippuden-boruto"
+    ]
+   },
+   {
+    "slug": "naruto-movie-3-dai-koufun-mikazuki-jima-no-animaru-panikku-dattebayo",
+    "title": "Naruto the Movie: Guardians of the Crescent Moon Kingdom",
+    "when": "Non-canon; best after Naruto episode 196",
+    "canon": false,
+    "afterEpisode": {
+     "series": "naruto",
+     "episode": 196
+    },
+    "note": "Fits anywhere in the late filler run; episode 196 matches its release window.",
+    "confidence": "high",
+    "sources": [
+     "https://www.looper.com/394804/the-correct-order-in-which-to-watch-the-naruto-franchise",
+     "https://thepopverse.com/naruto-anime-movies-episodes-watch-order-shippuden-boruto"
+    ]
+   },
+   {
+    "slug": "naruto-shippuden-movie-1",
+    "title": "Naruto Shippuden the Movie",
+    "when": "Non-canon; best after Shippuden episode 32 (end of the Kazekage Rescue arc)",
+    "canon": false,
+    "afterEpisode": {
+     "series": "naruto-shippuden",
+     "episode": 32
+    },
+    "note": "",
+    "confidence": "high",
+    "sources": [
+     "https://www.looper.com/394804/the-correct-order-in-which-to-watch-the-naruto-franchise",
+     "https://thepopverse.com/naruto-anime-movies-episodes-watch-order-shippuden-boruto"
+    ]
+   },
+   {
+    "slug": "naruto-shippuden-movie-2-kizuna",
+    "title": "Naruto Shippuden the Movie: Bonds",
+    "when": "Non-canon; best after Shippuden episode 71 (before 72)",
+    "canon": false,
+    "afterEpisode": {
+     "series": "naruto-shippuden",
+     "episode": 71
+    },
+    "note": "Sai is on Team Kakashi and Sasuke appears, so it belongs after the Tenchi Bridge arc.",
+    "confidence": "high",
+    "sources": [
+     "https://www.looper.com/394804/the-correct-order-in-which-to-watch-the-naruto-franchise",
+     "https://thepopverse.com/naruto-anime-movies-episodes-watch-order-shippuden-boruto"
+    ]
+   },
+   {
+    "slug": "naruto-shippuden-movie-3-hi-no-ishi-wo-tsugu-mono",
+    "title": "Naruto Shippuden the Movie: The Will of Fire",
+    "when": "Non-canon; best after Shippuden episode 120",
+    "canon": false,
+    "afterEpisode": {
+     "series": "naruto-shippuden",
+     "episode": 120
+    },
+    "note": "Guides differ (after episode 120 or 126); Naruto already uses the Rasenshuriken.",
+    "confidence": "medium",
+    "sources": [
+     "https://www.looper.com/394804/the-correct-order-in-which-to-watch-the-naruto-franchise",
+     "https://thepopverse.com/naruto-anime-movies-episodes-watch-order-shippuden-boruto"
+    ]
+   },
+   {
+    "slug": "naruto-shippuden-movie-4-the-lost-tower",
+    "title": "Naruto Shippuden the Movie: The Lost Tower",
+    "when": "Non-canon; best after Shippuden episode 143, before Pain's attack on the Leaf",
+    "canon": false,
+    "afterEpisode": {
+     "series": "naruto-shippuden",
+     "episode": 143
+    },
+    "note": "Narutopedia says it is set after Jiraiya's death and before Pain's assault; guides pick different slots in that window (143 or 154).",
+    "confidence": "medium",
+    "sources": [
+     "https://naruto.fandom.com/wiki/Naruto_Shipp%C5%ABden_the_Movie:_The_Lost_Tower",
+     "https://thepopverse.com/naruto-anime-movies-episodes-watch-order-shippuden-boruto",
+     "https://www.looper.com/394804/the-correct-order-in-which-to-watch-the-naruto-franchise"
+    ]
+   },
+   {
+    "slug": "naruto-shippuden-movie-5-blood-prison",
+    "title": "Naruto the Movie: Blood Prison",
+    "when": "Non-canon; best after Shippuden episode 196",
+    "canon": false,
+    "afterEpisode": {
+     "series": "naruto-shippuden",
+     "episode": 196
+    },
+    "note": "Does not fit cleanly; other guides place it after episode 221.",
+    "confidence": "medium",
+    "sources": [
+     "https://www.looper.com/394804/the-correct-order-in-which-to-watch-the-naruto-franchise",
+     "https://thepopverse.com/naruto-anime-movies-episodes-watch-order-shippuden-boruto"
+    ]
+   },
+   {
+    "slug": "naruto-shippuden-movie-6-road-to-ninja",
+    "title": "Road to Ninja: Naruto the Movie",
+    "when": "Non-canon; best after Shippuden episode 251 (before 252)",
+    "canon": false,
+    "afterEpisode": {
+     "series": "naruto-shippuden",
+     "episode": 251
+    },
+    "note": "Kishimoto wrote the story, but Narutopedia notes it does not match the manga timeline past Naruto's stay on Island Turtle.",
+    "confidence": "high",
+    "sources": [
+     "https://naruto.fandom.com/wiki/Road_to_Ninja:_Naruto_the_Movie",
+     "https://www.looper.com/394804/the-correct-order-in-which-to-watch-the-naruto-franchise",
+     "https://thepopverse.com/naruto-anime-movies-episodes-watch-order-shippuden-boruto"
+    ]
+   },
+   {
+    "slug": "the-last-naruto-the-movie",
+    "title": "The Last: Naruto the Movie",
+    "when": "After Shippuden episode 493 (before 494)",
+    "canon": true,
+    "afterEpisode": {
+     "series": "naruto-shippuden",
+     "episode": 493
+    },
+    "note": "Officially part of the story, billed as manga chapter 699.5; episodes 494-500 (Naruto's wedding) follow it.",
+    "confidence": "high",
+    "sources": [
+     "https://naruto.fandom.com/wiki/The_Last:_Naruto_the_Movie",
+     "https://www.looper.com/394804/the-correct-order-in-which-to-watch-the-naruto-franchise",
+     "https://thepopverse.com/naruto-anime-movies-episodes-watch-order-shippuden-boruto"
+    ]
+   },
+   {
+    "slug": "boruto-naruto-the-movie",
+    "title": "Boruto: Naruto the Movie",
+    "when": "After Boruto episode 50; Boruto episodes 51-66 retell the same story",
+    "canon": true,
+    "afterEpisode": {
+     "series": "boruto-naruto-next-generations",
+     "episode": 50
+    },
+    "note": "Written by Kishimoto and adapted as manga chapters 1-10 and anime episodes 51-66 (Chunin Exams arc), so you can watch either version.",
+    "confidence": "high",
+    "sources": [
+     "https://naruto.fandom.com/wiki/Versus_Momoshiki_Arc",
+     "https://naruto.fandom.com/wiki/Boruto:_Naruto_the_Movie",
+     "https://www.looper.com/394804/the-correct-order-in-which-to-watch-the-naruto-franchise"
+    ]
+   }
+  ],
+  "dragon-ball": [
+   {
+    "slug": "dragon-ball-movie-1-shen-long-no-densetsu",
+    "title": "Dragon Ball: Curse of the Blood Rubies",
+    "when": "Alternate retelling of the first arc; watch after Dragon Ball episode 13 or skip",
+    "canon": false,
+    "afterEpisode": {
+     "series": "dragon-ball",
+     "episode": 13
+    },
+    "note": "Replaces the Emperor Pilaf saga (episodes 1-13); the Daizenshuu guide treats it as a different world from the TV show.",
+    "confidence": "high",
+    "sources": [
+     "https://dragonball.fandom.com/wiki/Dragon_Ball:_Curse_of_the_Blood_Rubies",
+     "https://www.kanzenshuu.com/movie/db-01/"
+    ]
+   },
+   {
+    "slug": "dragon-ball-movie-2-majinjou-no-nemuri-hime",
+    "title": "Dragon Ball: Sleeping Princess in Devil's Castle",
+    "when": "Non-canon alternate take on Dragon Ball episodes 14-18; best after episode 18",
+    "canon": false,
+    "afterEpisode": {
+     "series": "dragon-ball",
+     "episode": 18
+    },
+    "note": "Daizenshuu places it at the start of Goku and Krillin's training with Master Roshi but notes it conflicts with the show.",
+    "confidence": "high",
+    "sources": [
+     "https://dragonball.fandom.com/wiki/Dragon_Ball:_Sleeping_Princess_in_Devil%27s_Castle",
+     "https://www.kanzenshuu.com/movie/db-02/"
+    ]
+   },
+   {
+    "slug": "dragon-ball-movie-3-makafushigi-daibouken",
+    "title": "Dragon Ball: Mystical Adventure",
+    "when": "Doesn't fit the timeline (alternate world); watch any time after Dragon Ball episode 101",
+    "canon": false,
+    "afterEpisode": {
+     "series": "dragon-ball",
+     "episode": 101
+    },
+    "note": "Daizenshuu calls it a completely different world; episode 101 is our pick so that Tao Pai Pai, Tien and Chiaotzu are already introduced.",
+    "confidence": "medium",
+    "sources": [
+     "https://dragonball.fandom.com/wiki/Dragon_Ball:_Mystical_Adventure",
+     "https://www.kanzenshuu.com/movie/db-03/"
+    ]
+   },
+   {
+    "slug": "dragon-ball-movie-4-saikyou-e-no-michi",
+    "title": "Dragon Ball: The Path to Power",
+    "when": "Doesn't fit the timeline (10th-anniversary remake); watch any time after Dragon Ball episode 67 or as a standalone",
+    "canon": false,
+    "afterEpisode": {
+     "series": "dragon-ball",
+     "episode": 67
+    },
+    "note": "Retells the first Dragon Ball hunt and the Red Ribbon Army story (episodes 1-67) in one film.",
+    "confidence": "medium",
+    "sources": [
+     "https://en.wikipedia.org/wiki/Dragon_Ball:_The_Path_to_Power",
+     "https://dragonball.fandom.com/wiki/Dragon_Ball:_The_Path_to_Power"
+    ]
+   },
+   {
+    "slug": "dragon-ball-z-movie-01-ora-no-gohan-wo-kaese",
+    "title": "Dragon Ball Z: Dead Zone",
+    "when": "After Dragon Ball episode 153, before Dragon Ball Z episode 1",
+    "canon": false,
+    "afterEpisode": {
+     "series": "dragon-ball",
+     "episode": 153
+    },
+    "note": "Daizenshuu places it after Goku and Chi-Chi's wedding and before Raditz arrives; Krillin meeting Gohan here clashes with the TV series.",
+    "confidence": "high",
+    "sources": [
+     "https://dragonball.fandom.com/wiki/Dragon_Ball_Z:_Dead_Zone",
+     "https://www.kanzenshuu.com/movie/dbz-01/"
+    ]
+   },
+   {
+    "slug": "dragon-ball-z-movie-02-konoyo-de-ichiban-tsuyoi-yatsu",
+    "title": "Dragon Ball Z: The World's Strongest",
+    "when": "Non-canon; best after DBZ episode 35 (between the Saiyan and Namek sagas)",
+    "canon": false,
+    "afterEpisode": {
+     "series": "dragon-ball-z",
+     "episode": 35
+    },
+    "note": "Daizenshuu dates it between the Vegeta fight and the trip to Namek, though Piccolo being alive does not match the show.",
+    "confidence": "high",
+    "sources": [
+     "https://dragonball.fandom.com/wiki/Dragon_Ball_Z:_The_World%27s_Strongest",
+     "https://www.kanzenshuu.com/movie/dbz-02/"
+    ]
+   },
+   {
+    "slug": "dragon-ball-z-movie-03-chikyuu-marugoto-chou-kessen",
+    "title": "Dragon Ball Z: The Tree of Might",
+    "when": "Doesn't fit the timeline; watch any time after DBZ episode 35",
+    "canon": false,
+    "afterEpisode": {
+     "series": "dragon-ball-z",
+     "episode": 35
+    },
+    "note": "Daizenshuu dates it to the Namek period, but everyone is on Earth and the dead fighters are alive, so it is a movie-only story.",
+    "confidence": "medium",
+    "sources": [
+     "https://dragonball.fandom.com/wiki/Dragon_Ball_Z:_The_Tree_of_Might",
+     "https://www.kanzenshuu.com/movie/dbz-03/"
+    ]
+   },
+   {
+    "slug": "dragon-ball-z-movie-04-super-saiyajin-da-son-goku",
+    "title": "Dragon Ball Z: Lord Slug",
+    "when": "Doesn't fit the timeline; watch any time after DBZ episode 35",
+    "canon": false,
+    "afterEpisode": {
+     "series": "dragon-ball-z",
+     "episode": 35
+    },
+    "note": "Daizenshuu sets it before the final Frieza fight because Goku is not yet a true Super Saiyan, while noting Goku should be on Namek then.",
+    "confidence": "medium",
+    "sources": [
+     "https://dragonball.fandom.com/wiki/Dragon_Ball_Z:_Lord_Slug",
+     "https://www.kanzenshuu.com/movie/dbz-04/"
+    ]
+   },
+   {
+    "slug": "dragon-ball-z-movie-05-tobikkiri-no-saikyou-tai-saikyou",
+    "title": "Dragon Ball Z: Cooler's Revenge",
+    "when": "Non-canon; best after DBZ episode 125 (end of the Trunks saga, before the Androids arrive)",
+    "canon": false,
+    "afterEpisode": {
+     "series": "dragon-ball-z",
+     "episode": 125
+    },
+    "note": "Daizenshuu places it in the three years between Future Trunks' warning and the Androids' arrival.",
+    "confidence": "high",
+    "sources": [
+     "https://dragonball.fandom.com/wiki/Dragon_Ball_Z:_Cooler%27s_Revenge",
+     "https://www.kanzenshuu.com/movie/dbz-05/"
+    ]
+   },
+   {
+    "slug": "dragon-ball-z-movie-07-kyokugen-battle-sandai-super-saiyajin",
+    "title": "Dragon Ball Z: Super Android 13!",
+    "when": "Non-canon (parallel world); best after DBZ episode 146, before Cell reaches his perfect form",
+    "canon": false,
+    "afterEpisode": {
+     "series": "dragon-ball-z",
+     "episode": 146
+    },
+    "note": "Daizenshuu sets it after Dr. Gero's death and before Perfect Cell, in a parallel world; episode 146 is where Goku wakes from the heart virus.",
+    "confidence": "medium",
+    "sources": [
+     "https://dragonball.fandom.com/wiki/Dragon_Ball_Z:_Super_Android_13!",
+     "https://www.kanzenshuu.com/movie/dbz-07/"
+    ]
+   },
+   {
+    "slug": "dragon-ball-z-movie-06-gekitotsu-100-oku-power-no-senshi-tachi",
+    "title": "Dragon Ball Z: The Return of Cooler",
+    "when": "During the 10-day wait for the Cell Games; best after DBZ episode 173 (before 175)",
+    "canon": false,
+    "afterEpisode": {
+     "series": "dragon-ball-z",
+     "episode": 173
+    },
+    "note": "Daizenshuu places it between the Cell Games announcement and their opening; Dende is already Earth's guardian (episode 172).",
+    "confidence": "high",
+    "sources": [
+     "https://dragonball.fandom.com/wiki/Dragon_Ball_Z:_The_Return_of_Cooler",
+     "https://www.kanzenshuu.com/movie/dbz-06/"
+    ]
+   },
+   {
+    "slug": "dragon-ball-z-movie-08-moetsukiro-nessen-ressen-chou-gekisen",
+    "title": "Dragon Ball Z: Broly - The Legendary Super Saiyan",
+    "when": "During the 10-day wait for the Cell Games; best after DBZ episode 173 (before 175)",
+    "canon": false,
+    "afterEpisode": {
+     "series": "dragon-ball-z",
+     "episode": 173
+    },
+    "note": "Daizenshuu sets it around the final showdown with Cell, before the Cell Games begin (episode 175).",
+    "confidence": "medium",
+    "sources": [
+     "https://dragonball.fandom.com/wiki/Dragon_Ball_Z:_Broly_-_The_Legendary_Super_Saiyan"
+    ]
+   },
+   {
+    "slug": "dragon-ball-z-movie-09-ginga-girigiri-bucchigiri-no-sugoi-yatsu",
+    "title": "Dragon Ball Z: Bojack Unbound",
+    "when": "After the Cell Games; best after DBZ episode 194",
+    "canon": false,
+    "afterEpisode": {
+     "series": "dragon-ball-z",
+     "episode": 194
+    },
+    "note": "Daizenshuu sets it several months after Cell's defeat, once Future Trunks has returned.",
+    "confidence": "medium",
+    "sources": [
+     "https://dragonball.fandom.com/wiki/Dragon_Ball_Z:_Bojack_Unbound"
+    ]
+   },
+   {
+    "slug": "dragon-ball-z-movie-10-kiken-na-futari-super-senshi-wa-nemurenai",
+    "title": "Dragon Ball Z: Broly - Second Coming",
+    "when": "Non-canon; best after DBZ episode 209 (just before the 25th World Tournament)",
+    "canon": false,
+    "afterEpisode": {
+     "series": "dragon-ball-z",
+     "episode": 209
+    },
+    "note": "Daizenshuu sets it shortly before the 25th World Martial Arts Tournament (episodes 210-219); Videl and Goten can already fly.",
+    "confidence": "medium",
+    "sources": [
+     "https://dragonball.fandom.com/wiki/Dragon_Ball_Z:_Broly_-_Second_Coming"
+    ]
+   },
+   {
+    "slug": "dragon-ball-z-movie-11-super-senshi-gekiha-katsu-no-wa-ore-da",
+    "title": "Dragon Ball Z: Bio-Broly",
+    "when": "Doesn't fit the timeline; watch any time after DBZ episode 219",
+    "canon": false,
+    "afterEpisode": {
+     "series": "dragon-ball-z",
+     "episode": 219
+    },
+    "note": "Daizenshuu places it after the 25th World Tournament, during the Majin Buu period, and calls it a movie-only story.",
+    "confidence": "medium",
+    "sources": [
+     "https://dragonball.fandom.com/wiki/Dragon_Ball_Z:_Bio-Broly"
+    ]
+   },
+   {
+    "slug": "dragon-ball-z-movie-12-fukkatsu-no-fusion-goku-to-vegeta",
+    "title": "Dragon Ball Z: Fusion Reborn",
+    "when": "Non-canon; best after DBZ episode 252, before Super Buu appears",
+    "canon": false,
+    "afterEpisode": {
+     "series": "dragon-ball-z",
+     "episode": 252
+    },
+    "note": "Daizenshuu sets it during the Majin Buu saga before Super Buu; Gohan's presence still clashes with the show.",
+    "confidence": "medium",
+    "sources": [
+     "https://dragonball.fandom.com/wiki/Dragon_Ball_Z:_Fusion_Reborn"
+    ]
+   },
+   {
+    "slug": "dragon-ball-z-movie-13-ryuuken-bakuhatsu-goku-ga-yaraneba-dare-ga-yaru",
+    "title": "Dragon Ball Z: Wrath of the Dragon",
+    "when": "Non-canon; best after DBZ episode 287 (after Kid Buu is defeated)",
+    "canon": false,
+    "afterEpisode": {
+     "series": "dragon-ball-z",
+     "episode": 287
+    },
+    "note": "Daizenshuu sets it after Majin Buu's defeat once peace returns.",
+    "confidence": "medium",
+    "sources": [
+     "https://dragonball.fandom.com/wiki/Dragon_Ball_Z:_Wrath_of_the_Dragon"
+    ]
+   },
+   {
+    "slug": "dragon-ball-z-movie-14-kami-to-kami",
+    "title": "Dragon Ball Z: Battle of Gods",
+    "when": "After DBZ episode 287 (before the 10-year skip in 288); Dragon Ball Super episodes 1-15 retell it",
+    "canon": true,
+    "afterEpisode": {
+     "series": "dragon-ball-z",
+     "episode": 287
+    },
+    "note": "Toriyama-written and retold in Super's God of Destruction Beerus saga; Daima is also set before the skip, but its order relative to this film is not officially stated.",
+    "confidence": "high",
+    "sources": [
+     "https://dragonball.fandom.com/wiki/Dragon_Ball_Z:_Battle_of_Gods",
+     "https://dragonball.fandom.com/wiki/God_of_Destruction_Beerus_Saga",
+     "https://en.wikipedia.org/wiki/Dragon_Ball_Daima"
+    ]
+   },
+   {
+    "slug": "dragon-ball-z-movie-15",
+    "title": "Dragon Ball Z: Resurrection 'F'",
+    "when": "After Battle of Gods; Dragon Ball Super episodes 16-27 retell it",
+    "canon": true,
+    "afterEpisode": {
+     "series": "dragon-ball-z",
+     "episode": 287
+    },
+    "note": "Set months after Battle of Gods; retold with changes in Super's Golden Frieza saga, so after Super episode 15 is the alternative slot.",
+    "confidence": "high",
+    "sources": [
+     "https://dragonball.fandom.com/wiki/Dragon_Ball_Z:_Resurrection_%E2%80%98F%E2%80%99",
+     "https://dragonball.fandom.com/wiki/Golden_Frieza_Saga"
+    ]
+   },
+   {
+    "slug": "dragon-ball-super-broly",
+    "title": "Dragon Ball Super: Broly",
+    "when": "After Dragon Ball Super episode 131 (the Tournament of Power)",
+    "canon": true,
+    "afterEpisode": {
+     "series": "dragon-ball-super",
+     "episode": 131
+    },
+    "note": "Toriyama said it takes place after the Tournament of Power, where the Super anime ends.",
+    "confidence": "high",
+    "sources": [
+     "https://dragonball.fandom.com/wiki/Dragon_Ball_Super:_Broly",
+     "https://dragonball.fandom.com/wiki/Universe_Survival_Saga"
+    ]
+   },
+   {
+    "slug": "dragon-ball-super-super-hero",
+    "title": "Dragon Ball Super: Super Hero",
+    "when": "After Dragon Ball Super: Broly (anime viewers: after Super episode 131)",
+    "canon": true,
+    "afterEpisode": {
+     "series": "dragon-ball-super",
+     "episode": 131
+    },
+    "note": "A sequel to Super: Broly; in the manga it follows the Granolah arc, which the anime has not adapted.",
+    "confidence": "high",
+    "sources": [
+     "https://dragonball.fandom.com/wiki/Dragon_Ball_Super:_Super_Hero",
+     "https://en.wikipedia.org/wiki/Dragon_Ball_Super:_Super_Hero"
+    ]
+   }
+  ],
+  "bleach": [
+   {
+    "slug": "bleach-memories-of-nobody",
+    "title": "Bleach: Memories of Nobody",
+    "when": "Non-canon; best after Bleach episode 109 (end of the Bount arc)",
+    "canon": false,
+    "afterEpisode": {
+     "series": "bleach",
+     "episode": 109
+    },
+    "note": "Fits between the Soul Society arc and the Arrancar arc; episodes 106-109 used footage from the film in their credits. Some guides say after 117 instead.",
+    "confidence": "high",
+    "sources": [
+     "https://www.escapistmagazine.com/how-to-watch-bleach-its-movies-in-order/",
+     "https://en.wikipedia.org/wiki/Bleach:_Memories_of_Nobody"
+    ]
+   },
+   {
+    "slug": "bleach-the-diamonddust-rebellion",
+    "title": "Bleach: The DiamondDust Rebellion",
+    "when": "Non-canon; best after Bleach episode 127",
+    "canon": false,
+    "afterEpisode": {
+     "series": "bleach",
+     "episode": 127
+    },
+    "note": "Guides place it anywhere after episode 125, once Ichigo can use his Hollow mask; it premiered between episodes 153 and 154.",
+    "confidence": "medium",
+    "sources": [
+     "https://www.escapistmagazine.com/how-to-watch-bleach-its-movies-in-order/",
+     "https://en.wikipedia.org/wiki/Bleach:_The_DiamondDust_Rebellion"
+    ]
+   },
+   {
+    "slug": "bleach-fade-to-black-kimi-no-na-wo-yobu",
+    "title": "Bleach: Fade to Black",
+    "when": "Doesn't fit the timeline; watch any time after Bleach episode 127",
+    "canon": false,
+    "afterEpisode": {
+     "series": "bleach",
+     "episode": 127
+    },
+    "note": "No consensus slot: some guides use episode 125-127, others its release slot between episodes 198 and 199.",
+    "confidence": "medium",
+    "sources": [
+     "https://www.escapistmagazine.com/how-to-watch-bleach-its-movies-in-order/",
+     "https://en.wikipedia.org/wiki/Bleach:_Fade_to_Black"
+    ]
+   },
+   {
+    "slug": "bleach-jigokuhen",
+    "title": "Bleach: Hell Verse",
+    "when": "Non-canon; best after Bleach episode 299 (before 300)",
+    "canon": false,
+    "afterEpisode": {
+     "series": "bleach",
+     "episode": 299
+    },
+    "note": "Episodes 298-299 set up the film, which opens during Ichigo's fight with Ulquiorra; Kubo supervised it, but it is not treated as canon.",
+    "confidence": "high",
+    "sources": [
+     "https://www.escapistmagazine.com/how-to-watch-bleach-its-movies-in-order/",
+     "https://en.wikipedia.org/wiki/Bleach:_Hell_Verse"
+    ]
+   }
+  ],
+  "one-piece": [
+   {
+    "slug": "one-piece-2000",
+    "title": "One Piece: The Movie",
+    "when": "Non-canon; best after episode 18 (between the Syrup Village and Baratie arcs)",
+    "canon": false,
+    "afterEpisode": {
+     "series": "one-piece",
+     "episode": 18
+    },
+    "note": "One Piece Wiki says its status quo fits the gap between Syrup Village and Baratie.",
+    "confidence": "high",
+    "sources": [
+     "https://onepiece.fandom.com/wiki/One_Piece:_The_Movie",
+     "https://www.destructoid.com/how-to-watch-all-one-piece-movies-in-order-chronologically/",
+     "https://www.thepopverse.com/one-piece-order-shows-movie-series-anime-watch-how-where-chronological"
+    ]
+   },
+   {
+    "slug": "one-piece-nejimaki-jima-no-daibouken",
+    "title": "Clockwork Island Adventure",
+    "when": "Non-canon; best after episode 53 (after Loguetown, before Warship Island)",
+    "canon": false,
+    "afterEpisode": {
+     "series": "one-piece",
+     "episode": 53
+    },
+    "note": "Zoro and Usopp have their Loguetown gear; One Piece Wiki says it could also sit just before Reverse Mountain (after episode 61).",
+    "confidence": "high",
+    "sources": [
+     "https://onepiece.fandom.com/wiki/Clockwork_Island_Adventure",
+     "https://www.destructoid.com/how-to-watch-all-one-piece-movies-in-order-chronologically/",
+     "https://www.thepopverse.com/one-piece-order-shows-movie-series-anime-watch-how-where-chronological"
+    ]
+   },
+   {
+    "slug": "one-piece-chinjuujima-no-chopper-oukoku",
+    "title": "Chopper's Kingdom on the Island of Strange Animals",
+    "when": "Doesn't fit the timeline; watch any time after episode 130 (end of the Arabasta arc)",
+    "canon": false,
+    "afterEpisode": {
+     "series": "one-piece",
+     "episode": 130
+    },
+    "note": "Chopper is aboard but Vivi and Robin are absent, which One Piece Wiki says contradicts canon; some guides use episode 102 instead.",
+    "confidence": "medium",
+    "sources": [
+     "https://onepiece.fandom.com/wiki/Chopper%27s_Kingdom_on_the_Island_of_Strange_Animals",
+     "https://www.thepopverse.com/one-piece-order-shows-movie-series-anime-watch-how-where-chronological"
+    ]
+   },
+   {
+    "slug": "one-piece-dead-end-no-bouken",
+    "title": "Dead End Adventure",
+    "when": "Non-canon; best after episode 138 (between the Arabasta and Jaya arcs)",
+    "canon": false,
+    "afterEpisode": {
+     "series": "one-piece",
+     "episode": 138
+    },
+    "note": "Robin is aboard but the crew does not yet know their new bounties, so it falls between Arabasta and Jaya.",
+    "confidence": "high",
+    "sources": [
+     "https://onepiece.fandom.com/wiki/Dead_End_Adventure",
+     "https://www.destructoid.com/how-to-watch-all-one-piece-movies-in-order-chronologically/",
+     "https://www.thepopverse.com/one-piece-order-shows-movie-series-anime-watch-how-where-chronological"
+    ]
+   },
+   {
+    "slug": "one-piece-norowareta-seiken",
+    "title": "The Cursed Holy Sword",
+    "when": "Non-canon; best after episode 195 (end of the Skypiea arc)",
+    "canon": false,
+    "afterEpisode": {
+     "series": "one-piece",
+     "episode": 195
+    },
+    "note": "One Piece Wiki places it after Skypiea because the crew knows their post-Arabasta bounties; some guides use episode 143 instead.",
+    "confidence": "medium",
+    "sources": [
+     "https://onepiece.fandom.com/wiki/The_Cursed_Holy_Sword",
+     "https://www.destructoid.com/how-to-watch-all-one-piece-movies-in-order-chronologically/"
+    ]
+   },
+   {
+    "slug": "one-piece-omatsuri-danshaku-to-himitsu-no-shima",
+    "title": "Baron Omatsuri and the Secret Island",
+    "when": "Non-canon; best after episode 206, any time before Water 7 (episode 229)",
+    "canon": false,
+    "afterEpisode": {
+     "series": "one-piece",
+     "episode": 206
+    },
+    "note": "Robin and the Going Merry place it between Skypiea and Water 7; guides pick episode 206 or 224.",
+    "confidence": "medium",
+    "sources": [
+     "https://www.thepopverse.com/one-piece-order-shows-movie-series-anime-watch-how-where-chronological",
+     "https://www.destructoid.com/how-to-watch-all-one-piece-movies-in-order-chronologically/"
+    ]
+   },
+   {
+    "slug": "one-piece-karakurijou-no-mecha-kyohei",
+    "title": "The Giant Mechanical Soldier of Karakuri Castle",
+    "when": "Non-canon; best after episode 228 (just before the Water 7 arc)",
+    "canon": false,
+    "afterEpisode": {
+     "series": "one-piece",
+     "episode": 228
+    },
+    "note": "One Piece Wiki sets it before the Water 7 arc.",
+    "confidence": "high",
+    "sources": [
+     "https://onepiece.fandom.com/wiki/The_Giant_Mechanical_Soldier_of_Karakuri_Castle",
+     "https://www.destructoid.com/how-to-watch-all-one-piece-movies-in-order-chronologically/",
+     "https://www.thepopverse.com/one-piece-order-shows-movie-series-anime-watch-how-where-chronological"
+    ]
+   },
+   {
+    "slug": "one-piece-strong-world",
+    "title": "One Piece Film: Strong World",
+    "when": "Non-canon; best after episode 381 (between Thriller Bark and Sabaody)",
+    "canon": false,
+    "afterEpisode": {
+     "series": "one-piece",
+     "episode": 381
+    },
+    "note": "Story by Oda, but the film itself is not canon (its villain Shiki is); filler episodes 426-429 are its prequel.",
+    "confidence": "high",
+    "sources": [
+     "https://onepiece.fandom.com/wiki/One_Piece_Film:_Strong_World",
+     "https://www.destructoid.com/how-to-watch-all-one-piece-movies-in-order-chronologically/"
+    ]
+   },
+   {
+    "slug": "one-piece-film-z",
+    "title": "One Piece Film: Z",
+    "when": "Non-canon; best after episode 578 (after the Z's Ambition episodes, before Punk Hazard)",
+    "canon": false,
+    "afterEpisode": {
+     "series": "one-piece",
+     "episode": 578
+    },
+    "note": "First post-timeskip film; filler episodes 575-578 lead into it.",
+    "confidence": "high",
+    "sources": [
+     "https://onepiece.fandom.com/wiki/One_Piece_Film:_Z",
+     "https://onepiece.fandom.com/wiki/Z%27s_Ambition_Arc",
+     "https://www.destructoid.com/how-to-watch-all-one-piece-movies-in-order-chronologically/",
+     "https://www.thepopverse.com/one-piece-order-shows-movie-series-anime-watch-how-where-chronological"
+    ]
+   },
+   {
+    "slug": "one-piece-film-gold",
+    "title": "One Piece Film: Gold",
+    "when": "Non-canon; best after episode 750 (between Dressrosa and Zou)",
+    "canon": false,
+    "afterEpisode": {
+     "series": "one-piece",
+     "episode": 750
+    },
+    "note": "Set after Dressrosa and before Zou; filler episodes 747-750 (Silver Mine) lead into it.",
+    "confidence": "high",
+    "sources": [
+     "https://onepiece.fandom.com/wiki/One_Piece_Film:_Gold",
+     "https://www.destructoid.com/how-to-watch-all-one-piece-movies-in-order-chronologically/",
+     "https://www.thepopverse.com/one-piece-order-shows-movie-series-anime-watch-how-where-chronological"
+    ]
+   },
+   {
+    "slug": "one-piece-stampede",
+    "title": "One Piece: Stampede",
+    "when": "Non-canon; best after episode 889 (after Levely, before Wano)",
+    "canon": false,
+    "afterEpisode": {
+     "series": "one-piece",
+     "episode": 889
+    },
+    "note": "Luffy has his post-Levely bounty and the Warlord system still exists, so it sits just before Wano; the Cidre Guild filler episodes tie in.",
+    "confidence": "high",
+    "sources": [
+     "https://onepiece.fandom.com/wiki/One_Piece:_Stampede",
+     "https://www.destructoid.com/how-to-watch-all-one-piece-movies-in-order-chronologically/",
+     "https://www.thepopverse.com/one-piece-order-shows-movie-series-anime-watch-how-where-chronological"
+    ]
+   },
+   {
+    "slug": "one-piece-film-red",
+    "title": "One Piece Film: Red",
+    "when": "Non-canon; best after episode 1085 (after the Wano arc)",
+    "canon": false,
+    "afterEpisode": {
+     "series": "one-piece",
+     "episode": 1085
+    },
+    "note": "One Piece Wiki places it after Wano because Jinbe is aboard and Luffy uses Gear 5; episodes 1029-1030 (Uta's Past) are a prequel, which is why many guides list it after episode 1030.",
+    "confidence": "medium",
+    "sources": [
+     "https://onepiece.fandom.com/wiki/One_Piece_Film:_Red",
+     "https://www.destructoid.com/how-to-watch-all-one-piece-movies-in-order-chronologically/",
+     "https://www.thepopverse.com/one-piece-order-shows-movie-series-anime-watch-how-where-chronological"
+    ]
+   }
+  ]
+ }
 }
