@@ -56,9 +56,9 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   },
   "dragon-ball": {
     label: "Dragon Ball",
-    intro: "Dragon Ball, then Dragon Ball Z, then Dragon Ball Super, with Daima (2024) set between Z and Super, followed by the films Broly (2018) and Super Hero (2022). Kai is a trimmed re-edit of Z, so choose Z or Kai, not both. GT is a non-canon ending; watch it last or skip it. The films Battle of Gods and Resurrection 'F' are retold in Super's first two arcs, so they are optional too.",
+    intro: "Dragon Ball, then Dragon Ball Z, then Dragon Ball Super, with Daima (2024) set between Z and Super, followed by the films Broly (2018) and Super Hero (2022). Kai is a trimmed re-edit of Z, so choose Z or Kai, not both. GT is a non-canon ending; watch it last or skip it. The films Battle of Gods and Resurrection 'F' are retold in Super's first two arcs, so they are optional too, as is Dragon Ball Super: Beerus (from October 2026), a remastered version of Super's early arcs. The thirteen Z films from 1989 to 1995 are non-canon side stories. A new series, Dragon Ball Super: The Galactic Patrol, set after Broly, was announced in January 2026 with no date yet.",
     promote: ["dragon-ball-daima", "dragon-ball-super", "dragon-ball-super-broly", "dragon-ball-super-super-hero"],
-    optional: ["dragon-ball-gt", "dragon-ball-gt-goku-gaiden-yuuki-no-akashi-wa-suushinchuu", "dragon-ball-kai", "dragon-ball-z-movie-14-kami-to-kami", "dragon-ball-z-movie-15"],
+    optional: ["dragon-ball-gt", "dragon-ball-gt-goku-gaiden-yuuki-no-akashi-wa-suushinchuu", "dragon-ball-kai", "dragon-ball-z-movie-14-kami-to-kami", "dragon-ball-z-movie-15", "dragon-ball-super-beerus"],
     mainOrder: ["dragon-ball", "dragon-ball-z", "dragon-ball-daima", "dragon-ball-super", "dragon-ball-super-broly", "dragon-ball-super-super-hero"],
   },
   "sword-art-online": {
@@ -147,7 +147,7 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   },
   "jojo-s-bizarre-adventure-2012": {
     label: "JoJo's Bizarre Adventure",
-    intro: "Watch the parts in order: the 2012 series (Parts 1 and 2, Phantom Blood and Battle Tendency), Stardust Crusaders (two cours), Diamond Is Unbreakable, Golden Wind, then Stone Ocean (released in three batches). Each part has a new lead but builds on the previous ones, so don't skip ahead. The Thus Spoke Kishibe Rohan OVAs are optional side stories best watched after Diamond Is Unbreakable. The 1993–2002 Stardust Crusaders OVA and the 2007 Phantom Blood film are older, partial adaptations you can ignore. Part 7, Steel Ball Run, follows Stone Ocean; it began streaming on Netflix in March 2026.",
+    intro: "Watch the parts in order: the 2012 series (Parts 1 and 2, Phantom Blood and Battle Tendency), Stardust Crusaders (two cours), Diamond Is Unbreakable, Golden Wind, then Stone Ocean (released in three batches). Each part has a new lead but builds on the previous ones, so don't skip ahead. The Thus Spoke Kishibe Rohan OVAs are optional side stories best watched after Diamond Is Unbreakable. The 1993–2002 Stardust Crusaders OVA and the 2007 Phantom Blood film are older, partial adaptations you can ignore. Part 7, Steel Ball Run, follows Stone Ocean; its first episode premiered on Netflix on March 19, 2026, and the remaining 11 episodes stream weekly from September 25, 2026.",
   },
   "neon-genesis-evangelion": {
     label: "Evangelion",
@@ -156,7 +156,9 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   },
   gintama: {
     label: "Gintama",
-    intro: "Gintama (2006), Gintama' (2011), Enchousen, then the film Be Forever Yorozuya (2013), Gintama° (2015), Gintama. (2017), Porori-hen, the two Silver Soul cours (2018) and finally the film Gintama: The Final (2021), which is the real ending. Be Forever Yorozuya is an alternate-future story released before the manga ended; it is well loved but optional. The first film (Benizakura) and Yoshiwara in Flames (2026) retell arcs from the TV series and can be skipped, and the 2025 spin-off series Mr. Ginpachi's Zany Class is optional.",
+    intro: "Gintama (2006), Gintama' (2011), Enchousen, then the film Be Forever Yorozuya (2013), Gintama° (2015), Gintama. (2017), Porori-hen, the two Silver Soul cours (2018) and finally the film Gintama: The Final (2021), which is the real ending. Be Forever Yorozuya is an alternate-future story released before the manga ended; it is well loved but optional. The first film (Benizakura), the On Theater 2D compilation films and Yoshiwara in Flames (2026) retell arcs from the TV series and can be skipped, and the 2025 spin-off series Mr. Ginpachi's Zany Class is optional.",
+    skip: ["gintama-on-theater-2d-ikkoku-keisei-hen"],
+    demote: ["gintama-kanketsu-hen-yorozuya-yo-eien-nare"],
   },
   "fairy-tail": {
     label: "Fairy Tail",
@@ -172,11 +174,11 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   },
   "tate-no-yuusha-no-nariagari": {
     label: "The Rising of the Shield Hero",
-    intro: "Seasons 1 to 4 in release order. Season 2 is short and had a mixed reception, but Season 3 picks up directly from it, so don't skip it. There are no films to slot in.",
+    intro: "Seasons 1 to 4 in release order; Season 5 is due in 2027. Season 2 is short and had a mixed reception, but Season 3 picks up directly from it, so don't skip it. There are no films to slot in.",
   },
   "dungeon-ni-deai-wo-motomeru-no-wa-machigatteiru-no-darou-ka": {
     label: "DanMachi",
-    intro: "Season 1, Season 2, Season 3, Season 4 (two parts) and Season 5 in order. Sword Oratoria is a spin-off that runs parallel to Season 1 from Aiz's side; watch it after Season 1. The film Arrow of the Orion is a standalone side story that also fits after Season 1.",
+    intro: "Season 1, Season 2, Season 3, Season 4 (two parts) and Season 5 in order; Season 6 was announced in February 2026 but has no premiere date yet. Sword Oratoria is a spin-off that runs parallel to Season 1 from Aiz's side; watch it after Season 1. The film Arrow of the Orion is a standalone side story that also fits after Season 1.",
   },
   "psycho-pass": {
     label: "Psycho-Pass",
@@ -323,10 +325,11 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
     intro: "Watch the 12-episode series (2011), then the sequel film Rebellion (2013), then Walpurgisnacht: Rising, which opened on August 28, 2026. The 2012 films Beginnings and Eternal retell the series and can be skipped if you watched it. Magia Record is a separate spin-off. The concept film, the manners short and the Sonico and Nisioisin collaboration clips are not part of the story.",
     skip: ["mahou-shoujo-madoka-magica-concept-movie", "mahou-shoujo-sonico-magica"],
     exclude: ["minna-to-manner-wo-manabou", "mahou-shoujo-madoka-magica-movie-3-hangyaku-no-monogatari-magica-quartet-x-nisioisin", "magia-record-mahou-shoujo-madoka-magica-gaiden"],
+    optional: ["magia-record-mahou-shoujo-madoka-magica-gaiden-tv"],
   },
   "saiki-kusuo-no-psi-nan-tv": {
     label: "The Disastrous Life of Saiki K.",
-    intro: "Season 1 (2016), Season 2 (2018), the Final Arc special (December 28, 2018), then Reawakened, six episodes released on Netflix on December 30, 2019. Season 1 aired as 120 short daily episodes that were also put together into 24 half-hour episodes, so pick one version, not both. The 2013 web shorts are optional.",
+    intro: "Season 1 (2016), Season 2 (2018), the Final Arc special (December 28, 2018), then Reawakened, six episodes released on Netflix on December 30, 2019. Season 1 aired as 120 short daily episodes that were also put together into 24 half-hour episodes, so pick one version, not both. The 2013 flash-anime short is optional.",
   },
   "chuunibyou-demo-koi-ga-shitai": {
     label: "Love, Chunibyo & Other Delusions",
@@ -343,11 +346,14 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   "kobayashi-san-chi-no-maid-dragon": {
     label: "Miss Kobayashi's Dragon Maid",
     intro: "Season 1 (2017) and its OVA, then Dragon Maid S (July–September 2021) and its OVA, then the film A Lonely Dragon Wants to Be Loved (June 27, 2025), the sequel film. The Mini Dragon shorts and other specials are optional.",
+    promote: ["kobayashisan-Chi-no-Maidragon-Samishii-Gariya-no-Ryuu", "kobayashi-san-chi-no-dragon-maid-s-ova"],
+    optional: ["kobayashi-san-chi-no-maidragon-s-mini-dra"],
   },
   "magi-the-kingdom-of-magic": {
     label: "Magi",
     intro: "Start with Magi: The Labyrinth of Magic (2012–2013), then The Kingdom of Magic (2013–2014). Magi: Adventure of Sinbad (TV, 2016) is a prequel spin-off about Sinbad's youth; it was made after the main series and is optional, so watch it afterwards. A five-episode Adventure of Sinbad OVA (2014–2015) also exists and is optional.",
     demote: ["magi-sinbad-no-bouken-tv"],
+    optional: ["magi-sinbad-no-bouken"],
   },
   nichijou: {
     label: "Nichijou",
@@ -357,6 +363,8 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   "high-school-dxd": {
     label: "High School DxD",
     intro: "Watch the four seasons in order: High School DxD (2012), New (2013), BorN (2015) and Hero (2018), each followed by the OVA episodes listed after it. The first season's two OVAs were released as episodes 13 and 14, after the TV run ended. The short specials that came with the Blu-ray volumes are optional extras.",
+    promote: ["high-school-dxd-hero-taiikukan-ura-no-holy"],
+    mainOrder: ["high-school-dxd", "high-school-dxd-ova", "high-school-dxd-new", "high-school-dxd-new-ova", "high-school-dxd-born", "high-school-dxd-born-yomigaerarenai-pheonix", "high-school-dxd-hero-taiikukan-ura-no-holy", "high-school-dxd-hero"],
   },
   "log-horizon": {
     label: "Log Horizon",
