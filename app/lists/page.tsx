@@ -44,7 +44,7 @@ export default async function Lists() {
           { href: "/anime-openings", icon: "🎵", t: "Openings & endings", d: "Every theme song, artist and episode range." },
           { href: "/birthdays", icon: "🎂", t: "Character birthdays", d: "Who's celebrating today, and every date." },
           { href: "/my/wrapped", icon: "✨", t: "My anime Wrapped", d: "Your year in anime as a shareable card." },
-          { href: "/random", icon: "🎲", t: "Random anime", d: "Can't decide? Let the dice pick." },
+          { href: "/random-anime-generator", icon: "🎲", t: "Random anime generator", d: "Pick by genre, length or score." },
         ].map((c, i) => (
           <li key={c.href} className="reveal">
             <Link href={c.href} className="genre-tile card group flex h-full gap-3 p-4 transition duration-300 hover:-translate-y-0.5 hover:border-white/20" style={{ ["--h" as string]: String([262, 350, 190, 140, 40, 300, 220, 20, 40, 300, 20, 190, 262, 40, 330, 330, 300, 190][i]) }}>

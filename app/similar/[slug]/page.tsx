@@ -10,6 +10,14 @@ import FanRecs from "@/components/FanRecs";
 import { getFanRecommendations } from "@/lib/anilist";
 import { getAniListInsight } from "@/lib/insights";
 import { robotsFor, similarIndexed } from "@/lib/indexing";
+import PickList, { type Pick } from "@/components/PickList";
+import { alAnime } from "@/lib/alsnap";
+import { sharedThemes } from "@/lib/similar";
+import { similarStrength, themesOf } from "@/lib/picks";
+import { type FanRec } from "@/lib/anilist";
+import { getAniListId } from "@/lib/kitsu";
+import { snapshotOrder } from "@/lib/wosnap";
+import { WATCH_ORDER_OVERRIDES } from "@/data/watch-orders";
 
 export const revalidate = 604800;
 // Render on first request, then serve from the ISR cache until revalidated.
@@ -34,18 +42,44 @@ async function similarTo(a: Anime): Promise<Anime[]> {
   return uniqueById(scored.sort((x, y) => y.score - x.score).map((s) => s.a)).slice(0, 20);
 }
 
+/** Fan recommendations as reasoned picks: what each shares with the title, from the AniList snapshot. */
+function fanPicks(recs: FanRec[], alId: number | null, name: string): Pick[] {
+  const mine = alId ? alAnime(alId)?.t ?? [] : [];
+  const seen = new Set<string>();
+  return recs.flatMap((r) => {
+    if (!r.anime) return [];
+    // One entry per franchise: Code Geass R2 adds nothing after Code Geass.
+    const root = snapshotOrder(r.anime.id)?.root.slug ?? r.anime.slug;
+    if (seen.has(root)) return [];
+    seen.add(root);
+    const theirs = alAnime(r.anilistId)?.t ?? [];
+    const both = mine.length ? sharedThemes(mine, theirs) : [];
+    const own = themesOf(theirs).filter((t) => !both.includes(t)).slice(0, 2);
+    const why = both.length ? `Like ${name}: ${both.join(", ")}.${own.length ? ` Also: ${own.join(", ")}.` : ""}` : own.length ? `${own.join(", ")}. Fans of ${name} pick it most.` : `Fans of ${name} pick it most.`;
+    return [{ anime: r.anime, why, votes: r.votes }];
+  });
+}
+
+/** Indexed when Google already shows it, or when fans recommend 8+ titles and 5+ share themes with it. */
+async function strong(kitsuId: string, slug: string) {
+  const alId = await getAniListId(kitsuId).catch(() => null);
+  return { alId, indexed: similarIndexed(slug) || (alId ? similarStrength(alId).strong : false) };
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const a = await getAnimeBySlug(decodeURIComponent(slug));
   if (!a) notFound();
   // English name when it's what people search ("anime like my hero academia"), the real count and the year.
-  const name = a.titleEn && a.titleEn.length <= 40 ? a.titleEn : a.title;
+  const name = WATCH_ORDER_OVERRIDES[a.slug]?.label ?? (a.titleEn && a.titleEn.length <= 40 ? a.titleEn : a.title);
   const n = (await similarTo(a)).length;
+  const { indexed, alId } = await strong(a.id, a.slug);
+  const fans = indexed ? fanPicks(await getFanRecommendations(a.id, 12), alId, name).length : 0;
   return {
-    title: `Anime Like ${name}: ${n || 20} Shows to Watch Next (${new Date().getFullYear()})`,
+    title: indexed && fans >= 8 ? `Anime Like ${name}: ${fans} Picks Fans Recommend, and Why (${new Date().getFullYear()})` : `Anime Like ${name}: ${n || 20} Shows to Watch Next (${new Date().getFullYear()})`,
     description: `Finished ${name}? These anime share its ${publicGenres(a.categories).slice(0, 3).map((c) => c.title.toLowerCase()).join(", ")} DNA, ranked by how many fans watch them.`,
     alternates: { canonical: `/similar/${a.slug}` },
-    robots: robotsFor(similarIndexed(a.slug)),
+    robots: robotsFor(indexed),
   };
 }
 
@@ -53,7 +87,9 @@ export default async function SimilarPage({ params }: Props) {
   const { slug } = await params;
   const a = await getAnimeBySlug(decodeURIComponent(slug));
   if (!a) notFound();
-  const [items, recs, insight] = await Promise.all([similarTo(a), getFanRecommendations(a.id, 12), getAniListInsight(a.id)]);
+  const [items, recs, insight, { alId }] = await Promise.all([similarTo(a), getFanRecommendations(a.id, 12), getAniListInsight(a.id), strong(a.id, a.slug)]);
+  const name = WATCH_ORDER_OVERRIDES[a.slug]?.label ?? (a.titleEn && a.titleEn.length <= 40 ? a.titleEn : a.title);
+  const picks = fanPicks(recs, alId, name);
   return (
     <div className="container-x pb-8">
       <PageHero
@@ -67,7 +103,13 @@ export default async function SimilarPage({ params }: Props) {
       >
         <div className="flex flex-wrap gap-2">{publicGenres(a.categories).slice(0, 6).map((c) => <Link key={c.id} href={`/genre/${c.slug}`} className="chip">{c.title}</Link>)}</div>
       </PageHero>
-      <FanRecs title={a.title} recs={recs} heading={`What ${a.title} fans recommend`} tags={insight?.tags} />
+      {picks.length >= 4 ? (
+        <section className="reveal mt-10" aria-labelledby="picks-h">
+          <h2 id="picks-h" className="h-section mb-1">{picks.length} anime {name} fans recommend, and why</h2>
+          <p className="mb-4 text-sm text-muted">Ordered by how many AniList members recommend each to {name} fans. The reason line is what the two share, from AniList&apos;s community tags.</p>
+          <PickList picks={picks} />
+        </section>
+      ) : <FanRecs title={a.title} recs={recs} heading={`What ${a.title} fans recommend`} tags={insight?.tags} />}
       <AdSlot slot="similar-top" />
       <h2 className="h-section mb-3 mt-12">Same genres and themes</h2>
       <div><AnimeGrid items={items} startRank={1} ld={`Anime like ${a.title}`} emptyText="Not enough genre data to find matches yet." /></div>

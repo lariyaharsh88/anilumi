@@ -3,7 +3,7 @@ import { posterUrl } from "@/lib/kitsu";
 import { alAnime } from "@/lib/alsnap";
 import { abs } from "@/lib/site";
 import { WATCH_ORDER_OVERRIDES } from "@/data/watch-orders";
-import { listAnime, getCategories, getAniListId, seasonOf, shiftSeason, animePath, episodePath, runtimeMinutes, TREND_GENRES, MAIN_GENRES } from "@/lib/kitsu";
+import { listAnime, getCategories, getAniListId, kitsuByAniListIds, seasonOf, shiftSeason, animePath, episodePath, runtimeMinutes, TREND_GENRES, MAIN_GENRES } from "@/lib/kitsu";
 import { episodeMinutes } from "@/lib/binge";
 import { popularVoiceActors, vaPath } from "@/lib/anilist";
 import { allDays, birthdaysOn, bdPath, monthPath } from "@/lib/birthdays";
@@ -14,6 +14,7 @@ import { hasSnapshotThemes } from "@/lib/themes";
 import { airing as airingSnapshot, upcomingOf } from "@/lib/airing";
 import { HINDI_SLUGS, hindiPath, hindiIndexed } from "@/lib/hindi";
 import { allStreams, streamsPath } from "@/lib/streams";
+import { strongSimilarIds } from "@/lib/picks";
 import { HINDI_PLATFORMS, dubsOn } from "@/lib/hindidub";
 import { airsSoon, searchShownPaths, similarSlugs, watchOrderIndexed, characterTableIndexed, notedCharacters, genreIndexed, bestYearIndexed, trendIndexed, voiceActorIndexed, NEXT_SEASON_MIN_MEMBERS } from "@/lib/indexing";
 import franchiseData from "@/data/franchises.json";
@@ -70,6 +71,7 @@ export async function sitemapEntries(): Promise<MetadataRoute.Sitemap> {
     { url: abs("/what-anime-is-this"), lastModified: at(), changeFrequency: "monthly", priority: 0.8 },
     { url: abs("/news"), lastModified: now, changeFrequency: "hourly", priority: 0.8 },
     { url: abs("/quiz"), lastModified: at(), changeFrequency: "monthly", priority: 0.6 },
+    { url: abs("/random-anime-generator"), lastModified: at(D.anilist), changeFrequency: "monthly", priority: 0.6 },
     { url: abs("/birthdays"), lastModified: now, changeFrequency: "daily", priority: 0.7 },
     ...Array.from({ length: 12 }, (_, i) => ({ url: abs(monthPath(i + 1)), lastModified: at(D.birthdays), changeFrequency: "monthly" as const, priority: 0.6 })),
     { url: abs("/on-this-day"), lastModified: now, changeFrequency: "daily", priority: 0.7 },
@@ -151,7 +153,9 @@ export async function sitemapEntries(): Promise<MetadataRoute.Sitemap> {
     }
     // "Anime like X" has the best click-through on the site: list it for the 500 most-followed titles (ranked in
     // the alias index, so no extra API calls).
-    for (const s of similarSlugs()) out.push({ url: abs(`/similar/${s}`), lastModified: at(D.anilist, D.aliases), changeFrequency: "monthly", priority: 0.5 });
+    // Plus every title whose page is strong: 8+ fan picks, 5+ with shared themes (lib/picks.ts, the page's own test).
+    const strongSimilar = await kitsuByAniListIds(strongSimilarIds()).catch(() => new Map<number, { slug: string }>());
+    for (const s of new Set([...similarSlugs(), ...[...strongSimilar.values()].map((a) => a.slug)])) out.push({ url: abs(`/similar/${s}`), lastModified: at(D.anilist, D.aliases), changeFrequency: "monthly", priority: 0.5 });
     // Most-followed voice actors only (the hub's own cached request).
     for (const [i, v] of (await popularVoiceActors()).entries()) if (voiceActorIndexed(vaPath(v), i)) out.push({ url: abs(vaPath(v)), lastModified: at(D.voiceActors), changeFrequency: "monthly", priority: 0.4 });
   } catch {

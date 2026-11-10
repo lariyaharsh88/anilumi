@@ -26,7 +26,7 @@ export const EXPLORE: NavItem[] = [
   { href: "/dub-schedule", label: "Dub schedule", icon: "schedule", desc: "Next English and Hindi dub episodes" },
   { href: "/hindi-dub", label: "Hindi dubbed anime", icon: "hindi", desc: "Anime you can watch in Hindi" },
   { href: "/hi", label: "हिंदी गाइड", icon: "hindi", desc: "Watch guides in Hindi" },
-  { href: "/random", label: "Random anime", icon: "random", desc: "Pick something for me" },
+  { href: "/random-anime-generator", label: "Random anime generator", icon: "random", desc: "Pick by genre, length or score" },
 ];
 
 export const isActive = (path: string, href: string) =>
