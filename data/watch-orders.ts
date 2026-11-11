@@ -205,7 +205,7 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   },
   "solo-leveling": {
     label: "Solo Leveling",
-    intro: "Season 1 (2024), then Season 2 – Arise from the Shadow (2025). ReAwakening is a theatrical recap of Season 1 with the first two episodes of Season 2 attached, so skip it if you are watching Season 2 anyway.",
+    intro: "Season 1 (January–March 2024), then Season 2 – Arise from the Shadow (January–March 2025). ReAwakening is a theatrical recap of Season 1 with the first two episodes of Season 2 attached, so skip it if you are watching Season 2 anyway; the February 2024 special How to Get Stronger is also a recap. A film, Beyond the System, which continues after Season 2, was announced in July 2026 with no release date yet.",
     skip: ["ore-dake-level-up-na-ken-reawakening"],
   },
   "dr-stone": {
@@ -214,7 +214,7 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   },
   "blue-lock": {
     label: "Blue Lock",
-    intro: "Season 1, then Season 2 (VS U-20 Japan). Episode Nagi (2024) is a film that retells Season 1 from Nagi's point of view with some new scenes; it is optional and lands best after Season 1, not before.",
+    intro: "Season 1 (October 2022–March 2023), then Season 2, VS. U-20 Japan (October–December 2024). Episode Nagi (2024) is a film that retells Season 1 from Nagi's point of view with some new scenes; it is optional and lands best after Season 1, not before. A third season, Neo Egoist League, has been announced with no premiere date yet.",
     demote: ["blue-lock-episode-nagi"],
   },
   "tokyo-revengers": {
@@ -934,14 +934,16 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   "little-busters": {
     label: "Little Busters!",
     intro: "Watch Little Busters! (26 episodes, October 2012–April 2013), then the second season, Little Busters! Refrain (13 episodes, October–December 2013), then the eight Little Busters! EX episodes (January–July 2014). All three are by J.C.Staff. The November 2013 OVA is an optional extra. Kud Wafter, a spin-off about Kudryavka, and Kaginado are separate.",
+    promote: ["little-busters-ex"],
   },
   "digimon-adventure": {
     label: "Digimon Adventure",
-    intro: "Start with the short film Digimon Adventure (March 6, 1999), released the day before the 54-episode series (March 1999–March 2000). Then watch the film Our War Game! (March 2000), Digimon Adventure 02 (April 2000–March 2001), the 02 film Revenge of Diaboromon, the six tri. films (2015–2018) and Last Evolution Kizuna (February 2020). Digimon: The Movie is an English edit of the early films, and the 2020 Digimon Adventure: is a reboot.",
+    intro: "Start with the short film Digimon Adventure (March 6, 1999), released the day before the 54-episode series (March 1999–March 2000). Then watch the film Our War Game! (March 2000), Digimon Adventure 02 (April 2000–March 2001) with its two films, Hurricane Touchdown (July 2000) and Revenge of Diaboromon (March 2001), then the six tri. films (2015–2018), Last Evolution Kizuna (February 2020) and Digimon Adventure 02: The Beginning (October 2023), which is set after Kizuna. The 20th Memorial Story shorts and the 2025 Beyond video are optional extras. Digimon: The Movie is an English edit of the early films, and the 2020 Digimon Adventure: is a reboot.",
+    optional: ["digimon-adventure-20-shuunen-memorial-story"],
   },
   mononoke: {
     label: "Mononoke",
-    intro: "Mononoke (12 episodes, July–September 2007) is a spin-off of the 2006 anthology Ayakashi: Samurai Horror Tales, following the Medicine Seller from its Bakeneko story; that story is an optional prequel, and the other Ayakashi stories are separate tales. After the series, watch the film trilogy: The Phantom in the Rain (July 2024), Hinezumi (March 2025) and Hebigami (May 2026). Kitsu only links the first film, so the other two were added.",
+    intro: "Mononoke (12 episodes, July–September 2007) is a spin-off of the 2006 anthology Ayakashi: Samurai Horror Tales, following the Medicine Seller from its Bakeneko story; that story is an optional prequel, and the other Ayakashi stories are separate tales. After the series, watch the film trilogy: The Phantom in the Rain (July 2024), Hinezumi (March 2025) and Hebigami (May 2026). Kitsu only links the first film, so the other two were added. A new Mononoke project, led by a new Medicine Seller, was announced in July 2026 with no format or date yet.",
     demote: ["ayakashi-japanese-classic-horror"],
     promote: ["Mononoke-Karakasa", "Mononoke-Hinezumi", "Mononoke-Hebigami"],
     mainOrder: ["mononoke", "Mononoke-Karakasa", "Mononoke-Hinezumi", "Mononoke-Hebigami"],
@@ -949,6 +951,7 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   "school-rumble": {
     label: "School Rumble",
     intro: "Watch School Rumble (26 episodes, October 2004–March 2005), the two-part OVA Extra Class (December 2005), the second season, 2nd Semester (26 episodes, April–September 2006), then 3rd Semester, two OVA episodes released from July to September 2008. 3rd Semester is the last School Rumble anime, so the story continues only in the manga.",
+    promote: ["school-rumble-ichi-gakki-hoshuu"],
   },
   "ginga-eiyuu-densetsu": {
     label: "Legend of the Galactic Heroes",
@@ -972,6 +975,8 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   "girls-und-panzer": {
     label: "Girls und Panzer",
     intro: "Watch the 12-episode TV series (October 2012–March 2013; the last two episodes aired in March), the OVA This Is the Real Anzio Battle! (July 2014), then Girls und Panzer der Film (November 2015). Then the das Finale films, planned as six parts: Part 1 (December 2017), Part 2 (June 2019), Part 3 (March 2021), Part 4 (October 2023) and Part 5 (October 9, 2026). The disc specials and Yukari's tank lectures are optional.",
+    promote: ["girls-und-panzer-kore-ga-hontou-no-anzio-sen-desu"],
+    optional: ["girls-und-panzer-der-film-arisu-war"],
   },
   xxxholic: {
     label: "xxxHolic",
@@ -979,7 +984,7 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   },
   "initial-d-first-stage": {
     label: "Initial D",
-    intro: "Watch the Stages in order: First Stage (26 episodes, 1998), Second Stage (1999–2000), the film Third Stage (January 2001), Fourth Stage (2004–2006), Fifth Stage (2012–2013) and Final Stage (May–June 2014). The Extra Stage OVAs are optional side stories; the Battle Stage videos and New Initial D the Movie (2014–2016), a film trilogy that retells the start, can be skipped. MF Ghost (from October 2023) is a sequel series set years later.",
+    intro: "Watch the Stages in order: First Stage (26 episodes, 1998), Second Stage (1999–2000), the film Third Stage (January 2001), Fourth Stage (2004–2006), Fifth Stage (2012–2013) and Final Stage (May–June 2014). The Extra Stage OVAs are optional side stories; the Battle Stage videos, the 2007 Project D recap special and New Initial D the Movie (2014–2016), a film trilogy that retells the start, can be skipped. MF Ghost, a sequel series set years later, follows: Season 1 (October–December 2023), Season 2 (October–December 2024) and Season 3 (January–March 2026), with a final season announced in March 2026.",
   },
   dorohedoro: {
     label: "Dorohedoro",
@@ -1029,7 +1034,8 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   },
   "yowamushi-pedal": {
     label: "Yowamushi Pedal",
-    intro: "Watch the five seasons in order: Yowamushi Pedal (38 episodes, October 2013–July 2014), Grande Road (October 2014–March 2015), New Generation (January–June 2017), Glory Line (January–June 2018) and Limit Break (October 2022–March 2023). The August 2015 film is optional and fits after Grande Road. Re:Ride, Re:Road and Re:Generation are compilation films and can be skipped, and Spare Bike is a spin-off.",
+    intro: "Watch the five seasons in order: Yowamushi Pedal (38 episodes, October 2013–July 2014), Grande Road (October 2014–March 2015), New Generation (January–June 2017), Glory Line (January–June 2018) and Limit Break (October 2022–March 2023). The August 2015 film is an optional side story set after Grande Road, so watch it any time after that season. Re:Ride, Re:Road and Re:Generation are compilation films and can be skipped, and Spare Bike is a spin-off.",
+    demote: ["yowamushi-pedal-movie"],
   },
   "otome-game-no-hametsu-flag-shika-nai-akuyaku-reijou-ni-tensei-shiteshimatta": {
     label: "My Next Life as a Villainess",
