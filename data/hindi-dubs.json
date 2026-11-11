@@ -1,5 +1,5 @@
 {
- "checked": "2026-11-10",
+ "checked": "2026-11-11",
  "reviewed": null,
  "entries": [
   {
@@ -1980,13 +1980,19 @@
      "name": "Netflix",
      "scope": "SAC_2045 (Season 1-2)",
      "url": "https://www.netflix.com/in/title/81030224"
+    },
+    {
+     "name": "Apple TV",
+     "scope": "Solid State Society film, streams via Prime Video",
+     "url": "https://tv.apple.com/in/movie/ghost-in-the-shell-stand-alone-complex-solid-state-society/umc.cmc.4v03qq1961i3vjyv2o7550d5k"
     }
    ],
    "sources": [
     "https://www.netflix.com/in/title/81030224",
-    "https://www.animenewsnetwork.com/news/2020-07-17/netflix-india-releases-hindi-dub-of-ghost-in-the-shell-sac_2045-anime/.161894"
+    "https://www.animenewsnetwork.com/news/2020-07-17/netflix-india-releases-hindi-dub-of-ghost-in-the-shell-sac_2045-anime/.161894",
+    "https://tv.apple.com/in/movie/ghost-in-the-shell-stand-alone-complex-solid-state-society/umc.cmc.4v03qq1961i3vjyv2o7550d5k"
    ],
-   "note": "Hindi is confirmed only for the SAC_2045 sequel on Netflix. Fan trackers say Anime Times added Hindi for the original Stand Alone Complex and 2nd GIG in 2025 (unverified)."
+   "note": "Hindi is confirmed for the SAC_2045 sequel on Netflix and the Solid State Society film on Apple TV India (via Prime Video). Fan trackers say Anime Times added Hindi for the original Stand Alone Complex and 2nd GIG in 2025 (unverified)."
   },
   {
    "s": "ghost-in-the-shell-2-0",
@@ -3192,6 +3198,1089 @@
     "https://www.crunchyroll.com/watch/GE00325115ARSA"
    ],
    "note": "Netflix India's page lists Hindi, Tamil and Telugu audio for all three seasons (checked 10 Nov 2026); Crunchyroll India also lists Hindi."
+  },
+  {
+   "s": "stand-by-me-doraemon",
+   "t": "Stand by Me Doraemon",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Netflix",
+     "scope": "Stand by Me Doraemon (2014) and Stand by Me Doraemon 2",
+     "url": "https://www.netflix.com/in/title/80158156"
+    }
+   ],
+   "sources": [
+    "https://www.netflix.com/in/title/80158156",
+    "https://www.netflix.com/in/title/81451264"
+   ],
+   "note": "Netflix India lists Hindi audio for both Stand by Me Doraemon films. The Doraemon TV series was not checked here."
+  },
+  {
+   "s": "baki-ona",
+   "t": "Baki",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Netflix",
+     "scope": "Baki (2018), Baki Hanma, Baki-dou: The Invincible Samurai",
+     "url": "https://www.netflix.com/in/title/80204451"
+    }
+   ],
+   "sources": [
+    "https://www.netflix.com/in/title/80204451",
+    "https://www.netflix.com/in/title/81236338",
+    "https://www.netflix.com/in/title/81922765"
+   ],
+   "note": "Netflix India lists Hindi audio for Baki (2018), Baki Hanma and Baki-dou."
+  },
+  {
+   "s": "gantz",
+   "t": "Gantz",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Netflix",
+     "scope": "The First Stage and The Second Stage",
+     "url": "https://www.netflix.com/in/title/80133769"
+    }
+   ],
+   "sources": [
+    "https://www.netflix.com/in/title/80133769"
+   ],
+   "note": "Netflix India lists Hindi audio for the 2004 series. The Gantz:O film has no Hindi there."
+  },
+  {
+   "s": "Ranma-12-2024",
+   "t": "Ranma 1/2 (2024)",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Netflix",
+     "scope": "2024 series",
+     "url": "https://www.netflix.com/in/title/81171925"
+    }
+   ],
+   "sources": [
+    "https://www.netflix.com/in/title/81171925"
+   ],
+   "note": "Netflix India lists Hindi audio for the 2024 remake only."
+  },
+  {
+   "s": "oemojisangjuui",
+   "t": "Lookism",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Netflix",
+     "scope": "Season 1",
+     "url": "https://www.netflix.com/in/title/81177634"
+    }
+   ],
+   "sources": [
+    "https://www.netflix.com/in/title/81177634"
+   ],
+   "note": "Netflix India lists Hindi audio."
+  },
+  {
+   "s": "akuma-kun-shin",
+   "t": "Akuma Kun (2023)",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Netflix",
+     "scope": "2023 series",
+     "url": "https://www.netflix.com/in/title/81400498"
+    }
+   ],
+   "sources": [
+    "https://www.netflix.com/in/title/81400498"
+   ],
+   "note": "Netflix India lists Hindi audio."
+  },
+  {
+   "s": "dungeon-meshi",
+   "t": "Delicious in Dungeon",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Netflix",
+     "scope": "Season 1",
+     "url": "https://www.netflix.com/in/title/81564899"
+    }
+   ],
+   "sources": [
+    "https://www.netflix.com/in/title/81564899"
+   ],
+   "note": "Netflix India lists Hindi audio."
+  },
+  {
+   "s": "watashi-no-shiawase-na-kekkon",
+   "t": "My Happy Marriage",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Netflix",
+     "scope": "",
+     "url": "https://www.netflix.com/in/title/81564905"
+    }
+   ],
+   "sources": [
+    "https://www.netflix.com/in/title/81564905"
+   ],
+   "note": "Netflix India lists Hindi audio."
+  },
+  {
+   "s": "ao-no-hako",
+   "t": "Blue Box",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Netflix",
+     "scope": "",
+     "url": "https://www.netflix.com/in/title/81663323"
+    }
+   ],
+   "sources": [
+    "https://www.netflix.com/in/title/81663323"
+   ],
+   "note": "Netflix India lists Hindi audio."
+  },
+  {
+   "s": "sakamoto-days",
+   "t": "Sakamoto Days",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Netflix",
+     "scope": "",
+     "url": "https://www.netflix.com/in/title/81663325"
+    }
+   ],
+   "sources": [
+    "https://www.netflix.com/in/title/81663325"
+   ],
+   "note": "Netflix India lists Hindi audio."
+  },
+  {
+   "s": "hikaru-ga-shinda-natsu",
+   "t": "The Summer Hikaru Died",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Netflix",
+     "scope": "",
+     "url": "https://www.netflix.com/in/title/81948057"
+    }
+   ],
+   "sources": [
+    "https://www.netflix.com/in/title/81948057"
+   ],
+   "note": "Netflix India lists Hindi audio."
+  },
+  {
+   "s": "tongari-boushi-no-atelier",
+   "t": "Witch Hat Atelier",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Netflix",
+     "scope": "",
+     "url": "https://www.netflix.com/in/title/82741721"
+    }
+   ],
+   "sources": [
+    "https://www.netflix.com/in/title/82741721"
+   ],
+   "note": "Netflix India lists Hindi audio."
+  },
+  {
+   "s": "daemons-of-the-shadow-realm",
+   "t": "Daemons of the Shadow Realm",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Netflix",
+     "scope": "",
+     "url": "https://www.netflix.com/in/title/82719204"
+    }
+   ],
+   "sources": [
+    "https://www.netflix.com/in/title/82719204"
+   ],
+   "note": "Netflix India lists Hindi audio."
+  },
+  {
+   "s": "garouden-the-way-of-the-lone-wolf",
+   "t": "Garouden: The Way of the Lone Wolf",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Netflix",
+     "scope": "",
+     "url": "https://www.netflix.com/in/title/81215625"
+    }
+   ],
+   "sources": [
+    "https://www.netflix.com/in/title/81215625"
+   ],
+   "note": "Netflix India lists Hindi audio."
+  },
+  {
+   "s": "suki-demo-kirai-na-ama-no-jaku",
+   "t": "My Oni Girl",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Netflix",
+     "scope": "Film",
+     "url": "https://www.netflix.com/in/title/81582442"
+    }
+   ],
+   "sources": [
+    "https://www.netflix.com/in/title/81582442"
+   ],
+   "note": "Netflix India lists Hindi audio."
+  },
+  {
+   "s": "scarlet",
+   "t": "Scarlet",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Netflix",
+     "scope": "Film (2025)",
+     "url": "https://www.netflix.com/in/title/82888057"
+    }
+   ],
+   "sources": [
+    "https://www.netflix.com/in/title/82888057"
+   ],
+   "note": "Netflix India lists Hindi audio for Mamoru Hosoda's 2025 film."
+  },
+  {
+   "s": "Mononoke-Karakasa",
+   "t": "Mononoke the Movie: Phantom in the Rain",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Netflix",
+     "scope": "Mononoke the Movie chapters I-III",
+     "url": "https://www.netflix.com/in/title/81580574"
+    }
+   ],
+   "sources": [
+    "https://www.netflix.com/in/title/81580574",
+    "https://www.netflix.com/in/title/81580575",
+    "https://www.netflix.com/in/title/82012956"
+   ],
+   "note": "Netflix India lists Hindi audio for all three Mononoke films (2024-2026). The 2007 TV series is not dubbed."
+  },
+  {
+   "s": "detective-conan",
+   "t": "Detective Conan",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Apple TV",
+     "scope": "Case Closed listing, streams via Prime Video",
+     "url": "https://tv.apple.com/in/show/case-closed-detective-conan/umc.cmc.o4e5fbtkmgjivlpghedf8a6x"
+    },
+    {
+     "name": "Netflix",
+     "scope": "Spin-offs Zero's Tea Time and The Culprit Hanzawa",
+     "url": "https://www.netflix.com/in/title/81313289"
+    }
+   ],
+   "sources": [
+    "https://tv.apple.com/in/show/case-closed-detective-conan/umc.cmc.o4e5fbtkmgjivlpghedf8a6x",
+    "https://www.netflix.com/in/title/81313289",
+    "https://www.netflix.com/in/title/81313291"
+   ],
+   "note": "Apple TV India lists Hindi audio for Case Closed (via Prime Video), and Netflix India for the two spin-offs. The Netflix main series and the films there have no Hindi."
+  },
+  {
+   "s": "pokemon",
+   "t": "Pokémon",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Pokémon Asia Hindi (YouTube)",
+     "scope": "Horizons; Orange Islands and Diamond & Pearl (from Oct 2025)",
+     "url": "https://www.animenewsnetwork.com/news/2024-07-20/pokemon-horizons-the-series-anime-streams-in-hindi-tamil-telugu-bengali-english-on-youtube/.213405"
+    },
+    {
+     "name": "Apple TV",
+     "scope": "Pokémon Journeys, streams via Prime Video",
+     "url": "https://tv.apple.com/in/show/pokemon/umc.cmc.721uypshyjjv0u0zbet4rqu71"
+    },
+    {
+     "name": "Netflix",
+     "scope": "Pokémon Concierge; Mewtwo Strikes Back Evolution",
+     "url": "https://www.netflix.com/in/title/81186864"
+    }
+   ],
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2024-07-20/pokemon-horizons-the-series-anime-streams-in-hindi-tamil-telugu-bengali-english-on-youtube/.213405",
+    "https://www.animenewsnetwork.com/news/2025-11-18/hindi-dub-of-pokemon-adventures-in-the-orange-islands-streams-on-youtube/.231112",
+    "https://tv.apple.com/in/show/pokemon/umc.cmc.721uypshyjjv0u0zbet4rqu71",
+    "https://www.netflix.com/in/title/81186864",
+    "https://www.netflix.com/in/title/81223075"
+   ],
+   "note": "Free Hindi episodes on the official Pokémon Asia Hindi YouTube channel (Horizons from July 2024; Orange Islands and Diamond & Pearl from Oct 2025). Horizons aired on Hungama in May 2024."
+  },
+  {
+   "s": "wind-breaker",
+   "t": "Wind Breaker",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Crunchyroll",
+     "scope": "Season 1 (Apr 2024); Season 2 (2025)",
+     "url": "https://www.animenewsnetwork.com/news/2024-04-28/a-salad-bowl-of-eccentrics-wind-breaker-a-condition-called-love-anime-hindi-dubs-stream-on-/.210245"
+    },
+    {
+     "name": "Apple TV",
+     "scope": "Streams via Prime Video",
+     "url": "https://tv.apple.com/in/show/wind-breaker/umc.cmc.33hd9a9nwzj4uw3zisvc1f9kl"
+    }
+   ],
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2024-04-28/a-salad-bowl-of-eccentrics-wind-breaker-a-condition-called-love-anime-hindi-dubs-stream-on-/.210245",
+    "https://www.animenewsnetwork.com/news/2025-03-22/crunchyroll-streams-the-unaware-atelier-meister-once-upon-a-witch-death-more-anime-in-india/.222673",
+    "https://tv.apple.com/in/show/wind-breaker/umc.cmc.33hd9a9nwzj4uw3zisvc1f9kl"
+   ],
+   "note": "Crunchyroll began the Hindi dub in April 2024 and announced one for Season 2 in 2025."
+  },
+  {
+   "s": "shangri-la-frontier",
+   "t": "Shangri-La Frontier",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Apple TV",
+     "scope": "Streams via Prime Video",
+     "url": "https://tv.apple.com/in/show/shangri-la-frontier/umc.cmc.3ikrhoh9kun62t84doanit8gq"
+    }
+   ],
+   "sources": [
+    "https://tv.apple.com/in/show/shangri-la-frontier/umc.cmc.3ikrhoh9kun62t84doanit8gq"
+   ],
+   "note": "Apple TV India lists Hindi, Tamil and Telugu audio (streams there via Prime Video)."
+  },
+  {
+   "s": "the-god-of-highschool-series",
+   "t": "The God of High School",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Apple TV",
+     "scope": "Streams via Prime Video",
+     "url": "https://tv.apple.com/in/show/the-god-of-high-school/umc.cmc.5levwyoopy9yewzr8xw0jxdlm"
+    }
+   ],
+   "sources": [
+    "https://tv.apple.com/in/show/the-god-of-high-school/umc.cmc.5levwyoopy9yewzr8xw0jxdlm"
+   ],
+   "note": "Apple TV India lists Hindi audio (streams there via Prime Video)."
+  },
+  {
+   "s": "mairimashita-iruma-kun",
+   "t": "Welcome to Demon School! Iruma-kun",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Muse India (YouTube)",
+     "scope": "Season 3 (2026)",
+     "url": "https://www.animenewsnetwork.com/news/2026-08-29/hindi-dubs-of-reincarnated-as-a-slime-season-4-welcome-to-demon-school-iruma-kun-season-3-stream-on-/.241106"
+    },
+    {
+     "name": "Apple TV",
+     "scope": "Streams via Prime Video",
+     "url": "https://tv.apple.com/in/show/welcome-to-demon-school-iruma-kun/umc.cmc.a9boelyb01te1ui8m1s7p0rs"
+    }
+   ],
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2026-08-29/hindi-dubs-of-reincarnated-as-a-slime-season-4-welcome-to-demon-school-iruma-kun-season-3-stream-on-/.241106",
+    "https://tv.apple.com/in/show/welcome-to-demon-school-iruma-kun/umc.cmc.a9boelyb01te1ui8m1s7p0rs"
+   ],
+   "note": "Apple TV India lists Hindi audio (via Prime Video); ANN reports Muse India streaming daily episodes of a Hindi dub of Season 3 from 30 Aug 2026."
+  },
+  {
+   "s": "vanitas-no-carte",
+   "t": "The Case Study of Vanitas",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Apple TV",
+     "scope": "Streams via Prime Video",
+     "url": "https://tv.apple.com/in/show/the-case-study-of-vanitas/umc.cmc.6mgkn4mcxglzcekbqjrd13pqb"
+    }
+   ],
+   "sources": [
+    "https://tv.apple.com/in/show/the-case-study-of-vanitas/umc.cmc.6mgkn4mcxglzcekbqjrd13pqb"
+   ],
+   "note": "Apple TV India lists Hindi audio (streams there via Prime Video)."
+  },
+  {
+   "s": "arifureta-shokugyou-de-sekai-saikyou",
+   "t": "Arifureta: From Commonplace to World's Strongest",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Crunchyroll",
+     "scope": "Seasons 1-3 (June-Aug 2026)",
+     "url": "https://respawn.outlookindia.com/pop-culture/pop-culture-news/crunchyroll-expands-hindi-tamil-and-telugu-anime-dubs-in-india"
+    },
+    {
+     "name": "Apple TV",
+     "scope": "Streams via Prime Video",
+     "url": "https://tv.apple.com/in/show/arifureta-from-commonplace-to-worlds-strongest/umc.cmc.5fiqwt7ebnzuiqrn10nnec5mq"
+    }
+   ],
+   "sources": [
+    "https://respawn.outlookindia.com/pop-culture/pop-culture-news/crunchyroll-expands-hindi-tamil-and-telugu-anime-dubs-in-india",
+    "https://tv.apple.com/in/show/arifureta-from-commonplace-to-worlds-strongest/umc.cmc.5fiqwt7ebnzuiqrn10nnec5mq"
+   ],
+   "note": "Crunchyroll rolled out Hindi for Seasons 1-3 in summer 2026; Apple TV India also lists Hindi audio."
+  },
+  {
+   "s": "otomege-sekai-wa-mob-ni-kibishii-sekai-desu",
+   "t": "Trapped in a Dating Sim: The World of Otome Games Is Tough for Mobs",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Crunchyroll",
+     "scope": "Season 2 (from 29 Jul 2026)",
+     "url": "https://respawn.outlookindia.com/pop-culture/pop-culture-news/crunchyroll-expands-hindi-tamil-and-telugu-anime-dubs-in-india"
+    },
+    {
+     "name": "Apple TV",
+     "scope": "Streams via Prime Video",
+     "url": "https://tv.apple.com/in/show/trapped-in-a-dating-sim-the-world-of-otome-games-is-tough-for-mobs/umc.cmc.nditxa92f9x13bfrpjf4lk14"
+    }
+   ],
+   "sources": [
+    "https://respawn.outlookindia.com/pop-culture/pop-culture-news/crunchyroll-expands-hindi-tamil-and-telugu-anime-dubs-in-india",
+    "https://tv.apple.com/in/show/trapped-in-a-dating-sim-the-world-of-otome-games-is-tough-for-mobs/umc.cmc.nditxa92f9x13bfrpjf4lk14"
+   ],
+   "note": "Apple TV India lists Hindi audio; Crunchyroll added Hindi for Season 2 in July 2026."
+  },
+  {
+   "s": "xian-wang-de-richang-shenghuo",
+   "t": "The Daily Life of the Immortal King",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Crunchyroll",
+     "scope": "From Feb 2024",
+     "url": "https://www.animenewsnetwork.com/news/2024-01-29/tower-of-god-gets-hindi-dub-the-ancient-magus-bride-spy-x-family-more-anime-get-tamil-telugu-dubs/.206974"
+    },
+    {
+     "name": "Apple TV",
+     "scope": "Streams via Prime Video",
+     "url": "https://tv.apple.com/in/show/the-daily-life-of-the-immortal-king/umc.cmc.5yw3schkot1vpg8d0i3y4enkd"
+    }
+   ],
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2024-01-29/tower-of-god-gets-hindi-dub-the-ancient-magus-bride-spy-x-family-more-anime-get-tamil-telugu-dubs/.206974",
+    "https://tv.apple.com/in/show/the-daily-life-of-the-immortal-king/umc.cmc.5yw3schkot1vpg8d0i3y4enkd"
+   ],
+   "note": "Crunchyroll added a Hindi dub in Feb 2024; Apple TV India also lists Hindi audio."
+  },
+  {
+   "s": "tower-of-god",
+   "t": "Tower of God",
+   "status": "available",
+   "confidence": "medium",
+   "platforms": [
+    {
+     "name": "Crunchyroll",
+     "scope": "Season 1 (Feb 2024); Season 2 (from 29 Jul 2024)",
+     "url": "https://www.animenewsnetwork.com/news/2024-07-27/crunchyroll-streams-new-indian-language-dubs-of-wistoria-vtuber-legend-the-elusive-samurai-6-more-/.213475"
+    }
+   ],
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2024-01-29/tower-of-god-gets-hindi-dub-the-ancient-magus-bride-spy-x-family-more-anime-get-tamil-telugu-dubs/.206974",
+    "https://www.animenewsnetwork.com/news/2024-07-27/crunchyroll-streams-new-indian-language-dubs-of-wistoria-vtuber-legend-the-elusive-samurai-6-more-/.213475"
+   ],
+   "note": "Crunchyroll added a Hindi dub of Season 1 in Feb 2024 and of Season 2 from 29 Jul 2024."
+  },
+  {
+   "s": "nige-jouzu-no-wakagimi",
+   "t": "The Elusive Samurai",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Crunchyroll",
+     "scope": "Season 1 (Jul 2024); Season 2 (Aug 2026)",
+     "url": "https://www.animenewsnetwork.com/news/2024-07-27/crunchyroll-streams-new-indian-language-dubs-of-wistoria-vtuber-legend-the-elusive-samurai-6-more-/.213475"
+    },
+    {
+     "name": "Apple TV",
+     "scope": "Streams via Prime Video",
+     "url": "https://tv.apple.com/in/show/the-elusive-samurai/umc.cmc.2olw3fgvam1g3fh80eh0x88ez"
+    }
+   ],
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2024-07-27/crunchyroll-streams-new-indian-language-dubs-of-wistoria-vtuber-legend-the-elusive-samurai-6-more-/.213475",
+    "https://respawn.outlookindia.com/pop-culture/pop-culture-news/crunchyroll-expands-hindi-tamil-and-telugu-anime-dubs-in-india",
+    "https://tv.apple.com/in/show/the-elusive-samurai/umc.cmc.2olw3fgvam1g3fh80eh0x88ez"
+   ],
+   "note": "Crunchyroll has a Hindi dub of both seasons; Apple TV India also lists Hindi audio."
+  },
+  {
+   "s": "tsue-to-tsurugi-no-wistoria",
+   "t": "Wistoria: Wand and Sword",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Crunchyroll",
+     "scope": "Season 1 (from 29 Jul 2024)",
+     "url": "https://www.animenewsnetwork.com/news/2024-07-27/crunchyroll-streams-new-indian-language-dubs-of-wistoria-vtuber-legend-the-elusive-samurai-6-more-/.213475"
+    },
+    {
+     "name": "Apple TV",
+     "scope": "Streams via Prime Video",
+     "url": "https://tv.apple.com/in/show/wistorias-wand-and-sword/umc.cmc.6x7re2y54me125j4s5oemho2g"
+    }
+   ],
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2024-07-27/crunchyroll-streams-new-indian-language-dubs-of-wistoria-vtuber-legend-the-elusive-samurai-6-more-/.213475",
+    "https://tv.apple.com/in/show/wistorias-wand-and-sword/umc.cmc.6x7re2y54me125j4s5oemho2g"
+   ],
+   "note": "Crunchyroll added Hindi, Tamil and Telugu dubs in July 2024."
+  },
+  {
+   "s": "make-heroine-ga-oosugiru",
+   "t": "Makeine: Too Many Losing Heroines!",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Crunchyroll",
+     "scope": "Season 1 (from 4 Aug 2024)",
+     "url": "https://www.animenewsnetwork.com/news/2024-07-27/crunchyroll-streams-new-indian-language-dubs-of-wistoria-vtuber-legend-the-elusive-samurai-6-more-/.213475"
+    },
+    {
+     "name": "Apple TV",
+     "scope": "Streams via Prime Video",
+     "url": "https://tv.apple.com/in/show/makeine-too-many-losing-heroines/umc.cmc.3cft5jsdwrq6vaip68gfnd52b"
+    }
+   ],
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2024-07-27/crunchyroll-streams-new-indian-language-dubs-of-wistoria-vtuber-legend-the-elusive-samurai-6-more-/.213475",
+    "https://tv.apple.com/in/show/makeine-too-many-losing-heroines/umc.cmc.3cft5jsdwrq6vaip68gfnd52b"
+   ],
+   "note": "Crunchyroll added Hindi, Tamil and Telugu dubs in Aug 2024."
+  },
+  {
+   "s": "bye-bye-earth",
+   "t": "Bye Bye, Earth",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Crunchyroll",
+     "scope": "Season 1 (Aug 2024); Season 2 (2025)",
+     "url": "https://www.animenewsnetwork.com/news/2024-07-27/crunchyroll-streams-new-indian-language-dubs-of-wistoria-vtuber-legend-the-elusive-samurai-6-more-/.213475"
+    },
+    {
+     "name": "Apple TV",
+     "scope": "Streams via Prime Video",
+     "url": "https://tv.apple.com/in/show/bye-bye-earth/umc.cmc.4klff83nkx4zn9vpynb19w4gt"
+    }
+   ],
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2024-07-27/crunchyroll-streams-new-indian-language-dubs-of-wistoria-vtuber-legend-the-elusive-samurai-6-more-/.213475",
+    "https://www.animenewsnetwork.com/news/2025-03-22/crunchyroll-streams-the-unaware-atelier-meister-once-upon-a-witch-death-more-anime-in-india/.222673",
+    "https://tv.apple.com/in/show/bye-bye-earth/umc.cmc.4klff83nkx4zn9vpynb19w4gt"
+   ],
+   "note": "Crunchyroll has Hindi for both seasons."
+  },
+  {
+   "s": "kakkou-no-iinazuke",
+   "t": "A Couple of Cuckoos",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Apple TV",
+     "scope": "Streams via Prime Video",
+     "url": "https://tv.apple.com/in/show/a-couple-of-cuckoos/umc.cmc.4efoqa5mq3peltvlq41m2opev"
+    }
+   ],
+   "sources": [
+    "https://tv.apple.com/in/show/a-couple-of-cuckoos/umc.cmc.4efoqa5mq3peltvlq41m2opev"
+   ],
+   "note": "Apple TV India lists Hindi, Tamil and Telugu audio (streams there via Prime Video)."
+  },
+  {
+   "s": "ansatsusha-de-aru-ore-no-status-ga-yuusha-yori-mo-akiraka-ni-tsuyoi-no-da-ga",
+   "t": "My Status as an Assassin Obviously Exceeds the Hero's",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Crunchyroll",
+     "scope": "Simuldub (Fall 2025)",
+     "url": "https://animenewsindia.com/2025/10/25/crunchyroll-announces-hindi-tamil-telugu-dub-premieres-for-spy-x-family-my-hero-academia-and-more-for-its-fall-slate-anime-release"
+    },
+    {
+     "name": "Apple TV",
+     "scope": "Streams via Prime Video",
+     "url": "https://tv.apple.com/in/show/my-status-as-an-assassin-obviously-exceeds-the-heros/umc.cmc.1wgjg1zrg5u5irhy5it888a6u"
+    }
+   ],
+   "sources": [
+    "https://animenewsindia.com/2025/10/25/crunchyroll-announces-hindi-tamil-telugu-dub-premieres-for-spy-x-family-my-hero-academia-and-more-for-its-fall-slate-anime-release",
+    "https://tv.apple.com/in/show/my-status-as-an-assassin-obviously-exceeds-the-heros/umc.cmc.1wgjg1zrg5u5irhy5it888a6u"
+   ],
+   "note": "Crunchyroll ran a Hindi simuldub in Fall 2025; Apple TV India also lists Hindi audio."
+  },
+  {
+   "s": "clevatess-majuu-no-ou-to-akago-to-kabane-no-yuusha",
+   "t": "Clevatess",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Crunchyroll",
+     "scope": "Season 1 (2025); Season 2 (from 8 Jul 2026)",
+     "url": "https://www.animenewsnetwork.com/news/2025-06-21/crunchyroll-announces-indian-language-dubs-for-clevatess-gachiakuta-more-anime/.225855"
+    },
+    {
+     "name": "Apple TV",
+     "scope": "Streams via Prime Video",
+     "url": "https://tv.apple.com/in/show/clevatess/umc.cmc.1wo3adpf6r58g7f7ga0lifzg3"
+    }
+   ],
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2025-06-21/crunchyroll-announces-indian-language-dubs-for-clevatess-gachiakuta-more-anime/.225855",
+    "https://respawn.outlookindia.com/pop-culture/pop-culture-news/crunchyroll-expands-hindi-tamil-and-telugu-anime-dubs-in-india",
+    "https://tv.apple.com/in/show/clevatess/umc.cmc.1wo3adpf6r58g7f7ga0lifzg3"
+   ],
+   "note": "Crunchyroll dubbed both seasons in Hindi, Tamil and Telugu."
+  },
+  {
+   "s": "izure-saikyou-no-renkinjutsushi",
+   "t": "Possibly the Greatest Alchemist of All Time",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Apple TV",
+     "scope": "Streams via Prime Video",
+     "url": "https://tv.apple.com/in/show/possibly-the-greatest-alchemist-of-all-time/umc.cmc.3brqo4r9nk7x9ytqd2ojn8mb"
+    }
+   ],
+   "sources": [
+    "https://tv.apple.com/in/show/possibly-the-greatest-alchemist-of-all-time/umc.cmc.3brqo4r9nk7x9ytqd2ojn8mb"
+   ],
+   "note": "Apple TV India lists Hindi, Tamil and Telugu audio (streams there via Prime Video)."
+  },
+  {
+   "s": "kenka-dokugaku",
+   "t": "Viral Hit",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Apple TV",
+     "scope": "Streams via Prime Video",
+     "url": "https://tv.apple.com/in/show/viral-hit/umc.cmc.317di55j4rdzgfyye0n9n7inw"
+    }
+   ],
+   "sources": [
+    "https://tv.apple.com/in/show/viral-hit/umc.cmc.317di55j4rdzgfyye0n9n7inw"
+   ],
+   "note": "Apple TV India lists Hindi audio (streams there via Prime Video)."
+  },
+  {
+   "s": "maou-sama-retry",
+   "t": "Demon Lord, Retry!",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Apple TV",
+     "scope": "Streams via Prime Video",
+     "url": "https://tv.apple.com/in/show/demon-lord-retry/umc.cmc.3wsz981rgf1om5ejfayydvjf3"
+    }
+   ],
+   "sources": [
+    "https://tv.apple.com/in/show/demon-lord-retry/umc.cmc.3wsz981rgf1om5ejfayydvjf3"
+   ],
+   "note": "Apple TV India lists Hindi, Tamil and Telugu audio (streams there via Prime Video)."
+  },
+  {
+   "s": "yaiba",
+   "t": "Yaiba: Samurai Legend",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Apple TV",
+     "scope": "Streams via Prime Video",
+     "url": "https://tv.apple.com/in/show/yaiba-samurai-legend/umc.cmc.1dcpzaw9egbqa29siauidtts1"
+    }
+   ],
+   "sources": [
+    "https://tv.apple.com/in/show/yaiba-samurai-legend/umc.cmc.1dcpzaw9egbqa29siauidtts1"
+   ],
+   "note": "Apple TV India lists Hindi audio (streams there via Prime Video)."
+  },
+  {
+   "s": "isekai-nonbiri-nouka",
+   "t": "Farming Life in Another World",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Apple TV",
+     "scope": "Streams via Prime Video",
+     "url": "https://tv.apple.com/in/show/farming-life-in-another-world/umc.cmc.33nmqs1az09oj5rr76ydfh3di"
+    }
+   ],
+   "sources": [
+    "https://tv.apple.com/in/show/farming-life-in-another-world/umc.cmc.33nmqs1az09oj5rr76ydfh3di"
+   ],
+   "note": "Apple TV India lists Hindi audio (streams there via Prime Video)."
+  },
+  {
+   "s": "otonari-no-tenshisama-ni-itsunomanika-dame-ningen-ni-sareteita-Ken",
+   "t": "The Angel Next Door Spoils Me Rotten",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Apple TV",
+     "scope": "Streams via Prime Video",
+     "url": "https://tv.apple.com/in/show/the-angel-next-door-spoils-me-rotten/umc.cmc.8fq3maudp8qhbym1oyxte2ce"
+    }
+   ],
+   "sources": [
+    "https://tv.apple.com/in/show/the-angel-next-door-spoils-me-rotten/umc.cmc.8fq3maudp8qhbym1oyxte2ce"
+   ],
+   "note": "Apple TV India lists Hindi audio (streams there via Prime Video)."
+  },
+  {
+   "s": "amagami-san-chi-no-enmusubi",
+   "t": "Tying the Knot with an Amagami Sister",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Apple TV",
+     "scope": "Streams via Prime Video",
+     "url": "https://tv.apple.com/in/show/tying-the-knot-with-an-amagami-sister/umc.cmc.60zhu4ractisyxywygcooo63z"
+    }
+   ],
+   "sources": [
+    "https://tv.apple.com/in/show/tying-the-knot-with-an-amagami-sister/umc.cmc.60zhu4ractisyxywygcooo63z"
+   ],
+   "note": "Apple TV India lists Hindi, Tamil and Telugu audio (streams there via Prime Video)."
+  },
+  {
+   "s": "akebi-chan-no-sailor-fuku",
+   "t": "Akebi's Sailor Uniform",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Apple TV",
+     "scope": "Listed on Apple TV India",
+     "url": "https://tv.apple.com/in/show/akebis-sailor-uniform/umc.cmc.3gpaxjbn20j0fz335kgvyydx1"
+    }
+   ],
+   "sources": [
+    "https://tv.apple.com/in/show/akebis-sailor-uniform/umc.cmc.3gpaxjbn20j0fz335kgvyydx1"
+   ],
+   "note": "Apple TV India lists Hindi, Tamil and Telugu audio."
+  },
+  {
+   "s": "kono-sekai-wa-fukanzen-sugiru",
+   "t": "Quality Assurance in Another World",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Apple TV",
+     "scope": "Streams via Prime Video",
+     "url": "https://tv.apple.com/in/show/quality-assurance-in-another-world/umc.cmc.3398n2jwevrl1ewhp8wg9hava"
+    }
+   ],
+   "sources": [
+    "https://tv.apple.com/in/show/quality-assurance-in-another-world/umc.cmc.3398n2jwevrl1ewhp8wg9hava"
+   ],
+   "note": "Apple TV India lists Hindi, Tamil and Telugu audio (streams there via Prime Video)."
+  },
+  {
+   "s": "crayon-shin-chan",
+   "t": "Crayon Shin-chan",
+   "status": "available",
+   "confidence": "medium",
+   "platforms": [
+    {
+     "name": "Hungama TV",
+     "scope": "Classic episodes and films (original and redubbed Hindi)",
+     "url": "https://animenewsindia.com/2024/05/11/sony-yay-introduces-hit-japanese-series-shin-chan-to-its-lineup"
+    },
+    {
+     "name": "Sony YAY!",
+     "scope": "Newer episodes (from May 2024; fresh batch from 20 Oct 2025)",
+     "url": "https://www.indianbroadcastingworld.com/?p=85748"
+    }
+   ],
+   "sources": [
+    "https://animenewsindia.com/2024/05/11/sony-yay-introduces-hit-japanese-series-shin-chan-to-its-lineup",
+    "https://www.indianbroadcastingworld.com/?p=85748"
+   ],
+   "note": "Shin-chan airs in Hindi on Hungama TV (since 2006) and Sony YAY! (newer episodes since 2024)."
+  },
+  {
+   "s": "beyblade-burst",
+   "t": "Beyblade Burst",
+   "status": "available",
+   "confidence": "medium",
+   "platforms": [
+    {
+     "name": "Beyblade Burst Official Hindi (YouTube)",
+     "scope": "Season 1 (from 30 Jul 2022)",
+     "url": "https://www.animenewsnetwork.com/news/2022-08-15/beyblade-burst-turbo-anime-hindi-dub-steams-on-youtube/.188655"
+    },
+    {
+     "name": "Hungama TV",
+     "scope": "Season 1 aired June 2020",
+     "url": "https://www.animenewsnetwork.com/news/2022-08-15/beyblade-burst-turbo-anime-hindi-dub-steams-on-youtube/.188655"
+    }
+   ],
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2022-08-15/beyblade-burst-turbo-anime-hindi-dub-steams-on-youtube/.188655"
+   ],
+   "note": "The official Hindi YouTube channel began streaming the first season's Hindi dub in July 2022; it aired earlier on Hungama TV and Marvel HQ."
+  },
+  {
+   "s": "gachiakuta",
+   "t": "Gachiakuta",
+   "status": "available",
+   "confidence": "medium",
+   "platforms": [
+    {
+     "name": "Crunchyroll",
+     "scope": "Season 1 (same-day dub from 6 Jul 2025)",
+     "url": "https://www.animenewsnetwork.com/news/2025-06-21/crunchyroll-announces-indian-language-dubs-for-clevatess-gachiakuta-more-anime/.225855"
+    }
+   ],
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2025-06-21/crunchyroll-announces-indian-language-dubs-for-clevatess-gachiakuta-more-anime/.225855",
+    "https://www.animenewsnetwork.com/news/2025-08-08/crunchyroll-shares-images-of-its-new-gachiakuta-outdoor-ad-campaign-in-india/.227470"
+   ],
+   "note": "Crunchyroll released Hindi, Tamil and Telugu dubs on the same day as the Japanese premiere."
+  },
+  {
+   "s": "enen-no-shouboutai",
+   "t": "Fire Force",
+   "status": "available",
+   "confidence": "medium",
+   "platforms": [
+    {
+     "name": "Crunchyroll",
+     "scope": "Season 3 (2025-2026)",
+     "url": "https://www.animenewsnetwork.com/news/2025-03-22/crunchyroll-streams-the-unaware-atelier-meister-once-upon-a-witch-death-more-anime-in-india/.222673"
+    }
+   ],
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2025-03-22/crunchyroll-streams-the-unaware-atelier-meister-once-upon-a-witch-death-more-anime-in-india/.222673"
+   ],
+   "note": "Crunchyroll dubbed the third and final season in Hindi, Tamil and Telugu; Hindi is confirmed only for that season."
+  },
+  {
+   "s": "sono-bisque-doll-wa-koi-wo-suru",
+   "t": "My Dress-Up Darling",
+   "status": "available",
+   "confidence": "medium",
+   "platforms": [
+    {
+     "name": "Crunchyroll",
+     "scope": "Season 1 (2022); Season 2 (2025)",
+     "url": "https://www.animenewsnetwork.com/news/2023-01-20/crunchyroll-adds-hindi-dub-for-my-dress-up-darling-ranking-of-kings-anime/.194017"
+    }
+   ],
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2023-01-20/crunchyroll-adds-hindi-dub-for-my-dress-up-darling-ranking-of-kings-anime/.194017",
+    "https://www.animenewsnetwork.com/news/2025-06-21/crunchyroll-announces-indian-language-dubs-for-clevatess-gachiakuta-more-anime/.225855"
+   ],
+   "note": "One of Crunchyroll's first Hindi dubs (July 2022); Season 2 was also dubbed in Hindi, Tamil and Telugu."
+  },
+  {
+   "s": "ousama-ranking",
+   "t": "Ranking of Kings",
+   "status": "available",
+   "confidence": "medium",
+   "platforms": [
+    {
+     "name": "Crunchyroll",
+     "scope": "Season 1 (2022)",
+     "url": "https://www.animenewsnetwork.com/news/2023-01-20/crunchyroll-adds-hindi-dub-for-my-dress-up-darling-ranking-of-kings-anime/.194017"
+    }
+   ],
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2023-01-20/crunchyroll-adds-hindi-dub-for-my-dress-up-darling-ranking-of-kings-anime/.194017"
+   ],
+   "note": "One of Crunchyroll's first two Hindi dubs (2022), free with ads."
+  },
+  {
+   "s": "kanojo-okarishimasu",
+   "t": "Rent-a-Girlfriend",
+   "status": "available",
+   "confidence": "medium",
+   "platforms": [
+    {
+     "name": "Crunchyroll",
+     "scope": "Season 4 (2025)",
+     "url": "https://www.animenewsnetwork.com/news/2025-06-21/crunchyroll-announces-indian-language-dubs-for-clevatess-gachiakuta-more-anime/.225855"
+    }
+   ],
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2025-06-21/crunchyroll-announces-indian-language-dubs-for-clevatess-gachiakuta-more-anime/.225855"
+   ],
+   "note": "Crunchyroll announced Hindi and English dubs for Season 4 in summer 2025."
+  },
+  {
+   "s": "hataraku-saibou-tv",
+   "t": "Cells at Work!",
+   "status": "available",
+   "confidence": "medium",
+   "platforms": [
+    {
+     "name": "Muse India (YouTube)",
+     "scope": "Weekly from Apr 2026",
+     "url": "https://www.animenewsnetwork.com/news/2026-04-13/muse-india-streams-cells-at-work-anime-hindi-dub-on-youtube/.236322"
+    },
+    {
+     "name": "Anime Times (Prime Video channel)",
+     "scope": "",
+     "url": "https://www.animenewsnetwork.com/news/2026-04-13/muse-india-streams-cells-at-work-anime-hindi-dub-on-youtube/.236322"
+    },
+    {
+     "name": "JioHotstar",
+     "scope": "",
+     "url": "https://www.animenewsnetwork.com/news/2026-04-13/muse-india-streams-cells-at-work-anime-hindi-dub-on-youtube/.236322"
+    }
+   ],
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2026-04-13/muse-india-streams-cells-at-work-anime-hindi-dub-on-youtube/.236322"
+   ],
+   "note": "ANN reports Muse's Hindi dub streaming free on Muse India YouTube and also on Anime Times and JioHotstar. Netflix India's version has no Hindi."
+  },
+  {
+   "s": "itai-no-wa-lya-nano-de-bougyoryoku-ni-kyokufuri-shitai-to-omoimasu",
+   "t": "BOFURI: I Don't Want to Get Hurt, so I'll Max Out My Defense.",
+   "status": "available",
+   "confidence": "medium",
+   "platforms": [
+    {
+     "name": "JioHotstar",
+     "scope": "Seasons 1-2",
+     "url": "https://animenewsnetwork.com/news/2026-05-01/jiohotstar-streams-bofuri-season-1-season-2-in-hindi/.236995"
+    },
+    {
+     "name": "Muse India (YouTube)",
+     "scope": "From Dec 2025",
+     "url": "https://animenewsnetwork.com/news/2026-05-01/jiohotstar-streams-bofuri-season-1-season-2-in-hindi/.236995"
+    }
+   ],
+   "sources": [
+    "https://animenewsnetwork.com/news/2026-05-01/jiohotstar-streams-bofuri-season-1-season-2-in-hindi/.236995"
+   ],
+   "note": "ANN reports JioHotstar streaming both seasons in Hindi, with Muse India's YouTube channel streaming the dub from Dec 2025."
+  },
+  {
+   "s": "tsuki-ga-michibiku-isekai-douchuu",
+   "t": "Tsukimichi: Moonlit Fantasy",
+   "status": "available",
+   "confidence": "medium",
+   "platforms": [
+    {
+     "name": "Crunchyroll",
+     "scope": "Season 2 (from 31 Oct 2025)",
+     "url": "https://animenewsindia.com/2025/10/25/crunchyroll-announces-hindi-tamil-telugu-dub-premieres-for-spy-x-family-my-hero-academia-and-more-for-its-fall-slate-anime-release"
+    }
+   ],
+   "sources": [
+    "https://animenewsindia.com/2025/10/25/crunchyroll-announces-hindi-tamil-telugu-dub-premieres-for-spy-x-family-my-hero-academia-and-more-for-its-fall-slate-anime-release"
+   ],
+   "note": "Crunchyroll launched a Hindi dub of Season 2 in Oct 2025."
+  },
+  {
+   "s": "tondemo-skill-de-isekai-hourou-meshi",
+   "t": "Campfire Cooking in Another World with My Absurd Skill",
+   "status": "available",
+   "confidence": "medium",
+   "platforms": [
+    {
+     "name": "Crunchyroll",
+     "scope": "Season 2 (from 12 Nov 2025)",
+     "url": "https://animenewsindia.com/2025/10/25/crunchyroll-announces-hindi-tamil-telugu-dub-premieres-for-spy-x-family-my-hero-academia-and-more-for-its-fall-slate-anime-release"
+    }
+   ],
+   "sources": [
+    "https://animenewsindia.com/2025/10/25/crunchyroll-announces-hindi-tamil-telugu-dub-premieres-for-spy-x-family-my-hero-academia-and-more-for-its-fall-slate-anime-release"
+   ],
+   "note": "Crunchyroll launched a Hindi dub of Season 2 in Nov 2025."
+  },
+  {
+   "s": "tensei-shitara-dai-nana-ouji-dattanode-kimamani-majutsu-wo-kiwamemasu",
+   "t": "I Was Reincarnated as the 7th Prince So I Can Take My Time Perfecting My Magical Ability",
+   "status": "available",
+   "confidence": "medium",
+   "platforms": [
+    {
+     "name": "Crunchyroll",
+     "scope": "Season 1 (Apr 2024)",
+     "url": "https://www.animenewsnetwork.com/news/2024-04-28/a-salad-bowl-of-eccentrics-wind-breaker-a-condition-called-love-anime-hindi-dubs-stream-on-/.210245"
+    },
+    {
+     "name": "Muse India (YouTube)",
+     "scope": "Weekly from Dec 2025",
+     "url": "https://www.animenewsnetwork.com/news/2025-12-13/hindi-dub-of-i-was-reincarnated-as-the-7th-prince-anime-streams-on-youtube/.232048"
+    }
+   ],
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2024-04-28/a-salad-bowl-of-eccentrics-wind-breaker-a-condition-called-love-anime-hindi-dubs-stream-on-/.210245",
+    "https://www.animenewsnetwork.com/news/2025-12-13/hindi-dub-of-i-was-reincarnated-as-the-7th-prince-anime-streams-on-youtube/.232048"
+   ],
+   "note": "Crunchyroll added a Hindi dub in April 2024; Muse India streams a Hindi dub free on YouTube from Dec 2025."
   }
  ]
 }
