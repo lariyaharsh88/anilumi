@@ -36,7 +36,8 @@ function ttl(path) {
   if (path.startsWith("/_next/static/")) return 365 * DAY;
   if (CARD.test(path)) return 7 * DAY; // the image routes' own revalidate
   if (WEEKLY.test(path)) return 7 * DAY; // pages whose own revalidate is a week: a day here only re-asked the app
-  if (FRESH.has(path) || path.startsWith("/season/") || path.startsWith("/news/")) return 3600;
+  if (FRESH.has(path) || path.startsWith("/news/")) return 3600;
+  if (path.startsWith("/season/")) return 6 * 3600; // the app re-renders season lists every 6 hours
   return DAY;
 }
 
