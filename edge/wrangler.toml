@@ -14,3 +14,9 @@ routes = [
 # secret GH_DISPATCH_TOKEN: npx wrangler secret put GH_DISPATCH_TOKEN --config edge/wrangler.toml
 [triggers]
 crons = ["5,35 * * * *"]
+
+# Global page cache (see worker.js): shares the app's bucket under edge/. Old builds' copies are never read again;
+# a lifecycle rule clears them: npx wrangler r2 bucket lifecycle add anilumi-next-cache edge-expiry edge/ --expire-days 30
+[[r2_buckets]]
+binding = "PAGES"
+bucket_name = "anilumi-next-cache"

@@ -14,7 +14,7 @@ export default async function OG({ params }: { params: Promise<{ slug: string }>
   const a = await getAnimeBySlug(decodeURIComponent(slug));
   const year = a?.startDate?.slice(0, 4);
   return posterCard({
-    poster: a ? posterUrl(a, "large") : null,
+    poster: a ? posterUrl(a, "medium") : null,
     kicker: a ? `${subtypeLabel(a.subtype)} · ${statusLabel(a.status)}${year ? ` · ${year}` : ""}` : "Anime",
     title: a?.title || "Anime not found",
     sub: a ? `${a.episodeCount ? `${a.episodeCount} episodes · ` : ""}${publicGenres(a.categories).slice(0, 3).map((c) => c.title).join(", ") || "Episodes, release dates & where to watch"}` : "",

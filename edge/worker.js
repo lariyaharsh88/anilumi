@@ -12,6 +12,12 @@ const SITE = "anilumi.in";
 let app = null;
 const base = () => (app ? `https://${SITE}` : ORIGIN);
 const upstream = (req) => (app ? app.fetch(req) : fetch(req));
+// Global copy of every cached page in R2 (binding PAGES, edge/wrangler.toml). caches.default is per data centre, so
+// with visitors and crawlers spread over dozens of them nearly every request reached the app; R2 is one store for
+// all of them, so a page renders once per build (or per TTL), wherever it is asked for. Optional: without the
+// binding the edge works as before.
+let pages = null;
+const R2_PREFIX = "edge/";
 // Pages that change through the day get an hour; everything else a day. Build assets have hashed names.
 const FRESH = new Set(["/", "/schedule", "/tonight", "/birthdays", "/sitemap.xml", "/feed.xml", "/news", "/hype"]);
 const DAY = 86400;
@@ -19,10 +25,14 @@ const DAY = 86400;
 // fetches against the host ("server connectivity"). Past this budget a visitor gets the last good copy instead.
 const ORIGIN_BUDGET_MS = 12_000;
 const LAST_GOOD_TTL = 14 * DAY;
+// Generated Open Graph / Twitter cards. Their URLs carry a hash of the image route (`?6cf9…`), so they need no
+// build in their key: they survive deploys, which would otherwise re-render every card.
+const CARD = /\/(opengraph|twitter)-image(-[\w-]+)?$/;
 const CRAWLER = /googlebot|google-inspectiontool|googleother|adsbot-google|mediapartners-google|bingbot|duckduckbot|yandex|applebot|baiduspider/i;
 
 function ttl(path) {
   if (path.startsWith("/_next/static/")) return 365 * DAY;
+  if (CARD.test(path)) return 7 * DAY; // the image routes' own revalidate
   if (FRESH.has(path) || path.startsWith("/season/") || path.startsWith("/news/")) return 3600;
   return DAY;
 }
@@ -104,6 +114,7 @@ function rscKey(request, url) {
 export default {
   async fetch(request, env, ctx) {
     app = env.APP || null;
+    pages = env.PAGES || null;
     const url = new URL(request.url);
     if (url.hostname === `www.${SITE}`) {
       url.hostname = SITE;
@@ -112,8 +123,8 @@ export default {
     if (!cacheable(request, url)) return toOrigin(request, url);
 
     const cache = caches.default;
-    // Hashed build assets never change; pages are keyed by the live build too.
-    const genq = url.pathname.startsWith("/_next/static/") ? "" : `${url.search ? "&" : "?"}__gen=${await generation(ctx)}`;
+    // Hashed build assets and cards never change; pages are keyed by the live build too.
+    const genq = url.pathname.startsWith("/_next/static/") || CARD.test(url.pathname) ? "" : `${url.search ? "&" : "?"}__gen=${await generation(ctx)}`;
     const key = new Request(`https://${SITE}${url.pathname}${rscKey(request, url) ?? url.search}${genq}`, { method: "GET" });
     const hit = await cache.match(key);
     if (hit) {
@@ -123,9 +134,24 @@ export default {
       return out;
     }
 
+    // Not in this data centre: the global copy, if another one has it. Within its TTL it is served as a hit; past
+    // it, it is still from the live build (the key says so), so it is served while a fresh one renders.
+    const global = url.pathname.startsWith("/_next/static/") ? null : await globalMatch(key);
+    if (global) {
+      const age = (Date.now() - global.uploaded) / 1000;
+      const fresh = age < ttl(url.pathname);
+      // Keep it here too: for the rest of its TTL, or a minute when stale so this colo refreshes it at most that often.
+      ctx.waitUntil(cache.put(key, withMaxAge(global.response.clone(), fresh ? Math.ceil(ttl(url.pathname) - age) : 60)));
+      if (!fresh) ctx.waitUntil(toOrigin(request, url, 30_000).then((res) => store(res, url, genq, key, lastKeyFor(url, genq))).catch(() => {}));
+      const out = new Response(global.response.body, global.response);
+      out.headers.set("x-edge-cache", fresh ? "GLOBAL-HIT" : "GLOBAL-STALE");
+      if (genq) out.headers.set("x-edge-gen", genq.slice(genq.indexOf("=") + 1));
+      return out;
+    }
+
     // Last good copy of a page, from any build: survives deploys, which otherwise send every crawler request to
     // Render at once. Only plain page HTML (an RSC payload from another build would make Next.js hard-reload).
-    const lastKey = genq && !url.searchParams.has("_rsc") ? new Request(`https://${SITE}${url.pathname}${url.search}${url.search ? "&" : "?"}__last=1`, { method: "GET" }) : null;
+    const lastKey = lastKeyFor(url, genq);
     const last = lastKey ? await cache.match(lastKey) : null;
     const stale = (why) => {
       const out = new Response(last.body, last);
@@ -181,13 +207,51 @@ export default {
   },
 };
 
-/** Cache a 200 page from the live build under its build key, and as the page's last good copy. Resolves when stored. */
+function lastKeyFor(url, genq) {
+  if (!genq || url.searchParams.has("_rsc")) return null;
+  return new Request(`https://${SITE}${url.pathname}${url.search}${url.search ? "&" : "?"}__last=1`, { method: "GET" });
+}
+
+function withMaxAge(res, seconds) {
+  const out = new Response(res.body, res);
+  out.headers.set("cache-control", `public, max-age=${seconds}`);
+  return out;
+}
+
+// Headers kept with a global copy (R2 custom metadata, 2 KB in all): the page's own, not per-response ones.
+const DROP = new Set(["date", "cache-control", "vary", "set-cookie", "content-length", "content-encoding", "etag", "nel", "report-to", "server", "cf-ray", "cf-placement", "alt-svc", "x-opennext-cache", "x-edge-cache", "x-edge-gen"]);
+const r2Key = (key) => R2_PREFIX + key.url.slice(`https://${SITE}/`.length);
+
+/** The global copy of a cache key, with when it was stored, or null (none, no binding, or R2 unreachable). */
+async function globalMatch(key) {
+  if (!pages) return null;
+  try {
+    const obj = await pages.get(r2Key(key));
+    if (!obj) return null;
+    const headers = new Headers(JSON.parse(obj.customMetadata?.h || "{}"));
+    return { response: new Response(obj.body, { status: 200, headers }), uploaded: obj.uploaded.getTime() };
+  } catch {
+    return null;
+  }
+}
+
+async function storeGlobal(res, key) {
+  const h = [...res.headers].filter(([name]) => !DROP.has(name));
+  const meta = JSON.stringify(h);
+  if (meta.length > 1800) return; // over R2's metadata limit: this colo's copy will do
+  const body = await res.arrayBuffer(); // R2 needs a known length
+  await pages.put(r2Key(key), body, { customMetadata: { h: meta } });
+}
+
+/** Cache a 200 page from the live build under its build key (here and globally), and as the page's last good copy. */
 async function store(res, url, genq, key, lastKey) {
   // Pages only from the live build: mid-deploy, the old instance can still answer and would be cached as new.
   const build = res.headers.get("x-build");
   const sameBuild = !genq || !build || genq.endsWith(`=${build}`);
   if (res.status !== 200 || res.headers.has("set-cookie") || !sameBuild) return;
   const puts = [];
+  // Build assets stay out of R2: the app serves them from static assets, which costs no Worker time.
+  if (pages && !url.pathname.startsWith("/_next/static/")) puts.push(storeGlobal(res.clone(), key).catch(() => {}));
   const stored = new Response(res.clone().body, res); // own copy: headers from fetch() are immutable
   stored.headers.set("cache-control", `public, max-age=${ttl(url.pathname)}`);
   stored.headers.delete("vary"); // the key already excludes RSC requests; Vary would split or block caching

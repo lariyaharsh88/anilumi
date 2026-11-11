@@ -21,7 +21,7 @@ export default async function OG({ params }: { params: Promise<{ slug: string; n
   const upcoming = !iso || isFuture(iso);
   const when = iso ? fmtDate(iso, { month: "long", day: "numeric", year: "numeric" }) : null;
   return posterCard({
-    poster: a ? posterUrl(a, "large") : null,
+    poster: a ? posterUrl(a, "medium") : null,
     kicker: `${a?.title || "Anime"} · Episode ${n}`,
     title: ep?.title || `Episode ${n} release date`,
     sub: when ? `${upcoming ? "Airs" : "Aired"} ${when} (JST)` : "Release date TBA",

@@ -14,7 +14,7 @@ export default async function OG({ params }: { params: Promise<{ slug: string }>
   const a = await getAnimeBySlug(decodeURIComponent(slug));
   const wo = a ? await buildWatchOrder(a) : null;
   return posterCard({
-    poster: a ? posterUrl(a, "large") : null,
+    poster: a ? posterUrl(a, "medium") : null,
     kicker: "Watch order guide",
     title: wo ? `${wo.root.title} watch order` : "Watch order",
     sub: wo ? `${wo.mainCount} core entries · ${wo.entries.length - wo.mainCount} extras` : "",
