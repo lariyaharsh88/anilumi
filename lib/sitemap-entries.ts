@@ -8,7 +8,7 @@ import { episodeMinutes } from "@/lib/binge";
 import { popularVoiceActors, vaPath } from "@/lib/anilist";
 import { allDays, birthdaysOn, bdPath, monthPath } from "@/lib/birthdays";
 import { fillerSlugs, continuationSlugs } from "@/lib/filler";
-import { characterTableSlugs } from "@/lib/charsnap";
+import { characterTableSlugs, BLOOD_TYPES } from "@/lib/charsnap";
 import { hasSnapshotCast } from "@/lib/castsnap";
 import { hasSnapshotThemes } from "@/lib/themes";
 import { airing as airingSnapshot, upcomingOf } from "@/lib/airing";
@@ -58,6 +58,8 @@ export async function sitemapEntries(): Promise<MetadataRoute.Sitemap> {
     ...continuationSlugs().map((slug) => ({ url: abs(`${animePath({ slug })}/manga`), lastModified: at(D.manga), changeFrequency: "monthly" as const, priority: 0.6 })),
     { url: abs("/voice-actors"), lastModified: at(D.voiceActors), changeFrequency: "weekly", priority: 0.6 },
     { url: abs("/characters"), lastModified: at(D.characters), changeFrequency: "monthly", priority: 0.7 },
+    { url: abs("/characters/blood-type"), lastModified: at(D.characters), changeFrequency: "monthly", priority: 0.5 },
+    ...BLOOD_TYPES.map((t) => ({ url: abs(`/characters/blood-type/${t}`), lastModified: at(D.characters), changeFrequency: "monthly" as const, priority: 0.5 })),
     { url: abs("/hi"), lastModified: weekly, changeFrequency: "weekly", priority: 0.6 },
     { url: abs("/hindi-dub"), lastModified: at(D.dubs), changeFrequency: "monthly", priority: 0.7 },
     { url: abs("/hi/hindi-dub"), lastModified: at(D.dubs), changeFrequency: "monthly", priority: 0.6 },

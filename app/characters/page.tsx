@@ -105,6 +105,8 @@ export default function CharactersHub() {
       <p className="mt-10 flex flex-wrap gap-2 text-sm">
         <Link href="/birthdays" className="chip">🎂 Character birthdays</Link>
         <Link href="/voice-actors" className="chip">🎙️ Popular voice actors</Link>
+        <Link href="/characters/blood-type" className="chip">🩸 Characters by blood type</Link>
+        <Link href="/anime-birthday-twin" className="chip">🎂 Your anime birthday twin</Link>
       </p>
 
       <Faq

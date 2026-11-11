@@ -125,3 +125,9 @@ export function characterTable(animeSlug: string, src: SnapChar[] = chars, serie
 
 /** Anime slugs that get a characters table (sitemap, anime page links). */
 export const characterTableSlugs = (): string[] => [...new Set([...chars.map((c) => c.s), ...seriesSlugs()])].filter((s) => characterTable(s));
+
+/** Blood types with their own page; AniList also has a few joke values ("S", "F") that stay out. */
+export const BLOOD_TYPES = ["a", "b", "o", "ab"] as const;
+export type BloodType = (typeof BLOOD_TYPES)[number];
+/** Characters with this official blood type, most favourited first. Pure. */
+export const charactersByBloodType = (bt: BloodType): SnapChar[] => chars.filter((c) => c.bt?.toLowerCase() === bt).sort((a, b) => b.f - a.f);

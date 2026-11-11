@@ -195,7 +195,7 @@ export default async function CharacterPage({ params }: Props) {
             {facts.map((f) => (
               <div key={f.key} className="flex justify-between gap-4 py-2">
                 <dt className="shrink-0 text-muted">{f.label}</dt>
-                <dd className="text-right font-medium">{f.key === "birthday" && bday ? <Link href={bdPath(bday.m, bday.d)} className="text-violet hover:underline">{f.value}</Link> : f.value}</dd>
+                <dd className="text-right font-medium">{f.key === "birthday" && bday ? <Link href={bdPath(bday.m, bday.d)} className="text-violet hover:underline">{f.value}</Link> : f.key === "blood" && /^(a|b|o|ab)$/i.test(f.value.trim()) ? <Link href={`/characters/blood-type/${f.value.trim().toLowerCase()}`} className="text-violet hover:underline">{f.value}</Link> : f.value}</dd>
               </div>
             ))}
             {sign && <div className="flex justify-between gap-4 py-2"><dt className="text-muted">Zodiac sign</dt><dd className="text-right font-medium">{sign}</dd></div>}
