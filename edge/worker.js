@@ -28,11 +28,14 @@ const LAST_GOOD_TTL = 14 * DAY;
 // Generated Open Graph / Twitter cards. Their URLs carry a hash of the image route (`?6cf9…`), so they need no
 // build in their key: they survive deploys, which would otherwise re-render every card.
 const CARD = /\/(opengraph|twitter)-image(-[\w-]+)?$/;
+// Routes with `revalidate = 604800` in the app (characters, watch orders, cast lists): no data on them changes daily.
+const WEEKLY = /^\/(character\/[^/]+|watch-order\/[^/]+|anime\/[^/]+\/(cast|characters))\/?$/;
 const CRAWLER = /googlebot|google-inspectiontool|googleother|adsbot-google|mediapartners-google|bingbot|duckduckbot|yandex|applebot|baiduspider/i;
 
 function ttl(path) {
   if (path.startsWith("/_next/static/")) return 365 * DAY;
   if (CARD.test(path)) return 7 * DAY; // the image routes' own revalidate
+  if (WEEKLY.test(path)) return 7 * DAY; // pages whose own revalidate is a week: a day here only re-asked the app
   if (FRESH.has(path) || path.startsWith("/season/") || path.startsWith("/news/")) return 3600;
   return DAY;
 }

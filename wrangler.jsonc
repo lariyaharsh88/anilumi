@@ -28,5 +28,6 @@
   // Uncached renders mostly wait on Kitsu, AniList and MongoDB (Mumbai): let Cloudflare run them near those
   // instead of near the visitor. Cached pages are still served from the visitor's nearest location.
   "placement": { "mode": "smart" },
-  "observability": { "enabled": true }
+  // Logs one request in ten: every request filled 5.5M of the plan's 20M events a month in 11 days.
+  "observability": { "enabled": true, "head_sampling_rate": 0.1 }
 }
