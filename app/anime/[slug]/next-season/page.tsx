@@ -2,12 +2,15 @@ import type { Metadata } from "next";
 import MadeBy from "@/components/MadeBy";
 import EditorWatched from "@/components/EditorWatched";
 import { fitTitle } from "@/lib/titles";
-import { sequelNews, newsOverrides, NEWS_CHECKED, NEWS_REVIEWED } from "@/lib/sequelnews";
+import { sequelNews, newsOverrides, NEWS_CHECKED, NEWS_REVIEWED, OUTLOOK_LABEL } from "@/lib/sequelnews";
+import PickList from "@/components/PickList";
+import { fanPicks } from "@/lib/picks";
+import { getFanRecommendations } from "@/lib/anilist";
 import { robotsFor, nextSeasonIndexed } from "@/lib/indexing";
 import Link from "@/components/Link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { getAnimeBySlug, buildWatchOrder, getRelations, kitsuByAniListIds, animePath, posterUrl, fmtDate, statusLabel, subtypeLabel, type Anime } from "@/lib/kitsu";
+import { getAnimeBySlug, getAniListId, buildWatchOrder, getRelations, kitsuByAniListIds, animePath, posterUrl, fmtDate, statusLabel, subtypeLabel, type Anime } from "@/lib/kitsu";
 import { getAniListSequel } from "@/lib/anilist";
 import { sequelVerdict, seasonGaps, humanMonths, type SequelLike, type SequelKind } from "@/lib/sequel";
 import { continuationFor } from "@/lib/filler";
@@ -45,7 +48,7 @@ async function load(slug: string) {
   // The name people search ("Demon Slayer Season 2", not "Kimetsu no Yaiba Season 2").
   const name = a.titleEn && a.titleEn.length <= 35 ? a.titleEn : a.title;
   const label = first ? `${name} Season 2` : `${name} Next Season`;
-  return { a, chain, idx, next, verdict, label, first };
+  return { a, chain, idx, next, verdict, label, first, name };
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -81,7 +84,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function NextSeasonPage({ params }: Props) {
   const { slug } = await params;
-  const { a, chain, next, verdict, label, first } = await load(slug);
+  const { a, chain, next, verdict, label, first, name } = await load(slug);
   const gaps = seasonGaps(chain);
   const avgGap = gaps.length ? Math.round(gaps.reduce((n, g) => n + g, 0) / gaps.length) : null;
   const cont = continuationFor(a.slug);
@@ -101,10 +104,16 @@ export default async function NextSeasonPage({ params }: Props) {
   const question = first ? `Is there a ${a.title} season 2?` : `Will ${a.title} get another season?`;
   const news = sequelNews(a.slug);
   const override = newsOverrides(news, verdict.kind);
+  // No sequel to wait for: what fans of the show watch instead.
+  const waiting = !override && (verdict.kind === "none" || verdict.kind === "still-airing");
+  const [recs, alId] = waiting ? await Promise.all([getFanRecommendations(a.id, 12).catch(() => []), getAniListId(a.id).catch(() => null)]) : [[], null];
+  const picks = fanPicks(recs, alId, name).slice(0, 6);
+  const why = news?.status === "none" && news.why ? news.why : null;
   const newsLine = news ? `${news.what}${news.announced && news.status !== "none" ? `, announced ${fmtDate(news.announced, { month: "long", day: "numeric", year: "numeric" })}${news.by ? ` by ${news.by}` : ""}` : ""}${news.window && news.window !== "TBA" && news.status !== "none" ? `; expected ${news.window}` : ""}.` : "";
 
   const faq: FaqItem[] = [
     { q: question, a: override ? newsLine : `${verdict.headline} ${verdict.detail}${thenNote}` },
+    ...(why ? [{ q: `Why is there no ${name} ${first ? "season 2" : "new season"}?`, a: why }] : []),
     ...(verdict.kind === "dated" && next?.startDate ? [{ q: `When does ${next.title} come out?`, a: `${next.title} is scheduled to premiere on ${fmtDate(next.startDate, { month: "long", day: "numeric", year: "numeric" })} in Japan.` }] : []),
     ...(avgGap !== null ? [{ q: `How long is the wait between ${a.title} seasons?`, a: `Across ${gaps.length} gap${gaps.length === 1 ? "" : "s"} so far, new entries in the main story have arrived on average ${humanMonths(avgGap)} after the previous one ended. That's a pattern, not an announcement.` }] : []),
     ...(cont ? [{ q: `Where does the ${a.title} anime end in the ${cont.medium}?`, a: `To keep going, start the ${cont.medium} from ${cont.chapter ? `chapter ${cont.chapter}` : `volume ${cont.volume}`}.${cont.note ? ` ${cont.note}` : ""}` }] : []),
@@ -141,6 +150,16 @@ export default async function NextSeasonPage({ params }: Props) {
             <span>{NEWS_REVIEWED ? "Checked" : `Draft, checked${NEWS_CHECKED ? ` on ${fmtDate(NEWS_CHECKED, { day: "numeric", month: "short", year: "numeric" })}` : ""}`} against official announcements and news reports.</span>
             {news.sources.slice(0, 3).map((u, i) => <a key={u} href={u} target="_blank" rel="noopener nofollow" className="underline">Source {i + 1}</a>)}
           </p>
+        </section>
+      )}
+
+      {why && news && (
+        <section className="reveal mt-8" aria-labelledby="why-h">
+          <h2 id="why-h" className="h-section mb-3">Why there&apos;s no {first ? "season 2" : "new season"} yet</h2>
+          <div className="card p-4">
+            {news.outlook && <p className="text-xs font-semibold uppercase tracking-wider text-accent-2">{OUTLOOK_LABEL[news.outlook]}</p>}
+            <p className="mt-1 text-sm leading-6 text-ink/90">{why}</p>
+          </div>
         </section>
       )}
 
@@ -201,6 +220,14 @@ export default async function NextSeasonPage({ params }: Props) {
           <p className="text-xs font-semibold uppercase tracking-wider text-violet-2">Can&apos;t wait?</p>
           <p className="mt-1 text-sm leading-6 text-ink/90">The anime leaves off at {cont.medium} {cont.chapter ? `chapter ${cont.chapter}` : `volume ${cont.volume}`}. {cont.note || ""}{!cont.reviewed && <span className="text-muted"> (Draft, being verified.)</span>}</p>
           <Link href={`${animePath(a)}/manga`} className="mt-2 inline-block text-sm text-violet hover:underline">Where the anime ends in the {cont.medium} →</Link>
+        </section>
+      )}
+
+      {picks.length > 0 && (
+        <section className="reveal mt-10" aria-labelledby="wait-h">
+          <h2 id="wait-h" className="h-section mb-1">While you wait: what {name} fans watch next</h2>
+          <p className="mb-4 text-sm text-muted">The titles AniList members most often recommend to {name} fans, with what each has in common. <Link href={`/similar/${a.slug}`} className="text-violet hover:underline">More anime like {name} →</Link></p>
+          <PickList picks={picks} />
         </section>
       )}
 

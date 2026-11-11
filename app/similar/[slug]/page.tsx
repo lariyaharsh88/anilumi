@@ -11,13 +11,9 @@ import FanRecs from "@/components/FanRecs";
 import { getFanRecommendations } from "@/lib/anilist";
 import { getAniListInsight } from "@/lib/insights";
 import { robotsFor, similarIndexed } from "@/lib/indexing";
-import PickList, { type Pick } from "@/components/PickList";
-import { alAnime } from "@/lib/alsnap";
-import { sharedThemes } from "@/lib/similar";
-import { similarStrength, themesOf } from "@/lib/picks";
-import { type FanRec } from "@/lib/anilist";
+import PickList from "@/components/PickList";
+import { similarStrength, fanPicks } from "@/lib/picks";
 import { getAniListId } from "@/lib/kitsu";
-import { snapshotOrder } from "@/lib/wosnap";
 import { WATCH_ORDER_OVERRIDES } from "@/data/watch-orders";
 
 export const revalidate = 604800;
@@ -41,24 +37,6 @@ async function similarTo(a: Anime): Promise<Anime[]> {
     }
   });
   return uniqueById(scored.sort((x, y) => y.score - x.score).map((s) => s.a)).slice(0, 20);
-}
-
-/** Fan recommendations as reasoned picks: what each shares with the title, from the AniList snapshot. */
-function fanPicks(recs: FanRec[], alId: number | null, name: string): Pick[] {
-  const mine = alId ? alAnime(alId)?.t ?? [] : [];
-  const seen = new Set<string>();
-  return recs.flatMap((r) => {
-    if (!r.anime) return [];
-    // One entry per franchise: Code Geass R2 adds nothing after Code Geass.
-    const root = snapshotOrder(r.anime.id)?.root.slug ?? r.anime.slug;
-    if (seen.has(root)) return [];
-    seen.add(root);
-    const theirs = alAnime(r.anilistId)?.t ?? [];
-    const both = mine.length ? sharedThemes(mine, theirs) : [];
-    const own = themesOf(theirs).filter((t) => !both.includes(t)).slice(0, 2);
-    const why = both.length ? `Like ${name}: ${both.join(", ")}.${own.length ? ` Also: ${own.join(", ")}.` : ""}` : own.length ? `${own.join(", ")}. Fans of ${name} pick it most.` : `Fans of ${name} pick it most.`;
-    return [{ anime: r.anime, why, votes: r.votes }];
-  });
 }
 
 /** Indexed when Google already shows it, or when fans recommend 8+ titles and 5+ share themes with it. */

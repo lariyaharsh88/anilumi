@@ -1,5 +1,6 @@
 // Query-string variants (?page=, ?sort=, filters). Reached only through the rewrites in next.config.ts;
 import { DUBS_SEASON, dubShows, type DubShow } from "@/lib/dubschedule";
+import { seasonDubs, SEASON_DUBS_CHECKED, type SeasonDub } from "@/lib/seasondubs";
 import MadeBy from "@/components/MadeBy";
 import { fitTitle } from "@/lib/titles";
 // the plain URL is served by ../page.tsx from the ISR cache.
@@ -109,6 +110,24 @@ export default async function SeasonPage({ params, searchParams }: Props) {
             {hi.length > 0 && <><h3 className="mt-3 text-xs font-semibold uppercase tracking-wide text-muted">🇮🇳 Hindi dubs</h3><ul className="mt-1.5 flex flex-wrap gap-1.5">{hi.map(row)}</ul></>}
           </section>
         ) : null;
+      })()}
+
+      {page === 1 && `${cap(season)} ${year}` !== DUBS_SEASON && (() => {
+        // Past and next seasons: the researched line-up (what got dubbed, simuldub or later).
+        const d = seasonDubs(y, season);
+        if (!d) return null;
+        const future = y > seasonOf().year || (y === seasonOf().year && SEASONS.indexOf(season as Season) > SEASONS.indexOf(seasonOf().season));
+        const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+        const when = (e: SeasonDub) => (e.when === "later" ? (e.later ? `dub ${MONTHS[Number(e.later.slice(5, 7)) - 1] ?? ""} ${e.later.slice(0, 4)}`.replace("  ", " ") : "dub came later") : "simuldub");
+        const row = (e: SeasonDub) => <li key={`${e.t}-${e.service}`}><Link href={e.slug ? `/anime/${e.slug}` : `/season/${year}/${season}`} className="chip text-xs">{e.t}<span className="text-muted"> · {e.service}, {when(e)}</span></Link></li>;
+        return (
+          <section className="card mt-6 p-4" aria-labelledby="dubbed-h">
+            <h2 id="dubbed-h" className="font-semibold text-ink">{future ? "Dubs announced" : "Dubbed"} for {cap(season)} {year}: {d.en.length} in English, {d.hi.length} in Hindi</h2>
+            <p className="mt-1 text-sm text-muted">Which {cap(season)} {year} shows {future ? "will be" : "were"} dubbed, on which service, and whether the dub aired alongside Japan (simuldub) or came later.{d.note ? ` ${d.note}` : ""}{SEASON_DUBS_CHECKED ? ` Checked ${SEASON_DUBS_CHECKED}.` : ""} <Link href="/dub-schedule" className="text-violet hover:underline">This season&apos;s dub schedule →</Link></p>
+            {d.en.length > 0 && <><h3 className="mt-3 text-xs font-semibold uppercase tracking-wide text-muted">English dubs</h3><ul className="mt-1.5 flex flex-wrap gap-1.5">{d.en.map(row)}</ul></>}
+            {d.hi.length > 0 && <><h3 className="mt-3 text-xs font-semibold uppercase tracking-wide text-muted">🇮🇳 Hindi dubs</h3><ul className="mt-1.5 flex flex-wrap gap-1.5">{d.hi.map(row)}</ul></>}
+          </section>
+        );
       })()}
 
       {page === 1 && data.total > 0 && (

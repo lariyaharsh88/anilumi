@@ -7,6 +7,9 @@ import data from "@/data/anime-al.json";
 import { alAnime } from "./alsnap";
 import { sharedThemes } from "./similar";
 import type { AlTag } from "./insights";
+import type { FanRec } from "./anilist";
+import type { Anime } from "./kitsu";
+import { snapshotOrder } from "./wosnap";
 
 const VAGUE = new Set(["Male Protagonist", "Female Protagonist", "Primarily Male Cast", "Primarily Female Cast", "Primarily Adult Cast", "Primarily Teen Cast", "Primarily Child Cast", "Ensemble Cast", "Episodic", "Heterosexual"]);
 
@@ -75,4 +78,22 @@ export function fanTiers(minVotes = 100000): FanTier[] {
   const rows = Object.entries(SNAP).filter(([, a]) => a.s && a.sv >= minVotes && !a.g.includes("Ecchi")).map(([id, a]) => ({ id: Number(id), s: a.s! })).sort((x, y) => y.s - x.s);
   const cuts: [FanTier["tier"], number][] = [["S", 8.6], ["A", 8.2], ["B", 7.8], ["C", 0]];
   return cuts.map(([tier, min], i) => ({ tier, min, ids: rows.filter((r) => r.s >= min && (i === 0 || r.s < cuts[i - 1][1])).map((r) => r.id) }));
+}
+
+/** Fan recommendations as reasoned picks: what each shares with the title, from the AniList snapshot. */
+export function fanPicks(recs: FanRec[], alId: number | null, name: string): { anime: Anime; why: string; votes: number }[] {
+  const mine = alId ? alAnime(alId)?.t ?? [] : [];
+  const seen = new Set<string>();
+  return recs.flatMap((r) => {
+    if (!r.anime) return [];
+    // One entry per franchise: Code Geass R2 adds nothing after Code Geass.
+    const root = snapshotOrder(r.anime.id)?.root.slug ?? r.anime.slug;
+    if (seen.has(root)) return [];
+    seen.add(root);
+    const theirs = alAnime(r.anilistId)?.t ?? [];
+    const both = mine.length ? sharedThemes(mine, theirs) : [];
+    const own = themesOf(theirs).filter((t) => !both.includes(t)).slice(0, 2);
+    const why = both.length ? `Like ${name}: ${both.join(", ")}.${own.length ? ` Also: ${own.join(", ")}.` : ""}` : own.length ? `${own.join(", ")}. Fans of ${name} pick it most.` : `Fans of ${name} pick it most.`;
+    return [{ anime: r.anime, why, votes: r.votes }];
+  });
 }

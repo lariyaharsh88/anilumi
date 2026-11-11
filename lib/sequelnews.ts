@@ -8,7 +8,10 @@
 import data from "@/data/sequel-news.json";
 import type { SequelKind } from "./sequel";
 
-export type SequelNews = { status: "announced" | "dated" | "airing" | "none"; what: string; announced: string | null; by: string | null; window: string | null; confidence: "high" | "medium"; sources: string[]; notes?: string };
+/** Why there's no sequel yet: the story is finished, source material is left, or the franchise went on another way. */
+export type SequelOutlook = "complete" | "material-left" | "remake-or-spinoff" | "announced";
+export type SequelNews = { status: "announced" | "dated" | "airing" | "none"; what: string; announced: string | null; by: string | null; window: string | null; confidence: "high" | "medium"; sources: string[]; notes?: string; outlook?: SequelOutlook; why?: string };
+export const OUTLOOK_LABEL: Record<SequelOutlook, string> = { complete: "Story complete", "material-left": "Source material left", "remake-or-spinoff": "Continued another way", announced: "Announced" };
 const DATA = data as unknown as { checked: string | null; reviewed: string | null; shows: Record<string, SequelNews> };
 export const NEWS_CHECKED = DATA.checked;
 export const NEWS_REVIEWED = DATA.reviewed;
