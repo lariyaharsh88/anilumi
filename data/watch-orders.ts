@@ -1083,13 +1083,13 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   },
   genshiken: {
     label: "Genshiken",
-    intro: "Watch Genshiken (12 episodes, October–December 2004), the three-episode OVA (December 2006–April 2007), Genshiken 2 (October–December 2007), then Genshiken Second Generation (July–September 2013) and its OVA (December 2013), which adapt the sequel manga, Genshiken: Second Season. Kujibiki Unbalance is the club's in-universe anime, released as a spin-off. Kitsu lists the 2013 OVA before the series it follows, so the order is fixed.",
+    intro: "Watch Genshiken (12 episodes, October–December 2004), the three-episode OVA (December 2006–April 2007), Genshiken 2 (October–December 2007), then Genshiken Second Generation (July–September 2013), which adapts the sequel manga, Genshiken: Second Season, and its OVA (December 2013). The OVA is set just before Second Generation but came out after it, so this guide keeps release order. Kujibiki Unbalance is the club's in-universe anime, released as a spin-off.",
     mainOrder: ["genshiken", "genshiken-ova", "genshiken-2", "genshiken-nidaime", "genshiken-nidaime-ova"],
   },
   "ranma-nettou-hen": {
     label: "Ranma ½",
     intro: "Watch the Studio Deen TV anime (April 1989–September 1992), broadcast first as Ranma ½ and then as Ranma ½ Nettōhen; Kitsu counts both as one entry. Then the OVAs (1993–1996), the 1994 film Team Ranma vs. the Legendary Phoenix and the 2008 OVA; the 1991 and 1992 films are optional side stories. The 2024 MAPPA series is a new adaptation: Season 1 (October–December 2024), Season 2 (October–December 2025) and Season 3, which began in October 2026.",
-    optional: ["Ranma-12-2024-2", "Ranma-12-2024-3"],
+    optional: ["Ranma-12-2024-2", "Ranma-12-2024-3", "Ranma-12-2024"],
   },
   "aria-the-animation": {
     label: "Aria",
@@ -1103,11 +1103,13 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   },
   gokushufudou: {
     label: "The Way of the Househusband",
-    intro: "The Way of the Househusband is a Netflix series by J.C.Staff with three batches of five episodes: Part 1 (April 2021), Part 2 (October 2021) and Season 2 (January 2023). Watch them in that order; there are no films, OVAs or recaps. Part 1 and Part 2 together make up the first season.",
+    intro: "The Way of the Househusband is a Netflix series by J.C.Staff with three batches of five episodes: Part 1 (April 2021), Part 2 (October 2021) and Season 2 (January 2023). Watch them in that order; there are no anime films, OVAs or recaps (the 2020 TV drama and 2022 film are live-action). Part 1 and Part 2 together make up the first season.",
   },
   "selector-infected-wixoss": {
     label: "WIXOSS",
-    intro: "Watch selector infected WIXOSS (12 episodes, April–June 2014), then selector spread WIXOSS (October–December 2014), then the sequel Lostorage incited WIXOSS (October–December 2016) and its second season, Lostorage conflated WIXOSS (April–June 2018), all by J.C.Staff. The film selector destructed WIXOSS (February 2016) is a compilation and can be skipped. WIXOSS Diva(A)Live (2021) is a separate series.",
+    intro: "Watch selector infected WIXOSS (12 episodes, April–June 2014), then selector spread WIXOSS (October–December 2014), then the sequel Lostorage incited WIXOSS (October–December 2016), the special -missing link- (December 2017) and the second season, Lostorage conflated WIXOSS (April–June 2018), all by J.C.Staff. The film selector destructed WIXOSS (February 2016) is a compilation and can be skipped. WIXOSS Diva(A)Live (2021) is a separate series.",
+    promote: ["lostorage-conflated-wixoss-missing-link"],
+    mainOrder: ["selector-infected-wixoss", "selector-spread-wixoss", "lostorage-incited-wixoss", "lostorage-conflated-wixoss-missing-link", "lostorage-conflated-wixoss"],
   },
   "shugo-chara": {
     label: "Shugo Chara!",
@@ -1127,7 +1129,8 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   },
   "aggressive-retsuko-ona": {
     label: "Aggretsuko",
-    intro: "Watch the five Netflix seasons in order: Season 1 (April 2018), Season 2 (June 2019), Season 3 (August 2020), Season 4 (December 2021) and Season 5 (February 2023), the final season. The Christmas special We Wish You a Metal Christmas (December 2018) fits between Seasons 1 and 2. The 100 short TBS episodes (2016–2018) came first; they are separate short episodes, listed as an alternative version.",
+    intro: "Watch the five Netflix seasons in order: Season 1 (April 2018), Season 2 (June 2019), Season 3 (August 2020), Season 4 (December 2021) and Season 5 (February 2023), the final season. The Christmas special We Wish You a Metal Christmas (December 2018) fits between Seasons 1 and 2. The 100 one-minute TBS shorts (2016–2018) came first; they are separate gags and are optional.",
+    optional: ["aggressive-retsuko"],
   },
   kingdom: {
     label: "Kingdom",
@@ -1146,10 +1149,11 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   },
   "osomatsu-san": {
     label: "Mr. Osomatsu (Osomatsu-san)",
-    intro: "Mr. Osomatsu (Osomatsu-san) follows the sextuplets of the 1962 manga Osomatsu-kun as adults, so you can start with it. Watch Season 1 (October 2015–March 2016), Season 2 (October 2017–March 2018), the film (March 2019), Season 3 (October 2020–March 2021) and Season 4 (July–September 2025; its final episode aired in June 2026). The 1966 and 1988 Osomatsu-kun series are optional, and the many shorts are extras.",
+    intro: "Mr. Osomatsu (Osomatsu-san) follows the sextuplets of the 1962 manga Osomatsu-kun as adults, so you can start with it. Watch Season 1 (October 2015–March 2016), Season 2 (October 2017–March 2018), the film (March 2019), Season 3 (October 2020–March 2021) and Season 4 (July–October 2025; its delayed final episode came out in June 2026). The two later films, The Hipipo Tribe and the Glistening Fruit (July 2022) and The Soul's Takoyaki Party and the Legendary Sleepover Party (July 2023), are optional, as are the 1966 and 1988 Osomatsu-kun series; the many shorts are extras.",
     demote: ["osomatsu-kun-1988"],
     promote: ["osomatsu-san-3", "osomatsu-san-4"],
     mainOrder: ["osomatsu-san", "osomatsu-san-2", "osomatsu-san-the-movie", "osomatsu-san-3", "osomatsu-san-4"],
+    optional: ["osomatsu-kun"],
   },
   "bocchi-the-rock": {
     label: "Bocchi the Rock!",
@@ -1162,23 +1166,25 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   },
   utawarerumono: {
     label: "Utawarerumono",
-    intro: "Watch Utawarerumono (26 episodes, April–September 2006) and the OVAs (2009–2010), then The False Faces (October 2015–March 2016) and Mask of Truth (July–December 2022), which adapt the sequel games Mask of Deception and Mask of Truth. The 2006 specials are optional and the recaps can be skipped.",
+    intro: "Watch Utawarerumono (26 episodes, April–September 2006), then The False Faces (October 2015–March 2016) and Mask of Truth (July–December 2022), which adapt the sequel games Mask of Deception and Mask of Truth. The three OVAs (2009–2010) tell side stories from the original game and are optional, as are the 2006 specials; the recaps can be skipped.",
   },
   "prince-of-tennis": {
     label: "The Prince of Tennis",
-    intro: "Watch the 178-episode TV series (October 2001–March 2005), then the OVA sequel in three parts, The National Tournament, Semifinals and Finals (26 episodes, March 2006–January 2009). The films and the Another Story OVAs (2009 and 2011), which are side stories, are optional. The New Prince of Tennis (2012) and its U-17 World Cup seasons adapt the sequel manga; Kitsu doesn't link them, so they were added as extras.",
+    intro: "Watch the 178-episode TV series (October 2001–March 2005), then the OVA sequel in three parts, The National Tournament, Semifinals and Finals (26 episodes, March 2006–January 2009). The films and the Another Story OVAs (2009 and 2011), which are side stories, are optional. The New Prince of Tennis (2012) and its U-17 World Cup seasons (2022, 2024, and a third that began in October 2026) adapt the sequel manga; Kitsu doesn't link them, so they were added as extras.",
     demote: ["prince-of-tennis-another-story-messages-from-past-and-future", "prince-of-tennis-another-story-ii-ano-toki-no-bokura"],
     optional: ["new-prince-of-tennis", "new-prince-of-tennis-ova-vs-genius10", "shin-tennis-no-oujisama-u17-world-cup", "shin-tennis-no-ouji-sama-u-17-world-cup-semifinal", "shin-tennis-no-ouji-sama-u-17-world-cup-kesshou-member-ketteisen"],
   },
   "uta-no-prince-sama-maji-love-1000": {
     label: "Uta no Prince-sama",
-    intro: "Watch the four seasons by A-1 Pictures in order: Maji Love 1000% (July–September 2011), Maji Love 2000% (April–June 2013), Maji Love Revolutions (April–June 2015) and Maji Love Legend Star (October–December 2016). Then the films Maji Love Kingdom (June 2019) and Maji Love ST☆RISH Tours (September 2022). The 2013 Christmas special and the July 2022 Tours special are optional extras.",
+    intro: "Watch the four seasons by A-1 Pictures in order: Maji Love 1000% (July–September 2011), Maji Love 2000% (April–June 2013), Maji Love Revolutions (April–June 2015) and Maji Love Legend Star (October–December 2016). Then the films Maji Love Kingdom (June 2019) and Maji Love ST☆RISH Tours (September 2022). The 2013 Christmas special and the July 2022 Tours special are optional extras. A further film, Taboo Night XXXX (May 2025), isn't on Kitsu yet, so it isn't listed here.",
     demote: ["uta-no-prince-sama-maji-love-2000-special", "uta-no-prince-sama-maji-love-st-rish-tours-tabi-no-hajimari"],
   },
   macross: {
     label: "Macross",
-    intro: "Watch in release order: Super Dimension Fortress Macross (October 1982–June 1983), Macross Plus (OVA, 1994–1995), Macross 7 (1994–1995), the Dynamite 7 OVA, Macross Zero (OVA, 2002–2004), Macross Frontier (2008), Macross Delta (2016) and the Delta film Absolute Live!!!!!! (October 2021). Zero is a prequel, which is why Kitsu lists it first. Do You Remember Love? (1984) and the two Frontier films retell their series and are optional.",
-    mainOrder: ["macross", "macross-plus", "macross-7", "macross-dynamite-7", "macross-zero", "macross-frontier", "macross-delta", "macross-zettai-live"],
+    intro: "Watch in release order: Super Dimension Fortress Macross (October 1982–June 1983), Macross Plus (OVA, 1994–1995), Macross 7 (1994–1995), the Dynamite 7 OVA (1997–1998), Macross Zero (OVA, 2002–2004), Macross Frontier (2008), Macross Delta (2016), then the Delta films Passionate Walküre (February 2018), which retells the series with changes, and its sequel Absolute Live!!!!!! (October 2021). Zero is a prequel, which is why Kitsu lists it first. Do You Remember Love? (1984) and the two Frontier films retell their series and are optional, as is the 1995 Macross 7 short film. A new Macross anime from Sunrise was announced in 2023 and has no release date yet.",
+    mainOrder: ["macross", "macross-plus", "macross-7", "macross-dynamite-7", "macross-zero", "macross-frontier", "macross-delta", "macross-delta-gekijou-no-walkure", "macross-zettai-live"],
+    promote: ["macross-delta-gekijou-no-walkure"],
+    exclude: ["macross-2018"],
   },
   "top-wo-nerae": {
     label: "Gunbuster (Aim for the Top!)",
@@ -1187,7 +1193,7 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   },
   "mobile-suit-gundam-seed": {
     label: "Mobile Suit Gundam SEED",
-    intro: "Watch Gundam SEED (50 episodes, October 2002–September 2003), the special After-Phase: Between the Stars (2004), Gundam SEED Destiny (50 episodes, October 2004–October 2005) and Final Plus (December 2005), then the follow-up film SEED Freedom (January 2024). SEED is set in its own Cosmic Era timeline, so the 1979 Mobile Suit Gundam was removed from the list. The Special Editions are compilations; Astray and Stargazer are side stories.",
+    intro: "Watch Gundam SEED (50 episodes, October 2002–September 2003), the special After-Phase: Between the Stars (2004), Gundam SEED Destiny (50 episodes, October 2004–October 2005) and Final Plus (December 2005), then the follow-up film SEED Freedom (January 2024). A prequel film set before SEED Freedom, SEED Freedom Zero, opens in Japan on January 15, 2027. SEED is set in its own Cosmic Era timeline, so the 1979 Mobile Suit Gundam was removed from the list. The Special Editions are compilations; Astray and Stargazer are side stories.",
     promote: ["mobile-suit-gundam-seed-freedom"],
     exclude: ["mobile-suit-gundam-0079"],
   },
@@ -1220,7 +1226,7 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   },
   "uq-holder": {
     label: "UQ Holder! (and Negima!)",
-    intro: "UQ Holder! (12 episodes, October–December 2017) is set several generations after Ken Akamatsu's Negima!, and its OVAs are extras. Kitsu builds this list from the Negima! OVAs that come before it: Ala Alba (2008–2009), Another World (2009–2010) and the film Anime Final (August 2011). The 2005 Negima! TV series and the 2006 retelling Negima!? have plots different from the manga, so they are listed as alternatives.",
+    intro: "UQ Holder! (12 episodes, October–December 2017) is set decades after Ken Akamatsu's Negima!, and its OVAs are extras. Kitsu builds this list from the Negima! OVAs that come before it: Ala Alba (2008–2009), Another World (2009–2010) and the film Anime Final (August 2011). The 2006 retelling Negima!? has a plot different from the manga, so it is listed as an alternative; the 2005 Negima! TV series also departs from the manga and isn't linked here.",
   },
   ikkitousen: {
     label: "Ikki Tousen",
@@ -1228,12 +1234,14 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   },
   "aa-megami-sama-tv": {
     label: "Ah! My Goddess",
-    intro: "Watch the TV series Ah! My Goddess (24 episodes, January–July 2005), its sequel Flights of Fancy (April–September 2006) and the TV special Fighting Wings (December 9, 2007), then the OVAs released from 2011 to 2013. The 1993 OVA is an earlier, separate adaptation by the same studio, AIC, listed as an alternative. The Adventures of Mini-Goddess (1998–1999) is a spin-off.",
+    intro: "Watch the TV series Ah! My Goddess (24 episodes, January–July 2005), its sequel Flights of Fancy (April–September 2006) and the two-episode special Fighting Wings (December 2007), then the Together Forever OVAs (2011–2013). The 1993 OVA is an earlier, separate adaptation by the same studio, AIC, listed as an alternative, and Ah! My Goddess: The Movie (2000) is an optional standalone film. The Adventures of Mini-Goddess (1998–1999) is a spin-off.",
+    optional: ["aa-megami-sama-movie"],
   },
   hakuouki: {
     label: "Hakuoki",
     intro: "Watch Hakuoki (12 episodes, April–June 2010) and Hekketsuroku (October–December 2010), then Reimeiroku (July–September 2012), which adapts the prequel game; Kitsu lists Reimeiroku first. The OVA series A Memory of Snow Flowers (August 2011–July 2012) is optional. The two films (August 2013 and March 2014) retell the first two seasons. Otogisōshi (2016) is a short spin-off, and the 2021–2022 OVA is a new series.",
     mainOrder: ["hakuouki", "hakuouki-hekketsuroku", "hakuouki-reimeiroku"],
+    skip: ["hakuouki-movie-1-kyoto-ranbu", "hakuouki-movie-2"],
   },
   "senki-zesshou-symphogear-meteoroid-falling-burning-and-disappear-then": {
     label: "Symphogear",
@@ -1245,8 +1253,10 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   },
   noblesse: {
     label: "Noblesse",
-    intro: "Start with the 13-episode TV series by Production I.G (October–December 2020), which adapts the Korean webtoon. Two earlier one-shots are optional and listed after it: the 2015 Korean animation Noblesse: The Beginning of Destruction and the 2016 ONA Noblesse: Awakening, also by Production I.G. Kitsu lists both before the series, so they were moved.",
-    demote: ["noblesse-pamyeol-ui-sijak", "noblesse-awakening"],
+    intro: "Start with Noblesse: Awakening (February 2016), a 31-minute ONA by Production I.G that adapts the first volume of the Korean webtoon, then the 13-episode TV series by Production I.G (October–December 2020), which picks up directly after it. The 2015 Korean animation Noblesse: The Beginning of Destruction, by Studio Animal, is an optional one-shot listed after the series.",
+    demote: ["noblesse-pamyeol-ui-sijak"],
+    promote: ["noblesse-awakening"],
+    mainOrder: ["noblesse-awakening", "noblesse"],
   },
   "dies-irae": {
     label: "Dies irae",
@@ -1257,6 +1267,7 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
     intro: "Watch the five TV seasons in order: Slayers (26 episodes, April–September 1995), Next (1996), Try (1997), Revolution (July–September 2008) and Evolution-R (January–April 2009), 104 episodes in all. The OVAs The Book of Spells (1996–1997) and Excellent (1998–1999) are side stories that Kitsu lists first because they are set earlier; they are optional, as are the theatrical films.",
     demote: ["slayers-excellent", "slayers-special"],
     mainOrder: ["slayers", "slayers-next", "slayers-try", "slayers-revolution", "slayers-evolution-r"],
+    optional: ["slayers-the-motion-picture", "slayers-return", "slayers-great", "slayers-gorgeous", "slayers-premium"],
   },
   "nogizaka-haruka-no-himitsu": {
     label: "Haruka Nogizaka's Secret",
@@ -1273,11 +1284,13 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   "persona-5-the-animation": {
     label: "Persona 5: The Animation",
     intro: "Watch the 26-episode series by CloverWorks (April–September 2018), then the two TV specials that continue it, Dark Sun (December 31, 2018) and Stars and Ours (March 2019). The two specials bundled with the Blu-ray volumes in May and June 2019 are optional extras. The Day Breakers (September 2016), made by A-1 Pictures before the game came out, is a separate one-off special.",
+    optional: ["persona-5"],
   },
   "the-idolm-ster": {
     label: "The Idolmaster",
     intro: "Watch The Idolmaster (25 episodes, July–December 2011, by A-1 Pictures), then the film Beyond the Brilliant Future! (January 25, 2014). The June 2012 special and the Shiny Festa OVA from October 2012 are optional extras. Xenoglossia (2007, by Sunrise) is a separate mecha series that re-imagines the idols as robot pilots, and Cinderella Girls, SideM and Million Live follow other idol groups.",
     demote: ["the-idolm-ster-765-pro-to-iu-monogatari", "the-idolm-ster-shiny-festa"],
+    optional: ["the-idolm-ster-live-for-you"],
   },
   "papa-no-iukoto-wo-kikinasai": {
     label: "Listen to Me, Girls. I Am Your Father!",
@@ -1285,8 +1298,9 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   },
   "horizon-in-the-middle-of-nowhere": {
     label: "Horizon in the Middle of Nowhere",
-    intro: "Watch Horizon in the Middle of Nowhere (13 episodes, October–December 2011), then Season 2 (July–September 2012), both by Sunrise. Kitsu lists the Owari no Chronicle special first, but it is a separate 2012 special tied to the author's earlier novels, so it was moved after the series. The short specials released online in 2011 are optional.",
+    intro: "Watch Horizon in the Middle of Nowhere (13 episodes, October–December 2011), then Season 2 (13 episodes, July–September 2012), both by Sunrise. The short specials released online in 2011 and the new special made for the December 2018 Blu-ray box set are optional extras. There are no films or recaps.",
     demote: ["owari-no-chronicle"],
+    exclude: ["owari-no-chronicle"],
   },
   "strike-witches": {
     label: "Strike Witches",
@@ -1311,6 +1325,7 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   },
   "hack-sign": {
     label: ".hack//Sign",
-    intro: "Watch .hack//Sign (26 episodes, April–September 2002, by Bee Train), then .hack//Legend of the Twilight (12 episodes, January–March 2003). The four Liminality OVAs came one with each of the .hack PS2 games (June 2002–April 2003) and are optional, as is the Gift OVA (November 2003). .hack//Roots (2006) and Quantum (2010–2011) are separate .hack stories.",
+    intro: "Watch .hack//Sign (26 episodes, April–September 2002, by Bee Train), then .hack//Legend of the Twilight (12 episodes, January–March 2003). The four Liminality OVAs came one with each of the .hack PS2 games (June 2002–April 2003) and are optional, as is the Gift OVA (November 2003). .hack//Roots (2006), the G.U. Returner OVA (2007), Quantum (2010–2011) and the 2012 film .hack//The Movie are separate .hack stories.",
+    optional: ["hack-g-u-returner"],
   },
 };
