@@ -1,11 +1,10 @@
 name: After deploy
-# Cloudflare Workers Builds deploys the app Worker "anilumi" on every push to main (build command
-# `npx opennextjs-cloudflare build`, deploy command `npx opennextjs-cloudflare deploy`, set in the dashboard).
-# This waits until anilumi.in reports the pushed commit, then starts the cache warm-up so the new build's
+# Cloudflare Workers Builds deploys the app Worker "anilumi" on every push to the release branch (build command
+# `npx opennextjs-cloudflare build`, deploy command `npx opennextjs-cloudflare deploy`, set in the dashboard);
+# release.yml moves release to main every second day and starts this run on the release ref.
+# This waits until anilumi.in reports that commit, then starts the cache warm-up so the new build's
 # pages are rendered before visitors or Google ask for them, and resubmits the sitemap (sitemap.yml).
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 concurrency:
   group: after-deploy

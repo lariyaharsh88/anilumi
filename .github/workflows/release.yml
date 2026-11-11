@@ -1,0 +1,45 @@
+name: Release
+# AniLumi goes live from the release branch, not main: Workers Builds deploys the app Worker on pushes to release.
+# Every deploy is a new build ID, which empties the app's page cache and the edge cache key, and main gets dozens
+# of pushes a day; so main is released 48 hours after the last release. Run this workflow by hand to release now
+# (that restarts the 48 hours).
+on:
+  schedule:
+    - cron: "30 */6 * * *" # checks every 6 hours; releases once the last push to release is 48 hours old
+  workflow_dispatch:
+concurrency:
+  group: release
+permissions:
+  contents: write # push release
+  actions: write # gh workflow run after-deploy.yml
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 48 hours since the last release?
+        id: due
+        run: |
+          last=$(gh api "repos/$GITHUB_REPOSITORY/activity?ref=refs/heads/release&per_page=1" --jq '.[0].timestamp' 2>/dev/null || true)
+          age=$(( $(date -u +%s) - $(date -u -d "${last:-1970-01-01T00:00:00Z}" +%s) ))
+          echo "Last release: ${last:-never} ($(( age / 3600 )) h ago)"
+          if [ "${{ github.event_name }}" = "schedule" ] && [ "$age" -lt 172800 ]; then
+            echo "due=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "due=true" >> "$GITHUB_OUTPUT"
+          fi
+        env:
+          GH_TOKEN: ${{ github.token }}
+      - uses: actions/checkout@v4
+        if: steps.due.outputs.due == 'true'
+        with:
+          fetch-depth: 0
+      - name: Move release to main and warm the new build
+        if: steps.due.outputs.due == 'true'
+        run: |
+          git fetch origin main release
+          if [ "$(git rev-parse origin/main)" = "$(git rev-parse origin/release)" ]; then echo "release is already at main"; exit 0; fi
+          git log --oneline origin/release..origin/main | head -50
+          git push origin origin/main:refs/heads/release # fast-forward only: main is the source of truth
+          gh workflow run after-deploy.yml --ref release
+        env:
+          GH_TOKEN: ${{ github.token }}

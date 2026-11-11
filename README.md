@@ -78,6 +78,7 @@ AniLumi runs on Cloudflare Workers through `@opennextjs/cloudflare` (`wrangler.j
 
 - `npm run preview` builds and serves the site in the real Workers runtime on http://localhost:8787 (no account needed).
 - `npm run deploy` builds and deploys. It also uploads the pre-rendered pages into the R2 cache.
+- Releases: Workers Builds deploys from the `release` branch, not `main`. `.github/workflows/release.yml` moves `release` to `main` once the last release is 48 hours old (checked every 6 hours) and starts the warm-up; run it by hand (Actions → Release → Run workflow) to go live now, which restarts the 48 hours. Pushing to `main` alone deploys nothing: every deploy is a new build ID, which empties the page caches, and `main` gets many pushes a day.
 - Cache: R2 bucket `anilumi-next-cache` (ISR pages + fetch cache) with a regional cache in front; a Durable Object queue handles background revalidation. No tag cache (only time-based revalidation is used).
 - Images: `images.unoptimized` (no Next image optimizer on Workers); Kitsu serves fixed sizes and the code picks them.
 - `NEXT_PUBLIC_SITE_URL` is set in `wrangler.jsonc` `vars`; other env vars go in the Worker's Settings → Variables (rebuild after changing any `NEXT_PUBLIC_*`).
