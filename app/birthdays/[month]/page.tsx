@@ -51,6 +51,10 @@ export default async function BirthdayMonth({ params }: Props) {
   const { month } = await params;
   const { m, name, characters, people, signs } = load(month);
   const today = todayJst();
+  // "One Piece characters born in July": every show with two or more of this month's characters, biggest first.
+  const series = [...characters.reduce((g, c) => (c.s ? g.set(c.s, [...(g.get(c.s) ?? []), c]) : g), new Map<string, BdChar[]>()).entries()]
+    .filter(([, cs]) => cs.length >= 2).map(([slug, cs]) => ({ slug, title: cs[0].t, chars: [...cs].sort((a, b) => a.d - b.d) }))
+    .sort((a, b) => b.chars.length - a.chars.length || a.title.localeCompare(b.title)).slice(0, 24);
   const prev = ((m + 10) % 12) + 1, next = (m % 12) + 1;
   const Face = ({ c, size = "sm" }: { c: BdChar; size?: "sm" | "lg" }) => {
     const body = (
@@ -117,6 +121,23 @@ export default async function BirthdayMonth({ params }: Props) {
         </section>
       ))}
 
+      {series.length > 0 && (
+        <section className="reveal mt-12" aria-labelledby="series-h">
+          <h2 id="series-h" className="h-section mb-1">{name} birthdays by series</h2>
+          <p className="mb-3 text-sm text-muted">Shows with two or more popular characters born in {name}.</p>
+          <div className="grid gap-3 md:grid-cols-2">
+            {series.map((g) => (
+              <div key={g.slug} id={`series-${g.slug}`} className="card p-3">
+                <h3 className="text-sm font-bold"><Link href={animePath({ slug: g.slug })} className="hover:text-violet-2">{g.title}</Link> characters born in {name}</h3>
+                <ul className="mt-1.5 flex flex-wrap gap-x-3 gap-y-1 text-sm">
+                  {g.chars.map((c) => { const h = href(c); return <li key={c.id}>{h ? <Link href={h} className="text-ink/90 hover:text-violet-2">{c.n}</Link> : c.n} <span className="text-xs text-muted">{name.slice(0, 3)} {c.d}</span></li>; })}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
       {people.length > 0 && (
         <section className="reveal mt-12" aria-labelledby="va-h">
           <h2 id="va-h" className="h-section mb-3">Voice actors born in {name}</h2>
@@ -140,6 +161,7 @@ export default async function BirthdayMonth({ params }: Props) {
         items={[
           { q: `Which anime characters have a birthday in ${name}?`, a: `${characters.slice(0, 10).map((c) => `${c.n} (${bdLabel(c.m, c.d)})`).join(", ")}${characters.length > 10 ? `, and ${characters.length - 10} more listed on this page` : ""}.` },
           ...(characters[0] ? [{ q: `Who is the most popular anime character born in ${name}?`, a: `${characters[0].n} from ${characters[0].t}, born on ${bdLabel(characters[0].m, characters[0].d)}.` }] : []),
+          ...series.slice(0, 3).map((g) => ({ q: `Which ${g.title} characters are born in ${name}?`, a: `${g.chars.map((c) => `${c.n} (${bdLabel(c.m, c.d)})`).join(", ")}.` })),
           ...signs.filter((s) => s.chars.length).map((s) => ({ q: `Which anime characters born in ${name} are ${s.sign}?`, a: `Characters born ${name} ${s.from}–${s.to} are ${s.sign}, including ${s.chars.slice(0, 5).map((c) => c.n).join(", ")}.` })),
         ]}
       />
