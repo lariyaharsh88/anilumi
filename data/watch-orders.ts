@@ -171,7 +171,9 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   },
   "mushoku-tensei-isekai-ittara-honki-dasu": {
     label: "Mushoku Tensei",
-    intro: "Season 1 in two cours (2021), then Season 2 in two cours (2023–2024). Season 2 opens with an episode 0 (Guardian Fitz) that is a required prologue, not a recap. The OVA episodes are optional side stories. Season 3 Part 1 aired July–September 2026, with Part 2 due in 2027.",
+    intro: "Season 1 in two cours (2021), then Season 2 in two cours (2023–2024). Season 2 opens with an episode 0 (Guardian Fitz) that is a required prologue, not a recap; Kitsu lists it separately, just before Season 2 below. The OVA (Eris the Goblin Slayer, 2022) is an optional side story. Season 3 Part 1 aired July–September 2026, with Part 2 due in 2027.",
+    promote: ["mushoku-tensei-ii-isekai-ittara-honki-dasu-shugo-jutsushi-fitz"],
+    mainOrder: ["mushoku-tensei-isekai-ittara-honki-dasu", "mushoku-tensei-isekai-ittara-honki-dasu-part-2", "mushoku-tensei-ii-isekai-ittara-honki-dasu-shugo-jutsushi-fitz", "mushoku-tensei-isekai-ittara-honki-dasu-season-2", "Mushoku-Tensei-Isekai-Ittara-Honki-Dasu-Season-2-Part-2", "Mushoku-Tensei-Isekai-Ittara-Honki-Dasu-Season-3", "mushoku-tensei-iii-isekai-ittara-honki-dasu-part-2"],
   },
   "tensei-shitara-slime-datta-ken": {
     label: "That Time I Got Reincarnated as a Slime",
@@ -254,7 +256,10 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   },
   "natsume-yuujinchou": {
     label: "Natsume's Book of Friends",
-    intro: "Watch the seasons in order, from the first through Zoku, San, Shi, Go, Roku and Shichi, with the film Ephemeral Bond after the sixth season and the 2021 film The Waking Rock and the Strange Visitor as an optional extra after it. Most episodes are self-contained, but character relationships build across seasons. Kitsu's sequel links stop after Shi, so the later seasons are not in the list below.",
+    intro: "Watch the seven seasons in order: Natsume's Book of Friends (2008), Zoku (2009), San (2011), Shi (2012), Go (2016), Roku (2017) and Shichi (2024), with the film Ephemeral Bond (September 2018) after Roku. The 2021 film The Waking Rock and the Strange Visitor and the 2014 OVA Itsuka Yuki no Hi ni are optional extras. Most episodes are self-contained, but character relationships build across seasons.",
+    promote: ["natsume-yuujinchou-go", "natsume-yuujinchou-roku", "natsume-yuujinchou-movie", "natsume-yuujinchou-shichi"],
+    demote: ["natsume-yuujinchou-itsuka-yuki-no-hi-ni"],
+    mainOrder: ["natsume-yuujinchou", "zoku-natsume-yuujinchou", "natsume-yuujinchou-san", "natsume-yuujinchou-shi", "natsume-yuujinchou-go", "natsume-yuujinchou-roku", "natsume-yuujinchou-movie", "natsume-yuujinchou-shichi"],
   },
   "kuroko-no-basket": {
     label: "Kuroko's Basketball",
@@ -579,7 +584,8 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   },
   "trinity-seven": {
     label: "Trinity Seven",
-    intro: "Watch the 12-episode series (October–December 2014), then the films Eternity Library & Alchemic Girl (February 2017) and Heavens Library & Crimson Lord (March 2019). The OVA (March 2015) is a side episode that fits after the series. The second film is not linked on Kitsu, so it is missing from the list below.",
+    intro: "Watch the 12-episode series (October–December 2014), then the films Eternity Library & Alchemic Girl (February 2017) and Heavens Library & Crimson Lord (March 2019). The OVA (March 2015) is a side episode that fits after the series.",
+    optional: ["trinity-seven-movie-2"],
   },
   "akagami-no-shirayuki-hime": {
     label: "Snow White with the Red Hair",
@@ -601,7 +607,8 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   },
   "koutetsujou-no-kabaneri": {
     label: "Kabaneri of the Iron Fortress",
-    intro: "Watch the 12-episode series (April–June 2016), then the film The Battle of Unato (May 2019), which is set six months after the series. The two compilation films (December 2016 and January 2017) recap the first and second halves of the series and can be skipped. The Ran and Mumei Ranman specials and the Sakaseyasakase music video are optional extras.",
+    intro: "Watch the 12-episode series (April–June 2016), then the film The Battle of Unato (May 2019), which is set six months after the series. The two compilation films (December 2016 and January 2017) recap the first and second halves of the series and can be skipped. The Ran and Mumei Ranman videos are promotional clips for a mobile game and a figure, so they are listed under safe to skip, and the Sakaseyasakase music video is an optional extra.",
+    skip: ["koutetsujou-no-kabaneri-ran-hajimaru-michiato", "koutetsujou-no-kabaneri-mumei-ranman"],
   },
   "lucky-star": {
     label: "Lucky Star",
@@ -625,7 +632,7 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   },
   "kore-wa-zombie-desu-ka": {
     label: "Is This a Zombie?",
-    intro: "Watch Is This a Zombie? (12 episodes, January–March 2011) and its OVA episodes, then Is This a Zombie? of the Dead (10 episodes, April–June 2012) and its OVA from October 2012. The OVAs were released with light novel and manga volumes as extra episodes.",
+    intro: "Watch Is This a Zombie? (12 episodes, January–April 2011) and its OVA episodes, then Is This a Zombie? of the Dead (10 episodes, April–June 2012) and its OVA from October 2012. The OVAs were released with light novel and manga volumes as extra episodes.",
   },
   bakuman: {
     label: "Bakuman.",
@@ -641,7 +648,7 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   },
   "rurouni-kenshin": {
     label: "Rurouni Kenshin (1996)",
-    intro: "Watch the TV series (January 1996–September 1998), then the OVA Trust & Betrayal (1999), a prequel about Kenshin's past made after the series, then the OVA Reflection (2001–2002), set after the series. The 1997 film is optional. New Kyoto Arc (2011–2012) retells the Kyoto arc and can be skipped. The 2023 series and its second season, Kyoto Disturbance (2024–2025), are a separate new adaptation.",
+    intro: "Watch the TV series (January 1996–September 1998), then the OVA Trust & Betrayal (1999), a prequel about Kenshin's past made after the series; it is listed below as a side story but is strongly recommended. Then watch the OVA Reflection (2001–2002), set after the series. The 1997 film is optional. New Kyoto Arc (2011–2012) retells the Kyoto arc and can be skipped. The 2023 series and its second season, Kyoto Disturbance (2024–2025), are a separate new adaptation, and a third season of it has been announced.",
     demote: ["rurouni-kenshin-tsuiokuhen"],
   },
   "aldnoah-zero": {
@@ -660,6 +667,7 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   "strike-the-blood": {
     label: "Strike the Blood",
     intro: "Watch the 24-episode TV series (October 2013–March 2014), then the OVA seasons in order: II (8 episodes, November 2016–May 2017), III (10 episodes, December 2018–September 2019), IV (April 2020–June 2021) and FINAL (4 episodes, March–July 2022). After the TV series the story continues only as OVAs. Kingdom of the Valkyria (2015) and The Lost Holy Spear (January 2020) are optional side OVAs.",
+    optional: ["strike-the-blood-kieta-seisou-hen"],
   },
   "91-days": {
     label: "91 Days",
@@ -671,7 +679,8 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   },
   "eureka-seven": {
     label: "Eureka Seven",
-    intro: "Watch Eureka Seven (50 episodes, April 2005–April 2006), then the sequel Eureka Seven AO (24 episodes, 2012), whose last two episodes aired together in November 2012, and its OVA. The 2009 film and the Hi-Evolution trilogy (2017–2021) are alternative versions of the original series and are listed under safe to skip. The AO Aratanari Fukaki Ao shorts are optional.",
+    intro: "Watch Eureka Seven (50 episodes, April 2005–April 2006), then the sequel Eureka Seven AO (24 episodes, April–November 2012), whose last two episodes aired together in November 2012. AO's OVA, The Flower Fields of Jungfrau, is set between its episodes 8 and 9, and the 2017 web episode One More Time is an expanded version of AO's finale; both are optional, as are the AO Aratanari Fukaki Ao shorts. The 2009 film Pocket Full of Rainbows is an alternative version and is listed under safe to skip. The Hi-Evolution trilogy (2017–2021) is a reimagining: its first film retells part of the original series, while the second and third tell a new story in their own continuity and are optional.",
+    optional: ["eureka-seven-ao-final-episode-one-more-time-lord-don-t-slow-me-down", "koukyoushihen-eureka-seven-hi-evolution-2", "koukyoushihen-eureka-seven-hi-evolution-3"],
   },
   "himouto-umaru-chan": {
     label: "Himouto! Umaru-chan",
@@ -679,7 +688,7 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   },
   "to-love-ru": {
     label: "To Love Ru",
-    intro: "Watch To Love Ru (26 episodes, April–September 2008), Motto To Love Ru (12 episodes, October–December 2010), To Love Ru Darkness (12 episodes, October–December 2012) and Darkness 2nd (July–October 2015). The OVA episodes, most of them bundled with manga volumes, are extra stories. The 2017 OVA came with To Love Ru Chronicles, a book for the franchise's 10th anniversary.",
+    intro: "Watch To Love Ru (26 episodes, April–September 2008), Motto To Love Ru (12 episodes, October–December 2010), To Love Ru Darkness (12 episodes, October–December 2012) and Darkness 2nd (July–October 2015). The OVA episodes, most of them bundled with manga volumes, are extra stories. The 2017 OVA came with To Love Ru Chronicle, a book for the franchise's 10th anniversary.",
   },
   "saenai-heroine-no-sodate-kata": {
     label: "Saekano: How to Raise a Boring Girlfriend",
@@ -708,7 +717,7 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   },
   "grisaia-no-kajitsu": {
     label: "The Fruit of Grisaia",
-    intro: "Watch The Fruit of Grisaia (13 episodes, October–December 2014), the TV film The Labyrinth of Grisaia (April 12, 2015), then The Eden of Grisaia (10 episodes, April–June 2015). The shorts released with the disc volumes are optional. Grisaia: Phantom Trigger (films from 2019 and a TV series from January 2025) is based on a separate game series.",
+    intro: "Watch The Fruit of Grisaia (13 episodes, October–December 2014), the TV film The Labyrinth of Grisaia (April 12, 2015), then The Eden of Grisaia (10 episodes, April–June 2015). The shorts released with the disc volumes are optional. Grisaia: Phantom Trigger (films from 2019 and 2020 and a TV series from January 2025) is based on a separate game series.",
   },
   "shinmai-maou-no-testament": {
     label: "The Testament of Sister New Devil",
@@ -796,11 +805,12 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   },
   "hataraku-saibou-tv": {
     label: "Cells at Work!",
-    intro: "Watch Cells at Work! (13 episodes, July–September 2018) and the special episode from December 27, 2018, then Cells at Work!! (8 episodes, January–February 2021), the second season. The theatrical film from September 2020, which adapts material from the fifth manga volume, came out between the two seasons and is optional. Cells at Work! Code Black (January–March 2021) is a spin-off series.",
+    intro: "Watch Cells at Work! (13 episodes, July–September 2018) and the special episode from December 27, 2018, then Cells at Work!! (8 episodes, January–February 2021), the second season. The September 2020 theatrical release was an early screening of Season 2's episodes 4 to 8, so it is listed under safe to skip. Cells at Work! Code Black (January–March 2021) is a spin-off series, and the December 2024 film is live action.",
+    skip: ["hataraku-saibou-saikyou-no-teki-futatabi-karada-no-naka-wa-chou-oosawagi"],
   },
   "mekaku-city-actors": {
     label: "Mekakucity Actors",
-    intro: "Mekakucity Actors is one 12-episode series by Shaft (April–June 2014), the anime of the Kagerou Project songs and novels. The short film Kagerou Daze: In a Day's (November 2016) is an optional side story, and the other entries are music videos. Mekakucity Reload is a 2018 Kagerou Project album, not an anime, so it was removed from the list.",
+    intro: "Mekakucity Actors is one 12-episode series by Shaft (April–June 2014), the anime of the Kagerou Project songs and novels. The short film Kagerou Daze: In a Day's (November 2016) is an optional side story, and the other entries are music videos. Mekakucity Reload, an anime announced in 2016, has never been released (the name was later used for a 2018 album), so it was removed from the list.",
     exclude: ["mekakucity-reload"],
   },
   beastars: {
@@ -822,11 +832,13 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   },
   "drifters-tv": {
     label: "Drifters",
-    intro: "Watch the 12-episode TV series (October–December 2016), then the three OVA episodes that continue it: two released in December 2017 and The Outlandish Knight (November 2018). Special Edition (June 2016), listed as an alternative version, is a 36-minute edit of the first two episodes that came with a manga volume, so skip it if you watch the series. No second season has been made.",
+    intro: "Watch the 12-episode TV series (October–December 2016), then the three OVA episodes that continue it: episodes 13 and 14 (December 2017), billed as the start of a second season, and The Outlandish Knight (November 2018). Special Edition (June 2016), listed as an alternative version, is a 36-minute edit of the first two episodes that came with a manga volume, so skip it if you watch the series. No further episodes have been released since 2018.",
   },
   "5-toubun-no-hanayome": {
     label: "The Quintessential Quintuplets",
-    intro: "Watch Season 1 (12 episodes, January–March 2019), Season 2 (January–March 2021), then The Quintessential Quintuplets Movie (May 2022), the sequel to Season 2. Then the two TV specials: ∽ (two episodes, September 2023, by Shaft) and * (December 24, 2024). Kitsu files ∽ next to Season 1, but it came out after the film. An anime of the sequel novels, The Four Seasons, and a new OVA have been announced.",
+    intro: "Watch Season 1 (12 episodes, January–March 2019), Season 2 (January–March 2021), then The Quintessential Quintuplets Movie (May 2022), the sequel to Season 2. Then the two TV specials: ∽ (two episodes, September 2023, by Shaft), side stories set between Season 2 and the film, and * (December 24, 2024). An anime of the sequel novels, The Four Seasons, and a new OVA have been announced.",
+    promote: ["5-toubun-no-hanayome-tv"],
+    mainOrder: ["5-toubun-no-hanayome", "5-toubun-no-hanayome-2", "5-toubun-no-hanayome-movie", "5-toubun-no-hanayome-tv", "5-toubun-no-hanayome-special"],
   },
   "isekai-maou-to-shoukan-shoujo-no-dorei-majutsu": {
     label: "How Not to Summon a Demon Lord",
@@ -846,6 +858,7 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   "detective-conan": {
     label: "Detective Conan (Case Closed)",
     intro: "Detective Conan is one TV series that has aired since January 8, 1996, with more than 1,200 episodes, so watch it in broadcast order. A new film has opened in April almost every year since 1997 (none in 2020); each has an original story rather than one adapted from the manga, so they are optional. It is easiest to watch each film after the episodes from around its release. The OVAs are optional too.",
+    optional: ["detective-conan-movie-13-the-raven-chaser", "detective-conan-movie-14-the-lost-ship-in-the-sky", "detective-conan-movie-15-quarter-of-silence", "detective-conan-movie-16-the-eleventh-striker", "detective-conan-movie-17-private-eye-in-the-distant-sea", "detective-conan-movie-18-the-sniper-from-another-dimension", "detective-conan-movie-19", "detective-conan-movie-20", "detective-conan-movie-21-deep-red-love-letter", "detective-conan-movie-22", "detective-conan-movie-23", "detective-conan-movie-24-hiiro-no-dangan", "detective-conan-movie-24-halloween-no-hanayome", "meitantei-conan-kurogane-no-submarine", "meitantei-conan-100-man-dol-no-michishirube", "meitantei-conan-sekigan-no-flashback", "meitantei-conan-movie-29-highway-no-datenshi"],
   },
   "non-non-biyori": {
     label: "Non Non Biyori",
@@ -853,11 +866,13 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   },
   "cardcaptor-sakura": {
     label: "Cardcaptor Sakura",
-    intro: "Watch the 70-episode series (April 1998–March 2000), then the second film, The Sealed Card (July 2000), which gives the original anime its ending. The first film (August 1999) is an optional side story. Then watch Clear Card (22 episodes, January–June 2018), the sequel set in junior high, with the original cast and staff back. The prologue OVA Sakura and the Two Bears (2017) is optional. A continuation of Clear Card was announced in April 2023.",
+    intro: "Watch the 70-episode series (April 1998–March 2000), then the second film, The Sealed Card (July 2000), which gives the original anime its ending. The first film (August 1999) is an optional side story, and Leave It to Kero-chan is a short shown with the second film. Then watch Clear Card (22 episodes, January–June 2018), the sequel set in junior high, with the original cast and staff back. The prologue OVA Sakura and the Two Bears (2017) is optional. A continuation of Clear Card was announced in April 2023.",
+    optional: ["cardcaptor-sakura-clear-card-hen-prologue-sakura-to-futatsu-no-kuma"],
   },
   "love-live-school-idol-project": {
     label: "Love Live! School Idol Project",
-    intro: "Watch Season 1 (13 episodes, January–March 2013), Season 2 (April–June 2014), then Love Live! The School Idol Movie (June 13, 2015), which concludes the μ's story. The November 2013 OVA and the short specials are optional, and the recap specials can be skipped. Love Live! Sunshine!! (2016), Nijigasaki (2020) and Superstar!! (2021) are separate series about other school idol groups and can be started on their own.",
+    intro: "Watch Season 1 (13 episodes, January–March 2013), Season 2 (April–June 2014), then Love Live! The School Idol Movie (June 13, 2015), which concludes the μ's story. The November 2013 OVA and the short specials are optional, and the recap specials and the theatre-manners clips shown before the film can be skipped. Love Live! Sunshine!! (2016), Nijigasaki (2020) and Superstar!! (2021) are separate series about other school idol groups and can be started on their own.",
+    skip: ["love-live-manor-movie"],
   },
   "shingeki-no-bahamut-genesis": {
     label: "Rage of Bahamut",
