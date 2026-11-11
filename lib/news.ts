@@ -99,7 +99,23 @@ export function mergeNews(lists: Omit<NewsItem, "anime">[][], limit = 50): Omit<
     .slice(0, limit);
 }
 
+/**
+ * Every anime page and the home page call this, so a warm-up renders it hundreds of times in a row on one Worker
+ * instance: reuse the matched list for 10 minutes there (the feeds themselves refresh far less often).
+ */
+const NEWS_REUSE_MS = 10 * 60 * 1000;
+// Only a finished list is kept (on Workers a pending fetch belongs to the request that started it), and only a
+// non-empty one (feeds that were down return [], which the next render retries).
+let recent: { at: number; items: NewsItem[] } | null = null;
+
 export async function getNews(): Promise<NewsItem[]> {
+  if (recent && Date.now() - recent.at < NEWS_REUSE_MS) return recent.items;
+  const items = await loadNews();
+  if (items.length) recent = { at: Date.now(), items };
+  return items;
+}
+
+async function loadNews(): Promise<NewsItem[]> {
   const lists = await Promise.all(FEEDS.map(fetchFeed));
   matchers ??= buildMatchers((data as { anime: AliasEntry[] }).anime);
   return mergeNews(lists).map((n) => ({ ...n, anime: animeInHeadline(n.title, matchers!) }));
