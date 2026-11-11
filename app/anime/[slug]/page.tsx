@@ -554,7 +554,7 @@ export default async function AnimePage({ params }: Props) {
                   {franchise.slice(0, 8).map((r) => (
                     <li key={r.anime.id}>
                       <Link href={animePath(r.anime)} className="card group flex items-center gap-3 p-2 pr-3 text-sm transition hover:-translate-y-0.5 hover:border-violet/60">
-                        <span className="relative h-14 w-10 shrink-0 overflow-hidden rounded-md bg-bg-2">{posterUrl(r.anime, "tiny") && <Image src={posterUrl(r.anime, "tiny")!} alt="" fill sizes="40px" className="object-cover" />}</span>
+                        <span className="relative h-14 w-10 shrink-0 overflow-hidden rounded-md bg-bg-2">{posterUrl(r.anime, "tiny") && <Image src={posterUrl(r.anime, "tiny")!} alt={`${r.anime.title} poster`} fill sizes="40px" className="object-cover" />}</span>
                         <span className="min-w-0 flex-1">
                           <span className="block truncate font-medium group-hover:text-violet-2">{r.anime.title}</span>
                           <span className="text-[11px] uppercase tracking-wide text-muted">{r.role.replace("_", " ")}{r.anime.startDate ? ` · ${r.anime.startDate.slice(0, 4)}` : ""}</span>
@@ -626,7 +626,7 @@ export default async function AnimePage({ params }: Props) {
                   <Link key={c.id} href={`/character/${c.slug}`} className="group block w-28 sm:w-32">
                     <TiltCard max={7} className="rounded-xl">
                       <div className="cc-frame">
-                        {c.image && <Image src={c.image} alt="" fill sizes="128px" className="object-cover" />}
+                        {c.image && <Image src={c.image} alt={c.name} fill sizes="128px" className="object-cover" />}
                         <div className="cc-shade" />
                         {c.role === "main" && <span className="cc-main">Main</span>}
                       </div>

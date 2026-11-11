@@ -101,7 +101,7 @@ export default async function TonightPage({ searchParams }: Props) {
               return (
                 <li key={a.id} className="card flex gap-3 p-3">
                   <Link href={animePath(a)} className="relative h-28 w-20 shrink-0 overflow-hidden rounded-md bg-bg-2" aria-hidden tabIndex={-1}>
-                    {posterUrl(a, "small") && <Image src={posterUrl(a, "small")!} alt="" fill sizes="80px" className="object-cover" />}
+                    {posterUrl(a, "small") && <Image src={posterUrl(a, "small")!} alt={`${a.title} poster`} fill sizes="80px" className="object-cover" />}
                   </Link>
                   <div className="min-w-0 flex-1">
                     <Link href={animePath(a)} className="line-clamp-2 font-semibold hover:text-violet">{a.title}</Link>
@@ -131,7 +131,7 @@ export default async function TonightPage({ searchParams }: Props) {
             {start.map(({ a, perNight, nights }) => (
               <li key={a.id}>
                 <Link href={animePath(a)} className="card flex gap-3 p-3 transition hover:border-violet">
-                  <div className="relative h-20 w-14 shrink-0 overflow-hidden rounded-md bg-bg-2">{posterUrl(a, "tiny") && <Image src={posterUrl(a, "tiny")!} alt="" fill sizes="56px" className="object-cover" />}</div>
+                  <div className="relative h-20 w-14 shrink-0 overflow-hidden rounded-md bg-bg-2">{posterUrl(a, "tiny") && <Image src={posterUrl(a, "tiny")!} alt={`${a.title} poster`} fill sizes="56px" className="object-cover" />}</div>
                   <div className="min-w-0">
                     <p className="line-clamp-2 font-semibold">{a.title}</p>
                     <p className="text-xs text-muted">{a.rating ? `★ ${(a.rating / 10).toFixed(1)} · ` : ""}{a.episodeCount} episodes</p>

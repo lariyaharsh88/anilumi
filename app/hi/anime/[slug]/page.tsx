@@ -158,7 +158,7 @@ export default async function HindiGuide({ params }: Props) {
           {ordered.map((e, i) => (
             <li key={e.anime.id} className={`card flex gap-3 p-3 ${e.attachedTo ? "ml-4 sm:ml-8" : ""}`}>
               <span className="w-7 shrink-0 pt-1 text-center text-lg font-extrabold text-muted">{i + 1}</span>
-              <span className="relative h-20 w-14 shrink-0 overflow-hidden rounded-md bg-bg-2">{posterUrl(e.anime, "small") && <Image src={posterUrl(e.anime, "small")!} alt="" fill sizes="56px" className="object-cover" />}</span>
+              <span className="relative h-20 w-14 shrink-0 overflow-hidden rounded-md bg-bg-2">{posterUrl(e.anime, "small") && <Image src={posterUrl(e.anime, "small")!} alt={`${e.anime.title} poster`} fill sizes="56px" className="object-cover" />}</span>
               <span className="min-w-0 flex-1">
                 <span className="text-[11px] font-bold uppercase tracking-wide text-accent-2">{KIND_HI[e.kind]}{e.optional && e.kind !== "movie" ? " · चाहें तो छोड़ सकते हैं" : ""}</span>
                 <Link href={animePath(e.anime)} className="block font-semibold text-ink hover:text-violet-2">{e.anime.title}</Link>

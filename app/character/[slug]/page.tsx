@@ -205,7 +205,7 @@ export default async function CharacterPage({ params }: Props) {
             {voices.map(({ va, lang }) => (
               <div key={va.id} className="flex items-center justify-between gap-4 py-2">
                 <dt className="text-muted">{lang === "Japanese" ? "Japanese voice" : "English voice"}</dt>
-                <dd><Link href={vaPath(va)} className="group flex items-center gap-2 font-medium text-violet hover:underline"><span className="relative h-7 w-7 overflow-hidden rounded-full bg-bg-2">{va.image && <Image src={va.image} alt="" fill sizes="28px" className="object-cover" />}</span>{va.name}</Link></dd>
+                <dd><Link href={vaPath(va)} className="group flex items-center gap-2 font-medium text-violet hover:underline"><span className="relative h-7 w-7 overflow-hidden rounded-full bg-bg-2">{va.image && <Image src={va.image} alt={va.name} fill sizes="28px" className="object-cover" />}</span>{va.name}</Link></dd>
               </div>
             ))}
           </dl>
@@ -274,7 +274,7 @@ export default async function CharacterPage({ params }: Props) {
             {apps.map(({ role, anime }) => (
               <li key={anime.id}>
                 <Link href={animePath(anime)} className="card flex gap-3 p-3 transition hover:border-violet">
-                  <div className="relative h-20 w-14 shrink-0 overflow-hidden rounded-md bg-bg-2">{posterUrl(anime, "tiny") && <Image src={posterUrl(anime, "tiny")!} alt="" fill sizes="56px" className="object-cover" />}</div>
+                  <div className="relative h-20 w-14 shrink-0 overflow-hidden rounded-md bg-bg-2">{posterUrl(anime, "tiny") && <Image src={posterUrl(anime, "tiny")!} alt={`${anime.title} poster`} fill sizes="56px" className="object-cover" />}</div>
                   <div className="min-w-0">
                     <p className="line-clamp-2 font-semibold">{anime.title}</p>
                     <p className="text-xs text-muted">{subtypeLabel(anime.subtype)}{anime.startDate ? ` · ${anime.startDate.slice(0, 4)}` : ""} · <span className="uppercase">{role}</span></p>
@@ -292,7 +292,7 @@ export default async function CharacterPage({ params }: Props) {
             {others.map((o) => (
               <li key={o.id}>
                 <Link href={`/character/${o.slug}`} className="group block">
-                  <span className="relative block aspect-[5/6] overflow-hidden rounded-xl border border-line bg-bg-2">{o.image && <Image src={o.image} alt="" fill sizes="(max-width:640px) 33vw, 160px" className="object-cover transition duration-500 group-hover:scale-105" />}</span>
+                  <span className="relative block aspect-[5/6] overflow-hidden rounded-xl border border-line bg-bg-2">{o.image && <Image src={o.image} alt={o.name} fill sizes="(max-width:640px) 33vw, 160px" className="object-cover transition duration-500 group-hover:scale-105" />}</span>
                   <span className="mt-1.5 block truncate text-sm font-semibold text-ink group-hover:text-violet-2">{o.name}</span>
                   <span className="block text-xs capitalize text-muted">{o.role}</span>
                 </Link>

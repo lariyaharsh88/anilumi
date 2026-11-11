@@ -167,7 +167,7 @@ export default async function NextSeasonPage({ params }: Props) {
         <section className="reveal mt-10" aria-labelledby="next-h">
           <h2 id="next-h" className="h-section mb-3">{verdict.kind === "out" || verdict.kind === "airing" ? "Watch next" : "What's coming"}</h2>
           <div className="card flex gap-4 p-4">
-            <span className="relative h-36 w-24 shrink-0 overflow-hidden rounded-lg bg-bg-2">{nextAnime && posterUrl(nextAnime, "small") && <Image src={posterUrl(nextAnime, "small")!} alt="" fill sizes="96px" className="object-cover" />}</span>
+            <span className="relative h-36 w-24 shrink-0 overflow-hidden rounded-lg bg-bg-2">{nextAnime && posterUrl(nextAnime, "small") && <Image src={posterUrl(nextAnime, "small")!} alt={`${nextAnime.title} poster`} fill sizes="96px" className="object-cover" />}</span>
             <div className="min-w-0">
               <p className="text-xs font-semibold uppercase tracking-wider text-accent-2">{BADGE[verdict.kind]}</p>
               <p className="mt-1 text-xl font-bold text-ink">{nextAnime ? <Link href={animePath(nextAnime)} className="hover:text-violet-2">{next.title}</Link> : next.title}</p>

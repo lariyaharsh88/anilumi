@@ -28,7 +28,7 @@ export default function PickList({ picks, start = 1, compact = false }: { picks:
             <span className="w-6 shrink-0 pt-0.5 text-right text-sm font-bold text-muted tabular-nums">{start + i}</span>
             {!compact && poster && (
               <Link href={animePath(a)} className="relative block h-24 w-16 shrink-0 overflow-hidden rounded-lg border border-line bg-bg-2" tabIndex={-1} aria-hidden>
-                <Image src={poster} alt="" fill sizes="64px" className="object-cover" />
+                <Image src={poster} alt={`${a.title} poster`} fill sizes="64px" className="object-cover" />
               </Link>
             )}
             <div className="min-w-0 flex-1">

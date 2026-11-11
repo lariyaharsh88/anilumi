@@ -275,7 +275,7 @@ export default async function WatchOrderPage({ params }: Props) {
             <li key={e.anime.id} className={`card flex gap-3 p-3 ${e.optional ? "opacity-90" : ""} ${e.attachedTo ? "ml-4 sm:ml-8" : ""}`}>
               <span className="w-8 shrink-0 pt-1 text-center text-lg font-extrabold text-muted">{e.step}</span>
               <div className="relative h-24 w-16 shrink-0 overflow-hidden rounded-md bg-bg-2">
-                {posterUrl(e.anime, "small") && <Image src={posterUrl(e.anime, "small")!} alt="" fill sizes="64px" className="object-cover" />}
+                {posterUrl(e.anime, "small") && <Image src={posterUrl(e.anime, "small")!} alt={`${e.anime.title} poster`} fill sizes="64px" className="object-cover" />}
               </div>
               <div className="min-w-0 flex-1">
                 <div className="flex flex-wrap items-center gap-2">

@@ -113,7 +113,7 @@ export default async function PersonProfile({ va, kind }: { va: VoiceActor; kind
         return (
           <li key={w.media.id} className="flex items-center gap-3 p-2.5 text-sm">
             <span className="w-10 shrink-0 text-xs tabular-nums text-muted">{w.media.year || "TBA"}</span>
-            <span className="relative h-12 w-9 shrink-0 overflow-hidden rounded bg-bg-2">{w.media.cover && <Image src={w.media.cover} alt="" fill sizes="36px" className="object-cover" />}</span>
+            <span className="relative h-12 w-9 shrink-0 overflow-hidden rounded bg-bg-2">{w.media.cover && <Image src={w.media.cover} alt={`${w.media.title} poster`} fill sizes="36px" className="object-cover" />}</span>
             <span className="min-w-0 flex-1">
               {k ? <Link href={animePath(k)} className="block truncate font-medium text-ink hover:text-violet-2">{w.media.title}</Link> : <span className="block truncate font-medium text-ink">{w.media.title}</span>}
               <span className="block truncate text-xs text-muted">{[...new Set(w.roles.map(cleanRole))].join(", ")}</span>
@@ -165,7 +165,7 @@ export default async function PersonProfile({ va, kind }: { va: VoiceActor; kind
               const body = (
                 <>
                   <span className="relative block aspect-[5/6] overflow-hidden rounded-xl border border-line bg-bg-2">
-                    {r.character.image && <Image src={r.character.image} alt="" fill sizes="(max-width:640px) 50vw, 180px" className="object-cover transition duration-500 group-hover:scale-105" />}
+                    {r.character.image && <Image src={r.character.image} alt={r.character.name} fill sizes="(max-width:640px) 50vw, 180px" className="object-cover transition duration-500 group-hover:scale-105" />}
                     {r.role === "MAIN" && <span className="absolute left-2 top-2 rounded bg-accent-strong px-1.5 py-0.5 text-[10px] font-bold uppercase text-snow">Main</span>}
                   </span>
                   <span className="mt-2 block truncate text-sm font-semibold text-ink group-hover:text-violet-2">{r.character.name}</span>
@@ -186,7 +186,7 @@ export default async function PersonProfile({ va, kind }: { va: VoiceActor; kind
               const k = link(w.media);
               const body = (
                 <>
-                  <span className="relative block aspect-[2/3] overflow-hidden rounded-xl border border-line bg-bg-2">{w.media.cover && <Image src={w.media.cover} alt="" fill sizes="(max-width:640px) 50vw, 180px" className="object-cover transition duration-500 group-hover:scale-105" />}</span>
+                  <span className="relative block aspect-[2/3] overflow-hidden rounded-xl border border-line bg-bg-2">{w.media.cover && <Image src={w.media.cover} alt={`${w.media.title} poster`} fill sizes="(max-width:640px) 50vw, 180px" className="object-cover transition duration-500 group-hover:scale-105" />}</span>
                   <span className="mt-2 block truncate text-sm font-semibold text-ink group-hover:text-violet-2">{w.media.title}</span>
                   <span className="block truncate text-xs text-muted">{cleanRole(w.roles[0])}{w.media.year ? ` · ${w.media.year}` : ""}</span>
                 </>
@@ -222,7 +222,7 @@ export default async function PersonProfile({ va, kind }: { va: VoiceActor; kind
                   return (
                     <li key={r.media.id} className="flex items-center gap-3 p-2.5 text-sm">
                       <span className="w-10 shrink-0 text-xs tabular-nums text-muted">{r.media.year || "TBA"}</span>
-                      <span className="relative h-12 w-9 shrink-0 overflow-hidden rounded bg-bg-2">{r.media.cover && <Image src={r.media.cover} alt="" fill sizes="36px" className="object-cover" />}</span>
+                      <span className="relative h-12 w-9 shrink-0 overflow-hidden rounded bg-bg-2">{r.media.cover && <Image src={r.media.cover} alt={`${r.media.title} poster`} fill sizes="36px" className="object-cover" />}</span>
                       <span className="min-w-0 flex-1">
                         {k ? <Link href={animePath(k)} className="block truncate font-medium text-ink hover:text-violet-2">{r.media.title}</Link> : <span className="block truncate font-medium text-ink">{r.media.title}</span>}
                         <span className="block truncate text-xs text-muted">{r.characters.map((c, i) => {

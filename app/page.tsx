@@ -172,7 +172,7 @@ export default async function Home() {
         <section className="reveal mt-12 grid gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)]" aria-label="Today in anime">
           {pick && (
             <div className="card flex gap-4 p-4 sm:p-5">
-              <Link href={animePath(pick)} aria-hidden="true" tabIndex={-1} className="relative h-36 w-24 shrink-0 overflow-hidden rounded-lg bg-bg-2">{posterUrl(pick, "small") && <Image src={posterUrl(pick, "small")!} alt="" fill sizes="96px" className="object-cover" />}</Link>
+              <Link href={animePath(pick)} aria-hidden="true" tabIndex={-1} className="relative h-36 w-24 shrink-0 overflow-hidden rounded-lg bg-bg-2">{posterUrl(pick, "small") && <Image src={posterUrl(pick, "small")!} alt={`${pick.title} poster`} fill sizes="96px" className="object-cover" />}</Link>
               <div className="min-w-0">
                 <p className="text-xs font-semibold uppercase tracking-wider text-accent-2">Anime of the day</p>
                 <h2 className="mt-1 text-lg font-bold text-ink"><Link href={animePath(pick)} className="hover:text-violet-2">{pick.title}</Link></h2>
@@ -190,7 +190,7 @@ export default async function Home() {
                 {onDay.map((p) => (
                   <li key={p.anime!.id}>
                     <Link href={animePath(p.anime!)} className="group block">
-                      <span className="relative block aspect-[5/7] overflow-hidden rounded-lg bg-bg-2">{posterUrl(p.anime!, "small") && <Image src={posterUrl(p.anime!, "small")!} alt="" fill sizes="(max-width:640px) 45vw, 140px" className="object-cover transition duration-500 group-hover:scale-105" />}<span className="absolute left-1.5 top-1.5 rounded bg-black/75 px-1.5 py-0.5 text-[11px] font-bold text-snow">{p.year}</span></span>
+                      <span className="relative block aspect-[5/7] overflow-hidden rounded-lg bg-bg-2">{posterUrl(p.anime!, "small") && <Image src={posterUrl(p.anime!, "small")!} alt={`${p.anime!.title} poster`} fill sizes="(max-width:640px) 45vw, 140px" className="object-cover transition duration-500 group-hover:scale-105" />}<span className="absolute left-1.5 top-1.5 rounded bg-black/75 px-1.5 py-0.5 text-[11px] font-bold text-snow">{p.year}</span></span>
                       <span className="mt-1.5 block truncate text-sm font-semibold text-ink group-hover:text-violet-2">{p.anime!.title}</span>
                     </Link>
                   </li>

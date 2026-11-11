@@ -93,7 +93,7 @@ export default async function CharactersTable({ params }: Props) {
                 <tr key={r.c.id}>
                   <th scope="row" className="p-3 text-left font-normal">
                     <span className="flex items-center gap-3">
-                      <span className="relative h-11 w-9 shrink-0 overflow-hidden rounded-md bg-bg-2">{snapImage(r.c) && <Image src={snapImage(r.c)!} alt="" fill sizes="36px" className="object-cover" />}</span>
+                      <span className="relative h-11 w-9 shrink-0 overflow-hidden rounded-md bg-bg-2">{snapImage(r.c) && <Image src={snapImage(r.c)!} alt={r.c.n} fill sizes="36px" className="object-cover" />}</span>
                       <Name r={r} />
                     </span>
                   </th>

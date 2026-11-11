@@ -50,7 +50,7 @@ function Row({ i, hype }: { i: PreviewItem; hype: boolean }) {
   const href = i.anime ? animePath(i.anime) : null;
   return (
     <li className="flex gap-3 p-3">
-      <span className="relative h-24 w-16 shrink-0 overflow-hidden rounded-md bg-bg-2">{i.cover && <Image src={i.cover} alt="" fill sizes="64px" className="object-cover" />}</span>
+      <span className="relative h-24 w-16 shrink-0 overflow-hidden rounded-md bg-bg-2">{i.cover && <Image src={i.cover} alt={`${name(i)} poster`} fill sizes="64px" className="object-cover" />}</span>
       <div className="min-w-0 flex-1">
         <p className="font-semibold text-ink">{href ? <Link href={href} className="hover:text-violet-2">{name(i)}</Link> : name(i)}</p>
         {i.native && i.native !== name(i) && <p className="truncate text-xs text-muted">{i.native}</p>}
@@ -146,7 +146,7 @@ export default async function SeasonPreview({ params }: Props) {
               const body = (
                 <>
                   <span className="relative block aspect-[5/7] overflow-hidden rounded-xl border border-line bg-bg-2">
-                    {i.cover && <Image src={i.cover} alt="" fill sizes="(max-width:640px) 50vw, 180px" className="object-cover transition duration-500 group-hover:scale-105" />}
+                    {i.cover && <Image src={i.cover} alt={`${name(i)} poster`} fill sizes="(max-width:640px) 50vw, 180px" className="object-cover transition duration-500 group-hover:scale-105" />}
                     <span className="absolute left-2 top-2 rounded-md bg-black/75 px-1.5 py-0.5 text-xs font-bold text-snow">#{n + 1}</span>
                     {i.kind === "sequel" && <span className="absolute right-2 top-2 rounded-md bg-violet-strong px-1.5 py-0.5 text-[10px] font-bold uppercase text-snow">Sequel</span>}
                   </span>

@@ -117,7 +117,7 @@ export default async function BirthdayView({ m, d, characters, people, today = f
               const arcs = note && c.s ? linkedArcs(note, c.s).slice(0, 3) : [];
               const body = (
                 <>
-                  {(() => { const pic = <span className="relative block h-24 w-[68px] shrink-0 overflow-hidden rounded-lg border border-line bg-bg-2">{c.i && <Image src={c.i} alt="" fill sizes="68px" className="object-cover transition duration-500 group-hover:scale-105" />}</span>; return href ? <Link href={href} tabIndex={-1} aria-hidden className="shrink-0">{pic}</Link> : pic; })()}
+                  {(() => { const pic = <span className="relative block h-24 w-[68px] shrink-0 overflow-hidden rounded-lg border border-line bg-bg-2">{c.i && <Image src={c.i} alt={c.n} fill sizes="68px" className="object-cover transition duration-500 group-hover:scale-105" />}</span>; return href ? <Link href={href} tabIndex={-1} aria-hidden className="shrink-0">{pic}</Link> : pic; })()}
                   <span className="min-w-0 flex-1">
                     <span className="flex items-baseline gap-2"><span className="text-xs font-bold tabular-nums text-muted">#{i + 1}</span>{href ? <Link href={href} className="truncate font-semibold text-ink hover:text-violet-2">{c.n}</Link> : <span className="truncate font-semibold text-ink">{c.n}</span>}</span>
                     <span className="block truncate text-xs text-muted">{role ? `${role === "main" ? "Main" : "Supporting"} character in ` : ""}{c.s ? <Link href={animePath({ slug: c.s })} className="underline decoration-line underline-offset-2 hover:text-violet-2">{c.t}</Link> : c.t}</span>
@@ -145,7 +145,7 @@ export default async function BirthdayView({ m, d, characters, people, today = f
             {shows.map((a) => (
               <li key={a.id}>
                 <Link href={animePath(a)} className="group block">
-                  <span className="relative block aspect-[5/7] overflow-hidden rounded-xl border border-line bg-bg-2">{posterUrl(a, "small") && <Image src={posterUrl(a, "small")!} alt="" fill sizes="(max-width:640px) 30vw, 160px" className="object-cover transition duration-500 group-hover:scale-105" />}</span>
+                  <span className="relative block aspect-[5/7] overflow-hidden rounded-xl border border-line bg-bg-2">{posterUrl(a, "small") && <Image src={posterUrl(a, "small")!} alt={`${a.title} poster`} fill sizes="(max-width:640px) 30vw, 160px" className="object-cover transition duration-500 group-hover:scale-105" />}</span>
                   <span className="mt-1.5 block truncate text-sm font-semibold text-ink group-hover:text-violet-2">{a.title}</span>
                   <span className="block text-xs text-muted">{[a.startDate?.slice(0, 4), a.episodeCount ? `${a.episodeCount} ep` : null].filter(Boolean).join(" · ")}</span>
                 </Link>
@@ -162,7 +162,7 @@ export default async function BirthdayView({ m, d, characters, people, today = f
             {people.map((p) => (
               <li key={p.id}>
                 <Link href={vaPath({ id: p.id, name: p.n })} className="card group flex items-center gap-3 p-2.5 transition hover:border-violet/60">
-                  <span className="relative h-14 w-11 shrink-0 overflow-hidden rounded-md bg-bg-2">{p.i && <Image src={p.i} alt="" fill sizes="44px" className="object-cover" />}</span>
+                  <span className="relative h-14 w-11 shrink-0 overflow-hidden rounded-md bg-bg-2">{p.i && <Image src={p.i} alt={p.n} fill sizes="44px" className="object-cover" />}</span>
                   <span className="min-w-0">
                     <span className="block truncate font-semibold text-ink group-hover:text-violet-2">{p.n}</span>
                     <span className="block truncate text-xs text-muted">{[p.j, p.l, p.y ? `turns ${year - p.y} in ${year}` : null].filter(Boolean).join(" · ")}</span>
@@ -186,7 +186,7 @@ export default async function BirthdayView({ m, d, characters, people, today = f
             {firsts.map((p) => (
               <li key={p.anime!.id}>
                 <Link href={animePath(p.anime!)} className="card group flex gap-3 p-2.5 transition hover:border-violet/60">
-                  <span className="relative h-20 w-14 shrink-0 overflow-hidden rounded-md bg-bg-2">{posterUrl(p.anime!, "tiny") && <Image src={posterUrl(p.anime!, "tiny")!} alt="" fill sizes="56px" className="object-cover" />}</span>
+                  <span className="relative h-20 w-14 shrink-0 overflow-hidden rounded-md bg-bg-2">{posterUrl(p.anime!, "tiny") && <Image src={posterUrl(p.anime!, "tiny")!} alt={`${p.anime!.title} poster`} fill sizes="56px" className="object-cover" />}</span>
                   <span className="min-w-0">
                     <span className="line-clamp-2 text-sm font-semibold text-ink group-hover:text-violet-2">{p.anime!.title}</span>
                     <span className="mt-0.5 block text-xs text-muted">{p.format} · {p.year}</span>
@@ -204,7 +204,7 @@ export default async function BirthdayView({ m, d, characters, people, today = f
           {week.map((x) => (
             <li key={`${x.m}-${x.d}`}>
               <Link href={bdPath(x.m, x.d)} className="card group block p-2 text-center transition hover:border-violet/60">
-                <span className="relative mx-auto block aspect-square w-14 overflow-hidden rounded-full border border-line bg-bg-2">{x.top?.i && <Image src={x.top.i} alt="" fill sizes="56px" className="object-cover" />}</span>
+                <span className="relative mx-auto block aspect-square w-14 overflow-hidden rounded-full border border-line bg-bg-2">{x.top?.i && <Image src={x.top.i} alt={x.top.n} fill sizes="56px" className="object-cover" />}</span>
                 <span className="mt-1.5 block text-xs font-semibold text-ink group-hover:text-violet-2">{bdLabel(x.m, x.d)}</span>
                 <span className="block truncate text-[11px] text-muted">{x.top ? x.top.n : "No major birthdays"}</span>
               </Link>

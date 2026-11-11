@@ -124,7 +124,7 @@ export default async function ComparePage({ params }: Props) {
         {[a, b].map((x, i) => (
           <Link key={x.id} href={animePath(x)} className={`card flex flex-col items-center gap-2 p-3 text-center transition duration-300 hover:-translate-y-0.5 hover:border-violet sm:flex-row sm:text-left ${i === 1 ? "col-start-3" : ""}`}>
             <span className={`h-1 w-10 rounded-full sm:hidden ${i ? "bg-viz-2" : "bg-viz-1"}`} aria-hidden />
-            <div className="relative h-28 w-20 shrink-0 overflow-hidden rounded-md bg-bg-2">{posterUrl(x, "small") && <Image src={posterUrl(x, "small")!} alt="" fill sizes="80px" className="object-cover" />}</div>
+            <div className="relative h-28 w-20 shrink-0 overflow-hidden rounded-md bg-bg-2">{posterUrl(x, "small") && <Image src={posterUrl(x, "small")!} alt={`${x.title} poster`} fill sizes="80px" className="object-cover" />}</div>
             <div className="min-w-0">
               <p className="hidden items-center gap-1.5 text-[10px] uppercase tracking-wider text-muted sm:flex"><span className={`h-2.5 w-3.5 rounded-[2px] ${i ? "bg-viz-2" : "bg-viz-1"}`} aria-hidden />{i ? "Right" : "Left"} in charts</p>
               <p className="line-clamp-2 font-semibold">{x.title}</p>

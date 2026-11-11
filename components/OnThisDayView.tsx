@@ -37,7 +37,7 @@ export default function OnThisDayView({ m, d, premieres, pick, today = false }: 
 
       {pick && (
         <section className="card reveal mt-10 flex gap-4 p-4 sm:p-5" aria-labelledby="aotd-h">
-          <Link href={animePath(pick)} aria-hidden="true" tabIndex={-1} className="relative h-40 w-28 shrink-0 overflow-hidden rounded-lg bg-bg-2">{posterUrl(pick, "small") && <Image src={posterUrl(pick, "small")!} alt="" fill sizes="112px" className="object-cover" />}</Link>
+          <Link href={animePath(pick)} aria-hidden="true" tabIndex={-1} className="relative h-40 w-28 shrink-0 overflow-hidden rounded-lg bg-bg-2">{posterUrl(pick, "small") && <Image src={posterUrl(pick, "small")!} alt={`${pick.title} poster`} fill sizes="112px" className="object-cover" />}</Link>
           <div className="min-w-0">
             <p className="text-xs font-semibold uppercase tracking-wider text-accent-2">Anime of the day</p>
             <h2 id="aotd-h" className="mt-1 text-xl font-bold text-ink"><Link href={animePath(pick)} className="hover:text-violet-2">{pick.title}</Link></h2>
@@ -55,7 +55,7 @@ export default function OnThisDayView({ m, d, premieres, pick, today = false }: 
               const body = (
                 <>
                   <span className="relative block aspect-[5/7] overflow-hidden rounded-xl border border-line bg-bg-2">
-                    {p.anime && posterUrl(p.anime, "small") && <Image src={posterUrl(p.anime, "small")!} alt="" fill sizes="(max-width:640px) 50vw, 180px" className="object-cover transition duration-500 group-hover:scale-105" />}
+                    {p.anime && posterUrl(p.anime, "small") && <Image src={posterUrl(p.anime, "small")!} alt={`${p.anime.title} poster`} fill sizes="(max-width:640px) 50vw, 180px" className="object-cover transition duration-500 group-hover:scale-105" />}
                     <span className="absolute left-2 top-2 rounded-md bg-black/75 px-1.5 py-0.5 text-xs font-bold text-snow">{p.year}</span>
                   </span>
                   <span className="mt-2 block truncate text-sm font-semibold text-ink group-hover:text-violet-2">{p.anime?.title || p.title}</span>
