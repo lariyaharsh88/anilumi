@@ -1,1 +1,3152 @@
-{"checked": null, "seasons": {}}
+{
+ "checked": "2026-11-11",
+ "seasons": {
+  "2024-fall": {
+   "en": [
+    {
+     "t": "DAN DA DAN",
+     "slug": "DAN-DA-DAN",
+     "service": "Crunchyroll / Netflix",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "BLUE LOCK Season 2",
+     "slug": "Blue-Lock-VS-U20-JAPAN",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Re:ZERO -Starting Life in Another World- Season 3",
+     "slug": "re-zero-kara-hajimeru-isekai-seikatsu-3",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Dragon Ball DAIMA",
+     "slug": "dragon-ball-daima",
+     "service": "Crunchyroll",
+     "when": "later",
+     "later": "2025-01",
+     "confidence": "high"
+    },
+    {
+     "t": "Shangri-La Frontier Season 2",
+     "slug": "ShangriLa-Frontier-2nd-Season",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "TRILLION GAME",
+     "slug": "trillion-game",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Demon Lord, Retry! R",
+     "slug": "maou-sama-retry-r",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "You Are Ms. Servant",
+     "slug": "kimi-wa-meido-sama",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "MF GHOST Season 2",
+     "slug": "mf-ghost-2nd-season",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Natsume's Book of Friends Season 7",
+     "slug": "natsume-yuujinchou-shichi",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "I'll Become a Villainess Who Goes Down in History",
+     "slug": "rekishi-ni-nokoru-akujo-ni-naruzo",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Tying the Knot with an Amagami Sister",
+     "slug": "amagami-san-chi-no-enmusubi",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "The Prince of Tennis II: U-17 World Cup Semifinal",
+     "slug": "shin-tennis-no-ouji-sama-u-17-world-cup-semifinal",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "DEMON LORD 2099",
+     "slug": "maou-2099",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Arifureta: From Commonplace to World's Strongest Season 3",
+     "slug": "arifureta-shokugyou-de-sekai-saikyou-3rd-season",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Rurouni Kenshin: Kyoto Disturbance",
+     "slug": "rurouni-kenshin-meiji-kenkaku-romantan-kyoto-douran",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Blue Exorcist -Beyond the Snow Saga-",
+     "slug": "ao-no-exorcist-yuki-no-hate-hen",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Sword Art Online Alternative: Gun Gale Online II",
+     "slug": "Sword-Art-Online-Alternative-Gun-Gale-Online-II",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Nina the Starry Bride",
+     "slug": "hoshi-furu-oukoku-no-nina",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Seirei Gensouki: Spirit Chronicles Season 2",
+     "slug": "seirei-gensouki-2",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Tower of God Season 2: Workshop Battle",
+     "slug": "kami-no-tou-koubou-sen",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "BLEACH: Thousand-Year Blood War Part 3 - The Conflict",
+     "slug": "bleach-sennen-kessen-hen-soukokutan",
+     "service": "Hulu / Disney+",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "Is It Wrong to Try to Pick Up Girls in a Dungeon? V",
+     "slug": "dungeon-ni-deai-wo-motomeru-no-wa-machigatteiru-darou-ka-v",
+     "service": "HIDIVE",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Ranma1/2 (2024)",
+     "slug": "Ranma-12-2024",
+     "service": "Netflix",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "BEASTARS Final Season",
+     "slug": "beastars-final-season-part-1",
+     "service": "Netflix",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "Blue Box",
+     "slug": "ao-no-hako",
+     "service": "Netflix",
+     "when": "later",
+     "later": "2025-04",
+     "confidence": "medium"
+    },
+    {
+     "t": "The Seven Deadly Sins: Four Knights of the Apocalypse Season 2",
+     "slug": "Nanatsu-no-Taizai-Mokushiroku-no-Yonkishi-2nd-season",
+     "service": "Netflix",
+     "when": "later",
+     "later": "2025-01",
+     "confidence": "medium"
+    },
+    {
+     "t": "Yakuza Fiancé: Raise wa Tanin ga Ii",
+     "slug": "raise-wa-tanin-ga-ii",
+     "service": "Crunchyroll",
+     "when": "later",
+     "later": "2025-04",
+     "confidence": "high"
+    },
+    {
+     "t": "Let This Grieving Soul Retire!",
+     "slug": "nageki-no-bourei-ha-intai-shitai",
+     "service": "Crunchyroll",
+     "when": "later",
+     "later": "2025-11",
+     "confidence": "medium"
+    },
+    {
+     "t": "Loner Life in Another World",
+     "slug": "hitoribocchi-no-isekai-kouryaku",
+     "service": "HIDIVE",
+     "when": "later",
+     "later": "2025-02",
+     "confidence": "high"
+    },
+    {
+     "t": "How I Attended an All-Guy's Mixer",
+     "slug": "goukon-ni-ittara-onna-ga-inakatta-hanashi",
+     "service": "HIDIVE",
+     "when": "later",
+     "later": "2025-02",
+     "confidence": "high"
+    }
+   ],
+   "hi": [
+    {
+     "t": "DAN DA DAN",
+     "slug": "DAN-DA-DAN",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "BLUE LOCK Season 2",
+     "slug": "Blue-Lock-VS-U20-JAPAN",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "Demon Lord, Retry! R",
+     "slug": "maou-sama-retry-r",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "I'll Become a Villainess Who Goes Down in History",
+     "slug": "rekishi-ni-nokoru-akujo-ni-naruzo",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Tying the Knot with an Amagami Sister",
+     "slug": "amagami-san-chi-no-enmusubi",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "365 Days to the Wedding",
+     "slug": "kekkon-suru-tte-hontou-desu-ka-365-days-to-the-wedding",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Goodbye, Dragon Life",
+     "slug": "sayonara-ryuusei-konnichiwa-jinsei",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Rurouni Kenshin: Kyoto Disturbance",
+     "slug": "rurouni-kenshin-meiji-kenkaku-romantan-kyoto-douran",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "TRILLION GAME",
+     "slug": "trillion-game",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "You Are Ms. Servant",
+     "slug": "kimi-wa-meido-sama",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Nina the Starry Bride",
+     "slug": "hoshi-furu-oukoku-no-nina",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Shangri-La Frontier Season 2",
+     "slug": "ShangriLa-Frontier-2nd-Season",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Dragon Ball DAIMA",
+     "slug": "dragon-ball-daima",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "Ranma1/2 (2024)",
+     "slug": "Ranma-12-2024",
+     "service": "Netflix",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "Tower of God Season 2: Workshop Battle",
+     "slug": "kami-no-tou-koubou-sen",
+     "service": "Crunchyroll",
+     "when": "later",
+     "later": "2025-01",
+     "confidence": "medium"
+    },
+    {
+     "t": "Blue Box",
+     "slug": "ao-no-hako",
+     "service": "Netflix",
+     "when": "later",
+     "later": "2026-06",
+     "confidence": "medium"
+    }
+   ],
+   "sources": [
+    "https://myanimelist.net/forum/message/55119844?goto=topic",
+    "https://www.bubbleblabber.com/?p=173451",
+    "https://www.bubbleblabber.com/?p=174033",
+    "https://www.bubbleblabber.com/2025/03/crunchyroll-reveals-winter-2025-english-dub-slate/",
+    "https://www.bubbleblabber.com/2025/05/crunchyroll-announces-spring-2025-english-dub-slate/",
+    "https://www.bubbleblabber.com/2025/02/hidive-reveals-winter-2025-english-dub-slate/",
+    "https://animemirchi.com/complete-crunchyroll-hindi-dubbed-anime-list",
+    "https://animemirchi.com/hindi-dubbed-anime-on-netflix-india/",
+    "https://www.animenewsnetwork.com/news/2024-09-30/crunchyroll-simulcasts-demon-lord-retry-r-dandadan-23-more-anime-in-india/.216135"
+   ],
+   "notes": "Hindi dubs here are Crunchyroll India unless noted; Dan Da Dan's Hindi dub aired first on Anime Times TV (17 Oct 2024). Later-dub months for Blue Box (18 Apr 2025), Four Knights S2 (Netflix release 30 Jan 2025) and Grieving Soul (28 Nov 2025) come from search summaries of finalweapon/TMS/ANN reports, not pages opened."
+  },
+  "2025-winter": {
+   "en": [
+    {
+     "t": "Solo Leveling Season 2 -Arise from the Shadow-",
+     "slug": "Solo-Leveling-Season-2-Arise-from-the-Shadow",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "The Apothecary Diaries Season 2",
+     "slug": "kusuriya-no-hitorigoto-2nd-season",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Dr. STONE SCIENCE FUTURE",
+     "slug": "dr-stone-science-future",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "SAKAMOTO DAYS",
+     "slug": "sakamoto-days",
+     "service": "Netflix",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "ZENSHU",
+     "slug": "zenshu",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Possibly the Greatest Alchemist of All Time",
+     "slug": "izure-saikyou-no-renkinjutsushi",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Magic Maker: How to Make Magic in Another World",
+     "slug": "magic-maker-isekai-mahou-no-tsukurikata",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Headhunted to Another World: From Salaryman to Big Four!",
+     "slug": "salaryman-ga-isekai-ni-ittara-shitennou-ni-natta-hanashi",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Medaka Kuroiwa Is Impervious to My Charms",
+     "slug": "kuroiwa-medaka-ni-watashi-no-kawaii-ga-tsuujinai",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Honey Lemon Soda",
+     "slug": "honey-lemon-soda",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Anyway, I'm Falling in Love with You.",
+     "slug": "douse-koishite-shimaunda",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "I May Be a Guild Receptionist, but I'll Solo Any Boss to Clock Out on Time",
+     "slug": "guild-no-uketsukejou-desu-ga-zangyou-wa-iya-nanode-boss-wo-solo-tobatsu-shiyou-to-omoimasu",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Toilet-bound Hanako-kun Season 2",
+     "slug": "jibaku-shounen-hanako-kun-2023",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "The 100 Girlfriends Who Really, Really, Really, Really, REALLY Love You Season 2",
+     "slug": "kimi-no-koto-ga-daidaidaidaidaisuki-na-100-nin-no-kanojo-2nd-season",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Ameku M.D.: Doctor Detective",
+     "slug": "ameku-takao-no-suiri-karte",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "The Red Ranger Becomes an Adventurer in Another World",
+     "slug": "sentai-red-isekai-de-boukensha-ni-naru",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "I Left My A-Rank Party to Help My Former Students Reach the Dungeon Depths!",
+     "slug": "a-rank-party-wo-ridatsu-shita-ore-wa-moto-oshiegotachi-to-meikyuu-shinbu-wo-mezasu",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Blue Exorcist -The Blue Night Saga-",
+     "slug": "ao-no-exorcist-yosuga-hen",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "Medalist",
+     "slug": "medalist",
+     "service": "Hulu / Disney+",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "Ishura Season 2",
+     "slug": "ishura-2nd-season",
+     "service": "Hulu / Disney+",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "My Happy Marriage Season 2",
+     "slug": "watashi-no-shiawase-na-kekkon-2nd-season",
+     "service": "Netflix",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "Übel Blatt",
+     "slug": "ubel-blatt",
+     "service": "Prime Video",
+     "when": "later",
+     "later": "2025-04",
+     "confidence": "medium"
+    },
+    {
+     "t": "Bogus Skill <<Fruitmaster>>",
+     "slug": "hazure-skill-kinomi-master-skill-no-mi-tabetara-shinu-wo-mugen-ni-taberareru-you-ni-natta-ken-nitsuite",
+     "service": "Crunchyroll",
+     "when": "later",
+     "later": "2025-11",
+     "confidence": "high"
+    }
+   ],
+   "hi": [
+    {
+     "t": "Solo Leveling Season 2 -Arise from the Shadow-",
+     "slug": "Solo-Leveling-Season-2-Arise-from-the-Shadow",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "The Apothecary Diaries Season 2",
+     "slug": "kusuriya-no-hitorigoto-2nd-season",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Dr. STONE SCIENCE FUTURE",
+     "slug": "dr-stone-science-future",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "ZENSHU",
+     "slug": "zenshu",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Possibly the Greatest Alchemist of All Time",
+     "slug": "izure-saikyou-no-renkinjutsushi",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Magic Maker: How to Make Magic in Another World",
+     "slug": "magic-maker-isekai-mahou-no-tsukurikata",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "I'm Getting Married to a Girl I Hate in My Class",
+     "slug": "Class-no-Daikirai-na-Joshi-to-Kekkon-Suru-Koto-ni-Natta",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Toilet-bound Hanako-kun Season 2",
+     "slug": "jibaku-shounen-hanako-kun-2023",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "The Red Ranger Becomes an Adventurer in Another World",
+     "slug": "sentai-red-isekai-de-boukensha-ni-naru",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Ameku M.D.: Doctor Detective",
+     "slug": "ameku-takao-no-suiri-karte",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "SAKAMOTO DAYS",
+     "slug": "sakamoto-days",
+     "service": "Netflix",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "My Happy Marriage Season 2",
+     "slug": "watashi-no-shiawase-na-kekkon-2nd-season",
+     "service": "Netflix",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "I Left My A-Rank Party to Help My Former Students Reach the Dungeon Depths!",
+     "slug": "a-rank-party-wo-ridatsu-shita-ore-wa-moto-oshiegotachi-to-meikyuu-shinbu-wo-mezasu",
+     "service": "Crunchyroll",
+     "when": "later",
+     "later": "2025-10",
+     "confidence": "medium"
+    }
+   ],
+   "sources": [
+    "https://myanimelist.net/forum/message/55119844?goto=topic",
+    "https://www.bubbleblabber.com/2025/03/crunchyroll-reveals-winter-2025-english-dub-slate/",
+    "https://www.bubbleblabber.com/2025/02/hidive-reveals-winter-2025-english-dub-slate/",
+    "https://www.bubbleblabber.com/2025/09/crunchyroll-announces-fall-2025-english-dub-slate/",
+    "https://animemirchi.com/complete-crunchyroll-hindi-dubbed-anime-list",
+    "https://animemirchi.com/hindi-dubbed-anime-on-netflix-india/",
+    "https://www.sportskeeda.com/anime/news-crunchyroll-brings-solo-leveling-season-2-dr-stone-final-season-winter-2025-anime-to-india"
+   ],
+   "notes": "Übel Blatt dub month (Apr 2025) from search summaries of finalweapon/Animemojo reports. Link Click: Bridon Arc and Beheneko (late-Dec 2024 premieres) left out to avoid season mismatch."
+  },
+  "2025-spring": {
+   "en": [
+    {
+     "t": "The Unaware Atelier Meister",
+     "slug": "kanchigai-no-atelier-meister-eiyuu-party-no-moto-zatsuyougakari-ga-jitsu-wa-sentou-igai-ga-sss-rank-datta-to-iu-yoku-aru-hanashi",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Once Upon a Witch's Death",
+     "slug": "aru-majo-ga-shinu-made",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "The Beginning After the End",
+     "slug": "saikyou-no-ousama-nidome-no-jinsei-wa-nani-wo-suru",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "The Brilliant Healer's New Life in the Shadows",
+     "slug": "isshun-de-chiryou-shiteita-no-ni-yakutatazu-to-tsuihou-sareta-tensai-chiyushi-yami-healer-toshite-tanoshiku-ikiru",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Fire Force Season 3",
+     "slug": "enen-no-shouboutai-san-no-shou",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Bye Bye, Earth Season 2",
+     "slug": "bye-bye-earth-2nd-season",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "To Be Hero X",
+     "slug": "to-be-hero-x",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Black Butler -Emerald Witch Arc-",
+     "slug": "kuroshitsuji-midori-no-majo-hen",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "I've Been Killing Slimes for 300 Years and Maxed Out My Level Season 2",
+     "slug": "slime-taoshite-300-nen-shiranai-uchi-ni-level-max-ni-nattemashita-2",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Anne Shirley",
+     "slug": "Anne-Shirley",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "WITCH WATCH",
+     "slug": "witch-watch",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "The Gorilla God's Go-To Girl",
+     "slug": "gorilla-no-kami-kara-kago-sareta-reijou-wa-ouritsu-kishidan-de-kawaigarareru",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "My Hero Academia: Vigilantes",
+     "slug": "vigilante-boku-no-hero-academia-illegals",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "The Shiunji Family Children",
+     "slug": "shiunji-ke-no-kodomotachi",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Teogonia",
+     "slug": "teogonia",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Kowloon Generic Romance",
+     "slug": "Kowloon-Generic-Romance",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Aharen-san wa Hakarenai Season 2",
+     "slug": "aharen-san-wa-hakarenai-season-2",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "WIND BREAKER Season 2",
+     "slug": "wind-breaker-season-2",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Lazarus",
+     "slug": "lazarus",
+     "service": "Adult Swim / HBO Max",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "Go! Go! Loser Ranger! Season 2",
+     "slug": "Sentai-Daishikkaku-2nd-Season",
+     "service": "Hulu / Disney+",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "Mobile Suit Gundam GQuuuuuuX",
+     "slug": "kidou-senshi-gundam-gquuuuuux",
+     "service": "Prime Video",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "From Old Country Bumpkin to Master Swordsman",
+     "slug": "katainaka-no-ossan-kensei-ni-naru",
+     "service": "Prime Video",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "The Dinner Table Detective",
+     "slug": "nazotoki-wa-dinner-no-ato-de",
+     "service": "Prime Video",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "Rock is a Lady's Modesty",
+     "slug": "rock-wa-lady-no-tashina-mideshite",
+     "service": "HIDIVE",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "Sword of the Demon Hunter: Kijin Gentosho",
+     "slug": "kijin-gentoushou",
+     "service": "HIDIVE",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "Yandere Dark Elf: She Chased Me All the Way From Another World!",
+     "slug": "Chotto-dake-Ai-ga-Omoi-Dark-Elf-ga-Isekai-kara-Oikakete-Kita",
+     "service": "HIDIVE",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "Moonrise",
+     "slug": "moonrise",
+     "service": "Netflix",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "YAIBA: Samurai Legend",
+     "slug": "yaiba",
+     "service": "Netflix / Hulu",
+     "when": "later",
+     "later": "2025-08",
+     "confidence": "medium"
+    }
+   ],
+   "hi": [
+    {
+     "t": "The Unaware Atelier Meister",
+     "slug": "kanchigai-no-atelier-meister-eiyuu-party-no-moto-zatsuyougakari-ga-jitsu-wa-sentou-igai-ga-sss-rank-datta-to-iu-yoku-aru-hanashi",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Once Upon a Witch's Death",
+     "slug": "aru-majo-ga-shinu-made",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Catch Me at the Ballpark!",
+     "slug": "ballpark-de-tsukamaete",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "WIND BREAKER Season 2",
+     "slug": "wind-breaker-season-2",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Fire Force Season 3",
+     "slug": "enen-no-shouboutai-san-no-shou",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Bye Bye, Earth Season 2",
+     "slug": "bye-bye-earth-2nd-season",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Black Butler -Emerald Witch Arc-",
+     "slug": "kuroshitsuji-midori-no-majo-hen",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "The Gorilla God's Go-To Girl",
+     "slug": "gorilla-no-kami-kara-kago-sareta-reijou-wa-ouritsu-kishidan-de-kawaigarareru",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "The Shiunji Family Children",
+     "slug": "shiunji-ke-no-kodomotachi",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Teogonia",
+     "slug": "teogonia",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "To Be Hero X",
+     "slug": "to-be-hero-x",
+     "service": "Crunchyroll",
+     "when": "later",
+     "later": "2026-03",
+     "confidence": "medium"
+    },
+    {
+     "t": "My Hero Academia: Vigilantes",
+     "slug": "vigilante-boku-no-hero-academia-illegals",
+     "service": "Crunchyroll",
+     "when": "later",
+     "later": "2026-07",
+     "confidence": "medium"
+    }
+   ],
+   "sources": [
+    "https://myanimelist.net/forum/message/55119844?goto=topic",
+    "https://www.bubbleblabber.com/2025/05/crunchyroll-announces-spring-2025-english-dub-slate/",
+    "https://animemirchi.com/complete-crunchyroll-hindi-dubbed-anime-list",
+    "https://www.animenewsnetwork.com/news/2025-03-22/crunchyroll-streams-the-unaware-atelier-meister-once-upon-a-witch-death-more-anime-in-india/.222673",
+    "https://animemirchi.com/crunchyroll-summer-2026-hindi-tamil-telugu-lineup/"
+   ],
+   "notes": "Unaware Atelier Meister premiered 30 Mar 2025 but was marketed as Spring 2025. Yaiba dub month (Aug 2025) from search summary of finalweapon/Viz reports. Netflix India added no new Spring 2025 TV anime in Hindi."
+  },
+  "2025-summer": {
+   "en": [
+    {
+     "t": "Gachiakuta",
+     "slug": "gachiakuta",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "DAN DA DAN Season 2",
+     "slug": "dandadan-2",
+     "service": "Crunchyroll / Netflix",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Kaiju No. 8 Season 2",
+     "slug": "Kaiju-No8-SEASON-2",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "My Dress-Up Darling Season 2",
+     "slug": "Sono-Bisque-Doll-wa-Koi-wo-Suru-Season-2",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Dr. STONE SCIENCE FUTURE Part 2",
+     "slug": "dr-stone-science-future-part-2",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Toilet-bound Hanako-kun Season 2 Part 2",
+     "slug": "jibaku-shounen-hanako-kun-2-2nd-season",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "A Couple of Cuckoos Season 2",
+     "slug": "kakkou-no-iinazuke-2nd-season",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Clevatess",
+     "slug": "clevatess-majuu-no-ou-to-akago-to-kabane-no-yuusha",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Cultural Exchange with a Game Centre Girl",
+     "slug": "gacen-shoujo-to-ibunka-kouryuu",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Dealing with Mikadono Sisters Is a Breeze",
+     "slug": "mikadono-sanshimai-wa-angai-choroi",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "I Was Reincarnated as the 7th Prince So I Can Take My Time Perfecting My Magical Ability Season 2",
+     "slug": "Tensei-Shitara-Dai-Nana-Ouji-Dattanode-Kimamani-Majutsu-wo-Kiwamemasu-2nd-Season",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Lord of Mysteries",
+     "slug": "guimi-zhi-zhu",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Nyaight of the Living Cat",
+     "slug": "nyaight-of-the-living-cat",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Reborn as a Vending Machine, I Now Wander the Dungeon Season 2",
+     "slug": "jidou-hanbaiki-ni-umarekawatta-ore-wa-meikyuu-wo-samayou-2nd-season",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "The Rising of the Shield Hero Season 4",
+     "slug": "tate-no-yuusha-no-nariagari-season-4",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Watari-kun's ****** Is About to Collapse",
+     "slug": "watari-kun-no-xx-ga-houkai-sunzen",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Tougen Anki",
+     "slug": "Tougen-Anki-Legend-of-the-Cursed-Blood",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Secrets of the Silent Witch",
+     "slug": "silent-witch-chinmoku-no-majo-no-kakushigoto",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "The Water Magician",
+     "slug": "mizu-zokusei-no-mahou-tsukai",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "Rent-a-Girlfriend Season 4",
+     "slug": "Kanojo-Okarishimasu-4th-Season",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "New Saga",
+     "slug": "tsuyokute-new-saga",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "With You and the Rain",
+     "slug": "ame-to-kimi-to",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "Onmyo Kaiten Re:Birth Verse",
+     "slug": "onmyo-kaiten-re-verse",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "Dekin no Mogura: The Earthbound Mole",
+     "slug": "dekin-no-mogura",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "SAKAMOTO DAYS Part 2",
+     "slug": "sakamoto-days-part-2",
+     "service": "Netflix",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "Leviathan",
+     "slug": "leviathan",
+     "service": "Netflix",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "The Fragrant Flower Blooms with Dignity",
+     "slug": "kaoru-hana-wa-rin-to-saku",
+     "service": "Netflix",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "The Summer Hikaru Died",
+     "slug": "hikaru-ga-shinda-natsu",
+     "service": "Netflix",
+     "when": "later",
+     "later": "2025-10",
+     "confidence": "medium"
+    },
+    {
+     "t": "Takopi's Original Sin",
+     "slug": "takopii-no-genzai",
+     "service": "Crunchyroll",
+     "when": "later",
+     "later": "2026-01",
+     "confidence": "high"
+    },
+    {
+     "t": "Call of the Night Season 2",
+     "slug": "Yofukashi-no-Uta-2nd-Season",
+     "service": "HIDIVE",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "CITY THE ANIMATION",
+     "slug": "CITY-THE-ANIMATION",
+     "service": "Prime Video",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "New Panty & Stocking with Garterbelt",
+     "slug": "new-panty-and-stocking-with-garterbelt",
+     "service": "Prime Video",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    }
+   ],
+   "hi": [
+    {
+     "t": "Clevatess",
+     "slug": "clevatess-majuu-no-ou-to-akago-to-kabane-no-yuusha",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "DAN DA DAN Season 2",
+     "slug": "dandadan-2",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "Gachiakuta",
+     "slug": "gachiakuta",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Dr. STONE SCIENCE FUTURE Part 2",
+     "slug": "dr-stone-science-future-part-2",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "Lord of Mysteries",
+     "slug": "guimi-zhi-zhu",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "Kaiju No. 8 Season 2",
+     "slug": "Kaiju-No8-SEASON-2",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Rent-a-Girlfriend Season 4",
+     "slug": "Kanojo-Okarishimasu-4th-Season",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "New Saga",
+     "slug": "tsuyokute-new-saga",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Reborn as a Vending Machine, I Now Wander the Dungeon Season 2",
+     "slug": "jidou-hanbaiki-ni-umarekawatta-ore-wa-meikyuu-wo-samayou-2nd-season",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "My Dress-Up Darling Season 2",
+     "slug": "Sono-Bisque-Doll-wa-Koi-wo-Suru-Season-2",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Toilet-bound Hanako-kun Season 2 Part 2",
+     "slug": "jibaku-shounen-hanako-kun-2-2nd-season",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "A Couple of Cuckoos Season 2",
+     "slug": "kakkou-no-iinazuke-2nd-season",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "SAKAMOTO DAYS Part 2",
+     "slug": "sakamoto-days-part-2",
+     "service": "Netflix",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "Leviathan",
+     "slug": "leviathan",
+     "service": "Netflix",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "The Summer Hikaru Died",
+     "slug": "hikaru-ga-shinda-natsu",
+     "service": "Netflix",
+     "when": "later",
+     "later": "2025-10",
+     "confidence": "medium"
+    },
+    {
+     "t": "Watari-kun's ****** Is About to Collapse",
+     "slug": "watari-kun-no-xx-ga-houkai-sunzen",
+     "service": "Crunchyroll",
+     "when": "later",
+     "later": "2026-06",
+     "confidence": "high"
+    },
+    {
+     "t": "The Rising of the Shield Hero Season 4",
+     "slug": "tate-no-yuusha-no-nariagari-season-4",
+     "service": "Crunchyroll",
+     "when": "later",
+     "later": "2026-06",
+     "confidence": "medium"
+    }
+   ],
+   "sources": [
+    "https://myanimelist.net/forum/message/55119844?goto=topic",
+    "https://www.bubbleblabber.com/2025/08/crunchyroll-details-summer-2025-english-dub-slate/",
+    "https://www.bubbleblabber.com/2026/03/crunchyroll-announces-winter-2026-english-dub-anime-slate/",
+    "https://animemirchi.com/complete-crunchyroll-hindi-dubbed-anime-list",
+    "https://animemirchi.com/hindi-dubbed-anime-on-netflix-india/",
+    "https://www.animenewsnetwork.com/news/2025-06-21/crunchyroll-announces-indian-language-dubs-for-clevatess-gachiakuta-more-anime/.225855",
+    "https://www.animenewsnetwork.com/news/2025-06-21/crunchyroll-streams-detectives-these-days-are-crazy-silent-witch-more-anime-in-india-in-summer-2025/.225842",
+    "https://respawn.outlookindia.com/pop-culture/pop-culture-news/crunchyroll-expands-hindi-tamil-and-telugu-anime-dubs-in-india"
+   ],
+   "notes": "Summer Hikaru Died English and Hindi dubs both landed on Netflix on 31 Oct 2025 (ANN, via search summary)."
+  },
+  "2025-fall": {
+   "en": [
+    {
+     "t": "My Hero Academia FINAL SEASON",
+     "slug": "boku-no-hero-academia-final-season",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "SPY x FAMILY Season 3",
+     "slug": "spy-x-family-season-3",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "One-Punch Man Season 3",
+     "slug": "one-punch-man-3",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "To Your Eternity Season 3",
+     "slug": "fumetsu-no-anata-e-3",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Tojima Wants to Be a Kamen Rider",
+     "slug": "toujima-tanzaburou-wa-kamen-rider-ni-naritai",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Tales of Wedding Rings Season 2",
+     "slug": "kekkon-yubiwa-monogatari-2nd-season",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "The Banished Court Magician Aims to Become the Strongest",
+     "slug": "mikata-ga-yowa-sugite-hojo-mahou-ni-toushite-ita-kyuutei-mahoushi-tsuihou-sarete-saikyou-wo-mezasu",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "My Status as an Assassin Obviously Exceeds the Hero's",
+     "slug": "ansatsusha-de-aru-ore-no-status-ga-yuusha-yori-mo-akiraka-ni-tsuyoi-no-da-ga",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Campfire Cooking in Another World with My Absurd Skill Season 2",
+     "slug": "tondemo-skill-de-isekai-hourou-meshi-2nd-season",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "The Dark History of the Reincarnated Villainess",
+     "slug": "tensei-akujo-no-kuro-rekishi",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "GNOSIA",
+     "slug": "gnosia",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "May I Ask for One Final Thing?",
+     "slug": "saigo-ni-hitotsu-dake-onegai-shite-mo-yoroshii-deshou-ka",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Kakuriyo -Bed & Breakfast for Spirits- Season 2",
+     "slug": "kakuriyo-no-yadomeshi-2nd-season",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Let's Play",
+     "slug": "let-s-play-quest-darake-no-my-life",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Pass the Monster Meat, Milady!",
+     "slug": "akujiki-reijou-to-kyouketsu-koushaku-sono-mamono-watashi-ga-oishiku-itadakimasu",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "With You, Our Love Will Make It Through",
+     "slug": "kimi-to-koete-koi-ni-naru",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "A Gatherer's Adventure in Isekai",
+     "slug": "sozai-saishuka-no-isekai-ryokouki",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Isekai Quartet 3",
+     "slug": "isekai-quartet-3",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Let This Grieving Soul Retire! Part 2",
+     "slug": "nageki-no-bourei-wa-intai-shitai-2",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Ranma1/2 (2024) Season 2",
+     "slug": "Ranma-12-2024-2",
+     "service": "Netflix",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "Record of Ragnarok III",
+     "slug": "shuumatsu-no-valkyrie-iii",
+     "service": "Netflix",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "Wandance",
+     "slug": "WANDANCE-tv-2025",
+     "service": "Hulu / Disney+",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "Cat's Eye (2025)",
+     "slug": "cat-s-eye-2025",
+     "service": "Hulu / Disney+",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "Disney Twisted-Wonderland The Animation",
+     "slug": "disney-twisted-wonderland",
+     "service": "Hulu / Disney+",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "Gintama - Mr. Ginpachi's Zany Class",
+     "slug": "3-nen-z-gumi-ginpachi-sensei",
+     "service": "Hulu",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "SANDA",
+     "slug": "SANDA",
+     "service": "Prime Video",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "A Star Brighter Than the Sun",
+     "slug": "taiyou-yori-mo-mabushii-hoshi",
+     "service": "Prime Video",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "Ninja vs. Gokudo",
+     "slug": null,
+     "service": "Prime Video",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "My Gift Lvl 9999 Unlimited Gacha",
+     "slug": "shinjiteita-nakamatachi-ni-dungeon-okuchi-de-korosarekaketa-ga-gift-mugen-gacha-de-level-9999-no-nakamatachi-wo-te-ni-irete-moto-party-member-to-sekai-ni-fukushuu-zamaa-shimasu",
+     "service": "HIDIVE",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "Dusk Beyond the End of the World",
+     "slug": "towa-no-yuugure",
+     "service": "HIDIVE",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "Digimon Beatbreak",
+     "slug": "digimon-beatbreak",
+     "service": "Crunchyroll",
+     "when": "later",
+     "later": "2025-12",
+     "confidence": "high"
+    },
+    {
+     "t": "The Daily Life of the Immortal King Season 5",
+     "slug": "xian-wang-de-richang-shenghuo-5",
+     "service": "Crunchyroll",
+     "when": "later",
+     "later": "2026-01",
+     "confidence": "high"
+    }
+   ],
+   "hi": [
+    {
+     "t": "SPY x FAMILY Season 3",
+     "slug": "spy-x-family-season-3",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "One-Punch Man Season 3",
+     "slug": "one-punch-man-3",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Campfire Cooking in Another World with My Absurd Skill Season 2",
+     "slug": "tondemo-skill-de-isekai-hourou-meshi-2nd-season",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Tojima Wants to Be a Kamen Rider",
+     "slug": "toujima-tanzaburou-wa-kamen-rider-ni-naritai",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Let's Play",
+     "slug": "let-s-play-quest-darake-no-my-life",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Mechanical Marie",
+     "slug": "kikaijikake-no-marie",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "With You, Our Love Will Make It Through",
+     "slug": "kimi-to-koete-koi-ni-naru",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "My Status as an Assassin Obviously Exceeds the Hero's",
+     "slug": "ansatsusha-de-aru-ore-no-status-ga-yuusha-yori-mo-akiraka-ni-tsuyoi-no-da-ga",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "May I Ask for One Final Thing?",
+     "slug": "saigo-ni-hitotsu-dake-onegai-shite-mo-yoroshii-deshou-ka",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "A Wild Last Boss Appeared!",
+     "slug": "yasei-no-last-boss-ga-arawareta",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "A Gatherer's Adventure in Isekai",
+     "slug": "sozai-saishuka-no-isekai-ryokouki",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "Ranma1/2 (2024) Season 2",
+     "slug": "Ranma-12-2024-2",
+     "service": "Netflix",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "My Hero Academia FINAL SEASON",
+     "slug": "boku-no-hero-academia-final-season",
+     "service": "Crunchyroll",
+     "when": "later",
+     "later": "2026-05",
+     "confidence": "medium"
+    },
+    {
+     "t": "The Daily Life of the Immortal King Season 5",
+     "slug": "xian-wang-de-richang-shenghuo-5",
+     "service": "Crunchyroll",
+     "when": "later",
+     "later": "2026-01",
+     "confidence": "medium"
+    }
+   ],
+   "sources": [
+    "https://myanimelist.net/forum/message/55119844?goto=topic",
+    "https://www.bubbleblabber.com/2025/11/crunchyroll-announces-fall-2025-english-dub-slate/",
+    "https://www.bubbleblabber.com/2025/09/crunchyroll-announces-fall-2025-english-dub-slate/",
+    "https://www.bubbleblabber.com/2026/03/crunchyroll-announces-winter-2026-english-dub-anime-slate/",
+    "https://animemirchi.com/complete-crunchyroll-hindi-dubbed-anime-list",
+    "https://animemirchi.com/hindi-dubbed-anime-on-netflix-india/",
+    "https://animenewsindia.com/2025/10/25/crunchyroll-announces-hindi-tamil-telugu-dub-premieres-for-spy-x-family-my-hero-academia-and-more-for-its-fall-slate-anime-release",
+    "https://animemirchi.com/crunchyroll-spring-2026-hindi-tamil-telugu-lineup/"
+   ],
+   "notes": "One-Punch Man S3 English dub is produced by VIZ Media; the US streaming home was not confirmed in sources opened. Gachiakuta and Tougen Anki continued from Summer 2025 (listed there). Ninja vs. Gokudo had no Kitsu match."
+  },
+  "2026-winter": {
+   "en": [
+    {
+     "t": "JUJUTSU KAISEN Season 3: The Culling Game Part 1",
+     "slug": "Jujutsu-Kaisen-3",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Frieren: Beyond Journey's End Season 2",
+     "slug": "sousou-no-frieren-season-2",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Hell's Paradise Season 2",
+     "slug": "jigokuraku-2nd-season",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Fire Force Season 3 Part 2",
+     "slug": "enen-no-shouboutai-san-no-shou-part-2",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "TRIGUN STARGAZE",
+     "slug": "trigun-stargaze",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Sentenced to Be a Hero",
+     "slug": "yuusha-kei-ni-shosu-choubatsu-yuusha-9004-tai-keimu-kiroku",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Hana-Kimi",
+     "slug": "hanazakari-no-kimitachi-e",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "My Hero Academia: Vigilantes Season 2",
+     "slug": "Vigilante-Boku-no-Hero-Academia-ILLEGALS-2nd-Season",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Golden Kamuy Final Season",
+     "slug": "golden-kamuy-5",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "You Can't Be In a Rom-Com with Your Childhood Friends!",
+     "slug": "osananajimi-to-wa-love-comedy-ni-naranai",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Tune In to the Midnight Heart",
+     "slug": "mayonaka-heart-tune",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "SHIBOYUGI: Playing Death Games to Put Food on the Table",
+     "slug": "shibou-yuugi-de-meshi-wo-kuu",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Anyway, I'm Falling in Love with You Season 2",
+     "slug": "douse-koishite-shimaunda-season-2",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "ROLL OVER AND DIE",
+     "slug": "omae-gotoki-ga-maou-ni-kateru-to-omou-na-to-yuusha-party-wo-tsuihou-sareta-node-outo-de-kimama-ni-kurashitai",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "DARK MOON: THE BLOOD ALTAR",
+     "slug": "dark-moon-kuro-no-tsuki-tsuki-no-saidan",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Dead Account",
+     "slug": "dead-account",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "A Misanthrope Teaches a Class for Demi-Humans",
+     "slug": "jingai-kyoushitsu-no-ningengirai-kyoushi",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "You and I Are Polar Opposites",
+     "slug": "seihantai-na-kimi-to-boku",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "The Villainess Is Adored by the Prince of the Neighbor Kingdom",
+     "slug": "akuyaku-reijou-wa-ringoku-no-outaishi-ni-dekiai-sareru",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "In the Clear Moonlit Dusk",
+     "slug": "uruwashi-no-yoi-no-tsuki",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Kaya-chan Isn't Scary",
+     "slug": "kaya-chan-wa-kowakunai",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Jack-of-All-Trades, Party of None",
+     "slug": "jack-of-all-trades-party-of-none",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "MF GHOST Season 3",
+     "slug": "mf-ghost-3rd-season",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Fate/strange Fake",
+     "slug": "fate-strange-fake-tv",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "An Adventurer's Daily Grind at Age 29",
+     "slug": "29-sai-dokushin-chuuken-boukensha-no-nichijou",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "[Oshi no Ko] Season 3",
+     "slug": "oshi-no-ko-season-3",
+     "service": "HIDIVE",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "HELL MODE: The Hardcore Gamer Dominates in Another World with Garbage Balancing",
+     "slug": "hell-mode-the-hardcore-gamer-dominates-in-another-world-with-garbage-balancing",
+     "service": "HIDIVE",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "Chained Soldier Season 2",
+     "slug": "Mato-Seihei-no-Slave-2nd-Season",
+     "service": "HIDIVE",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "Reincarnated as a Dragon Hatchling",
+     "slug": "tensei-shitara-dragon-no-tamago-datta",
+     "service": "HIDIVE",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "Medalist Season 2",
+     "slug": "medalist-2nd-season",
+     "service": "Hulu / Disney+",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "The Darwin Incident",
+     "slug": "darwin-jihen",
+     "service": "Prime Video",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "BAKI-DOU: The Invincible Samurai",
+     "slug": "baki-dou",
+     "service": "Netflix",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "Love Through a Prism",
+     "slug": "prism-rondo",
+     "service": "Netflix",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "BEASTARS Final Season Part 2",
+     "slug": "beastars-final-season-part-2",
+     "service": "Netflix",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "Isekai Office Worker: The Other World's Books Depend on the Bean Counter",
+     "slug": "isekai-no-sata-wa-shachiku-shidai",
+     "service": "Crunchyroll",
+     "when": "later",
+     "later": "2026-04",
+     "confidence": "high"
+    },
+    {
+     "t": "Tamon's B-Side",
+     "slug": "tamon-kun-ima-docchi",
+     "service": "Crunchyroll",
+     "when": "later",
+     "later": "2026-05",
+     "confidence": "high"
+    }
+   ],
+   "hi": [
+    {
+     "t": "JUJUTSU KAISEN Season 3: The Culling Game Part 1",
+     "slug": "Jujutsu-Kaisen-3",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Frieren: Beyond Journey's End Season 2",
+     "slug": "sousou-no-frieren-season-2",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Fire Force Season 3 Part 2",
+     "slug": "enen-no-shouboutai-san-no-shou-part-2",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Sentenced to Be a Hero",
+     "slug": "yuusha-kei-ni-shosu-choubatsu-yuusha-9004-tai-keimu-kiroku",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Hana-Kimi",
+     "slug": "hanazakari-no-kimitachi-e",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "DARK MOON: THE BLOOD ALTAR",
+     "slug": "dark-moon-kuro-no-tsuki-tsuki-no-saidan",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "You and I Are Polar Opposites",
+     "slug": "seihantai-na-kimi-to-boku",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Kunon the Sorcerer Can See",
+     "slug": "majutsushi-kunon-wa-mieteiru",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "There Was a Cute Girl in the Hero's Party, So I Tried Confessing to Her",
+     "slug": "yuusha-party-ni-kawaii-ko-ga-ita-no-de-kokuhaku-shitemita",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "An Adventurer's Daily Grind at Age 29",
+     "slug": "29-sai-dokushin-chuuken-boukensha-no-nichijou",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "ROLL OVER AND DIE",
+     "slug": "omae-gotoki-ga-maou-ni-kateru-to-omou-na-to-yuusha-party-wo-tsuihou-sareta-node-outo-de-kimama-ni-kurashitai",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "TRIGUN STARGAZE",
+     "slug": "trigun-stargaze",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "A Misanthrope Teaches a Class for Demi-Humans",
+     "slug": "jingai-kyoushitsu-no-ningengirai-kyoushi",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Easygoing Territory Defense by the Optimistic Lord",
+     "slug": "okiraku-ryoushu-no-tanoshii-ryouchi-bouei",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "Release That Witch",
+     "slug": "fangkai-nage-nuwu",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "BAKI-DOU: The Invincible Samurai",
+     "slug": "baki-dou",
+     "service": "Netflix",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "STEEL BALL RUN: JoJo's Bizarre Adventure (1st Stage)",
+     "slug": "steel-ball-run-jojo-no-kimyou-na-bouken",
+     "service": "Netflix",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "My Hero Academia: Vigilantes Season 2",
+     "slug": "Vigilante-Boku-no-Hero-Academia-ILLEGALS-2nd-Season",
+     "service": "Crunchyroll",
+     "when": "later",
+     "later": "2026-07",
+     "confidence": "medium"
+    },
+    {
+     "t": "[Oshi no Ko] Season 3",
+     "slug": "oshi-no-ko-season-3",
+     "service": "Crunchyroll",
+     "when": "later",
+     "later": "2026-08",
+     "confidence": "medium"
+    }
+   ],
+   "sources": [
+    "https://myanimelist.net/forum/message/55119844?goto=topic",
+    "https://www.bubbleblabber.com/2026/03/crunchyroll-announces-winter-2026-english-dub-anime-slate/",
+    "https://www.bubbleblabber.com/2026/05/crunchyroll-announces-spring-2026-english-dub-slate/",
+    "https://animemirchi.com/complete-crunchyroll-hindi-dubbed-anime-list",
+    "https://animemirchi.com/hindi-dubbed-anime-on-netflix-india/",
+    "https://animemirchi.com/crunchyroll-winter-2026-hindi-tamil-telugu-lineup/",
+    "https://animenewsindia.com/2026/01/24/crunchyroll-announces-winter-2026-regional-dubs-lineup/",
+    "https://animemirchi.com/crunchyroll-summer-2026-hindi-tamil-telugu-lineup/"
+   ],
+   "notes": "Steel Ball Run 1st Stage dropped on Netflix 19 Mar 2026 (Hindi listed by Netflix India); its English dub timing for that drop was not confirmed, so it is only in the Hindi list. MHA Vigilantes S2 Hindi was posted 10 Jul 2026, pulled, and re-added 30 Jul. Oshi no Ko S3 is Sentai/HIDIVE in the US; Hindi is on Crunchyroll India."
+  },
+  "2026-spring": {
+   "en": [
+    {
+     "t": "Re:ZERO -Starting Life in Another World- Season 4",
+     "slug": "re-zero-kara-hajimeru-isekai-seikatsu-4",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "That Time I Got Reincarnated as a Slime Season 4",
+     "slug": "tensei-shitara-slime-datta-ken-4th-season",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Witch Hat Atelier",
+     "slug": "tongari-boushi-no-atelier",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Daemons of the Shadow Realm",
+     "slug": "daemons-of-the-shadow-realm",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Agents of the Four Seasons: Dance of Spring",
+     "slug": "shunkashuutou-daikousha-haru-no-mai",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Go For It, Nakamura-kun!!",
+     "slug": "ganbare-nakamura-kun",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "The Beginning After the End Season 2",
+     "slug": "the-beginning-after-the-end-season-2",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Reborn as a Vending Machine, I Now Wander the Dungeon Season 3",
+     "slug": "jidou-hanbaiki-ni-umarekawatta-ore-wa-meikyuu-wo-samayou-3rd-season",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Classroom of the Elite 4th Season: Second Year, First Semester",
+     "slug": "youkoso-jitsuryoku-shijou-shugi-no-kyoushitsu-e-4th-season-2-nensei-hen-1-gakki",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Dr. STONE SCIENCE FUTURE Part 3",
+     "slug": "dr-stone-science-future-part-3",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Welcome to Demon School! Iruma-kun Season 4",
+     "slug": "mairimashita-iruma-kun-4th-season",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Ascendance of a Bookworm: Adopted Daughter of an Archduke",
+     "slug": "honzuki-no-gekokujou-shisho-ni-naru-tame-ni-wa-shudan-wo-erandeiraremasen-4th-season",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Mistress Kanan is Devilishly Easy",
+     "slug": "kanan-sama-wa-akumade-choroi",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "LIAR GAME",
+     "slug": "liar-game",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "An Observation Log of My Fiancée Who Calls Herself a Villainess",
+     "slug": "jishou-akuyaku-reijou-na-konyakusha-no-kansatsu-kiroku",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "The Klutzy Class Monitor and the Girl with the Short Skirt",
+     "slug": "ponkotsu-fuuki-iin-to-skirt-take-ga-futekisetsu-na-jk-no-hanashi",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "MARRIAGETOXIN",
+     "slug": "marriagetoxin",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Rent-a-Girlfriend Season 5",
+     "slug": "kanojo-okarishimasu-5th-season",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "The Warrior Princess and the Barbaric King",
+     "slug": "hime-kishi-wa-barbaroi-no-yome",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "The Drops of God",
+     "slug": "kami-no-shizuku",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Wistoria: Wand and Sword Season 2",
+     "slug": "tsue-to-tsurugi-no-wistoria-2nd-season",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "I Want to End This Love Game",
+     "slug": "aishiteru-game-wo-owarasetai",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Snowball Earth",
+     "slug": "snowball-earth",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "NEEDY GIRL OVERDOSE",
+     "slug": "needy-girl-overdose",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "The Angel Next Door Spoils Me Rotten Season 2",
+     "slug": "otonari-no-tenshi-sama-ni-itsunomanika-dame-ningen-ni-sareteita-ken-2nd-season",
+     "service": "Crunchyroll",
+     "when": "later",
+     "later": "2026-08",
+     "confidence": "high"
+    },
+    {
+     "t": "Dorohedoro Season 2",
+     "slug": "Dorohedoro-2",
+     "service": "Netflix",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "The Ramparts of Ice",
+     "slug": "koori-no-joheki",
+     "service": "Netflix",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "Akane-Banashi",
+     "slug": "Akanebanashi",
+     "service": "Netflix",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "Dandelion",
+     "slug": "dandelion",
+     "service": "Netflix",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "BAKI-DOU: The Invincible Samurai Part 2",
+     "slug": "baki-dou-part-2",
+     "service": "Netflix",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "NIPPON SANGOKU: The Three Nations of the Crimson Sun",
+     "slug": "nippon-sangoku-the-three-nations-of-the-crimson-sun",
+     "service": "Prime Video",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "Fist of the North Star (2026)",
+     "slug": "Hokuto-no-Ken-FIST-OF-THE-NORTH-STAR-2026",
+     "service": "Prime Video",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "Farming Life in Another World Season 2",
+     "slug": "isekai-nonbiri-nouka-2",
+     "service": "HIDIVE",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "The Most Heretical Last Boss Queen Season 2",
+     "slug": "higeki-no-genkyou-to-naru-saikyou-gedou-last-boss-joou-wa-tami-no-tame-ni-tsukushimasu-season-2",
+     "service": "HIDIVE",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "Petals of Reincarnation",
+     "slug": "reincarnation-no-kaben",
+     "service": "HIDIVE",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "Kirio Fanclub",
+     "slug": "kirio-fanclub",
+     "service": "HIDIVE",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "Yowayowa Sensei",
+     "slug": "yowa-yowa-sensei",
+     "service": "HIDIVE",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "MAO",
+     "slug": "mao-2026",
+     "service": "Hulu / Disney+",
+     "when": "later",
+     "later": "2026-08",
+     "confidence": "medium"
+    }
+   ],
+   "hi": [
+    {
+     "t": "Daemons of the Shadow Realm",
+     "slug": "daemons-of-the-shadow-realm",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Agents of the Four Seasons: Dance of Spring",
+     "slug": "shunkashuutou-daikousha-haru-no-mai",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Dr. STONE SCIENCE FUTURE Part 3",
+     "slug": "dr-stone-science-future-part-3",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "Reborn as a Vending Machine, I Now Wander the Dungeon Season 3",
+     "slug": "jidou-hanbaiki-ni-umarekawatta-ore-wa-meikyuu-wo-samayou-3rd-season",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "The Beginning After the End Season 2",
+     "slug": "the-beginning-after-the-end-season-2",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "An Observation Log of My Fiancée Who Calls Herself a Villainess",
+     "slug": "jishou-akuyaku-reijou-na-konyakusha-no-kansatsu-kiroku",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "The Angel Next Door Spoils Me Rotten Season 2",
+     "slug": "otonari-no-tenshi-sama-ni-itsunomanika-dame-ningen-ni-sareteita-ken-2nd-season",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Snowball Earth",
+     "slug": "snowball-earth",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "LIAR GAME",
+     "slug": "liar-game",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "MARRIAGETOXIN",
+     "slug": "marriagetoxin",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Eren the Southpaw",
+     "slug": "hidarikiki-no-eren",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "The Warrior Princess and the Barbaric King",
+     "slug": "hime-kishi-wa-barbaroi-no-yome",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "Wistoria: Wand and Sword Season 2",
+     "slug": "tsue-to-tsurugi-no-wistoria-2nd-season",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "Karna The Guardian",
+     "slug": null,
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "Re:ZERO -Starting Life in Another World- Season 4",
+     "slug": "re-zero-kara-hajimeru-isekai-seikatsu-4",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "That Time I Got Reincarnated as a Slime Season 4",
+     "slug": "tensei-shitara-slime-datta-ken-4th-season",
+     "service": "Crunchyroll",
+     "when": "later",
+     "later": "2026-07",
+     "confidence": "high"
+    },
+    {
+     "t": "The Drops of God",
+     "slug": "kami-no-shizuku",
+     "service": "Crunchyroll",
+     "when": "later",
+     "later": "2026-09",
+     "confidence": "medium"
+    },
+    {
+     "t": "The Ramparts of Ice",
+     "slug": "koori-no-joheki",
+     "service": "Netflix",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "Dandelion",
+     "slug": "dandelion",
+     "service": "Netflix",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "Witch Hat Atelier",
+     "slug": "tongari-boushi-no-atelier",
+     "service": "Netflix",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "BAKI-DOU: The Invincible Samurai Part 2",
+     "slug": "baki-dou-part-2",
+     "service": "Netflix",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    }
+   ],
+   "sources": [
+    "https://myanimelist.net/forum/message/55119844?goto=topic",
+    "https://www.bubbleblabber.com/2026/05/crunchyroll-announces-spring-2026-english-dub-slate/",
+    "https://www.bubbleblabber.com/2026/09/crunchyroll-announces-summer-2026-english-dub-slate/",
+    "https://animemirchi.com/complete-crunchyroll-hindi-dubbed-anime-list",
+    "https://animemirchi.com/hindi-dubbed-anime-on-netflix-india/",
+    "https://animemirchi.com/crunchyroll-spring-2026-hindi-tamil-telugu-lineup/",
+    "https://animemirchi.com/crunchyroll-summer-2026-hindi-tamil-telugu-lineup/",
+    "https://www.animenewsnetwork.com/news/2026-03-29/crunchyroll-simulcasts-agents-of-the-four-seasons-the-food-diary-of-miss-maid-more-anime-in-india/.235819"
+   ],
+   "notes": "Agents of the Four Seasons premiered 28 Mar 2026 but is a Spring 2026 show. Slime S4: Tamil/Telugu from 1 May, Hindi from 31 Jul 2026. MAO dub (eps 1-13) via VIZ on Hulu/Disney+ 24 Aug 2026 (search summary). Mission: Yozakura Family S2 got a Disney English dub later but the month was not found, so it is left out. Karna The Guardian had no Kitsu match."
+  },
+  "2026-summer": {
+   "en": [
+    {
+     "t": "Mushoku Tensei: Jobless Reincarnation Season 3",
+     "slug": "Mushoku-Tensei-Isekai-Ittara-Honki-Dasu-Season-3",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Clevatess Season 2",
+     "slug": "clevatess-ii-majuu-no-ou-to-itsuwari-no-yuusha-denshou",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "BLACK TORCH",
+     "slug": "black-torch",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Hana-Kimi Season 2",
+     "slug": "hanazakari-no-kimitachi-e-2nd-season",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "KAIJU GIRL CARAMELISE",
+     "slug": "otome-kaiju-caramelise",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Bungo Stray Dogs WAN! 2",
+     "slug": "bungou-stray-dogs-wan-2",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "The Exiled Heavy Knight Knows How to Game the System",
+     "slug": "tsuihou-sareta-tensei-juukishi-wa-game-sashiki-de-musou-suru",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Jaadugar: A Witch in Mongolia",
+     "slug": "tenmaku-no-jaadugar",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Skeleton Knight in Another World Season 2",
+     "slug": "gaikotsu-kishi-sama-tadaima-isekai-e-odekakechuu-2nd-season",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "You and I Are Polar Opposites Season 2",
+     "slug": "seihantai-na-kimi-to-boku-2",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Tomb Raider King",
+     "slug": "dogul-wang",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Trapped in a Dating Sim: The World of Otome Games Is Tough for Mobs Season 2",
+     "slug": "otomege-sekai-wa-mob-ni-kibishii-sekai-desu-2nd-season",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Hanaori-san Still Wants to Fight in the Next Life",
+     "slug": "hanaori-san-wa-tensei-shite-mo-kenka-ga-shitai",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "GROW UP SHOW -Sunflower Circus-",
+     "slug": "grow-up-show-himawari-no-circus-dan",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "The 100 Girlfriends Who Really, Really, Really, Really, REALLY Love You Season 3",
+     "slug": "kimi-no-koto-ga-daidaidaidaidaisuki-na-100-nin-no-kanojo-3rd-season",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "The Elusive Samurai Season 2",
+     "slug": "nige-jouzu-no-wakagimi-2nd-season",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Goodbye, Lara",
+     "slug": "sayonara-lara",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Link Click Season 3",
+     "slug": "shiguang-dailiren-iii",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Smoking Behind the Supermarket with You",
+     "slug": "super-no-ura-de-yani-suu-futari",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "Saga of Tanya the Evil II",
+     "slug": "youjo-senki-ii",
+     "service": "Crunchyroll",
+     "when": "later",
+     "later": "2026-09",
+     "confidence": "high"
+    },
+    {
+     "t": "Though I Am an Inept Villainess",
+     "slug": "futsutsuka-na-akujo-de-wa-gozaimasu-ga-hinamiya-chou-nezumi-torikae-den",
+     "service": "Hulu / Disney+",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "THE GHOST IN THE SHELL",
+     "slug": "The-Ghost-in-the-Shell",
+     "service": "Prime Video",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "From Old Country Bumpkin to Master Swordsman Season 2",
+     "slug": "katainaka-no-ossan-kensei-ni-naru-2nd-season",
+     "service": "Prime Video",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "Magilumiere Magical Girls Inc. Season 2",
+     "slug": "kabushiki-gaisha-magi-lumiere-2nd-season",
+     "service": "Prime Video",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "Draw This, Then Die!",
+     "slug": "kore-kaite-shine",
+     "service": "Netflix",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "Sparks of Tomorrow",
+     "slug": "nijusseiki-denki-mokuroku",
+     "service": "Netflix",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "Thunder 3",
+     "slug": "thunder-3",
+     "service": "Netflix",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "Chainsmoker Cat",
+     "slug": "yani-neko",
+     "service": "Netflix",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "HELL MODE Season 2",
+     "slug": "hell-mode-yarikomi-zuki-no-gamer-wa-haisettei-no-isekai-de-musou-suru-2nd-season",
+     "service": "HIDIVE",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "The Forsaken Saintess and Her Foodie Roadtrip in Another World",
+     "slug": "suterare-seijo-no-isekai-gohantabi-kakure-skill-de-camping-car-wo-shoukan-shimashita",
+     "service": "HIDIVE",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    }
+   ],
+   "hi": [
+    {
+     "t": "Clevatess Season 2",
+     "slug": "clevatess-ii-majuu-no-ou-to-itsuwari-no-yuusha-denshou",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "I Became a Legend After My 10 Year-Long Last Stand",
+     "slug": "koko-wa-ore-ni-makasete-saki-ni-ike-to-ittekara-10-nen-ga-tattara-densetsu-ni-natteita",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Tomb Raider King",
+     "slug": "dogul-wang",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Trapped in a Dating Sim: The World of Otome Games Is Tough for Mobs Season 2",
+     "slug": "otomege-sekai-wa-mob-ni-kibishii-sekai-desu-2nd-season",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "The Elusive Samurai Season 2",
+     "slug": "nige-jouzu-no-wakagimi-2nd-season",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "BLACK TORCH",
+     "slug": "black-torch",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Mushoku Tensei: Jobless Reincarnation Season 3",
+     "slug": "Mushoku-Tensei-Isekai-Ittara-Honki-Dasu-Season-3",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "high"
+    },
+    {
+     "t": "Hanaori-san Still Wants to Fight in the Next Life",
+     "slug": "hanaori-san-wa-tensei-shite-mo-kenka-ga-shitai",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "The Exiled Heavy Knight Knows How to Game the System",
+     "slug": "tsuihou-sareta-tensei-juukishi-wa-game-sashiki-de-musou-suru",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "Jaadugar: A Witch in Mongolia",
+     "slug": "tenmaku-no-jaadugar",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "Hana-Kimi Season 2",
+     "slug": "hanazakari-no-kimitachi-e-2nd-season",
+     "service": "Crunchyroll",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "Sparks of Tomorrow",
+     "slug": "nijusseiki-denki-mokuroku",
+     "service": "Netflix",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "Thunder 3",
+     "slug": "thunder-3",
+     "service": "Netflix",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "Smoking Behind the Supermarket with You",
+     "slug": "super-no-ura-de-yani-suu-futari",
+     "service": "Netflix",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    },
+    {
+     "t": "Chainsmoker Cat",
+     "slug": "yani-neko",
+     "service": "Netflix",
+     "when": "simuldub",
+     "later": null,
+     "confidence": "medium"
+    }
+   ],
+   "sources": [
+    "https://myanimelist.net/forum/message/55119844?goto=topic",
+    "https://www.bubbleblabber.com/2026/09/crunchyroll-announces-summer-2026-english-dub-slate/",
+    "https://animemirchi.com/complete-crunchyroll-hindi-dubbed-anime-list",
+    "https://animemirchi.com/hindi-dubbed-anime-on-netflix-india/",
+    "https://animemirchi.com/crunchyroll-summer-2026-hindi-tamil-telugu-lineup/",
+    "https://respawn.outlookindia.com/pop-culture/pop-culture-news/crunchyroll-expands-hindi-tamil-and-telugu-anime-dubs-in-india"
+   ],
+   "notes": "Exiled Heavy Knight (26 eps) and Link Click S3 dubs are still running into Fall 2026. The World Is Dancing has a running simuldub per the MAL tracker but its service was not confirmed, so it is left out."
+  }
+ }
+}

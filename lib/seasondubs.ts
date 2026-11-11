@@ -6,7 +6,7 @@
 import data from "@/data/season-dubs.json";
 
 export type SeasonDub = { t: string; slug: string | null; service: string; when: "simuldub" | "later"; later: string | null; confidence: "high" | "medium" };
-export type SeasonDubs = { en: SeasonDub[]; hi: SeasonDub[]; sources: string[]; note?: string };
+export type SeasonDubs = { en: SeasonDub[]; hi: SeasonDub[]; sources: string[]; /** Research notes, not shown. */ notes?: string };
 const D = data as unknown as { checked: string | null; seasons: Record<string, SeasonDubs> };
 export const SEASON_DUBS_CHECKED = D.checked;
 

@@ -123,7 +123,7 @@ export default async function SeasonPage({ params, searchParams }: Props) {
         return (
           <section className="card mt-6 p-4" aria-labelledby="dubbed-h">
             <h2 id="dubbed-h" className="font-semibold text-ink">{future ? "Dubs announced" : "Dubbed"} for {cap(season)} {year}: {d.en.length} in English, {d.hi.length} in Hindi</h2>
-            <p className="mt-1 text-sm text-muted">Which {cap(season)} {year} shows {future ? "will be" : "were"} dubbed, on which service, and whether the dub aired alongside Japan (simuldub) or came later.{d.note ? ` ${d.note}` : ""}{SEASON_DUBS_CHECKED ? ` Checked ${SEASON_DUBS_CHECKED}.` : ""} <Link href="/dub-schedule" className="text-violet hover:underline">This season&apos;s dub schedule →</Link></p>
+            <p className="mt-1 text-sm text-muted">Which {cap(season)} {year} shows {future ? "will be" : "were"} dubbed, on which service, and whether the dub aired alongside Japan (simuldub) or came later.{SEASON_DUBS_CHECKED ? ` Checked ${SEASON_DUBS_CHECKED}.` : ""} <Link href="/dub-schedule" className="text-violet hover:underline">This season&apos;s dub schedule →</Link></p>
             {d.en.length > 0 && <><h3 className="mt-3 text-xs font-semibold uppercase tracking-wide text-muted">English dubs</h3><ul className="mt-1.5 flex flex-wrap gap-1.5">{d.en.map(row)}</ul></>}
             {d.hi.length > 0 && <><h3 className="mt-3 text-xs font-semibold uppercase tracking-wide text-muted">🇮🇳 Hindi dubs</h3><ul className="mt-1.5 flex flex-wrap gap-1.5">{d.hi.map(row)}</ul></>}
           </section>
@@ -167,6 +167,14 @@ export default async function SeasonPage({ params, searchParams }: Props) {
           { q: `When does the ${cap(season)} ${year} anime season start?`, a: `The ${season} season covers anime that premiere between ${months[s]} ${year}. Most TV series begin in the first two weeks of the season.` },
           { q: `How many anime are airing in ${cap(season)} ${year}?`, a: `Kitsu currently lists ${data.total} titles for ${cap(season)} ${year}, including TV series, movies, OVAs and web shorts. ${isCurrent ? "This number grows as late announcements are added." : ""}` },
           { q: `What is the most popular anime of ${cap(season)} ${year}?`, a: data.items[0] ? `${data.items[0].title} is the most-tracked title of the season with ${data.items[0].userCount.toLocaleString()} users on Kitsu.` : "Rankings will appear once titles are added." },
+          ...(() => {
+            const d = `${cap(season)} ${year}` === DUBS_SEASON ? null : seasonDubs(y, season);
+            const names = (xs: SeasonDub[]) => xs.slice(0, 5).map((e) => `${e.t} (${e.service})`).join(", ");
+            return d ? [
+              ...(d.en.length ? [{ q: `Which ${cap(season)} ${year} anime have an English dub?`, a: `${d.en.length} shows from the season got an English dub, ${d.en.filter((e) => e.when === "simuldub").length} of them as simuldubs. Among them: ${names(d.en)}.` }] : []),
+              ...(d.hi.length ? [{ q: `Which ${cap(season)} ${year} anime are dubbed in Hindi?`, a: `${d.hi.length} shows from the season got a Hindi dub. Among them: ${names(d.hi)}.` }] : []),
+            ] : [];
+          })(),
         ]}
       />
     </div>
