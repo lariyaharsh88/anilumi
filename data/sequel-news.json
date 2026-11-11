@@ -1,5 +1,5 @@
 {
-  "checked": "2026-11-09",
+  "checked": "2026-11-11",
   "reviewed": null,
   "shows": {
     "one-piece": {
@@ -88,39 +88,51 @@
     },
     "death-note": {
       "status": "none",
-      "what": "No sequel announced; the TV anime ended 2007-06-27",
+      "what": "No sequel announced; the TV anime ended 2007-06-27 after adapting the whole manga",
       "announced": "2007-06-27",
       "by": null,
       "window": null,
       "confidence": "high",
       "sources": [
+        "https://en.wikipedia.org/wiki/Death_Note",
         "https://en.wikipedia.org/wiki/Death_Note_(2006_TV_series)",
-        "https://www.animenewsnetwork.com/encyclopedia/anime.php?id=6592"
-      ]
+        "https://dexerto.com/anime/death-note-fans-still-wish-one-thing-was-different-about-the-ending-2853729"
+      ],
+      "outlook": "complete",
+      "why": "The 37-episode anime (2006-2007) runs through to the ending of the manga, which finished in May 2006 at 108 chapters in 12 volumes; the final scenes differ in detail but the story ends at the same point, so there is no main story left to adapt. Since then the franchise has continued only through short one-shot chapters (C-Kira in 2008, a-Kira in 2020), live-action films, a 2024 video game and stage musicals. A live-action Netflix series was announced in 2022 but has no release date.",
+      "notes": "Netflix live-action series (Duffer Brothers' Upside Down Pictures, announced July 2022) has had no release date or cast news as of Nov 2026. The 2008 and 2020 one-shots were never animated. Relight 1/2 (2007-2008) are recap TV specials, not sequels."
     },
     "fullmetal-alchemist-brotherhood": {
       "status": "none",
-      "what": "No sequel announced; the TV anime ended 2010-07-04",
+      "what": "No sequel announced; the TV anime ended 2010-07-04 after adapting the whole manga",
       "announced": "2010-07-04",
       "by": null,
       "window": null,
       "confidence": "high",
       "sources": [
         "https://en.wikipedia.org/wiki/Fullmetal_Alchemist:_Brotherhood",
-        "https://www.animenewsnetwork.com/encyclopedia/anime.php?id=10216"
-      ]
+        "https://en.wikipedia.org/wiki/Fullmetal_Alchemist"
+      ],
+      "outlook": "complete",
+      "why": "Brotherhood follows the complete story of the manga, which ended in June 2010 after 108 chapters (27 volumes); the anime's final episode aired a few weeks later in July 2010. Creator Hiromu Arakawa has said she told everything she wanted to tell when the series ended. The only later animated story is the 2011 side-story film The Sacred Star of Milos.",
+      "notes": "Later projects are not anime sequels: live-action films (2017, two in 2022) and a full-colour webtoon edition of the original manga (from May 2025)."
     },
     "hunter-x-hunter-2011": {
       "status": "none",
-      "what": "No anime continuation announced; the 2011 TV anime ended 2014-09-24",
+      "what": "No anime continuation announced; the 2011 TV anime ended 2014-09-24 at the end of the Election arc",
       "announced": "2014-09-24",
       "by": null,
       "window": null,
       "confidence": "high",
       "sources": [
         "https://en.wikipedia.org/wiki/Hunter_%C3%97_Hunter_(2011_TV_series)",
-        "https://www.animenewsnetwork.com/encyclopedia/anime.php?id=13262"
-      ]
+        "https://en.wikipedia.org/wiki/Hunter_%C3%97_Hunter",
+        "https://www.animenewsnetwork.com/news/2026-09-07/hunter-x-hunter-manga-announces-hiatus-4th-stage-play-featuring-chimera-ant-arc/.241478",
+        "https://www.animenewsnetwork.com/news/2026-10-05/hunter-x-hunter-manga-creator-yoshihiro-togashi-to-limit-work-due-to-physical-mental-health-issues/.242517"
+      ],
+      "outlook": "material-left",
+      "why": "The anime stops at the end of the Election arc (around chapter 339, volume 32), while the manga has since reached chapter 420 and 39 volumes, so roughly 80 chapters (about seven volumes) of the Dark Continent / Succession Contest story are unadapted. The manga itself is unfinished and runs in short bursts between long breaks: it resumed on 29 June 2026, went back on hiatus on 7 September 2026, and in October 2026 creator Yoshihiro Togashi said physical and mental health issues will lead him to turn down other deadline work to focus on his manuscripts. No anime studio or broadcaster has announced a continuation.",
+      "notes": "As of Nov 2026: last published chapter 420; Togashi said on 15 Sep 2026 he had finished the manuscript for chapter 428 (unpublished); volume 39 released 3 Jul 2026. The anime's end point (ch. 339) rests on fan/guide sources plus the arc listing on Wikipedia, not an official statement. The only new announced adaptation is a stage play (Hunter x Hunter The Stage 4, Chimera Ant arc, 2027)."
     },
     "kimetsu-no-yaiba": {
       "status": "announced",
@@ -250,8 +262,12 @@
       "confidence": "high",
       "sources": [
         "https://en.wikipedia.org/wiki/No_Game_No_Life",
-        "https://www.animenewsnetwork.com/encyclopedia/anime.php?id=19405"
-      ]
+        "https://animecorner.me/no-game-no-life-returns-with-volume-13-in-april-first-new-release-in-over-3-years/",
+        "https://animecorner.me/no-game-no-life-author-dispels-fake-season-2-news-after-latest-leaks/"
+      ],
+      "outlook": "material-left",
+      "why": "The 2014 TV anime covers roughly the first three of the light novels, and the 2017 film Zero adapts the prequel volume 6, so volumes 4, 5 and 7 onward (about nine volumes) are unadapted. The novels are still ongoing: volume 13 came out in Japan on 24 April 2026, the first new volume since February 2023. In January 2025 author Yuu Kamiya publicly called a viral Season 2 report a baseless rumour, and no production has been announced since.",
+      "notes": "Wikipedia's lead still says 'twelve novels' while its infobox and body list 13 volumes; Anime Corner confirms vol. 13 (Apr 2026). Which volumes the TV series covers (1-3) is inferred from Wikipedia's episode summaries, a single source."
     },
     "steins-gate": {
       "status": "none",
@@ -268,15 +284,18 @@
     },
     "shigatsu-wa-kimi-no-uso": {
       "status": "none",
-      "what": "No sequel announced; the TV anime ended 2015-03-20",
+      "what": "No sequel announced; the TV anime ended 2015-03-20 after adapting the whole manga",
       "announced": "2015-03-20",
       "by": null,
       "window": null,
       "confidence": "high",
       "sources": [
         "https://en.wikipedia.org/wiki/Your_Lie_in_April",
-        "https://www.animenewsnetwork.com/encyclopedia/anime.php?id=16108"
-      ]
+        "https://www.animenewsnetwork.com/news/2014-12-26/your-lie-in-april-manga-to-end-in-february/.82641"
+      ],
+      "outlook": "complete",
+      "why": "The manga ended in February 2015 at 11 volumes, while the 22-episode anime was still airing, and the anime finished the same story a month later in March 2015, so there is nothing left to adapt. Creator Naoshi Arakawa has not continued the story beyond a short 2016 one-shot. Later adaptations are a 2016 live-action film, stage plays and musicals rather than more anime.",
+      "notes": "A short OVA, 'Moments', shipped with manga volume 11 (May 2015). A one-shot spin-off, 'Coda' (2016), was never animated."
     },
     "jujutsu-kaisen": {
       "status": "announced",
@@ -337,12 +356,14 @@
       "announced": "2009-03-26",
       "by": null,
       "window": null,
-      "confidence": "high",
+      "confidence": "medium",
       "sources": [
         "https://en.wikipedia.org/wiki/Toradora!",
-        "https://www.animenewsnetwork.com/encyclopedia/anime.php?id=10050"
+        "https://www.animenewsnetwork.com/news/2009-02-05/toradora-anime-original-novels-to-end-on-march-10"
       ],
-      "notes": "ANN lists the final broadcast as 2009-03-25; the 26th is the page's date, from the late-night slot."
+      "outlook": "complete",
+      "why": "The main Toradora! light novel series ended with its 10th volume on 10 March 2009, and the 25-episode anime finished the same month, carrying the story through to its conclusion. With the main story told, the only extra animation has been a single OVA episode in a 2011 Blu-ray box. The ongoing manga is a retelling of the same story, not new material.",
+      "notes": "ANN lists the final broadcast as 2009-03-25; the 26th is the page's date, from the late-night slot. A 3-volume 'Toradora Spin-off!' side-story novel series (2007-2010) was never fully animated. That the anime covers all 10 volumes rests on Wikipedia's plot summary plus the matching end dates, not an explicit statement, hence medium. Discotek is reissuing the anime on Blu-ray on 27 Oct 2026 (re-release, not new anime)."
     },
     "haikyuu-2": {
       "status": "dated",
@@ -433,8 +454,13 @@
       "confidence": "high",
       "sources": [
         "https://en.wikipedia.org/wiki/Noragami",
-        "https://www.animenewsnetwork.com/encyclopedia/anime.php?id=16906"
-      ]
+        "https://animecorner.me/noragami-manga-ends-with-chapter-109/",
+        "https://mangashed.com/where-does-the-noragami-anime-leave-off-in-the-manga/",
+        "https://www.animefillerguide.com/anime/noragami/"
+      ],
+      "outlook": "material-left",
+      "why": "Aragoto stops around chapter 38-39 of the manga (about volume 10), while the manga ran to chapter 109 and ended in January 2024 with 27 volumes, so roughly 70 chapters (about 17 volumes) of finished story are unadapted. Studio Bones has made no statement about a third season in the ten years since Aragoto aired.",
+      "notes": "Exact end point varies by guide (ch. 38 per mangashed, ch. 39 per animefillerguide); both fan guides, not official. Chapter total is given as 109 by Anime Corner (Kodansha announcement) but 107 by some outlets."
     },
     "boku-dake-ga-inai-machi": {
       "status": "none",
@@ -445,8 +471,12 @@
       "confidence": "high",
       "sources": [
         "https://en.wikipedia.org/wiki/Erased_(manga)",
-        "https://www.animenewsnetwork.com/encyclopedia/anime.php?id=17217"
-      ]
+        "https://www.animenewsnetwork.com/daily-briefs/2016-01-08/erased-boku-dake-ga-inai-machi-anime-to-portray-ending-of-original-manga/.97329",
+        "https://www.cbr.com/erased-anime-manga-differences-controversy/"
+      ],
+      "outlook": "complete",
+      "why": "The anime aired while the manga was finishing (its last chapter came out in March 2016, the same month the anime ended), so it wrapped up the story with its own condensed version of the finale. The manga is complete at 8 main volumes plus a 2016 side-story volume (Erased Re), so the main story has been told in both forms. The story was retold again as a 2016 live-action film and a 2017 Netflix live-action series rather than continued in anime.",
+      "notes": "The anime's last stretch differs from the manga's final arc (CBR); viewers wanting the fuller ending can read the manga from around chapter 33. The side-story volume Re was never animated."
     },
     "haikyuu-karasuno-koukou-vs-shiratorizawa-gakuen-koukou": {
       "status": "dated",
@@ -468,11 +498,190 @@
       "announced": "2015-03-26",
       "by": null,
       "window": null,
-      "confidence": "high",
+      "confidence": "medium",
       "sources": [
         "https://en.wikipedia.org/wiki/Parasyte",
-        "https://www.animenewsnetwork.com/encyclopedia/anime.php?id=15855"
-      ]
+        "https://about.netflix.com/en/news/parasyte-tamiya-announcement",
+        "https://www.animenewsnetwork.com/review/parasyte-the-maxim/episode-24/.86375"
+      ],
+      "outlook": "complete",
+      "why": "Hitoshi Iwaaki's manga ended in 1995 after 64 chapters in 10 volumes, and the 24-episode 2014-2015 anime adapts it through to its ending, so there is no further story to animate. The franchise has since continued in live action instead: Netflix's Korean series Parasyte: The Grey (2024) and Parasyte: Tamiya, announced in July 2026 for a 2027 release.",
+      "notes": "Parasyte: Tamiya is a live-action Netflix series (Japan-Korea), not anime. The claim that the anime covers the full manga is widely stated but only fan/informal sources say it explicitly; ANN's ep. 24 review treats it as concluding the story. Hence medium."
+    },
+    "cowboy-bebop": {
+      "status": "none",
+      "what": "No sequel announced; the TV anime ended 1999-04-24 (the 2001 film is set between episodes 22 and 23)",
+      "announced": "1999-04-24",
+      "by": null,
+      "window": null,
+      "confidence": "high",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Cowboy_Bebop",
+        "https://www.inverse.com/entertainment/43138-cowboy-bebop-anniversary-twenty-years-sequels"
+      ],
+      "outlook": "complete",
+      "why": "Cowboy Bebop is an original anime, not an adaptation, and its 26 episodes tell a finished story; the 2001 film Knockin' on Heaven's Door slots in before the final episodes rather than continuing it. Director Shinichiro Watanabe has said he gave the series a definitive ending on purpose and did not want to keep making sequels just for the sake of it. Netflix's 2021 live-action version was cancelled after one season.",
+      "notes": "Watanabe has occasionally left the door open ('someday ... maybe', 2006, per Wikipedia) but no new Bebop anime has ever been announced."
+    },
+    "code-geass-lelouch-of-the-rebellion-r2": {
+      "status": "none",
+      "what": "No new Lelouch season; his story continued in the film 'Lelouch of the Re;surrection' (2019), and a new Code Geass anime, 'Star Chaser Aspal', is set for 2027",
+      "announced": "2025-12-07",
+      "by": "Bandai Namco Filmworks / Sunrise, at the 'Code Geass Project To 20th' event; 2027 window and teaser revealed 2026-09-26",
+      "window": null,
+      "confidence": "high",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Code_Geass",
+        "https://en.wikipedia.org/wiki/Code_Geass:_Lelouch_of_the_Re;surrection",
+        "https://animecorner.me/code-geass-new-anime-announced-for-2027-with-teaser-trailer-visual-and-staff/"
+      ],
+      "outlook": "remake-or-spinoff",
+      "why": "R2 was the final TV season, but the story did not stop there: the 2017-2018 recap film trilogy retold both seasons, and the 2019 film Lelouch of the Re;surrection is a sequel set a year after R2's ending (in the film trilogy's continuity). The franchise has since moved to new stories in the same world: the four-part Rozé of the Recapture (2024, also on Disney+ as 12 episodes) and Star Chaser Aspal, announced for 2027.",
+      "notes": "PAGE VERDICT WRONG: 'Not announced' is misleading. A direct sequel film (Lelouch of the Re;surrection, Feb 2019) is already out, Rozé of the Recapture followed in 2024, and a new anime (Star Chaser Aspal) is dated for 2027 (event screenings from Jan 2027). Aspal is a new story (Roman Empire setting); it is not presented as a Lelouch sequel. Wikipedia says producer Taniguchi revealed on 2024-12-07 that multiple sequels were in production."
+    },
+    "angel-beats": {
+      "status": "none",
+      "what": "No sequel announced; the TV anime ended 2010-06-26 (OVA 'Hell's Kitchen' 2015)",
+      "announced": "2010-06-26",
+      "by": null,
+      "window": null,
+      "confidence": "high",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Angel_Beats!",
+        "https://en.wikipedia.org/wiki/Angel_Beats!_1st_Beat",
+        "https://www.animenewsnetwork.com/news/2026-10-19/kanon-air-clannad-heaven-burns-red-jun-maeda-in-palliative-care-for-pharyngeal-cancer/.242983"
+      ],
+      "outlook": "complete",
+      "why": "Angel Beats! is an original anime written by Jun Maeda, and its 13 episodes tell a finished story. The planned continuation was a six-part visual novel, but only the first part (1st Beat, 2015) was released; Maeda said in 2016 that the rest was cancelled and its material went into the manga The Last Operation (2017-2020).",
+      "notes": "Two OVAs exist (Stairway to Heaven 2010, Hell's Kitchen 2015). Visual Arts founder Takahiro Baba has been reported saying a '2nd Beat' is 'not zero' (Automaton headline; article body not read)."
+    },
+    "tengen-toppa-gurren-lagann": {
+      "status": "none",
+      "what": "No sequel announced; the TV anime ended 2007-09-30",
+      "announced": "2007-09-30",
+      "by": null,
+      "window": null,
+      "confidence": "high",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Gurren_Lagann",
+        "https://animecorner.me/trigger-new-anime-hiroyuki-imaishi-kazuki-nakashima/"
+      ],
+      "outlook": "complete",
+      "why": "Gurren Lagann is an original anime, and its 27-episode story was written to end: Wikipedia notes the finale was built to complete the hero's growth and the staff did not mean to leave signs of a sequel. The two films (2008 and 2009) retell the series with new animation rather than continue it. Director Hiroyuki Imaishi and writer Kazuki Nakashima's next project, announced by Studio Trigger in July 2026, is a brand-new anime, not Gurren Lagann.",
+      "notes": "Rights moved from Gainax to Trigger-side holders by 2021. Spin-off manga (Gurren Gakuen-hen etc.) and a mobile game (closed Jan 2026) exist; no anime continuation."
+    },
+    "death-parade": {
+      "status": "none",
+      "what": "No sequel announced; the TV anime ended 2015-03-28",
+      "announced": "2015-03-28",
+      "by": null,
+      "window": null,
+      "confidence": "high",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Death_Parade",
+        "https://www.animenewsnetwork.com/news/2014-10-31/anime-mirai-short-death-billiards-gets-tv-anime/.80532"
+      ],
+      "outlook": "complete",
+      "why": "Death Parade is an original anime by director Yuzuru Tachikawa, expanded from his 2013 short film Death Billiards, so there is no manga or novel to adapt further. Its 12 episodes close the main story, and neither Madhouse nor Tachikawa has announced or publicly discussed a second season since it aired in 2015.",
+      "notes": "Kitsu/page date 2015-03-28 vs Wikipedia's 2015-03-27 is the late-night slot. Crunchyroll removed the series in Oct 2025 (Polygon via Wikipedia), which further reduces sequel odds but is not a statement about one."
+    },
+    "ouran-koukou-host-club": {
+      "status": "none",
+      "what": "No sequel announced; the TV anime ended 2006-09-27",
+      "announced": "2006-09-27",
+      "by": null,
+      "window": null,
+      "confidence": "high",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Ouran_High_School_Host_Club",
+        "https://www.looper.com/491625/ouran-high-school-host-club-season-2-release-date-characters-plot",
+        "https://epicstream.com/article/what-chapter-in-the-manga-did-ouran-high-school-host-club-end",
+        "https://animenewsnetwork.com/news/2010-08-23/ouran-high-school-host-club-manga-to-end-in-september"
+      ],
+      "outlook": "material-left",
+      "why": "The 2006 anime covers roughly the first eight volumes (to about chapter 36) and then wraps up with its own ending, because the manga was still running. The manga ended in 2010 at 18 volumes (83 chapters), so about ten volumes are unadapted. Studio Bones and creator Bisco Hatori have made no announcement of a second season; the franchise moved to live action instead, with a 2011 TV drama and a 2012 film.",
+      "notes": "Recent adaptations are stage musicals (2022-2023), not anime. The manga ending was reported by ANN as the September 2010 LaLa issue (on sale Sept 24, 2010); Wikipedia says November 2010 issue."
+    },
+    "ansatsu-kyoushitsu-tv-2nd-season-kagaijugyou-hen": {
+      "status": "none",
+      "what": "No further season; TV Season 2 (2016) adapted the manga to its final chapter. The newest anime is the film 'Assassination Classroom The Movie: Our Time', released 2026-03-20",
+      "announced": "2026-03-20",
+      "by": null,
+      "window": null,
+      "confidence": "high",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Assassination_Classroom",
+        "https://www.animenewsnetwork.com/news/2016-02-20/assassination-classroom-anime-2nd-season-to-cover-manga-ending/.98897",
+        "https://animecorner.me/assassination-classroom-movie-reveals-new-visual-main-trailer/"
+      ],
+      "outlook": "complete",
+      "why": "This entry is not the main season: it is a set of eight roughly five-minute web shorts (2016) adapting two manga chapters (78-79, volume 9) that the TV series skipped. The main story is finished: the manga ended in March 2016 at 180 chapters (21 volumes), and director Seiji Kishi said Season 2 would adapt it through the final chapter, which it did by July 2016. The franchise's newest anime is a film, Our Time (March 2026), made of manga stories the TV series left out, rather than a new season.",
+      "notes": "PAGE VERDICT WRONG: this Kitsu slug is the 8-episode ONA shorts collection 'Kagaijugyou-hen' (Kitsu: 5 min/ep, Mar-May 2016), not a main season, so a 'season 2' page for it is off-target. The correct main-story answer is: Season 2 (ansatsu-kyoushitsu-tv-2, Jan-Jul 2016) adapted the whole manga, no Season 3 exists or is planned, and a new anime film 'Our Time' (Minna no Jikan, Lerche) was released 2026-03-20 (Crunchyroll streaming from 2026-07-23 per Wikipedia). 'Not announced' reads as if more is pending; consider redirecting this slug to the Season 2 / Our Time answer. Other entries: 365 Days' Time and Koro-sensei Q! (both 2016-11-19)."
+    },
+    "clannad-after-story": {
+      "status": "none",
+      "what": "No sequel announced; the TV anime ended 2009-03-27",
+      "announced": "2009-03-27",
+      "by": null,
+      "window": null,
+      "confidence": "high",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Clannad_(visual_novel)",
+        "https://en.wikipedia.org/wiki/List_of_Clannad_episodes",
+        "https://myanimelist.net/anime/4181/Clannad__After_Story"
+      ],
+      "outlook": "complete",
+      "why": "After Story animates the After Story arc, the final chapter of Key's Clannad visual novel that continues Nagisa's route, so together with the first season Kyoto Animation's anime has told the game's main story to its end. The other heroines' routes appeared only as alternate-universe OVAs. Key has never announced any new Clannad anime.",
+      "notes": "The last broadcast episode is a recap; the 'Another World: Kyou Chapter' OVA (2009) is an alternate route. Toei's 2007 Clannad film is a separate retelling. Maeda news: https://www.animenewsnetwork.com/news/2026-10-19/kanon-air-clannad-heaven-burns-red-jun-maeda-in-palliative-care-for-pharyngeal-cancer/.242983"
+    },
+    "soul-eater": {
+      "status": "none",
+      "what": "No sequel or remake announced; the TV anime ended 2009-03-30",
+      "announced": "2009-03-30",
+      "by": null,
+      "window": null,
+      "confidence": "high",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Soul_Eater_(manga)",
+        "https://en.wikipedia.org/wiki/List_of_Soul_Eater_episodes",
+        "https://comicbook.com/anime/news/soul-eater-teases-big-announcement-as-fans-wait-for-a-remake/",
+        "https://comicbook.com/anime/news/cunchyrolls-major-shonen-anime-has-exciting-news-for-fans-after-finale/"
+      ],
+      "outlook": "material-left",
+      "why": "The 2008-2009 anime ended four years before the manga, so after about episode 38 (roughly volume 10 of 25) it switched to its own story and an anime-original ending. The manga finished in August 2013 at 113 chapters in 25 volumes, so about 15 volumes of the real story have never been animated. The only later anime is the 2014 spin-off Soul Eater Not!, and no remake has been announced.",
+      "notes": "April 2026: the Soul Eater X account posted a 'NEXT IS...' teaser that fuelled remake rumours; it turned out to promote a Fire Force art exhibition (announced 2026-04-24), not a Soul Eater anime (comicbook.com, 2026-04-26). Divergence point varies by source (ep. 35-39); Wikipedia's episode list says after episode 38."
+    },
+    "akame-ga-kill": {
+      "status": "none",
+      "what": "No sequel or remake announced; the TV anime ended 2014-12-15",
+      "announced": "2014-12-15",
+      "by": null,
+      "window": null,
+      "confidence": "high",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Akame_ga_Kill!",
+        "https://www.animefillerguide.com/anime/akame-ga-kill/",
+        "https://sportskeeda.com/anime/akame-ga-kill-manga-anime-ending-differences-explained"
+      ],
+      "outlook": "material-left",
+      "why": "The anime aired while the manga was still running, so after about episode 19 (around chapter 38, volume 8) it left the manga and wrote its own ending. The manga ended in December 2016 with 15 volumes, so roughly seven volumes of the original story, including its different ending, have never been animated. No new anime, sequel or remake has been announced; the prequel manga Akame ga Kill! Zero (2013-2019) and spin-off Hinowa ga Crush! (2017-2022) were not animated either.",
+      "notes": "Divergence point varies by guide (ep. 17-20); animefillerguide lists ep. 19 as the last manga-based episode and recommends reading from chapter 39 (vol. 9)."
+    },
+    "another": {
+      "status": "none",
+      "what": "No sequel announced; the TV anime ended 2012-03-27",
+      "announced": "2012-03-27",
+      "by": null,
+      "window": null,
+      "confidence": "high",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Another_(novel)",
+        "https://www.animenewsnetwork.com/news/2012-02-28/ayatsuji-plans-2-more-novels-of-horror-franchise-another",
+        "https://www.animenewsnetwork.com/news/2020-06-01/yukito-ayatsuji-another-2001-horror-novel-compilation-slated-for-september/.160164"
+      ],
+      "outlook": "material-left",
+      "why": "The 12-episode anime adapts Yukito Ayatsuji's original 2009 novel, whose story it completes. Ayatsuji has since written two follow-ups that were never animated: the spin-off Another Episode S (2013) and a full sequel, Another 2001 (serialised 2014-2020, published as one roughly 1,200-page volume in September 2020). No anime adaptation of either has been announced.",
+      "notes": "A 2012 live-action film adapted the first novel. The OVA 'The Other -Karma-' (2012) is a prequel episode 0, not a sequel."
     }
   }
 }
