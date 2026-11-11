@@ -1,3 +1,4 @@
+import { fitDescription } from "@/lib/titles";
 import type { Metadata } from "next";
 import { getNews } from "@/lib/news";
 import PageHero from "@/components/PageHero";
@@ -8,7 +9,7 @@ import { dbEnabled } from "@/lib/db";
 export const revalidate = 1800;
 export const metadata: Metadata = {
   title: "Anime News Today – Latest Announcements, Trailers & Casting",
-  description: "The latest anime news, updated hourly: new season announcements, trailers, casting and release dates, with links to each show's AniLumi page.",
+  description: fitDescription("The latest anime news, updated hourly: new season announcements, trailers, casting and release dates, with links to each show's AniLumi page."),
   alternates: { canonical: "/news" },
 };
 

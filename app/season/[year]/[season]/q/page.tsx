@@ -2,7 +2,7 @@
 import { DUBS_SEASON, dubShows, type DubShow } from "@/lib/dubschedule";
 import { seasonDubs, SEASON_DUBS_CHECKED, type SeasonDub } from "@/lib/seasondubs";
 import MadeBy from "@/components/MadeBy";
-import { fitTitle } from "@/lib/titles";
+import { fitTitle, fitDescription } from "@/lib/titles";
 // the plain URL is served by ../page.tsx from the ISR cache.
 import type { Metadata } from "next";
 import Link from "@/components/Link";
@@ -43,7 +43,7 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
       total ? `${cap(season)} ${year} Anime: All ${total} Shows, Ranked` : null,
       `${cap(season)} ${year} Anime – Full Season Chart`,
     ]),
-    description: `${total ? `All ${total} anime ${current ? "airing in" : "of"} ${cap(season)} ${year}` : `Every anime airing in ${cap(season)} ${year}`}${tops.length ? `, led by ${tops.join(", ")}` : ""}: new series, sequels and movies ranked by popularity, with air times, scores and where to stream each.`,
+    description: fitDescription(`${total ? `All ${total} anime ${current ? "airing in" : "of"} ${cap(season)} ${year}` : `Every anime airing in ${cap(season)} ${year}`}${tops.length ? `, led by ${tops.join(", ")}` : ""}: new series, sequels and movies ranked by popularity, with air times, scores and where to stream each.`),
     alternates: { canonical: `/season/${year}/${season}${Number(page) > 1 ? `?page=${page}` : ""}` },
   };
 }

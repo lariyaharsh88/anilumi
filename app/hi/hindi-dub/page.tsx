@@ -1,3 +1,4 @@
+import { fitDescription } from "@/lib/titles";
 import type { Metadata } from "next";
 import Link from "@/components/Link";
 import PageHero from "@/components/PageHero";
@@ -14,7 +15,7 @@ export function generateMetadata(): Metadata {
   const n = hindiDubbed().length;
   return {
     title: `Hindi Dubbed Anime List – हिंदी डब एनीमे की लिस्ट और कहाँ देखें (${n} एनीमे)`,
-    description: `${n} पॉपुलर एनीमे जिनका आधिकारिक हिंदी डब है, और हर एक कहाँ देखें: Crunchyroll, Netflix, Prime Video, JioHotstar, मुफ़्त YouTube चैनल और टीवी। ${dubDate("hi")} को जाँचा गया।`,
+    description: fitDescription(`${n} पॉपुलर एनीमे जिनका आधिकारिक हिंदी डब है, और हर एक कहाँ देखें: Crunchyroll, Netflix, Prime Video, JioHotstar, मुफ़्त YouTube चैनल और टीवी। ${dubDate("hi")} को जाँचा गया।`),
     alternates: { canonical: "/hi/hindi-dub", languages: { en: "/hindi-dub", hi: "/hi/hindi-dub", "x-default": "/hindi-dub" } },
   };
 }

@@ -1,3 +1,4 @@
+import { fitDescription } from "@/lib/titles";
 import type { Metadata } from "next";
 import Link from "@/components/Link";
 import Image from "next/image";
@@ -10,7 +11,7 @@ import JsonLd from "@/components/JsonLd";
 export const revalidate = 3600;
 export const metadata: Metadata = {
   title: "Popular Anime Voice Actors – Seiyuu Roles & Characters",
-  description: "The most-followed anime voice actors in Japanese and English, with every character they've voiced, their best-known roles and roles per year.",
+  description: fitDescription("The most-followed anime voice actors in Japanese and English, with every character they've voiced, their best-known roles and roles per year."),
   alternates: { canonical: "/voice-actors" },
 };
 

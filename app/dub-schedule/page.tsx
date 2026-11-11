@@ -5,7 +5,7 @@ import PageHero from "@/components/PageHero";
 import Faq from "@/components/Faq";
 import JsonLd from "@/components/JsonLd";
 import { itemList } from "@/lib/ld";
-import { fitTitle } from "@/lib/titles";
+import { fitTitle, fitDescription } from "@/lib/titles";
 import { animePath } from "@/lib/kitsu";
 import { DUBS_CHECKED, DUBS_SEASON, LANG_NAME, dubShows, dubWhen, dubsDate, dueWithin, nextDub, releasedBy, type DubShow } from "@/lib/dubschedule";
 import { safeUrl } from "@/lib/streams";
@@ -19,7 +19,7 @@ export function generateMetadata(): Metadata {
   const hi = shows.filter((e) => e.lang === "hi").length;
   return {
     title: fitTitle([`Anime Dub Schedule ${DUBS_SEASON}: ${en} English Dubs, ${hi} Hindi`, `Anime Dub Schedule ${DUBS_SEASON}: English & Hindi`, `Anime Dub Schedule (${DUBS_SEASON})`]),
-    description: `When the next dubbed episode of every ${DUBS_SEASON} anime releases: ${en} English dubs on Crunchyroll, HIDIVE and Netflix, plus ${hi} Hindi dubs in India, with weekday and episode count. Checked ${dubsDate()}.`,
+    description: fitDescription(`When the next dubbed episode of every ${DUBS_SEASON} anime releases: ${en} English dubs on Crunchyroll, HIDIVE and Netflix, plus ${hi} Hindi dubs in India, with weekday and episode count. Checked ${dubsDate()}.`),
     alternates: { canonical: "/dub-schedule" },
   };
 }

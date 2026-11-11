@@ -1,3 +1,4 @@
+import { fitDescription } from "@/lib/titles";
 import type { Metadata } from "next";
 import Link from "@/components/Link";
 import { countAnime, TREND_GENRES } from "@/lib/kitsu";
@@ -6,7 +7,7 @@ import PageHero from "@/components/PageHero";
 export const revalidate = 86400;
 export const metadata: Metadata = {
   title: "Anime Genre Trends – Which Genres Are Growing and Shrinking",
-  description: "Every major anime genre ranked by how its share of new TV anime has changed over the past decade, with year-by-year charts for each.",
+  description: fitDescription("Every major anime genre ranked by how its share of new TV anime has changed over the past decade, with year-by-year charts for each."),
   alternates: { canonical: "/trends" },
 };
 

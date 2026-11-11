@@ -1,3 +1,4 @@
+import { fitDescription } from "@/lib/titles";
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import SiteHeader from "@/components/SiteHeader";
@@ -17,7 +18,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: { default: `${site.name} – ${site.tagline}`, template: `%s | ${site.name}` },
-  description: site.description,
+  description: fitDescription(site.description),
   openGraph: { siteName: site.name, type: "website", locale: "en_US" },
   twitter: { card: "summary_large_image", site: site.twitter },
   // Large image previews make pages eligible for Google Discover and image-rich results; full-length snippets.

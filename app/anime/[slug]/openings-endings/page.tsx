@@ -1,3 +1,4 @@
+import { fitDescription } from "@/lib/titles";
 import type { Metadata } from "next";
 import Link from "@/components/Link";
 import { notFound } from "next/navigation";
@@ -27,9 +28,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const eds = t?.themes.filter((x) => x.type === "ED") || [];
   return {
     title: `${a.title} Openings & Endings – All ${ops.length + eds.length || ""} Theme Songs & Artists`.replace("All  ", "All "),
-    description: t?.themes.length
+    description: fitDescription(t?.themes.length
       ? `Every ${a.title} opening and ending: ${t.themes.slice(0, 3).map((x) => `${x.type}${x.sequence} “${x.song}” by ${x.artists[0] || "unknown"}`).join(", ")}, with the episodes each one plays on.`
-      : `Opening and ending songs for ${a.title}.`,
+      : `Opening and ending songs for ${a.title}.`),
     alternates: { canonical: `${animePath(a)}/openings-endings` },
     ...(t?.themes.length ? {} : { robots: { index: false } }),
   };

@@ -1,3 +1,4 @@
+import { fitDescription } from "@/lib/titles";
 import type { Metadata } from "next";
 import { listAnime, getRelations, uniqueById, animePath, posterUrl, fmtDate, type Anime } from "@/lib/kitsu";
 import PageHero from "@/components/PageHero";
@@ -6,7 +7,7 @@ import ToolList, { type ToolRow } from "@/components/ToolList";
 export const revalidate = 21600;
 export const metadata: Metadata = {
   title: `Confirmed Anime Sequels & New Seasons (${new Date().getFullYear()}–${new Date().getFullYear() + 1})`,
-  description: "Every announced season 2, season 3 and sequel of popular anime, with release dates where they're set, plus the new seasons airing right now. Updated every few hours.",
+  description: fitDescription("Every announced season 2, season 3 and sequel of popular anime, with release dates where they're set, plus the new seasons airing right now. Updated every few hours."),
   alternates: { canonical: "/upcoming-seasons" },
 };
 

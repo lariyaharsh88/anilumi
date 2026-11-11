@@ -1,3 +1,4 @@
+import { fitDescription } from "@/lib/titles";
 import type { Metadata } from "next";
 import Link from "@/components/Link";
 import PageHero from "@/components/PageHero";
@@ -7,7 +8,7 @@ import MadeBy from "@/components/MadeBy";
 
 export const metadata: Metadata = {
   title: "What Anime Should I Watch? Take the 30-Second Quiz",
-  description: "Answer five quick questions about mood, time, era, intensity and sub or dub (English or Hindi) and get anime picks that fit, ranked by fan scores, with where to watch each.",
+  description: fitDescription("Answer five quick questions about mood, time, era, intensity and sub or dub (English or Hindi) and get anime picks that fit, ranked by fan scores, with where to watch each."),
   alternates: { canonical: "/quiz" },
 };
 

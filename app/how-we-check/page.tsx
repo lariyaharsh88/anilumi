@@ -1,3 +1,4 @@
+import { fitDescription } from "@/lib/titles";
 import type { Metadata } from "next";
 import Link from "@/components/Link";
 import PageHero from "@/components/PageHero";
@@ -9,7 +10,7 @@ import { checkedGuides, draftCounts } from "@/lib/checked";
 
 export const metadata: Metadata = {
   title: "How AniLumi's guides are made and checked",
-  description: "What refreshes automatically, what is drafted and cross-checked against sources, what a person has checked, and what each label on a guide means.",
+  description: fitDescription("What refreshes automatically, what is drafted and cross-checked against sources, what a person has checked, and what each label on a guide means."),
   alternates: { canonical: "/how-we-check" },
 };
 

@@ -9,7 +9,7 @@ import ListFilter from "@/components/ListFilter";
 import { STREAM_KIND_CLASS } from "@/components/StreamServices";
 import { getAnimeBySlug, posterUrl } from "@/lib/kitsu";
 import { itemList } from "@/lib/ld";
-import { fitTitle } from "@/lib/titles";
+import { fitTitle, fitDescription } from "@/lib/titles";
 import { STREAMS_CHECKED, REGIONS, REGION_FLAG, REGION_NAME, REGION_SHORT, KIND_LABEL, allStreams, audioLine, catalogue, freeIn, servicesIn, streamsDate, streamsPath, type Region } from "@/lib/streams";
 
 export const revalidate = 86400;
@@ -18,7 +18,7 @@ export function generateMetadata(): Metadata {
   const n = allStreams().length;
   return {
     title: fitTitle([`Where to Watch Anime (${new Date().getFullYear()}): ${n} Shows in the US, India & UK`, `Where to Watch Anime: ${n} Shows by Country`, "Where to Watch Anime by Country"]),
-    description: `Where ${n} popular anime stream legally in the US, India and the UK: Crunchyroll, Netflix, Prime Video, Hulu, HIDIVE and free options, with sub, English dub and Hindi dub for each. Checked ${streamsDate()}.`,
+    description: fitDescription(`Where ${n} popular anime stream legally in the US, India and the UK: Crunchyroll, Netflix, Prime Video, Hulu, HIDIVE and free options, with sub, English dub and Hindi dub for each. Checked ${streamsDate()}.`),
     alternates: { canonical: "/where-to-watch" },
   };
 }

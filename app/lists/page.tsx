@@ -1,3 +1,4 @@
+import { fitDescription } from "@/lib/titles";
 import type { Metadata } from "next";
 import Link from "@/components/Link";
 import { getTrending, getCategories, posterUrl } from "@/lib/kitsu";
@@ -6,7 +7,7 @@ import PageHero from "@/components/PageHero";
 export const revalidate = 86400;
 export const metadata: Metadata = {
   title: "Anime Lists – Best of Each Year, Short Binges, Similar Shows",
-  description: "Curated-by-data anime lists: the best anime of every year, series you can finish in a weekend, and what to watch after your favourite show.",
+  description: fitDescription("Curated-by-data anime lists: the best anime of every year, series you can finish in a weekend, and what to watch after your favourite show."),
   alternates: { canonical: "/lists" },
 };
 

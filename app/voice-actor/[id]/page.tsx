@@ -1,3 +1,4 @@
+import { fitDescription } from "@/lib/titles";
 import type { Metadata } from "next";
 import { robotsFor, voiceActorIndexed } from "@/lib/indexing";
 import { notFound, permanentRedirect } from "next/navigation";
@@ -22,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const top = signatureRoles(va.roles).slice(0, 3);
   return {
     title: `${va.name}${va.native ? ` (${va.native})` : ""} – Voice Actor Roles & Characters`,
-    description: `${va.name} is a ${va.language ? `${va.language} ` : ""}voice actor known for ${top.map((r) => `${r.character.name} in ${r.media[0].title}`).join(", ")}. Every anime role by year, with signature characters.`,
+    description: fitDescription(`${va.name} is a ${va.language ? `${va.language} ` : ""}voice actor known for ${top.map((r) => `${r.character.name} in ${r.media[0].title}`).join(", ")}. Every anime role by year, with signature characters.`),
     alternates: { canonical: vaPath(va) },
     // The most-favourited voice actors and any search already shows (lib/indexing.ts).
     robots: robotsFor(voiceActorIndexed(vaPath(va), await popularVoiceActors().then((xs) => { const i = xs.findIndex((x) => x.id === va.id); return i < 0 ? null : i; }).catch(() => null))),

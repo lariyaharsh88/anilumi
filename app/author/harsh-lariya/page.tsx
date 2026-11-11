@@ -1,3 +1,4 @@
+import { fitDescription } from "@/lib/titles";
 import type { Metadata } from "next";
 import Link from "@/components/Link";
 import PageHero from "@/components/PageHero";
@@ -10,7 +11,7 @@ import { WATCHED_COUNT, watchedList } from "@/lib/editor";
 
 export const metadata: Metadata = {
   title: `${AUTHOR.name}, who checks AniLumi's guides`,
-  description: `${AUTHOR.name} runs ${site.name} and checks its watch orders, filler lists and editor's notes by hand. Every guide checked so far, with dates.`,
+  description: fitDescription(`${AUTHOR.name} runs ${site.name} and checks its watch orders, filler lists and editor's notes by hand. Every guide checked so far, with dates.`),
   alternates: { canonical: AUTHOR.path },
 };
 

@@ -7,7 +7,7 @@ import JsonLd from "@/components/JsonLd";
 import { KIND_CLASS } from "@/components/HindiDub";
 import { getAnimeBySlug, posterUrl } from "@/lib/kitsu";
 import { itemList } from "@/lib/ld";
-import { fitTitle } from "@/lib/titles";
+import { fitTitle, fitDescription } from "@/lib/titles";
 import { HINDI_PLATFORMS, dubDate, dubHref, dubsOn, hindiDubbed, hindiPlatform, platformKind } from "@/lib/hindidub";
 
 export const revalidate = 86400;
@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const name = p.label.replace(/ \(.*\)$/, "");
   return {
     title: fitTitle([`${name} Hindi Dubbed Anime List (${y}): ${list.length} Anime`, `${name} Hindi Dubbed Anime (${y}): ${list.length} Anime`, `${name} Hindi Dubbed Anime`]),
-    description: `All ${list.length} anime with an official Hindi dub on ${p.label}, most-watched first: ${list.slice(0, 6).map((x) => x.d.t).join(", ")} and more, with which seasons have Hindi audio. Checked ${dubDate()}.`,
+    description: fitDescription(`All ${list.length} anime with an official Hindi dub on ${p.label}, most-watched first: ${list.slice(0, 6).map((x) => x.d.t).join(", ")} and more, with which seasons have Hindi audio. Checked ${dubDate()}.`),
     alternates: { canonical: `/hindi-dub/${p.slug}` },
   };
 }

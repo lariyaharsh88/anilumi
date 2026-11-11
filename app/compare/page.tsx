@@ -1,3 +1,4 @@
+import { fitDescription } from "@/lib/titles";
 import type { Metadata } from "next";
 import Link from "@/components/Link";
 import { redirect } from "next/navigation";
@@ -9,7 +10,7 @@ type Props = { searchParams: Promise<{ a?: string; b?: string }> };
 
 export const metadata: Metadata = {
   title: "Compare Anime – Side-by-Side Scores, Length and Popularity",
-  description: "Put any two anime side by side: community score, how each is rated, members, favourites, runtime and shared genres.",
+  description: fitDescription("Put any two anime side by side: community score, how each is rated, members, favourites, runtime and shared genres."),
   alternates: { canonical: "/compare" },
 };
 

@@ -1,5 +1,6 @@
 // Query-string variants (?page=, ?sort=, filters). Reached only through the rewrites in next.config.ts;
 // the plain URL is served by ../page.tsx from the ISR cache.
+import { fitDescription } from "@/lib/titles";
 import type { Metadata } from "next";
 import Link from "@/components/Link";
 import { listAnime, getCategories, posterUrl } from "@/lib/kitsu";
@@ -20,7 +21,7 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
   const qs = [genre ? `genre=${genre}` : "", m !== 13 ? `max=${m}` : "", Number(page) > 1 ? `page=${page}` : ""].filter(Boolean).join("&");
   return {
     title: `Best Short${g} Anime (${m} Episodes or Less) – Weekend Binges`,
-    description: `Top-rated${g} anime you can finish in a weekend: complete series with ${m} episodes or fewer, ranked by score, with runtime and where to watch.`,
+    description: fitDescription(`Top-rated${g} anime you can finish in a weekend: complete series with ${m} episodes or fewer, ranked by score, with runtime and where to watch.`),
     alternates: { canonical: `/short-anime${qs ? `?${qs}` : ""}` },
   };
 }

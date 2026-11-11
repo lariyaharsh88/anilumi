@@ -1,3 +1,4 @@
+import { fitDescription } from "@/lib/titles";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getProducerBySlug, getStudioAnime, posterUrl } from "@/lib/kitsu";
@@ -23,7 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!p) notFound();
   return {
     title: `${p.name} Anime List – Every Series, Upcoming & Best Rated`,
-    description: `All anime animated by ${p.name}: currently airing and upcoming projects, plus the studio's most popular and best-rated series with where to watch.`,
+    description: fitDescription(`All anime animated by ${p.name}: currently airing and upcoming projects, plus the studio's most popular and best-rated series with where to watch.`),
     alternates: { canonical: `/studio/${p.slug}` },
   };
 }

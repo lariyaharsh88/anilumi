@@ -1,3 +1,4 @@
+import { fitDescription } from "@/lib/titles";
 import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
@@ -84,7 +85,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const d = await load((await params).slug);
   return {
     title: `${d.name} Watch Order in Hindi: देखने का सही क्रम, कुल समय और अगला सीज़न`,
-    description: `${d.name} किस क्रम में देखें? ${hiCount(d.mains.length, "मुख्य हिस्सा", "मुख्य हिस्से")}${d.movies.length ? `, ${hiCount(d.movies.length, "मूवी", "मूवीज़")}` : ""} और कुल समय ${hiDuration(d.wo.totalMinutes)}। फ़िलर, मूवीज़ कहाँ देखें और अगले सीज़न की ताज़ा जानकारी हिंदी में।`.slice(0, 300),
+    description: fitDescription(`${d.name} किस क्रम में देखें? ${hiCount(d.mains.length, "मुख्य हिस्सा", "मुख्य हिस्से")}${d.movies.length ? `, ${hiCount(d.movies.length, "मूवी", "मूवीज़")}` : ""} और कुल समय ${hiDuration(d.wo.totalMinutes)}। फ़िलर, मूवीज़ कहाँ देखें और अगले सीज़न की ताज़ा जानकारी हिंदी में।`.slice(0, 300)),
     alternates: {
       canonical: hindiPath(d.slug),
       languages: { en: `/watch-order/${d.slug}`, hi: hindiPath(d.slug), "x-default": `/watch-order/${d.slug}` },

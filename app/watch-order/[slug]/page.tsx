@@ -1,3 +1,4 @@
+import { fitDescription } from "@/lib/titles";
 import type { Metadata } from "next";
 import EditorWatched from "@/components/EditorWatched";
 import Link from "@/components/Link";
@@ -71,9 +72,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const c = counts(wo);
   return {
     title: wo.entries.length > 1 ? `${name} Watch Order: ${c.label} (${year})` : `${name} Watch Order (${year}): Standalone, No Sequels`,
-    description: wo.entries.length > 1
+    description: fitDescription(wo.entries.length > 1
       ? `Watch ${name} in this order: ${order.slice(0, 4).map((e, i) => `${i + 1}. ${e.anime.title}`).join(", ")}${order.length > 4 ? ", …" : ""}. Where every movie and OVA fits, which recaps to skip, and the total time (${fmtMinutes(wo.totalMinutes)}).`.slice(0, 300)
-      : `${name} is a standalone title with no sequels, prequels or spin-offs on record.`,
+      : `${name} is a standalone title with no sequels, prequels or spin-offs on record.`),
     // One URL per franchise: every season's watch-order page points at it, so ranking signals aren't split.
     robots: robotsFor(watchOrderIndexed(watchOrderSlug(wo), wo.entries.length, wo.entries.filter((e) => e.kind === "main" || e.kind === "movie").length)),
     alternates: { canonical: `/watch-order/${watchOrderSlug(wo)}`, ...(hindiIndexed(watchOrderSlug(wo)) ? { languages: { en: `/watch-order/${watchOrderSlug(wo)}`, hi: hindiPath(watchOrderSlug(wo)), "x-default": `/watch-order/${watchOrderSlug(wo)}` } } : {}) },

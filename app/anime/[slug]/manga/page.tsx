@@ -1,3 +1,4 @@
+import { fitDescription } from "@/lib/titles";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "@/components/Link";
@@ -30,7 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { a, cont, start } = await load(slug);
   return {
     title: `Where Does the ${a.title} Anime End in the ${cont.medium === "manga" ? "Manga" : "Light Novel"}? Start at ${start.replace(/^./, (c) => c.toUpperCase())}`,
-    description: `Finished ${a.title}? Pick up the ${cont.medium} from ${start}. ${cont.note || ""}`.trim().slice(0, 300),
+    description: fitDescription(`Finished ${a.title}? Pick up the ${cont.medium} from ${start}. ${cont.note || ""}`.trim().slice(0, 300)),
     alternates: { canonical: `${animePath(a)}/manga` },
   };
 }

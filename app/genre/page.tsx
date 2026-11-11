@@ -1,3 +1,4 @@
+import { fitDescription } from "@/lib/titles";
 import type { Metadata } from "next";
 import { getCategories } from "@/lib/kitsu";
 import PageHero from "@/components/PageHero";
@@ -6,7 +7,7 @@ import GenreTile, { GENRE_HUES } from "@/components/GenreTile";
 export const revalidate = 86400;
 export const metadata: Metadata = {
   title: "Anime Genres – Browse Every Genre and Theme",
-  description: "Browse anime by genre: action, romance, isekai, slice of life, horror, sports and 60+ more themes, each ranked by popularity.",
+  description: fitDescription("Browse anime by genre: action, romance, isekai, slice of life, horror, sports and 60+ more themes, each ranked by popularity."),
   alternates: { canonical: "/genre" },
 };
 

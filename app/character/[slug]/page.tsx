@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { characterNote } from "@/lib/charnotes";
-import { fitTitle } from "@/lib/titles";
+import { fitTitle, fitDescription } from "@/lib/titles";
 import PushButton from "@/components/PushButton";
 import { charTopic } from "@/lib/push";
 import { dbEnabled } from "@/lib/db";
@@ -108,7 +108,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       what.includes("Voice Actor") && `${name}: ${what.replace(/,? ?(& )?Voice Actor$/, "").replace(/, ([^,]+)$/, " & $1")}`,
       `${name}: Age, Birthday & More`,
     ]),
-    description: ((lead ? `${lead} ` : "") + (bio ? bio.slice(0, 120).replace(/\s+\S*$/, "") + "…" : `Every anime ${name} appears in.`)).slice(0, 300),
+    description: fitDescription(((lead ? `${lead} ` : "") + (bio ? bio.slice(0, 120).replace(/\s+\S*$/, "") + "…" : `Every anime ${name} appears in.`)).slice(0, 300)),
     alternates: { canonical: `/character/${c.slug}` },
     robots: robotsFor(characterIndexed(c.slug)),
   };

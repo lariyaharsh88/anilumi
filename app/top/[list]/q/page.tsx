@@ -1,5 +1,6 @@
 // Query-string variants (?page=, ?sort=, filters). Reached only through the rewrites in next.config.ts;
 // the plain URL is served by ../page.tsx from the ISR cache.
+import { fitDescription } from "@/lib/titles";
 import type { Metadata } from "next";
 import Link from "@/components/Link";
 import { notFound } from "next/navigation";
@@ -22,7 +23,7 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
   const def = LISTS[list];
   if (!def) notFound();
   const p = Number(page) > 1 ? ` – Page ${page}` : "";
-  return { title: def.title + p, description: def.description, alternates: { canonical: `/top/${list}${Number(page) > 1 ? `?page=${page}` : ""}` } };
+  return { title: def.title + p, description: fitDescription(def.description), alternates: { canonical: `/top/${list}${Number(page) > 1 ? `?page=${page}` : ""}` } };
 }
 
 export default async function TopPage({ params, searchParams }: Props) {

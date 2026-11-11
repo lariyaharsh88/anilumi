@@ -1,3 +1,4 @@
+import { fitDescription } from "@/lib/titles";
 import type { Metadata } from "next";
 import Link from "@/components/Link";
 import Image from "next/image";
@@ -10,7 +11,7 @@ import JsonLd from "@/components/JsonLd";
 export const revalidate = 86400;
 export const metadata: Metadata = {
   title: "Best Anime Openings – Theme Songs of the Most Popular Anime",
-  description: "The opening songs of the most popular anime, with artists and every later opening, plus ending themes for each series.",
+  description: fitDescription("The opening songs of the most popular anime, with artists and every later opening, plus ending themes for each series."),
   alternates: { canonical: "/anime-openings" },
 };
 

@@ -1,3 +1,4 @@
+import { fitDescription } from "@/lib/titles";
 import type { Metadata } from "next";
 import MyList from "@/components/MyList";
 import PageHero from "@/components/PageHero";
@@ -7,7 +8,7 @@ import SyncPanel from "@/components/SyncPanel";
 import ListAlerts from "@/components/ListAlerts";
 import { dbEnabled } from "@/lib/db";
 
-export const metadata: Metadata = { title: "My list", description: "Your saved anime and their next episodes.", robots: { index: false, follow: true } };
+export const metadata: Metadata = { title: "My list", description: fitDescription("Your saved anime and their next episodes."), robots: { index: false, follow: true } };
 
 export default function MyPage() {
   return (

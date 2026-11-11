@@ -12,7 +12,7 @@ import Faq, { type FaqItem } from "@/components/Faq";
 import AdSlot from "@/components/AdSlot";
 import LeadForm from "@/components/LeadForm";
 import { dbEnabled } from "@/lib/db";
-import { fitTitle } from "@/lib/titles";
+import { fitTitle, fitDescription } from "@/lib/titles";
 import { arcsFor, arcOf, arcRange, type Arc } from "@/lib/arcs";
 
 export const revalidate = 604800;
@@ -71,7 +71,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { a, f, skip, saved, name } = await load(slug);
   return {
     title: fitTitle([`${name} Filler List (${new Date().getFullYear()}): ${skip} Episodes to Skip`, `${name} Filler List: ${skip} Episodes to Skip`, `${name} Filler List (${new Date().getFullYear()})`, `${name} Filler List`]),
-    description: `${name} has ${f.count} filler episodes out of ${f.total} (${f.share.toFixed(0)}%)${f.recap.size ? ` plus ${f.recap.size} recaps` : ""}. Full list of filler, mixed and canon episodes${saved ? `; skipping saves about ${hours(saved)}` : ""}.`,
+    description: fitDescription(`${name} has ${f.count} filler episodes out of ${f.total} (${f.share.toFixed(0)}%)${f.recap.size ? ` plus ${f.recap.size} recaps` : ""}. Full list of filler, mixed and canon episodes${saved ? `; skipping saves about ${hours(saved)}` : ""}.`),
     alternates: { canonical: `${animePath(a)}/filler-list` },
   };
 }

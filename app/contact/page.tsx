@@ -1,10 +1,11 @@
+import { fitDescription } from "@/lib/titles";
 import type { Metadata } from "next";
 import Link from "@/components/Link";
 import { site } from "@/lib/site";
 import PageHero from "@/components/PageHero";
 import CorrectionForm from "@/components/CorrectionForm";
 
-export const metadata: Metadata = { title: "Contact", description: `Send ${site.name} a question, an idea or a correction.`, alternates: { canonical: "/contact" } };
+export const metadata: Metadata = { title: "Contact", description: fitDescription(`Send ${site.name} a question, an idea or a correction.`), alternates: { canonical: "/contact" } };
 
 export default function Contact() {
   return (

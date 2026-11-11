@@ -1,3 +1,4 @@
+import { fitDescription } from "@/lib/titles";
 import type { Metadata } from "next";
 import MadeBy from "@/components/MadeBy";
 import Link from "@/components/Link";
@@ -17,7 +18,7 @@ export const revalidate = 86400;
 
 export const metadata: Metadata = {
   title: "Random Anime Generator: Pick by Genre, Length & Score",
-  description: "Can't decide what to watch? Pick a random anime from the most-watched series and films, filtered by genre, length, AniList score or Hindi dub. Every pick says what it's about and where to watch it.",
+  description: fitDescription("Can't decide what to watch? Pick a random anime from the most-watched series and films, filtered by genre, length, AniList score or Hindi dub. Every pick says what it's about and where to watch it."),
   alternates: { canonical: "/random-anime-generator" },
 };
 

@@ -1,3 +1,4 @@
+import { fitDescription } from "@/lib/titles";
 import type { Metadata } from "next";
 import { getAnimeBySlug, animePath, posterUrl, type Anime } from "@/lib/kitsu";
 import { fillerFor, fillerSlugs } from "@/lib/filler";
@@ -7,7 +8,7 @@ import ToolList from "@/components/ToolList";
 export const revalidate = 86400;
 export const metadata: Metadata = {
   title: "Anime Filler Lists: Which Episodes to Skip",
-  description: "Filler lists for Naruto, One Piece, Bleach, Fairy Tail, Black Clover and more long-running anime: every filler, recap and mixed episode, and how much time skipping saves.",
+  description: fitDescription("Filler lists for Naruto, One Piece, Bleach, Fairy Tail, Black Clover and more long-running anime: every filler, recap and mixed episode, and how much time skipping saves."),
   alternates: { canonical: "/filler-lists" },
 };
 

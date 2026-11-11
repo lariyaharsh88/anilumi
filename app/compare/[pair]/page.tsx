@@ -1,3 +1,4 @@
+import { fitDescription } from "@/lib/titles";
 import type { Metadata } from "next";
 import Link from "@/components/Link";
 import Image from "next/image";
@@ -40,7 +41,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const sa = score(a), sb = score(b);
   return {
     title: `${a.title} vs ${b.title} – Which Is Better? Scores, Length & Popularity`,
-    description: `${a.title} vs ${b.title}: community score ${sa ? sa.toFixed(2) : "–"} vs ${sb ? sb.toFixed(2) : "–"}, ${fmtMinutes(runtimeMinutes(a))} vs ${fmtMinutes(runtimeMinutes(b))} to watch, ${a.userCount.toLocaleString()} vs ${b.userCount.toLocaleString()} members. Side-by-side score breakdown and genres.`,
+    description: fitDescription(`${a.title} vs ${b.title}: community score ${sa ? sa.toFixed(2) : "–"} vs ${sb ? sb.toFixed(2) : "–"}, ${fmtMinutes(runtimeMinutes(a))} vs ${fmtMinutes(runtimeMinutes(b))} to watch, ${a.userCount.toLocaleString()} vs ${b.userCount.toLocaleString()} members. Side-by-side score breakdown and genres.`),
     alternates: { canonical: comparePath(a, b) },
     // Usable by anyone, but only pairs people search for are offered to search engines (compareIndexable).
     ...(compareIndexable(a, b) ? {} : { robots: { index: false, follow: true } }),

@@ -1,4 +1,5 @@
 // Query-string variants (?page=, ?sort=, filters). Reached only through the rewrites in next.config.ts;
+import { fitDescription } from "@/lib/titles";
 import { robotsFor, bestYearIndexed } from "@/lib/indexing";
 // the plain URL is served by ../page.tsx from the ISR cache.
 import type { Metadata } from "next";
@@ -26,7 +27,7 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
   const cur = Number(year) === new Date().getFullYear();
   return {
     title: `Best Anime of ${year}${cur ? " (So Far)" : ""} – ${SORTS[s].label}${Number(page) > 1 ? ` Page ${page}` : ""}`,
-    description: `The best anime that premiered in ${year}, ranked by ${SORTS[s].label.toLowerCase()} on Kitsu, with scores, episode counts and where to watch each one.`,
+    description: fitDescription(`The best anime that premiered in ${year}, ranked by ${SORTS[s].label.toLowerCase()} on Kitsu, with scores, episode counts and where to watch each one.`),
     alternates: { canonical: `/best/${year}${s !== "rated" ? `?sort=${s}` : ""}${Number(page) > 1 ? `${s !== "rated" ? "&" : "?"}page=${page}` : ""}` },
     // The last ten years and any year search already shows; never the sorted or paged copies.
     robots: robotsFor(s === "rated" && !(Number(page) > 1) && bestYearIndexed(Number(year))),

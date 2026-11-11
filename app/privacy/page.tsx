@@ -1,8 +1,9 @@
+import { fitDescription } from "@/lib/titles";
 import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import { site } from "@/lib/site";
 
-export const metadata: Metadata = { title: "Privacy", description: `What ${site.name} stores, why, and how to remove it.`, alternates: { canonical: "/privacy" } };
+export const metadata: Metadata = { title: "Privacy", description: fitDescription(`What ${site.name} stores, why, and how to remove it.`), alternates: { canonical: "/privacy" } };
 
 /** Plain-language privacy notice. Covers India's DPDP Act 2023 and GDPR basics; not legal advice. */
 export default function Privacy() {

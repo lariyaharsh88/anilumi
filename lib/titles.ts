@@ -15,3 +15,15 @@ export function fitTitle(candidates: (string | null | false | undefined)[], max 
   if (fits) return fits.length + SUFFIX.length <= max ? fits : { absolute: fits };
   return { absolute: list.reduce((a, b) => (b.length < a.length ? b : a)) };
 }
+
+/** Meta descriptions: Google shows about 155–160 characters and Bing flags longer ones, so a description is cut at
+ *  the last sentence that fits, else at a word, with an ellipsis. */
+export const DESCRIPTION_MAX = 160;
+export function fitDescription(text: string, max = DESCRIPTION_MAX): string {
+  const s = text.replace(/\s+/g, " ").trim();
+  if (s.length <= max) return s;
+  const cut = s.slice(0, max);
+  const sentence = cut.lastIndexOf(". ");
+  if (sentence >= 80) return cut.slice(0, sentence + 1);
+  return `${cut.slice(0, cut.lastIndexOf(" ")).replace(/[,;:–-]$/, "")}…`;
+}

@@ -1,3 +1,4 @@
+import { fitDescription } from "@/lib/titles";
 import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import PartnerForm from "@/components/PartnerForm";
@@ -7,7 +8,7 @@ import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Advertise & Partner with AniLumi",
-  description: "Reach anime fans while they plan what to watch: sponsorships, affiliate partnerships and product placements on AniLumi.",
+  description: fitDescription("Reach anime fans while they plan what to watch: sponsorships, affiliate partnerships and product placements on AniLumi."),
   alternates: { canonical: "/advertise" },
 };
 

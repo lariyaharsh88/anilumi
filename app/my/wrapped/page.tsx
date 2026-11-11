@@ -1,10 +1,11 @@
+import { fitDescription } from "@/lib/titles";
 import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import WrappedCard from "@/components/WrappedCard";
 
 export const metadata: Metadata = {
   title: `My Anime Wrapped ${new Date().getFullYear()} – Your Year in Anime`,
-  description: "Turn your anime list into a shareable card: hours watched, episodes, top genres and your anime personality. No account; it stays in your browser.",
+  description: fitDescription("Turn your anime list into a shareable card: hours watched, episodes, top genres and your anime personality. No account; it stays in your browser."),
   alternates: { canonical: "/my/wrapped" },
 };
 

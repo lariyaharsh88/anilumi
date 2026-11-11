@@ -1,3 +1,4 @@
+import { fitDescription } from "@/lib/titles";
 import type { Metadata } from "next";
 import EditorWatched from "@/components/EditorWatched";
 import Link from "@/components/Link";
@@ -56,7 +57,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const fans = indexed ? fanPicks(await getFanRecommendations(a.id, 12), alId, name).length : 0;
   return {
     title: indexed && fans >= 8 ? `Anime Like ${name}: ${fans} Picks Fans Recommend, and Why (${new Date().getFullYear()})` : `Anime Like ${name}: ${n || 20} Shows to Watch Next (${new Date().getFullYear()})`,
-    description: `Finished ${name}? These anime share its ${publicGenres(a.categories).slice(0, 3).map((c) => c.title.toLowerCase()).join(", ")} DNA, ranked by how many fans watch them.`,
+    description: fitDescription(`Finished ${name}? These anime share its ${publicGenres(a.categories).slice(0, 3).map((c) => c.title.toLowerCase()).join(", ")} DNA, ranked by how many fans watch them.`),
     alternates: { canonical: `/similar/${a.slug}` },
     robots: robotsFor(indexed),
   };

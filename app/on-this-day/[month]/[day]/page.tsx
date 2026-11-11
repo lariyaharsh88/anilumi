@@ -1,3 +1,4 @@
+import { fitDescription } from "@/lib/titles";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { parseBdParams, bdLabel } from "@/lib/birthdays";
@@ -15,7 +16,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const premieres = await premieresOn(p.m, p.d);
   return {
     title: `Anime Released on ${bdLabel(p.m, p.d)}`,
-    description: `Anime that premiered on ${bdLabel(p.m, p.d)}${premieres[0] ? `: ${premieres.slice(0, 4).map((x) => `${x.anime?.title || x.title} (${x.year})`).join(", ")}` : ""}.`,
+    description: fitDescription(`Anime that premiered on ${bdLabel(p.m, p.d)}${premieres[0] ? `: ${premieres.slice(0, 4).map((x) => `${x.anime?.title || x.title} (${x.year})`).join(", ")}` : ""}.`),
     alternates: { canonical: otdPath(p.m, p.d) },
     ...(premieres.length ? {} : { robots: { index: false } }),
   };

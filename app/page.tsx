@@ -1,3 +1,4 @@
+import { fitDescription } from "@/lib/titles";
 import Link from "@/components/Link";
 import type { Metadata } from "next";
 import { getTrending, listAnime, getSeason, seasonOf, shiftSeason, cap, getCategories, animePath, posterUrl, subtypeLabel, MAIN_GENRES } from "@/lib/kitsu";
@@ -47,7 +48,7 @@ const FUN_TOOLS: Tool[] = [
 
 export const metadata: Metadata = {
   title: `${site.name} – ${site.tagline}`,
-  description: site.description,
+  description: fitDescription(site.description),
   alternates: { canonical: "/" },
 };
 

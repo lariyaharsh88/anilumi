@@ -1,3 +1,4 @@
+import { fitDescription } from "@/lib/titles";
 import type { Metadata } from "next";
 import { robotsFor, characterTableIndexed } from "@/lib/indexing";
 import Link from "@/components/Link";
@@ -39,7 +40,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const lead = rows.slice(0, 3).map((r) => `${r.c.n} (${[ageText(r.age), r.cm && `${r.cm} cm`].filter(Boolean).join(", ") || "profile"})`).join(", ");
   return {
     title: `${title} Characters: Ages, Heights & Birthdays`,
-    description: `How old and how tall are the ${title} characters? Ages, heights, birthdays and voice actors of ${rows.length} characters: ${lead} and more, with a height chart.`,
+    description: fitDescription(`How old and how tall are the ${title} characters? Ages, heights, birthdays and voice actors of ${rows.length} characters: ${lead} and more, with a height chart.`),
     alternates: { canonical: `/anime/${slug}/characters` },
     robots: robotsFor(characterTableIndexed(slug)),
   };

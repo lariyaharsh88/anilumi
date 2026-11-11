@@ -3,7 +3,7 @@ import MadeBy from "@/components/MadeBy";
 import EditorWatched from "@/components/EditorWatched";
 import OfficialRatings from "@/components/OfficialRatings";
 import { officialRatings, ratingsLine } from "@/lib/ageratings";
-import { fitTitle } from "@/lib/titles";
+import { fitTitle, fitDescription } from "@/lib/titles";
 import Link from "@/components/Link";
 import { notFound } from "next/navigation";
 import { getAnimeBySlug, listAnime, animePath, posterUrl } from "@/lib/kitsu";
@@ -46,7 +46,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   // Official ratings lead the snippet where a platform rates the show: the answer to "<show> age rating".
   const official = officialRatings(a.slug);
   const desc = official ? `${a.title} official age rating: ${ratingsLine(official)}. ${description}`.slice(0, 300) : description;
-  return { title, description: desc, alternates: { canonical: `${animePath(a)}/parents-guide` }, ...(guide ? {} : { robots: { index: false } }) };
+  return { title, description: fitDescription(desc), alternates: { canonical: `${animePath(a)}/parents-guide` }, ...(guide ? {} : { robots: { index: false } }) };
 }
 
 export default async function ParentsGuidePage({ params }: Props) {

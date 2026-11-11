@@ -1,3 +1,4 @@
+import { fitDescription } from "@/lib/titles";
 import type { Metadata } from "next";
 import { birthdaysOn, todayJst, bdLabel } from "@/lib/birthdays";
 import BirthdayView from "@/components/BirthdayView";
@@ -13,7 +14,7 @@ export async function generateMetadata(): Promise<Metadata> {
     title: characters.length
       ? `Anime Birthdays Today (${bdLabel(m, d)}): ${characters.slice(0, 2).map((c) => c.n).join(", ")}${characters.length > 2 ? ` & ${characters.length - 2} More` : ""}`
       : `Anime Character Birthdays Today (${bdLabel(m, d)})`,
-    description: `Anime characters and voice actors celebrating a birthday today, ${bdLabel(m, d)}${characters[0] ? `: ${characters.slice(0, 3).map((c) => c.n).join(", ")} and more` : ""}.`,
+    description: fitDescription(`Anime characters and voice actors celebrating a birthday today, ${bdLabel(m, d)}${characters[0] ? `: ${characters.slice(0, 3).map((c) => c.n).join(", ")} and more` : ""}.`),
     alternates: { canonical: "/birthdays" },
   };
 }

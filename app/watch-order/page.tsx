@@ -1,3 +1,4 @@
+import { fitDescription } from "@/lib/titles";
 import type { Metadata } from "next";
 import Link from "@/components/Link";
 import { listAnime, animePath, getRelations, uniqueById, posterUrl } from "@/lib/kitsu";
@@ -10,7 +11,7 @@ import FranchiseIndex, { type FranchiseRow } from "@/components/FranchiseIndex";
 export const revalidate = 86400;
 export const metadata: Metadata = {
   title: "Anime Watch Order Guides – Every Franchise in the Right Order",
-  description: "Auto-generated watch orders for the biggest anime franchises: seasons, movies, OVAs and which recaps to skip, with total binge time.",
+  description: fitDescription("Auto-generated watch orders for the biggest anime franchises: seasons, movies, OVAs and which recaps to skip, with total binge time."),
   alternates: { canonical: "/watch-order" },
 };
 

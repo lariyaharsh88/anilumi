@@ -1,4 +1,5 @@
 // Query-string variants (?page=, ?sort=, filters). Reached only through the rewrites in next.config.ts;
+import { fitDescription } from "@/lib/titles";
 import { MAIN_GENRES } from "@/lib/kitsu";
 import { robotsFor, genreIndexed } from "@/lib/indexing";
 // the plain URL is served by ../page.tsx from the ISR cache.
@@ -63,7 +64,7 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
   const qs = [s !== "popular" ? `sort=${s}` : "", Number(page) > 1 ? `page=${page}` : ""].filter(Boolean).join("&");
   return {
     title: qs ? `Best ${g.title} Anime – ${SORTS[s].label}${Number(page) > 1 ? ` (Page ${page})` : ""}` : genrePicks(slug).length >= 6 ? `Best ${g.title} Anime (${new Date().getFullYear()}): Top 10 Ranked, With Where to Watch` : `Best ${g.title} Anime – ${SORTS[s].label}`,
-    description: `The best ${g.title.toLowerCase()} anime ranked by ${SORTS[s].label.toLowerCase()}. ${g.count?.toLocaleString()} titles with ratings, episode counts and where to watch.`,
+    description: fitDescription(`The best ${g.title.toLowerCase()} anime ranked by ${SORTS[s].label.toLowerCase()}. ${g.count?.toLocaleString()} titles with ratings, episode counts and where to watch.`),
     alternates: { canonical: `/genre/${slug}${qs ? `?${qs}` : ""}` },
     // Main genres and any search already shows; never the sorted or paged copies.
     robots: robotsFor(!qs && genreIndexed(slug, MAIN_GENRES.has(slug))),

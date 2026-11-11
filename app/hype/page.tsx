@@ -1,3 +1,4 @@
+import { fitDescription } from "@/lib/titles";
 import type { Metadata } from "next";
 import Link from "@/components/Link";
 import { db } from "@/lib/db";
@@ -9,7 +10,7 @@ import HypeButton, { HypeProvider } from "@/components/HypeButton";
 export const revalidate = 600;
 export const metadata: Metadata = {
   title: "Most Hyped Upcoming Anime, Voted by Fans",
-  description: "The upcoming anime AniLumi fans are most excited for, ranked by hype votes. Add your vote on any upcoming show.",
+  description: fitDescription("The upcoming anime AniLumi fans are most excited for, ranked by hype votes. Add your vote on any upcoming show."),
   alternates: { canonical: "/hype" },
 };
 

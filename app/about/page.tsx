@@ -1,3 +1,4 @@
+import { fitDescription } from "@/lib/titles";
 import type { Metadata } from "next";
 import { WATCHED_COUNT } from "@/lib/editor";
 import Link from "@/components/Link";
@@ -5,7 +6,7 @@ import { site } from "@/lib/site";
 import { AUTHOR } from "@/lib/author";
 import PageHero from "@/components/PageHero";
 
-export const metadata: Metadata = { title: "About", description: `Who runs ${site.name}, how its anime guides are checked and where the data comes from.`, alternates: { canonical: "/about" } };
+export const metadata: Metadata = { title: "About", description: fitDescription(`Who runs ${site.name}, how its anime guides are checked and where the data comes from.`), alternates: { canonical: "/about" } };
 
 export default function About() {
   return (

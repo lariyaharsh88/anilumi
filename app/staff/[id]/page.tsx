@@ -1,3 +1,4 @@
+import { fitDescription } from "@/lib/titles";
 import type { Metadata } from "next";
 import { notFound, permanentRedirect } from "next/navigation";
 import { getVoiceActor, vaIdFromParam, vaPath, staffPath } from "@/lib/anilist";
@@ -21,7 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const jobs = mainRoles(p.work, 2);
   return {
     title: `${p.name}${p.native ? ` (${p.native})` : ""} – ${jobs[0] || "Anime Staff"}: Anime Credits & Works`,
-    description: `${p.name}${jobs.length ? `, ${jobs.join(" and ").toLowerCase()},` : ""} worked on ${p.work.slice(0, 4).map((w) => w.media.title).join(", ")}. Every anime credit by year.`,
+    description: fitDescription(`${p.name}${jobs.length ? `, ${jobs.join(" and ").toLowerCase()},` : ""} worked on ${p.work.slice(0, 4).map((w) => w.media.title).join(", ")}. Every anime credit by year.`),
     alternates: { canonical: staffPath(p) },
     openGraph: p.imageLarge ? { images: [{ url: p.imageLarge }] } : undefined,
   };

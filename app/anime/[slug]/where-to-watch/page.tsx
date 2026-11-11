@@ -9,7 +9,7 @@ import RegionTabs from "@/components/RegionTabs";
 import StreamServices from "@/components/StreamServices";
 import { getAnimeBySlug, animePath, posterUrl } from "@/lib/kitsu";
 import { pageAbout } from "@/lib/ld";
-import { fitTitle } from "@/lib/titles";
+import { fitTitle, fitDescription } from "@/lib/titles";
 import { REGIONS, REGION_FLAG, REGION_NAME, REGION_SHORT, dubbedIn, freeIn, servicesIn, streamsBySlug, streamsDate, streamsPath, type Region, type Streams } from "@/lib/streams";
 import { hasHindiDub } from "@/lib/hindidub";
 import { WATCH_ORDER_OVERRIDES } from "@/data/watch-orders";
@@ -36,7 +36,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const lead = [us.length ? `${join(us.slice(0, 3))} in the US` : null, inn.length ? `${join(inn.slice(0, 3))} in India` : null].filter(Boolean).join("; ");
   return {
     title: fitTitle([`Where to Watch ${e.t}: Streaming in the US, India & UK (Sub & Dub)`, `Where to Watch ${e.t}: US, India & UK Streaming`, `Where to Watch ${e.t} (Sub & Dub)`, `Where to Watch ${e.t}`]),
-    description: `${lead ? `${e.t} streams on ${lead}.` : `Where ${e.t} streams legally.`} Every legal option by country, with sub, English dub${dubbedIn(e, "IN", "hi") ? " and Hindi dub" : ""}, free options and which seasons each service has. Checked ${streamsDate()}.`.slice(0, 300),
+    description: fitDescription(`${lead ? `${e.t} streams on ${lead}.` : `Where ${e.t} streams legally.`} Every legal option by country, with sub, English dub${dubbedIn(e, "IN", "hi") ? " and Hindi dub" : ""}, free options and which seasons each service has. Checked ${streamsDate()}.`.slice(0, 300)),
     alternates: { canonical: streamsPath(e.s) },
   };
 }

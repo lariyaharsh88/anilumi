@@ -1,3 +1,4 @@
+import { fitDescription } from "@/lib/titles";
 import type { Metadata } from "next";
 import Link from "@/components/Link";
 import { notFound } from "next/navigation";
@@ -38,9 +39,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const lead = mains.slice(0, 2).map((e) => `${e.character.name} (${e.jp!.name})`).join(", ");
   return {
     title: lead ? `${a.title} Cast & Voice Actors: ${lead} & More` : `${a.title} Cast & Voice Actors (Japanese and English Dub)`,
-    description: mains.length
+    description: fitDescription(mains.length
       ? `${dub ? "Japanese and English dub" : "Japanese"} voice actors for the characters of ${a.title}: ${mains.map((e) => `${e.character.name} (${e.jp!.name}${e.en ? ` / ${e.en.name}` : ""})`).join(", ")} and the rest of the cast.`
-      : `Characters and voice actors of ${a.title}.`,
+      : `Characters and voice actors of ${a.title}.`),
     alternates: { canonical: `${animePath(a)}/cast` },
     ...(cast?.entries.length ? {} : { robots: { index: false } }),
   };

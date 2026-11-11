@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import MadeBy from "@/components/MadeBy";
 import EditorWatched from "@/components/EditorWatched";
-import { fitTitle } from "@/lib/titles";
+import { fitTitle, fitDescription } from "@/lib/titles";
 import { sequelNews, newsOverrides, NEWS_CHECKED, NEWS_REVIEWED, OUTLOOK_LABEL } from "@/lib/sequelnews";
 import PickList from "@/components/PickList";
 import { fanPicks } from "@/lib/picks";
@@ -75,7 +75,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const title = override ? fitTitle([news!.window && news!.window !== "TBA" ? `${label}: Announced for ${news!.window}` : null, `${label}: Announced (${asOf})`, `${label}: Announced`]) : `${label}${dateQuestion ? " Release Date" : ""}: ${answer[verdict.kind]}`;
   return {
     title,
-    description: `${first ? `Is there a ${a.title} season 2?` : `Will ${a.title} get another season?`} ${override ? `${news!.what}${news!.announced ? ` (announced ${fmtDate(news!.announced, { month: "long", day: "numeric", year: "numeric" })})` : ""}.` : `${verdict.headline} ${verdict.detail}`}`.slice(0, 300),
+    description: fitDescription(`${first ? `Is there a ${a.title} season 2?` : `Will ${a.title} get another season?`} ${override ? `${news!.what}${news!.announced ? ` (announced ${fmtDate(news!.announced, { month: "long", day: "numeric", year: "numeric" })})` : ""}.` : `${verdict.headline} ${verdict.detail}`}`.slice(0, 300)),
     alternates: { canonical: `${animePath(a)}/next-season` },
     // Films and OVAs never; a series when there's news, or it's popular enough that people ask anyway.
     ...(a.subtype === "TV" || a.subtype === "ONA" ? { robots: robotsFor(nextSeasonIndexed(`${animePath(a)}/next-season`, override || (verdict.kind !== "none" && verdict.kind !== "still-airing"), a.userCount)) } : { robots: { index: false } }),

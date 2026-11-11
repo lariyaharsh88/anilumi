@@ -1,3 +1,4 @@
+import { fitDescription } from "@/lib/titles";
 import type { Metadata } from "next";
 import Link from "@/components/Link";
 import { listAnime, getSeason, seasonOf, uniqueById, posterUrl, cap, type Anime } from "@/lib/kitsu";
@@ -13,7 +14,7 @@ import { editorWatched } from "@/lib/editor";
 
 export const metadata: Metadata = {
   title: "Anime Tier List (2026): Fan-Score Ranking + Make Your Own",
-  description: "The most-watched anime in S, A, B and C tiers by fan score, then make your own tier list in seconds: start from popular, this season or top rated, add any title, download or share it.",
+  description: fitDescription("The most-watched anime in S, A, B and C tiers by fan score, then make your own tier list in seconds: start from popular, this season or top rated, add any title, download or share it."),
   alternates: { canonical: "/tier-list" },
 };
 
