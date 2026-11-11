@@ -14,6 +14,8 @@ import AdSlot from "@/components/AdSlot";
 import BingePlan from "@/components/BingePlan";
 import HindiDub from "@/components/HindiDub";
 import { dubFor, dubFaq } from "@/lib/hindidub";
+import { safeUrl, servicesIn, streamsFor, streamsPath, type Service } from "@/lib/streams";
+import EditorWatched from "@/components/EditorWatched";
 import { streamCoverage, oneLinkPerSite } from "@/lib/wostreams";
 import { streamLink, affiliateRel } from "@/lib/affiliate";
 import { adaptationFor, type Adaptation } from "@/lib/mangaseasons";
@@ -100,6 +102,12 @@ export default async function HindiGuide({ params }: Props) {
   const next = nextSeasonText(d);
   const dub = dubFor(a);
   const dubQ = dubFaq(dub, name, "hi");
+  // Where it streams in India, from the where-to-watch research (US/IN/UK), in Hindi.
+  const india = (() => { const st = streamsFor(a); return st ? { st, list: servicesIn(st, "IN") } : null; })();
+  const STREAM_KIND_HI: Record<Service["kind"], string> = { free: "मुफ़्त", subscription: "सब्सक्रिप्शन", buy: "ख़रीदें या किराए पर" };
+  const AUDIO_HI: Record<string, string> = { ja: "जापानी (सबटाइटल)", en: "इंग्लिश डब", hi: "हिंदी डब", ta: "तमिल डब", te: "तेलुगु डब" };
+  const audioHi = (x: Service) => x.audio.map((l) => AUDIO_HI[l] ?? l.toUpperCase()).join(", ");
+  const indiaQ: FaqItem | null = india?.list.length ? { q: `${name} भारत में कहाँ देखें?`, a: india.list.map((x) => `${x.service} (${STREAM_KIND_HI[x.kind]}${audioHi(x) ? `, ${audioHi(x)}` : ""}${x.scope ? `, ${x.scope}` : ""})`).join("; ") + "।" } : null;
   // Same data as the English watch-order page: where each part streams, the season table, arcs.
   const core = ordered.filter((e) => e.kind === "main" || e.kind === "movie");
   const streams = await getStreamingFor(ordered.map((e) => e.anime.id));
@@ -110,6 +118,7 @@ export default async function HindiGuide({ params }: Props) {
   const arcGroups = mains.flatMap((e) => { const arcs = arcsFor(e.anime.slug); return arcs ? [{ e, arcs }] : []; });
   const faq: FaqItem[] = [
     ...(dubQ ? [dubQ] : []),
+    ...(indiaQ ? [indiaQ] : []),
     { q: `${name} किस क्रम में देखें?`, a: `${mains.map((e, i) => `${i + 1}. ${e.anime.title}`).join(", ")}। ${movies.length ? "मूवीज़ उस सीज़न के बाद देखें जिसके बाद वे ऊपर लिस्ट में हैं।" : ""}`.trim() },
     { q: `${name} देखने में कितना समय लगेगा?`, a: wo.totalMinutes ? `मुख्य कहानी और मूवीज़ मिलाकर लगभग ${hiDuration(wo.totalMinutes)}। रोज़ 2 घंटे देखें तो करीब ${hiDays(wo.totalMinutes)} दिन लगेंगे।` : "पूरा रनटाइम अभी उपलब्ध नहीं है।" },
     ...(coverage.length ? [{ q: `${name} कहाँ देखें?`, a: `${coverage[0].site} पर ${core.length} में से ${coverage[0].n} सीज़न और मूवीज़ हैं${coverage[1] ? `, ${coverage[1].site} पर ${coverage[1].n}` : ""}। हर देश में कैटलॉग अलग होता है, इसलिए ऊपर हर हिस्से के लिंक देखें।` }] : []),
@@ -236,6 +245,21 @@ export default async function HindiGuide({ params }: Props) {
 
       <BingePlan ordered={ordered} lang="hi" />
       <HindiDub dub={dub} title={name} lang="hi" className="mt-8" />
+      {india && india.list.length > 0 && (
+        <section className="card reveal mt-8 p-4" aria-labelledby="india-h">
+          <h2 id="india-h" className="font-semibold text-ink">🇮🇳 भारत में {name} कहाँ देखें</h2>
+          <ul className="mt-2 space-y-1.5 text-sm">
+            {india.list.map((x) => { const url = safeUrl(x.url); return (
+              <li key={x.service + x.scope} className="flex flex-wrap gap-x-2">
+                {url ? <a href={url} target="_blank" rel="noopener nofollow" className="font-semibold text-ink hover:text-violet-2 hover:underline">{x.service} ↗</a> : <span className="font-semibold text-ink">{x.service}</span>}
+                <span className="text-muted">{STREAM_KIND_HI[x.kind]}{audioHi(x) ? ` · ${audioHi(x)}` : ""}{x.scope ? ` · ${x.scope}` : ""}</span>
+              </li>
+            ); })}
+          </ul>
+          <p className="mt-2 text-xs text-muted">स्ट्रीमिंग प्लेटफ़ॉर्म के अपने पेज और JustWatch से जाँचा गया। <Link href={streamsPath(india.st.s)} hrefLang="en" className="text-violet hover:underline">US और UK में कहाँ देखें (English) →</Link></p>
+        </section>
+      )}
+      <EditorWatched anime={a} className="mt-6" />
 
       <section className="reveal mt-10">
         <div className="card p-5">
