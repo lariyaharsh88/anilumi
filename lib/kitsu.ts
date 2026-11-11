@@ -16,7 +16,8 @@ const BASE = "https://kitsu.io/api/edge";
  * Catalogue data barely changes; next-episode times come from AniList and refresh every 6 hours.
  */
 export const KITSU_MIN_REVALIDATE = Number(process.env.KITSU_MIN_REVALIDATE) || 43200;
-export const ANILIST_MIN_REVALIDATE = Number(process.env.ANILIST_MIN_REVALIDATE) || 21600;
+const KITSU_EDGE_TTL = 21600;
+export const ANILIST_MIN_REVALIDATE =Number(process.env.ANILIST_MIN_REVALIDATE) || 21600;
 const SAFE_RATINGS = "G,PG,R"; // excludes R18 catalogue entries site-wide
 
 export type ImageSet = {
@@ -114,6 +115,10 @@ async function kitsu(path: string, params: Record<string, string | number> = {},
         headers: { Accept: "application/vnd.api+json", "User-Agent": "AniLumi/1.0 (+https://github.com/harshlariya98)" },
         next: { revalidate: Math.max(revalidate, KITSU_MIN_REVALIDATE) },
         signal: AbortSignal.timeout(Number(process.env.KITSU_TIMEOUT_MS) || 10000),
+        // On Cloudflare Workers, also keep the response in Cloudflare's HTTP cache. Next's fetch cache missed for most
+        // calls (164k Kitsu subrequests a day, 0% cached); with this, repeats of a URL within 6 h never leave
+        // Cloudflare. Ignored on Node. Adds at most 6 h to the age of catalogue data (floor above: 12 h).
+        ...({ cf: { cacheEverything: true, cacheTtl: KITSU_EDGE_TTL } } as RequestInit),
       });
       if (res.status === 404) return null;
       if (res.status === 429 || res.status >= 500) {
