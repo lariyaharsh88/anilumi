@@ -13,6 +13,7 @@ export const REPO = "lariyaharsh88/anilumi";
  *   warm-cache  every 6 hours, after that hour's airing snapshot
  *   health      daily at 05:35 UTC (11:05 IST)
  *   sitemap     daily at 06:05 UTC: resubmit the sitemap to Google, changed URLs to IndexNow
+ *   release     every 6 hours (:05); the workflow itself only releases once the last release is 48 hours old
  */
 export function dueWorkflows(date) {
   const h = date.getUTCHours();
@@ -23,8 +24,12 @@ export function dueWorkflows(date) {
   if (!first && h % 6 === 0) out.push("warm-cache.yml");
   if (!first && h === 5) out.push("health.yml");
   if (first && h === 6) out.push("sitemap.yml");
+  if (first && h % 6 === 0) out.push("release.yml");
   return out;
 }
+
+/** Workflow inputs per file. release.yml releases at once when run by hand; from here it waits out its 48 hours. */
+const INPUTS = { "release.yml": { force: "false" } };
 
 /** Start each due workflow on main. Needs the secret GH_DISPATCH_TOKEN (Actions: read and write on the repo). */
 export async function dispatchDue(env, date = new Date()) {
@@ -44,7 +49,7 @@ export async function dispatchDue(env, date = new Date()) {
           "user-agent": "anilumi-edge-cron",
           "content-type": "application/json",
         },
-        body: JSON.stringify({ ref: "main" }),
+        body: JSON.stringify(INPUTS[file] ? { ref: "main", inputs: INPUTS[file] } : { ref: "main" }),
       })
         .then((r) => `${file} ${r.status}`)
         .catch((e) => `${file} ${e.name}`),

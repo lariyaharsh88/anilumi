@@ -2,11 +2,17 @@ name: Release
 # AniLumi goes live from the release branch, not main: Workers Builds deploys the app Worker on pushes to release.
 # Every deploy is a new build ID, which empties the app's page cache and the edge cache key, and main gets dozens
 # of pushes a day; so main is released 48 hours after the last release. Run this workflow by hand to release now
-# (that restarts the 48 hours).
+# (that restarts the 48 hours). The edge Worker's cron (edge/schedule.js) starts it every 6 hours with force=false,
+# since GitHub's own schedule runs hours late; the schedule below is the backup.
 on:
   schedule:
     - cron: "30 */6 * * *" # checks every 6 hours; releases once the last push to release is 48 hours old
   workflow_dispatch:
+    inputs:
+      force:
+        description: "Release now, even if the last release is less than 48 hours old"
+        type: boolean
+        default: true
 concurrency:
   group: release
 permissions:
@@ -22,7 +28,7 @@ jobs:
           last=$(gh api "repos/$GITHUB_REPOSITORY/activity?ref=refs/heads/release&per_page=1" --jq '.[0].timestamp' 2>/dev/null || true)
           age=$(( $(date -u +%s) - $(date -u -d "${last:-1970-01-01T00:00:00Z}" +%s) ))
           echo "Last release: ${last:-never} ($(( age / 3600 )) h ago)"
-          if [ "${{ github.event_name }}" = "schedule" ] && [ "$age" -lt 172800 ]; then
+          if [ "$age" -lt 172800 ] && [ "${{ github.event_name == 'workflow_dispatch' && inputs.force }}" != "true" ]; then
             echo "due=false" >> "$GITHUB_OUTPUT"
           else
             echo "due=true" >> "$GITHUB_OUTPUT"
