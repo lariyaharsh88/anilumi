@@ -227,7 +227,9 @@ export default async function AnimePage({ params }: Props) {
   const nextN = a.status === "current" && a.nextRelease && latestInfo.reliable ? lastAired + 1 : null;
   const poster = posterUrl(a, "medium");
   const coverLarge = a.cover?.large || a.cover?.original || null;
-  const cover = a.cover?.tiny || a.cover?.small || a.cover?.large || null; // heavily blurred backdrop: served ~96px wide by the optimizer
+  // Heavily blurred backdrop. Images are unoptimized on Workers, so Kitsu's "tiny" cover is ~120 KB and was the
+  // page's LCP element; the tiny poster (~11 KB) blurs to the same colour wash.
+  const cover = posterUrl(a, "tiny") || a.cover?.tiny || a.cover?.small || null;
   // One-line answers to each guide's question, linking to the full guide (depth + descriptive internal links).
   const base = animePath(a);
   const fillerInfo = a.subtype === "movie" ? null : fillerFor(a.slug, a.episodeCount ?? (lastAired || null));
@@ -371,7 +373,7 @@ export default async function AnimePage({ params }: Props) {
         <div className="absolute inset-0 -z-10" aria-hidden>
           {cover && (
             <div className="parallax-bg absolute inset-0">
-              <Image src={cover} alt="" fill className="scale-110 object-cover opacity-40 blur-2xl" sizes="96px" quality={40} priority fetchPriority="high" />
+              <Image src={cover} alt="" fill className="scale-110 object-cover opacity-40 blur-2xl" sizes="96px" quality={40} loading="eager" />
             </div>
           )}
           {coverLarge && <Backdrop src={coverLarge} className="opacity-[.42] [mask-image:linear-gradient(180deg,#000_55%,transparent)]" position="center 25%" />}
