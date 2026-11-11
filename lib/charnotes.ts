@@ -11,6 +11,12 @@ export type CharacterNote = {
   debut: { anime: string | null; episode: number | null; episodeTitle: string | null; source: "manga" | "light novel" | null; chapter: number | null; volume: number | null } | null;
   arcs: string[]; affiliations: string[]; relatives: { name: string; relation: string }[];
   confidence: "high" | "medium"; sources: string[]; notes?: string;
+  /** Spoiler-free: what they can do as introduced. */
+  abilities?: string | null;
+  /** "Does X die?": shown only behind a spoiler toggle. */
+  fate?: { status: "alive" | "dies" | "unclear"; detail: string; basis: string } | null;
+  /** Official Hindi dub voice, only when credited by an official or first-hand source. */
+  hindiVoice?: { name: string; dub: string; sources: string[] } | null;
 };
 const DATA = data as unknown as { checked: string | null; reviewed: string | null; characters: Record<string, CharacterNote> };
 export const NOTES_CHECKED = DATA.checked;

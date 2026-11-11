@@ -18,6 +18,8 @@ export default function CharacterNotes({ slug, show }: { slug: string; show: { s
   if (arcs.length) rows.push(["Key arcs", <span key="arcs" className="flex flex-wrap gap-1.5">{arcs.map((a) => a.arc && show ? <Link key={a.name} href={`/anime/${show.slug}/episodes${Math.ceil(a.arc.from / 20) > 1 ? `/page/${Math.ceil(a.arc.from / 20)}` : ""}#ep-${a.arc.from}`} className="chip">{a.name}</Link> : <span key={a.name} className="chip">{a.name}</span>)}</span>]);
   if (n.affiliations.length) rows.push(["Affiliations", n.affiliations.join(" · ")]);
   if (n.relatives.length) rows.push(["Family", n.relatives.map((r) => `${r.name} (${r.relation})`).join(" · ")]);
+  if (n.abilities) rows.push(["Abilities", n.abilities]);
+  if (n.hindiVoice) rows.push(["Hindi voice", <>{n.hindiVoice.name} <span className="text-muted">({n.hindiVoice.dub})</span></>]);
   if (!rows.length) return null;
   return (
     <section className="card reveal p-5" aria-labelledby="notes-h">
@@ -25,6 +27,12 @@ export default function CharacterNotes({ slug, show }: { slug: string; show: { s
       <dl className="mt-3 grid gap-x-4 gap-y-2 text-sm sm:grid-cols-[9rem_1fr]">
         {rows.map(([k, v]) => <div key={k} className="contents"><dt className="text-muted">{k}</dt><dd className="min-w-0 text-ink/90">{v}</dd></div>)}
       </dl>
+      {n.fate && (
+        <details className="mt-3 rounded-xl border border-line bg-white/[.03] p-3 text-sm">
+          <summary className="cursor-pointer font-medium text-ink">Does {n.name} die? <span className="text-muted">(spoiler, tap to reveal)</span></summary>
+          <p className="mt-2 text-ink/90"><strong>{n.fate.status === "alive" ? "No." : n.fate.status === "dies" ? "Yes." : "It's unclear."}</strong> {n.fate.detail} <span className="text-muted">(As of the {n.fate.basis}.)</span></p>
+        </details>
+      )}
       <p className="mt-3 text-[11px] text-muted">{NOTES_REVIEWED ? "Checked" : `Draft, cross-checked${NOTES_CHECKED ? ` on ${fmt(NOTES_CHECKED)}` : ""}`} against the series wiki and Wikipedia. <Link href="/how-we-check" className="underline">How we check</Link></p>
     </section>
   );

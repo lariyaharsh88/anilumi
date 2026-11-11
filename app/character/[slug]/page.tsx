@@ -117,6 +117,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function CharacterPage({ params }: Props) {
   const { slug } = await params;
   const { c, apps, mains, home, homeApp, voiced, bday, facts, fact, bio, al, ranked, rankShow, snapped, others, aliases, sign, span: firsts, table, tableShow } = await load(slug);
+  const note = characterNote(c.slug);
   const span = yearsActive(apps);
   const answer = quickAnswer({
     name: c.name, gender: fact("gender"), role: home ? (homeApp?.role === "main" ? "main" : "supporting") : null, anime: home?.title,
@@ -308,7 +309,10 @@ export default async function CharacterPage({ params }: Props) {
           ...(fact("age") ? [{ q: `How old is ${c.name}?`, a: ageAnswer(c.name, fact("age")!) }] : []),
           ...(fact("height") ? [{ q: `How tall is ${c.name}?`, a: `${c.name} is ${fact("height")} tall.` }] : []),
           ...(bday ? [{ q: `When is ${c.name}'s birthday?`, a: `${c.name}'s birthday is ${bdLabel(bday.m, bday.d)}. See every anime character born on ${bdLabel(bday.m, bday.d)} on AniLumi's birthday page.` }] : fact("birthday") ? [{ q: `When is ${c.name}'s birthday?`, a: `${c.name}'s birthday is ${fact("birthday")}.` }] : []),
-          ...(voiced?.jp ? [{ q: `Who voices ${c.name}?`, a: `${c.name} is voiced by ${voiced.jp.name} in Japanese${voiced.en ? ` and by ${voiced.en.name} in the English dub` : ""}.` }] : []),
+          ...(voiced?.jp ? [{ q: `Who voices ${c.name}?`, a: `${c.name} is voiced by ${voiced.jp.name} in Japanese${voiced.en ? ` and by ${voiced.en.name} in the English dub` : ""}${note?.hindiVoice ? `, and by ${note.hindiVoice.name} in the Hindi dub (${note.hindiVoice.dub})` : ""}.` }] : []),
+          ...(note?.hindiVoice && !voiced?.jp ? [{ q: `Who voices ${c.name} in Hindi?`, a: `${note.hindiVoice.name} voices ${c.name} in the Hindi dub (${note.hindiVoice.dub}).` }] : []),
+          ...(note?.abilities ? [{ q: `What are ${c.name}'s powers and abilities?`, a: note.abilities }] : []),
+          ...(note?.fate ? [{ q: `Does ${c.name} die?`, a: `Spoiler: ${note.fate.status === "alive" ? "no." : note.fate.status === "dies" ? "yes." : "it's unclear."} ${note.fate.detail} (As of the ${note.fate.basis}.)` }] : []),
           // "Sakura Haruno" → "What is Sakura's full name?"; skipped for "Monkey D. Luffy" style names, whose first word isn't the given name.
           ...(c.name.split(" ").length === 2 ? [{ q: `What is ${c.name.split(" ")[0]}'s full name?`, a: `${c.name.split(" ")[0]}'s full name is ${c.name}${c.nameJp ? ` (${c.nameJp} in Japanese)` : ""}.${aliases.length ? ` ${c.name} is also known as ${aliases.join(", ")}.` : ""}` }] : []),
           ...(aliases.length && c.name.split(" ").length !== 2 ? [{ q: `What else is ${c.name} called?`, a: `${c.name} is also known as ${aliases.join(", ")}.` }] : []),
