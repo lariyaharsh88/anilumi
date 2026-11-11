@@ -9,7 +9,7 @@ Disallow: /api/
 Disallow: /embed/
 Disallow: /search
 Disallow: /quiz/results
-Disallow: /random
+Disallow: /random$
 Disallow: /*?
 
 # Versioned icons and link-preview images carry a ?hash; keep them crawlable.
