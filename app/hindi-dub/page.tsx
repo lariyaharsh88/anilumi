@@ -132,6 +132,7 @@ export default async function HindiDubHub() {
         </ul>
       </section>
 
+      <p className="mt-8 text-sm"><Link href="/hindi-voice-artists" className="font-medium text-violet hover:underline">🎙️ Who voices anime in Hindi? Meet the voice artists →</Link></p>
       <Faq title="Hindi dub FAQ" items={faq} />
     </div>
   );

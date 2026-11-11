@@ -1,1 +1,1094 @@
-{"checked": null, "artists": []}
+{
+  "checked": "2026-11-11",
+  "artists": [
+    {
+      "name": "Lohit Sharma",
+      "slug": "lohit-sharma",
+      "bio": "Lohit Sharma is a Hindi voice artist whose anime work grew from Pokémon Journeys around 2021-22 to lead roles in Crunchyroll's Hindi dubs, starting with DARLING in the FRANXX. He won the first Crunchyroll Anime Award for Best Voice Artist Performance (Hindi) in 2025 for Satoru Gojo in Jujutsu Kaisen Season 2. Outside dubbing he also works as a songwriter, guitarist, singer and actor.",
+      "roles": [
+        {
+          "character": "Satoru Gojo",
+          "anime": "Jujutsu Kaisen",
+          "slug": "jujutsu-kaisen",
+          "dub": "Crunchyroll",
+          "sources": [
+            "https://www.sportskeeda.com/anime/news-jujutsu-kaisen-season-1-receives-hindi-dub-crunchyroll",
+            "https://respawn.outlookindia.com/pop-culture/pop-culture-originals/interview-jujutsu-kaisen-hindi-dub-cast-discuss-localization",
+            "https://awn.com/news/2025-crunchyroll-anime-awards-nominees-presenters-announced",
+            "https://www.etvbharat.com/en/!entertainment/interview-lohit-sharma-opens-up-on-indias-voiceover-boom-says-skys-the-limit-after-crunchyroll-anime-award-2025-win-enn25060301128"
+          ]
+        },
+        {
+          "character": "Denji",
+          "anime": "Chainsaw Man",
+          "slug": "chainsaw-man",
+          "dub": "Crunchyroll",
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2023-07-28/crunchyroll-adds-hindi-dub-of-chainsaw-man-anime-on-july-29/.200742",
+            "https://animationxpress.com/?p=1603729"
+          ]
+        }
+      ],
+      "sources": [
+        "https://www.sportskeeda.com/anime/news-jujutsu-kaisen-season-1-receives-hindi-dub-crunchyroll",
+        "https://www.animenewsnetwork.com/news/2023-07-21/crunchyroll-adds-hindi-dub-for-jujutsu-kaisen-anime-announces-hindi-dub-for-chainsaw-man-anime/.200528",
+        "https://respawn.outlookindia.com/pop-culture/pop-culture-originals/interview-jujutsu-kaisen-hindi-dub-cast-discuss-localization",
+        "https://respawn.outlookindia.com/pop-culture/pop-culture-originals/deadlines-budget-race-the-challenges-of-anime-dubbing-in-india",
+        "https://animehunch.com/exclusive-yujis-pain-gojos-aura-makis-vengeance-and-megumis-angst-explained-by-hindi-voice-actors-of-jujutsu-kaisen/",
+        "https://awn.com/news/2025-crunchyroll-anime-awards-nominees-presenters-announced",
+        "https://www.etvbharat.com/en/!entertainment/interview-lohit-sharma-opens-up-on-indias-voiceover-boom-says-skys-the-limit-after-crunchyroll-anime-award-2025-win-enn25060301128",
+        "https://www.animenewsnetwork.com/news/2023-07-28/crunchyroll-adds-hindi-dub-of-chainsaw-man-anime-on-july-29/.200742",
+        "https://animationxpress.com/?p=1603729"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Abhishek Sharma",
+      "slug": "abhishek-sharma",
+      "bio": "Abhishek Sharma is a Hindi voice artist in Crunchyroll's Indian-language dubs. He was nominated in the first Hindi voice performance category of the Crunchyroll Anime Awards in 2025 for Einar in Vinland Saga Season 2, and won the category in 2026 for Jinshi in The Apothecary Diaries Season 2.",
+      "roles": [
+        {
+          "character": "Einar",
+          "anime": "Vinland Saga Season 2",
+          "slug": "vinland-saga",
+          "dub": "Crunchyroll",
+          "sources": [
+            "https://awn.com/news/2025-crunchyroll-anime-awards-nominees-presenters-announced"
+          ]
+        },
+        {
+          "character": "Jinshi",
+          "anime": "The Apothecary Diaries Season 2",
+          "slug": "kusuriya-no-hitorigoto",
+          "dub": "Crunchyroll",
+          "sources": [
+            "https://bleedingcool.com/tv/2026-crunchyroll-anime-awards-nominees-set-new-details-released/",
+            "https://respawn.outlookindia.com/amp/story/pop-culture/pop-culture-news/dan-da-dan-my-hero-academia-lead-2026-anime-awards-nominees",
+            "https://thecontending.com/2026-crunchyroll-anime-awards-winners-revealed-after-a-record-73-million-votes-cast-globally/"
+          ]
+        }
+      ],
+      "sources": [
+        "https://awn.com/news/2025-crunchyroll-anime-awards-nominees-presenters-announced",
+        "https://bleedingcool.com/tv/2026-crunchyroll-anime-awards-nominees-set-new-details-released/",
+        "https://respawn.outlookindia.com/amp/story/pop-culture/pop-culture-news/dan-da-dan-my-hero-academia-lead-2026-anime-awards-nominees",
+        "https://thecontending.com/2026-crunchyroll-anime-awards-winners-revealed-after-a-record-73-million-votes-cast-globally/"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Merlyn James",
+      "slug": "merlyn-james",
+      "bio": "Merlyn James is a Hindi voice artist in Crunchyroll's Indian-language anime dubs. She voiced Kobeni Higashiyama in the 2023 Hindi dub of Chainsaw Man and was nominated at the 2026 Crunchyroll Anime Awards for her Hindi performance as Anya Forger in SPY x FAMILY Season 3.",
+      "roles": [
+        {
+          "character": "Anya Forger",
+          "anime": "SPY x FAMILY",
+          "slug": "spy-x-family",
+          "dub": "Crunchyroll",
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2023-11-06/spy-x-family-anime-hindi-dub-premieres-on-november-7/.204154",
+            "https://www.mediainfoline.com/brand/crunchyroll-bring-spy-x-family-hindi-dubs-to-india"
+          ]
+        },
+        {
+          "character": "Anya Forger",
+          "anime": "SPY x FAMILY Season 3",
+          "slug": "spy-x-family",
+          "dub": "Crunchyroll",
+          "sources": [
+            "https://bleedingcool.com/tv/2026-crunchyroll-anime-awards-nominees-set-new-details-released/",
+            "https://respawn.outlookindia.com/amp/story/pop-culture/pop-culture-news/dan-da-dan-my-hero-academia-lead-2026-anime-awards-nominees"
+          ]
+        },
+        {
+          "character": "Kobeni Higashiyama",
+          "anime": "Chainsaw Man",
+          "slug": "chainsaw-man",
+          "dub": "Crunchyroll",
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2023-07-28/crunchyroll-adds-hindi-dub-of-chainsaw-man-anime-on-july-29/.200742",
+            "https://animationxpress.com/?p=1603729"
+          ]
+        }
+      ],
+      "sources": [
+        "https://bleedingcool.com/tv/2026-crunchyroll-anime-awards-nominees-set-new-details-released/",
+        "https://respawn.outlookindia.com/amp/story/pop-culture/pop-culture-news/dan-da-dan-my-hero-academia-lead-2026-anime-awards-nominees",
+        "https://www.animenewsnetwork.com/news/2023-07-28/crunchyroll-adds-hindi-dub-of-chainsaw-man-anime-on-july-29/.200742",
+        "https://animationxpress.com/?p=1603729",
+        "https://www.animenewsnetwork.com/news/2023-11-06/spy-x-family-anime-hindi-dub-premieres-on-november-7/.204154",
+        "https://www.mediainfoline.com/brand/crunchyroll-bring-spy-x-family-hindi-dubs-to-india"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Himanshu Rana",
+      "slug": "himanshu-rana",
+      "bio": "Himanshu Rana is a Hindi voice artist credited in Crunchyroll's announced Hindi casts. He voiced Aki Hayakawa in the Hindi dub of Chainsaw Man (2023) and Woo Jinchul in the Hindi dub of Solo Leveling Season 2 -Arise from the Shadow- (2025).",
+      "roles": [
+        {
+          "character": "Aki Hayakawa",
+          "anime": "Chainsaw Man",
+          "slug": "chainsaw-man",
+          "dub": "Crunchyroll",
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2023-07-28/crunchyroll-adds-hindi-dub-of-chainsaw-man-anime-on-july-29/.200742",
+            "https://animationxpress.com/?p=1603729"
+          ]
+        },
+        {
+          "character": "Woo Jinchul",
+          "anime": "Solo Leveling Season 2 -Arise from the Shadow-",
+          "slug": "solo-leveling",
+          "dub": "Crunchyroll",
+          "sources": [
+            "https://animenewsnetwork.com/news/2025-01-26/2nd-seasons-of-solo-leveling-the-apothecary-diaries-anime-get-indian-dubs/.220462"
+          ]
+        }
+      ],
+      "sources": [
+        "https://www.animenewsnetwork.com/news/2023-07-28/crunchyroll-adds-hindi-dub-of-chainsaw-man-anime-on-july-29/.200742",
+        "https://animationxpress.com/?p=1603729",
+        "https://animenewsnetwork.com/news/2025-01-26/2nd-seasons-of-solo-leveling-the-apothecary-diaries-anime-get-indian-dubs/.220462"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Ayushi",
+      "slug": "ayushi",
+      "bio": "Ayushi is a Hindi voice artist credited by her first name in Crunchyroll's announced Hindi casts. She voiced Power in the Hindi dub of Chainsaw Man and Siesta in the Hindi dub of The Detective Is Already Dead (both 2023), and Han Song-Yi in the Hindi dub of Solo Leveling Season 2 -Arise from the Shadow- (2025). Crunchyroll's 2023 cast announcements also credited her with Hindi work on Resident Evil and One Sikh Girl.",
+      "roles": [
+        {
+          "character": "Power",
+          "anime": "Chainsaw Man",
+          "slug": "chainsaw-man",
+          "dub": "Crunchyroll",
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2023-07-28/crunchyroll-adds-hindi-dub-of-chainsaw-man-anime-on-july-29/.200742",
+            "https://animationxpress.com/?p=1603729"
+          ]
+        },
+        {
+          "character": "Han Song-Yi",
+          "anime": "Solo Leveling Season 2 -Arise from the Shadow-",
+          "slug": "solo-leveling",
+          "dub": "Crunchyroll",
+          "sources": [
+            "https://animenewsnetwork.com/news/2025-01-26/2nd-seasons-of-solo-leveling-the-apothecary-diaries-anime-get-indian-dubs/.220462"
+          ]
+        },
+        {
+          "character": "Siesta",
+          "anime": "The Detective Is Already Dead",
+          "slug": null,
+          "dub": "Crunchyroll",
+          "sources": [
+            "https://www.animationxpress.com/latest-news/crunchyroll-to-premiere-tamil-and-hindi-dubs-of-two-anime-titles/"
+          ]
+        }
+      ],
+      "sources": [
+        "https://www.animenewsnetwork.com/news/2023-07-28/crunchyroll-adds-hindi-dub-of-chainsaw-man-anime-on-july-29/.200742",
+        "https://animationxpress.com/?p=1603729",
+        "https://animenewsnetwork.com/news/2025-01-26/2nd-seasons-of-solo-leveling-the-apothecary-diaries-anime-get-indian-dubs/.220462",
+        "https://www.animationxpress.com/latest-news/crunchyroll-to-premiere-tamil-and-hindi-dubs-of-two-anime-titles/",
+        "https://www.animationxpress.com/latest-news/crunchyroll-announces-voice-cast-of-hindi-and-tamil-dubs-of-anime-streaming-on-its-platform/"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "name": "Archit Maurya",
+      "slug": "archit-maurya",
+      "bio": "Archit Maurya is a Hindi voice artist who has appeared in several of Crunchyroll's Hindi dubs. He voiced Ryomen Sukuna in the Hindi dub of Jujutsu Kaisen, which premiered in July 2023, and Kim Sangshik in the Hindi dub of Solo Leveling (2024).",
+      "roles": [
+        {
+          "character": "Ryomen Sukuna",
+          "anime": "Jujutsu Kaisen",
+          "slug": "jujutsu-kaisen",
+          "dub": "Crunchyroll",
+          "sources": [
+            "https://www.sportskeeda.com/anime/news-jujutsu-kaisen-season-1-receives-hindi-dub-crunchyroll",
+            "https://www.animenewsnetwork.com/news/2023-07-21/crunchyroll-adds-hindi-dub-for-jujutsu-kaisen-anime-announces-hindi-dub-for-chainsaw-man-anime/.200528"
+          ]
+        },
+        {
+          "character": "Kim Sangshik",
+          "anime": "Solo Leveling",
+          "slug": "solo-leveling",
+          "dub": "Crunchyroll",
+          "sources": [
+            "https://www.animenewsnetwork.com/press-release/2023-12-12/indian-actor-ali-fazal-cast-to-hindi-voice-role-from-crunchyroll-highly-anticipated-anime-series-/.205412"
+          ]
+        }
+      ],
+      "sources": [
+        "https://www.sportskeeda.com/anime/news-jujutsu-kaisen-season-1-receives-hindi-dub-crunchyroll",
+        "https://www.animenewsnetwork.com/news/2023-07-21/crunchyroll-adds-hindi-dub-for-jujutsu-kaisen-anime-announces-hindi-dub-for-chainsaw-man-anime/.200528",
+        "https://www.animenewsnetwork.com/press-release/2023-12-12/indian-actor-ali-fazal-cast-to-hindi-voice-role-from-crunchyroll-highly-anticipated-anime-series-/.205412"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Vidit Kumar",
+      "slug": "vidit-kumar",
+      "bio": "Vidit Kumar is a Mumbai-based voice actor and musician who has led several Hindi anime dubs. He voices Yuji Itadori in Crunchyroll's Hindi dub of Jujutsu Kaisen (2023), Soshiro Hoshina in Crunchyroll's Kaiju No. 8, and Izuku Midoriya in the Hindi dub of My Hero Academia that premiered on Cartoon Network India in September 2023. He also voices Shin in Netflix's Hindi dub of Sakamoto Days (2025) and was announced as Brook in Cartoon Network India's 2024 Hindi dub of One Piece's Wano Country arc.",
+      "roles": [
+        {
+          "character": "Yuji Itadori",
+          "anime": "Jujutsu Kaisen",
+          "slug": "jujutsu-kaisen",
+          "dub": "Crunchyroll",
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2023-07-21/crunchyroll-adds-hindi-dub-for-jujutsu-kaisen-anime-announces-hindi-dub-for-chainsaw-man-anime/.200528",
+            "https://www.sportskeeda.com/anime/news-jujutsu-kaisen-season-1-receives-hindi-dub-crunchyroll",
+            "https://respawn.outlookindia.com/pop-culture/pop-culture-originals/interview-jujutsu-kaisen-hindi-dub-cast-discuss-localization"
+          ]
+        },
+        {
+          "character": "Soshiro Hoshina",
+          "anime": "Kaiju No. 8",
+          "slug": "kaijuu-8-gou",
+          "dub": "Crunchyroll",
+          "sources": [
+            "https://www.animenewsnetwork.com/interview/2024-06-21/the-hindi-dub-cast-of-kaiju-no-8-take-you-inside-the-studio/.211695",
+            "https://sportskeeda.com/anime/news-kaiju-no-8-hindi-voice-actors-see-bright-future-india-exclusive"
+          ]
+        },
+        {
+          "character": "Izuku Midoriya",
+          "anime": "My Hero Academia",
+          "slug": "boku-no-hero-academia",
+          "dub": "Cartoon Network India",
+          "sources": [
+            "https://www.onmanorama.com/entertainment/entertainment-news/2023/08/26/anime-my-hero-academia-5-languages-cartoon-network.html",
+            "https://animationxpress.com/?p=1604917",
+            "https://sportskeeda.com/anime/news-kaiju-no-8-hindi-voice-actors-see-bright-future-india-exclusive"
+          ]
+        },
+        {
+          "character": "Brook",
+          "anime": "One Piece (Wano Country arc)",
+          "slug": "one-piece",
+          "dub": "Cartoon Network India",
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2024-05-11/one-piece-anime-wano-arc-reveals-more-hindi-cast/.210606"
+          ]
+        },
+        {
+          "character": "Shin Asakura",
+          "anime": "Sakamoto Days",
+          "slug": null,
+          "dub": "Netflix",
+          "sources": [
+            "https://animenewsindia.com/2025/01/12/netflix-streams-sakamoto-days-in-hindi-voice-cast-staff-revealed"
+          ]
+        }
+      ],
+      "sources": [
+        "https://www.animenewsnetwork.com/news/2023-07-21/crunchyroll-adds-hindi-dub-for-jujutsu-kaisen-anime-announces-hindi-dub-for-chainsaw-man-anime/.200528",
+        "https://www.sportskeeda.com/anime/news-jujutsu-kaisen-season-1-receives-hindi-dub-crunchyroll",
+        "https://respawn.outlookindia.com/pop-culture/pop-culture-originals/interview-jujutsu-kaisen-hindi-dub-cast-discuss-localization",
+        "https://respawn.outlookindia.com/pop-culture/pop-culture-originals/deadlines-budget-race-the-challenges-of-anime-dubbing-in-india",
+        "https://animehunch.com/exclusive-yujis-pain-gojos-aura-makis-vengeance-and-megumis-angst-explained-by-hindi-voice-actors-of-jujutsu-kaisen/",
+        "https://www.animenewsnetwork.com/interview/2024-06-21/the-hindi-dub-cast-of-kaiju-no-8-take-you-inside-the-studio/.211695",
+        "https://www.animenewsnetwork.com/news/2024-05-11/one-piece-anime-wano-arc-reveals-more-hindi-cast/.210606",
+        "https://sportskeeda.com/anime/news-kaiju-no-8-hindi-voice-actors-see-bright-future-india-exclusive",
+        "https://www.onmanorama.com/entertainment/entertainment-news/2023/08/26/anime-my-hero-academia-5-languages-cartoon-network.html",
+        "https://animationxpress.com/?p=1604917",
+        "https://animenewsindia.com/2025/01/12/netflix-streams-sakamoto-days-in-hindi-voice-cast-staff-revealed"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Shilpie Pandey",
+      "slug": "shilpie-pandey",
+      "knownAs": [
+        "Shilpi Pandey"
+      ],
+      "bio": "Shilpie Pandey is a Hindi voice artist in Crunchyroll's Indian-language dubs. She voices Yor Forger in the Hindi dub of SPY x FAMILY, which premiered in November 2023, and was nominated at the 2026 Crunchyroll Anime Awards for her Hindi performance as Lufas Maphaahl in A Wild Last Boss Appeared!",
+      "roles": [
+        {
+          "character": "Yor Forger",
+          "anime": "SPY x FAMILY",
+          "slug": "spy-x-family",
+          "dub": "Crunchyroll",
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2023-11-06/spy-x-family-anime-hindi-dub-premieres-on-november-7/.204154",
+            "https://www.mediainfoline.com/brand/crunchyroll-bring-spy-x-family-hindi-dubs-to-india"
+          ]
+        },
+        {
+          "character": "Lufas Maphaahl",
+          "anime": "A Wild Last Boss Appeared!",
+          "slug": null,
+          "dub": "Crunchyroll",
+          "sources": [
+            "https://bleedingcool.com/tv/2026-crunchyroll-anime-awards-nominees-set-new-details-released/",
+            "https://respawn.outlookindia.com/amp/story/pop-culture/pop-culture-news/dan-da-dan-my-hero-academia-lead-2026-anime-awards-nominees"
+          ]
+        }
+      ],
+      "sources": [
+        "https://www.animenewsnetwork.com/news/2023-11-06/spy-x-family-anime-hindi-dub-premieres-on-november-7/.204154",
+        "https://bleedingcool.com/tv/2026-crunchyroll-anime-awards-nominees-set-new-details-released/",
+        "https://respawn.outlookindia.com/amp/story/pop-culture/pop-culture-news/dan-da-dan-my-hero-academia-lead-2026-anime-awards-nominees",
+        "https://www.mediainfoline.com/brand/crunchyroll-bring-spy-x-family-hindi-dubs-to-india"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Warren D'Souza",
+      "slug": "warren-dsouza",
+      "knownAs": [
+        "Warren Dsouza"
+      ],
+      "bio": "Warren D'Souza is a Hindi voice artist credited in Crunchyroll's announced Hindi casts. He voiced Hirokazu Arai in the Hindi dub of Chainsaw Man (2023) and the dog Bond in the Hindi dub of SPY x FAMILY (2023).",
+      "roles": [
+        {
+          "character": "Hirokazu Arai",
+          "anime": "Chainsaw Man",
+          "slug": "chainsaw-man",
+          "dub": "Crunchyroll",
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2023-07-28/crunchyroll-adds-hindi-dub-of-chainsaw-man-anime-on-july-29/.200742",
+            "https://animationxpress.com/?p=1603729"
+          ]
+        },
+        {
+          "character": "Bond Forger",
+          "anime": "SPY x FAMILY",
+          "slug": "spy-x-family",
+          "dub": "Crunchyroll",
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2023-11-06/spy-x-family-anime-hindi-dub-premieres-on-november-7/.204154",
+            "https://www.mediainfoline.com/brand/crunchyroll-bring-spy-x-family-hindi-dubs-to-india"
+          ]
+        }
+      ],
+      "sources": [
+        "https://www.animenewsnetwork.com/news/2023-07-28/crunchyroll-adds-hindi-dub-of-chainsaw-man-anime-on-july-29/.200742",
+        "https://animationxpress.com/?p=1603729",
+        "https://www.animenewsnetwork.com/news/2023-11-06/spy-x-family-anime-hindi-dub-premieres-on-november-7/.204154",
+        "https://www.mediainfoline.com/brand/crunchyroll-bring-spy-x-family-hindi-dubs-to-india"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Manikant Sarabhoy",
+      "slug": "manikant-sarabhoy",
+      "knownAs": [
+        "Manikant Sarbhoy"
+      ],
+      "bio": "Manikant Sarabhoy is a Hindi voice artist credited in Crunchyroll's announced Hindi casts. He voiced Franky in the Hindi dub of SPY x FAMILY (2023) and Ahn Sangmin in the Hindi dub of Solo Leveling Season 2 -Arise from the Shadow- (2025).",
+      "roles": [
+        {
+          "character": "Franky Franklin",
+          "anime": "SPY x FAMILY",
+          "slug": "spy-x-family",
+          "dub": "Crunchyroll",
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2023-11-06/spy-x-family-anime-hindi-dub-premieres-on-november-7/.204154",
+            "https://www.mediainfoline.com/brand/crunchyroll-bring-spy-x-family-hindi-dubs-to-india"
+          ]
+        },
+        {
+          "character": "Ahn Sangmin",
+          "anime": "Solo Leveling Season 2 -Arise from the Shadow-",
+          "slug": "solo-leveling",
+          "dub": "Crunchyroll",
+          "sources": [
+            "https://animenewsnetwork.com/news/2025-01-26/2nd-seasons-of-solo-leveling-the-apothecary-diaries-anime-get-indian-dubs/.220462"
+          ]
+        }
+      ],
+      "sources": [
+        "https://www.animenewsnetwork.com/news/2023-11-06/spy-x-family-anime-hindi-dub-premieres-on-november-7/.204154",
+        "https://animenewsnetwork.com/news/2025-01-26/2nd-seasons-of-solo-leveling-the-apothecary-diaries-anime-get-indian-dubs/.220462",
+        "https://www.mediainfoline.com/brand/crunchyroll-bring-spy-x-family-hindi-dubs-to-india"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "name": "Ish Thakkar",
+      "slug": "ish-thakkar",
+      "bio": "Ish Thakkar is a Hindi voice artist who appears in both Crunchyroll and Cartoon Network India anime dubs. He was announced as Park Beom-shik in the Hindi cast of Solo Leveling (2024) and as Roronoa Zoro in Cartoon Network India's Hindi dub of One Piece's Wano Country arc, which began airing in May 2024.",
+      "roles": [
+        {
+          "character": "Roronoa Zoro",
+          "anime": "One Piece (Wano Country arc)",
+          "slug": "one-piece",
+          "dub": "Cartoon Network India",
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2024-05-11/one-piece-anime-wano-arc-reveals-more-hindi-cast/.210606"
+          ]
+        },
+        {
+          "character": "Park Beom-shik",
+          "anime": "Solo Leveling",
+          "slug": "solo-leveling",
+          "dub": "Crunchyroll",
+          "sources": [
+            "https://www.animenewsnetwork.com/press-release/2023-12-12/indian-actor-ali-fazal-cast-to-hindi-voice-role-from-crunchyroll-highly-anticipated-anime-series-/.205412"
+          ]
+        }
+      ],
+      "sources": [
+        "https://www.animenewsnetwork.com/news/2024-05-11/one-piece-anime-wano-arc-reveals-more-hindi-cast/.210606",
+        "https://www.animenewsnetwork.com/press-release/2023-12-12/indian-actor-ali-fazal-cast-to-hindi-voice-role-from-crunchyroll-highly-anticipated-anime-series-/.205412"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Vaibhav Thakkar",
+      "slug": "vaibhav-thakkar",
+      "bio": "Vaibhav Thakkar is a Hindi voice artist who voices Monkey D. Luffy in Cartoon Network India's Hindi dub of One Piece, announced for the Wano Country arc in April 2024. He also voices Taichi in the Hindi dub of Digimon Adventure that began airing on Cartoon Network India in October 2022.",
+      "roles": [
+        {
+          "character": "Monkey D. Luffy",
+          "anime": "One Piece (Wano Country arc)",
+          "slug": "one-piece",
+          "dub": "Cartoon Network India",
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2024-04-21/cartoon-network-announces-indian-language-dubs-for-one-piece-anime-wano-arc/.210059",
+            "https://www.animenewsnetwork.com/news/2024-05-11/one-piece-anime-wano-arc-reveals-more-hindi-cast/.210606"
+          ]
+        },
+        {
+          "character": "Taichi Yagami",
+          "anime": "Digimon Adventure (2020)",
+          "slug": null,
+          "dub": "Cartoon Network India",
+          "sources": [
+            "https://animehunch.com/exclusive-agumons-hindi-va-speaks-in-depth-about-voicing-the-character-much-more-in-latest-interview/"
+          ]
+        }
+      ],
+      "sources": [
+        "https://www.animenewsnetwork.com/news/2024-04-21/cartoon-network-announces-indian-language-dubs-for-one-piece-anime-wano-arc/.210059",
+        "https://www.animenewsnetwork.com/news/2024-05-11/one-piece-anime-wano-arc-reveals-more-hindi-cast/.210606",
+        "https://animehunch.com/exclusive-agumons-hindi-va-speaks-in-depth-about-voicing-the-character-much-more-in-latest-interview/"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "name": "Ankur Javeri",
+      "slug": "ankur-javeri",
+      "bio": "Ankur Javeri is a veteran Indian voice artist who began as a child artist and has worked for close to four decades. He is best known to Indian anime fans as the Hindi voice of Goku: he says he dubbed Dragon Ball Z for Cartoon Network India from 2006 to 2010, and he returned as Goku for Cartoon Network India's 2023 Hindi dub of Dragon Ball Z Kai and the 2022 Hindi theatrical release of Dragon Ball Super: Super Hero. His Hindi dubbing work also includes Hollywood roles such as Peter Pevensie in The Chronicles of Narnia and Johnny Storm in Fantastic Four.",
+      "roles": [
+        {
+          "character": "Goku",
+          "anime": "Dragon Ball Z",
+          "slug": "dragon-ball",
+          "dub": "Cartoon Network India",
+          "sources": [
+            "https://indiananimenetwork.com/interview-voice-actor-of-goku/",
+            "https://indiananimenetwork.com/?p=5375"
+          ]
+        },
+        {
+          "character": "Goku",
+          "anime": "Dragon Ball Z Kai",
+          "slug": "dragon-ball",
+          "dub": "Cartoon Network India",
+          "sources": [
+            "https://www.afaqs.com/companies/cartoon-network-premiering-dragon-ball-z-kai-from-april-16",
+            "https://www.mediainfoline.com/entertainment/cartoon-network-premiers-dragon-ball-z-kai-from-april-16",
+            "https://animehunch.com/dragon-ball-z-kai-to-air-every-sunday-on-cartoon-network-india-from-april-16/"
+          ]
+        },
+        {
+          "character": "Son Goku",
+          "anime": "Dragon Ball Super: Super Hero",
+          "slug": "dragon-ball",
+          "dub": "Theatrical release (Sony Pictures India)",
+          "sources": [
+            "https://animenewsnetwork.com/news/2022-08-20/dragon-ball-super-super-hero-film-reveals-hindi-dub-cast/.188810",
+            "https://www.movietalkies.com/news/sony-pictures-dragon-ball-super-super-hero-becomes-the-first-anime-film-to-be-dubbed-in-hindi-for-a-theatrical-release",
+            "https://animehunch.com/dragon-ball-super-super-hero-to-get-hindi-dub-release-in-india/"
+          ]
+        }
+      ],
+      "sources": [
+        "https://indiananimenetwork.com/interview-voice-actor-of-goku/",
+        "https://indiananimenetwork.com/?p=5375",
+        "https://www.afaqs.com/companies/cartoon-network-premiering-dragon-ball-z-kai-from-april-16",
+        "https://www.mediainfoline.com/entertainment/cartoon-network-premiers-dragon-ball-z-kai-from-april-16",
+        "https://animehunch.com/dragon-ball-z-kai-to-air-every-sunday-on-cartoon-network-india-from-april-16/",
+        "https://animenewsnetwork.com/news/2022-08-20/dragon-ball-super-super-hero-film-reveals-hindi-dub-cast/.188810",
+        "https://www.movietalkies.com/news/sony-pictures-dragon-ball-super-super-hero-becomes-the-first-anime-film-to-be-dubbed-in-hindi-for-a-theatrical-release",
+        "https://animehunch.com/dragon-ball-super-super-hero-to-get-hindi-dub-release-in-india/",
+        "https://www.animenewsnetwork.com/news/2022-05-09/cartoon-network-india-airs-dragon-ball-super-anime-on-may-22/.185482"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Sahil Kulkarni",
+      "slug": "sahil-kulkarni",
+      "knownAs": [
+        "Sahil Vinod Kulkarni"
+      ],
+      "bio": "Sahil Kulkarni is a Hindi voice artist who works across Crunchyroll and Cartoon Network India anime dubs. He voices Megumi Fushiguro in Crunchyroll's Hindi dub of Jujutsu Kaisen (2023) and Kimihiko Kimizuka in its Hindi dub of The Detective Is Already Dead (2023). He was also announced as Katsuki Bakugo in the Hindi dub of My Hero Academia that premiered on Cartoon Network India in September 2023.",
+      "roles": [
+        {
+          "character": "Megumi Fushiguro",
+          "anime": "Jujutsu Kaisen",
+          "slug": "jujutsu-kaisen",
+          "dub": "Crunchyroll",
+          "sources": [
+            "https://www.sportskeeda.com/anime/news-jujutsu-kaisen-season-1-receives-hindi-dub-crunchyroll",
+            "https://www.animenewsnetwork.com/news/2023-09-22/crunchyroll-announces-hindi-tamil-dubs-for-jujutsu-kaisen-season-2-frieren-2-more-anime/.202697",
+            "https://respawn.outlookindia.com/pop-culture/pop-culture-originals/interview-jujutsu-kaisen-hindi-dub-cast-discuss-localization"
+          ]
+        },
+        {
+          "character": "Katsuki Bakugo",
+          "anime": "My Hero Academia",
+          "slug": "boku-no-hero-academia",
+          "dub": "Cartoon Network India",
+          "sources": [
+            "https://www.onmanorama.com/entertainment/entertainment-news/2023/08/26/anime-my-hero-academia-5-languages-cartoon-network.html",
+            "https://animationxpress.com/?p=1604917"
+          ]
+        },
+        {
+          "character": "Kimihiko Kimizuka",
+          "anime": "The Detective Is Already Dead",
+          "slug": null,
+          "dub": "Crunchyroll",
+          "sources": [
+            "https://www.animationxpress.com/latest-news/crunchyroll-to-premiere-tamil-and-hindi-dubs-of-two-anime-titles/"
+          ]
+        }
+      ],
+      "sources": [
+        "https://www.sportskeeda.com/anime/news-jujutsu-kaisen-season-1-receives-hindi-dub-crunchyroll",
+        "https://www.animenewsnetwork.com/news/2023-09-22/crunchyroll-announces-hindi-tamil-dubs-for-jujutsu-kaisen-season-2-frieren-2-more-anime/.202697",
+        "https://respawn.outlookindia.com/pop-culture/pop-culture-originals/interview-jujutsu-kaisen-hindi-dub-cast-discuss-localization",
+        "https://animehunch.com/exclusive-yujis-pain-gojos-aura-makis-vengeance-and-megumis-angst-explained-by-hindi-voice-actors-of-jujutsu-kaisen/",
+        "https://www.onmanorama.com/entertainment/entertainment-news/2023/08/26/anime-my-hero-academia-5-languages-cartoon-network.html",
+        "https://animationxpress.com/?p=1604917",
+        "https://www.animationxpress.com/latest-news/crunchyroll-to-premiere-tamil-and-hindi-dubs-of-two-anime-titles/"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Rushikesh Phunse",
+      "slug": "rushikesh-phunse",
+      "knownAs": [
+        "Rushikesh Punse"
+      ],
+      "bio": "Rushikesh Phunse is a voice artist who works in Hindi, Marathi and English and had about four years in dubbing as of mid-2024. He voices Kafka Hibino in Crunchyroll's Hindi dub of Kaiju No. 8, a performance nominated at the 2025 Crunchyroll Anime Awards. In a 2024 interview he also listed Hindi anime roles including Khun in Tower of God and Yuno in Black Clover: Sword of the Wizard King.",
+      "roles": [
+        {
+          "character": "Kafka Hibino",
+          "anime": "Kaiju No. 8",
+          "slug": "kaijuu-8-gou",
+          "dub": "Crunchyroll",
+          "sources": [
+            "https://www.animenewsnetwork.com/interview/2024-06-21/the-hindi-dub-cast-of-kaiju-no-8-take-you-inside-the-studio/.211695",
+            "https://awn.com/news/2025-crunchyroll-anime-awards-nominees-presenters-announced"
+          ]
+        },
+        {
+          "character": "Khun Aguero Agnis",
+          "anime": "Tower of God",
+          "slug": null,
+          "dub": "Hindi dub (platform not stated in source)",
+          "sources": [
+            "https://sportskeeda.com/anime/news-kaiju-no-8-hindi-voice-actors-see-bright-future-india-exclusive"
+          ]
+        },
+        {
+          "character": "Yuno Grinberryall",
+          "anime": "Black Clover: Sword of the Wizard King",
+          "slug": "black-clover-tv",
+          "dub": "Netflix",
+          "sources": [
+            "https://sportskeeda.com/anime/news-kaiju-no-8-hindi-voice-actors-see-bright-future-india-exclusive"
+          ]
+        }
+      ],
+      "sources": [
+        "https://www.animenewsnetwork.com/interview/2024-06-21/the-hindi-dub-cast-of-kaiju-no-8-take-you-inside-the-studio/.211695",
+        "https://sportskeeda.com/anime/news-kaiju-no-8-hindi-voice-actors-see-bright-future-india-exclusive",
+        "https://www.pinkvilla.com/entertainment/anime/exclusive-kaiju-no-8-hindi-dub-cast-shares-most-challenging-parts-of-dubbing-japanese-to-indian-language-1314176",
+        "https://awn.com/news/2025-crunchyroll-anime-awards-nominees-presenters-announced"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "name": "Adnan Shakeel",
+      "slug": "adnan-shakeel",
+      "bio": "Adnan Shakeel is a Delhi-born voice artist who started by uploading home-recorded trailer fandubs to YouTube and later moved to Mumbai to dub professionally. He voices Reno Ichikawa in Crunchyroll's Hindi dub of Kaiju No. 8, and in a 2024 interview listed Lelouch vi Britannia in Code Geass and Sou and Masahito in Summertime Rendering among his Hindi anime roles.",
+      "roles": [
+        {
+          "character": "Reno Ichikawa",
+          "anime": "Kaiju No. 8",
+          "slug": "kaijuu-8-gou",
+          "dub": "Crunchyroll",
+          "sources": [
+            "https://www.animenewsnetwork.com/interview/2024-06-21/the-hindi-dub-cast-of-kaiju-no-8-take-you-inside-the-studio/.211695",
+            "https://sportskeeda.com/anime/news-kaiju-no-8-hindi-voice-actors-see-bright-future-india-exclusive"
+          ]
+        },
+        {
+          "character": "Lelouch vi Britannia",
+          "anime": "Code Geass: Lelouch of the Rebellion",
+          "slug": "code-geass-lelouch-of-the-rebellion",
+          "dub": "Crunchyroll",
+          "sources": [
+            "https://sportskeeda.com/anime/news-kaiju-no-8-hindi-voice-actors-see-bright-future-india-exclusive"
+          ]
+        },
+        {
+          "character": "Sou / Masahito",
+          "anime": "Summertime Rendering",
+          "slug": null,
+          "dub": "Hindi dub (platform not stated in source)",
+          "sources": [
+            "https://sportskeeda.com/anime/news-kaiju-no-8-hindi-voice-actors-see-bright-future-india-exclusive"
+          ]
+        }
+      ],
+      "sources": [
+        "https://www.animenewsnetwork.com/interview/2024-06-21/the-hindi-dub-cast-of-kaiju-no-8-take-you-inside-the-studio/.211695",
+        "https://sportskeeda.com/anime/news-kaiju-no-8-hindi-voice-actors-see-bright-future-india-exclusive",
+        "https://www.pinkvilla.com/entertainment/anime/exclusive-kaiju-no-8-hindi-dub-cast-shares-most-challenging-parts-of-dubbing-japanese-to-indian-language-1314176"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "name": "Rahul Arya",
+      "slug": "rahul-arya",
+      "bio": "Rahul Arya is a Hindi voice artist credited in Crunchyroll's announced Hindi cast for Demon Slayer: Kimetsu no Yaiba Swordsmith Village Arc, whose Hindi dub began streaming in May 2023. In that dub he voices two characters: Inosuke Hashibira and the Upper Moon Five demon Gyokko.",
+      "roles": [
+        {
+          "character": "Inosuke Hashibira",
+          "anime": "Demon Slayer: Kimetsu no Yaiba Swordsmith Village Arc",
+          "slug": "kimetsu-no-yaiba",
+          "dub": "Crunchyroll",
+          "sources": [
+            "https://sportskeeda.com/anime/news-crunchyroll-adds-hindi-dub-demon-slayer-season-3",
+            "https://animehunch.com/demon-slayer-season-3-hindi-dub-reveals-release-date-cast/"
+          ]
+        },
+        {
+          "character": "Gyokko",
+          "anime": "Demon Slayer: Kimetsu no Yaiba Swordsmith Village Arc",
+          "slug": "kimetsu-no-yaiba",
+          "dub": "Crunchyroll",
+          "sources": [
+            "https://sportskeeda.com/anime/news-crunchyroll-adds-hindi-dub-demon-slayer-season-3",
+            "https://animehunch.com/demon-slayer-season-3-hindi-dub-reveals-release-date-cast/"
+          ]
+        }
+      ],
+      "sources": [
+        "https://sportskeeda.com/anime/news-crunchyroll-adds-hindi-dub-demon-slayer-season-3",
+        "https://animehunch.com/demon-slayer-season-3-hindi-dub-reveals-release-date-cast/"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "name": "Sonal Kaushal",
+      "slug": "sonal-kaushal",
+      "knownAs": [
+        "The Motor Mouth"
+      ],
+      "bio": "Sonal Kaushal is a Delhi-born voice artist who started as a child voice artist with All India Radio and began voicing Doraemon in the Hindi dub as a teenager in 2005. Besides anime she is the voice of Chhota Bheem and has dubbed Blossom in the rebooted Powerpuff Girls and Arya Stark in Game of Thrones; she also runs the YouTube channel The Motor Mouth.",
+      "roles": [
+        {
+          "character": "Doraemon",
+          "anime": "Doraemon",
+          "slug": null,
+          "dub": "Hindi TV dub (channel not stated in sources)",
+          "sources": [
+            "https://www.india.com/entertainment/meet-sonal-kaushal-aka-the-motormouth-the-voice-behind-doraemon-and-chota-bheem-exclusive-6753411/",
+            "https://www.shethepeople.tv/news/meet-sonal-kaushal-the-voice-of-doraemon-in-india"
+          ]
+        },
+        {
+          "character": "Pikachu",
+          "anime": "Pokémon",
+          "slug": null,
+          "dub": "Cartoon Network India (some episodes)",
+          "sources": [
+            "https://www.india.com/entertainment/meet-sonal-kaushal-aka-the-motormouth-the-voice-behind-doraemon-and-chota-bheem-exclusive-6753411/",
+            "https://pocketmonsters.net/staff/view/5449"
+          ]
+        }
+      ],
+      "sources": [
+        "https://www.india.com/entertainment/meet-sonal-kaushal-aka-the-motormouth-the-voice-behind-doraemon-and-chota-bheem-exclusive-6753411/",
+        "https://www.shethepeople.tv/news/meet-sonal-kaushal-the-voice-of-doraemon-in-india",
+        "https://en.wikipedia.org/wiki/Sonal_Kaushal",
+        "https://pocketmonsters.net/staff/view/5449"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "name": "Meghana Erande",
+      "slug": "meghana-erande",
+      "knownAs": [
+        "Meghna Erande"
+      ],
+      "bio": "Meghana Erande is a Mumbai-based dubbing artist with roughly 25 years in the profession by 2015, educated in Marathi literature at Mumbai University. Her Hindi cartoon work includes DeeDee in Dexter's Laboratory, Dizzy in Bob the Builder and the Princess in The Powerpuff Girls, and she also dubs Marathi films. In a 2015 Rediff interview she named Ninja Hattori as her favourite character and listed Doraemon and Shin Chan among the characters she has dubbed in Hindi.",
+      "roles": [
+        {
+          "character": "Kanzo Hattori",
+          "anime": "Ninja Hattori-kun",
+          "slug": null,
+          "dub": "Hindi TV dub (Nickelodeon India per Wikipedia)",
+          "sources": [
+            "http://www.rediff.com/getahead/report/achievers-meghana-erande-voice-behind-your-favourite-cartoons/20150427.htm",
+            "https://theinterviewportal.com/2017/05/31/cartoon-dubbing-artist-interview/",
+            "https://www.scrolldroll.com/?p=81516"
+          ]
+        },
+        {
+          "character": "Shin-chan",
+          "anime": "Crayon Shin-chan",
+          "slug": null,
+          "dub": "Hindi TV dub (channel and period not stated in source)",
+          "sources": [
+            "http://www.rediff.com/getahead/report/achievers-meghana-erande-voice-behind-your-favourite-cartoons/20150427.htm",
+            "https://theinterviewportal.com/2017/05/31/cartoon-dubbing-artist-interview/"
+          ]
+        },
+        {
+          "character": "Doraemon",
+          "anime": "Doraemon",
+          "slug": null,
+          "dub": "Hindi TV dub (channel and period not stated in source)",
+          "sources": [
+            "http://www.rediff.com/getahead/report/achievers-meghana-erande-voice-behind-your-favourite-cartoons/20150427.htm",
+            "https://theinterviewportal.com/2017/05/31/cartoon-dubbing-artist-interview/"
+          ]
+        }
+      ],
+      "sources": [
+        "http://www.rediff.com/getahead/report/achievers-meghana-erande-voice-behind-your-favourite-cartoons/20150427.htm",
+        "https://theinterviewportal.com/2017/05/31/cartoon-dubbing-artist-interview/",
+        "https://www.scrolldroll.com/?p=81516",
+        "https://en.wikipedia.org/wiki/Meghana_Erande"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "name": "Akanksha Sharma",
+      "slug": "akanksha-sharma",
+      "knownAs": [
+        "Aakanksha Sharma"
+      ],
+      "bio": "Akanksha Sharma is a former Radio Mirchi RJ who began voice-over work in 2013 and was described in 2017 as the official Hindi voice of Shin-chan, a role she won after an audition run by Disney and UTV. She also voices Bo-chan in Shin-chan and Dorami in Doraemon, has dubbed WWE women wrestlers and Discovery shows into Hindi, and performs comedy.",
+      "roles": [
+        {
+          "character": "Shinnosuke 'Shin-chan' Nohara",
+          "anime": "Crayon Shin-chan",
+          "slug": null,
+          "dub": "Hindi TV dub (Disney/UTV)",
+          "sources": [
+            "https://www.millenniumpost.in/i-am-like-shinchan-176980",
+            "https://www.scrolldroll.com/?p=81516"
+          ]
+        },
+        {
+          "character": "Bo-chan",
+          "anime": "Crayon Shin-chan",
+          "slug": null,
+          "dub": "Hindi TV dub (Disney/UTV)",
+          "sources": [
+            "https://www.millenniumpost.in/i-am-like-shinchan-176980"
+          ]
+        },
+        {
+          "character": "Dorami",
+          "anime": "Doraemon",
+          "slug": null,
+          "dub": "Hindi TV dub (channel not stated in source)",
+          "sources": [
+            "https://www.millenniumpost.in/i-am-like-shinchan-176980"
+          ]
+        }
+      ],
+      "sources": [
+        "https://www.millenniumpost.in/i-am-like-shinchan-176980",
+        "https://www.scrolldroll.com/?p=81516"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "name": "Parul Bhatnagar",
+      "slug": "parul-bhatnagar",
+      "bio": "Parul Bhatnagar is a Hindi voice artist known for long-running roles in two Japanese franchises that are staples of Indian children's television. She has voiced Shizuka in the Hindi dub of Doraemon for over fifteen years and voices Kazama in the Hindi dub of Crayon Shin-chan, and she runs a YouTube channel where she has discussed upcoming Hindi releases of both franchises.",
+      "roles": [
+        {
+          "character": "Shizuka Minamoto",
+          "anime": "Doraemon",
+          "slug": null,
+          "dub": "Hindi TV dub (channel not stated in sources)",
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2021-03-06/voice-actor-parul-bhatnagar-teases-new-shinchan-film-for-indian-tv/.170280",
+            "https://www.scrolldroll.com/?p=81516"
+          ]
+        },
+        {
+          "character": "Toru Kazama",
+          "anime": "Crayon Shin-chan",
+          "slug": null,
+          "dub": "Hindi TV dub (channel not stated in source)",
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2021-03-06/voice-actor-parul-bhatnagar-teases-new-shinchan-film-for-indian-tv/.170280"
+          ]
+        }
+      ],
+      "sources": [
+        "https://www.animenewsnetwork.com/news/2021-03-06/voice-actor-parul-bhatnagar-teases-new-shinchan-film-for-indian-tv/.170280",
+        "https://www.scrolldroll.com/?p=81516"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "name": "Prasad Barve",
+      "slug": "prasad-barve",
+      "bio": "Prasad Barve is a Pune-born actor and dubbing artist, active since 1994, who works in Marathi, Hindi and English and is known for comic-relief voices. He is the Hindi voice of Vegeta in Cartoon Network India's 2023 dub of Dragon Ball Z Kai and in the 2022 Hindi theatrical release of Dragon Ball Super: Super Hero. His Hollywood dubbing includes Po in the Kung Fu Panda films and Ned Leeds in the recent Spider-Man films.",
+      "roles": [
+        {
+          "character": "Vegeta",
+          "anime": "Dragon Ball Z Kai",
+          "slug": "dragon-ball",
+          "dub": "Cartoon Network India",
+          "sources": [
+            "https://www.afaqs.com/companies/cartoon-network-premiering-dragon-ball-z-kai-from-april-16",
+            "https://www.mediainfoline.com/entertainment/cartoon-network-premiers-dragon-ball-z-kai-from-april-16",
+            "https://animehunch.com/dragon-ball-z-kai-to-air-every-sunday-on-cartoon-network-india-from-april-16/"
+          ]
+        },
+        {
+          "character": "Vegeta",
+          "anime": "Dragon Ball Super: Super Hero",
+          "slug": "dragon-ball",
+          "dub": "Theatrical release (Sony Pictures India)",
+          "sources": [
+            "https://animenewsnetwork.com/news/2022-08-20/dragon-ball-super-super-hero-film-reveals-hindi-dub-cast/.188810",
+            "https://www.movietalkies.com/news/sony-pictures-dragon-ball-super-super-hero-becomes-the-first-anime-film-to-be-dubbed-in-hindi-for-a-theatrical-release",
+            "https://animehunch.com/dragon-ball-super-super-hero-to-get-hindi-dub-release-in-india/"
+          ]
+        }
+      ],
+      "sources": [
+        "https://www.afaqs.com/companies/cartoon-network-premiering-dragon-ball-z-kai-from-april-16",
+        "https://www.mediainfoline.com/entertainment/cartoon-network-premiers-dragon-ball-z-kai-from-april-16",
+        "https://animehunch.com/dragon-ball-z-kai-to-air-every-sunday-on-cartoon-network-india-from-april-16/",
+        "https://animenewsnetwork.com/news/2022-08-20/dragon-ball-super-super-hero-film-reveals-hindi-dub-cast/.188810",
+        "https://www.movietalkies.com/news/sony-pictures-dragon-ball-super-super-hero-becomes-the-first-anime-film-to-be-dubbed-in-hindi-for-a-theatrical-release",
+        "https://animehunch.com/dragon-ball-super-super-hero-to-get-hindi-dub-release-in-india/",
+        "https://en.wikipedia.org/wiki/Prasad_Barve"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Neshma Chemburkar",
+      "slug": "neshma-chemburkar",
+      "knownAs": [
+        "Neshma",
+        "Neshma Mantri"
+      ],
+      "bio": "Neshma Chemburkar is a voice actress who began dubbing as a child and has been active since the early 1980s. She voiced Chichi in Cartoon Network India's 2023 Hindi dub of Dragon Ball Z Kai and Pan in the 2022 Hindi theatrical release of Dragon Ball Super: Super Hero. In Hollywood dubs she is known as the Hindi voice of Scarlett Johansson's Black Widow across the Marvel films.",
+      "roles": [
+        {
+          "character": "Chichi",
+          "anime": "Dragon Ball Z Kai",
+          "slug": "dragon-ball",
+          "dub": "Cartoon Network India",
+          "sources": [
+            "https://www.afaqs.com/companies/cartoon-network-premiering-dragon-ball-z-kai-from-april-16",
+            "https://www.mediainfoline.com/entertainment/cartoon-network-premiers-dragon-ball-z-kai-from-april-16",
+            "https://animehunch.com/dragon-ball-z-kai-to-air-every-sunday-on-cartoon-network-india-from-april-16/"
+          ]
+        },
+        {
+          "character": "Pan",
+          "anime": "Dragon Ball Super: Super Hero",
+          "slug": "dragon-ball",
+          "dub": "Theatrical release (Sony Pictures India)",
+          "sources": [
+            "https://animenewsnetwork.com/news/2022-08-20/dragon-ball-super-super-hero-film-reveals-hindi-dub-cast/.188810",
+            "https://www.movietalkies.com/news/sony-pictures-dragon-ball-super-super-hero-becomes-the-first-anime-film-to-be-dubbed-in-hindi-for-a-theatrical-release",
+            "https://animehunch.com/dragon-ball-super-super-hero-to-get-hindi-dub-release-in-india/"
+          ]
+        }
+      ],
+      "sources": [
+        "https://www.afaqs.com/companies/cartoon-network-premiering-dragon-ball-z-kai-from-april-16",
+        "https://www.mediainfoline.com/entertainment/cartoon-network-premiers-dragon-ball-z-kai-from-april-16",
+        "https://animehunch.com/dragon-ball-z-kai-to-air-every-sunday-on-cartoon-network-india-from-april-16/",
+        "https://animenewsnetwork.com/news/2022-08-20/dragon-ball-super-super-hero-film-reveals-hindi-dub-cast/.188810",
+        "https://www.movietalkies.com/news/sony-pictures-dragon-ball-super-super-hero-becomes-the-first-anime-film-to-be-dubbed-in-hindi-for-a-theatrical-release",
+        "https://animehunch.com/dragon-ball-super-super-hero-to-get-hindi-dub-release-in-india/",
+        "https://en.wikipedia.org/wiki/Neshma_Chemburkar"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Mayur Vyas",
+      "slug": "mayur-vyas",
+      "bio": "Mayur Vyas is a Hindi voice artist in the modern Hindi dubs of the Dragon Ball franchise. He voiced Krillin in the 2022 Hindi theatrical release of Dragon Ball Super: Super Hero and again in Cartoon Network India's 2023 Hindi dub of Dragon Ball Z Kai.",
+      "roles": [
+        {
+          "character": "Krillin",
+          "anime": "Dragon Ball Z Kai",
+          "slug": "dragon-ball",
+          "dub": "Cartoon Network India",
+          "sources": [
+            "https://www.afaqs.com/companies/cartoon-network-premiering-dragon-ball-z-kai-from-april-16",
+            "https://www.mediainfoline.com/entertainment/cartoon-network-premiers-dragon-ball-z-kai-from-april-16",
+            "https://animehunch.com/dragon-ball-z-kai-to-air-every-sunday-on-cartoon-network-india-from-april-16/"
+          ]
+        },
+        {
+          "character": "Krillin",
+          "anime": "Dragon Ball Super: Super Hero",
+          "slug": "dragon-ball",
+          "dub": "Theatrical release (Sony Pictures India)",
+          "sources": [
+            "https://animenewsnetwork.com/news/2022-08-20/dragon-ball-super-super-hero-film-reveals-hindi-dub-cast/.188810",
+            "https://www.movietalkies.com/news/sony-pictures-dragon-ball-super-super-hero-becomes-the-first-anime-film-to-be-dubbed-in-hindi-for-a-theatrical-release",
+            "https://animehunch.com/dragon-ball-super-super-hero-to-get-hindi-dub-release-in-india/"
+          ]
+        }
+      ],
+      "sources": [
+        "https://www.afaqs.com/companies/cartoon-network-premiering-dragon-ball-z-kai-from-april-16",
+        "https://www.mediainfoline.com/entertainment/cartoon-network-premiers-dragon-ball-z-kai-from-april-16",
+        "https://animehunch.com/dragon-ball-z-kai-to-air-every-sunday-on-cartoon-network-india-from-april-16/",
+        "https://animenewsnetwork.com/news/2022-08-20/dragon-ball-super-super-hero-film-reveals-hindi-dub-cast/.188810",
+        "https://www.movietalkies.com/news/sony-pictures-dragon-ball-super-super-hero-becomes-the-first-anime-film-to-be-dubbed-in-hindi-for-a-theatrical-release",
+        "https://animehunch.com/dragon-ball-super-super-hero-to-get-hindi-dub-release-in-india/"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "name": "Shailendra Pandey",
+      "slug": "shailendra-pandey",
+      "bio": "Shailendra Pandey is a Hindi voice artist in the modern Hindi dubs of the Dragon Ball franchise. He voiced Piccolo in the 2022 Hindi theatrical release of Dragon Ball Super: Super Hero and again in Cartoon Network India's 2023 Hindi dub of Dragon Ball Z Kai.",
+      "roles": [
+        {
+          "character": "Piccolo",
+          "anime": "Dragon Ball Z Kai",
+          "slug": "dragon-ball",
+          "dub": "Cartoon Network India",
+          "sources": [
+            "https://www.afaqs.com/companies/cartoon-network-premiering-dragon-ball-z-kai-from-april-16",
+            "https://www.mediainfoline.com/entertainment/cartoon-network-premiers-dragon-ball-z-kai-from-april-16",
+            "https://animehunch.com/dragon-ball-z-kai-to-air-every-sunday-on-cartoon-network-india-from-april-16/"
+          ]
+        },
+        {
+          "character": "Piccolo",
+          "anime": "Dragon Ball Super: Super Hero",
+          "slug": "dragon-ball",
+          "dub": "Theatrical release (Sony Pictures India)",
+          "sources": [
+            "https://animenewsnetwork.com/news/2022-08-20/dragon-ball-super-super-hero-film-reveals-hindi-dub-cast/.188810",
+            "https://www.movietalkies.com/news/sony-pictures-dragon-ball-super-super-hero-becomes-the-first-anime-film-to-be-dubbed-in-hindi-for-a-theatrical-release",
+            "https://animehunch.com/dragon-ball-super-super-hero-to-get-hindi-dub-release-in-india/"
+          ]
+        }
+      ],
+      "sources": [
+        "https://www.afaqs.com/companies/cartoon-network-premiering-dragon-ball-z-kai-from-april-16",
+        "https://www.mediainfoline.com/entertainment/cartoon-network-premiers-dragon-ball-z-kai-from-april-16",
+        "https://animehunch.com/dragon-ball-z-kai-to-air-every-sunday-on-cartoon-network-india-from-april-16/",
+        "https://animenewsnetwork.com/news/2022-08-20/dragon-ball-super-super-hero-film-reveals-hindi-dub-cast/.188810",
+        "https://www.movietalkies.com/news/sony-pictures-dragon-ball-super-super-hero-becomes-the-first-anime-film-to-be-dubbed-in-hindi-for-a-theatrical-release",
+        "https://animehunch.com/dragon-ball-super-super-hero-to-get-hindi-dub-release-in-india/"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "name": "Rajesh Shukla",
+      "slug": "rajesh-shukla",
+      "bio": "Rajesh Shukla is a Hindi voice artist best known as Sung Jinwoo in Crunchyroll's Hindi dub of Solo Leveling, a performance nominated at the Crunchyroll Anime Awards in both 2025 and 2026. He earlier voiced Gamma 2 in the 2022 Hindi theatrical release of Dragon Ball Super: Super Hero. In May 2026 he appeared alongside Japanese voice actor Taito Ban at Crunchyroll's Solo Leveling panel at Mumbai Comic Con.",
+      "roles": [
+        {
+          "character": "Sung Jinwoo",
+          "anime": "Solo Leveling (Seasons 1-2)",
+          "slug": "solo-leveling",
+          "dub": "Crunchyroll",
+          "sources": [
+            "https://www.animenewsnetwork.com/press-release/2023-12-12/indian-actor-ali-fazal-cast-to-hindi-voice-role-from-crunchyroll-highly-anticipated-anime-series-/.205412",
+            "https://animenewsnetwork.com/news/2025-01-26/2nd-seasons-of-solo-leveling-the-apothecary-diaries-anime-get-indian-dubs/.220462",
+            "https://awn.com/news/2025-crunchyroll-anime-awards-nominees-presenters-announced",
+            "https://bleedingcool.com/tv/2026-crunchyroll-anime-awards-nominees-set-new-details-released/",
+            "https://respawn.outlookindia.com/amp/story/pop-culture/pop-culture-news/dan-da-dan-my-hero-academia-lead-2026-anime-awards-nominees"
+          ]
+        },
+        {
+          "character": "Gamma 2",
+          "anime": "Dragon Ball Super: Super Hero",
+          "slug": "dragon-ball",
+          "dub": "Theatrical release (Sony Pictures India)",
+          "sources": [
+            "https://animenewsnetwork.com/news/2022-08-20/dragon-ball-super-super-hero-film-reveals-hindi-dub-cast/.188810",
+            "https://www.movietalkies.com/news/sony-pictures-dragon-ball-super-super-hero-becomes-the-first-anime-film-to-be-dubbed-in-hindi-for-a-theatrical-release",
+            "https://animehunch.com/dragon-ball-super-super-hero-to-get-hindi-dub-release-in-india/"
+          ]
+        }
+      ],
+      "sources": [
+        "https://www.animenewsnetwork.com/press-release/2023-12-12/indian-actor-ali-fazal-cast-to-hindi-voice-role-from-crunchyroll-highly-anticipated-anime-series-/.205412",
+        "https://animenewsnetwork.com/news/2025-01-26/2nd-seasons-of-solo-leveling-the-apothecary-diaries-anime-get-indian-dubs/.220462",
+        "https://awn.com/news/2025-crunchyroll-anime-awards-nominees-presenters-announced",
+        "https://bleedingcool.com/tv/2026-crunchyroll-anime-awards-nominees-set-new-details-released/",
+        "https://respawn.outlookindia.com/amp/story/pop-culture/pop-culture-news/dan-da-dan-my-hero-academia-lead-2026-anime-awards-nominees",
+        "https://www.animenewsnetwork.com/interest/2026-05-10/live-dubbing-inspirational-stories-and-surprises-at-crunchyroll-solo-leveling-panel/.237211",
+        "https://www.animenewsnetwork.com/press-release/2026-04-29/crunchyroll-brings-its-biggest-ever-anime-experience-in-india-to-mumbai/.236910",
+        "https://animemirchi.com/mashle-magic-and-muscles-hindi-dub-voice-cast/",
+        "https://animenewsnetwork.com/news/2022-08-20/dragon-ball-super-super-hero-film-reveals-hindi-dub-cast/.188810",
+        "https://www.movietalkies.com/news/sony-pictures-dragon-ball-super-super-hero-becomes-the-first-anime-film-to-be-dubbed-in-hindi-for-a-theatrical-release",
+        "https://animehunch.com/dragon-ball-super-super-hero-to-get-hindi-dub-release-in-india/"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Mani Puhan",
+      "slug": "mani-puhan",
+      "bio": "Mani Puhan is a Hindi voice artist working across Crunchyroll and Cartoon Network India anime dubs. Mani Puhan voices Maki Zenin in Crunchyroll's Hindi dub of Jujutsu Kaisen, was part of Crunchyroll's 2026 press interviews with that cast, and voiced Bulma in Cartoon Network India's 2023 Hindi dub of Dragon Ball Z Kai.",
+      "roles": [
+        {
+          "character": "Maki Zenin",
+          "anime": "Jujutsu Kaisen",
+          "slug": "jujutsu-kaisen",
+          "dub": "Crunchyroll",
+          "sources": [
+            "https://respawn.outlookindia.com/pop-culture/pop-culture-originals/interview-jujutsu-kaisen-hindi-dub-cast-discuss-localization",
+            "https://animehunch.com/exclusive-yujis-pain-gojos-aura-makis-vengeance-and-megumis-angst-explained-by-hindi-voice-actors-of-jujutsu-kaisen/",
+            "https://respawn.outlookindia.com/pop-culture/pop-culture-originals/deadlines-budget-race-the-challenges-of-anime-dubbing-in-india"
+          ]
+        },
+        {
+          "character": "Bulma",
+          "anime": "Dragon Ball Z Kai",
+          "slug": "dragon-ball",
+          "dub": "Cartoon Network India",
+          "sources": [
+            "https://www.afaqs.com/companies/cartoon-network-premiering-dragon-ball-z-kai-from-april-16",
+            "https://www.mediainfoline.com/entertainment/cartoon-network-premiers-dragon-ball-z-kai-from-april-16",
+            "https://animehunch.com/dragon-ball-z-kai-to-air-every-sunday-on-cartoon-network-india-from-april-16/"
+          ]
+        }
+      ],
+      "sources": [
+        "https://respawn.outlookindia.com/pop-culture/pop-culture-originals/interview-jujutsu-kaisen-hindi-dub-cast-discuss-localization",
+        "https://animehunch.com/exclusive-yujis-pain-gojos-aura-makis-vengeance-and-megumis-angst-explained-by-hindi-voice-actors-of-jujutsu-kaisen/",
+        "https://respawn.outlookindia.com/pop-culture/pop-culture-originals/deadlines-budget-race-the-challenges-of-anime-dubbing-in-india",
+        "https://www.afaqs.com/companies/cartoon-network-premiering-dragon-ball-z-kai-from-april-16",
+        "https://www.mediainfoline.com/entertainment/cartoon-network-premiers-dragon-ball-z-kai-from-april-16",
+        "https://animehunch.com/dragon-ball-z-kai-to-air-every-sunday-on-cartoon-network-india-from-april-16/"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

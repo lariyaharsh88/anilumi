@@ -11,10 +11,14 @@ import { itemList } from "@/lib/ld";
 
 export const revalidate = 86400;
 
+const FAMOUS = ["Goku", "Luffy", "Gojo", "Vegeta", "Doraemon", "Shin-chan", "Denji", "Tanjiro", "Anya"];
+const famous = (all: ReturnType<typeof hindiArtists>) => FAMOUS.filter((f) => all.some((a) => a.roles.some((r) => r.character.includes(f)))).slice(0, 3);
+
 export function generateMetadata(): Metadata {
   const all = hindiArtists();
   return {
-    title: `Hindi Anime Dub Voice Artists (${all.length}): Who Voices Goku, Naruto & More in Hindi`,
+    // Named after characters with a confirmed Hindi voice on the list, most famous first.
+    title: `Hindi Anime Dub Voice Artists (${all.length}): Who Voices ${famous(all).join(", ")} & More`,
     description: fitDescription(`The Indian voice artists behind official Hindi anime dubs: ${all.slice(0, 4).map((a) => a.name).join(", ")} and more, with every confirmed character.`),
     alternates: { canonical: "/hindi-voice-artists" },
   };

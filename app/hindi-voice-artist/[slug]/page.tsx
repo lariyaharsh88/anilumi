@@ -49,7 +49,7 @@ export default async function HindiArtistPage({ params }: Props) {
         <h2 id="roles-h" className="h-section mb-3">{a.name}&apos;s anime roles in Hindi</h2>
         <ul className="grid gap-3 md:grid-cols-2">
           {a.roles.map((r) => (
-            <li key={`${r.character}-${r.anime}`} className="card p-3">
+            <li key={`${r.character}-${r.anime}-${r.dub}`} className="card p-3">
               <p className="font-semibold text-ink">{r.character}</p>
               <p className="text-sm text-muted">{r.slug ? <Link href={animePath({ slug: r.slug })} className="text-violet hover:underline">{r.anime}</Link> : r.anime} · {r.dub}</p>
               <p className="mt-1 flex flex-wrap gap-x-3 text-[11px] text-muted">{r.sources.slice(0, 3).map((u, i) => <a key={u} href={u} target="_blank" rel="noopener nofollow" className="underline">Source {i + 1}</a>)}</p>
