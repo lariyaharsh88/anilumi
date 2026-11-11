@@ -20,7 +20,9 @@ import EmbedSnippet from "@/components/EmbedSnippet";
 import CalendarLinks from "@/components/CalendarLinks";
 import WhereToWatch from "@/components/WhereToWatch";
 import EditorWatched from "@/components/EditorWatched";
-import { streamsFor, streamsPath } from "@/lib/streams";
+import { streamsFor, streamsPath, servicesIn } from "@/lib/streams";
+import { verdictLines } from "@/lib/verdict";
+import { themesOf } from "@/lib/picks";
 import WatchOrderCard from "@/components/WatchOrderCard";
 import { snapshotOrder } from "@/lib/wosnap";
 import PushButton from "@/components/PushButton";
@@ -139,6 +141,8 @@ function buildFaq(a: Anime, extra: FaqItem[] = [], ep: { planned: number | null;
   items.push(...extra);
   return items.slice(0, 8);
 }
+
+const released0 = (a: Anime) => a.status === "current" || a.status === "finished";
 
 export default async function AnimePage({ params }: Props) {
   const { slug } = await params;
@@ -262,6 +266,22 @@ export default async function AnimePage({ params }: Props) {
   const refreshed = new Date().toISOString();
   // Researched per-country streaming (US, India, UK) for this franchise, when we have it.
   const streams = streamsFor(a);
+  // "Should you watch it?" from the facts above: themes, scores, completion, length, audience, where, fan pairings.
+  const verdict2 = released0(a) ? verdictLines({
+    title: a.title,
+    themes: insight ? themesOf(insight.tags) : [],
+    score: combined ? { value: combined.score, sites: combined.sources.length } : null,
+    finish: drop ? { rate: drop.completionRate, started: drop.started } : null,
+    runtimeMin: runtime || null,
+    episodes: a.subtype === "movie" ? null : epCount || null,
+    movie: a.subtype === "movie",
+    airing: a.status === "current",
+    suits: guide?.suitable ?? null,
+    // Streaming research is per franchise: shown for the series and films, not for OVAs and specials.
+    watchOn: streams && ["TV", "movie", "ONA"].includes(a.subtype) ? [...new Set(servicesIn(streams, "US").filter((x) => x.kind !== "buy").map((x) => x.service))].slice(0, 3) : [],
+    hindi: ["TV", "movie", "ONA"].includes(a.subtype) && dub?.status === "available",
+    pairs: fanRecs.slice(0, 2).map((r) => r.title),
+  }) : [];
   const changing = a.status === "current" || a.status === "upcoming";
   const community = dbEnabled();
   const released = a.status === "current" || a.status === "finished";
@@ -521,6 +541,13 @@ export default async function AnimePage({ params }: Props) {
                 <p className="mt-2 text-xs text-muted">Synopsis excerpt via <a href={`https://kitsu.app/anime/${a.slug}`} target="_blank" rel="noopener nofollow" className="underline">Kitsu</a>.</p>
               </>
             ) : <p className="text-muted">No synopsis available yet.</p>}
+            {verdict2.length >= 3 && (
+              <div className="card mt-6 border-violet/30 p-4" aria-labelledby="h-verdict">
+                <h3 id="h-verdict" className="text-sm font-bold uppercase tracking-wider text-violet-2">Should you watch {a.title}?</h3>
+                <p className="mt-2 text-sm leading-6 text-ink/90">{verdict2.join(" ")}</p>
+                <p className="mt-2 text-[11px] text-muted">Built from AniList, Kitsu and MyAnimeList scores and viewer stats, AniList tags and our streaming research. <Link href={`/similar/${a.slug}`} className="underline">More like this</Link></p>
+              </div>
+            )}
             {a.youtubeVideoId && (
               <div className="mt-8">
                 <h3 className="mb-3 text-lg font-bold">Trailer</h3>
