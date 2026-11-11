@@ -251,7 +251,7 @@ async function store(res, url, genq, key, lastKey) {
   if (res.status !== 200 || res.headers.has("set-cookie") || !sameBuild) return;
   const puts = [];
   // Build assets stay out of R2: the app serves them from static assets, which costs no Worker time.
-  if (pages && !url.pathname.startsWith("/_next/static/")) puts.push(storeGlobal(res.clone(), key).catch(() => {}));
+  if (pages && !url.pathname.startsWith("/_next/static/")) puts.push(storeGlobal(res.clone(), key).catch((err) => console.error("r2 store failed", key.url, String(err))));
   const stored = new Response(res.clone().body, res); // own copy: headers from fetch() are immutable
   stored.headers.set("cache-control", `public, max-age=${ttl(url.pathname)}`);
   stored.headers.delete("vary"); // the key already excludes RSC requests; Vary would split or block caching
