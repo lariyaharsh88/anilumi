@@ -9,6 +9,7 @@ import { popularVoiceActors, vaPath } from "@/lib/anilist";
 import { allDays, birthdaysOn, bdPath, monthPath } from "@/lib/birthdays";
 import { fillerSlugs, continuationSlugs } from "@/lib/filler";
 import { characterTableSlugs, BLOOD_TYPES } from "@/lib/charsnap";
+import { hindiArtists, hindiArtistPath } from "@/lib/hindivoices";
 import { hasSnapshotCast } from "@/lib/castsnap";
 import { hasSnapshotThemes } from "@/lib/themes";
 import { airing as airingSnapshot, upcomingOf } from "@/lib/airing";
@@ -76,6 +77,8 @@ export async function sitemapEntries(): Promise<MetadataRoute.Sitemap> {
     { url: abs("/random-anime-generator"), lastModified: at(D.anilist), changeFrequency: "monthly", priority: 0.6 },
     { url: abs("/birthdays"), lastModified: now, changeFrequency: "daily", priority: 0.7 },
     { url: abs("/anime-birthday-twin"), lastModified: at(D.birthdays), changeFrequency: "monthly", priority: 0.6 },
+    // Hindi voice artists: listed once researched (the hub 404s while the data file is empty).
+    ...(hindiArtists().length ? [{ url: abs("/hindi-voice-artists"), lastModified: now, changeFrequency: "monthly" as const, priority: 0.6 }, ...hindiArtists().map((a) => ({ url: abs(hindiArtistPath(a)), lastModified: now, changeFrequency: "monthly" as const, priority: 0.5 }))] : []),
     ...Array.from({ length: 12 }, (_, i) => ({ url: abs(monthPath(i + 1)), lastModified: at(D.birthdays), changeFrequency: "monthly" as const, priority: 0.6 })),
     { url: abs("/on-this-day"), lastModified: now, changeFrequency: "daily", priority: 0.7 },
     // Only indexed character pages (lib/indexing.ts): those with verified notes plus any Google already shows.

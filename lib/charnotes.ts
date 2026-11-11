@@ -14,7 +14,7 @@ export type CharacterNote = {
   /** Spoiler-free: what they can do as introduced. */
   abilities?: string | null;
   /** "Does X die?": shown only behind a spoiler toggle. */
-  fate?: { status: "alive" | "dies" | "unclear"; detail: string; basis: string } | null;
+  fate?: { status: "alive" | "dies" | "revived" | "unclear"; detail: string; basis: string } | null;
   /** Official Hindi dub voice, only when credited by an official or first-hand source. */
   hindiVoice?: { name: string; dub: string; sources: string[] } | null;
 };

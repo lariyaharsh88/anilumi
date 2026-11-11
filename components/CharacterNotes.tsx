@@ -1,5 +1,6 @@
 import Link from "@/components/Link";
 import { characterNote, debutInShow, linkedArcs, NOTES_CHECKED, NOTES_REVIEWED } from "@/lib/charnotes";
+import { hindiArtistByName, hindiArtistPath } from "@/lib/hindivoices";
 
 const fmt = (iso: string) => new Date(`${iso}T12:00:00Z`).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" });
 
@@ -19,7 +20,7 @@ export default function CharacterNotes({ slug, show }: { slug: string; show: { s
   if (n.affiliations.length) rows.push(["Affiliations", n.affiliations.join(" · ")]);
   if (n.relatives.length) rows.push(["Family", n.relatives.map((r) => `${r.name} (${r.relation})`).join(" · ")]);
   if (n.abilities) rows.push(["Abilities", n.abilities]);
-  if (n.hindiVoice) rows.push(["Hindi voice", <>{n.hindiVoice.name} <span className="text-muted">({n.hindiVoice.dub})</span></>]);
+  if (n.hindiVoice) { const artist = hindiArtistByName(n.hindiVoice.name); rows.push(["Hindi voice", <>{artist ? <Link href={hindiArtistPath(artist)} className="text-violet-2 hover:underline">{n.hindiVoice.name}</Link> : n.hindiVoice.name} <span className="text-muted">({n.hindiVoice.dub})</span></>]); }
   if (!rows.length) return null;
   return (
     <section className="card reveal p-5" aria-labelledby="notes-h">
@@ -30,7 +31,7 @@ export default function CharacterNotes({ slug, show }: { slug: string; show: { s
       {n.fate && (
         <details className="mt-3 rounded-xl border border-line bg-white/[.03] p-3 text-sm">
           <summary className="cursor-pointer font-medium text-ink">Does {n.name} die? <span className="text-muted">(spoiler, tap to reveal)</span></summary>
-          <p className="mt-2 text-ink/90"><strong>{n.fate.status === "alive" ? "No." : n.fate.status === "dies" ? "Yes." : "It's unclear."}</strong> {n.fate.detail} <span className="text-muted">(As of the {n.fate.basis}.)</span></p>
+          <p className="mt-2 text-ink/90"><strong>{n.fate.status === "alive" ? "No." : n.fate.status === "dies" ? "Yes." : n.fate.status === "revived" ? "Yes, but not for good." : "It's unclear."}</strong> {n.fate.detail} <span className="text-muted">(As of the {n.fate.basis}.)</span></p>
         </details>
       )}
       <p className="mt-3 text-[11px] text-muted">{NOTES_REVIEWED ? "Checked" : `Draft, cross-checked${NOTES_CHECKED ? ` on ${fmt(NOTES_CHECKED)}` : ""}`} against the series wiki and Wikipedia. <Link href="/how-we-check" className="underline">How we check</Link></p>
