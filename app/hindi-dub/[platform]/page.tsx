@@ -11,8 +11,9 @@ import { fitTitle } from "@/lib/titles";
 import { HINDI_PLATFORMS, dubDate, dubHref, dubsOn, hindiDubbed, hindiPlatform, platformKind } from "@/lib/hindidub";
 
 export const revalidate = 86400;
-export const dynamicParams = false;
-export function generateStaticParams() { return HINDI_PLATFORMS.map((p) => ({ platform: p.slug })); }
+// Rendered on first request like the rest of the site: build-time pages with dynamicParams = false 404 on the
+// Cloudflare build (OpenNext). Unknown values still 404 through load().
+export async function generateStaticParams() { return []; }
 type Props = { params: Promise<{ platform: string }> };
 
 function load(slug: string) {

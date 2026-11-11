@@ -16,10 +16,9 @@ import { dbEnabled } from "@/lib/db";
 
 // Every 6 hours, so the "Today" marker follows the date.
 export const revalidate = 21600;
-export const dynamicParams = false;
-export function generateStaticParams() {
-  return MONTHS.map((month) => ({ month }));
-}
+// Rendered on first request like the rest of the site: build-time pages with dynamicParams = false 404 on the
+// Cloudflare build (OpenNext). Unknown values still 404 through load().
+export async function generateStaticParams() { return []; }
 type Props = { params: Promise<{ month: string }> };
 
 const href = (c: BdChar) => characterPathFor(c.id) ?? (c.s ? animePath({ slug: c.s }) : null);
