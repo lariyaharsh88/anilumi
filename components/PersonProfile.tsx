@@ -3,7 +3,7 @@ import Image from "next/image";
 import { kitsuByAniListIds, animePath, type Anime } from "@/lib/kitsu";
 import { vaPath, staffPath, cleanBio, type VoiceActor, type VaRole, type StaffWork } from "@/lib/anilist";
 import { personFacts } from "@/lib/wikidata";
-import { characterPathFor } from "@/lib/charsnap";
+import { characterPathFor, snapById } from "@/lib/charsnap";
 import { abs } from "@/lib/site";
 import PageHero from "./PageHero";
 import JsonLd from "./JsonLd";
@@ -59,6 +59,9 @@ export default async function PersonProfile({ va, kind }: { va: VoiceActor; kind
   const link = (m: VaRole["media"]): Anime | undefined => kitsu.get(m.id);
   const path = kind === "voice" ? vaPath(va) : staffPath(va);
   const sig = signatureRoles(va.roles);
+  // The same character in the other language ("English: Kaiji Tang"), from the monthly character snapshot.
+  const counterpart = (charId: number) => { const c = snapById(charId); const p = va.language === "English" ? c?.jp : c?.en; return p && p.id !== va.id ? p : null; };
+  const dubbed = kind === "voice" ? sig.slice(0, 12).flatMap((r) => { const p = counterpart(r.character.id); return p ? [{ r, p }] : []; }) : [];
   const mains = va.roles.filter((r) => r.role === "MAIN").length;
   const capped = va.roles.length >= 95;
   const jobs = mainRoles(va.work);
@@ -113,6 +116,7 @@ export default async function PersonProfile({ va, kind }: { va: VoiceActor; kind
     ? [
         { q: `What characters has ${va.name} voiced?`, a: `${va.name}'s best-known roles include ${sig.slice(0, 6).map((r) => `${r.character.name} (${r.media[0].title})`).join(", ")}. ${va.name} has voiced ${capped ? "more than 100" : va.roles.length} anime roles.` },
         ...(current.length ? [{ q: `What new anime is ${va.name} in?`, a: `${current.slice(0, 4).map((r) => `${r.role.characters[0]?.name ?? "a role"} in ${r.role.media.title} (${r.when.toLowerCase()})`).join(", ")}.` }] : []),
+        ...(dubbed.length ? [{ q: va.language === "English" ? `Who voices ${va.name}'s characters in Japanese?` : `Who voices ${va.name}'s characters in the English dub?`, a: `${dubbed.slice(0, 5).map(({ r, p }) => `${r.character.name}: ${p.n}`).join("; ")}.` }] : []),
         ...(sig[0] ? [{ q: `What is ${va.name}'s most popular role?`, a: `${sig[0].character.name} in ${sig[0].media[0].title}, the most-watched anime ${va.name} has voiced in.` }] : []),
         ...(born ? [{ q: `When is ${va.name}'s birthday?`, a: `${va.name} was born on ${born}${va.homeTown || wd?.birthPlace ? ` in ${va.homeTown || wd!.birthPlace}` : ""}.` }] : []),
         ...(wd?.awards.length ? [{ q: `What awards has ${va.name} won?`, a: `${wd.awards.join(", ")}.` }] : []),
@@ -211,6 +215,7 @@ export default async function PersonProfile({ va, kind }: { va: VoiceActor; kind
                   </span>
                   <span className="mt-2 block truncate text-sm font-semibold text-ink group-hover:text-violet-2">{r.character.name}</span>
                   <span className="block truncate text-xs text-muted">{r.media[0].title}{r.media.length > 1 ? ` +${r.media.length - 1}` : ""}</span>
+                  {counterpart(r.character.id) && <span className="block truncate text-[11px] text-muted">{va.language === "English" ? "Japanese" : "English"}: {counterpart(r.character.id)!.n}</span>}
                 </>
               );
               // The character's own page when we have one (their profile is what people want), else the anime.
