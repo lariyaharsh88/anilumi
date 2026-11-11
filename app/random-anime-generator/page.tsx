@@ -17,8 +17,8 @@ import { editorWatched } from "@/lib/editor";
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: "Random Anime Generator: Pick by Genre, Length & Score",
-  description: fitDescription("Can't decide what to watch? Pick a random anime from the most-watched series and films, filtered by genre, length, AniList score or Hindi dub. Every pick says what it's about and where to watch it."),
+  title: "Random Anime Generator: Pick by Mood, Genre, Length & Score",
+  description: fitDescription("Can't decide what to watch? Pick a random anime by mood (feel-good, sad, hype, mind-bending, romance, scary), genre, length, score or Hindi dub, one or three at a time."),
   alternates: { canonical: "/random-anime-generator" },
 };
 
@@ -53,7 +53,7 @@ export default async function RandomGenerator() {
         crumbs={[{ href: "/", label: "Home" }, { href: "/random-anime-generator", label: "Random anime generator" }]}
         eyebrow="🎲 Random pick"
         title={<>Random <span className="text-gradient">anime generator</span></>}
-        subtitle={`Set a genre, a length or a minimum score, then let it pick from ${items.length} well-loved anime. Only first seasons and standalone films, so every pick is somewhere you can start.`}
+        subtitle={`Pick a mood, or set a genre, a length or a minimum score, then let it pick one or three from ${items.length} well-loved anime. Only first seasons and standalone films, so every pick is somewhere you can start.`}
         facts={[{ value: String(items.length), label: "anime to pick from" }, { value: String(items.filter((x) => x.hindi).length), label: "with a Hindi dub" }]}
         hue={300}
       />
@@ -65,6 +65,8 @@ export default async function RandomGenerator() {
       <Faq title="Random anime generator FAQ" items={[
         { q: "Which anime can it pick?", a: `The ${items.length} most-watched anime on AniList that you can start from: first seasons and standalone films, never a sequel. Adult and ecchi titles are left out.` },
         { q: "How do the filters work?", a: "Genre uses AniList's genres; length counts TV episodes (movies separately); score is AniList's average; the Hindi option keeps only anime with an official Hindi dub on our checked list." },
+        { q: "Can it pick anime for my mood?", a: "Yes. Feel-good picks comedy and slice of life, Something sad picks drama, Hype action picks action, Mind-bending picks psychological, mystery and thriller, Romance and Scary do what they say, and Cozy & short keeps to slice of life of 13 episodes or fewer." },
+        { q: "Can I share what it picked?", a: "Yes: press Share after a pick to send a link that opens on the same anime." },
         { q: "Is it really random?", a: "Yes: every anime that matches your filters has the same chance, and it won't pick the same one twice in a row." },
       ]} />
     </div>
