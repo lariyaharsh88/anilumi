@@ -4,6 +4,7 @@
  */
 import data from "@/data/aliases.json";
 import { norm, type AliasEntry } from "./aliases";
+import { untrackedFetch } from "./untracked-fetch";
 
 export type NewsItem = { id: string; title: string; summary: string; url: string; date: string; category: string; source: string; anime: { slug: string; title: string }[] };
 
@@ -76,9 +77,9 @@ export function animeInHeadline(headline: string, ms: Matcher[], limit = 2): { s
 
 async function fetchFeed(f: (typeof FEEDS)[number]): Promise<Omit<NewsItem, "anime">[]> {
   try {
-    const res = await fetch(f.url, {
+    // Untracked (getNews keeps the list 10 minutes): a tracked hourly fetch made anime pages expire hourly.
+    const res = await untrackedFetch(f.url, {
       headers: { Accept: "application/rss+xml, application/xml;q=0.9, */*;q=0.8", "User-Agent": "Mozilla/5.0 (compatible; AniLumi/1.0; +https://anilumi.in)" },
-      next: { revalidate: 3600 },
       signal: AbortSignal.timeout(8000),
     });
     if (!res.ok) { console.warn(`[news] ${f.source}: HTTP ${res.status}`); return []; }

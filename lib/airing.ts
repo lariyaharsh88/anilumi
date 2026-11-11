@@ -1,9 +1,12 @@
 /**
  * Airing snapshot: every airing anime with AniList's exact air times for its next few episodes, refreshed every
- * 3 hours by .github/workflows/airing.yml into the `airing-data` branch and read here at runtime (cached 30 min).
+ * 3 hours by .github/workflows/airing.yml into the `airing-data` branch and read here at runtime (kept 10 minutes
+ * per Worker instance).
  * AniList rate-limits Render, so live calls failed exactly when "episode N release date" pages needed them.
  * Fails soft: an unreachable or stale (> 12 h) snapshot reads as empty and callers use live AniList.
  */
+import { untrackedFetch } from "./untracked-fetch";
+
 export const AIRING_URL = "https://raw.githubusercontent.com/lariyaharsh88/anilumi/airing-data/airing.json";
 const STALE_MS = 12 * 3600_000;
 
@@ -27,7 +30,8 @@ export function indexAiring(snap: Partial<Snap> | null, now = Date.now()): Index
 
 export async function airing(): Promise<Index> {
   if (memo && Date.now() - memo.at < 10 * 60_000) return memo.v;
-  const snap = await fetch(AIRING_URL, { next: { revalidate: 1800 }, signal: AbortSignal.timeout(5000) })
+  // Untracked: a tracked 30-minute fetch made every page that reads air times expire after 30 minutes.
+  const snap = await untrackedFetch(AIRING_URL, { signal: AbortSignal.timeout(5000) })
     .then((r) => (r.ok ? (r.json() as Promise<Snap>) : null))
     .catch(() => null);
   const v = indexAiring(snap);

@@ -458,7 +458,7 @@ export default async function AnimePage({ params }: Props) {
               {a.status === "current" && a.nextRelease && (
                 <Link href={nextN ? episodePath(a, nextN) : `${animePath(a)}/episodes`} className="mt-5 flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-accent/40 max-md:col-span-2 bg-accent/10 p-3 text-left text-sm backdrop-blur transition hover:border-accent">
                   <span><strong className="text-accent-2">{nextN ? `Episode ${nextN}${planned && nextN <= planned ? ` of ${planned}` : ""}:` : "Next episode:"}</strong> {fmtDate(a.nextRelease, { weekday: "long", month: "long", day: "numeric", hour: "numeric", minute: "2-digit", timeZone: "Asia/Tokyo" })} JST<LocalTime iso={a.nextRelease} /></span>
-                  <Countdown iso={a.nextRelease} label="in" />
+                  <Countdown iso={a.nextRelease} label="in" kitsuId={a.id} />
                 </Link>
               )}
               {notice && <div className="text-left max-md:col-span-2"><AiringNoticeBanner n={notice} title={a.title} /></div>}

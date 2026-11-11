@@ -345,7 +345,7 @@ export async function getAniListSequel(kitsuId: string): Promise<AlSequel | null
     const d = await anilist<{ Media: { relations: { edges: Parameters<typeof alSequelFrom>[0] } } | null }>(
       "query($id:Int){Media(id:$id,type:ANIME){relations{edges{relationType node{id type format status title{romaji english} startDate{year month day}}}}}}",
       { id },
-      21600,
+      86400, // a day: it sets the anime page's expiry for finished shows, and sequel news is rare
       { strict: true },
     );
     return d?.Media ? alSequelFrom(d.Media.relations.edges) : null;
