@@ -101,7 +101,8 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   },
   overlord: {
     label: "Overlord",
-    intro: "Four seasons in order, then the 2024 film The Sacred Kingdom, which adapts the next volume. The two compilation films retell Season 1 and can be skipped. Ple Ple Pleiades are comedy shorts.",
+    intro: "Four seasons in order, then the 2024 film The Sacred Kingdom, which adapts the Holy Kingdom arc (light novel volumes 12 and 13). Season 4 skipped those two volumes, so the film fills that gap and is best watched after Season 4. The two compilation films retell Season 1 and can be skipped. Ple Ple Pleiades are comedy shorts, and Isekai Quartet is an optional crossover comedy.",
+    skip: ["isekai-quartet-relay-pv"],
   },
   "kono-subarashii-sekai-ni-shukufuku-wo": {
     label: "KonoSuba",
@@ -127,7 +128,7 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   },
   "spy-x-family": {
     label: "Spy x Family",
-    intro: "Season 1 (two halves), then the standalone film Code: White if you want it, then Season 2 and Season 3 (October 2025).",
+    intro: "Season 1 (two halves, April–December 2022), then the standalone film Code: White (December 2023) if you want it, then Season 2 (October–December 2023) and Season 3 (October–December 2025). A fourth season and a second film were announced in November 2026, both for 2027.",
   },
   "chainsaw-man": {
     label: "Chainsaw Man",
@@ -230,12 +231,16 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   },
   "bungou-stray-dogs": {
     label: "Bungo Stray Dogs",
-    intro: "Seasons 1 and 2, then the film Dead Apple, which is set between Seasons 2 and 3, then Seasons 3, 4 and 5. Season 2 opens with a four-episode flashback arc (The Dark Era) that is essential. Kitsu's links stop at Dead Apple, so the later seasons are not in the list below. Bungo Stray Dogs Wan! is a chibi comedy spin-off.",
+    intro: "Seasons 1 and 2, then the film Dead Apple (2018), which is set between Seasons 2 and 3, then Season 3 (2019), Season 4 (January–March 2023) and Season 5 (July–September 2023). Season 2 opens with a four-episode flashback arc (The Dark Era) that is essential. No sixth season has been announced. Bungo Stray Dogs Wan! (2021, with a second season in 2026) is a chibi comedy spin-off.",
+    promote: ["bungou-stray-dogs-3", "bungou-stray-dogs-4", "bungou-stray-dogs-5"],
+    mainOrder: ["bungou-stray-dogs", "bungou-stray-dogs-2", "bungou-stray-dogs-dead-apple", "bungou-stray-dogs-3", "bungou-stray-dogs-4", "bungou-stray-dogs-5"],
   },
   "black-butler": {
     label: "Black Butler",
     intro: "Season 1 follows the manga for roughly its first half and then tells an anime-original story; Season 2 continues that anime-only plot, so skip it. The manga-faithful route after Season 1 is Book of Circus (2014), Book of Murder (OVA), the film Book of the Atlantic, then Public School Arc (2024) and Emerald Witch Arc (2025).",
     skip: ["black-butler-ii"],
+    promote: ["black-butler-book-of-circus", "black-butler-book-of-murder", "black-butler-book-of-the-atlantic", "kuroshitsuji-2024", "kuroshitsuji-midori-no-majo-hen"],
+    mainOrder: ["black-butler", "black-butler-book-of-circus", "black-butler-book-of-murder", "black-butler-book-of-the-atlantic", "kuroshitsuji-2024", "kuroshitsuji-midori-no-majo-hen"],
   },
   "fruits-basket-2019": {
     label: "Fruits Basket",
@@ -243,7 +248,9 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   },
   "toaru-majutsu-no-index": {
     label: "A Certain Magical Index / Railgun",
-    intro: "Index and Railgun share a world and overlap in time. Release order works well: Index (2008), Railgun (2009), Index II (2010), the film Miracle of Endymion (February 2013), Railgun S (April 2013), Index III (2018), Accelerator (2019) and Railgun T (2020). Railgun also stands on its own if you only want Misaka's story.",
+    intro: "Index and Railgun share a world and overlap in time. Release order works well: Index (2008), Railgun (2009), Index II (2010), the film Miracle of Endymion (February 2013), Railgun S (April 2013), Index III (2018), Accelerator (2019) and Railgun T (2020). Railgun also stands on its own if you only want Misaka's story. A fourth Railgun season was announced in February 2025 and has no release date yet.",
+    promote: ["toaru-kagaku-no-railgun", "toaru-kagaku-no-railgun-s", "toaru-kagaku-no-accelerator", "toaru-kagaku-no-railgun-t"],
+    mainOrder: ["toaru-majutsu-no-index", "toaru-kagaku-no-railgun", "toaru-majutsu-no-index-ii", "toaru-kagaku-no-railgun-s", "toaru-majutsu-no-index-iii", "toaru-kagaku-no-accelerator", "toaru-kagaku-no-railgun-t"],
   },
   "natsume-yuujinchou": {
     label: "Natsume's Book of Friends",
@@ -414,7 +421,7 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   },
   kakegurui: {
     label: "Kakegurui",
-    intro: "Kakegurui (12 episodes, July–September 2017), then Kakegurui×× (12 episodes, January–March 2019). Kakegurui Twin (Netflix, August 2022) is a spin-off centred on Mary Saotome; it is optional and can be watched after the two seasons.",
+    intro: "Kakegurui (12 episodes, July–September 2017), then Kakegurui×× (12 episodes, January–March 2019). Kakegurui Twin (Netflix, August 2022, 6 episodes) is a prequel spin-off centred on Mary Saotome, set a year before the first season; it is optional and can be watched any time after Season 1.",
     demote: ["kakegurui-twin"],
   },
   "darker-than-black": {
@@ -452,7 +459,7 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   },
   "danganronpa-kibou-no-gakuen-to-zetsubou-no-koukousei-the-animation": {
     label: "Danganronpa",
-    intro: "Danganronpa: The Animation (13 episodes, 2013) adapts the first game. Then watch Danganronpa 3: Future Arc and Despair Arc, which aired in parallel, alternating episodes, from July to September 2016, and finish with Hope Arc (September 29, 2016), the single-episode ending to both. Despair Arc is set in the past, during the characters' school days. Danganronpa 3 is an original story written for the anime as a sequel to the games.",
+    intro: "Danganronpa: The Animation (13 episodes, 2013) adapts the first game. Then watch Danganronpa 3: Future Arc and Despair Arc, which aired in parallel, alternating episodes, from July to September 2016, and finish with Hope Arc (September 29, 2016), the single-episode ending to both. Despair Arc is set in the past, during the characters' school days. Danganronpa 3 is an original story written for the anime as a sequel to the games, including the second game, Super Danganronpa 2, which has no anime adaptation, so play it or read a summary first.",
     promote: ["danganronpa-3-the-end-of-kibougamine-gakuen-zetsubou-hen"],
     mainOrder: ["danganronpa-kibou-no-gakuen-to-zetsubou-no-koukousei-the-animation", "danganronpa-3-the-end-of-kibougamine-gakuen-mirai-hen", "danganronpa-3-the-end-of-kibougamine-gakuen-zetsubou-hen", "danganronpa-3-the-end-of-kibougamine-gakuen-kibou-hen"],
   },
@@ -468,11 +475,11 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   },
   "ghost-in-the-shell-2015": {
     label: "Ghost in the Shell: Arise",
-    intro: "Arise is a reboot with its own continuity, separate from Stand Alone Complex and the 1995 film. Watch either the four OVA Borders (June 2013–September 2014) or Alternative Architecture (TV, April–June 2015), which re-edits them as a TV series and adds two new episodes, Pyrophoric Cult. Then watch Ghost in the Shell: The New Movie (June 2015), which follows on from Arise.",
+    intro: "Arise is a reboot with its own continuity, separate from Stand Alone Complex and the 1995 film. Watch either the four OVA Borders (June 2013–September 2014) or Alternative Architecture (TV, April–June 2015), which re-edits them as a TV series and adds two new episodes, Pyrophoric Cult. If you watch the Borders, also watch Pyrophoric Cult, released separately as Border 5 in August 2015; it is listed below with the alternative versions but is not a retelling. Then watch Ghost in the Shell: The New Movie (June 2015), which follows on from Arise.",
   },
   "ghost-in-the-shell-stand-alone-complex": {
     label: "Ghost in the Shell: Stand Alone Complex",
-    intro: "Watch Stand Alone Complex (26 episodes, 2002–2003), 2nd GIG (26 episodes, 2004–2005) and the TV film Solid State Society (2006), then SAC_2045 Season 1 (Netflix, April 2020) and Season 2 (May 2022). The Laughing Man and Individual Eleven are compilation films of the first two seasons, and Sustainable War and The Last Human recut SAC_2045; skip all four if you watch the series. The Tachikomatic Days shorts are optional.",
+    intro: "Watch Stand Alone Complex (26 episodes, 2002–2003), 2nd GIG (26 episodes, 2004–2005) and the TV film Solid State Society (2006), then SAC_2045 Season 1 (Netflix, April 2020) and Season 2 (May 2022). The Laughing Man and Individual Eleven are compilation films of the first two seasons, and Sustainable Warfare and The Last Human recut SAC_2045; skip all four if you watch the series. The Tachikomatic Days shorts are optional. THE GHOST IN THE SHELL (July 2026, Science SARU) is a new adaptation of Masamune Shirow's manga with its own continuity; it is listed below with the alternative versions but is not a retelling of Stand Alone Complex.",
   },
   trigun: {
     label: "Trigun",
@@ -499,7 +506,7 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   },
   "higurashi-no-naku-koro-ni": {
     label: "Higurashi: When They Cry",
-    intro: "Watch Higurashi (26 episodes, April–September 2006), Kai (24 episodes, July–December 2007) and the Rei OVA (2009), then Gou (24 episodes, October 2020–March 2021) and its sequel Sotsu (July–September 2021). Gou was first promoted as a remake, but it continues from the earlier anime, so do not start with it. Kira (2011), Outbreak (2013) and the Nekogoroshi-hen special are optional extras.",
+    intro: "Watch Higurashi (26 episodes, April–September 2006), Kai (24 episodes, July–December 2007) and the Rei OVA (2009), then Gou (24 episodes, October 2020–March 2021) and its sequel Sotsu (July–September 2021). Gou was first promoted as a remake, but it continues from the earlier anime, so do not start with it. Kira (2011), Outbreak (2013) and the Nekogoroshi-hen special are optional extras. A new TV anime by Studio Deen, which made the 2006 series, was announced in June 2026 and has no release date yet.",
     promote: ["higurashi-no-naku-koro-ni-gou", "higurashi-no-naku-koro-ni-sotsu"],
     mainOrder: ["higurashi-no-naku-koro-ni", "higurashi-no-naku-koro-ni-kai", "higurashi-no-naku-koro-ni-rei", "higurashi-no-naku-koro-ni-gou", "higurashi-no-naku-koro-ni-sotsu"],
   },
@@ -517,6 +524,8 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
     intro: "Watch Free! (July–September 2013), Eternal Summer (July–September 2014), the film Take Your Marks (October 2017), which is set between the second and third seasons, Dive to the Future (July–September 2018), then the two-part film The Final Stroke (September 2021 and April 2022). The Timeless Medley films (2017) and Road to the World (2019) are compilations. Starting Days (2015) is an optional prequel film set in middle school.",
     demote: ["free-starting-days"],
     skip: ["free-timeless-melody-kizuna"],
+    promote: ["free-take-your-marks"],
+    mainOrder: ["free", "free-eternal-summer", "free-take-your-marks", "free-dive-to-the-future", "free–the-final-stroke", "free-the-final-stroke-kouhen"],
   },
   given: {
     label: "Given",
@@ -525,10 +534,12 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   "yu-yu-hakusho": {
     label: "Yu Yu Hakusho",
     intro: "Yu Yu Hakusho is one 112-episode TV series (October 1992–January 1995), so start there. The films The Golden Seal (July 1993) and Poltergeist Report (April 1994) have original stories and are optional. Two Shots / All or Nothing (October 2018) adapts a bonus chapter about how Hiei and Kurama met and a chapter from the end of the manga; watch it after the series. The Eizou Hakusho videos and the 2009 picture drama are short extras.",
+    demote: ["yu-yu-hakusho-picture-drama"],
   },
   "youkoso-jitsuryoku-shijou-shugi-no-kyoushitsu-e-tv": {
     label: "Classroom of the Elite",
     intro: "Watch the four seasons in order: Classroom of the Elite (July–September 2017), II (July–September 2022), III (January–March 2024) and the 4th Season (16 episodes, April–June 2026), subtitled Second Year, First Semester, which starts the second-year story. A fifth season was announced after the fourth season's final episode and has no release date yet.",
+    skip: ["youkoso-jitsuryoku-shijou-shugi-no-kyoushitsu-e"],
   },
   "zero-no-tsukaima": {
     label: "The Familiar of Zero",
@@ -550,7 +561,8 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   },
   "accel-world": {
     label: "Accel World",
-    intro: "Watch the 24-episode series (April–September 2012), then the film Accel World: Infinite Burst (July 2016). The two-episode EX OVA (September 2012 and January 2013) is a pair of side episodes, one about a thief in the school network and one about Haruyuki's diet. The Accel World specials are optional too.",
+    intro: "Watch the 24-episode series (April–September 2012), then the film Accel World: Infinite Burst (July 2016). The two-episode EX OVA, bundled with the two Accel World video games in September 2012 and January 2013, is a pair of optional side episodes. The Acchel World chibi specials are optional too.",
+    demote: ["accel-world-ex"],
   },
   "youjo-senki": {
     label: "The Saga of Tanya the Evil",
@@ -763,7 +775,8 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   },
   "my-little-monster": {
     label: "My Little Monster",
-    intro: "My Little Monster is one 13-episode series (October–December 2012). The OVA, bundled on DVD with the limited edition of the twelfth and final manga volume on August 12, 2013, is an optional extra episode to watch after the series. There is no second season.",
+    intro: "My Little Monster is one 13-episode series (October–December 2012). The OVA, bundled on DVD with the limited edition of manga volume 12 (the last volume of the main story) in August 2013, is an optional extra episode to watch after the series. There is no second season.",
+    optional: ["my-little-monster-ova"],
   },
   dororo: {
     label: "Dororo (2019)",
