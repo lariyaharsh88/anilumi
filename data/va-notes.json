@@ -1,5 +1,5 @@
 {
-  "checked": "2026-11-10",
+  "checked": "2026-11-11",
   "reviewed": null,
   "people": {
     "95591": {
@@ -3287,6 +3287,799 @@
         "https://www.seiyuawards.jp/winning/winning_10/index.php"
       ],
       "notes": "Debut left null: only ja Wikipedia names a debut role (Monroe in Shakira!, 2013). Newtype award year from ja Wikipedia; en Wikipedia lists him in its Newtype Best Actor navbox without a year. The Sir Vanity fact is from ja Wikipedia only."
+    },
+    "95091": {
+      "name": "Jouji Nakata",
+      "debut": null,
+      "awards": [],
+      "agency": "Office Osawa",
+      "signature": [
+        {
+          "character": "Alucard",
+          "anime": "Hellsing",
+          "year": 2001
+        },
+        {
+          "character": "The Count of Monte Cristo",
+          "anime": "Gankutsuou: The Count of Monte Cristo",
+          "year": 2004
+        },
+        {
+          "character": "Giroro",
+          "anime": "Sgt. Frog",
+          "year": 2004
+        },
+        {
+          "character": "Kirei Kotomine",
+          "anime": "Fate/stay night",
+          "year": 2006
+        }
+      ],
+      "also": [
+        "Began as a live-action actor; his first regular TV role was Nitta Tadatsune in the 1979 NHK taiga drama Kusa Moeru.",
+        "Played villains in Super Sentai on screen, including Sir Cowler in Choushinsei Flashman (1986) and Great Professor Bias in Choujuu Sentai Liveman (1988)."
+      ],
+      "confidence": "high",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Jouji_Nakata",
+        "https://ja.wikipedia.org/wiki/%E4%B8%AD%E7%94%B0%E8%AD%B2%E6%B2%BB",
+        "https://www.animenewsnetwork.com/encyclopedia/people.php?id=10486",
+        "https://osawa-inc.co.jp/men/nakatajouji/",
+        "https://anilist.co/staff/95091"
+      ],
+      "notes": "Debut left null: neither Wikipedia names a first anime role (his career began in live action in 1979). No major voice-acting awards found in either Wikipedia or the Seiyu Awards winners lists. ANN id 1030 redirects to 10486."
+    },
+    "95010": {
+      "name": "Johnny Yong Bosch",
+      "debut": null,
+      "awards": [],
+      "agency": null,
+      "signature": [
+        {
+          "character": "Vash the Stampede",
+          "anime": "Trigun (English dub)",
+          "year": 1998
+        },
+        {
+          "character": "Ichigo Kurosaki",
+          "anime": "Bleach (English dub)",
+          "year": 2004
+        },
+        {
+          "character": "Lelouch Lamperouge",
+          "anime": "Code Geass: Lelouch of the Rebellion (English dub)",
+          "year": 2006
+        }
+      ],
+      "also": [
+        "American English-dub voice actor, not a Japanese seiyu; first known on screen as Adam Park, the second Black Ranger in Mighty Morphin Power Rangers (1994).",
+        "Fronts the rock band Eyeshine as vocalist and guitarist."
+      ],
+      "confidence": "medium",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Johnny_Yong_Bosch",
+        "https://ja.wikipedia.org/wiki/%E3%82%B8%E3%83%A7%E3%83%8B%E3%83%BC%E3%83%BB%E3%83%A8%E3%83%B3%E3%82%B0%E3%83%BB%E3%83%9C%E3%83%83%E3%82%B7%E3%83%A5",
+        "https://www.animenewsnetwork.com/encyclopedia/people.php?id=1283",
+        "https://anilist.co/staff/95010"
+      ],
+      "notes": "He is an English-dub actor, so Seiyu Awards and Japanese agencies do not apply. Debut left null: the sources disagree (en Wikipedia says Shotaro Kaneda in the Animaze dub of Akira; ja Wikipedia says Vash in Trigun, 2000). Agency left null: neither Wikipedia names one. Awards empty: en Wikipedia lists only Crunchyroll Anime Award nominations (2021, 2024) and ja Wikipedia an American Anime Awards nomination, no wins. Years are the original Japanese series years; his English dubs came later (Trigun 2000, Bleach 2006, Code Geass 2008)."
+    },
+    "95081": {
+      "name": "Nana Mizuki",
+      "debut": null,
+      "awards": [
+        {
+          "award": "Seiyu Awards – Singing Award (1st)",
+          "year": 2007
+        },
+        {
+          "award": "Seiyu Awards – Kei Tomiyama Award (4th)",
+          "year": 2010
+        },
+        {
+          "award": "MEXT Art Encouragement Prize for New Artists (64th), popular entertainment",
+          "year": 2014
+        }
+      ],
+      "agency": "StarCrew",
+      "signature": [
+        {
+          "character": "Hinata Hyuga",
+          "anime": "Naruto",
+          "year": 2002
+        },
+        {
+          "character": "Fate Testarossa",
+          "anime": "Magical Girl Lyrical Nanoha",
+          "year": 2004
+        },
+        {
+          "character": "Tsubomi Hanasaki / Cure Blossom",
+          "anime": "HeartCatch PreCure!",
+          "year": 2010
+        },
+        {
+          "character": "Tsubasa Kazanari",
+          "anime": "Symphogear",
+          "year": 2012
+        }
+      ],
+      "also": [
+        "Her album Ultimate Diamond reached No. 1 on the Oricon weekly album chart in June 2009.",
+        "Performed at the 60th NHK Kōhaku Uta Gassen at the end of 2009, her first appearance on the show."
+      ],
+      "confidence": "high",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Nana_Mizuki",
+        "https://ja.wikipedia.org/wiki/%E6%B0%B4%E6%A8%B9%E5%A5%88%E3%80%85",
+        "https://www.animenewsnetwork.com/encyclopedia/people.php?id=436",
+        "https://anilist.co/staff/95081",
+        "https://www.mizukinana.jp/",
+        "https://ja.wikipedia.org/wiki/%E5%A3%B0%E5%84%AA%E3%82%A2%E3%83%AF%E3%83%BC%E3%83%89",
+        "https://www.seiyuawards.jp/winning/winning_01/index.php",
+        "https://www.seiyuawards.jp/winning/winning_04/index.php"
+      ],
+      "notes": "Debut left null: her first voice role was Chisato Kadokura in the PlayStation game Noël: La Neige (1997/98), not an anime. The Seiyu Awards pages list her agency at the time as Sigma Seven; she is now with StarCrew. The Kei Tomiyama Award was later restricted to men, making her its only female winner (ja Wikipedia)."
+    },
+    "112635": {
+      "name": "Makoto Furukawa",
+      "debut": {
+        "character": "Satoshi Yoshino",
+        "anime": "Busou Chuugakusei: Basket Army (web anime)",
+        "year": 2011
+      },
+      "awards": [
+        {
+          "award": "Seiyu Awards – Best Actor in a Supporting Role (14th)",
+          "year": 2020
+        }
+      ],
+      "agency": "Toy's Factory (since December 2018)",
+      "signature": [
+        {
+          "character": "Saitama",
+          "anime": "One-Punch Man",
+          "year": 2015
+        },
+        {
+          "character": "Miyuki Shirogane",
+          "anime": "Kaguya-sama: Love Is War",
+          "year": 2019
+        },
+        {
+          "character": "Taiju Oki",
+          "anime": "Dr. Stone",
+          "year": 2019
+        }
+      ],
+      "also": [
+        "Played lead Banri Tada in Golden Time (2013); ja Wikipedia calls it his first TV anime lead.",
+        "Made his solo singing debut under Lantis in July 2018."
+      ],
+      "confidence": "medium",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Makoto_Furukawa",
+        "https://ja.wikipedia.org/wiki/%E5%8F%A4%E5%B7%9D%E6%85%8E",
+        "https://www.animenewsnetwork.com/encyclopedia/people.php?id=123459",
+        "https://anilist.co/staff/112635",
+        "https://www.toysfactory.co.jp/artist/makotofurukawa/",
+        "https://ja.wikipedia.org/wiki/%E5%A3%B0%E5%84%AA%E3%82%A2%E3%83%AF%E3%83%BC%E3%83%89",
+        "https://www.seiyuawards.jp/winning/winning_14/index.php"
+      ],
+      "notes": "Debut rests on ja Wikipedia only (it calls the 2011 web anime his professional debut, after a 2009 game role); AniList gives 2011 as his first active year. en Wikipedia carries a Newtype Anime Award navbox but no year or detail, and ja Wikipedia does not mention it, so it is left out. He went freelance after leaving Space Craft Entertainment in September 2018."
+    },
+    "119319": {
+      "name": "Junya Enoki",
+      "debut": null,
+      "awards": [],
+      "agency": "Asleben (since July 2025)",
+      "signature": [
+        {
+          "character": "Yuji Itadori",
+          "anime": "Jujutsu Kaisen",
+          "year": 2020
+        },
+        {
+          "character": "Pannacotta Fugo",
+          "anime": "JoJo's Bizarre Adventure: Golden Wind",
+          "year": 2018
+        },
+        {
+          "character": "Senjuro Rengoku",
+          "anime": "Demon Slayer: Kimetsu no Yaiba – The Movie: Mugen Train",
+          "year": 2020
+        }
+      ],
+      "also": [
+        "Cousin of voice actress Chika Anzai.",
+        "Regular Japanese dub voice of Tom Holland, including his Spider-Man films."
+      ],
+      "confidence": "high",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Junya_Enoki",
+        "https://ja.wikipedia.org/wiki/%E6%A6%8E%E6%9C%A8%E6%B7%B3%E5%BC%A5",
+        "https://www.animenewsnetwork.com/encyclopedia/people.php?id=109167",
+        "https://anilist.co/staff/119319",
+        "https://asleben.jp/talents/junya-enoki"
+      ],
+      "notes": "Debut left null: neither Wikipedia names a first role. Trained at the Atomic Monkey school and was with Atomic Monkey until June 2025. No Seiyu Award wins found on the official winners pages. Signature roles chosen from ANN and AniList credits; neither Wikipedia gives a best-known list."
+    },
+    "124923": {
+      "name": "Tomori Kusunoki",
+      "debut": {
+        "character": "Middle school girl",
+        "anime": "Eromanga Sensei",
+        "year": 2017
+      },
+      "awards": [
+        {
+          "award": "Seiyu Awards – Best New Actress (13th)",
+          "year": 2019
+        },
+        {
+          "award": "Seiyu Awards – Singing Award (17th), as a member of Nijigasaki High School Idol Club",
+          "year": 2023
+        }
+      ],
+      "agency": "Sony Music Artists",
+      "signature": [
+        {
+          "character": "Llenn (Karen Kohiruimaki)",
+          "anime": "Sword Art Online Alternative: Gun Gale Online",
+          "year": 2018
+        },
+        {
+          "character": "Setsuna Yuki",
+          "anime": "Love Live! Nijigasaki High School Idol Club",
+          "year": 2020
+        },
+        {
+          "character": "Makima",
+          "anime": "Chainsaw Man",
+          "year": 2022
+        }
+      ],
+      "also": [
+        "First anime lead was Hazuki Kagimura in Märchen Mädchen (2018).",
+        "Stepped down from the role of Setsuna Yuki at the end of March 2023 for health reasons."
+      ],
+      "confidence": "high",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Tomori_Kusunoki",
+        "https://ja.wikipedia.org/wiki/%E6%A5%A0%E6%9C%A8%E3%81%A8%E3%82%82%E3%82%8A",
+        "https://www.animenewsnetwork.com/encyclopedia/people.php?id=158678",
+        "https://anilist.co/staff/124923",
+        "https://ja.wikipedia.org/wiki/%E5%A3%B0%E5%84%AA%E3%82%A2%E3%83%AF%E3%83%BC%E3%83%89",
+        "https://www.seiyuawards.jp/winning/winning_13/index.php",
+        "https://www.seiyuawards.jp/winning/winning_17/index.php"
+      ],
+      "notes": "ja Wikipedia also lists a Famitsu Dengeki Game Award 2022 (voice actor, Heaven Burns Red); en Wikipedia does not, so it is left out. Agency confirmed by both Wikipedias and the 13th Seiyu Awards page."
+    },
+    "116543": {
+      "name": "Yumiri Hanamori",
+      "debut": {
+        "character": "Sōta Amaya",
+        "anime": "Aiura",
+        "year": 2013
+      },
+      "awards": [],
+      "agency": "tomorrow jam (her own company, since January 2023)",
+      "signature": [
+        {
+          "character": "Remo",
+          "anime": "Garakowa: Restore the World",
+          "year": 2016
+        },
+        {
+          "character": "Ai Hayasaka",
+          "anime": "Kaguya-sama: Love Is War",
+          "year": 2019
+        },
+        {
+          "character": "Sagiri",
+          "anime": "Hell's Paradise",
+          "year": 2023
+        }
+      ],
+      "also": [
+        "Left the Re:Stage! project in November 2019 because of a knee injury.",
+        "Previously with Pony Canyon Artists/Swallow and then m&i (2017–2022)."
+      ],
+      "confidence": "high",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Yumiri_Hanamori",
+        "https://ja.wikipedia.org/wiki/%E8%8A%B1%E5%AE%88%E3%82%86%E3%81%BF%E3%82%8A",
+        "https://www.animenewsnetwork.com/encyclopedia/people.php?id=118609",
+        "https://anilist.co/staff/116543",
+        "https://tomorrowjam.jp/talent/hanamori-yumiri/"
+      ],
+      "notes": "Debut: ja Wikipedia names Aiura (2013) as her debut and en Wikipedia lists it as her first anime credit. Remo was her first film role and a lead in both Wikipedias. No Seiyu Award wins on the official winners pages. Hayasaka and Sagiri come from ANN and AniList credits; neither Wikipedia gives a best-known list."
+    },
+    "95004": {
+      "name": "Aya Hirano",
+      "debut": {
+        "character": "Momo the monkey",
+        "anime": "Angel Tales",
+        "year": 2001
+      },
+      "awards": [
+        {
+          "award": "Seiyu Awards – Best New Actress (1st)",
+          "year": 2007
+        },
+        {
+          "award": "Tokyo Anime Award – Best Voice Actor",
+          "year": 2007
+        },
+        {
+          "award": "Seiyu Awards – Best Actress in a Leading Role (2nd)",
+          "year": 2008
+        },
+        {
+          "award": "Seiyu Awards – Singing Award (2nd), as part of the Lucky Star unit for \"Motteke! Sailor Fuku\"",
+          "year": 2008
+        }
+      ],
+      "agency": "Independent (left Grick in August 2022)",
+      "signature": [
+        {
+          "character": "Haruhi Suzumiya",
+          "anime": "The Melancholy of Haruhi Suzumiya",
+          "year": 2006
+        },
+        {
+          "character": "Misa Amane",
+          "anime": "Death Note",
+          "year": 2006
+        },
+        {
+          "character": "Konata Izumi",
+          "anime": "Lucky Star",
+          "year": 2007
+        },
+        {
+          "character": "Lucy Heartfilia",
+          "anime": "Fairy Tail",
+          "year": 2009
+        }
+      ],
+      "also": [
+        "Started as a child actor in TV commercials after joining Space Craft's Tokyo Child Theatrical Group in 1998.",
+        "Sang \"Bōken Desho Desho?\", the opening theme of The Melancholy of Haruhi Suzumiya (2006)."
+      ],
+      "confidence": "medium",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Aya_Hirano",
+        "https://ja.wikipedia.org/wiki/%E5%B9%B3%E9%87%8E%E7%B6%BE",
+        "https://www.animenewsnetwork.com/encyclopedia/people.php?id=6581",
+        "https://anilist.co/staff/95004",
+        "https://ja.wikipedia.org/wiki/%E5%A3%B0%E5%84%AA%E3%82%A2%E3%83%AF%E3%83%BC%E3%83%89",
+        "https://www.seiyuawards.jp/winning/winning_01/index.php",
+        "https://www.seiyuawards.jp/winning/winning_02/index.php"
+      ],
+      "notes": "Agency rests on ja Wikipedia only (it says her contract with Grick ended in August 2022 and she went independent); en Wikipedia does not give a current agency. en Wikipedia's awards table is inconsistent for 2008, so Seiyu Awards come from the official winners pages and ja Wikipedia."
+    },
+    "147792": {
+      "name": "Aleks Le",
+      "debut": null,
+      "awards": [
+        {
+          "award": "Crunchyroll Anime Awards – Best VA Performance (English), for Solo Leveling",
+          "year": 2025
+        }
+      ],
+      "agency": "Atlas Talent Agency",
+      "signature": [
+        {
+          "character": "Zenitsu Agatsuma",
+          "anime": "Demon Slayer: Kimetsu no Yaiba (English dub)",
+          "year": 2019
+        },
+        {
+          "character": "Manjiro \"Mikey\" Sano",
+          "anime": "Tokyo Revengers (English dub)",
+          "year": 2021
+        },
+        {
+          "character": "Mash Burnedead",
+          "anime": "Mashle: Magic and Muscles (English dub)",
+          "year": 2023
+        },
+        {
+          "character": "Sung Jinwoo",
+          "anime": "Solo Leveling (English dub)",
+          "year": 2024
+        }
+      ],
+      "also": [
+        "American English-dub voice actor, not a Japanese seiyu; born in Hanoi, Vietnam, and moved to the United States at age 10.",
+        "Co-launched the YouTube channel VO to Go with Jonah Scott in October 2022."
+      ],
+      "confidence": "medium",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Aleks_Le",
+        "https://www.animenewsnetwork.com/encyclopedia/people.php?id=174640",
+        "https://anilist.co/staff/147792",
+        "https://www.animenewsnetwork.com/interest/2025-05-25/all-the-winners-of-the-crunchyroll-anime-awards-2025/.224777"
+      ],
+      "notes": "He is an English-dub actor, so Seiyu Awards and Japanese agencies do not apply; there is no ja Wikipedia article. Agency rests on the en Wikipedia infobox only. Debut left null: en Wikipedia gives Dahar in The Laws of the Universe: Part 1 (2018) as his Los Angeles debut, which is not clearly his first role. en Wikipedia also lists a 2025 Astra TV Award (Best Lead Voice-Over Performance), left out as single-source. Years are the original Japanese series years."
+    },
+    "106030": {
+      "name": "Chika Anzai",
+      "debut": {
+        "character": "Nagisa Mikogami",
+        "anime": "Anyamaru Tantei Kiruminzuu",
+        "year": 2009
+      },
+      "awards": [
+        {
+          "award": "Seiyu Awards – Best Lead Voice Actor (17th)",
+          "year": 2023
+        }
+      ],
+      "agency": "Avex Pictures",
+      "signature": [
+        {
+          "character": "Chaika Trabant",
+          "anime": "Chaika: The Coffin Princess",
+          "year": 2014
+        },
+        {
+          "character": "Reina Kousaka",
+          "anime": "Sound! Euphonium",
+          "year": 2015
+        },
+        {
+          "character": "Hanabi Yasuraoka",
+          "anime": "Scum's Wish",
+          "year": 2017
+        },
+        {
+          "character": "Chisato Nishikigi",
+          "anime": "Lycoris Recoil",
+          "year": 2022
+        }
+      ],
+      "also": [
+        "Joined the Avex Artist Academy as a teenager and moved to Tokyo alone at 15 while still enrolled at a high school in Fukui.",
+        "Cousin of voice actor Junya Enoki."
+      ],
+      "confidence": "high",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Chika_Anzai",
+        "https://ja.wikipedia.org/wiki/%E5%AE%89%E6%B8%88%E7%9F%A5%E4%BD%B3",
+        "https://www.animenewsnetwork.com/encyclopedia/people.php?id=78724",
+        "https://anilist.co/staff/106030",
+        "https://avex-pictures.co.jp/lineup/91485/",
+        "https://ja.wikipedia.org/wiki/%E5%A3%B0%E5%84%AA%E3%82%A2%E3%83%AF%E3%83%BC%E3%83%89",
+        "https://www.seiyuawards.jp/winning/winning_17/index.php"
+      ],
+      "notes": "Chaika was her first lead role per ja Wikipedia. The cousin link to Junya Enoki is stated in both Wikipedias for her and for him."
+    },
+    "95014": {
+      "name": "Megumi Hayashibara",
+      "debut": {
+        "character": "Kindergartener B (Yōsuke)",
+        "anime": "Maison Ikkoku",
+        "year": 1986
+      },
+      "awards": [
+        {
+          "award": "Anime Grand Prix – Voice Actor category (12th)",
+          "year": 1989
+        },
+        {
+          "award": "Anime Grand Prix – Voice Actor category (13th)",
+          "year": 1990
+        },
+        {
+          "award": "Anime Grand Prix – Voice Actor category (14th)",
+          "year": 1991
+        },
+        {
+          "award": "Anime Grand Prix – Voice Actor category (15th)",
+          "year": 1992
+        },
+        {
+          "award": "Anime Grand Prix – Voice Actor category (16th)",
+          "year": 1993
+        },
+        {
+          "award": "Anime Grand Prix – Voice Actor category (18th)",
+          "year": 1995
+        },
+        {
+          "award": "Anime Grand Prix – Voice Actor category (19th)",
+          "year": 1996
+        },
+        {
+          "award": "Anime Grand Prix – Voice Actor category (20th)",
+          "year": 1997
+        },
+        {
+          "award": "Anime Grand Prix – Voice Actor category (21th)",
+          "year": 1998
+        },
+        {
+          "award": "Anime Grand Prix – Voice Actor category (22th)",
+          "year": 1999
+        },
+        {
+          "award": "Anime Grand Prix – Voice Actor category (23th)",
+          "year": 2000
+        },
+        {
+          "award": "Anime Grand Prix – Voice Actor category (24th)",
+          "year": 2001
+        }
+      ],
+      "agency": "Woodpark Office (her own company, since 1999)",
+      "signature": [
+        {
+          "character": "Rei Ayanami",
+          "anime": "Neon Genesis Evangelion",
+          "year": 1995
+        },
+        {
+          "character": "Lina Inverse",
+          "anime": "Slayers",
+          "year": 1995
+        },
+        {
+          "character": "Musashi (Jessie)",
+          "anime": "Pokémon",
+          "year": 1997
+        },
+        {
+          "character": "Faye Valentine",
+          "anime": "Cowboy Bebop",
+          "year": 1998
+        }
+      ],
+      "also": [
+        "Won the Anime Grand Prix voice-acting category 12 times (1989–1993 and 1995–2001).",
+        "Qualified as a nurse, attending nursing school and voice training side by side for three years from 1985."
+      ],
+      "confidence": "high",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Megumi_Hayashibara",
+        "https://ja.wikipedia.org/wiki/%E6%9E%97%E5%8E%9F%E3%82%81%E3%81%90%E3%81%BF",
+        "https://en.wikipedia.org/wiki/Anime_Grand_Prix",
+        "https://www.animenewsnetwork.com/encyclopedia/people.php?id=391",
+        "https://anilist.co/staff/95014"
+      ],
+      "notes": "Anime Grand Prix years and edition numbers come from the en Wikipedia Anime Grand Prix list and match the years in ja Wikipedia (1989–1993, 1995–2001); year is the year the poll covers. In 1989 and 1990 the category was split by gender. ANN marks her Maison Ikkoku kindergartener as her debut. She left Arts Vision in June 1999 to found Woodpark Office (ja Wikipedia). No Seiyu Award wins."
+    },
+    "95001": {
+      "name": "Tomokazu Seki",
+      "debut": {
+        "character": "Tomache Massarik",
+        "anime": "Mobile Suit Victory Gundam",
+        "year": 1993
+      },
+      "awards": [
+        {
+          "award": "Seiyu Awards – Synergy Award (9th), for Yo-kai Watch",
+          "year": 2015
+        },
+        {
+          "award": "Seiyu Awards – Influencer Award (16th)",
+          "year": 2022
+        }
+      ],
+      "agency": "Atomic Monkey",
+      "signature": [
+        {
+          "character": "Domon Kasshu",
+          "anime": "Mobile Fighter G Gundam",
+          "year": 1994
+        },
+        {
+          "character": "Kyo Sohma",
+          "anime": "Fruits Basket",
+          "year": 2001
+        },
+        {
+          "character": "Suneo Honekawa",
+          "anime": "Doraemon",
+          "year": 2005
+        },
+        {
+          "character": "Gilgamesh",
+          "anime": "Fate/stay night",
+          "year": 2006
+        }
+      ],
+      "also": [
+        "Leads the theatre company HeroHero Q Company, which he co-founded.",
+        "Took over the role of Suneo when Doraemon was relaunched in 2005, succeeding Kaneta Kimotsuki."
+      ],
+      "confidence": "medium",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Tomokazu_Seki",
+        "https://ja.wikipedia.org/wiki/%E9%96%A2%E6%99%BA%E4%B8%80",
+        "https://www.animenewsnetwork.com/encyclopedia/people.php?id=529",
+        "https://anilist.co/staff/95001",
+        "https://www.atomicmonkey.jp/talent/sekitomokazu",
+        "https://ja.wikipedia.org/wiki/%E5%A3%B0%E5%84%AA%E3%82%A2%E3%83%AF%E3%83%BC%E3%83%89",
+        "https://www.seiyuawards.jp/winning/winning_09/index.php",
+        "https://www.seiyuawards.jp/winning/winning_16/index.php"
+      ],
+      "notes": "Debut: en Wikipedia gives Victory Gundam (1993) as his first role; ja Wikipedia calls it his first regular role and names an earlier dub of the foreign cartoon Reporter Blues (1991) as his voice debut. The 9th Seiyu Awards Synergy Award went to Yo-kai Watch, with Seki and Haruka Tomatsu accepting. The Suneo succession rests on ja Wikipedia; en Wikipedia and ANN confirm the role."
+    },
+    "116971": {
+      "name": "Daiki Yamashita",
+      "debut": {
+        "character": "Student B",
+        "anime": "Little Busters!",
+        "year": 2012
+      },
+      "awards": [
+        {
+          "award": "Seiyu Awards – Best New Actor (8th)",
+          "year": 2014
+        }
+      ],
+      "agency": "Arts Vision",
+      "signature": [
+        {
+          "character": "Sakamichi Onoda",
+          "anime": "Yowamushi Pedal",
+          "year": 2013
+        },
+        {
+          "character": "Izuku Midoriya",
+          "anime": "My Hero Academia",
+          "year": 2016
+        },
+        {
+          "character": "Narancia Ghirga",
+          "anime": "JoJo's Bizarre Adventure: Golden Wind",
+          "year": 2018
+        }
+      ],
+      "also": [],
+      "confidence": "medium",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Daiki_Yamashita",
+        "https://ja.wikipedia.org/wiki/%E5%B1%B1%E4%B8%8B%E5%A4%A7%E8%BC%9D",
+        "https://www.animenewsnetwork.com/encyclopedia/people.php?id=119386",
+        "https://anilist.co/staff/116971",
+        "https://ja.wikipedia.org/wiki/%E5%A3%B0%E5%84%AA%E3%82%A2%E3%83%AF%E3%83%BC%E3%83%89",
+        "https://www.seiyuawards.jp/winning/winning_08/index.php"
+      ],
+      "notes": "Debut rests on ja Wikipedia (Student B in Little Busters!); ANN confirms the credit (episode 10) and AniList gives 2012 as his first active year, but en Wikipedia does not name a debut. Signature roles are from ja Wikipedia's lead list and en Wikipedia's lead (Midoriya), backed by ANN."
+    },
+    "133507": {
+      "name": "Chiaki Kobayashi",
+      "debut": null,
+      "awards": [
+        {
+          "award": "Seiyu Awards – Best New Actor (15th)",
+          "year": 2021
+        }
+      ],
+      "agency": "Office Osawa",
+      "signature": [
+        {
+          "character": "Hiroto Kuga",
+          "anime": "Gundam Build Divers Re:Rise",
+          "year": 2019
+        },
+        {
+          "character": "Langa Hasegawa",
+          "anime": "SK8 the Infinity",
+          "year": 2021
+        },
+        {
+          "character": "Gabimaru",
+          "anime": "Hell's Paradise",
+          "year": 2023
+        },
+        {
+          "character": "Stark",
+          "anime": "Frieren: Beyond Journey's End",
+          "year": 2023
+        }
+      ],
+      "also": [
+        "First anime lead was Hiroto Kuga in Gundam Build Divers Re:Rise (2019)."
+      ],
+      "confidence": "medium",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Chiaki_Kobayashi",
+        "https://ja.wikipedia.org/wiki/%E5%B0%8F%E6%9E%97%E5%8D%83%E6%99%83",
+        "https://www.animenewsnetwork.com/encyclopedia/people.php?id=176057",
+        "https://anilist.co/staff/133507",
+        "https://osawa-inc.co.jp/men/kobayashichiaki/",
+        "https://ja.wikipedia.org/wiki/%E5%A3%B0%E5%84%AA%E3%82%A2%E3%83%AF%E3%83%BC%E3%83%89",
+        "https://www.seiyuawards.jp/winning/winning_15/index.php"
+      ],
+      "notes": "Debut left null: neither Wikipedia names a first role. The first-lead fact rests on ja Wikipedia; en Wikipedia lists the role. en Wikipedia also lists a 2026 Crunchyroll Anime Awards nomination (not a win). ja Wikipedia lists a 2022 Anirazi Award for a radio show, left out as single-source."
+    },
+    "119416": {
+      "name": "Kaede Hondo",
+      "debut": {
+        "character": "Female customer",
+        "anime": "Aoharu × Machinegun",
+        "year": 2015
+      },
+      "awards": [
+        {
+          "award": "Seiyu Awards – Best New Actress (13th)",
+          "year": 2019
+        }
+      ],
+      "agency": "I'm Enterprise",
+      "signature": [
+        {
+          "character": "Hikari Takanashi",
+          "anime": "Interviews with Monster Girls",
+          "year": 2017
+        },
+        {
+          "character": "Sakura Minamoto",
+          "anime": "Zombie Land Saga",
+          "year": 2018
+        },
+        {
+          "character": "Kanami Eto",
+          "anime": "Katana Maidens: Toji no Miko",
+          "year": 2018
+        },
+        {
+          "character": "Maple",
+          "anime": "Bofuri: I Don't Want to Get Hurt, so I'll Max Out My Defense.",
+          "year": 2020
+        }
+      ],
+      "also": [],
+      "confidence": "high",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Kaede_Hondo",
+        "https://ja.wikipedia.org/wiki/%E6%9C%AC%E6%B8%A1%E6%A5%93",
+        "https://www.animenewsnetwork.com/encyclopedia/people.php?id=140600",
+        "https://anilist.co/staff/119416",
+        "https://www.imenterprise.jp/profile.php?id=78",
+        "https://ja.wikipedia.org/wiki/%E5%A3%B0%E5%84%AA%E3%82%A2%E3%83%AF%E3%83%BC%E3%83%89",
+        "https://www.seiyuawards.jp/winning/winning_13/index.php"
+      ],
+      "notes": "Debut: en Wikipedia places her debut in 2015 in minor roles including Aoharu × Machinegun; ja Wikipedia names the role (a female customer with one line). Signature roles come from en Wikipedia's list of lead roles."
+    },
+    "95027": {
+      "name": "Yukari Tamura",
+      "debut": null,
+      "awards": [],
+      "agency": "Amuleto (since August 2016)",
+      "signature": [
+        {
+          "character": "Nanoha Takamachi",
+          "anime": "Magical Girl Lyrical Nanoha",
+          "year": 2004
+        },
+        {
+          "character": "Rika Furude",
+          "anime": "Higurashi: When They Cry",
+          "year": 2006
+        },
+        {
+          "character": "Ruru Amour / Cure Amour",
+          "anime": "HUGtto! PreCure",
+          "year": 2018
+        }
+      ],
+      "also": [
+        "Made her singing debut in March 1997 with \"Yūki o Kudasai\", an insert song from Macross Generation, the audio drama in which she had her first voice role (Passel)."
+      ],
+      "confidence": "medium",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Yukari_Tamura",
+        "https://ja.wikipedia.org/wiki/%E7%94%B0%E6%9D%91%E3%82%86%E3%81%8B%E3%82%8A",
+        "https://www.animenewsnetwork.com/encyclopedia/people.php?id=524",
+        "https://anilist.co/staff/95027",
+        "https://www.tamurayukari.com/"
+      ],
+      "notes": "Debut left null: her first role (Passel in Macross Generation, 1997) was in an audio drama, not an anime. Rika Furude is backed by ANN and AniList but neither Wikipedia lead names it. Agency history: Arts Vision, then I'm Enterprise from January 2007, then Amuleto from August 2016 (date from ja Wikipedia). No Seiyu Award wins."
     }
   }
 }
