@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import MadeBy from "@/components/MadeBy";
 import EditorWatched from "@/components/EditorWatched";
-import { fitTitle } from "@/lib/titles";
+import { fitTitle, fitDescription } from "@/lib/titles";
 import Link from "@/components/Link";
 import { notFound } from "next/navigation";
 import { getAnimeBySlug, getLastAiredBest, buildWatchOrder, listAnime, animePath, posterUrl, runtimeMinutes, subtypeLabel, type Anime } from "@/lib/kitsu";
@@ -68,7 +68,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       ? `All of ${a.title} takes about ${fmtRun(fTotal)} across ${franchise!.mainCount} main parts${franchise!.entries.some((e) => e.kind === "movie") ? " plus films" : ""}. ${seasonal ? `${a.title} season 1` : a.title} alone is ${fmtRun(total)}${eps > 1 && len ? ` (${eps} episodes × ${len} min)` : ""}. At 2 hours a day the whole series takes ${humanDays(Math.ceil(fTotal / 120))}.`
       : `${a.title} takes about ${fmtRun(total)} to watch${eps > 1 && len ? ` (${eps} episodes × ${len} min)` : ""}. At 2 hours a day that's ${humanDays(Math.ceil(total / 120))}.${franchise ? ` The whole franchise runs about ${fmtRun(fTotal)}.` : " See faster ways and filler skips."}`
     : `Runtime and binge planner for ${a.title}.`;
-  return { title, description, alternates: { canonical: `${animePath(a)}/how-long-to-watch` }, ...(total ? {} : { robots: { index: false } }) };
+  return { title, description: fitDescription(description), alternates: { canonical: `${animePath(a)}/how-long-to-watch` }, ...(total ? {} : { robots: { index: false } }) };
 }
 
 export default async function HowLongPage({ params }: Props) {

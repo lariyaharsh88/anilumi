@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { animeIndexed, robotsFor } from "@/lib/indexing";
 import { WATCH_ORDER_OVERRIDES } from "@/data/watch-orders";
-import { fitTitle } from "@/lib/titles";
+import { fitTitle, fitDescription } from "@/lib/titles";
 import { workType, workId, isoDuration } from "@/lib/ld";
 import Link from "@/components/Link";
 import Image from "next/image";
@@ -106,7 +106,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     : [`${a.title}${year ? ` (${year})` : ""} – Episodes & Where to Watch`, `${a.title} – Episodes & Where to Watch`, `${a.title} – Where to Watch`, a.title]);
   // Our own summary where there is one, not Kitsu's synopsis (lib/summaries.ts).
   const blurb = summaryFor(a.slug)?.summary ?? a.synopsis;
-  const description = `${a.title}: ${a.episodeCount ? `${a.episodeCount} episodes` : subtypeLabel(a.subtype)}, ${statusLabel(a.status).toLowerCase()}${a.rating ? `, rated ${(a.rating / 10).toFixed(1)}/10` : ""}. ${blurb.slice(0, 120).replace(/\s+\S*$/, "")}…`;
+  const description = fitDescription(`${a.title}: ${a.episodeCount ? `${a.episodeCount} episodes` : subtypeLabel(a.subtype)}, ${statusLabel(a.status).toLowerCase()}${a.rating ? `, rated ${(a.rating / 10).toFixed(1)}/10` : ""}. ${blurb.slice(0, 120).replace(/\s+\S*$/, "")}…`);
   return {
     title,
     description,

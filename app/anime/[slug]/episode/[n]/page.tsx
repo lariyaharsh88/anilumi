@@ -1,3 +1,4 @@
+import { fitDescription } from "@/lib/titles";
 import type { Metadata } from "next";
 import PushButton from "@/components/PushButton";
 import { animeTopic } from "@/lib/push";
@@ -76,7 +77,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     : `${a.title} episode ${d.n}${episode.title ? ` "${episode.title}"` : ""} aired on ${when}. ${(episode.synopsis || "").slice(0, 120)}`;
   const path = episodePath(a, d.n);
   const indexed = episodeIndexed({ path, n: d.n, upcoming, next: d.isNext, airIso, airing: a.status === "current", lastAired: d.lastAired });
-  return { title, description, alternates: { canonical: path }, robots: robotsFor(indexed) };
+  return { title, description: fitDescription(description), alternates: { canonical: path }, robots: robotsFor(indexed) };
 }
 
 export default async function EpisodePage({ params }: Props) {
