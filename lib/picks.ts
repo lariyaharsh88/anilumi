@@ -97,3 +97,12 @@ export function fanPicks(recs: FanRec[], alId: number | null, name: string): { a
     return [{ anime: r.anime, why, votes: r.votes }];
   });
 }
+
+export type SeasonEntry = { anilistId: number; title: string; score: number; popularity: number };
+/** This season's shows in tiers by AniList score, cut lower than the all-time list (new shows rate lower): S 8.4+,
+ *  A 7.9+, B 7.4+, C below. Only shows enough people have rated (popularity floor), most popular first in a tier. */
+export function seasonTiers(entries: SeasonEntry[], minPopularity = 10000): { tier: FanTier["tier"]; entries: SeasonEntry[] }[] {
+  const cuts: [FanTier["tier"], number][] = [["S", 8.4], ["A", 7.9], ["B", 7.4], ["C", 0]];
+  const rated = entries.filter((e) => e.score > 0 && e.popularity >= minPopularity);
+  return cuts.map(([tier, min], i) => ({ tier, entries: rated.filter((e) => e.score >= min && (i === 0 || e.score < cuts[i - 1][1])).sort((a, b) => b.popularity - a.popularity) })).filter((t) => t.entries.length);
+}
