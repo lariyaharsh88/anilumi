@@ -9,6 +9,7 @@ import { vaPath } from "@/lib/anilist";
 import { characterPathFor, snapById, type SnapChar } from "@/lib/charsnap";
 import { roleIn } from "@/lib/seriessnap";
 import { characterNote, linkedArcs } from "@/lib/charnotes";
+import { characterLine } from "@/lib/charlines";
 import { premieresOn, otdPath, type Premiere } from "@/lib/onthisday";
 import { bdLabel, bdPath, monthPath, nextDays, aroundDays, birthdaysOn, zodiacOf, sameSign, MONTHS, cap, type BdChar, type BdPerson } from "@/lib/birthdays";
 import PageHero from "./PageHero";
@@ -70,6 +71,7 @@ export default async function BirthdayView({ m, d, characters, people, today = f
         posters={characters.slice(0, 3).map((c) => c.i)}
       />
       <MadeBy className="mt-4" method="Birthdays come from AniList's character and staff records, ranked by fans; roles, arcs and voice-actor facts come from our checked notes where we have them." />
+      <p className="mt-3 text-sm"><Link href="/anime-birthday-twin" className="font-medium text-violet hover:underline">🎂 Find your own anime birthday twin →</Link></p>
 
       {top && (
         <section className="reveal mt-10" aria-labelledby="spot-h">
@@ -121,6 +123,7 @@ export default async function BirthdayView({ m, d, characters, people, today = f
                   <span className="min-w-0 flex-1">
                     <span className="flex items-baseline gap-2"><span className="text-xs font-bold tabular-nums text-muted">#{i + 1}</span>{href ? <Link href={href} className="truncate font-semibold text-ink hover:text-violet-2">{c.n}</Link> : <span className="truncate font-semibold text-ink">{c.n}</span>}</span>
                     <span className="block truncate text-xs text-muted">{role ? `${role === "main" ? "Main" : "Supporting"} character in ` : ""}{c.s ? <Link href={animePath({ slug: c.s })} className="underline decoration-line underline-offset-2 hover:text-violet-2">{c.t}</Link> : c.t}</span>
+                    {characterLine(c.id) && <span className="mt-1 block text-xs text-ink/85">{characterLine(c.id)}</span>}
                     {facts.length > 0 && <span className="mt-1 block truncate text-xs text-ink/80">{facts.join(" · ")}</span>}
                     {arcs.length > 0 && <span className="mt-1 block truncate text-xs text-muted">Key arcs: {arcs.map((a, j) => <span key={a.name}>{j ? ", " : ""}{a.arc ? <Link href={`/anime/${c.s}/episodes${Math.ceil(a.arc.from / 20) > 1 ? `/page/${Math.ceil(a.arc.from / 20)}` : ""}#ep-${a.arc.from}`} className="hover:text-violet-2 hover:underline">{a.name}</Link> : a.name}</span>)}</span>}
                     <span className="mt-1 flex flex-wrap items-center gap-x-2 text-xs text-muted">

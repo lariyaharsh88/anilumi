@@ -73,6 +73,7 @@ export async function sitemapEntries(): Promise<MetadataRoute.Sitemap> {
     { url: abs("/quiz"), lastModified: at(), changeFrequency: "monthly", priority: 0.6 },
     { url: abs("/random-anime-generator"), lastModified: at(D.anilist), changeFrequency: "monthly", priority: 0.6 },
     { url: abs("/birthdays"), lastModified: now, changeFrequency: "daily", priority: 0.7 },
+    { url: abs("/anime-birthday-twin"), lastModified: at(D.birthdays), changeFrequency: "monthly", priority: 0.6 },
     ...Array.from({ length: 12 }, (_, i) => ({ url: abs(monthPath(i + 1)), lastModified: at(D.birthdays), changeFrequency: "monthly" as const, priority: 0.6 })),
     { url: abs("/on-this-day"), lastModified: now, changeFrequency: "daily", priority: 0.7 },
     // Only indexed character pages (lib/indexing.ts): those with verified notes plus any Google already shows.
