@@ -13,6 +13,10 @@ import Faq, { type FaqItem } from "./Faq";
 import VaNotes from "./VaNotes";
 import AdSlot from "./AdSlot";
 import { excerpt } from "@/lib/excerpt";
+import { recentRoles } from "@/lib/varecent";
+import { airing, upcomingOf } from "@/lib/airing";
+import { previewSnapshot } from "@/lib/preview";
+import { seasonOf } from "@/lib/kitsu";
 
 const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 export const birthday = (b: VoiceActor["birth"]) => (b?.month ? `${MONTHS[b.month - 1]}${b.day ? ` ${b.day}` : ""}${b.year ? `, ${b.year}` : ""}` : null);
@@ -58,6 +62,19 @@ export default async function PersonProfile({ va, kind }: { va: VoiceActor; kind
   const mains = va.roles.filter((r) => r.role === "MAIN").length;
   const capped = va.roles.length >= 95;
   const jobs = mainRoles(va.work);
+  // What they're in now: this week's airing shows and the announced seasons ahead (both snapshots, no extra calls).
+  const live = kind === "voice" ? await airing().catch(() => null) : null;
+  const seasons = Object.fromEntries(Object.entries(previewSnapshot().seasons).map(([k, items]) => [k, items.map((i) => i.id)]));
+  // "Airing" means a next episode is scheduled; long-runners on a break (One Piece in late 2026) don't count.
+  const scheduled = new Map<number, string>();
+  for (const [id, show] of live?.byAniList ?? []) {
+    const next = upcomingOf(show)[0];
+    if (!next) continue;
+    const at = new Date(next.at);
+    scheduled.set(id, at.getTime() - Date.now() < 14 * 86400_000 ? "Airing now" : `Returns ${at.toLocaleDateString("en-US", { month: "short", year: "numeric", timeZone: "UTC" })}`);
+  }
+  const recent = kind === "voice" ? recentRoles(va.roles, scheduled, seasons, seasonOf()) : [];
+  const current = recent.filter((r) => r.kind !== "recent");
   const { text: bio, facts: bioFacts } = cleanBio(va.bio);
   const voiceYears = yearSpan(va.roles, (r) => r.media.year);
   const workYears = yearSpan(va.work, (w) => w.media.year);
@@ -95,6 +112,7 @@ export default async function PersonProfile({ va, kind }: { va: VoiceActor; kind
   const faq: FaqItem[] = kind === "voice"
     ? [
         { q: `What characters has ${va.name} voiced?`, a: `${va.name}'s best-known roles include ${sig.slice(0, 6).map((r) => `${r.character.name} (${r.media[0].title})`).join(", ")}. ${va.name} has voiced ${capped ? "more than 100" : va.roles.length} anime roles.` },
+        ...(current.length ? [{ q: `What new anime is ${va.name} in?`, a: `${current.slice(0, 4).map((r) => `${r.role.characters[0]?.name ?? "a role"} in ${r.role.media.title} (${r.when.toLowerCase()})`).join(", ")}.` }] : []),
         ...(sig[0] ? [{ q: `What is ${va.name}'s most popular role?`, a: `${sig[0].character.name} in ${sig[0].media[0].title}, the most-watched anime ${va.name} has voiced in.` }] : []),
         ...(born ? [{ q: `When is ${va.name}'s birthday?`, a: `${va.name} was born on ${born}${va.homeTown || wd?.birthPlace ? ` in ${va.homeTown || wd!.birthPlace}` : ""}.` }] : []),
         ...(wd?.awards.length ? [{ q: `What awards has ${va.name} won?`, a: `${wd.awards.join(", ")}.` }] : []),
@@ -155,6 +173,29 @@ export default async function PersonProfile({ va, kind }: { va: VoiceActor; kind
 
       {kind === "voice" && <VaNotes id={va.id} />}
 
+      {recent.length > 0 && (
+        <section className="reveal mt-10" aria-labelledby="new-h">
+          <h2 id="new-h" className="h-section mb-1">{current.length ? `${va.name}: new and upcoming roles` : `${va.name}'s latest roles`}</h2>
+          <p className="mb-3 text-sm text-muted">{current.length ? "Roles in shows airing now, returning or announced for a coming season, then the most recent ones." : "The most recent anime they've voiced in."}</p>
+          <ul className="grid gap-2 sm:grid-cols-2">
+            {recent.map(({ role: r, when, kind: k }) => {
+              const c = r.characters[0];
+              const a = link(r.media);
+              const cp = c ? characterPathFor(c.id) : null;
+              return (
+                <li key={r.media.id} className="card flex items-center gap-3 p-2.5">
+                  <span className="relative h-14 w-11 shrink-0 overflow-hidden rounded-md bg-bg-2">{c?.image && <Image src={c.image} alt={c.name} fill sizes="44px" className="object-cover" />}</span>
+                  <span className="min-w-0 flex-1">
+                    <span className="block truncate font-semibold text-ink">{c ? (cp ? <Link href={cp} className="hover:text-violet-2">{c.name}</Link> : c.name) : "Role"}</span>
+                    <span className="block truncate text-xs text-muted">{a ? <Link href={animePath(a)} className="hover:text-violet-2 hover:underline">{r.media.title}</Link> : r.media.title}{r.role === "MAIN" ? " · main role" : ""}</span>
+                  </span>
+                  <span className={`shrink-0 rounded-full px-2 py-0.5 text-[11px] font-semibold ${k === "airing" ? "bg-emerald-500/15 text-emerald-300" : k === "upcoming" ? "bg-violet/15 text-violet-2" : "bg-white/5 text-muted"}`}>{when}</span>
+                </li>
+              );
+            })}
+          </ul>
+        </section>
+      )}
       {kind === "voice" ? (
         <section className="reveal mt-10" aria-labelledby="sig-h">
           <h2 id="sig-h" className="h-section mb-3">Best-known roles</h2>
