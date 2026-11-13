@@ -29,7 +29,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const y = new Date().getFullYear();
   const name = p.label.replace(/ \(.*\)$/, "");
   return {
-    title: fitTitle([`${name} Hindi Dubbed Anime List (${y}): ${list.length} Anime`, `${name} Hindi Dubbed Anime (${y}): ${list.length} Anime`, `${name} Hindi Dubbed Anime`]),
+    // Free platforms lead with "free": what people search ("anime in hindi free on youtube").
+    title: fitTitle(platformKind(list[0].rows[0].name) === "free"
+      ? [`Watch Anime in Hindi Free on ${name} (${y}): ${list.length} Anime`, `Free Hindi Dubbed Anime on ${name} (${y}): ${list.length}`, `Free Hindi Dubbed Anime on ${name}`]
+      : [`${name} Hindi Dubbed Anime List (${y}): ${list.length} Anime`, `${name} Hindi Dubbed Anime (${y}): ${list.length} Anime`, `${name} Hindi Dubbed Anime`]),
     description: fitDescription(`All ${list.length} anime with an official Hindi dub on ${p.label}, most-watched first: ${list.slice(0, 6).map((x) => x.d.t).join(", ")} and more, with which seasons have Hindi audio. Checked ${dubDate()}.`),
     alternates: { canonical: `/hindi-dub/${p.slug}` },
   };
