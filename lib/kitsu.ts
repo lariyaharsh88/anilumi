@@ -324,6 +324,14 @@ export async function listAnime(opts: ListOpts = {}): Promise<Paged<Anime>> {
   };
 }
 
+/** Several anime by slug, 20 per request (Kitsu's page size), cached for a day. Missing slugs are left out. */
+export async function animeBySlugs(slugs: string[], withCategories = false): Promise<Map<string, Anime>> {
+  const uniq = [...new Set(slugs)];
+  const pages = await Promise.all(Array.from({ length: Math.ceil(uniq.length / 20) }, (_, i) =>
+    listAnime({ filter: { slug: uniq.slice(i * 20, i * 20 + 20).join(",") }, limit: 20, withCategories, revalidate: 86400, unrated: true }).then((r) => r.items).catch((): Anime[] => [])));
+  return new Map(pages.flat().map((a) => [a.slug, a]));
+}
+
 export async function getTrending(limit = 10): Promise<Anime[]> {
   const doc = await kitsu("/trending/anime", { limit, "fields[anime]": `${LIST_FIELDS},coverImage` }, 1800);
   if (!doc || !Array.isArray(doc.data)) return [];

@@ -1,5 +1,6 @@
 import Link from "@/components/Link";
 import { dubDate, platformKind, type Dub, type PlatformKind } from "@/lib/hindidub";
+import { hindiCast } from "@/lib/hindistats";
 
 const T = {
   en: {
@@ -10,6 +11,7 @@ const T = {
     source: "source",
     checked: (d: string) => `Checked against the platforms' own pages on ${d}. Streaming deals change, so confirm the audio menu before you start.`,
     all: "All Hindi-dubbed anime", allHref: "/hindi-dub",
+    cast: "Hindi voice cast", free: "Free and legal:", artists: "All Hindi voice artists",
   },
   hi: {
     q: (t: string) => `क्या ${t} हिंदी डब में है?`,
@@ -19,6 +21,7 @@ const T = {
     source: "स्रोत",
     checked: (d: string) => `${d} को प्लेटफ़ॉर्म के अपने पेज से जाँचा गया। स्ट्रीमिंग बदलती रहती है, इसलिए देखने से पहले ऑडियो मेनू में हिंदी देख लें।`,
     all: "सभी हिंदी डब एनीमे", allHref: "/hi/hindi-dub",
+    cast: "हिंदी आवाज़ कलाकार", free: "मुफ़्त और कानूनी:", artists: "सभी हिंदी आवाज़ कलाकार",
   },
 } as const;
 
@@ -52,6 +55,28 @@ export default function HindiDub({ dub, title, lang = "en", className = "" }: { 
           ))}
         </ul>
       )}
+      {yes && (() => {
+        const free = dub.platforms.filter((p) => platformKind(p.name) === "free");
+        return free.length > 0 && dub.platforms.length > free.length ? <p className="mt-3 text-sm text-emerald-300">✓ {t.free} {free.map((p) => p.name).join(", ")}</p> : null;
+      })()}
+      {yes && (() => {
+        // Credited Hindi voices (data/hindi-voice-artists.json): official credits, studio or artist posts only.
+        const cast = hindiCast(dub.s);
+        return cast.length > 0 && (
+          <div className="mt-3 border-t border-line/60 pt-3">
+            <h3 className="text-xs font-semibold uppercase tracking-wide text-muted">{t.cast}</h3>
+            <ul className="mt-1.5 grid gap-x-6 gap-y-1 text-sm sm:grid-cols-2">
+              {cast.slice(0, 8).map((c) => (
+                <li key={c.character + c.artist} className="flex justify-between gap-2">
+                  <span className="truncate text-muted">{c.characterHref ? <Link href={c.characterHref} className="hover:text-violet-2">{c.character}</Link> : c.character}</span>
+                  <Link href={c.artistHref} className="shrink-0 font-medium text-ink hover:text-violet-2">{c.artist}</Link>
+                </li>
+              ))}
+            </ul>
+            <Link href="/hindi-voice-artists" className="mt-1.5 inline-block text-xs text-violet hover:underline">{t.artists} →</Link>
+          </div>
+        );
+      })()}
       {lang === "en" && dub.note && <p className="mt-3 text-sm leading-6 text-ink/80">{dub.note}</p>}
       <p className="mt-3 text-xs text-muted">{t.checked(dubDate(lang))} <Link href={t.allHref} className="font-medium text-violet hover:text-violet-2">{t.all} →</Link></p>
     </section>
