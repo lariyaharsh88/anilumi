@@ -1,6 +1,7 @@
 // Query-string variants (?page=, ?sort=, filters). Reached only through the rewrites in next.config.ts;
 import { DUBS_SEASON, dubShows, type DubShow } from "@/lib/dubschedule";
 import { seasonDubs, SEASON_DUBS_CHECKED, type SeasonDub } from "@/lib/seasondubs";
+import { previewSnapshot } from "@/lib/preview";
 import MadeBy from "@/components/MadeBy";
 import { fitTitle, fitDescription } from "@/lib/titles";
 // the plain URL is served by ../page.tsx from the ISR cache.
@@ -34,16 +35,25 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
   // The searched answer up front ("anime airing in fall 2026"): how many, whether they're airing now, the top titles.
   const now = seasonOf();
   const current = now.season === season && now.year === Number(year);
-  const first = Number(page) > 1 ? null : await getSeason(Number(year), season as Season, 1, 3).catch(() => null);
+  const first = Number(page) > 1 ? null : await getSeason(Number(year), season as Season, 1, 20).catch(() => null);
   const total = first?.total ?? 0;
-  const tops = (first?.items ?? []).slice(0, 3).map((a) => a.title);
+  // The shows people know, by the names they search: AniList's English titles and popularity from the season preview
+  // snapshot when it has the season, else Kitsu's most followed. Short names only, so the snippet keeps its point.
+  const preview = previewSnapshot().seasons[`${year}-${season}`] ?? [];
+  const short = (t: string) => t.length <= 28;
+  const tops = (preview.length
+    ? [...preview].sort((a, b) => b.popularity - a.popularity).map((i) => i.title)
+    : [...(first?.items ?? [])].sort((a, b) => b.userCount - a.userCount).map((a) => a.titleEn || a.title)
+  ).filter(short).slice(0, 3);
+  const label = `${cap(season)} ${year}`;
+  const dubs = `${label}` === DUBS_SEASON ? dubShows().filter((e) => e.status !== "complete" && e.lang === "en").length : seasonDubs(Number(year), season)?.en.length ?? 0;
   return {
-    title: p ? `${cap(season)} ${year} Anime – Full Season Chart${p}` : fitTitle([
-      total ? `${cap(season)} ${year} Anime: All ${total} Shows${current ? " Airing Now" : ""}, Ranked` : null,
-      total ? `${cap(season)} ${year} Anime: All ${total} Shows, Ranked` : null,
-      `${cap(season)} ${year} Anime – Full Season Chart`,
+    title: p ? `${label} Anime – Full Season Chart${p}` : fitTitle([
+      total ? `${label} Anime: All ${total} Shows, Air Days & Where to Watch` : null,
+      total ? `${label} Anime: All ${total} Shows${current ? " Airing Now" : ""}, Ranked` : null,
+      `${label} Anime – Full Season Chart`,
     ]),
-    description: fitDescription(`${total ? `All ${total} anime ${current ? "airing in" : "of"} ${cap(season)} ${year}` : `Every anime airing in ${cap(season)} ${year}`}${tops.length ? `, led by ${tops.join(", ")}` : ""}: new series, sequels and movies ranked by popularity, with air times, scores and where to stream each.`),
+    description: fitDescription(`${total ? `All ${total} ${label} anime` : `Every ${label} anime`} with air days, where to stream${dubs ? `, ${dubs} English dubs` : ""} and fan scores${tops.length ? `: ${tops.join(", ")} and more` : ""}.`),
     alternates: { canonical: `/season/${year}/${season}${Number(page) > 1 ? `?page=${page}` : ""}` },
   };
 }

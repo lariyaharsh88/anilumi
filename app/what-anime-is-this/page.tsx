@@ -8,8 +8,8 @@ import { abs } from "@/lib/site";
 import { ORG_ID, SITE_ID } from "@/lib/ld";
 
 export const metadata: Metadata = {
-  title: "What Anime Is This? Find Any Anime From a Screenshot",
-  description: fitDescription("Upload or paste a screenshot and find the anime, the exact episode and the timestamp it's from, with a preview clip. Free, no sign-up."),
+  title: "What Anime Is This? Free Screenshot Search, Episode & Time",
+  description: fitDescription("Paste or upload a screenshot to find the anime, the exact episode and the minute it's from, in seconds. Free, no sign-up, with where to watch it next."),
   alternates: { canonical: "/what-anime-is-this" },
 };
 

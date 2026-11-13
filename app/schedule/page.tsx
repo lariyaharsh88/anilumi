@@ -14,7 +14,7 @@ import BarChart from "@/components/viz/BarChart";
 export const revalidate = 1800;
 export const metadata: Metadata = {
   title: "Anime Schedule This Week – Daily Airing Calendar (JST)",
-  description: fitDescription("Weekly anime release schedule: which anime air today and every day this week, with exact JST times, your local time, countdowns and streaming links. Updated every 30 minutes."),
+  description: fitDescription("Which anime air today and every day this week, with exact times in JST and your own time zone, countdowns and where to stream. Updated every 30 minutes."),
   alternates: { canonical: "/schedule" },
 };
 

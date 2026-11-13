@@ -36,11 +36,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { year, season } = await params;
   const { y, s } = parse(year, season);
   const items = await getSeasonPreview(y, s);
-  const top = items.slice(0, 3).map(name);
+  // Short, well-known names keep the snippet's point (dates, sequels) visible.
+  const top = items.map(name).filter((t) => t.length <= 28).slice(0, 3);
   return {
     // "winter 2027 anime" searches want the count, the dates and what's worth watching.
     title: items.length >= 5 ? `${cap(s)} ${y} Anime: ${items.length} Shows, Release Dates & Most Anticipated` : `${cap(s)} ${y} Anime Preview: Every New Show, Sequel & Premiere Date`,
-    description: fitDescription(`${cap(s)} ${y} anime (${MONTHS[s]} ${y}): ${items.length} shows${top.length ? ` including ${top.join(", ")}` : ""}, with premiere dates, studios, source material and which ones are sequels.`),
+    description: fitDescription(`${items.length} ${cap(s)} ${y} anime (${MONTHS[s]} ${y}) with premiere dates, studios and which are sequels${top.length ? `: ${top.join(", ")} and more` : ""}.`),
     alternates: { canonical: `/season/${y}/${s}/preview` },
     ...(items.length >= 5 ? {} : { robots: { index: false } }),
   };
