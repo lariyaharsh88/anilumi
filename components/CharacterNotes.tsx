@@ -15,7 +15,7 @@ export default function CharacterNotes({ slug, show }: { slug: string; show: { s
   if (n.role) rows.push(["Role", n.role]);
   if (d?.anime && (d.episode || d.episodeTitle)) rows.push(["First appears", <>{epLink ? <Link href={epLink} className="text-violet-2 hover:underline">{d.anime} episode {d.episode}</Link> : `${d.anime}${d.episode ? ` episode ${d.episode}` : ""}`}{d.episodeTitle ? <span className="text-muted">: “{d.episodeTitle}”</span> : null}</>]);
   else if (d?.anime) rows.push(["First appears", d.anime]);
-  if (d?.source && (d.chapter || d.volume)) rows.push([d.source === "manga" ? "In the manga" : "In the light novel", d.chapter ? `chapter ${d.chapter}` : `volume ${d.volume}`]);
+  if (d?.source && (d.chapter || d.volume)) rows.push([`In the ${d.source}`, d.chapter ? `chapter ${d.chapter}` : `volume ${d.volume}`]);
   if (arcs.length) rows.push(["Key arcs", <span key="arcs" className="flex flex-wrap gap-1.5">{arcs.map((a) => a.arc && show ? <Link key={a.name} href={`/anime/${show.slug}/episodes${Math.ceil(a.arc.from / 20) > 1 ? `/page/${Math.ceil(a.arc.from / 20)}` : ""}#ep-${a.arc.from}`} className="chip">{a.name}</Link> : <span key={a.name} className="chip">{a.name}</span>)}</span>]);
   if (n.affiliations.length) rows.push(["Affiliations", n.affiliations.join(" · ")]);
   if (n.relatives.length) rows.push(["Family", n.relatives.map((r) => `${r.name} (${r.relation})`).join(" · ")]);

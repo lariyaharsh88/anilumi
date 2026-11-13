@@ -8,7 +8,7 @@ import { arcsFor, type Arc } from "./arcs";
 
 export type CharacterNote = {
   name: string; role: string | null;
-  debut: { anime: string | null; episode: number | null; episodeTitle: string | null; source: "manga" | "light novel" | null; chapter: number | null; volume: number | null } | null;
+  debut: { anime: string | null; episode: number | null; episodeTitle: string | null; source: "manga" | "light novel" | "novel" | "visual novel" | null; chapter: number | null; volume: number | null } | null;
   arcs: string[]; affiliations: string[]; relatives: { name: string; relation: string }[];
   confidence: "high" | "medium"; sources: string[]; notes?: string;
   /** Our own spoiler-free "Who is X?" (replaces the shared database biography, which is duplicate text). */
