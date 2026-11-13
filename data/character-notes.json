@@ -7672,6 +7672,2115 @@
         "basis": "manga ending"
       },
       "about": "Toge Inumaki, an upperclassman one year above Yuji Itadori's group at Tokyo Jujutsu High, is an heir of the Inumaki clan, whose Cursed Speech technique turns his spoken commands into orders that people and curses cannot resist. Because a careless remark could hurt anyone nearby, he limits everyday conversation to the names of rice-ball fillings, which his classmates have learned to interpret. He is ranked as a semi-Grade 1 sorcerer despite being only a second-year. Quiet-looking but friendly and playful, he trains alongside fellow second-years Maki Zenin and Panda and quickly gets on with the new first-years."
+    },
+    "yukino-yukinoshita": {
+      "name": "Yukino Yukinoshita",
+      "role": "Founder and president of Sobu High School's Service Club; one of the series' two heroines",
+      "debut": {
+        "anime": "My Teen Romantic Comedy SNAFU",
+        "episode": 1,
+        "episodeTitle": "Youth Romantic Comedy Is Wrong, as I Expected",
+        "source": "light novel",
+        "chapter": 1,
+        "volume": 1
+      },
+      "arcs": [
+        "Season 1 (SNAFU)",
+        "Season 2 (SNAFU Too!)",
+        "Season 3 (SNAFU Climax!)"
+      ],
+      "affiliations": [
+        "Sobu High School (Class 2J)",
+        "Service Club"
+      ],
+      "relatives": [
+        {
+          "name": "Haruno Yukinoshita",
+          "relation": "older sister"
+        }
+      ],
+      "confidence": "high",
+      "sources": [
+        "https://oregairu.fandom.com/wiki/Yukino_Yukinoshita",
+        "https://en.wikipedia.org/wiki/My_Teen_Romantic_Comedy_SNAFU_season_1",
+        "https://en.wikipedia.org/wiki/List_of_My_Teen_Romantic_Comedy_SNAFU_episodes",
+        "https://anilist.co/character/67067",
+        "https://myanimelist.net/character/67067/Yukino_Yukinoshita"
+      ],
+      "notes": "Light novel debut is volume 1, chapter 1 (fandom wiki infobox); the Wikipedia season 1 summary places her in episode 1.",
+      "about": "Yukino Yukinoshita is a top student at Sobu High School and, at first, the only member of the Service Club, a club that takes requests from students who need help. Brilliant, poised and cuttingly honest, she has a reputation as an untouchable ice queen, and she believes capable people owe it to others to help them stand on their own rather than doing the work for them. When teacher Shizuka Hiratsuka drops the cynical loner Hachiman Hikigaya into her club, the two clash immediately over how problems should be solved. Bubbly Yui Yuigahama soon joins them, and Yukino's guarded, prickly friendship with her becomes one of the show's warmest threads.",
+      "abilities": "Ranked first in her year in every subject and gifted at sports, though she tires quickly and dislikes crowds.",
+      "fate": {
+        "status": "alive",
+        "detail": "Nobody dies in the series. By the end (light novel volume 14 and the third anime season) Yukino and Hachiman have become a couple.",
+        "basis": "series ending"
+      },
+      "hindiVoice": null
+    },
+    "koro-sensei": {
+      "name": "Koro-sensei",
+      "role": "Teacher in charge of Kunugigaoka Junior High's Class 3-E, and the target his own students are hired to assassinate",
+      "debut": {
+        "anime": "Assassination Classroom",
+        "episode": 1,
+        "episodeTitle": "Assassination Time",
+        "source": "manga",
+        "chapter": 1,
+        "volume": null
+      },
+      "arcs": [
+        "Introduction: Assassination Time",
+        "First Semester",
+        "Assassination Island Arc",
+        "Second Semester",
+        "Final Semester"
+      ],
+      "affiliations": [
+        "Kunugigaoka Junior High School (Class 3-E)"
+      ],
+      "relatives": [],
+      "confidence": "high",
+      "sources": [
+        "https://ansatsukyoshitsu.fandom.com/wiki/Korosensei",
+        "https://ansatsukyoshitsu.fandom.com/wiki/Episode_46",
+        "https://ansatsukyoshitsu.fandom.com/wiki/Chapter_177",
+        "https://en.wikipedia.org/wiki/List_of_Assassination_Classroom_episodes",
+        "https://en.wikipedia.org/wiki/List_of_Assassination_Classroom_characters",
+        "https://anilist.co/character/65643",
+        "https://myanimelist.net/character/65643"
+      ],
+      "notes": "The Wikipedia episode list has titles but no summaries; the death episode is confirmed by the Assassination Classroom Wiki's Episode 46 and Chapter 177 pages. A Hindi dub exists (Crunchyroll), but only one fan site names his Hindi voice, so hindiVoice is null.",
+      "about": "Koro-sensei is a huge yellow octopus-like creature with a fixed grin, a mortarboard cap and the ability to move at Mach 20. He claims to be the one who blew most of the Moon away, and he says Earth is next when the school year ends in March. His one condition for waiting is to teach Class 3-E, the dumping ground for Kunugigaoka's weakest students. The government secretly offers ten billion yen to whoever kills him, so every lesson doubles as assassination training. Yet he is a tireless, inventive teacher who studies each pupil's strengths and rebuilds their confidence. That clash between doomsday threat and devoted mentor is the heart of the series.",
+      "abilities": "He can fly at Mach 20, regenerate lost tentacles and dodge almost any attack, and he shrugs off ordinary weapons; only special anti-sensei knives and pellets can hurt him.",
+      "fate": {
+        "status": "dies",
+        "detail": "When the school year closes, his students carry out the assassination: Nagisa Shiota delivers the killing blow to his heart (manga chapter 177; anime season 2 episode 24, 'Graduation Time').",
+        "basis": "series ending"
+      },
+      "hindiVoice": null
+    },
+    "goku-son": {
+      "name": "Son Goku",
+      "role": "Protagonist of Dragon Ball; a Saiyan martial artist raised on Earth who protects it from ever-stronger enemies",
+      "debut": {
+        "anime": "Dragon Ball",
+        "episode": 1,
+        "episodeTitle": "Bulma and Son Goku",
+        "source": "manga",
+        "chapter": 1,
+        "volume": 1
+      },
+      "arcs": [
+        "Saiyan Saga",
+        "Frieza Saga",
+        "Android and Cell Saga",
+        "Majin Buu Saga"
+      ],
+      "affiliations": [
+        "Z Fighters",
+        "Turtle School"
+      ],
+      "relatives": [
+        {
+          "name": "Chi-Chi",
+          "relation": "wife"
+        },
+        {
+          "name": "Gohan",
+          "relation": "son"
+        },
+        {
+          "name": "Grandpa Gohan",
+          "relation": "adoptive grandfather"
+        }
+      ],
+      "confidence": "high",
+      "sources": [
+        "https://dragonball.fandom.com/wiki/Goku",
+        "https://en.wikipedia.org/wiki/Goku",
+        "https://en.wikipedia.org/wiki/List_of_Dragon_Ball_episodes",
+        "https://anilist.co/character/246",
+        "https://myanimelist.net/character/246/Gokuu_Son",
+        "https://indiananimenetwork.com/interview-voice-actor-of-goku/",
+        "https://indiananimenetwork.com/?p=5375"
+      ],
+      "notes": "AniLumi lists him under Dragon Ball Z, but his first anime appearance is episode 1 of the original Dragon Ball (1986); the English dub title is \"The Secret of the Dragon Balls\". Arcs listed are the Dragon Ball Z sagas.",
+      "about": "Son Goku is a good-natured, endlessly hungry fighter who was found as a baby in the mountains and raised by an old martial artist. By the start of Dragon Ball Z he is a grown man, a husband and father, and the world's most celebrated martial artist after years of tournaments and adventures with friends like Bulma, Krillin and his former rival Piccolo. He lives for the thrill of meeting someone stronger and pushing past his own limits, yet he is gentle and forgiving, often sparing enemies in the hope they will change. When a stranger from space arrives claiming to know where Goku really came from, his peaceful life is turned upside down.",
+      "abilities": "A martial arts prodigy whose signature move is the Kamehameha energy wave; he flies, senses energy and rides the cloud Flying Nimbus.",
+      "fate": {
+        "status": "revived",
+        "detail": "Goku dies twice: he sacrifices himself to stop Raditz and is brought back by the Dragon Balls, then gives his life again during the Cell Games. He stays dead for seven years until Old Kai gives him his life back during the Majin Buu arc, and he is alive in Dragon Ball Super.",
+        "basis": "manga and anime"
+      },
+      "hindiVoice": {
+        "name": "Ankur Javeri",
+        "dub": "Cartoon Network India Hindi (Dragon Ball Z)",
+        "sources": [
+          "https://indiananimenetwork.com/interview-voice-actor-of-goku/",
+          "https://indiananimenetwork.com/?p=5375"
+        ]
+      }
+    },
+    "asuta-sutaria": {
+      "name": "Asta",
+      "role": "Protagonist; an orphan born without magic who joins the Black Bulls and aims to become Wizard King",
+      "debut": {
+        "anime": "Black Clover",
+        "episode": 1,
+        "episodeTitle": "Asta and Yuno",
+        "source": "manga",
+        "chapter": 1,
+        "volume": null
+      },
+      "arcs": [
+        "Magic Knights Entrance Exam",
+        "The Undead Invasion",
+        "Royal Knights Selection Exam",
+        "Battle of Clover Castle",
+        "Battle of the Shadow Palace",
+        "Devil Trial"
+      ],
+      "affiliations": [
+        "Black Bulls",
+        "Clover Kingdom Magic Knights"
+      ],
+      "relatives": [
+        {
+          "name": "Yuno Grinberryall",
+          "relation": "foster brother (raised together at the Hage church)"
+        }
+      ],
+      "confidence": "high",
+      "sources": [
+        "https://blackclover.fandom.com/wiki/Asta",
+        "https://en.wikipedia.org/wiki/Black_Clover_season_1",
+        "https://en.wikipedia.org/wiki/List_of_Black_Clover_characters",
+        "https://en.wikipedia.org/wiki/Black_Clover",
+        "https://anilist.co/character/123285",
+        "https://myanimelist.net/character/124731/Asta"
+      ],
+      "notes": "Crunchyroll began a Hindi dub of season 1 in October 2026, but no Hindi voice credit for Asta could be confirmed, so hindiVoice is null.",
+      "about": "Asta grew up in a church orphanage in Hage, a poor village on the edge of the Clover Kingdom, alongside Yuno, his rival and closest friend. In a world where nearly everyone is born with magic, Asta has none at all, so he makes up for it with relentless training and a voice loud enough to be a running joke. At fifteen he receives a tattered five-leaf grimoire whose power takes the form of anti-magic swords. He fails to impress most squads at the Magic Knights exam, but Yami Sukehiro recruits him into the Black Bulls, a rowdy band of misfits. Stubborn, sincere and impossible to discourage, he never stops insisting he will one day be Wizard King.",
+      "abilities": "Asta has no mana, but his five-leaf grimoire holds anti-magic swords that cut through or nullify spells, and his heavily trained body gives him unusual strength and stamina.",
+      "fate": {
+        "status": "alive",
+        "detail": "Asta survives the story; by the end of the manga, which finished in May 2026, he has become Wizard King. The anime's second season began in October 2026.",
+        "basis": "series ending"
+      },
+      "hindiVoice": null
+    },
+    "dio-brando": {
+      "name": "Dio Brando",
+      "role": "Main antagonist of Phantom Blood and Stardust Crusaders; Jonathan Joestar's adopted brother and lifelong rival",
+      "debut": {
+        "anime": "JoJo's Bizarre Adventure (2012)",
+        "episode": 1,
+        "episodeTitle": "Dio the Invader",
+        "source": "manga",
+        "chapter": 1,
+        "volume": 1
+      },
+      "arcs": [
+        "Phantom Blood",
+        "Stardust Crusaders"
+      ],
+      "affiliations": [],
+      "relatives": [
+        {
+          "name": "Dario Brando",
+          "relation": "father"
+        },
+        {
+          "name": "George Joestar I",
+          "relation": "adoptive father"
+        },
+        {
+          "name": "Jonathan Joestar",
+          "relation": "adoptive brother"
+        }
+      ],
+      "confidence": "high",
+      "sources": [
+        "https://jojo.fandom.com/wiki/Dio_Brando",
+        "https://en.wikipedia.org/wiki/Dio_Brando",
+        "https://en.wikipedia.org/wiki/List_of_JoJo%27s_Bizarre_Adventure_episodes",
+        "https://anilist.co/character/4004",
+        "https://myanimelist.net/character/4004/Dio_Brando"
+      ],
+      "about": "Dio Brando grows up in the slums of Victorian London under a drunken, abusive father, and when that father dies he is taken in by the wealthy Joestar family, who owe the man an old debt. Charming to adults and vicious in private, Dio arrives at the Joestar estate with one goal: to push aside George Joestar's kind-hearted son Jonathan and seize the family fortune for himself. He bullies Jonathan relentlessly, turns his friends against him and attacks the things he loves, all while playing the perfect gentleman. Ruthless, proud and endlessly ambitious, Dio becomes the dark mirror to Jonathan, and the rivalry between them shapes the whole Joestar saga.",
+      "abilities": "Athletic, cunning and brilliant at manipulating people; he is a fearsome fighter even as a teenager.",
+      "fate": {
+        "status": "dies",
+        "detail": "After surviving the end of Phantom Blood as a severed head that takes over Jonathan's body, Dio is finally defeated by Jotaro Kujo in Cairo at the climax of Stardust Crusaders (anime: Stardust Crusaders episode 47, \"Dio's World, Part 3\"); his remains are then destroyed by sunlight.",
+        "basis": "manga and anime"
+      },
+      "hindiVoice": null
+    },
+    "aslan-jade-callenreese": {
+      "name": "Ash Lynx",
+      "role": "Protagonist; teenage New York gang leader and the unwilling heir of mafia boss Dino Golzine",
+      "debut": {
+        "anime": "Banana Fish",
+        "episode": 1,
+        "episodeTitle": "A Perfect Day for Bananafish",
+        "source": "manga",
+        "chapter": null,
+        "volume": 1
+      },
+      "arcs": [],
+      "affiliations": [
+        "Ash's gang"
+      ],
+      "relatives": [
+        {
+          "name": "Griffin Callenreese",
+          "relation": "older half-brother"
+        },
+        {
+          "name": "Jim Callenreese",
+          "relation": "father"
+        }
+      ],
+      "confidence": "high",
+      "sources": [
+        "https://banana-fish.fandom.com/wiki/Ash_Lynx",
+        "https://en.wikipedia.org/wiki/List_of_Banana_Fish_episodes",
+        "https://en.wikipedia.org/wiki/Banana_Fish",
+        "https://anilist.co/character/13580",
+        "https://myanimelist.net/character/13580/Aslan_Jade_Callenreese"
+      ],
+      "notes": "Real name Aslan Jade Callenreese. The Banana Fish Wiki infobox lists his status as 'Unknown (open ending)', but its own article text and both Wikipedia pages describe him as dying, so fate is 'dies'. Arcs left empty because neither source names story arcs.",
+      "about": "Ash Lynx is a seventeen-year-old who rules a gang on the streets of New York and was raised, against his will, by Corsican mafia boss Dino Golzine. Strikingly handsome, extremely intelligent and a deadly marksman, he hides a painful past behind sarcasm and cold self-control. When a dying man hands him a vial and whispers the words \"banana fish,\" Ash connects them to the phrase his older brother Griffin keeps repeating since coming home from war with a broken mind, and he starts digging. That search pits him against Golzine. Along the way he meets Eiji Okumura, a gentle young Japanese photographer's assistant, and their unlikely bond becomes the emotional core of the story.",
+      "abilities": "A gifted strategist with a genius-level intellect and a near-flawless shot with a handgun, able to fight his way out of situations that would finish most people.",
+      "fate": {
+        "status": "dies",
+        "detail": "After everything is over, Ash is stabbed by Lao Yen-Thai while reading a farewell letter from Eiji; he shoots Lao, then dies quietly in the New York Public Library. This happens in the last episode ('The Catcher in the Rye', no. 24) and on the manga's closing pages.",
+        "basis": "series ending"
+      },
+      "hindiVoice": null
+    },
+    "kazuma-satou": {
+      "name": "Kazuma Satou",
+      "role": "Protagonist; a shut-in gamer reborn in a fantasy world, where he leads a dysfunctional adventuring party",
+      "debut": {
+        "anime": "KonoSuba: God's Blessing on This Wonderful World!",
+        "episode": 1,
+        "episodeTitle": "This Self-Proclaimed Goddess and Reincarnation in Another World!",
+        "source": "light novel",
+        "chapter": null,
+        "volume": 1
+      },
+      "arcs": [
+        "Season 1",
+        "Season 2",
+        "Legend of Crimson (film)",
+        "Season 3"
+      ],
+      "affiliations": [
+        "Adventurers' Guild of Axel",
+        "Kazuma's party"
+      ],
+      "relatives": [],
+      "confidence": "high",
+      "sources": [
+        "https://konosuba.fandom.com/wiki/Kazuma_Satou",
+        "https://en.wikipedia.org/wiki/List_of_KonoSuba_characters",
+        "https://en.wikipedia.org/wiki/List_of_KonoSuba_episodes",
+        "https://anilist.co/character/89364",
+        "https://myanimelist.net/character/117221/Kazuma_Satou"
+      ],
+      "about": "Kazuma Satou is a teenage shut-in obsessed with video games whose life ends in a humiliating accident before the story even starts. In the afterlife, the goddess Aqua offers him a fresh start in a fantasy world full of monsters, and he spitefully picks her as the one thing he takes along. Stuck in the starter town of Axel with a useless goddess, Kazuma ends up leading a party of brilliant misfits: the explosion-obsessed wizard Megumin and the masochistic crusader Darkness. Lazy, sarcastic and shameless, he is still the only practical one in the group, and his schemes, complaints and accidental heroics drive the comedy.",
+      "abilities": "His class is the lowly Adventurer, but he picks up skills from others, such as Steal, and has extraordinary luck.",
+      "fate": {
+        "status": "alive",
+        "detail": "Kazuma's death in a freak accident is the premise of the story, and he is killed and resurrected by Aqua several more times along the way, but he is alive throughout the anime so far.",
+        "basis": "anime so far"
+      },
+      "hindiVoice": null
+    },
+    "tooru-oikawa": {
+      "name": "Tooru Oikawa",
+      "role": "Captain and setter of Aoba Johsai High's boys' volleyball team; Kageyama's former senior",
+      "debut": {
+        "anime": "Haikyu!!",
+        "episode": 5,
+        "episodeTitle": "A Coward's Anxiety",
+        "source": "manga",
+        "chapter": 13,
+        "volume": null
+      },
+      "arcs": [
+        "Karasuno High Team Formation Arc",
+        "Interhigh Arc",
+        "Spring High Preliminary Arc",
+        "Final Arc"
+      ],
+      "affiliations": [
+        "Aoba Johsai High",
+        "Kitagawa Daiichi Junior High (formerly)"
+      ],
+      "relatives": [],
+      "confidence": "medium",
+      "sources": [
+        "https://haikyuu.fandom.com/wiki/T%C5%8Dru_Oikawa",
+        "https://haikyuu.fandom.com/wiki/An_Interesting_Team",
+        "https://en.wikipedia.org/wiki/Haikyu!!_season_1",
+        "https://en.wikipedia.org/wiki/List_of_Haikyu!!_characters",
+        "https://anilist.co/character/71611",
+        "https://myanimelist.net/character/71611"
+      ],
+      "notes": "The Haikyuu!! Wiki gives episode 5 as his anime debut; Wikipedia's summaries first name him in episode 7, 'Versus the Great King', where he plays. Manga debut is chapter 13, 'An Interesting Team' (Haikyuu!! Wiki chapter page).",
+      "about": "Tooru Oikawa is the captain and setter of Aoba Johsai, one of the strongest volleyball schools in Miyagi Prefecture, and he was Tobio Kageyama's senior at Kitagawa Daiichi Junior High. On the surface he is a flirt who soaks up attention from fans and teases opponents with a cheerful grin, which earns him the nickname 'Great King' from Hinata. Underneath is a fiercely driven, analytical player who has worked endlessly to keep up with naturally gifted rivals. His brutal jump serve and his knack for drawing the best out of every spiker make Seijoh dangerous. His long friendship with ace Hajime Iwaizumi and his rivalry with Kageyama shape his early story.",
+      "abilities": "A complete setter: he reads every hitter on his team and tailors sets to them, and he backs that up with one of the most powerful jump serves in the prefecture.",
+      "fate": {
+        "status": "alive",
+        "detail": "Oikawa is alive at the end of the manga. Following the time skip he is a pro setter with CA San Juan in Argentina, and after taking Argentine citizenship he also represents Argentina's national team.",
+        "basis": "series ending"
+      },
+      "hindiVoice": null
+    },
+    "kamina": {
+      "name": "Kamina",
+      "role": "Founder and leader of Team Gurren (later Team Dai-Gurren); Simon's sworn big brother",
+      "debut": {
+        "anime": "Gurren Lagann",
+        "episode": 1,
+        "episodeTitle": "Bust Through the Heavens with Your Drill!",
+        "source": "original",
+        "chapter": null,
+        "volume": null
+      },
+      "arcs": [
+        "Part 1 (episodes 1-8)"
+      ],
+      "affiliations": [
+        "Team Gurren",
+        "Team Dai-Gurren"
+      ],
+      "relatives": [],
+      "confidence": "high",
+      "sources": [
+        "https://gurrenlagann.fandom.com/wiki/Kamina",
+        "https://en.wikipedia.org/wiki/Kamina",
+        "https://en.wikipedia.org/wiki/List_of_Gurren_Lagann_episodes",
+        "https://anilist.co/character/2075",
+        "https://myanimelist.net/character/2075/Kamina"
+      ],
+      "notes": "Gurren Lagann is an original anime by Gainax; episode titles follow the Wikipedia episode list. Arc labels are descriptive rather than official.",
+      "about": "Kamina is a loud, swaggering young man from Jeeha, an underground village where people dig tunnels and live in fear of earthquakes. Unlike everyone around him, he refuses to accept life beneath the rock and is sure there is a sky above them waiting to be reached. He drags along Simon, a quiet orphan boy he treats as a little brother, and fills him with confidence through bold speeches and absurd catchphrases. Kamina has more nerve than sense, but his charisma is real, and once he and Simon break through to the surface, he starts gathering a band of fighters to take on the beastmen who rule it.",
+      "abilities": "A fearless brawler and swordsman who pilots the Gunman Gurren, which combines with Simon's Lagann to form Gurren Lagann.",
+      "fate": {
+        "status": "dies",
+        "detail": "Kamina is mortally wounded during Team Dai-Gurren's assault on Thymilph's fortress Dai-Gunzan and dies in episode 8 (\"Later, Buddy\"). He appears afterwards only in flashbacks and visions, including a brief appearance during the final battle.",
+        "basis": "anime"
+      },
+      "hindiVoice": null
+    },
+    "kazuto-kirigaya": {
+      "name": "Kazuto Kirigaya",
+      "role": "Protagonist; a teenage gamer known as Kirito, trapped in the virtual-reality death game Sword Art Online",
+      "debut": {
+        "anime": "Sword Art Online",
+        "episode": 1,
+        "episodeTitle": "The World of Swords",
+        "source": "light novel",
+        "chapter": null,
+        "volume": 1
+      },
+      "arcs": [
+        "Aincrad Arc",
+        "Fairy Dance Arc",
+        "Phantom Bullet Arc",
+        "Mother's Rosario",
+        "Alicization Arc",
+        "Unital Ring Arc"
+      ],
+      "affiliations": [
+        "Solo player (Sword Art Online)",
+        "Knights of the Blood Oath (briefly)"
+      ],
+      "relatives": [
+        {
+          "name": "Suguha Kirigaya",
+          "relation": "cousin raised as his younger sister"
+        }
+      ],
+      "confidence": "high",
+      "sources": [
+        "https://swordartonline.fandom.com/wiki/Kirigaya_Kazuto",
+        "https://en.wikipedia.org/wiki/List_of_Sword_Art_Online_episodes",
+        "https://en.wikipedia.org/wiki/Kirito_(Sword_Art_Online)",
+        "https://anilist.co/character/36765",
+        "https://myanimelist.net/character/36765"
+      ],
+      "notes": "Unital Ring is still being published in the light novels, so his fate reflects the story so far. A Hindi dub of season 1 is reported, but no Hindi voice credit was found.",
+      "about": "Kazuto Kirigaya is a quiet, computer-obsessed teenager who goes by Kirito online. He was one of only a thousand beta testers for Sword Art Online, the first virtual-reality MMORPG, and he logs in again on launch day. Then the game's creator, Akihiko Kayaba, announces that nobody can log out and that dying in the game kills the player in real life; the only escape is to beat every one of the hundred floors of Aincrad. Kirito chooses to fight alone, accepting the hated label of 'beater' to shield other beta testers. Calm, blunt and secretly kind, he slowly forms bonds with players such as Klein and the skilled swordswoman Asuna.",
+      "abilities": "Among the top fighters in Aincrad, he combines fast reactions with knowledge from the beta test and fights mainly with a one-handed sword.",
+      "fate": {
+        "status": "alive",
+        "detail": "Kirito is alive in the anime and in the light novels, which are still running with the Unital Ring arc as of November 2026.",
+        "basis": "anime so far"
+      },
+      "hindiVoice": null
+    },
+    "shouta-aizawa": {
+      "name": "Shota Aizawa",
+      "role": "Homeroom teacher of U.A. High's Class 1-A; the underground pro hero Eraser Head",
+      "debut": {
+        "anime": "My Hero Academia",
+        "episode": 5,
+        "episodeTitle": "What I Can Do For Now",
+        "source": "manga",
+        "chapter": 5,
+        "volume": null
+      },
+      "arcs": [
+        "Entrance Exam arc",
+        "Quirk Apprehension Test arc",
+        "U.S.J. arc",
+        "U.A. Sports Festival arc",
+        "Forest Training Camp arc",
+        "Paranormal Liberation War arc",
+        "Final War arc"
+      ],
+      "affiliations": [
+        "U.A. High School",
+        "Class 1-A (homeroom teacher)"
+      ],
+      "relatives": [],
+      "confidence": "high",
+      "sources": [
+        "https://myheroacademia.fandom.com/wiki/Shota_Aizawa",
+        "https://en.wikipedia.org/wiki/List_of_My_Hero_Academia_characters",
+        "https://en.wikipedia.org/wiki/My_Hero_Academia_season_1",
+        "https://anilist.co/character/89225",
+        "https://myanimelist.net/character/117915/Shouta_Aizawa"
+      ],
+      "about": "Shota Aizawa is the homeroom teacher of Class 1-A at U.A. High, the elite school where Izuku Midoriya trains to become a hero. Scruffy, sleepy-eyed and usually found napping in a sleeping bag, he cares little about appearances and hates wasted time. On the first day he puts his new students through a Quirk test and threatens to expel whoever finishes last, setting the tone for his strict, unsentimental teaching. Behind the gruffness he is deeply protective of his class and refuses to let them settle for less than their best. He is also a working pro hero, Eraser Head, who avoids the media spotlight.",
+      "abilities": "His Quirk, Erasure, cancels the Quirk of anyone he looks at for as long as he keeps his eyes open, and he backs it up with combat skill and a capture scarf.",
+      "fate": {
+        "status": "alive",
+        "detail": "Aizawa survives the series. During the Paranormal Liberation War he cuts off his own right leg to stop a Quirk-destroying drug from spreading, and damage to his right eye leaves him wearing an eyepatch; he gets around on a prosthetic leg afterwards.",
+        "basis": "manga and anime"
+      },
+      "hindiVoice": null
+    },
+    "yumeko-jabami": {
+      "name": "Yumeko Jabami",
+      "role": "Protagonist; a newcomer to Hyakkaou Private Academy who gambles purely for the thrill of risk",
+      "debut": {
+        "anime": "Kakegurui",
+        "episode": 1,
+        "episodeTitle": "A Woman Named Yumeko Jabami",
+        "source": "manga",
+        "chapter": 1,
+        "volume": null
+      },
+      "arcs": [],
+      "affiliations": [
+        "Hyakkaou Private Academy"
+      ],
+      "relatives": [],
+      "confidence": "medium",
+      "sources": [
+        "https://kakegurui.fandom.com/wiki/Yumeko_Jabami",
+        "https://en.wikipedia.org/wiki/Kakegurui_%E2%80%93_Compulsive_Gambler",
+        "https://kitsu.app/anime/kakegurui",
+        "https://anilist.co/character/121889",
+        "https://myanimelist.net/character/119413/Yumeko_Jabami"
+      ],
+      "notes": "Wikipedia has no Kakegurui episode list, so the episode 1 debut rests on the Kakegurui Wiki and Kitsu; the English title is given as on Kitsu (the wiki uses 'A Girl named Yumeko Jabami'). The manga is still running, so her fate reflects the story so far.",
+      "about": "Yumeko Jabami is a new second-year arrival at Hyakkaou Private Academy, an elite school where rank is decided by gambling and students who fall into debt become 'house pets' for everyone else. At first glance she is a polite, cheerful, well-bred girl, but she lives for the rush of high stakes and will bet anything, including her own future, when a game feels exciting. Her eyes glow red when a match gets dangerous. She spots cheating schemes quickly and turns them against their owners. Her first days drag in classmate Ryota Suzui and rival Mary Saotome, and her habit of shaking up the hierarchy soon draws the attention of the powerful student council.",
+      "abilities": "An exceptionally sharp gambler with a strong memory and keen eye for tells, she uncovers rigged games and turns the cheats against the people running them.",
+      "fate": {
+        "status": "alive",
+        "detail": "Yumeko is alive in both anime seasons and in the manga, which is still running as of November 2026.",
+        "basis": "anime so far"
+      },
+      "hindiVoice": null
+    },
+    "jousuke-higashikata": {
+      "name": "Josuke Higashikata",
+      "role": "Protagonist of Diamond Is Unbreakable; a Morioh high school student and the fourth JoJo",
+      "debut": {
+        "anime": "JoJo's Bizarre Adventure: Diamond Is Unbreakable",
+        "episode": 1,
+        "episodeTitle": "Jotaro Kujo! Meets Josuke Higashikata",
+        "source": "manga",
+        "chapter": 266,
+        "volume": null
+      },
+      "arcs": [
+        "Diamond Is Unbreakable"
+      ],
+      "affiliations": [
+        "Budogaoka High School"
+      ],
+      "relatives": [
+        {
+          "name": "Joseph Joestar",
+          "relation": "father"
+        },
+        {
+          "name": "Tomoko Higashikata",
+          "relation": "mother"
+        },
+        {
+          "name": "Jotaro Kujo",
+          "relation": "nephew"
+        }
+      ],
+      "confidence": "high",
+      "sources": [
+        "https://jojo.fandom.com/wiki/Josuke_Higashikata",
+        "https://en.wikipedia.org/wiki/List_of_JoJo%27s_Bizarre_Adventure_characters",
+        "https://en.wikipedia.org/wiki/List_of_JoJo%27s_Bizarre_Adventure_episodes",
+        "https://anilist.co/character/13085",
+        "https://myanimelist.net/character/13085/Jousuke_Higashikata"
+      ],
+      "notes": "Jotaro is technically Josuke's nephew despite being older, as Josuke is Joseph Joestar's son and Jotaro is Joseph's grandson.",
+      "about": "Josuke Higashikata is a laid-back first-year student in the quiet Japanese town of Morioh in 1999, recognisable by his towering pompadour, which he will not let anyone insult. He has grown up with his mother and grandfather, unaware that his father is Joseph Joestar until the stern Jotaro Kujo turns up to tell him. Josuke is easygoing, a little greedy and fond of a good scheme, but he is fiercely kind and protective of his friends and his town. When he learns that dangerous Stand users are appearing all over Morioh, he teams up with friends like Koichi Hirose and Okuyasu Nijimura to deal with them.",
+      "abilities": "His Stand, Crazy Diamond, is a powerful close-range fighter that can restore damaged objects and heal other people's injuries, though not his own.",
+      "fate": {
+        "status": "alive",
+        "detail": "Josuke survives Diamond Is Unbreakable and is alive at the end of Part 4 (manga and anime).",
+        "basis": "series ending"
+      },
+      "hindiVoice": null
+    },
+    "tornado": {
+      "name": "Tatsumaki",
+      "role": "S-Class Rank 2 hero of the Hero Association, known as the Tornado of Terror",
+      "debut": {
+        "anime": "One-Punch Man",
+        "episode": 6,
+        "episodeTitle": "The Terrifying City",
+        "source": "manga",
+        "chapter": 30,
+        "volume": null
+      },
+      "arcs": [],
+      "affiliations": [
+        "Hero Association (S-Class)"
+      ],
+      "relatives": [
+        {
+          "name": "Fubuki",
+          "relation": "younger sister"
+        }
+      ],
+      "confidence": "medium",
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Tatsumaki",
+        "https://onepunchman.fandom.com/wiki/Episode_6",
+        "https://onepunchman.fandom.com/wiki/Episode_10",
+        "https://en.wikipedia.org/wiki/List_of_One-Punch_Man_episodes",
+        "https://en.wikipedia.org/wiki/List_of_One-Punch_Man_characters",
+        "https://anilist.co/character/81929",
+        "https://myanimelist.net/character/81929"
+      ],
+      "notes": "The One Punch Man Wiki's Episode 6 page lists her first scene (complaining to the Hero Association staff); Wikipedia's summaries do not name her until later, and her first full outing is episode 10. Chapter 30 is her manga debut per the wiki infobox. A Hindi dub exists, but no confirmed Hindi voice credit was found.",
+      "about": "Tatsumaki, the Tornado of Terror, holds the number two spot among the Hero Association's S-Class heroes and one of its most powerful members. A psychic of enormous strength, she is tiny and young-looking, which people constantly mistake for childhood, though she is an adult and hates being treated like one. She is rude, short-tempered and quick to dismiss anyone she considers useless, including Saitama and Genos. Despite the attitude, she takes monster-fighting seriously and throws herself at threats other heroes cannot handle. Her younger sister is Fubuki, who leads a B-Class group, and her overprotective, controlling hold on her sibling is one of her defining traits.",
+      "abilities": "Overwhelming psychokinesis: she can fly, shield herself, crush or hurl buildings and bend huge objects to her will, which puts her near the very top of the association.",
+      "fate": {
+        "status": "alive",
+        "detail": "Tatsumaki is alive in the anime and in the ongoing manga and webcomic as of November 2026.",
+        "basis": "anime so far"
+      },
+      "hindiVoice": null
+    },
+    "chopper-tony-tony": {
+      "name": "Tony Tony Chopper",
+      "role": "The Straw Hat crew's ship's doctor; a reindeer who ate the Human-Human Fruit",
+      "debut": {
+        "anime": "One Piece",
+        "episode": 81,
+        "episodeTitle": "Are You Happy? The Doctor Called Witch!",
+        "source": "manga",
+        "chapter": 134,
+        "volume": null
+      },
+      "arcs": [
+        "Drum Island",
+        "Alabasta",
+        "Skypiea",
+        "Water 7",
+        "Enies Lobby",
+        "Thriller Bark"
+      ],
+      "affiliations": [
+        "Straw Hat Pirates"
+      ],
+      "relatives": [
+        {
+          "name": "Hiriluk",
+          "relation": "adoptive father figure"
+        },
+        {
+          "name": "Dr. Kureha",
+          "relation": "mentor and adoptive mother figure"
+        }
+      ],
+      "confidence": "high",
+      "sources": [
+        "https://onepiece.fandom.com/wiki/Tony_Tony_Chopper",
+        "https://en.wikipedia.org/wiki/Tony_Tony_Chopper",
+        "https://en.wikipedia.org/wiki/One_Piece_season_3",
+        "https://anilist.co/character/309",
+        "https://www.animenewsnetwork.com/news/2024-04-21/cartoon-network-announces-indian-language-dubs-for-one-piece-anime-wano-arc/.210059",
+        "https://www.animenewsnetwork.com/news/2024-05-11/one-piece-anime-wano-arc-reveals-more-hindi-cast/.210606",
+        "https://myanimelist.net/character/309/Chopper_Tony_Tony"
+      ],
+      "notes": "Debut chapter 134 and episode 81 from the One Piece Wiki infobox; Wikipedia's article gives chapter 134 as his first appearance. Episode title is the Wikipedia translation of the Japanese title.",
+      "about": "Tony Tony Chopper is a young reindeer from the snowy Drum Island who ate the Human-Human Fruit, a Devil Fruit that lets him think, talk and take a human-like form. Rejected by his herd for his blue nose and feared by people as a monster, he was taken in by an eccentric doctor named Hiriluk, whose kindness inspired him to study medicine. He is shy, easily flattered and terrible at hiding, often standing behind a door with his whole body in plain sight. When the Straw Hat Pirates reach Drum Island searching for a doctor, Chopper's skills and his longing for a place to belong set the stage for him to join them.",
+      "abilities": "A gifted doctor who can shift between reindeer, human and in-between forms, and later uses Rumble Balls to unlock additional transformations.",
+      "fate": {
+        "status": "alive",
+        "detail": "Chopper is alive in the anime and in the ongoing manga (as of November 2026).",
+        "basis": "anime so far"
+      },
+      "hindiVoice": {
+        "name": "Nikita Salaskar",
+        "dub": "Cartoon Network India Hindi (Wano arc)",
+        "sources": [
+          "https://www.animenewsnetwork.com/news/2024-04-21/cartoon-network-announces-indian-language-dubs-for-one-piece-anime-wano-arc/.210059",
+          "https://www.animenewsnetwork.com/news/2024-05-11/one-piece-anime-wano-arc-reveals-more-hindi-cast/.210606"
+        ]
+      }
+    },
+    "kenzo-tenma": {
+      "name": "Kenzo Tenma",
+      "role": "Protagonist; a Japanese brain surgeon working in Düsseldorf who saves a boy's life and later hunts the killer that boy became",
+      "debut": {
+        "anime": "Monster",
+        "episode": 1,
+        "episodeTitle": "Herr Dr. Tenma",
+        "source": "manga",
+        "chapter": 1,
+        "volume": null
+      },
+      "arcs": [],
+      "affiliations": [
+        "Eisler Memorial Hospital (formerly)"
+      ],
+      "relatives": [],
+      "confidence": "medium",
+      "sources": [
+        "https://en.wikipedia.org/wiki/List_of_Monster_episodes",
+        "https://en.wikipedia.org/wiki/Monster_(manga)",
+        "https://anilist.co/character/718",
+        "https://myanimelist.net/character/718"
+      ],
+      "notes": "No Monster fandom wiki could be reached, so facts rest on Wikipedia, AniList and MyAnimeList. Manga chapter 1 shares the title 'Herr Dr. Tenma' with the first episode.",
+      "about": "Dr. Kenzo Tenma is a gifted Japanese brain surgeon on the staff of Düsseldorf's Eisler Memorial Hospital in the 1980s. He is the hospital director's favourite, engaged to the director's daughter Eva, and on track for a brilliant career, though he is uneasy about how the hospital ranks patients by status. One night a young boy who has been shot in the head arrives just before the city's mayor, and Tenma is ordered to switch to the more important patient. He refuses, saves the boy, and loses the mayor, his standing and his engagement. The fallout of that single choice drives the rest of the story. Gentle, principled and stubborn, he believes every life has equal worth.",
+      "abilities": "An exceptionally skilled brain surgeon whose reputation and medical knowledge earn him help and loyalty wherever he goes.",
+      "fate": {
+        "status": "alive",
+        "detail": "Tenma survives the series. In the final episode (74, 'The Real Monster') all charges against him have been dropped and he works for Doctors Without Borders, matching the ending of the manga.",
+        "basis": "series ending"
+      },
+      "hindiVoice": null
+    },
+    "yoshikage-kira": {
+      "name": "Yoshikage Kira",
+      "role": "The central villain of Diamond Is Unbreakable; a serial killer hiding in Morioh as an ordinary office worker",
+      "debut": {
+        "anime": "JoJo's Bizarre Adventure: Diamond Is Unbreakable",
+        "episode": 17,
+        "episodeTitle": "Rohan Kishibe's Adventure",
+        "source": "manga",
+        "chapter": 334,
+        "volume": null
+      },
+      "arcs": [
+        "Diamond Is Unbreakable"
+      ],
+      "affiliations": [
+        "Kame Yu Department Stores"
+      ],
+      "relatives": [
+        {
+          "name": "Yoshihiro Kira",
+          "relation": "father"
+        }
+      ],
+      "confidence": "medium",
+      "sources": [
+        "https://jojo.fandom.com/wiki/Yoshikage_Kira",
+        "https://en.wikipedia.org/wiki/Yoshikage_Kira",
+        "https://en.wikipedia.org/wiki/List_of_JoJo%27s_Bizarre_Adventure_episodes",
+        "https://anilist.co/character/12055",
+        "https://myanimelist.net/character/12055/Yoshikage_Kira"
+      ],
+      "notes": "The JoJo Wiki lists a glimpse in Diamond Is Unbreakable episode 12 and his first full appearance in episode 17 (a flashback); he takes centre stage from episode 21, \"Yoshikage Kira Just Wants to Live Quietly, Part 1\". The Wikipedia episode list gives titles only, so the episode number rests on the JoJo Wiki.",
+      "about": "Yoshikage Kira is a 33-year-old office worker in Morioh who keeps his life deliberately unremarkable: decent grades, a modest job, no ambition and a strict routine built around getting a full night's sleep. That carefully dull surface hides a man who has been secretly killing people in the town for years, and his only real desire is to keep living in peace without anyone noticing. Polite, fastidious and coldly logical, he treats every threat to his quiet routine as a problem to be cleaned up. Once the town's Stand users begin closing in on him, his obsession with staying hidden makes him one of JoJo's most unsettling villains.",
+      "abilities": "His Stand, Killer Queen, can turn anything it touches into a bomb, letting him make his victims vanish without a trace.",
+      "fate": {
+        "status": "dies",
+        "detail": "In the final battle of Diamond Is Unbreakable, after being beaten by Josuke's group and Jotaro, Kira is accidentally run over by the ambulance called to the scene. His ghost ends up in the haunted alley where Reimi Sugimoto, his first victim, waits, and spectral hands drag him away to an unknown fate.",
+        "basis": "manga and anime"
+      },
+      "hindiVoice": null
+    },
+    "griffith": {
+      "name": "Griffith",
+      "role": "Leader of the mercenary Band of the Hawk and Guts's commander and friend in the Golden Age",
+      "debut": {
+        "anime": "Berserk (1997)",
+        "episode": 1,
+        "episodeTitle": "The Black Swordsman",
+        "source": "manga",
+        "chapter": null,
+        "volume": null
+      },
+      "arcs": [
+        "Golden Age Arc",
+        "Black Swordsman Arc",
+        "Conviction Arc",
+        "Millennium Falcon Arc",
+        "Fantasia Arc"
+      ],
+      "affiliations": [
+        "Band of the Hawk"
+      ],
+      "relatives": [],
+      "confidence": "medium",
+      "sources": [
+        "https://berserk.fandom.com/wiki/Griffith",
+        "https://berserk.fandom.com/wiki/Episode_1_(1997_Anime)",
+        "https://berserk.fandom.com/wiki/Episode_0-6_(Manga)",
+        "https://en.wikipedia.org/wiki/List_of_Berserk_episodes",
+        "https://en.wikipedia.org/wiki/Griffith_(Berserk)",
+        "https://anilist.co/character/424",
+        "https://myanimelist.net/character/424"
+      ],
+      "notes": "In the 1997 series he is glimpsed in episode 1 in a flashing vision (Berserk Wiki episode page) and properly introduced in the second episode. His first manga appearance is in the Black Swordsman chapter 'Guardians of Desire (4)' (pre-episode 6), which has no simple chapter number. The Band is called the Band of the Falcon in newer translations.",
+      "about": "Griffith is the young, strikingly handsome leader of a mercenary company, the Band of the Hawk, hired by the kingdom of Midland in its Hundred-Year War against Tudor. Born a commoner, he dreams of ruling a kingdom of his own, and his calm charisma and gift for strategy make soldiers and nobles alike want to follow him. He wins Guts over by beating him in a duel and drawing him into the Band, where they become the closest of comrades alongside his trusted captain Casca. Graceful, polite and almost otherworldly, he hides a ruthless willingness to do whatever his dream requires. He also carries a strange egg-shaped pendant called a Behelit.",
+      "abilities": "A superb swordsman with a sabre and a brilliant tactician, Griffith inspires near-fanatical loyalty and rarely loses a battle he has planned.",
+      "fate": {
+        "status": "alive",
+        "detail": "Griffith does not die. At the Eclipse (1997 anime episodes 24-25) he offers up his own soldiers as a sacrifice and is reborn as Femto, who becomes the God Hand's fifth member. In the ongoing manga he later returns to the physical world and builds the city of Falconia.",
+        "basis": "anime so far"
+      },
+      "hindiVoice": null
+    },
+    "sasha-braus": {
+      "name": "Sasha Blouse",
+      "role": "Member of the 104th Training Corps who joins the Survey Corps; a hunter's daughter nicknamed \"Potato Girl\"",
+      "debut": {
+        "anime": "Attack on Titan",
+        "episode": 2,
+        "episodeTitle": "That Day: The Fall of Shiganshina, Part 2",
+        "source": "manga",
+        "chapter": 2,
+        "volume": null
+      },
+      "arcs": [
+        "The Struggle for Trost arc",
+        "The 57th Exterior Scouting Mission arc",
+        "Clash of the Titans arc",
+        "Royal Government arc",
+        "Return to Shiganshina arc",
+        "Marley arc"
+      ],
+      "affiliations": [
+        "104th Training Corps",
+        "Survey Corps",
+        "Special Operations Squad"
+      ],
+      "relatives": [
+        {
+          "name": "Artur Blouse",
+          "relation": "father"
+        }
+      ],
+      "confidence": "medium",
+      "sources": [
+        "https://attackontitan.fandom.com/wiki/Sasha_Blouse",
+        "https://attackontitan.fandom.com/wiki/Sasha_Braus_(Anime)",
+        "https://en.wikipedia.org/wiki/List_of_Attack_on_Titan_characters",
+        "https://en.wikipedia.org/wiki/Attack_on_Titan_season_1",
+        "https://en.wikipedia.org/wiki/Attack_on_Titan_season_4",
+        "https://anilist.co/character/45887",
+        "https://myanimelist.net/character/45887/Sasha_Blouse"
+      ],
+      "notes": "Episode 2 and chapter 2 debuts come from the Attack on Titan Wiki infoboxes; Wikipedia's season 1 summaries do not name her until later, though her famous potato scene is in episode 3. Her surname is spelled Braus in the English dub.",
+      "about": "Sasha Blouse grew up in a remote mountain village where her family lived by hunting, and she arrives at military training with a hunter's instincts and a bottomless appetite. On her very first day she is caught eating a stolen steamed potato in the middle of inspection, earning the nickname \"Potato Girl\" and a punishing run. Sasha speaks in oddly formal language to hide her country dialect, and she is impulsive, cheerful and easily distracted by the smell of food. Behind the comedy she is a capable soldier with sharp senses, and her friendships with Connie Springer and the rest of the 104th make her a fan favourite.",
+      "abilities": "A natural hunter with excellent hearing, reflexes and instincts, she is a skilled archer and later one of the Survey Corps' best marksmen.",
+      "fate": {
+        "status": "dies",
+        "detail": "During the Survey Corps' raid on Liberio, Sasha is shot by the stowaway Gabi Braun as their airship escapes, and she dies saying \"meat\". This happens in manga chapter 105 and in The Final Season episode 8, \"Assassin's Bullet\".",
+        "basis": "manga and anime"
+      },
+      "hindiVoice": null
+    },
+    "aqua-360bb730-d958-4265-b31f-c92de9c653f1": {
+      "name": "Aqua",
+      "role": "Goddess of water dragged into another world by Kazuma; the party's arch priest",
+      "debut": {
+        "anime": "KonoSuba: God's Blessing on This Wonderful World!",
+        "episode": 1,
+        "episodeTitle": "This Self-Proclaimed Goddess and Reincarnation in Another World!",
+        "source": "light novel",
+        "chapter": null,
+        "volume": 1
+      },
+      "arcs": [],
+      "affiliations": [
+        "Kazuma's party",
+        "Axis Order (patron goddess)",
+        "Adventurers' Guild of Axel"
+      ],
+      "relatives": [],
+      "confidence": "high",
+      "sources": [
+        "https://konosuba.fandom.com/wiki/Aqua",
+        "https://en.wikipedia.org/wiki/List_of_KonoSuba_episodes",
+        "https://en.wikipedia.org/wiki/List_of_KonoSuba_characters",
+        "https://anilist.co/character/89362",
+        "https://myanimelist.net/character/117223/Aqua"
+      ],
+      "notes": "No Hindi voice credit was found for the Crunchyroll Hindi dub.",
+      "about": "Aqua is the goddess of water whose job is to guide young people who have died, offering some of them a fresh start in a fantasy world threatened by the Demon King. When she mocks the shut-in Kazuma Satou over his embarrassing death, he takes revenge by choosing her as the one thing he may bring along, and both land in the town of Axel. As a goddess she has superb stats and takes the arch priest class, but her intelligence and luck are dismal. Loud, vain, lazy and quick to cry, she spends skill points on party tricks and drinks away her earnings. Her squabbling partnership with Kazuma is the comic engine of the series.",
+      "abilities": "An arch priest with divine healing, resurrection and purification magic that is especially deadly to undead and demons, plus summoning water.",
+      "fate": {
+        "status": "alive",
+        "detail": "Aqua is alive through the anime and is still alive when the main light novel series ends (published 2013-2020).",
+        "basis": "series ending"
+      },
+      "hindiVoice": null
+    },
+    "ryuuko-matoi": {
+      "name": "Ryuko Matoi",
+      "role": "Protagonist; a drifter armed with half of a giant scissor blade who takes on Honnouji Academy",
+      "debut": {
+        "anime": "Kill la Kill",
+        "episode": 1,
+        "episodeTitle": "If Only I Had Thorns Like a Thistle...",
+        "source": "original",
+        "chapter": null,
+        "volume": null
+      },
+      "arcs": [
+        "Season 1 (episodes 1-24)"
+      ],
+      "affiliations": [
+        "Honnouji Academy",
+        "Nudist Beach (ally)"
+      ],
+      "relatives": [
+        {
+          "name": "Isshin Matoi",
+          "relation": "father"
+        }
+      ],
+      "confidence": "high",
+      "sources": [
+        "https://kill-la-kill.fandom.com/wiki/Ry%C5%ABko_Matoi",
+        "https://en.wikipedia.org/wiki/List_of_Kill_la_Kill_characters",
+        "https://en.wikipedia.org/wiki/List_of_Kill_la_Kill_episodes",
+        "https://anilist.co/character/83797",
+        "https://myanimelist.net/character/83797/Ryuuko_Matoi"
+      ],
+      "notes": "Kill la Kill is an original anime by Studio Trigger; the manga is an adaptation. Further family members are left out to avoid spoilers.",
+      "about": "Ryuko Matoi is a hot-headed transfer student who walks into Honnouji Academy carrying one half of an enormous scissor blade and a single question: who killed her father? The school is ruled by the icy student council president Satsuki Kiryuin, whose elite members wear Goku Uniforms that give them superhuman power, and Ryuko is sure Satsuki knows the answer. Crude, stubborn and quick to throw a punch, Ryuko is outmatched until she finds Senketsu, a talking sailor uniform that bonds with her in battle. Her loyal friendship with her chaotic classmate Mako Mankanshoku keeps her grounded as she fights her way up the school's ranks.",
+      "abilities": "She fights with the Scissor Blade, and wearing the living uniform Senketsu gives her enormous strength, speed and durability.",
+      "fate": {
+        "status": "alive",
+        "detail": "Ryuko survives the final battle in episode 24 and is shown alive at the end of the series, though she loses Senketsu.",
+        "basis": "series ending"
+      },
+      "hindiVoice": null
+    },
+    "simon": {
+      "name": "Simon",
+      "role": "Protagonist; a timid young digger from Giha Village who becomes the pilot of Lagann",
+      "debut": {
+        "anime": "Gurren Lagann",
+        "episode": 1,
+        "episodeTitle": "Bust Through the Heavens with Your Drill!",
+        "source": null,
+        "chapter": null,
+        "volume": null
+      },
+      "arcs": [
+        "Before Beastmen War Arc",
+        "Beastmen War Arc",
+        "Anti-Spiral War Arc",
+        "Epilogue"
+      ],
+      "affiliations": [
+        "Team Dai-Gurren",
+        "Giha Village (formerly)"
+      ],
+      "relatives": [],
+      "confidence": "high",
+      "sources": [
+        "https://gurrenlagann.fandom.com/wiki/Simon",
+        "https://en.wikipedia.org/wiki/List_of_Gurren_Lagann_episodes",
+        "https://en.wikipedia.org/wiki/List_of_Gurren_Lagann_characters",
+        "https://anilist.co/character/2257",
+        "https://myanimelist.net/character/2257"
+      ],
+      "notes": "Gurren Lagann is an original anime, so the debut source is null. Kamina calls Simon his 'bro' but they are not related.",
+      "about": "Simon is a shy orphan who spends his days drilling new tunnels for Giha, an underground village whose people have never seen the sky. Everyone teases him except Kamina, a loud, fearless older boy who calls Simon his sworn brother and dreams of breaking through to the surface. While digging, Simon unearths a small drill-shaped key and then a tiny mecha with a face, later named Lagann. When a giant robot crashes through the ceiling, followed by the rifle-toting Yoko, Simon uses that find to fight back and the pair finally reach the open world above. Quiet and unsure of himself at first, he leans heavily on Kamina's belief in him.",
+      "abilities": "A natural digger who pilots Lagann, a small mecha that can drill into and take over larger machines, powered by the strength of his will.",
+      "fate": {
+        "status": "alive",
+        "detail": "Simon survives the final battle. In the last episode he marries Nia before she fades away, passes Lagann's Core Drill to Gimmy and leaves to wander the world as a nameless digger.",
+        "basis": "series ending"
+      },
+      "hindiVoice": null
+    },
+    "revy": {
+      "name": "Revy",
+      "role": "Gunslinger of the Lagoon Company, a band of mercenary smugglers in Roanapur; known as \"Two Hands\"",
+      "debut": {
+        "anime": "Black Lagoon",
+        "episode": 1,
+        "episodeTitle": "The Black Lagoon",
+        "source": "manga",
+        "chapter": null,
+        "volume": 1
+      },
+      "arcs": [
+        "Black Lagoon (season 1)",
+        "The Second Barrage (season 2)",
+        "Roberta's Blood Trail (OVA)"
+      ],
+      "affiliations": [
+        "Lagoon Company"
+      ],
+      "relatives": [],
+      "confidence": "high",
+      "sources": [
+        "https://black-lagoon.fandom.com/wiki/Revy",
+        "https://en.wikipedia.org/wiki/Revy_(Black_Lagoon)",
+        "https://en.wikipedia.org/wiki/List_of_Black_Lagoon_episodes",
+        "https://anilist.co/character/458",
+        "https://myanimelist.net/character/458/Revy"
+      ],
+      "notes": "Her full name is Rebecca Lee. The Black Lagoon Wiki numbers her first manga chapter as Chapter 00, so chapter is left null. Arcs are listed by anime season.",
+      "about": "Revy is the trigger-happy enforcer of the Lagoon Company, a small crew of smugglers and mercenaries who run jobs out of Roanapur, a lawless port city in Thailand. Raised on the streets of New York's Chinatown, she trusts nobody, drinks hard and treats violence as the simplest answer to any problem. She first crosses paths with Rock, a Japanese salaryman taken hostage during a job, and is openly contemptuous when he decides to stay and join the crew. Their constant arguments about morality, survival and what kind of life is worth living become the heart of the series, alongside her loyalty to captain Dutch and mechanic Benny.",
+      "abilities": "A lethal shot who fights with a pair of customised Beretta pistols, one in each hand, which earned her the nickname \"Two Hands\".",
+      "fate": {
+        "status": "alive",
+        "detail": "Revy is alive at the end of the anime (including the Roberta's Blood Trail OVA) and in the manga so far.",
+        "basis": "anime and manga so far"
+      },
+      "hindiVoice": null
+    },
+    "lain-iwakura": {
+      "name": "Lain Iwakura",
+      "role": "Protagonist; a withdrawn fourteen-year-old girl drawn into the Wired, a global computer network",
+      "debut": {
+        "anime": "Serial Experiments Lain",
+        "episode": 1,
+        "episodeTitle": "Weird",
+        "source": null,
+        "chapter": null,
+        "volume": null
+      },
+      "arcs": [],
+      "affiliations": [],
+      "relatives": [],
+      "confidence": "high",
+      "sources": [
+        "https://lain.fandom.com/wiki/Lain_Iwakura",
+        "https://en.wikipedia.org/wiki/Serial_Experiments_Lain",
+        "https://anilist.co/character/2219",
+        "https://myanimelist.net/character/2219"
+      ],
+      "notes": "Original anime, so the debut source is null; the episode is 'Layer 01: Weird'. Her family members are left out because what they really are is a plot point.",
+      "about": "Lain Iwakura is a quiet, awkward middle-school girl living in suburban Japan who barely speaks to classmates and shows little interest in technology. That changes when students at her school start receiving emails signed by Chisa Yomoda, a girl from their school who took her own life days earlier, claiming she has only left her body and now lives in the Wired, the vast computer network linking the world. Lain gets the message too. Curious, she asks her father for a powerful new NAVI computer and gradually sinks into the network. Meanwhile her friend Alice and others insist they have seen a bolder, very different Lain at a Shibuya club called Cyberia. Her slow unravelling sets the eerie mood.",
+      "abilities": null,
+      "fate": {
+        "status": "unclear",
+        "detail": "In the final episode Lain resets reality so that nobody remembers her, putting the network and physical reality back on separate sides; she carries on as a presence beyond ordinary existence rather than dying.",
+        "basis": "series ending"
+      },
+      "hindiVoice": null
+    },
+    "kei-tsukishima": {
+      "name": "Kei Tsukishima",
+      "role": "Karasuno High volleyball club middle blocker; a tall, sarcastic first-year",
+      "debut": {
+        "anime": "Haikyu!!",
+        "episode": 3,
+        "episodeTitle": "A Formidable Ally",
+        "source": "manga",
+        "chapter": 5,
+        "volume": 1
+      },
+      "arcs": [
+        "Karasuno High Team Formation arc",
+        "Inter-High arc",
+        "Tokyo Expedition arc",
+        "Spring High Preliminary arc",
+        "Tokyo Nationals arc"
+      ],
+      "affiliations": [
+        "Karasuno High School Volleyball Club"
+      ],
+      "relatives": [
+        {
+          "name": "Akiteru Tsukishima",
+          "relation": "older brother"
+        }
+      ],
+      "confidence": "high",
+      "sources": [
+        "https://haikyuu.fandom.com/wiki/Kei_Tsukishima",
+        "https://haikyuu.fandom.com/wiki/The_King_of_The_Court",
+        "https://en.wikipedia.org/wiki/Haikyu!!_season_1",
+        "https://en.wikipedia.org/wiki/List_of_Haikyu!!_characters",
+        "https://anilist.co/character/67329",
+        "https://myanimelist.net/character/67329/Kei_Tsukishima"
+      ],
+      "notes": "Manga debut is chapter 5, \"The King of the Court\" (Haikyu Wiki); the Wikipedia season 1 summary introduces him in episode 3.",
+      "about": "Kei Tsukishima joins Karasuno High's volleyball club as a first-year middle blocker, and at nearly 190 centimetres he towers over the rest of the squad. Cool, sarcastic and fond of needling people, he takes particular pleasure in mocking the hot-headed Shoyo Hinata and the arrogant setter Tobio Kageyama, whom he calls the King of the Court. Tsukishima insists volleyball is just a club activity and refuses to get worked up over it, which frustrates teammates who give everything. He is rarely seen without his headphones or his loyal childhood friend Tadashi Yamaguchi, and his slow change in attitude is one of the series' best arcs.",
+      "abilities": "An analytical blocker who reads the opposing setter and spiker instead of guessing, making him the backbone of Karasuno's defence at the net.",
+      "fate": {
+        "status": "alive",
+        "detail": "Haikyu!! has no character deaths. In the manga's post-timeskip epilogue he is a college student and plays in the middle for the V.League side Sendai Frogs, with a job lined up at the Sendai City Museum.",
+        "basis": "series ending"
+      },
+      "hindiVoice": null
+    },
+    "kurumi-tokisaki": {
+      "name": "Kurumi Tokisaki",
+      "role": "A Spirit codenamed Nightmare who transfers into Shido's class; known as the Worst Spirit",
+      "debut": {
+        "anime": "Date A Live",
+        "episode": 7,
+        "episodeTitle": "The Visitors",
+        "source": "light novel",
+        "chapter": null,
+        "volume": 3
+      },
+      "arcs": [],
+      "affiliations": [
+        "Raizen High School"
+      ],
+      "relatives": [],
+      "confidence": "medium",
+      "sources": [
+        "https://date-a-live.fandom.com/wiki/Kurumi_Tokisaki",
+        "https://en.wikipedia.org/wiki/Date_A_Live_season_1",
+        "https://en.wikipedia.org/wiki/List_of_Date_A_Live_characters",
+        "https://anilist.co/character/70069",
+        "https://myanimelist.net/character/70069"
+      ],
+      "notes": "The Date A Live Wiki lists a possible cameo in episode 5 but gives episode 7 as her real first appearance, which matches Wikipedia's season 1 summary.",
+      "about": "Kurumi Tokisaki is a Spirit, one of the mysterious beings whose arrival on Earth triggers devastating spacequakes. She enrolls in Shido Itsuka's class at Raizen High School and calmly tells everyone in her self-introduction that she is a Spirit, which the class takes as a joke. Elegant, polite and playful on the surface, she wears a gothic dress in Spirit form and has a left eye shaped like a clock face. Behind the charm she is a deadly hunter, called Nightmare by the anti-Spirit forces, who regard her as the most dangerous Spirit of all. Shido must try to win her over by dating her, while she has plans of her own for him.",
+      "abilities": "Her Angel, Zafkiel, is a giant clock paired with a flintlock and musket whose bullets manipulate time, and she can call up copies of herself drawn from her own past.",
+      "fate": {
+        "status": "alive",
+        "detail": "Kurumi is alive throughout the anime and is still alive when the main light novel series closes (22 volumes, 2011-2020).",
+        "basis": "series ending"
+      },
+      "hindiVoice": null
+    },
+    "rikka-takanashi": {
+      "name": "Rikka Takanashi",
+      "role": "Heroine; a high school girl with a severe case of chunibyo who believes she has a magical \"Wicked Eye\"",
+      "debut": {
+        "anime": "Love, Chunibyo & Other Delusions",
+        "episode": 1,
+        "episodeTitle": "Chance Encounter... with Wicked Lord Shingan",
+        "source": "light novel",
+        "chapter": null,
+        "volume": 1
+      },
+      "arcs": [
+        "Season 1",
+        "Season 2 (Heart Throb)",
+        "Take On Me (film)"
+      ],
+      "affiliations": [
+        "Far Eastern Magic Napping Society of Summer"
+      ],
+      "relatives": [
+        {
+          "name": "Toka Takanashi",
+          "relation": "older sister"
+        }
+      ],
+      "confidence": "high",
+      "sources": [
+        "https://chunibyo.fandom.com/wiki/Rikka_Takanashi",
+        "https://en.wikipedia.org/wiki/Love,_Chunibyo_%26_Other_Delusions",
+        "https://en.wikipedia.org/wiki/List_of_Love,_Chunibyo_%26_Other_Delusions_episodes",
+        "https://anilist.co/character/65865",
+        "https://myanimelist.net/character/65865/Rikka_Takanashi"
+      ],
+      "notes": "Episode title follows the Wikipedia episode list; the fandom wiki gives it as \"An Encounter with... the Wicked Eye\".",
+      "about": "Rikka Takanashi is a small, eccentric first-year who lives in the apartment above Yuta Togashi and fully believes in her own fantasy world. She covers a coloured contact lens with a medical eyepatch that she claims seals her Wicked Eye, carries an umbrella like a weapon and speaks in grand, mystical phrases. Yuta, who is desperate to bury his own embarrassing past as the self-styled Dark Flame Master, recognises the symptoms at once, and Rikka latches onto him as a fellow warrior. She founds a strange school club with her followers, and her clumsy, sincere friendship with Yuta slowly turns into something more.",
+      "abilities": null,
+      "fate": {
+        "status": "alive",
+        "detail": "Rikka is alive throughout. She and Yuta start dating and remain together through Season 2 and the 2018 film Take On Me.",
+        "basis": "series ending"
+      },
+      "hindiVoice": null
+    },
+    "tsubasa-hanekawa": {
+      "name": "Tsubasa Hanekawa",
+      "role": "Koyomi Araragi's classmate and class president; a model student with a troubled home life",
+      "debut": {
+        "anime": "Bakemonogatari",
+        "episode": 1,
+        "episodeTitle": "Hitagi Crab, Part One",
+        "source": "light novel",
+        "chapter": null,
+        "volume": 1
+      },
+      "arcs": [
+        "Hitagi Crab",
+        "Mayoi Snail",
+        "Nadeko Snake",
+        "Tsubasa Cat",
+        "Tsubasa Family",
+        "Tsubasa Tiger"
+      ],
+      "affiliations": [
+        "Naoetsu Private High School"
+      ],
+      "relatives": [],
+      "confidence": "high",
+      "sources": [
+        "https://bakemonogatari.fandom.com/wiki/Tsubasa_Hanekawa",
+        "https://en.wikipedia.org/wiki/List_of_Monogatari_episodes",
+        "https://en.wikipedia.org/wiki/List_of_Monogatari_characters",
+        "https://anilist.co/character/22055",
+        "https://myanimelist.net/character/22055"
+      ],
+      "notes": "Arcs listed are those she plays a significant part in, from the Monogatari Wiki. Her family situation is left out of the summary as it is a plot point.",
+      "about": "Tsubasa Hanekawa is the class president in Koyomi Araragi's year at Naoetsu Private High School: top of the school, kind to everyone, and so well read that friends joke she knows everything. Her stock reply is that she doesn't know everything, only the things she happens to know. Bookish-looking, with braids and glasses, she is the kind of student teachers adore. She helped Araragi through his ordeal with a vampire over spring break, and she keeps nudging him toward people who need help, including Hitagi Senjougahara. Calm, generous and a little scary when she lectures him, he trusts her more than almost anyone, though there is clearly more to her than her perfect image.",
+      "abilities": null,
+      "fate": {
+        "status": "alive",
+        "detail": "Hanekawa is alive throughout the anime adaptations and the Monogatari novels.",
+        "basis": "anime so far"
+      },
+      "hindiVoice": null
+    },
+    "jujutsu-kaisen-touji-fushiguro": {
+      "name": "Toji Fushiguro",
+      "role": "A hired killer nicknamed the Sorcerer Killer; a man born with no cursed energy and Megumi Fushiguro's father",
+      "debut": {
+        "anime": "Jujutsu Kaisen",
+        "episode": 25,
+        "episodeTitle": "Hidden Inventory",
+        "source": "manga",
+        "chapter": 66,
+        "volume": null
+      },
+      "arcs": [
+        "Hidden Inventory / Premature Death arc",
+        "Shibuya Incident arc"
+      ],
+      "affiliations": [
+        "Zen'in clan (former)"
+      ],
+      "relatives": [
+        {
+          "name": "Megumi Fushiguro",
+          "relation": "son"
+        }
+      ],
+      "confidence": "high",
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro",
+        "https://en.wikipedia.org/wiki/Jujutsu_Kaisen_season_2",
+        "https://en.wikipedia.org/wiki/List_of_Jujutsu_Kaisen_episodes",
+        "https://en.wikipedia.org/wiki/List_of_Jujutsu_Kaisen_characters",
+        "https://anilist.co/character/162722",
+        "https://myanimelist.net/character/175543/Touji_Fushiguro"
+      ],
+      "notes": "Episode 25 is the first episode of season 2 (\"Hidden Inventory\"). Born Toji Zen'in; Fushiguro is his wife's maiden name (Wikipedia season 2 summary).",
+      "about": "Toji Fushiguro is a hired killer who turns up in the Hidden Inventory flashback, set years before the main story, when Satoru Gojo and Suguru Geto are still students. Born into the powerful Zen'in sorcerer clan with no cursed energy at all, he was treated as worthless, walked away from them and took his wife's family name. He now sells his skills to the highest bidder, gambles away most of what he earns and takes a contract from a religious group to kill Riko Amanai, the girl Gojo and Geto are guarding. Calm, lazy-seeming and frighteningly patient, Toji is a rare villain who threatens the young Gojo through raw physical skill alone.",
+      "abilities": "His total lack of cursed energy came with superhuman strength, speed and senses, and he fights with an arsenal of cursed tools carried by a worm-like spirit.",
+      "fate": {
+        "status": "dies",
+        "detail": "Gojo kills Toji at the end of Hidden Inventory (season 2 episode 4, overall episode 28). During the Shibuya Incident a seance brings his soul back inside another man's body; after fighting Megumi, he recognises his son and ends the possession by stabbing himself in the head (episode 40, \"Thunderclap\").",
+        "basis": "manga and anime"
+      },
+      "hindiVoice": null
+    },
+    "gilgamesh": {
+      "name": "Gilgamesh",
+      "role": "Archer-class Servant summoned by Tokiomi Tohsaka; the self-styled King of Heroes",
+      "debut": {
+        "anime": "Fate/Zero",
+        "episode": 1,
+        "episodeTitle": "The Summoning of Heroes",
+        "source": "light novel",
+        "chapter": null,
+        "volume": 1
+      },
+      "arcs": [],
+      "affiliations": [
+        "Tokiomi Tohsaka (Master)",
+        "Fourth Holy Grail War"
+      ],
+      "relatives": [],
+      "confidence": "medium",
+      "sources": [
+        "https://typemoon.fandom.com/wiki/Gilgamesh",
+        "https://en.wikipedia.org/wiki/List_of_Fate/Zero_episodes",
+        "https://en.wikipedia.org/wiki/List_of_Fate/stay_night_characters",
+        "https://anilist.co/character/2514",
+        "https://myanimelist.net/character/2514"
+      ],
+      "notes": "The character first appeared in the 2004 visual novel Fate/stay night; this page follows Fate/Zero, where he is summoned in episode 1. Fate status covers his eventual end in Fate/stay night; his defeat in the Heaven's Feel route is left out because the sources checked do not describe it clearly.",
+      "about": "Gilgamesh is the ancient king of Uruk, summoned as an Archer-class Servant by Tokiomi Tohsaka for the Fourth Holy Grail War. Calling himself the King of Heroes, he believes he is the rightful owner of every treasure in the world, and he treats almost everyone else as a mongrel beneath his notice. Golden-armoured, arrogant and endlessly amused by human desire, he sees the war as entertainment rather than a duty. He takes a growing interest in the priest Kirei Kotomine, whose hidden emptiness fascinates him, and he openly scorns his own Master's caution. His clashes of pride with the other kings in the war, Saber and Rider, are among the series' best scenes.",
+      "abilities": "Through the Gate of Babylon he can fire an almost endless arsenal of legendary weapons, and his strongest Noble Phantasm, the sword Ea, can tear apart space itself.",
+      "fate": {
+        "status": "dies",
+        "detail": "Gilgamesh survives Fate/Zero: the corrupted Grail gives him a physical body and he lingers for ten years. In Fate/stay night he is defeated, struck down by Saber's Excalibur in the Fate route and finished off by Archer's arrow in Unlimited Blade Works.",
+        "basis": "series ending"
+      },
+      "hindiVoice": null
+    },
+    "gaara": {
+      "name": "Gaara",
+      "role": "Sand ninja and host of the One-Tailed Shukaku; later Fifth Kazekage of the Hidden Sand Village",
+      "debut": {
+        "anime": "Naruto",
+        "episode": 20,
+        "episodeTitle": "A New Chapter Begins: The Chunin Exam!",
+        "source": "manga",
+        "chapter": 35,
+        "volume": null
+      },
+      "arcs": [
+        "Chunin Exams arc",
+        "Konoha Crush arc",
+        "Sasuke Recovery Mission arc",
+        "Kazekage Rescue Mission arc",
+        "Fourth Shinobi World War arc"
+      ],
+      "affiliations": [
+        "Hidden Sand Village",
+        "Team Baki"
+      ],
+      "relatives": [
+        {
+          "name": "Temari",
+          "relation": "older sister"
+        },
+        {
+          "name": "Kankuro",
+          "relation": "older brother"
+        },
+        {
+          "name": "Rasa",
+          "relation": "father (Fourth Kazekage)"
+        }
+      ],
+      "confidence": "high",
+      "sources": [
+        "https://naruto.fandom.com/wiki/Gaara",
+        "https://en.wikipedia.org/wiki/Gaara",
+        "https://en.wikipedia.org/wiki/Naruto_season_1",
+        "https://anilist.co/character/1662",
+        "https://myanimelist.net/character/1662/Gaara"
+      ],
+      "about": "Gaara is a quiet, red-haired genin from the Hidden Sand Village who comes to the Leaf Village alongside his older sister Temari and brother Kankuro to take part in the Chunin Exams. A tailed beast called Shukaku was sealed inside him before birth, and the village has feared him for as long as he can remember. That isolation turned him into a cold boy who believes he exists only for himself and proves he is alive by crushing others. He carries a gourd full of sand that moves on its own to shield him, and even his teammates are terrified of him. Gaara's loneliness mirrors Naruto's, which makes their clash one of the series' defining moments.",
+      "abilities": "He controls sand at will, using it as an automatic shield and to crush opponents from a distance.",
+      "fate": {
+        "status": "revived",
+        "detail": "In Naruto Shippuden's Kazekage Rescue Mission arc, Akatsuki extract Shukaku from Gaara and he dies; Elder Chiyo gives up her own life to revive him. He survives the rest of the series, including the Fourth Shinobi World War, and appears alive in Boruto.",
+        "basis": "manga and anime"
+      },
+      "hindiVoice": null
+    },
+    "rukia-kuchiki": {
+      "name": "Rukia Kuchiki",
+      "role": "Soul Reaper of the Gotei 13's 13th Division who passes her powers to Ichigo Kurosaki",
+      "debut": {
+        "anime": "Bleach",
+        "episode": 1,
+        "episodeTitle": "The Day I Became a Shinigami",
+        "source": "manga",
+        "chapter": 1,
+        "volume": 1
+      },
+      "arcs": [
+        "Agent of the Shinigami arc",
+        "Soul Society arc",
+        "Arrancar arc",
+        "Hueco Mundo arc",
+        "Fake Karakura Town arc",
+        "The Lost Substitute Shinigami arc",
+        "The Thousand-Year Blood War arc"
+      ],
+      "affiliations": [
+        "Gotei 13 (13th Division)",
+        "Kuchiki family"
+      ],
+      "relatives": [
+        {
+          "name": "Byakuya Kuchiki",
+          "relation": "adoptive older brother"
+        }
+      ],
+      "confidence": "high",
+      "sources": [
+        "https://bleach.fandom.com/wiki/Rukia_Kuchiki",
+        "https://en.wikipedia.org/wiki/Bleach_season_1",
+        "https://en.wikipedia.org/wiki/Rukia_Kuchiki",
+        "https://anilist.co/character/6",
+        "https://myanimelist.net/character/6"
+      ],
+      "notes": "Other relatives (an older sister and her later husband and daughter) are left out to avoid spoilers. A Hindi dub of Thousand-Year Blood War exists, but no Hindi voice credit for Rukia was found.",
+      "about": "Rukia Kuchiki is a Soul Reaper, one of the guardians who guide spirits to the afterlife and destroy the monstrous souls called Hollows. While on patrol in Karakura Town she runs into Ichigo Kurosaki, a teenager who can see ghosts, and when a Hollow attacks his family she is badly wounded. To save them, she transfers her powers into Ichigo, intending to lend only part of them, but he absorbs nearly everything. Stranded in a temporary human body, she enrols at his school and trains him as a substitute Soul Reaper. Small, stern and formal, she adores rabbits and a famously bad drawing style, and her dry teasing gives the early series its humour.",
+      "abilities": "A trained Soul Reaper skilled in kido spells and swordsmanship; her zanpakuto, Sode no Shirayuki, uses ice and is often called the most beautiful in Soul Society.",
+      "fate": {
+        "status": "alive",
+        "detail": "Rukia survives the Thousand-Year Blood War. In the manga's final chapter, set ten years later, she has become captain of the 13th Division.",
+        "basis": "series ending"
+      },
+      "hindiVoice": null
+    },
+    "johnny-joestar": {
+      "name": "Johnny Joestar",
+      "role": "Protagonist of Steel Ball Run; a paralysed former jockey who enters a transcontinental horse race",
+      "debut": {
+        "anime": "Steel Ball Run: JoJo's Bizarre Adventure",
+        "episode": 1,
+        "episodeTitle": "Steel Ball Run",
+        "source": "manga",
+        "chapter": 2,
+        "volume": null
+      },
+      "arcs": [
+        "Steel Ball Run"
+      ],
+      "affiliations": [
+        "Steel Ball Run race"
+      ],
+      "relatives": [
+        {
+          "name": "George Joestar",
+          "relation": "father"
+        }
+      ],
+      "confidence": "high",
+      "sources": [
+        "https://jojo.fandom.com/wiki/Johnny_Joestar",
+        "https://en.wikipedia.org/wiki/List_of_JoJo%27s_Bizarre_Adventure_characters",
+        "https://en.wikipedia.org/wiki/Steel_Ball_Run:_JoJo%27s_Bizarre_Adventure",
+        "https://en.wikipedia.org/wiki/Steel_Ball_Run",
+        "https://jojowiki.com/Morioh_1901",
+        "https://anilist.co/character/19492",
+        "https://myanimelist.net/character/19492/Johnny_Joestar"
+      ],
+      "notes": "Manga debut is Steel Ball Run chapter 2 (JoJo Wiki). The anime's first episode (the \"1st Stage\") premiered on Netflix on 19 March 2026; further episodes began weekly from 25 September 2026.",
+      "about": "Johnny Joestar was once a cocky horse-racing prodigy in 1890s America until a shooting left him paralysed from the waist down and his fame collapsed. Bitter and stuck in a wheelchair, he turns up at the start of the Steel Ball Run, a horse race across the continent with a huge cash prize. There he sees Gyro Zeppeli, a mysterious Italian rider whose spinning steel balls briefly let Johnny stand on his own, and he decides to enter the race just to follow Gyro and learn his secret. Johnny is stubborn, sharp and capable of cold resolve, and his uneasy partnership with Gyro grows into one of JoJo's great friendships.",
+      "abilities": "An expert rider despite his paralysis, he later awakens a Stand, Tusk, that fires his fingernails as spinning projectiles.",
+      "fate": {
+        "status": "dies",
+        "detail": "Johnny survives the Steel Ball Run race itself. The sequel manga JoJolion (chapter 22, \"Morioh 1901\") later reveals that he died in 1901 after taking his wife Rina's illness onto himself, his head crushed by a boulder. The anime has not reached this.",
+        "basis": "manga"
+      },
+      "hindiVoice": null
+    },
+    "vegeta": {
+      "name": "Vegeta",
+      "role": "Prince of the Saiyans; Goku's arrogant rival who arrives as a villain and later fights alongside the Z Fighters",
+      "debut": {
+        "anime": "Dragon Ball Z",
+        "episode": 2,
+        "episodeTitle": "The Mightiest Warrior in All of History is Goku's Older Brother!",
+        "source": "manga",
+        "chapter": 204,
+        "volume": 17
+      },
+      "arcs": [
+        "Saiyan Saga",
+        "Frieza Saga",
+        "Android Saga",
+        "Cell Saga",
+        "Majin Buu Saga"
+      ],
+      "affiliations": [
+        "Saiyan army (formerly)",
+        "Frieza Force (formerly)",
+        "Z Fighters"
+      ],
+      "relatives": [
+        {
+          "name": "King Vegeta",
+          "relation": "father"
+        }
+      ],
+      "confidence": "medium",
+      "sources": [
+        "https://dragonball.fandom.com/wiki/Vegeta",
+        "https://dragonball.fandom.com/wiki/The_Needs_of_the_Many",
+        "https://en.wikipedia.org/wiki/Dragon_Ball_Z_season_1",
+        "https://en.wikipedia.org/wiki/Vegeta",
+        "https://anilist.co/character/913",
+        "https://myanimelist.net/character/913",
+        "https://www.afaqs.com/companies/cartoon-network-premiering-dragon-ball-z-kai-from-april-16",
+        "https://www.mediainfoline.com/entertainment/cartoon-network-premiers-dragon-ball-z-kai-from-april-16",
+        "https://animenewsnetwork.com/news/2022-08-20/dragon-ball-super-super-hero-film-reveals-hindi-dub-cast/.188810"
+      ],
+      "notes": "He is glimpsed in Dragon Ball Z episode 2 (titled 'Reunions' in the Funimation dub) and first appears properly in episode 5 ('Gohan's Rage'), per the Dragon Ball Wiki and Wikipedia's season 1 list. Manga debut is chapter 204, 'Sayonara, Son Goku' (Viz: 'The Needs of the Many'), in volume 17. His wife and children are left out to avoid spoilers. The Hindi credit is for Cartoon Network India's Dragon Ball Z Kai dub (and the Super Hero film), not the original Dragon Ball Z.",
+      "about": "Vegeta is the proud prince of the Saiyans, a warrior race that has all but vanished, and he serves the galactic tyrant Frieza alongside the brutal Nappa. After Goku's brother Raditz is defeated on Earth, Vegeta learns of the planet's wish-granting Dragon Balls and sets out with Nappa to claim them and wish for eternal life. Cold, cruel and sure of his own superiority, he looks down on Goku as a low-class Saiyan raised among humans, and losing to him becomes the wound that drives him for years. His fierce pride, sharp tongue and constant hunger to surpass Goku make him the series' most compelling rival, and one of its most enduring fan favourites.",
+      "abilities": "An elite Saiyan fighter with enormous power, flight and energy blasts such as the Galick Gun, who grows stronger after every hard battle.",
+      "fate": {
+        "status": "revived",
+        "detail": "Vegeta dies twice and returns both times: Frieza kills him on Namek and he is revived by a wish to restore Frieza's victims, and he later sacrifices himself against Majin Buu before being brought back. He is alive when Dragon Ball Z ends and in Dragon Ball Super.",
+        "basis": "series ending"
+      },
+      "hindiVoice": {
+        "name": "Prasad Barve",
+        "dub": "Cartoon Network India Hindi (Dragon Ball Z Kai)",
+        "sources": [
+          "https://www.afaqs.com/companies/cartoon-network-premiering-dragon-ball-z-kai-from-april-16",
+          "https://www.mediainfoline.com/entertainment/cartoon-network-premiers-dragon-ball-z-kai-from-april-16",
+          "https://animehunch.com/dragon-ball-z-kai-to-air-every-sunday-on-cartoon-network-india-from-april-16/"
+        ]
+      }
+    },
+    "eikichi-onizuka": {
+      "name": "Eikichi Onizuka",
+      "role": "Protagonist; a 22-year-old ex-biker gang leader who becomes a teacher at Holy Forest Academy",
+      "debut": {
+        "anime": "Great Teacher Onizuka",
+        "episode": 1,
+        "episodeTitle": "GTO – The Legend Begins",
+        "source": "manga",
+        "chapter": 1,
+        "volume": 1
+      },
+      "arcs": [
+        "Holy Forest Academy (Class 3-4)"
+      ],
+      "affiliations": [
+        "Holy Forest Academy",
+        "Oni-Baku (former)"
+      ],
+      "relatives": [],
+      "confidence": "high",
+      "sources": [
+        "https://gto.fandom.com/wiki/Eikichi_Onizuka",
+        "https://en.wikipedia.org/wiki/Great_Teacher_Onizuka",
+        "https://en.wikipedia.org/wiki/List_of_Great_Teacher_Onizuka_episodes",
+        "https://anilist.co/character/434",
+        "https://myanimelist.net/character/434/Eikichi_Onizuka"
+      ],
+      "about": "Eikichi Onizuka is a 22-year-old former leader of a biker gang who scraped through a low-ranked university and decides, for less than noble reasons, that he wants to be a teacher. Crude, broke and hopeless at academics, he talks his way into a trial job at the elite Holy Forest Academy, where he is handed Class 3-4, a group of students who have driven previous teachers to breakdowns. Onizuka meets their pranks and cruelty with reckless stunts, brute strength and a stubborn refusal to give up on anyone. Underneath the bluster he genuinely cares about kids the system has failed, which makes him the unlikeliest great teacher in anime.",
+      "abilities": "A tough street fighter with absurd physical endurance, plus a talent for reading what troubled students actually need.",
+      "fate": {
+        "status": "alive",
+        "detail": "Onizuka is alive at the end of the anime and of the original manga; he returns as the lead of later sequel manga such as GTO: Shonan 14 Days.",
+        "basis": "series ending"
+      },
+      "hindiVoice": null
+    },
+    "juuzou-suzuya": {
+      "name": "Juuzou Suzuya",
+      "role": "Eccentric young CCG ghoul investigator partnered with Yukinori Shinohara",
+      "debut": {
+        "anime": "Tokyo Ghoul",
+        "episode": 9,
+        "episodeTitle": "Birdcage",
+        "source": "manga",
+        "chapter": 47,
+        "volume": null
+      },
+      "arcs": [
+        "Aogiri Arc",
+        "Raid of Kanou's Lab",
+        "Owl Suppression Operation",
+        "Auction Mopping-Up Operation",
+        "Rushima Landing Operation",
+        "Clown Siege"
+      ],
+      "affiliations": [
+        "CCG (Commission of Counter Ghoul)",
+        "Suzuya Squad"
+      ],
+      "relatives": [],
+      "confidence": "medium",
+      "sources": [
+        "https://tokyoghoul.fandom.com/wiki/Juuzou_Suzuya",
+        "https://en.wikipedia.org/wiki/List_of_Tokyo_Ghoul_episodes",
+        "https://en.wikipedia.org/wiki/List_of_Tokyo_Ghoul_characters",
+        "https://anilist.co/character/88412",
+        "https://myanimelist.net/character/104437/Juuzou_Suzuya"
+      ],
+      "notes": "Debut is from the Tokyo Ghoul Wiki infobox; the Wikipedia episode list has no summaries to confirm it. His upbringing is left out as it is revealed later.",
+      "about": "Juuzou Suzuya is a young, low-ranked investigator at the CCG, the agency that hunts ghouls in Tokyo, and he is paired with the veteran Yukinori Shinohara, who treats him like a problem child. With his slight build, stitches in his skin and clips in his hair, he looks more like a mischievous kid than an officer. He behaves like one too: cheerful, impulsive, careless with other people's things and fond of sweets. That playfulness hides a startling lack of fear and empathy in combat, where he fights with a gleeful, almost acrobatic ferocity. Unpredictable and unsettling, he stands out among the investigators, and his bond with Shinohara is one of the few things that seem to reach him.",
+      "abilities": "An agile, knife-throwing fighter who feels almost no pain and handles quinque weapons made from ghoul kagune with deadly skill.",
+      "fate": {
+        "status": "alive",
+        "detail": "Juuzou survives the series; at the end of Tokyo Ghoul:re he is still a leading investigator.",
+        "basis": "series ending"
+      },
+      "hindiVoice": null
+    },
+    "momo-ayase": {
+      "name": "Momo Ayase",
+      "role": "Heroine; a high school girl with psychic powers who teams up with the occult fan Okarun",
+      "debut": {
+        "anime": "Dandadan",
+        "episode": 1,
+        "episodeTitle": "That's How Love Starts, Ya Know!",
+        "source": "manga",
+        "chapter": 1,
+        "volume": 1
+      },
+      "arcs": [
+        "Serpo arc",
+        "Turbo Granny arc",
+        "Evil Eye arc"
+      ],
+      "affiliations": [
+        "Kami High (History and Culture Research Club)"
+      ],
+      "relatives": [
+        {
+          "name": "Seiko Ayase",
+          "relation": "grandmother"
+        }
+      ],
+      "confidence": "high",
+      "sources": [
+        "https://dandadan.fandom.com/wiki/Momo_Ayase",
+        "https://en.wikipedia.org/wiki/List_of_Dandadan_characters",
+        "https://en.wikipedia.org/wiki/List_of_Dandadan_episodes",
+        "https://anilist.co/character/222594",
+        "https://myanimelist.net/character/196898/Momo_Ayase"
+      ],
+      "notes": "No Kitsu entry was found for this character.",
+      "about": "Momo Ayase is a tough, outspoken high school girl who believes in ghosts thanks to her grandmother Seiko, a spirit medium, but scoffs at aliens. After defending a nerdy classmate she calls Okarun from bullies, she argues with him about which is real, and the two agree to test each other's beliefs by visiting a haunted spot and an alien hotspot. Both turn out to be right in the worst possible way, and the encounter awakens psychic powers in Momo. Brash and quick-tempered but kind-hearted, she drags Okarun into one supernatural crisis after another, and their awkward, slowly growing romance gives the chaos its heart.",
+      "abilities": "Her psychokinesis lets her see auras and seize people, spirits and objects with giant invisible hands.",
+      "fate": {
+        "status": "alive",
+        "detail": "Momo is alive in the anime so far and in the ongoing manga (as of November 2026).",
+        "basis": "anime so far"
+      },
+      "hindiVoice": null
+    },
+    "ranpo-edogawa": {
+      "name": "Ranpo Edogawa",
+      "role": "Star investigator of the Armed Detective Agency, who insists he is the best detective alive",
+      "debut": {
+        "anime": "Bungo Stray Dogs",
+        "episode": 1,
+        "episodeTitle": "Fortune Is Unpredictable and Mutable",
+        "source": "manga",
+        "chapter": 1,
+        "volume": null
+      },
+      "arcs": [],
+      "affiliations": [
+        "Armed Detective Agency"
+      ],
+      "relatives": [],
+      "confidence": "medium",
+      "sources": [
+        "https://bungostraydogs.fandom.com/wiki/Ranpo_Edogawa",
+        "https://en.wikipedia.org/wiki/List_of_Bungo_Stray_Dogs_episodes",
+        "https://en.wikipedia.org/wiki/List_of_Bungo_Stray_Dogs_characters",
+        "https://anilist.co/character/89201",
+        "https://myanimelist.net/character/132504/Ranpo_Edogawa"
+      ],
+      "notes": "The Bungo Stray Dogs Wiki gives episode 1 and chapter 1 as his debut; his first full case, where he shows off his deduction, is the fifth episode (manga chapter 6). He is named after the mystery writer Edogawa Ranpo.",
+      "about": "Ranpo Edogawa is the star detective of Yokohama's Armed Detective Agency, the group of gifted investigators that Atsushi Nakajima joins. He boasts that no detective on Earth can match him and credits his success to an ability named Super Deduction, which lets him solve cases at a glance once he puts on his glasses. Unlike almost everyone else at the Agency, he does not actually have a supernatural ability; his genius is entirely his own, though he seems not to know or care. Childish, lazy and fond of snacks, he refuses to ride trains alone and sulks when not praised. His trust in Agency president Yukichi Fukuzawa is one of his defining traits.",
+      "abilities": "No supernatural ability: his 'Super Deduction' is pure observation and reasoning, sharp enough to name a culprit within seconds of arriving at a scene.",
+      "fate": {
+        "status": "alive",
+        "detail": "Ranpo is alive in the anime and in the ongoing manga as of November 2026.",
+        "basis": "anime so far"
+      },
+      "hindiVoice": null
+    },
+    "aoi-toudou-jujutsu-kaisen": {
+      "name": "Aoi Todo",
+      "role": "Kyoto Jujutsu High third-year ranked as a Grade 1 sorcerer while still a student",
+      "debut": {
+        "anime": "Jujutsu Kaisen",
+        "episode": 8,
+        "episodeTitle": "Boredom",
+        "source": "manga",
+        "chapter": 16,
+        "volume": null
+      },
+      "arcs": [
+        "Kyoto Goodwill Event arc",
+        "Shibuya Incident arc",
+        "Shinjuku Showdown arc"
+      ],
+      "affiliations": [
+        "Kyoto Jujutsu High"
+      ],
+      "relatives": [],
+      "confidence": "high",
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Aoi_Todo",
+        "https://en.wikipedia.org/wiki/Jujutsu_Kaisen_season_1",
+        "https://en.wikipedia.org/wiki/List_of_Jujutsu_Kaisen_episodes",
+        "https://en.wikipedia.org/wiki/List_of_Jujutsu_Kaisen_characters",
+        "https://anilist.co/character/137975",
+        "https://myanimelist.net/character/164484/Aoi_Toudou"
+      ],
+      "notes": "No Kitsu entry was found for this character.",
+      "about": "Aoi Todo is a hulking, scarred third-year at Kyoto Jujutsu High and one of the few students ranked Grade 1, despite coming from a family with no sorcerer background. He is loud, theatrical and obsessed with two things: fighting worthy opponents and his favourite idol, Takada-chan. Todo judges people by asking what type of woman they like, and he is ready to beat anyone whose answer bores him. He is introduced roughing up Megumi Fushiguro in Tokyo, then meets Yuji Itadori during the exchange event between the two schools and, after hearing Yuji's answer, decides the two of them are best friends.",
+      "abilities": "Enormously strong and a brilliant tactician, he uses Boogie Woogie, a technique that swaps the positions of people or objects when he claps his hands.",
+      "fate": {
+        "status": "alive",
+        "detail": "Todo survives the series. During the Shibuya Incident he cuts off his own left hand to escape Mahito's transfiguration, and he returns in the Shinjuku Showdown arc with the missing hand replaced by a vibraslap.",
+        "basis": "manga"
+      },
+      "hindiVoice": null
+    },
+    "houtarou-oreki": {
+      "name": "Houtarou Oreki",
+      "role": "Protagonist; an energy-conserving first-year who joins Kamiyama High's Classics Club and solves its everyday mysteries",
+      "debut": {
+        "anime": "Hyouka",
+        "episode": 1,
+        "episodeTitle": "The Return of the Time-Honored Classic Lit Club",
+        "source": "novel",
+        "chapter": null,
+        "volume": 1
+      },
+      "arcs": [
+        "Reviving the Classic Lit Club",
+        "Summertime Anguish",
+        "Kanya Festival"
+      ],
+      "affiliations": [
+        "Kamiyama High School",
+        "Classic Literature Club"
+      ],
+      "relatives": [
+        {
+          "name": "Tomoe Oreki",
+          "relation": "older sister"
+        }
+      ],
+      "confidence": "high",
+      "sources": [
+        "https://hyouka.fandom.com/wiki/Houtarou_Oreki",
+        "https://en.wikipedia.org/wiki/List_of_Hyouka_episodes",
+        "https://en.wikipedia.org/wiki/Hyouka",
+        "https://anilist.co/character/55131",
+        "https://myanimelist.net/character/55131"
+      ],
+      "notes": "Hyouka is based on Honobu Yonezawa's Classic Literature Club mystery novels; the first novel is Hyouka (2001). The novel series is still unfinished.",
+      "about": "Houtarou Oreki is in his first year at Kamiyama High, and his personal motto is to avoid doing anything he doesn't have to, and to do what he must as quickly as possible. On orders from his globe-trotting older sister Tomoe, he joins the Classic Literature Club so it won't close for lack of members. There he meets Eru Chitanda, a wealthy, endlessly curious girl whose catchphrase, 'I'm curious,' drags him into one small mystery after another. Despite himself, Houtarou turns out to be an exceptional reasoner. His old friends Satoshi Fukube and Mayaka Ibara complete the club, and his slow shift from grey apathy toward caring is the quiet heart of the show.",
+      "abilities": "Brilliant deductive reasoning: from small details he pieces together explanations nobody else sees, though he insists it is only luck.",
+      "fate": {
+        "status": "alive",
+        "detail": "Houtarou is alive at the end of the anime; the novel series is ongoing.",
+        "basis": "anime so far"
+      },
+      "hindiVoice": null
+    },
+    "misa-amane": {
+      "name": "Misa Amane",
+      "role": "Popular model who obtains a Death Note and becomes the \"Second Kira\"",
+      "debut": {
+        "anime": "Death Note",
+        "episode": 11,
+        "episodeTitle": "Assault",
+        "source": "manga",
+        "chapter": 25,
+        "volume": null
+      },
+      "arcs": [
+        "L arc",
+        "Yotsuba arc",
+        "Near and Mello arc"
+      ],
+      "affiliations": [],
+      "relatives": [],
+      "confidence": "high",
+      "sources": [
+        "https://deathnote.fandom.com/wiki/Misa_Amane",
+        "https://en.wikipedia.org/wiki/Misa_Amane",
+        "https://en.wikipedia.org/wiki/List_of_Death_Note_episodes",
+        "https://anilist.co/character/835",
+        "https://myanimelist.net/character/835/Misa_Amane"
+      ],
+      "notes": "Manga debut is chapter 25, \"Fool\" (Death Note Wiki); the Wikipedia episode 11 summary introduces her talking with Rem.",
+      "about": "Misa Amane is a bubbly, gothic-styled model and rising celebrity in Tokyo who worships Kira, the mysterious killer of criminals, because Kira punished the man who murdered her parents. She comes into possession of her own Death Note, along with the shinigami Rem who watches over her, and sets out to find Kira and offer him her devotion. Impulsive, cheerful and dangerously single-minded, Misa announces herself to the world with a string of televised killings that make investigators speak of a second Kira. Once she meets Light Yagami, her obsessive love for him becomes something he is all too willing to exploit.",
+      "abilities": "She traded half her remaining lifespan for Shinigami Eyes, which let her see a person's name and lifespan just by looking at their face.",
+      "fate": {
+        "status": "unclear",
+        "detail": "Misa survives the story itself. The anime's final episode shows her alone on the outer edge of a skyscraper after Light's death, implying suicide. In the official Death Note guidebook (volume 13, How to Read), writer Tsugumi Ohba says she most likely took her own life a little over a year after Light died.",
+        "basis": "anime ending and official guidebook"
+      },
+      "hindiVoice": null
+    },
+    "sousuke-aizen": {
+      "name": "Sousuke Aizen",
+      "role": "Captain of the Gotei 13's 5th Division, admired by his lieutenant Momo Hinamori",
+      "debut": {
+        "anime": "Bleach",
+        "episode": 23,
+        "episodeTitle": "14 Days Before Rukia's Execution",
+        "source": "manga",
+        "chapter": 79,
+        "volume": 9
+      },
+      "arcs": [
+        "Soul Society arc",
+        "Arrancar arc",
+        "Hueco Mundo arc",
+        "Fake Karakura Town arc",
+        "The Thousand-Year Blood War arc"
+      ],
+      "affiliations": [
+        "Gotei 13 (5th Division)"
+      ],
+      "relatives": [],
+      "confidence": "high",
+      "sources": [
+        "https://bleach.fandom.com/wiki/S%C5%8Dsuke_Aizen",
+        "https://en.wikipedia.org/wiki/Bleach_season_2",
+        "https://en.wikipedia.org/wiki/S%C5%8Dsuke_Aizen",
+        "https://anilist.co/character/1086",
+        "https://myanimelist.net/character/1086"
+      ],
+      "notes": "Role, summary and affiliations describe him as he first appears, to avoid spoiling the Soul Society arc; the full picture is behind the fate toggle.",
+      "about": "Sousuke Aizen leads the 5th Division, one of the thirteen squads of Soul Reapers that protect Soul Society. When Ichigo and his friends break in to rescue Rukia from execution, Aizen appears as the calmest, kindest of the captains: a soft-spoken, bespectacled scholar who speaks to his officers by their first names and is adored by his devoted lieutenant, Momo Hinamori. He seems uneasy about the speed of Rukia's sentence and about the scheming of fellow captain Gin Ichimaru, and he becomes a figure that other characters turn to for reassurance. Polite, warm and thoughtful, he is the picture of a model leader, which is exactly why he leaves such a mark.",
+      "abilities": "A captain-class Soul Reaper famed for his skill and spiritual power; his zanpakuto is named Kyoka Suigetsu.",
+      "fate": {
+        "status": "alive",
+        "detail": "Aizen is revealed as the mastermind behind the series' early conflicts and betrays Soul Society. After Ichigo's final attack weakens him, Kisuke Urahara's seal binds him, and he is sentenced to 20,000 years in the underground prison Muken. He is briefly released during the war with Yhwach to help fight him, then returned to prison, alive.",
+        "basis": "series ending"
+      },
+      "hindiVoice": null
+    },
+    "erza-scarlet": {
+      "name": "Erza Scarlet",
+      "role": "S-Class wizard of the Fairy Tail guild, known as Titania",
+      "debut": {
+        "anime": "Fairy Tail",
+        "episode": 4,
+        "episodeTitle": "Dear Kaby",
+        "source": "manga",
+        "chapter": 10,
+        "volume": null
+      },
+      "arcs": [
+        "Lullaby arc",
+        "Galuna Island arc",
+        "Phantom Lord arc",
+        "Tower of Heaven arc",
+        "Battle of Fairy Tail arc",
+        "Oracion Seis arc"
+      ],
+      "affiliations": [
+        "Fairy Tail",
+        "Team Natsu"
+      ],
+      "relatives": [],
+      "confidence": "high",
+      "sources": [
+        "https://fairytail.fandom.com/wiki/Erza_Scarlet",
+        "https://fairytail.fandom.com/wiki/Episode_4",
+        "https://en.wikipedia.org/wiki/Erza_Scarlet",
+        "https://en.wikipedia.org/wiki/Fairy_Tail_season_1",
+        "https://anilist.co/character/5189",
+        "https://myanimelist.net/character/5189/Erza_Scarlet"
+      ],
+      "notes": "She is first seen walking into Magnolia in the closing scene of episode 4 (Fairy Tail Wiki); the Wikipedia season 1 summary first names her in episode 5, \"The Wizard in Armor\". Family left out to avoid spoilers.",
+      "about": "Erza Scarlet is one of Fairy Tail's most powerful wizards, a scarlet-haired swordswoman whose return to the guild hall is enough to make its rowdiest members stand up straight. Strict, proud and fiercely disciplined, she acts as the guild's enforcer and constantly scolds Natsu and Gray for their brawling, yet she cares deeply for her guildmates and would fight anyone to protect them. She soon joins Natsu, Gray, Lucy and Happy on missions, forming the core of the team the story follows. Beneath the armour Erza has a softer, sometimes awkward side, including a weakness for strawberry cake, and a painful past she rarely talks about.",
+      "abilities": "Her Requip magic lets her summon swords and change between dozens of magical armours mid-battle, earning her the title Titania, Queen of the Fairies.",
+      "fate": {
+        "status": "alive",
+        "detail": "Erza is alive at the end of Fairy Tail and appears in the sequel Fairy Tail: 100 Years Quest.",
+        "basis": "series ending"
+      },
+      "hindiVoice": null
+    },
+    "akame": {
+      "name": "Akame",
+      "role": "Assassin of the revolutionary group Night Raid, wielding the cursed sword Murasame",
+      "debut": {
+        "anime": "Akame ga Kill!",
+        "episode": 1,
+        "episodeTitle": "Kill the Darkness",
+        "source": "manga",
+        "chapter": 1,
+        "volume": null
+      },
+      "arcs": [],
+      "affiliations": [
+        "Night Raid",
+        "Revolutionary Army",
+        "The Empire's elite assassins (formerly)"
+      ],
+      "relatives": [
+        {
+          "name": "Kurome",
+          "relation": "younger sister"
+        }
+      ],
+      "confidence": "high",
+      "sources": [
+        "https://akamegakill.fandom.com/wiki/Akame",
+        "https://en.wikipedia.org/wiki/List_of_Akame_ga_Kill!_episodes",
+        "https://en.wikipedia.org/wiki/List_of_Akame_ga_Kill!_characters",
+        "https://anilist.co/character/63351",
+        "https://myanimelist.net/character/63351"
+      ],
+      "notes": "The anime's second half departs from the manga, but Akame survives in both.",
+      "about": "Akame belongs to Night Raid, a small team of assassins working for the Revolutionary Army to bring down the corrupt Empire from within. Raised by the Empire as a child assassin alongside her younger sister Kurome, she later turned against it and joined the rebels. Tatsumi, a country boy who comes to the capital hoping to earn money for his village, meets her when Night Raid strikes the household that has taken him in, and she soon becomes his mentor. Quiet, blunt and seemingly cold, she is actually socially awkward and deeply protective of her comrades. She also has an enormous appetite and handles much of the team's cooking.",
+      "abilities": "A lightning-fast swordswoman who carries Murasame, an Imperial Arm whose curse kills anyone it cuts, even with a scratch.",
+      "fate": {
+        "status": "alive",
+        "detail": "Akame survives in both versions. In the anime's final episode (24) she defeats Esdeath; afterwards, still an assassin, she sets out beyond the Empire's borders to handle neighbouring countries that might exploit its weakness.",
+        "basis": "series ending"
+      },
+      "hindiVoice": null
+    },
+    "wolfgang-grimmer": {
+      "name": "Wolfgang Grimmer",
+      "role": "Freelance journalist and survivor of the 511 Kinderheim orphanage who helps Dr. Tenma",
+      "debut": {
+        "anime": "Monster",
+        "episode": 40,
+        "episodeTitle": "Grimmer",
+        "source": "manga",
+        "chapter": 78,
+        "volume": null
+      },
+      "arcs": [
+        "Prague arc",
+        "Ruhenheim arc"
+      ],
+      "affiliations": [],
+      "relatives": [],
+      "confidence": "high",
+      "sources": [
+        "https://obluda.fandom.com/wiki/Wolfgang_Grimmer",
+        "https://en.wikipedia.org/wiki/List_of_Monster_characters",
+        "https://en.wikipedia.org/wiki/List_of_Monster_episodes",
+        "https://anilist.co/character/3096",
+        "https://myanimelist.net/character/3096/Wolfgang_Grimmer"
+      ],
+      "notes": "The fandom source is the Naoki Urasawa's Monster Wiki (obluda.fandom.com). Arc labels are descriptive.",
+      "about": "Wolfgang Grimmer is a lanky, endlessly smiling freelance journalist who meets Dr. Kenzo Tenma on a train bound for Prague and helps the fugitive doctor escape the police. He is investigating 511 Kinderheim, a notorious East German orphanage where children were subjected to psychological experiments, and he has a personal stake in the story. Grimmer is warm, chatty and gentle with children, yet he admits he cannot actually feel happiness or grief, and that his constant smile was something he had to learn. Under extreme stress a violent alter ego he calls the Magnificent Steiner takes over, making him both a valuable ally and a tragic figure.",
+      "abilities": "Trained as a spy in his youth, and when his Magnificent Steiner persona surfaces he becomes a ferocious hand-to-hand fighter.",
+      "fate": {
+        "status": "dies",
+        "detail": "Grimmer is mortally wounded during the massacre in the town of Ruhenheim near the end of the series. Dying, he tells Tenma he finally understands that his Magnificent Steiner rages were his own anger, and he dies in front of Tenma; the anime covers this in episodes 71-72.",
+        "basis": "manga and anime"
+      },
+      "hindiVoice": null
+    },
+    "souma-yukihira": {
+      "name": "Souma Yukihira",
+      "role": "Protagonist; a diner chef's son who enrolls at the elite Totsuki Culinary Academy",
+      "debut": {
+        "anime": "Food Wars! Shokugeki no Soma",
+        "episode": 1,
+        "episodeTitle": "The Vast Wasteland",
+        "source": "manga",
+        "chapter": 1,
+        "volume": null
+      },
+      "arcs": [
+        "Enrollment Test",
+        "Totsuki Friendship and Rapport Training Camp",
+        "43rd Annual Totsuki Autumn Election",
+        "Stagiaire",
+        "Moon Banquet Festival",
+        "Central"
+      ],
+      "affiliations": [
+        "Restaurant Yukihira",
+        "Totsuki Culinary Academy",
+        "Polar Star Dormitory"
+      ],
+      "relatives": [
+        {
+          "name": "Joichiro Yukihira",
+          "relation": "father"
+        }
+      ],
+      "confidence": "high",
+      "sources": [
+        "https://shokugekinosoma.fandom.com/wiki/S%C5%8Dma_Yukihira",
+        "https://en.wikipedia.org/wiki/List_of_Food_Wars!:_Shokugeki_no_Soma_episodes",
+        "https://en.wikipedia.org/wiki/List_of_Food_Wars!:_Shokugeki_no_Soma_characters",
+        "https://anilist.co/character/75216",
+        "https://myanimelist.net/character/75216"
+      ],
+      "notes": "Episode 1 title as on Wikipedia; the Food Wars Wiki uses 'The Endless Wilderness'. A Hindi dub airs on ZEE5, but no Hindi voice credit was found.",
+      "about": "Souma Yukihira grew up cooking alongside his father, Joichiro, at their small family diner, Restaurant Yukihira, and his goal is to one day surpass him and take over the shop. Instead, his father shuts the restaurant and sends him to Totsuki Culinary Academy, a cut-throat elite school where only a tiny fraction of students graduate. Souma arrives with no fancy training, just practical diner skills and a habit of inventing odd dishes, then declares in front of the whole first-year class that he plans to be number one. Cheerful, cocky and endlessly curious, he treats every cooking duel, or shokugeki, as a chance to learn, and his catchphrase is 'Happy to serve!'",
+      "abilities": "A resourceful, improvising cook whose diner background lets him turn cheap ingredients and clever tricks into dishes that beat far more polished rivals.",
+      "fate": {
+        "status": "alive",
+        "detail": "Souma is alive at the end of the manga and the anime, still cooking and still trying to outdo his father.",
+        "basis": "series ending"
+      },
+      "hindiVoice": null
+    },
+    "kiritsugu-emiya": {
+      "name": "Kiritsugu Emiya",
+      "role": "Protagonist of Fate/Zero; a mercenary magus known as the Magus Killer who fights the Fourth Holy Grail War as Saber's Master",
+      "debut": {
+        "anime": "Fate/Zero",
+        "episode": 1,
+        "episodeTitle": "The Summoning of Heroes",
+        "source": "light novel",
+        "chapter": null,
+        "volume": 1
+      },
+      "arcs": [
+        "Fourth Holy Grail War"
+      ],
+      "affiliations": [
+        "Einzbern family"
+      ],
+      "relatives": [
+        {
+          "name": "Irisviel von Einzbern",
+          "relation": "wife"
+        },
+        {
+          "name": "Illyasviel von Einzbern",
+          "relation": "daughter"
+        }
+      ],
+      "confidence": "high",
+      "sources": [
+        "https://typemoon.fandom.com/wiki/Kiritsugu_Emiya",
+        "https://en.wikipedia.org/wiki/List_of_Fate/Zero_characters",
+        "https://en.wikipedia.org/wiki/List_of_Fate/Zero_episodes",
+        "https://anilist.co/character/10010",
+        "https://myanimelist.net/character/10010/Kiritsugu_Emiya"
+      ],
+      "notes": "He first appeared in the Fate/stay night visual novel (2004), where he is already dead and seen only in flashbacks; Fate/Zero, a prequel light novel, is AniLumi's series here.",
+      "about": "Kiritsugu Emiya is a hardened magus-for-hire who has spent his life hunting other magi with guns, explosives and ruthless planning, earning a reputation as the Magus Killer. He has married into the ancient Einzbern family, and he enters the Fourth Holy Grail War in Fuyuki City as their champion, with the legendary knight Saber as his Servant. His dream is genuinely noble, to end all conflict through the Grail's miracle, but he is willing to sacrifice anyone to reach it. Cold and silent with Saber, tender only with his wife Irisviel and his young daughter Illya, he is a hero whose methods look a lot like villainy.",
+      "abilities": "A skilled assassin who combines firearms with magecraft, including a time-acceleration technique and a special bullet that wrecks the magic circuits of any magus who blocks it.",
+      "fate": {
+        "status": "dies",
+        "detail": "Kiritsugu survives the Fourth Holy Grail War but is left cursed by the corrupted Grail, which slowly destroys his body. He dies peacefully about five years later while looking at the moon with Shirou, the boy he rescued and adopted; Fate/Zero's final episode (25) shows this scene.",
+        "basis": "light novel and anime"
+      },
+      "hindiVoice": null
+    },
+    "norman-ed4a52db-9ba4-4d8b-a624-475a6f2ede5c": {
+      "name": "Norman",
+      "role": "Grace Field House's top student and strategist, Emma and Ray's closest friend",
+      "debut": {
+        "anime": "The Promised Neverland",
+        "episode": 1,
+        "episodeTitle": "121045",
+        "source": "manga",
+        "chapter": 1,
+        "volume": null
+      },
+      "arcs": [
+        "Introduction Arc",
+        "Jailbreak Arc",
+        "King of Paradise Arc",
+        "Seven Walls Arc",
+        "Imperial Capital Battle Arc",
+        "Return to Grace Field Arc",
+        "Human World Arc"
+      ],
+      "affiliations": [
+        "Grace Field House"
+      ],
+      "relatives": [],
+      "confidence": "high",
+      "sources": [
+        "https://yakusokunoneverland.fandom.com/wiki/Norman",
+        "https://en.wikipedia.org/wiki/List_of_The_Promised_Neverland_episodes",
+        "https://en.wikipedia.org/wiki/List_of_The_Promised_Neverland_characters",
+        "https://anilist.co/character/121700",
+        "https://myanimelist.net/character/144916/Norman"
+      ],
+      "notes": "Season 2 of the anime skips much of the manga, including most of Norman's later arcs.",
+      "about": "Norman is an eleven-year-old orphan at Grace Field House, a seemingly idyllic home where children are raised by a loving caretaker they call Mom. He has the highest test scores in the house and is famous for never losing at tag, thanks to how carefully he plans. When he and Emma discover the terrible truth about what happens to children sent away for adoption, the three oldest and brightest children, Norman, Emma and Ray, begin plotting an escape. Gentle, polite and pale, with white hair and a frail look, Norman is the calm, analytical mind of the group, yet his biggest motivation is protecting Emma and the younger children.",
+      "abilities": "A genius planner with exceptional maths and reasoning skills who can anticipate an opponent's moves several steps ahead.",
+      "fate": {
+        "status": "alive",
+        "detail": "Norman survives the series and reaches the human world with the other children at the end of the manga and anime.",
+        "basis": "series ending"
+      },
+      "hindiVoice": null
+    },
+    "rohan-kishibe": {
+      "name": "Rohan Kishibe",
+      "role": "Famous manga artist living in Morioh and a Stand user; later star of his own spin-off",
+      "debut": {
+        "anime": "JoJo's Bizarre Adventure: Diamond Is Unbreakable",
+        "episode": 14,
+        "episodeTitle": "Let's Go to the Manga Artist's House, Part 1",
+        "source": "manga",
+        "chapter": 318,
+        "volume": null
+      },
+      "arcs": [
+        "Diamond Is Unbreakable"
+      ],
+      "affiliations": [],
+      "relatives": [],
+      "confidence": "high",
+      "sources": [
+        "https://jojo.fandom.com/wiki/Rohan_Kishibe",
+        "https://en.wikipedia.org/wiki/List_of_JoJo%27s_Bizarre_Adventure_characters",
+        "https://en.wikipedia.org/wiki/List_of_JoJo%27s_Bizarre_Adventure_episodes",
+        "https://anilist.co/character/12659",
+        "https://myanimelist.net/character/12659/Rohan_Kishibe"
+      ],
+      "notes": "The JoJo Wiki lists a silhouetted cameo in Diamond Is Unbreakable episode 1 and his first full appearance in episode 14.",
+      "about": "Rohan Kishibe is a celebrated young manga artist who has made his home in Morioh, where he works obsessively on his weekly series. He cares about one thing above all, the quality and realism of his manga, and will go to unsettling lengths to gather material, including treating other people's lives as research. Arrogant, prickly and openly contemptuous of anyone he finds boring, he takes an instant dislike to Josuke Higashikata. Rohan first enters the story when Koichi Hirose and his friend visit his house as fans, and the encounter quickly turns dangerous. His eccentric pride and strange sense of honour make him one of the part's most memorable characters.",
+      "abilities": "His Stand, Heaven's Door, turns people into books he can read and write in, letting him learn their secrets or give them commands.",
+      "fate": {
+        "status": "alive",
+        "detail": "Rohan survives Diamond Is Unbreakable and goes on to headline the spin-off Thus Spoke Kishibe Rohan.",
+        "basis": "series ending"
+      },
+      "hindiVoice": null
+    },
+    "chuuya-nakahara": {
+      "name": "Chuuya Nakahara",
+      "role": "Port Mafia executive and Osamu Dazai's former partner",
+      "debut": {
+        "anime": "Bungo Stray Dogs",
+        "episode": 9,
+        "episodeTitle": "The Beauty Is Quiet Like a Stone Statue",
+        "source": "manga",
+        "chapter": 10,
+        "volume": null
+      },
+      "arcs": [],
+      "affiliations": [
+        "Port Mafia"
+      ],
+      "relatives": [],
+      "confidence": "medium",
+      "sources": [
+        "https://bungostraydogs.fandom.com/wiki/Ch%C5%ABya_Nakahara",
+        "https://en.wikipedia.org/wiki/List_of_Bungo_Stray_Dogs_episodes",
+        "https://en.wikipedia.org/wiki/List_of_Bungo_Stray_Dogs_characters",
+        "https://anilist.co/character/89853",
+        "https://myanimelist.net/character/132959/Chuuya_Nakahara"
+      ],
+      "notes": "Debut from the Bungo Stray Dogs Wiki infobox; the Wikipedia list gives titles but no summaries. Named after the poet Nakahara Chuuya.",
+      "about": "Chuuya Nakahara sits among the Port Mafia's five executives, the criminal organisation that rules Yokohama's underworld. Short, sharply dressed and never without his hat and gloves, he is hot-tempered, proud and openly delighted by a good fight. Years ago he was paired with Osamu Dazai, who has since joined the Armed Detective Agency, and the two loathe each other with an intensity that is half grudge and half old habit; their constant bickering is a fan favourite. Behind the swagger he stays utterly devoted to the Mafia's boss and to his subordinates, and he takes his responsibilities as an executive seriously. His supernatural ability, Upon the Tainted Sorrow, lets him manipulate gravity.",
+      "abilities": "Upon the Tainted Sorrow gives him command over gravity for whatever he touches, including himself, which makes him devastating in close combat.",
+      "fate": {
+        "status": "alive",
+        "detail": "Chuuya is alive in the anime and in the ongoing manga as of November 2026.",
+        "basis": "anime so far"
+      },
+      "hindiVoice": null
     }
   }
 }
