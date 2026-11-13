@@ -131,3 +131,6 @@ export const BLOOD_TYPES = ["a", "b", "o", "ab"] as const;
 export type BloodType = (typeof BLOOD_TYPES)[number];
 /** Characters with this official blood type, most favourited first. Pure. */
 export const charactersByBloodType = (bt: BloodType): SnapChar[] => chars.filter((c) => c.bt?.toLowerCase() === bt).sort((a, b) => b.f - a.f);
+
+/** Every character in the monthly snapshot (comparison tables). */
+export const allSnapChars = (): SnapChar[] => chars;

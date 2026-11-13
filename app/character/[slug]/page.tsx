@@ -7,6 +7,8 @@ import { authorRef } from "@/lib/author";
 import { NOTES_CHECKED } from "@/lib/charnotes";
 import { DEEP_CHECKED } from "@/lib/chardeep";
 import CharacterDeepProfile, { deepSections } from "@/components/CharacterDeep";
+import CharacterCompare from "@/components/CharacterCompare";
+import { compareSets } from "@/lib/charcompare";
 import SectionNav, { type NavSection } from "@/components/fx/SectionNav";
 import { fitTitle, fitDescription } from "@/lib/titles";
 import PushButton from "@/components/PushButton";
@@ -132,10 +134,12 @@ export default async function CharacterPage({ params }: Props) {
   // Our own research on the page (notes, bio, profile): who checked it, when, and against what.
   const checked = deep ? DEEP_CHECKED : note ? NOTES_CHECKED : null;
   const sources = [...new Set([...(note?.sources ?? []), ...(deep?.sources ?? [])])];
+  const compare = compareSets(c.slug);
   const navSections: NavSection[] = [
     ...(note?.about ? [{ id: "who", label: "About" }] : []),
     { id: "facts", label: "Facts" },
     ...deepSections(c.slug),
+    ...(compare ? [{ id: "compare", label: "Compare" }] : []),
     ...(apps.length ? [{ id: "appearances", label: "Appearances" }] : []),
     { id: "faq", label: "FAQ" },
   ];
@@ -265,6 +269,13 @@ export default async function CharacterPage({ params }: Props) {
         )}
       </div>
       <CharacterDeepProfile slug={c.slug} name={note?.name ?? c.name} />
+      {compare && (
+        <section id="compare" data-section className="reveal pt-10" aria-labelledby="compare-h">
+          <h2 id="compare-h" className="h-section mb-1"><span aria-hidden className="mr-2">⚖️</span>{note?.name ?? c.name} compared with similar characters</h2>
+          <p className="mb-4 text-sm text-muted">Side by side with {compare.sameSeries.length ? "the most-loved characters of the same series" : ""}{compare.sameSeries.length && compare.similar.length ? " and " : ""}{compare.similar.length ? "the leads of anime fans recommend alongside it" : ""}. Tick who to include and sort the table.</p>
+          <CharacterCompare {...compare} />
+        </section>
+      )}
       {stats.length >= 2 && (
         <section id="numbers" data-section className="reveal mt-10" aria-labelledby="numbers-h">
           <h2 id="numbers-h" className="h-section mb-3">{c.name} in numbers</h2>
