@@ -21,8 +21,8 @@ export function generationOf(relation: string): number {
   if (/grand(father|mother|parent)|great[- ]?(uncle|aunt)/.test(r)) return -2;
   if (/grand(son|daughter|child)|great[- ]?(nephew|niece)/.test(r)) return 2;
   if (/genetic source/.test(r)) return -1;
-  if (/\b(son|daughter|child|children|nephew|niece)\b/.test(r)) return 1;
-  if (/\b(father|mother|parent|dad|mom|uncle|aunt|guardian)\b/.test(r)) return -1;
+  if (/\b(son|daughter|child|children|nephew|niece|ward)\b/.test(r)) return 1;
+  if (/\b(father|mother|parent|dad|mom|uncle|aunt|guardian|godfather|godmother)\b/.test(r)) return -1;
   return 0;
 }
 /** Order within a generation: parents before uncles, spouses next to the character, siblings, then cousins. */

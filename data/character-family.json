@@ -1809,6 +1809,1986 @@
         "https://bakuman.fandom.com/wiki/Yuriko_Aoki",
         "https://en.wikipedia.org/wiki/List_of_Bakuman_characters"
       ]
+    },
+    "levi": {
+      "members": [
+        {
+          "name": "Kuchel Ackerman",
+          "slug": null,
+          "relation": "mother",
+          "spoiler": true,
+          "note": "Lived in the Underground city where Levi was born"
+        },
+        {
+          "name": "Kenny Ackerman",
+          "slug": null,
+          "relation": "maternal uncle",
+          "spoiler": true,
+          "note": "Taught young Levi to survive without revealing their kinship"
+        },
+        {
+          "name": "Mikasa Ackerman",
+          "slug": "mikasa-ackerman",
+          "relation": "distant relative",
+          "spoiler": true,
+          "note": "Both descend from the Ackerman bloodline"
+        }
+      ],
+      "sources": [
+        "https://attackontitan.fandom.com/wiki/Levi_Ackerman",
+        "https://en.wikipedia.org/wiki/Levi_Ackerman",
+        "https://en.wikipedia.org/wiki/List_of_Attack_on_Titan_characters"
+      ]
+    },
+    "killua-zoldyck": {
+      "members": [
+        {
+          "name": "Silva Zoldyck",
+          "slug": null,
+          "relation": "father",
+          "spoiler": false,
+          "note": "Current head of the Zoldyck assassin family"
+        },
+        {
+          "name": "Kikyo Zoldyck",
+          "slug": null,
+          "relation": "mother",
+          "spoiler": false
+        },
+        {
+          "name": "Illumi Zoldyck",
+          "slug": null,
+          "relation": "eldest brother",
+          "spoiler": false,
+          "note": "Exerts a controlling grip over Killua"
+        },
+        {
+          "name": "Milluki Zoldyck",
+          "slug": null,
+          "relation": "older brother",
+          "spoiler": false,
+          "note": "Second son; the family hacker"
+        },
+        {
+          "name": "Alluka Zoldyck",
+          "slug": null,
+          "relation": "younger sibling",
+          "spoiler": true,
+          "note": "Kept hidden by the family; Killua is fiercely protective"
+        },
+        {
+          "name": "Kalluto Zoldyck",
+          "slug": null,
+          "relation": "younger brother",
+          "spoiler": false,
+          "note": "Youngest Zoldyck child"
+        },
+        {
+          "name": "Zeno Zoldyck",
+          "slug": null,
+          "relation": "paternal grandfather",
+          "spoiler": false
+        },
+        {
+          "name": "Maha Zoldyck",
+          "slug": null,
+          "relation": "paternal great-grandfather",
+          "spoiler": false
+        }
+      ],
+      "sources": [
+        "https://hunterxhunter.fandom.com/wiki/Killua_Zoldyck",
+        "https://myanimelist.net/character/27/Killua_Zoldyck",
+        "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters",
+        "https://en.wikipedia.org/wiki/Killua_Zoldyck"
+      ]
+    },
+    "zoro-roronoa": {
+      "members": [
+        {
+          "name": "Roronoa Arashi",
+          "slug": null,
+          "relation": "father",
+          "spoiler": true,
+          "note": "Revealed in a later author Q&A"
+        },
+        {
+          "name": "Tera",
+          "slug": null,
+          "relation": "mother",
+          "spoiler": true,
+          "note": "Daughter of a mountain bandit"
+        },
+        {
+          "name": "Shimotsuki Furiko",
+          "slug": null,
+          "relation": "paternal grandmother",
+          "spoiler": true,
+          "note": "Links Zoro to the Shimotsuki swordsmith clan"
+        },
+        {
+          "name": "Shimotsuki Ryuma",
+          "slug": null,
+          "relation": "ancestor",
+          "spoiler": true,
+          "note": "Legendary Wano swordsman of the Shimotsuki line"
+        },
+        {
+          "name": "Shimotsuki Ushimaru",
+          "slug": null,
+          "relation": "great-uncle",
+          "spoiler": true,
+          "note": "Younger brother of his grandmother Furiko"
+        },
+        {
+          "name": "Shimotsuki Kuina",
+          "slug": null,
+          "relation": "distant relative",
+          "spoiler": true,
+          "note": "His childhood rival, also a Shimotsuki"
+        },
+        {
+          "name": "Shimotsuki Koushirou",
+          "slug": null,
+          "relation": "distant relative",
+          "spoiler": true,
+          "note": "His sword teacher, also a Shimotsuki"
+        }
+      ],
+      "sources": [
+        "https://onepiece.fandom.com/wiki/Roronoa_Zoro",
+        "https://myanimelist.net/character/62/Zoro_Roronoa",
+        "https://en.wikipedia.org/wiki/Roronoa_Zoro",
+        "https://en.wikipedia.org/wiki/List_of_One_Piece_characters",
+        "https://en.wikipedia.org/wiki/List_of_One_Piece_pirates",
+        "https://onepiece.fandom.com/wiki/Roronoa_Zoro/Personality_and_Relationships",
+        "https://onepiece.fandom.com/wiki/Shimotsuki_Family"
+      ]
+    },
+    "emilia-3": {
+      "members": [
+        {
+          "name": "Fortuna",
+          "slug": null,
+          "relation": "paternal aunt and adoptive mother",
+          "spoiler": true,
+          "note": "Raised Emilia in the Elior Forest"
+        }
+      ],
+      "sources": [
+        "https://rezero.fandom.com/wiki/Emilia",
+        "https://myanimelist.net/character/118737/Emilia",
+        "https://en.wikipedia.org/wiki/List_of_Re%3AZero_episodes",
+        "https://en.wikipedia.org/wiki/List_of_Re%3AZero_characters",
+        "https://anilist.co/character/183732"
+      ]
+    },
+    "ken-kaneki": {
+      "members": [
+        {
+          "name": "Touka Kirishima",
+          "slug": "touka-kirishima",
+          "relation": "wife",
+          "spoiler": true,
+          "note": "They marry late in Tokyo Ghoul:re"
+        },
+        {
+          "name": "Ichika Kaneki",
+          "slug": null,
+          "relation": "daughter",
+          "spoiler": true
+        },
+        {
+          "name": "Ayato Kirishima",
+          "slug": "ayato-kirishima",
+          "relation": "brother-in-law",
+          "spoiler": true
+        }
+      ],
+      "sources": [
+        "https://tokyoghoul.fandom.com/wiki/Ken_Kaneki",
+        "https://myanimelist.net/character/87275/Ken_Kaneki",
+        "https://en.wikipedia.org/wiki/List_of_Tokyo_Ghoul_characters",
+        "https://anilist.co/character/244814"
+      ]
+    },
+    "arataka-reigen": {
+      "members": [],
+      "sources": [
+        "https://mob-psycho-100.fandom.com/wiki/Arataka_Reigen",
+        "https://myanimelist.net/character/109931/Arataka_Reigen",
+        "https://en.wikipedia.org/wiki/List_of_Mob_Psycho_100_characters"
+      ]
+    },
+    "kurisu-makise": {
+      "members": [
+        {
+          "name": "Shouichi Makise",
+          "slug": null,
+          "relation": "father",
+          "spoiler": true,
+          "note": "Better known as Dr. Nakabachi"
+        }
+      ],
+      "sources": [
+        "https://steins-gate.fandom.com/wiki/Kurisu_Makise",
+        "https://myanimelist.net/character/34470/Kurisu_Makise",
+        "https://en.wikipedia.org/wiki/Steins%3BGate"
+      ]
+    },
+    "kakashi-hatake": {
+      "members": [
+        {
+          "name": "Sakumo Hatake",
+          "slug": null,
+          "relation": "father",
+          "spoiler": false,
+          "note": "Renowned as the White Fang of the Leaf"
+        }
+      ],
+      "sources": [
+        "https://naruto.fandom.com/wiki/Kakashi_Hatake",
+        "https://myanimelist.net/character/85/Kakashi_Hatake",
+        "https://en.wikipedia.org/wiki/Kakashi_Hatake",
+        "https://en.wikipedia.org/wiki/List_of_Naruto_characters"
+      ]
+    },
+    "rintarou-okabe": {
+      "members": [],
+      "sources": [
+        "https://steins-gate.fandom.com/wiki/Rintaro_Okabe",
+        "https://myanimelist.net/character/35252/Rintarou_Okabe",
+        "https://en.wikipedia.org/wiki/Steins%3BGate"
+      ]
+    },
+    "kurapika": {
+      "members": [],
+      "sources": [
+        "https://hunterxhunter.fandom.com/wiki/Kurapika",
+        "https://myanimelist.net/character/28/Kurapika",
+        "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters"
+      ]
+    },
+    "shigeo-kageyama": {
+      "members": [
+        {
+          "name": "Ritsu Kageyama",
+          "slug": "ritsu-kageyama",
+          "relation": "younger brother",
+          "spoiler": false,
+          "note": "Studious sibling who craves psychic powers"
+        }
+      ],
+      "sources": [
+        "https://mob-psycho-100.fandom.com/wiki/Shigeo_Kageyama",
+        "https://myanimelist.net/character/109929/Shigeo_Kageyama",
+        "https://en.wikipedia.org/wiki/Shigeo_Kageyama",
+        "https://en.wikipedia.org/wiki/List_of_Mob_Psycho_100_characters"
+      ]
+    },
+    "violet-evergarden": {
+      "members": [],
+      "sources": [
+        "https://violet-evergarden.fandom.com/wiki/Violet_Evergarden",
+        "https://myanimelist.net/character/141354/Violet_Evergarden",
+        "https://en.wikipedia.org/wiki/Violet_Evergarden",
+        "https://en.wikipedia.org/wiki/Violet_Evergarden%3A_The_Movie",
+        "https://violet-evergarden.fandom.com/wiki/Violet_Evergarden_(anime_character)"
+      ]
+    },
+    "naruto-uzumaki": {
+      "members": [
+        {
+          "name": "Minato Namikaze",
+          "slug": null,
+          "relation": "father",
+          "spoiler": false,
+          "note": "The Fourth Hokage"
+        },
+        {
+          "name": "Kushina Uzumaki",
+          "slug": null,
+          "relation": "mother",
+          "spoiler": false
+        },
+        {
+          "name": "Hinata Hyuga",
+          "slug": "hinata-hyuuga",
+          "relation": "wife",
+          "spoiler": true,
+          "note": "They marry after the war"
+        },
+        {
+          "name": "Boruto Uzumaki",
+          "slug": "boruto-uzumaki",
+          "relation": "son",
+          "spoiler": true
+        },
+        {
+          "name": "Himawari Uzumaki",
+          "slug": null,
+          "relation": "daughter",
+          "spoiler": true
+        },
+        {
+          "name": "Jiraiya",
+          "slug": null,
+          "relation": "godfather",
+          "spoiler": true,
+          "note": "Minato named his son after a Jiraiya novel hero"
+        }
+      ],
+      "sources": [
+        "https://naruto.fandom.com/wiki/Naruto_Uzumaki",
+        "https://myanimelist.net/character/17/Naruto_Uzumaki",
+        "https://en.wikipedia.org/wiki/Naruto_Uzumaki",
+        "https://en.wikipedia.org/wiki/List_of_Naruto_characters",
+        "https://en.wikipedia.org/wiki/Naruto"
+      ]
+    },
+    "jujutsu-kaisen-megumi-fushiguro": {
+      "members": [
+        {
+          "name": "Tsumiki Fushiguro",
+          "slug": null,
+          "relation": "stepsister",
+          "spoiler": false,
+          "note": "Older stepsister he swore to protect"
+        },
+        {
+          "name": "Toji Fushiguro",
+          "slug": "jujutsu-kaisen-touji-fushiguro",
+          "relation": "father",
+          "spoiler": true,
+          "note": "Sorcerer killer born into the Zenin clan"
+        }
+      ],
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro",
+        "https://myanimelist.net/character/164470/Megumi_Fushiguro",
+        "https://en.wikipedia.org/wiki/Megumi_Fushiguro",
+        "https://en.wikipedia.org/wiki/List_of_Jujutsu_Kaisen_characters"
+      ]
+    },
+    "shouto-todoroki": {
+      "members": [
+        {
+          "name": "Enji Todoroki",
+          "slug": null,
+          "relation": "father",
+          "spoiler": false,
+          "note": "The flame hero Endeavor"
+        },
+        {
+          "name": "Rei Todoroki",
+          "slug": null,
+          "relation": "mother",
+          "spoiler": false,
+          "note": "Hospitalised for years after a family trauma"
+        },
+        {
+          "name": "Fuyumi Todoroki",
+          "slug": null,
+          "relation": "older sister",
+          "spoiler": false,
+          "note": "Eldest Todoroki daughter"
+        },
+        {
+          "name": "Natsuo Todoroki",
+          "slug": null,
+          "relation": "older brother",
+          "spoiler": false,
+          "note": "Second-born Todoroki son"
+        },
+        {
+          "name": "Toya Todoroki",
+          "slug": null,
+          "relation": "eldest brother",
+          "spoiler": true,
+          "note": "Secretly the villain Dabi"
+        }
+      ],
+      "sources": [
+        "https://myheroacademia.fandom.com/wiki/Shoto_Todoroki",
+        "https://myanimelist.net/character/118489/Shouto_Todoroki",
+        "https://en.wikipedia.org/wiki/List_of_My_Hero_Academia_characters"
+      ]
+    },
+    "katsuki-bakugou": {
+      "members": [
+        {
+          "name": "Mitsuki Bakugo",
+          "slug": null,
+          "relation": "mother",
+          "spoiler": false
+        },
+        {
+          "name": "Masaru Bakugo",
+          "slug": null,
+          "relation": "father",
+          "spoiler": false
+        }
+      ],
+      "sources": [
+        "https://myheroacademia.fandom.com/wiki/Katsuki_Bakugo",
+        "https://myanimelist.net/character/117911/Katsuki_Bakugou",
+        "https://en.wikipedia.org/wiki/List_of_My_Hero_Academia_characters",
+        "https://anilist.co/character/231957",
+        "https://anilist.co/character/231956"
+      ]
+    },
+    "osamu-dazai-5df9c678-bb69-4154-84e6-62ec3186738c": {
+      "members": [],
+      "sources": [
+        "https://bungostraydogs.fandom.com/wiki/Osamu_Dazai",
+        "https://myanimelist.net/character/125056/Osamu_Dazai",
+        "https://en.wikipedia.org/wiki/Osamu_Dazai_%28Bungo_Stray_Dogs%29",
+        "https://en.wikipedia.org/wiki/List_of_Bungo_Stray_Dogs_characters"
+      ]
+    },
+    "subaru-natsuki": {
+      "members": [
+        {
+          "name": "Kenichi Natsuki",
+          "slug": null,
+          "relation": "father",
+          "spoiler": false,
+          "note": "Hard-working dad who raised Subaru as an athlete"
+        },
+        {
+          "name": "Naoko Natsuki",
+          "slug": null,
+          "relation": "mother",
+          "spoiler": false
+        }
+      ],
+      "sources": [
+        "https://rezero.fandom.com/wiki/Natsuki_Subaru",
+        "https://myanimelist.net/character/118735/Subaru_Natsuki",
+        "https://en.wikipedia.org/wiki/List_of_Re%3AZero_episodes",
+        "https://en.wikipedia.org/wiki/List_of_Re%3AZero_characters",
+        "https://anilist.co/character/182088",
+        "https://anilist.co/character/182087"
+      ]
+    },
+    "kiyotaka-ayanokouji": {
+      "members": [
+        {
+          "name": "Atsuomi Ayanokouji",
+          "slug": null,
+          "relation": "father",
+          "spoiler": true,
+          "note": "Runs the White Room that raised Kiyotaka"
+        }
+      ],
+      "sources": [
+        "https://you-zitsu.fandom.com/wiki/Kiyotaka_Ayanok%C5%8Dji",
+        "https://myanimelist.net/character/128909/Kiyotaka_Ayanokouji",
+        "https://en.wikipedia.org/wiki/List_of_Classroom_of_the_Elite_characters",
+        "https://you-zitsu.fandom.com/wiki/Professor_Ayanok%C5%8Dji"
+      ]
+    },
+    "sanji": {
+      "members": [
+        {
+          "name": "Zeff",
+          "slug": null,
+          "relation": "foster father",
+          "spoiler": false,
+          "note": "Head chef of the Baratie who raised him"
+        },
+        {
+          "name": "Vinsmoke Judge",
+          "slug": null,
+          "relation": "father",
+          "spoiler": true,
+          "note": "King of the Germa Kingdom"
+        },
+        {
+          "name": "Vinsmoke Sora",
+          "slug": null,
+          "relation": "mother",
+          "spoiler": true
+        },
+        {
+          "name": "Vinsmoke Reiju",
+          "slug": null,
+          "relation": "older sister",
+          "spoiler": true,
+          "note": "The only sibling who was kind to him"
+        },
+        {
+          "name": "Vinsmoke Ichiji",
+          "slug": null,
+          "relation": "older brother",
+          "spoiler": true,
+          "note": "One of the quadruplets"
+        },
+        {
+          "name": "Vinsmoke Niji",
+          "slug": null,
+          "relation": "older brother",
+          "spoiler": true,
+          "note": "One of the quadruplets"
+        },
+        {
+          "name": "Vinsmoke Yonji",
+          "slug": null,
+          "relation": "younger brother",
+          "spoiler": true,
+          "note": "One of the quadruplets"
+        }
+      ],
+      "sources": [
+        "https://onepiece.fandom.com/wiki/Sanji",
+        "https://myanimelist.net/character/305/Sanji",
+        "https://en.wikipedia.org/wiki/Sanji_%28One_Piece%29",
+        "https://en.wikipedia.org/wiki/List_of_One_Piece_characters",
+        "https://en.wikipedia.org/wiki/List_of_One_Piece_pirates",
+        "https://onepiece.fandom.com/wiki/Sanji/Personality_and_Relationships"
+      ]
+    },
+    "robin-nico": {
+      "members": [
+        {
+          "name": "Nico Olvia",
+          "slug": null,
+          "relation": "mother",
+          "spoiler": false,
+          "note": "Archaeologist from Ohara"
+        }
+      ],
+      "sources": [
+        "https://onepiece.fandom.com/wiki/Nico_Robin",
+        "https://myanimelist.net/character/61/Robin_Nico",
+        "https://en.wikipedia.org/wiki/Nico_Robin",
+        "https://en.wikipedia.org/wiki/List_of_One_Piece_characters",
+        "https://en.wikipedia.org/wiki/List_of_One_Piece_pirates",
+        "https://onepiece.fandom.com/wiki/Nico_Robin/Personality_and_Relationships"
+      ]
+    },
+    "hitagi-senjougahara": {
+      "members": [],
+      "sources": [
+        "https://bakemonogatari.fandom.com/wiki/Hitagi_Senjougahara",
+        "https://myanimelist.net/character/22037/Hitagi_Senjougahara",
+        "https://en.wikipedia.org/wiki/List_of_Monogatari_characters"
+      ]
+    },
+    "ichigo-kurosaki": {
+      "members": [
+        {
+          "name": "Isshin Kurosaki",
+          "slug": null,
+          "relation": "father",
+          "spoiler": false,
+          "note": "Runs the family clinic"
+        },
+        {
+          "name": "Masaki Kurosaki",
+          "slug": null,
+          "relation": "mother",
+          "spoiler": false
+        },
+        {
+          "name": "Karin Kurosaki",
+          "slug": null,
+          "relation": "younger sister",
+          "spoiler": false,
+          "note": "Twin of Yuzu; sporty and blunt"
+        },
+        {
+          "name": "Yuzu Kurosaki",
+          "slug": null,
+          "relation": "younger sister",
+          "spoiler": false,
+          "note": "Twin of Karin; runs the household"
+        },
+        {
+          "name": "Orihime Inoue",
+          "slug": "orihime-inoue",
+          "relation": "wife",
+          "spoiler": true,
+          "note": "Married in the series epilogue"
+        },
+        {
+          "name": "Kazui Kurosaki",
+          "slug": null,
+          "relation": "son",
+          "spoiler": true
+        },
+        {
+          "name": "Kukaku Shiba",
+          "slug": null,
+          "relation": "paternal relative",
+          "spoiler": true,
+          "note": "Related through Isshin's Shiba clan roots"
+        },
+        {
+          "name": "Ganju Shiba",
+          "slug": null,
+          "relation": "paternal relative",
+          "spoiler": true,
+          "note": "Related through Isshin's Shiba clan roots"
+        }
+      ],
+      "sources": [
+        "https://bleach.fandom.com/wiki/Ichigo_Kurosaki",
+        "https://myanimelist.net/character/5/Ichigo_Kurosaki",
+        "https://en.wikipedia.org/wiki/List_of_Bleach_characters",
+        "https://en.wikipedia.org/wiki/Ichigo_Kurosaki"
+      ]
+    },
+    "chainsaw-man-aki-hayakawa": {
+      "members": [],
+      "sources": [
+        "https://chainsaw-man.fandom.com/wiki/Aki_Hayakawa",
+        "https://myanimelist.net/character/170735/Aki_Hayakawa",
+        "https://en.wikipedia.org/wiki/List_of_Chainsaw_Man_characters"
+      ]
+    },
+    "armin-arelet": {
+      "members": [],
+      "sources": [
+        "https://attackontitan.fandom.com/wiki/Armin_Arlert",
+        "https://myanimelist.net/character/46494/Armin_Arlert",
+        "https://en.wikipedia.org/wiki/List_of_Attack_on_Titan_characters"
+      ]
+    },
+    "shinobu-oshino": {
+      "members": [],
+      "sources": [
+        "https://bakemonogatari.fandom.com/wiki/Shinobu_Oshino",
+        "https://myanimelist.net/character/23602/Shinobu_Oshino",
+        "https://en.wikipedia.org/wiki/List_of_Monogatari_characters"
+      ]
+    },
+    "rimuru-tempest": {
+      "members": [],
+      "sources": [
+        "https://tensura.fandom.com/wiki/Rimuru_Tempest",
+        "https://myanimelist.net/character/131549/Rimuru_Tempest"
+      ]
+    },
+    "sasuke-uchiha": {
+      "members": [
+        {
+          "name": "Fugaku Uchiha",
+          "slug": null,
+          "relation": "father",
+          "spoiler": false,
+          "note": "Head of the Uchiha clan"
+        },
+        {
+          "name": "Mikoto Uchiha",
+          "slug": null,
+          "relation": "mother",
+          "spoiler": false
+        },
+        {
+          "name": "Itachi Uchiha",
+          "slug": null,
+          "relation": "older brother",
+          "spoiler": false,
+          "note": "Prodigy at the center of Sasuke's story"
+        },
+        {
+          "name": "Sakura Haruno",
+          "slug": "sakura-haruno",
+          "relation": "wife",
+          "spoiler": true
+        },
+        {
+          "name": "Sarada Uchiha",
+          "slug": "sarada-uchiha",
+          "relation": "daughter",
+          "spoiler": true
+        }
+      ],
+      "sources": [
+        "https://naruto.fandom.com/wiki/Sasuke_Uchiha",
+        "https://myanimelist.net/character/13/Sasuke_Uchiha",
+        "https://en.wikipedia.org/wiki/Sasuke_Uchiha",
+        "https://en.wikipedia.org/wiki/Obito_Uchiha",
+        "https://en.wikipedia.org/wiki/List_of_Naruto_characters",
+        "https://anilist.co/character/16973",
+        "https://anilist.co/character/21122",
+        "https://anilist.co/character/145",
+        "https://anilist.co/character/121440"
+      ]
+    },
+    "yato": {
+      "members": [
+        {
+          "name": "Father",
+          "slug": null,
+          "relation": "creator, called Father",
+          "spoiler": true,
+          "note": "Sorcerer who created Yato and later hides as Kouto Fujisaki"
+        }
+      ],
+      "sources": [
+        "https://noragami.fandom.com/wiki/Yato",
+        "https://myanimelist.net/character/84677/Yato",
+        "https://en.wikipedia.org/wiki/List_of_Noragami_characters"
+      ]
+    },
+    "tobio-kageyama": {
+      "members": [
+        {
+          "name": "Miwa Kageyama",
+          "slug": null,
+          "relation": "older sister",
+          "spoiler": false
+        }
+      ],
+      "sources": [
+        "https://haikyuu.fandom.com/wiki/Tobio_Kageyama",
+        "https://myanimelist.net/character/64771/Tobio_Kageyama",
+        "https://en.wikipedia.org/wiki/List_of_Haikyu%21%21_episodes",
+        "https://en.wikipedia.org/wiki/List_of_Haikyu%21%21_characters"
+      ]
+    },
+    "koyomi-araragi": {
+      "members": [
+        {
+          "name": "Karen Araragi",
+          "slug": "karen-araragi",
+          "relation": "younger sister",
+          "spoiler": false,
+          "note": "Elder of the two Fire Sisters"
+        },
+        {
+          "name": "Tsukihi Araragi",
+          "slug": "tsukihi-araragi",
+          "relation": "younger sister",
+          "spoiler": false,
+          "note": "Younger of the two Fire Sisters"
+        }
+      ],
+      "sources": [
+        "https://bakemonogatari.fandom.com/wiki/Koyomi_Araragi",
+        "https://myanimelist.net/character/22036/Koyomi_Araragi",
+        "https://en.wikipedia.org/wiki/Koyomi_Araragi",
+        "https://en.wikipedia.org/wiki/List_of_Monogatari_characters",
+        "https://en.wikipedia.org/wiki/List_of_Monogatari_episodes"
+      ]
+    },
+    "saber": {
+      "members": [
+        {
+          "name": "Uther Pendragon",
+          "slug": null,
+          "relation": "father",
+          "spoiler": false,
+          "note": "King of Britain before her"
+        },
+        {
+          "name": "Ector",
+          "slug": null,
+          "relation": "foster father",
+          "spoiler": false,
+          "note": "Knight who raised her in secret"
+        },
+        {
+          "name": "Kay",
+          "slug": null,
+          "relation": "foster brother",
+          "spoiler": false,
+          "note": "Later served as her seneschal"
+        },
+        {
+          "name": "Morgan le Fay",
+          "slug": null,
+          "relation": "older sister",
+          "spoiler": false
+        },
+        {
+          "name": "Mordred",
+          "slug": null,
+          "relation": "child (homunculus)",
+          "spoiler": false,
+          "note": "Created by Morgan from Artoria's genetic material"
+        }
+      ],
+      "sources": [
+        "https://typemoon.fandom.com/wiki/Artoria_Pendragon",
+        "https://en.wikipedia.org/wiki/List_of_Fate/Stay_Night_characters",
+        "https://en.wikipedia.org/wiki/List_of_Fate/Zero_characters"
+      ]
+    },
+    "shouko-nishimiya": {
+      "members": [
+        {
+          "name": "Yaeko Nishimiya",
+          "slug": null,
+          "relation": "mother",
+          "spoiler": false,
+          "note": "Strict single mother"
+        },
+        {
+          "name": "Yuzuru Nishimiya",
+          "slug": "yuzuru-nishimiya",
+          "relation": "younger sister",
+          "spoiler": false,
+          "note": "Fiercely protective; loves photography"
+        },
+        {
+          "name": "Ito Nishimiya",
+          "slug": null,
+          "relation": "maternal grandmother",
+          "spoiler": false,
+          "note": "Warm presence in the household"
+        }
+      ],
+      "sources": [
+        "https://koenokatachi.fandom.com/wiki/Sh%C5%8Dko_Nishimiya",
+        "https://myanimelist.net/character/80243/Shouko_Nishimiya"
+      ]
+    },
+    "shinji-ikari": {
+      "members": [
+        {
+          "name": "Gendo Ikari",
+          "slug": null,
+          "relation": "father",
+          "spoiler": false,
+          "note": "Commander of NERV"
+        },
+        {
+          "name": "Yui Ikari",
+          "slug": null,
+          "relation": "mother",
+          "spoiler": false
+        }
+      ],
+      "sources": [
+        "https://evangelion.fandom.com/wiki/Shinji_Ikari",
+        "https://myanimelist.net/character/89/Shinji_Ikari",
+        "https://en.wikipedia.org/wiki/List_of_Neon_Genesis_Evangelion_characters",
+        "https://en.wikipedia.org/wiki/Shinji_Ikari"
+      ]
+    },
+    "misato-katsuragi": {
+      "members": [
+        {
+          "name": "Dr. Katsuragi",
+          "slug": null,
+          "relation": "father",
+          "spoiler": false,
+          "note": "Scientist who led the Antarctic expedition"
+        },
+        {
+          "name": "Shinji Ikari",
+          "slug": "shinji-ikari",
+          "relation": "ward",
+          "spoiler": false,
+          "note": "She becomes his legal guardian"
+        },
+        {
+          "name": "Asuka Langley Soryu",
+          "slug": "asuka-langley",
+          "relation": "ward",
+          "spoiler": false,
+          "note": "Moves into her apartment as her ward"
+        }
+      ],
+      "sources": [
+        "https://evangelion.fandom.com/wiki/Misato_Katsuragi",
+        "https://myanimelist.net/character/1259/Misato_Katsuragi",
+        "https://en.wikipedia.org/wiki/Misato_Katsuragi",
+        "https://en.wikipedia.org/wiki/List_of_Neon_Genesis_Evangelion_characters",
+        "https://en.wikipedia.org/wiki/List_of_Neon_Genesis_Evangelion_episodes"
+      ]
+    },
+    "shouya-ishida": {
+      "members": [
+        {
+          "name": "Miyako Ishida",
+          "slug": null,
+          "relation": "mother",
+          "spoiler": false,
+          "note": "Runs a hair salon from home"
+        },
+        {
+          "name": "Maria Ishida",
+          "slug": null,
+          "relation": "niece",
+          "spoiler": false,
+          "note": "Toddler daughter of his older sister"
+        }
+      ],
+      "sources": [
+        "https://koenokatachi.fandom.com/wiki/Sh%C5%8Dya_Ishida",
+        "https://myanimelist.net/character/80491/Shouya_Ishida",
+        "https://anilist.co/character/124030",
+        "https://anilist.co/character/124031"
+      ]
+    },
+    "yuu-nishinoya": {
+      "members": [],
+      "sources": [
+        "https://haikyuu.fandom.com/wiki/Y%C5%AB_Nishinoya",
+        "https://myanimelist.net/character/67327/Yuu_Nishinoya",
+        "https://en.wikipedia.org/wiki/List_of_Haikyu%21%21_characters"
+      ]
+    },
+    "chainsaw-man-reze": {
+      "members": [],
+      "sources": [
+        "https://chainsaw-man.fandom.com/wiki/Reze",
+        "https://myanimelist.net/character/174751/Reze"
+      ]
+    },
+    "asuna-yuuki": {
+      "members": [
+        {
+          "name": "Kyouko Yuuki",
+          "slug": null,
+          "relation": "mother",
+          "spoiler": false,
+          "note": "Strict university professor"
+        },
+        {
+          "name": "Shouzou Yuuki",
+          "slug": null,
+          "relation": "father",
+          "spoiler": false,
+          "note": "Former CEO of RCT Progress"
+        },
+        {
+          "name": "Kazuto Kirigaya",
+          "slug": "kazuto-kirigaya",
+          "relation": "in-game husband",
+          "spoiler": false,
+          "note": "Better known as Kirito"
+        },
+        {
+          "name": "Yui",
+          "slug": "yui-c77287c5-c033-4d24-867c-e26ab93ccfdd",
+          "relation": "adopted daughter",
+          "spoiler": false,
+          "note": "AI she and Kirito adopted in Aincrad"
+        }
+      ],
+      "sources": [
+        "https://swordartonline.fandom.com/wiki/Yuuki_Asuna",
+        "https://myanimelist.net/character/36828/Asuna_Yuuki",
+        "https://en.wikipedia.org/wiki/Asuna_%28Sword_Art_Online%29",
+        "https://en.wikipedia.org/wiki/List_of_Sword_Art_Online_characters",
+        "https://anilist.co/character/49085",
+        "https://anilist.co/character/36832",
+        "https://anilist.co/character/67069"
+      ]
+    },
+    "phosphophyllite": {
+      "members": [],
+      "sources": [
+        "https://houseki-no-kuni.fandom.com/wiki/Phosphophyllite",
+        "https://myanimelist.net/character/110355/Phosphophyllite"
+      ]
+    },
+    "kenma-kozume": {
+      "members": [],
+      "sources": [
+        "https://haikyuu.fandom.com/wiki/Kenma_Kozume",
+        "https://myanimelist.net/character/71267/Kenma_Kozume",
+        "https://en.wikipedia.org/wiki/List_of_Haikyu%21%21_characters"
+      ]
+    },
+    "gabi-braun": {
+      "members": [
+        {
+          "name": "Reiner Braun",
+          "slug": "reiner-braun",
+          "relation": "cousin",
+          "spoiler": false,
+          "note": "Her older cousin and role model"
+        },
+        {
+          "name": "Karina Braun",
+          "slug": null,
+          "relation": "aunt",
+          "spoiler": false,
+          "note": "Reiner's mother"
+        }
+      ],
+      "sources": [
+        "https://attackontitan.fandom.com/wiki/Gabi_Braun",
+        "https://myanimelist.net/character/149205/Gabi_Braun",
+        "https://en.wikipedia.org/wiki/List_of_Attack_on_Titan_characters",
+        "https://anilist.co/character/199712"
+      ]
+    },
+    "howl": {
+      "members": [],
+      "sources": [
+        "https://ghibli.fandom.com/wiki/Howl_Jenkins_Pendragon",
+        "https://myanimelist.net/character/507/Howl",
+        "https://en.wikipedia.org/wiki/Howl%27s_Moving_Castle_%28film%29",
+        "https://en.wikipedia.org/wiki/Howl%27s_Moving_Castle_%28novel%29"
+      ]
+    },
+    "touka-kirishima": {
+      "members": [
+        {
+          "name": "Ayato Kirishima",
+          "slug": "ayato-kirishima",
+          "relation": "younger brother",
+          "spoiler": false
+        },
+        {
+          "name": "Arata Kirishima",
+          "slug": null,
+          "relation": "father",
+          "spoiler": false
+        },
+        {
+          "name": "Hikari Kirishima",
+          "slug": null,
+          "relation": "mother",
+          "spoiler": false
+        },
+        {
+          "name": "Renji Yomo",
+          "slug": null,
+          "relation": "maternal uncle",
+          "spoiler": true,
+          "note": "Hikari's younger brother"
+        },
+        {
+          "name": "Ken Kaneki",
+          "slug": "ken-kaneki",
+          "relation": "husband",
+          "spoiler": true,
+          "note": "They marry late in Tokyo Ghoul:re"
+        },
+        {
+          "name": "Ichika Kaneki",
+          "slug": null,
+          "relation": "daughter",
+          "spoiler": true
+        }
+      ],
+      "sources": [
+        "https://tokyoghoul.fandom.com/wiki/Touka_Kirishima",
+        "https://myanimelist.net/character/87277/Touka_Kirishima",
+        "https://en.wikipedia.org/wiki/List_of_Tokyo_Ghoul_characters",
+        "https://anilist.co/character/88411",
+        "https://anilist.co/character/189326",
+        "https://anilist.co/character/189324",
+        "https://anilist.co/character/244814"
+      ]
+    },
+    "ban-b502349e-2c23-449b-82d8-995b8f5f67f6": {
+      "members": [
+        {
+          "name": "Elaine",
+          "slug": null,
+          "relation": "wife",
+          "spoiler": true,
+          "note": "The fairy guardian he loves"
+        },
+        {
+          "name": "Lancelot",
+          "slug": null,
+          "relation": "son",
+          "spoiler": true
+        },
+        {
+          "name": "King",
+          "slug": "king-56fdcd6e-ecda-4a9e-926e-86a7b3f650ea",
+          "relation": "brother-in-law",
+          "spoiler": true,
+          "note": "Elaine's older brother"
+        }
+      ],
+      "sources": [
+        "https://nanatsu-no-taizai.fandom.com/wiki/Ban",
+        "https://myanimelist.net/character/77605/Ban",
+        "https://en.wikipedia.org/wiki/List_of_The_Seven_Deadly_Sins_characters",
+        "https://anilist.co/character/265209"
+      ]
+    },
+    "ryuk": {
+      "members": [],
+      "sources": [
+        "https://deathnote.fandom.com/wiki/Ryuk",
+        "https://myanimelist.net/character/75/Ryuk",
+        "https://en.wikipedia.org/wiki/Ryuk_%28Death_Note%29",
+        "https://en.wikipedia.org/wiki/List_of_Death_Note_characters"
+      ]
+    },
+    "all-might": {
+      "members": [],
+      "sources": [
+        "https://myheroacademia.fandom.com/wiki/Toshinori_Yagi",
+        "https://myanimelist.net/character/117921/All_Might",
+        "https://en.wikipedia.org/wiki/List_of_My_Hero_Academia_characters"
+      ]
+    },
+    "usopp": {
+      "members": [
+        {
+          "name": "Yasopp",
+          "slug": null,
+          "relation": "father",
+          "spoiler": false,
+          "note": "Sharpshooter in the Red Hair Pirates"
+        },
+        {
+          "name": "Banchina",
+          "slug": null,
+          "relation": "mother",
+          "spoiler": false
+        }
+      ],
+      "sources": [
+        "https://onepiece.fandom.com/wiki/Usopp",
+        "https://myanimelist.net/character/724/Usopp",
+        "https://en.wikipedia.org/wiki/Usopp",
+        "https://en.wikipedia.org/wiki/List_of_One_Piece_characters",
+        "https://en.wikipedia.org/wiki/List_of_One_Piece_pirates",
+        "https://onepiece.fandom.com/wiki/Usopp/Personality_and_Relationships",
+        "https://anilist.co/character/21310"
+      ]
+    },
+    "leorio-paladiknight": {
+      "members": [],
+      "sources": [
+        "https://hunterxhunter.fandom.com/wiki/Leorio_Paradinight"
+      ]
+    },
+    "yui-hirasawa": {
+      "members": [
+        {
+          "name": "Ui Hirasawa",
+          "slug": null,
+          "relation": "younger sister",
+          "spoiler": false,
+          "note": "Dependable sister who keeps house"
+        }
+      ],
+      "sources": [
+        "https://k-on.fandom.com/wiki/Yui_Hirasawa",
+        "https://myanimelist.net/character/19565/Yui_Hirasawa",
+        "https://en.wikipedia.org/wiki/List_of_K_characters"
+      ]
+    },
+    "mayuri-shiina": {
+      "members": [],
+      "sources": [
+        "https://steins-gate.fandom.com/wiki/Mayuri_Shiina",
+        "https://myanimelist.net/character/35253/Mayuri_Shiina",
+        "https://en.wikipedia.org/wiki/Steins%3BGate"
+      ]
+    },
+    "rin-okumura": {
+      "members": [
+        {
+          "name": "Yukio Okumura",
+          "slug": "yukio-okumura",
+          "relation": "younger twin brother",
+          "spoiler": false,
+          "note": "Studious twin who became an exorcist"
+        },
+        {
+          "name": "Shiro Fujimoto",
+          "slug": "shirou-fujimoto",
+          "relation": "adoptive father",
+          "spoiler": false,
+          "note": "Paladin who raised the twins"
+        },
+        {
+          "name": "Satan",
+          "slug": null,
+          "relation": "father",
+          "spoiler": false,
+          "note": "God of demons"
+        },
+        {
+          "name": "Yuri Egin",
+          "slug": null,
+          "relation": "mother",
+          "spoiler": true
+        },
+        {
+          "name": "Amaimon",
+          "slug": null,
+          "relation": "paternal half-brother",
+          "spoiler": false,
+          "note": "King of Earth among the demon kings"
+        }
+      ],
+      "sources": [
+        "https://aonoexorcist.fandom.com/wiki/Rin_Okumura",
+        "https://myanimelist.net/character/24482/Rin_Okumura",
+        "https://en.wikipedia.org/wiki/List_of_Blue_Exorcist_characters",
+        "https://anilist.co/character/48511",
+        "https://anilist.co/character/30433"
+      ]
+    },
+    "tomura-shigaraki": {
+      "members": [
+        {
+          "name": "Kotaro Shimura",
+          "slug": null,
+          "relation": "father",
+          "spoiler": true
+        },
+        {
+          "name": "Nao Shimura",
+          "slug": null,
+          "relation": "mother",
+          "spoiler": true
+        },
+        {
+          "name": "Hana Shimura",
+          "slug": null,
+          "relation": "older sister",
+          "spoiler": true
+        },
+        {
+          "name": "Nana Shimura",
+          "slug": null,
+          "relation": "paternal grandmother",
+          "spoiler": true,
+          "note": "Seventh holder of One For All"
+        },
+        {
+          "name": "All For One",
+          "slug": null,
+          "relation": "adoptive father",
+          "spoiler": true,
+          "note": "Took him in and renamed him"
+        }
+      ],
+      "sources": [
+        "https://myheroacademia.fandom.com/wiki/Tomura_Shigaraki",
+        "https://myanimelist.net/character/122103/Tomura_Shigaraki",
+        "https://en.wikipedia.org/wiki/List_of_My_Hero_Academia_characters",
+        "https://anilist.co/character/290002",
+        "https://anilist.co/character/290001"
+      ]
+    },
+    "noelle-silva": {
+      "members": [
+        {
+          "name": "Acier Silva",
+          "slug": null,
+          "relation": "mother",
+          "spoiler": false
+        },
+        {
+          "name": "Nozel Silva",
+          "slug": null,
+          "relation": "older brother",
+          "spoiler": false,
+          "note": "Captain of the Silver Eagles"
+        },
+        {
+          "name": "Nebra Silva",
+          "slug": null,
+          "relation": "older sister",
+          "spoiler": false
+        },
+        {
+          "name": "Solid Silva",
+          "slug": null,
+          "relation": "older brother",
+          "spoiler": false
+        },
+        {
+          "name": "Mimosa Vermillion",
+          "slug": "mimosa-vermillion",
+          "relation": "cousin",
+          "spoiler": false,
+          "note": "Healer in the Golden Dawn"
+        },
+        {
+          "name": "Kirsch Vermillion",
+          "slug": null,
+          "relation": "cousin",
+          "spoiler": false,
+          "note": "Mimosa's older brother"
+        }
+      ],
+      "sources": [
+        "https://blackclover.fandom.com/wiki/Noelle_Silva",
+        "https://myanimelist.net/character/127141/Noelle_Silva",
+        "https://en.wikipedia.org/wiki/Noelle_Silva",
+        "https://en.wikipedia.org/wiki/List_of_Black_Clover_characters",
+        "https://en.wikipedia.org/wiki/List_of_Black_Clover_episodes",
+        "https://blackclover.fandom.com/wiki/Template:Lineage/Silva2"
+      ]
+    },
+    "tamaki-suoh": {
+      "members": [
+        {
+          "name": "Yuzuru Suoh",
+          "slug": null,
+          "relation": "father",
+          "spoiler": false,
+          "note": "Ouran Academy chairman"
+        },
+        {
+          "name": "Anne-Sophie de Grantaine",
+          "slug": null,
+          "relation": "mother",
+          "spoiler": false,
+          "note": "Lives in France"
+        },
+        {
+          "name": "Shizue Suoh",
+          "slug": null,
+          "relation": "paternal grandmother",
+          "spoiler": false,
+          "note": "Matriarch who disapproves of Tamaki"
+        }
+      ],
+      "sources": [
+        "https://ouran.fandom.com/wiki/Tamaki_Suoh",
+        "https://myanimelist.net/character/19/Tamaki_Suou",
+        "https://en.wikipedia.org/wiki/List_of_Ouran_High_School_Host_Club_characters"
+      ]
+    },
+    "sora-2": {
+      "members": [
+        {
+          "name": "Shiro",
+          "slug": "shiro-2",
+          "relation": "stepsister",
+          "spoiler": false,
+          "note": "His inseparable gaming partner"
+        }
+      ],
+      "sources": [
+        "https://no-game-no-life.fandom.com/wiki/Sora",
+        "https://myanimelist.net/character/82523/Sora",
+        "https://en.wikipedia.org/wiki/List_of_No_Game_No_Life_characters"
+      ]
+    },
+    "mitsuha-miyamizu": {
+      "members": [
+        {
+          "name": "Hitoha Miyamizu",
+          "slug": null,
+          "relation": "maternal grandmother",
+          "spoiler": false,
+          "note": "Head priestess of the family shrine"
+        },
+        {
+          "name": "Toshiki Miyamizu",
+          "slug": null,
+          "relation": "father",
+          "spoiler": false,
+          "note": "Itomori's mayor"
+        },
+        {
+          "name": "Futaba Miyamizu",
+          "slug": null,
+          "relation": "mother",
+          "spoiler": false
+        },
+        {
+          "name": "Yotsuha Miyamizu",
+          "slug": null,
+          "relation": "younger sister",
+          "spoiler": false
+        }
+      ],
+      "sources": [
+        "https://kiminonawa.fandom.com/wiki/Mitsuha_Miyamizu",
+        "https://myanimelist.net/character/137467/Mitsuha_Miyamizu",
+        "https://en.wikipedia.org/wiki/Your_Name",
+        "https://anilist.co/character/121520",
+        "https://anilist.co/character/158632",
+        "https://anilist.co/character/121518"
+      ]
+    },
+    "franky": {
+      "members": [
+        {
+          "name": "Tom",
+          "slug": null,
+          "relation": "foster father",
+          "spoiler": false,
+          "note": "Fishman shipwright who raised him"
+        },
+        {
+          "name": "Queen",
+          "slug": null,
+          "relation": "father",
+          "spoiler": true,
+          "note": "Revealed in an author Q&A"
+        }
+      ],
+      "sources": [
+        "https://onepiece.fandom.com/wiki/Franky",
+        "https://myanimelist.net/character/64/Franky",
+        "https://en.wikipedia.org/wiki/Franky_%28One_Piece%29",
+        "https://en.wikipedia.org/wiki/List_of_One_Piece_characters",
+        "https://onepiece.fandom.com/wiki/Franky/Personality_and_Relationships"
+      ]
+    },
+    "gray-fullbuster": {
+      "members": [
+        {
+          "name": "Silver Fullbuster",
+          "slug": null,
+          "relation": "father",
+          "spoiler": true
+        }
+      ],
+      "sources": [
+        "https://fairytail.fandom.com/wiki/Gray_Fullbuster",
+        "https://myanimelist.net/character/4839/Gray_Fullbuster",
+        "https://en.wikipedia.org/wiki/List_of_Fairy_Tail_characters"
+      ]
+    },
+    "yuno-kurosurii": {
+      "members": [
+        {
+          "name": "Asta",
+          "slug": "asuta-sutaria",
+          "relation": "foster brother",
+          "spoiler": false,
+          "note": "Raised together at the Hage church"
+        },
+        {
+          "name": "Loyce Grinberryall",
+          "slug": null,
+          "relation": "father",
+          "spoiler": true,
+          "note": "Former king of the Spade Kingdom"
+        },
+        {
+          "name": "Ciel Grinberryall",
+          "slug": null,
+          "relation": "mother",
+          "spoiler": true
+        }
+      ],
+      "sources": [
+        "https://blackclover.fandom.com/wiki/Yuno_Grinberryall",
+        "https://myanimelist.net/character/124732/Yuno",
+        "https://en.wikipedia.org/wiki/List_of_Black_Clover_characters",
+        "https://en.wikipedia.org/wiki/List_of_Black_Clover_episodes",
+        "https://blackclover.fandom.com/wiki/Template:Lineage/Grinberryall",
+        "https://anilist.co/character/216708"
+      ]
+    },
+    "konata-izumi": {
+      "members": [
+        {
+          "name": "Sojiro Izumi",
+          "slug": null,
+          "relation": "father",
+          "spoiler": false,
+          "note": "Novelist and otaku"
+        },
+        {
+          "name": "Kanata Izumi",
+          "slug": null,
+          "relation": "mother",
+          "spoiler": false
+        },
+        {
+          "name": "Yutaka Kobayakawa",
+          "slug": null,
+          "relation": "younger cousin",
+          "spoiler": false,
+          "note": "Lives with the Izumis during high school"
+        },
+        {
+          "name": "Yui Narumi",
+          "slug": null,
+          "relation": "older cousin",
+          "spoiler": false,
+          "note": "Traffic cop; Yutaka's sister"
+        }
+      ],
+      "sources": [
+        "https://luckystar.fandom.com/wiki/Konata_Izumi",
+        "https://myanimelist.net/character/2169/Konata_Izumi",
+        "https://en.wikipedia.org/wiki/List_of_Lucky_Star_characters",
+        "https://anilist.co/character/2936"
+      ]
+    },
+    "suzuha-amane": {
+      "members": [],
+      "sources": [
+        "https://steins-gate.fandom.com/wiki/Suzuha_Amane",
+        "https://myanimelist.net/character/35255/Suzuha_Amane",
+        "https://en.wikipedia.org/wiki/Steins%3BGate"
+      ]
+    },
+    "satoru-fujinuma": {
+      "members": [
+        {
+          "name": "Sachiko Fujinuma",
+          "slug": "sachiko-fujinuma",
+          "relation": "mother",
+          "spoiler": false,
+          "note": "Former news announcer with a keen eye"
+        }
+      ],
+      "sources": [
+        "https://bokudakegainaimachi.fandom.com/wiki/Satoru_Fujinuma",
+        "https://myanimelist.net/character/98737/Satoru_Fujinuma",
+        "https://anilist.co/character/89326"
+      ]
+    },
+    "sakura-haruno": {
+      "members": [
+        {
+          "name": "Kizashi Haruno",
+          "slug": null,
+          "relation": "father",
+          "spoiler": false
+        },
+        {
+          "name": "Mebuki Haruno",
+          "slug": null,
+          "relation": "mother",
+          "spoiler": false
+        },
+        {
+          "name": "Sasuke Uchiha",
+          "slug": "sasuke-uchiha",
+          "relation": "husband",
+          "spoiler": true
+        },
+        {
+          "name": "Sarada Uchiha",
+          "slug": "sarada-uchiha",
+          "relation": "daughter",
+          "spoiler": true
+        }
+      ],
+      "sources": [
+        "https://naruto.fandom.com/wiki/Sakura_Haruno",
+        "https://myanimelist.net/character/145/Sakura_Haruno",
+        "https://en.wikipedia.org/wiki/List_of_Naruto_characters",
+        "https://en.wikipedia.org/wiki/Sakura_Haruno"
+      ]
+    },
+    "bishamon": {
+      "members": [],
+      "sources": [
+        "https://noragami.fandom.com/wiki/Bishamonten",
+        "https://myanimelist.net/character/93711/Bishamon",
+        "https://en.wikipedia.org/wiki/List_of_Noragami_characters",
+        "https://en.wikipedia.org/wiki/Bishamon"
+      ]
+    },
+    "nate-river": {
+      "members": [],
+      "sources": [
+        "https://deathnote.fandom.com/wiki/Near",
+        "https://myanimelist.net/character/464/Nate_River",
+        "https://en.wikipedia.org/wiki/List_of_Death_Note_characters",
+        "https://en.wikipedia.org/wiki/Nate_%28given_name%29"
+      ]
+    },
+    "hero-6e47f7e6-abaf-453a-9b48-41ec706bdb9d": {
+      "members": [],
+      "sources": [
+        "https://megamitensei.fandom.com/wiki/Ren_Amamiya",
+        "https://myanimelist.net/character/142795/Ren_Amamiya",
+        "https://en.wikipedia.org/wiki/List_of_Persona_5_characters"
+      ]
+    },
+    "olivier-mira-armstrong": {
+      "members": [
+        {
+          "name": "Alex Louis Armstrong",
+          "slug": null,
+          "relation": "younger brother",
+          "spoiler": false,
+          "note": "The Strong Arm Alchemist"
+        },
+        {
+          "name": "Philip Gargantos Armstrong",
+          "slug": null,
+          "relation": "father",
+          "spoiler": false
+        },
+        {
+          "name": "Catherine Elle Armstrong",
+          "slug": null,
+          "relation": "youngest sister",
+          "spoiler": false
+        }
+      ],
+      "sources": [
+        "https://fma.fandom.com/wiki/Olivier_Mira_Armstrong",
+        "https://myanimelist.net/character/3934/Olivier_Mira_Armstrong",
+        "https://en.wikipedia.org/wiki/List_of_Fullmetal_Alchemist_characters",
+        "https://en.wikipedia.org/wiki/List_of_Fullmetal_Alchemist%3A_Brotherhood_episodes"
+      ]
+    },
+    "suzaku-kururugi": {
+      "members": [
+        {
+          "name": "Genbu Kururugi",
+          "slug": null,
+          "relation": "father",
+          "spoiler": false,
+          "note": "Japan's last prime minister"
+        },
+        {
+          "name": "Kaguya Sumeragi",
+          "slug": null,
+          "relation": "cousin",
+          "spoiler": false,
+          "note": "Head of the Kyoto House"
+        }
+      ],
+      "sources": [
+        "https://codegeass.fandom.com/wiki/Suzaku_Kururugi",
+        "https://myanimelist.net/character/559/Suzaku_Kururugi",
+        "https://en.wikipedia.org/wiki/List_of_Code_Geass_characters",
+        "https://anilist.co/character/1865"
+      ]
+    },
+    "ami-kawashima": {
+      "members": [],
+      "sources": [
+        "https://myanimelist.net/character/13725/Ami_Kawashima",
+        "https://en.wikipedia.org/wiki/List_of_Toradora%21_episodes"
+      ]
+    },
+    "mami-tomoe": {
+      "members": [],
+      "sources": [
+        "https://madoka.fandom.com/wiki/Mami_Tomoe",
+        "https://myanimelist.net/character/38194/Mami_Tomoe"
+      ]
+    },
+    "chihiro-ogino": {
+      "members": [
+        {
+          "name": "Akio Ogino",
+          "slug": null,
+          "relation": "father",
+          "spoiler": false
+        },
+        {
+          "name": "Yuko Ogino",
+          "slug": null,
+          "relation": "mother",
+          "spoiler": false
+        }
+      ],
+      "sources": [
+        "https://ghibli.fandom.com/wiki/Chihiro_Ogino",
+        "https://myanimelist.net/character/384/Chihiro_Ogino",
+        "https://en.wikipedia.org/wiki/Spirited_Away",
+        "https://anilist.co/character/8299"
+      ]
+    },
+    "kaoru-hitachiin": {
+      "members": [
+        {
+          "name": "Hikaru Hitachiin",
+          "slug": "hikaru-hitachiin",
+          "relation": "twin brother",
+          "spoiler": false,
+          "note": "Older twin by a few minutes"
+        },
+        {
+          "name": "Yuzuha Hitachiin",
+          "slug": null,
+          "relation": "mother",
+          "spoiler": false,
+          "note": "Famous fashion designer"
+        }
+      ],
+      "sources": [
+        "https://ouran.fandom.com/wiki/Kaoru_Hitachiin",
+        "https://myanimelist.net/character/24/Kaoru_Hitachiin",
+        "https://en.wikipedia.org/wiki/List_of_Ouran_High_School_Host_Club_characters",
+        "https://anilist.co/character/76374"
+      ]
+    },
+    "gowther": {
+      "members": [],
+      "sources": [
+        "https://nanatsu-no-taizai.fandom.com/wiki/Gowther",
+        "https://myanimelist.net/character/95977/Gowther",
+        "https://en.wikipedia.org/wiki/List_of_The_Seven_Deadly_Sins_characters"
+      ]
+    },
+    "finral-roulacase": {
+      "members": [
+        {
+          "name": "Langris Vaude",
+          "slug": null,
+          "relation": "younger half-brother",
+          "spoiler": false,
+          "note": "Heir to House Vaude"
+        },
+        {
+          "name": "Finesse Calmreich",
+          "slug": null,
+          "relation": "wife",
+          "spoiler": true,
+          "note": "Originally betrothed to his half-brother Langris"
+        }
+      ],
+      "sources": [
+        "https://blackclover.fandom.com/wiki/Finral_Roulacase",
+        "https://myanimelist.net/character/153561/Finral_Roulacase",
+        "https://en.wikipedia.org/wiki/List_of_Black_Clover_characters",
+        "https://en.wikipedia.org/wiki/List_of_Black_Clover_episodes",
+        "https://blackclover.fandom.com/wiki/Template:Lineage/Vaude"
+      ]
+    },
+    "juliet-persia": {
+      "members": [],
+      "sources": [
+        "https://kishuku-gakkou-no-juliet.fandom.com/wiki/Juliet_Persia",
+        "https://myanimelist.net/character/131194/Juliet_Persia",
+        "https://en.wikipedia.org/wiki/Boarding_School_Juliet"
+      ]
+    },
+    "shura-kirigakure": {
+      "members": [],
+      "sources": [
+        "https://aonoexorcist.fandom.com/wiki/Shura_Kirigakure",
+        "https://myanimelist.net/character/32110/Shura_Kirigakure",
+        "https://en.wikipedia.org/wiki/List_of_Blue_Exorcist_characters",
+        "https://en.wikipedia.org/wiki/List_of_Blue_Exorcist_episodes"
+      ]
+    },
+    "stephanie-dora": {
+      "members": [
+        {
+          "name": "Makoto Dola",
+          "slug": null,
+          "relation": "grandfather",
+          "spoiler": false,
+          "note": "Former king of Elkia"
+        }
+      ],
+      "sources": [
+        "https://no-game-no-life.fandom.com/wiki/Stephanie_Dola",
+        "https://myanimelist.net/character/82527/Stephanie_Dola",
+        "https://en.wikipedia.org/wiki/List_of_No_Game_No_Life_characters"
+      ]
+    },
+    "kaede-kayano": {
+      "members": [
+        {
+          "name": "Aguri Yukimura",
+          "slug": null,
+          "relation": "older sister",
+          "spoiler": true,
+          "note": "Kayano's real surname is Yukimura"
+        }
+      ],
+      "sources": [
+        "https://myanimelist.net/character/85291/Kaede_Kayano",
+        "https://en.wikipedia.org/wiki/List_of_Assassination_Classroom_characters"
+      ]
+    },
+    "takumi-aldini": {
+      "members": [
+        {
+          "name": "Isami Aldini",
+          "slug": null,
+          "relation": "younger twin brother",
+          "spoiler": false,
+          "note": "His partner in the family trattoria"
+        }
+      ],
+      "sources": [
+        "https://shokugekinosoma.fandom.com/wiki/Takumi_Aldini",
+        "https://myanimelist.net/character/85777/Takumi_Aldini",
+        "https://anilist.co/character/85785"
+      ]
+    },
+    "bertolt-hoover": {
+      "members": [],
+      "sources": [
+        "https://attackontitan.fandom.com/wiki/Bertolt_Hoover",
+        "https://myanimelist.net/character/46488/Bertolt_Hoover"
+      ]
+    },
+    "sweet-mask": {
+      "members": [],
+      "sources": [
+        "https://onepunchman.fandom.com/wiki/Beaut"
+      ]
+    },
+    "alois-trancy": {
+      "members": [
+        {
+          "name": "Luka Macken",
+          "slug": null,
+          "relation": "younger brother",
+          "spoiler": true
+        }
+      ],
+      "sources": [
+        "https://kuroshitsuji.fandom.com/wiki/Alois_Trancy",
+        "https://myanimelist.net/character/30030/Alois_Trancy",
+        "https://en.wikipedia.org/wiki/List_of_Black_Butler_characters"
+      ]
+    },
+    "c-c": {
+      "members": [],
+      "sources": [
+        "https://codegeass.fandom.com/wiki/C.C.",
+        "https://myanimelist.net/character/1111/CC",
+        "https://en.wikipedia.org/wiki/List_of_Code_Geass_characters"
+      ]
+    },
+    "argo": {
+      "members": [],
+      "sources": [
+        "https://swordartonline.fandom.com/wiki/Hosaka_Carina_Tomo",
+        "https://myanimelist.net/character/249065/Argo",
+        "https://en.wikipedia.org/wiki/List_of_Sword_Art_Online_characters"
+      ]
+    },
+    "barry-the-chopper": {
+      "members": [],
+      "sources": [
+        "https://fma.fandom.com/wiki/Barry_the_Chopper",
+        "https://myanimelist.net/character/5428/Barry_the_Chopper",
+        "https://en.wikipedia.org/wiki/List_of_Fullmetal_Alchemist_characters",
+        "https://en.wikipedia.org/wiki/List_of_Fullmetal_Alchemist%3A_Brotherhood_episodes",
+        "https://en.wikipedia.org/wiki/Fullmetal_Alchemist%3A_Brotherhood"
+      ]
+    },
+    "charlotte-265064b8-abef-46a5-a01f-fc929bdea53e": {
+      "members": [],
+      "sources": [
+        "https://princess-principal.fandom.com/wiki/Princess_Charlotte"
+      ]
+    },
+    "finnian": {
+      "members": [],
+      "sources": [
+        "https://kuroshitsuji.fandom.com/wiki/Finnian",
+        "https://myanimelist.net/character/14953/Finnian",
+        "https://en.wikipedia.org/wiki/List_of_Black_Butler_characters"
+      ]
+    },
+    "hisashi-igou": {
+      "members": [],
+      "sources": [
+        "https://highschool-of-the-dead.fandom.com/wiki/Hisashi_Igou",
+        "https://myanimelist.net/character/19711/Hisashi_Igou",
+        "https://en.wikipedia.org/wiki/List_of_Highschool_of_the_Dead_characters"
+      ]
+    },
+    "kazu-ishi": {
+      "members": [],
+      "sources": [
+        "https://highschool-of-the-dead.fandom.com/wiki/Kazu_Ishii"
+      ]
+    },
+    "lord-yupa": {
+      "members": [],
+      "sources": [
+        "https://ghibli.fandom.com/wiki/Yupa",
+        "https://myanimelist.net/character/540/Lord_Yupa"
+      ]
+    },
+    "markl": {
+      "members": [],
+      "sources": [
+        "https://ghibli.fandom.com/wiki/Markl",
+        "https://myanimelist.net/character/509/Markl"
+      ]
+    },
+    "milly-ashford": {
+      "members": [
+        {
+          "name": "Ruben K. Ashford",
+          "slug": null,
+          "relation": "grandfather",
+          "spoiler": false,
+          "note": "Head of Ashford Academy"
+        }
+      ],
+      "sources": [
+        "https://codegeass.fandom.com/wiki/Milly_Ashford",
+        "https://myanimelist.net/character/1121/Milly_Ashford",
+        "https://en.wikipedia.org/wiki/List_of_Code_Geass_characters"
+      ]
+    },
+    "nidaime-raikage": {
+      "members": [],
+      "sources": [
+        "https://naruto.fandom.com/wiki/A_%28Second_Raikage%29",
+        "https://myanimelist.net/character/93637/A_Second_Raikage",
+        "https://en.wikipedia.org/wiki/List_of_Naruto_media"
+      ]
+    },
+    "satoshi-mashiba": {
+      "members": [],
+      "sources": [
+        "https://koenokatachi.fandom.com/wiki/Satoshi_Mashiba",
+        "https://myanimelist.net/character/100473/Satoshi_Mashiba"
+      ]
+    },
+    "tachikoma": {
+      "members": [],
+      "sources": [
+        "https://ghostintheshell.fandom.com/wiki/Tachikoma",
+        "https://myanimelist.net/character/4808/Tachikoma",
+        "https://en.wikipedia.org/wiki/Tachikoma",
+        "https://en.wikipedia.org/wiki/List_of_Ghost_in_the_Shell%3A_Stand_Alone_Complex_episodes"
+      ]
+    },
+    "tsubaki-sawabe": {
+      "members": [],
+      "sources": [
+        "https://shigatsu-wa-kimi-no-uso.fandom.com/wiki/Tsubaki_Sawabe",
+        "https://myanimelist.net/character/69409/Tsubaki_Sawabe",
+        "https://en.wikipedia.org/wiki/List_of_Your_Lie_in_April_episodes"
+      ]
+    },
+    "yotsuha-miyamizu": {
+      "members": [
+        {
+          "name": "Mitsuha Miyamizu",
+          "slug": "mitsuha-miyamizu",
+          "relation": "older sister",
+          "spoiler": false
+        },
+        {
+          "name": "Hitoha Miyamizu",
+          "slug": null,
+          "relation": "maternal grandmother",
+          "spoiler": false,
+          "note": "Head priestess of the family shrine"
+        },
+        {
+          "name": "Toshiki Miyamizu",
+          "slug": null,
+          "relation": "father",
+          "spoiler": false,
+          "note": "Itomori's mayor"
+        },
+        {
+          "name": "Futaba Miyamizu",
+          "slug": null,
+          "relation": "mother",
+          "spoiler": false
+        }
+      ],
+      "sources": [
+        "https://kiminonawa.fandom.com/wiki/Yotsuha_Miyamizu",
+        "https://myanimelist.net/character/141484/Yotsuha_Miyamizu",
+        "https://en.wikipedia.org/wiki/Your_Name",
+        "https://anilist.co/character/121520",
+        "https://anilist.co/character/158632"
+      ]
     }
   }
 }
