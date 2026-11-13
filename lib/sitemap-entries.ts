@@ -18,7 +18,7 @@ import { HINDI_SLUGS, hindiPath, hindiIndexed } from "@/lib/hindi";
 import { allStreams, streamsPath } from "@/lib/streams";
 import { strongSimilarIds } from "@/lib/picks";
 import { HINDI_PLATFORMS, dubsOn } from "@/lib/hindidub";
-import { airsSoon, searchShownPaths, similarSlugs, watchOrderIndexed, characterTableIndexed, notedCharacters, genreIndexed, bestYearIndexed, trendIndexed, voiceActorIndexed, NEXT_SEASON_MIN_MEMBERS } from "@/lib/indexing";
+import { airsSoon, searchShownPaths, similarSlugs, watchOrderIndexed, characterTableIndexed, notedCharacters, genreIndexed, bestYearIndexed, trendIndexed, voiceActorIndexed, castIndexed, howLongIndexed, NEXT_SEASON_MIN_MEMBERS } from "@/lib/indexing";
 import franchiseData from "@/data/franchises.json";
 import { DATA_DATES as D, STATIC_UPDATED, latest, weekStart, monthStart } from "@/lib/lastmod";
 import { FILLER } from "@/data/filler";
@@ -147,11 +147,11 @@ export async function sitemapEntries(): Promise<MetadataRoute.Sitemap> {
       // Airing shows count aired episodes only, so they need a known next episode past the first.
       const aired = a.status === "current" ? Math.max(0, (upcomingOf(snap.byKitsu.get(a.id))[0]?.episode ?? 1) - 1) : a.episodeCount || 0;
       const timed = a.subtype === "movie" ? runtimeMinutes(a) > 0 : episodeMinutes(a) > 0 && aired > 0;
-      if (released && timed) out.push({ url: abs(`${animePath(a)}/how-long-to-watch`), lastModified: a.status === "current" ? now : at(D.anilist), changeFrequency: "monthly", priority: 0.6 });
+      if (released && timed && howLongIndexed(`${animePath(a)}/how-long-to-watch`, a.userCount)) out.push({ url: abs(`${animePath(a)}/how-long-to-watch`), lastModified: a.status === "current" ? now : at(D.anilist), changeFrequency: "monthly", priority: 0.6 });
       if (a.subtype !== "movie" && a.status === "current") out.push({ url: abs(`${animePath(a)}/episodes`), lastModified: now, changeFrequency: "daily", priority: 0.5 });
       if (n > 50) continue;
       const al = alIds.get(a.id);
-      if (al && hasSnapshotCast(al)) out.push({ url: abs(`${animePath(a)}/cast`), lastModified: at(D.casts), changeFrequency: "monthly", priority: 0.5 });
+      if (al && hasSnapshotCast(al) && castIndexed(`${animePath(a)}/cast`)) out.push({ url: abs(`${animePath(a)}/cast`), lastModified: at(D.casts), changeFrequency: "monthly", priority: 0.5 });
       if (released && hasSnapshotThemes(a.id)) out.push({ url: abs(`${animePath(a)}/openings-endings`), lastModified: at(D.themes), changeFrequency: "monthly", priority: 0.5 });
       // Same test as the page (which noindexes itself without a guide): AniList tags in the monthly snapshot. Shorts,
       // ads and music clips don't need a parents' guide.

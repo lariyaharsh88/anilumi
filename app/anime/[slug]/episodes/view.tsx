@@ -1,3 +1,5 @@
+import { robotsFor, episodeListIndexed } from "@/lib/indexing";
+import { fitDescription } from "@/lib/titles";
 import { Fragment } from "react";
 import type { Metadata } from "next";
 import Image from "next/image";
@@ -39,10 +41,11 @@ export async function episodesMetadata(slug: string, page: number): Promise<Meta
   const span = a.startDate ? ` (${fmtDate(a.startDate, { month: "short", year: "numeric" })}${a.endDate ? ` – ${fmtDate(a.endDate, { month: "short", year: "numeric" })}` : airing ? " – now" : ""})` : "";
   return {
     title: `${head}${p}`,
-    description: n
+    description: fitDescription(n
       ? `${airing ? `${n} episodes of ${a.title} have aired so far` : `All ${n} episodes of ${a.title}`}${span}, with titles, air dates and spoiler-safe synopses${fill?.count ? `, plus which ${fill.count} are filler` : ""}.`
-      : `Every episode of ${a.title} with titles, air dates and synopses.`,
+      : `Every episode of ${a.title} with titles, air dates and synopses.`),
     alternates: { canonical: episodesPath(a.slug, page) },
+    robots: robotsFor(episodeListIndexed(episodesPath(a.slug, page), { airing, curated: Boolean(fill), page })),
     openGraph: { images: posterUrl(a, "large") ? [{ url: posterUrl(a, "large")! }] : [] },
   };
 }

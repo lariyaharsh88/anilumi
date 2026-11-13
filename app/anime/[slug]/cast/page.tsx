@@ -1,3 +1,4 @@
+import { robotsFor, castIndexed } from "@/lib/indexing";
 import { fitDescription } from "@/lib/titles";
 import type { Metadata } from "next";
 import Link from "@/components/Link";
@@ -43,7 +44,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       ? `${dub ? "Japanese and English dub" : "Japanese"} voice actors for the characters of ${a.title}: ${mains.map((e) => `${e.character.name} (${e.jp!.name}${e.en ? ` / ${e.en.name}` : ""})`).join(", ")} and the rest of the cast.`
       : `Characters and voice actors of ${a.title}.`),
     alternates: { canonical: `${animePath(a)}/cast` },
-    ...(cast?.entries.length ? {} : { robots: { index: false } }),
+    // Thin next to the character pages: indexed only where search already shows it (lib/indexing.ts).
+    ...(cast?.entries.length ? { robots: robotsFor(castIndexed(`${animePath(a)}/cast`)) } : { robots: { index: false } }),
   };
 }
 

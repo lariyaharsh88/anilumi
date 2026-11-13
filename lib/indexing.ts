@@ -95,6 +95,19 @@ export const characterTableIndexed = (slug: string) => searchShown(`/anime/${slu
 /** "Next season" pages: indexed when there's news, or the title is popular enough that people ask anyway. */
 export const nextSeasonIndexed = (path: string, hasNews: boolean, members: number) => hasNews || members >= NEXT_SEASON_MIN_MEMBERS || searchShown(path);
 
+/**
+ * Episode lists: Google dropped most finished shows' lists (titles and dates any database has). Indexed when the show
+ * is airing (fresh air dates), has our own filler list, or search already shows it; page 2 onwards never.
+ */
+export const episodeListIndexed = (path: string, o: { airing: boolean; curated: boolean; page: number }) => o.page === 1 && (o.airing || o.curated || searchShown(path));
+
+/** Cast pages repeat the character pages' voice credits: indexed only where search already shows them. */
+export const castIndexed = (path: string) => searchShown(path);
+
+/** "How long to watch": worth a page for shows people actually binge. */
+export const HOW_LONG_MIN_MEMBERS = 30_000;
+export const howLongIndexed = (path: string, members: number) => members >= HOW_LONG_MIN_MEMBERS || searchShown(path);
+
 /** `robots` metadata for a page: undefined (indexable) or noindex, follow. */
 export const robotsFor = (indexed: boolean) => (indexed ? undefined : NOINDEX);
 
