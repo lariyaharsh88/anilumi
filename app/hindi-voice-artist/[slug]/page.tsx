@@ -8,6 +8,7 @@ import JsonLd from "@/components/JsonLd";
 import MadeBy from "@/components/MadeBy";
 import { hindiArtist, hindiArtistPath, hindiArtists, HINDI_VOICES_CHECKED } from "@/lib/hindivoices";
 import { animePath } from "@/lib/kitsu";
+import { characterPageForHindiRole } from "@/lib/hindivoices";
 import { abs } from "@/lib/site";
 
 export const revalidate = 86400;
@@ -50,7 +51,7 @@ export default async function HindiArtistPage({ params }: Props) {
         <ul className="grid gap-3 md:grid-cols-2">
           {a.roles.map((r) => (
             <li key={`${r.character}-${r.anime}-${r.dub}`} className="card p-3">
-              <p className="font-semibold text-ink">{r.character}</p>
+              <p className="font-semibold text-ink">{characterPageForHindiRole(a.name, r.character) ? <Link href={characterPageForHindiRole(a.name, r.character)!} className="hover:text-violet-2">{r.character}</Link> : r.character}</p>
               <p className="text-sm text-muted">{r.slug ? <Link href={animePath({ slug: r.slug })} className="text-violet hover:underline">{r.anime}</Link> : r.anime} · {r.dub}</p>
               <p className="mt-1 flex flex-wrap gap-x-3 text-[11px] text-muted">{r.sources.slice(0, 3).map((u, i) => <a key={u} href={u} target="_blank" rel="noopener nofollow" className="underline">Source {i + 1}</a>)}</p>
             </li>

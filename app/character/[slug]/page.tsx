@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 import { characterNote } from "@/lib/charnotes";
 import { characterDeep } from "@/lib/chardeep";
+import MadeBy from "@/components/MadeBy";
+import EditorWatched from "@/components/EditorWatched";
+import { authorRef } from "@/lib/author";
+import { NOTES_CHECKED } from "@/lib/charnotes";
+import { DEEP_CHECKED } from "@/lib/chardeep";
 import CharacterDeepProfile, { deepSections } from "@/components/CharacterDeep";
 import SectionNav, { type NavSection } from "@/components/fx/SectionNav";
 import { fitTitle, fitDescription } from "@/lib/titles";
@@ -124,6 +129,9 @@ export default async function CharacterPage({ params }: Props) {
   const { c, apps, mains, home, homeApp, voiced, bday, facts, fact, bio, al, ranked, rankShow, snapped, others, aliases, sign, span: firsts, table, tableShow } = await load(slug);
   const note = characterNote(c.slug);
   const deep = characterDeep(c.slug);
+  // Our own research on the page (notes, bio, profile): who checked it, when, and against what.
+  const checked = deep ? DEEP_CHECKED : note ? NOTES_CHECKED : null;
+  const sources = [...new Set([...(note?.sources ?? []), ...(deep?.sources ?? [])])];
   const navSections: NavSection[] = [
     ...(note?.about ? [{ id: "who", label: "About" }] : []),
     { id: "facts", label: "Facts" },
@@ -173,6 +181,9 @@ export default async function CharacterPage({ params }: Props) {
   return (
     <article className="container-x pb-8">
       <JsonLd data={ld} />
+      {checked && (
+        <JsonLd data={{ "@context": "https://schema.org", "@type": "ProfilePage", url: abs(`/character/${c.slug}`), mainEntity: { "@id": `${abs(`/character/${c.slug}`)}#character` }, author: authorRef(), dateModified: checked, citation: sources.slice(0, 8) }} />
+      )}
       <PageHero
         crumbs={[{ href: "/", label: "Home" }, ...(home ? [{ href: animePath(home), label: home.title }] : []), { href: `/character/${c.slug}`, label: c.name }]}
         eyebrow={homeApp?.role === "main" ? "Main character" : "Character"}
@@ -202,6 +213,8 @@ export default async function CharacterPage({ params }: Props) {
           {aliases.length > 0 && <p className="mt-2 text-sm text-muted">Also known as {aliases.map((x, i) => <span key={x}>{i ? ", " : ""}<strong className="font-semibold text-ink/85">{x}</strong></span>)}.</p>}
         </section>
       )}
+      {home && <EditorWatched anime={home} className="mt-4" />}
+      {checked && <MadeBy className="mt-3" date={checked} method="Age, height, birthday and voice cast come from AniList and Kitsu; the bio, story notes and profile are written by AniLumi and every fact is checked against two sources, listed at the end of the page." />}
       <SectionNav sections={navSections} />
       {note?.about && (
         <section id="who" data-section className="card reveal mt-5 p-5 sm:p-6" aria-labelledby="bio-h">
@@ -328,6 +341,14 @@ export default async function CharacterPage({ params }: Props) {
             ))}
           </ul>
         </section>
+      )}
+      {sources.length > 0 && (
+        <details className="card mt-10 p-4 text-sm">
+          <summary className="cursor-pointer font-semibold text-ink">Sources for this page ({sources.length})</summary>
+          <ul className="mt-2 space-y-1">
+            {sources.map((u) => <li key={u} className="truncate"><a href={u} target="_blank" rel="noopener nofollow" className="text-violet hover:underline">{u.replace(/^https?:\/\/(www\.)?/, "")}</a></li>)}
+          </ul>
+        </details>
       )}
       <div id="faq" data-section><Faq
         title={`${c.name} FAQ`}
