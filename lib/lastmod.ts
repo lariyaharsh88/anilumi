@@ -34,7 +34,7 @@ import hindiVoices from "@/data/hindi-voice-artists.json";
  */
 export const SITE_UPDATED = "2026-11-11"; // 11 Nov: verdicts, character/VA sections, capped descriptions
 
-/** Birthday date pages' template: 14 Nov added "at a glance", "who they are" and the comparison table. */
+/** Birthday date and month pages' template: 14 Nov added "at a glance" numbers, charts and comparison tables. */
 export const BIRTHDAY_PAGES_UPDATED = "2026-11-14";
 /** Hindi dub hub template: 14 Nov added the numbers, charts, posters and filters (and the Apple TV fix). */
 export const HINDI_HUB_UPDATED = "2026-11-14";

@@ -1,7 +1,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { birthdaysOn, allDays, bdLabel } from "../lib/birthdays";
-import { birthdayStats, statsLine } from "../lib/bdstats";
+import { birthdayStats, statsLine, shortAge } from "../lib/bdstats";
 
 test("bdstats: every date with 2+ characters gets clean numbers and a sentence", () => {
   let withStats = 0;
@@ -16,4 +16,10 @@ test("bdstats: every date with 2+ characters gets clean numbers and a sentence",
     assert.doesNotMatch(line, /\b0 |undefined|null|NaN/, `${m}/${d}: ${line}`);
   }
   assert.ok(withStats > 250, `only ${withStats} dates`);
+});
+
+test("bdstats: short ages for sentences", () => {
+  assert.equal(shortAge("12-17 (Naruto), 27- (Boruto)"), "12-17");
+  assert.equal(shortAge("15-"), "15+");
+  assert.equal(shortAge("19"), "19");
 });

@@ -14,6 +14,12 @@ import JsonLd from "@/components/JsonLd";
 import Faq from "@/components/Faq";
 import LeadForm from "@/components/LeadForm";
 import { dbEnabled } from "@/lib/db";
+import SectionNav from "@/components/fx/SectionNav";
+import StatTiles from "@/components/viz/StatTiles";
+import BarChart from "@/components/viz/BarChart";
+import StackedBar from "@/components/viz/StackedBar";
+import CharacterCompare from "@/components/CharacterCompare";
+import { birthdayRows, birthdayStats, statsLine } from "@/lib/bdstats";
 
 // Every 6 hours, so the "Today" marker follows the date.
 export const revalidate = 21600;
@@ -56,6 +62,14 @@ export default async function BirthdayMonth({ params }: Props) {
     .filter(([, cs]) => cs.length >= 2).map(([slug, cs]) => ({ slug, title: cs[0].t, chars: [...cs].sort((a, b) => a.d - b.d) }))
     .sort((a, b) => b.chars.length - a.chars.length || a.title.localeCompare(b.title)).slice(0, 24);
   const prev = ((m + 10) % 12) + 1, next = (m % 12) + 1;
+  const stats = birthdayStats(characters);
+  const perDay = Array.from({ length: DAYS_IN[m - 1] }, (_, i) => ({ d: i + 1, n: characters.filter((c) => c.d === i + 1).length }));
+  const busiest = [...perDay].sort((a, b) => b.n - a.n || a.d - b.d)[0];
+  const quiet = perDay.filter((x) => x.n === 0).length;
+  const tabs = [
+    { key: "top", label: `Most popular in ${name}`, rows: birthdayRows(characters, 8) },
+    ...signs.filter((s) => s.chars.length >= 2).map((s) => ({ key: s.sign, label: `${s.sign} (${name.slice(0, 3)} ${s.from}–${s.to})`, rows: birthdayRows(s.chars, 7) })),
+  ].filter((t) => t.rows.length >= 2);
   const Face = ({ c, size = "sm" }: { c: BdChar; size?: "sm" | "lg" }) => {
     const body = (
       <>
@@ -82,15 +96,50 @@ export default async function BirthdayMonth({ params }: Props) {
         hue={330}
         posters={characters.slice(0, 3).map((c) => c.i)}
       />
+      <SectionNav sections={[
+        { id: "top", label: "Most popular" },
+        ...(stats ? [{ id: "glance", label: "At a glance" }] : []),
+        ...(tabs.length ? [{ id: "compare", label: "Compare" }] : []),
+        { id: "days", label: "Day by day" },
+        ...signs.filter((s) => s.chars.length >= 4).map((s) => ({ id: `sign-${s.sign}`, label: s.sign })),
+        ...(series.length ? [{ id: "series", label: "By series" }] : []),
+        ...(people.length ? [{ id: "voices", label: "Voice actors" }] : []),
+      ]} />
 
-      <section className="reveal mt-10" aria-labelledby="top-h">
+      <section id="top" data-section className="reveal pt-10" aria-labelledby="top-h">
         <h2 id="top-h" className="h-section mb-3">Most popular {name} birthdays</h2>
         <ul className="grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-6">
           {characters.slice(0, 12).map((c) => <li key={c.id}><Face c={c} size="lg" /></li>)}
         </ul>
       </section>
 
-      <section className="reveal mt-12" aria-labelledby="days-h">
+      {stats && (
+        <section id="glance" data-section className="reveal pt-10" aria-labelledby="glance-h">
+          <h2 id="glance-h" className="h-section mb-1">{name} birthdays at a glance</h2>
+          <p className="mb-4 max-w-3xl text-sm leading-6 text-muted">{statsLine(name, stats)} The busiest day is {bdLabel(m, busiest.d)}, with {busiest.n} birthdays{quiet ? `; ${quiet} day${quiet === 1 ? " has" : "s have"} none on record` : ""}.</p>
+          <StatTiles stats={[
+            { label: "Characters born", value: String(characters.length), sub: `from ${stats.series} anime` },
+            { label: "Busiest day", value: bdLabel(m, busiest.d), sub: `${busiest.n} birthdays`, still: true },
+            { label: "Voice actors born", value: String(people.length), sub: `in ${name}` },
+            ...(stats.tallest ? [{ label: "Tallest", value: `${stats.tallest.heightCm} cm`, sub: stats.tallest.name, still: true }] : []),
+          ]} />
+          <div className="mt-4 grid gap-4 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]">
+            <BarChart integer title={`Birthdays on each day of ${name}`} subtitle="Popular characters born on each date; open a day for everyone born on it" valueHeading="Characters" height={170}
+              data={perDay.map((x) => ({ key: String(x.d), label: String(x.d), value: x.n, display: `${x.n} on ${bdLabel(m, x.d)}`, href: bdPath(m, x.d) }))} highlightKey={String(busiest.d)} labelKeys={[String(busiest.d)]} />
+            <StackedBar title={`${name}'s zodiac signs`} subtitle="Characters born under each sign this month" unit="characters" segments={signs.map((s) => ({ key: s.sign, label: `${s.sign} (${s.from}–${s.to})`, value: s.chars.length }))} />
+          </div>
+        </section>
+      )}
+
+      {tabs.length > 0 && (
+        <section id="compare" data-section className="reveal pt-10" aria-labelledby="cmp-h">
+          <h2 id="cmp-h" className="h-section mb-1">Compare {name}&apos;s most popular characters</h2>
+          <p className="mb-3 text-sm text-muted">Popularity, age, height, blood type and voices side by side, for the month or for each zodiac sign. Tap names to leave them out, and sort.</p>
+          <CharacterCompare tabs={tabs} />
+        </section>
+      )}
+
+      <section id="days" data-section className="reveal pt-10" aria-labelledby="days-h">
         <h2 id="days-h" className="h-section mb-3">{name}, day by day</h2>
         <ol className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {Array.from({ length: DAYS_IN[m - 1] }, (_, i) => i + 1).map((d) => {
@@ -114,15 +163,15 @@ export default async function BirthdayMonth({ params }: Props) {
       </section>
 
       {signs.map((s) => s.chars.length >= 4 && (
-        <section key={s.sign} className="reveal mt-12" aria-labelledby={`sign-${s.sign}`}>
-          <h2 id={`sign-${s.sign}`} className="h-section mb-1">{s.sign} anime characters born in {name}</h2>
+        <section key={s.sign} id={`sign-${s.sign}`} data-section className="reveal pt-10" aria-labelledby={`sign-${s.sign}-h`}>
+          <h2 id={`sign-${s.sign}-h`} className="h-section mb-1">{s.sign} anime characters born in {name}</h2>
           <p className="mb-3 text-sm text-muted">{name} {s.from}–{s.to}. {s.chars.length} popular characters.</p>
           <ul className="grid grid-cols-3 gap-3 sm:grid-cols-6 lg:grid-cols-8">{s.chars.slice(0, 16).map((c) => <li key={c.id}><Face c={c} /></li>)}</ul>
         </section>
       ))}
 
       {series.length > 0 && (
-        <section className="reveal mt-12" aria-labelledby="series-h">
+        <section id="series" data-section className="reveal pt-10" aria-labelledby="series-h">
           <h2 id="series-h" className="h-section mb-1">{name} birthdays by series</h2>
           <p className="mb-3 text-sm text-muted">Shows with two or more popular characters born in {name}.</p>
           <div className="grid gap-3 md:grid-cols-2">
@@ -139,7 +188,7 @@ export default async function BirthdayMonth({ params }: Props) {
       )}
 
       {people.length > 0 && (
-        <section className="reveal mt-12" aria-labelledby="va-h">
+        <section id="voices" data-section className="reveal pt-10" aria-labelledby="va-h">
           <h2 id="va-h" className="h-section mb-3">Voice actors born in {name}</h2>
           <ul className="flex flex-wrap gap-2">
             {people.slice(0, 40).map((p) => <li key={p.id}><Link href={vaPath({ id: p.id, name: p.n })} className="chip">{p.n} · {bdLabel(p.m, p.d)}</Link></li>)}
@@ -160,6 +209,8 @@ export default async function BirthdayMonth({ params }: Props) {
         title={`${name} anime birthdays FAQ`}
         items={[
           { q: `Which anime characters have a birthday in ${name}?`, a: `${characters.slice(0, 10).map((c) => `${c.n} (${bdLabel(c.m, c.d)})`).join(", ")}${characters.length > 10 ? `, and ${characters.length - 10} more listed on this page` : ""}.` },
+          { q: `Which day in ${name} has the most anime birthdays?`, a: `${bdLabel(m, busiest.d)}, with ${busiest.n}: ${characters.filter((c) => c.d === busiest.d).slice(0, 5).map((c) => c.n).join(", ")}${busiest.n > 5 ? " and more" : ""}.` },
+          ...(stats?.tallest ? [{ q: `Who is the tallest anime character born in ${name}?`, a: `${stats.tallest.name} from ${stats.tallest.series}, at ${stats.tallest.heightCm} cm${stats.shortest ? `; the shortest is ${stats.shortest.name} at ${stats.shortest.heightCm} cm` : ""}.` }] : []),
           ...(characters[0] ? [{ q: `Who is the most popular anime character born in ${name}?`, a: `${characters[0].n} from ${characters[0].t}, born on ${bdLabel(characters[0].m, characters[0].d)}.` }] : []),
           ...series.slice(0, 3).map((g) => ({ q: `Which ${g.title} characters are born in ${name}?`, a: `${g.chars.map((c) => `${c.n} (${bdLabel(c.m, c.d)})`).join(", ")}.` })),
           ...signs.filter((s) => s.chars.length).map((s) => ({ q: `Which anime characters born in ${name} are ${s.sign}?`, a: `Characters born ${name} ${s.from}–${s.to} are ${s.sign}, including ${s.chars.slice(0, 5).map((c) => c.n).join(", ")}.` })),

@@ -20,7 +20,7 @@ import LeadForm from "./LeadForm";
 import { dbEnabled } from "@/lib/db";
 import SectionNav, { type NavSection } from "@/components/fx/SectionNav";
 import CharacterCompare from "@/components/CharacterCompare";
-import { birthdayRows, birthdayStats, statsLine } from "@/lib/bdstats";
+import { birthdayRows, birthdayStats, statsLine, shortAge } from "@/lib/bdstats";
 
 /** First two sentences of a bio, for the "who they are" cards. */
 const lead = (t: string) => (t.match(/[^.!?]+[.!?]+(\s|$)/g) ?? [t]).slice(0, 2).join("").trim();
@@ -143,7 +143,7 @@ export default async function BirthdayView({ m, d, characters, people, today = f
             <dl className="grid grid-cols-2 gap-x-4 gap-y-4 text-sm sm:grid-cols-4">
               <div><dt className="text-xs text-muted">Characters</dt><dd className="text-lg font-bold text-ink">{stats.count}</dd><dd className="text-xs text-muted">from {stats.series} anime</dd></div>
               {stats.main + stats.supporting > 0 && <div><dt className="text-xs text-muted">Main · supporting</dt><dd className="text-lg font-bold text-ink">{stats.main} · {stats.supporting}</dd><dd className="text-xs text-muted">{stats.female} female, {stats.male} male</dd></div>}
-              {stats.oldest && <div><dt className="text-xs text-muted">Oldest</dt><dd className="font-semibold text-ink">{stats.oldest.href ? <Link href={stats.oldest.href} className="hover:text-violet-2">{stats.oldest.name}</Link> : stats.oldest.name}</dd><dd className="text-xs text-muted">Age {stats.oldest.age}{stats.youngest ? ` · youngest ${stats.youngest.name} (${stats.youngest.age})` : ""}</dd></div>}
+              {stats.oldest && <div><dt className="text-xs text-muted">Oldest</dt><dd className="font-semibold text-ink">{stats.oldest.href ? <Link href={stats.oldest.href} className="hover:text-violet-2">{stats.oldest.name}</Link> : stats.oldest.name}</dd><dd className="text-xs text-muted">Age {shortAge(stats.oldest.age)}{stats.youngest ? ` · youngest ${stats.youngest.name} (${shortAge(stats.youngest.age)})` : ""}</dd></div>}
               {stats.tallest && <div><dt className="text-xs text-muted">Tallest</dt><dd className="font-semibold text-ink">{stats.tallest.href ? <Link href={stats.tallest.href} className="hover:text-violet-2">{stats.tallest.name}</Link> : stats.tallest.name}</dd><dd className="text-xs text-muted">{stats.tallest.heightCm} cm{stats.shortest ? ` · shortest ${stats.shortest.name} (${stats.shortest.heightCm} cm)` : ""}</dd></div>}
             </dl>
             <p className="mt-4 text-sm leading-6 text-ink/90">{statsLine(label, stats)}</p>
@@ -321,7 +321,7 @@ export default async function BirthdayView({ m, d, characters, people, today = f
         { q: `Which anime characters have a birthday on ${label}?`, a: characters.length ? `${characters.slice(0, 8).map((c) => `${c.n} (${c.t})`).join(", ")}${characters.length > 8 ? `, and ${characters.length - 8} more` : ""}.` : `None of the most popular characters on record were born on ${label}.` },
         ...(top ? [{ q: `Who is the most popular anime character born on ${label}?`, a: `${top.n} from ${top.t}, with ${top.f.toLocaleString()} fans on AniList${topSnap?.jp ? `. In Japanese, ${top.n} is voiced by ${topSnap.jp.n}` : ""}.` }] : []),
         { q: `What zodiac sign are anime characters born on ${label}?`, a: `${sign.name} (${sign.symbol}).${otherSign.length ? ` Other well-known ${sign.name} characters include ${otherSign.slice(0, 3).map((c) => c.n).join(", ")}.` : ""}` },
-        ...(stats?.oldest ? [{ q: `Who is the oldest anime character born on ${label}?`, a: `${stats.oldest.name} from ${stats.oldest.series}, at ${stats.oldest.age}${stats.youngest ? `. The youngest is ${stats.youngest.name} (${stats.youngest.age})` : ""}.` }] : []),
+        ...(stats?.oldest ? [{ q: `Who is the oldest anime character born on ${label}?`, a: `${stats.oldest.name} from ${stats.oldest.series}, at ${shortAge(stats.oldest.age)}${stats.youngest ? `. The youngest is ${stats.youngest.name} (${shortAge(stats.youngest.age)})` : ""}.` }] : []),
         ...(stats?.tallest ? [{ q: `Who is the tallest anime character born on ${label}?`, a: `${stats.tallest.name} from ${stats.tallest.series}, at ${stats.tallest.heightCm} cm${stats.shortest ? `. The shortest is ${stats.shortest.name} at ${stats.shortest.heightCm} cm` : ""}.` }] : []),
         ...(people.length ? [{ q: `Which voice actors were born on ${label}?`, a: `${people.slice(0, 6).map((p) => p.n).join(", ")}.` }] : []),
         ...(firsts.length ? [{ q: `Which anime premiered on ${label}?`, a: `${firsts.slice(0, 5).map((p) => `${p.anime!.title} (${p.year})`).join(", ")}.` }] : []),

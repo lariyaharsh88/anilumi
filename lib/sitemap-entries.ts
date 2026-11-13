@@ -80,7 +80,7 @@ export async function sitemapEntries(): Promise<MetadataRoute.Sitemap> {
     { url: abs("/anime-birthday-twin"), lastModified: at(D.birthdays, D.charLines), changeFrequency: "monthly", priority: 0.6 },
     // Hindi voice artists: listed once researched (the hub 404s while the data file is empty).
     ...(hindiArtists().length ? [{ url: abs("/hindi-voice-artists"), lastModified: at(D.hindiVoices), changeFrequency: "monthly" as const, priority: 0.6 }, ...hindiArtists().map((a) => ({ url: abs(hindiArtistPath(a)), lastModified: at(D.hindiVoices), changeFrequency: "monthly" as const, priority: 0.5 }))] : []),
-    ...Array.from({ length: 12 }, (_, i) => ({ url: abs(monthPath(i + 1)), lastModified: at(D.birthdays, D.charLines), changeFrequency: "monthly" as const, priority: 0.6 })),
+    ...Array.from({ length: 12 }, (_, i) => ({ url: abs(monthPath(i + 1)), lastModified: at(D.birthdays, D.charLines, BIRTHDAY_PAGES_UPDATED), changeFrequency: "monthly" as const, priority: 0.6 })),
     { url: abs("/on-this-day"), lastModified: now, changeFrequency: "daily", priority: 0.7 },
     // Only indexed character pages (lib/indexing.ts): those with verified notes plus any Google already shows.
     ...[...new Set([...notedCharacters(), ...searchShownPaths("/character/").map((p) => p.slice("/character/".length))])]

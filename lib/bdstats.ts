@@ -46,13 +46,16 @@ const split = (a: number, aw: string, b: number, bw: string) => {
   return p.length ? `${p.join(" and ")[0].toUpperCase()}${p.join(" and ").slice(1)}.` : "";
 };
 
+/** "12-17 (Naruto), 27- (Boruto)" → "12-17": the first age, for sentences (the comparison table keeps all of it). */
+export const shortAge = (age: string | null) => (age ?? "").split(/\s*[(,;]/)[0].replace(/[-–]$/, "+").trim();
+
 /** One paragraph of the date's numbers, for the "at a glance" section. */
 export function statsLine(label: string, s: BdStats): string {
   const parts = [
     `${s.count} well-known anime characters share the ${label} birthday${s.series > 1 ? `, from ${s.series} different anime` : ""}, with ${s.fans.toLocaleString("en-US")} AniList favourites between them.`,
     split(s.main, "main character", s.supporting, "supporting character"),
     split(s.female, "female character", s.male, "male character"),
-    s.oldest ? `The oldest is ${s.oldest.name} (${s.oldest.age})${s.youngest ? ` and the youngest ${s.youngest.name} (${s.youngest.age})` : ""}.` : "",
+    s.oldest ? `The oldest is ${s.oldest.name} (${shortAge(s.oldest.age)})${s.youngest ? ` and the youngest ${s.youngest.name} (${shortAge(s.youngest.age)})` : ""}.` : "",
     s.tallest ? `${s.tallest.name} is the tallest at ${s.tallest.heightCm} cm${s.shortest ? `, ${s.shortest.name} the shortest at ${s.shortest.heightCm} cm` : ""}.` : "",
     s.blood ? `Blood type ${s.blood.type} is the most common, shared by ${s.blood.names.slice(0, 3).join(", ")}${s.blood.names.length > 3 ? ` and ${s.blood.names.length - 3} more` : ""}.` : "",
   ];

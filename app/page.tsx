@@ -13,7 +13,8 @@ import NewsList from "@/components/NewsList";
 import { getNews } from "@/lib/news";
 import { getQuoteOfDay } from "@/lib/quote";
 import { premieresOn, animeOfTheDay, nowJst, otdPath } from "@/lib/onthisday";
-import { bdPath } from "@/lib/birthdays";
+import { bdPath, bdLabel, birthdaysOn, monthPath, MONTHS } from "@/lib/birthdays";
+import { characterPathFor } from "@/lib/charsnap";
 import Image from "next/image";
 import PollCard from "@/components/PollCard";
 import { currentPoll } from "@/data/polls";
@@ -201,6 +202,31 @@ export default async function Home() {
           )}
         </section>
       )}
+      {(() => {
+        // Birthdays bring most of the search clicks: a daily strip links today's date page from the home page.
+        const born = birthdaysOn(jst.m, jst.d).characters;
+        return born.length > 0 && (
+          <section className="reveal card mt-6 p-4 sm:p-5" aria-labelledby="born-today-h">
+            <div className="flex flex-wrap items-baseline justify-between gap-2">
+              <h2 id="born-today-h" className="text-xs font-semibold uppercase tracking-wider text-accent-2">🎂 Born today, {bdLabel(jst.m, jst.d)}</h2>
+              <span className="flex gap-3 text-sm"><Link href="/birthdays" className="font-medium text-violet hover:text-violet-2">All {born.length} →</Link><Link href={monthPath(jst.m)} className="text-muted hover:text-ink">{cap(MONTHS[jst.m - 1])} birthdays</Link></span>
+            </div>
+            <ul className="mt-3 flex gap-4 overflow-x-auto pb-1 [scrollbar-width:none]">
+              {born.slice(0, 10).map((c) => {
+                const href = characterPathFor(c.id) ?? (c.s ? animePath({ slug: c.s }) : bdPath(jst.m, jst.d));
+                return (
+                  <li key={c.id} className="w-16 shrink-0 text-center">
+                    <Link href={href} className="group block">
+                      <span className="relative mx-auto block h-14 w-14 overflow-hidden rounded-full border border-line bg-bg-2">{c.i && <Image src={c.i} alt={c.n} fill sizes="56px" className="object-cover object-top" />}</span>
+                      <span className="mt-1 block truncate text-[11px] font-medium text-ink group-hover:text-violet-2">{c.n}</span>
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </section>
+        );
+      })()}
       {dbEnabled() && currentPoll(new Date().toISOString().slice(0, 10)) && <div className="mt-12"><PollCard poll={currentPoll(new Date().toISOString().slice(0, 10))!} /></div>}
       <AnimeRail title="Top rated of all time" href="/top/rated" items={topRated.items} rank />
       {quote && (
