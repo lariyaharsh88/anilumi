@@ -28,7 +28,7 @@ jobs:
           echo "::warning::anilumi.in still reports ${live:-nothing} after 45 minutes; check Workers Builds"; exit 1
       - name: Start the warm-up and tell search engines about the new sitemap
         run: |
-          gh workflow run warm-cache.yml --repo "$GITHUB_REPOSITORY"
+          gh workflow run warm-cache.yml --repo "$GITHUB_REPOSITORY" -f full=true
           gh workflow run sitemap.yml --repo "$GITHUB_REPOSITORY"
         env:
           GH_TOKEN: ${{ github.token }}

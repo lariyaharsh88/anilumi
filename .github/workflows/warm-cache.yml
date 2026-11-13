@@ -1,12 +1,19 @@
 name: Warm cache
 # Builds every sitemap page through anilumi.in (scripts/warm-cache.mjs) so visitors and Google get cached pages,
 # never a first-time render. Each app deploy starts a fresh page cache: a Workers Builds deploy (via
-# .github/workflows/after-deploy.yml) or a manual `npm run deploy` triggers this when it finishes. Every 6 hours as well, for pages whose cache expired.
+# .github/workflows/after-deploy.yml) or a manual `npm run deploy` triggers this with full=true when it finishes.
+# Every 6 hours as well, but only for the top pages (Search Console's ~800, home, birthdays): the long tail renders
+# when someone actually asks for it.
 # The edge Worker's Cloudflare cron also starts this on time (edge/schedule.js); the schedule below is the backup.
 on:
   schedule:
     - cron: "41 */6 * * *"
   workflow_dispatch:
+    inputs:
+      full:
+        description: "Every sitemap page (after a release), not just the top pages"
+        type: boolean
+        default: false
 concurrency:
   group: warm-cache
   cancel-in-progress: true # a newer deploy supersedes a pass that is still running
@@ -19,5 +26,5 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: Warm every page
-        run: CONC=3 GAP=1 node scripts/warm-cache.mjs https://anilumi.in
+      - name: Warm pages
+        run: SCOPE=${{ inputs.full && 'all' || 'top' }} CONC=3 GAP=1 node scripts/warm-cache.mjs https://anilumi.in

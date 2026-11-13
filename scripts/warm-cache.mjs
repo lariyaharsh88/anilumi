@@ -3,13 +3,17 @@
 // Order: pages Google already shows most (data/warm-priority.json, from a Search Console export), today's and the
 // coming days' birthday pages, then the sitemap by priority. CONC pages at a time; a page that was already cached
 // costs no render, so a full pass over a warm site takes minutes. Runs from .github/workflows/warm-cache.yml.
-// Usage: node scripts/warm-cache.mjs [baseUrl]   (env: LIMIT=all CONC=3 GAP=1)
+// SCOPE=top (the 6-hourly pass) stops after those first pages: warming the whole long tail every 6 hours re-rendered
+// ~2,000 pages nobody had asked for each time their cache expired, which cost more Worker CPU than visitors did.
+// A full pass (SCOPE=all) runs after each release, when every page's cache starts empty.
+// Usage: node scripts/warm-cache.mjs [baseUrl]   (env: SCOPE=all|top LIMIT=all CONC=3 GAP=1)
 import { readFileSync } from "node:fs";
 
 const base = (process.argv[2] || "https://anilumi.in").replace(/\/$/, "");
 const LIMIT = Number(process.env.LIMIT) || Infinity;
 const CONC = Number(process.env.CONC) || 3;
 const GAP = (Number(process.env.GAP) || 1) * 1000;
+const TOP_ONLY = process.env.SCOPE === "top";
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 let priority = [];
@@ -34,7 +38,7 @@ const bySitemap = [...xml.matchAll(/<url>([\s\S]*?)<\/url>/g)]
   .filter((u) => u.loc)
   .sort((a, b) => b.p - a.p)
   .map((u) => { const x = new URL(u.loc); return x.pathname + x.search; }); // sitemap lists anilumi.in; base may be the origin
-const urls = [...new Set(["/", "/birthdays", ...days, ...priority, ...bySitemap])].slice(0, LIMIT).map((p) => base + p);
+const urls = [...new Set(["/", "/birthdays", ...days, ...priority, ...(TOP_ONLY ? [] : bySitemap)])].slice(0, LIMIT).map((p) => base + p);
 
 const tally = { cached: 0, built: 0, failed: 0 };
 const slow = [];
