@@ -20,12 +20,19 @@ import seriesChars from "@/data/series-characters.json";
 import themes from "@/data/themes.json";
 import vas from "@/data/voice-actors.json";
 import woSnap from "@/data/watch-order-snap.json";
+import summaries from "@/data/summaries.json";
+import charNotes from "@/data/character-notes.json";
+import vaNotes from "@/data/va-notes.json";
+import charLines from "@/data/character-lines.json";
+import sequelNews from "@/data/sequel-news.json";
+import seasonDubs from "@/data/season-dubs.json";
+import hindiVoices from "@/data/hindi-voice-artists.json";
 
 /**
  * The last release that changed most pages' content (templates, new sections). Bump it with such a release;
  * no page claims an older change than this.
  */
-export const SITE_UPDATED = "2026-11-04";
+export const SITE_UPDATED = "2026-11-11"; // 11 Nov: verdicts, character/VA sections, capped descriptions
 
 /** Info pages, by the date their text last changed. */
 export const STATIC_UPDATED: Record<string, string> = {
@@ -39,6 +46,8 @@ export const DATA_DATES = {
   casts: g(casts).generated, characters: g(characters).generated, franchises: g(franchises).generated, dubs: g(dubs).checked,
   manga: g(manga).checked, seriesCharacters: g(seriesChars).generated, themes: g(themes).generated, voiceActors: g(vas).generated,
   watchOrders: g(woSnap).generated, streams: g(streams).checked, dubSchedule: g(dubSchedule).checked,
+  summaries: g(summaries).checked, charNotes: g(charNotes).checked, vaNotes: g(vaNotes).checked, charLines: g(charLines).checked,
+  sequelNews: g(sequelNews).checked, seasonDubs: g(seasonDubs).checked, hindiVoices: g(hindiVoices).checked,
 };
 
 const toTime = (d: string | Date | null | undefined) => (d ? (d instanceof Date ? d.getTime() : Date.parse(d.length === 10 ? `${d}T00:00:00Z` : d)) : NaN);

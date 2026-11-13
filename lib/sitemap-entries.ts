@@ -10,6 +10,7 @@ import { allDays, birthdaysOn, bdPath, monthPath } from "@/lib/birthdays";
 import { fillerSlugs, continuationSlugs } from "@/lib/filler";
 import { characterTableSlugs, BLOOD_TYPES } from "@/lib/charsnap";
 import { hindiArtists, hindiArtistPath } from "@/lib/hindivoices";
+import { summaryFor } from "@/lib/summaries";
 import { hasSnapshotCast } from "@/lib/castsnap";
 import { hasSnapshotThemes } from "@/lib/themes";
 import { airing as airingSnapshot, upcomingOf } from "@/lib/airing";
@@ -76,20 +77,20 @@ export async function sitemapEntries(): Promise<MetadataRoute.Sitemap> {
     { url: abs("/quiz"), lastModified: at(), changeFrequency: "monthly", priority: 0.6 },
     { url: abs("/random-anime-generator"), lastModified: at(D.anilist), changeFrequency: "monthly", priority: 0.6 },
     { url: abs("/birthdays"), lastModified: now, changeFrequency: "daily", priority: 0.7 },
-    { url: abs("/anime-birthday-twin"), lastModified: at(D.birthdays), changeFrequency: "monthly", priority: 0.6 },
+    { url: abs("/anime-birthday-twin"), lastModified: at(D.birthdays, D.charLines), changeFrequency: "monthly", priority: 0.6 },
     // Hindi voice artists: listed once researched (the hub 404s while the data file is empty).
-    ...(hindiArtists().length ? [{ url: abs("/hindi-voice-artists"), lastModified: now, changeFrequency: "monthly" as const, priority: 0.6 }, ...hindiArtists().map((a) => ({ url: abs(hindiArtistPath(a)), lastModified: now, changeFrequency: "monthly" as const, priority: 0.5 }))] : []),
-    ...Array.from({ length: 12 }, (_, i) => ({ url: abs(monthPath(i + 1)), lastModified: at(D.birthdays), changeFrequency: "monthly" as const, priority: 0.6 })),
+    ...(hindiArtists().length ? [{ url: abs("/hindi-voice-artists"), lastModified: at(D.hindiVoices), changeFrequency: "monthly" as const, priority: 0.6 }, ...hindiArtists().map((a) => ({ url: abs(hindiArtistPath(a)), lastModified: at(D.hindiVoices), changeFrequency: "monthly" as const, priority: 0.5 }))] : []),
+    ...Array.from({ length: 12 }, (_, i) => ({ url: abs(monthPath(i + 1)), lastModified: at(D.birthdays, D.charLines), changeFrequency: "monthly" as const, priority: 0.6 })),
     { url: abs("/on-this-day"), lastModified: now, changeFrequency: "daily", priority: 0.7 },
     // Only indexed character pages (lib/indexing.ts): those with verified notes plus any Google already shows.
     ...[...new Set([...notedCharacters(), ...searchShownPaths("/character/").map((p) => p.slice("/character/".length))])]
-      .map((s, i) => ({ url: abs(`/character/${s}`), lastModified: at(D.characters), changeFrequency: "monthly" as const, priority: i < 100 ? 0.6 : 0.4 })),
+      .map((s, i) => ({ url: abs(`/character/${s}`), lastModified: at(D.characters, D.charNotes), changeFrequency: "monthly" as const, priority: i < 100 ? 0.6 : 0.4 })),
     ...characterTableSlugs().filter(characterTableIndexed).map((s) => ({ url: abs(`/anime/${s}/characters`), lastModified: at(D.seriesCharacters), changeFrequency: "monthly" as const, priority: 0.5 })),
     { url: abs("/hype"), lastModified: now, changeFrequency: "daily", priority: 0.6 },
     { ...info("/advertise"), changeFrequency: "monthly", priority: 0.3 },
     { ...info("/contact"), changeFrequency: "yearly", priority: 0.3 },
     { ...info("/privacy"), changeFrequency: "yearly", priority: 0.2 },
-    ...allDays().filter(({ m, d }) => birthdaysOn(m, d).characters.length).map(({ m, d }) => ({ url: abs(bdPath(m, d)), lastModified: at(D.birthdays), changeFrequency: "yearly" as const, priority: 0.4 })),
+    ...allDays().filter(({ m, d }) => birthdaysOn(m, d).characters.length).map(({ m, d }) => ({ url: abs(bdPath(m, d)), lastModified: at(D.birthdays, D.charLines), changeFrequency: "yearly" as const, priority: 0.4 })),
     // Query-string variants are disallowed in robots.txt, so only the plain URL is listed.
     { url: abs("/tonight"), lastModified: now, changeFrequency: "weekly", priority: 0.7 },
     ...Array.from({ length: now.getFullYear() - 1999 }, (_, i) => now.getFullYear() - i).filter((y) => bestYearIndexed(y, now)).map((y, i) => ({ url: abs(`/best/${y}`), lastModified: i === 0 ? now : monthly, changeFrequency: (i === 0 ? "daily" : "monthly") as "daily" | "monthly", priority: i < 3 ? 0.8 : 0.5 })),
@@ -101,7 +102,7 @@ export async function sitemapEntries(): Promise<MetadataRoute.Sitemap> {
   const s = seasonOf(now);
   for (let d = -8; d <= 2; d++) {
     const x = shiftSeason(s.season, s.year, d);
-    out.push({ url: abs(`/season/${x.year}/${x.season}`), lastModified: d >= -1 ? now : monthly, changeFrequency: d >= -1 ? "daily" : "monthly", priority: d >= -1 ? 0.8 : 0.5 });
+    out.push({ url: abs(`/season/${x.year}/${x.season}`), lastModified: d >= -1 ? now : at(D.seasonDubs), changeFrequency: d >= -1 ? "daily" : "monthly", priority: d >= -1 ? 0.8 : 0.5 });
     if (d >= 0) out.push({ url: abs(`/season/${x.year}/${x.season}/preview`), lastModified: now, changeFrequency: "daily", priority: 0.8 });
   }
   try {
@@ -138,7 +139,7 @@ export async function sitemapEntries(): Promise<MetadataRoute.Sitemap> {
       const released = a.status !== "upcoming" && a.status !== "tba" && a.status !== "unreleased";
       const series = a.subtype === "TV" || a.subtype === "ONA";
       const poster = posterUrl(a, "large");
-      out.push({ url: abs(animePath(a)), lastModified: a.status === "current" ? now : at(D.anilist, D.arcs, D.manga), changeFrequency: a.status === "current" ? "daily" : "weekly", priority: a.status === "current" ? 0.8 : 0.7, ...(poster ? { images: [poster] } : {}) });
+      out.push({ url: abs(animePath(a)), lastModified: a.status === "current" ? now : at(D.anilist, D.arcs, D.manga, summaryFor(a.slug) ? D.summaries : null), changeFrequency: a.status === "current" ? "daily" : "weekly", priority: a.status === "current" ? 0.8 : 0.7, ...(poster ? { images: [poster] } : {}) });
       if (n > 100) continue;
       // Popular series only: the page noindexes "no news" answers for less-followed titles (lib/indexing.ts).
       if (series && released && a.userCount >= NEXT_SEASON_MIN_MEMBERS) out.push({ url: abs(`${animePath(a)}/next-season`), lastModified: weekly, changeFrequency: "weekly", priority: 0.7 });
@@ -163,7 +164,7 @@ export async function sitemapEntries(): Promise<MetadataRoute.Sitemap> {
     const strongSimilar = await kitsuByAniListIds(strongSimilarIds()).catch(() => new Map<number, { slug: string }>());
     for (const s of new Set([...similarSlugs(), ...[...strongSimilar.values()].map((a) => a.slug)])) out.push({ url: abs(`/similar/${s}`), lastModified: at(D.anilist, D.aliases), changeFrequency: "monthly", priority: 0.5 });
     // Most-followed voice actors only (the hub's own cached request).
-    for (const [i, v] of (await popularVoiceActors()).entries()) if (voiceActorIndexed(vaPath(v), i)) out.push({ url: abs(vaPath(v)), lastModified: at(D.voiceActors), changeFrequency: "monthly", priority: 0.4 });
+    for (const [i, v] of (await popularVoiceActors()).entries()) if (voiceActorIndexed(vaPath(v), i)) out.push({ url: abs(vaPath(v)), lastModified: at(D.voiceActors, D.vaNotes), changeFrequency: "monthly", priority: 0.4 });
   } catch {
     /* upstream hiccup: ship the static part of the sitemap */
   }
