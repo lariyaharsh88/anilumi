@@ -17,8 +17,10 @@ export const FAMILY_CHECKED = D.checked;
 export function generationOf(relation: string): number {
   const r = relation.toLowerCase();
   if (/great[- ]?grand(father|mother|parent)|ancestor/.test(r)) return -3;
-  if (/grand(father|mother|parent)/.test(r)) return -2;
-  if (/grand(son|daughter|child)/.test(r)) return 2;
+  if (/great[- ]?grand(son|daughter|child)|descendant/.test(r)) return 3;
+  if (/grand(father|mother|parent)|great[- ]?(uncle|aunt)/.test(r)) return -2;
+  if (/grand(son|daughter|child)|great[- ]?(nephew|niece)/.test(r)) return 2;
+  if (/genetic source/.test(r)) return -1;
   if (/\b(son|daughter|child|children|nephew|niece)\b/.test(r)) return 1;
   if (/\b(father|mother|parent|dad|mom|uncle|aunt|guardian)\b/.test(r)) return -1;
   return 0;

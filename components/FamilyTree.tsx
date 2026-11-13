@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "@/components/Link";
 import { familyOf, type FamilyNode } from "@/lib/family";
 
-const GEN_LABEL: Record<number, string> = { [-3]: "Ancestors", [-2]: "Grandparents", [-1]: "Parents & elders", 0: "Same generation", 1: "Children", 2: "Grandchildren" };
+const GEN_LABEL: Record<number, string> = { [-3]: "Ancestors", [-2]: "Grandparents", [-1]: "Parents & elders", 0: "Same generation", 1: "Children", 2: "Grandchildren", 3: "Descendants" };
 
 const Node = ({ n, self = false }: { n: { name: string; relation: string; href: string | null; image: string | null; note?: string }; self?: boolean }) => {
   const initials = n.name.split(/\s+/).map((w) => w[0]).slice(0, 2).join("");
