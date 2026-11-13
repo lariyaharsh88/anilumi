@@ -42,12 +42,14 @@ function ttl(path) {
 }
 
 /**
- * The live build's commit, re-checked at most once a minute per Worker instance. It goes into page cache keys,
+ * The live build's commit, re-checked at most every 10 minutes per Worker instance (once a minute was ~100k app
+ * invocations a day, for a value that changes with a release every 2 days). It goes into page cache keys,
  * so a deploy starts a fresh cache by itself (old pages would point at JS chunks the new build no longer has).
  * Held in memory, not in the Cache API: the zone's cache rules override TTLs there (it stuck for a day). "0" if
  * unknown. Once known, the re-check runs in the background: Render can take seconds to answer, and no request,
  * cache hits included, should wait on it. Only a fresh instance waits, and at most 3 s.
  */
+const GEN_CHECK_MS = 10 * 60_000;
 let gen = { value: "0", at: 0 };
 let checking = null;
 function refreshGeneration() {
@@ -55,12 +57,12 @@ function refreshGeneration() {
     .then((r) => r.json())
     .then((j) => String(j.commit || "0").slice(0, 12))
     .catch(() => gen.value)
-    // An unknown build ("0") caches nothing, so retry it after 10 s rather than a minute.
-    .then((value) => { gen = { value, at: value === "0" ? Date.now() - 50_000 : Date.now() }; checking = null; return value; });
+    // An unknown build ("0") caches nothing, so retry it after 10 s rather than waiting the full interval.
+    .then((value) => { gen = { value, at: value === "0" ? Date.now() - GEN_CHECK_MS + 10_000 : Date.now() }; checking = null; return value; });
   return checking;
 }
 async function generation(ctx) {
-  if (Date.now() - gen.at < 60_000) return gen.value;
+  if (Date.now() - gen.at < GEN_CHECK_MS) return gen.value;
   if (gen.value === "0") return refreshGeneration();
   ctx.waitUntil(refreshGeneration());
   return gen.value;

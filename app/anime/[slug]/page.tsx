@@ -6,7 +6,7 @@ import { workType, workId, isoDuration } from "@/lib/ld";
 import Link from "@/components/Link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { publicGenres, getAnimeBySlug, getCharacters, getEpisodes, getEpisodesAt, listAnime, getRelations, getLastAiredBest, getProductions, buildWatchOrder, type LastAired, type WatchOrder, comparePath, franchiseRoot, airingNotice, episodePath, posterUrl, fmtDate, statusLabel, subtypeLabel, animePath, weekdayOf, runtimeMinutes, fmtMinutes, isFuture, Anime, airedOnly, type AiringNotice } from "@/lib/kitsu";
+import { publicGenres, getAnimeBySlug, getCharacters, getEpisodes, getEpisodesAt, listAnime, getRelations, getLastAiredBest, getProductions, buildWatchOrder, type LastAired, type WatchOrder, comparePath, COMPARE_MIN_MEMBERS, franchiseRoot, airingNotice, episodePath, posterUrl, fmtDate, statusLabel, subtypeLabel, animePath, weekdayOf, runtimeMinutes, fmtMinutes, isFuture, Anime, airedOnly, type AiringNotice } from "@/lib/kitsu";
 import { abs } from "@/lib/site";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import JsonLd from "@/components/JsonLd";
@@ -770,7 +770,9 @@ export default async function AnimePage({ params }: Props) {
           <section className="mt-14">
             <h2 className="h-section mb-3">Compare {a.title} with…</h2>
             <div className="flex flex-wrap gap-2">
-              {relatedItems.filter((o) => franchiseRoot(o.title) !== franchiseRoot(a.title)).slice(0, 5).map((o) => (
+              {/* Only pairs search engines may index (both titles widely watched; same genre by construction): links to
+                  the rest made crawlers render tens of thousands of noindex comparison pages. */}
+              {relatedItems.filter((o) => franchiseRoot(o.title) !== franchiseRoot(a.title) && a.userCount >= COMPARE_MIN_MEMBERS && o.userCount >= COMPARE_MIN_MEMBERS).slice(0, 5).map((o) => (
                 <Link key={o.id} href={comparePath(a, o)} className="chip">{a.title} vs {o.title}</Link>
               ))}
               <Link href="/compare" className="chip chip-active">Pick any anime →</Link>
