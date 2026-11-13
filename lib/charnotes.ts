@@ -11,6 +11,8 @@ export type CharacterNote = {
   debut: { anime: string | null; episode: number | null; episodeTitle: string | null; source: "manga" | "light novel" | null; chapter: number | null; volume: number | null } | null;
   arcs: string[]; affiliations: string[]; relatives: { name: string; relation: string }[];
   confidence: "high" | "medium"; sources: string[]; notes?: string;
+  /** Our own spoiler-free "Who is X?" (replaces the shared database biography, which is duplicate text). */
+  about?: string;
   /** Spoiler-free: what they can do as introduced. */
   abilities?: string | null;
   /** "Does X die?": shown only behind a spoiler toggle. */

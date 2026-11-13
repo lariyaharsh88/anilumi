@@ -91,6 +91,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { c, home, voiced, facts, fact, bio, aliases, nick } = await load(slug);
   // The checked name from the notes when there is one ("Monkey D. Luffy", not AniList's "Luffy Monkey D.").
   const name = characterNote(c.slug)?.name ?? c.name;
+  // Our own words first; the shared database biography only where we have none (those pages aren't indexed).
+  const about = characterNote(c.slug)?.about ?? bio;
   // Searchers want quick facts (age, height, birthday, voice actor), so the title and snippet lead with them.
   const what = factsTitle(facts.map((f) => f.key), Boolean(voiced?.jp));
   const brief = [fact("age") && `age ${fact("age")}`, fact("height") && `${fact("height")} tall`, fact("birthday") && `birthday ${fact("birthday")}`].filter(Boolean).join(", ");
@@ -108,7 +110,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       what.includes("Voice Actor") && `${name}: ${what.replace(/,? ?(& )?Voice Actor$/, "").replace(/, ([^,]+)$/, " & $1")}`,
       `${name}: Age, Birthday & More`,
     ]),
-    description: fitDescription(((lead ? `${lead} ` : "") + (bio ? bio.slice(0, 120).replace(/\s+\S*$/, "") + "…" : `Every anime ${name} appears in.`)).slice(0, 300)),
+    description: fitDescription(((lead ? `${lead} ` : "") + (about ? about.slice(0, 120).replace(/\s+\S*$/, "") + "…" : `Every anime ${name} appears in.`)).slice(0, 300)),
     alternates: { canonical: `/character/${c.slug}` },
     robots: robotsFor(characterIndexed(c.slug)),
   };
@@ -150,7 +152,7 @@ export default async function CharacterPage({ params }: Props) {
     name: c.name,
     alternateName: alternateName.length ? alternateName : undefined,
     image: c.image || undefined,
-    description: excerpt(bio, 300) || undefined,
+    description: note?.about ? excerpt(note.about, 300) : excerpt(bio, 300) || undefined,
     url: abs(`/character/${c.slug}`),
     mainEntityOfPage: abs(`/character/${c.slug}`),
     gender: gender && /^(male|female)$/i.test(gender) ? cap(gender.toLowerCase()) : undefined,
@@ -186,6 +188,13 @@ export default async function CharacterPage({ params }: Props) {
           {aliases.length > 0 && <p className="mt-2 text-sm text-muted">Also known as {aliases.map((x, i) => <span key={x}>{i ? ", " : ""}<strong className="font-semibold text-ink/85">{x}</strong></span>)}.</p>}
         </section>
       )}
+      {note?.about && (
+        <section className="card reveal mt-5 p-5 sm:p-6" aria-labelledby="bio-h">
+          <h2 id="bio-h" className="h-section mb-2">Who is {c.name}?</h2>
+          <p className="prose-anime">{note.about}</p>
+          <p className="mt-2 text-xs text-muted">Written by AniLumi, spoiler-free, checked against {note.sources.length} sources. <Link href="/how-we-check" className="underline">How we check</Link></p>
+        </section>
+      )}
       <div className="mt-5 grid gap-5 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.5fr)] lg:items-start">
         <section className="card reveal p-5" aria-labelledby="facts-h">
           <h2 id="facts-h" className="text-xs font-semibold uppercase tracking-wider text-muted">{c.name}: quick facts</h2>
@@ -219,11 +228,13 @@ export default async function CharacterPage({ params }: Props) {
           </p>
         </section>
         <CharacterNotes slug={c.slug} show={home ? { slug: home.slug, title: home.title } : null} />
+        {!note?.about && (
         <section className="card reveal p-5 sm:p-6" aria-labelledby="bio-h">
-          <h2 id="bio-h" className="h-section mb-2">Who is {c.name}?</h2>
-          <p className="prose-anime whitespace-pre-line">{excerpt(bio, 520) || "No biography has been written for this character yet."}</p>
-          {bio && <p className="mt-2 text-xs text-muted">Biography excerpt via <a href={home ? `https://kitsu.app/anime/${home.slug}/characters` : "https://kitsu.app"} target="_blank" rel="noopener nofollow" className="underline">Kitsu</a>.</p>}
-        </section>
+            <h2 id="bio-h" className="h-section mb-2">Who is {c.name}?</h2>
+            <p className="prose-anime whitespace-pre-line">{excerpt(bio, 520) || "No biography has been written for this character yet."}</p>
+            {bio && <p className="mt-2 text-xs text-muted">Biography excerpt via <a href={home ? `https://kitsu.app/anime/${home.slug}/characters` : "https://kitsu.app"} target="_blank" rel="noopener nofollow" className="underline">Kitsu</a>.</p>}
+          </section>
+        )}
       </div>
       {stats.length >= 2 && (
         <section className="reveal mt-10" aria-labelledby="numbers-h">
