@@ -14,8 +14,8 @@ export const otdPath = (m: number, d: number) => `/on-this-day/${MONTHS[m - 1]}/
 /** "%1028" for October 28. Pure. */
 export const dateLike = (m: number, d: number) => `%${String(m).padStart(2, "0")}${String(d).padStart(2, "0")}`;
 
-export type Premiere = { year: number; format: string; title: string; popularity: number; anime: Anime | null };
-type Raw = { id: number; title: { romaji: string; english: string | null }; startDate: { year: number | null }; format: string | null; popularity: number };
+export type Premiere = { year: number; day?: number; format: string; title: string; popularity: number; anime: Anime | null };
+type Raw = { id: number; title: { romaji: string; english: string | null }; startDate: { year: number | null; day?: number | null }; format: string | null; popularity: number };
 
 const FORMAT: Record<string, string> = { TV: "TV series", TV_SHORT: "TV short", MOVIE: "Movie", OVA: "OVA", ONA: "Web series", SPECIAL: "Special" };
 
@@ -25,13 +25,29 @@ export function toPremieres(rows: Raw[], kitsu: Map<number, Anime>, minPopularit
     .filter((r) => r.startDate.year && r.popularity >= minPopularity)
     // Belt and braces: the query already drops Ecchi; Kitsu R18 / nsfw flags catch anything mislabelled.
     .filter((r) => { const k = kitsu.get(r.id); return !k || (!k.nsfw && k.ageRating !== "R18"); })
-    .map((r) => ({ year: r.startDate.year!, format: FORMAT[r.format || ""] || "Anime", title: r.title.english || r.title.romaji, popularity: r.popularity, anime: kitsu.get(r.id) ?? null }));
+    .map((r) => ({ year: r.startDate.year!, ...(r.startDate.day ? { day: r.startDate.day } : {}), format: FORMAT[r.format || ""] || "Anime", title: r.title.english || r.title.romaji, popularity: r.popularity, anime: kitsu.get(r.id) ?? null }));
 }
 
 export async function premieresOn(m: number, d: number, limit = 24): Promise<Premiere[]> {
   const res = await anilist<{ Page: { media: Raw[] } }>(
     `query($d:String,$n:Int){Page(perPage:$n){media(type:ANIME,startDate_like:$d,sort:POPULARITY_DESC,isAdult:false,genre_not_in:["Ecchi","Hentai"]){id title{romaji english} startDate{year} format popularity}}}`,
     { d: dateLike(m, d), n: limit },
+    86400 * 7,
+  );
+  const rows = res?.Page.media ?? [];
+  if (!rows.length) return [];
+  const kitsu = await kitsuByAniListIds(rows.map((r) => r.id)).catch(() => new Map<number, Anime>());
+  return toPremieres(rows, kitsu);
+}
+
+/** "%10__" for October: any day of the month, any year (AniList start dates are YYYYMMDD). Pure. */
+export const monthLike = (m: number) => `%${String(m).padStart(2, "0")}__`;
+
+/** The most popular anime that premiered in a month, any year: one query for the whole month. */
+export async function premieresIn(m: number, limit = 16): Promise<Premiere[]> {
+  const res = await anilist<{ Page: { media: Raw[] } }>(
+    `query($d:String,$n:Int){Page(perPage:$n){media(type:ANIME,startDate_like:$d,sort:POPULARITY_DESC,isAdult:false,genre_not_in:["Ecchi","Hentai"]){id title{romaji english} startDate{year day} format popularity}}}`,
+    { d: monthLike(m), n: limit },
     86400 * 7,
   );
   const rows = res?.Page.media ?? [];

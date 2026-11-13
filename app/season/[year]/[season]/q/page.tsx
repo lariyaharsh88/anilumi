@@ -21,6 +21,7 @@ import BrowseFilter from "@/components/BrowseFilter";
 import Image from "next/image";
 import SectionNav from "@/components/fx/SectionNav";
 import { seasonNumbers } from "@/lib/seasonstats";
+import { seasonStreaming } from "@/lib/seasonstreams";
 import type { PreviewItem } from "@/lib/preview";
 
 const showName = (i: PreviewItem) => i.anime?.titleEn || i.title || i.anime?.title || "";
@@ -92,6 +93,9 @@ export default async function SeasonPage({ params, searchParams }: Props) {
   const preview = page === 1 ? previewSnapshot().seasons[`${year}-${season}`] ?? [] : [];
   const sn = preview.length >= 10 ? seasonNumbers(preview) : null;
   const nextPreview = previewSnapshot().seasons[`${next.year}-${next.season}`] ?? [];
+  const streams = sn ? await seasonStreaming(y, s).catch(() => null) : null;
+  const byAl = new Map(preview.map((i) => [i.id, i]));
+  const services = streams?.services.filter((x) => x.ids.length >= 2).slice(0, 8) ?? [];
   const label = `${cap(season)} ${year}`;
   const PosterCard = ({ i, badge }: { i: PreviewItem; badge?: string }) => {
     const body = (
@@ -140,6 +144,7 @@ export default async function SeasonPage({ params, searchParams }: Props) {
           { id: "glance", label: "At a glance" },
           ...(sn ? [{ id: "popular", label: "Most popular" }, { id: "days", label: "By air day" }, { id: "new-sequels", label: "New vs sequels" }] : []),
           { id: "dubs", label: "Dubs" },
+          ...(services.length ? [{ id: "streaming", label: "Where to stream" }] : []),
           ...(sn ? [{ id: "studios", label: "Studios & sources" }] : []),
           { id: "all", label: `All ${data.total}` },
           ...(nextPreview.length ? [{ id: "next", label: `${cap(next.season)} ${next.year}` }] : []),
@@ -251,6 +256,24 @@ export default async function SeasonPage({ params, searchParams }: Props) {
       })()}
 
       <AdSlot slot="season-top" />
+      {services.length > 0 && (
+        <section id="streaming" data-section className="reveal pt-10" aria-labelledby="stream-h">
+          <h2 id="stream-h" className="h-section mb-1">Where to stream {label} anime</h2>
+          <p className="mb-4 max-w-3xl text-sm text-muted">Official streaming services for the season&apos;s 50 most popular shows, from the links AniList lists. Which shows each service carries depends on your country; in India, see the <Link href="/hindi-dub" className="text-violet hover:underline">Hindi dub list</Link> and each show&apos;s page.</p>
+          <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.3fr)]">
+            <BarChart orientation="bar" integer title="Shows on each service" subtitle={`Of the ${streams!.byShow.size} most popular ${label} shows`} valueHeading="Shows" data={services.map((x) => ({ key: x.site, label: x.site, value: x.ids.length, display: `${x.ids.length} shows` }))} highlightKey={services[0].site} />
+            <div className="grid gap-3 sm:grid-cols-2">
+              {services.slice(0, 4).map((x) => (
+                <div key={x.site} className="card p-3.5">
+                  <h3 className="flex items-baseline justify-between font-semibold text-ink">{x.site}<span className="text-xs font-normal text-muted">{x.ids.length} shows</span></h3>
+                  <ul className="mt-2 space-y-1 text-sm">{x.ids.flatMap((id) => (byAl.get(id) ? [byAl.get(id)!] : [])).slice(0, 6).map((i) => <li key={i.id} className="truncate">{nameLink(i)}</li>)}</ul>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {sn && (
         <section id="studios" data-section className="reveal pt-10" aria-labelledby="st-h">
           <h2 id="st-h" className="h-section mb-4">{label} studios, sources and genres</h2>

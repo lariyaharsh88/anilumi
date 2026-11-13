@@ -20,6 +20,8 @@ import BarChart from "@/components/viz/BarChart";
 import StackedBar from "@/components/viz/StackedBar";
 import CharacterCompare from "@/components/CharacterCompare";
 import { birthdayRows, birthdayStats, statsLine } from "@/lib/bdstats";
+import { premieresIn, otdPath, type Premiere } from "@/lib/onthisday";
+import { posterUrl } from "@/lib/kitsu";
 
 // Every 6 hours, so the "Today" marker follows the date.
 export const revalidate = 21600;
@@ -63,6 +65,8 @@ export default async function BirthdayMonth({ params }: Props) {
     .sort((a, b) => b.chars.length - a.chars.length || a.title.localeCompare(b.title)).slice(0, 24);
   const prev = ((m + 10) % 12) + 1, next = (m % 12) + 1;
   const stats = birthdayStats(characters);
+  // AniList is cached for Cloudflare by the hourly sync: a miss leaves the section out until the cache fills.
+  const premieres = (await premieresIn(m, 16).catch((): Premiere[] => [])).filter((p) => p.anime).slice(0, 12);
   const perDay = Array.from({ length: DAYS_IN[m - 1] }, (_, i) => ({ d: i + 1, n: characters.filter((c) => c.d === i + 1).length }));
   const busiest = [...perDay].sort((a, b) => b.n - a.n || a.d - b.d)[0];
   const quiet = perDay.filter((x) => x.n === 0).length;
@@ -104,6 +108,7 @@ export default async function BirthdayMonth({ params }: Props) {
         ...signs.filter((s) => s.chars.length >= 4).map((s) => ({ id: `sign-${s.sign}`, label: s.sign })),
         ...(series.length ? [{ id: "series", label: "By series" }] : []),
         ...(people.length ? [{ id: "voices", label: "Voice actors" }] : []),
+        ...(premieres.length ? [{ id: "premieres", label: "Premieres" }] : []),
       ]} />
 
       <section id="top" data-section className="reveal pt-10" aria-labelledby="top-h">
@@ -196,6 +201,27 @@ export default async function BirthdayMonth({ params }: Props) {
         </section>
       )}
 
+      {premieres.length > 0 && (
+        <section id="premieres" data-section className="reveal pt-10" aria-labelledby="prem-h">
+          <h2 id="prem-h" className="h-section mb-1">Anime that premiered in {name}</h2>
+          <p className="mb-4 text-sm text-muted">The most popular anime whose first episode aired in {name}, in any year. Tap the date for everything that premiered that day.</p>
+          <ul className="grid grid-cols-3 gap-3 sm:grid-cols-4 lg:grid-cols-6">
+            {premieres.map((p) => (
+              <li key={p.anime!.id} className="min-w-0">
+                <Link href={animePath(p.anime!)} className="group block">
+                  <span className="relative block aspect-[5/7] overflow-hidden rounded-xl border border-line bg-bg-2">
+                    {posterUrl(p.anime!, "small") && <Image src={posterUrl(p.anime!, "small")!} alt={`${p.title} poster`} fill sizes="(max-width:640px) 30vw, 160px" className="object-cover transition duration-500 group-hover:scale-105" />}
+                    <span className="absolute left-1.5 top-1.5 rounded-full bg-black/70 px-1.5 py-0.5 text-[10px] font-bold text-white">{p.year}</span>
+                  </span>
+                  <span className="mt-1.5 line-clamp-2 text-sm font-semibold leading-snug text-ink group-hover:text-violet-2">{p.title}</span>
+                </Link>
+                <span className="block text-xs text-muted">{p.format}{p.day ? <> · <Link href={otdPath(m, p.day)} className="hover:text-violet-2">{name.slice(0, 3)} {p.day}</Link></> : null}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
       <nav className="mt-12 flex flex-wrap gap-2 text-sm" aria-label="Other months">
         <Link href={monthPath(prev)} className="chip">← {cap(MONTHS[prev - 1])}</Link>
         <Link href="/birthdays" className="chip">🎂 Birthdays today</Link>
@@ -209,6 +235,7 @@ export default async function BirthdayMonth({ params }: Props) {
         title={`${name} anime birthdays FAQ`}
         items={[
           { q: `Which anime characters have a birthday in ${name}?`, a: `${characters.slice(0, 10).map((c) => `${c.n} (${bdLabel(c.m, c.d)})`).join(", ")}${characters.length > 10 ? `, and ${characters.length - 10} more listed on this page` : ""}.` },
+          ...(premieres.length ? [{ q: `Which popular anime premiered in ${name}?`, a: `${premieres.slice(0, 6).map((p) => `${p.title} (${p.day ? `${name} ${p.day}, ` : ""}${p.year})`).join(", ")}.` }] : []),
           { q: `Which day in ${name} has the most anime birthdays?`, a: `${bdLabel(m, busiest.d)}, with ${busiest.n}: ${characters.filter((c) => c.d === busiest.d).slice(0, 5).map((c) => c.n).join(", ")}${busiest.n > 5 ? " and more" : ""}.` },
           ...(stats?.tallest ? [{ q: `Who is the tallest anime character born in ${name}?`, a: `${stats.tallest.name} from ${stats.tallest.series}, at ${stats.tallest.heightCm} cm${stats.shortest ? `; the shortest is ${stats.shortest.name} at ${stats.shortest.heightCm} cm` : ""}.` }] : []),
           ...(characters[0] ? [{ q: `Who is the most popular anime character born in ${name}?`, a: `${characters[0].n} from ${characters[0].t}, born on ${bdLabel(characters[0].m, characters[0].d)}.` }] : []),
