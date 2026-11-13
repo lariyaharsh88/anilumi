@@ -1,0 +1,296 @@
+{
+  "checked": "2026-11-14",
+  "platforms": {
+    "crunchyroll": {
+      "label": "Crunchyroll",
+      "free": false,
+      "plans": [
+        {
+          "name": "Fan",
+          "price": 99,
+          "period": "month",
+          "ads": false,
+          "quality": null,
+          "notes": "Ad-free, 1 stream. Price listed in the Crunchyroll iOS app's India store (checked 2026-11-14); same figure reported in Economic Times' Demon Slayer: Infinity Castle piece (2025, read via inkl syndication). Older ₹79 figure (2022 price) still repeated by some outlets.",
+          "sources": [
+            "https://apps.apple.com/in/app/crunchyroll/id329913454",
+            "https://www.inkl.com/news/want-to-watch-demon-slayer-infinity-castle-part-1-in-india-crunchyrolls-limited-time-plan-costs-almost-rs-1-a-day"
+          ]
+        },
+        {
+          "name": "Mega Fan",
+          "price": 119,
+          "period": "month",
+          "ads": false,
+          "quality": null,
+          "notes": "Ad-free, up to 4 streams, offline downloads. Same two sources as Fan.",
+          "sources": [
+            "https://apps.apple.com/in/app/crunchyroll/id329913454",
+            "https://www.inkl.com/news/want-to-watch-demon-slayer-infinity-castle-part-1-in-india-crunchyrolls-limited-time-plan-costs-almost-rs-1-a-day"
+          ]
+        },
+        {
+          "name": "Ultimate Fan",
+          "price": 299,
+          "period": "month",
+          "ads": false,
+          "quality": null,
+          "notes": "Includes Crunchyroll Manga; up to 6 devices. Outlook Respawn, 9 Oct 2026, plus iOS India store listing.",
+          "sources": [
+            "https://respawn.outlookindia.com/pop-culture/pop-culture-news/crunchyroll-manga-launches-in-india-with-250-titles",
+            "https://apps.apple.com/in/app/crunchyroll/id329913454"
+          ]
+        },
+        {
+          "name": "Ultimate Fan (annual)",
+          "price": 999,
+          "period": "year",
+          "ads": false,
+          "quality": null,
+          "notes": "Outlook Respawn, 9 Oct 2026, plus iOS India store listing.",
+          "sources": [
+            "https://respawn.outlookindia.com/pop-culture/pop-culture-news/crunchyroll-manga-launches-in-india-with-250-titles",
+            "https://apps.apple.com/in/app/crunchyroll/id329913454"
+          ]
+        }
+      ],
+      "hindiNote": "Hindi dubs are part of the regular catalogue on every paid tier; no specific tier is needed for Hindi audio. Not every title has a Hindi dub. The free ad-supported tier ended on 31 Dec 2025, so a paid plan is now required.",
+      "sources": [
+        "https://apps.apple.com/in/app/crunchyroll/id329913454",
+        "https://respawn.outlookindia.com/pop-culture/pop-culture-news/crunchyroll-manga-launches-in-india-with-250-titles",
+        "https://www.inkl.com/news/want-to-watch-demon-slayer-infinity-castle-part-1-in-india-crunchyrolls-limited-time-plan-costs-almost-rs-1-a-day",
+        "https://respawn.outlookindia.com/pop-culture/pop-culture-news/crunchyroll-ends-free-ad-tier-subscription-mandatory-by-2026"
+      ],
+      "confidence": "medium",
+      "notes": "crunchyroll.com pricing pages are client-rendered and geo-priced, so I could not read the web checkout price from outside India; the in-app (Apple) price may differ from the web price. Outlook Respawn (8 Dec 2025) still printed Fan ₹79 / Mega Fan ₹99, which conflicts with the figures above (looks like recycled 2022 pricing). Left out: annual Fan and annual Mega Fan. Sources disagree: Crunchyroll's Jan 2026 Comic Con press release says Mega Fan annual is 'typically ₹475', the iOS India store lists ₹569, and an X post lists ₹999 list price discounted to ₹569. Annual Fan figures (₹350/₹375/₹469) all come from promotions."
+    },
+    "netflix": {
+      "label": "Netflix",
+      "free": false,
+      "plans": [
+        {
+          "name": "Mobile",
+          "price": 149,
+          "period": "month",
+          "ads": false,
+          "quality": "480p",
+          "notes": "1 phone or tablet; no casting."
+        },
+        {
+          "name": "Basic",
+          "price": 199,
+          "period": "month",
+          "ads": false,
+          "quality": "720p",
+          "notes": "1 screen."
+        },
+        {
+          "name": "Standard",
+          "price": 499,
+          "period": "month",
+          "ads": false,
+          "quality": "1080p",
+          "notes": "2 screens."
+        },
+        {
+          "name": "Premium",
+          "price": 649,
+          "period": "month",
+          "ads": false,
+          "quality": "4K + HDR",
+          "notes": "4 screens, spatial audio."
+        }
+      ],
+      "hindiNote": "Hindi audio is per title and available on all plans.",
+      "sources": [
+        "https://help.netflix.com/en/node/24926/in",
+        "https://www.businesstoday.in/latest/corporate/story/netflix-cuts-prices-in-india-check-out-new-rates-315459-2021-12-14"
+      ],
+      "confidence": "high",
+      "notes": "Netflix's India help page, read 2026-11-14, lists these exact prices; it says taxes may apply. These prices have been unchanged since the Dec 2021 cut reported by Business Today. India has no ad-supported Netflix plan. Netflix prices India only monthly."
+    },
+    "prime-video": {
+      "label": "Prime Video",
+      "free": false,
+      "plans": [
+        {
+          "name": "Prime (monthly)",
+          "price": 299,
+          "period": "month",
+          "ads": true,
+          "quality": null,
+          "notes": "Full Prime membership. Since 17 Jun 2025, Prime Video shows limited ads unless you buy the ad-free add-on."
+        },
+        {
+          "name": "Prime (quarterly)",
+          "price": 599,
+          "period": "quarter",
+          "ads": true,
+          "quality": null,
+          "notes": "Full Prime membership."
+        },
+        {
+          "name": "Prime (annual)",
+          "price": 1499,
+          "period": "year",
+          "ads": true,
+          "quality": null,
+          "notes": "Full Prime membership."
+        },
+        {
+          "name": "Prime Lite",
+          "price": 799,
+          "period": "year",
+          "ads": true,
+          "quality": null,
+          "notes": "Annual only; all Prime Video content streams with ads."
+        }
+      ],
+      "hindiNote": "Hindi-dubbed anime is in the main Prime Video catalogue. Anime Times and Crunchyroll are paid add-on channels on top of Prime.",
+      "sources": [
+        "https://www.aboutamazon.in/news/retail/how-to-sign-up-for-a-prime-membership",
+        "https://press.aboutamazon.com/in/2026/5/amazon-prime-day-returns-to-india-this-july",
+        "https://telecomtalk.info/amazon-prime-subscription-hiked-again-in-india/698447",
+        "https://telecomtalk.info/amazon-prime-lite-gets-a-price-cut-in-india/909406"
+      ],
+      "confidence": "high",
+      "notes": "Amazon's own pages: aboutamazon.in (updated 9 Sep 2026) gives ₹299/month, ₹599/3 months and ₹1,499/year; the Amazon India press release of 1 May 2026 gives ₹1,499 Prime and ₹799 Prime Lite. Telecomtalk (Apr 2023 hike, Dec 2023 Lite cut) matches; both are older but confirmed by Amazon's 2026 pages. amazon.in/amazonprime returned 503, so I could not read the live checkout page. Prime Shopping Edition (₹399/yr) is left out because it has no Prime Video. Left out: the ad-free add-on (₹129/month or ₹699/year at its June 2025 launch per Business Standard, TechCrunch and afaqs; TechCrunch called it introductory), because no 2026 or Amazon source confirms the current price. Left out: the Anime Times channel, because the only sources are a Dec 2023 launch report (₹899/year, afaqs) and a June 2025 fan-site report (₹69/month after a ₹1 offer), with nothing from Amazon or from 2026. Temporary Prime Day 2026 offers (₹999 Prime, ₹599 Lite) are excluded."
+    },
+    "jiohotstar": {
+      "label": "JioHotstar",
+      "free": false,
+      "plans": [
+        {
+          "name": "Mobile",
+          "price": 79,
+          "period": "month",
+          "ads": true,
+          "quality": null,
+          "notes": "1 mobile device. Hollywood content is a separate add-on (₹49/mo, ₹129/qtr, ₹399/yr)."
+        },
+        {
+          "name": "Mobile",
+          "price": 149,
+          "period": "quarter",
+          "ads": true,
+          "quality": null,
+          "notes": "1 mobile device."
+        },
+        {
+          "name": "Mobile",
+          "price": 499,
+          "period": "year",
+          "ads": true,
+          "quality": null,
+          "notes": "1 mobile device."
+        },
+        {
+          "name": "Super",
+          "price": 149,
+          "period": "month",
+          "ads": true,
+          "quality": "1080p",
+          "notes": "2 devices incl. TV/web."
+        },
+        {
+          "name": "Super",
+          "price": 349,
+          "period": "quarter",
+          "ads": true,
+          "quality": "1080p",
+          "notes": "2 devices."
+        },
+        {
+          "name": "Super",
+          "price": 1099,
+          "period": "year",
+          "ads": true,
+          "quality": "1080p",
+          "notes": "2 devices."
+        },
+        {
+          "name": "Premium",
+          "price": 299,
+          "period": "month",
+          "ads": false,
+          "quality": "4K",
+          "notes": "4 devices. Ad-free except live sports and live shows."
+        },
+        {
+          "name": "Premium",
+          "price": 699,
+          "period": "quarter",
+          "ads": false,
+          "quality": "4K",
+          "notes": "4 devices. Ad-free except live sports and live shows."
+        },
+        {
+          "name": "Premium",
+          "price": 2199,
+          "period": "year",
+          "ads": false,
+          "quality": "4K",
+          "notes": "4 devices. Ad-free except live sports and live shows."
+        }
+      ],
+      "hindiNote": "Hindi-dubbed anime is in the main catalogue (JioHotstar has an anime hub), so any tier works. Super/Premium include everything; Mobile lacks only Hollywood titles.",
+      "sources": [
+        "https://cdn.jiostar.com/jiostar/wp-content/uploads/2026/01/JioHotstar-Introduces-Monthly-Plans.pdf",
+        "https://telecomtalk.info/jiohotstar-subscription-plans-2026-mobile-super-premium/1004394/",
+        "https://www.businesstoday.in/technology/news/story/jiohotstar-adds-rs-79-monthly-plan-raises-quarterly-and-annual-prices-511647-2026-01-20"
+      ],
+      "confidence": "high",
+      "notes": "Prices are from JioStar's own press release of 19 Jan 2026 (effective 28 Jan 2026, new subscribers) and match Telecomtalk (13 Feb 2026) and Business Today (20 Jan 2026). The quality figures (1080p Super, 4K Premium) come from Telecomtalk only. Existing subscribers on auto-renew keep their old prices. I found no later 2026 price change, but hotstar.com's plan page is client-rendered and I could not read it live."
+    },
+    "mx-player": {
+      "label": "Amazon MX Player",
+      "free": true,
+      "plans": [],
+      "hindiNote": "Free with ads; Hindi-dubbed titles are free to stream.",
+      "sources": [
+        "https://www.businesstoday.in/technology/news/story/amazon-prime-video-bets-big-on-exclusive-original-content-with-mx-player-integration-530269-2026-05-07",
+        "https://ppc.land/amazon-kills-mx-player-brand-folding-it-into-prime-video-for-india-ad-reach/",
+        "https://techcrunch.com/2025/05/13/amazon-prime-video-in-india-to-get-ads-starting-in-june"
+      ],
+      "confidence": "medium",
+      "notes": "Free and ad-supported (AVOD); no Prime membership needed. Big 2026 change: Amazon is folding MX Player into Prime Video (announced 7 May 2026, Business Today). On iOS, web and TV, MX users are redirected to Prime Video, where the free titles stay free. The Android app continues for free users under a rebranded identity. ppc.land reports the MX Player brand was retired on 16 Jul 2026 (single source). Labels on anilumi.in that say 'Amazon MX Player' may need to say 'free on Prime Video (formerly MX Player)'. No standalone ad-free MX tier was found. In 2025, Amazon said MX content inside Prime Video keeps ads even with the ad-free add-on; the May 2026 report is vague on this, so no ad-free plan is listed."
+    },
+    "youtube": {
+      "label": "YouTube",
+      "free": true,
+      "plans": [
+        {
+          "name": "YouTube Premium (Individual, optional ad-free)",
+          "price": 149,
+          "period": "month",
+          "ads": false,
+          "quality": null,
+          "notes": "Optional; removes ads on YouTube (and YouTube Music). Recurring monthly plan with a 1-month free trial. Prepaid options on the same page: ₹159/1 month, ₹459/3 months, ₹1,490/12 months. A cheaper Premium Lite (₹89/month) still shows ads on music, Shorts and search, so it is left out.",
+          "sources": [
+            "https://www.youtube.com/premium?gl=IN&hl=en-IN",
+            "https://www.digit.in/news/apps/youtube-premium-prices-hike-for-the-first-time-since-2019-plans-prices-and-more.html"
+          ]
+        }
+      ],
+      "hindiNote": "Muse India and Ani-One India upload Hindi-dubbed episodes free with ads; Premium is only needed for ad-free viewing.",
+      "sources": [
+        "https://www.youtube.com/premium?gl=IN&hl=en-IN",
+        "https://www.digit.in/news/apps/youtube-premium-prices-hike-for-the-first-time-since-2019-plans-prices-and-more.html"
+      ],
+      "confidence": "high",
+      "notes": "Read the YouTube Premium page with gl=IN on 2026-11-14 (raw HTML, ₹ prices). It matches Digit's Aug 2024 report of the hike to ₹149 individual and ₹1,490 annual prepaid; that report is older but YouTube's own page confirms it. Some Muse/Ani-One episodes are members-only or geo-limited, which is not covered here."
+    },
+    "cartoon-network": {
+      "label": "Cartoon Network / Sony YAY!",
+      "free": false,
+      "plans": [],
+      "hindiNote": "Both are linear TV channels with Hindi audio feeds, available through DTH or cable. Usually bought inside kids or Hindi packs; prices vary by operator.",
+      "sources": [
+        "https://www.trai.gov.in/sites/default/files/2026-09/MRP_02092026.pdf",
+        "https://www.medianews4u.com/?p=2493876"
+      ],
+      "confidence": "medium",
+      "notes": "Left out: Cartoon Network's a-la-carte price. The TRAI MRP list as on 31.08.2026 shows Cartoon Network (SD, Hindi/Tamil/Telugu/English) at ₹5.00 and Cartoon Network HD+ at ₹7.00, before taxes. I found no independent 2026 news source confirming ₹5; older reports and filings say ₹4.25. So for Cartoon Network, say 'included in DTH/cable packs' (TRAI-declared MRP ₹5/month if you want to cite the regulator alone). Sony's own channel-prices page was unreadable; a search snippet of it showed ₹4 for YAY! (undated, likely old). Medianews4u is a media trade site, not one of the listed outlets. Downgrade YAY! to 'included in packs' too if you want only listed outlets. Separately: Tata Play's 'Cartoon Network Forever/Classics' service (₹2/day) and Airtel's 'Cartoon Network Classics' (₹59/month) are operator value-added services, not the CN channel."
+    }
+  }
+}

@@ -11,6 +11,7 @@ import StatTiles from "@/components/viz/StatTiles";
 import BarChart from "@/components/viz/BarChart";
 import HindiDubList, { type DubCard } from "@/components/HindiDubList";
 import { cheapestKind, genreCounts, eraCounts, hindiArrivals } from "@/lib/hindistats";
+import { pricesFor, cheapestPlan, startingAt, PERIOD, PRICES_CHECKED } from "@/lib/platformprices";
 import { itemList } from "@/lib/ld";
 import { fitTitle, fitDescription } from "@/lib/titles";
 import { HINDI_PLATFORMS, dubDate, dubHref, dubsOn, hindiDubbed, hindiPlatform, platformKind } from "@/lib/hindidub";
@@ -48,6 +49,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 /** Every anime a platform carries with Hindi audio, and how to switch the audio on. */
 export default async function HindiPlatformPage({ params }: Props) {
   const { p, list } = load((await params).platform);
+  const price = pricesFor(p.slug);
+  const cheapest = price ? cheapestPlan(price) : null;
+  const checkedOn = new Date(`${PRICES_CHECKED}T00:00:00Z`).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
   const fresh = hindiArrivals(120).filter((e) => p.match.test(e.service));
   const kitsu = await animeBySlugs([...list.map((x) => x.d.s), ...fresh.flatMap((e) => (e.slug ? [e.slug] : []))], true);
   const posters = list.slice(0, 3).map((x) => { const a = kitsu.get(x.d.s); return a ? posterUrl(a, "medium") : null; });
@@ -66,6 +70,7 @@ export default async function HindiPlatformPage({ params }: Props) {
   const faq = [
     { q: `Which anime are in Hindi on ${p.label}?`, a: `${list.length} on our list: ${list.map((x) => x.d.t).join(", ")}.` },
     { q: `How do I watch anime in Hindi on ${p.label}?`, a: p.how },
+    ...(price ? [{ q: `How much does ${p.label} cost in India?`, a: price.free ? `Nothing: it's free with ads.${cheapest ? ` An optional ad-free plan costs ₹${cheapest.price.toLocaleString("en-IN")} a ${PERIOD[cheapest.period]}.` : ""} (Checked ${checkedOn}.)` : cheapest ? `${startingAt(price)}; the best value is ${cheapest.name} at ₹${cheapest.price.toLocaleString("en-IN")} a ${PERIOD[cheapest.period]}. ${price.hindiNote ?? ""} (Checked ${checkedOn}; prices change, so confirm before you subscribe.)` : `${price.hindiNote ?? price.notes ?? ""}` }] : []),
     ...(fresh.length ? [{ q: `What's new in Hindi on ${p.label}?`, a: `${fresh.slice(0, 6).map((e) => `${e.t} (from ${fmtDay(e.premiere)})`).join(", ")}.` }] : []),
     { q: `Is ${p.label} free?`, a: kind === "free" ? "Yes. These are official uploads by the licensors, free with ads." : kind === "tv" ? "It is a TV channel, included in cable and DTH packs that carry it." : "No, it needs a subscription. For free and legal Hindi dubs, see the YouTube channels and MX Player on the main Hindi dub list." },
   ];
@@ -93,6 +98,7 @@ export default async function HindiPlatformPage({ params }: Props) {
         ...(fresh.length ? [{ id: "new", label: "New" }] : []),
         { id: "list", label: `All ${list.length}` },
         ...(alsoFree.length ? [{ id: "also-free", label: "Also free" }] : []),
+        ...(price ? [{ id: "price", label: "Price" }] : []),
         { id: "faq", label: "FAQ" },
       ]} />
 
@@ -159,6 +165,39 @@ export default async function HindiPlatformPage({ params }: Props) {
               </li>
             ))}
           </ul>
+        </section>
+      )}
+
+      {price && (
+        <section id="price" data-section className="reveal pt-10" aria-labelledby="price-h">
+          <h2 id="price-h" className="h-section mb-1">{p.label}: plans and price in India</h2>
+          <p className="mb-3 max-w-3xl text-sm text-muted">{price.free ? "" : price.plans.length ? `${startingAt(price)}. ` : "Included in DTH and cable packs that carry the channel. "}{price.hindiNote}</p>
+          {price.plans.length > 0 && (
+            <div className="card overflow-x-auto p-0">
+              <table className="w-full min-w-[480px] border-collapse text-sm">
+                <thead>
+                  <tr className="text-left text-xs uppercase tracking-wide text-muted">
+                    <th scope="col" className="px-3 py-2">Plan</th><th scope="col" className="px-3 py-2">Price</th><th scope="col" className="px-3 py-2">Ads</th><th scope="col" className="px-3 py-2">Quality</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {price.plans.map((x) => (
+                    <tr key={`${x.name}-${x.period}`} className="border-t border-line/60">
+                      <td className="px-3 py-2 font-medium text-ink">{x.name}{x === cheapest && !price.free ? <span className="ml-2 rounded bg-emerald-500/15 px-1.5 py-0.5 text-[10px] font-semibold text-emerald-300">Cheapest</span> : null}</td>
+                      <td className="whitespace-nowrap px-3 py-2 tabular-nums text-ink">₹{x.price.toLocaleString("en-IN")} <span className="text-muted">/ {PERIOD[x.period]}</span></td>
+                      <td className="px-3 py-2 text-ink/90">{x.ads ? "With ads" : "No ads"}</td>
+                      <td className="px-3 py-2 text-ink/90">{x.quality ?? "–"}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
+          <p className="mt-2 text-xs text-muted">
+            Checked {checkedOn} against {price.sources.length > 1 ? `${price.sources.length} sources` : "the platform's own page"}, including{" "}
+            {price.sources.slice(0, 2).map((u, i) => <span key={u}>{i ? " and " : ""}<a href={u} target="_blank" rel="noopener nofollow" className="underline">{new URL(u).hostname.replace(/^www\./, "")}</a></span>)}.
+            {price.confidence === "medium" ? " Some prices differ between the app and the website." : ""} Prices change and taxes may apply; confirm on {p.label} before you subscribe.
+          </p>
         </section>
       )}
 
