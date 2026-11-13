@@ -332,6 +332,8 @@ export default async function CharacterPage({ params }: Props) {
             { q: `What can we learn from ${c.name}?`, a: deep.lessons.map((l) => l.lesson).join(" ") },
             { q: `What is ${c.name}'s backstory?`, a: `Spoiler: ${deep.backstory}` },
           ] : []),
+          ...(deep?.strength ? [{ q: `How strong is ${c.name}?`, a: `${deep.strength.spoiler ? "Spoiler: " : ""}${deep.strength.rank}. ${deep.strength.summary}` }] : []),
+          ...(deep?.fights?.some((f) => !f.spoiler) ? [{ q: `What are ${c.name}'s best fights?`, a: deep.fights.filter((f) => !f.spoiler).map((f) => `${f.title}${f.episode ? ` (episode ${f.episode})` : ""}`).join(", ") + "." }] : []),
           ...(note?.fate ? [{ q: `Does ${c.name} die?`, a: `Spoiler: ${note.fate.status === "alive" ? "no." : note.fate.status === "dies" ? "yes." : note.fate.status === "revived" ? "yes, but not for good." : "it's unclear."} ${note.fate.detail} (As of the ${note.fate.basis}.)` }] : []),
           // "Sakura Haruno" → "What is Sakura's full name?"; skipped for "Monkey D. Luffy" style names, whose first word isn't the given name.
           ...(c.name.split(" ").length === 2 ? [{ q: `What is ${c.name.split(" ")[0]}'s full name?`, a: `${c.name.split(" ")[0]}'s full name is ${c.name}${c.nameJp ? ` (${c.nameJp} in Japanese)` : ""}.${aliases.length ? ` ${c.name} is also known as ${aliases.join(", ")}.` : ""}` }] : []),
