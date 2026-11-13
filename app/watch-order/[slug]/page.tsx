@@ -310,6 +310,47 @@ export default async function WatchOrderPage({ params }: Props) {
         </section>
       )}
 
+      {movieList.length >= 2 && (() => {
+        // "One Piece movies in order" (4.4k a month in India): every film by release date, with where it fits.
+        const films = [...movieList].sort((x, y) => (x.anime.startDate ?? "").localeCompare(y.anime.startDate ?? ""));
+        const canon = new Map((timeline ?? []).map((f) => [f.slug, f.canon]));
+        return (
+          <section className="mt-10" aria-labelledby="movies-h">
+            <h2 id="movies-h" className="h-section mb-1">{name} movies in order</h2>
+            <p className="mb-3 text-sm text-muted">The {films.length} {name} films in this watch order, by release date, with the part of the series to watch first.</p>
+            <div className="card overflow-x-auto p-0">
+              <table className="w-full min-w-[560px] border-collapse text-sm">
+                <thead>
+                  <tr className="text-left text-xs uppercase tracking-wide text-muted">
+                    <th scope="col" className="px-3 py-2">#</th>
+                    <th scope="col" className="px-3 py-2">Movie</th>
+                    <th scope="col" className="px-3 py-2">Year</th>
+                    <th scope="col" className="px-3 py-2">Runtime</th>
+                    <th scope="col" className="px-3 py-2">Score</th>
+                    <th scope="col" className="px-3 py-2">Watch after</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {films.map((m, i) => (
+                    <tr key={m.anime.id} className="border-t border-line/60">
+                      <td className="px-3 py-2 font-bold tabular-nums text-muted">{i + 1}</td>
+                      <td className="px-3 py-2">
+                        <Link href={animePath(m.anime)} className="font-medium text-ink hover:text-violet-2">{m.anime.title}</Link>
+                        {canon.has(m.anime.slug) && <span className={`ml-2 rounded px-1.5 py-0.5 text-[10px] font-semibold ${canon.get(m.anime.slug) ? "bg-violet/15 text-violet-2" : "bg-white/5 text-muted"}`}>{canon.get(m.anime.slug) ? "Canon" : "Non-canon"}</span>}
+                      </td>
+                      <td className="px-3 py-2 tabular-nums text-ink/90">{m.anime.startDate?.slice(0, 4) ?? "–"}</td>
+                      <td className="px-3 py-2 tabular-nums text-ink/90">{runtimeMinutes(m.anime) ? fmtMinutes(runtimeMinutes(m.anime)) : "–"}</td>
+                      <td className="px-3 py-2 tabular-nums text-ink/90">{m.anime.rating ? (m.anime.rating / 10).toFixed(1) : "–"}</td>
+                      <td className="px-3 py-2 text-ink/80">{m.after ?? "Any time"}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </section>
+        );
+      })()}
+
       {timeline && (
         <section className="mt-10" aria-labelledby="chrono-h">
           <h2 id="chrono-h" className="h-section mb-1">{name} chronological order: where each film fits</h2>
@@ -369,6 +410,7 @@ export default async function WatchOrderPage({ params }: Props) {
           { q: `What order should I watch ${name} in?`, a: wo.intro ? wo.intro : wo.entries.length === 1 ? `${name} has a single entry, so there is nothing to sequence.` : `Follow the recommended order above: ${wo.entries.filter((e) => e.kind === "main").map((e) => e.anime.title).join(" → ")}. Movies and side stories are slotted after the season they relate to.` },
           { q: `How long does it take to watch all of ${name}?`, a: wo.totalMinutes ? `The core story and movies run about ${fmtMinutes(wo.totalMinutes)}. At two hours a day that is roughly ${Math.ceil(wo.totalMinutes / 120)} days.` : "Runtime data is incomplete for this franchise." },
           ...(mainCount > 1 ? [{ q: `How many seasons does ${name} have?`, a: `${mainCount} parts make up the main story${movieList.length ? `, plus ${movieList.length} movie${movieList.length === 1 ? "" : "s"}` : ""}${sideCount ? ` and ${sideCount} side stor${sideCount === 1 ? "y" : "ies"} or OVAs` : ""}.` }] : []),
+          ...(movieList.length >= 2 ? [{ q: `How many ${name} movies are there?`, a: `${movieList.length} films are in the watch order: ${[...movieList].sort((x, y) => (x.anime.startDate ?? "").localeCompare(y.anime.startDate ?? "")).map((m) => `${m.anime.title}${m.anime.startDate ? ` (${m.anime.startDate.slice(0, 4)})` : ""}`).join(", ")}.` }] : []),
           ...(timeline ? [{ q: `What is the ${name} chronological order, with the movies?`, a: timeline.map((f) => `${f.title}: ${f.when}${f.canon ? " (canon)" : ""}`).join("; ") + "." }] : movieList.length ? [{ q: `Where do the ${name} movies fit in the watch order?`, a: movieList.map((m) => `${m.anime.title}${m.after ? `: after ${m.after}` : ""}`).join("; ") + "." }] : []),
           ...(skippable.length ? [{ q: `Can I skip the ${name} recaps?`, a: `Yes. ${skippable.map((e) => e.anime.title).join(", ")} retell events you have already seen and can be skipped.` }] : []),
           ...(coverage.length ? [{ q: `Where can I stream all of ${name}?`, a: `${coverage[0].site} lists ${coverage[0].n} of the ${core.length} seasons and movies${coverage[1] ? `, ${coverage[1].site} ${coverage[1].n}` : ""}${coverage[2] ? ` and ${coverage[2].site} ${coverage[2].n}` : ""}. Catalogues differ by country, so check the links on each part above.` }] : []),

@@ -34,6 +34,7 @@ export function deepSections(slug: string): { id: string; label: string }[] {
     ...(d.strength ? [{ id: "strength", label: "Strength" }] : []),
     ...(d.fights?.length ? [{ id: "fights", label: "Best fights" }] : []),
     ...(d.keyEpisodes?.length ? [{ id: "episodes", label: "Key episodes" }] : []),
+    ...(d.ages?.length ? [{ id: "ages", label: "Age" }] : []),
     { id: "spoilers", label: "Backstory & journey" },
     { id: "lessons", label: "Lessons" },
   ];
@@ -41,7 +42,7 @@ export function deepSections(slug: string): { id: string; label: string }[] {
 
 /**
  * The deep profile, in the order people read a character: what defines them, who they're tied to, how strong they
- * are, their best fights and key episodes, then a spoiler zone (backstory, journey, later ages) and lessons.
+ * are, their best fights and key episodes, their age through the story, then a spoiler zone (backstory, journey) and lessons.
  */
 export default function CharacterDeepProfile({ slug, name }: { slug: string; name: string }) {
   const d = characterDeep(slug);
@@ -108,6 +109,14 @@ export default function CharacterDeepProfile({ slug, name }: { slug: string; nam
           {eps.hidden.length > 0 && <Spoilers label={`${eps.hidden.length} later turning points`}><ul className="divide-y divide-line/60">{eps.hidden.map(epItem)}</ul></Spoilers>}
         </Block>
       )}
+      {(ages.open.length > 0 || ages.hidden.length > 0) && (
+        // "eren yeager age": its own section, the age at the start first and later ages behind a spoiler toggle.
+        <Block id="ages" icon="🎂" title={`${name}'s age through the story`}>
+          {ages.open[0] && <p className="mb-3 text-sm text-ink/90">How old is {name}? <strong className="text-ink">{ages.open[0].age}</strong>, as of {ages.open[0].when}.{ages.hidden.length ? " Later ages are under the spoiler toggle." : ""}</p>}
+          {ages.open.length > 0 && <ul className="card divide-y divide-line/60 px-3">{ages.open.map(ageItem)}</ul>}
+          {ages.hidden.length > 0 && <Spoilers label={`${ages.hidden.length === 1 ? "Age" : "Ages"} later in the story`}><ul className="divide-y divide-line/60">{ages.hidden.map(ageItem)}</ul></Spoilers>}
+        </Block>
+      )}
       <Block id="spoilers" icon="🔒" title={`${name}'s backstory and journey`}>
         <div className="card p-4">
           <p className="text-sm text-muted">Everything here spoils the story. Open only what you want to read.</p>
@@ -115,11 +124,7 @@ export default function CharacterDeepProfile({ slug, name }: { slug: string; nam
           <Spoilers label={`Journey, arc by arc (${d.journey.length} stages)`}>
             <ol className="space-y-3 border-l-2 border-violet/40 pl-4">{d.journey.map((j, i) => <li key={j.stage}><p className="text-sm font-semibold text-ink"><span className="mr-1.5 text-muted">{i + 1}.</span>{j.stage}</p><p className="text-sm text-ink/85">{j.summary}</p></li>)}</ol>
           </Spoilers>
-          {ages.hidden.length > 0 && <Spoilers label="Ages later in the story"><ul className="divide-y divide-line/60">{ages.hidden.map(ageItem)}</ul></Spoilers>}
         </div>
-        {ages.open.length > 0 && (
-          <div className="mt-4"><p className="mb-1 text-sm font-semibold text-ink">How old is {name}?</p><ul className="card divide-y divide-line/60 px-3">{ages.open.map(ageItem)}</ul></div>
-        )}
       </Block>
       <Block id="lessons" icon="💡" title={`What you can learn from ${name}`}>
         <ul className="grid gap-3 sm:grid-cols-2">{d.lessons.map((l) => <li key={l.lesson} className="card p-3"><p className="font-semibold text-ink">{l.lesson}</p><p className="mt-1 text-sm text-ink/85">{l.why}</p></li>)}</ul>
