@@ -243,10 +243,10 @@
       "notes": "Prices are from JioStar's own press release of 19 Jan 2026 (effective 28 Jan 2026, new subscribers) and match Telecomtalk (13 Feb 2026) and Business Today (20 Jan 2026). The quality figures (1080p Super, 4K Premium) come from Telecomtalk only. Existing subscribers on auto-renew keep their old prices. I found no later 2026 price change, but hotstar.com's plan page is client-rendered and I could not read it live."
     },
     "mx-player": {
-      "label": "Amazon MX Player",
+      "label": "MX Player (now free on Prime Video)",
       "free": true,
       "plans": [],
-      "hindiNote": "Free with ads; Hindi-dubbed titles are free to stream.",
+      "hindiNote": "Free with ads, no Prime membership needed. Since Amazon folded MX Player into Prime Video (announced May 2026), its free shows, Hindi dubs included, are on Prime Video's free tier; the Android MX Player app still works, while iPhone, TV and web redirect to Prime Video.",
       "sources": [
         "https://www.businesstoday.in/technology/news/story/amazon-prime-video-bets-big-on-exclusive-original-content-with-mx-player-integration-530269-2026-05-07",
         "https://ppc.land/amazon-kills-mx-player-brand-folding-it-into-prime-video-for-india-ad-reach/",

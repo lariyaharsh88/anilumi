@@ -115,7 +115,7 @@ export default async function HindiDubHubHi() {
       {free.length > 0 && (
         <section id="free" data-section className="reveal pt-10" aria-labelledby="free-h">
           <h2 id="free-h" className="h-section mb-1">एनीमे हिंदी में मुफ़्त और कानूनी तरीके से देखें</h2>
-          <p className="mb-4 max-w-3xl text-sm text-muted">ये {free.length} आधिकारिक हिंदी डब मुफ़्त हैं: ये लाइसेंस वाली कंपनियों के अपने YouTube चैनल या विज्ञापन वाले MX Player पर हैं। इनके अलावा &ldquo;फ़्री हिंदी एनीमे&rdquo; देने वाली साइटें बिना लाइसेंस की हैं।</p>
+          <p className="mb-4 max-w-3xl text-sm text-muted">ये {free.length} आधिकारिक हिंदी डब मुफ़्त हैं: ये लाइसेंस वाली कंपनियों के अपने YouTube चैनल या विज्ञापन वाले MX Player पर हैं, जो अब Prime Video के मुफ़्त हिस्से में है। इनके अलावा &ldquo;फ़्री हिंदी एनीमे&rdquo; देने वाली साइटें बिना लाइसेंस की हैं।</p>
           <ul className="grid grid-cols-3 gap-3 sm:grid-cols-5 lg:grid-cols-8">
             {free.map((d) => posterCard(d.s, dubHref(d), d.t, poster(d.s), "मुफ़्त", d.platforms.filter((p) => platformKind(p.name) === "free").map((p) => p.name.replace(/ \(YouTube\)$/, "")).join(", "), true))}
           </ul>
@@ -245,7 +245,7 @@ export default async function HindiDubHubHi() {
           <div className="card border-emerald-500/30 p-4">
             <h3 className="font-semibold text-emerald-300">✓ आधिकारिक और सुरक्षित</h3>
             <ul className="mt-2 list-disc space-y-1.5 pl-5 text-sm leading-6 text-ink/90">
-              <li><strong>{free.length} डब मुफ़्त हैं</strong>: लाइसेंस वाली कंपनियों के अपने YouTube चैनल (Muse India, Ani-One India) और MX Player पर। <a href="#free" className="text-violet hover:underline">देखें</a>।</li>
+              <li><strong>{free.length} डब मुफ़्त हैं</strong>: लाइसेंस वाली कंपनियों के अपने YouTube चैनल (Muse India, Ani-One India) और MX Player पर, जो अब Prime Video के मुफ़्त हिस्से में है (Prime मेंबरशिप ज़रूरी नहीं)। <a href="#free" className="text-violet hover:underline">देखें</a>।</li>
               <li>बाकी Crunchyroll, Netflix, Prime Video और JioHotstar पर हैं, जो अपने ऐप में ऑफ़लाइन देखने के लिए डाउनलोड की सुविधा देते हैं।</li>
               <li>आधिकारिक अपलोड लाइसेंस वाली कंपनी के वेरिफ़ाइड चैनल से आते हैं और उसकी साइट या सोशल अकाउंट पर घोषित होते हैं।</li>
             </ul>

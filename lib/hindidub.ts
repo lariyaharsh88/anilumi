@@ -87,9 +87,11 @@ export const HINDI_PLATFORMS = [
   { slug: "crunchyroll", label: "Crunchyroll", match: /^crunchyroll/i, how: "Open the episode, then pick Hindi under Audio in the settings menu (the gear icon on the web, the three dots in the app)." },
   { slug: "youtube", label: "YouTube (free)", match: /youtube/i, how: "Search the channel name on YouTube; full episodes are free with ads and stay up for months, though some playlists are removed when the licence ends." },
   { slug: "netflix", label: "Netflix India", match: /^netflix/i, how: "Open the title, start an episode, then choose Hindi under Audio & Subtitles." },
-  { slug: "prime-video", label: "Prime Video (Anime Times)", match: /prime video|anime times/i, how: "Anime Times is a paid channel inside Prime Video India; subscribe to the channel, then pick Hindi in the audio menu." },
+  { slug: "prime-video", label: "Prime Video (Anime Times)", match: /^(?!.*mx player).*(prime video|anime times)/i, how: "Anime Times is a paid channel inside Prime Video India; subscribe to the channel, then pick Hindi in the audio menu." },
   { slug: "jiohotstar", label: "JioHotstar", match: /hotstar/i, how: "Open the series and choose Hindi in the language menu before you press play." },
-  { slug: "mx-player", label: "Amazon MX Player", match: /mx player/i, how: "Free with ads in the MX Player app and website; the Hindi version is usually listed as its own show." },
+  // Amazon folded MX Player into Prime Video in India (announced May 2026): its free shows moved to Prime Video's free
+  // tier. The slug and "MX Player" stay, since that's what people search for.
+  { slug: "mx-player", label: "MX Player (now Prime Video free)", match: /mx player/i, how: "Free with ads and no Prime membership needed: MX Player's shows are now on Prime Video's free tier (Amazon folded MX Player into Prime Video in 2026). On Android the MX Player app still works; on iPhone, TV and the web it opens Prime Video. The Hindi version is usually listed as its own show." },
   { slug: "cartoon-network", label: "Cartoon Network India", match: /cartoon network/i, how: "A TV channel: check its schedule; some shows also stream on JioHotstar." },
 ] as const;
 export type HindiPlatform = (typeof HINDI_PLATFORMS)[number];

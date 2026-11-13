@@ -27,7 +27,7 @@ export function generateMetadata(): Metadata {
   // Searchers ask "where to watch anime in Hindi for free": the title answers that the list includes free, legal options.
   return {
     title: fitTitle([`Hindi Dubbed Anime List (${new Date().getFullYear()}): ${n} Anime in Hindi, ${free} Free`, `Hindi Dubbed Anime List (${new Date().getFullYear()}): ${n} Anime, ${free} Free`, `Hindi Dubbed Anime List (${new Date().getFullYear()})`]),
-    description: fitDescription(`${n} anime with an official Hindi dub and where to watch each: ${free} free and legal on YouTube (Muse India, Ani-One India) and MX Player, the rest on Crunchyroll, Netflix, Prime Video, JioHotstar and TV. Checked ${dubDate()}.`),
+    description: fitDescription(`${n} anime with an official Hindi dub and where to watch each: ${free} free and legal on YouTube (Muse India, Ani-One India) and MX Player (now Prime Video's free tier), the rest on Crunchyroll, Netflix, Prime Video, JioHotstar and TV. Checked ${dubDate()}.`),
     alternates: { canonical: "/hindi-dub", languages: { en: "/hindi-dub", hi: "/hi/hindi-dub", "x-default": "/hindi-dub" } },
   };
 }
@@ -104,7 +104,7 @@ export default async function HindiDubHub() {
       {free.length > 0 && (
         <section id="free" data-section className="reveal pt-10" aria-labelledby="free-h">
           <h2 id="free-h" className="h-section mb-1">Watch anime in Hindi for free, legally</h2>
-          <p className="mb-4 max-w-3xl text-sm text-muted">These {free.length} official Hindi dubs cost nothing: they stream on the licensors&apos; own YouTube channels or ad-supported MX Player. Sites offering &ldquo;free Hindi anime&rdquo; beyond these are unlicensed uploads.</p>
+          <p className="mb-4 max-w-3xl text-sm text-muted">These {free.length} official Hindi dubs cost nothing: they stream on the licensors&apos; own YouTube channels or ad-supported MX Player, now part of Prime Video&apos;s free tier. Sites offering &ldquo;free Hindi anime&rdquo; beyond these are unlicensed uploads.</p>
           <ul className="grid grid-cols-3 gap-3 sm:grid-cols-5 lg:grid-cols-8">
             {free.map((d) => (
               <li key={d.s} className="min-w-0">
@@ -274,7 +274,7 @@ export default async function HindiDubHub() {
           <div className="card border-emerald-500/30 p-4">
             <h3 className="font-semibold text-emerald-300">✓ Official and safe</h3>
             <ul className="mt-2 list-disc space-y-1.5 pl-5 text-sm leading-6 text-ink/90">
-              <li><strong>{free.length} dubs are free</strong> on the licensors&apos; own YouTube channels (Muse India, Ani-One India) and on MX Player. <a href="#free" className="text-violet hover:underline">See them</a>.</li>
+              <li><strong>{free.length} dubs are free</strong> on the licensors&apos; own YouTube channels (Muse India, Ani-One India) and on MX Player, now Prime Video&apos;s free tier (no Prime membership needed). <a href="#free" className="text-violet hover:underline">See them</a>.</li>
               <li>Crunchyroll, Netflix, Prime Video and JioHotstar carry the rest, and let you download episodes inside their apps to watch offline.</li>
               <li>Official uploads come from the licensor&apos;s verified channel and are announced on its site or social accounts.</li>
             </ul>

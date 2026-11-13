@@ -24,8 +24,17 @@ test("Hindi dubs: platform kinds and the by-platform index", () => {
   assert.equal(platformKind("Sony YAY!"), "tv");
   assert.equal(platformKind("Crunchyroll"), "subscription");
   assert.equal(platformKind("Apple TV"), "subscription");
+  assert.equal(platformKind("MX Player (now free on Prime Video)"), "free");
   assert.equal(platformKind("Hungama TV"), "tv");
   const p = byPlatform();
   assert.equal(p[0].name, "Crunchyroll");
   for (const x of p) assert.equal(new Set(x.titles.map((t) => t.d.s)).size, x.titles.length, `${x.name} lists a franchise twice`);
+});
+
+test("hindidub: MX Player's free shows stay off the paid Prime Video page", async () => {
+  const { HINDI_PLATFORMS } = await import("../lib/hindidub");
+  const prime = HINDI_PLATFORMS.find((p) => p.slug === "prime-video")!, mx = HINDI_PLATFORMS.find((p) => p.slug === "mx-player")!;
+  assert.ok(!prime.match.test("MX Player (now free on Prime Video)"));
+  assert.ok(prime.match.test("Anime Times (Prime Video channel)"));
+  assert.ok(mx.match.test("MX Player (now free on Prime Video)"));
 });
