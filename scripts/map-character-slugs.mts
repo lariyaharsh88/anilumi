@@ -58,5 +58,17 @@ for (const slug of shows) {
   }
   process.stdout.write(`shows ${done}/${shows.length}, matched ${matched}\r`);
 }
+// One page per character: when two characters matched the same Kitsu slug (Chomusuke under "megumin"), the
+// most-favourited keeps it and the others lose the link.
+const owner = new Map<string, (typeof data.characters)[number]>();
+for (const c of data.characters) {
+  if (!c.k) continue;
+  const prev = owner.get(c.k);
+  if (!prev) { owner.set(c.k, c); continue; }
+  const loser = prev.f >= c.f ? c : prev;
+  console.log(`\nslug ${c.k} matched twice; dropped from ${loser.n}`);
+  if (loser === prev) owner.set(c.k, c);
+  delete loser.k;
+}
 writeFileSync(FILE, JSON.stringify(data));
 console.log(`\nmatched ${matched} of ${data.characters.length} characters to Kitsu pages`);
