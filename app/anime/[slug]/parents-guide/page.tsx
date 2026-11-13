@@ -38,10 +38,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   // Lead with the answer people search for ("madoka magica age rating", "deadman wonderland nudity").
   const flags = guide ? flaggedShort(guide) : [];
   const title = fitTitle(guide
-    ? [`${a.title} Age Rating: ${ageLabel(guide.suitable)}${flags.length ? ` (${flags.join(", ")})` : ""} · Parents' Guide`, `${a.title} Age Rating: ${ageLabel(guide.suitable)}${flags.length ? ` (${flags.join(", ")})` : ""}`, `${a.title} Age Rating: ${ageLabel(guide.suitable)}`, `${a.title} Age Rating`]
+    // Phase 7: page 1 but few clicks. Parents search the question ("is madoka magica appropriate for 12 year olds"),
+    // so the title asks it, with the rating and the flags as the answer.
+    ? [`Is ${a.title} OK for Kids? Age ${ageLabel(guide.suitable)}${flags.length ? `, ${flags.join(", ")}` : ""}`,
+       `${a.title} Age Rating: ${ageLabel(guide.suitable)}${flags.length ? ` (${flags.join(", ")})` : ""} · Parents' Guide`, `${a.title} Age Rating: ${ageLabel(guide.suitable)}${flags.length ? ` (${flags.join(", ")})` : ""}`, `${a.title} Age Rating: ${ageLabel(guide.suitable)}`, `${a.title} Age Rating`]
     : [`${a.title} Age Rating & Parents' Guide`, `${a.title} Age Rating`]);
   const description = guide
-    ? `${a.title} is best for ${guide.suitable.toLowerCase()}${a.ageRating ? `; Kitsu lists it as ${a.ageRating}` : ""}. ${guide.areas.filter((x) => x.key !== "sexual-violence" || x.level !== "none").map((x) => `${x.label}: ${LEVEL_WORD[x.level].toLowerCase()}`).join(" · ")}. Spoiler-free, from viewer tags.`
+    ? `Is ${a.title} OK for kids? It's best for ${guide.suitable.toLowerCase()}${a.ageRating ? `; Kitsu lists it as ${a.ageRating}` : ""}. ${guide.areas.filter((x) => x.key !== "sexual-violence" || x.level !== "none").map((x) => `${x.label}: ${LEVEL_WORD[x.level].toLowerCase()}`).join(" · ")}. Spoiler-free, from viewer tags.`
     : `Age rating and content notes for ${a.title}.`;
   // Official ratings lead the snippet where a platform rates the show: the answer to "<show> age rating".
   const official = officialRatings(a.slug);

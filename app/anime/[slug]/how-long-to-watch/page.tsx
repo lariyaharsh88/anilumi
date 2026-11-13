@@ -62,12 +62,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const title = fitTitle(!total
     ? [`How Long Is ${a.title}? Runtime & Binge Time`, `How Long Is ${a.title}?`]
     : isRoot
-      ? [`How Long Is ${a.title}? ${fh} Hours for ${seasonal ? "All Seasons" : "the Whole Franchise"} (${part}: ${h}h)`, `How Long Is ${a.title}? ${fh} Hours for ${seasonal ? "All Seasons" : "the Whole Franchise"}`, `How Long Is ${a.title}? ${fh} Hours`, `${a.title}: ${fh} Hours to Watch`]
-      : [`How Long Is ${a.title}? ${own}`, `How Long Is ${a.title}? ${h} Hours`, `${a.title}: ${h} Hours to Watch`]);
+      // Phase 7: Google answers "how long is X" itself, so the title also offers what the answer box can't: the plan.
+      ? [`How Long Is ${a.title}? ${fh} Hours for ${seasonal ? "All Seasons" : "the Whole Franchise"} + Binge Plan`, `How Long Is ${a.title}? ${fh} Hours for ${seasonal ? "All Seasons" : "the Whole Franchise"} (${part}: ${h}h)`, `How Long Is ${a.title}? ${fh} Hours for ${seasonal ? "All Seasons" : "the Whole Franchise"}`, `How Long Is ${a.title}? ${fh} Hours`, `${a.title}: ${fh} Hours to Watch`]
+      : [`How Long Is ${a.title}? ${own} + Binge Plan`, `How Long Is ${a.title}? ${own}`, `How Long Is ${a.title}? ${h} Hours`, `${a.title}: ${h} Hours to Watch`]);
   const description = total
     ? isRoot
-      ? `All of ${a.title} takes about ${fmtRun(fTotal)} across ${franchise!.mainCount} main parts${franchise!.entries.some((e) => e.kind === "movie") ? " plus films" : ""}. ${seasonal ? `${a.title} season 1` : a.title} alone is ${fmtRun(total)}${eps > 1 && len ? ` (${eps} episodes × ${len} min)` : ""}. At 2 hours a day the whole series takes ${humanDays(Math.ceil(fTotal / 120))}.`
-      : `${a.title} takes about ${fmtRun(total)} to watch${eps > 1 && len ? ` (${eps} episodes × ${len} min)` : ""}. At 2 hours a day that's ${humanDays(Math.ceil(total / 120))}.${franchise ? ` The whole franchise runs about ${fmtRun(fTotal)}.` : " See faster ways and filler skips."}`
+      ? `All of ${a.title} takes about ${fmtRun(fTotal)} across ${franchise!.mainCount} main parts${franchise!.entries.some((e) => e.kind === "movie") ? " plus films" : ""}. ${seasonal ? `${a.title} season 1` : a.title} alone is ${fmtRun(total)}${eps > 1 && len ? ` (${eps} episodes × ${len} min)` : ""}. At 2 hours a day the whole series takes ${humanDays(Math.ceil(fTotal / 120))}; set your own pace for a finish date.`
+      : `${a.title} takes about ${fmtRun(total)} to watch${eps > 1 && len ? ` (${eps} episodes × ${len} min)` : ""}. At 2 hours a day that's ${humanDays(Math.ceil(total / 120))}.${franchise ? ` The whole franchise runs about ${fmtRun(fTotal)}.` : ""} Set your pace for a finish date, and see which episodes to skip.`
     : `Runtime and binge planner for ${a.title}.`;
   return { title, description: fitDescription(description), alternates: { canonical: `${animePath(a)}/how-long-to-watch` }, ...(total ? { robots: robotsFor(howLongIndexed(`${animePath(a)}/how-long-to-watch`, a.userCount)) } : { robots: { index: false } }) };
 }
