@@ -92,12 +92,13 @@ export default async function EpisodePage({ params }: Props) {
   const nextUp = reliable && n <= lastAired && n >= lastAired - 2 ? lastAired + 1 : null;
   // The day in Japan, matching the JST time beside it (a 00:56 JST slot is the previous day in UTC).
   const when = airIso ? fmtDate(airIso, { weekday: "long", month: "long", day: "numeric", year: "numeric", ...(airIso.length > 10 ? { timeZone: "Asia/Tokyo" } : {}) }) : null;
-  const whenTime = airIso && airIso.length > 10 ? fmtDate(airIso, { hour: "numeric", minute: "2-digit", timeZone: "Asia/Tokyo" }) : null;
+  // Time only ("11:00 PM"): fmtDate formats a date, and with hour options it gave "11/14/2026, 11:00 PM".
+  const whenTime = airIso && airIso.length > 10 ? new Date(airIso).toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit", timeZone: "Asia/Tokyo" }) : null;
   const hasPrev = n > 1;
   const hasNext = n < count || (a.status === "current" && n <= lastAired) || nextScheduled;
   const watchItem = { id: a.id, slug: a.slug, title: a.title, poster: posterUrl(a, "small"), status: a.status, nextRelease: a.nextRelease };
   // "release time india / us": the broadcast in the zones most of our readers search from.
-  const at = (tz: string) => (airIso && airIso.length > 10 ? fmtDate(airIso, { weekday: "short", hour: "numeric", minute: "2-digit", timeZone: tz }) : null);
+  const at = (tz: string) => (airIso && airIso.length > 10 ? new Date(airIso).toLocaleString("en-US", { weekday: "short", hour: "numeric", minute: "2-digit", timeZone: tz }) : null);
   const zones = whenTime ? { ist: at("Asia/Kolkata"), et: at("America/New_York"), pt: at("America/Los_Angeles"), uk: at("Europe/London") } : null;
 
   // Upcoming and recently aired episodes change (air time, title, length) as sources fill in; these show when the
@@ -128,6 +129,7 @@ export default async function EpisodePage({ params }: Props) {
   const kindOf = filler ? (filler.filler.has(n) ? "Filler (safe to skip)" : filler.recap.has(n) ? "Recap (safe to skip)" : filler.mixed.has(n) ? "Mixed canon and filler" : "Canon (from the source)") : null;
   // Dubs: this season's dub schedule (English and Hindi runs with their service and day) and the Hindi dub record.
   const dubRuns = dubShows().filter((e) => e.slug === a.slug && e.status !== "announced");
+  const hindiSoon = dubShows().find((e) => e.slug === a.slug && e.lang === "hi" && e.status === "announced");
   const hindi = dubFor(a);
   const zoneRows = airIso && airIso.length > 10 ? ([["Japan (JST)", "Asia/Tokyo"], ["India (IST)", "Asia/Kolkata"], ["US East (ET)", "America/New_York"], ["US West (PT)", "America/Los_Angeles"], ["UK", "Europe/London"]] as const) : null;
   const songLine = (type: "OP" | "ED") => songs.filter((t) => t.type === type).map((t) => `“${t.song}”${t.artists[0] ? ` by ${t.artists[0]}` : ""}`).join(" and ");
@@ -220,7 +222,7 @@ export default async function EpisodePage({ params }: Props) {
             <section className="mt-6" aria-labelledby="time-h">
               <h2 id="time-h" className="h-section mb-2">{a.title} episode {n} release date and time</h2>
               <p className="mb-3 text-sm text-ink/90">{upcoming ? "Airs" : "Aired"} on {when} in Japan{whenTime ? ` at ${whenTime} JST` : ""}. That&apos;s:</p>
-              <dl className="card grid grid-cols-2 gap-x-4 gap-y-3 p-4 text-sm sm:grid-cols-5">
+              <dl className="card grid grid-cols-2 gap-x-4 gap-y-3 p-4 text-sm sm:grid-cols-3 lg:grid-cols-5">
                 {zoneRows.map(([label, tz]) => (
                   <div key={tz}><dt className="text-xs text-muted">{label}</dt><dd className="font-semibold tabular-nums text-ink">{new Date(airIso!).toLocaleString("en-US", { weekday: "short", month: "short", day: "numeric", hour: "numeric", minute: "2-digit", timeZone: tz })}</dd></div>
                 ))}
@@ -263,7 +265,7 @@ export default async function EpisodePage({ params }: Props) {
 
           {!upcoming && <WatchedUpTo ep={n} item={{ id: a.id, slug: a.slug, title: a.title, poster: posterUrl(a, "small"), status: a.status, nextRelease: a.nextRelease, episodeCount: a.episodeCount, episodeLength: a.episodeLength }} />}
 
-          {(a.streaming.length > 0 || dubRuns.length > 0 || hindi?.status === "available") && (
+          {(a.streaming.length > 0 || dubRuns.length > 0 || hindiSoon || hindi?.status === "available") && (
             <section className="mt-6" aria-labelledby="watch-h">
               <h2 id="watch-h" className="h-section mb-2">Where to watch {a.title} episode {n}</h2>
               {a.streaming.length > 0 && (
@@ -273,13 +275,16 @@ export default async function EpisodePage({ params }: Props) {
                   ))}
                 </div>
               )}
-              {(dubRuns.length > 0 || hindi?.status === "available") && (
+              {(dubRuns.length > 0 || hindiSoon || hindi?.status === "available") && (
                 <ul className="mt-3 space-y-1.5 text-sm">
                   {dubRuns.map((e) => (
                     <li key={`${e.lang}-${e.service}`}><span className="font-semibold text-ink">{e.lang === "hi" ? "🇮🇳 Hindi" : e.lang === "en" ? "English" : e.lang.toUpperCase()} dub</span> <span className="text-ink/85">on {e.service}{e.weekday ? `, new episodes ${e.weekday}s` : ""}{e.delay ? ` (${e.delay})` : ""}</span></li>
                   ))}
-                  {hindi?.status === "available" && !dubRuns.some((e) => e.lang === "hi") && (
-                    <li><span className="font-semibold text-ink">🇮🇳 Hindi dub</span> <span className="text-ink/85">on {hindi.platforms.map((p) => `${p.name}${platformKind(p.name) === "free" ? " (free)" : ""}`).join(", ")}</span></li>
+                  {hindiSoon && !dubRuns.some((e) => e.lang === "hi") ? (
+                    <li><span className="font-semibold text-ink">🇮🇳 Hindi dub</span> <span className="text-ink/85">announced for {hindiSoon.service}{hindiSoon.premiere ? `, from ${fmtDate(hindiSoon.premiere)}` : ", date not announced yet"}</span></li>
+                  ) : hindi?.status === "available" && !dubRuns.some((e) => e.lang === "hi") && (
+                    // The franchise's Hindi record: its scope says which seasons, which may not include this one.
+                    <li><span className="font-semibold text-ink">🇮🇳 Hindi dub</span> <span className="text-ink/85">on {hindi.platforms.map((p) => `${p.name}${p.scope ? ` (${p.scope})` : ""}${platformKind(p.name) === "free" ? ", free" : ""}`).join("; ")}</span></li>
                   )}
                 </ul>
               )}
