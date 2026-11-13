@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { characterNote } from "@/lib/charnotes";
 import { characterDeep } from "@/lib/chardeep";
-import CharacterDeepProfile from "@/components/CharacterDeep";
+import CharacterDeepProfile, { deepSections } from "@/components/CharacterDeep";
+import SectionNav, { type NavSection } from "@/components/fx/SectionNav";
 import { fitTitle, fitDescription } from "@/lib/titles";
 import PushButton from "@/components/PushButton";
 import { charTopic } from "@/lib/push";
@@ -123,6 +124,13 @@ export default async function CharacterPage({ params }: Props) {
   const { c, apps, mains, home, homeApp, voiced, bday, facts, fact, bio, al, ranked, rankShow, snapped, others, aliases, sign, span: firsts, table, tableShow } = await load(slug);
   const note = characterNote(c.slug);
   const deep = characterDeep(c.slug);
+  const navSections: NavSection[] = [
+    ...(note?.about ? [{ id: "who", label: "About" }] : []),
+    { id: "facts", label: "Facts" },
+    ...deepSections(c.slug),
+    ...(apps.length ? [{ id: "appearances", label: "Appearances" }] : []),
+    { id: "faq", label: "FAQ" },
+  ];
   const span = yearsActive(apps);
   const answer = quickAnswer({
     name: c.name, gender: fact("gender"), role: home ? (homeApp?.role === "main" ? "main" : "supporting") : null, anime: home?.title,
@@ -170,10 +178,13 @@ export default async function CharacterPage({ params }: Props) {
         eyebrow={homeApp?.role === "main" ? "Main character" : "Character"}
         title={<>{c.name}{c.nameJp && <span className="mt-1 block text-lg font-semibold text-ink/60 sm:text-xl">{c.nameJp}</span>}</>}
         subtitle={home ? <>{homeApp?.role === "main" ? "Main character in" : "Appears in"} <Link href={animePath(home)} className="font-semibold text-violet-2 hover:underline">{home.title}</Link>{apps.length > 1 ? ` and ${apps.length - 1} more` : ""}.</> : undefined}
+        // The facts people search first (age, height, birthday), then how much of the franchise they're in.
         facts={[
+          ...(fact("age") ? [{ value: String(fact("age")).replace(/-$/, "+"), label: "age" }] : []),
+          ...(fact("height") ? [{ value: String(fact("height")).replace(/\s*\(.*\)$/, ""), label: "height" }] : []),
           ...(bday ? [{ value: bdLabel(bday.m, bday.d), label: "birthday" }] : []),
-          ...(apps.length ? [{ value: String(apps.length), label: apps.length === 1 ? "appearance" : "appearances" }, { value: String(mains.length), label: "main roles" }] : []),
-        ]}
+          ...(apps.length ? [{ value: String(apps.length), label: apps.length === 1 ? "appearance" : "appearances" }] : []),
+        ].slice(0, 4)}
         hue={300}
         backdrop={home?.cover?.large || null}
         posters={[c.image]}
@@ -191,14 +202,15 @@ export default async function CharacterPage({ params }: Props) {
           {aliases.length > 0 && <p className="mt-2 text-sm text-muted">Also known as {aliases.map((x, i) => <span key={x}>{i ? ", " : ""}<strong className="font-semibold text-ink/85">{x}</strong></span>)}.</p>}
         </section>
       )}
+      <SectionNav sections={navSections} />
       {note?.about && (
-        <section className="card reveal mt-5 p-5 sm:p-6" aria-labelledby="bio-h">
+        <section id="who" data-section className="card reveal mt-5 p-5 sm:p-6" aria-labelledby="bio-h">
           <h2 id="bio-h" className="h-section mb-2">Who is {c.name}?</h2>
           <p className="prose-anime">{note.about}</p>
           <p className="mt-2 text-xs text-muted">Written by AniLumi, spoiler-free, checked against {note.sources.length} sources. <Link href="/how-we-check" className="underline">How we check</Link></p>
         </section>
       )}
-      <div className="mt-5 grid gap-5 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.5fr)] lg:items-start">
+      <div id="facts" data-section className="mt-5 grid gap-5 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.5fr)] lg:items-start">
         <section className="card reveal p-5" aria-labelledby="facts-h">
           <h2 id="facts-h" className="text-xs font-semibold uppercase tracking-wider text-muted">{c.name}: quick facts</h2>
           <dl className="mt-3 divide-y divide-line/60 text-sm">
@@ -241,7 +253,7 @@ export default async function CharacterPage({ params }: Props) {
       </div>
       <CharacterDeepProfile slug={c.slug} name={note?.name ?? c.name} />
       {stats.length >= 2 && (
-        <section className="reveal mt-10" aria-labelledby="numbers-h">
+        <section id="numbers" data-section className="reveal mt-10" aria-labelledby="numbers-h">
           <h2 id="numbers-h" className="h-section mb-3">{c.name} in numbers</h2>
           <StatTiles stats={stats} />
           <div className="mt-3 grid gap-3 lg:grid-cols-2">
@@ -284,7 +296,7 @@ export default async function CharacterPage({ params }: Props) {
       <MerchBlock name={c.name} show={home?.title} source="character" className="reveal mt-10" />
       <AdSlot slot="character-mid" />
       {apps.length > 0 && (
-        <section className="mt-10">
+        <section id="appearances" data-section className="mt-10">
           <h2 className="h-section mb-3">Appearances</h2>
           <ul className="grid gap-3 sm:grid-cols-2">
             {apps.map(({ role, anime }) => (
@@ -317,7 +329,7 @@ export default async function CharacterPage({ params }: Props) {
           </ul>
         </section>
       )}
-      <Faq
+      <div id="faq" data-section><Faq
         title={`${c.name} FAQ`}
         items={[
           { q: `What anime is ${c.name} from?`, a: home ? `${c.name} is ${homeApp?.role === "main" ? "a main character" : "a character"} in ${home.title}${apps.length > 1 ? ` and appears in ${apps.length} titles in total, including ${apps.filter((x) => x.anime.id !== home.id).slice(0, 2).map((x) => x.anime.title).join(" and ")}` : ""}.` : `${c.name}'s appearances have not been catalogued yet.` },
@@ -343,7 +355,7 @@ export default async function CharacterPage({ params }: Props) {
           ...(c.nameJp ? [{ q: `What is ${c.name}'s Japanese name?`, a: `${c.name} is written ${c.nameJp} in Japanese.` }] : []),
           { q: `Where can I watch ${c.name}?`, a: home ? `Open the ${home.title} page for licensed streaming links and the full episode list.` : "Streaming links are listed on each anime page." },
         ]}
-      />
+      /></div>
     </article>
   );
 }
