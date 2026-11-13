@@ -20,7 +20,7 @@ import { strongSimilarIds } from "@/lib/picks";
 import { HINDI_PLATFORMS, dubsOn } from "@/lib/hindidub";
 import { airsSoon, searchShownPaths, similarSlugs, watchOrderIndexed, characterTableIndexed, notedCharacters, genreIndexed, bestYearIndexed, trendIndexed, voiceActorIndexed, castIndexed, howLongIndexed, NEXT_SEASON_MIN_MEMBERS } from "@/lib/indexing";
 import franchiseData from "@/data/franchises.json";
-import { DATA_DATES as D, STATIC_UPDATED, latest, weekStart, monthStart } from "@/lib/lastmod";
+import { DATA_DATES as D, STATIC_UPDATED, BIRTHDAY_PAGES_UPDATED, latest, weekStart, monthStart } from "@/lib/lastmod";
 import { FILLER } from "@/data/filler";
 
 
@@ -90,7 +90,7 @@ export async function sitemapEntries(): Promise<MetadataRoute.Sitemap> {
     { ...info("/advertise"), changeFrequency: "monthly", priority: 0.3 },
     { ...info("/contact"), changeFrequency: "yearly", priority: 0.3 },
     { ...info("/privacy"), changeFrequency: "yearly", priority: 0.2 },
-    ...allDays().filter(({ m, d }) => birthdaysOn(m, d).characters.length).map(({ m, d }) => ({ url: abs(bdPath(m, d)), lastModified: at(D.birthdays, D.charLines), changeFrequency: "yearly" as const, priority: 0.4 })),
+    ...allDays().filter(({ m, d }) => birthdaysOn(m, d).characters.length).map(({ m, d }) => ({ url: abs(bdPath(m, d)), lastModified: at(D.birthdays, D.charLines, D.charNotes, BIRTHDAY_PAGES_UPDATED), changeFrequency: "yearly" as const, priority: 0.4 })),
     // Query-string variants are disallowed in robots.txt, so only the plain URL is listed.
     { url: abs("/tonight"), lastModified: now, changeFrequency: "weekly", priority: 0.7 },
     ...Array.from({ length: now.getFullYear() - 1999 }, (_, i) => now.getFullYear() - i).filter((y) => bestYearIndexed(y, now)).map((y, i) => ({ url: abs(`/best/${y}`), lastModified: i === 0 ? now : monthly, changeFrequency: (i === 0 ? "daily" : "monthly") as "daily" | "monthly", priority: i < 3 ? 0.8 : 0.5 })),

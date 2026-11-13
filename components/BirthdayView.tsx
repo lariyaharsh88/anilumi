@@ -18,6 +18,12 @@ import JsonLd from "@/components/JsonLd";
 import Faq from "./Faq";
 import LeadForm from "./LeadForm";
 import { dbEnabled } from "@/lib/db";
+import SectionNav, { type NavSection } from "@/components/fx/SectionNav";
+import CharacterCompare from "@/components/CharacterCompare";
+import { birthdayRows, birthdayStats, statsLine } from "@/lib/bdstats";
+
+/** First two sentences of a bio, for the "who they are" cards. */
+const lead = (t: string) => (t.match(/[^.!?]+[.!?]+(\s|$)/g) ?? [t]).slice(0, 2).join("").trim();
 
 const fans = (n: number) => (n >= 1000 ? `${(n / 1000).toFixed(n >= 10000 ? 0 : 1)}K` : String(n));
 const height = (s: SnapChar | null) => s?.l.find(([k]) => /height/i.test(k))?.[1] ?? null;
@@ -52,6 +58,31 @@ export default async function BirthdayView({ m, d, characters, people, today = f
     premieresOn(m, d, 12).catch((): Premiere[] => []),
   ]);
   const firsts = premieres.filter((p) => p.anime).slice(0, 8);
+  const stats = birthdayStats(characters);
+  // Who they are: our checked bio where the character has notes, else the one-line description.
+  const who = characters.slice(0, 8).flatMap((c) => {
+    const href = hrefOf(c);
+    const note = href?.startsWith("/character/") ? characterNote(href.slice("/character/".length)) : null;
+    const text = note?.about ? lead(note.about) : characterLine(c.id);
+    return text ? [{ c, href, text, noted: Boolean(note?.about) }] : [];
+  }).slice(0, 6);
+  // Compare: the date's characters, the week's best known, and the sign's best known.
+  const tabs = [
+    { key: "day", label: `Born on ${label}`, rows: birthdayRows(characters, 8) },
+    { key: "week", label: "Born the same week", rows: birthdayRows([...characters.slice(0, 1), ...week.flatMap((x) => (x.top ? [x.top] : []))], 8) },
+    { key: "sign", label: `Same sign (${sign.name})`, rows: birthdayRows([...characters.slice(0, 1), ...otherSign], 7) },
+  ].filter((t) => t.rows.length >= 2);
+  const nav: NavSection[] = [
+    ...(top ? [{ id: "spotlight", label: "Top birthday" }] : []),
+    ...(stats ? [{ id: "glance", label: "At a glance" }] : []),
+    ...(who.length ? [{ id: "who", label: "Who they are" }] : []),
+    ...(tabs.length ? [{ id: "compare", label: "Compare" }] : []),
+    ...(characters.length ? [{ id: "all", label: "All characters" }] : []),
+    ...(people.length ? [{ id: "voices", label: "Voice actors" }] : []),
+    ...(firsts.length ? [{ id: "premieres", label: "Premieres" }] : []),
+    { id: "week", label: "Same week" },
+    ...(otherSign.length ? [{ id: "sign", label: sign.name }] : []),
+  ];
 
   return (
     <div className="container-x pb-8">
@@ -72,9 +103,10 @@ export default async function BirthdayView({ m, d, characters, people, today = f
       />
       <MadeBy className="mt-4" method="Birthdays come from AniList's character and staff records, ranked by fans; roles, arcs and voice-actor facts come from our checked notes where we have them." />
       <p className="mt-3 text-sm"><Link href="/anime-birthday-twin" className="font-medium text-violet hover:underline">🎂 Find your own anime birthday twin →</Link></p>
+      <SectionNav sections={nav} />
 
       {top && (
-        <section className="reveal mt-10" aria-labelledby="spot-h">
+        <section id="spotlight" data-section className="reveal pt-10" aria-labelledby="spot-h">
           <h2 id="spot-h" className="h-section mb-3">Most popular birthday on {label}</h2>
           <div className="card flex flex-col gap-5 p-4 sm:flex-row sm:p-5">
             <span className="relative mx-auto block aspect-[5/7] w-40 shrink-0 overflow-hidden rounded-xl border border-line bg-bg-2 sm:mx-0 sm:w-44">
@@ -104,8 +136,50 @@ export default async function BirthdayView({ m, d, characters, people, today = f
         </section>
       )}
 
+      {stats && (
+        <section id="glance" data-section className="reveal pt-10" aria-labelledby="glance-h">
+          <h2 id="glance-h" className="h-section mb-3">{label} birthdays at a glance</h2>
+          <div className="card p-4 sm:p-5">
+            <dl className="grid grid-cols-2 gap-x-4 gap-y-4 text-sm sm:grid-cols-4">
+              <div><dt className="text-xs text-muted">Characters</dt><dd className="text-lg font-bold text-ink">{stats.count}</dd><dd className="text-xs text-muted">from {stats.series} anime</dd></div>
+              {stats.main + stats.supporting > 0 && <div><dt className="text-xs text-muted">Main · supporting</dt><dd className="text-lg font-bold text-ink">{stats.main} · {stats.supporting}</dd><dd className="text-xs text-muted">{stats.female} female, {stats.male} male</dd></div>}
+              {stats.oldest && <div><dt className="text-xs text-muted">Oldest</dt><dd className="font-semibold text-ink">{stats.oldest.href ? <Link href={stats.oldest.href} className="hover:text-violet-2">{stats.oldest.name}</Link> : stats.oldest.name}</dd><dd className="text-xs text-muted">Age {stats.oldest.age}{stats.youngest ? ` · youngest ${stats.youngest.name} (${stats.youngest.age})` : ""}</dd></div>}
+              {stats.tallest && <div><dt className="text-xs text-muted">Tallest</dt><dd className="font-semibold text-ink">{stats.tallest.href ? <Link href={stats.tallest.href} className="hover:text-violet-2">{stats.tallest.name}</Link> : stats.tallest.name}</dd><dd className="text-xs text-muted">{stats.tallest.heightCm} cm{stats.shortest ? ` · shortest ${stats.shortest.name} (${stats.shortest.heightCm} cm)` : ""}</dd></div>}
+            </dl>
+            <p className="mt-4 text-sm leading-6 text-ink/90">{statsLine(label, stats)}</p>
+          </div>
+        </section>
+      )}
+
+      {who.length > 0 && (
+        <section id="who" data-section className="reveal pt-10" aria-labelledby="who-h">
+          <h2 id="who-h" className="h-section mb-3">Who are the {label} birthday characters?</h2>
+          <div className="grid gap-3 md:grid-cols-2">
+            {who.map(({ c, href, text, noted }) => (
+              <article key={c.id} className="card flex gap-3 p-3.5">
+                <span className="relative h-20 w-14 shrink-0 overflow-hidden rounded-lg border border-line bg-bg-2">{c.i && <Image src={c.i} alt={c.n} fill sizes="56px" className="object-cover" />}</span>
+                <div className="min-w-0">
+                  <h3 className="font-semibold text-ink">{href ? <Link href={href} className="hover:text-violet-2">{c.n}</Link> : c.n}</h3>
+                  <p className="text-xs text-muted">{c.t}</p>
+                  <p className="mt-1.5 text-sm leading-6 text-ink/90">{text}</p>
+                  {noted && href && <Link href={href} className="mt-1 inline-block text-xs font-medium text-violet hover:underline">Full profile: age, family, abilities →</Link>}
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {tabs.length > 0 && (
+        <section id="compare" data-section className="reveal pt-10" aria-labelledby="cmp-h">
+          <h2 id="cmp-h" className="h-section mb-1">Compare the {label} birthday characters</h2>
+          <p className="mb-3 text-sm text-muted">Popularity, age, height, blood type and voices side by side. Switch to the same week or the same sign, tap names to leave them out, and sort.</p>
+          <CharacterCompare tabs={tabs} />
+        </section>
+      )}
+
       {characters.length > 0 && (
-        <section className="reveal mt-10" aria-labelledby="chars-h">
+        <section id="all" data-section className="reveal pt-10" aria-labelledby="chars-h">
           <h2 id="chars-h" className="h-section mb-3">Every character born on {label}</h2>
           <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {characters.map((c, i) => {
@@ -159,8 +233,8 @@ export default async function BirthdayView({ m, d, characters, people, today = f
       )}
 
       {people.length > 0 && (
-        <section className="reveal mt-10">
-          <h2 className="h-section mb-3">Voice actors born on {label}</h2>
+        <section id="voices" data-section className="reveal pt-10" aria-labelledby="va-h">
+          <h2 id="va-h" className="h-section mb-3">Voice actors born on {label}</h2>
           <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {people.map((p) => (
               <li key={p.id}>
@@ -180,7 +254,7 @@ export default async function BirthdayView({ m, d, characters, people, today = f
       )}
 
       {firsts.length > 0 && (
-        <section className="reveal mt-10" aria-labelledby="otd-h">
+        <section id="premieres" data-section className="reveal pt-10" aria-labelledby="otd-h">
           <div className="mb-3 flex items-end justify-between gap-3">
             <h2 id="otd-h" className="h-section">Anime that premiered on {label}</h2>
             <Link href={otdPath(m, d)} className="shrink-0 text-sm font-medium text-violet hover:text-violet-2">All →</Link>
@@ -201,7 +275,7 @@ export default async function BirthdayView({ m, d, characters, people, today = f
         </section>
       )}
 
-      <section className="reveal mt-10" aria-labelledby="week-h">
+      <section id="week" data-section className="reveal pt-10" aria-labelledby="week-h">
         <h2 id="week-h" className="h-section mb-3">Born the same week</h2>
         <ul className="grid grid-cols-3 gap-3 sm:grid-cols-6">
           {week.map((x) => (
@@ -217,7 +291,7 @@ export default async function BirthdayView({ m, d, characters, people, today = f
       </section>
 
       {otherSign.length > 0 && (
-        <section className="reveal mt-10" aria-labelledby="sign-h">
+        <section id="sign" data-section className="reveal pt-10" aria-labelledby="sign-h">
           <h2 id="sign-h" className="h-section mb-1">{sign.symbol} Other {sign.name} anime characters</h2>
           <p className="mb-3 text-sm text-muted">{label} falls under {sign.name}. {signmates.length.toLocaleString()} of the most popular anime characters share the sign; these are the best known.</p>
           <ul className="flex flex-wrap gap-2">
@@ -247,6 +321,8 @@ export default async function BirthdayView({ m, d, characters, people, today = f
         { q: `Which anime characters have a birthday on ${label}?`, a: characters.length ? `${characters.slice(0, 8).map((c) => `${c.n} (${c.t})`).join(", ")}${characters.length > 8 ? `, and ${characters.length - 8} more` : ""}.` : `None of the most popular characters on record were born on ${label}.` },
         ...(top ? [{ q: `Who is the most popular anime character born on ${label}?`, a: `${top.n} from ${top.t}, with ${top.f.toLocaleString()} fans on AniList${topSnap?.jp ? `. In Japanese, ${top.n} is voiced by ${topSnap.jp.n}` : ""}.` }] : []),
         { q: `What zodiac sign are anime characters born on ${label}?`, a: `${sign.name} (${sign.symbol}).${otherSign.length ? ` Other well-known ${sign.name} characters include ${otherSign.slice(0, 3).map((c) => c.n).join(", ")}.` : ""}` },
+        ...(stats?.oldest ? [{ q: `Who is the oldest anime character born on ${label}?`, a: `${stats.oldest.name} from ${stats.oldest.series}, at ${stats.oldest.age}${stats.youngest ? `. The youngest is ${stats.youngest.name} (${stats.youngest.age})` : ""}.` }] : []),
+        ...(stats?.tallest ? [{ q: `Who is the tallest anime character born on ${label}?`, a: `${stats.tallest.name} from ${stats.tallest.series}, at ${stats.tallest.heightCm} cm${stats.shortest ? `. The shortest is ${stats.shortest.name} at ${stats.shortest.heightCm} cm` : ""}.` }] : []),
         ...(people.length ? [{ q: `Which voice actors were born on ${label}?`, a: `${people.slice(0, 6).map((p) => p.n).join(", ")}.` }] : []),
         ...(firsts.length ? [{ q: `Which anime premiered on ${label}?`, a: `${firsts.slice(0, 5).map((p) => `${p.anime!.title} (${p.year})`).join(", ")}.` }] : []),
       ]} />
