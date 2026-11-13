@@ -8,6 +8,8 @@ import { NOTES_CHECKED } from "@/lib/charnotes";
 import { DEEP_CHECKED } from "@/lib/chardeep";
 import CharacterDeepProfile, { deepSections } from "@/components/CharacterDeep";
 import CharacterCompare from "@/components/CharacterCompare";
+import FamilyTree from "@/components/FamilyTree";
+import { familyOf } from "@/lib/family";
 import { compareSets } from "@/lib/charcompare";
 import SectionNav, { type NavSection } from "@/components/fx/SectionNav";
 import { fitTitle, fitDescription } from "@/lib/titles";
@@ -135,9 +137,11 @@ export default async function CharacterPage({ params }: Props) {
   const checked = deep ? DEEP_CHECKED : note ? NOTES_CHECKED : null;
   const sources = [...new Set([...(note?.sources ?? []), ...(deep?.sources ?? [])])];
   const compare = compareSets(c.slug);
+  const family = familyOf(c.slug);
   const navSections: NavSection[] = [
     ...(note?.about ? [{ id: "who", label: "About" }] : []),
     { id: "facts", label: "Facts" },
+    ...(family ? [{ id: "family", label: "Family" }] : []),
     ...deepSections(c.slug),
     ...(compare ? [{ id: "compare", label: "Compare" }] : []),
     ...(apps.length ? [{ id: "appearances", label: "Appearances" }] : []),
@@ -268,6 +272,12 @@ export default async function CharacterPage({ params }: Props) {
           </section>
         )}
       </div>
+      {family && (
+        <section id="family" data-section className="reveal pt-10" aria-labelledby="family-h">
+          <h2 id="family-h" className="h-section mb-3"><span aria-hidden className="mr-2">🌳</span>{note?.name ?? c.name}&apos;s family tree</h2>
+          <FamilyTree slug={c.slug} name={note?.name ?? c.name} image={c.image} />
+        </section>
+      )}
       <CharacterDeepProfile slug={c.slug} name={note?.name ?? c.name} />
       {compare && (
         <section id="compare" data-section className="reveal pt-10" aria-labelledby="compare-h">
