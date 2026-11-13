@@ -23,6 +23,8 @@ test("Hindi dubs: platform kinds and the by-platform index", () => {
   assert.equal(platformKind("Muse India (YouTube)"), "free");
   assert.equal(platformKind("Sony YAY!"), "tv");
   assert.equal(platformKind("Crunchyroll"), "subscription");
+  assert.equal(platformKind("Apple TV"), "subscription");
+  assert.equal(platformKind("Hungama TV"), "tv");
   const p = byPlatform();
   assert.equal(p[0].name, "Crunchyroll");
   for (const x of p) assert.equal(new Set(x.titles.map((t) => t.d.s)).size, x.titles.length, `${x.name} lists a franchise twice`);

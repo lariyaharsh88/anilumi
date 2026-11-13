@@ -21,7 +21,8 @@ export const DUB_REVIEWED = D.reviewed;
 /** How you watch on each platform; unknown names read as subscription. */
 const KIND: [RegExp, PlatformKind][] = [
   [/youtube|mx player/i, "free"],
-  [/cartoon network|sony yay|zee caf|nickelodeon|\btv\b/i, "tv"],
+  // "Apple TV" is a streaming service, not a channel.
+  [/cartoon network|sony yay|zee caf|nickelodeon|(?<!apple )\btv\b/i, "tv"],
 ];
 export const platformKind = (name: string): PlatformKind => KIND.find(([re]) => re.test(name))?.[1] ?? "subscription";
 

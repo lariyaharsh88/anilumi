@@ -4,10 +4,17 @@ import PageHero from "@/components/PageHero";
 import Faq from "@/components/Faq";
 import JsonLd from "@/components/JsonLd";
 import { KIND_CLASS } from "@/components/HindiDub";
-import { getAnimeBySlug, posterUrl } from "@/lib/kitsu";
+import Image from "next/image";
+import { listAnime, posterUrl, type Anime } from "@/lib/kitsu";
 import { itemList } from "@/lib/ld";
 import { HINDI_PLATFORMS, byPlatform, dubDate, dubHref, hindiDubbed, notDubbed, platformKind, type PlatformKind } from "@/lib/hindidub";
 import { fitTitle, fitDescription } from "@/lib/titles";
+import { dubStats, cheapestKind, genreCounts, eraCounts } from "@/lib/hindistats";
+import SectionNav from "@/components/fx/SectionNav";
+import StatTiles from "@/components/viz/StatTiles";
+import BarChart from "@/components/viz/BarChart";
+import StackedBar from "@/components/viz/StackedBar";
+import HindiDubList, { type DubCard } from "@/components/HindiDubList";
 
 export const revalidate = 86400;
 const KIND: Record<PlatformKind, string> = { free: "Free", subscription: "Subscription", tv: "TV channel" };
@@ -23,13 +30,32 @@ export function generateMetadata(): Metadata {
   };
 }
 
+/** Kitsu records (poster, genres, start year) for the dubbed franchises, 20 slugs per request, cached for a day. */
+async function kitsuFor(slugs: string[]): Promise<Map<string, Anime>> {
+  const pages = await Promise.all(Array.from({ length: Math.ceil(slugs.length / 20) }, (_, i) =>
+    listAnime({ filter: { slug: slugs.slice(i * 20, i * 20 + 20).join(",") }, limit: 20, withCategories: true, revalidate: 86400, unrated: true }).then((r) => r.items).catch((): Anime[] => [])));
+  return new Map(pages.flat().map((a) => [a.slug, a]));
+}
+const yearOf = (a: Anime | undefined) => (a?.startDate ? Number(a.startDate.slice(0, 4)) : null);
+
 /** Every popular anime with an official Hindi dub, by title and by platform, plus the big ones still without. */
 export default async function HindiDubHub() {
   const dubbed = hindiDubbed();
   const platforms = byPlatform();
   const free = dubbed.filter((d) => d.platforms.some((p) => platformKind(p.name) === "free"));
   const none = notDubbed();
-  const posters = (await Promise.all(dubbed.slice(0, 3).map((d) => getAnimeBySlug(d.s).catch(() => null)))).map((a) => (a ? posterUrl(a, "medium") : null));
+  const kitsu = await kitsuFor(dubbed.map((d) => d.s));
+  const poster = (slug: string, size: "small" | "medium" = "small") => { const a = kitsu.get(slug); return a ? posterUrl(a, size) : null; };
+  const posters = dubbed.slice(0, 3).map((d) => poster(d.s, "medium"));
+  const st = dubStats();
+  const genres = genreCounts(dubbed.flatMap((d) => { const a = kitsu.get(d.s); return a ? [a.categories.map((c) => c.title)] : []; }));
+  const eras = eraCounts(dubbed.map((d) => yearOf(kitsu.get(d.s))));
+  const withYear = eras.reduce((n, e) => n + e.value, 0);
+  const cards: DubCard[] = dubbed.map((d) => ({
+    s: d.s, t: d.t, href: dubHref(d), poster: poster(d.s), year: yearOf(kitsu.get(d.s)), cheapest: cheapestKind(d),
+    platforms: d.platforms.map((p) => ({ name: p.name, scope: p.scope, url: p.url, kind: platformKind(p.name) })),
+  }));
+  const platformPage = (name: string) => { const page = HINDI_PLATFORMS.find((x) => x.match.test(name)); return page ? `/hindi-dub/${page.slug}` : null; };
   const top = platforms[0];
   const faq = [
     { q: "Which anime have an official Hindi dub?", a: `${dubbed.length} popular anime on our list do, including ${dubbed.slice(0, 8).map((d) => d.t).join(", ")}. The full list with platforms is above.` },
@@ -50,90 +76,140 @@ export default async function HindiDubHub() {
           { value: String(dubbed.length), label: "anime in Hindi" },
           { value: String(free.length), label: "free to watch" },
           { value: String(platforms.length), label: "platforms" },
+          { value: `${st.share}%`, label: "of popular anime" },
         ]}
         hue={25}
         posters={posters}
       >
         <p className="flex flex-wrap gap-2 text-sm">
           <Link href="/hi/hindi-dub" className="chip" hrefLang="hi">हिंदी में देखें</Link>
-          {free.length > 0 && <a href="#free" className="chip">Free and legal ({free.length})</a>}
-          <a href="#by-platform" className="chip">By platform</a>
-          <a href="#no-dub" className="chip">No Hindi dub yet</a>
           <Link href="/dub-schedule#hindi" className="chip">New Hindi dubs</Link>
+          <Link href="/hindi-voice-artists" className="chip">Hindi voice artists</Link>
           <Link href="/where-to-watch" className="chip">Where to watch in India</Link>
         </p>
       </PageHero>
+      <SectionNav sections={[
+        ...(free.length ? [{ id: "free", label: `Free (${free.length})` }] : []),
+        { id: "numbers", label: "In numbers" },
+        { id: "list", label: `All ${dubbed.length}` },
+        { id: "by-platform", label: "By platform" },
+        { id: "no-dub", label: "No dub yet" },
+        { id: "faq", label: "FAQ" },
+      ]} />
 
       {free.length > 0 && (
-        <section id="free" className="card reveal mt-10 scroll-mt-24 border-emerald-500/40 bg-emerald-500/[.06] p-4" aria-labelledby="free-h">
-          <h2 id="free-h" className="font-semibold text-ink">Watch anime in Hindi for free, legally</h2>
-          <p className="mt-1 text-sm text-ink/80">These {free.length} official Hindi dubs cost nothing: they stream on the licensors&apos; own YouTube channels or ad-supported MX Player. Sites offering &ldquo;free Hindi anime&rdquo; beyond these are unlicensed uploads.</p>
-          <ul className="mt-3 grid gap-x-4 gap-y-1.5 text-sm sm:grid-cols-2">
+        <section id="free" data-section className="reveal pt-10" aria-labelledby="free-h">
+          <h2 id="free-h" className="h-section mb-1">Watch anime in Hindi for free, legally</h2>
+          <p className="mb-4 max-w-3xl text-sm text-muted">These {free.length} official Hindi dubs cost nothing: they stream on the licensors&apos; own YouTube channels or ad-supported MX Player. Sites offering &ldquo;free Hindi anime&rdquo; beyond these are unlicensed uploads.</p>
+          <ul className="grid grid-cols-3 gap-3 sm:grid-cols-5 lg:grid-cols-8">
             {free.map((d) => (
               <li key={d.s} className="min-w-0">
-                <Link href={dubHref(d)} className="font-medium text-ink hover:text-violet-2">{d.t}</Link>
-                <span className="text-muted"> · {d.platforms.filter((p) => platformKind(p.name) === "free").map((p, i) => <span key={p.name}>{i ? ", " : ""}<a href={p.url} target="_blank" rel="noopener nofollow" className="hover:text-violet-2 hover:underline">{p.name}{p.scope ? ` (${p.scope})` : ""}</a></span>)}</span>
+                <Link href={dubHref(d)} className="group block">
+                  <span className="relative block aspect-[5/7] overflow-hidden rounded-xl border border-emerald-500/30 bg-bg-2">
+                    {poster(d.s) && <Image src={poster(d.s)!} alt={`${d.t} poster`} fill sizes="(max-width:640px) 30vw, 160px" className="object-cover transition duration-500 group-hover:scale-105" />}
+                    <span className="absolute left-1.5 top-1.5 rounded-full bg-emerald-600/90 px-1.5 py-0.5 text-[10px] font-bold text-white">FREE</span>
+                  </span>
+                  <span className="mt-1.5 line-clamp-2 text-sm font-semibold leading-snug text-ink group-hover:text-violet-2">{d.t}</span>
+                </Link>
+                <span className="block truncate text-xs text-muted">{d.platforms.filter((p) => platformKind(p.name) === "free").map((p, i) => <span key={p.name}>{i ? ", " : ""}<a href={p.url} target="_blank" rel="noopener nofollow" className="hover:text-violet-2 hover:underline">{p.name.replace(/ \(YouTube\)$/, "")}</a></span>)}</span>
               </li>
             ))}
           </ul>
         </section>
       )}
 
-      <section className="reveal mt-10" aria-labelledby="list-h">
-        <h2 id="list-h" className="h-section mb-1">Hindi dubbed anime, most-watched first</h2>
-        <p className="mb-4 text-sm text-muted">Checked {dubDate()}. Scope shows which seasons or films have Hindi audio.</p>
-        <ul className="grid gap-3 md:grid-cols-2">
-          {dubbed.map((d) => (
-            <li key={d.s} className="card p-4">
-              <Link href={dubHref(d)} className="font-semibold text-ink hover:text-violet-2">{d.t}</Link>
-              <ul className="mt-2 space-y-1.5">
-                {d.platforms.map((p) => (
-                  <li key={p.name + p.scope} className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm">
-                    <span className="font-medium text-ink/90">{p.name}</span>
-                    <span className={`rounded-full border px-2 py-0.5 text-[11px] font-medium ${KIND_CLASS[platformKind(p.name)]}`}>{KIND[platformKind(p.name)]}</span>
-                    {p.scope && <span className="text-muted">· {p.scope}</span>}
-                    <a href={p.url} target="_blank" rel="noopener nofollow" className="text-xs text-violet hover:underline">source ↗</a>
-                  </li>
-                ))}
-              </ul>
-            </li>
-          ))}
-        </ul>
+      <section id="numbers" data-section className="reveal pt-10" aria-labelledby="num-h">
+        <h2 id="num-h" className="h-section mb-1">Hindi dubbed anime in numbers</h2>
+        <p className="mb-4 max-w-3xl text-sm text-muted">Of the {st.checked} most-watched anime franchises we checked, {st.dubbed} ({st.share}%) have an official Hindi dub. {st.multi} of them stream in more than one place, so you can often pick the cheapest.</p>
+        <StatTiles stats={[
+          { label: "Anime with a Hindi dub", value: String(st.dubbed), sub: `of ${st.checked} checked` },
+          { label: "Free to watch", value: String(st.access.free), sub: "YouTube or MX Player" },
+          { label: "Platforms carrying them", value: String(st.platformCount), sub: "streaming and TV" },
+          { label: "On 2+ platforms", value: String(st.multi), sub: `${Math.round((st.multi / Math.max(1, st.dubbed)) * 100)}% of dubs` },
+        ]} />
+        <div className="mt-4 grid gap-4 lg:grid-cols-2">
+          <StackedBar title="How you can watch them" subtitle="Each dub counted once, by its cheapest option" unit="anime" segments={[
+            { key: "free", label: "Free somewhere", value: st.access.free },
+            { key: "sub", label: "Subscription only", value: st.access.subscription },
+            { key: "tv", label: "TV channel only", value: st.access.tv },
+          ]} />
+          <StackedBar title="Popular anime with and without a Hindi dub" subtitle={`The ${st.checked} most-watched franchises we checked`} unit="anime" segments={[
+            { key: "yes", label: "Hindi dub", value: st.dubbed },
+            { key: "no", label: "No Hindi dub yet", value: st.none },
+          ]} />
+        </div>
+        <div className="mt-4 grid gap-4 lg:grid-cols-2">
+          <BarChart orientation="bar" integer title="Which platform has the most Hindi dubs?" subtitle={`Anime on each platform${st.other ? `. Other: ${st.other.names.join(", ")}` : ""}`} valueHeading="Anime"
+            data={[...st.platforms.map((p) => ({ key: p.name, label: p.name, value: p.count, display: `${p.count} anime`, href: platformPage(p.name) ?? undefined })), ...(st.other ? [{ key: "other", label: "Other", value: st.other.count, display: `${st.other.count} anime` }] : [])]}
+            labelKeys={st.platforms.slice(0, 3).map((p) => p.name)} highlightKey={st.platforms[0]?.name} />
+          <div className="grid gap-4">
+            {genres.length > 0 && <BarChart orientation="bar" integer title="Hindi dubs by genre" subtitle={`${genres[0]?.label} and ${genres[1]?.label} lead; an anime can have several genres`} valueHeading="Anime"
+              data={genres.map((g) => ({ key: g.label, label: g.label, value: g.value, display: `${g.value} anime` }))} labelKeys={genres.slice(0, 2).map((g) => g.label)} highlightKey={genres[0]?.label} />}
+          </div>
+        </div>
+        <div className="mt-4 grid gap-4 lg:grid-cols-2">
+          {withYear > 0 && <BarChart integer title="When the dubbed anime first aired" subtitle="Most Hindi dubs are of recent hits, but classics from the 1990s and 2000s are there too" valueHeading="Anime"
+            data={eras.map((e) => ({ key: e.label, label: e.label, value: e.value, display: `${e.value} anime` }))} labelKeys={eras.map((e) => e.label)} height={170} />}
+          <BarChart integer title="On how many platforms is each dub?" subtitle="More platforms means more ways to watch, often one of them free" valueHeading="Anime"
+            data={st.spread.map((x) => ({ key: x.label, label: `${x.label} platform${x.label === "1" ? "" : "s"}`, value: x.value, display: `${x.value} anime` }))} labelKeys={st.spread.map((x) => x.label)} height={170} />
+        </div>
       </section>
 
-      <section id="by-platform" className="reveal mt-12 scroll-mt-24" aria-labelledby="plat-h">
+      <section id="list" data-section className="reveal pt-10" aria-labelledby="list-h">
+        <h2 id="list-h" className="h-section mb-1">All {dubbed.length} Hindi dubbed anime, most-watched first</h2>
+        <p className="mb-4 text-sm text-muted">Checked {dubDate()}. Scope shows which seasons or films have Hindi audio; every row links to the page that confirms it.</p>
+        <HindiDubList items={cards} platforms={platforms.map((p) => p.name)} />
+      </section>
+
+      <section id="by-platform" data-section className="reveal pt-10" aria-labelledby="plat-h">
         <h2 id="plat-h" className="h-section mb-4">Hindi dubs by platform</h2>
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {platforms.map((p) => (
             <div key={p.name} className="card p-4">
               <div className="flex items-center justify-between gap-2">
-                <h3 className="font-semibold text-ink">{(() => { const page = HINDI_PLATFORMS.find((x) => x.match.test(p.name)); return page ? <Link href={`/hindi-dub/${page.slug}`} className="hover:text-violet-2 hover:underline">{p.name}</Link> : p.name; })()}</h3>
+                <h3 className="font-semibold text-ink">{platformPage(p.name) ? <Link href={platformPage(p.name)!} className="hover:text-violet-2 hover:underline">{p.name}</Link> : p.name}</h3>
                 <span className={`rounded-full border px-2 py-0.5 text-[11px] font-medium ${KIND_CLASS[p.kind]}`}>{KIND[p.kind]}</span>
               </div>
               <p className="text-xs text-muted">{p.titles.length} anime</p>
-              <ul className="mt-2 flex flex-wrap gap-1.5">
-                {p.titles.map(({ d }) => <li key={d.s}><Link href={dubHref(d)} className="chip text-xs">{d.t}</Link></li>)}
+              <span className="mt-2 block h-1.5 rounded-full bg-white/10"><span className="block h-1.5 rounded-full bg-violet" style={{ width: `${(p.titles.length / platforms[0].titles.length) * 100}%` }} /></span>
+              <ul className="mt-3 flex flex-wrap gap-1.5">
+                {p.titles.slice(0, 8).map(({ d }) => <li key={d.s}><Link href={dubHref(d)} className="chip text-xs">{d.t}</Link></li>)}
               </ul>
+              {p.titles.length > 8 && (platformPage(p.name)
+                ? <Link href={platformPage(p.name)!} className="mt-2 inline-block text-xs font-medium text-violet hover:underline">All {p.titles.length} on {p.name} →</Link>
+                : <details className="mt-2 text-xs"><summary className="cursor-pointer text-violet">+{p.titles.length - 8} more</summary><ul className="mt-2 flex flex-wrap gap-1.5">{p.titles.slice(8).map(({ d }) => <li key={d.s}><Link href={dubHref(d)} className="chip text-xs">{d.t}</Link></li>)}</ul></details>)}
             </div>
           ))}
         </div>
       </section>
 
-      <section id="no-dub" className="reveal mt-12 scroll-mt-24" aria-labelledby="none-h">
+      <section id="no-dub" data-section className="reveal pt-10" aria-labelledby="none-h">
         <h2 id="none-h" className="h-section mb-1">Popular anime with no Hindi dub yet</h2>
         <p className="mb-4 text-sm text-muted">Checked on the platforms that stream them in India; none offered Hindi audio on {dubDate()}.</p>
-        <ul className="grid gap-x-6 gap-y-2 text-sm sm:grid-cols-2 lg:grid-cols-3">
-          {none.map((d) => (
+        {(() => {
+          const item = (d: (typeof none)[number]) => (
             <li key={d.s} className="min-w-0">
               <Link href={dubHref(d)} className="font-medium text-ink hover:text-violet-2">{d.t}</Link>
               <span className="block text-xs text-muted">{d.note}</span>
             </li>
-          ))}
-        </ul>
+          );
+          const grid = "grid gap-x-6 gap-y-2 text-sm sm:grid-cols-2 lg:grid-cols-3";
+          return (
+            <>
+              <ul className={grid}>{none.slice(0, 24).map(item)}</ul>
+              {none.length > 24 && (
+                <details className="mt-4">
+                  <summary className="cursor-pointer text-sm font-medium text-violet">Show all {none.length} without a Hindi dub</summary>
+                  <ul className={`${grid} mt-3`}>{none.slice(24).map(item)}</ul>
+                </details>
+              )}
+            </>
+          );
+        })()}
       </section>
 
       <p className="mt-8 text-sm"><Link href="/hindi-voice-artists" className="font-medium text-violet hover:underline">🎙️ Who voices anime in Hindi? Meet the voice artists →</Link></p>
-      <Faq title="Hindi dub FAQ" items={faq} />
+      <div id="faq" data-section className="pt-2"><Faq title="Hindi dub FAQ" items={faq} /></div>
     </div>
   );
 }
