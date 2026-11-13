@@ -43,7 +43,7 @@ function ttl(path) {
 
 /**
  * The live build's commit, re-checked at most every 10 minutes per Worker instance (once a minute was ~100k app
- * invocations a day, for a value that changes with a release every 2 days). It goes into page cache keys,
+ * invocations a day, for a value that changes with a release every 2 days), from a static file the app serves free. It goes into page cache keys,
  * so a deploy starts a fresh cache by itself (old pages would point at JS chunks the new build no longer has).
  * Held in memory, not in the Cache API: the zone's cache rules override TTLs there (it stuck for a day). "0" if
  * unknown. Once known, the re-check runs in the background: Render can take seconds to answer, and no request,
@@ -53,7 +53,10 @@ const GEN_CHECK_MS = 10 * 60_000;
 let gen = { value: "0", at: 0 };
 let checking = null;
 function refreshGeneration() {
-  checking ??= upstream(new Request(`${base()}/api/version`, { cf: { cacheTtl: 0 }, signal: AbortSignal.timeout(3000) }))
+  // /version.json is a static asset (no app CPU); /api/version for a build from before it existed.
+  const ask = (path) => upstream(new Request(`${base()}${path}`, { cf: { cacheTtl: 0 }, signal: AbortSignal.timeout(3000) }));
+  checking ??= ask("/version.json")
+    .then((r) => (r.ok ? r : ask("/api/version")))
     .then((r) => r.json())
     .then((j) => String(j.commit || "0").slice(0, 12))
     .catch(() => gen.value)

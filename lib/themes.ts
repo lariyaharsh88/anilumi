@@ -37,11 +37,16 @@ export const hasSnapshotThemes = (kitsuId: string) => (SNAP[kitsuId]?.t.length ?
  * times out or errors throws UpstreamError, so the page is not cached as empty (and noindexed) while the
  * service is just slow; AnimeThemes often takes 10–20 s.
  */
+// After a failed live call, fail fast for 10 minutes on this instance instead of waiting on AnimeThemes again.
+const DOWN_FOR_MS = 10 * 60_000;
+let downSince = 0;
+
 export async function getThemes(kitsuId: string): Promise<Themes | null> {
   const snap = SNAP[kitsuId];
   if (snap) return { atSlug: snap.s, themes: snap.t };
   const mal = await getMalId(kitsuId);
   if (!mal) return null;
+  if (Date.now() - downSince < DOWN_FOR_MS) throw new UpstreamError(`AnimeThemes unavailable for MAL ${mal} (down)`);
   const url = `https://api.animethemes.moe/anime?filter[has]=resources&filter[site]=MyAnimeList&filter[external_id]=${mal}&include=animethemes.animethemeentries,animethemes.song.artists&fields[anime]=slug&fields[song]=title&fields[artist]=name&fields[animetheme]=type,sequence,slug&fields[animethemeentry]=version,episodes,spoiler,nsfw`;
   // One retry: AnimeThemes allows 90 requests a minute and is slow under load.
   for (let attempt = 0; attempt < 2; attempt++) {
@@ -57,6 +62,7 @@ export async function getThemes(kitsuId: string): Promise<Themes | null> {
       if (attempt) break;
     }
   }
+  downSince = Date.now();
   throw new UpstreamError(`AnimeThemes unavailable for MAL ${mal}`);
 }
 

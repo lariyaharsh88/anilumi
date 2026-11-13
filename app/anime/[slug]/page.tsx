@@ -38,6 +38,7 @@ import { ageLabel } from "@/lib/insights";
 import { noteFor } from "@/data/notes";
 import RatingWidget from "@/components/RatingWidget";
 import HypeButton from "@/components/HypeButton";
+import { hasSnapshotThemes } from "@/lib/themes";
 import LeadForm from "@/components/LeadForm";
 import { dbEnabled, ratingStats } from "@/lib/db";
 import { summarize, aggregateRating } from "@/lib/community";
@@ -721,7 +722,9 @@ export default async function AnimePage({ params }: Props) {
                   <Link href={`${animePath(a)}/how-long-to-watch`} className="text-violet hover:underline">How long to watch</Link> ·{" "}
                   {a.subtype !== "movie" && <><Link href={`${animePath(a)}/next-season`} className="text-violet hover:underline">{a.status === "finished" ? "Is there a next season?" : "Next season"}</Link> ·{" "}</>}
                   <Link href={`${animePath(a)}/cast`} className="text-violet hover:underline">Voice cast</Link> ·{" "}
-                  <Link href={`${animePath(a)}/openings-endings`} className="text-violet hover:underline">Openings &amp; endings</Link> ·{" "}
+                  {/* Only titles in the monthly songs snapshot (as in the sitemap): the rest need a live AnimeThemes call, which
+                      crawlers following this link turned into thousands of slow renders and 500s whenever AnimeThemes was down. */}
+                  {hasSnapshotThemes(a.id) && <><Link href={`${animePath(a)}/openings-endings`} className="text-violet hover:underline">Openings &amp; endings</Link> ·{" "}</>}
                   <Link href="/my" className="text-violet hover:underline">My list</Link>
                 </p>
                 {(a.status === "current" || a.status === "upcoming") && <EmbedSnippet slug={a.slug} title={a.title} />}

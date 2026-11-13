@@ -1,10 +1,15 @@
 import type { NextConfig } from "next";
 import { execSync } from "node:child_process";
+import { writeFileSync } from "node:fs";
 
 // The commit being built: from the CI (Workers Builds, Render, GitHub), else the local checkout (a manual deploy).
 const COMMIT = process.env.WORKERS_CI_COMMIT_SHA || process.env.RENDER_GIT_COMMIT || process.env.GITHUB_SHA || (() => {
   try { return execSync("git rev-parse HEAD", { stdio: ["ignore", "pipe", "ignore"] }).toString().trim(); } catch { return ""; }
 })();
+
+// The same commit as a static file (public/version.json, git-ignored): the edge Worker polls it for its cache keys,
+// and Cloudflare serves static assets without running the app (/api/version cost ~60 ms of CPU per call, 40k a day).
+if (COMMIT) writeFileSync(new URL("./public/version.json", import.meta.url), JSON.stringify({ commit: COMMIT }));
 
 const nextConfig: NextConfig = {
   // Lets a production build run alongside the dev server (NEXT_DIST_DIR=.next-prod npm run build).
