@@ -1,5 +1,5 @@
 {
-  "checked": "2026-11-11",
+  "checked": "2026-11-13",
   "artists": [
     {
       "name": "Lohit Sharma",
@@ -186,6 +186,16 @@
           "sources": [
             "https://www.animationxpress.com/latest-news/crunchyroll-to-premiere-tamil-and-hindi-dubs-of-two-anime-titles/"
           ]
+        },
+        {
+          "character": "Chika",
+          "anime": "Suzume",
+          "slug": "suzume-no-tojimari",
+          "dub": "Theatrical release (PVR Pictures)",
+          "sources": [
+            "https://animehunch.com/suzume-no-tojimari-anime-film-reveals-hindi-dub-cast/",
+            "https://sportskeeda.com/anime/makoto-shinkai-s-suzume-tojimari-changes-history-indian-anime-community"
+          ]
         }
       ],
       "sources": [
@@ -278,7 +288,7 @@
         {
           "character": "Shin Asakura",
           "anime": "Sakamoto Days",
-          "slug": null,
+          "slug": "sakamoto-days",
           "dub": "Netflix",
           "sources": [
             "https://animenewsindia.com/2025/01/12/netflix-streams-sakamoto-days-in-hindi-voice-cast-staff-revealed"
@@ -1035,6 +1045,16 @@
             "https://www.movietalkies.com/news/sony-pictures-dragon-ball-super-super-hero-becomes-the-first-anime-film-to-be-dubbed-in-hindi-for-a-theatrical-release",
             "https://animehunch.com/dragon-ball-super-super-hero-to-get-hindi-dub-release-in-india/"
           ]
+        },
+        {
+          "character": "Souta Munakata",
+          "anime": "Suzume",
+          "slug": "suzume-no-tojimari",
+          "dub": "Theatrical release (PVR Pictures)",
+          "sources": [
+            "https://animehunch.com/suzume-no-tojimari-anime-film-reveals-hindi-dub-cast/",
+            "https://sportskeeda.com/anime/makoto-shinkai-s-suzume-tojimari-changes-history-indian-anime-community"
+          ]
         }
       ],
       "sources": [
@@ -1087,6 +1107,175 @@
         "https://www.afaqs.com/companies/cartoon-network-premiering-dragon-ball-z-kai-from-april-16",
         "https://www.mediainfoline.com/entertainment/cartoon-network-premiers-dragon-ball-z-kai-from-april-16",
         "https://animehunch.com/dragon-ball-z-kai-to-air-every-sunday-on-cartoon-network-india-from-april-16/"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Hitanshi Jha",
+      "slug": "hitanshi-jha",
+      "bio": "Hitanshi Jha is a Hindi voice artist in Crunchyroll's Hindi dubs. She voices Nezuko Kamado in the Hindi dub of Demon Slayer's Swordsmith Village Arc and Alphonse Elric in the Crunchyroll Hindi dub of Fullmetal Alchemist: Brotherhood, which launched in July 2026.",
+      "roles": [
+        {
+          "character": "Nezuko Kamado",
+          "anime": "Demon Slayer: Kimetsu no Yaiba Swordsmith Village Arc",
+          "slug": "kimetsu-no-yaiba",
+          "dub": "Crunchyroll",
+          "sources": [
+            "https://animehunch.com/demon-slayer-season-3-hindi-dub-reveals-release-date-cast/",
+            "https://sportskeeda.com/anime/news-crunchyroll-adds-hindi-dub-demon-slayer-season-3"
+          ]
+        },
+        {
+          "character": "Alphonse Elric",
+          "anime": "Fullmetal Alchemist: Brotherhood",
+          "slug": "fullmetal-alchemist-brotherhood",
+          "dub": "Crunchyroll",
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2026-07-24/fullmetal-alchemist-brotherhood-anime-hindi-tamil-telugu-dubs-stream-on-crunchyroll/.239931",
+            "https://respawn.outlookindia.com/pop-culture/pop-culture-news/fullmetal-alchemist-brotherhood-dubs-debut-in-india",
+            "https://myanimethoughts.com/fullmetal-alchemist-brotherhood-gets-new-dubs-8019330"
+          ]
+        }
+      ],
+      "sources": [
+        "https://animehunch.com/demon-slayer-season-3-hindi-dub-reveals-release-date-cast/",
+        "https://sportskeeda.com/anime/news-crunchyroll-adds-hindi-dub-demon-slayer-season-3",
+        "https://www.animenewsnetwork.com/news/2026-07-24/fullmetal-alchemist-brotherhood-anime-hindi-tamil-telugu-dubs-stream-on-crunchyroll/.239931",
+        "https://respawn.outlookindia.com/pop-culture/pop-culture-news/fullmetal-alchemist-brotherhood-dubs-debut-in-india",
+        "https://myanimethoughts.com/fullmetal-alchemist-brotherhood-gets-new-dubs-8019330"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Priyanka Bhandari",
+      "slug": "priyanka-bhandari",
+      "bio": "Priyanka Bhandari is a Hindi voice artist who leads Crunchyroll's Hindi dub of Demon Slayer's Swordsmith Village Arc as Tanjiro Kamado. She also voices Riza Hawkeye in the Crunchyroll Hindi dub of Fullmetal Alchemist: Brotherhood (2026).",
+      "roles": [
+        {
+          "character": "Tanjiro Kamado",
+          "anime": "Demon Slayer: Kimetsu no Yaiba Swordsmith Village Arc",
+          "slug": "kimetsu-no-yaiba",
+          "dub": "Crunchyroll",
+          "sources": [
+            "https://animehunch.com/demon-slayer-season-3-hindi-dub-reveals-release-date-cast/",
+            "https://sportskeeda.com/anime/news-crunchyroll-adds-hindi-dub-demon-slayer-season-3"
+          ]
+        },
+        {
+          "character": "Riza Hawkeye",
+          "anime": "Fullmetal Alchemist: Brotherhood",
+          "slug": "fullmetal-alchemist-brotherhood",
+          "dub": "Crunchyroll",
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2026-07-24/fullmetal-alchemist-brotherhood-anime-hindi-tamil-telugu-dubs-stream-on-crunchyroll/.239931",
+            "https://respawn.outlookindia.com/pop-culture/pop-culture-news/fullmetal-alchemist-brotherhood-dubs-debut-in-india"
+          ]
+        }
+      ],
+      "sources": [
+        "https://animehunch.com/demon-slayer-season-3-hindi-dub-reveals-release-date-cast/",
+        "https://sportskeeda.com/anime/news-crunchyroll-adds-hindi-dub-demon-slayer-season-3",
+        "https://www.animenewsnetwork.com/news/2026-07-24/fullmetal-alchemist-brotherhood-anime-hindi-tamil-telugu-dubs-stream-on-crunchyroll/.239931",
+        "https://respawn.outlookindia.com/pop-culture/pop-culture-news/fullmetal-alchemist-brotherhood-dubs-debut-in-india"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Suvela Sharma",
+      "slug": "suvela-sharma",
+      "bio": "Suvela Sharma is a Hindi voice artist who voices Nobara Kugisaki in Crunchyroll's Hindi dub of Jujutsu Kaisen and Kallen Kozuki in its Hindi dub of Code Geass: Lelouch of the Rebellion (both 2023). She also voiced Ritsuko Akagi in the Hindi dub of the Rebuild of Evangelion films on Amazon Prime Video India (2021).",
+      "roles": [
+        {
+          "character": "Nobara Kugisaki",
+          "anime": "Jujutsu Kaisen",
+          "slug": "jujutsu-kaisen",
+          "dub": "Crunchyroll",
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2023-07-21/crunchyroll-adds-hindi-dub-for-jujutsu-kaisen-anime-announces-hindi-dub-for-chainsaw-man-anime/.200528",
+            "https://www.animenewsnetwork.com/news/2023-09-22/crunchyroll-announces-hindi-tamil-dubs-for-jujutsu-kaisen-season-2-frieren-2-more-anime/.202697",
+            "https://www.animenewsnetwork.com/news/2023-07-28/crunchyroll-streams-hindi-tamil-dubs-of-jujutsu-kaisen-season-2/.200740"
+          ]
+        },
+        {
+          "character": "Kallen Kozuki",
+          "anime": "Code Geass: Lelouch of the Rebellion",
+          "slug": "code-geass-lelouch-of-the-rebellion",
+          "dub": "Crunchyroll",
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2023-09-08/hindi-dubs-of-code-geass-the-maid-i-hired-recently-is-mysterious-anime-stream-on-crunchyroll/.202108"
+          ]
+        }
+      ],
+      "sources": [
+        "https://www.animenewsnetwork.com/news/2023-07-21/crunchyroll-adds-hindi-dub-for-jujutsu-kaisen-anime-announces-hindi-dub-for-chainsaw-man-anime/.200528",
+        "https://www.animenewsnetwork.com/news/2023-09-22/crunchyroll-announces-hindi-tamil-dubs-for-jujutsu-kaisen-season-2-frieren-2-more-anime/.202697",
+        "https://www.animenewsnetwork.com/news/2023-07-28/crunchyroll-streams-hindi-tamil-dubs-of-jujutsu-kaisen-season-2/.200740",
+        "https://animenewsindia.com/2021/08/09/amazon-prime-video-reveals-hindi-voice-cast-staff-members-for-rebuild-of-evangelion-anime-film-series-a-head-of-its-release-on-august-13/",
+        "https://www.animenewsnetwork.com/news/2023-09-08/hindi-dubs-of-code-geass-the-maid-i-hired-recently-is-mysterious-anime-stream-on-crunchyroll/.202108"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Natasha John",
+      "slug": "natasha-john",
+      "bio": "Natasha John is a Hindi voice artist who plays the title role in Crunchyroll's Hindi dub of Frieren: Beyond Journey's End, a performance nominated for Best Voice Artist Performance (Hindi) at the 2025 Crunchyroll Anime Awards. She also voices C.C. in Crunchyroll's Hindi dub of Code Geass: Lelouch of the Rebellion (2023).",
+      "roles": [
+        {
+          "character": "Frieren",
+          "anime": "Frieren: Beyond Journey's End",
+          "slug": "sousou-no-frieren",
+          "dub": "Crunchyroll",
+          "sources": [
+            "https://awn.com/news/2025-crunchyroll-anime-awards-nominees-presenters-announced",
+            "https://www.animenewsnetwork.com/press-release/2025-04-04/make-your-vote-count-crunchyroll-reveals-nominees-and-celebrity-presenter-line-up-for-the-2025-/.223222"
+          ]
+        },
+        {
+          "character": "C.C.",
+          "anime": "Code Geass: Lelouch of the Rebellion",
+          "slug": "code-geass-lelouch-of-the-rebellion",
+          "dub": "Crunchyroll",
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2023-09-08/hindi-dubs-of-code-geass-the-maid-i-hired-recently-is-mysterious-anime-stream-on-crunchyroll/.202108"
+          ]
+        }
+      ],
+      "sources": [
+        "https://awn.com/news/2025-crunchyroll-anime-awards-nominees-presenters-announced",
+        "https://www.animenewsnetwork.com/press-release/2025-04-04/make-your-vote-count-crunchyroll-reveals-nominees-and-celebrity-presenter-line-up-for-the-2025-/.223222",
+        "https://www.animenewsnetwork.com/news/2023-09-08/hindi-dubs-of-code-geass-the-maid-i-hired-recently-is-mysterious-anime-stream-on-crunchyroll/.202108"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Anshul Saxena",
+      "slug": "anshul-saxena",
+      "bio": "Anshul Saxena is a Hindi voice artist who voiced Trunks in the Hindi theatrical dub of Dragon Ball Super: Super Hero (2022), the first anime film released in Indian cinemas in Hindi. He also voices Suzaku Kururugi in Crunchyroll's Hindi dub of Code Geass: Lelouch of the Rebellion (2023).",
+      "roles": [
+        {
+          "character": "Trunks",
+          "anime": "Dragon Ball Super: Super Hero",
+          "slug": "dragon-ball",
+          "dub": "Theatrical release (Sony Pictures India)",
+          "sources": [
+            "https://animenewsnetwork.com/news/2022-08-20/dragon-ball-super-super-hero-film-reveals-hindi-dub-cast/.188810",
+            "https://animehunch.com/dragon-ball-super-super-hero-to-get-hindi-dub-release-in-india/"
+          ]
+        },
+        {
+          "character": "Suzaku Kururugi",
+          "anime": "Code Geass: Lelouch of the Rebellion",
+          "slug": "code-geass-lelouch-of-the-rebellion",
+          "dub": "Crunchyroll",
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2023-09-08/hindi-dubs-of-code-geass-the-maid-i-hired-recently-is-mysterious-anime-stream-on-crunchyroll/.202108"
+          ]
+        }
+      ],
+      "sources": [
+        "https://animenewsnetwork.com/news/2022-08-20/dragon-ball-super-super-hero-film-reveals-hindi-dub-cast/.188810",
+        "https://animehunch.com/dragon-ball-super-super-hero-to-get-hindi-dub-release-in-india/",
+        "https://www.animenewsnetwork.com/news/2023-09-08/hindi-dubs-of-code-geass-the-maid-i-hired-recently-is-mysterious-anime-stream-on-crunchyroll/.202108"
       ],
       "confidence": "high"
     }
