@@ -64,6 +64,7 @@ import { getFanRecommendations, getKeyStaff, personPath, getAniListSequel } from
 import { sequelVerdict, type SequelLike, type SequelKind } from "@/lib/sequel";
 import { combineScores, kitsuScore, aniListScore, getMalScore } from "@/lib/scores";
 import SectionNav, { type NavSection } from "@/components/fx/SectionNav";
+import ReleaseSchedule from "@/components/ReleaseSchedule";
 import MobileFold from "@/components/fx/MobileFold";
 import Refreshed from "@/components/Refreshed";
 import { airing } from "@/lib/airing";
@@ -343,8 +344,11 @@ export default async function AnimePage({ params }: Props) {
   const watchItem = { id: a.id, slug: a.slug, title: a.title, poster: posterUrl(a, "small"), status: a.status, nextRelease: a.nextRelease };
   const GENRES_SHOWN = 6;
   const hasStats = Boolean(a.rating || a.userCount > 0 || dropOk);
+  // Airing seasons of up to 40 episodes get the release schedule ("black clover season 2 episode 5 release date").
+  const scheduled = a.status === "current" && Math.max(planned ?? 0, lastAired) > 0 && Math.max(planned ?? 0, lastAired) <= 40;
   const sections: NavSection[] = [
     { id: "overview", label: "Overview" },
+    ...(scheduled ? [{ id: "schedule", label: "Release dates" }] : []),
     ...(epList.length ? [{ id: "episodes", label: "Episodes" }] : []),
     ...(characters.length ? [{ id: "characters", label: "Characters" }] : []),
     ...(hasStats ? [{ id: "stats", label: "Stats" }] : []),
@@ -599,6 +603,8 @@ export default async function AnimePage({ params }: Props) {
           </section>
 
           <AdSlot slot="anime-mid" />
+
+          {scheduled && <ReleaseSchedule a={a} lastAired={lastAired} />}
 
           {/* ───────── Episodes ───────── */}
           {epList.length > 0 && (

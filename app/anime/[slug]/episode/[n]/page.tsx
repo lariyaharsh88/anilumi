@@ -32,6 +32,9 @@ import { episodeIndexed, robotsFor } from "@/lib/indexing";
 import { excerpt } from "@/lib/excerpt";
 import { snapshotThemes, themesForEpisode } from "@/lib/themes";
 import { arcsFor, arcOf } from "@/lib/arcs";
+import ReleaseSchedule from "@/components/ReleaseSchedule";
+import { dubShows } from "@/lib/dubschedule";
+import { dubFor, platformKind } from "@/lib/hindidub";
 
 export const revalidate = 21600;
 // Render on first request, then serve from the ISR cache until revalidated.
@@ -120,6 +123,13 @@ export default async function EpisodePage({ params }: Props) {
   // The opening and ending used in this episode (monthly AnimeThemes snapshot; dub-only variants left out).
   const songs = themesForEpisode(snapshotThemes(a.id), n);
   const arc = arcOf(arcsFor(a.slug), n);
+  const planned = a.episodeCount || (await airing()).byKitsu.get(a.id)?.e || null;
+  const filler = fillerFor(a.slug, a.episodeCount ?? (lastAired || null));
+  const kindOf = filler ? (filler.filler.has(n) ? "Filler (safe to skip)" : filler.recap.has(n) ? "Recap (safe to skip)" : filler.mixed.has(n) ? "Mixed canon and filler" : "Canon (from the source)") : null;
+  // Dubs: this season's dub schedule (English and Hindi runs with their service and day) and the Hindi dub record.
+  const dubRuns = dubShows().filter((e) => e.slug === a.slug && e.status !== "announced");
+  const hindi = dubFor(a);
+  const zoneRows = airIso && airIso.length > 10 ? ([["Japan (JST)", "Asia/Tokyo"], ["India (IST)", "Asia/Kolkata"], ["US East (ET)", "America/New_York"], ["US West (PT)", "America/Los_Angeles"], ["UK", "Europe/London"]] as const) : null;
   const songLine = (type: "OP" | "ED") => songs.filter((t) => t.type === type).map((t) => `“${t.song}”${t.artists[0] ? ` by ${t.artists[0]}` : ""}`).join(" and ");
   const faq = [
     { q: `When does ${a.title} episode ${n} come out?`, a: when ? `${a.title} episode ${n} ${upcoming ? "is scheduled for" : "aired on"} ${when}${whenTime ? ` at ${whenTime} JST` : ""}.${upcoming ? " Simulcasts usually go live within an hour or two on licensed services." : ""}` : `The release date for ${a.title} episode ${n} has not been announced yet. This page updates automatically when it is.` },
@@ -206,6 +216,19 @@ export default async function EpisodePage({ params }: Props) {
             </div>
           )}
 
+          {zoneRows && (
+            <section className="mt-6" aria-labelledby="time-h">
+              <h2 id="time-h" className="h-section mb-2">{a.title} episode {n} release date and time</h2>
+              <p className="mb-3 text-sm text-ink/90">{upcoming ? "Airs" : "Aired"} on {when} in Japan{whenTime ? ` at ${whenTime} JST` : ""}. That&apos;s:</p>
+              <dl className="card grid grid-cols-2 gap-x-4 gap-y-3 p-4 text-sm sm:grid-cols-5">
+                {zoneRows.map(([label, tz]) => (
+                  <div key={tz}><dt className="text-xs text-muted">{label}</dt><dd className="font-semibold tabular-nums text-ink">{new Date(airIso!).toLocaleString("en-US", { weekday: "short", month: "short", day: "numeric", hour: "numeric", minute: "2-digit", timeZone: tz })}</dd></div>
+                ))}
+              </dl>
+              <p className="mt-2 text-xs text-muted">The broadcast in Japan; Crunchyroll, Netflix and other licensed services usually add the episode within an hour or two.</p>
+            </section>
+          )}
+
           {episode.thumbnail && (
             <SpoilerGate animeId={a.id} ep={n}>
             <div className="relative mt-6 aspect-video overflow-hidden rounded-xl border border-line bg-bg-2">
@@ -222,20 +245,49 @@ export default async function EpisodePage({ params }: Props) {
             </SpoilerGate>
           </section>
 
+          <section className="mt-6" aria-labelledby="details-h">
+            <h2 id="details-h" className="h-section mb-2">Episode {n} details</h2>
+            <dl className="card grid grid-cols-2 gap-x-4 gap-y-3 p-4 text-sm sm:grid-cols-3">
+              <div><dt className="text-xs text-muted">Episode</dt><dd className="font-semibold text-ink">{n}{planned ? ` of ${planned}` : ""}</dd></div>
+              {episode.length ? <div><dt className="text-xs text-muted">Length</dt><dd className="font-semibold text-ink">{episode.length} min</dd></div> : null}
+              <div><dt className="text-xs text-muted">{upcoming ? "Airs" : "Aired"}</dt><dd className="font-semibold text-ink">{airIso ? fmtDate(airIso, { month: "short", day: "numeric", year: "numeric", ...(airIso.length > 10 ? { timeZone: "Asia/Tokyo" } : {}) }) : "Not announced"}</dd></div>
+              {kindOf && <div><dt className="text-xs text-muted">Type</dt><dd className="font-semibold text-ink">{kindOf}</dd></div>}
+              {arc && <div><dt className="text-xs text-muted">Arc</dt><dd className="font-semibold text-ink">{arc.name}{arc.filler ? " (filler)" : ""}</dd></div>}
+              {a.status === "current" && reliable && <div><dt className="text-xs text-muted">Aired so far</dt><dd className="font-semibold text-ink">{lastAired}{planned ? ` of ${planned}` : ""}</dd></div>}
+              {songs.filter((t) => t.type === "OP").slice(0, 1).map((t) => <div key={t.slug}><dt className="text-xs text-muted">Opening</dt><dd className="truncate font-semibold text-ink">“{t.song}”</dd></div>)}
+              {songs.filter((t) => t.type === "ED").slice(0, 1).map((t) => <div key={t.slug}><dt className="text-xs text-muted">Ending</dt><dd className="truncate font-semibold text-ink">“{t.song}”</dd></div>)}
+            </dl>
+          </section>
+
           <AdSlot slot="episode-mid" />
 
           {!upcoming && <WatchedUpTo ep={n} item={{ id: a.id, slug: a.slug, title: a.title, poster: posterUrl(a, "small"), status: a.status, nextRelease: a.nextRelease, episodeCount: a.episodeCount, episodeLength: a.episodeLength }} />}
 
-          {a.streaming.length > 0 && (
-            <section className="mt-6">
-              <h2 className="text-xs font-semibold uppercase tracking-wider text-muted">Where to watch</h2>
-              <div className="mt-2 flex flex-wrap gap-2">
-                {a.streaming.map((s) => (
-                  <a key={s.id} href={streamLink(s.url)} target="_blank" rel={affiliateRel} className="btn-outline capitalize">▶ {s.site}</a>
-                ))}
-              </div>
+          {(a.streaming.length > 0 || dubRuns.length > 0 || hindi?.status === "available") && (
+            <section className="mt-6" aria-labelledby="watch-h">
+              <h2 id="watch-h" className="h-section mb-2">Where to watch {a.title} episode {n}</h2>
+              {a.streaming.length > 0 && (
+                <div className="flex flex-wrap gap-2">
+                  {a.streaming.map((s) => (
+                    <a key={s.id} href={streamLink(s.url)} target="_blank" rel={affiliateRel} className="btn-outline capitalize">▶ {s.site}</a>
+                  ))}
+                </div>
+              )}
+              {(dubRuns.length > 0 || hindi?.status === "available") && (
+                <ul className="mt-3 space-y-1.5 text-sm">
+                  {dubRuns.map((e) => (
+                    <li key={`${e.lang}-${e.service}`}><span className="font-semibold text-ink">{e.lang === "hi" ? "🇮🇳 Hindi" : e.lang === "en" ? "English" : e.lang.toUpperCase()} dub</span> <span className="text-ink/85">on {e.service}{e.weekday ? `, new episodes ${e.weekday}s` : ""}{e.delay ? ` (${e.delay})` : ""}</span></li>
+                  ))}
+                  {hindi?.status === "available" && !dubRuns.some((e) => e.lang === "hi") && (
+                    <li><span className="font-semibold text-ink">🇮🇳 Hindi dub</span> <span className="text-ink/85">on {hindi.platforms.map((p) => `${p.name}${platformKind(p.name) === "free" ? " (free)" : ""}`).join(", ")}</span></li>
+                  )}
+                </ul>
+              )}
+              <p className="mt-2 text-xs text-muted">Licensed services only; availability depends on your country. <Link href="/dub-schedule" className="text-violet hover:underline">Dub schedule</Link> · <Link href="/hindi-dub" className="text-violet hover:underline">Hindi dubbed anime</Link></p>
             </section>
           )}
+
+          <ReleaseSchedule a={a} lastAired={lastAired} current={n} id="all-episodes" heading={a.status === "current" ? `All ${a.title} episodes: release dates` : `All ${a.title} episodes and air dates`} />
 
           <nav className="mt-8 flex items-center justify-between gap-3 text-sm" aria-label="Episode navigation">
             {hasPrev ? <Link href={episodePath(a, n - 1)} className="btn-outline" rel="prev">← Episode {n - 1}</Link> : <span />}
