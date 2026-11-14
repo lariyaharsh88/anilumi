@@ -1,12 +1,12 @@
 /**
- * The emails: confirmation (double opt-in), a new-episode alert and the Friday digest. Styled like the site's
- * dark theme with table layout and inline styles (what Gmail, Outlook and Apple Mail render reliably), declared
- * dark so mail apps don't invert it, plus a plain-text version of each. Pure.
+ * The emails: confirmation (double opt-in), a new-episode alert, a new-Hindi-dub alert and the Friday digest.
+ * Styled like the site's dark theme with table layout and inline styles (what Gmail, Outlook and Apple Mail
+ * render reliably), declared dark so mail apps don't invert it, plus a plain-text version of each. Pure.
  */
 import { EMAIL_SITE, unsubHeaders, unsubUrl, type Mail } from "./email";
 import type { Alert } from "./pushplan";
 
-export type LeadDoc = { email: string; kind: "alert" | "digest" | "cheatsheet" | "guide" | "list"; animeId: string | null; animeTitle?: string | null; token: string; page?: string; listId?: string };
+export type LeadDoc = { email: string; kind: "alert" | "digest" | "cheatsheet" | "guide" | "list" | "hindi"; animeId: string | null; animeTitle?: string | null; token: string; page?: string; listId?: string };
 
 // The site's dark theme (app/globals.css).
 const C = { bg: "#0b0d13", bg2: "#111520", card: "#161b28", line: "#242b3b", ink: "#e8ecf5", body: "#c5cddd", muted: "#8f9ab3", accent: "#ff7a8f", violet: "#8b7cff", button: "#6c5ce7", gold: "#ffc857" };
@@ -64,6 +64,7 @@ const WHAT: Record<LeadDoc["kind"], (l: LeadDoc) => string> = {
   cheatsheet: () => "the season cheat sheet and a heads-up when new shows are confirmed",
   guide: (l) => (l.animeTitle ? `updates to the ${l.animeTitle} guides` : "guide updates"),
   list: () => "an email when a new episode of any show on your AniLumi list airs",
+  hindi: (l) => (l.animeTitle ? `an email when ${l.animeTitle} gets an official Hindi dub` : "an email when a new anime gets an official Hindi dub"),
 };
 const PERKS: Record<LeadDoc["kind"], (l: LeadDoc) => string[]> = {
   alert: (l) => [`One email the moment each ${l.animeTitle ? esc(l.animeTitle) : ""} episode airs`, "Where to stream it, plus the episode guide", "Nothing else, and you can stop any time"],
@@ -71,6 +72,7 @@ const PERKS: Record<LeadDoc["kind"], (l: LeadDoc) => string[]> = {
   cheatsheet: () => ["Every premiere date on one printable page", "A heads-up when new shows are confirmed", "No spam, unsubscribe any time"],
   guide: (l) => [`A note when the ${l.animeTitle ? esc(l.animeTitle) : ""} guides change`, "New seasons, filler lists and where the manga picks up", "Only when something actually changes"],
   list: () => ["One email as each new episode of a show on your list airs", "Follows your synced list: add or remove shows any time", "Nothing else, and you can stop any time"],
+  hindi: (l) => [l.animeTitle ? `One email when ${esc(l.animeTitle)} is out in Hindi` : "One email when official Hindi dubs are added", "Where to watch it, and whether it&rsquo;s free", "Only official dubs, never pirate links"],
 };
 const perks = (rows: string[]) => `<table role="presentation" cellpadding="0" cellspacing="0" style="margin:4px 0 6px">${rows.map((r) => `<tr><td valign="top" style="padding:5px 12px 5px 0;font-size:15px;line-height:1.5;color:${C.violet};font-weight:800">&#10003;</td><td style="padding:5px 0;font-size:15px;line-height:1.5;color:${C.body}">${r}</td></tr>`).join("")}</table>`;
 
@@ -86,7 +88,7 @@ export function confirmMail(l: LeadDoc): Mail {
     `<p style="margin:22px 0 0;font-size:13px;line-height:1.6;color:${C.muted}">Didn&rsquo;t sign up? Ignore this email and you won&rsquo;t hear from us again.</p>`;
   return {
     to: l.email, tag: "confirm",
-    subject: l.kind === "alert" && l.animeTitle ? `Confirm your ${l.animeTitle} episode alerts` : l.kind === "digest" ? "Confirm your weekly anime digest" : l.kind === "cheatsheet" ? "Your cheat sheet + one tap to confirm" : l.kind === "list" ? "Confirm alerts for the shows on your list" : "Confirm your AniLumi updates",
+    subject: l.kind === "alert" && l.animeTitle ? `Confirm your ${l.animeTitle} episode alerts` : l.kind === "digest" ? "Confirm your weekly anime digest" : l.kind === "cheatsheet" ? "Your cheat sheet + one tap to confirm" : l.kind === "list" ? "Confirm alerts for the shows on your list" : l.kind === "hindi" ? (l.animeTitle ? `Confirm your ${l.animeTitle} Hindi dub alert` : "Confirm your Hindi dub alerts") : "Confirm your AniLumi updates",
     html: layout({ preheader: "One tap to confirm, then you're set.", content, why: `Someone (hopefully you) signed up for ${what} on anilumi.in.` }),
     text: `You asked for ${what} on AniLumi. Confirm here: ${url}${sheet ? `\n\nYour cheat sheet: ${abs(sheet)}` : ""}\n\nDidn't sign up? Ignore this email.`,
   };
@@ -177,5 +179,22 @@ export function digestMail(l: LeadDoc, d: Digest): Mail {
     subject: `This week in anime: ${d.week}`,
     html: layout({ preheader: d.premieres.length ? `${d.premieres.length} premieres and ${d.episodes.length} new episodes this week` : `${d.episodes.length} new episodes this week`, content, why: "You get this because you signed up for the weekly AniLumi digest.", token: l.token }),
     text: `This week in anime · ${d.week}\n\n${text}\n\nFull schedule: ${EMAIL_SITE}/schedule\nUnsubscribe: ${unsubUrl(l.token)}`,
+  };
+}
+
+/** New official Hindi dubs (lib/hindialerts.ts): one row per title, with where it streams. */
+export function hindiMail(l: LeadDoc, items: { title: string; url: string; where: string }[]): Mail {
+  const one = items.length === 1;
+  const rows = items.map((x) => `<tr><td style="padding:10px 0;border-bottom:1px solid ${C.line}">
+  <a href="${esc(abs(x.url))}" style="text-decoration:none"><span style="font-size:15px;font-weight:700;color:${C.ink}">${esc(x.title)}</span><br><span style="font-size:13px;color:${C.muted}">${esc(x.where)}</span></a></td></tr>`).join("");
+  const content = kicker("Hindi dub") + `<div class="h1">${h1(one ? `${esc(items[0].title)} is out in Hindi` : `${items.length} new Hindi dubs`)}</div>` +
+    p(one ? "An official Hindi dub has just been added. Here&rsquo;s where to watch it." : "These official Hindi dubs have just been added. Here&rsquo;s where to watch each one.") +
+    `<table role="presentation" width="100%" cellpadding="0" cellspacing="0">${rows}</table>` +
+    button(one ? "Where to watch" : "All Hindi dubbed anime", one ? items[0].url : "/hindi-dub");
+  return {
+    to: l.email, tag: "hindi", headers: unsubHeaders(l.token),
+    subject: one ? `${items[0].title} is now in Hindi` : `${items.length} new Hindi dubbed anime`,
+    html: layout({ preheader: one ? `Where to watch ${items[0].title} in Hindi` : items.map((x) => x.title).join(", "), content, why: `You get this because you asked for ${WHAT[l.kind](l)}.`, token: l.token }),
+    text: `${one ? `${items[0].title} is out in Hindi` : `${items.length} new Hindi dubs`}\n\n${items.map((x) => `- ${x.title} (${x.where}) ${abs(x.url)}`).join("\n")}\n\nAll Hindi dubs: ${EMAIL_SITE}/hindi-dub\nUnsubscribe: ${unsubUrl(l.token)}`,
   };
 }

@@ -18,6 +18,8 @@ import JsonLd from "@/components/JsonLd";
 import Faq from "./Faq";
 import LeadForm from "./LeadForm";
 import { dbEnabled } from "@/lib/db";
+import PushButton from "./PushButton";
+import { charTopic } from "@/lib/push";
 import SectionNav, { type NavSection } from "@/components/fx/SectionNav";
 import CharacterCompare from "@/components/CharacterCompare";
 import { birthdayRows, birthdayStats, statsLine, shortAge } from "@/lib/bdstats";
@@ -131,6 +133,7 @@ export default async function BirthdayView({ m, d, characters, people, today = f
                   {topSnap.en && <><Link href={vaPath({ id: topSnap.en.id, name: topSnap.en.n })} className="text-violet hover:underline">{topSnap.en.n}</Link> (English)</>}.
                 </p>
               )}
+              {dbEnabled() && <PushButton className="mt-4" topic={charTopic(top.id)} source="birthday-day" label={`Remind me on ${top.n}'s birthday`} onLabel="Birthday reminder on" />}
             </div>
           </div>
         </section>

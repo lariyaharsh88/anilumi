@@ -168,7 +168,7 @@ export default async function WatchOrderPage({ params }: Props) {
         </section>
       )}
       <BingePlan ordered={ordered} />
-      <HindiDub dub={dub} title={name} className="mt-6" />
+      <HindiDub dub={dub} title={name} className="mt-6" alertId={firstMain?.anime.id} />
 
       <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-4">
         <div className="card p-3"><p className="text-xl font-extrabold text-accent-2">{wo.mainCount}</p><p className="text-xs text-muted">core entries</p></div>

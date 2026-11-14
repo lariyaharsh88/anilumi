@@ -17,7 +17,7 @@ export const isReaction = (k: unknown): k is ReactionKey => REACTIONS.some((r) =
 export const RATING_SNIPPET_MIN = 10;
 
 /** list: new episodes of every airing show on the visitor's synced My list (lead.listId, see lib/listid.ts). */
-export const LEAD_KINDS = ["alert", "digest", "cheatsheet", "guide", "list"] as const;
+export const LEAD_KINDS = ["alert", "digest", "cheatsheet", "guide", "list", "hindi"] as const;
 export type LeadKind = (typeof LEAD_KINDS)[number];
 
 export const isScore = (n: unknown): n is number => Number.isInteger(n) && (n as number) >= 1 && (n as number) <= 10;

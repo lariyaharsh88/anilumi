@@ -1,30 +1,34 @@
 /**
  * Sends due alerts (lib/pushplan.ts) by browser push (push_subs, from app/api/push) and email (confirmed
  * leads, through Resend). Run by .github/workflows/alerts.yml:
- *   auto      every scheduled run: new episodes, plus today's birthdays and the weekly digest once they're due
- *             (dueJobs), so a cron slot GitHub skips is made up by the next run
+ *   auto      every scheduled run: new episodes and new Hindi dubs, plus today's birthdays and the weekly digest
+ *             once they're due (dueJobs), so a cron slot GitHub skips is made up by the next run
  *   episodes  new episodes and premieres, push + email
+ *   hindi     official Hindi dubs added since the last run (lib/hindialerts.ts), email
  *   birthdays character birthdays, push
  *   digest    the weekly digest email (once per ISO week)
  *   confirm-pending (by hand only): one confirmation email to signups from before email was switched on
  * Each alert is claimed in alerts_sent before sending, so reruns never repeat it. A channel without its
  * secrets (VAPID_PRIVATE_KEY + data/vapid.json, RESEND_API_KEY) is skipped with a notice.
  */
+import { createHash } from "node:crypto";
 import { MongoClient, type Db } from "mongodb";
 import webpush from "web-push";
 import { AIRING_URL, indexAiring } from "../lib/airing";
 import { birthdayChars } from "../lib/birthdays";
 import { characterPathFor } from "../lib/charsnap";
 import { emailEnabled, sendMails } from "../lib/email";
-import { confirmMail, digestMail, episodeMail, type LeadDoc } from "../lib/emails";
+import { confirmMail, digestMail, episodeMail, hindiMail, type LeadDoc } from "../lib/emails";
+import { hindiItems, itemsFor } from "../lib/hindialerts";
 import { getNews } from "../lib/news";
 import { listLeadsByShow, oncePerEmail } from "../lib/listalerts";
 import { kitsuPosters } from "../lib/posters";
 import { VAPID_PUBLIC_KEY } from "../lib/push";
 import { buildDigest, dueBirthdays, dueEpisodes, dueJobs, isoWeek, weekBirthdays, type Alert } from "../lib/pushplan";
+import { orderSlugs } from "../lib/wosnap";
 
 const mode = process.argv[2];
-if (!["auto", "episodes", "birthdays", "digest", "confirm-pending"].includes(mode)) throw new Error("usage: send-alerts.mts auto|episodes|birthdays|digest|confirm-pending");
+if (!["auto", "episodes", "hindi", "birthdays", "digest", "confirm-pending"].includes(mode)) throw new Error("usage: send-alerts.mts auto|episodes|hindi|birthdays|digest|confirm-pending");
 const { MONGODB_URI, VAPID_PRIVATE_KEY } = process.env;
 if (!MONGODB_URI) { console.log("::notice::Alerts are off: MONGODB_URI is missing."); process.exit(0); }
 const pushOn = Boolean(VAPID_PRIVATE_KEY && VAPID_PUBLIC_KEY);
@@ -95,6 +99,25 @@ async function episodes() {
   console.log(`episodes: ${alerts.length} due`);
 }
 
+/**
+ * New Hindi dubs: every item is remembered in hindi_seen (kept for good, unlike alerts_sent), so each is mailed
+ * once. The first run only records what's already listed, so nobody gets the whole catalogue at once.
+ */
+async function hindi() {
+  const seen = d.collection<{ _id: string; at: Date }>("hindi_seen");
+  const items = hindiItems();
+  const first = !(await seen.estimatedDocumentCount());
+  const fresh = [];
+  for (const i of items) if (await seen.insertOne({ _id: i.key, at: new Date() }).then(() => true, (e) => (e.code === 11000 ? false : Promise.reject(e)))) fresh.push(i);
+  if (first) { console.log(`hindi: recorded ${fresh.length} existing dubs, nothing sent`); return; }
+  if (fresh.length) {
+    const to = await leads.find({ kind: "hindi", status: "confirmed" }).toArray();
+    const mails = to.flatMap((l) => { const mine = itemsFor(l, fresh, orderSlugs); return mine.length ? [hindiMail(l, mine)] : []; });
+    await mail(`mail:hindi:${createHash("sha1").update(fresh.map((i) => i.key).sort().join("\n")).digest("hex")}`, mails);
+  }
+  console.log(`hindi: ${fresh.length} new`);
+}
+
 async function birthdays() {
   const alerts = dueBirthdays(birthdayChars(), characterPathFor);
   await push(d, alerts);
@@ -116,10 +139,13 @@ async function digest() {
 if (mode === "auto") {
   const due = dueJobs();
   await episodes();
+  await hindi();
   if (due.birthdays) await birthdays();
   if (due.digest) await digest();
 } else if (mode === "episodes") {
   await episodes();
+} else if (mode === "hindi") {
+  await hindi();
 } else if (mode === "birthdays") {
   await birthdays();
 } else if (mode === "digest") {

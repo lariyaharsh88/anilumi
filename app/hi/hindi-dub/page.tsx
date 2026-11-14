@@ -15,6 +15,8 @@ import StatTiles from "@/components/viz/StatTiles";
 import BarChart from "@/components/viz/BarChart";
 import StackedBar from "@/components/viz/StackedBar";
 import HindiDubList, { type DubCard } from "@/components/HindiDubList";
+import LeadForm from "@/components/LeadForm";
+import { dbEnabled } from "@/lib/db";
 
 export const revalidate = 86400;
 const fmtDay = (iso: string | null) => (iso ? new Date(/T/.test(iso) ? iso : `${iso}T00:00:00Z`).toLocaleDateString("hi-IN", { day: "numeric", month: "short", timeZone: "UTC" }) : "तारीख़ अभी तय नहीं");
@@ -154,6 +156,8 @@ export default async function HindiDubHubHi() {
         </section>
       )}
 
+      {dbEnabled() && <LeadForm className="mt-8" kind="hindi" source="hindi-hub-hi" lang="hi" title="🇮🇳 नया एनीमे हिंदी में आने पर ईमेल करें" blurb="जब कोई आधिकारिक हिंदी डब जुड़े या स्ट्रीम होना शुरू हो, तब एक छोटा ईमेल: कहाँ देखें और क्या यह मुफ़्त है। पायरेसी लिंक कभी नहीं।" button="मुझे बताएं" />}
+
       <section id="numbers" data-section className="reveal pt-10" aria-labelledby="num-h">
         <h2 id="num-h" className="h-section mb-1">हिंदी डब एनीमे आँकड़ों में</h2>
         <p className="mb-4 max-w-3xl text-sm text-muted">हमने जिन {st.checked} सबसे ज़्यादा देखे जाने वाले एनीमे को जाँचा, उनमें से {st.dubbed} ({st.share}%) का आधिकारिक हिंदी डब है। इनमें से {st.multi} एक से ज़्यादा जगह पर हैं, इसलिए अक्सर सस्ता विकल्प चुना जा सकता है।</p>
@@ -273,6 +277,7 @@ export default async function HindiDubHubHi() {
             <ul className="mt-3 flex flex-wrap gap-2">{none.slice(40).map((d) => <li key={d.s}><Link href={dubHref(d)} className="chip text-xs" hrefLang="en">{d.t}</Link></li>)}</ul>
           </details>
         )}
+        {dbEnabled() && <LeadForm className="mt-6" kind="hindi" source="hindi-nodub-hi" lang="hi" title="🔔 इनमें से किसी का इंतज़ार है?" blurb="इनमें से कोई भी, या कोई और लोकप्रिय एनीमे, आधिकारिक रूप से हिंदी में आए तो एक ईमेल पाएं।" button="मुझे बताएं" />}
       </section>
 
       <div id="faq" data-section className="pt-2"><Faq title="हिंदी डब: अक्सर पूछे जाने वाले सवाल" items={faq} /></div>

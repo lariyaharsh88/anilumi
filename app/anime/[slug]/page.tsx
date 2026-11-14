@@ -576,7 +576,7 @@ export default async function AnimePage({ params }: Props) {
                 <p className="mt-2 text-[11px] text-muted">{ADAPT_REVIEWED ? "Checked" : `Draft${ADAPT_CHECKED ? `, cross-checked on ${new Date(`${ADAPT_CHECKED}T12:00:00Z`).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" })}` : ""}`} against the series wiki and episode lists. <Link href="/how-we-check" className="underline">How we check</Link></p>
               </div>
             )}
-            <HindiDub dub={dub} title={a.title} className="mt-8" />
+            <HindiDub dub={dub} title={a.title} className="mt-8" alertId={a.id} />
             <MerchBlock name={a.title} source="anime" manga={false} className="mt-8" />
             {franchise.length > 0 && (
               <MobileFold label="franchise" className="mt-8">

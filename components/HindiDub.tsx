@@ -1,6 +1,8 @@
 import Link from "@/components/Link";
 import { dubDate, platformKind, type Dub, type PlatformKind } from "@/lib/hindidub";
 import { hindiCast } from "@/lib/hindistats";
+import { dbEnabled } from "@/lib/db";
+import LeadForm from "./LeadForm";
 
 const T = {
   en: {
@@ -12,6 +14,7 @@ const T = {
     checked: (d: string) => `Checked against the platforms' own pages on ${d}. Streaming deals change, so confirm the audio menu before you start.`,
     all: "All Hindi-dubbed anime", allHref: "/hindi-dub",
     cast: "Hindi voice cast", free: "Free and legal:", artists: "All Hindi voice artists",
+    alert: (t: string) => `🔔 Email me when ${t} gets a Hindi dub`, alertBlurb: "One email if an official Hindi dub is announced or starts streaming, with where to watch it. Nothing else.", alertButton: "Notify me",
   },
   hi: {
     q: (t: string) => `क्या ${t} हिंदी डब में है?`,
@@ -22,6 +25,7 @@ const T = {
     checked: (d: string) => `${d} को प्लेटफ़ॉर्म के अपने पेज से जाँचा गया। स्ट्रीमिंग बदलती रहती है, इसलिए देखने से पहले ऑडियो मेनू में हिंदी देख लें।`,
     all: "सभी हिंदी डब एनीमे", allHref: "/hi/hindi-dub",
     cast: "हिंदी आवाज़ कलाकार", free: "मुफ़्त और कानूनी:", artists: "सभी हिंदी आवाज़ कलाकार",
+    alert: (t: string) => `🔔 ${t} का हिंदी डब आने पर ईमेल करें`, alertBlurb: "आधिकारिक हिंदी डब की घोषणा होने या स्ट्रीमिंग शुरू होने पर एक ईमेल, कहाँ देखें के साथ। और कुछ नहीं।", alertButton: "मुझे बताएं",
   },
 } as const;
 
@@ -35,7 +39,8 @@ export const KIND_CLASS: Record<PlatformKind, string> = {
  * "Is X dubbed in Hindi?" answered from data/hindi-dubs.json: each platform with its seasons, how you watch it
  * and the page that confirms it, or a clear "no" when the check found none. English or Hindi; server component.
  */
-export default function HindiDub({ dub, title, lang = "en", className = "" }: { dub: Dub | null; title: string; lang?: "en" | "hi"; className?: string }) {
+/** `alertId` (a Kitsu anime id) adds an "email me when it's dubbed" signup to a "no Hindi dub yet" answer. */
+export default function HindiDub({ dub, title, lang = "en", className = "", alertId }: { dub: Dub | null; title: string; lang?: "en" | "hi"; className?: string; alertId?: string }) {
   if (!dub) return null;
   const t = T[lang];
   const yes = dub.status === "available";
@@ -78,6 +83,9 @@ export default function HindiDub({ dub, title, lang = "en", className = "" }: { 
         );
       })()}
       {lang === "en" && dub.note && <p className="mt-3 text-sm leading-6 text-ink/80">{dub.note}</p>}
+      {!yes && alertId && dbEnabled() && (
+        <LeadForm compact className="mt-4 border-t border-line/60 pt-4" kind="hindi" source="hindi-anime" lang={lang} animeId={alertId} animeTitle={title} title={t.alert(title)} blurb={t.alertBlurb} button={t.alertButton} />
+      )}
       <p className="mt-3 text-xs text-muted">{t.checked(dubDate(lang))} <Link href={t.allHref} className="font-medium text-violet hover:text-violet-2">{t.all} →</Link></p>
     </section>
   );

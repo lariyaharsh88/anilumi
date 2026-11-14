@@ -10,6 +10,8 @@ import SectionNav from "@/components/fx/SectionNav";
 import StatTiles from "@/components/viz/StatTiles";
 import BarChart from "@/components/viz/BarChart";
 import HindiDubList, { type DubCard } from "@/components/HindiDubList";
+import LeadForm from "@/components/LeadForm";
+import { dbEnabled } from "@/lib/db";
 import { cheapestKind, genreCounts, eraCounts, hindiArrivals } from "@/lib/hindistats";
 import { pricesFor, cheapestPlan, startingAt, PERIOD, PRICES_CHECKED } from "@/lib/platformprices";
 import { itemList } from "@/lib/ld";
@@ -151,6 +153,7 @@ export default async function HindiPlatformPage({ params }: Props) {
         <h2 id="list-h" className="h-section mb-1">All {list.length} anime in Hindi on {p.label}</h2>
         <p className="mb-4 text-sm text-muted">Checked {dubDate()} against {p.label}&apos;s own pages and Indian anime news. Most-watched first; each row links to the page that confirms it.</p>
         <HindiDubList items={cards} platforms={[...new Set(cards.flatMap((c) => c.platforms.map((x) => x.name)))]} />
+        {dbEnabled() && <LeadForm className="mt-6" kind="hindi" source="hindi-platform" title="🔔 Email me when new Hindi dubs arrive" blurb={`One short email when an official Hindi dub is added, on ${p.label} or any other platform, with where to watch it and whether it's free.`} />}
       </section>
 
       {alsoFree.length > 0 && (

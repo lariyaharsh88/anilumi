@@ -16,6 +16,8 @@ import StatTiles from "@/components/viz/StatTiles";
 import BarChart from "@/components/viz/BarChart";
 import StackedBar from "@/components/viz/StackedBar";
 import HindiDubList, { type DubCard } from "@/components/HindiDubList";
+import LeadForm from "@/components/LeadForm";
+import { dbEnabled } from "@/lib/db";
 
 export const revalidate = 86400;
 const fmtDay = (iso: string | null) => (iso ? new Date(/T/.test(iso) ? iso : `${iso}T00:00:00Z`).toLocaleDateString("en-GB", { day: "numeric", month: "short", timeZone: "UTC" }) : "date to be announced");
@@ -177,6 +179,8 @@ export default async function HindiDubHub() {
         </section>
       )}
 
+      {dbEnabled() && <LeadForm className="mt-8" kind="hindi" source="hindi-hub" title="🇮🇳 Email me when a new anime gets a Hindi dub" blurb="One short email when an official Hindi dub is added or starts streaming, with where to watch it and whether it's free. No pirate links, ever." />}
+
       <section id="numbers" data-section className="reveal pt-10" aria-labelledby="num-h">
         <h2 id="num-h" className="h-section mb-1">Hindi dubbed anime in numbers</h2>
         <p className="mb-4 max-w-3xl text-sm text-muted">Of the {st.checked} most-watched anime franchises we checked, {st.dubbed} ({st.share}%) have an official Hindi dub. {st.multi} of them stream in more than one place, so you can often pick the cheapest.</p>
@@ -313,6 +317,7 @@ export default async function HindiDubHub() {
             </>
           );
         })()}
+        {dbEnabled() && <LeadForm className="mt-6" kind="hindi" source="hindi-nodub" title="🔔 Waiting for one of these in Hindi?" blurb="We check these again whenever the platforms announce new dubs. Get one email when any of them, or any other popular anime, gets an official Hindi dub." />}
       </section>
 
       <p className="mt-8 text-sm"><Link href="/hindi-voice-artists" className="font-medium text-violet hover:underline">🎙️ Who voices anime in Hindi? Meet the voice artists →</Link></p>

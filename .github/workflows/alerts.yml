@@ -1,5 +1,5 @@
 name: Alerts
-# Episode and birthday alerts by browser push and email, and the Friday digest (scripts/send-alerts.mts).
+# Episode, Hindi dub and birthday alerts by browser push and email, and the Friday digest (scripts/send-alerts.mts).
 # GitHub runs schedules late or skips them (an hourly cron ran 3-7 hours apart in Nov 2026), so every run is
 # "auto": new episodes from the last 12 hours, plus character birthdays once it's 03:30 UTC (9 AM in India) and
 # the weekly digest from Friday 03:30 UTC until it has gone out. Each alert is sent once (alerts_sent in
@@ -13,7 +13,7 @@ on:
       mode:
         description: What to send
         type: choice
-        options: [auto, episodes, birthdays, digest, confirm-pending]
+        options: [auto, episodes, hindi, birthdays, digest, confirm-pending]
         default: auto
 permissions:
   contents: read

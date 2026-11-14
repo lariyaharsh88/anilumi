@@ -100,6 +100,9 @@ export default async function EpisodePage({ params }: Props) {
   // "release time india / us": the broadcast in the zones most of our readers search from.
   const at = (tz: string) => (airIso && airIso.length > 10 ? new Date(airIso).toLocaleString("en-US", { weekday: "short", hour: "numeric", minute: "2-digit", timeZone: tz }) : null);
   const zones = whenTime ? { ist: at("Asia/Kolkata"), et: at("America/New_York"), pt: at("America/Los_Angeles"), uk: at("Europe/London") } : null;
+  // The alert buttons name the time in India, where most visitors are: "(Sat, 9:30 PM IST)".
+  const nextIst = nextUp && a.nextRelease && a.nextRelease.length > 10 && isFuture(a.nextRelease) ? new Date(a.nextRelease).toLocaleString("en-US", { weekday: "short", hour: "numeric", minute: "2-digit", timeZone: "Asia/Kolkata" }) : null;
+  const istNote = (t: string | null | undefined) => (t ? ` (${t} IST)` : "");
 
   // Upcoming and recently aired episodes change (air time, title, length) as sources fill in; these show when the
   // page last re-read them, and give it to search engines as dateModified. Older episodes are settled: no date.
@@ -204,12 +207,12 @@ export default async function EpisodePage({ params }: Props) {
           {dbEnabled() && !upcoming && <EpisodeReactions animeId={a.id} ep={n} />}
           {/* Just watched an episode of a show still airing: the moment to offer the next one. */}
           {dbEnabled() && !upcoming && a.status === "current" && (<>
-            <PushButton className="mt-5" topic={animeTopic(a.id)} source="episode-next-alert" label={nextUp ? `Alert me when episode ${nextUp} airs` : "Alert me when new episodes air"} onLabel="Episode alerts on" />
-            <LeadForm className="mt-4" kind="alert" source="episode-next-alert" animeId={a.id} animeTitle={a.title} title={nextUp ? `🔔 Email me when episode ${nextUp} is out` : `🔔 Email me when a new ${a.title} episode is out`} blurb={`One email per new ${a.title} episode, at air time. Unsubscribe any time.`} />
+            <PushButton className="mt-5" topic={animeTopic(a.id)} source="episode-next-alert" label={nextUp ? `Alert me when episode ${nextUp} airs${istNote(nextIst)}` : "Alert me when new episodes air"} onLabel="Episode alerts on" />
+            <LeadForm className="mt-4" kind="alert" source="episode-next-alert" animeId={a.id} animeTitle={a.title} title={nextUp ? `🔔 Email me when episode ${nextUp} is out${istNote(nextIst)}` : `🔔 Email me when a new ${a.title} episode is out`} blurb={`One email per new ${a.title} episode, at air time. Unsubscribe any time.`} />
           </>)}
           {dbEnabled() && upcoming && a.status !== "finished" && (<>
-            <PushButton className="mt-5" topic={animeTopic(a.id)} source="episode-alert" label={`Alert me when episode ${n} airs`} onLabel="Episode alerts on" />
-            <LeadForm className="mt-4" kind="alert" source="episode-alert" animeId={a.id} animeTitle={a.title} title={`🔔 Email me when episode ${n} airs`} blurb={`One email when ${a.title} episode ${n} is out, then one per new episode. Unsubscribe any time.`} />
+            <PushButton className="mt-5" topic={animeTopic(a.id)} source="episode-alert" label={`Alert me when episode ${n} airs${istNote(zones?.ist)}`} onLabel="Episode alerts on" />
+            <LeadForm className="mt-4" kind="alert" source="episode-alert" animeId={a.id} animeTitle={a.title} title={`🔔 Email me when episode ${n} airs${istNote(zones?.ist)}`} blurb={`One email when ${a.title} episode ${n} is out, then one per new episode. Unsubscribe any time.`} />
           </>)}
           {upcoming && airIso && (
             <div className="card mt-5 p-5">

@@ -245,7 +245,7 @@ export default async function HindiGuide({ params }: Props) {
       )}
 
       <BingePlan ordered={ordered} lang="hi" />
-      <HindiDub dub={dub} title={name} lang="hi" className="mt-8" />
+      <HindiDub dub={dub} title={name} lang="hi" className="mt-8" alertId={a.id} />
       {india && india.list.length > 0 && (
         <section className="card reveal mt-8 p-4" aria-labelledby="india-h">
           <h2 id="india-h" className="font-semibold text-ink">🇮🇳 भारत में {name} कहाँ देखें</h2>
