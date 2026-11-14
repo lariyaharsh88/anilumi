@@ -170,7 +170,9 @@ function normalizeRaw(r: JsonApiResource, included: JsonApiResource[] = []): Ani
     .map((s) => {
       const streamerRef = s!.relationships?.streamer?.data as { id: string } | undefined;
       const streamer = streamerRef ? byId.get(`streamers:${streamerRef.id}`) : undefined;
-      const url = String(s!.attributes.url || "");
+      // Kitsu has some links without a scheme ("www.crunchyroll.com/..."), which browsers resolve as AniLumi paths.
+      const raw = String(s!.attributes.url || "").trim();
+      const url = /^https?:\/\//i.test(raw) ? raw : /^(www\.)?[a-z0-9-]+(\.[a-z0-9-]+)+\//i.test(raw) ? `https://${raw}` : "";
       const site = streamer ? String(streamer.attributes.siteName) : hostLabel(url);
       return { id: s!.id, url, subs: (s!.attributes.subs as string[]) || [], dubs: (s!.attributes.dubs as string[]) || [], site };
     })
