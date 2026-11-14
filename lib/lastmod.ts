@@ -38,6 +38,8 @@ export const SITE_UPDATED = "2026-11-11"; // 11 Nov: verdicts, character/VA sect
 export const BIRTHDAY_PAGES_UPDATED = "2026-11-14";
 /** Hindi dub hub template: 14 Nov added the numbers, charts, posters and filters (and the Apple TV fix). */
 export const HINDI_HUB_UPDATED = "2026-11-14";
+/** "What anime is this?" page: 14 Nov added how the search works, tips and the no-screenshot H2s. */
+export const SCENE_PAGE_UPDATED = "2026-11-14";
 
 /** Info pages, by the date their text last changed. */
 export const STATIC_UPDATED: Record<string, string> = {
