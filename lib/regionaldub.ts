@@ -19,6 +19,7 @@ type LangDub = { status: "available" | "none_found"; confidence: "high" | "mediu
 type Entry = { s: string; t: string; ta?: LangDub; te?: LangDub; sources: string[]; note?: string; checked?: string };
 const D = data as unknown as { checked: string; entries: Entry[] };
 export const REGIONAL_CHECKED = D.checked;
+export const REGIONAL_SCANNED = (D as { lastScan?: string }).lastScan ?? D.checked;
 
 /** One anime's dub in one language, shaped like a Hindi dub entry so the same list and helpers work. */
 export type RegionalDub = { s: string; t: string; confidence: "high" | "medium"; platforms: DubPlatform[]; checked: string; added?: string };

@@ -15,18 +15,20 @@
     },
     {
      "name": "Muse India (YouTube)",
-     "scope": "Season 1-2 (separate dub); Season 3 (16-26 Oct 2026) and Season 4 (from 27 Oct 2026) reported",
-     "url": "https://www.animenewsnetwork.com/news/2026-03-16/hindi-tamil-telugu-dubs-of-attack-on-titan-season-1-streams-on-muse-india-youtube-channel/.235358"
+     "scope": "Season 1-2 (separate dub); Season 3 (16-26 Oct 2026, reported); The Final Season (from 27 Oct 2026, two episodes daily)",
+     "url": "https://www.animenewsnetwork.com/news/2026-11-02/attack-on-titan-the-final-season-anime-hindi-dub-streams-on-muse-india-youtube-channel/.243438"
     }
    ],
    "sources": [
     "https://animenewsindia.com/2024/12/27/attack-on-titan-season-1-now-streaming-in-hindi-on-prime-video-india",
     "https://animenewsnetwork.com/news/2025-03-31/attack-on-titan-the-final-chapters-anime-hindi-dub-streams-on-anime-times/.223050",
     "https://www.animenewsnetwork.com/news/2026-03-16/hindi-tamil-telugu-dubs-of-attack-on-titan-season-1-streams-on-muse-india-youtube-channel/.235358",
-    "https://animemirchi.com/?p=1579"
+    "https://animemirchi.com/?p=1579",
+    "https://www.animenewsnetwork.com/news/2026-11-02/attack-on-titan-the-final-season-anime-hindi-dub-streams-on-muse-india-youtube-channel/.243438"
    ],
-   "note": "Anime Times on Prime Video carries Hindi for all four seasons. Muse India released a separate free Hindi dub of Season 1 on YouTube in March 2026 and Season 2 from April 2026; a fan tracker reports Muse's Season 3 (16-26 Oct 2026) and Season 4 (from 27 Oct 2026), not confirmed elsewhere.",
-   "added": "2026-11-04"
+   "note": "Anime News Network (2 Nov 2026) confirms that Muse India's YouTube channel began the Hindi dub of The Final Season on Tuesday 27 Oct with two episodes daily, which the current entry has only as a fan-tracker report.",
+   "added": "2026-11-04",
+   "checked": "2026-11-15"
   },
   {
    "s": "boku-no-hero-academia",
@@ -522,7 +524,7 @@
    "platforms": [
     {
      "name": "Crunchyroll",
-     "scope": "Season 1 (from 9 Sep 2026, reported)",
+     "scope": "Season 1 (from 9 Sep 2026) and Season 2 (from 10 Nov 2026), reported",
      "url": "https://www.crunchyroll.com/series/GR49G9VP6/sword-art-online"
     },
     {
@@ -535,10 +537,12 @@
     "https://www.crunchyroll.com/series/GR49G9VP6/sword-art-online",
     "https://animenewsnetwork.com/news/2024-10-06/muse-asia-simulcasts-re-zero-anime-3rd-season-in-india/.216376",
     "https://animemirchi.com/complete-crunchyroll-hindi-dubbed-anime-list/",
-    "https://animemirchi.com/hindi-dubbed-anime-on-jiohotstar"
+    "https://animemirchi.com/hindi-dubbed-anime-on-jiohotstar",
+    "https://animemirchi.com/crunchyroll-fall-2026-hindi-tamil-telugu-lineup/"
    ],
-   "note": "Crunchyroll's series page lists Hindi audio; a fan tracker dates Season 1 to 9 Sep 2026. Muse India streamed a Hindi dub on YouTube from Oct 2024, which was later removed; the same fan site reports that dub on JioHotstar (Seasons 1-2, Dec 2025). Season scopes rest on that one fan site.",
-   "added": "2026-11-04"
+   "note": "Anime Mirchi lists Season 2 in Hindi on Crunchyroll from 10 Nov 2026 as a batch release; no Crunchyroll or ANN confirmation was found, so the confidence is medium.",
+   "added": "2026-11-04",
+   "checked": "2026-11-15"
   },
   {
    "s": "code-geass-lelouch-of-the-rebellion",
@@ -1263,16 +1267,24 @@
      "name": "MX Player (now free on Prime Video)",
      "scope": "Season 1",
      "url": "https://www.animenewsnetwork.com/news/2025-05-10/amazon-mx-player-adds-hindi-dubs-of-spy-family-demon-slayer-4-more-anime/.224301"
+    },
+    {
+     "name": "Netflix",
+     "scope": "Steel Ball Run only (1st Stage and 2nd-3rd Stage)",
+     "url": "https://www.netflix.com/in/title/82116553"
     }
    ],
    "sources": [
     "https://www.animenewsnetwork.com/news/2025-04-21/jojo-bizarre-adventure-anime-hindi-dub-streams-on-muse-india/.223753",
     "https://www.animenewsnetwork.com/news/2026-09-04/hindi-dub-of-jojo-bizarre-adventure-diamond-is-unbreakable-anime-streams-on-muse-india-youtube-/.241369",
     "https://www.animenewsnetwork.com/news/2025-05-10/amazon-mx-player-adds-hindi-dubs-of-spy-family-demon-slayer-4-more-anime/.224301",
-    "https://www.crunchyroll.com/series/GYP8DP1MY/jojos-bizarre-adventure"
+    "https://www.crunchyroll.com/series/GYP8DP1MY/jojos-bizarre-adventure",
+    "https://www.netflix.com/in/title/82116553",
+    "https://www.netflix.com/in/title/80179831"
    ],
-   "note": "Muse Communication's Hindi dub. Crunchyroll India's version has no Hindi audio. A fan tracker lists Steel Ball Run on Netflix in Hindi (unverified).",
-   "added": "2026-11-04"
+   "note": "Netflix India's Steel Ball Run page lists Hindi audio (with Tamil and Telugu), which the current entry called unverified; it was added in Sep-Oct 2026, so this corrects the entry rather than reporting a November release. Netflix's earlier JoJo parts (80179831) are English and Japanese audio only.",
+   "added": "2026-11-04",
+   "checked": "2026-11-15"
   },
   {
    "s": "high-school-of-the-dead",
@@ -1410,12 +1422,17 @@
    "s": "dragon-ball",
    "t": "Dragon Ball",
    "status": "available",
-   "confidence": "medium",
+   "confidence": "high",
    "platforms": [
     {
      "name": "Crunchyroll",
      "scope": "Dragon Ball Daima",
      "url": "https://www.crunchyroll.com/series/GG5H5XQ35/dragon-ball-daima"
+    },
+    {
+     "name": "Crunchyroll",
+     "scope": "Dragon Ball Super: Beerus (weekly on Thursdays from 12 Nov 2026, four weeks behind the subtitled simulcast)",
+     "url": "https://animenewsindia.com/2026/11/13/dragon-ball-super-beerus-2026-is-now-streaming-on-crunchyroll-in-english-hindi-tamil-and-telugu-dubs/"
     },
     {
      "name": "Crunchyroll",
@@ -1436,10 +1453,14 @@
    "sources": [
     "https://www.crunchyroll.com/series/GG5H5XQ35/dragon-ball-daima",
     "https://www.animenewsnetwork.com/news/2024-11-08/crunchyroll-streams-dragon-ball-daima-anime-hindi-tamil-telugu-dubs-on-november-9/.217575",
-    "https://animenewsindia.com/2025/06/18/netflix-india-to-stream-dragon-ball-z-for-the-first-time-starting-july-15-2025/"
+    "https://animenewsindia.com/2025/06/18/netflix-india-to-stream-dragon-ball-z-for-the-first-time-starting-july-15-2025/",
+    "https://animenewsindia.com/2026/11/13/dragon-ball-super-beerus-2026-is-now-streaming-on-crunchyroll-in-english-hindi-tamil-and-telugu-dubs/",
+    "https://animemirchi.com/crunchyroll-fall-2026-hindi-tamil-telugu-lineup/",
+    "https://animemirchi.com/complete-crunchyroll-hindi-dubbed-anime-list/"
    ],
-   "note": "Hindi depends on the series: Daima and the Super Hero film on Crunchyroll; Dragon Ball and Dragon Ball Super on Cartoon Network India TV; DBZ Kai on Discovery+. Netflix's DBZ and Crunchyroll's original Dragon Ball/Super have no Hindi.",
-   "added": "2026-11-04"
+   "note": "Crunchyroll added a Hindi dub of the new Dragon Ball Super: Beerus series on 12 Nov 2026 (new episodes weekly on Thursdays); the other platforms are unchanged.",
+   "added": "2026-11-04",
+   "checked": "2026-11-15"
   },
   {
    "s": "high-school-dxd",
@@ -4407,5 +4428,6 @@
    "note": "Crunchyroll added a Hindi dub in April 2024; Muse India streams a Hindi dub free on YouTube from Dec 2025.",
    "added": "2026-11-12"
   }
- ]
+ ],
+ "lastScan": "2026-11-15"
 }

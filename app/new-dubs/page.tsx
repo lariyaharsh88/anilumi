@@ -8,6 +8,8 @@ import { dbEnabled } from "@/lib/db";
 import { itemList } from "@/lib/ld";
 import { fitTitle, fitDescription } from "@/lib/titles";
 import { hindiComing } from "@/lib/hindistats";
+import { DUB_SCANNED } from "@/lib/hindidub";
+import { REGIONAL_SCANNED } from "@/lib/regionaldub";
 import { premiereAt } from "@/lib/dubschedule";
 import { dubEvents, dubWeeks, type DubEvent } from "@/lib/dubupdates";
 
@@ -48,7 +50,7 @@ export default function NewDubs() {
         crumbs={[{ href: "/", label: "Home" }, { href: "/hindi-dub", label: "Indian dubs" }, { href: "/new-dubs", label: "New dubs" }]}
         eyebrow="🇮🇳 New this week"
         title={<>New <span className="text-gradient">Hindi, Tamil &amp; Telugu</span> dubbed anime</>}
-        subtitle="What changed on our Indian dub lists, week by week: new official dubs and Hindi dubs that started streaming. Official platforms only."
+        subtitle={`What changed on our Indian dub lists, week by week: new official dubs and Hindi dubs that started streaming. Official platforms only. Last checked for new dubs: ${fmt([DUB_SCANNED, REGIONAL_SCANNED].sort().at(-1)!, { day: "numeric", month: "long", year: "numeric" })}.`}
         facts={[
           { value: String(started30), label: "Hindi dubs started, last 30 days" },
           { value: String(coming.length), label: "Hindi dubs coming" },

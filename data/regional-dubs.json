@@ -744,7 +744,7 @@
     "platforms": [
      {
       "name": "Crunchyroll",
-      "scope": "Season 1 Part 1 (Ep. 1–51); Season 2",
+      "scope": "Season 1 Part 1 (Ep. 1-40 from 10 Oct 2026, Ep. 41-51 on 7 Nov 2026); Season 2 announced, date TBA",
       "url": "https://animenewsindia.com/2026/10/29/black-clover-season-1-part-1-is-now-streaming-on-crunchyroll-india-in-hindi-tamil-and-telugu-dubs/"
      }
     ],
@@ -756,7 +756,7 @@
     "platforms": [
      {
       "name": "Crunchyroll",
-      "scope": "Season 1 Part 1 (rolling out); Season 2",
+      "scope": "Season 1 Part 1 (rolling out since 24 Oct 2026; Ep. 1-10 by 4 Nov); Season 2 announced, date TBA",
       "url": "https://animenewsindia.com/2026/10/29/black-clover-season-1-part-1-is-now-streaming-on-crunchyroll-india-in-hindi-tamil-and-telugu-dubs/"
      }
     ],
@@ -766,7 +766,7 @@
     "https://animenewsindia.com/2026/10/29/black-clover-season-1-part-1-is-now-streaming-on-crunchyroll-india-in-hindi-tamil-and-telugu-dubs/",
     "https://www.animenewsnetwork.com/news/2026-10-02/crunchyroll-streams-a-tale-of-the-secret-saint-psyren-more-anime-in-india/.242409"
    ],
-   "note": "Netflix India has Black Clover in Japanese only.",
+   "note": "Scope correction: the 15 Nov entry lists Season 2 as available, but Anime News India says the Season 2 dubs 'will be added soon', with no date; the Telugu Season 1 Part 1 is still rolling out (Ep. 1-10 by 4 Nov).",
    "checked": "2026-11-15"
   },
   {
@@ -4159,5 +4159,6 @@
    "note": "Source is from 2010; current schedule not confirmed.",
    "checked": "2026-11-15"
   }
- ]
+ ],
+ "lastScan": "2026-11-15"
 }

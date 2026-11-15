@@ -11,13 +11,15 @@ export type DubPlatform = { name: string; scope: string; url: string };
 export type Dub = {
   s: string; t: string; status: "available" | "past_broadcast" | "announced" | "none_found";
   confidence: "high" | "medium" | "low"; platforms: DubPlatform[]; sources: string[]; note: string;
-  /** When the dub was added to the list (YYYY-MM-DD), for /new-dubs. */
-  added?: string;
+  /** When the dub was added to the list (YYYY-MM-DD), for /new-dubs; when this entry was last re-checked. */
+  added?: string; checked?: string;
 };
 export type PlatformKind = "free" | "subscription" | "tv";
 
 const D = data as { checked: string; reviewed: string | null; entries: Dub[] };
 export const DUB_CHECKED = D.checked;
+/** When the list was last scanned for new or changed dubs (scripts/apply-dub-check.mts). */
+export const DUB_SCANNED = (D as { lastScan?: string }).lastScan ?? D.checked;
 export const DUB_REVIEWED = D.reviewed;
 
 /** How you watch on each platform; unknown names read as subscription. */
