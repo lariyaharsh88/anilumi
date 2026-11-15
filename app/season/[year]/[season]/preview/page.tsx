@@ -135,6 +135,7 @@ export default async function SeasonPreview({ params }: Props) {
         <div className="flex flex-wrap gap-2">
           <Link href={`/season/${prev.year}/${prev.season}/preview`} className="chip">← {cap(prev.season)} {prev.year}</Link>
           <Link href={`/season/${y}/${s}`} className="chip">Full {label} chart</Link>
+          {upcoming && <Link href="/anime-trailers" className="chip">▶ Trailers &amp; PVs</Link>}
           <Link href={`/season/${next.year}/${next.season}/preview`} className="chip">{cap(next.season)} {next.year} →</Link>
         </div>
       </PageHero>

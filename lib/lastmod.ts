@@ -40,7 +40,7 @@ export const BIRTHDAY_PAGES_UPDATED = "2026-11-14";
 export const HINDI_HUB_UPDATED = "2026-11-14";
 /** "What anime is this?" page: 14 Nov added how the search works, tips and the no-screenshot H2s. */
 export const SCENE_PAGE_UPDATED = "2026-11-14";
-/** /sub-vs-dub and /anime-salt-alternatives, added 15 Nov from the Bing keyword research. */
+/** /sub-vs-dub, /anime-salt-alternatives and /anime-trailers, added 15 Nov from the Bing keyword research. */
 export const DUB_GUIDES_ADDED = "2026-11-15";
 
 /** Info pages, by the date their text last changed. */

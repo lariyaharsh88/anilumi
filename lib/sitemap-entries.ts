@@ -54,6 +54,7 @@ export async function sitemapEntries(): Promise<MetadataRoute.Sitemap> {
     { url: abs("/how-long-to-watch"), lastModified: weekly, changeFrequency: "weekly", priority: 0.7 },
     { url: abs("/parents-guide"), lastModified: at(D.anilist), changeFrequency: "weekly", priority: 0.7 },
     { url: abs("/upcoming-seasons"), lastModified: now, changeFrequency: "daily", priority: 0.8 },
+    { url: abs("/anime-trailers"), lastModified: now, changeFrequency: "daily", priority: 0.8 },
     { url: abs("/filler-lists"), lastModified: at(D.watchOrders), changeFrequency: "monthly", priority: 0.7 },
     ...fillerSlugs().map((slug) => ({ url: abs(`${animePath({ slug })}/filler-list`), lastModified: at(FILLER[slug]?.reviewedOn, D.arcs), changeFrequency: "monthly" as const, priority: 0.7 })),
     { url: abs("/anime-to-manga"), lastModified: at(D.manga), changeFrequency: "monthly", priority: 0.7 },
