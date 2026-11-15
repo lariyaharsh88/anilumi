@@ -26,6 +26,7 @@ import vaNotes from "@/data/va-notes.json";
 import charLines from "@/data/character-lines.json";
 import sequelNews from "@/data/sequel-news.json";
 import seasonDubs from "@/data/season-dubs.json";
+import regionalDubs from "@/data/regional-dubs.json";
 import hindiVoices from "@/data/hindi-voice-artists.json";
 
 /**
@@ -40,7 +41,7 @@ export const BIRTHDAY_PAGES_UPDATED = "2026-11-14";
 export const HINDI_HUB_UPDATED = "2026-11-14";
 /** "What anime is this?" page: 14 Nov added how the search works, tips and the no-screenshot H2s. */
 export const SCENE_PAGE_UPDATED = "2026-11-14";
-/** /sub-vs-dub, /anime-salt-alternatives and /anime-trailers, added 15 Nov from the Bing keyword research. */
+/** /sub-vs-dub, /anime-salt-alternatives, /anime-trailers, /tamil-dub and /telugu-dub, added 15 Nov. */
 export const DUB_GUIDES_ADDED = "2026-11-15";
 
 /** Info pages, by the date their text last changed. */
@@ -56,7 +57,7 @@ export const DATA_DATES = {
   manga: g(manga).checked, seriesCharacters: g(seriesChars).generated, themes: g(themes).generated, voiceActors: g(vas).generated,
   watchOrders: g(woSnap).generated, streams: g(streams).checked, dubSchedule: g(dubSchedule).checked,
   summaries: g(summaries).checked, charNotes: g(charNotes).checked, vaNotes: g(vaNotes).checked, charLines: g(charLines).checked,
-  sequelNews: g(sequelNews).checked, seasonDubs: g(seasonDubs).checked, hindiVoices: g(hindiVoices).checked,
+  sequelNews: g(sequelNews).checked, seasonDubs: g(seasonDubs).checked, hindiVoices: g(hindiVoices).checked, regionalDubs: g(regionalDubs).checked,
 };
 
 const toTime = (d: string | Date | null | undefined) => (d ? (d instanceof Date ? d.getTime() : Date.parse(d.length === 10 ? `${d}T00:00:00Z` : d)) : NaN);

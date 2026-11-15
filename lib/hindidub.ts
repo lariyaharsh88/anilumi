@@ -22,7 +22,7 @@ export const DUB_REVIEWED = D.reviewed;
 const KIND: [RegExp, PlatformKind][] = [
   [/youtube|mx player/i, "free"],
   // "Apple TV" is a streaming service, not a channel.
-  [/cartoon network|sony yay|zee caf|nickelodeon|(?<!apple )\btv\b/i, "tv"],
+  [/cartoon network|sony yay|zee caf|nickelodeon|pogo|hungama|disney channel|discovery kids|(?<!apple )\btv\b/i, "tv"],
 ];
 export const platformKind = (name: string): PlatformKind => KIND.find(([re]) => re.test(name))?.[1] ?? "subscription";
 
@@ -48,7 +48,7 @@ export function dubFor(anime: { id: string; slug: string }): Dub | null {
 }
 
 /** Where a franchise's guide lives: the watch order when it has several parts, else the anime page. */
-export const dubHref = (d: Dub) => ((users.get(d.s)?.n ?? 1) > 1 ? `/watch-order/${d.s}` : `/anime/${d.s}`);
+export const dubHref = (d: Pick<Dub, "s">) => ((users.get(d.s)?.n ?? 1) > 1 ? `/watch-order/${d.s}` : `/anime/${d.s}`);
 
 /** Platform → franchises it carries in Hindi, biggest catalogue first. */
 export function byPlatform(): { name: string; kind: PlatformKind; titles: { d: Dub; scope: string }[] }[] {

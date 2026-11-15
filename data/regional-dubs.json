@@ -1,0 +1,728 @@
+{
+ "checked": "2026-11-10",
+ "source": "Seeded from data/where-to-watch.json (India audio languages); replaced by the dedicated Tamil/Telugu check.",
+ "entries": [
+  {
+   "s": "attack-on-titan",
+   "t": "Attack on Titan",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Anime Times (Prime Video channel)",
+      "scope": "Seasons 1–4 (all seasons)",
+      "url": "https://www.primevideo.com/detail?gti=amzn1.dv.gti.57cdfd42-0c7f-4c3f-b35a-f776cae96d9d"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Anime Times (Prime Video channel)",
+      "scope": "Seasons 1–4 (all seasons)",
+      "url": "https://www.primevideo.com/detail?gti=amzn1.dv.gti.57cdfd42-0c7f-4c3f-b35a-f776cae96d9d"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.justwatch.com/us/tv-show/attack-on-titan",
+    "https://www.justwatch.com/in/tv-show/attack-on-titan",
+    "https://www.justwatch.com/uk/tv-series/attack-on-titan"
+   ],
+   "note": ""
+  },
+  {
+   "s": "kimetsu-no-yaiba",
+   "t": "Demon Slayer: Kimetsu no Yaiba",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Netflix",
+      "scope": "All TV arcs (5 seasons); Infinity Castle movie",
+      "url": "https://www.netflix.com/title/81091393"
+     },
+     {
+      "name": "JioHotstar",
+      "scope": "Seasons 1–3 (Hindi dub, reported)",
+      "url": "https://www.hotstar.com/in/1971041196"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Netflix",
+      "scope": "All TV arcs (5 seasons); Infinity Castle movie",
+      "url": "https://www.netflix.com/title/81091393"
+     },
+     {
+      "name": "JioHotstar",
+      "scope": "Seasons 1–3 (Hindi dub, reported)",
+      "url": "https://www.hotstar.com/in/1971041196"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.justwatch.com/us/tv-show/demon-slayer-kimetsu-no-yaiba",
+    "https://www.justwatch.com/in/tv-show/demon-slayer-kimetsu-no-yaiba",
+    "https://www.justwatch.com/uk/tv-series/demon-slayer-kimetsu-no-yaiba"
+   ],
+   "note": ""
+  },
+  {
+   "s": "jujutsu-kaisen",
+   "t": "JUJUTSU KAISEN",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "JioHotstar",
+      "scope": "Seasons 1–2 (Sony YAY! Hindi dub)",
+      "url": "https://www.hotstar.com/in/1271461642"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "JioHotstar",
+      "scope": "Seasons 1–2 (Sony YAY! Hindi dub)",
+      "url": "https://www.hotstar.com/in/1271461642"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.justwatch.com/us/tv-show/jujutsu-kaisen",
+    "https://www.justwatch.com/in/tv-show/jujutsu-kaisen",
+    "https://www.justwatch.com/uk/tv-series/jujutsu-kaisen"
+   ],
+   "note": ""
+  },
+  {
+   "s": "death-note",
+   "t": "Death Note",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Anime Times (Prime Video channel)",
+      "scope": "All 37 episodes",
+      "url": "https://www.primevideo.com/detail?gti=amzn1.dv.gti.8cccea97-8ef5-423f-b344-c68e3683811f"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Anime Times (Prime Video channel)",
+      "scope": "All 37 episodes",
+      "url": "https://www.primevideo.com/detail?gti=amzn1.dv.gti.8cccea97-8ef5-423f-b344-c68e3683811f"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.justwatch.com/us/tv-show/death-note",
+    "https://www.justwatch.com/in/tv-show/death-note",
+    "https://www.justwatch.com/uk/tv-series/death-note"
+   ],
+   "note": ""
+  },
+  {
+   "s": "naruto",
+   "t": "Naruto",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Anime Times (Prime Video channel)",
+      "scope": "Naruto (Hindi, Tamil, Telugu audio)",
+      "url": "https://www.primevideo.com/detail?gti=amzn1.dv.gti.3771d3f8-aa60-474f-915f-e852f1f099f2"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Anime Times (Prime Video channel)",
+      "scope": "Naruto (Hindi, Tamil, Telugu audio)",
+      "url": "https://www.primevideo.com/detail?gti=amzn1.dv.gti.3771d3f8-aa60-474f-915f-e852f1f099f2"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.justwatch.com/us/tv-show/naruto",
+    "https://www.justwatch.com/in/tv-show/naruto",
+    "https://www.justwatch.com/uk/tv-series/naruto"
+   ],
+   "note": ""
+  },
+  {
+   "s": "haikyuu",
+   "t": "HAIKYU!!",
+   "ta": {
+    "status": "available",
+    "confidence": "medium",
+    "platforms": [
+     {
+      "name": "JioHotstar",
+      "scope": "Series (Hindi audio, separate dub reported)",
+      "url": "https://www.hotstar.com/in/1271498279"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "medium",
+    "platforms": [
+     {
+      "name": "JioHotstar",
+      "scope": "Series (Hindi audio, separate dub reported)",
+      "url": "https://www.hotstar.com/in/1271498279"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.justwatch.com/us/tv-show/haikyu-2014",
+    "https://www.justwatch.com/in/tv-show/haikyu",
+    "https://www.justwatch.com/uk/tv-series/haikyu-2014"
+   ],
+   "note": ""
+  },
+  {
+   "s": "spy-x-family",
+   "t": "SPY x FAMILY",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Anime Times (Prime Video channel)",
+      "scope": "Selected seasons (Muse Hindi dub)",
+      "url": "https://www.primevideo.com/detail?gti=amzn1.dv.gti.0db7769b-e77c-4311-ba26-d908b08310f0"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Anime Times (Prime Video channel)",
+      "scope": "Selected seasons (Muse Hindi dub)",
+      "url": "https://www.primevideo.com/detail?gti=amzn1.dv.gti.0db7769b-e77c-4311-ba26-d908b08310f0"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.justwatch.com/us/tv-show/spy-x-family",
+    "https://www.justwatch.com/in/tv-show/spy-x-family",
+    "https://www.justwatch.com/uk/tv-series/spy-x-family"
+   ],
+   "note": ""
+  },
+  {
+   "s": "sousou-no-frieren",
+   "t": "Frieren: Beyond Journey’s End",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–2 (Hindi dub; Tamil and Telugu for Season 2)",
+      "url": "https://www.crunchyroll.com/watch/GE00324920ARSA"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–2 (Hindi dub; Tamil and Telugu for Season 2)",
+      "url": "https://www.crunchyroll.com/watch/GE00324920ARSA"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.justwatch.com/us/tv-show/frieren-beyond-journeys-end",
+    "https://www.justwatch.com/in/tv-show/frieren-beyond-journeys-end",
+    "https://www.justwatch.com/uk/tv-series/frieren-beyond-journeys-end"
+   ],
+   "note": ""
+  },
+  {
+   "s": "tate-no-yuusha-no-nariagari",
+   "t": "The Rising of the Shield Hero",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–4 (all)",
+      "url": "https://www.crunchyroll.com/watch/GE00058393TAIN"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–4 (all)",
+      "url": "https://www.crunchyroll.com/watch/GE00058393TAIN"
+     }
+    ]
+   },
+   "sources": [
+    "https://anilist.co/anime/99263",
+    "https://www.crunchyroll.com/series/G6W4QKX0R/the-rising-of-the-shield-hero",
+    "https://www.justwatch.com/in/tv-show/the-rising-of-the-shield-hero"
+   ],
+   "note": ""
+  },
+  {
+   "s": "solo-leveling",
+   "t": "Solo Leveling",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–2 (all)",
+      "url": "https://www.crunchyroll.com/watch/GE00320669PLPL"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–2 (all)",
+      "url": "https://www.crunchyroll.com/watch/GE00320669PLPL"
+     }
+    ]
+   },
+   "sources": [
+    "https://anilist.co/anime/151807",
+    "https://etvbharat.com/en/!entertainment/solo-leveling-season-2-dubs-to-be-out-on-this-date-rana-daggubati-as-powerful-barca-in-hindi-tamil-and-telugu-version-enn25012101959",
+    "https://www.animenewsnetwork.com/news/2023-12-12/crunchyroll-hosts-screening-of-solo-leveling-anime-in-mumbai-on-december-20-adds-hindi-dub-on-/.205413"
+   ],
+   "note": ""
+  },
+  {
+   "s": "sono-bisque-doll-wa-koi-wo-suru",
+   "t": "My Dress-Up Darling",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–2 (all)",
+      "url": "https://www.crunchyroll.com/watch/GQJUGVQEZ"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–2 (all)",
+      "url": "https://www.crunchyroll.com/watch/GQJUGVQEZ"
+     }
+    ]
+   },
+   "sources": [
+    "https://anilist.co/anime/132405",
+    "https://www.justwatch.com/in/tv-show/my-dress-up-darling",
+    "https://www.justwatch.com/uk/tv-series/my-dress-up-darling"
+   ],
+   "note": ""
+  },
+  {
+   "s": "overlord",
+   "t": "Overlord",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–4 (all)",
+      "url": "https://www.crunchyroll.com/watch/GE00253631TEIN"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–4 (all)",
+      "url": "https://www.crunchyroll.com/watch/GE00253631TEIN"
+     }
+    ]
+   },
+   "sources": [
+    "https://anilist.co/anime/20832",
+    "https://animemirchi.com/?p=7091",
+    "https://animemirchi.com/overlord-anime-in-hindi-on-zee-cafe-india/"
+   ],
+   "note": ""
+  },
+  {
+   "s": "DAN-DA-DAN",
+   "t": "DAN DA DAN",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–2 (all)",
+      "url": "https://www.crunchyroll.com/watch/GVWU8NKGQ"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–2 (all)",
+      "url": "https://www.crunchyroll.com/watch/GVWU8NKGQ"
+     }
+    ]
+   },
+   "sources": [
+    "https://anilist.co/anime/171018",
+    "https://animenewsindia.com/2024/10/18/muse-asia-announces-the-hindi-dub-premiere-date-for-dandadan-on-ott-platforms-updated",
+    "https://animenewsnetwork.com/news/2024-11-18/dan-da-dan-anime-hindi-dub-streams-on-muse-india/.217965"
+   ],
+   "note": ""
+  },
+  {
+   "s": "kusuriya-no-hitorigoto",
+   "t": "The Apothecary Diaries",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–3 (all)",
+      "url": "https://www.crunchyroll.com/watch/GE00325115ARSA"
+     },
+     {
+      "name": "Netflix",
+      "scope": "Seasons 1–3 (Netflix numbering)",
+      "url": "https://www.netflix.com/title/81712068"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–3 (all)",
+      "url": "https://www.crunchyroll.com/watch/GE00325115ARSA"
+     },
+     {
+      "name": "Netflix",
+      "scope": "Seasons 1–3 (Netflix numbering)",
+      "url": "https://www.netflix.com/title/81712068"
+     }
+    ]
+   },
+   "sources": [
+    "https://anilist.co/anime/161645",
+    "https://www.animenewsnetwork.com/news/2025-01-26/2nd-seasons-of-solo-leveling-the-apothecary-diaries-anime-get-indian-dubs/.220462",
+    "https://www.justwatch.com/in/tv-show/the-apothecary-diaries"
+   ],
+   "note": ""
+  },
+  {
+   "s": "tower-of-god",
+   "t": "Tower of God",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–2 (all)",
+      "url": "https://www.crunchyroll.com/watch/GE00257751ARSA"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–2 (all)",
+      "url": "https://www.crunchyroll.com/watch/GE00257751ARSA"
+     }
+    ]
+   },
+   "sources": [
+    "https://anilist.co/anime/115230",
+    "https://www.justwatch.com/in/tv-show/tower-of-god",
+    "https://www.justwatch.com/uk/tv-series/tower-of-god"
+   ],
+   "note": ""
+  },
+  {
+   "s": "oshi-no-ko",
+   "t": "OSHI NO KO",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–3 (all)",
+      "url": "https://www.crunchyroll.com/watch/GE00366795HIIN"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–3 (all)",
+      "url": "https://www.crunchyroll.com/watch/GE00366795HIIN"
+     }
+    ]
+   },
+   "sources": [
+    "https://anilist.co/anime/150672",
+    "https://www.justwatch.com/in/tv-show/oshi-no-ko",
+    "https://www.justwatch.com/uk/tv-series/oshi-no-ko"
+   ],
+   "note": ""
+  },
+  {
+   "s": "blue-lock",
+   "t": "BLUE LOCK",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–2 (38 episodes)",
+      "url": "https://www.crunchyroll.com/watch/GE00257767PLPL"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–2 (38 episodes)",
+      "url": "https://www.crunchyroll.com/watch/GE00257767PLPL"
+     }
+    ]
+   },
+   "sources": [
+    "https://anilist.co/anime/137822",
+    "https://animemirchi.com/?p=7091",
+    "https://animenewsindia.com/2024/05/17/crunchyroll-announces-exciting-summer-2024-regional-dubs-lineup-for-may-june"
+   ],
+   "note": ""
+  },
+  {
+   "s": "the-god-of-highschool-series",
+   "t": "The God of High School",
+   "ta": {
+    "status": "available",
+    "confidence": "medium",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1",
+      "url": "https://www.crunchyroll.com/the-god-of-high-school"
+     },
+     {
+      "name": "Crunchyroll on Sony LIV",
+      "scope": "Season 1",
+      "url": ""
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "medium",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1",
+      "url": "https://www.crunchyroll.com/the-god-of-high-school"
+     },
+     {
+      "name": "Crunchyroll on Sony LIV",
+      "scope": "Season 1",
+      "url": ""
+     }
+    ]
+   },
+   "sources": [
+    "https://www.justwatch.com/us/tv-show/the-god-of-high-school",
+    "https://www.justwatch.com/in/tv-show/the-god-of-high-school",
+    "https://www.justwatch.com/uk/tv-series/the-god-of-high-school"
+   ],
+   "note": ""
+  },
+  {
+   "s": "mashle",
+   "t": "MASHLE: MAGIC AND MUSCLES",
+   "ta": {
+    "status": "available",
+    "confidence": "medium",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–2",
+      "url": "https://www.crunchyroll.com/series/GDKHZEP8W/mashle-magic-and-muscles"
+     },
+     {
+      "name": "Crunchyroll on Sony LIV",
+      "scope": "Season 1",
+      "url": ""
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "medium",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–2",
+      "url": "https://www.crunchyroll.com/series/GDKHZEP8W/mashle-magic-and-muscles"
+     },
+     {
+      "name": "Crunchyroll on Sony LIV",
+      "scope": "Season 1",
+      "url": ""
+     }
+    ]
+   },
+   "sources": [
+    "https://www.justwatch.com/us/tv-show/mashle-magic-and-muscles",
+    "https://www.justwatch.com/in/tv-show/mashle-magic-and-muscles",
+    "https://www.justwatch.com/uk/tv-series/mashle-magic-and-muscles"
+   ],
+   "note": ""
+  },
+  {
+   "s": "kaijuu-8-gou",
+   "t": "Kaiju No. 8",
+   "ta": {
+    "status": "available",
+    "confidence": "medium",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–2",
+      "url": "https://www.crunchyroll.com/series/GG5H5XQ7D/kaiju-no-8"
+     },
+     {
+      "name": "Crunchyroll on Sony LIV",
+      "scope": "Seasons 1–2",
+      "url": "https://www.sonyliv.com/shows/kaiju-no-8-1790007558"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "medium",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–2",
+      "url": "https://www.crunchyroll.com/series/GG5H5XQ7D/kaiju-no-8"
+     },
+     {
+      "name": "Crunchyroll on Sony LIV",
+      "scope": "Seasons 1–2",
+      "url": "https://www.sonyliv.com/shows/kaiju-no-8-1790007558"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.justwatch.com/us/tv-show/kaiju-no-8",
+    "https://www.justwatch.com/in/tv-show/kaiju-no-8",
+    "https://www.justwatch.com/uk/tv-series/kaiju-no-8"
+   ],
+   "note": ""
+  },
+  {
+   "s": "gachiakuta",
+   "t": "Gachiakuta",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1 (all 24 episodes)",
+      "url": "https://www.crunchyroll.com/series/GP5HJ84P7/gachiakuta"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1 (all 24 episodes)",
+      "url": "https://www.crunchyroll.com/series/GP5HJ84P7/gachiakuta"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.justwatch.com/us/tv-show/gachiakuta",
+    "https://www.justwatch.com/in/tv-show/gachiakuta",
+    "https://www.justwatch.com/uk/tv-series/gachiakuta"
+   ],
+   "note": ""
+  }
+ ]
+}

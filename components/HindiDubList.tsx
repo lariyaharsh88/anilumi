@@ -15,11 +15,11 @@ const T = {
 const KIND_CLASS: Record<PlatformKind, string> = { free: "border-emerald-500/40 text-emerald-300", subscription: "border-line text-muted", tv: "border-amber-400/40 text-amber-200" };
 
 /**
- * Every Hindi dub as a poster card, with a search box, a free / subscription / TV filter and a platform filter. All
+ * Every dub as a poster card (Hindi, or Tamil and Telugu with `labels`), with a search box, a free / subscription / TV filter and a platform filter. All
  * cards are in the HTML; filtering only hides them.
  */
-export default function HindiDubList({ items, platforms, lang = "en" }: { items: DubCard[]; platforms: string[]; lang?: "en" | "hi" }) {
-  const t = T[lang], KIND = t.kind;
+export default function HindiDubList({ items, platforms, lang = "en", labels }: { items: DubCard[]; platforms: string[]; lang?: "en" | "hi"; labels?: { searchLabel: string; none: string } }) {
+  const t = { ...T[lang], ...labels }, KIND = t.kind;
   const [q, setQ] = useState("");
   const [kind, setKind] = useState<PlatformKind | "all">("all");
   const [platform, setPlatform] = useState("");
