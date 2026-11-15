@@ -88,6 +88,7 @@ export default async function HindiDubHub() {
           <Link href="/dub-schedule#hindi" className="chip">New Hindi dubs</Link>
           <Link href="/hindi-voice-artists" className="chip">Hindi voice artists</Link>
           <Link href="/where-to-watch" className="chip">Where to watch in India</Link>
+          <Link href="/anime-salt-alternatives" className="chip">Anime Salt alternatives</Link>
         </p>
       </PageHero>
       <SectionNav sections={[
@@ -281,6 +282,7 @@ export default async function HindiDubHub() {
               <li><strong>{free.length} dubs are free</strong> on the licensors&apos; own YouTube channels (Muse India, Ani-One India) and on MX Player, now Prime Video&apos;s free tier (no Prime membership needed). <a href="#free" className="text-violet hover:underline">See them</a>.</li>
               <li>Crunchyroll, Netflix, Prime Video and JioHotstar carry the rest, and let you download episodes inside their apps to watch offline.</li>
               <li>Official uploads come from the licensor&apos;s verified channel and are announced on its site or social accounts.</li>
+              <li>Looking for a site like Anime Salt? See the <Link href="/anime-salt-alternatives" className="text-violet hover:underline">legal Anime Salt alternatives</Link>, free ones first.</li>
             </ul>
           </div>
           <div className="card border-accent/30 p-4">

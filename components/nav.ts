@@ -24,6 +24,7 @@ export const EXPLORE: NavItem[] = [
   { href: "/news", label: "News", icon: "news", desc: "Latest anime news" },
   { href: "/where-to-watch", label: "Where to watch", icon: "play", desc: "Streaming by country, sub or dub" },
   { href: "/dub-schedule", label: "Dub schedule", icon: "schedule", desc: "Next English and Hindi dub episodes" },
+  { href: "/sub-vs-dub", label: "Sub vs dub", icon: "play", desc: "Which anime are dubbed, and where" },
   { href: "/hindi-dub", label: "Hindi dubbed anime", icon: "hindi", desc: "Anime you can watch in Hindi" },
   { href: "/hi", label: "हिंदी गाइड", icon: "hindi", desc: "Watch guides in Hindi" },
   { href: "/random-anime-generator", label: "Random anime generator", icon: "random", desc: "Pick by genre, length or score" },

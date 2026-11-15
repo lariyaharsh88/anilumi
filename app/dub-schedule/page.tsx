@@ -92,6 +92,7 @@ export default function DubSchedule() {
           <a href="#english" className="chip">English dubs</a>
           <a href="#hindi" className="chip">Hindi dubs</a>
           {announced.length > 0 && <a href="#announced" className="chip">Announced</a>}
+          <Link href="/sub-vs-dub" className="chip">Which anime are dubbed?</Link>
           <Link href="/schedule" className="chip">Japanese broadcast schedule</Link>
           <Link href="/where-to-watch" className="chip">Where to watch</Link>
         </p>

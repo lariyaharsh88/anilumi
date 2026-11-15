@@ -55,6 +55,7 @@ export default async function WhereToWatchHub() {
       >
         <p className="flex flex-wrap gap-2 text-sm">
           <Link href="/dub-schedule" className="chip">Dub schedule</Link>
+          <Link href="/sub-vs-dub" className="chip">Sub vs dub</Link>
           <Link href="/hindi-dub" className="chip">Hindi dubbed anime</Link>
         </p>
       </PageHero>
