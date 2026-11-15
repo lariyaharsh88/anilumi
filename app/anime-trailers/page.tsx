@@ -25,7 +25,12 @@ async function load() {
   const now = seasonOf();
   const seasons = [1, 2, 3].map((d) => shiftSeason(now.season, now.year, d));
   const previews = await Promise.all(seasons.map((x) => getSeasonPreview(x.year, x.season).catch(() => [] as PreviewItem[])));
-  const videos = await youtubeTrailers([...new Set(previews.flat().map((i) => i.id))]);
+  // Trailers come with the weekly preview snapshot (scripts/fetch-season-previews.mts); only shows it doesn't cover
+  // (the third season out, or an older snapshot) are looked up live.
+  const all = previews.flat();
+  const videos = new Map(all.flatMap((i) => (i.trailer ? [[i.id, i.trailer] as [number, string]] : [])));
+  const missing = all.filter((i) => i.trailer === undefined).map((i) => i.id);
+  if (missing.length) for (const [id, v] of await youtubeTrailers([...new Set(missing)])) videos.set(id, v);
   const groups = seasons.map((x, k) => ({ ...x, label: `${cap(x.season)} ${x.year}`, items: withTrailers(previews[k], videos) })).filter((g) => g.items.length);
   return { groups, total: groups.reduce((n, g) => n + g.items.length, 0) };
 }

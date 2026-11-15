@@ -1,6 +1,6 @@
 /**
  * Builds data/season-previews.json: the AniList line-up (with Kitsu matches) of the current and next two anime
- * seasons, for /season/[year]/[season]/preview. AniList rate-limits Render, which made the page answer 500.
+ * seasons (with each show's trailer), for /season/[year]/[season]/preview and /anime-trailers. AniList rate-limits Render, which made the page answer 500.
  * Runs weekly in .github/workflows/season-previews.yml (premiere dates and new announcements land every week);
  * by hand: npx tsx scripts/fetch-season-previews.mts
  */
@@ -12,7 +12,8 @@ import { packJson } from "../lib/snapjson";
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 const now = seasonOf();
 const seasons: Record<string, PreviewItem[]> = {};
-for (const k of [0, 1, 2]) {
+// The current season and the next three (/anime-trailers shows three ahead).
+for (const k of [0, 1, 2, 3]) {
   const { season, year } = shiftSeason(now.season, now.year, k);
   for (let attempt = 0; attempt < 4; attempt++) {
     try {

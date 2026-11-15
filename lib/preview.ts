@@ -21,6 +21,8 @@ export type PreviewItem = {
   genres: string[];
   studio: string | null;
   cover: string | null;
+  /** YouTube id of AniList's trailer (null: none; absent in snapshots made before 15 Nov 2026). */
+  trailer?: string | null;
   prequel: { id: number; title: string } | null;
   kind: PreviewKind;
   anime: Anime | null;
@@ -38,6 +40,7 @@ type Raw = {
   genres: string[];
   studios: { nodes: { name: string }[] };
   coverImage: { large: string | null };
+  trailer?: { id: string | null; site: string | null } | null;
   relations: { edges: { relationType: string; node: { id: number; type: string; format: string | null; title: { romaji: string; english: string | null } } }[] };
 };
 
@@ -63,6 +66,7 @@ export function toPreview(r: Raw): Omit<PreviewItem, "anime" | "prequelAnime"> {
     genres: r.genres.slice(0, 3),
     studio: r.studios.nodes[0]?.name ?? null,
     cover: r.coverImage.large,
+    trailer: r.trailer?.site === "youtube" && r.trailer.id && /^[\w-]{6,20}$/.test(r.trailer.id) ? r.trailer.id : null,
     prequel: pre ? { id: pre.node.id, title: pre.node.title.english || pre.node.title.romaji } : null,
     kind,
   };
@@ -84,7 +88,7 @@ export function premiereCalendar<T extends { date: PreviewItem["date"] }>(items:
   return [...by.entries()].sort(([a], [b]) => a.localeCompare(b)).map(([date, items]) => ({ date, items }));
 }
 
-const QUERY = `query($s:MediaSeason,$y:Int,$p:Int){Page(page:$p,perPage:50){pageInfo{hasNextPage} media(type:ANIME,season:$s,seasonYear:$y,isAdult:false,sort:POPULARITY_DESC,format_in:[TV,TV_SHORT,ONA,MOVIE]){id title{romaji english} format episodes source startDate{year month day} popularity genres studios(isMain:true){nodes{name}} coverImage{large} relations{edges{relationType node{id type format title{romaji english}}}}}}}`;
+const QUERY = `query($s:MediaSeason,$y:Int,$p:Int){Page(page:$p,perPage:50){pageInfo{hasNextPage} media(type:ANIME,season:$s,seasonYear:$y,isAdult:false,sort:POPULARITY_DESC,format_in:[TV,TV_SHORT,ONA,MOVIE]){id title{romaji english} format episodes source startDate{year month day} popularity genres studios(isMain:true){nodes{name}} coverImage{large} trailer{id site} relations{edges{relationType node{id type format title{romaji english}}}}}}}`;
 
 type PreviewSnap = { generated: string; seasons: Record<string, PreviewItem[]> };
 let snap: PreviewSnap | null = null;
