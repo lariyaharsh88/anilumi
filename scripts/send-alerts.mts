@@ -3,7 +3,7 @@
  * leads, through Resend). Run by .github/workflows/alerts.yml:
  *   auto      every scheduled run: new episodes and new Hindi dubs, plus today's birthdays and the weekly digest
  *             once they're due (dueJobs), so a cron slot GitHub skips is made up by the next run
- *   episodes  new episodes and premieres, push + email
+ *   episodes  new episodes and premieres, push + email, and IndexNow for the pages they change
  *   hindi     official Hindi dubs added since the last run (lib/hindialerts.ts), email
  *   birthdays character birthdays, push
  *   digest    the weekly digest email (once per ISO week)
@@ -20,6 +20,7 @@ import { characterPathFor } from "../lib/charsnap";
 import { emailEnabled, sendMails } from "../lib/email";
 import { confirmMail, digestMail, episodeMail, hindiMail, type LeadDoc } from "../lib/emails";
 import { hindiItems, itemsFor } from "../lib/hindialerts";
+import { episodeUrls, submitIndexNow } from "../lib/indexnow";
 import { getNews } from "../lib/news";
 import { listLeadsByShow, oncePerEmail } from "../lib/listalerts";
 import { kitsuPosters } from "../lib/posters";
@@ -95,6 +96,13 @@ async function episodes() {
     const own = await leads.find({ kind: "alert", animeId, status: "confirmed" }).toArray();
     const to = oncePerEmail(byShow.get(animeId) || [], own); // the show's own alert lead wins (its unsubscribe link)
     await mail(`mail:${a.key}`, to.map((l) => episodeMail(l, { ...a, poster: posters.get(animeId) })));
+  }
+  // Bing and the other IndexNow engines hear about each new episode as it airs, once (claimed like an alert).
+  const fresh: string[] = [];
+  for (const a of alerts) if (await claim(`indexnow:${a.key}`)) fresh.push(...episodeUrls(a.url));
+  if (fresh.length) {
+    const status = await submitIndexNow(fresh).catch((e) => `error ${(e as Error).message}`);
+    console.log(`IndexNow: ${fresh.length} URLs for new episodes (${status})`);
   }
   console.log(`episodes: ${alerts.length} due`);
 }

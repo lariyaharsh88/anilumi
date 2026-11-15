@@ -30,6 +30,8 @@ export function urlsetXml(entries: Entry[]): string {
     const parts = [`<loc>${esc(e.url)}</loc>`];
     const lm = iso(e.lastModified);
     if (lm) parts.push(`<lastmod>${lm}</lastmod>`);
+    // Bing reads it; scripts/submit-sitemap.mts also skips hourly and daily pages, whose lastmod is the build time.
+    if (e.changeFrequency) parts.push(`<changefreq>${e.changeFrequency}</changefreq>`);
     // Google ignores priority, but the cache warm-up orders by it (scripts/warm-cache.mjs).
     if (e.priority !== undefined) parts.push(`<priority>${e.priority}</priority>`);
     for (const [lang, href] of Object.entries(e.alternates?.languages ?? {})) if (href) parts.push(`<xhtml:link rel="alternate" hreflang="${esc(lang)}" href="${esc(String(href))}"/>`);

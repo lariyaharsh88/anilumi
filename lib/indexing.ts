@@ -1,8 +1,13 @@
 /**
  * Which templated pages ask Google to index them. Thin or near-duplicate pages (old episode recaps, minor
  * characters) stay on the site for visitors and keep passing links ("noindex, follow"), but stay out of the
- * index and the sitemap, so the site isn't judged by its weakest pages. Pages Search Console already shows
+ * index and the sitemap, so the site isn't judged by its weakest pages. Pages Search Console still shows
  * (data/warm-priority.json) always stay indexed. Pure.
+ *
+ * 15 Nov 2026: Google showed the site ~15,000 times a day 28–31 Oct, then dropped it to ~20 a day from 1 Nov and left
+ * 2,297 crawled pages unindexed, mostly templated sub-pages (character, episode list, next season, cast, how long).
+ * The bars below were raised so the index is the few hundred pages with something of our own; `shown` is now pages
+ * Google still shows after the drop, not every page it tried during the first week.
  */
 import priority from "@/data/warm-priority.json";
 import franchiseData from "@/data/franchises.json";
@@ -105,18 +110,24 @@ export const episodeListIndexed = (path: string, o: { airing: boolean; curated: 
 export const castIndexed = (path: string) => searchShown(path);
 
 /** "How long to watch": worth a page for shows people actually binge. */
-export const HOW_LONG_MIN_MEMBERS = 30_000;
+export const HOW_LONG_MIN_MEMBERS = 60_000;
 export const howLongIndexed = (path: string, members: number) => members >= HOW_LONG_MIN_MEMBERS || searchShown(path);
+
+/**
+ * Parents' guides are built from viewer tags for any title, so they're indexed only for shows parents ask about
+ * (popular ones), where a platform publishes an official rating, or where search still shows the guide.
+ */
+export const parentsGuideIndexed = (path: string, members: number, official: boolean) => members >= ANIME_MIN_MEMBERS || official || searchShown(path);
 
 /** `robots` metadata for a page: undefined (indexable) or noindex, follow. */
 export const robotsFor = (indexed: boolean) => (indexed ? undefined : NOINDEX);
 
 /**
  * Anime pages: Kitsu lists ~20,000 titles, most with nothing beyond the shared database text. Indexed: titles with at
- * least ANIME_MIN_MEMBERS followers (about the top 3,500), anything airing or announced, anything with our own
- * content (summary, guide, where-to-watch or dub research), and anything search already shows. The rest stay
- * reachable for visitors.
+ * least ANIME_MIN_MEMBERS followers (about the top 200, the ones the sitemap lists; was 3,000, about the top 3,500),
+ * anything airing or announced, anything with our own content (summary, guide, where-to-watch or dub research), and
+ * anything search still shows. The rest stay reachable for visitors.
  */
-export const ANIME_MIN_MEMBERS = 3000;
+export const ANIME_MIN_MEMBERS = 60_000;
 export const animeIndexed = (a: { slug: string; userCount: number; status: string }, ownContent: boolean) =>
   a.userCount >= ANIME_MIN_MEMBERS || a.status === "current" || a.status === "upcoming" || ownContent || searchShown(`/anime/${a.slug}`);

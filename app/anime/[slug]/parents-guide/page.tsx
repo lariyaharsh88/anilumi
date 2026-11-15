@@ -1,3 +1,4 @@
+import { robotsFor, parentsGuideIndexed } from "@/lib/indexing";
 import type { Metadata } from "next";
 import MadeBy from "@/components/MadeBy";
 import EditorWatched from "@/components/EditorWatched";
@@ -49,7 +50,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   // Official ratings lead the snippet where a platform rates the show: the answer to "<show> age rating".
   const official = officialRatings(a.slug);
   const desc = official ? `${a.title} official age rating: ${ratingsLine(official)}. ${description}`.slice(0, 300) : description;
-  return { title, description: fitDescription(desc), alternates: { canonical: `${animePath(a)}/parents-guide` }, ...(guide ? {} : { robots: { index: false } }) };
+  const path = `${animePath(a)}/parents-guide`;
+  return { title, description: fitDescription(desc), alternates: { canonical: path }, robots: guide ? robotsFor(parentsGuideIndexed(path, a.userCount, Boolean(official))) : { index: false } };
 }
 
 export default async function ParentsGuidePage({ params }: Props) {

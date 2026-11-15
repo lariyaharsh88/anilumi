@@ -4,16 +4,17 @@
  *     prints what Google reports (last read, errors, warnings, URLs submitted). Needs the repository secret
  *     GSC_SERVICE_ACCOUNT: a Google Cloud service account's JSON key, added as a user of the Search Console
  *     property. Skipped with a notice without it. (Google retired its anonymous sitemap "ping" in 2023.)
- *  2. IndexNow (Bing, Yandex, Seznam, Naver; Bing also feeds DuckDuckGo): the URLs whose sitemap lastmod
- *     changed in the last LOOKBACK_HOURS. No account; the key is the public file /<key>.txt.
+ *  2. IndexNow (lib/indexnow.ts): the URLs whose data changed in the last LOOKBACK_HOURS. Hourly and daily pages
+ *     carry the sitemap's build time rather than a change, so they're skipped; new episodes go as they air
+ *     (scripts/send-alerts.mts).
  * By hand: GSC_SERVICE_ACCOUNT="$(cat key.json)" npx tsx scripts/submit-sitemap.mts
  */
 import { createSign } from "node:crypto";
+import { changedEntries, submitIndexNow } from "../lib/indexnow";
 
 const SITE = "https://anilumi.in";
 const SITEMAP = `${SITE}/sitemap.xml`;
 const PROPERTY = "sc-domain:anilumi.in";
-const INDEXNOW_KEY = "67e58fb83b0e42898f42b207fa29073d";
 const LOOKBACK_HOURS = Number(process.env.LOOKBACK_HOURS) || 26;
 let problems = 0;
 
@@ -58,21 +59,11 @@ async function indexNow() {
   const index = await (await fetch(SITEMAP, { signal: AbortSignal.timeout(60_000) })).text();
   const children = [...index.matchAll(/<sitemap><loc>([^<]+)<\/loc>/g)].map(([, loc]) => loc);
   const xml = children.length ? (await Promise.all(children.map((u) => fetch(u, { signal: AbortSignal.timeout(60_000) }).then((r) => r.text())))).join("\n") : index;
-  const since = Date.now() - LOOKBACK_HOURS * 3600_000;
-  const urls = [...xml.matchAll(/<url>([\s\S]*?)<\/url>/g)]
-    .map(([, u]) => ({ loc: u.match(/<loc>([^<]+)<\/loc>/)?.[1], mod: Date.parse(u.match(/<lastmod>([^<]+)<\/lastmod>/)?.[1] || "") }))
-    .filter((u) => u.loc && u.mod >= since)
-    .map((u) => u.loc!)
-    .slice(0, 10_000);
+  const urls = [...new Set(changedEntries(xml, Date.now() - LOOKBACK_HOURS * 3600_000))].slice(0, 10_000);
   if (!urls.length) { console.log("IndexNow: nothing changed"); return; }
-  const res = await fetch("https://api.indexnow.org/indexnow", {
-    method: "POST",
-    headers: { "content-type": "application/json; charset=utf-8" },
-    body: JSON.stringify({ host: "anilumi.in", key: INDEXNOW_KEY, keyLocation: `${SITE}/${INDEXNOW_KEY}.txt`, urlList: urls }),
-  });
-  // 200/202: accepted. 403: key file not reachable. 422: URLs don't match the host.
-  if (res.status === 200 || res.status === 202) console.log(`IndexNow: ${urls.length} changed URLs sent (HTTP ${res.status})`);
-  else { problems++; console.log(`::warning::IndexNow: HTTP ${res.status} ${(await res.text()).slice(0, 200)}`); }
+  const status = await submitIndexNow(urls);
+  if (status === 200 || status === 202) console.log(`IndexNow: ${urls.length} changed URLs sent (HTTP ${status})`);
+  else { problems++; console.log(`::warning::IndexNow: HTTP ${status}`); }
 }
 
 await google().catch((e) => { problems++; console.log(`::error::Google: ${(e as Error).message}`); });
