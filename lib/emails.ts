@@ -77,21 +77,33 @@ const PERKS: Record<LeadDoc["kind"], (l: LeadDoc) => string[]> = {
 const perks = (rows: string[]) => `<table role="presentation" cellpadding="0" cellspacing="0" style="margin:4px 0 6px">${rows.map((r) => `<tr><td valign="top" style="padding:5px 12px 5px 0;font-size:15px;line-height:1.5;color:${C.violet};font-weight:800">&#10003;</td><td style="padding:5px 0;font-size:15px;line-height:1.5;color:${C.body}">${r}</td></tr>`).join("")}</table>`;
 
 /** Double opt-in: nothing else is sent until this link is used. */
-export function confirmMail(l: LeadDoc): Mail {
+/**
+ * The confirmation email. `reminder`: the one follow-up for a signup still unconfirmed a day later (most first
+ * emails land in Gmail's Promotions or Spam tab), sent by hand (scripts/send-alerts.mts remind-pending).
+ */
+export function confirmMail(l: LeadDoc, reminder = false): Mail {
   const url = `${EMAIL_SITE}/api/lead/confirm?t=${l.token}`;
   const what = WHAT[l.kind](l);
   const sheet = l.kind === "cheatsheet" && l.page ? l.page.replace(/\/preview$/, "/cheatsheet") : null;
-  const content = kicker("One last step") + `<div class="h1">${h1("Confirm your email")}</div>` +
-    p(`You asked for <strong style="color:${C.ink}">${esc(what)}</strong>. Tap the button so we know it&rsquo;s really you.`) +
+  const content = kicker(reminder ? "Still want it?" : "One last step") + `<div class="h1">${h1("Confirm your email")}</div>` +
+    p(`You asked for <strong style="color:${C.ink}">${esc(what)}</strong>${reminder ? " but haven&rsquo;t confirmed yet, so nothing has been sent" : ""}. Tap the button so we know it&rsquo;s really you.`) +
     perks(PERKS[l.kind](l)) + button("Yes, confirm", url) +
     (sheet ? `<div style="margin:22px 0 0;padding:14px 16px;border-radius:14px;background:${C.bg2};border:1px solid ${C.line};font-size:14px;color:${C.body}">📋 Your cheat sheet is ready now: ${a(sheet, "open it here", C.violet)}</div>` : "") +
-    `<p style="margin:22px 0 0;font-size:13px;line-height:1.6;color:${C.muted}">Didn&rsquo;t sign up? Ignore this email and you won&rsquo;t hear from us again.</p>`;
+    `<p style="margin:22px 0 0;font-size:13px;line-height:1.6;color:${C.muted}">${reminder ? "This is the only reminder. " : ""}Didn&rsquo;t sign up? Ignore this email and you won&rsquo;t hear from us again.</p>`;
+  const subject = l.kind === "alert" && l.animeTitle ? `Confirm your ${l.animeTitle} episode alerts` : l.kind === "digest" ? "Confirm your weekly anime digest" : l.kind === "cheatsheet" ? "Your cheat sheet + one tap to confirm" : l.kind === "list" ? "Confirm alerts for the shows on your list" : l.kind === "hindi" ? (l.animeTitle ? `Confirm your ${l.animeTitle} Hindi dub alert` : "Confirm your Hindi dub alerts") : "Confirm your AniLumi updates";
   return {
-    to: l.email, tag: "confirm",
-    subject: l.kind === "alert" && l.animeTitle ? `Confirm your ${l.animeTitle} episode alerts` : l.kind === "digest" ? "Confirm your weekly anime digest" : l.kind === "cheatsheet" ? "Your cheat sheet + one tap to confirm" : l.kind === "list" ? "Confirm alerts for the shows on your list" : l.kind === "hindi" ? (l.animeTitle ? `Confirm your ${l.animeTitle} Hindi dub alert` : "Confirm your Hindi dub alerts") : "Confirm your AniLumi updates",
-    html: layout({ preheader: "One tap to confirm, then you're set.", content, why: `Someone (hopefully you) signed up for ${what} on anilumi.in.` }),
-    text: `You asked for ${what} on AniLumi. Confirm here: ${url}${sheet ? `\n\nYour cheat sheet: ${abs(sheet)}` : ""}\n\nDidn't sign up? Ignore this email.`,
+    to: l.email, tag: reminder ? "confirm-reminder" : "confirm",
+    subject: reminder ? `Reminder: ${subject[0].toLowerCase()}${subject.slice(1)}` : subject,
+    html: layout({ preheader: reminder ? "You signed up but haven't confirmed yet. One tap and you're set." : "One tap to confirm, then you're set.", content, why: `Someone (hopefully you) signed up for ${what} on anilumi.in.` }),
+    text: `You asked for ${what} on AniLumi${reminder ? " but haven't confirmed yet" : ""}. Confirm here: ${url}${sheet ? `\n\nYour cheat sheet: ${abs(sheet)}` : ""}\n\n${reminder ? "This is the only reminder. " : ""}Didn't sign up? Ignore this email.`,
   };
+}
+
+/** Signups worth the one reminder: still pending, never reminded, first email at least a day old (or never sent,
+ *  from before email was switched on), and not a test address. Pure. */
+export const REMIND_AFTER_MS = 24 * 3600_000;
+export function dueReminders<T extends { email: string; status: string; confirmSentAt?: Date | null; remindedAt?: Date | null }>(leads: T[], now = Date.now()): T[] {
+  return leads.filter((l) => l.status === "pending" && !l.remindedAt && (!l.confirmSentAt || +new Date(l.confirmSentAt) <= now - REMIND_AFTER_MS) && !/@(example\.(com|org|net)|anilumi\.in)$/i.test(l.email));
 }
 
 /** One new episode (or a premiere) for someone following that anime. */

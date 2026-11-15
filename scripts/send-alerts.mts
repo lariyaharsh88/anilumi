@@ -8,6 +8,7 @@
  *   birthdays character birthdays, push
  *   digest    the weekly digest email (once per ISO week)
  *   confirm-pending (by hand only): one confirmation email to signups from before email was switched on
+ *   remind-pending  (by hand only): one reminder to signups still unconfirmed a day later (dueReminders), never twice
  * Each alert is claimed in alerts_sent before sending, so reruns never repeat it. A channel without its
  * secrets (VAPID_PRIVATE_KEY + data/vapid.json, RESEND_API_KEY) is skipped with a notice.
  */
@@ -18,7 +19,7 @@ import { AIRING_URL, indexAiring } from "../lib/airing";
 import { birthdayChars } from "../lib/birthdays";
 import { characterPathFor } from "../lib/charsnap";
 import { emailEnabled, sendMails } from "../lib/email";
-import { confirmMail, digestMail, episodeMail, hindiMail, type LeadDoc } from "../lib/emails";
+import { confirmMail, digestMail, dueReminders, episodeMail, hindiMail, type LeadDoc } from "../lib/emails";
 import { hindiItems, itemsFor } from "../lib/hindialerts";
 import { episodeUrls, submitIndexNow } from "../lib/indexnow";
 import { getNews } from "../lib/news";
@@ -168,6 +169,17 @@ if (mode === "auto") {
     for (const e of r.errors) console.warn(`email failed: ${e}`);
   }
   console.log(`confirm-pending: ${pending.length} pending signups`);
+} else if (mode === "remind-pending") {
+  // Each lead is claimed (remindedAt) before its email goes, so a rerun or a second run never reminds anyone twice.
+  const due = emailEnabled() ? dueReminders(await leads.find({ status: "pending", remindedAt: { $exists: false } }).toArray() as (LeadDoc & { status: string; _id: unknown; confirmSentAt?: Date; remindedAt?: Date })[]) : [];
+  const claimed: typeof due = [];
+  for (const l of due) if ((await leads.updateOne({ _id: l._id, remindedAt: { $exists: false } } as never, { $set: { remindedAt: new Date(), confirmSentAt: new Date() } })).modifiedCount) claimed.push(l);
+  if (claimed.length) {
+    const r = await sendMails(claimed.map((l) => confirmMail(l, true)), `remind-pending:${new Date().toISOString().slice(0, 13)}`);
+    successes += r.sent; failures += r.errors.length;
+    for (const e of r.errors) console.warn(`email failed: ${e}`);
+  }
+  console.log(`remind-pending: ${claimed.length} reminders${emailEnabled() ? "" : " (email is off)"}`);
 }
 
 console.log(`done: ${successes} sent, ${failures} failed`);
