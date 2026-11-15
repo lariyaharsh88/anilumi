@@ -13,7 +13,9 @@ const QUERY = "query($ids:[Int]){Page(perPage:50){media(id_in:$ids){id trailer{i
 export async function youtubeTrailers(ids: number[]): Promise<Map<number, string>> {
   const out = new Map<number, string>();
   for (let i = 0; i < ids.length; i += 50) {
-    const page = await anilist<{ Page: { media: Raw[] } }>(QUERY, { ids: ids.slice(i, i + 50) }, 86400);
+    // strict: when AniList is down or rate-limiting, throw (the page errors and is retried) rather than cache a
+    // page with no trailers, which is what happened on the first deploy (15 Nov).
+    const page = await anilist<{ Page: { media: Raw[] } }>(QUERY, { ids: ids.slice(i, i + 50) }, 86400, { strict: true });
     for (const m of page?.Page.media ?? []) if (m.trailer?.site === "youtube" && m.trailer.id && /^[\w-]{6,20}$/.test(m.trailer.id)) out.set(m.id, m.trailer.id);
   }
   return out;
