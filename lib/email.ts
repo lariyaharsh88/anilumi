@@ -8,7 +8,9 @@ const FROM = () => process.env.EMAIL_FROM || "AniLumi <alerts@anilumi.in>";
 
 export type Mail = { to: string; subject: string; html: string; text: string; headers?: Record<string, string>; tag?: string };
 
-const body = (m: Mail) => ({ from: FROM(), to: [m.to], subject: m.subject, html: m.html, text: m.text, headers: m.headers, tags: m.tag ? [{ name: "type", value: m.tag }] : undefined });
+/** Replies go to a real inbox (Cloudflare Email Routing forwards hello@ and alerts@ to the owner). */
+const REPLY_TO = () => process.env.EMAIL_REPLY_TO || "hello@anilumi.in";
+const body = (m: Mail) => ({ from: FROM(), to: [m.to], reply_to: REPLY_TO(), subject: m.subject, html: m.html, text: m.text, headers: m.headers, tags: m.tag ? [{ name: "type", value: m.tag }] : undefined });
 
 async function post(path: string, payload: unknown, idempotencyKey?: string): Promise<Response> {
   return fetch(`https://api.resend.com${path}`, {
