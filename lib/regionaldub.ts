@@ -6,6 +6,7 @@
 import data from "@/data/regional-dubs.json";
 import franchises from "@/data/franchises.json";
 import { platformKind, type DubPlatform, type PlatformKind } from "./hindidub";
+import { orderSlugs } from "./wosnap";
 
 export const REGIONAL_LANGS = ["ta", "te"] as const;
 export type RegionalLang = (typeof REGIONAL_LANGS)[number];
@@ -30,6 +31,16 @@ export function dubbedIn(lang: RegionalLang, entries: Entry[] = D.entries): Regi
     const x = e[lang];
     return x?.status === "available" && x.platforms.length ? [{ s: e.s, t: e.t, confidence: x.confidence, platforms: x.platforms, checked: e.checked ?? D.checked }] : [];
   }).sort((a, b) => (users.get(b.s) ?? 0) - (users.get(a.s) ?? 0));
+}
+
+const bySlug = new Map(D.entries.map((e) => [e.s, e]));
+/** An anime's confirmed dub in `lang`: its own entry, else its franchise's (any part of its watch order). */
+export function regionalFor(anime: { id: string; slug: string }, lang: RegionalLang): RegionalDub | null {
+  for (const s of [anime.slug, ...orderSlugs(anime.id)]) {
+    const e = bySlug.get(s), x = e?.[lang];
+    if (e && x?.status === "available" && x.platforms.length) return { s: e.s, t: e.t, confidence: x.confidence, platforms: x.platforms, checked: e.checked ?? D.checked };
+  }
+  return null;
 }
 
 /** Free when any platform is free, else subscription, else TV. Pure. */

@@ -18,3 +18,9 @@ test("only confirmed dubs in the language; free beats subscription beats TV; pla
   assert.deepEqual(platformsFor(ta).map((x) => [x.name, x.titles.length]), [["Crunchyroll", 2], ["Muse India (YouTube)", 1]]);
   assert.equal(LANG.ta.other, "te");
 });
+
+test("an anime's Tamil or Telugu dub: its own entry first, else its franchise's", async () => {
+  const { regionalFor } = await import("../lib/regionaldub");
+  assert.equal(regionalFor({ id: "0", slug: "attack-on-titan" }, "ta")?.s, "attack-on-titan");
+  assert.equal(regionalFor({ id: "0", slug: "no-such-anime-xyz" }, "te"), null);
+});

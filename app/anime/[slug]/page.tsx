@@ -27,6 +27,7 @@ import WatchOrderCard from "@/components/WatchOrderCard";
 import { snapshotOrder } from "@/lib/wosnap";
 import PushButton from "@/components/PushButton";
 import HindiDub from "@/components/HindiDub";
+import WatchInIndia from "@/components/WatchInIndia";
 import { dubFor, dubFaq } from "@/lib/hindidub";
 import { animeTopic } from "@/lib/push";
 import SpoilerGate from "@/components/SpoilerGate";
@@ -488,6 +489,7 @@ export default async function AnimePage({ params }: Props) {
               links={a.streaming.map((x) => ({ id: x.id, url: x.url, site: x.site, dubs: x.dubs, subs: x.subs }))}
               extra={<>{streams && <Link href={streamsPath(streams.s)} className="btn-outline">🌍 Where to watch in the US, India &amp; UK</Link>}<AmazonLink query={`${a.title} manga`} source="anime" className="btn-outline">📚 Manga on Amazon</AmazonLink></>}
             />
+            <WatchInIndia anime={a} hindi={dub} className="mt-3" />
             {a.streaming.length > 0 && <p className="mt-3 text-[11px] text-muted">Official, legal streams. Catalogues differ by country. · <Refreshed iso={refreshed} /></p>}
             <AffiliateNote className="mt-1" />
             {a.streaming.length === 0 && (<>
