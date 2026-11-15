@@ -115,7 +115,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title,
     description,
     alternates: { canonical: animePath(a) },
-    robots: robotsFor(animeIndexed(a, Boolean(summaryFor(a.slug) || streamsFor(a) || dubFor(a) || WATCH_ORDER_OVERRIDES[a.slug]))),
+    // A rewritten synopsis isn't our own content (15 Nov audit): curated where-to-watch, dub or watch-order data is.
+    robots: robotsFor(animeIndexed(a, Boolean(streamsFor(a) || dubFor(a) || WATCH_ORDER_OVERRIDES[a.slug]))),
     openGraph: { title, description, type: "video.tv_show" },
     twitter: { card: "summary_large_image", title, description },
   };

@@ -76,7 +76,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       ? `All of ${a.title} takes about ${fmtRun(fTotal)} across ${franchise!.mainCount} main parts${fEps ? ` (${fEps} episodes)` : ""}${franchise!.entries.some((e) => e.kind === "movie") ? " plus films" : ""}. ${seasonal ? `${a.title} season 1` : a.title} alone is ${fmtRun(total)}${eps > 1 && len ? ` (${eps} episodes × ${len} min)` : ""}. At 2 hours a day the whole series takes ${humanDays(Math.ceil(fTotal / 120))}; set your own pace for a finish date.`
       : `${a.title} takes about ${fmtRun(total)} to watch${eps > 1 && len ? ` (${eps} episodes × ${len} min)` : ""}. At 2 hours a day that's ${humanDays(Math.ceil(total / 120))}.${franchise ? ` The whole franchise runs about ${fmtRun(fTotal)}.` : ""} Set your pace for a finish date, and see which episodes to skip.`
     : `Runtime and binge planner for ${a.title}.`;
-  return { title, description: fitDescription(description), alternates: { canonical: `${animePath(a)}/how-long-to-watch` }, ...(total ? { robots: robotsFor(howLongIndexed(`${animePath(a)}/how-long-to-watch`, a.userCount)) } : { robots: { index: false } }) };
+  return { title, description: fitDescription(description), alternates: { canonical: `${animePath(a)}/how-long-to-watch` }, ...(total ? { robots: robotsFor(howLongIndexed()) } : { robots: { index: false } }) };
 }
 
 export default async function HowLongPage({ params }: Props) {

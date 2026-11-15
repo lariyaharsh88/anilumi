@@ -3,15 +3,15 @@ import { posterUrl } from "@/lib/kitsu";
 import { alAnime } from "@/lib/alsnap";
 import { abs } from "@/lib/site";
 import { WATCH_ORDER_OVERRIDES } from "@/data/watch-orders";
-import { listAnime, getCategories, getAniListId, kitsuByAniListIds, seasonOf, shiftSeason, animePath, episodePath, runtimeMinutes, TREND_GENRES, MAIN_GENRES } from "@/lib/kitsu";
-import { episodeMinutes } from "@/lib/binge";
+import { listAnime, getCategories, getAniListId, kitsuByAniListIds, seasonOf, shiftSeason, animePath, episodePath, TREND_GENRES, MAIN_GENRES } from "@/lib/kitsu";
 import { popularVoiceActors, vaPath } from "@/lib/anilist";
 import { allDays, birthdaysOn, bdPath, monthPath } from "@/lib/birthdays";
 import { fillerSlugs, continuationSlugs } from "@/lib/filler";
 import { characterTableSlugs, BLOOD_TYPES } from "@/lib/charsnap";
 import { hindiArtists, hindiArtistPath } from "@/lib/hindivoices";
 import { summaryFor } from "@/lib/summaries";
-import { hasSnapshotCast } from "@/lib/castsnap";
+import { sequelNews } from "@/lib/sequelnews";
+import { officialRatings } from "@/lib/ageratings";
 import { hasSnapshotThemes } from "@/lib/themes";
 import { airing as airingSnapshot, upcomingOf } from "@/lib/airing";
 import { HINDI_SLUGS, hindiPath, hindiIndexed } from "@/lib/hindi";
@@ -19,7 +19,7 @@ import { LANG, dubbedIn } from "@/lib/regionaldub";
 import { allStreams, streamsPath } from "@/lib/streams";
 import { strongSimilarIds } from "@/lib/picks";
 import { HINDI_PLATFORMS, dubsOn } from "@/lib/hindidub";
-import { airsSoon, searchShownPaths, similarSlugs, watchOrderIndexed, characterTableIndexed, notedCharacters, genreIndexed, bestYearIndexed, trendIndexed, voiceActorIndexed, castIndexed, howLongIndexed, NEXT_SEASON_MIN_MEMBERS } from "@/lib/indexing";
+import { airsSoon, searchShownPaths, similarSlugs, watchOrderIndexed, characterTableIndexed, notedCharacters, genreIndexed, bestYearIndexed, trendIndexed, voiceActorIndexed, } from "@/lib/indexing";
 import franchiseData from "@/data/franchises.json";
 import { DATA_DATES as D, STATIC_UPDATED, BIRTHDAY_PAGES_UPDATED, HINDI_HUB_UPDATED, SCENE_PAGE_UPDATED, DUB_GUIDES_ADDED, latest, weekStart, monthStart } from "@/lib/lastmod";
 import { FILLER } from "@/data/filler";
@@ -146,22 +146,14 @@ export async function sitemapEntries(): Promise<MetadataRoute.Sitemap> {
       const poster = posterUrl(a, "large");
       out.push({ url: abs(animePath(a)), lastModified: a.status === "current" ? now : at(D.anilist, D.arcs, D.manga, summaryFor(a.slug) ? D.summaries : null), changeFrequency: a.status === "current" ? "daily" : "weekly", priority: a.status === "current" ? 0.8 : 0.7, ...(poster ? { images: [poster] } : {}) });
       if (n > 100) continue;
-      // Popular series only: the page noindexes "no news" answers for less-followed titles (lib/indexing.ts).
-      if (series && released && a.userCount >= NEXT_SEASON_MIN_MEMBERS) out.push({ url: abs(`${animePath(a)}/next-season`), lastModified: weekly, changeFrequency: "weekly", priority: 0.7 });
-      // Same test as the page, which noindexes itself without a trustworthy runtime (AniList can rescue some later).
-      // Airing shows count aired episodes only, so they need a known next episode past the first.
-      const aired = a.status === "current" ? Math.max(0, (upcomingOf(snap.byKitsu.get(a.id))[0]?.episode ?? 1) - 1) : a.episodeCount || 0;
-      const timed = a.subtype === "movie" ? runtimeMinutes(a) > 0 : episodeMinutes(a) > 0 && aired > 0;
-      if (released && timed && howLongIndexed(`${animePath(a)}/how-long-to-watch`, a.userCount)) out.push({ url: abs(`${animePath(a)}/how-long-to-watch`), lastModified: a.status === "current" ? now : at(D.anilist), changeFrequency: "monthly", priority: 0.6 });
+      // Only with sequel news; the page indexes itself whenever a sequel exists (lib/indexing.ts nextSeasonIndexed).
+      if (series && released && sequelNews(a.slug)) out.push({ url: abs(`${animePath(a)}/next-season`), lastModified: weekly, changeFrequency: "weekly", priority: 0.7 });
       if (a.subtype !== "movie" && a.status === "current") out.push({ url: abs(`${animePath(a)}/episodes`), lastModified: now, changeFrequency: "daily", priority: 0.5 });
       if (n > 50) continue;
       const al = alIds.get(a.id);
-      if (al && hasSnapshotCast(al) && castIndexed(`${animePath(a)}/cast`)) out.push({ url: abs(`${animePath(a)}/cast`), lastModified: at(D.casts), changeFrequency: "monthly", priority: 0.5 });
       if (released && hasSnapshotThemes(a.id)) out.push({ url: abs(`${animePath(a)}/openings-endings`), lastModified: at(D.themes), changeFrequency: "monthly", priority: 0.5 });
-      // Same test as the page (which noindexes itself without a guide): AniList tags in the monthly snapshot. Shorts,
-      // ads and music clips don't need a parents' guide.
-      const story = (a.subtype === "TV" || a.subtype === "movie" || a.subtype === "ONA" || a.subtype === "OVA") && (a.episodeLength ?? 24) >= 10;
-      if (story && al && (alAnime(al)?.t.length ?? 0) > 0) out.push({ url: abs(`${animePath(a)}/parents-guide`), lastModified: at(D.anilist), changeFrequency: "monthly", priority: 0.5 });
+      // Same test as the page: a tag-built guide plus an official rating (lib/indexing.ts parentsGuideIndexed).
+      if (al && (alAnime(al)?.t.length ?? 0) > 0 && officialRatings(a.slug)) out.push({ url: abs(`${animePath(a)}/parents-guide`), lastModified: at(D.anilist), changeFrequency: "monthly", priority: 0.5 });
     }
     // "Anime like X" has the best click-through on the site: list it for the 500 most-followed titles (ranked in
     // the alias index, so no extra API calls).

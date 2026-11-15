@@ -64,7 +64,7 @@ export async function episodesMetadata(slug: string, page: number): Promise<Meta
         ? `${airing ? `${n} episodes of ${a.title} have aired so far` : `All ${n} episodes of ${a.title}`}${span}, ${extras}.`
         : `Every episode of ${a.title} with titles, air dates and synopses.`),
     alternates: { canonical: episodesPath(a.slug, page) },
-    robots: robotsFor(episodeListIndexed(episodesPath(a.slug, page), { airing, curated: Boolean(fill), page })),
+    robots: robotsFor(episodeListIndexed({ airing, curated: Boolean(fill), page })),
     openGraph: { images: posterUrl(a, "large") ? [{ url: posterUrl(a, "large")! }] : [] },
   };
 }

@@ -18,7 +18,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `Anime Released on ${bdLabel(p.m, p.d)}`,
     description: fitDescription(`Anime that premiered on ${bdLabel(p.m, p.d)}${premieres[0] ? `: ${premieres.slice(0, 4).map((x) => `${x.anime?.title || x.title} (${x.year})`).join(", ")}` : ""}.`),
     alternates: { canonical: otdPath(p.m, p.d) },
-    ...(premieres.length ? {} : { robots: { index: false } }),
+    // 366 templated day pages: for visitors, not the index (15 Nov audit); the /on-this-day hub is indexed.
+    robots: { index: false, follow: true },
   };
 }
 

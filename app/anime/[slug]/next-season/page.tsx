@@ -77,8 +77,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title,
     description: fitDescription(`${first ? `Is there a ${a.title} season 2?` : `Will ${a.title} get another season?`} ${override ? `${news!.what}${news!.announced ? ` (announced ${fmtDate(news!.announced, { month: "long", day: "numeric", year: "numeric" })})` : ""}.` : `${verdict.headline} ${verdict.detail}`}`.slice(0, 300)),
     alternates: { canonical: `${animePath(a)}/next-season` },
-    // Films and OVAs never; a series when there's news, or it's popular enough that people ask anyway.
-    ...(a.subtype === "TV" || a.subtype === "ONA" ? { robots: robotsFor(nextSeasonIndexed(`${animePath(a)}/next-season`, override || (verdict.kind !== "none" && verdict.kind !== "still-airing"), a.userCount)) } : { robots: { index: false } }),
+    // Films and OVAs never; a series only with an answer (a sequel exists or there's official news).
+    ...(a.subtype === "TV" || a.subtype === "ONA" ? { robots: robotsFor(nextSeasonIndexed(override || (verdict.kind !== "none" && verdict.kind !== "still-airing"))) } : { robots: { index: false } }),
   };
 }
 

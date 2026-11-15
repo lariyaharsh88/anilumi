@@ -21,9 +21,6 @@ import vaNotes from "@/data/va-notes.json";
 export const INDEXED_AIRED_EPISODES = 1;
 /** A franchise watch order is indexed with an editor guide or at least this many parts ("watch A, then B" is thin). */
 export const INDEXED_MIN_PARTS = 3;
-/** "Next season" pages with no sequel news stay indexed for titles at least this followed (people search
- * "<popular show> season 2" whatever the answer; for obscure titles "not announced" is a thin page). */
-export const NEXT_SEASON_MIN_MEMBERS = 100_000;
 /** Upcoming episodes stay indexed this far ahead ("episode 8 release date" is searched a week or two out). */
 export const INDEXED_DAYS_AHEAD = 14;
 
@@ -97,27 +94,26 @@ export const similarIndexed = (slug: string) => searchShown(`/similar/${slug}`);
 /** Character tables repeat what the character pages say: indexed only where search already shows them. */
 export const characterTableIndexed = (slug: string) => searchShown(`/anime/${slug}/characters`);
 
-/** "Next season" pages: indexed when there's news, or the title is popular enough that people ask anyway. */
-export const nextSeasonIndexed = (path: string, hasNews: boolean, members: number) => hasNews || members >= NEXT_SEASON_MIN_MEMBERS || searchShown(path);
+/** "Next season" pages: indexed only with an answer (a sequel announced, dated, airing or out, or official news);
+ *  "not announced" pages were thin and Google left them unindexed (15 Nov audit). */
+export const nextSeasonIndexed = (hasNews: boolean) => hasNews;
 
 /**
  * Episode lists: Google dropped most finished shows' lists (titles and dates any database has). Indexed when the show
  * is airing (fresh air dates), has our own filler list, or search already shows it; page 2 onwards never.
  */
-export const episodeListIndexed = (path: string, o: { airing: boolean; curated: boolean; page: number }) => o.page === 1 && (o.airing || o.curated || searchShown(path));
-
-/** Cast pages repeat the character pages' voice credits: indexed only where search already shows them. */
-export const castIndexed = (path: string) => searchShown(path);
-
-/** "How long to watch": worth a page for shows people actually binge. */
-export const HOW_LONG_MIN_MEMBERS = 60_000;
-export const howLongIndexed = (path: string, members: number) => members >= HOW_LONG_MIN_MEMBERS || searchShown(path);
+export const episodeListIndexed = (o: { airing: boolean; curated: boolean; page: number }) => o.page === 1 && (o.airing || o.curated);
 
 /**
- * Parents' guides are built from viewer tags for any title, so they're indexed only for shows parents ask about
- * (popular ones), where a platform publishes an official rating, or where search still shows the guide.
+ * 15 Nov audit: cast pages (the character pages' voice credits again) and "how long to watch" (Google answers it
+ * itself: 4,517 impressions, 4 clicks) are never indexed; their answers belong on the anime page.
  */
-export const parentsGuideIndexed = (path: string, members: number, official: boolean) => members >= ANIME_MIN_MEMBERS || official || searchShown(path);
+export const castIndexed = () => false;
+export const howLongIndexed = () => false;
+
+/** Parents' guides are built from viewer tags for any title, so they're indexed only where a platform publishes an
+ *  official rating (the part no tag list can give). */
+export const parentsGuideIndexed = (official: boolean) => official;
 
 /** `robots` metadata for a page: undefined (indexable) or noindex, follow. */
 export const robotsFor = (indexed: boolean) => (indexed ? undefined : NOINDEX);

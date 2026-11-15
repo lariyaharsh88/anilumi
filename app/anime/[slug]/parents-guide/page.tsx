@@ -51,7 +51,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const official = officialRatings(a.slug);
   const desc = official ? `${a.title} official age rating: ${ratingsLine(official)}. ${description}`.slice(0, 300) : description;
   const path = `${animePath(a)}/parents-guide`;
-  return { title, description: fitDescription(desc), alternates: { canonical: path }, robots: guide ? robotsFor(parentsGuideIndexed(path, a.userCount, Boolean(official))) : { index: false } };
+  return { title, description: fitDescription(desc), alternates: { canonical: path }, robots: guide ? robotsFor(parentsGuideIndexed(Boolean(official))) : { index: false } };
 }
 
 export default async function ParentsGuidePage({ params }: Props) {

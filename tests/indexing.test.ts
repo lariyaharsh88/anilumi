@@ -67,7 +67,6 @@ test("similar pages and character tables: only the ones search already shows", a
   assert.equal(similarIndexed("zzz-not-a-real-anime"), false);
   assert.equal(characterTableIndexed("zzz-not-a-real-anime"), false);
   // Next season: news, or a title popular enough that people ask anyway.
-  assert.equal(nextSeasonIndexed("/anime/x/next-season", true, 500), true);
-  assert.equal(nextSeasonIndexed("/anime/x/next-season", false, 250_000), true);
-  assert.equal(nextSeasonIndexed("/anime/x/next-season", false, 5_000), false);
+  assert.equal(nextSeasonIndexed(true), true);
+  assert.equal(nextSeasonIndexed(false), false);
 });

@@ -50,7 +50,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       : `Characters and voice actors of ${a.title}.`),
     alternates: { canonical: `${animePath(a)}/cast` },
     // Thin next to the character pages: indexed only where search already shows it (lib/indexing.ts).
-    ...(cast?.entries.length ? { robots: robotsFor(castIndexed(`${animePath(a)}/cast`)) } : { robots: { index: false } }),
+    ...(cast?.entries.length ? { robots: robotsFor(castIndexed()) } : { robots: { index: false } }),
   };
 }
 
