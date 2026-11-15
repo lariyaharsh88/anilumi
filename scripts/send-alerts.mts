@@ -4,7 +4,7 @@
  *   auto      every scheduled run: new episodes and new Hindi dubs, plus today's birthdays and the weekly digest
  *             once they're due (dueJobs), so a cron slot GitHub skips is made up by the next run
  *   episodes  new episodes and premieres, push + email, and IndexNow for the pages they change
- *   hindi     official Hindi dubs added since the last run (lib/hindialerts.ts), email
+ *   hindi     official Hindi, Tamil and Telugu dubs added since the last run (lib/hindialerts.ts), email
  *   birthdays character birthdays, push
  *   digest    the weekly digest email (once per ISO week)
  *   confirm-pending (by hand only): one confirmation email to signups from before email was switched on
@@ -20,7 +20,7 @@ import { birthdayChars } from "../lib/birthdays";
 import { characterPathFor } from "../lib/charsnap";
 import { emailEnabled, sendMails } from "../lib/email";
 import { confirmMail, digestMail, dueReminders, episodeMail, hindiMail, type LeadDoc } from "../lib/emails";
-import { hindiItems, itemsFor } from "../lib/hindialerts";
+import { hindiItems, itemsFor, regionalItems } from "../lib/hindialerts";
 import { episodeUrls, submitIndexNow } from "../lib/indexnow";
 import { getNews } from "../lib/news";
 import { listLeadsByShow, oncePerEmail } from "../lib/listalerts";
@@ -114,17 +114,19 @@ async function episodes() {
  */
 async function hindi() {
   const seen = d.collection<{ _id: string; at: Date }>("hindi_seen");
-  const items = hindiItems();
-  const first = !(await seen.estimatedDocumentCount());
-  const fresh = [];
-  for (const i of items) if (await seen.insertOne({ _id: i.key, at: new Date() }).then(() => true, (e) => (e.code === 11000 ? false : Promise.reject(e)))) fresh.push(i);
-  if (first) { console.log(`hindi: recorded ${fresh.length} existing dubs, nothing sent`); return; }
-  if (fresh.length) {
-    const to = await leads.find({ kind: "hindi", status: "confirmed" }).toArray();
-    const mails = to.flatMap((l) => { const mine = itemsFor(l, fresh, orderSlugs); return mine.length ? [hindiMail(l, mine)] : []; });
-    await mail(`mail:hindi:${createHash("sha1").update(fresh.map((i) => i.key).sort().join("\n")).digest("hex")}`, mails);
+  // Hindi keys are "f:"/"r:", Tamil "ta:", Telugu "te:" (one collection). Each language's first run only records.
+  for (const [kind, items, prefix] of [["hindi", hindiItems(), "^[fr]:"], ["tamil", regionalItems("ta"), "^ta:"], ["telugu", regionalItems("te"), "^te:"]] as const) {
+    const first = !(await seen.countDocuments({ _id: { $regex: prefix } }, { limit: 1 }));
+    const fresh = [];
+    for (const i of items) if (await seen.insertOne({ _id: i.key, at: new Date() }).then(() => true, (e) => (e.code === 11000 ? false : Promise.reject(e)))) fresh.push(i);
+    if (first) { console.log(`${kind}: recorded ${fresh.length} existing dubs, nothing sent`); continue; }
+    if (fresh.length) {
+      const to = await leads.find({ kind, status: "confirmed" }).toArray();
+      const mails = to.flatMap((l) => { const mine = itemsFor(l, fresh, orderSlugs); return mine.length ? [hindiMail(l, mine, kind)] : []; });
+      await mail(`mail:${kind}:${createHash("sha1").update(fresh.map((i) => i.key).sort().join("\n")).digest("hex")}`, mails);
+    }
+    console.log(`${kind}: ${fresh.length} new`);
   }
-  console.log(`hindi: ${fresh.length} new`);
 }
 
 async function birthdays() {

@@ -6,6 +6,7 @@
  */
 import { dubHref, hindiDubbed, platformKind } from "./hindidub";
 import { dubShows, premiereAt } from "./dubschedule";
+import { dubbedIn, type RegionalLang } from "./regionaldub";
 
 export type HindiItem = { key: string; slug: string | null; title: string; url: string; where: string };
 
@@ -27,6 +28,11 @@ export function hindiItems(now = Date.now()): HindiItem[] {
       where: `${named(e.service)}, from ${fmtDay(premiereAt(e))}`,
     }));
   return [...franchises, ...runs];
+}
+
+/** Tamil or Telugu dubs on the checked list (data/regional-dubs.json), keyed "ta:<slug>" / "te:<slug>". */
+export function regionalItems(lang: RegionalLang): HindiItem[] {
+  return dubbedIn(lang).map((d) => ({ key: `${lang}:${d.s}`, slug: d.s, title: d.t, url: dubHref(d), where: [...new Set(d.platforms.map((p) => named(p.name)))].join(", ") }));
 }
 
 /** The anime a lead's page is about: /anime/<slug>, /anime/<slug>/... or /watch-order/<slug>. */

@@ -53,3 +53,16 @@ test("Hindi dub email: one title or a list, escaped, with one-click unsubscribe"
   assert.equal(two.subject, "2 new Hindi dubbed anime");
   assert.match(two.text, /- B \(Netflix\)/);
 });
+
+test("Tamil and Telugu alerts: keyed per language, with their own confirmation and email", async () => {
+  const { regionalItems } = await import("../lib/hindialerts");
+  const ta = regionalItems("ta"), te = regionalItems("te");
+  assert.ok(ta.length >= 20 && ta.every((i) => i.key.startsWith("ta:")));
+  assert.ok(te.every((i) => i.key.startsWith("te:")));
+  const t: LeadDoc = { ...lead, kind: "tamil" };
+  assert.ok(LEAD_KINDS.includes("tamil") && LEAD_KINDS.includes("telugu"));
+  assert.equal(confirmMail(t).subject, "Confirm your Tamil dub alerts");
+  const m = hindiMail(t, [{ title: "Attack on Titan", url: "/watch-order/attack-on-titan", where: "Crunchyroll" }], "tamil");
+  assert.equal(m.subject, "Attack on Titan is now in Tamil");
+  assert.match(m.text, /All Tamil dubs: https:\/\/anilumi\.in\/tamil-dub/);
+});
