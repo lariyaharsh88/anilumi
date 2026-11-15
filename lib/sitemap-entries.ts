@@ -16,6 +16,7 @@ import { hasSnapshotThemes } from "@/lib/themes";
 import { airing as airingSnapshot, upcomingOf } from "@/lib/airing";
 import { HINDI_SLUGS, hindiPath, hindiIndexed } from "@/lib/hindi";
 import { LANG, dubbedIn } from "@/lib/regionaldub";
+import { dubEvents } from "@/lib/dubupdates";
 import { allStreams, streamsPath } from "@/lib/streams";
 import { strongSimilarIds } from "@/lib/picks";
 import { HINDI_PLATFORMS, dubsOn } from "@/lib/hindidub";
@@ -67,6 +68,8 @@ export async function sitemapEntries(): Promise<MetadataRoute.Sitemap> {
     { url: abs("/hi"), lastModified: weekly, changeFrequency: "weekly", priority: 0.6 },
     { url: abs("/hindi-dub"), lastModified: at(D.dubs, HINDI_HUB_UPDATED), changeFrequency: "monthly", priority: 0.7 },
     { url: abs("/hi/hindi-dub"), lastModified: at(D.dubs, HINDI_HUB_UPDATED), changeFrequency: "monthly", priority: 0.6 },
+    // Changes as dubs are added or start streaming: dated by the latest event (lib/dubupdates.ts).
+    { url: abs("/new-dubs"), lastModified: at(dubEvents()[0]?.date), changeFrequency: "weekly", priority: 0.7 },
     ...(["ta", "te"] as const).filter((l) => dubbedIn(l).length >= 5).map((l) => ({ url: abs(LANG[l].path), lastModified: at(D.regionalDubs, DUB_GUIDES_ADDED), changeFrequency: "monthly" as const, priority: 0.7 })),
     ...HINDI_PLATFORMS.filter((p) => dubsOn(p).length).map((p) => ({ url: abs(`/hindi-dub/${p.slug}`), lastModified: at(D.dubs, HINDI_HUB_UPDATED), changeFrequency: "monthly" as const, priority: 0.6 })),
     { url: abs("/where-to-watch"), lastModified: at(D.streams), changeFrequency: "monthly", priority: 0.8 },

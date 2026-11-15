@@ -90,6 +90,7 @@ export default async function HindiDubHub() {
           <Link href="/hindi-voice-artists" className="chip">Hindi voice artists</Link>
           <Link href="/where-to-watch" className="chip">Where to watch in India</Link>
           <Link href="/anime-salt-alternatives" className="chip">Anime Salt alternatives</Link>
+          <Link href="/new-dubs" className="chip">New this week</Link>
           <Link href="/tamil-dub" className="chip">Tamil dubbed anime</Link>
           <Link href="/telugu-dub" className="chip">Telugu dubbed anime</Link>
         </p>

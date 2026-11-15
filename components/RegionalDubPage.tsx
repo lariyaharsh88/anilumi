@@ -75,6 +75,7 @@ export default async function RegionalDubPage({ lang }: { lang: RegionalLang }) 
         posters={dubs.slice(0, 3).map((d) => poster(d.s, "medium"))}
       >
         <p className="flex flex-wrap gap-2 text-sm">
+          <Link href="/new-dubs" className="chip">New this week</Link>
           <Link href={other.path} className="chip">{other.name} dubbed anime</Link>
           <Link href="/hindi-dub" className="chip">Hindi dubbed anime</Link>
           <Link href="/anime-salt-alternatives" className="chip">Free legal options</Link>

@@ -11,6 +11,8 @@ export type DubPlatform = { name: string; scope: string; url: string };
 export type Dub = {
   s: string; t: string; status: "available" | "past_broadcast" | "announced" | "none_found";
   confidence: "high" | "medium" | "low"; platforms: DubPlatform[]; sources: string[]; note: string;
+  /** When the dub was added to the list (YYYY-MM-DD), for /new-dubs. */
+  added?: string;
 };
 export type PlatformKind = "free" | "subscription" | "tv";
 
