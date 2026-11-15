@@ -20,7 +20,7 @@ import { dubEvents } from "@/lib/dubupdates";
 import { allStreams, streamsPath } from "@/lib/streams";
 import { strongSimilarIds } from "@/lib/picks";
 import { HINDI_PLATFORMS, dubsOn } from "@/lib/hindidub";
-import { airsSoon, searchShownPaths, similarSlugs, watchOrderIndexed, characterTableIndexed, notedCharacters, genreIndexed, bestYearIndexed, trendIndexed, voiceActorIndexed, } from "@/lib/indexing";
+import { airsSoon, searchShown, searchShownPaths, similarSlugs, watchOrderIndexed, characterTableIndexed, notedCharacters, genreIndexed, bestYearIndexed, trendIndexed, voiceActorIndexed, } from "@/lib/indexing";
 import franchiseData from "@/data/franchises.json";
 import { DATA_DATES as D, STATIC_UPDATED, BIRTHDAY_PAGES_UPDATED, HINDI_HUB_UPDATED, SCENE_PAGE_UPDATED, DUB_GUIDES_ADDED, latest, weekStart, monthStart } from "@/lib/lastmod";
 import { FILLER } from "@/data/filler";
@@ -149,12 +149,11 @@ export async function sitemapEntries(): Promise<MetadataRoute.Sitemap> {
       const poster = posterUrl(a, "large");
       out.push({ url: abs(animePath(a)), lastModified: a.status === "current" ? now : at(D.anilist, D.arcs, D.manga, summaryFor(a.slug) ? D.summaries : null), changeFrequency: a.status === "current" ? "daily" : "weekly", priority: a.status === "current" ? 0.8 : 0.7, ...(poster ? { images: [poster] } : {}) });
       if (n > 100) continue;
-      // Only with sequel news; the page indexes itself whenever a sequel exists (lib/indexing.ts nextSeasonIndexed).
+      // Researched sequel news (data/sequel-news.json): the page always indexes these (lib/indexing.ts nextSeasonIndexed).
       if (series && released && sequelNews(a.slug)) out.push({ url: abs(`${animePath(a)}/next-season`), lastModified: weekly, changeFrequency: "weekly", priority: 0.7 });
-      if (a.subtype !== "movie" && a.status === "current") out.push({ url: abs(`${animePath(a)}/episodes`), lastModified: now, changeFrequency: "daily", priority: 0.5 });
       if (n > 50) continue;
       const al = alIds.get(a.id);
-      if (released && hasSnapshotThemes(a.id)) out.push({ url: abs(`${animePath(a)}/openings-endings`), lastModified: at(D.themes), changeFrequency: "monthly", priority: 0.5 });
+      if (released && hasSnapshotThemes(a.id) && searchShown(`${animePath(a)}/openings-endings`)) out.push({ url: abs(`${animePath(a)}/openings-endings`), lastModified: at(D.themes), changeFrequency: "monthly", priority: 0.5 });
       // Same test as the page: a tag-built guide plus an official rating (lib/indexing.ts parentsGuideIndexed).
       if (al && (alAnime(al)?.t.length ?? 0) > 0 && officialRatings(a.slug)) out.push({ url: abs(`${animePath(a)}/parents-guide`), lastModified: at(D.anilist), changeFrequency: "monthly", priority: 0.5 });
     }

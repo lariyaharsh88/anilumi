@@ -99,10 +99,10 @@ export const characterTableIndexed = (slug: string) => searchShown(`/anime/${slu
 export const nextSeasonIndexed = (hasNews: boolean) => hasNews;
 
 /**
- * Episode lists: Google dropped most finished shows' lists (titles and dates any database has). Indexed when the show
- * is airing (fresh air dates), has our own filler list, or search already shows it; page 2 onwards never.
+ * Episode lists: titles and dates any database has (Google dropped most). Indexed only with our own filler list;
+ * an airing show's latest episodes are on its anime page, and its short list was thin (15 Nov audit). Page 1 only.
  */
-export const episodeListIndexed = (o: { airing: boolean; curated: boolean; page: number }) => o.page === 1 && (o.airing || o.curated);
+export const episodeListIndexed = (o: { airing: boolean; curated: boolean; page: number }) => o.page === 1 && o.curated;
 
 /**
  * 15 Nov audit: cast pages (the character pages' voice credits again) and "how long to watch" (Google answers it

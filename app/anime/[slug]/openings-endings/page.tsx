@@ -1,4 +1,5 @@
-import { fitDescription } from "@/lib/titles";
+import { fitTitle, fitDescription } from "@/lib/titles";
+import { robotsFor, searchShown } from "@/lib/indexing";
 import type { Metadata } from "next";
 import Link from "@/components/Link";
 import { notFound } from "next/navigation";
@@ -27,12 +28,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const ops = t?.themes.filter((x) => x.type === "OP") || [];
   const eds = t?.themes.filter((x) => x.type === "ED") || [];
   return {
-    title: `${a.title} Openings & Endings – All ${ops.length + eds.length || ""} Theme Songs & Artists`.replace("All  ", "All "),
+    title: fitTitle([`${a.title} Openings & Endings – All ${ops.length + eds.length || ""} Theme Songs & Artists`.replace("All  ", "All "), `${a.title} Openings & Endings (${ops.length + eds.length} Songs)`, `${a.title} Openings & Endings`]),
     description: fitDescription(t?.themes.length
       ? `Every ${a.title} opening and ending: ${t.themes.slice(0, 3).map((x) => `${x.type}${x.sequence} “${x.song}” by ${x.artists[0] || "unknown"}`).join(", ")}, with the episodes each one plays on.`
       : `Opening and ending songs for ${a.title}.`),
     alternates: { canonical: `${animePath(a)}/openings-endings` },
-    ...(t?.themes.length ? {} : { robots: { index: false } }),
+    // Song lists are thin next to the anime page: indexed only where search already shows them (15 Nov audit).
+    robots: robotsFor(Boolean(t?.themes.length) && searchShown(`${animePath(a)}/openings-endings`)),
   };
 }
 

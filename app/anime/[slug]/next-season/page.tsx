@@ -72,13 +72,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   // Official news beats a database status that hasn't caught up (lib/sequelnews.ts).
   const news = sequelNews(a.slug);
   const override = newsOverrides(news, verdict.kind);
-  const title = override ? fitTitle([news!.window && news!.window !== "TBA" ? `${label}: Announced for ${news!.window}` : null, `${label}: Announced (${asOf})`, `${label}: Announced`]) : `${label}${dateQuestion ? " Release Date" : ""}: ${answer[verdict.kind]}`;
+  const title = override ? fitTitle([news!.window && news!.window !== "TBA" ? `${label}: Announced for ${news!.window}` : null, `${label}: Announced (${asOf})`, `${label}: Announced`]) : fitTitle([`${label}${dateQuestion ? " Release Date" : ""}: ${answer[verdict.kind]}`, `${label}: ${answer[verdict.kind]}`]);
   return {
     title,
     description: fitDescription(`${first ? `Is there a ${a.title} season 2?` : `Will ${a.title} get another season?`} ${override ? `${news!.what}${news!.announced ? ` (announced ${fmtDate(news!.announced, { month: "long", day: "numeric", year: "numeric" })})` : ""}.` : `${verdict.headline} ${verdict.detail}`}`.slice(0, 300)),
     alternates: { canonical: `${animePath(a)}/next-season` },
-    // Films and OVAs never; a series only with an answer (a sequel exists or there's official news).
-    ...(a.subtype === "TV" || a.subtype === "ONA" ? { robots: robotsFor(nextSeasonIndexed(override || (verdict.kind !== "none" && verdict.kind !== "still-airing"))) } : { robots: { index: false } }),
+    // Films and OVAs never; a series only with an answer: a sequel exists, or researched news (even "story complete").
+    ...(a.subtype === "TV" || a.subtype === "ONA" ? { robots: robotsFor(nextSeasonIndexed(Boolean(news) || override || (verdict.kind !== "none" && verdict.kind !== "still-airing"))) } : { robots: { index: false } }),
   };
 }
 
