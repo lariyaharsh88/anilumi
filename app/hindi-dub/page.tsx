@@ -17,6 +17,7 @@ import BarChart from "@/components/viz/BarChart";
 import StackedBar from "@/components/viz/StackedBar";
 import HindiDubList, { type DubCard } from "@/components/HindiDubList";
 import LeadForm from "@/components/LeadForm";
+import CorrectionForm from "@/components/CorrectionForm";
 import { dbEnabled } from "@/lib/db";
 
 export const revalidate = 86400;
@@ -224,7 +225,8 @@ export default async function HindiDubHub() {
       <section id="list" data-section className="reveal pt-10" aria-labelledby="list-h">
         <h2 id="list-h" className="h-section mb-1">All {dubbed.length} Hindi dubbed anime, most-watched first</h2>
         <p className="mb-4 text-sm text-muted">Checked {dubDate()}. Scope shows which seasons or films have Hindi audio; every row links to the page that confirms it.</p>
-        <HindiDubList items={cards} platforms={platforms.map((p) => p.name)} />
+        <HindiDubList items={cards} platforms={platforms.map((p) => p.name)} canReport={dbEnabled()} />
+        {dbEnabled() && <CorrectionForm kind="dub" className="mt-4" />}
       </section>
 
       <section id="by-platform" data-section className="reveal pt-10" aria-labelledby="plat-h">

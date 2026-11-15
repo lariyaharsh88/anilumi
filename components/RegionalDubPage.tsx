@@ -9,6 +9,7 @@ import SectionNav from "@/components/fx/SectionNav";
 import BarChart from "@/components/viz/BarChart";
 import HindiDubList, { type DubCard } from "@/components/HindiDubList";
 import LeadForm from "@/components/LeadForm";
+import CorrectionForm from "@/components/CorrectionForm";
 import { dbEnabled } from "@/lib/db";
 import { animeBySlugs, posterUrl, type Anime } from "@/lib/kitsu";
 import { itemList } from "@/lib/ld";
@@ -112,7 +113,8 @@ export default async function RegionalDubPage({ lang }: { lang: RegionalLang }) 
       <section id="list" data-section className="reveal pt-10" aria-labelledby="list-h">
         <h2 id="list-h" className="h-section mb-1">All {dubs.length} {L.name} dubbed anime</h2>
         <p className="mb-4 max-w-3xl text-sm text-muted">Most-watched first. Filter by how you watch or by platform.</p>
-        <HindiDubList items={cards} platforms={platforms.map((p) => p.name)} labels={{ searchLabel: `Search ${L.name} dubbed anime`, none: `No ${L.name} dub matches. It may not have one yet, or we haven't confirmed it.` }} />
+        <HindiDubList items={cards} platforms={platforms.map((p) => p.name)} labels={{ searchLabel: `Search ${L.name} dubbed anime`, none: `No ${L.name} dub matches. It may not have one yet, or we haven't confirmed it.`, dub: `${L.name} dub` }} canReport={dbEnabled()} />
+        {dbEnabled() && <CorrectionForm kind="dub" className="mt-4" />}
         <MadeBy className="mt-4" method={`Each ${L.name} dub is checked on the platform's own title page (audio languages), the licensor's announcement or Indian anime news; fan lists and unofficial uploads never count.`} date={REGIONAL_CHECKED} />
       </section>
 

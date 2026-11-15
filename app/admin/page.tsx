@@ -102,7 +102,7 @@ export default async function Admin({ searchParams }: Props) {
               {fixes.map((f) => (
                 <tr key={String(f._id)}>
                   <td className="whitespace-nowrap px-3 py-2">{fmt(f.createdAt)}</td>
-                  <td className="px-3 py-2"><Link href={f.page} className="text-violet hover:underline">{f.kind === "contact" ? "✉ contact" : f.page}</Link></td>
+                  <td className="px-3 py-2"><Link href={f.page} className="text-violet hover:underline">{f.kind === "contact" ? "✉ contact" : f.kind === "dub" ? `🇮🇳 dub · ${f.page}` : f.page}</Link></td>
                   <td className="max-w-md whitespace-pre-line px-3 py-2">{f.message}</td>
                   <td className="px-3 py-2">{f.email || ""}</td>
                   <td className="px-3 py-2"><form action="/api/admin/delete" method="post"><input type="hidden" name="type" value="correction" /><input type="hidden" name="id" value={String(f._id)} /><button className="text-xs text-muted hover:text-accent-2">Done</button></form></td>

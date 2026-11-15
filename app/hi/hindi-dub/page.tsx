@@ -16,6 +16,7 @@ import BarChart from "@/components/viz/BarChart";
 import StackedBar from "@/components/viz/StackedBar";
 import HindiDubList, { type DubCard } from "@/components/HindiDubList";
 import LeadForm from "@/components/LeadForm";
+import CorrectionForm from "@/components/CorrectionForm";
 import { dbEnabled } from "@/lib/db";
 
 export const revalidate = 86400;
@@ -196,7 +197,8 @@ export default async function HindiDubHubHi() {
       <section id="list" data-section className="reveal pt-10" aria-labelledby="list-h">
         <h2 id="list-h" className="h-section mb-1">सभी {dubbed.length} हिंदी डब एनीमे की लिस्ट</h2>
         <p className="mb-4 text-sm text-muted">{dubDate("hi")} को जाँचा गया। सबसे ज़्यादा देखे जाने वाले पहले; हर लाइन उस पेज से जुड़ी है जहाँ इसकी पुष्टि हुई।</p>
-        <HindiDubList items={cards} platforms={platforms.map((p) => p.name)} lang="hi" />
+        <HindiDubList items={cards} platforms={platforms.map((p) => p.name)} lang="hi" canReport={dbEnabled()} />
+        {dbEnabled() && <CorrectionForm kind="dub" className="mt-4" />}
       </section>
 
       <section id="by-platform" data-section className="reveal pt-10" aria-labelledby="plat-h">

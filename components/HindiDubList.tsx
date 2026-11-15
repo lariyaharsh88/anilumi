@@ -3,6 +3,7 @@ import { useMemo, useState } from "react";
 import Image from "next/image";
 import Link from "@/components/Link";
 import type { PlatformKind } from "@/lib/hindidub";
+import { reportDub } from "@/components/CorrectionForm";
 
 export type DubCard = {
   s: string; t: string; href: string; poster: string | null; year: number | null; cheapest: PlatformKind;
@@ -11,8 +12,8 @@ export type DubCard = {
   platforms: { name: string; scope: string; url: string; kind: PlatformKind }[];
 };
 const T = {
-  en: { kind: { free: "Free", subscription: "Subscription", tv: "TV channel" } as Record<PlatformKind, string>, search: "Search a title…", searchLabel: "Search Hindi dubbed anime", how: "How you watch", all: "All", any: "Any platform", count: (n: number, of: number) => (n === of ? `${of} anime` : `${n} of ${of} anime`), since: "Since", source: "source", checked: "Checked", oneSource: "one source", none: "No Hindi dub matches. It may not have one yet: see the list of popular anime without a Hindi dub below." },
-  hi: { kind: { free: "मुफ़्त", subscription: "सब्सक्रिप्शन", tv: "टीवी चैनल" } as Record<PlatformKind, string>, search: "एनीमे का नाम खोजें…", searchLabel: "हिंदी डब एनीमे खोजें", how: "कैसे देखें", all: "सभी", any: "कोई भी प्लेटफ़ॉर्म", count: (n: number, of: number) => (n === of ? `${of} एनीमे` : `${of} में से ${n} एनीमे`), since: "शुरुआत", source: "स्रोत", checked: "जाँचा गया", oneSource: "एक स्रोत", none: "कोई हिंदी डब नहीं मिला। हो सकता है इसका डब अभी न हो: नीचे बिना हिंदी डब वाले एनीमे की लिस्ट देखें।" },
+  en: { kind: { free: "Free", subscription: "Subscription", tv: "TV channel" } as Record<PlatformKind, string>, search: "Search a title…", searchLabel: "Search Hindi dubbed anime", how: "How you watch", all: "All", any: "Any platform", count: (n: number, of: number) => (n === of ? `${of} anime` : `${n} of ${of} anime`), since: "Since", source: "source", checked: "Checked", oneSource: "one source", report: "Report a change", dub: "Hindi dub", none: "No Hindi dub matches. It may not have one yet: see the list of popular anime without a Hindi dub below." },
+  hi: { kind: { free: "मुफ़्त", subscription: "सब्सक्रिप्शन", tv: "टीवी चैनल" } as Record<PlatformKind, string>, search: "एनीमे का नाम खोजें…", searchLabel: "हिंदी डब एनीमे खोजें", how: "कैसे देखें", all: "सभी", any: "कोई भी प्लेटफ़ॉर्म", count: (n: number, of: number) => (n === of ? `${of} एनीमे` : `${of} में से ${n} एनीमे`), since: "शुरुआत", source: "स्रोत", checked: "जाँचा गया", oneSource: "एक स्रोत", report: "बदलाव बताएं", dub: "हिंदी डब", none: "कोई हिंदी डब नहीं मिला। हो सकता है इसका डब अभी न हो: नीचे बिना हिंदी डब वाले एनीमे की लिस्ट देखें।" },
 };
 const KIND_CLASS: Record<PlatformKind, string> = { free: "border-emerald-500/40 text-emerald-300", subscription: "border-line text-muted", tv: "border-amber-400/40 text-amber-200" };
 
@@ -20,7 +21,7 @@ const KIND_CLASS: Record<PlatformKind, string> = { free: "border-emerald-500/40 
  * Every dub as a poster card (Hindi, or Tamil and Telugu with `labels`), with a search box, a free / subscription / TV filter and a platform filter. All
  * cards are in the HTML; filtering only hides them.
  */
-export default function HindiDubList({ items, platforms, lang = "en", labels }: { items: DubCard[]; platforms: string[]; lang?: "en" | "hi"; labels?: { searchLabel: string; none: string } }) {
+export default function HindiDubList({ items, platforms, lang = "en", labels, canReport = false }: { items: DubCard[]; platforms: string[]; lang?: "en" | "hi"; labels?: { searchLabel: string; none: string; dub?: string }; canReport?: boolean }) {
   const t = { ...T[lang], ...labels }, KIND = t.kind;
   const [q, setQ] = useState("");
   const [kind, setKind] = useState<PlatformKind | "all">("all");
@@ -75,6 +76,7 @@ export default function HindiDubList({ items, platforms, lang = "en", labels }: 
                   </li>
                 ))}
               </ul>
+              {canReport && <button type="button" onClick={() => reportDub(`${d.t} (${t.dub})`)} className="mt-2 text-[11px] text-muted underline decoration-dotted underline-offset-2 hover:text-ink">{t.report}</button>}
             </div>
           </li>
         ))}

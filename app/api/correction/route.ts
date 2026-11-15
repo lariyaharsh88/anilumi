@@ -2,7 +2,7 @@ import { guard, reply } from "@/lib/guard";
 import { normalizeEmail, cleanText } from "@/lib/community";
 
 /**
- * "Spotted a mistake?" reports and contact messages. Stored for the admin page; the email is optional and only
+ * "Spotted a mistake?" reports, dub change reports (the Hindi, Tamil and Telugu lists) and contact messages. Stored for the admin page; the email is optional and only
  * used to reply. Same guard as every community write (same-origin, honeypot, per-IP limit).
  */
 export async function POST(req: Request) {
@@ -15,6 +15,6 @@ export async function POST(req: Request) {
   if (!page.startsWith("/")) return reply(g, { error: "Bad request" }, 400);
   const email = b.email ? normalizeEmail(b.email) : null;
   if (b.email && !email) return reply(g, { error: "That email address doesn't look right (or leave it empty)." }, 400);
-  await g.d.collection("corrections").insertOne({ page, message, email, kind: b.kind === "contact" ? "contact" : "correction", status: "new", createdAt: new Date() });
+  await g.d.collection("corrections").insertOne({ page, message, email, kind: b.kind === "contact" ? "contact" : b.kind === "dub" ? "dub" : "correction", status: "new", createdAt: new Date() });
   return reply(g, { ok: true });
 }
