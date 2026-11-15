@@ -30,7 +30,7 @@ import { buildDigest, dueBirthdays, dueEpisodes, dueJobs, isoWeek, weekBirthdays
 import { orderSlugs } from "../lib/wosnap";
 
 const mode = process.argv[2];
-if (!["auto", "episodes", "hindi", "birthdays", "digest", "confirm-pending"].includes(mode)) throw new Error("usage: send-alerts.mts auto|episodes|hindi|birthdays|digest|confirm-pending");
+if (!["auto", "episodes", "hindi", "birthdays", "digest", "confirm-pending", "remind-pending"].includes(mode)) throw new Error("usage: send-alerts.mts auto|episodes|hindi|birthdays|digest|confirm-pending|remind-pending");
 const { MONGODB_URI, VAPID_PRIVATE_KEY } = process.env;
 if (!MONGODB_URI) { console.log("::notice::Alerts are off: MONGODB_URI is missing."); process.exit(0); }
 const pushOn = Boolean(VAPID_PRIVATE_KEY && VAPID_PUBLIC_KEY);
