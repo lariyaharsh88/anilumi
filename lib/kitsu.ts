@@ -743,6 +743,27 @@ export function franchiseName(wo: Pick<WatchOrder, "entries" | "root"> & { label
   return name.replace(/\s*\((?:\d{4}|TV)\)$/, "").trim();
 }
 
+/** Whether a franchise's other core entries are numbered seasons of `a` (Attack on Titan Season 2, Part 2, The
+ *  Final Season), not a new series (Naruto → Shippuden), so "Season 1" and "all seasons" read right. Pure. */
+export function numberedSeasons(wo: Pick<WatchOrder, "entries">, a: Pick<Anime, "id">): boolean {
+  return wo.entries.some((e) => e.kind === "main" && e.anime.id !== a.id && /season|\b(2nd|3rd|\d+th)\b|part \d|final/i.test(`${e.anime.title} ${e.anime.slug}`));
+}
+
+/**
+ * Episodes across a franchise's core series (its main non-film entries), with `own` for `a` itself (airing: what
+ * has aired). 0 when another main entry has no episode count yet, so a title never states a short total. Pure.
+ */
+export function seriesEpisodes(wo: Pick<WatchOrder, "entries">, a: Pick<Anime, "id">, own: number): number {
+  let n = 0;
+  for (const e of wo.entries) {
+    if (e.kind !== "main" || e.anime.subtype === "movie") continue;
+    const eps = e.anime.id === a.id ? own : e.anime.episodeCount || 0;
+    if (!eps) return 0;
+    n += eps;
+  }
+  return n;
+}
+
 /**
  * Which of `n` main entries to list in a short preview: all of them if they fit, otherwise the first few plus
  * the one before, at and after `cur`, with null marking each gap ("…"). Pure.

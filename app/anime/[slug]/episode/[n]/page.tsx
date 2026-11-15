@@ -1,4 +1,4 @@
-import { fitDescription } from "@/lib/titles";
+import { fitTitle, fitDescription } from "@/lib/titles";
 import type { Metadata } from "next";
 import PushButton from "@/components/PushButton";
 import { animeTopic } from "@/lib/push";
@@ -72,12 +72,26 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const when = airIso ? fmtDate(airIso, { month: "long", day: "numeric", year: "numeric" }) : null;
   // The English name people search ("The Apothecary Diaries Season 3 episode 7"), romaji when there's none.
   const show = a.titleEn && a.titleEn.length <= 50 ? a.titleEn : a.title;
+  // The broadcast in India, where most readers are: "Oct 31, 9:30 PM IST", the day and time both in IST.
+  const timed = Boolean(airIso && airIso.length > 10);
+  const tz = timed ? { timeZone: "Asia/Kolkata" } : {};
+  const day = airIso ? fmtDate(airIso, { month: "short", day: "numeric", ...tz }) : null;
+  const year = airIso ? fmtDate(airIso, { year: "numeric", ...tz }) : "";
+  const dayFull = airIso ? fmtDate(airIso, { month: "long", day: "numeric", year: "numeric", ...tz }) : null;
+  const ist = timed ? `${new Date(airIso!).toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit", timeZone: "Asia/Kolkata" })} IST` : null;
+  // Aired in the last three weeks: people still search its release date ("black clover season 2 episode 5 release
+  // date", 14 Nov: ~700 impressions at position 8, no clicks, the date cut off a 98-character title), so the date
+  // leads and says it's out. Every title is the longest that fits a result (lib/titles.ts).
+  const recent = !upcoming && airIso && Date.now() - Date.parse(airIso) < 21 * 86_400_000;
+  const ep = `${show} Episode ${d.n}`;
   const title = upcoming
-    ? `${show} Episode ${d.n} Release Date & Time${when ? ` – ${when}` : ""}`
-    : `${show} Episode ${d.n}${episode.title ? `: ${episode.title}` : ""} – Release Date & Recap`;
+    ? fitTitle([day && ist && `${ep} Release Date: ${day}, ${ist}`, day && `${ep} Release Date & Time: ${day}, ${year}`, day && `${ep} Release Date: ${day}, ${year}`, day && `${show} Ep ${d.n} Release Date: ${day}`, `${ep} Release Date & Time`])
+    : recent
+      ? fitTitle([`${ep} Release Date: ${day} (Out Now)`, `${ep} Release Date: ${day}, ${year}`, `${show} Ep ${d.n} Release Date: ${day} (Out Now)`, `${show} Ep ${d.n}: Out ${day}`])
+      : fitTitle([episode.title && `${ep}: ${episode.title} – Release Date & Recap`, episode.title && `${ep}: ${episode.title} – Recap`, episode.title && `${ep}: ${episode.title}`, `${ep} Release Date & Recap`, ep]);
   const description = upcoming
-    ? `${a.title} episode ${d.n} ${when ? `airs on ${when} (JST)` : "release date is not confirmed yet"}. Release time in India (IST), the US (ET/PT) and the UK, a live countdown and where to stream it.`
-    : `${a.title} episode ${d.n}${episode.title ? ` "${episode.title}"` : ""} aired on ${when}. ${(episode.synopsis || "").slice(0, 120)}`;
+    ? `${a.title} episode ${d.n} ${when ? `airs on ${ist ? `${dayFull} at ${ist}` : `${when} (JST)`}` : "release date is not confirmed yet"}. Release time in India (IST), the US (ET/PT) and the UK, a live countdown and where to stream it.`
+    : `${a.title} episode ${d.n}${episode.title ? ` "${episode.title}"` : ""} ${recent && ist ? `came out on ${dayFull} at ${ist}` : `aired on ${when}`}. ${(episode.synopsis || "").slice(0, 120)}`;
   const path = episodePath(a, d.n);
   const indexed = episodeIndexed({ path, n: d.n, upcoming, next: d.isNext, airIso, airing: a.status === "current", lastAired: d.lastAired });
   return { title, description: fitDescription(description), alternates: { canonical: path }, robots: robotsFor(indexed) };

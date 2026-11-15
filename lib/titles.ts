@@ -10,7 +10,8 @@ export const TITLE_MAX = 62;
 const SUFFIX = ` | ${site.name}`;
 
 export function fitTitle(candidates: (string | null | false | undefined)[], max = TITLE_MAX): NonNullable<Metadata["title"]> {
-  const list = [...new Set(candidates.filter((c): c is string => Boolean(c)).map((c) => c.replace(/\s+/g, " ").trim()))];
+  // Decorative marks in official titles ("Madoka★Magica") are spaces to a searcher ("madoka magica").
+  const list = [...new Set(candidates.filter((c): c is string => Boolean(c)).map((c) => c.replace(/[★☆♪♡♥]/g, " ").replace(/\s+/g, " ").trim()))];
   const fits = list.find((c) => c.length <= max);
   if (fits) return fits.length + SUFFIX.length <= max ? fits : { absolute: fits };
   return { absolute: list.reduce((a, b) => (b.length < a.length ? b : a)) };

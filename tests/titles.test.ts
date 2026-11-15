@@ -17,3 +17,7 @@ test("descriptions: unchanged when short, else cut at the last sentence that fit
   const cut = fitDescription(words);
   assert.ok(cut.length <= 161 && cut.endsWith("…") && !cut.includes("  "));
 });
+
+test("decorative marks in official titles become spaces", () => {
+  assert.equal(fitTitle(["Mahou Shoujo Madoka★Magica Age Rating: 13+"]), "Mahou Shoujo Madoka Magica Age Rating: 13+");
+});

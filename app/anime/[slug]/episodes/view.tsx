@@ -1,11 +1,11 @@
 import { robotsFor, episodeListIndexed } from "@/lib/indexing";
-import { fitDescription } from "@/lib/titles";
+import { fitTitle, fitDescription } from "@/lib/titles";
 import { Fragment } from "react";
 import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import Link from "@/components/Link";
-import { getAnimeBySlug, getEpisodes, getLastAiredBest, airingNotice, fmtDate, animePath, episodePath, posterUrl } from "@/lib/kitsu";
+import { getAnimeBySlug, getEpisodes, getLastAiredBest, airingNotice, fmtDate, animePath, episodePath, posterUrl, buildWatchOrder, numberedSeasons, seriesEpisodes, type Anime } from "@/lib/kitsu";
 import Countdown from "@/components/Countdown";
 import AiringNoticeBanner from "@/components/AiringNoticeBanner";
 import SpoilerGate from "@/components/SpoilerGate";
@@ -24,6 +24,17 @@ const LIMIT = 20;
 /** Episode list pages live at /episodes (page 1) and /episodes/page/[p], so every page is ISR-cacheable. */
 export const episodesPath = (slug: string, page: number) => `/anime/${slug}/episodes${page > 1 ? `/page/${page}` : ""}`;
 
+/**
+ * Episodes across every season when this is season 1 of a show with numbered seasons ("vinland saga episodes" means
+ * all of them), else 0. Not a season count: parts and cours make "8 seasons" of Attack on Titan's 4.
+ */
+async function allSeasons(a: Anime, n: number, page: number): Promise<number> {
+  if (page !== 1 || !n || a.subtype === "movie") return 0;
+  const wo = await buildWatchOrder(a);
+  const all = wo.root.id === a.id && wo.mainCount > 1 && numberedSeasons(wo, a) ? seriesEpisodes(wo, a, n) : 0;
+  return all > n ? all : 0;
+}
+
 export async function episodesMetadata(slug: string, page: number): Promise<Metadata> {
   const a = await getAnimeBySlug(decodeURIComponent(slug));
   if (!a) notFound();
@@ -33,17 +44,25 @@ export async function episodesMetadata(slug: string, page: number): Promise<Meta
   const aired = airing ? (await getLastAiredBest(a.id)).lastAired : 0;
   const fill = fillerFor(a.slug, a.episodeCount ?? (aired || null));
   const n = airing ? aired : a.episodeCount || 0;
+  // Season 1 of a multi-season show gives both counts (14 Nov: these sat at position 9-10 with hundreds of
+  // impressions and no clicks while saying only "All 24").
+  const all = await allSeasons(a, n, page);
   const head = !n
     ? `${a.title} Episode List & Air Dates`
     : airing
       ? `${a.title} Episode Guide: ${n} Episodes So Far & Next Air Date`
       : `${a.title} Episode Guide: All ${n} Episodes${fill?.count ? ` (${fill.count} Filler)` : ""}`;
   const span = a.startDate ? ` (${fmtDate(a.startDate, { month: "short", year: "numeric" })}${a.endDate ? ` – ${fmtDate(a.endDate, { month: "short", year: "numeric" })}` : airing ? " – now" : ""})` : "";
+  const extras = `with titles, air dates and spoiler-safe synopses${fill?.count ? `, plus which ${fill.count} are filler` : ""}`;
   return {
-    title: `${head}${p}`,
-    description: fitDescription(n
-      ? `${airing ? `${n} episodes of ${a.title} have aired so far` : `All ${n} episodes of ${a.title}`}${span}, with titles, air dates and spoiler-safe synopses${fill?.count ? `, plus which ${fill.count} are filler` : ""}.`
-      : `Every episode of ${a.title} with titles, air dates and synopses.`),
+    title: all
+      ? fitTitle([`${a.title} Episodes: ${n} in Season 1, ${all} Across All Seasons`, `${a.title} Episodes: ${n} in Season 1, ${all} in All Seasons`, `${a.title} Episodes: ${n} (Season 1), ${all} in All`, `${a.title}: ${all} Episodes, All Seasons`])
+      : `${head}${p}`,
+    description: fitDescription(all
+      ? `${a.title} has ${all} episodes across all its seasons. Season 1${span}: all ${n} episodes ${extras}.`
+      : n
+        ? `${airing ? `${n} episodes of ${a.title} have aired so far` : `All ${n} episodes of ${a.title}`}${span}, ${extras}.`
+        : `Every episode of ${a.title} with titles, air dates and synopses.`),
     alternates: { canonical: episodesPath(a.slug, page) },
     robots: robotsFor(episodeListIndexed(episodesPath(a.slug, page), { airing, curated: Boolean(fill), page })),
     openGraph: { images: posterUrl(a, "large") ? [{ url: posterUrl(a, "large")! }] : [] },
@@ -54,6 +73,7 @@ export async function EpisodesView({ slug, page }: { slug: string; page: number 
   const a = await getAnimeBySlug(decodeURIComponent(slug));
   if (!a) notFound();
   const [eps, { lastAired, reliable, nextAt }] = await Promise.all([getEpisodes(a.id, page, LIMIT), getLastAiredBest(a.id)]);
+  const all = await allSeasons(a, a.status === "current" ? lastAired : a.episodeCount || 0, page);
   const notice = a.status === "current" ? airingNotice(a.nextRelease, nextAt) : null;
   const fill = fillerFor(a.slug, a.episodeCount ?? (lastAired || null));
   if (nextAt) a.nextRelease = nextAt;
@@ -73,7 +93,8 @@ export async function EpisodesView({ slug, page }: { slug: string; page: number 
         title={<>{a.title} <span className="text-gradient">episodes</span></>}
         subtitle={`${eps.total ? `${eps.total} episodes` : "Episode list"}${a.nextRelease ? ` · next episode ${fmtDate(a.nextRelease, { weekday: "short", month: "short", day: "numeric", timeZone: "Asia/Tokyo" })}` : ""}`}
         facts={[
-          ...(eps.total ? [{ value: String(eps.total), label: "episodes listed" }] : []),
+          ...(eps.total ? [{ value: String(eps.total), label: all ? "in season 1" : "episodes listed" }] : []),
+          ...(all ? [{ value: String(all), label: "in all seasons" }] : []),
           ...(a.status === "current" && lastAired ? [{ value: String(lastAired), label: "aired so far" }] : []),
           ...(fill ? [{ value: String(fill.filler.size), label: "filler to skip" }] : []),
         ]}

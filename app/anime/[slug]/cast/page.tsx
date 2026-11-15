@@ -1,5 +1,5 @@
 import { robotsFor, castIndexed } from "@/lib/indexing";
-import { fitDescription } from "@/lib/titles";
+import { fitTitle, fitDescription } from "@/lib/titles";
 import type { Metadata } from "next";
 import Link from "@/components/Link";
 import { notFound } from "next/navigation";
@@ -36,10 +36,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { a, cast } = await load(slug);
   const mains = (cast?.entries || []).filter((e) => e.role === "MAIN" && e.jp).slice(0, 3);
   const dub = (cast?.entries || []).some((e) => e.en);
-  // Names in the title answer "vinland saga cast" at a glance: who plays the leads.
-  const lead = mains.slice(0, 2).map((e) => `${e.character.name} (${e.jp!.name})`).join(", ");
+  // Names in the title answer "vinland saga cast" at a glance: who plays the leads. Two leads ran to 117-126
+  // characters and Google cut them mid-name, so the title is the longest version that fits (lib/titles.ts).
+  const pair = (e: (typeof mains)[number], full = true) => `${full ? e.character.name : e.character.name.split(" ")[0]} (${e.jp!.name})`;
+  const named = (k: number, full: boolean) => mains.length >= k && `${a.title} Cast: ${mains.slice(0, k).map((e) => pair(e, full)).join(", ")} & More`;
   return {
-    title: lead ? `${a.title} Cast & Voice Actors: ${lead} & More` : `${a.title} Cast & Voice Actors (Japanese and English Dub)`,
+    title: fitTitle([
+      named(2, true), named(2, false), mains[0] && `${a.title} Cast & Voice Actors: ${pair(mains[0])}`, named(1, true), named(1, false),
+      `${a.title} Cast & Voice Actors (Japanese${dub ? " & English Dub" : ""})`, `${a.title} Cast & Voice Actors`,
+    ]),
     description: fitDescription(mains.length
       ? `${dub ? "Japanese and English dub" : "Japanese"} voice actors for the characters of ${a.title}: ${mains.map((e) => `${e.character.name} (${e.jp!.name}${e.en ? ` / ${e.en.name}` : ""})`).join(", ")} and the rest of the cast.`
       : `Characters and voice actors of ${a.title}.`),
