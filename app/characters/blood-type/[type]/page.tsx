@@ -1,4 +1,4 @@
-import { fitDescription } from "@/lib/titles";
+import { fitTitle, fitDescription } from "@/lib/titles";
 import type { Metadata } from "next";
 import Link from "@/components/Link";
 import Image from "next/image";
@@ -38,7 +38,7 @@ function topShows(chars: SnapChar[], n = 6) {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { bt, chars } = load((await params).type);
   return {
-    title: `Anime Characters With Blood Type ${label(bt)} (${chars.length}): ${chars.slice(0, 2).map((c) => c.n).join(", ")} & More`,
+    title: fitTitle([`Anime Characters With Blood Type ${label(bt)} (${chars.length}): ${chars.slice(0, 2).map((c) => c.n).join(", ")} & More`, `Anime Characters With Blood Type ${label(bt)} (${chars.length}): ${chars[0]?.n ?? ""} & More`, `Anime Characters With Blood Type ${label(bt)} (${chars.length})`]),
     description: fitDescription(`${chars.length} popular anime characters whose official blood type is ${label(bt)}, most-loved first: ${chars.slice(0, 4).map((c) => c.n).join(", ")} and more.`),
     alternates: { canonical: `/characters/blood-type/${bt}` },
   };

@@ -1,4 +1,4 @@
-import { fitDescription } from "@/lib/titles";
+import { fitTitle, fitDescription } from "@/lib/titles";
 import type { Metadata } from "next";
 import Link from "@/components/Link";
 import Image from "next/image";
@@ -13,7 +13,7 @@ import { abs } from "@/lib/site";
 export const revalidate = 86400;
 const year = snapGenerated.slice(0, 4);
 export const metadata: Metadata = {
-  title: `Most Popular Anime Characters (${year}) – Top 100 with Age, Height & Voice Actors`,
+  title: fitTitle([`Most Popular Anime Characters (${year}) – Top 100 with Age, Height & Voice Actors`, `Top 100 Anime Characters (${year}): Age, Height & Voice Actors`, `Most Popular Anime Characters (${year}): Top 100`]),
   description: fitDescription("The 100 anime characters fans favourite most on AniList, ranked, plus the most-loved characters of each big series. Every profile has age, height, birthday, zodiac sign and voice actors."),
   alternates: { canonical: "/characters" },
 };
