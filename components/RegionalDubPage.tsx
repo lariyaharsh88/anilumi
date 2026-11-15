@@ -36,16 +36,20 @@ export default async function RegionalDubPage({ lang }: { lang: RegionalLang }) 
   const both = dubs.filter((d) => dubbedIn(L.other).some((x) => x.s === d.s)).length;
   const hindi = dubs.filter((d) => hasHindiDub(d.s)).length;
   const kitsu = await animeBySlugs(dubs.map((d) => d.s), true);
+  // Kitsu followers rank titles the franchise list doesn't know yet (Doraemon, this year's Crunchyroll dubs).
+  const byFollowers = (a: { s: string }, b: { s: string }) => (kitsu.get(b.s)?.userCount ?? 0) - (kitsu.get(a.s)?.userCount ?? 0);
+  dubs.sort(byFollowers); free.sort(byFollowers);
+  for (const p of platforms) p.titles.sort(byFollowers);
   const poster = (s: string, size: "small" | "medium" = "small") => { const a = kitsu.get(s); return a ? posterUrl(a, size) : null; };
   const cards: DubCard[] = dubs.map((d) => ({
-    s: d.s, t: d.t, href: dubHref(d), poster: poster(d.s), year: yearOf(kitsu.get(d.s)), cheapest: cheapest(d),
+    s: d.s, t: d.t, href: dubHref(d), poster: poster(d.s), year: yearOf(kitsu.get(d.s)), cheapest: cheapest(d), checked: d.checked, oneSource: d.confidence === "medium",
     platforms: d.platforms.map((p) => ({ name: p.name, scope: p.scope, url: p.url, kind: platformKind(p.name) })),
   }));
   const top = platforms[0];
   const faq = [
     { q: `Which anime are dubbed in ${L.name}?`, a: dubs.length ? `${dubs.length} anime have an official ${L.name} dub on our list, including ${dubs.slice(0, 8).map((d) => d.t).join(", ")}. Each card above shows where to watch it.` : `We haven't confirmed an official ${L.name} dub yet.` },
     ...(top ? [{ q: `Which app has the most ${L.name} dubbed anime?`, a: `${top.name}, with ${top.titles.length} of them${platforms.length > 1 ? `, followed by ${platforms.slice(1, 3).map((p) => `${p.name} (${p.titles.length})`).join(" and ")}` : ""}. On streaming apps, start an episode and pick ${L.name} in the audio menu.` }] : []),
-    { q: `Can I watch anime in ${L.name} for free?`, a: free.length ? `Yes, legally: ${free.slice(0, 6).map((d) => d.t).join(", ")} stream free on the licensors' YouTube channels or Prime Video's free tier.` : `Not on our list yet: the official ${L.name} dubs are on subscription apps. Free uploads elsewhere are unlicensed.` },
+    { q: `Can I watch anime in ${L.name} for free?`, a: free.length ? `Yes, legally: ${free.slice(0, 6).map((d) => d.t).join(", ")} stream free on ${platforms.filter((p) => p.kind === "free").map((p) => p.name).join(" and ")}.` : `Not on our list yet: the official ${L.name} dubs are on subscription apps. Free uploads elsewhere are unlicensed.` },
     { q: `Do these anime have a ${other.name} and Hindi dub too?`, a: `${both} of the ${dubs.length} also have an official ${other.name} dub and ${hindi} a Hindi dub: Indian dubs are often made together. See the ${other.name} and Hindi lists.` },
     { q: "How was this list checked?", a: `Against each platform's own title page (its audio languages), the licensors' announcements and Indian anime news, on ${regionalDate()}. Fan lists and unofficial uploads never count. Platforms add and drop dubs, so check the audio menu before you start.` },
   ];
@@ -84,7 +88,7 @@ export default async function RegionalDubPage({ lang }: { lang: RegionalLang }) 
       {free.length > 0 && (
         <section id="free" data-section className="reveal pt-10" aria-labelledby="free-h">
           <h2 id="free-h" className="h-section mb-1">Watch anime in {L.name} for free, legally</h2>
-          <p className="mb-4 max-w-3xl text-sm text-muted">These {free.length} official {L.name} dubs cost nothing, on the licensors&apos; own YouTube channels or Prime Video&apos;s free tier.</p>
+          <p className="mb-4 max-w-3xl text-sm text-muted">These {free.length} official {L.name} dubs cost nothing, on {platforms.filter((p) => p.kind === "free").map((p) => p.name).join(" and ")}.</p>
           <ul className="grid grid-cols-3 gap-3 sm:grid-cols-5 lg:grid-cols-8">
             {free.map((d) => (
               <li key={d.s} className="min-w-0">

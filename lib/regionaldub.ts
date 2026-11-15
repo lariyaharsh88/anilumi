@@ -15,12 +15,12 @@ export const LANG: Record<RegionalLang, { name: string; native: string; path: st
 };
 
 type LangDub = { status: "available" | "none_found"; confidence: "high" | "medium"; platforms: DubPlatform[] };
-type Entry = { s: string; t: string; ta?: LangDub; te?: LangDub; sources: string[]; note?: string };
+type Entry = { s: string; t: string; ta?: LangDub; te?: LangDub; sources: string[]; note?: string; checked?: string };
 const D = data as unknown as { checked: string; entries: Entry[] };
 export const REGIONAL_CHECKED = D.checked;
 
 /** One anime's dub in one language, shaped like a Hindi dub entry so the same list and helpers work. */
-export type RegionalDub = { s: string; t: string; confidence: "high" | "medium"; platforms: DubPlatform[] };
+export type RegionalDub = { s: string; t: string; confidence: "high" | "medium"; platforms: DubPlatform[]; checked: string };
 
 const users = new Map((franchises as { franchises: { s: string; u: number }[] }).franchises.map((f) => [f.s, f.u]));
 
@@ -28,7 +28,7 @@ const users = new Map((franchises as { franchises: { s: string; u: number }[] })
 export function dubbedIn(lang: RegionalLang, entries: Entry[] = D.entries): RegionalDub[] {
   return entries.flatMap((e) => {
     const x = e[lang];
-    return x?.status === "available" && x.platforms.length ? [{ s: e.s, t: e.t, confidence: x.confidence, platforms: x.platforms }] : [];
+    return x?.status === "available" && x.platforms.length ? [{ s: e.s, t: e.t, confidence: x.confidence, platforms: x.platforms, checked: e.checked ?? D.checked }] : [];
   }).sort((a, b) => (users.get(b.s) ?? 0) - (users.get(a.s) ?? 0));
 }
 

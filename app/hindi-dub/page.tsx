@@ -7,7 +7,7 @@ import { KIND_CLASS } from "@/components/HindiDub";
 import Image from "next/image";
 import { animeBySlugs, animePath, posterUrl, type Anime } from "@/lib/kitsu";
 import { itemList } from "@/lib/ld";
-import { HINDI_PLATFORMS, byPlatform, dubDate, dubHref, hindiDubbed, notDubbed, platformKind, type PlatformKind } from "@/lib/hindidub";
+import { DUB_CHECKED, HINDI_PLATFORMS, byPlatform, dubDate, dubHref, hindiDubbed, notDubbed, platformKind, type PlatformKind } from "@/lib/hindidub";
 import { fitTitle, fitDescription } from "@/lib/titles";
 import { dubStats, cheapestKind, genreCounts, eraCounts, hindiArrivals, hindiComing, castShows } from "@/lib/hindistats";
 import { premiereAt } from "@/lib/dubschedule";
@@ -51,7 +51,7 @@ export default async function HindiDubHub() {
   const eras = eraCounts(dubbed.map((d) => yearOf(kitsu.get(d.s))));
   const withYear = eras.reduce((n, e) => n + e.value, 0);
   const cards: DubCard[] = dubbed.map((d) => ({
-    s: d.s, t: d.t, href: dubHref(d), poster: poster(d.s), year: yearOf(kitsu.get(d.s)), cheapest: cheapestKind(d),
+    s: d.s, t: d.t, href: dubHref(d), poster: poster(d.s), year: yearOf(kitsu.get(d.s)), cheapest: cheapestKind(d), checked: DUB_CHECKED, oneSource: d.confidence === "medium",
     platforms: d.platforms.map((p) => ({ name: p.name, scope: p.scope, url: p.url, kind: platformKind(p.name) })),
   }));
   const platformPage = (name: string) => { const page = HINDI_PLATFORMS.find((x) => x.match.test(name)); return page ? `/hindi-dub/${page.slug}` : null; };

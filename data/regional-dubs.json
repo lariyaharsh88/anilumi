@@ -1,6 +1,7 @@
 {
- "checked": "2026-11-10",
- "source": "Seeded from data/where-to-watch.json (India audio languages); replaced by the dedicated Tamil/Telugu check.",
+ "checked": "2026-11-15",
+ "reviewed": null,
+ "source": "Each Tamil and Telugu dub checked 15 Nov 2026 against the platform's title page (Netflix India), the licensor's announcement or Indian anime news (Anime News Network, Anime News India, trade press); a single source is marked medium. Fan lists never count.",
  "entries": [
   {
    "s": "attack-on-titan",
@@ -11,8 +12,13 @@
     "platforms": [
      {
       "name": "Anime Times (Prime Video channel)",
-      "scope": "Seasons 1–4 (all seasons)",
+      "scope": "All seasons",
       "url": "https://www.primevideo.com/detail?gti=amzn1.dv.gti.57cdfd42-0c7f-4c3f-b35a-f776cae96d9d"
+     },
+     {
+      "name": "Muse India (YouTube)",
+      "scope": "Season 1",
+      "url": "https://www.animenewsnetwork.com/news/2026-03-16/hindi-tamil-telugu-dubs-of-attack-on-titan-season-1-streams-on-muse-india-youtube-channel/.235358"
      }
     ]
    },
@@ -22,71 +28,39 @@
     "platforms": [
      {
       "name": "Anime Times (Prime Video channel)",
-      "scope": "Seasons 1–4 (all seasons)",
+      "scope": "All seasons",
       "url": "https://www.primevideo.com/detail?gti=amzn1.dv.gti.57cdfd42-0c7f-4c3f-b35a-f776cae96d9d"
+     },
+     {
+      "name": "Muse India (YouTube)",
+      "scope": "Season 1",
+      "url": "https://www.animenewsnetwork.com/news/2026-03-16/hindi-tamil-telugu-dubs-of-attack-on-titan-season-1-streams-on-muse-india-youtube-channel/.235358"
      }
     ]
    },
    "sources": [
-    "https://www.justwatch.com/us/tv-show/attack-on-titan",
-    "https://www.justwatch.com/in/tv-show/attack-on-titan",
-    "https://www.justwatch.com/uk/tv-series/attack-on-titan"
+    "https://animenewsindia.com/2025/02/13/attack-on-titan-now-available-in-hindi-tamil-telugu-and-kannada-on-prime-video-india/",
+    "https://www.animenewsnetwork.com/news/2026-03-16/hindi-tamil-telugu-dubs-of-attack-on-titan-season-1-streams-on-muse-india-youtube-channel/.235358"
    ],
-   "note": ""
+   "note": "Anime Times also has a Kannada dub; Muse India's free uploads cover Season 1 only.",
+   "checked": "2026-11-15"
   },
   {
-   "s": "kimetsu-no-yaiba",
-   "t": "Demon Slayer: Kimetsu no Yaiba",
-   "ta": {
-    "status": "available",
-    "confidence": "high",
-    "platforms": [
-     {
-      "name": "Netflix",
-      "scope": "All TV arcs (5 seasons); Infinity Castle movie",
-      "url": "https://www.netflix.com/title/81091393"
-     },
-     {
-      "name": "JioHotstar",
-      "scope": "Seasons 1–3 (Hindi dub, reported)",
-      "url": "https://www.hotstar.com/in/1971041196"
-     }
-    ]
-   },
-   "te": {
-    "status": "available",
-    "confidence": "high",
-    "platforms": [
-     {
-      "name": "Netflix",
-      "scope": "All TV arcs (5 seasons); Infinity Castle movie",
-      "url": "https://www.netflix.com/title/81091393"
-     },
-     {
-      "name": "JioHotstar",
-      "scope": "Seasons 1–3 (Hindi dub, reported)",
-      "url": "https://www.hotstar.com/in/1971041196"
-     }
-    ]
-   },
-   "sources": [
-    "https://www.justwatch.com/us/tv-show/demon-slayer-kimetsu-no-yaiba",
-    "https://www.justwatch.com/in/tv-show/demon-slayer-kimetsu-no-yaiba",
-    "https://www.justwatch.com/uk/tv-series/demon-slayer-kimetsu-no-yaiba"
-   ],
-   "note": ""
-  },
-  {
-   "s": "jujutsu-kaisen",
-   "t": "JUJUTSU KAISEN",
+   "s": "boku-no-hero-academia",
+   "t": "My Hero Academia",
    "ta": {
     "status": "available",
     "confidence": "high",
     "platforms": [
      {
       "name": "JioHotstar",
-      "scope": "Seasons 1–2 (Sony YAY! Hindi dub)",
-      "url": "https://www.hotstar.com/in/1271461642"
+      "scope": "Seasons 1–8",
+      "url": "https://animenewsindia.com/2026/03/16/my-hero-academia-the-final-season-is-now-streaming-on-jiohotstar-in-hindi-tamil-telugu-dub/"
+     },
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–3 and 8",
+      "url": "https://animemirchi.com/crunchyroll-summer-2026-hindi-tamil-telugu-lineup/"
      }
     ]
    },
@@ -96,24 +70,83 @@
     "platforms": [
      {
       "name": "JioHotstar",
-      "scope": "Seasons 1–2 (Sony YAY! Hindi dub)",
-      "url": "https://www.hotstar.com/in/1271461642"
+      "scope": "Seasons 1–8",
+      "url": "https://animenewsindia.com/2026/03/16/my-hero-academia-the-final-season-is-now-streaming-on-jiohotstar-in-hindi-tamil-telugu-dub/"
+     },
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–3 and 8",
+      "url": "https://animemirchi.com/crunchyroll-summer-2026-hindi-tamil-telugu-lineup/"
      }
     ]
    },
    "sources": [
-    "https://www.justwatch.com/us/tv-show/jujutsu-kaisen",
-    "https://www.justwatch.com/in/tv-show/jujutsu-kaisen",
-    "https://www.justwatch.com/uk/tv-series/jujutsu-kaisen"
+    "https://animenewsindia.com/2026/03/16/my-hero-academia-the-final-season-is-now-streaming-on-jiohotstar-in-hindi-tamil-telugu-dub/",
+    "https://animemirchi.com/crunchyroll-summer-2026-hindi-tamil-telugu-lineup/",
+    "https://animemirchi.com/crunchyroll-spring-2026-hindi-tamil-telugu-lineup/"
    ],
-   "note": ""
+   "note": "Seasons 1–7 use the Cartoon Network India TV dub; Season 7 on Crunchyroll is Hindi-only.",
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "one-punch-man",
+   "t": "One Punch Man",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–3",
+      "url": "https://www.animenewsnetwork.com/news/2026-05-02/hindi-tamil-telugu-dub-of-one-punch-man-anime-streams-on-muse-india/.237012"
+     },
+     {
+      "name": "Sony YAY!",
+      "scope": "Seasons 2–3 (TV)",
+      "url": "https://animenewsindia.com/2026/04/08/sony-yay-to-premiere-one-punch-man-season-3-starting-april-11-2026-in-regional-dubs/"
+     },
+     {
+      "name": "Muse India (YouTube)",
+      "scope": "",
+      "url": "https://www.animenewsnetwork.com/news/2026-05-02/hindi-tamil-telugu-dub-of-one-punch-man-anime-streams-on-muse-india/.237012"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–3",
+      "url": "https://www.animenewsnetwork.com/news/2026-05-02/hindi-tamil-telugu-dub-of-one-punch-man-anime-streams-on-muse-india/.237012"
+     },
+     {
+      "name": "Sony YAY!",
+      "scope": "Seasons 2–3 (TV)",
+      "url": "https://animenewsindia.com/2026/04/08/sony-yay-to-premiere-one-punch-man-season-3-starting-april-11-2026-in-regional-dubs/"
+     },
+     {
+      "name": "Muse India (YouTube)",
+      "scope": "",
+      "url": "https://www.animenewsnetwork.com/news/2026-05-02/hindi-tamil-telugu-dub-of-one-punch-man-anime-streams-on-muse-india/.237012"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2026-05-02/hindi-tamil-telugu-dub-of-one-punch-man-anime-streams-on-muse-india/.237012",
+    "https://animenewsindia.com/2025/10/25/crunchyroll-announces-hindi-tamil-telugu-dub-premieres-for-spy-x-family-my-hero-academia-and-more-for-its-fall-slate-anime-release/",
+    "https://animenewsindia.com/2026/04/08/sony-yay-to-premiere-one-punch-man-season-3-starting-april-11-2026-in-regional-dubs/",
+    "https://animemirchi.com/crunchyroll-spring-2026-hindi-tamil-telugu-lineup/"
+   ],
+   "checked": "2026-11-15"
   },
   {
    "s": "death-note",
    "t": "Death Note",
    "ta": {
     "status": "available",
-    "confidence": "high",
+    "confidence": "medium",
     "platforms": [
      {
       "name": "Anime Times (Prime Video channel)",
@@ -124,7 +157,7 @@
    },
    "te": {
     "status": "available",
-    "confidence": "high",
+    "confidence": "medium",
     "platforms": [
      {
       "name": "Anime Times (Prime Video channel)",
@@ -134,11 +167,264 @@
     ]
    },
    "sources": [
-    "https://www.justwatch.com/us/tv-show/death-note",
-    "https://www.justwatch.com/in/tv-show/death-note",
-    "https://www.justwatch.com/uk/tv-series/death-note"
+    "https://animenewsindia.com/2025/08/21/anime-times-adds-hindi-tamil-and-telugu-dub-of-critically-acclaimed-series-death-note-on-prime-video-channel/"
    ],
-   "note": ""
+   "note": "Netflix India carries Death Note in English and Japanese only.",
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "fullmetal-alchemist-brotherhood",
+   "t": "Fullmetal Alchemist: Brotherhood",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Episodes 1–64 (batches Jul–Oct 2026)",
+      "url": "https://www.animenewsnetwork.com/news/2026-07-24/fullmetal-alchemist-brotherhood-anime-hindi-tamil-telugu-dubs-stream-on-crunchyroll/.239931"
+     },
+     {
+      "name": "Crunchyroll on Sony LIV",
+      "scope": "",
+      "url": "https://respawn.outlookindia.com/pop-culture/pop-culture-news/fullmetal-alchemist-brotherhood-dubs-debut-in-india"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Episodes 1–64 (batches Jul–Oct 2026)",
+      "url": "https://www.animenewsnetwork.com/news/2026-07-24/fullmetal-alchemist-brotherhood-anime-hindi-tamil-telugu-dubs-stream-on-crunchyroll/.239931"
+     },
+     {
+      "name": "Crunchyroll on Sony LIV",
+      "scope": "",
+      "url": "https://respawn.outlookindia.com/pop-culture/pop-culture-news/fullmetal-alchemist-brotherhood-dubs-debut-in-india"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2026-07-24/fullmetal-alchemist-brotherhood-anime-hindi-tamil-telugu-dubs-stream-on-crunchyroll/.239931",
+    "https://respawn.outlookindia.com/pop-culture/pop-culture-news/fullmetal-alchemist-brotherhood-dubs-debut-in-india",
+    "https://animemirchi.com/crunchyroll-fall-2026-hindi-tamil-telugu-lineup/"
+   ],
+   "note": "First-ever Tamil and Telugu dubs; they premiered on Sony LIV before Crunchyroll.",
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "kimetsu-no-yaiba",
+   "t": "Demon Slayer",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Netflix",
+      "scope": "All 5 TV arcs",
+      "url": "https://www.netflix.com/in/title/81091393"
+     },
+     {
+      "name": "Netflix",
+      "scope": "Infinity Castle (movie)",
+      "url": "https://www.netflix.com/in/title/82723106"
+     },
+     {
+      "name": "Crunchyroll",
+      "scope": "Mugen Train to Hashira Training arcs; Infinity Castle movie",
+      "url": "https://www.animenewsnetwork.com/news/2026-07-06/crunchyroll-streams-1st-demon-slayer-infinity-castle-film-with-hindi-tamil-telugu-dubs-on-july-28/.239284"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Netflix",
+      "scope": "All 5 TV arcs",
+      "url": "https://www.netflix.com/in/title/81091393"
+     },
+     {
+      "name": "Netflix",
+      "scope": "Infinity Castle (movie)",
+      "url": "https://www.netflix.com/in/title/82723106"
+     },
+     {
+      "name": "Crunchyroll",
+      "scope": "Mugen Train to Hashira Training arcs; Infinity Castle movie",
+      "url": "https://www.animenewsnetwork.com/news/2026-07-06/crunchyroll-streams-1st-demon-slayer-infinity-castle-film-with-hindi-tamil-telugu-dubs-on-july-28/.239284"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.netflix.com/in/title/81091393",
+    "https://www.netflix.com/in/title/82723106",
+    "https://www.animenewsnetwork.com/press-release/2023-09-30/anime-adventures-await-crunchyroll-announces-three-telugu-dub-series-premiering-soon/.203008",
+    "https://www.animenewsnetwork.com/press-release/2024-05-31/crunchyroll-announces-the-launch-of-demon-slayer-kimetsu-no-yaiba-hashira-training-arc-dubs-in-india/.211401",
+    "https://www.animenewsnetwork.com/news/2024-01-22/solo-leveling-demon-slayer-swordsmith-village-arc-anime-tamil-telugu-dubs-stream-on-crunchyroll/.206737",
+    "https://www.animenewsnetwork.com/news/2026-07-06/crunchyroll-streams-1st-demon-slayer-infinity-castle-film-with-hindi-tamil-telugu-dubs-on-july-28/.239284"
+   ],
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "one-piece",
+   "t": "One Piece",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Egghead and Elbaph arcs (Ep. 1089 onward)",
+      "url": "https://animenewsindia.com/2026/10/25/crunchyroll-brings-complete-catalogue-of-one-piece-to-india-in-sub-dub/"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Egghead and Elbaph arcs (Ep. 1089 onward)",
+      "url": "https://animenewsindia.com/2026/10/25/crunchyroll-brings-complete-catalogue-of-one-piece-to-india-in-sub-dub/"
+     }
+    ]
+   },
+   "sources": [
+    "https://animenewsindia.com/2026/03/28/crunchyroll-to-stream-one-piece-egghead-arc-in-hindi-tamil-and-telugu-from-march-30-2026/",
+    "https://respawn.outlookindia.com/pop-culture/pop-culture-news/crunchyroll-expands-one-piece-egghead-arc-with-regional-dubs",
+    "https://animenewsindia.com/2026/10/25/crunchyroll-brings-complete-catalogue-of-one-piece-to-india-in-sub-dub/"
+   ],
+   "note": "Episodes 1–1088 have no Indian-language dub on Crunchyroll.",
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "ansatsu-kyoushitsu-tv",
+   "t": "Assassination Classroom",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–2",
+      "url": "https://www.animenewsnetwork.com/press-release/2024-01-29/crunchyroll-invites-you-to-tune-in-to-the-hindi-tamil-and-telugu-dub-premieres-of-spy-x-family-/.206973"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–2",
+      "url": "https://www.animenewsnetwork.com/press-release/2024-01-29/crunchyroll-invites-you-to-tune-in-to-the-hindi-tamil-and-telugu-dub-premieres-of-spy-x-family-/.206973"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.animenewsnetwork.com/press-release/2024-01-29/crunchyroll-invites-you-to-tune-in-to-the-hindi-tamil-and-telugu-dub-premieres-of-spy-x-family-/.206973",
+    "https://animemirchi.com/complete-crunchyroll-tamil-dubbed-anime-list/",
+    "https://animemirchi.com/complete-crunchyroll-telugu-dubbed-anime-list/"
+   ],
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "haikyuu",
+   "t": "Haikyuu!!",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–4; Land vs. Air",
+      "url": "https://www.animenewsnetwork.com/news/2025-10-27/haikyu-to-the-top-season-4-anime-gets-hindi-tamil-telugu-dubs-on-november-6/.230329"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–4; Land vs. Air",
+      "url": "https://www.animenewsnetwork.com/news/2025-10-27/haikyu-to-the-top-season-4-anime-gets-hindi-tamil-telugu-dubs-on-november-6/.230329"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2024-05-17/crunchyroll-adds-hindi-tamil-telugu-dubs-of-dr-stone-haikyu-bluelock-more-anime-in-may-june/.210906",
+    "https://www.animenewsnetwork.com/news/2025-10-27/haikyu-to-the-top-season-4-anime-gets-hindi-tamil-telugu-dubs-on-november-6/.230329",
+    "https://www.animenewsnetwork.com/news/2026-07-17/hindi-dubs-for-tomb-raider-king-black-torch-more-anime-stream-on-crunchyroll/.239722",
+    "https://animenewsindia.com/2026/07/15/crunchyroll-announces-hindi-tamil-and-telugu-dub-releases-for-naruto-shippuden-tokyo-ghoul-arifureta-and-new-summer-2026-titles/",
+    "https://animemirchi.com/complete-crunchyroll-tamil-dubbed-anime-list/"
+   ],
+   "note": "Seasons 2–3 dates come from schedule trackers; Seasons 1 and 4 are officially announced.",
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "jujutsu-kaisen",
+   "t": "Jujutsu Kaisen",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–3",
+      "url": "https://www.animenewsnetwork.com/news/2025-12-21/crunchyroll-streams-tamon-b-side-sentenced-to-be-a-hero-more-anime-in-india/.232312"
+     },
+     {
+      "name": "JioHotstar",
+      "scope": "Seasons 1–2 (Sony YAY! dub)",
+      "url": "https://respawn.outlookindia.com/pop-culture/pop-culture-news/anime-hit-jujutsu-kaisen-expands-indian-streaming-footprint"
+     },
+     {
+      "name": "Sony YAY!",
+      "scope": "TV broadcast",
+      "url": "https://www.mediainfoline.com/brand/sony-yay-brings-global-anime-hit-jujutsu-kaisen-to-indian-television-for-the-first-time-ever"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–3",
+      "url": "https://www.animenewsnetwork.com/news/2025-12-21/crunchyroll-streams-tamon-b-side-sentenced-to-be-a-hero-more-anime-in-india/.232312"
+     },
+     {
+      "name": "JioHotstar",
+      "scope": "Seasons 1–2 (Sony YAY! dub)",
+      "url": "https://respawn.outlookindia.com/pop-culture/pop-culture-news/anime-hit-jujutsu-kaisen-expands-indian-streaming-footprint"
+     },
+     {
+      "name": "Sony YAY!",
+      "scope": "TV broadcast",
+      "url": "https://www.mediainfoline.com/brand/sony-yay-brings-global-anime-hit-jujutsu-kaisen-to-indian-television-for-the-first-time-ever"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.animenewsnetwork.com/press-release/2023-09-30/anime-adventures-await-crunchyroll-announces-three-telugu-dub-series-premiering-soon/.203008",
+    "https://www.animenewsnetwork.com/news/2025-12-21/crunchyroll-streams-tamon-b-side-sentenced-to-be-a-hero-more-anime-in-india/.232312",
+    "https://animenewsindia.com/2026/01/24/crunchyroll-announces-winter-2026-regional-dubs-lineup/",
+    "https://respawn.outlookindia.com/pop-culture/pop-culture-news/anime-hit-jujutsu-kaisen-expands-indian-streaming-footprint",
+    "https://www.mediainfoline.com/brand/sony-yay-brings-global-anime-hit-jujutsu-kaisen-to-indian-television-for-the-first-time-ever",
+    "https://animemirchi.com/complete-crunchyroll-tamil-dubbed-anime-list/"
+   ],
+   "note": "Crunchyroll and Sony YAY! use different dubs.",
+   "checked": "2026-11-15"
   },
   {
    "s": "naruto",
@@ -148,105 +434,14 @@
     "confidence": "high",
     "platforms": [
      {
-      "name": "Anime Times (Prime Video channel)",
-      "scope": "Naruto (Hindi, Tamil, Telugu audio)",
-      "url": "https://www.primevideo.com/detail?gti=amzn1.dv.gti.3771d3f8-aa60-474f-915f-e852f1f099f2"
-     }
-    ]
-   },
-   "te": {
-    "status": "available",
-    "confidence": "high",
-    "platforms": [
-     {
-      "name": "Anime Times (Prime Video channel)",
-      "scope": "Naruto (Hindi, Tamil, Telugu audio)",
-      "url": "https://www.primevideo.com/detail?gti=amzn1.dv.gti.3771d3f8-aa60-474f-915f-e852f1f099f2"
-     }
-    ]
-   },
-   "sources": [
-    "https://www.justwatch.com/us/tv-show/naruto",
-    "https://www.justwatch.com/in/tv-show/naruto",
-    "https://www.justwatch.com/uk/tv-series/naruto"
-   ],
-   "note": ""
-  },
-  {
-   "s": "haikyuu",
-   "t": "HAIKYU!!",
-   "ta": {
-    "status": "available",
-    "confidence": "medium",
-    "platforms": [
-     {
-      "name": "JioHotstar",
-      "scope": "Series (Hindi audio, separate dub reported)",
-      "url": "https://www.hotstar.com/in/1271498279"
-     }
-    ]
-   },
-   "te": {
-    "status": "available",
-    "confidence": "medium",
-    "platforms": [
-     {
-      "name": "JioHotstar",
-      "scope": "Series (Hindi audio, separate dub reported)",
-      "url": "https://www.hotstar.com/in/1271498279"
-     }
-    ]
-   },
-   "sources": [
-    "https://www.justwatch.com/us/tv-show/haikyu-2014",
-    "https://www.justwatch.com/in/tv-show/haikyu",
-    "https://www.justwatch.com/uk/tv-series/haikyu-2014"
-   ],
-   "note": ""
-  },
-  {
-   "s": "spy-x-family",
-   "t": "SPY x FAMILY",
-   "ta": {
-    "status": "available",
-    "confidence": "high",
-    "platforms": [
-     {
-      "name": "Anime Times (Prime Video channel)",
-      "scope": "Selected seasons (Muse Hindi dub)",
-      "url": "https://www.primevideo.com/detail?gti=amzn1.dv.gti.0db7769b-e77c-4311-ba26-d908b08310f0"
-     }
-    ]
-   },
-   "te": {
-    "status": "available",
-    "confidence": "high",
-    "platforms": [
-     {
-      "name": "Anime Times (Prime Video channel)",
-      "scope": "Selected seasons (Muse Hindi dub)",
-      "url": "https://www.primevideo.com/detail?gti=amzn1.dv.gti.0db7769b-e77c-4311-ba26-d908b08310f0"
-     }
-    ]
-   },
-   "sources": [
-    "https://www.justwatch.com/us/tv-show/spy-x-family",
-    "https://www.justwatch.com/in/tv-show/spy-x-family",
-    "https://www.justwatch.com/uk/tv-series/spy-x-family"
-   ],
-   "note": ""
-  },
-  {
-   "s": "sousou-no-frieren",
-   "t": "Frieren: Beyond Journey’s End",
-   "ta": {
-    "status": "available",
-    "confidence": "high",
-    "platforms": [
-     {
       "name": "Crunchyroll",
-      "scope": "Seasons 1–2 (Hindi dub; Tamil and Telugu for Season 2)",
-      "url": "https://www.crunchyroll.com/watch/GE00324920ARSA"
+      "scope": "Naruto Seasons 1–9; Shippuden Ep. 1–220",
+      "url": "https://www.animenewsnetwork.com/news/2026-07-04/hindi-tamil-telugu-dubs-of-naruto-shippuden-anime-stream-on-crunchyroll-on-july-6/.239253"
+     },
+     {
+      "name": "Sony YAY!",
+      "scope": "Naruto Shippuden (TV)",
+      "url": "https://animenewsindia.com/2026/10/11/naruto-shippuden-returns-to-sony-yay-with-brand-new-episodes-starting-october-192026/"
      }
     ]
    },
@@ -256,29 +451,265 @@
     "platforms": [
      {
       "name": "Crunchyroll",
-      "scope": "Seasons 1–2 (Hindi dub; Tamil and Telugu for Season 2)",
-      "url": "https://www.crunchyroll.com/watch/GE00324920ARSA"
+      "scope": "Naruto Seasons 1–9; Shippuden Ep. 1–220",
+      "url": "https://www.animenewsnetwork.com/news/2026-07-04/hindi-tamil-telugu-dubs-of-naruto-shippuden-anime-stream-on-crunchyroll-on-july-6/.239253"
+     },
+     {
+      "name": "Sony YAY!",
+      "scope": "Naruto Shippuden (TV)",
+      "url": "https://animenewsindia.com/2026/10/11/naruto-shippuden-returns-to-sony-yay-with-brand-new-episodes-starting-october-192026/"
      }
     ]
    },
    "sources": [
-    "https://www.justwatch.com/us/tv-show/frieren-beyond-journeys-end",
-    "https://www.justwatch.com/in/tv-show/frieren-beyond-journeys-end",
-    "https://www.justwatch.com/uk/tv-series/frieren-beyond-journeys-end"
+    "https://animenewsindia.com/2025/04/12/crunchyroll-adds-hindi-tamil-and-telugu-dubs-of-naruto-in-india/",
+    "https://www.animenewsnetwork.com/news/2025-06-02/crunchyroll-adds-hindi-tamil-telugu-english-dubs-for-naruto-season-7/.225021",
+    "https://www.animenewsnetwork.com/news/2025-06-16/crunchyroll-adds-hindi-tamil-telugu-dubs-for-naruto-seasons-8-9/.225602",
+    "https://www.animenewsnetwork.com/news/2026-07-04/hindi-tamil-telugu-dubs-of-naruto-shippuden-anime-stream-on-crunchyroll-on-july-6/.239253",
+    "https://animenewsindia.com/2026/07/15/crunchyroll-announces-hindi-tamil-and-telugu-dub-releases-for-naruto-shippuden-tokyo-ghoul-arifureta-and-new-summer-2026-titles/",
+    "https://animenewsindia.com/2026/10/11/naruto-shippuden-returns-to-sony-yay-with-brand-new-episodes-starting-october-192026/"
    ],
-   "note": ""
+   "note": "Crunchyroll streams the dub originally made for Sony YAY!.",
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "sword-art-online",
+   "t": "Sword Art Online",
+   "ta": {
+    "status": "available",
+    "confidence": "medium",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–2",
+      "url": "https://animemirchi.com/crunchyroll-fall-2026-hindi-tamil-telugu-lineup/"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "medium",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–2",
+      "url": "https://animemirchi.com/crunchyroll-fall-2026-hindi-tamil-telugu-lineup/"
+     }
+    ]
+   },
+   "sources": [
+    "https://animemirchi.com/crunchyroll-summer-2026-hindi-tamil-telugu-lineup/",
+    "https://animemirchi.com/crunchyroll-fall-2026-hindi-tamil-telugu-lineup/",
+    "https://animemirchi.com/complete-crunchyroll-tamil-dubbed-anime-list/"
+   ],
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "tokyo-ghoul",
+   "t": "Tokyo Ghoul",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–3 (incl. √A and :re)",
+      "url": "https://www.animenewsnetwork.com/news/2026-07-17/hindi-dubs-for-tomb-raider-king-black-torch-more-anime-stream-on-crunchyroll/.239722"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–3 (incl. √A and :re)",
+      "url": "https://www.animenewsnetwork.com/news/2026-07-17/hindi-dubs-for-tomb-raider-king-black-torch-more-anime-stream-on-crunchyroll/.239722"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2026-07-17/hindi-dubs-for-tomb-raider-king-black-torch-more-anime-stream-on-crunchyroll/.239722",
+    "https://animenewsindia.com/2026/07/15/crunchyroll-announces-hindi-tamil-and-telugu-dub-releases-for-naruto-shippuden-tokyo-ghoul-arifureta-and-new-summer-2026-titles/",
+    "https://respawn.outlookindia.com/pop-culture/pop-culture-news/crunchyroll-expands-hindi-tamil-and-telugu-anime-dubs-in-india"
+   ],
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "dr-stone",
+   "t": "Dr. Stone",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–4 (incl. Science Future)",
+      "url": "https://www.animenewsnetwork.com/news/2024-05-17/crunchyroll-adds-hindi-tamil-telugu-dubs-of-dr-stone-haikyu-bluelock-more-anime-in-may-june/.210906"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–4 (incl. Science Future)",
+      "url": "https://www.animenewsnetwork.com/news/2024-05-17/crunchyroll-adds-hindi-tamil-telugu-dubs-of-dr-stone-haikyu-bluelock-more-anime-in-may-june/.210906"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2024-05-17/crunchyroll-adds-hindi-tamil-telugu-dubs-of-dr-stone-haikyu-bluelock-more-anime-in-may-june/.210906",
+    "https://animenewsindia.com/2024/08/17/crunchyroll-announces-regional-dubs-with-popular-anime-titles-to-premiere-in-hindi-tamil-and-telugu-dubbed-in-this-august-and-september/",
+    "https://animenewsindia.com/2024/12/15/crunchyroll-winter-2025-anime-lineup-for-india-in-regional-dubs/",
+    "https://animemirchi.com/crunchyroll-spring-2026-hindi-tamil-telugu-lineup/"
+   ],
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "kono-subarashii-sekai-ni-shukufuku-wo",
+   "t": "KonoSuba",
+   "ta": {
+    "status": "available",
+    "confidence": "medium",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–3; An Explosion on This Wonderful World!",
+      "url": "https://animemirchi.com/crunchyroll-fall-2026-hindi-tamil-telugu-lineup/"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "medium",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–3; An Explosion on This Wonderful World!",
+      "url": "https://animemirchi.com/crunchyroll-fall-2026-hindi-tamil-telugu-lineup/"
+     }
+    ]
+   },
+   "sources": [
+    "https://animemirchi.com/crunchyroll-summer-2026-hindi-tamil-telugu-lineup/",
+    "https://animemirchi.com/crunchyroll-fall-2026-hindi-tamil-telugu-lineup/",
+    "https://animemirchi.com/complete-crunchyroll-tamil-dubbed-anime-list/"
+   ],
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "tensei-shitara-slime-datta-ken",
+   "t": "That Time I Got Reincarnated as a Slime",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–4",
+      "url": "https://www.animenewsnetwork.com/press-release/2024-01-29/crunchyroll-invites-you-to-tune-in-to-the-hindi-tamil-and-telugu-dub-premieres-of-spy-x-family-/.206973"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–4",
+      "url": "https://www.animenewsnetwork.com/press-release/2024-01-29/crunchyroll-invites-you-to-tune-in-to-the-hindi-tamil-and-telugu-dub-premieres-of-spy-x-family-/.206973"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.animenewsnetwork.com/press-release/2024-01-29/crunchyroll-invites-you-to-tune-in-to-the-hindi-tamil-and-telugu-dub-premieres-of-spy-x-family-/.206973",
+    "https://www.animenewsnetwork.com/news/2026-03-29/crunchyroll-simulcasts-agents-of-the-four-seasons-the-food-diary-of-miss-maid-more-anime-in-india/.235819",
+    "https://animemirchi.com/complete-crunchyroll-tamil-dubbed-anime-list/",
+    "https://animemirchi.com/complete-crunchyroll-telugu-dubbed-anime-list/"
+   ],
+   "checked": "2026-11-15"
   },
   {
    "s": "tate-no-yuusha-no-nariagari",
    "t": "The Rising of the Shield Hero",
    "ta": {
     "status": "available",
+    "confidence": "medium",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–4",
+      "url": "https://www.crunchyroll.com/watch/GE00058393TAIN"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "medium",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–4",
+      "url": "https://www.crunchyroll.com/watch/GE00058393TAIN"
+     }
+    ]
+   },
+   "sources": [
+    "https://animemirchi.com/crunchyroll-winter-2026-hindi-tamil-telugu-lineup/",
+    "https://animemirchi.com/crunchyroll-spring-2026-hindi-tamil-telugu-lineup/",
+    "https://animemirchi.com/complete-crunchyroll-tamil-dubbed-anime-list/"
+   ],
+   "note": "Tamil and Telugu were added in 2026; a mid-2025 report listed only an English dub.",
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "jojo-s-bizarre-adventure-2012",
+   "t": "JoJo's Bizarre Adventure",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Netflix",
+      "scope": "Steel Ball Run only",
+      "url": "https://www.netflix.com/in/title/82116553"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Netflix",
+      "scope": "Steel Ball Run only",
+      "url": "https://www.netflix.com/in/title/82116553"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.netflix.com/in/title/82116553",
+    "https://www.netflix.com/in/title/80179831"
+   ],
+   "note": "The earlier JoJo parts on Netflix India have no Tamil or Telugu audio.",
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "black-clover-tv",
+   "t": "Black Clover",
+   "ta": {
+    "status": "available",
     "confidence": "high",
     "platforms": [
      {
       "name": "Crunchyroll",
-      "scope": "Seasons 1–4 (all)",
-      "url": "https://www.crunchyroll.com/watch/GE00058393TAIN"
+      "scope": "Season 1 Part 1 (Ep. 1–51); Season 2",
+      "url": "https://animenewsindia.com/2026/10/29/black-clover-season-1-part-1-is-now-streaming-on-crunchyroll-india-in-hindi-tamil-and-telugu-dubs/"
      }
     ]
    },
@@ -288,17 +719,324 @@
     "platforms": [
      {
       "name": "Crunchyroll",
-      "scope": "Seasons 1–4 (all)",
-      "url": "https://www.crunchyroll.com/watch/GE00058393TAIN"
+      "scope": "Season 1 Part 1 (rolling out); Season 2",
+      "url": "https://animenewsindia.com/2026/10/29/black-clover-season-1-part-1-is-now-streaming-on-crunchyroll-india-in-hindi-tamil-and-telugu-dubs/"
      }
     ]
    },
    "sources": [
-    "https://anilist.co/anime/99263",
-    "https://www.crunchyroll.com/series/G6W4QKX0R/the-rising-of-the-shield-hero",
-    "https://www.justwatch.com/in/tv-show/the-rising-of-the-shield-hero"
+    "https://animenewsindia.com/2026/10/29/black-clover-season-1-part-1-is-now-streaming-on-crunchyroll-india-in-hindi-tamil-and-telugu-dubs/",
+    "https://www.animenewsnetwork.com/news/2026-10-02/crunchyroll-streams-a-tale-of-the-secret-saint-psyren-more-anime-in-india/.242409"
    ],
-   "note": ""
+   "note": "Netflix India has Black Clover in Japanese only.",
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "dragon-ball",
+   "t": "Dragon Ball",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Cartoon Network India",
+      "scope": "Dragon Ball (1986), Dragon Ball Z Kai, Dragon Ball Super",
+      "url": "https://www.animenewsnetwork.com/news/2024-08-16/cartoon-network-india-airs-dragon-ball-anime-on-august-25/.214314"
+     },
+     {
+      "name": "Crunchyroll",
+      "scope": "Dragon Ball DAIMA; Dragon Ball Super: Beerus",
+      "url": "https://www.animenewsnetwork.com/press-release/2024-11-06/crunchyroll-announces-the-launch-of-dragon-ball-daima-dubs-in-india-this-november/.217571"
+     },
+     {
+      "name": "Discovery+",
+      "scope": "Dragon Ball Z Kai",
+      "url": "https://animenewsindia.com/2025/05/01/dbz-kai-streaming-discovery-plus-india-hindi-tamil-telugu/"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Cartoon Network India",
+      "scope": "Dragon Ball (1986), Dragon Ball Z Kai, Dragon Ball Super",
+      "url": "https://www.animenewsnetwork.com/news/2024-08-16/cartoon-network-india-airs-dragon-ball-anime-on-august-25/.214314"
+     },
+     {
+      "name": "Crunchyroll",
+      "scope": "Dragon Ball DAIMA; Dragon Ball Super: Beerus",
+      "url": "https://www.animenewsnetwork.com/press-release/2024-11-06/crunchyroll-announces-the-launch-of-dragon-ball-daima-dubs-in-india-this-november/.217571"
+     },
+     {
+      "name": "Discovery+",
+      "scope": "Dragon Ball Z Kai",
+      "url": "https://animenewsindia.com/2025/05/01/dbz-kai-streaming-discovery-plus-india-hindi-tamil-telugu/"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2024-08-16/cartoon-network-india-airs-dragon-ball-anime-on-august-25/.214314",
+    "https://indiantelevision.com/news-headline/cartoon-network-to-telecast-dragon-ball-super-in-hindi-tamil-and-telugu",
+    "https://www.mediainfoline.com/entertainment/cartoon-network-premiers-dragon-ball-z-kai-from-april-16",
+    "https://www.animenewsnetwork.com/press-release/2024-11-06/crunchyroll-announces-the-launch-of-dragon-ball-daima-dubs-in-india-this-november/.217571",
+    "https://animenewsindia.com/2026/11/13/dragon-ball-super-beerus-2026-is-now-streaming-on-crunchyroll-in-english-hindi-tamil-and-telugu-dubs/",
+    "https://animenewsindia.com/2025/05/01/dbz-kai-streaming-discovery-plus-india-hindi-tamil-telugu/"
+   ],
+   "note": "Netflix India's Dragon Ball Z is Japanese-only.",
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "overlord",
+   "t": "Overlord",
+   "ta": {
+    "status": "available",
+    "confidence": "medium",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–4",
+      "url": "https://www.crunchyroll.com/watch/GE00253631TEIN"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "medium",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–4",
+      "url": "https://www.crunchyroll.com/watch/GE00253631TEIN"
+     }
+    ]
+   },
+   "sources": [
+    "https://animemirchi.com/crunchyroll-summer-2026-hindi-tamil-telugu-lineup/",
+    "https://animemirchi.com/complete-crunchyroll-tamil-dubbed-anime-list/",
+    "https://animemirchi.com/complete-crunchyroll-telugu-dubbed-anime-list/"
+   ],
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "black-butler",
+   "t": "Black Butler",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Public School Arc; Emerald Witch Arc",
+      "url": "https://www.animenewsnetwork.com/news/2024-03-16/kaiju-no-8-black-butler-public-school-arc-6-more-anime-simulcast-on-crunchyroll-in-india/.208803"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Public School Arc; Emerald Witch Arc",
+      "url": "https://www.animenewsnetwork.com/news/2024-03-16/kaiju-no-8-black-butler-public-school-arc-6-more-anime-simulcast-on-crunchyroll-in-india/.208803"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2024-03-16/kaiju-no-8-black-butler-public-school-arc-6-more-anime-simulcast-on-crunchyroll-in-india/.208803",
+    "https://animenewsindia.com/2025/03/20/crunchyroll-reveals-spring-2025-anime-season-lineup-30-new-titles-including-fire-force-season-3-my-hero-academia-vigilantes-and-more/"
+   ],
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "spy-x-family",
+   "t": "Spy x Family",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–3",
+      "url": "https://www.animenewsnetwork.com/press-release/2024-01-29/crunchyroll-invites-you-to-tune-in-to-the-hindi-tamil-and-telugu-dub-premieres-of-spy-x-family-/.206973"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–3",
+      "url": "https://www.animenewsnetwork.com/press-release/2024-01-29/crunchyroll-invites-you-to-tune-in-to-the-hindi-tamil-and-telugu-dub-premieres-of-spy-x-family-/.206973"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.animenewsnetwork.com/press-release/2024-01-29/crunchyroll-invites-you-to-tune-in-to-the-hindi-tamil-and-telugu-dub-premieres-of-spy-x-family-/.206973",
+    "https://animenewsindia.com/2025/10/25/crunchyroll-announces-hindi-tamil-telugu-dub-premieres-for-spy-x-family-my-hero-academia-and-more-for-its-fall-slate-anime-release/"
+   ],
+   "note": "Netflix India has Hindi but not Tamil or Telugu.",
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "mahoutsukai-no-yome",
+   "t": "The Ancient Magus' Bride",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1",
+      "url": "https://www.animenewsnetwork.com/press-release/2024-01-29/crunchyroll-invites-you-to-tune-in-to-the-hindi-tamil-and-telugu-dub-premieres-of-spy-x-family-/.206973"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1",
+      "url": "https://www.animenewsnetwork.com/press-release/2024-01-29/crunchyroll-invites-you-to-tune-in-to-the-hindi-tamil-and-telugu-dub-premieres-of-spy-x-family-/.206973"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.animenewsnetwork.com/press-release/2024-01-29/crunchyroll-invites-you-to-tune-in-to-the-hindi-tamil-and-telugu-dub-premieres-of-spy-x-family-/.206973"
+   ],
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "yuri-on-ice",
+   "t": "Yuri!!! On ICE",
+   "ta": {
+    "status": "available",
+    "confidence": "medium",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1",
+      "url": "https://animemirchi.com/crunchyroll-winter-2026-hindi-tamil-telugu-lineup/"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "medium",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1",
+      "url": "https://animemirchi.com/crunchyroll-winter-2026-hindi-tamil-telugu-lineup/"
+     }
+    ]
+   },
+   "sources": [
+    "https://animemirchi.com/crunchyroll-winter-2026-hindi-tamil-telugu-lineup/",
+    "https://animemirchi.com/complete-crunchyroll-tamil-dubbed-anime-list/"
+   ],
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "vinland-saga",
+   "t": "Vinland Saga",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–2",
+      "url": "https://www.animenewsnetwork.com/news/2023-12-17/vinland-saga-season-1-trapped-in-a-dating-sim-anime-get-indian-language-dubs/.205581"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–2",
+      "url": "https://www.animenewsnetwork.com/news/2023-12-17/vinland-saga-season-1-trapped-in-a-dating-sim-anime-get-indian-language-dubs/.205581"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.animenewsnetwork.com/press-release/2023-09-30/anime-adventures-await-crunchyroll-announces-three-telugu-dub-series-premiering-soon/.203008",
+    "https://www.animenewsnetwork.com/news/2023-12-17/vinland-saga-season-1-trapped-in-a-dating-sim-anime-get-indian-language-dubs/.205581",
+    "https://animemirchi.com/complete-crunchyroll-telugu-dubbed-anime-list/"
+   ],
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "ghost-in-the-shell-stand-alone-complex",
+   "t": "Ghost in the Shell: Stand Alone Complex",
+   "ta": {
+    "status": "available",
+    "confidence": "medium",
+    "platforms": [
+     {
+      "name": "Anime Times (Prime Video channel)",
+      "scope": "Season 1, 2nd GIG, Solid State Society",
+      "url": "https://animemirchi.com/ghost-in-the-shell-sac-s1-hindi-tamil-telugu-dubs/"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "medium",
+    "platforms": [
+     {
+      "name": "Anime Times (Prime Video channel)",
+      "scope": "Season 1, 2nd GIG, Solid State Society",
+      "url": "https://animemirchi.com/ghost-in-the-shell-sac-s1-hindi-tamil-telugu-dubs/"
+     }
+    ]
+   },
+   "sources": [
+    "https://animemirchi.com/ghost-in-the-shell-sac-s1-hindi-tamil-telugu-dubs/",
+    "https://animemirchi.com/ghost-in-the-shell-sac-2nd-gig-hindi-tamil-telugu/"
+   ],
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "trigun",
+   "t": "Trigun",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Trigun Stargaze (2026) only",
+      "url": "https://www.animenewsnetwork.com/news/2025-12-21/crunchyroll-streams-tamon-b-side-sentenced-to-be-a-hero-more-anime-in-india/.232312"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Trigun Stargaze (2026) only",
+      "url": "https://www.animenewsnetwork.com/news/2025-12-21/crunchyroll-streams-tamon-b-side-sentenced-to-be-a-hero-more-anime-in-india/.232312"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2025-12-21/crunchyroll-streams-tamon-b-side-sentenced-to-be-a-hero-more-anime-in-india/.232312",
+    "https://animenewsindia.com/2026/01/24/crunchyroll-announces-winter-2026-regional-dubs-lineup/"
+   ],
+   "note": "Only the 2026 sequel Trigun Stargaze is dubbed in Tamil and Telugu.",
+   "checked": "2026-11-15"
   },
   {
    "s": "solo-leveling",
@@ -309,7 +1047,7 @@
     "platforms": [
      {
       "name": "Crunchyroll",
-      "scope": "Seasons 1–2 (all)",
+      "scope": "Seasons 1–2",
       "url": "https://www.crunchyroll.com/watch/GE00320669PLPL"
      }
     ]
@@ -320,29 +1058,29 @@
     "platforms": [
      {
       "name": "Crunchyroll",
-      "scope": "Seasons 1–2 (all)",
+      "scope": "Seasons 1–2",
       "url": "https://www.crunchyroll.com/watch/GE00320669PLPL"
      }
     ]
    },
    "sources": [
-    "https://anilist.co/anime/151807",
-    "https://etvbharat.com/en/!entertainment/solo-leveling-season-2-dubs-to-be-out-on-this-date-rana-daggubati-as-powerful-barca-in-hindi-tamil-and-telugu-version-enn25012101959",
-    "https://www.animenewsnetwork.com/news/2023-12-12/crunchyroll-hosts-screening-of-solo-leveling-anime-in-mumbai-on-december-20-adds-hindi-dub-on-/.205413"
+    "https://www.animenewsnetwork.com/news/2024-01-22/solo-leveling-demon-slayer-swordsmith-village-arc-anime-tamil-telugu-dubs-stream-on-crunchyroll/.206737",
+    "https://www.animenewsnetwork.com/news/2025-01-26/2nd-seasons-of-solo-leveling-the-apothecary-diaries-anime-get-indian-dubs/.220462",
+    "https://animenewsindia.com/2025/01/22/crunchyroll-announces-the-hindi-tamil-and-telugu-dubs-releases-of-solo-leveling-season-2-on-26th-january/"
    ],
-   "note": ""
+   "checked": "2026-11-15"
   },
   {
-   "s": "sono-bisque-doll-wa-koi-wo-suru",
-   "t": "My Dress-Up Darling",
+   "s": "sousou-no-frieren",
+   "t": "Frieren: Beyond Journey's End",
    "ta": {
     "status": "available",
     "confidence": "high",
     "platforms": [
      {
       "name": "Crunchyroll",
-      "scope": "Seasons 1–2 (all)",
-      "url": "https://www.crunchyroll.com/watch/GQJUGVQEZ"
+      "scope": "Seasons 1–2",
+      "url": "https://www.crunchyroll.com/watch/GE00324920ARSA"
      }
     ]
    },
@@ -352,60 +1090,29 @@
     "platforms": [
      {
       "name": "Crunchyroll",
-      "scope": "Seasons 1–2 (all)",
-      "url": "https://www.crunchyroll.com/watch/GQJUGVQEZ"
+      "scope": "Seasons 1–2",
+      "url": "https://www.crunchyroll.com/watch/GE00324920ARSA"
      }
     ]
    },
    "sources": [
-    "https://anilist.co/anime/132405",
-    "https://www.justwatch.com/in/tv-show/my-dress-up-darling",
-    "https://www.justwatch.com/uk/tv-series/my-dress-up-darling"
+    "https://www.animenewsnetwork.com/press-release/2023-09-30/anime-adventures-await-crunchyroll-announces-three-telugu-dub-series-premiering-soon/.203008",
+    "https://www.animenewsnetwork.com/press-release/2024-07-19/crunchyroll-announces-the-hindi-tamil-and-telugu-dub-premieres-of-summer-and-catalogue-titles-like-/.213387",
+    "https://animenewsindia.com/2026/01/24/crunchyroll-announces-winter-2026-regional-dubs-lineup/"
    ],
-   "note": ""
-  },
-  {
-   "s": "overlord",
-   "t": "Overlord",
-   "ta": {
-    "status": "available",
-    "confidence": "high",
-    "platforms": [
-     {
-      "name": "Crunchyroll",
-      "scope": "Seasons 1–4 (all)",
-      "url": "https://www.crunchyroll.com/watch/GE00253631TEIN"
-     }
-    ]
-   },
-   "te": {
-    "status": "available",
-    "confidence": "high",
-    "platforms": [
-     {
-      "name": "Crunchyroll",
-      "scope": "Seasons 1–4 (all)",
-      "url": "https://www.crunchyroll.com/watch/GE00253631TEIN"
-     }
-    ]
-   },
-   "sources": [
-    "https://anilist.co/anime/20832",
-    "https://animemirchi.com/?p=7091",
-    "https://animemirchi.com/overlord-anime-in-hindi-on-zee-cafe-india/"
-   ],
-   "note": ""
+   "note": "Netflix India has Hindi only.",
+   "checked": "2026-11-15"
   },
   {
    "s": "DAN-DA-DAN",
-   "t": "DAN DA DAN",
+   "t": "Dan Da Dan",
    "ta": {
     "status": "available",
     "confidence": "high",
     "platforms": [
      {
       "name": "Crunchyroll",
-      "scope": "Seasons 1–2 (all)",
+      "scope": "Seasons 1–2",
       "url": "https://www.crunchyroll.com/watch/GVWU8NKGQ"
      }
     ]
@@ -416,17 +1123,113 @@
     "platforms": [
      {
       "name": "Crunchyroll",
-      "scope": "Seasons 1–2 (all)",
+      "scope": "Seasons 1–2",
       "url": "https://www.crunchyroll.com/watch/GVWU8NKGQ"
      }
     ]
    },
    "sources": [
-    "https://anilist.co/anime/171018",
-    "https://animenewsindia.com/2024/10/18/muse-asia-announces-the-hindi-dub-premiere-date-for-dandadan-on-ott-platforms-updated",
-    "https://animenewsnetwork.com/news/2024-11-18/dan-da-dan-anime-hindi-dub-streams-on-muse-india/.217965"
+    "https://animenewsindia.com/2024/10/03/crunchyroll-revealed-fall-2024-anime-season-lineup-dragon-ball-daima-dandadan-more-coming-to-this-october-in-india/",
+    "https://animenewsindia.com/2025/06/19/crunchyroll-announces-summer-2025-anime-season-lineup-for-india/",
+    "https://animemirchi.com/complete-crunchyroll-tamil-dubbed-anime-list/"
    ],
-   "note": ""
+   "note": "Netflix India has English and Japanese only.",
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "kaijuu-8-gou",
+   "t": "Kaiju No. 8",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–2; Narumi's Week at Work OVA",
+      "url": "https://www.crunchyroll.com/series/GG5H5XQ7D/kaiju-no-8"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–2; Narumi's Week at Work OVA",
+      "url": "https://www.crunchyroll.com/series/GG5H5XQ7D/kaiju-no-8"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2024-03-28/kaiju-no-8-anime-gets-hindi-tamil-telugu-simuldubs/.209286",
+    "https://animenewsindia.com/2025/06/19/crunchyroll-announces-summer-2025-anime-season-lineup-for-india/",
+    "https://animemirchi.com/complete-crunchyroll-tamil-dubbed-anime-list/"
+   ],
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "blue-lock",
+   "t": "Blue Lock",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–2",
+      "url": "https://www.crunchyroll.com/watch/GE00257767PLPL"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–2",
+      "url": "https://www.crunchyroll.com/watch/GE00257767PLPL"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2024-05-17/crunchyroll-adds-hindi-tamil-telugu-dubs-of-dr-stone-haikyu-bluelock-more-anime-in-may-june/.210906",
+    "https://animenewsindia.com/2024/08/17/crunchyroll-announces-regional-dubs-with-popular-anime-titles-to-premiere-in-hindi-tamil-and-telugu-dubbed-in-this-august-and-september/",
+    "https://animenewsindia.com/2024/10/03/crunchyroll-revealed-fall-2024-anime-season-lineup-dragon-ball-daima-dandadan-more-coming-to-this-october-in-india/"
+   ],
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "mashle",
+   "t": "Mashle: Magic and Muscles",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–2",
+      "url": "https://www.crunchyroll.com/series/GDKHZEP8W/mashle-magic-and-muscles"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–2",
+      "url": "https://www.crunchyroll.com/series/GDKHZEP8W/mashle-magic-and-muscles"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2024-05-17/crunchyroll-adds-hindi-tamil-telugu-dubs-of-dr-stone-haikyu-bluelock-more-anime-in-may-june/.210906",
+    "https://animenewsindia.com/2024/08/17/crunchyroll-announces-regional-dubs-with-popular-anime-titles-to-premiere-in-hindi-tamil-and-telugu-dubbed-in-this-august-and-september/"
+   ],
+   "checked": "2026-11-15"
   },
   {
    "s": "kusuriya-no-hitorigoto",
@@ -437,13 +1240,13 @@
     "platforms": [
      {
       "name": "Crunchyroll",
-      "scope": "Seasons 1–3 (all)",
+      "scope": "Seasons 1–3",
       "url": "https://www.crunchyroll.com/watch/GE00325115ARSA"
      },
      {
       "name": "Netflix",
-      "scope": "Seasons 1–3 (Netflix numbering)",
-      "url": "https://www.netflix.com/title/81712068"
+      "scope": "Seasons 1–3",
+      "url": "https://www.netflix.com/in/title/81712068"
      }
     ]
    },
@@ -453,34 +1256,71 @@
     "platforms": [
      {
       "name": "Crunchyroll",
-      "scope": "Seasons 1–3 (all)",
+      "scope": "Seasons 1–3",
       "url": "https://www.crunchyroll.com/watch/GE00325115ARSA"
      },
      {
       "name": "Netflix",
-      "scope": "Seasons 1–3 (Netflix numbering)",
-      "url": "https://www.netflix.com/title/81712068"
+      "scope": "Seasons 1–3",
+      "url": "https://www.netflix.com/in/title/81712068"
      }
     ]
    },
    "sources": [
-    "https://anilist.co/anime/161645",
+    "https://www.netflix.com/in/title/81712068",
+    "https://www.animenewsnetwork.com/press-release/2024-07-19/crunchyroll-announces-the-hindi-tamil-and-telugu-dub-premieres-of-summer-and-catalogue-titles-like-/.213387",
     "https://www.animenewsnetwork.com/news/2025-01-26/2nd-seasons-of-solo-leveling-the-apothecary-diaries-anime-get-indian-dubs/.220462",
-    "https://www.justwatch.com/in/tv-show/the-apothecary-diaries"
+    "https://www.animenewsnetwork.com/news/2026-10-02/crunchyroll-streams-a-tale-of-the-secret-saint-psyren-more-anime-in-india/.242409"
    ],
-   "note": ""
+   "checked": "2026-11-15"
   },
   {
-   "s": "tower-of-god",
-   "t": "Tower of God",
+   "s": "scarlet",
+   "t": "Scarlet",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Netflix",
+      "scope": "Movie",
+      "url": "https://www.netflix.com/in/title/82888057"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Netflix",
+      "scope": "Movie",
+      "url": "https://www.netflix.com/in/title/82888057"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.netflix.com/in/title/82888057",
+    "https://www.animenewsnetwork.com/news/2026-05-23/hindi-tamil-telugu-dubs-of-mamoru-hosoda-scarlet-anime-film-stream-on-netflix/.237708"
+   ],
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "daemons-of-the-shadow-realm",
+   "t": "Daemons of the Shadow Realm",
    "ta": {
     "status": "available",
     "confidence": "high",
     "platforms": [
      {
       "name": "Crunchyroll",
-      "scope": "Seasons 1–2 (all)",
-      "url": "https://www.crunchyroll.com/watch/GE00257751ARSA"
+      "scope": "Season 1",
+      "url": "https://www.animenewsnetwork.com/news/2026-03-29/crunchyroll-simulcasts-agents-of-the-four-seasons-the-food-diary-of-miss-maid-more-anime-in-india/.235819"
+     },
+     {
+      "name": "Netflix",
+      "scope": "Season 1",
+      "url": "https://www.netflix.com/in/title/82719204"
      }
     ]
    },
@@ -490,29 +1330,64 @@
     "platforms": [
      {
       "name": "Crunchyroll",
-      "scope": "Seasons 1–2 (all)",
-      "url": "https://www.crunchyroll.com/watch/GE00257751ARSA"
+      "scope": "Season 1",
+      "url": "https://www.animenewsnetwork.com/news/2026-03-29/crunchyroll-simulcasts-agents-of-the-four-seasons-the-food-diary-of-miss-maid-more-anime-in-india/.235819"
+     },
+     {
+      "name": "Netflix",
+      "scope": "Season 1",
+      "url": "https://www.netflix.com/in/title/82719204"
      }
     ]
    },
    "sources": [
-    "https://anilist.co/anime/115230",
-    "https://www.justwatch.com/in/tv-show/tower-of-god",
-    "https://www.justwatch.com/uk/tv-series/tower-of-god"
+    "https://www.animenewsnetwork.com/news/2026-03-29/crunchyroll-simulcasts-agents-of-the-four-seasons-the-food-diary-of-miss-maid-more-anime-in-india/.235819",
+    "https://www.netflix.com/in/title/82719204"
    ],
-   "note": ""
+   "checked": "2026-11-15"
   },
   {
-   "s": "oshi-no-ko",
-   "t": "OSHI NO KO",
+   "s": "ao-no-hako",
+   "t": "Blue Box",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Netflix",
+      "scope": "Seasons 1–2",
+      "url": "https://www.netflix.com/in/title/81663323"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Netflix",
+      "scope": "Seasons 1–2",
+      "url": "https://www.netflix.com/in/title/81663323"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.netflix.com/in/title/81663323",
+    "https://animemirchi.com/netflix-fall-2026-hindi-tamil-telugu-dub-anime/"
+   ],
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "wind-breaker",
+   "t": "Wind Breaker",
    "ta": {
     "status": "available",
     "confidence": "high",
     "platforms": [
      {
       "name": "Crunchyroll",
-      "scope": "Seasons 1–3 (all)",
-      "url": "https://www.crunchyroll.com/watch/GE00366795HIIN"
+      "scope": "Seasons 1–2",
+      "url": "https://animenewsindia.com/2025/03/20/crunchyroll-reveals-spring-2025-anime-season-lineup-30-new-titles-including-fire-force-season-3-my-hero-academia-vigilantes-and-more/"
      }
     ]
    },
@@ -522,29 +1397,29 @@
     "platforms": [
      {
       "name": "Crunchyroll",
-      "scope": "Seasons 1–3 (all)",
-      "url": "https://www.crunchyroll.com/watch/GE00366795HIIN"
+      "scope": "Seasons 1–2",
+      "url": "https://animenewsindia.com/2025/03/20/crunchyroll-reveals-spring-2025-anime-season-lineup-30-new-titles-including-fire-force-season-3-my-hero-academia-vigilantes-and-more/"
      }
     ]
    },
    "sources": [
-    "https://anilist.co/anime/150672",
-    "https://www.justwatch.com/in/tv-show/oshi-no-ko",
-    "https://www.justwatch.com/uk/tv-series/oshi-no-ko"
+    "https://animenewsindia.com/2025/03/20/crunchyroll-reveals-spring-2025-anime-season-lineup-30-new-titles-including-fire-force-season-3-my-hero-academia-vigilantes-and-more/",
+    "https://animemirchi.com/complete-crunchyroll-tamil-dubbed-anime-list/",
+    "https://animemirchi.com/complete-crunchyroll-telugu-dubbed-anime-list/"
    ],
-   "note": ""
+   "checked": "2026-11-15"
   },
   {
-   "s": "blue-lock",
-   "t": "BLUE LOCK",
+   "s": "shangri-la-frontier",
+   "t": "Shangri-La Frontier",
    "ta": {
     "status": "available",
     "confidence": "high",
     "platforms": [
      {
       "name": "Crunchyroll",
-      "scope": "Seasons 1–2 (38 episodes)",
-      "url": "https://www.crunchyroll.com/watch/GE00257767PLPL"
+      "scope": "Seasons 1–2",
+      "url": "https://animenewsindia.com/2024/10/03/crunchyroll-revealed-fall-2024-anime-season-lineup-dragon-ball-daima-dandadan-more-coming-to-this-october-in-india/"
      }
     ]
    },
@@ -554,17 +1429,17 @@
     "platforms": [
      {
       "name": "Crunchyroll",
-      "scope": "Seasons 1–2 (38 episodes)",
-      "url": "https://www.crunchyroll.com/watch/GE00257767PLPL"
+      "scope": "Seasons 1–2",
+      "url": "https://animenewsindia.com/2024/10/03/crunchyroll-revealed-fall-2024-anime-season-lineup-dragon-ball-daima-dandadan-more-coming-to-this-october-in-india/"
      }
     ]
    },
    "sources": [
-    "https://anilist.co/anime/137822",
-    "https://animemirchi.com/?p=7091",
-    "https://animenewsindia.com/2024/05/17/crunchyroll-announces-exciting-summer-2024-regional-dubs-lineup-for-may-june"
+    "https://www.animenewsnetwork.com/press-release/2024-07-19/crunchyroll-announces-the-hindi-tamil-and-telugu-dub-premieres-of-summer-and-catalogue-titles-like-/.213387",
+    "https://animenewsindia.com/2024/10/03/crunchyroll-revealed-fall-2024-anime-season-lineup-dragon-ball-daima-dandadan-more-coming-to-this-october-in-india/",
+    "https://animemirchi.com/complete-crunchyroll-tamil-dubbed-anime-list/"
    ],
-   "note": ""
+   "checked": "2026-11-15"
   },
   {
    "s": "the-god-of-highschool-series",
@@ -577,11 +1452,6 @@
       "name": "Crunchyroll",
       "scope": "Season 1",
       "url": "https://www.crunchyroll.com/the-god-of-high-school"
-     },
-     {
-      "name": "Crunchyroll on Sony LIV",
-      "scope": "Season 1",
-      "url": ""
      }
     ]
    },
@@ -593,104 +1463,485 @@
       "name": "Crunchyroll",
       "scope": "Season 1",
       "url": "https://www.crunchyroll.com/the-god-of-high-school"
-     },
-     {
-      "name": "Crunchyroll on Sony LIV",
-      "scope": "Season 1",
-      "url": ""
      }
     ]
    },
    "sources": [
-    "https://www.justwatch.com/us/tv-show/the-god-of-high-school",
-    "https://www.justwatch.com/in/tv-show/the-god-of-high-school",
-    "https://www.justwatch.com/uk/tv-series/the-god-of-high-school"
+    "https://animemirchi.com/complete-crunchyroll-tamil-dubbed-anime-list/",
+    "https://animemirchi.com/complete-crunchyroll-telugu-dubbed-anime-list/"
    ],
-   "note": ""
+   "checked": "2026-11-15"
   },
   {
-   "s": "mashle",
-   "t": "MASHLE: MAGIC AND MUSCLES",
+   "s": "arifureta-shokugyou-de-sekai-saikyou",
+   "t": "Arifureta: From Commonplace to World's Strongest",
    "ta": {
     "status": "available",
-    "confidence": "medium",
+    "confidence": "high",
     "platforms": [
      {
       "name": "Crunchyroll",
-      "scope": "Seasons 1–2",
-      "url": "https://www.crunchyroll.com/series/GDKHZEP8W/mashle-magic-and-muscles"
-     },
-     {
-      "name": "Crunchyroll on Sony LIV",
-      "scope": "Season 1",
-      "url": ""
+      "scope": "Seasons 1–3",
+      "url": "https://www.animenewsnetwork.com/news/2026-07-17/hindi-dubs-for-tomb-raider-king-black-torch-more-anime-stream-on-crunchyroll/.239722"
      }
     ]
    },
    "te": {
     "status": "available",
-    "confidence": "medium",
+    "confidence": "high",
     "platforms": [
      {
       "name": "Crunchyroll",
-      "scope": "Seasons 1–2",
-      "url": "https://www.crunchyroll.com/series/GDKHZEP8W/mashle-magic-and-muscles"
-     },
-     {
-      "name": "Crunchyroll on Sony LIV",
-      "scope": "Season 1",
-      "url": ""
+      "scope": "Seasons 1–3",
+      "url": "https://www.animenewsnetwork.com/news/2026-07-17/hindi-dubs-for-tomb-raider-king-black-torch-more-anime-stream-on-crunchyroll/.239722"
      }
     ]
    },
    "sources": [
-    "https://www.justwatch.com/us/tv-show/mashle-magic-and-muscles",
-    "https://www.justwatch.com/in/tv-show/mashle-magic-and-muscles",
-    "https://www.justwatch.com/uk/tv-series/mashle-magic-and-muscles"
+    "https://www.animenewsnetwork.com/news/2026-07-17/hindi-dubs-for-tomb-raider-king-black-torch-more-anime-stream-on-crunchyroll/.239722",
+    "https://animenewsindia.com/2026/07/15/crunchyroll-announces-hindi-tamil-and-telugu-dub-releases-for-naruto-shippuden-tokyo-ghoul-arifureta-and-new-summer-2026-titles/",
+    "https://respawn.outlookindia.com/pop-culture/pop-culture-news/crunchyroll-expands-hindi-tamil-and-telugu-anime-dubs-in-india"
    ],
-   "note": ""
+   "checked": "2026-11-15"
   },
   {
-   "s": "kaijuu-8-gou",
-   "t": "Kaiju No. 8",
+   "s": "otomege-sekai-wa-mob-ni-kibishii-sekai-desu",
+   "t": "Trapped in a Dating Sim: The World of Otome Games Is Tough for Mobs",
    "ta": {
     "status": "available",
-    "confidence": "medium",
+    "confidence": "high",
     "platforms": [
      {
       "name": "Crunchyroll",
       "scope": "Seasons 1–2",
-      "url": "https://www.crunchyroll.com/series/GG5H5XQ7D/kaiju-no-8"
-     },
-     {
-      "name": "Crunchyroll on Sony LIV",
-      "scope": "Seasons 1–2",
-      "url": "https://www.sonyliv.com/shows/kaiju-no-8-1790007558"
+      "url": "https://www.animenewsnetwork.com/news/2023-12-17/vinland-saga-season-1-trapped-in-a-dating-sim-anime-get-indian-language-dubs/.205581"
      }
     ]
    },
    "te": {
     "status": "available",
-    "confidence": "medium",
+    "confidence": "high",
     "platforms": [
      {
       "name": "Crunchyroll",
       "scope": "Seasons 1–2",
-      "url": "https://www.crunchyroll.com/series/GG5H5XQ7D/kaiju-no-8"
-     },
-     {
-      "name": "Crunchyroll on Sony LIV",
-      "scope": "Seasons 1–2",
-      "url": "https://www.sonyliv.com/shows/kaiju-no-8-1790007558"
+      "url": "https://www.animenewsnetwork.com/news/2023-12-17/vinland-saga-season-1-trapped-in-a-dating-sim-anime-get-indian-language-dubs/.205581"
      }
     ]
    },
    "sources": [
-    "https://www.justwatch.com/us/tv-show/kaiju-no-8",
-    "https://www.justwatch.com/in/tv-show/kaiju-no-8",
-    "https://www.justwatch.com/uk/tv-series/kaiju-no-8"
+    "https://www.animenewsnetwork.com/news/2023-12-17/vinland-saga-season-1-trapped-in-a-dating-sim-anime-get-indian-language-dubs/.205581",
+    "https://animenewsindia.com/2026/07/15/crunchyroll-announces-hindi-tamil-and-telugu-dub-releases-for-naruto-shippuden-tokyo-ghoul-arifureta-and-new-summer-2026-titles/",
+    "https://respawn.outlookindia.com/pop-culture/pop-culture-news/crunchyroll-expands-hindi-tamil-and-telugu-anime-dubs-in-india"
    ],
-   "note": ""
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "xian-wang-de-richang-shenghuo",
+   "t": "The Daily Life of the Immortal King",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–5",
+      "url": "https://www.animenewsnetwork.com/press-release/2024-07-19/crunchyroll-announces-the-hindi-tamil-and-telugu-dub-premieres-of-summer-and-catalogue-titles-like-/.213387"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–5",
+      "url": "https://www.animenewsnetwork.com/press-release/2024-07-19/crunchyroll-announces-the-hindi-tamil-and-telugu-dub-premieres-of-summer-and-catalogue-titles-like-/.213387"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.animenewsnetwork.com/press-release/2024-07-19/crunchyroll-announces-the-hindi-tamil-and-telugu-dub-premieres-of-summer-and-catalogue-titles-like-/.213387",
+    "https://animenewsindia.com/2024/08/17/crunchyroll-announces-regional-dubs-with-popular-anime-titles-to-premiere-in-hindi-tamil-and-telugu-dubbed-in-this-august-and-september/",
+    "https://animenewsindia.com/2025/10/06/crunchyroll-announces-official-fall-2025-anime-season-lineup-for-india/",
+    "https://animemirchi.com/crunchyroll-winter-2026-hindi-tamil-telugu-lineup/"
+   ],
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "tower-of-god",
+   "t": "Tower of God",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–2",
+      "url": "https://www.crunchyroll.com/watch/GE00257751ARSA"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–2",
+      "url": "https://www.crunchyroll.com/watch/GE00257751ARSA"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2025-02-24/crunchyroll-streams-tamil-telugu-dubs-for-tower-of-god-season-2-anime/.221574",
+    "https://animemirchi.com/complete-crunchyroll-tamil-dubbed-anime-list/",
+    "https://animemirchi.com/complete-crunchyroll-telugu-dubbed-anime-list/"
+   ],
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "tsue-to-tsurugi-no-wistoria",
+   "t": "Wistoria: Wand and Sword",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–2",
+      "url": "https://www.animenewsnetwork.com/press-release/2024-07-19/crunchyroll-announces-the-hindi-tamil-and-telugu-dub-premieres-of-summer-and-catalogue-titles-like-/.213387"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–2",
+      "url": "https://www.animenewsnetwork.com/press-release/2024-07-19/crunchyroll-announces-the-hindi-tamil-and-telugu-dub-premieres-of-summer-and-catalogue-titles-like-/.213387"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.animenewsnetwork.com/press-release/2024-07-19/crunchyroll-announces-the-hindi-tamil-and-telugu-dub-premieres-of-summer-and-catalogue-titles-like-/.213387",
+    "https://animenewsindia.com/2024/06/27/crunchyroll-india-announces-summer-2024-regional-dubs-lineup/",
+    "https://animemirchi.com/crunchyroll-spring-2026-hindi-tamil-telugu-lineup/"
+   ],
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "make-heroine-ga-oosugiru",
+   "t": "Makeine: Too Many Losing Heroines!",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1",
+      "url": "https://www.animenewsnetwork.com/press-release/2024-07-19/crunchyroll-announces-the-hindi-tamil-and-telugu-dub-premieres-of-summer-and-catalogue-titles-like-/.213387"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1",
+      "url": "https://www.animenewsnetwork.com/press-release/2024-07-19/crunchyroll-announces-the-hindi-tamil-and-telugu-dub-premieres-of-summer-and-catalogue-titles-like-/.213387"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.animenewsnetwork.com/press-release/2024-07-19/crunchyroll-announces-the-hindi-tamil-and-telugu-dub-premieres-of-summer-and-catalogue-titles-like-/.213387",
+    "https://animenewsindia.com/2024/06/27/crunchyroll-india-announces-summer-2024-regional-dubs-lineup/"
+   ],
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "bye-bye-earth",
+   "t": "Bye Bye, Earth",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–2",
+      "url": "https://www.animenewsnetwork.com/press-release/2024-07-19/crunchyroll-announces-the-hindi-tamil-and-telugu-dub-premieres-of-summer-and-catalogue-titles-like-/.213387"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–2",
+      "url": "https://www.animenewsnetwork.com/press-release/2024-07-19/crunchyroll-announces-the-hindi-tamil-and-telugu-dub-premieres-of-summer-and-catalogue-titles-like-/.213387"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.animenewsnetwork.com/press-release/2024-07-19/crunchyroll-announces-the-hindi-tamil-and-telugu-dub-premieres-of-summer-and-catalogue-titles-like-/.213387",
+    "https://animenewsindia.com/2025/03/20/crunchyroll-reveals-spring-2025-anime-season-lineup-30-new-titles-including-fire-force-season-3-my-hero-academia-vigilantes-and-more/"
+   ],
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "kakkou-no-iinazuke",
+   "t": "A Couple of Cuckoos",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–2",
+      "url": "https://www.animenewsnetwork.com/news/2024-03-25/indian-dubs-of-a-couple-of-cuckoos-tomo-chan-is-a-girl-more-anime-stream-as-free-titles/.209118"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–2",
+      "url": "https://www.animenewsnetwork.com/news/2024-03-25/indian-dubs-of-a-couple-of-cuckoos-tomo-chan-is-a-girl-more-anime-stream-as-free-titles/.209118"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2024-03-25/indian-dubs-of-a-couple-of-cuckoos-tomo-chan-is-a-girl-more-anime-stream-as-free-titles/.209118",
+    "https://animenewsindia.com/2025/06/19/crunchyroll-announces-summer-2025-anime-season-lineup-for-india/"
+   ],
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "ansatsusha-de-aru-ore-no-status-ga-yuusha-yori-mo-akiraka-ni-tsuyoi-no-da-ga",
+   "t": "My Status as an Assassin Obviously Exceeds the Hero's",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1",
+      "url": "https://animenewsindia.com/2025/10/06/crunchyroll-announces-official-fall-2025-anime-season-lineup-for-india/"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1",
+      "url": "https://animenewsindia.com/2025/10/06/crunchyroll-announces-official-fall-2025-anime-season-lineup-for-india/"
+     }
+    ]
+   },
+   "sources": [
+    "https://animenewsindia.com/2025/10/06/crunchyroll-announces-official-fall-2025-anime-season-lineup-for-india/",
+    "https://animenewsindia.com/2025/10/25/crunchyroll-announces-hindi-tamil-telugu-dub-premieres-for-spy-x-family-my-hero-academia-and-more-for-its-fall-slate-anime-release/"
+   ],
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "clevatess-majuu-no-ou-to-akago-to-kabane-no-yuusha",
+   "t": "Clevatess",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–2",
+      "url": "https://www.animenewsnetwork.com/news/2025-06-21/crunchyroll-announces-indian-language-dubs-for-clevatess-gachiakuta-more-anime/.225855"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–2",
+      "url": "https://www.animenewsnetwork.com/news/2025-06-21/crunchyroll-announces-indian-language-dubs-for-clevatess-gachiakuta-more-anime/.225855"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2025-06-21/crunchyroll-announces-indian-language-dubs-for-clevatess-gachiakuta-more-anime/.225855",
+    "https://www.animenewsnetwork.com/news/2026-07-17/hindi-dubs-for-tomb-raider-king-black-torch-more-anime-stream-on-crunchyroll/.239722"
+   ],
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "izure-saikyou-no-renkinjutsushi",
+   "t": "Possibly the Greatest Alchemist of All Time",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1",
+      "url": "https://animenewsindia.com/2024/12/15/crunchyroll-winter-2025-anime-lineup-for-india-in-regional-dubs/"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1",
+      "url": "https://animenewsindia.com/2024/12/15/crunchyroll-winter-2025-anime-lineup-for-india-in-regional-dubs/"
+     }
+    ]
+   },
+   "sources": [
+    "https://animenewsindia.com/2024/12/15/crunchyroll-winter-2025-anime-lineup-for-india-in-regional-dubs/",
+    "https://animemirchi.com/complete-crunchyroll-tamil-dubbed-anime-list/"
+   ],
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "maou-sama-retry",
+   "t": "Demon Lord, Retry!",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1; Season 2 (R)",
+      "url": "https://animenewsindia.com/2024/10/03/crunchyroll-revealed-fall-2024-anime-season-lineup-dragon-ball-daima-dandadan-more-coming-to-this-october-in-india/"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1; Season 2 (R)",
+      "url": "https://animenewsindia.com/2024/10/03/crunchyroll-revealed-fall-2024-anime-season-lineup-dragon-ball-daima-dandadan-more-coming-to-this-october-in-india/"
+     }
+    ]
+   },
+   "sources": [
+    "https://animenewsindia.com/2024/10/03/crunchyroll-revealed-fall-2024-anime-season-lineup-dragon-ball-daima-dandadan-more-coming-to-this-october-in-india/",
+    "https://animemirchi.com/complete-crunchyroll-tamil-dubbed-anime-list/"
+   ],
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "amagami-san-chi-no-enmusubi",
+   "t": "Tying the Knot with an Amagami Sister",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1",
+      "url": "https://animenewsindia.com/2024/10/03/crunchyroll-revealed-fall-2024-anime-season-lineup-dragon-ball-daima-dandadan-more-coming-to-this-october-in-india/"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1",
+      "url": "https://animenewsindia.com/2024/10/03/crunchyroll-revealed-fall-2024-anime-season-lineup-dragon-ball-daima-dandadan-more-coming-to-this-october-in-india/"
+     }
+    ]
+   },
+   "sources": [
+    "https://animenewsindia.com/2024/10/03/crunchyroll-revealed-fall-2024-anime-season-lineup-dragon-ball-daima-dandadan-more-coming-to-this-october-in-india/",
+    "https://animemirchi.com/complete-crunchyroll-tamil-dubbed-anime-list/"
+   ],
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "akebi-chan-no-sailor-fuku",
+   "t": "Akebi's Sailor Uniform",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1",
+      "url": "https://www.animenewsnetwork.com/news/2023-11-20/akebi-sailor-uniform-fire-force-anime-get-tamil-telugu-dubs/.204646"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1",
+      "url": "https://www.animenewsnetwork.com/news/2023-11-20/akebi-sailor-uniform-fire-force-anime-get-tamil-telugu-dubs/.204646"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2023-11-20/akebi-sailor-uniform-fire-force-anime-get-tamil-telugu-dubs/.204646",
+    "https://www.fandompost.com/2023/11/16/crunchyroll-begins-streaming-akebi-sailor-uniform-anime-tamil-telugu-dubs/"
+   ],
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "kono-sekai-wa-fukanzen-sugiru",
+   "t": "Quality Assurance in Another World",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1",
+      "url": "https://www.animenewsnetwork.com/press-release/2024-07-19/crunchyroll-announces-the-hindi-tamil-and-telugu-dub-premieres-of-summer-and-catalogue-titles-like-/.213387"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1",
+      "url": "https://www.animenewsnetwork.com/press-release/2024-07-19/crunchyroll-announces-the-hindi-tamil-and-telugu-dub-premieres-of-summer-and-catalogue-titles-like-/.213387"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.animenewsnetwork.com/press-release/2024-07-19/crunchyroll-announces-the-hindi-tamil-and-telugu-dub-premieres-of-summer-and-catalogue-titles-like-/.213387",
+    "https://animenewsindia.com/2024/06/27/crunchyroll-india-announces-summer-2024-regional-dubs-lineup/"
+   ],
+   "checked": "2026-11-15"
   },
   {
    "s": "gachiakuta",
@@ -701,7 +1952,7 @@
     "platforms": [
      {
       "name": "Crunchyroll",
-      "scope": "Season 1 (all 24 episodes)",
+      "scope": "Season 1",
       "url": "https://www.crunchyroll.com/series/GP5HJ84P7/gachiakuta"
      }
     ]
@@ -712,17 +1963,1999 @@
     "platforms": [
      {
       "name": "Crunchyroll",
-      "scope": "Season 1 (all 24 episodes)",
+      "scope": "Season 1",
       "url": "https://www.crunchyroll.com/series/GP5HJ84P7/gachiakuta"
      }
     ]
    },
    "sources": [
-    "https://www.justwatch.com/us/tv-show/gachiakuta",
-    "https://www.justwatch.com/in/tv-show/gachiakuta",
-    "https://www.justwatch.com/uk/tv-series/gachiakuta"
+    "https://www.animenewsnetwork.com/news/2025-06-27/gachiakuta-tv-anime-gets-same-day-hindi-tamil-telugu-dubs/.226079",
+    "https://animenewsindia.com/2025/06/19/crunchyroll-announces-summer-2025-anime-season-lineup-for-india/"
    ],
-   "note": ""
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "enen-no-shouboutai",
+   "t": "Fire Force",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–3",
+      "url": "https://www.animenewsnetwork.com/news/2023-11-20/akebi-sailor-uniform-fire-force-anime-get-tamil-telugu-dubs/.204646"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–3",
+      "url": "https://www.animenewsnetwork.com/news/2023-11-20/akebi-sailor-uniform-fire-force-anime-get-tamil-telugu-dubs/.204646"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2023-11-20/akebi-sailor-uniform-fire-force-anime-get-tamil-telugu-dubs/.204646",
+    "https://www.animenewsnetwork.com/press-release/2024-01-29/crunchyroll-invites-you-to-tune-in-to-the-hindi-tamil-and-telugu-dub-premieres-of-spy-x-family-/.206973",
+    "https://animenewsindia.com/2025/03/20/crunchyroll-reveals-spring-2025-anime-season-lineup-30-new-titles-including-fire-force-season-3-my-hero-academia-vigilantes-and-more/",
+    "https://www.animenewsnetwork.com/news/2025-12-21/crunchyroll-streams-tamon-b-side-sentenced-to-be-a-hero-more-anime-in-india/.232312"
+   ],
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "sono-bisque-doll-wa-koi-wo-suru",
+   "t": "My Dress-Up Darling",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–2",
+      "url": "https://www.crunchyroll.com/watch/GQJUGVQEZ"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–2",
+      "url": "https://www.crunchyroll.com/watch/GQJUGVQEZ"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.animenewsnetwork.com/press-release/2023-09-30/anime-adventures-await-crunchyroll-announces-three-telugu-dub-series-premiering-soon/.203008",
+    "https://www.animenewsnetwork.com/news/2025-06-21/crunchyroll-announces-indian-language-dubs-for-clevatess-gachiakuta-more-anime/.225855",
+    "https://animemirchi.com/complete-crunchyroll-telugu-dubbed-anime-list/"
+   ],
+   "note": "Netflix India has English and Japanese only.",
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "ousama-ranking",
+   "t": "Ranking of Kings",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1; Treasure Chest of Courage",
+      "url": "https://www.animenewsnetwork.com/press-release/2023-09-30/anime-adventures-await-crunchyroll-announces-three-telugu-dub-series-premiering-soon/.203008"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "medium",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1",
+      "url": "https://animemirchi.com/complete-crunchyroll-telugu-dubbed-anime-list/"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.animenewsnetwork.com/press-release/2023-09-30/anime-adventures-await-crunchyroll-announces-three-telugu-dub-series-premiering-soon/.203008",
+    "https://animemirchi.com/complete-crunchyroll-tamil-dubbed-anime-list/",
+    "https://animemirchi.com/complete-crunchyroll-telugu-dubbed-anime-list/"
+   ],
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "tsuki-ga-michibiku-isekai-douchuu",
+   "t": "Tsukimichi: Moonlit Fantasy",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–2",
+      "url": "https://www.animenewsnetwork.com/news/2024-05-17/crunchyroll-adds-hindi-tamil-telugu-dubs-of-dr-stone-haikyu-bluelock-more-anime-in-may-june/.210906"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–2",
+      "url": "https://www.animenewsnetwork.com/news/2024-05-17/crunchyroll-adds-hindi-tamil-telugu-dubs-of-dr-stone-haikyu-bluelock-more-anime-in-may-june/.210906"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2024-05-17/crunchyroll-adds-hindi-tamil-telugu-dubs-of-dr-stone-haikyu-bluelock-more-anime-in-may-june/.210906",
+    "https://animenewsindia.com/2025/10/25/crunchyroll-announces-hindi-tamil-telugu-dub-premieres-for-spy-x-family-my-hero-academia-and-more-for-its-fall-slate-anime-release/"
+   ],
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "tondemo-skill-de-isekai-hourou-meshi",
+   "t": "Campfire Cooking in Another World with My Absurd Skill",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 2",
+      "url": "https://www.animenewsnetwork.com/news/2026-09-19/tamil-telugu-dubs-of-campfire-cooking-in-another-world-with-my-absurd-skill-anime-stream-on-muse-/.241976"
+     },
+     {
+      "name": "Muse India (YouTube)",
+      "scope": "Season 1",
+      "url": "https://www.animenewsnetwork.com/news/2026-09-19/tamil-telugu-dubs-of-campfire-cooking-in-another-world-with-my-absurd-skill-anime-stream-on-muse-/.241976"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 2",
+      "url": "https://www.animenewsnetwork.com/news/2026-09-19/tamil-telugu-dubs-of-campfire-cooking-in-another-world-with-my-absurd-skill-anime-stream-on-muse-/.241976"
+     },
+     {
+      "name": "Muse India (YouTube)",
+      "scope": "Season 1",
+      "url": "https://www.animenewsnetwork.com/news/2026-09-19/tamil-telugu-dubs-of-campfire-cooking-in-another-world-with-my-absurd-skill-anime-stream-on-muse-/.241976"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2026-09-19/tamil-telugu-dubs-of-campfire-cooking-in-another-world-with-my-absurd-skill-anime-stream-on-muse-/.241976",
+    "https://animenewsindia.com/2025/10/25/crunchyroll-announces-hindi-tamil-telugu-dub-premieres-for-spy-x-family-my-hero-academia-and-more-for-its-fall-slate-anime-release/"
+   ],
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "darling-in-the-franxx",
+   "t": "DARLING in the FRANXX",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1",
+      "url": "https://www.animenewsnetwork.com/news/2023-12-01/crunchyroll-adds-tamil-telugu-dubs-for-darling-in-the-franxx-anime/.204999"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1",
+      "url": "https://www.animenewsnetwork.com/news/2023-12-01/crunchyroll-adds-tamil-telugu-dubs-for-darling-in-the-franxx-anime/.204999"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2023-12-01/crunchyroll-adds-tamil-telugu-dubs-for-darling-in-the-franxx-anime/.204999",
+    "https://www.fandompost.com/2023/11/29/crunchyroll-starts-streaming-darling-in-the-franxx-anime-with-tamil-telugu-dubs/"
+   ],
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "mob-psycho-100",
+   "t": "Mob Psycho 100",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Muse India (YouTube)",
+      "scope": "Season 1, Season III, II OVA",
+      "url": "https://www.animenewsnetwork.com/news/2026-08-02/hindi-tamil-telugu-dubs-of-mob-psycho-anime-streams-on-muse-india-youtube-channel/.240176"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Muse India (YouTube)",
+      "scope": "Season 1, Season III, II OVA",
+      "url": "https://www.animenewsnetwork.com/news/2026-08-02/hindi-tamil-telugu-dubs-of-mob-psycho-anime-streams-on-muse-india-youtube-channel/.240176"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2026-08-02/hindi-tamil-telugu-dubs-of-mob-psycho-anime-streams-on-muse-india-youtube-channel/.240176",
+    "https://www.animenewsnetwork.com/news/2026-08-22/hindi-tamil-telugu-dubs-of-mob-psycho-100-iii-anime-streams-on-muse-india-youtube-channel/.240832"
+   ],
+   "note": "Season 2 dub not yet confirmed.",
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "oshi-no-ko",
+   "t": "OSHI NO KO",
+   "ta": {
+    "status": "available",
+    "confidence": "medium",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–3",
+      "url": "https://www.crunchyroll.com/watch/GE00366795HIIN"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "medium",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–3",
+      "url": "https://www.crunchyroll.com/watch/GE00366795HIIN"
+     }
+    ]
+   },
+   "sources": [
+    "https://animemirchi.com/crunchyroll-summer-2026-hindi-tamil-telugu-lineup/",
+    "https://animemirchi.com/complete-crunchyroll-tamil-dubbed-anime-list/",
+    "https://animemirchi.com/complete-crunchyroll-telugu-dubbed-anime-list/"
+   ],
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "pokemon",
+   "t": "Pokémon",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Pokémon Asia (YouTube)",
+      "scope": "Pokémon Horizons",
+      "url": "https://www.animenewsnetwork.com/news/2024-07-20/pokemon-horizons-the-series-anime-streams-in-hindi-tamil-telugu-bengali-english-on-youtube/.213405"
+     },
+     {
+      "name": "Super Hungama TV",
+      "scope": "Pokémon the Series: XYZ",
+      "url": "https://www.animenewsnetwork.com/news/2024-04-22/super-hungama-airs-pokemon-the-series-xyz-anime-starting-on-april-29/.210071"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Pokémon Asia (YouTube)",
+      "scope": "Pokémon Horizons",
+      "url": "https://www.animenewsnetwork.com/news/2024-07-20/pokemon-horizons-the-series-anime-streams-in-hindi-tamil-telugu-bengali-english-on-youtube/.213405"
+     },
+     {
+      "name": "Super Hungama TV",
+      "scope": "Pokémon the Series: XYZ",
+      "url": "https://www.animenewsnetwork.com/news/2024-04-22/super-hungama-airs-pokemon-the-series-xyz-anime-starting-on-april-29/.210071"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2024-07-20/pokemon-horizons-the-series-anime-streams-in-hindi-tamil-telugu-bengali-english-on-youtube/.213405",
+    "https://www.animenewsnetwork.com/news/2024-04-22/super-hungama-airs-pokemon-the-series-xyz-anime-starting-on-april-29/.210071"
+   ],
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "crayon-shin-chan",
+   "t": "Crayon Shin-chan",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Hungama TV",
+      "scope": "Classic episodes and films",
+      "url": "https://animenewsindia.com/2024/05/11/sony-yay-introduces-hit-japanese-series-shin-chan-to-its-lineup"
+     },
+     {
+      "name": "Sony YAY!",
+      "scope": "Newer seasons (separate dub)",
+      "url": "https://animenewsindia.com/2024/05/11/sony-yay-introduces-hit-japanese-series-shin-chan-to-its-lineup"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Hungama TV",
+      "scope": "Classic episodes and films",
+      "url": "https://animenewsindia.com/2024/05/11/sony-yay-introduces-hit-japanese-series-shin-chan-to-its-lineup"
+     },
+     {
+      "name": "Sony YAY!",
+      "scope": "Newer seasons (separate dub)",
+      "url": "https://animenewsindia.com/2024/05/11/sony-yay-introduces-hit-japanese-series-shin-chan-to-its-lineup"
+     }
+    ]
+   },
+   "sources": [
+    "https://animenewsindia.com/2024/05/11/sony-yay-introduces-hit-japanese-series-shin-chan-to-its-lineup",
+    "https://www.afaqs.com/news/media/26611_walt-disney-india-ties-up-with-sun-distribution-services"
+   ],
+   "note": "Sony YAY!'s newer episodes use a separate dub from Hungama TV's.",
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "beyblade-burst",
+   "t": "Beyblade Burst",
+   "ta": {
+    "status": "available",
+    "confidence": "medium",
+    "platforms": [
+     {
+      "name": "Super Hungama TV",
+      "scope": "Beyblade Burst Turbo (aired on Marvel HQ, now Super Hungama)",
+      "url": "https://animationxpress.com/?p=1123939"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "medium",
+    "platforms": [
+     {
+      "name": "Super Hungama TV",
+      "scope": "Beyblade Burst Turbo (aired on Marvel HQ, now Super Hungama)",
+      "url": "https://animationxpress.com/?p=1123939"
+     }
+    ]
+   },
+   "sources": [
+    "https://animationxpress.com/?p=1123939"
+   ],
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "sakamoto-days",
+   "t": "Sakamoto Days",
+   "ta": {
+    "status": "none_found",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Netflix",
+      "scope": "",
+      "url": "https://www.netflix.com/in/title/81663325"
+     }
+    ]
+   },
+   "te": {
+    "status": "none_found",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Netflix",
+      "scope": "",
+      "url": "https://www.netflix.com/in/title/81663325"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.netflix.com/in/title/81663325"
+   ],
+   "note": "Netflix-exclusive; its India page lists no Tamil or Telugu audio.",
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "dungeon-meshi",
+   "t": "Delicious in Dungeon",
+   "ta": {
+    "status": "none_found",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Netflix",
+      "scope": "",
+      "url": "https://www.netflix.com/in/title/81564899"
+     }
+    ]
+   },
+   "te": {
+    "status": "none_found",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Netflix",
+      "scope": "",
+      "url": "https://www.netflix.com/in/title/81564899"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.netflix.com/in/title/81564899"
+   ],
+   "note": "Netflix-exclusive; its India page lists no Tamil or Telugu audio.",
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "hikaru-ga-shinda-natsu",
+   "t": "The Summer Hikaru Died",
+   "ta": {
+    "status": "none_found",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Netflix",
+      "scope": "",
+      "url": "https://www.netflix.com/in/title/81948057"
+     }
+    ]
+   },
+   "te": {
+    "status": "none_found",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Netflix",
+      "scope": "",
+      "url": "https://www.netflix.com/in/title/81948057"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.netflix.com/in/title/81948057"
+   ],
+   "note": "Netflix-exclusive; its India page lists no Tamil or Telugu audio.",
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "garouden-the-way-of-the-lone-wolf",
+   "t": "Garouden: The Way of the Lone Wolf",
+   "ta": {
+    "status": "none_found",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Netflix",
+      "scope": "",
+      "url": "https://www.netflix.com/in/title/81215625"
+     }
+    ]
+   },
+   "te": {
+    "status": "none_found",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Netflix",
+      "scope": "",
+      "url": "https://www.netflix.com/in/title/81215625"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.netflix.com/in/title/81215625"
+   ],
+   "note": "Netflix-exclusive; its India page lists no Tamil or Telugu audio.",
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "suki-demo-kirai-na-ama-no-jaku",
+   "t": "My Oni Girl",
+   "ta": {
+    "status": "none_found",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Netflix",
+      "scope": "",
+      "url": "https://www.netflix.com/in/title/81582442"
+     }
+    ]
+   },
+   "te": {
+    "status": "none_found",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Netflix",
+      "scope": "",
+      "url": "https://www.netflix.com/in/title/81582442"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.netflix.com/in/title/81582442"
+   ],
+   "note": "Netflix-exclusive; its India page lists no Tamil or Telugu audio.",
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "akuma-kun-shin",
+   "t": "Akuma Kun (2023)",
+   "ta": {
+    "status": "none_found",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Netflix",
+      "scope": "",
+      "url": "https://www.netflix.com/in/title/81400498"
+     }
+    ]
+   },
+   "te": {
+    "status": "none_found",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Netflix",
+      "scope": "",
+      "url": "https://www.netflix.com/in/title/81400498"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.netflix.com/in/title/81400498"
+   ],
+   "note": "Netflix-exclusive; its India page lists no Tamil or Telugu audio.",
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "oemojisangjuui",
+   "t": "Lookism",
+   "ta": {
+    "status": "none_found",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Netflix",
+      "scope": "",
+      "url": "https://www.netflix.com/in/title/81177634"
+     }
+    ]
+   },
+   "te": {
+    "status": "none_found",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Netflix",
+      "scope": "",
+      "url": "https://www.netflix.com/in/title/81177634"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.netflix.com/in/title/81177634"
+   ],
+   "note": "Netflix-exclusive; its India page lists no Tamil or Telugu audio.",
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "Ranma-12-2024",
+   "t": "Ranma 1/2 (2024)",
+   "ta": {
+    "status": "none_found",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Netflix",
+      "scope": "",
+      "url": "https://www.netflix.com/in/title/81171925"
+     }
+    ]
+   },
+   "te": {
+    "status": "none_found",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Netflix",
+      "scope": "",
+      "url": "https://www.netflix.com/in/title/81171925"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.netflix.com/in/title/81171925"
+   ],
+   "note": "Netflix-exclusive; its India page lists no Tamil or Telugu audio.",
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "baki-ona",
+   "t": "Baki",
+   "ta": {
+    "status": "none_found",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Netflix",
+      "scope": "",
+      "url": "https://www.netflix.com/in/title/80204451"
+     },
+     {
+      "name": "Netflix",
+      "scope": "",
+      "url": "https://www.netflix.com/in/title/81236338"
+     }
+    ]
+   },
+   "te": {
+    "status": "none_found",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Netflix",
+      "scope": "",
+      "url": "https://www.netflix.com/in/title/80204451"
+     },
+     {
+      "name": "Netflix",
+      "scope": "",
+      "url": "https://www.netflix.com/in/title/81236338"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.netflix.com/in/title/80204451",
+    "https://www.netflix.com/in/title/81236338"
+   ],
+   "note": "Netflix-exclusive; its India page lists no Tamil or Telugu audio.",
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "Mononoke-Karakasa",
+   "t": "Mononoke the Movie: Phantom in the Rain",
+   "ta": {
+    "status": "none_found",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Netflix",
+      "scope": "",
+      "url": "https://www.netflix.com/in/title/81580574"
+     }
+    ]
+   },
+   "te": {
+    "status": "none_found",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Netflix",
+      "scope": "",
+      "url": "https://www.netflix.com/in/title/81580574"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.netflix.com/in/title/81580574"
+   ],
+   "note": "Netflix-exclusive; its India page lists no Tamil or Telugu audio.",
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "watashi-no-shiawase-na-kekkon",
+   "t": "My Happy Marriage",
+   "ta": {
+    "status": "none_found",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Netflix",
+      "scope": "",
+      "url": "https://www.netflix.com/in/title/81564905"
+     }
+    ]
+   },
+   "te": {
+    "status": "none_found",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Netflix",
+      "scope": "",
+      "url": "https://www.netflix.com/in/title/81564905"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.netflix.com/in/title/81564905"
+   ],
+   "note": "Netflix-exclusive; its India page lists no Tamil or Telugu audio.",
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "cyberpunk-edgerunners",
+   "t": "Cyberpunk: Edgerunners",
+   "ta": {
+    "status": "none_found",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Netflix",
+      "scope": "",
+      "url": "https://www.netflix.com/in/title/81054853"
+     }
+    ]
+   },
+   "te": {
+    "status": "none_found",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Netflix",
+      "scope": "",
+      "url": "https://www.netflix.com/in/title/81054853"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.netflix.com/in/title/81054853"
+   ],
+   "note": "Netflix-exclusive; its India page lists no Tamil or Telugu audio.",
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "beastars",
+   "t": "BEASTARS",
+   "ta": {
+    "status": "none_found",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Netflix",
+      "scope": "",
+      "url": "https://www.netflix.com/in/title/81054847"
+     }
+    ]
+   },
+   "te": {
+    "status": "none_found",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Netflix",
+      "scope": "",
+      "url": "https://www.netflix.com/in/title/81054847"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.netflix.com/in/title/81054847"
+   ],
+   "note": "Netflix-exclusive; its India page lists no Tamil or Telugu audio.",
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "spirited-away",
+   "t": "Spirited Away",
+   "ta": {
+    "status": "none_found",
+    "confidence": "medium",
+    "platforms": [
+     {
+      "name": "Netflix",
+      "scope": "",
+      "url": "https://www.netflix.com/in/title/60023642"
+     }
+    ]
+   },
+   "te": {
+    "status": "none_found",
+    "confidence": "medium",
+    "platforms": [
+     {
+      "name": "Netflix",
+      "scope": "",
+      "url": "https://www.netflix.com/in/title/60023642"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.netflix.com/in/title/60023642"
+   ],
+   "note": "Studio Ghibli films stream in India only on Netflix, which lists English, Hindi and Japanese audio.",
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "my-neighbor-totoro",
+   "t": "My Neighbor Totoro",
+   "ta": {
+    "status": "none_found",
+    "confidence": "medium",
+    "platforms": [
+     {
+      "name": "Netflix",
+      "scope": "",
+      "url": "https://www.netflix.com/in/title/60032294"
+     }
+    ]
+   },
+   "te": {
+    "status": "none_found",
+    "confidence": "medium",
+    "platforms": [
+     {
+      "name": "Netflix",
+      "scope": "",
+      "url": "https://www.netflix.com/in/title/60032294"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.netflix.com/in/title/60032294"
+   ],
+   "note": "Studio Ghibli films stream in India only on Netflix, which lists English, Hindi and Japanese audio.",
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "howl-s-moving-castle",
+   "t": "Howl's Moving Castle",
+   "ta": {
+    "status": "none_found",
+    "confidence": "medium",
+    "platforms": [
+     {
+      "name": "Netflix",
+      "scope": "",
+      "url": "https://www.netflix.com/in/title/70028883"
+     }
+    ]
+   },
+   "te": {
+    "status": "none_found",
+    "confidence": "medium",
+    "platforms": [
+     {
+      "name": "Netflix",
+      "scope": "",
+      "url": "https://www.netflix.com/in/title/70028883"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.netflix.com/in/title/70028883"
+   ],
+   "note": "Studio Ghibli films stream in India only on Netflix, which lists English, Hindi and Japanese audio.",
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "princess-mononoke",
+   "t": "Princess Mononoke",
+   "ta": {
+    "status": "none_found",
+    "confidence": "medium",
+    "platforms": [
+     {
+      "name": "Netflix",
+      "scope": "",
+      "url": "https://www.netflix.com/in/title/28630857"
+     }
+    ]
+   },
+   "te": {
+    "status": "none_found",
+    "confidence": "medium",
+    "platforms": [
+     {
+      "name": "Netflix",
+      "scope": "",
+      "url": "https://www.netflix.com/in/title/28630857"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.netflix.com/in/title/28630857"
+   ],
+   "note": "Studio Ghibli films stream in India only on Netflix, which lists English, Hindi and Japanese audio.",
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "kiki-s-delivery-service",
+   "t": "Kiki's Delivery Service",
+   "ta": {
+    "status": "none_found",
+    "confidence": "medium",
+    "platforms": [
+     {
+      "name": "Netflix",
+      "scope": "",
+      "url": "https://www.netflix.com/in/title/60027106"
+     }
+    ]
+   },
+   "te": {
+    "status": "none_found",
+    "confidence": "medium",
+    "platforms": [
+     {
+      "name": "Netflix",
+      "scope": "",
+      "url": "https://www.netflix.com/in/title/60027106"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.netflix.com/in/title/60027106"
+   ],
+   "note": "Studio Ghibli films stream in India only on Netflix, which lists English, Hindi and Japanese audio.",
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "tokidoki-bosotto-russiago-de-dereru-tonari-no-alya-san",
+   "t": "Alya Sometimes Hides Her Feelings in Russian",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1",
+      "url": "https://www.animenewsnetwork.com/press-release/2024-07-19/crunchyroll-announces-the-hindi-tamil-and-telugu-dub-premieres-of-summer-and-catalogue-titles-like-/.213387"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1",
+      "url": "https://www.animenewsnetwork.com/press-release/2024-07-19/crunchyroll-announces-the-hindi-tamil-and-telugu-dub-premieres-of-summer-and-catalogue-titles-like-/.213387"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.animenewsnetwork.com/press-release/2024-07-19/crunchyroll-announces-the-hindi-tamil-and-telugu-dub-premieres-of-summer-and-catalogue-titles-like-/.213387"
+   ],
+   "note": "",
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "yeosingangnim",
+   "t": "True Beauty",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1",
+      "url": "https://www.animenewsnetwork.com/press-release/2024-07-19/crunchyroll-announces-the-hindi-tamil-and-telugu-dub-premieres-of-summer-and-catalogue-titles-like-/.213387"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1",
+      "url": "https://www.animenewsnetwork.com/press-release/2024-07-19/crunchyroll-announces-the-hindi-tamil-and-telugu-dub-premieres-of-summer-and-catalogue-titles-like-/.213387"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.animenewsnetwork.com/press-release/2024-07-19/crunchyroll-announces-the-hindi-tamil-and-telugu-dub-premieres-of-summer-and-catalogue-titles-like-/.213387"
+   ],
+   "note": "",
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "isekai-shikkaku",
+   "t": "No Longer Allowed in Another World",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1",
+      "url": "https://www.animenewsnetwork.com/press-release/2024-07-19/crunchyroll-announces-the-hindi-tamil-and-telugu-dub-premieres-of-summer-and-catalogue-titles-like-/.213387"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1",
+      "url": "https://www.animenewsnetwork.com/press-release/2024-07-19/crunchyroll-announces-the-hindi-tamil-and-telugu-dub-premieres-of-summer-and-catalogue-titles-like-/.213387"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.animenewsnetwork.com/press-release/2024-07-19/crunchyroll-announces-the-hindi-tamil-and-telugu-dub-premieres-of-summer-and-catalogue-titles-like-/.213387"
+   ],
+   "note": "",
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "zom-100-zombie-ni-naru-made-ni-shitai-100-no-koto",
+   "t": "Zom 100: Bucket List of the Dead",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1",
+      "url": "https://www.animenewsnetwork.com/press-release/2024-07-19/crunchyroll-announces-the-hindi-tamil-and-telugu-dub-premieres-of-summer-and-catalogue-titles-like-/.213387"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1",
+      "url": "https://www.animenewsnetwork.com/press-release/2024-07-19/crunchyroll-announces-the-hindi-tamil-and-telugu-dub-premieres-of-summer-and-catalogue-titles-like-/.213387"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.animenewsnetwork.com/press-release/2024-07-19/crunchyroll-announces-the-hindi-tamil-and-telugu-dub-premieres-of-summer-and-catalogue-titles-like-/.213387"
+   ],
+   "note": "",
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "tomo-chan-wa-onna-no-ko",
+   "t": "Tomo-chan Is a Girl!",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1",
+      "url": "https://www.animenewsnetwork.com/press-release/2024-07-19/crunchyroll-announces-the-hindi-tamil-and-telugu-dub-premieres-of-summer-and-catalogue-titles-like-/.213387"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1",
+      "url": "https://www.animenewsnetwork.com/press-release/2024-07-19/crunchyroll-announces-the-hindi-tamil-and-telugu-dub-premieres-of-summer-and-catalogue-titles-like-/.213387"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.animenewsnetwork.com/press-release/2024-07-19/crunchyroll-announces-the-hindi-tamil-and-telugu-dub-premieres-of-summer-and-catalogue-titles-like-/.213387"
+   ],
+   "note": "",
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "radiant",
+   "t": "Radiant",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–2",
+      "url": "https://www.animenewsnetwork.com/news/2024-05-17/crunchyroll-adds-hindi-tamil-telugu-dubs-of-dr-stone-haikyu-bluelock-more-anime-in-may-june/.210906"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Seasons 1–2",
+      "url": "https://www.animenewsnetwork.com/news/2024-05-17/crunchyroll-adds-hindi-tamil-telugu-dubs-of-dr-stone-haikyu-bluelock-more-anime-in-may-june/.210906"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2024-05-17/crunchyroll-adds-hindi-tamil-telugu-dubs-of-dr-stone-haikyu-bluelock-more-anime-in-may-june/.210906"
+   ],
+   "note": "",
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "shin-no-nakama-ja-nai-to-yuusha-no-party-wo-oidasareta-node-henkyou-de-slow-life-suru-koto-ni-shima",
+   "t": "Banished from the Hero's Party, I Decided to Live a Quiet Life in the Countryside",
+   "ta": {
+    "status": "available",
+    "confidence": "medium",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1",
+      "url": "https://animenewsindia.com/2024/08/17/crunchyroll-announces-regional-dubs-with-popular-anime-titles-to-premiere-in-hindi-tamil-and-telugu-dubbed-in-this-august-and-september/"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "medium",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1",
+      "url": "https://animenewsindia.com/2024/08/17/crunchyroll-announces-regional-dubs-with-popular-anime-titles-to-premiere-in-hindi-tamil-and-telugu-dubbed-in-this-august-and-september/"
+     }
+    ]
+   },
+   "sources": [
+    "https://animenewsindia.com/2024/08/17/crunchyroll-announces-regional-dubs-with-popular-anime-titles-to-premiere-in-hindi-tamil-and-telugu-dubbed-in-this-august-and-september/"
+   ],
+   "note": "",
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "boushoku-no-berserk",
+   "t": "Berserk of Gluttony",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1",
+      "url": "https://www.animenewsnetwork.com/news/2025-01-17/hindi-tamil-telugu-dubs-for-berserk-of-gluttony-anime-stream-on-crunchyroll/.220147"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1",
+      "url": "https://www.animenewsnetwork.com/news/2025-01-17/hindi-tamil-telugu-dubs-for-berserk-of-gluttony-anime-stream-on-crunchyroll/.220147"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2025-01-17/hindi-tamil-telugu-dubs-for-berserk-of-gluttony-anime-stream-on-crunchyroll/.220147"
+   ],
+   "note": "",
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "watashi-no-oshi-wa-akuyaku-reijou",
+   "t": "I'm in Love with the Villainess",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1",
+      "url": "https://www.animenewsnetwork.com/news/2025-04-20/im-in-love-with-the-villainess-bucchigiri-anime-get-full-seasons-of-tamil-telugu-dubs/.223701"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1",
+      "url": "https://www.animenewsnetwork.com/news/2025-04-20/im-in-love-with-the-villainess-bucchigiri-anime-get-full-seasons-of-tamil-telugu-dubs/.223701"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2025-04-20/im-in-love-with-the-villainess-bucchigiri-anime-get-full-seasons-of-tamil-telugu-dubs/.223701"
+   ],
+   "note": "",
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "bucchigiri-tv",
+   "t": "Bucchigiri?!",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1",
+      "url": "https://www.animenewsnetwork.com/news/2025-04-20/im-in-love-with-the-villainess-bucchigiri-anime-get-full-seasons-of-tamil-telugu-dubs/.223701"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1",
+      "url": "https://www.animenewsnetwork.com/news/2025-04-20/im-in-love-with-the-villainess-bucchigiri-anime-get-full-seasons-of-tamil-telugu-dubs/.223701"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2025-04-20/im-in-love-with-the-villainess-bucchigiri-anime-get-full-seasons-of-tamil-telugu-dubs/.223701"
+   ],
+   "note": "",
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "kimi-to-koete-koi-ni-naru",
+   "t": "With You, Our Love Will Make It Through",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1",
+      "url": "https://www.animenewsnetwork.com/news/2025-11-07/with-you-our-love-will-make-it-through-anime-gets-hindi-tamil-telugu-dubs/.230740"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1",
+      "url": "https://www.animenewsnetwork.com/news/2025-11-07/with-you-our-love-will-make-it-through-anime-gets-hindi-tamil-telugu-dubs/.230740"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2025-11-07/with-you-our-love-will-make-it-through-anime-gets-hindi-tamil-telugu-dubs/.230740"
+   ],
+   "note": "",
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "yuusha-kei-ni-shosu-choubatsu-yuusha-9004-tai-keimu-kiroku",
+   "t": "Sentenced to Be a Hero",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1",
+      "url": "https://www.animenewsnetwork.com/news/2025-12-21/crunchyroll-streams-tamon-b-side-sentenced-to-be-a-hero-more-anime-in-india/.232312"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1",
+      "url": "https://www.animenewsnetwork.com/news/2025-12-21/crunchyroll-streams-tamon-b-side-sentenced-to-be-a-hero-more-anime-in-india/.232312"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2025-12-21/crunchyroll-streams-tamon-b-side-sentenced-to-be-a-hero-more-anime-in-india/.232312"
+   ],
+   "note": "",
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "hanazakari-no-kimitachi-e",
+   "t": "Hana-Kimi",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1",
+      "url": "https://www.animenewsnetwork.com/news/2025-12-21/crunchyroll-streams-tamon-b-side-sentenced-to-be-a-hero-more-anime-in-india/.232312"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1",
+      "url": "https://www.animenewsnetwork.com/news/2025-12-21/crunchyroll-streams-tamon-b-side-sentenced-to-be-a-hero-more-anime-in-india/.232312"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2025-12-21/crunchyroll-streams-tamon-b-side-sentenced-to-be-a-hero-more-anime-in-india/.232312"
+   ],
+   "note": "",
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "majutsushi-kunon-wa-mieteiru",
+   "t": "Kunon the Sorcerer Can See",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1",
+      "url": "https://www.animenewsnetwork.com/news/2025-12-21/crunchyroll-streams-tamon-b-side-sentenced-to-be-a-hero-more-anime-in-india/.232312"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1",
+      "url": "https://www.animenewsnetwork.com/news/2025-12-21/crunchyroll-streams-tamon-b-side-sentenced-to-be-a-hero-more-anime-in-india/.232312"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2025-12-21/crunchyroll-streams-tamon-b-side-sentenced-to-be-a-hero-more-anime-in-india/.232312"
+   ],
+   "note": "",
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "yuusha-party-ni-kawaii-ko-ga-ita-no-de-kokuhaku-shitemita",
+   "t": "There Was a Cute Girl in the Hero's Party, So I Tried Confessing to Her",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1",
+      "url": "https://www.animenewsnetwork.com/news/2025-12-21/crunchyroll-streams-tamon-b-side-sentenced-to-be-a-hero-more-anime-in-india/.232312"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1",
+      "url": "https://www.animenewsnetwork.com/news/2025-12-21/crunchyroll-streams-tamon-b-side-sentenced-to-be-a-hero-more-anime-in-india/.232312"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2025-12-21/crunchyroll-streams-tamon-b-side-sentenced-to-be-a-hero-more-anime-in-india/.232312"
+   ],
+   "note": "",
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "29-sai-dokushin-chuuken-boukensha-no-nichijou",
+   "t": "An Adventurer's Daily Grind at Age 29",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1",
+      "url": "https://www.animenewsnetwork.com/news/2025-12-21/crunchyroll-streams-tamon-b-side-sentenced-to-be-a-hero-more-anime-in-india/.232312"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1",
+      "url": "https://www.animenewsnetwork.com/news/2025-12-21/crunchyroll-streams-tamon-b-side-sentenced-to-be-a-hero-more-anime-in-india/.232312"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2025-12-21/crunchyroll-streams-tamon-b-side-sentenced-to-be-a-hero-more-anime-in-india/.232312"
+   ],
+   "note": "",
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "jingai-kyoushitsu-no-ningengirai-kyoushi",
+   "t": "A Misanthrope Teaches a Class for Demi-Humans",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1",
+      "url": "https://www.animenewsnetwork.com/news/2025-12-21/crunchyroll-streams-tamon-b-side-sentenced-to-be-a-hero-more-anime-in-india/.232312"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1",
+      "url": "https://www.animenewsnetwork.com/news/2025-12-21/crunchyroll-streams-tamon-b-side-sentenced-to-be-a-hero-more-anime-in-india/.232312"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2025-12-21/crunchyroll-streams-tamon-b-side-sentenced-to-be-a-hero-more-anime-in-india/.232312"
+   ],
+   "note": "",
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "seihantai-na-kimi-to-boku",
+   "t": "You and I Are Polar Opposites",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1",
+      "url": "https://www.animenewsnetwork.com/news/2025-12-21/crunchyroll-streams-tamon-b-side-sentenced-to-be-a-hero-more-anime-in-india/.232312"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1",
+      "url": "https://www.animenewsnetwork.com/news/2025-12-21/crunchyroll-streams-tamon-b-side-sentenced-to-be-a-hero-more-anime-in-india/.232312"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2025-12-21/crunchyroll-streams-tamon-b-side-sentenced-to-be-a-hero-more-anime-in-india/.232312"
+   ],
+   "note": "",
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "vigilante-boku-no-hero-academia-illegals",
+   "t": "My Hero Academia: Vigilantes",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 2",
+      "url": "https://www.animenewsnetwork.com/news/2025-12-21/crunchyroll-streams-tamon-b-side-sentenced-to-be-a-hero-more-anime-in-india/.232312"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 2",
+      "url": "https://www.animenewsnetwork.com/news/2025-12-21/crunchyroll-streams-tamon-b-side-sentenced-to-be-a-hero-more-anime-in-india/.232312"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2025-12-21/crunchyroll-streams-tamon-b-side-sentenced-to-be-a-hero-more-anime-in-india/.232312"
+   ],
+   "note": "",
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "shunkashuutou-daikousha-haru-no-mai",
+   "t": "Agents of the Four Seasons: Dance of Spring",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1",
+      "url": "https://www.animenewsnetwork.com/news/2026-03-29/crunchyroll-simulcasts-agents-of-the-four-seasons-the-food-diary-of-miss-maid-more-anime-in-india/.235819"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1",
+      "url": "https://www.animenewsnetwork.com/news/2026-03-29/crunchyroll-simulcasts-agents-of-the-four-seasons-the-food-diary-of-miss-maid-more-anime-in-india/.235819"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2026-03-29/crunchyroll-simulcasts-agents-of-the-four-seasons-the-food-diary-of-miss-maid-more-anime-in-india/.235819"
+   ],
+   "note": "",
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "liar-game",
+   "t": "Liar Game",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1",
+      "url": "https://www.animenewsnetwork.com/news/2026-05-05/indian-language-dubs-for-liar-game-marriage-toxin-more-anime-stream-on-crunchyroll/.237034"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1",
+      "url": "https://www.animenewsnetwork.com/news/2026-05-05/indian-language-dubs-for-liar-game-marriage-toxin-more-anime-stream-on-crunchyroll/.237034"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2026-05-05/indian-language-dubs-for-liar-game-marriage-toxin-more-anime-stream-on-crunchyroll/.237034"
+   ],
+   "note": "",
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "marriagetoxin",
+   "t": "Marriagetoxin",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1",
+      "url": "https://www.animenewsnetwork.com/news/2026-05-05/indian-language-dubs-for-liar-game-marriage-toxin-more-anime-stream-on-crunchyroll/.237034"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1",
+      "url": "https://www.animenewsnetwork.com/news/2026-05-05/indian-language-dubs-for-liar-game-marriage-toxin-more-anime-stream-on-crunchyroll/.237034"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2026-05-05/indian-language-dubs-for-liar-game-marriage-toxin-more-anime-stream-on-crunchyroll/.237034"
+   ],
+   "note": "",
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "hidarikiki-no-eren",
+   "t": "Eren the Southpaw",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1",
+      "url": "https://www.animenewsnetwork.com/news/2026-05-05/indian-language-dubs-for-liar-game-marriage-toxin-more-anime-stream-on-crunchyroll/.237034"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1",
+      "url": "https://www.animenewsnetwork.com/news/2026-05-05/indian-language-dubs-for-liar-game-marriage-toxin-more-anime-stream-on-crunchyroll/.237034"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2026-05-05/indian-language-dubs-for-liar-game-marriage-toxin-more-anime-stream-on-crunchyroll/.237034"
+   ],
+   "note": "",
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "hime-kishi-wa-barbaroi-no-yome",
+   "t": "The Warrior Princess and the Barbaric King",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1",
+      "url": "https://www.animenewsnetwork.com/news/2026-05-05/indian-language-dubs-for-liar-game-marriage-toxin-more-anime-stream-on-crunchyroll/.237034"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1",
+      "url": "https://www.animenewsnetwork.com/news/2026-05-05/indian-language-dubs-for-liar-game-marriage-toxin-more-anime-stream-on-crunchyroll/.237034"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2026-05-05/indian-language-dubs-for-liar-game-marriage-toxin-more-anime-stream-on-crunchyroll/.237034"
+   ],
+   "note": "",
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "watari-kun-no-xx-ga-houkai-sunzen",
+   "t": "Watari-kun's ****** Is About to Collapse",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1",
+      "url": "https://www.animenewsnetwork.com/news/2026-07-17/hindi-dubs-for-tomb-raider-king-black-torch-more-anime-stream-on-crunchyroll/.239722"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1",
+      "url": "https://www.animenewsnetwork.com/news/2026-07-17/hindi-dubs-for-tomb-raider-king-black-torch-more-anime-stream-on-crunchyroll/.239722"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2026-07-17/hindi-dubs-for-tomb-raider-king-black-torch-more-anime-stream-on-crunchyroll/.239722",
+    "https://animenewsindia.com/2026/07/15/crunchyroll-announces-hindi-tamil-and-telugu-dub-releases-for-naruto-shippuden-tokyo-ghoul-arifureta-and-new-summer-2026-titles/"
+   ],
+   "note": "",
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "yowaki-max-reijou-nano-ni-ratsuwan-konyakusha-sama-no-kake-ni-notte-shimatta",
+   "t": "Even Though I'm a Super Timid Noble Girl, I Accepted the Bet From My Cunning Fiancé",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1",
+      "url": "https://www.animenewsnetwork.com/news/2026-10-02/crunchyroll-streams-a-tale-of-the-secret-saint-psyren-more-anime-in-india/.242409"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1",
+      "url": "https://www.animenewsnetwork.com/news/2026-10-02/crunchyroll-streams-a-tale-of-the-secret-saint-psyren-more-anime-in-india/.242409"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2026-10-02/crunchyroll-streams-a-tale-of-the-secret-saint-psyren-more-anime-in-india/.242409"
+   ],
+   "note": "",
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "tsuihou-sareta-cheat-fuyo-majutsushi-wa-kimama-na-second-life-wo-ouka-suru-ore-wa-buki-dake-ja-naku-arayuru-mono-ni-kyouka-point-wo-fuyo-dekiru-shi-ore-no-ishi-de-itsudemo-kouka-wo-kaijo-dekiru-kedo-nokotta-hitotachi-daijoubu",
+   "t": "The Laid-Off Cheat-Granting Mage Enjoys a Second Lease on Life",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1",
+      "url": "https://www.animenewsnetwork.com/news/2026-10-02/crunchyroll-streams-a-tale-of-the-secret-saint-psyren-more-anime-in-india/.242409"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1",
+      "url": "https://www.animenewsnetwork.com/news/2026-10-02/crunchyroll-streams-a-tale-of-the-secret-saint-psyren-more-anime-in-india/.242409"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2026-10-02/crunchyroll-streams-a-tale-of-the-secret-saint-psyren-more-anime-in-india/.242409"
+   ],
+   "note": "",
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "hotaru-no-yomeiri",
+   "t": "Firefly Wedding",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1",
+      "url": "https://www.animenewsnetwork.com/news/2026-10-02/crunchyroll-streams-a-tale-of-the-secret-saint-psyren-more-anime-in-india/.242409"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1",
+      "url": "https://www.animenewsnetwork.com/news/2026-10-02/crunchyroll-streams-a-tale-of-the-secret-saint-psyren-more-anime-in-india/.242409"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2026-10-02/crunchyroll-streams-a-tale-of-the-secret-saint-psyren-more-anime-in-india/.242409"
+   ],
+   "note": "",
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "sozai-saishuka-no-isekai-ryokouki",
+   "t": "A Gatherer's Adventure in Isekai",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1",
+      "url": "https://www.animenewsnetwork.com/news/2026-01-24/tamil-telugu-dubs-of-a-gatherer-adventure-in-isekai-anime-stream-on-youtube/.233412"
+     },
+     {
+      "name": "Muse India (YouTube)",
+      "scope": "Season 1",
+      "url": "https://www.animenewsnetwork.com/news/2026-01-24/tamil-telugu-dubs-of-a-gatherer-adventure-in-isekai-anime-stream-on-youtube/.233412"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1",
+      "url": "https://www.animenewsnetwork.com/news/2026-01-24/tamil-telugu-dubs-of-a-gatherer-adventure-in-isekai-anime-stream-on-youtube/.233412"
+     },
+     {
+      "name": "Muse India (YouTube)",
+      "scope": "Season 1",
+      "url": "https://www.animenewsnetwork.com/news/2026-01-24/tamil-telugu-dubs-of-a-gatherer-adventure-in-isekai-anime-stream-on-youtube/.233412"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2026-01-24/tamil-telugu-dubs-of-a-gatherer-adventure-in-isekai-anime-stream-on-youtube/.233412",
+    "https://animenewsindia.com/2025/10/25/crunchyroll-announces-hindi-tamil-telugu-dub-premieres-for-spy-x-family-my-hero-academia-and-more-for-its-fall-slate-anime-release/"
+   ],
+   "note": "",
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "gaikotsu-kishi-sama-tadaima-isekai-e-odekakechuu",
+   "t": "Skeleton Knight in Another World",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Muse India (YouTube)",
+      "scope": "Season 1",
+      "url": "https://www.animenewsnetwork.com/news/2026-09-04/hindi-dub-of-jojo-bizarre-adventure-diamond-is-unbreakable-anime-streams-on-muse-india-youtube-/.241369"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Muse India (YouTube)",
+      "scope": "Season 1",
+      "url": "https://www.animenewsnetwork.com/news/2026-09-04/hindi-dub-of-jojo-bizarre-adventure-diamond-is-unbreakable-anime-streams-on-muse-india-youtube-/.241369"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2026-09-04/hindi-dub-of-jojo-bizarre-adventure-diamond-is-unbreakable-anime-streams-on-muse-india-youtube-/.241369"
+   ],
+   "note": "",
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "koori-no-joheki",
+   "t": "The Ramparts of Ice",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Netflix",
+      "scope": "Seasons 1–2",
+      "url": "https://www.netflix.com/in/title/82031882"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Netflix",
+      "scope": "Seasons 1–2",
+      "url": "https://www.netflix.com/in/title/82031882"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.netflix.com/in/title/82031882"
+   ],
+   "note": "",
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "ninja-hattori-kun",
+   "t": "Ninja Hattori-kun",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Nickelodeon India TV",
+      "scope": "TV series",
+      "url": "https://animationxpress.com/?p=915139"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Nickelodeon India TV",
+      "scope": "TV series",
+      "url": "https://animationxpress.com/?p=915139"
+     }
+    ]
+   },
+   "sources": [
+    "https://theadvertisingclub.net/news/nick-enters-south-market/",
+    "https://animationxpress.com/?p=915139"
+   ],
+   "note": "",
+   "checked": "2026-11-15"
+  },
+  {
+   "s": "doraemon-2005",
+   "t": "Doraemon",
+   "ta": {
+    "status": "available",
+    "confidence": "medium",
+    "platforms": [
+     {
+      "name": "Hungama TV",
+      "scope": "TV series (older dub; reruns also on Disney Channel India)",
+      "url": "https://www.afaqs.com/news/media/26611_walt-disney-india-ties-up-with-sun-distribution-services"
+     }
+    ]
+   },
+   "te": {
+    "status": "available",
+    "confidence": "medium",
+    "platforms": [
+     {
+      "name": "Hungama TV",
+      "scope": "TV series (older dub; reruns also on Disney Channel India)",
+      "url": "https://www.afaqs.com/news/media/26611_walt-disney-india-ties-up-with-sun-distribution-services"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.afaqs.com/news/media/26611_walt-disney-india-ties-up-with-sun-distribution-services"
+   ],
+   "note": "Source is from 2010; current schedule not confirmed.",
+   "checked": "2026-11-15"
   }
  ]
 }

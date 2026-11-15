@@ -6,11 +6,13 @@ import type { PlatformKind } from "@/lib/hindidub";
 
 export type DubCard = {
   s: string; t: string; href: string; poster: string | null; year: number | null; cheapest: PlatformKind;
+  /** When this entry was last checked (YYYY-MM-DD); `oneSource`: confirmed by a single news source. */
+  checked?: string; oneSource?: boolean;
   platforms: { name: string; scope: string; url: string; kind: PlatformKind }[];
 };
 const T = {
-  en: { kind: { free: "Free", subscription: "Subscription", tv: "TV channel" } as Record<PlatformKind, string>, search: "Search a title…", searchLabel: "Search Hindi dubbed anime", how: "How you watch", all: "All", any: "Any platform", count: (n: number, of: number) => (n === of ? `${of} anime` : `${n} of ${of} anime`), since: "Since", source: "source", none: "No Hindi dub matches. It may not have one yet: see the list of popular anime without a Hindi dub below." },
-  hi: { kind: { free: "मुफ़्त", subscription: "सब्सक्रिप्शन", tv: "टीवी चैनल" } as Record<PlatformKind, string>, search: "एनीमे का नाम खोजें…", searchLabel: "हिंदी डब एनीमे खोजें", how: "कैसे देखें", all: "सभी", any: "कोई भी प्लेटफ़ॉर्म", count: (n: number, of: number) => (n === of ? `${of} एनीमे` : `${of} में से ${n} एनीमे`), since: "शुरुआत", source: "स्रोत", none: "कोई हिंदी डब नहीं मिला। हो सकता है इसका डब अभी न हो: नीचे बिना हिंदी डब वाले एनीमे की लिस्ट देखें।" },
+  en: { kind: { free: "Free", subscription: "Subscription", tv: "TV channel" } as Record<PlatformKind, string>, search: "Search a title…", searchLabel: "Search Hindi dubbed anime", how: "How you watch", all: "All", any: "Any platform", count: (n: number, of: number) => (n === of ? `${of} anime` : `${n} of ${of} anime`), since: "Since", source: "source", checked: "Checked", oneSource: "one source", none: "No Hindi dub matches. It may not have one yet: see the list of popular anime without a Hindi dub below." },
+  hi: { kind: { free: "मुफ़्त", subscription: "सब्सक्रिप्शन", tv: "टीवी चैनल" } as Record<PlatformKind, string>, search: "एनीमे का नाम खोजें…", searchLabel: "हिंदी डब एनीमे खोजें", how: "कैसे देखें", all: "सभी", any: "कोई भी प्लेटफ़ॉर्म", count: (n: number, of: number) => (n === of ? `${of} एनीमे` : `${of} में से ${n} एनीमे`), since: "शुरुआत", source: "स्रोत", checked: "जाँचा गया", oneSource: "एक स्रोत", none: "कोई हिंदी डब नहीं मिला। हो सकता है इसका डब अभी न हो: नीचे बिना हिंदी डब वाले एनीमे की लिस्ट देखें।" },
 };
 const KIND_CLASS: Record<PlatformKind, string> = { free: "border-emerald-500/40 text-emerald-300", subscription: "border-line text-muted", tv: "border-amber-400/40 text-amber-200" };
 
@@ -60,6 +62,7 @@ export default function HindiDubList({ items, platforms, lang = "en", labels }: 
                 {d.cheapest === "free" && <span className="shrink-0 rounded-full bg-emerald-500/15 px-2 py-0.5 text-[11px] font-semibold text-emerald-300">{KIND.free}</span>}
               </div>
               {d.year && <p className="text-xs text-muted">{t.since} {d.year}</p>}
+              {d.checked && <p className="text-[11px] text-muted">{t.checked} {new Date(`${d.checked}T00:00:00Z`).toLocaleDateString(lang === "hi" ? "hi-IN" : "en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" })}{d.oneSource ? ` · ${t.oneSource}` : ""}</p>}
               <ul className="mt-2 space-y-1.5">
                 {d.platforms.map((p) => (
                   <li key={p.name + p.scope} className="text-xs">
