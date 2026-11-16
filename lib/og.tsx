@@ -1,6 +1,7 @@
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { ImageResponse } from "next/og";
+import { compactPng } from "./pngcompact";
 import { markDataUri, BRAND } from "./brand";
 
 export const OG_SIZE = { width: 1200, height: 630 };
@@ -58,7 +59,7 @@ function Badge({ text }: { text: string }) {
 /** Shared poster-left / text-right card used by every generated Open Graph image. */
 export async function posterCard(opts: { poster: string | null; kicker: string; title: string; sub: string; badge?: string | null }) {
   const { poster, kicker, title, sub, badge } = opts;
-  return new ImageResponse(
+  return compactPng(new ImageResponse(
     (
       <div style={{ width: "100%", height: "100%", display: "flex", background: "linear-gradient(135deg,#0b0d13 0%,#161b28 70%,#2a2550 100%)", color: "#e8ecf5", fontFamily: "Inter" }}>
         <div style={{ width: 380, height: "100%", display: "flex", alignItems: "center", justifyContent: "center", padding: 40 }}>
@@ -79,7 +80,7 @@ export async function posterCard(opts: { poster: string | null; kicker: string; 
       </div>
     ),
     { ...OG_SIZE, fonts: await ogFonts() },
-  );
+  ));
 }
 
 /**
@@ -115,7 +116,7 @@ export async function sectionCard(opts: { kicker: string; title: string; sub: st
     { left: 200, top: 30, rotate: 0, z: 3 },
     { left: 400, top: 70, rotate: 9, z: 2 },
   ];
-  return new ImageResponse(
+  return compactPng(new ImageResponse(
     (
       <div style={{ width: "100%", height: "100%", display: "flex", background: "radial-gradient(circle at 85% 15%, rgba(193,60,240,.35), transparent 45%), linear-gradient(135deg,#0b0d13 0%,#161b28 60%,#2a2550 100%)", color: "#e8ecf5", fontFamily: "Inter" }}>
         <div style={{ width: posters.length ? 600 : 1040, display: "flex", flexDirection: "column", justifyContent: "center", padding: "0 0 0 72px" }}>
@@ -136,5 +137,5 @@ export async function sectionCard(opts: { kicker: string; title: string; sub: st
       </div>
     ),
     { ...OG_SIZE, fonts: await ogFonts() },
-  );
+  ));
 }

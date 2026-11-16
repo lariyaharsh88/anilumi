@@ -21,7 +21,8 @@
     "next": "15.5.28",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "server-only": "^0.0.1"
+    "server-only": "^0.0.1",
+    "upng-js": "^2.1.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
@@ -29,6 +30,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/upng-js": "^2.1.5",
     "@types/web-push": "^3.6.4",
     "eslint": "^9",
     "eslint-config-next": "15.5.28",
