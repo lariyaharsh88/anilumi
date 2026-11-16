@@ -132,96 +132,21 @@ function rscKey(request, url) {
   return `?__rsc=${kind}${depth}${rest ? `&${rest}` : ""}`;
 }
 
+/** The Hindi guides (/hi, /hi/…) are Hindi pages under a root layout that says lang="en" for the whole app. */
+export const isHindiPath = (pathname) => pathname === "/hi" || pathname.startsWith("/hi/");
+
+/** Hindi pages: lang="hi" on <html> and a Content-Language header, so search engines don't read them as English. */
+function localize(res, url) {
+  if (!isHindiPath(url.pathname) || !(res.headers.get("content-type") || "").includes("text/html")) return res;
+  const out = new HTMLRewriter().on("html", { element: (el) => el.setAttribute("lang", "hi") }).transform(res);
+  const headers = new Headers(out.headers);
+  headers.set("content-language", "hi");
+  return new Response(out.body, { status: out.status, statusText: out.statusText, headers });
+}
+
 export default {
   async fetch(request, env, ctx) {
-    app = env.APP || null;
-    pages = env.PAGES || null;
-    const url = new URL(request.url);
-    if (url.hostname === `www.${SITE}`) {
-      url.hostname = SITE;
-      return Response.redirect(url.toString(), 301);
-    }
-    if (!cacheable(request, url)) return toOrigin(request, url);
-    // From here on, a tagged link is the same page as the untagged one: one cache entry, one render.
-    if (url.search) url.search = cleanSearch(url.search);
-
-    const cache = caches.default;
-    // Hashed build assets and cards never change; pages are keyed by the live build too.
-    const genq = url.pathname.startsWith("/_next/static/") || CARD.test(url.pathname) ? "" : `${url.search ? "&" : "?"}__gen=${await generation(ctx)}`;
-    const key = new Request(`https://${SITE}${url.pathname}${rscKey(request, url) ?? url.search}${genq}`, { method: "GET" });
-    const hit = await cache.match(key);
-    if (hit) {
-      const out = new Response(hit.body, hit);
-      out.headers.set("x-edge-cache", "HIT");
-      if (genq) out.headers.set("x-edge-gen", genq.slice(genq.indexOf("=") + 1));
-      return out;
-    }
-
-    // Not in this data centre: the global copy, if another one has it. Within its TTL it is served as a hit; past
-    // it, it is still from the live build (the key says so), so it is served while a fresh one renders.
-    const global = url.pathname.startsWith("/_next/static/") ? null : await globalMatch(key);
-    if (global) {
-      const age = (Date.now() - global.uploaded) / 1000;
-      const fresh = age < ttl(url.pathname);
-      // Keep it here too: for the rest of its TTL, or a minute when stale so this colo refreshes it at most that often.
-      ctx.waitUntil(cache.put(key, withMaxAge(global.response.clone(), fresh ? Math.ceil(ttl(url.pathname) - age) : 60)));
-      if (!fresh) ctx.waitUntil(toOrigin(request, url, 30_000).then((res) => store(res, url, genq, key, lastKeyFor(url, genq))).catch(() => {}));
-      const out = new Response(global.response.body, global.response);
-      out.headers.set("x-edge-cache", fresh ? "GLOBAL-HIT" : "GLOBAL-STALE");
-      if (genq) out.headers.set("x-edge-gen", genq.slice(genq.indexOf("=") + 1));
-      return out;
-    }
-
-    // Last good copy of a page, from any build: survives deploys, which otherwise send every crawler request to
-    // Render at once. Only plain page HTML (an RSC payload from another build would make Next.js hard-reload).
-    const lastKey = lastKeyFor(url, genq);
-    const last = lastKey ? await cache.match(lastKey) : null;
-    const stale = (why) => {
-      const out = new Response(last.body, last);
-      out.headers.set("x-edge-cache", why);
-      return out;
-    };
-
-    // Crawlers get the last good copy straight away; the current build's copy is fetched in the background. So does
-    // everyone else when that copy is from the live build (its hour or day ran out, or this colo evicted the key):
-    // same build, same JS chunks, so it's safe to show while the fresh one renders.
-    const lastBuild = last?.headers.get("x-build");
-    const sameBuild = Boolean(lastBuild) && genq.endsWith(`=${lastBuild}`);
-    if (last && (sameBuild || CRAWLER.test(request.headers.get("user-agent") || ""))) {
-      ctx.waitUntil(toOrigin(request, url, 30_000).then((res) => store(res, url, genq, key, lastKey)).catch(() => {}));
-      return stale("STALE");
-    }
-
-    let res;
-    try {
-      res = await toOrigin(request, url, last ? ORIGIN_BUDGET_MS : 0); // no fallback: wait as long as the app needs
-    } catch {
-      // Timed out or unreachable: the last good copy, else a retryable 503 (never a hung connection).
-      if (last) return stale("STALE-TIMEOUT");
-      return new Response("AniLumi is busy, please retry in a minute.", { status: 503, headers: { "retry-after": "60", "content-type": "text/plain; charset=utf-8", "cache-control": "no-store" } });
-    }
-    // Render's own Cloudflare sometimes challenges our requests ("Just a moment…", 403/429 + cf-mitigated). That
-    // page is useless to visitors and crawlers alike: treat it as the origin being down.
-    const blocked = res.headers.get("cf-mitigated") === "challenge" || res.status === 429 || res.status === 403;
-    if ((res.status >= 500 || blocked) && last) return stale(blocked ? "STALE-BLOCKED" : "STALE-ERROR");
-    if (blocked) {
-      return new Response("AniLumi is busy, please retry in a few minutes.", { status: 503, headers: { "retry-after": "300", "content-type": "text/plain; charset=utf-8", "cache-control": "no-store", "x-edge-cache": "ORIGIN-BLOCKED" } });
-    }
-    if (res.status >= 500) {
-      // No copy to fall back on: say "temporarily unavailable, retry" (503 + Retry-After), which crawlers treat as
-      // transient, rather than passing on a 500.
-      const out = new Response(res.body, { status: 503, headers: new Headers(res.headers) });
-      out.headers.set("retry-after", "300");
-      out.headers.set("cache-control", "no-store");
-      out.headers.set("x-edge-cache", `ORIGIN-${res.status}`);
-      return out;
-    }
-
-    const out = new Response(res.body, res);
-    out.headers.set("x-edge-cache", "MISS");
-    if (genq) out.headers.set("x-edge-gen", genq.slice(genq.indexOf("=") + 1));
-    ctx.waitUntil(store(out, url, genq, key, lastKey));
-    return out;
+    return localize(await handle(request, env, ctx), new URL(request.url));
   },
 
   // Cron triggers (edge/wrangler.toml): start the GitHub workflows on time (edge/schedule.js).
@@ -229,6 +154,97 @@ export default {
     ctx.waitUntil(dispatchDue(env, new Date(event.scheduledTime)));
   },
 };
+
+async function handle(request, env, ctx) {
+  app = env.APP || null;
+  pages = env.PAGES || null;
+  const url = new URL(request.url);
+  if (url.hostname === `www.${SITE}`) {
+    url.hostname = SITE;
+    return Response.redirect(url.toString(), 301);
+  }
+  if (!cacheable(request, url)) return toOrigin(request, url);
+  // From here on, a tagged link is the same page as the untagged one: one cache entry, one render.
+  if (url.search) url.search = cleanSearch(url.search);
+
+  const cache = caches.default;
+  // Hashed build assets and cards never change; pages are keyed by the live build too.
+  const genq = url.pathname.startsWith("/_next/static/") || CARD.test(url.pathname) ? "" : `${url.search ? "&" : "?"}__gen=${await generation(ctx)}`;
+  const key = new Request(`https://${SITE}${url.pathname}${rscKey(request, url) ?? url.search}${genq}`, { method: "GET" });
+  const hit = await cache.match(key);
+  if (hit) {
+    const out = new Response(hit.body, hit);
+    out.headers.set("x-edge-cache", "HIT");
+    if (genq) out.headers.set("x-edge-gen", genq.slice(genq.indexOf("=") + 1));
+    return out;
+  }
+
+  // Not in this data centre: the global copy, if another one has it. Within its TTL it is served as a hit; past
+  // it, it is still from the live build (the key says so), so it is served while a fresh one renders.
+  const global = url.pathname.startsWith("/_next/static/") ? null : await globalMatch(key);
+  if (global) {
+    const age = (Date.now() - global.uploaded) / 1000;
+    const fresh = age < ttl(url.pathname);
+    // Keep it here too: for the rest of its TTL, or a minute when stale so this colo refreshes it at most that often.
+    ctx.waitUntil(cache.put(key, withMaxAge(global.response.clone(), fresh ? Math.ceil(ttl(url.pathname) - age) : 60)));
+    if (!fresh) ctx.waitUntil(toOrigin(request, url, 30_000).then((res) => store(res, url, genq, key, lastKeyFor(url, genq))).catch(() => {}));
+    const out = new Response(global.response.body, global.response);
+    out.headers.set("x-edge-cache", fresh ? "GLOBAL-HIT" : "GLOBAL-STALE");
+    if (genq) out.headers.set("x-edge-gen", genq.slice(genq.indexOf("=") + 1));
+    return out;
+  }
+
+  // Last good copy of a page, from any build: survives deploys, which otherwise send every crawler request to
+  // Render at once. Only plain page HTML (an RSC payload from another build would make Next.js hard-reload).
+  const lastKey = lastKeyFor(url, genq);
+  const last = lastKey ? await cache.match(lastKey) : null;
+  const stale = (why) => {
+    const out = new Response(last.body, last);
+    out.headers.set("x-edge-cache", why);
+    return out;
+  };
+
+  // Crawlers get the last good copy straight away; the current build's copy is fetched in the background. So does
+  // everyone else when that copy is from the live build (its hour or day ran out, or this colo evicted the key):
+  // same build, same JS chunks, so it's safe to show while the fresh one renders.
+  const lastBuild = last?.headers.get("x-build");
+  const sameBuild = Boolean(lastBuild) && genq.endsWith(`=${lastBuild}`);
+  if (last && (sameBuild || CRAWLER.test(request.headers.get("user-agent") || ""))) {
+    ctx.waitUntil(toOrigin(request, url, 30_000).then((res) => store(res, url, genq, key, lastKey)).catch(() => {}));
+    return stale("STALE");
+  }
+
+  let res;
+  try {
+    res = await toOrigin(request, url, last ? ORIGIN_BUDGET_MS : 0); // no fallback: wait as long as the app needs
+  } catch {
+    // Timed out or unreachable: the last good copy, else a retryable 503 (never a hung connection).
+    if (last) return stale("STALE-TIMEOUT");
+    return new Response("AniLumi is busy, please retry in a minute.", { status: 503, headers: { "retry-after": "60", "content-type": "text/plain; charset=utf-8", "cache-control": "no-store" } });
+  }
+  // Render's own Cloudflare sometimes challenges our requests ("Just a moment…", 403/429 + cf-mitigated). That
+  // page is useless to visitors and crawlers alike: treat it as the origin being down.
+  const blocked = res.headers.get("cf-mitigated") === "challenge" || res.status === 429 || res.status === 403;
+  if ((res.status >= 500 || blocked) && last) return stale(blocked ? "STALE-BLOCKED" : "STALE-ERROR");
+  if (blocked) {
+    return new Response("AniLumi is busy, please retry in a few minutes.", { status: 503, headers: { "retry-after": "300", "content-type": "text/plain; charset=utf-8", "cache-control": "no-store", "x-edge-cache": "ORIGIN-BLOCKED" } });
+  }
+  if (res.status >= 500) {
+    // No copy to fall back on: say "temporarily unavailable, retry" (503 + Retry-After), which crawlers treat as
+    // transient, rather than passing on a 500.
+    const out = new Response(res.body, { status: 503, headers: new Headers(res.headers) });
+    out.headers.set("retry-after", "300");
+    out.headers.set("cache-control", "no-store");
+    out.headers.set("x-edge-cache", `ORIGIN-${res.status}`);
+    return out;
+  }
+
+  const out = new Response(res.body, res);
+  out.headers.set("x-edge-cache", "MISS");
+  if (genq) out.headers.set("x-edge-gen", genq.slice(genq.indexOf("=") + 1));
+  ctx.waitUntil(store(out, url, genq, key, lastKey));
+  return out;
+}
 
 function lastKeyFor(url, genq) {
   if (!genq || url.searchParams.has("_rsc")) return null;

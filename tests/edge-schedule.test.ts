@@ -51,3 +51,12 @@ test("edge cache: tracking tags don't split the cache, real parameters stay", as
   assert.equal(cleanSearch("?q=naruto"), "?q=naruto");
   assert.equal(cleanSearch(""), "");
 });
+
+test("edge: only /hi and its subpages are treated as Hindi", async () => {
+  const { isHindiPath } = await import("../edge/worker.js");
+  assert.equal(isHindiPath("/hi"), true);
+  assert.equal(isHindiPath("/hi/hindi-dub"), true);
+  assert.equal(isHindiPath("/hi/anime/naruto"), true);
+  assert.equal(isHindiPath("/hindi-dub"), false);
+  assert.equal(isHindiPath("/history"), false);
+});
