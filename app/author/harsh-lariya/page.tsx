@@ -34,7 +34,7 @@ export default function AuthorPage() {
       "@id": AUTHOR_ID,
       name: AUTHOR.name,
       url: abs(AUTHOR.path),
-      sameAs: [AUTHOR.home],
+      sameAs: AUTHOR.sameAs,
       description: `Anime fan from India who runs ${site.name} and checks its watch orders, filler lists and editor's notes.`,
       knowsAbout: ["Anime", "Anime watch orders", "Filler episodes", "Anime streaming in India"],
       worksFor: { "@id": ORG_ID },
@@ -82,7 +82,7 @@ export default function AuthorPage() {
       </ul>
       <div className="prose-anime mt-8 max-w-3xl">
         <h2>Elsewhere</h2>
-        <p>My own site: <a href={AUTHOR.home} rel="me noopener">{AUTHOR.home.replace(/^https?:\/\//, "")}</a>. Spotted a mistake in a guide? <Link href="/contact">Tell me</Link>, or use the &ldquo;Spotted a mistake?&rdquo; link on any page.</p>
+        <p>My own site: <a href={AUTHOR.home} rel="me noopener">{AUTHOR.home.replace(/^https?:\/\//, "")}</a>{site.founder.social.map((s) => <span key={s.name}> · <a href={s.url} rel="me noopener">{s.name}</a></span>)}. Spotted a mistake in a guide? <Link href="/contact">Tell me</Link>, or use the &ldquo;Spotted a mistake?&rdquo; link on any page.</p>
       </div>
     </div>
   );

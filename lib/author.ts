@@ -9,6 +9,8 @@ export const AUTHOR = {
   path: "/author/harsh-lariya",
   /** Their own site, listed as sameAs. */
   home: site.founder.url,
+  /** Their own site and social accounts, for sameAs. */
+  sameAs: [site.founder.url, ...site.founder.social.map((s) => s.url)],
 };
 export const AUTHOR_ID = `${abs(AUTHOR.path)}#person`;
 

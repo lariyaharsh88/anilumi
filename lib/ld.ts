@@ -24,6 +24,7 @@ export function siteGraph() {
         description: site.description,
         email: site.email,
         contactPoint: { "@type": "ContactPoint", contactType: "customer support", email: site.email, availableLanguage: ["English", "Hindi"] },
+        sameAs: site.channels.map((c) => c.url),
         founder: authorRef(),
       },
       {

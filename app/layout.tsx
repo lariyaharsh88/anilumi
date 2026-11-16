@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   title: { default: `${site.name} – ${site.tagline}`, template: `%s | ${site.name}` },
   description: fitDescription(site.description),
   openGraph: { siteName: site.name, type: "website", locale: "en_US" },
-  twitter: { card: "summary_large_image", site: site.twitter },
+  twitter: { card: "summary_large_image", creator: site.twitter },
   // Large image previews make pages eligible for Google Discover and image-rich results; full-length snippets.
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 } },
   manifest: "/manifest.webmanifest",

@@ -32,3 +32,9 @@ test("site graph links the website to its publisher", () => {
   assert.equal(web["@id"], SITE_ID);
   assert.deepEqual(web.publisher, { "@id": ORG_ID });
 });
+
+test("the Organization lists AniLumi's own channels, not the founder's accounts", () => {
+  const org = siteGraph()["@graph"][0] as { sameAs: string[] };
+  assert.deepEqual(org.sameAs, ["https://t.me/anilumi_in", "https://whatsapp.com/channel/0029Vb8zz3r3rZZjTkwgpK3m"]);
+  assert.ok(!org.sameAs.some((u) => u.includes("x.com") || u.includes("quora")));
+});
