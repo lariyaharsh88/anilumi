@@ -42,3 +42,12 @@ test("edge cron: dispatches each due workflow on main, and nothing without a tok
     console.log = log;
   }
 });
+
+test("edge cache: tracking tags don't split the cache, real parameters stay", async () => {
+  const { cleanSearch } = await import("../edge/worker.js");
+  assert.equal(cleanSearch("?utm_source=telegram&utm_medium=channel"), "");
+  assert.equal(cleanSearch("?utm_source=whatsapp&page=2&fbclid=abc"), "?page=2");
+  assert.equal(cleanSearch("?_rsc=1x&utm_campaign=starter"), "?_rsc=1x");
+  assert.equal(cleanSearch("?q=naruto"), "?q=naruto");
+  assert.equal(cleanSearch(""), "");
+});

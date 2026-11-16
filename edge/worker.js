@@ -30,6 +30,10 @@ const LAST_GOOD_TTL = 14 * DAY;
 const CARD = /\/(opengraph|twitter)-image(-[\w-]+)?$/;
 // Routes with `revalidate = 604800` in the app (characters, watch orders, cast lists): no data on them changes daily.
 const WEEKLY = /^\/(character\/[^/]+|watch-order\/[^/]+|anime\/[^/]+\/(cast|characters))\/?$/;
+// Campaign and click tags: the page is the same with or without them, and analytics reads them from the visitor's
+// address bar, not the server. Kept in the cache key, every tagged link (a channel post's utm_source=telegram) was a
+// cold page of its own with no copy to fall back on, so link previews waited on a full render and often gave up.
+const TRACKING = /^(utm_[a-z]+|fbclid|gclid|gbraid|wbraid|msclkid|igshid|mc_cid|mc_eid)$/i;
 const CRAWLER = /googlebot|google-inspectiontool|googleother|adsbot-google|mediapartners-google|bingbot|duckduckbot|yandex|applebot|baiduspider/i;
 
 function ttl(path) {
@@ -76,6 +80,14 @@ async function generation(ctx) {
  * only with its `_rsc` parameter, which Next.js derives from the headers that shape the payload (router state,
  * prefetch kind), so the full URL identifies it. Page HTML is only cached for plain requests without `_rsc`.
  */
+/** `search` without tracking tags, in the original order; "" when nothing else is left. Pure. */
+export function cleanSearch(search) {
+  const params = new URLSearchParams(search);
+  for (const k of [...params.keys()]) if (TRACKING.test(k)) params.delete(k);
+  const rest = params.toString();
+  return rest ? `?${rest}` : "";
+}
+
 function cacheable(request, url) {
   if (request.method !== "GET") return false;
   if (url.pathname.startsWith("/api/") || url.pathname.startsWith("/admin")) return false;
@@ -130,6 +142,8 @@ export default {
       return Response.redirect(url.toString(), 301);
     }
     if (!cacheable(request, url)) return toOrigin(request, url);
+    // From here on, a tagged link is the same page as the untagged one: one cache entry, one render.
+    if (url.search) url.search = cleanSearch(url.search);
 
     const cache = caches.default;
     // Hashed build assets and cards never change; pages are keyed by the live build too.
