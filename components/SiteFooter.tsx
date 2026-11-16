@@ -41,7 +41,7 @@ export default function SiteFooter() {
           <p className="mt-5 text-xs font-semibold uppercase tracking-wider text-ink/60">Follow</p>
           <div className="mt-2 flex flex-wrap gap-2">
             {[...site.channels, ...site.founder.social].map((s) => (
-              <a key={s.name} href={s.url} className="chip" target="_blank" rel="noopener me">{s.name}</a>
+              <a key={s.name} href={s.url} className="chip" target="_blank" rel="me noopener nofollow">{s.name}</a>
             ))}
           </div>
           {dbEnabled() && <LeadForm compact className="mt-6" kind="digest" source="footer-digest" title="📰 Weekly anime digest" button="Subscribe" />}

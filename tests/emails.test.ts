@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { confirmMail, digestMail, episodeMail, type LeadDoc } from "../lib/emails";
+import { confirmMail, digestMail, episodeMail, hindiMail, type LeadDoc } from "../lib/emails";
 import { buildDigest } from "../lib/pushplan";
 import type { AiringShow } from "../lib/airing";
 
@@ -53,4 +53,14 @@ test("digest: the week's birthdays, most-favourited first, listed soonest first 
   const m = digestMail({ ...lead, kind: "digest" }, { week: "9–16 Nov", premieres: [], episodes: [], news: [], birthdays: w });
   assert.match(m.html, /Birthdays this week/);
   assert.match(m.text, /BIRTHDAYS THIS WEEK\n- Today, Show/);
+});
+
+test("Indian dub emails point to the WhatsApp and Telegram channels; other emails don't", () => {
+  const dub = { ...lead, kind: "tamil" as const };
+  for (const m of [confirmMail(dub), hindiMail(dub, [{ title: "Naruto", url: "/anime/naruto", where: "Crunchyroll" }], "tamil")]) {
+    assert.match(m.html, /whatsapp\.com\/channel\//);
+    assert.match(m.html, /t\.me\/anilumi_in/);
+    assert.match(m.text, /WhatsApp: https:\/\/whatsapp\.com\/channel\//);
+  }
+  assert.doesNotMatch(confirmMail({ ...lead, kind: "digest" }).html, /t\.me\/anilumi_in/);
 });

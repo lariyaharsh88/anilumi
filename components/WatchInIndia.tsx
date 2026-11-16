@@ -1,4 +1,5 @@
 import Link from "@/components/Link";
+import JoinChannels from "@/components/JoinChannels";
 import { platformKind, type Dub } from "@/lib/hindidub";
 import { LANG, regionalFor } from "@/lib/regionaldub";
 
@@ -28,6 +29,7 @@ export default function WatchInIndia({ anime, hindi, className = "" }: { anime: 
           </li>
         ))}
       </ul>
+      <JoinChannels compact source="anime-india" lang="Indian" className="mt-2" />
     </div>
   );
 }

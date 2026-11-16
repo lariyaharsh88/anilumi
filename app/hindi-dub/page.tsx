@@ -17,6 +17,7 @@ import BarChart from "@/components/viz/BarChart";
 import StackedBar from "@/components/viz/StackedBar";
 import HindiDubList, { type DubCard } from "@/components/HindiDubList";
 import LeadForm from "@/components/LeadForm";
+import JoinChannels from "@/components/JoinChannels";
 import CorrectionForm from "@/components/CorrectionForm";
 import { dbEnabled } from "@/lib/db";
 
@@ -185,6 +186,7 @@ export default async function HindiDubHub() {
       )}
 
       {dbEnabled() && <LeadForm className="mt-8" kind="hindi" source="hindi-hub" title="🇮🇳 Email me when a new anime gets a Hindi dub" blurb="One short email when an official Hindi dub is added or starts streaming, with where to watch it and whether it's free. No pirate links, ever." />}
+      <JoinChannels className="mt-4" source="hindi-hub" />
 
       <section id="numbers" data-section className="reveal pt-10" aria-labelledby="num-h">
         <h2 id="num-h" className="h-section mb-1">Hindi dubbed anime in numbers</h2>

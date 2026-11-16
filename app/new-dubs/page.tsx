@@ -4,6 +4,7 @@ import PageHero from "@/components/PageHero";
 import Faq from "@/components/Faq";
 import JsonLd from "@/components/JsonLd";
 import LeadForm from "@/components/LeadForm";
+import JoinChannels from "@/components/JoinChannels";
 import { dbEnabled } from "@/lib/db";
 import { itemList } from "@/lib/ld";
 import { fitTitle, fitDescription } from "@/lib/titles";
@@ -67,6 +68,7 @@ export default function NewDubs() {
       </PageHero>
 
       {dbEnabled() && <LeadForm className="mt-8" kind="hindi" source="new-dubs" title="🇮🇳 Get new Hindi dubs by email" blurb="One short email when an official Hindi dub is added, with where to watch it and whether it's free. Tamil and Telugu alerts are on their lists." />}
+      <JoinChannels className="mt-4" source="new-dubs" lang="Hindi, Tamil & Telugu" />
 
       {weeks.map((w, i) => (
         <section key={w.start} className="reveal pt-10" aria-labelledby={`w-${w.start}`}>

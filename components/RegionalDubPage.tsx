@@ -9,6 +9,7 @@ import SectionNav from "@/components/fx/SectionNav";
 import BarChart from "@/components/viz/BarChart";
 import HindiDubList, { type DubCard } from "@/components/HindiDubList";
 import LeadForm from "@/components/LeadForm";
+import JoinChannels from "@/components/JoinChannels";
 import CorrectionForm from "@/components/CorrectionForm";
 import { dbEnabled } from "@/lib/db";
 import { animeBySlugs, posterUrl, type Anime } from "@/lib/kitsu";
@@ -110,6 +111,7 @@ export default async function RegionalDubPage({ lang }: { lang: RegionalLang }) 
       )}
 
       {dbEnabled() && <LeadForm className="mt-8" kind={lang === "ta" ? "tamil" : "telugu"} source={lang === "ta" ? "tamil-hub" : "telugu-hub"} title={`🇮🇳 Email me when a new anime gets a ${L.name} dub`} blurb={`One short email when an official ${L.name} dub is added, with where to watch it and whether it's free. No pirate links, ever.`} />}
+      <JoinChannels className="mt-4" source={lang === "ta" ? "tamil-hub" : "telugu-hub"} lang={L.name} />
 
       <section id="list" data-section className="reveal pt-10" aria-labelledby="list-h">
         <h2 id="list-h" className="h-section mb-1">All {dubs.length} {L.name} dubbed anime</h2>

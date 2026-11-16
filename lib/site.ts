@@ -7,10 +7,10 @@ export const site = {
   url: (process.env.NEXT_PUBLIC_SITE_URL || (process.env.NODE_ENV === "production" ? "https://anilumi.in" : "http://localhost:3130")).replace(/\/$/, ""),
   /** The founder's X account (@anilumi belongs to someone else), so it goes in twitter:creator, not twitter:site. */
   twitter: "@harsh_products",
-  /** AniLumi's own channels: Organization sameAs and the footer. */
+  /** AniLumi's own channels: Organization sameAs, the footer, JoinChannels and the dub emails. WhatsApp first: far more Indian readers have it. */
   channels: [
-    { name: "Telegram", url: "https://t.me/anilumi_in" },
     { name: "WhatsApp", url: "https://whatsapp.com/channel/0029Vb8zz3r3rZZjTkwgpK3m" },
+    { name: "Telegram", url: "https://t.me/anilumi_in" },
   ],
   /** Forwarded to the owner's inbox by Cloudflare Email Routing (15 Nov 2026). */
   email: "hello@anilumi.in",

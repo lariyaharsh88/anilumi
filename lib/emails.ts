@@ -5,6 +5,7 @@
  */
 import { EMAIL_SITE, unsubHeaders, unsubUrl, type Mail } from "./email";
 import type { Alert } from "./pushplan";
+import { site } from "./site";
 
 export type LeadDoc = { email: string; kind: "alert" | "digest" | "cheatsheet" | "guide" | "list" | "hindi" | "tamil" | "telugu"; animeId: string | null; animeTitle?: string | null; token: string; page?: string; listId?: string };
 
@@ -30,6 +31,10 @@ const button = (label: string, href: string) => `<table role="presentation" cell
 
 const poster = (src: string | null | undefined, w: number, h: number) =>
   src ? `<img src="${esc(src)}" width="${w}" height="${h}" alt="" style="display:block;width:${w}px;height:${h}px;object-fit:cover;border-radius:10px;border:1px solid ${C.line}">` : `<div style="width:${w}px;height:${h}px;line-height:${h}px;text-align:center;font-size:${Math.round(w / 3)}px;color:${C.line};border-radius:10px;background:${C.bg2};border:1px solid ${C.line}">&#9654;</div>`;
+
+/** The WhatsApp and Telegram channels (lib/site.ts), for the Indian dub emails: the same news, one tap, no inbox. */
+const channelsBox = () => `<div style="margin:22px 0 0;padding:14px 16px;border-radius:14px;background:${C.bg2};border:1px solid ${C.line};font-size:14px;line-height:1.6;color:${C.body}">💬 Also on ${site.channels.map((c) => a(c.url, c.name, C.violet)).join(" and ")}: new dubs the day they&rsquo;re added, plus what&rsquo;s free this week.</div>`;
+const channelsText = () => `Also on ${site.channels.map((c) => `${c.name}: ${c.url}`).join(" · ")}`;
 
 const FOOT_LINKS: [string, string][] = [["/schedule", "Schedule"], ["/watch-order", "Watch orders"], ["/hindi-dub", "Hindi dub"], ["/my", "My list"]];
 
@@ -96,13 +101,14 @@ export function confirmMail(l: LeadDoc, reminder = false): Mail {
     p(`You asked for <strong style="color:${C.ink}">${esc(what)}</strong>${reminder ? " but haven&rsquo;t confirmed yet, so nothing has been sent" : ""}. Tap the button so we know it&rsquo;s really you.`) +
     perks(PERKS[l.kind](l)) + button("Yes, confirm", url) +
     (sheet ? `<div style="margin:22px 0 0;padding:14px 16px;border-radius:14px;background:${C.bg2};border:1px solid ${C.line};font-size:14px;color:${C.body}">📋 Your cheat sheet is ready now: ${a(sheet, "open it here", C.violet)}</div>` : "") +
+    (l.kind in DUB_LANG ? channelsBox() : "") +
     `<p style="margin:22px 0 0;font-size:13px;line-height:1.6;color:${C.muted}">${reminder ? "This is the only reminder. " : ""}Didn&rsquo;t sign up? Ignore this email and you won&rsquo;t hear from us again.</p>`;
   const subject = l.kind === "alert" && l.animeTitle ? `Confirm your ${l.animeTitle} episode alerts` : l.kind === "digest" ? "Confirm your weekly anime digest" : l.kind === "cheatsheet" ? "Your cheat sheet + one tap to confirm" : l.kind === "list" ? "Confirm alerts for the shows on your list" : l.kind in DUB_LANG ? (l.animeTitle ? `Confirm your ${l.animeTitle} ${DUB_LANG[l.kind as DubKind].name} dub alert` : `Confirm your ${DUB_LANG[l.kind as DubKind].name} dub alerts`) : "Confirm your AniLumi updates";
   return {
     to: l.email, tag: reminder ? "confirm-reminder" : "confirm",
     subject: reminder ? `Reminder: ${subject[0].toLowerCase()}${subject.slice(1)}` : subject,
     html: layout({ preheader: reminder ? "You signed up but haven't confirmed yet. One tap and you're set." : "One tap to confirm, then you're set.", content, why: `Someone (hopefully you) signed up for ${what} on anilumi.in.` }),
-    text: `You asked for ${what} on AniLumi${reminder ? " but haven't confirmed yet" : ""}. Confirm here: ${url}${sheet ? `\n\nYour cheat sheet: ${abs(sheet)}` : ""}\n\n${reminder ? "This is the only reminder. " : ""}Didn't sign up? Ignore this email.`,
+    text: `You asked for ${what} on AniLumi${reminder ? " but haven't confirmed yet" : ""}. Confirm here: ${url}${sheet ? `\n\nYour cheat sheet: ${abs(sheet)}` : ""}${l.kind in DUB_LANG ? `\n\n${channelsText()}` : ""}\n\n${reminder ? "This is the only reminder. " : ""}Didn't sign up? Ignore this email.`,
   };
 }
 
@@ -214,11 +220,11 @@ export function hindiMail(l: LeadDoc, items: { title: string; url: string; where
   const content = kicker(`${L} dub`) + `<div class="h1">${h1(one ? `${esc(items[0].title)} is out in ${L}` : `${items.length} new ${L} dubs`)}</div>` +
     p(one ? `An official ${L} dub has just been added. Here&rsquo;s where to watch it.` : `These official ${L} dubs have just been added. Here&rsquo;s where to watch each one.`) +
     `<table role="presentation" width="100%" cellpadding="0" cellspacing="0">${rows}</table>` +
-    button(one ? "Where to watch" : `All ${L} dubbed anime`, one ? items[0].url : path);
+    button(one ? "Where to watch" : `All ${L} dubbed anime`, one ? items[0].url : path) + channelsBox();
   return {
     to: l.email, tag: kind, headers: unsubHeaders(l.token),
     subject: one ? `${items[0].title} is now in ${L}` : `${items.length} new ${L} dubbed anime`,
     html: layout({ preheader: one ? `Where to watch ${items[0].title} in ${L}` : items.map((x) => x.title).join(", "), content, why: `You get this because you asked for ${WHAT[l.kind](l)}.`, token: l.token }),
-    text: `${one ? `${items[0].title} is out in ${L}` : `${items.length} new ${L} dubs`}\n\n${items.map((x) => `- ${x.title} (${x.where}) ${abs(x.url)}`).join("\n")}\n\nAll ${L} dubs: ${EMAIL_SITE}${path}\nUnsubscribe: ${unsubUrl(l.token)}`,
+    text: `${one ? `${items[0].title} is out in ${L}` : `${items.length} new ${L} dubs`}\n\n${items.map((x) => `- ${x.title} (${x.where}) ${abs(x.url)}`).join("\n")}\n\nAll ${L} dubs: ${EMAIL_SITE}${path}\n${channelsText()}\nUnsubscribe: ${unsubUrl(l.token)}`,
   };
 }
