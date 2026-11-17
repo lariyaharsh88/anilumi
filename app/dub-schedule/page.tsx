@@ -125,7 +125,7 @@ export default function DubSchedule() {
 
       <section id="hindi" className="reveal mt-12 scroll-mt-24" aria-labelledby="hi-h">
         <h2 id="hi-h" className="h-section mb-1">🇮🇳 Hindi dubs: new and upcoming</h2>
-        <p className="mb-4 text-sm text-muted">New Hindi dubs released or announced around this season. For every anime you can already watch in Hindi, see the <Link href="/hindi-dub" className="text-violet hover:underline">Hindi dubbed anime list</Link>.</p>
+        <p className="mb-4 text-sm text-muted">New Hindi dubs released or announced around this season. For every anime you can already watch in Hindi, see the <Link href="/hindi-dub" className="text-violet hover:underline">Hindi dubbed anime list</Link>. Episode by episode, with times in IST: <Link href="/hindi-dub/this-week" className="text-violet hover:underline">Hindi dub schedule this week</Link>.</p>
         {hi.length ? <Table rows={hi} now={now} caption="Hindi dubs" /> : <p className="text-sm text-muted">No new Hindi dub announcements on our list yet.</p>}
         <JoinChannels className="mt-4" source="dub-schedule" />
       </section>
