@@ -25,6 +25,9 @@ export function fitDescription(text: string, max = DESCRIPTION_MAX): string {
   if (s.length <= max) return s;
   const cut = s.slice(0, max);
   const sentence = cut.lastIndexOf(". ");
-  if (sentence >= 80) return cut.slice(0, sentence + 1);
-  return `${cut.slice(0, cut.lastIndexOf(" ")).replace(/[,;:–-]$/, "")}…`;
+  const word = cut.lastIndexOf(" ");
+  // A whole sentence when it fills most of the snippet (or nothing longer fits); otherwise as many words as fit.
+  // Stopping at any sentence past 80 characters left snippets like "X from Y: age 15, 170 cm tall." at 96.
+  if (sentence >= 0 && (sentence >= 120 || word <= sentence + 1)) return cut.slice(0, sentence + 1);
+  return `${cut.slice(0, word).replace(/[,;:–-]$/, "")}…`;
 }

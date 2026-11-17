@@ -13,6 +13,9 @@ test("descriptions: unchanged when short, else cut at the last sentence that fit
   assert.equal(fitDescription("  Short   one. "), "Short one.");
   const sentences = `${"a".repeat(100)}. ${"b".repeat(100)}.`;
   assert.equal(fitDescription(sentences), `${"a".repeat(100)}.`);
+  const short = fitDescription(`Eren Yeager from Attack on Titan: age 15, 170 cm (5'7") - 183 cm (6'0") tall, birthday March 30. Voiced by Yuki Kaji (Japanese) and Bryce Papenbrook (English). Also known as Eren Jaeger.`);
+  // Was cut after the first sentence (96 characters); now both sentences fit.
+  assert.equal(short, `Eren Yeager from Attack on Titan: age 15, 170 cm (5'7") - 183 cm (6'0") tall, birthday March 30. Voiced by Yuki Kaji (Japanese) and Bryce Papenbrook (English).`);
   const words = Array.from({ length: 60 }, (_, i) => `word${i}`).join(" ");
   const cut = fitDescription(words);
   assert.ok(cut.length <= 161 && cut.endsWith("…") && !cut.includes("  "));

@@ -15,6 +15,7 @@ import { dbEnabled } from "@/lib/db";
 import { SPOILER_PREPAINT, THEME_PREPAINT } from "@/lib/prepaint";
 import { site } from "@/lib/site";
 import { AUTHOR } from "@/lib/author";
+import { INDEX } from "@/lib/indexing";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
   authors: [{ name: AUTHOR.name, url: AUTHOR.path }],
   publisher: site.name,
   // Large image previews make pages eligible for Google Discover and image-rich results; full-length snippets.
-  robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 } },
+  robots: INDEX,
   manifest: "/manifest.webmanifest",
   alternates: { types: { "application/rss+xml": [{ url: "/feed.xml", title: `${site.name} – this week's episodes` }] } },
   verification: process.env.NEXT_PUBLIC_GSC_VERIFICATION ? { google: process.env.NEXT_PUBLIC_GSC_VERIFICATION } : undefined,

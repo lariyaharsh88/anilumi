@@ -28,6 +28,12 @@ export const INDEXED_DAYS_AHEAD = 14;
 export const airsSoon = (airIso: string | null, now = Date.now()) => Boolean(airIso) && new Date(airIso!).getTime() - now < INDEXED_DAYS_AHEAD * 86400_000;
 
 const NOINDEX = { index: false, follow: true } as const;
+/**
+ * The robots rules for an indexed page: the root layout's own, repeated on every indexed page. A page that set
+ * `robots: undefined` dropped the layout's tag altogether (Next.js replaces the key, it doesn't merge), so most
+ * indexed pages went out without max-image-preview:large, which Google needs for large images in Discover.
+ */
+export const INDEX = { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 } } as const;
 
 // `shown`: pages with impressions in the latest Search Console export. `paths` is the warm-up order, which also
 // lists pages Google is re-checking; older files have only `paths`.
@@ -116,7 +122,7 @@ export const howLongIndexed = () => false;
 export const parentsGuideIndexed = (official: boolean) => official;
 
 /** `robots` metadata for a page: undefined (indexable) or noindex, follow. */
-export const robotsFor = (indexed: boolean) => (indexed ? undefined : NOINDEX);
+export const robotsFor = (indexed: boolean) => (indexed ? INDEX : NOINDEX);
 
 /**
  * Anime pages: Kitsu lists ~20,000 titles, most with nothing beyond the shared database text. Indexed: titles with at

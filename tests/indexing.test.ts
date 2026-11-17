@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { episodeIndexed, characterIndexed, robotsFor, searchShown, notedCharacters } from "../lib/indexing";
+import { episodeIndexed, characterIndexed, robotsFor, searchShown, notedCharacters, INDEX } from "../lib/indexing";
 import { topCharacterSlugs } from "../lib/charsnap";
 
 const ep = (n: number, over: Partial<Parameters<typeof episodeIndexed>[0]> = {}) =>
@@ -45,7 +45,9 @@ test("voice actors, genres, best-of years and trends: popular or already in sear
 });
 
 test("robotsFor", () => {
-  assert.equal(robotsFor(true), undefined);
+  // Indexed pages repeat the layout's rules; `undefined` dropped them (no max-image-preview:large on most pages).
+  assert.deepEqual(robotsFor(true), INDEX);
+  assert.equal(INDEX.googleBot["max-image-preview"], "large");
   assert.deepEqual(robotsFor(false), { index: false, follow: true });
 });
 
