@@ -36,7 +36,8 @@ function data() {
 export function generateMetadata(): Metadata {
   const { dubbed, free } = data();
   return {
-    title: fitTitle([`Anime Salt Alternatives: ${dubbed.length} Hindi Dubbed Anime, ${free.length} Free & Legal`, `Anime Salt Alternatives: Legal Hindi Dubbed Anime (${new Date().getFullYear()})`, "Anime Salt Alternatives: Legal Hindi Dubbed Anime"]),
+    // People search "anime salt hindi" (Bing suggested keywords, 6.3K impressions a month): the title leads with it.
+    title: fitTitle([`Anime Salt Hindi Alternatives: ${dubbed.length} Legal Hindi Dubs, ${free.length} Free`, `Anime Salt Hindi Alternatives: Legal Hindi Dubbed Anime (${new Date().getFullYear()})`, `Anime Salt Hindi Alternatives (${new Date().getFullYear()})`]),
     description: fitDescription(`Looking for Anime Salt? ${dubbed.length} anime have an official Hindi dub, ${free.length} of them free on YouTube and Prime Video's free tier. Every legal platform compared by price, with the shows on each. Checked ${dubDate()}.`),
     alternates: { canonical: "/anime-salt-alternatives" },
   };

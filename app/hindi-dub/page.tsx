@@ -61,6 +61,8 @@ export default async function HindiDubHub() {
   const faq = [
     { q: "Which anime have an official Hindi dub?", a: `${dubbed.length} popular anime on our list do, including ${dubbed.slice(0, 8).map((d) => d.t).join(", ")}. The full list with platforms is above.` },
     { q: "Where can I watch anime in Hindi for free?", a: free.length ? `${platforms.filter((p) => p.kind === "free").map((p) => p.name).join(", ")} carry Hindi dubs at no cost, for example ${free.slice(0, 6).map((d) => d.t).join(", ")}.` : "None of the dubs on our list is free right now." },
+    // Bing: "hindi dub anime website free", "free anime website hindi" and similar, many with high click-through.
+    { q: "Which websites have anime in Hindi for free?", a: `Legally, the licensors' own YouTube channels (Muse India, Ani-One India) and MX Player, now Prime Video's free tier: ${free.length} anime between them, free with ads. Sites that put every show up free are unlicensed. All legal sites, compared on price and catalogue: anilumi.in/anime-streaming-sites.` },
     { q: "Which platform has the most Hindi-dubbed anime?", a: `${top.name}, with ${top.titles.length} of the anime on this list, followed by ${platforms.slice(1, 3).map((p) => `${p.name} (${p.titles.length})`).join(" and ")}.` },
     ...(arrivals.length ? [{ q: "Which anime got a Hindi dub recently?", a: `${arrivals.slice(0, 6).map((e) => `${e.t} (${e.service}, ${fmtDay(e.premiere)})`).join(", ")}. The newest are listed under New Hindi dubbed anime above.` }] : []),
     ...(coming.length ? [{ q: "Which Hindi dubs are coming soon?", a: `${coming.map((e) => `${e.t} on ${e.service}${e.premiere ? ` from ${fmtDay(e.premiere)}` : ""}`).join("; ")}.` }] : []),
@@ -172,7 +174,7 @@ export default async function HindiDubHub() {
               const pic = e.slug ? kitsu.get(e.slug) : undefined;
               return (
                 <li key={`${e.t}-${e.service}`} className="card flex gap-3 p-3">
-                  <span className="relative h-[90px] w-16 shrink-0 overflow-hidden rounded-lg border border-line bg-bg-2">{pic && posterUrl(pic, "small") && <Image src={posterUrl(pic, "small")!} alt="" fill sizes="64px" className="object-cover" />}</span>
+                  <span className="relative h-[90px] w-16 shrink-0 overflow-hidden rounded-lg border border-line bg-bg-2">{pic && posterUrl(pic, "small") && <Image src={posterUrl(pic, "small")!} alt={`${e.t} poster`} fill sizes="64px" className="object-cover" />}</span>
                   <div className="min-w-0">
                     <p className="font-semibold text-ink">{e.slug ? <Link href={animePath({ slug: e.slug })} className="hover:text-violet-2">{e.t}</Link> : e.t}</p>
                     <p className="text-sm text-ink/85">{e.service} · <span className="font-medium text-accent-2">{Number.isFinite(premiereAt(e)) ? `from ${fmtDay(e.premiere)}` : "date to be announced"}</span></p>

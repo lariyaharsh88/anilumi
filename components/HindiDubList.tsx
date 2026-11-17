@@ -55,7 +55,7 @@ export default function HindiDubList({ items, platforms, lang = "en", labels, ca
         {items.map((d) => (
           <li key={d.s} hidden={!shown.has(d.s)} className="card flex gap-3 p-3">
             <Link href={d.href} tabIndex={-1} aria-hidden className="relative h-[104px] w-[74px] shrink-0 overflow-hidden rounded-lg border border-line bg-bg-2">
-              {d.poster && <Image src={d.poster} alt="" fill sizes="74px" className="object-cover" />}
+              {d.poster && <Image src={d.poster} alt={`${d.t} poster`} fill sizes="74px" className="object-cover" />}
             </Link>
             <div className="min-w-0 flex-1">
               <div className="flex items-start justify-between gap-2">

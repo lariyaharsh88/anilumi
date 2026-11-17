@@ -81,6 +81,8 @@ export default function AnimeStreamingSites() {
 
   const faq: FaqItem[] = [
     { q: "What is the best anime streaming site in India?", a: `For the biggest catalogue, ${name(most)}: it carries ${most.streams.length} of the ${total} most-followed anime we track in India${most.price ? ` (${most.price.toLowerCase()})` : ""}. For Hindi dubs, ${name(mostHindi)} has the most (${mostHindi.hindi.length} of ${hindiTotal}).` },
+    // Bing: "how to watch anime online", "where to watch anime online legally" and "anime streaming legality".
+    { q: "How can I watch anime online legally?", a: `Pick a licensed site from the table: ${name(most)} has the most anime, ${free.map(name).join(" and ")} are free with ads. To find one show, open its page on AniLumi: it lists every legal place it streams in India, the US and the UK, with sub, English dub and Hindi dub.` },
     { q: "Which anime sites are free and legal in India?", a: `${free.map((r) => `${r.site.name}: ${r.streams.length} popular anime and ${r.hindi.length} Hindi dubs`).join("; ")}. All are free with ads and carry official uploads from the licensors.` },
     { q: "Where can I watch anime in Hindi?", a: `${hindiTotal} anime have an official Hindi dub. Most are on ${list.filter((r) => r.hindi.length).sort((a, b) => b.hindi.length - a.hindi.length).slice(0, 3).map((r) => `${name(r)} (${r.hindi.length})`).join(", ")}; ${freeHindi.length} of them are free on YouTube or MX Player.` },
     ...(cheapest ? [{ q: "What is the cheapest way to watch anime in India?", a: `Free: YouTube channels like Muse India and Ani-One, and MX Player on Prime Video. The cheapest paid plan we found is ${name(cheapest)}'s ${cheapest.plan} (about ₹${cheapest.perMonth} a month). Prices checked ${fmtDate(PRICES_CHECKED)}.` }] : []),
@@ -179,7 +181,7 @@ export default function AnimeStreamingSites() {
         <div className="card max-w-3xl space-y-2 p-4 text-sm leading-6 text-ink/85">
           <p>Sites that put every new episode up for free, the day it airs, are unlicensed. They pay nothing to the studios, and their pop-up ads and fake &ldquo;download&rdquo; buttons are a common source of malware and scams.</p>
           <p>The free options above are the licensors&rsquo; own uploads: {free.map((r) => `${r.site.name} (${r.streams.length} popular anime, ${r.hindi.length} Hindi dubs)`).join(" and ")}. They show ads, and some playlists come down when a licence ends.</p>
-          <p><Link href="/hindi-dub" className="text-violet hover:underline">See which {freeHindi.length} anime are free in Hindi →</Link></p>
+          <p><Link href="/hindi-dub" className="text-violet hover:underline">See which {freeHindi.length} anime are free in Hindi →</Link> · <Link href="/anime-salt-alternatives" className="text-violet hover:underline">Legal alternatives to Anime Salt →</Link></p>
         </div>
         <JoinChannels source="streaming-sites" className="mt-5" />
       </section>

@@ -56,8 +56,9 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
   const label = `${cap(season)} ${year}`;
   const dubs = `${label}` === DUBS_SEASON ? dubShows().filter((e) => e.status !== "complete" && e.lang === "en").length : seasonDubs(Number(year), season)?.en.length ?? 0;
   return {
-    // Bing ranks the current season at #2 for "anime airing in fall 2026" with no clicks: say "airing now" up front.
+    // Bing ranks the current season at #2 for "anime airing in fall 2026" with no clicks: match that wording first.
     title: p ? `${label} Anime – Full Season Chart${p}` : fitTitle([
+      total && current ? `Anime Airing in ${label}: All ${total} Shows & Where to Watch` : null,
       total && current ? `${label} Anime Airing Now: All ${total} Shows & Where to Watch` : null,
       total ? `${label} Anime: All ${total} Shows, Air Days & Where to Watch` : null,
       total ? `${label} Anime: All ${total} Shows${current ? " Airing Now" : ""}, Ranked` : null,

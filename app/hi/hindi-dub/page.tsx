@@ -103,6 +103,7 @@ export default async function HindiDubHubHi() {
           <Link href="/hindi-dub" className="chip" hrefLang="en">English</Link>
           <Link href="/hi" className="chip">हिंदी गाइड</Link>
           <Link href="/hindi-voice-artists" className="chip" hrefLang="en">हिंदी आवाज़ कलाकार</Link>
+          <Link href="/anime-salt-alternatives" className="chip" hrefLang="en">Anime Salt के कानूनी विकल्प</Link>
         </p>
       </PageHero>
       <SectionNav sections={[
@@ -147,7 +148,7 @@ export default async function HindiDubHubHi() {
               const pic = e.slug ? kitsu.get(e.slug) : undefined;
               return (
                 <li key={`${e.t}-${e.service}`} className="card flex gap-3 p-3">
-                  <span className="relative h-[90px] w-16 shrink-0 overflow-hidden rounded-lg border border-line bg-bg-2">{pic && posterUrl(pic, "small") && <Image src={posterUrl(pic, "small")!} alt="" fill sizes="64px" className="object-cover" />}</span>
+                  <span className="relative h-[90px] w-16 shrink-0 overflow-hidden rounded-lg border border-line bg-bg-2">{pic && posterUrl(pic, "small") && <Image src={posterUrl(pic, "small")!} alt={`${e.t} poster`} fill sizes="64px" className="object-cover" />}</span>
                   <div className="min-w-0">
                     <p className="font-semibold text-ink" lang="en">{e.slug ? <Link href={animePath({ slug: e.slug })} className="hover:text-violet-2">{e.t}</Link> : e.t}</p>
                     <p className="text-sm text-ink/85"><span lang="en">{e.service}</span> · <span className="font-medium text-accent-2">{Number.isFinite(premiereAt(e)) ? `${fmtDay(e.premiere)} से` : "तारीख़ अभी तय नहीं"}</span></p>

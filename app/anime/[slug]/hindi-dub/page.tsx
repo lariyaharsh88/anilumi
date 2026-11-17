@@ -152,6 +152,7 @@ export default async function HindiDubPage({ params }: Props) {
           {streams && <Link href={streams} className="chip">▶ All streaming options (sub, English dub)</Link>}
           {a && <Link href={animePath(a)} className="chip">About {d.t}</Link>}
           <Link href="/anime-streaming-sites" className="chip">Anime streaming sites in India</Link>
+          <Link href="/anime-salt-alternatives" className="chip">Anime Salt alternatives</Link>
         </div>
       </section>
 

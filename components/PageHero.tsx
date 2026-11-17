@@ -29,6 +29,8 @@ type Props = {
  */
 export default function PageHero({ crumbs, eyebrow, title, subtitle, facts, posters, backdrop, hue = 350, children, className = "" }: Props) {
   const art = (posters || []).filter((p): p is string => Boolean(p)).slice(0, 3);
+  // Bing flags empty alt text: name the posters after the page (its last breadcrumb).
+  const artAlt = crumbs?.length ? crumbs[crumbs.length - 1].label : "Anime";
   const tint = { ["--hue" as string]: String(hue) };
   return (
     <div className={`pt-6 ${className}`}>
@@ -72,7 +74,7 @@ export default function PageHero({ crumbs, eyebrow, title, subtitle, facts, post
                 return (
                   <div key={src} className="absolute top-1/2 h-48 w-32" style={{ left: pos.left, zIndex: pos.z, transform: `translate(-50%, -50%) rotate(${pos.rot}deg) scale(${pos.scale})` }}>
                     <div className="float-slow relative h-full w-full overflow-hidden rounded-xl border border-white/15 bg-card shadow-[0_20px_40px_-15px_rgba(0,0,0,.8)]" style={{ ["--delay" as string]: `${i * 0.6}s` }}>
-                      <Image src={src} alt="" fill sizes="128px" className="object-cover" />
+                      <Image src={src} alt={`${artAlt} poster ${i + 1}`} fill sizes="128px" className="object-cover" />
                       {i > 0 && <div className="absolute inset-0 bg-bg/30" />}
                     </div>
                   </div>
