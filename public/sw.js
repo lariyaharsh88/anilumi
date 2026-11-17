@@ -45,7 +45,8 @@ self.addEventListener("fetch", (e) => {
     e.respondWith((async () => {
       try {
         const res = await fetch(req);
-        if (res.ok && !url.search) {
+        // Never the admin dashboard: it lists subscribers' emails and would stay in Cache Storage after logout.
+        if (res.ok && !url.search && !url.pathname.startsWith("/admin")) {
           const c = await caches.open(PAGES);
           await c.put(url.pathname, res.clone());
           trim(PAGES, 60);

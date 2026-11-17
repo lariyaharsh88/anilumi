@@ -12,7 +12,8 @@ export async function POST(req: Request) {
   const message = cleanText(b.message, 1500);
   const page = cleanText(b.page, 300);
   if (message.length < 10) return reply(g, { error: "Please describe the problem in a sentence or two." }, 400);
-  if (!page.startsWith("/")) return reply(g, { error: "Bad request" }, 400);
+  // A site path, never "//other.host/…", which the admin page would render as an off-site link.
+  if (!/^\/(?!\/)/.test(page)) return reply(g, { error: "Bad request" }, 400);
   const email = b.email ? normalizeEmail(b.email) : null;
   if (b.email && !email) return reply(g, { error: "That email address doesn't look right (or leave it empty)." }, 400);
   await g.d.collection("corrections").insertOne({ page, message, email, kind: b.kind === "contact" ? "contact" : b.kind === "dub" ? "dub" : "correction", status: "new", createdAt: new Date() });

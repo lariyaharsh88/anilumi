@@ -34,6 +34,13 @@ const WEEKLY = /^\/(character\/[^/]+|watch-order\/[^/]+|anime\/[^/]+\/(cast|char
 // address bar, not the server. Kept in the cache key, every tagged link (a channel post's utm_source=telegram) was a
 // cold page of its own with no copy to fall back on, so link previews waited on a full render and often gave up.
 const TRACKING = /^(utm_[a-z]+|fbclid|gclid|gbraid|wbraid|msclkid|igshid|mc_cid|mc_eid)$/i;
+/**
+ * Query parameters some page reads (server searchParams, next.config rewrites, RandomPicker's ?pick). A URL with any
+ * other parameter still reaches the app but isn't cached here or in R2, so random ?x=1, ?x=2… can't fill the cache.
+ */
+const KNOWN_PARAMS = new Set(["_rsc", "a", "all", "b", "country", "done", "e", "genre", "id", "ids", "k", "max", "min", "minutes", "ok", "p", "page", "pick", "preset", "q", "retry", "s", "sort", "t", "title", "type", "u", "user"]);
+/** Whether every parameter in `search` is one a page reads. Pure. */
+export const knownSearch = (search) => [...new URLSearchParams(search).keys()].every((k) => KNOWN_PARAMS.has(k));
 const CRAWLER = /googlebot|google-inspectiontool|googleother|adsbot-google|mediapartners-google|bingbot|duckduckbot|yandex|applebot|baiduspider/i;
 
 function ttl(path) {
@@ -88,9 +95,17 @@ export function cleanSearch(search) {
   return rest ? `?${rest}` : "";
 }
 
+/** The path as the app will route it: "/%61dmin" is /admin. Pure. */
+function routedPath(pathname) {
+  try { return decodeURIComponent(pathname).toLowerCase(); } catch { return pathname.toLowerCase(); }
+}
+
 function cacheable(request, url) {
   if (request.method !== "GET") return false;
-  if (url.pathname.startsWith("/api/") || url.pathname.startsWith("/admin")) return false;
+  const path = routedPath(url.pathname);
+  if (path.startsWith("/api/") || path.startsWith("/admin")) return false;
+  // A signed-in admin sees lead emails; whatever URL they open, their copy must never become everyone's.
+  if (/(?:^|;\s*)al_admin=/.test(request.headers.get("cookie") || "")) return false;
   const rscRequest = request.headers.has("rsc") || request.headers.has("next-router-prefetch");
   return rscRequest === url.searchParams.has("_rsc");
 }
@@ -166,6 +181,7 @@ async function handle(request, env, ctx) {
   if (!cacheable(request, url)) return toOrigin(request, url);
   // From here on, a tagged link is the same page as the untagged one: one cache entry, one render.
   if (url.search) url.search = cleanSearch(url.search);
+  if (url.search && !knownSearch(url.search)) return toOrigin(request, url);
 
   const cache = caches.default;
   // Hashed build assets and cards never change; pages are keyed by the live build too.

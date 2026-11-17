@@ -10,7 +10,7 @@ export type IcsEvent = {
 };
 
 export function icsEscape(s: string) {
-  return s.replace(/\\/g, "\\\\").replace(/;/g, "\;").replace(/,/g, "\\,").replace(/\r?\n/g, "\\n");
+  return s.replace(/\\/g, "\\\\").replace(/;/g, "\\;").replace(/,/g, "\\,").replace(/\r?\n/g, "\\n");
 }
 
 /** Fold a content line so no physical line exceeds 75 octets (UTF-8), never splitting a character. */

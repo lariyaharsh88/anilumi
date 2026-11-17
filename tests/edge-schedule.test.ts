@@ -52,6 +52,15 @@ test("edge cache: tracking tags don't split the cache, real parameters stay", as
   assert.equal(cleanSearch(""), "");
 });
 
+test("edge cache: only query parameters a page reads are cached", async () => {
+  const { knownSearch } = await import("../edge/worker.js");
+  assert.ok(knownSearch("?page=2&sort=rated"));
+  assert.ok(knownSearch("?_rsc=1x"));
+  assert.ok(knownSearch(""));
+  assert.equal(knownSearch("?x=1"), false);
+  assert.equal(knownSearch("?page=2&cachebust=9"), false);
+});
+
 test("edge: only /hi and its subpages are treated as Hindi", async () => {
   const { isHindiPath } = await import("../edge/worker.js");
   assert.equal(isHindiPath("/hi"), true);

@@ -5,9 +5,13 @@ import { emailEnabled, sendMail } from "@/lib/email";
 import { confirmMail, type LeadDoc } from "@/lib/emails";
 import { listIdOf } from "@/lib/listid";
 import { normalizeCode } from "@/lib/syncmerge";
+import { listAnime } from "@/lib/kitsu";
 
 /** A repeat signup re-sends the confirmation at most this often. */
 const RESEND_AFTER_MS = 10 * 60_000;
+/** At most this many confirmation emails to one address a day, across every kind and show: no email bombing. */
+const MAX_CONFIRMS_PER_DAY = 3;
+const DAY_MS = 86_400_000;
 
 /**
  * Email signup from any lead CTA. Stored as "pending" and sent a confirmation link (double opt-in, through
@@ -23,6 +27,9 @@ export async function POST(req: Request) {
   if (!email) return reply(g, { error: "Please enter a valid email address." }, 400);
   if (!LEAD_KINDS.includes(kind) || !isSource(b.source) || b.consent !== true) return reply(g, { error: "Bad request" }, 400);
   const animeId = isAnimeId(b.animeId) ? b.animeId : null;
+  // The title in the email comes from Kitsu by id, never from the request: a client-sent title would let anyone mail
+  // their own text to any address through AniLumi's sender. (filter[id] needs unrated: lib/kitsu.ts.)
+  const animeTitle = animeId ? await listAnime({ filter: { id: animeId }, limit: 1, unrated: true }).then((r) => r.items[0]?.title ?? null).catch(() => null) : null;
   // List alerts follow the visitor's synced list (app/api/sync), named by its sync code.
   const code = kind === "list" ? normalizeCode(b.code) : null;
   if (kind === "list" && !code) return reply(g, { error: "Bad request" }, 400);
@@ -43,11 +50,12 @@ export async function POST(req: Request) {
     key,
     {
       $setOnInsert: { ...key, ...(listId ? { listId } : {}), status: "pending", token: randomBytes(18).toString("base64url"), createdAt: now, consentAt: now },
-      $set: { animeTitle: cleanText(b.animeTitle, 200) || null, source: b.source, page: cleanText(b.page, 300), utm, updatedAt: now },
+      $set: { animeTitle, source: b.source, page: cleanText(b.page, 300), utm, updatedAt: now },
     },
     { upsert: true },
   );
-  if (emailEnabled()) {
+  const sentToday = emailEnabled() ? await leads.countDocuments({ email, confirmSentAt: { $gt: new Date(now.getTime() - DAY_MS) } }) : 0;
+  if (emailEnabled() && sentToday < MAX_CONFIRMS_PER_DAY) {
     // Claim the send first, so two quick submits don't send two emails.
     const lead = await leads.findOneAndUpdate(
       { ...key, status: "pending", $or: [{ confirmSentAt: { $exists: false } }, { confirmSentAt: { $lt: new Date(now.getTime() - RESEND_AFTER_MS) } }] },

@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import { buildIcs, foldLine, icsEscape } from "../lib/ics";
 
 test("escapes RFC 5545 special characters", () => {
-  assert.equal(icsEscape("a,b;c\\d\ne"), "a\\,b\;c\\\\d\\ne");
+  assert.equal(icsEscape("a,b;c\\d\ne"), "a\\,b\\;c\\\\d\\ne"); // RFC 5545: , ; \ and newlines escaped
 });
 
 test("folds long lines at 75 octets without splitting multi-byte characters", () => {

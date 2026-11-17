@@ -34,7 +34,8 @@ async function sameOrigin(): Promise<boolean> {
   const h = await headers();
   const origin = h.get("origin");
   if (!origin) return false;
-  const host = new URL(origin).host;
+  let host: string;
+  try { host = new URL(origin).host; } catch { return false; } // "Origin: null" (sandboxed frames, some privacy modes)
   return host === new URL(site.url).host || host === h.get("host") || (process.env.NODE_ENV !== "production" && /^localhost(:\d+)?$/.test(host));
 }
 
