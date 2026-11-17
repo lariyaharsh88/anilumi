@@ -2,9 +2,9 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { CHUNK_SIZE, SENT_WINDOW_MS, changedEntries, chunk, episodeUrls, freshUrls, recordSent } from "../lib/indexnow";
 
-test("a new episode changes its own page, the show and the episode list", () => {
+test("a new episode changes the show and the episode list (single episodes are off-limits to crawlers)", () => {
   assert.deepEqual(episodeUrls("/anime/Black-Clover-Season-2/episode/8"), [
-    "https://anilumi.in/anime/Black-Clover-Season-2/episode/8", "https://anilumi.in/anime/Black-Clover-Season-2", "https://anilumi.in/anime/Black-Clover-Season-2/episodes",
+    "https://anilumi.in/anime/Black-Clover-Season-2", "https://anilumi.in/anime/Black-Clover-Season-2/episodes",
   ]);
 });
 

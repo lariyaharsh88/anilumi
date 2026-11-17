@@ -3,7 +3,7 @@ import { posterUrl } from "@/lib/kitsu";
 import { alAnime } from "@/lib/alsnap";
 import { abs } from "@/lib/site";
 import { WATCH_ORDER_OVERRIDES } from "@/data/watch-orders";
-import { listAnime, getCategories, getAniListId, seasonOf, shiftSeason, animePath, episodePath, TREND_GENRES, MAIN_GENRES } from "@/lib/kitsu";
+import { listAnime, getCategories, getAniListId, seasonOf, shiftSeason, animePath, TREND_GENRES, MAIN_GENRES } from "@/lib/kitsu";
 import { popularVoiceActors, vaPath } from "@/lib/anilist";
 import { allDays, birthdaysOn, bdPath, monthPath } from "@/lib/birthdays";
 import { fillerSlugs, continuationSlugs } from "@/lib/filler";
@@ -13,7 +13,6 @@ import { summaryFor } from "@/lib/summaries";
 import { sequelNews } from "@/lib/sequelnews";
 import { officialRatings } from "@/lib/ageratings";
 import { hasSnapshotThemes } from "@/lib/themes";
-import { airing as airingSnapshot, upcomingOf } from "@/lib/airing";
 import { HINDI_SLUGS, hindiPath, hindiIndexed } from "@/lib/hindi";
 import { LANG, dubbedIn } from "@/lib/regionaldub";
 import { dubEvents } from "@/lib/dubupdates";
@@ -21,7 +20,7 @@ import { allStreams, streamsPath } from "@/lib/streams";
 import { HINDI_PLATFORMS, dubsOn, hindiDubbed, hindiDubPath } from "@/lib/hindidub";
 import { PRICES_CHECKED } from "@/lib/platformprices";
 import { indexedSimilar } from "@/lib/similarhub";
-import { airsSoon, searchShown, searchShownPaths, watchOrderIndexed, characterTableIndexed, notedCharacters, genreIndexed, bestYearIndexed, trendIndexed, voiceActorIndexed, hindiDubIndexed } from "@/lib/indexing";
+import { searchShown, searchShownPaths, watchOrderIndexed, characterTableIndexed, notedCharacters, genreIndexed, bestYearIndexed, trendIndexed, voiceActorIndexed, hindiDubIndexed } from "@/lib/indexing";
 import franchiseData from "@/data/franchises.json";
 import { DATA_DATES as D, STATIC_UPDATED, BIRTHDAY_PAGES_UPDATED, HINDI_HUB_UPDATED, SCENE_PAGE_UPDATED, DUB_GUIDES_ADDED, latest, weekStart, monthStart } from "@/lib/lastmod";
 import { FILLER } from "@/data/filler";
@@ -132,18 +131,7 @@ export async function sitemapEntries(): Promise<MetadataRoute.Sitemap> {
     const airingPages = await Promise.all([0, 20, 40].map((offset) => listAnime({ filter: { status: "current" }, sort: "-userCount", limit: 20, offset, revalidate: 86400 })));
     const airing = { items: airingPages.flatMap((p) => p.items) };
     out.push({ url: abs("/compare"), lastModified: at(), changeFrequency: "monthly", priority: 0.5 });
-    // Episode pages: each airing show's episodes due in the next two weeks (the snapshot has their exact air
-    // times). Aired ones aren't listed: Kitsu often lacks their dates, and older recaps are noindexed
-    // (lib/indexing.ts). Episode pages Google already shows are listed.
-    const snap = await airingSnapshot();
-    for (const p of searchShownPaths("/anime/").filter((p) => p.includes("/episode/"))) out.push({ url: abs(p), lastModified: weekly, changeFrequency: "weekly", priority: 0.5 });
-    for (const show of snap.shows) {
-      if (!show.s) continue;
-      const upcoming = upcomingOf(show);
-      const next = upcoming[0]?.episode;
-      if (!next) continue;
-      for (const ep of upcoming.filter((u) => airsSoon(u.at)).map((u) => u.episode)) out.push({ url: abs(episodePath({ slug: show.s }, ep)), lastModified: now, changeFrequency: "daily", priority: ep === next ? 0.6 : 0.5 });
-    }
+    // Episode pages aren't listed: robots.txt keeps crawlers off them (scrapers walked every episode, Nov 2026).
     const seen = new Set<string>();
     // Cast and openings pages are listed only when the monthly snapshots have data for them; without it the page
     // renders empty and noindexes itself. AniList ids for the first 50 titles (Kitsu mappings, cached a week).

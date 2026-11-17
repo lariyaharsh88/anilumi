@@ -11,10 +11,11 @@
 const SITE = "https://anilumi.in";
 export const INDEXNOW_KEY = "67e58fb83b0e42898f42b207fa29073d";
 
-/** The pages a newly aired episode changes: the episode itself, the show and its episode list. Pure. */
+/** The pages a newly aired episode changes: the show and its episode list. Pure. */
 export const episodeUrls = (episodeUrl: string) => {
   const show = episodeUrl.replace(/\/episode\/\d+$/, "");
-  return [`${SITE}${episodeUrl}`, `${SITE}${show}`, `${SITE}${show}/episodes`];
+  // Not the episode page itself: robots.txt keeps crawlers off single episodes.
+  return [`${SITE}${show}`, `${SITE}${show}/episodes`];
 };
 
 /**

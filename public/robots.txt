@@ -11,6 +11,10 @@ Disallow: /search
 Disallow: /quiz/results
 Disallow: /random$
 Disallow: /*?
+# Comparison pairs and single episodes: unlimited URL families that scrapers walked (~240K renders a day,
+# Nov 2026) for about 17 search clicks a month. The /compare tool and each show's /episodes list stay open.
+Disallow: /compare/
+Disallow: /anime/*/episode/
 
 # Versioned icons and link-preview images carry a ?hash; keep them crawlable.
 Allow: /icon.svg?
@@ -49,5 +53,6 @@ Disallow: /*?
 Disallow: /*opengraph-image
 Disallow: /*twitter-image
 Disallow: /compare/
+Disallow: /anime/*/episode/
 
 Sitemap: https://anilumi.in/sitemap.xml
