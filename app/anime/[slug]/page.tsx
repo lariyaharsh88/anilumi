@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { animeIndexed, robotsFor } from "@/lib/indexing";
+import { animeIndexed, robotsFor, voiceActorIndexed } from "@/lib/indexing";
 import { WATCH_ORDER_OVERRIDES } from "@/data/watch-orders";
 import { fitTitle, fitDescription } from "@/lib/titles";
 import { workType, workId, isoDuration } from "@/lib/ld";
 import Link from "@/components/Link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { publicGenres, getAnimeBySlug, getCharacters, getEpisodes, getEpisodesAt, listAnime, getRelations, getLastAiredBest, getProductions, buildWatchOrder, type LastAired, type WatchOrder, comparePath, COMPARE_MIN_MEMBERS, franchiseRoot, airingNotice, episodePath, posterUrl, fmtDate, statusLabel, subtypeLabel, animePath, weekdayOf, runtimeMinutes, fmtMinutes, isFuture, Anime, airedOnly, type AiringNotice } from "@/lib/kitsu";
+import { getAniListId, publicGenres, getAnimeBySlug, getCharacters, getEpisodes, getEpisodesAt, listAnime, getRelations, getLastAiredBest, getProductions, buildWatchOrder, type LastAired, type WatchOrder, comparePath, COMPARE_MIN_MEMBERS, franchiseRoot, airingNotice, episodePath, posterUrl, fmtDate, statusLabel, subtypeLabel, animePath, weekdayOf, runtimeMinutes, fmtMinutes, isFuture, Anime, airedOnly, type AiringNotice } from "@/lib/kitsu";
 import { abs, OG_BASE, TWITTER_BASE } from "@/lib/site";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import JsonLd from "@/components/JsonLd";
@@ -34,7 +34,9 @@ import SpoilerGate from "@/components/SpoilerGate";
 import StoryGuide from "@/components/StoryGuide";
 import EditorNote from "@/components/EditorNote";
 import QuickAnswers, { type Answer } from "@/components/QuickAnswers";
-import { characterTable } from "@/lib/charsnap";
+import { characterTable, characterPathFor } from "@/lib/charsnap";
+import { castFromSnapshot } from "@/lib/castsnap";
+import { characterNote } from "@/lib/charnotes";
 import { ageLabel } from "@/lib/insights";
 import { noteFor } from "@/data/notes";
 import RatingWidget from "@/components/RatingWidget";
@@ -61,7 +63,7 @@ import ScoreCard from "@/components/ScoreCard";
 import FanRecs from "@/components/FanRecs";
 import NewsList from "@/components/NewsList";
 import { getNews, newsAbout } from "@/lib/news";
-import { getFanRecommendations, getKeyStaff, personPath, getAniListSequel } from "@/lib/anilist";
+import { getFanRecommendations, getKeyStaff, personPath, getAniListSequel, vaPath } from "@/lib/anilist";
 import { sequelVerdict, type SequelLike, type SequelKind } from "@/lib/sequel";
 import { combineScores, kitsuScore, aniListScore, getMalScore } from "@/lib/scores";
 import SectionNav, { type NavSection } from "@/components/fx/SectionNav";
@@ -154,7 +156,7 @@ export default async function AnimePage({ params }: Props) {
   if (!a) notFound();
 
   const mainGenre = publicGenres(a.categories)[0];
-  const [characters, episodes, related, relations, latestInfo, productions, insight, malScore, fanRecs, allNews, keyStaff] = await Promise.all([
+  const [characters, episodes, related, relations, latestInfo, productions, insight, malScore, fanRecs, allNews, keyStaff, voiceCast] = await Promise.all([
     getCharacters(a.id, 12),
     a.subtype === "movie" ? Promise.resolve({ items: [], total: 0, limit: 0, offset: 0 }) : getEpisodes(a.id, 1, 6),
     mainGenre ? listAnime({ filter: { categories: mainGenre.slug }, sort: "-userCount", limit: 13 }) : Promise.resolve({ items: [], total: 0, limit: 0, offset: 0 }),
@@ -166,6 +168,8 @@ export default async function AnimePage({ params }: Props) {
     getFanRecommendations(a.id, 12),
     getNews(),
     getKeyStaff(a.id),
+    // Who voices whom, from the monthly cast snapshot only (no AniList call): the ~290 most-followed series.
+    getAniListId(a.id).then((id) => (id ? castFromSnapshot(id, 8) : null)).catch(() => null),
   ]);
   const news = newsAbout(allNews, [a.title, a.titleEn]).slice(0, 4);
   const combined = combineScores([kitsuScore(a), aniListScore(insight), malScore]);
@@ -674,6 +678,28 @@ export default async function AnimePage({ params }: Props) {
                   </Link>
                 ))}
               </RailScroller>
+              {voiceCast && voiceCast.entries.some((e) => e.jp || e.en) && (
+                <div className="mt-4">
+                  <h3 className="text-xs font-semibold uppercase tracking-wide text-muted">Voice cast</h3>
+                  <ul className="mt-1.5 grid gap-x-6 gap-y-1 text-sm sm:grid-cols-2">
+                    {voiceCast.entries.filter((e) => e.jp || e.en).map((e) => {
+                      const charHref = characterPathFor(e.character.id);
+                      // The checked name where we have notes ("Monkey D. Luffy", not AniList's "Luffy Monkey").
+                      const charName = (charHref && characterNote(charHref.slice("/character/".length))?.name) || e.character.name;
+                      // Voice actors link only where their page is indexed, so links go to pages that can rank.
+                      const va = (v: NonNullable<typeof e.jp>, lang: string) => (voiceActorIndexed(vaPath(v), null)
+                        ? <Link href={vaPath(v)} className="font-medium text-ink hover:text-violet-2" title={`${v.name}, ${lang} voice`}>{v.name}</Link>
+                        : <span className="text-ink/80">{v.name}</span>);
+                      return (
+                        <li key={e.character.id} className="flex justify-between gap-2">
+                          <span className="truncate text-muted">{charHref ? <Link href={charHref} className="hover:text-violet-2">{charName}</Link> : charName}</span>
+                          <span className="shrink-0 text-right">{e.jp && va(e.jp, "Japanese")}{e.jp && e.en && <span className="text-muted"> · </span>}{e.en && va(e.en, "English")}</span>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+              )}
             </section>
           )}
 
