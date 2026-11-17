@@ -33,7 +33,7 @@ export default function TierMaker({ items, initialTiers, initialTitle }: { items
   useEffect(() => {
     if (q.trim().length < 2) { setResults([]); return; }
     const t = setTimeout(() => {
-      fetch(`/api/search?q=${encodeURIComponent(q.trim())}`).then((r) => r.json()).then((d: { items: TierItem[] }) => setResults(d.items)).catch(() => setResults([]));
+      fetch(`/api/search?anime=1&q=${encodeURIComponent(q.trim())}`).then((r) => r.json()).then((d: { items: TierItem[] }) => setResults(d.items)).catch(() => setResults([]));
     }, 300);
     return () => clearTimeout(t);
   }, [q]);
