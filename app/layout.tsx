@@ -14,6 +14,7 @@ import StickyLeadBar from "@/components/StickyLeadBar";
 import { dbEnabled } from "@/lib/db";
 import { SPOILER_PREPAINT, THEME_PREPAINT } from "@/lib/prepaint";
 import { site } from "@/lib/site";
+import { AUTHOR } from "@/lib/author";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -21,6 +22,10 @@ export const metadata: Metadata = {
   description: fitDescription(site.description),
   openGraph: { siteName: site.name, type: "website", locale: "en_US" },
   twitter: { card: "summary_large_image", creator: site.twitter },
+  // <meta name="author">, <link rel="author"> and <meta name="publisher">. Search engines read these from the
+  // JSON-LD (Organization, author Person); the tags are for tools and readers that look for them in <head>.
+  authors: [{ name: AUTHOR.name, url: AUTHOR.path }],
+  publisher: site.name,
   // Large image previews make pages eligible for Google Discover and image-rich results; full-length snippets.
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 } },
   manifest: "/manifest.webmanifest",
