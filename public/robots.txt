@@ -18,4 +18,36 @@ Allow: /apple-icon.png?
 Allow: /*opengraph-image?
 Allow: /*twitter-image?
 
+# AI training crawlers send no visitors but render pages on every visit (Cloudflare AI Crawl Control, week to
+# 17 Nov 2026: GPTBot 94K requests, ClaudeBot 77K, Amazonbot 37K), which is most of the Workers CPU bill. The
+# crawlers behind answers that do send visitors stay allowed through "*": OAI-SearchBot and ChatGPT-User
+# (ChatGPT search), Claude-SearchBot and Claude-User, PerplexityBot, Googlebot, Bingbot, DuckDuckBot.
+User-agent: GPTBot
+User-agent: ClaudeBot
+User-agent: anthropic-ai
+User-agent: Amazonbot
+User-agent: Applebot-Extended
+User-agent: Bytespider
+User-agent: CCBot
+User-agent: meta-externalagent
+User-agent: FacebookBot
+Disallow: /
+
+# Applebot (Siri, Spotlight) fetched 52K link-preview images a day (8 GB), each drawn on the server: pages only.
+# A crawler with its own group ignores "*", so the rules above are repeated here.
+User-agent: Applebot
+Disallow: /my
+Disallow: /unsubscribe
+Disallow: /subscribed
+Disallow: /admin
+Disallow: /api/
+Disallow: /embed/
+Disallow: /search
+Disallow: /quiz/results
+Disallow: /random$
+Disallow: /*?
+Disallow: /*opengraph-image
+Disallow: /*twitter-image
+Disallow: /compare/
+
 Sitemap: https://anilumi.in/sitemap.xml

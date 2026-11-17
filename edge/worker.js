@@ -181,7 +181,8 @@ async function handle(request, env, ctx) {
   if (!cacheable(request, url)) return toOrigin(request, url);
   // From here on, a tagged link is the same page as the untagged one: one cache entry, one render.
   if (url.search) url.search = cleanSearch(url.search);
-  if (url.search && !knownSearch(url.search)) return toOrigin(request, url);
+  // Preview images carry a version hash (opengraph-image?d53d2c13…) and build files their own: both are cached as is.
+  if (url.search && !CARD.test(url.pathname) && !url.pathname.startsWith("/_next/") && !knownSearch(url.search)) return toOrigin(request, url);
 
   const cache = caches.default;
   // Hashed build assets and cards never change; pages are keyed by the live build too.
