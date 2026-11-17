@@ -36,6 +36,8 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
     label: "Demon Slayer",
     intro: "Season 1, then the Mugen Train film (or its TV re-cut, which adds one new episode, but not both), then the Entertainment District, Swordsmith Village and Hashira Training arcs, then the Infinity Castle film trilogy that started in 2025.",
     checked: "2026-11-03",
+    // A 2-minute MLB promo clip, not part of the story.
+    exclude: ["kimetsu-no-yaiba-x-mlb-tokyo-series-presented-by-guggenheim"],
   },
   "jujutsu-kaisen": {
     label: "Jujutsu Kaisen",

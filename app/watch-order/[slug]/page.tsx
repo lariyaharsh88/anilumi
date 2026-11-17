@@ -283,6 +283,8 @@ export default async function WatchOrderPage({ params }: Props) {
                   {e.optional && e.kind !== "movie" && <span className="text-[10px] font-semibold uppercase text-muted">optional</span>}
                 </div>
                 <Link href={animePath(e.anime)} className="mt-1 block font-semibold hover:text-violet">{e.anime.title}</Link>
+                {/* The English name people search ("Entertainment District Arc"), under Kitsu's romaji title. */}
+                {e.anime.titleEn && e.anime.titleEn !== e.anime.title && <p className="text-xs text-ink/80">{e.anime.titleEn}</p>}
                 <p className="text-xs text-muted">{subtypeLabel(e.anime.subtype)}{e.anime.startDate ? ` · ${e.anime.startDate.slice(0, 4)}` : ""}{e.anime.episodeCount ? ` · ${e.anime.episodeCount} ep` : ""}{runtimeMinutes(e.anime) ? ` · ${fmtMinutes(runtimeMinutes(e.anime))}` : ""}</p>
                 <p className="mt-1 text-xs text-ink/70">{e.note}</p>
                 {oneLinkPerSite(streams.get(e.anime.id) || []).length > 0 && (

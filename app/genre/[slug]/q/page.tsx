@@ -16,6 +16,9 @@ import PickList, { type Pick } from "@/components/PickList";
 import { genrePicks, hiddenGems, type GenrePick } from "@/lib/picks";
 import { kitsuByAniListIds } from "@/lib/kitsu";
 import { snapshotOrder } from "@/lib/wosnap";
+import { animeBySlugs, posterUrl as poster } from "@/lib/kitsu";
+import { dubHref, hindiDubbed, platformKind, type Dub } from "@/lib/hindidub";
+import Image from "next/image";
 
 const LIMIT = 20;
 const why = (p: GenrePick, genre: string) => (p.themes.length ? `${p.themes.join(", ")}.` : `A top-rated ${genre} anime.`) + ` Rated ${p.score.toFixed(1)}/10 by ${p.votes.toLocaleString("en-US")} AniList members.`;
@@ -45,6 +48,19 @@ async function topPicks(slug: string, genre: string) {
   const hidden: Pick[] = gems.flatMap((p) => { const a = kitsu.get(p.anilistId); const root = a ? snapshotOrder(a.id)?.root.slug ?? a.slug : null; return a && root === a.slug && !all.some((x) => x.anime.id === a.id) ? [{ anime: a, why: why(p, genre), score: p.score }] : []; });
   return top.length >= 6 ? { top, short, hidden } : null;
 }
+/**
+ * Official Hindi dubs in this genre (data/hindi-dubs.json, genres from Kitsu), most-watched first: "romance anime in
+ * Hindi" is how much of India searches, and no general anime site answers it. Plain URL only.
+ */
+async function hindiInGenre(slug: string): Promise<{ d: Dub; free: boolean; img: string | null }[]> {
+  const dubs = hindiDubbed();
+  const kitsu = await animeBySlugs(dubs.map((d) => d.s), true).catch(() => new Map());
+  return dubs.flatMap((d) => {
+    const a = kitsu.get(d.s);
+    return a && a.categories.some((c: { slug: string }) => c.slug === slug) ? [{ d, free: d.platforms.some((p) => platformKind(p.name) === "free"), img: poster(a, "small") }] : [];
+  });
+}
+
 const SORTS: Record<string, { label: string; sort: string; filter?: Record<string, string> }> = {
   popular: { label: "Most popular", sort: "-userCount" },
   rated: { label: "Top rated", sort: "ratingRank" },
@@ -82,7 +98,8 @@ export default async function GenrePage({ params, searchParams }: Props) {
   const data = await listAnime({ filter: { categories: g.slug, ...(s.filter || {}) }, sort: s.sort, limit: LIMIT, offset: (page - 1) * LIMIT });
   const base = `/genre/${slug}${sortKey !== "popular" ? `?sort=${sortKey}` : ""}`;
   const plain = sortKey === "popular" && page === 1;
-  const picks = plain ? await topPicks(slug, g.title.toLowerCase()) : null;
+  const [picks, hindi] = plain ? await Promise.all([topPicks(slug, g.title.toLowerCase()), hindiInGenre(slug)]) : [null, []];
+  const g1 = g.title.toLowerCase();
 
   return (
     <div className="container-x pb-8">
@@ -120,6 +137,25 @@ export default async function GenrePage({ params, searchParams }: Props) {
           <h2 className="h-section mb-1 mt-12">Every {g.title.toLowerCase()} anime, most popular first</h2>
         </section>
       )}
+      {hindi.length > 0 && (
+        <section className="reveal mt-10" aria-labelledby="hindi-h">
+          <h2 id="hindi-h" className="h-section mb-1">{g.title} anime in Hindi</h2>
+          <p className="mb-4 text-sm text-muted">{hindi.length} {g1} anime with an official Hindi dub{hindi.some((x) => x.free) ? `, ${hindi.filter((x) => x.free).length} of them free and legal on YouTube or MX Player` : ""}. Most-watched first. <Link href="/hindi-dub" className="text-violet hover:underline">All Hindi dubbed anime →</Link></p>
+          <ul className="grid grid-cols-3 gap-3 sm:grid-cols-6 lg:grid-cols-8">
+            {hindi.slice(0, 16).map(({ d, free, img }) => (
+              <li key={d.s} className="min-w-0">
+                <Link href={dubHref(d)} className="group block">
+                  <span className="relative block aspect-[5/7] overflow-hidden rounded-xl border border-line bg-bg-2">
+                    {img && <Image src={img} alt={`${d.t} poster`} fill sizes="(max-width:640px) 30vw, 120px" className="object-cover transition duration-500 group-hover:scale-105" />}
+                    {free && <span className="absolute left-1.5 top-1.5 rounded-full bg-emerald-500/90 px-1.5 py-0.5 text-[10px] font-bold text-white">FREE</span>}
+                  </span>
+                  <span className="mt-1.5 line-clamp-2 text-xs font-semibold leading-snug text-ink group-hover:text-violet-2">{d.t}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
       <AdSlot slot="genre-top" />
       <div className="mt-6">
         <AnimeGrid items={data.items} startRank={(page - 1) * LIMIT + 1} ld={`Best ${g.title.toLowerCase()} anime`} />
@@ -129,6 +165,7 @@ export default async function GenrePage({ params, searchParams }: Props) {
         items={[
           ...(picks ? [{ q: `What is the best ${g.title.toLowerCase()} anime?`, a: `By AniList score weighted by how many rated it: ${picks.top.slice(0, 5).map((x, i) => `${i + 1}. ${x.anime.title}`).join(", ")}. ${picks.top[0].anime.title}: ${picks.top[0].why}` }] : []),
           { q: `What is the most popular ${g.title.toLowerCase()} anime?`, a: data.items[0] && sortKey === "popular" ? `${data.items[0].title} is the most popular ${g.title.toLowerCase()} anime with ${data.items[0].userCount.toLocaleString()} fans tracking it on Kitsu.` : `Switch to the "Most popular" tab to see the ${g.title.toLowerCase()} anime with the largest audience.` },
+          ...(hindi.length ? [{ q: `Which ${g1} anime are dubbed in Hindi?`, a: `${hindi.length} have an official Hindi dub, including ${hindi.slice(0, 6).map((x) => x.d.t).join(", ")}.${hindi.some((x) => x.free) ? ` Free and legal: ${hindi.filter((x) => x.free).slice(0, 4).map((x) => x.d.t).join(", ")}.` : ""}` }] : []),
           { q: `How many ${g.title.toLowerCase()} anime are there?`, a: `Kitsu tags ${g.count?.toLocaleString()} anime with the ${g.title} genre, including TV series, movies and OVAs.` },
         ]}
       />
