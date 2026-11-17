@@ -57,7 +57,12 @@ export const hindiDubPath = (s: string) => `/anime/${s}/hindi-dub`;
 /** The available dub entry for this exact slug: the page exists only for these. */
 export const dubPageEntry = (s: string): Dub | null => { const d = bySlug.get(s); return d?.status === "available" ? d : null; };
 let top: Set<string> | null = null;
-export const topHindiDub = (s: string) => (top ??= new Set(hindiDubbed().slice(0, HINDI_DUB_PAGES).map((d) => d.s))).has(s);
+/**
+ * Kids' shows people search in Hindi ("shinchan in hindi" 6.6K, "doraemon in hindi" 3.6K, "pokemon in hindi" 1.3K,
+ * "beyblade in hindi" 2.8K a month, Keyword Planner, Nov 2026): indexed although they rank below the top 30 here.
+ */
+const KIDS_INDEXED = ["crayon-shin-chan", "stand-by-me-doraemon", "pokemon", "beyblade-burst"];
+export const topHindiDub = (s: string) => (top ??= new Set([...hindiDubbed().slice(0, HINDI_DUB_PAGES).map((d) => d.s), ...KIDS_INDEXED.filter((k) => dubPageEntry(k))])).has(s);
 
 /**
  * Where a dub links to: its own Hindi dub page for the most-watched, else the watch order when the franchise has
@@ -109,6 +114,8 @@ export const HINDI_PLATFORMS = [
   // Amazon folded MX Player into Prime Video in India (announced May 2026): its free shows moved to Prime Video's free
   // tier. The slug and "MX Player" stay, since that's what people search for.
   { slug: "mx-player", label: "MX Player (now Prime Video free)", match: /mx player/i, how: "Free with ads and no Prime membership needed: MX Player's shows are now on Prime Video's free tier (Amazon folded MX Player into Prime Video in 2026). On Android the MX Player app still works; on iPhone, TV and the web it opens Prime Video. The Hindi version is usually listed as its own show." },
+  // "sony yay anime" 1.6K and "sony yay naruto" 880 a month (Keyword Planner, Nov 2026).
+  { slug: "sony-yay", label: "Sony YAY!", match: /sony yay/i, how: "A kids' TV channel with a Hindi audio feed: check its schedule on your DTH or cable guide. It isn't a streaming app; for on-demand Hindi episodes, see the other platforms on the Hindi dub list." },
   { slug: "cartoon-network", label: "Cartoon Network India", match: /cartoon network/i, how: "A TV channel: check its schedule; some shows also stream on JioHotstar." },
 ] as const;
 export type HindiPlatform = (typeof HINDI_PLATFORMS)[number];

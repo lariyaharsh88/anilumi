@@ -187,7 +187,7 @@ export default function AnimeStreamingSites() {
       </section>
 
       <p className="mt-8 text-xs text-muted">
-        Catalogues from our where-to-watch research on the {total} most-followed anime (checked {streamsDate()}), Hindi dubs checked {dubDate()}, Tamil and Telugu dubs checked {regionalDate()}, prices checked {fmtDate(PRICES_CHECKED)}. Catalogues and prices change, so check the site before you subscribe. <Link href="/how-we-check" className="underline">How we check</Link> · <Link href="/where-to-watch" className="underline">Where to watch each anime</Link>
+        Catalogues from our where-to-watch research on the {total} most-followed anime (checked {streamsDate()}), Hindi dubs checked {dubDate()}, Tamil and Telugu dubs checked {regionalDate()}, prices checked {fmtDate(PRICES_CHECKED)}. Catalogues and prices change, so check the site before you subscribe. <Link href="/how-we-check" className="underline">How we check</Link> · <Link href="/where-to-watch" className="underline">Where to watch each anime</Link> · <Link href="/crunchyroll-price-india" className="underline">Crunchyroll price in India</Link> · <Link href="/download-anime-in-hindi" className="underline">Downloading anime in Hindi</Link>
       </p>
 
       <Faq title="Anime streaming in India: FAQ" items={faq} />

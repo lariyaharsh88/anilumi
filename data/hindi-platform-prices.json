@@ -291,6 +291,18 @@
       ],
       "confidence": "medium",
       "notes": "Left out: Cartoon Network's a-la-carte price. The TRAI MRP list as on 31.08.2026 shows Cartoon Network (SD, Hindi/Tamil/Telugu/English) at ₹5.00 and Cartoon Network HD+ at ₹7.00, before taxes. I found no independent 2026 news source confirming ₹5; older reports and filings say ₹4.25. So for Cartoon Network, say 'included in DTH/cable packs' (TRAI-declared MRP ₹5/month if you want to cite the regulator alone). Sony's own channel-prices page was unreadable; a search snippet of it showed ₹4 for YAY! (undated, likely old). Medianews4u is a media trade site, not one of the listed outlets. Downgrade YAY! to 'included in packs' too if you want only listed outlets. Separately: Tata Play's 'Cartoon Network Forever/Classics' service (₹2/day) and Airtel's 'Cartoon Network Classics' (₹59/month) are operator value-added services, not the CN channel."
+    },
+    "sony-yay": {
+      "label": "Sony YAY!",
+      "free": false,
+      "plans": [],
+      "hindiNote": "A linear TV channel with a Hindi audio feed, available through DTH or cable, usually inside kids or Hindi packs; prices vary by operator.",
+      "notes": "Same research as the cartoon-network entry, which covers Cartoon Network and Sony YAY! together. Sony's own channel-prices page was unreadable, and the only figure found (₹4, undated) is likely old, so no price is listed.",
+      "sources": [
+        "https://www.trai.gov.in/sites/default/files/2026-09/MRP_02092026.pdf",
+        "https://www.medianews4u.com/?p=2493876"
+      ],
+      "confidence": "medium"
     }
   }
 }

@@ -15,6 +15,9 @@ test("sitemap: each URL lands in its page type's child sitemap", () => {
   assert.equal(g("/anime-streaming-sites"), "hindi");
   assert.equal(g("/similar"), "lists");
   assert.equal(g("/best-anime"), "lists");
+  assert.equal(g("/anime-world-alternatives"), "hindi");
+  assert.equal(g("/download-anime-in-hindi"), "hindi");
+  assert.equal(g("/crunchyroll-price-india"), "hindi");
   assert.equal(g("/hindi-dub/this-week"), "hindi");
   assert.equal(g("/voice-actor/95869-saori-hayami"), "people");
   assert.equal(g("/genre/action"), "lists");
