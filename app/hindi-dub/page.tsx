@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "@/components/Link";
 import PageHero from "@/components/PageHero";
+import AnswerLead from "@/components/AnswerLead";
 import Faq from "@/components/Faq";
 import JsonLd from "@/components/JsonLd";
 import { KIND_CLASS } from "@/components/HindiDub";
@@ -58,6 +59,8 @@ export default async function HindiDubHub() {
   }));
   const platformPage = (name: string) => { const page = HINDI_PLATFORMS.find((x) => x.match.test(name)); return page ? `/hindi-dub/${page.slug}` : null; };
   const top = platforms[0];
+  // For the one-line answer: Apple TV's Hindi listings mostly stream through Prime Video, so it isn't named as a service.
+  const streamers = platforms.filter((p) => !/apple tv/i.test(p.name));
   const faq = [
     { q: "Which anime have an official Hindi dub?", a: `${dubbed.length} popular anime on our list do, including ${dubbed.slice(0, 8).map((d) => d.t).join(", ")}. The full list with platforms is above.` },
     { q: "Where can I watch anime in Hindi for free?", a: free.length ? `${platforms.filter((p) => p.kind === "free").map((p) => p.name).join(", ")} carry Hindi dubs at no cost, for example ${free.slice(0, 6).map((d) => d.t).join(", ")}.` : "None of the dubs on our list is free right now." },
@@ -102,6 +105,9 @@ export default async function HindiDubHub() {
           <Link href="/telugu-dub" className="chip">Telugu dubbed anime</Link>
         </p>
       </PageHero>
+      <AnswerLead checked={dubDate()}>
+        {dubbed.length} anime have an official Hindi dub in India, {free.length} of them free and legal on YouTube (Muse India, Ani-One India) and MX Player. {top.name} has the most ({top.titles.length}), followed by {streamers.slice(1, 3).map((p) => `${p.name.replace(/ \(.*\)$/, "")} (${p.titles.length})`).join(" and ")}.
+      </AnswerLead>
       <SectionNav sections={[
         ...(free.length ? [{ id: "free", label: `Free (${free.length})` }] : []),
         ...(arrivals.length ? [{ id: "new", label: "New" }] : []),

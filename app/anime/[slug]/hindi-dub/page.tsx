@@ -6,6 +6,7 @@ import PageHero from "@/components/PageHero";
 import JsonLd from "@/components/JsonLd";
 import Faq, { type FaqItem } from "@/components/Faq";
 import JoinChannels from "@/components/JoinChannels";
+import AnswerLead from "@/components/AnswerLead";
 import { getAnimeBySlug, animeBySlugs, animePath, posterUrl, buildWatchOrder } from "@/lib/kitsu";
 import { dubShows, premiereAt } from "@/lib/dubschedule";
 import { pricesFor as priceOf, cheapestPlan, PERIOD } from "@/lib/platformprices";
@@ -82,7 +83,7 @@ export default async function HindiDubPage({ params }: Props) {
   const lowest = (pr: NonNullable<ReturnType<typeof priceOf>>) => [...pr.plans].filter((x) => x.period === "month").sort((x, y) => x.price - y.price)[0] ?? cheapestPlan(pr);
   const paidFrom = paid.flatMap((r) => { const pr = r.plat ? priceOf(r.plat.slug) : null; const c = pr ? lowest(pr) : null; return c ? [{ name: r.name, c }] : []; }).sort((x, y) => x.c.price - y.c.price)[0] ?? null;
   const tvOnly = rows.filter((r) => r.kind === "tv");
-  const cheapestWay = free.length ? `Free on ${[...new Set(free.map((r) => r.name))].join(" and ")}` : paidFrom ? `${paidFrom.name}, from ₹${paidFrom.c.price} a ${PERIOD[paidFrom.c.period]}` : tvOnly.length ? `On TV: ${[...new Set(tvOnly.map((r) => r.name))].join(", ")} (in DTH and cable packs)` : null;
+  const cheapestWay = free.length ? `Free on ${[...new Set(free.map((r) => r.name))].join(" and ")}` : paidFrom ? `${paidFrom.name}, from ₹${paidFrom.c.price} a ${PERIOD[paidFrom.c.period]}` : tvOnly.length ? `On TV (${[...new Set(tvOnly.map((r) => r.name))].join(", ")}), in DTH and cable packs` : null;
   const fmtDay = (iso: string) => new Date(/T/.test(iso) ? iso : `${iso}T00:00:00Z`).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
   const glance = [
     start && core.length > 1 ? { k: "Start with", v: <><Link href={animePath(start)} className="text-violet hover:underline">{start.titleEn || start.title}</Link>{start.startDate ? ` (${start.startDate.slice(0, 4)})` : ""}</> } : null,
@@ -92,6 +93,10 @@ export default async function HindiDubPage({ params }: Props) {
     started ? { k: "Hindi dub started", v: <>{fmtDay(started.premiere!)} on {started.service}</> } : null,
     cheapestWay ? { k: "Cheapest legal way", v: <>{cheapestWay}</> } : null,
   ].filter((x): x is { k: string; v: React.ReactElement } => Boolean(x));
+  // The answer first, in one line: platform (with the first clause of its scope), then the cheapest legal way in.
+  const shortScope = (x: string) => { const c = (x.split(";")[0].split("(")[0].trim() || x.split(";")[0]).trim(); return c.length > 60 ? `${c.slice(0, 57).replace(/[\s,(]+\S*$/, "")}…` : c; };
+  const byPlatform = [...new Map(rows.map((r) => [r.name, r])).values()];
+  const answer = `Yes. ${d.t} has an official Hindi dub on ${join(byPlatform.map((r) => (r.scope ? `${r.name} (${shortScope(r.scope)})` : r.name)))}.${cheapestWay ? ` Cheapest legal way: ${/^(Free|On TV)/.test(cheapestWay) ? cheapestWay.charAt(0).toLowerCase() + cheapestWay.slice(1) : cheapestWay}.` : ""}`;
 
   const faq: FaqItem[] = [
     { q: `Is ${d.t} dubbed in Hindi?`, a: `Yes. ${d.t} has an official Hindi dub on ${join(names(d))}. ${rows.map((r) => `${r.name}: ${r.scope || "available"}`).join("; ")}.` },
@@ -120,6 +125,8 @@ export default async function HindiDubPage({ params }: Props) {
         hue={25}
         posters={poster ? [poster] : []}
       />
+
+      <AnswerLead checked={checkedOn(d)}>{answer}</AnswerLead>
 
       {glance.length > 0 && (
         <section className="reveal mt-10" aria-labelledby="glance-h">

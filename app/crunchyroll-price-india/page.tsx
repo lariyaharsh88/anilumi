@@ -4,9 +4,10 @@ import PageHero from "@/components/PageHero";
 import JsonLd from "@/components/JsonLd";
 import Faq, { type FaqItem } from "@/components/Faq";
 import JoinChannels from "@/components/JoinChannels";
+import AnswerLead from "@/components/AnswerLead";
 import { webPage } from "@/lib/ld";
 import { fitTitle, fitDescription } from "@/lib/titles";
-import { dubHref, dubsOn, hindiDubbed, hindiPlatform, type HindiPlatform } from "@/lib/hindidub";
+import { dubHref, dubsOn, hindiPlatform, type HindiPlatform } from "@/lib/hindidub";
 import { dubbedIn } from "@/lib/regionaldub";
 import { PERIOD, PRICES_CHECKED, pricesFor, type PricePlan } from "@/lib/platformprices";
 
@@ -72,6 +73,10 @@ export default function CrunchyrollPriceIndia() {
         facts={[{ value: `₹${cheapest.price}`, label: `${cheapest.name}, a ${PERIOD[cheapest.period]}` }, { value: String(hindi.length), label: "anime in Hindi" }, { value: String(tamil.length), label: "in Tamil" }]}
         hue={25}
       />
+
+      <AnswerLead checked={checkedOn()}>
+        Crunchyroll costs ₹{cheapest.price} a month in India ({cheapest.name}). {monthly.filter((x) => x !== cheapest).map((x) => `${x.name} is ₹${x.price} a month${/offline|download/i.test(x.notes ?? "") ? " and adds offline downloads" : ""}`).join("; ")}. There&rsquo;s no free plan since 31 December 2025. Every plan includes the {hindi.length} anime with Hindi audio.
+      </AnswerLead>
 
       <section className="reveal mt-10" aria-labelledby="plans-h">
         <h2 id="plans-h" className="h-section mb-1">Crunchyroll plans and prices</h2>

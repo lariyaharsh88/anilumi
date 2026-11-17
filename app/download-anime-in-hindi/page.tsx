@@ -4,6 +4,7 @@ import PageHero from "@/components/PageHero";
 import JsonLd from "@/components/JsonLd";
 import Faq, { type FaqItem } from "@/components/Faq";
 import JoinChannels from "@/components/JoinChannels";
+import AnswerLead from "@/components/AnswerLead";
 import { webPage } from "@/lib/ld";
 import { fitTitle, fitDescription } from "@/lib/titles";
 import { dubHref, dubDate, dubsOn, hindiDubbed, hindiPlatform, platformKind, type HindiPlatform } from "@/lib/hindidub";
@@ -71,6 +72,10 @@ export default function DownloadAnimeInHindi() {
         facts={[{ value: String(r.length), label: "official apps" }, { value: String(dubbed.length), label: "anime in Hindi" }, { value: String(free.length), label: "free to stream" }]}
         hue={200}
       />
+
+      <AnswerLead checked={dubDate()}>
+        You can download Hindi dubbed anime legally inside the {((xs: string[]) => `${xs.slice(0, -1).join(", ")} and ${xs[xs.length - 1]}`)(r.map((x) => x.p.label.replace(/ \(.*\)$/, "").replace(/ India$/, "")))} apps{cr ? ` (on Crunchyroll, with ${cr.cost})` : ""}. Downloads play offline inside the app and can&rsquo;t be saved to your gallery. {free.length} of the {dubbed.length} Hindi dubs are also free to stream.
+      </AnswerLead>
 
       <section className="reveal mt-10" aria-labelledby="apps-h">
         <h2 id="apps-h" className="h-section mb-1">Apps that let you download Hindi dubbed anime</h2>

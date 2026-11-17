@@ -4,6 +4,7 @@ import PageHero from "@/components/PageHero";
 import JsonLd from "@/components/JsonLd";
 import Faq, { type FaqItem } from "@/components/Faq";
 import JoinChannels from "@/components/JoinChannels";
+import AnswerLead from "@/components/AnswerLead";
 import { webPage } from "@/lib/ld";
 import { fitTitle, fitDescription } from "@/lib/titles";
 import { allStreams, catalogue, streamsDate, streamsPath, type Streams } from "@/lib/streams";
@@ -105,6 +106,10 @@ export default function AnimeStreamingSites() {
         ]}
         hue={150}
       />
+
+      <AnswerLead checked={streamsDate()}>
+        The best legal anime streaming site in India is {name(most)}: {most.streams.length} of the {total} most-followed anime and {mostHindi === most ? `${most.hindi.length} of the ${hindiTotal} Hindi dubs` : `${most.hindi.length} Hindi dubs`}{most.price ? `, ${most.price.toLowerCase()}` : ""}. {free.map(name).join(" and ")} are free and legal, with {freeHindi.length} anime in Hindi.
+      </AnswerLead>
 
       <section className="reveal mt-10" aria-labelledby="quick-h">
         <h2 id="quick-h" className="h-section mb-3">Quick answer</h2>
