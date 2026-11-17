@@ -1,4 +1,4 @@
-import { fitDescription } from "@/lib/titles";
+import { fitDescription, fitTitle } from "@/lib/titles";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { birthdaysOn, parseBdParams, bdLabel, bdPath, zodiacOf } from "@/lib/birthdays";
@@ -20,8 +20,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const top = characters.slice(0, 2).map((c) => c.n);
   const more = characters.length - top.length;
   return {
+    // Two names when they fit Google's width, else one, else the count.
     title: characters.length
-      ? `${bdLabel(p.m, p.d)} Anime Birthdays: ${top.join(", ")}${more > 0 ? ` & ${more} More` : ""}`
+      ? fitTitle([
+        `${bdLabel(p.m, p.d)} Anime Birthdays: ${top.join(", ")}${more > 0 ? ` & ${more} More` : ""}`,
+        `${bdLabel(p.m, p.d)} Anime Birthdays: ${top[0]}${characters.length > 1 ? ` & ${characters.length - 1} More` : ""}`,
+        `${bdLabel(p.m, p.d)} Anime Birthdays (${characters.length} Character${characters.length === 1 ? "" : "s"})`,
+      ])
       : `${bdLabel(p.m, p.d)} Anime Birthdays: Characters & Voice Actors`,
     description: fitDescription(`Anime characters born on ${bdLabel(p.m, p.d)}${characters[0] ? `: ${characters.slice(0, 4).map((c) => `${c.n} (${c.t})`).join(", ")}${characters.length > 4 ? ` and ${characters.length - 4} more` : ""}` : ""}${people.length ? `, plus ${people.length} voice actor${people.length === 1 ? "" : "s"} with the same birthday` : ""}. Ages, heights, voice actors and the ${zodiacOf(p.m, p.d).name} sign.`),
     alternates: { canonical: bdPath(p.m, p.d) },
