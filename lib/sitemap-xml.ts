@@ -18,7 +18,7 @@ export function sitemapGroup(url: string): string {
   if (p.startsWith("/watch-order")) return "watch-orders";
   if (p.startsWith("/birthdays") || p === "/on-this-day") return "birthdays";
   if (p === "/hi" || p.startsWith("/hi/") || p === "/hindi-dub" || p.startsWith("/hindi-dub/") || p === "/tamil-dub" || p === "/telugu-dub" || p === "/new-dubs") return "hindi";
-  if (p.startsWith("/voice-actor") || p.startsWith("/staff")) return "people";
+  if (p.startsWith("/voice-actor") || p.startsWith("/staff") || p.startsWith("/hindi-voice-artist")) return "people";
   if (/^\/(genre|best|best-anime|top|season|trends|similar|compare|upcoming-seasons|lists|short-anime|tier-list|anime-openings|filler-lists|anime-to-manga|how-long-to-watch|parents-guide)(\/|$)/.test(p)) return "lists";
   return "pages";
 }

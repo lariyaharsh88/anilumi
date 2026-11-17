@@ -20,6 +20,8 @@ test("sitemap: each URL lands in its page type's child sitemap", () => {
   assert.equal(g("/crunchyroll-price-india"), "hindi");
   assert.equal(g("/hindi-dub/this-week"), "hindi");
   assert.equal(g("/voice-actor/95869-saori-hayami"), "people");
+  assert.equal(g("/hindi-voice-artist/sanket-mhatre"), "people");
+  assert.equal(g("/hindi-voice-artists"), "people");
   assert.equal(g("/genre/action"), "lists");
   assert.equal(g("/about"), "pages");
 });

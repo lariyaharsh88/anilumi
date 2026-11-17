@@ -1,5 +1,5 @@
 {
-  "checked": "2026-11-13",
+  "checked": "2026-11-17",
   "artists": [
     {
       "name": "Lohit Sharma",
@@ -1278,6 +1278,372 @@
         "https://www.animenewsnetwork.com/news/2023-09-08/hindi-dubs-of-code-geass-the-maid-i-hired-recently-is-mysterious-anime-stream-on-crunchyroll/.202108"
       ],
       "confidence": "high"
+    },
+    {
+      "name": "Sanket Mhatre",
+      "slug": "sanket-mhatre",
+      "bio": "Sanket Mhatre is a Hindi dubbing artist who began voicing Hollywood films around 2007 and is a regular Hindi voice for Ryan Reynolds, Brad Pitt and South Indian stars such as Ram Charan and Vishal. In Netflix's Hindi dub of the Korean animated series Lookism (2022) he voices Park Hyung-seok's second, handsome body, sharing the role with Rajesh Kava, who voices the original body. He also voiced the Professor in the Hindi dub of Money Heist: Korea.",
+      "roles": [
+        {
+          "character": "Park Hyung-seok (second body)",
+          "anime": "Lookism",
+          "slug": "oemojisangjuui",
+          "dub": "Netflix",
+          "sources": [
+            "https://sportskeeda.com/pop-culture/news-taught-lot-restraint-patience-lookism-s-voice-actors-sanket-rajesh-dish-playing-park-hyung-seok-korean-anime-series"
+          ]
+        }
+      ],
+      "sources": [
+        "https://sportskeeda.com/pop-culture/news-taught-lot-restraint-patience-lookism-s-voice-actors-sanket-rajesh-dish-playing-park-hyung-seok-korean-anime-series",
+        "https://www.pinkvilla.com/entertainment/exclusives/exclusive-meet-voice-rajinikanth-brad-pitt-ryan-reynolds-ram-charan-and-vishal-hindi-617580",
+        "https://sportskeeda.com/pop-culture/news-i-ve-always-enjoyed-antiheroes-tad-bit-more-in-conversation-indian-voice-actor-sanket-mhatre-plays-the-professor-money-heist-korea"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "name": "Ali Fazal",
+      "slug": "ali-fazal",
+      "bio": "Ali Fazal is an Indian actor who works mainly in Hindi films and series, known for Fukrey and Mirzapur. Crunchyroll announced in December 2023 that he would voice Song Chiyul, a C-rank hunter, in its Hindi dub of Solo Leveling, which streamed from January 2024 alongside the anime's simulcast.",
+      "roles": [
+        {
+          "character": "Song Chiyul",
+          "anime": "Solo Leveling",
+          "slug": "solo-leveling",
+          "dub": "Crunchyroll",
+          "sources": [
+            "https://www.animenewsnetwork.com/press-release/2023-12-12/indian-actor-ali-fazal-cast-to-hindi-voice-role-from-crunchyroll-highly-anticipated-anime-series-/.205412",
+            "https://www.animationxpress.com/latest-news/korean-anime-solo-leveling-to-debut-on-crunchyroll-ali-fazal-to-lend-hindi-voice/",
+            "https://www.tribuneindia.com/news/entertainment/ali-fazal-joins-the-hindi-voice-cast-for-solo-leveling-571870"
+          ]
+        }
+      ],
+      "sources": [
+        "https://www.animenewsnetwork.com/press-release/2023-12-12/indian-actor-ali-fazal-cast-to-hindi-voice-role-from-crunchyroll-highly-anticipated-anime-series-/.205412",
+        "https://www.animationxpress.com/latest-news/korean-anime-solo-leveling-to-debut-on-crunchyroll-ali-fazal-to-lend-hindi-voice/",
+        "https://www.tribuneindia.com/news/entertainment/ali-fazal-joins-the-hindi-voice-cast-for-solo-leveling-571870",
+        "https://en.wikipedia.org/wiki/Ali_Fazal"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Rajesh Kava",
+      "slug": "rajesh-kava",
+      "bio": "Rajesh Kava is a Gujarat-born voice actor who works in Hindi, Gujarati and English, best known as the Hindi voice of Harry Potter in the last three films and of Legolas and Jon Snow. In Netflix's Hindi dub of the Korean animated series Lookism (2022) he voices Park Hyung-seok in his original body, sharing the role with Sanket Mhatre, who voices the second body.",
+      "roles": [
+        {
+          "character": "Park Hyung-seok (original body)",
+          "anime": "Lookism",
+          "slug": "oemojisangjuui",
+          "dub": "Netflix",
+          "sources": [
+            "https://sportskeeda.com/pop-culture/news-taught-lot-restraint-patience-lookism-s-voice-actors-sanket-rajesh-dish-playing-park-hyung-seok-korean-anime-series"
+          ]
+        }
+      ],
+      "sources": [
+        "https://sportskeeda.com/pop-culture/news-taught-lot-restraint-patience-lookism-s-voice-actors-sanket-rajesh-dish-playing-park-hyung-seok-korean-anime-series",
+        "https://en.wikipedia.org/wiki/Rajesh_Kava"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "name": "Pooja Punjabi",
+      "slug": "pooja-punjabi",
+      "bio": "Pooja Punjabi is a Hindi voice-over artist who voices Naruto Uzumaki in the Hindi dub of Naruto that Sony YAY! began airing in August 2022. That dub is separate from the earlier Cartoon Network India Hindi version, in which Urvi Ashar voiced Naruto.",
+      "roles": [
+        {
+          "character": "Naruto Uzumaki",
+          "anime": "Naruto",
+          "slug": "naruto",
+          "dub": "Sony YAY!",
+          "sources": [
+            "https://animationvibes.com/naruto-on-sony-yay-promo-release-date-time-in-india/",
+            "https://animemirchi.com/naruto-hindi-dub-voice-cast/"
+          ]
+        }
+      ],
+      "sources": [
+        "https://animationvibes.com/naruto-on-sony-yay-promo-release-date-time-in-india/",
+        "https://animemirchi.com/naruto-hindi-dub-voice-cast/",
+        "https://www.afaqs.com/news/media/japanese-anime-series-naruto-to-launch-on-sony-yay"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "name": "Urvi Ashar",
+      "slug": "urvi-ashar",
+      "bio": "Urvi Ashar is an Indian dubbing actress, active since 1998, who works in English, Hindi, Kutchi, Gujarati and Marathi. She voiced Naruto Uzumaki in the Hindi dub of Naruto that aired on Cartoon Network India, a separate, earlier version from the Hindi dub Sony YAY! began airing in 2022. Her other Hindi cartoon roles include Candace Flynn in Phineas and Ferb and Mabel Pines in Gravity Falls.",
+      "roles": [
+        {
+          "character": "Naruto Uzumaki",
+          "anime": "Naruto",
+          "slug": "naruto",
+          "dub": "Cartoon Network India",
+          "sources": [
+            "https://animationvibes.com/naruto-on-sony-yay-promo-release-date-time-in-india/",
+            "https://animemirchi.com/naruto-hindi-dub-voice-cast/"
+          ]
+        }
+      ],
+      "sources": [
+        "https://animationvibes.com/naruto-on-sony-yay-promo-release-date-time-in-india/",
+        "https://animemirchi.com/naruto-hindi-dub-voice-cast/",
+        "https://en.wikipedia.org/wiki/Urvi_Ashar"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "name": "Ranjit R Tiwari",
+      "slug": "ranjit-r-tiwari",
+      "knownAs": [
+        "Ranjit Tiwari"
+      ],
+      "bio": "Ranjit R Tiwari is a Hindi voice artist in Crunchyroll's Indian-language dubs. He voices Yoichi Isagi in the Hindi dub of BLUE LOCK and was nominated in the first Hindi voice performance category of the Crunchyroll Anime Awards in 2025 for the role in BLUE LOCK's 2nd Season.",
+      "roles": [
+        {
+          "character": "Yoichi Isagi",
+          "anime": "BLUE LOCK 2nd Season",
+          "slug": "blue-lock",
+          "dub": "Crunchyroll",
+          "sources": [
+            "https://www.animenewsnetwork.com/press-release/2025-04-04/make-your-vote-count-crunchyroll-reveals-nominees-and-celebrity-presenter-line-up-for-the-2025-/.223222",
+            "https://awn.com/news/2025-crunchyroll-anime-awards-nominees-presenters-announced"
+          ]
+        }
+      ],
+      "sources": [
+        "https://www.animenewsnetwork.com/press-release/2025-04-04/make-your-vote-count-crunchyroll-reveals-nominees-and-celebrity-presenter-line-up-for-the-2025-/.223222",
+        "https://awn.com/news/2025-crunchyroll-anime-awards-nominees-presenters-announced"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Akshita Mishra",
+      "slug": "akshita-mishra",
+      "bio": "Akshita Mishra is a Hindi voice artist in Crunchyroll's Indian-language dubs. She was nominated in the Hindi voice performance category of the 2026 Crunchyroll Anime Awards for Koyuki in Demon Slayer: Kimetsu no Yaiba Infinity Castle.",
+      "roles": [
+        {
+          "character": "Koyuki",
+          "anime": "Demon Slayer: Kimetsu no Yaiba Infinity Castle",
+          "slug": "kimetsu-no-yaiba",
+          "dub": "Crunchyroll",
+          "sources": [
+            "https://bleedingcool.com/tv/2026-crunchyroll-anime-awards-nominees-set-new-details-released/",
+            "https://respawn.outlookindia.com/amp/story/pop-culture/pop-culture-news/dan-da-dan-my-hero-academia-lead-2026-anime-awards-nominees"
+          ]
+        }
+      ],
+      "sources": [
+        "https://bleedingcool.com/tv/2026-crunchyroll-anime-awards-nominees-set-new-details-released/",
+        "https://respawn.outlookindia.com/amp/story/pop-culture/pop-culture-news/dan-da-dan-my-hero-academia-lead-2026-anime-awards-nominees"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Heena Malik",
+      "slug": "heena-malik",
+      "bio": "Heena Malik is a Hindi voice artist. She was nominated in the Hindi voice performance category of the 2026 Crunchyroll Anime Awards for Reze in Chainsaw Man – The Movie: Reze Arc.",
+      "roles": [
+        {
+          "character": "Reze",
+          "anime": "Chainsaw Man – The Movie: Reze Arc",
+          "slug": "chainsaw-man",
+          "dub": "Crunchyroll",
+          "sources": [
+            "https://bleedingcool.com/tv/2026-crunchyroll-anime-awards-nominees-set-new-details-released/",
+            "https://respawn.outlookindia.com/amp/story/pop-culture/pop-culture-news/dan-da-dan-my-hero-academia-lead-2026-anime-awards-nominees"
+          ]
+        }
+      ],
+      "sources": [
+        "https://bleedingcool.com/tv/2026-crunchyroll-anime-awards-nominees-set-new-details-released/",
+        "https://respawn.outlookindia.com/amp/story/pop-culture/pop-culture-news/dan-da-dan-my-hero-academia-lead-2026-anime-awards-nominees"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "name": "Saudamini Anjaria",
+      "slug": "saudamini-anjaria",
+      "bio": "Saudamini Anjaria is a Hindi voice artist who voices Makima in Crunchyroll's Hindi dub of Chainsaw Man, which began streaming in July 2023. Crunchyroll's cast announcement listed her earlier Hindi dubbing work on Spider-Man: Into the Spider-Verse.",
+      "roles": [
+        {
+          "character": "Makima",
+          "anime": "Chainsaw Man",
+          "slug": "chainsaw-man",
+          "dub": "Crunchyroll",
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2023-07-28/crunchyroll-adds-hindi-dub-of-chainsaw-man-anime-on-july-29/.200742",
+            "https://animationxpress.com/?p=1603729"
+          ]
+        }
+      ],
+      "sources": [
+        "https://www.animenewsnetwork.com/news/2023-07-28/crunchyroll-adds-hindi-dub-of-chainsaw-man-anime-on-july-29/.200742",
+        "https://animationxpress.com/?p=1603729"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Anubhav Rawat",
+      "slug": "anubhav-rawat",
+      "bio": "Anubhav Rawat is a Hindi voice artist who voices Edward Elric in Crunchyroll's Hindi dub of Fullmetal Alchemist: Brotherhood, released in July 2026. In September 2025 he was among the Hindi voice actors named for Anime Times' live-dubbing session of Attack on Titan and Death Note at the MMAJ event in New Delhi.",
+      "roles": [
+        {
+          "character": "Edward Elric",
+          "anime": "Fullmetal Alchemist: Brotherhood",
+          "slug": "fullmetal-alchemist-brotherhood",
+          "dub": "Crunchyroll",
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2026-07-24/fullmetal-alchemist-brotherhood-anime-hindi-tamil-telugu-dubs-stream-on-crunchyroll/.239931",
+            "https://respawn.outlookindia.com/pop-culture/pop-culture-news/fullmetal-alchemist-brotherhood-dubs-debut-in-india"
+          ]
+        }
+      ],
+      "sources": [
+        "https://www.animenewsnetwork.com/news/2026-07-24/fullmetal-alchemist-brotherhood-anime-hindi-tamil-telugu-dubs-stream-on-crunchyroll/.239931",
+        "https://respawn.outlookindia.com/pop-culture/pop-culture-news/fullmetal-alchemist-brotherhood-dubs-debut-in-india",
+        "https://www.animenewsnetwork.com/news/2025-09-13/attack-on-titan-death-note-anime-hindi-voice-actors-participate-in-live-dubbing-session-at-mmaj-on-/.228750"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Mohak Ninad",
+      "slug": "mohak-ninad",
+      "bio": "Mohak Ninad is a Hindi voice artist who voices All Might in Cartoon Network India's Hindi dub of My Hero Academia, which premiered in September 2023. Cartoon Network India named him in its launch announcement alongside Vidit Kumar as Izuku Midoriya and Sahil Vinod Kulkarni as Katsuki Bakugo.",
+      "roles": [
+        {
+          "character": "All Might",
+          "anime": "My Hero Academia",
+          "slug": "boku-no-hero-academia",
+          "dub": "Cartoon Network India",
+          "sources": [
+            "https://www.animenewsnetwork.com/press-release/2023-08-25/cartoon-network-to-premiere-my-hero-academia-from-september-10-in-india-adding-ultimate-superhero-/.201618",
+            "https://ianslive.in/hit-anime-series-my-hero-academia-to-get-5-language-india-dub--20230825142105"
+          ]
+        }
+      ],
+      "sources": [
+        "https://www.animenewsnetwork.com/press-release/2023-08-25/cartoon-network-to-premiere-my-hero-academia-from-september-10-in-india-adding-ultimate-superhero-/.201618",
+        "https://ianslive.in/hit-anime-series-my-hero-academia-to-get-5-language-india-dub--20230825142105"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Nikita Salaskar",
+      "slug": "nikita-salaskar",
+      "bio": "Nikita Salaskar is a Hindi voice artist who voices Tony Tony Chopper in Cartoon Network India's Hindi dub of One Piece, which began with the Wano Country arc in May 2024. She was among the first Hindi cast members Cartoon Network India revealed in April 2024, alongside Vaibhav Thakkar as Luffy.",
+      "roles": [
+        {
+          "character": "Tony Tony Chopper",
+          "anime": "One Piece (Wano Country arc)",
+          "slug": "one-piece",
+          "dub": "Cartoon Network India",
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2024-04-21/cartoon-network-announces-indian-language-dubs-for-one-piece-anime-wano-arc/.210059",
+            "https://www.animenewsnetwork.com/news/2024-05-11/one-piece-anime-wano-arc-reveals-more-hindi-cast/.210606",
+            "https://www.animationxpress.com/latest-news/cartoon-network-to-air-one-piece-in-multiple-indian-languages/"
+          ]
+        }
+      ],
+      "sources": [
+        "https://www.animenewsnetwork.com/news/2024-04-21/cartoon-network-announces-indian-language-dubs-for-one-piece-anime-wano-arc/.210059",
+        "https://www.animenewsnetwork.com/news/2024-05-11/one-piece-anime-wano-arc-reveals-more-hindi-cast/.210606",
+        "https://www.animationxpress.com/latest-news/cartoon-network-to-air-one-piece-in-multiple-indian-languages/",
+        "https://www.sportskeeda.com/anime/news-one-piece-hindi-dub-indian-fans-losing-mind"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Kaith Handa",
+      "slug": "kaith-handa",
+      "bio": "Kaith Handa is a Hindi voice artist who voices Usopp in Cartoon Network India's Hindi dub of One Piece, which began with the Wano Country arc in May 2024. He was among the first Hindi cast members Cartoon Network India revealed in April 2024, alongside Vaibhav Thakkar as Luffy.",
+      "roles": [
+        {
+          "character": "Usopp",
+          "anime": "One Piece (Wano Country arc)",
+          "slug": "one-piece",
+          "dub": "Cartoon Network India",
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2024-04-21/cartoon-network-announces-indian-language-dubs-for-one-piece-anime-wano-arc/.210059",
+            "https://www.animenewsnetwork.com/news/2024-05-11/one-piece-anime-wano-arc-reveals-more-hindi-cast/.210606",
+            "https://www.animationxpress.com/latest-news/cartoon-network-to-air-one-piece-in-multiple-indian-languages/"
+          ]
+        }
+      ],
+      "sources": [
+        "https://www.animenewsnetwork.com/news/2024-04-21/cartoon-network-announces-indian-language-dubs-for-one-piece-anime-wano-arc/.210059",
+        "https://www.animenewsnetwork.com/news/2024-05-11/one-piece-anime-wano-arc-reveals-more-hindi-cast/.210606",
+        "https://www.animationxpress.com/latest-news/cartoon-network-to-air-one-piece-in-multiple-indian-languages/",
+        "https://www.sportskeeda.com/anime/news-one-piece-hindi-dub-indian-fans-losing-mind"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Pragti Kothari",
+      "slug": "pragti-kothari",
+      "bio": "Pragti Kothari is a Hindi voice artist who voices Nico Robin in Cartoon Network India's Hindi dub of One Piece, which began with the Wano Country arc in May 2024. She was among the first Hindi cast members Cartoon Network India revealed in April 2024, alongside Vaibhav Thakkar as Luffy.",
+      "roles": [
+        {
+          "character": "Nico Robin",
+          "anime": "One Piece (Wano Country arc)",
+          "slug": "one-piece",
+          "dub": "Cartoon Network India",
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2024-04-21/cartoon-network-announces-indian-language-dubs-for-one-piece-anime-wano-arc/.210059",
+            "https://www.animenewsnetwork.com/news/2024-05-11/one-piece-anime-wano-arc-reveals-more-hindi-cast/.210606",
+            "https://www.animationxpress.com/latest-news/cartoon-network-to-air-one-piece-in-multiple-indian-languages/"
+          ]
+        }
+      ],
+      "sources": [
+        "https://www.animenewsnetwork.com/news/2024-04-21/cartoon-network-announces-indian-language-dubs-for-one-piece-anime-wano-arc/.210059",
+        "https://www.animenewsnetwork.com/news/2024-05-11/one-piece-anime-wano-arc-reveals-more-hindi-cast/.210606",
+        "https://www.animationxpress.com/latest-news/cartoon-network-to-air-one-piece-in-multiple-indian-languages/",
+        "https://www.sportskeeda.com/anime/news-one-piece-hindi-dub-indian-fans-losing-mind"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Gaurav Marwaha",
+      "slug": "gaurav-marwaha",
+      "bio": "Gaurav Marwaha is a Hindi voice artist who voices Hiroshi Nohara, the school principal and Action Kamen in the Hindi dub of Crayon Shin-chan; in February 2021 he used his YouTube channel to explain delays in the dub's production. He also voices King Bradley in Crunchyroll's 2026 Hindi dub of Fullmetal Alchemist: Brotherhood.",
+      "roles": [
+        {
+          "character": "Hiroshi Nohara",
+          "anime": "Crayon Shin-chan",
+          "slug": null,
+          "dub": "Hindi TV dub (channel not stated in source)",
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2021-02-22/shinchan-hindi-dub-voice-actor-gaurav-marwaha-streams-video-explaining-production-delays/.169829"
+          ]
+        },
+        {
+          "character": "Action Kamen",
+          "anime": "Crayon Shin-chan",
+          "slug": null,
+          "dub": "Hindi TV dub (channel not stated in source)",
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2021-02-22/shinchan-hindi-dub-voice-actor-gaurav-marwaha-streams-video-explaining-production-delays/.169829"
+          ]
+        },
+        {
+          "character": "King Bradley",
+          "anime": "Fullmetal Alchemist: Brotherhood",
+          "slug": "fullmetal-alchemist-brotherhood",
+          "dub": "Crunchyroll",
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2026-07-24/fullmetal-alchemist-brotherhood-anime-hindi-tamil-telugu-dubs-stream-on-crunchyroll/.239931",
+            "https://respawn.outlookindia.com/pop-culture/pop-culture-news/fullmetal-alchemist-brotherhood-dubs-debut-in-india"
+          ]
+        }
+      ],
+      "sources": [
+        "https://www.animenewsnetwork.com/news/2021-02-22/shinchan-hindi-dub-voice-actor-gaurav-marwaha-streams-video-explaining-production-delays/.169829",
+        "https://www.animenewsnetwork.com/news/2026-07-24/fullmetal-alchemist-brotherhood-anime-hindi-tamil-telugu-dubs-stream-on-crunchyroll/.239931",
+        "https://respawn.outlookindia.com/pop-culture/pop-culture-news/fullmetal-alchemist-brotherhood-dubs-debut-in-india"
+      ],
+      "confidence": "medium"
     }
   ]
 }
