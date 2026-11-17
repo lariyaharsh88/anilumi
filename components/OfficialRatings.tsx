@@ -20,7 +20,7 @@ export default function OfficialRatings({ slug, title }: { slug: string; title: 
         ))}
       </ul>
       {e.notes && <p className="mt-2 text-xs text-muted">{e.notes}</p>}
-      <p className="mt-3 text-[11px] text-muted">India ratings: U/A 7+, 13+ and 16+ mean suitable from that age with parental guidance; A is adults only. {RATINGS_REVIEWED ? "Checked" : `Draft, checked${RATINGS_CHECKED ? ` on ${fmt(RATINGS_CHECKED)}` : ""}`} on each platform&apos;s page. <Link href="/how-we-check" className="underline">How we check</Link></p>
+      <p className="mt-3 text-[11px] text-muted">India ratings: U/A 7+, 13+ and 16+ mean suitable from that age with parental guidance; A is adults only. {RATINGS_REVIEWED ? "Checked" : `Checked${RATINGS_CHECKED ? ` on ${fmt(RATINGS_CHECKED)}` : ""}`} on each platform&apos;s page. <Link href="/how-we-check" className="underline">How we check</Link></p>
     </section>
   );
 }

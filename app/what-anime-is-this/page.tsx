@@ -1,4 +1,4 @@
-import { fitDescription } from "@/lib/titles";
+import { fitDescription, fitTitle } from "@/lib/titles";
 import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import SceneSearch from "@/components/SceneSearch";
@@ -13,7 +13,7 @@ import { seasonOf } from "@/lib/kitsu";
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: "What Anime Is This? Free Screenshot Search, Episode & Time",
+  title: fitTitle(["What Anime Is This? Free Screenshot Search, Episode & Time"]),
   description: fitDescription("Paste or upload a screenshot to find the anime, the exact episode and the minute it's from, in seconds. Free, no sign-up, with where to watch it next."),
   alternates: { canonical: "/what-anime-is-this" },
 };

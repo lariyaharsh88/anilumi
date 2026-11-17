@@ -1,4 +1,4 @@
-import { fitDescription } from "@/lib/titles";
+import { fitDescription, fitTitle } from "@/lib/titles";
 import type { Metadata } from "next";
 import { getAnimeBySlug, animePath, posterUrl, type Anime } from "@/lib/kitsu";
 import { continuationFor, continuationSlugs } from "@/lib/filler";
@@ -7,7 +7,7 @@ import ToolList from "@/components/ToolList";
 
 export const revalidate = 86400;
 export const metadata: Metadata = {
-  title: "Where Does the Anime End in the Manga? Chapter to Start Reading",
+  title: fitTitle(["Where Does the Anime End in the Manga? Chapter to Start Reading", "Where Does the Anime End in the Manga? Chapter to Read"]),
   description: fitDescription("Finished the anime and can't wait for the next season? The manga chapter or light-novel volume to start from for Chainsaw Man, Frieren, Jujutsu Kaisen, Demon Slayer and more."),
   alternates: { canonical: "/anime-to-manga" },
 };

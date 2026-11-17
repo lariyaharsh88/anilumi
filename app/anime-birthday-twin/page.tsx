@@ -1,4 +1,4 @@
-import { fitDescription } from "@/lib/titles";
+import { fitDescription, fitTitle } from "@/lib/titles";
 import type { Metadata } from "next";
 import MadeBy from "@/components/MadeBy";
 import Link from "@/components/Link";
@@ -13,7 +13,7 @@ import { site } from "@/lib/site";
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: "Anime Birthday Twin: Which Anime Character Shares Your Birthday?",
+  title: fitTitle(["Anime Birthday Twin: Which Anime Character Shares Your Birthday?", "Anime Birthday Twin: Which Character Shares Your Birthday?"]),
   description: fitDescription("Enter your birthday to find the anime characters and voice actors born on the same day, your zodiac sign, and a card to share with friends."),
   alternates: { canonical: "/anime-birthday-twin" },
 };

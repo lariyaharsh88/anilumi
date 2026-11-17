@@ -1,4 +1,4 @@
-import { fitDescription } from "@/lib/titles";
+import { fitDescription, fitTitle } from "@/lib/titles";
 import type { Metadata } from "next";
 import Link from "@/components/Link";
 import { listAnime, getSeason, seasonOf, uniqueById, posterUrl, cap, type Anime } from "@/lib/kitsu";
@@ -14,7 +14,7 @@ import { anilist } from "@/lib/anilist";
 import { editorWatched } from "@/lib/editor";
 
 export const metadata: Metadata = {
-  title: `Anime Tier List (${seasonOf().year}): ${cap(seasonOf().season)} Season + All-Time, Make Your Own`,
+  title: fitTitle([`Anime Tier List (${seasonOf().year}): ${cap(seasonOf().season)} Season + All-Time, Make Your Own`]),
   description: fitDescription("The most-watched anime in S, A, B and C tiers by fan score, then make your own tier list in seconds: start from popular, this season or top rated, add any title, download or share it."),
   alternates: { canonical: "/tier-list" },
 };

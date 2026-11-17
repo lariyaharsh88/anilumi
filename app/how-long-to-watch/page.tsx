@@ -1,4 +1,4 @@
-import { fitDescription } from "@/lib/titles";
+import { fitDescription, fitTitle } from "@/lib/titles";
 import type { Metadata } from "next";
 import { listAnime, uniqueById, animePath, posterUrl, runtimeMinutes, getLastAiredBest, primeAniList } from "@/lib/kitsu";
 import { humanDays, fmtRun } from "@/lib/binge";
@@ -8,7 +8,7 @@ import BarChart from "@/components/viz/BarChart";
 
 export const revalidate = 86400;
 export const metadata: Metadata = {
-  title: "How Long to Watch Anime – Longest & Shortest Popular Series by Runtime",
+  title: fitTitle(["How Long to Watch Anime – Longest & Shortest Popular Series by Runtime", "How Long to Watch Anime: Longest & Shortest Series"]),
   description: fitDescription("Total runtime and binge time for the 100 most popular anime series: the longest commitments, the quickest binges, and a calculator for every title."),
   alternates: { canonical: "/how-long-to-watch" },
 };

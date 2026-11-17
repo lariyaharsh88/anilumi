@@ -1,4 +1,4 @@
-import { fitDescription } from "@/lib/titles";
+import { fitDescription, fitTitle } from "@/lib/titles";
 import type { Metadata } from "next";
 import EditorWatched from "@/components/EditorWatched";
 import Link from "@/components/Link";
@@ -62,8 +62,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { indexed, alId } = await strong(a.id, a.slug);
   const fans = indexed ? fanPicks(await getFanRecommendations(a.id, 12), alId, name).length : 0;
   return {
-    title: indexed && fans >= 8 ? `Anime Like ${name}: ${fans} Picks Fans Recommend, and Why (${new Date().getFullYear()})` : `Anime Like ${name}: ${n || 20} Shows to Watch Next (${new Date().getFullYear()})`,
-    description: fitDescription(`Finished ${name}? These anime share its ${publicGenres(a.categories).slice(0, 3).map((c) => c.title.toLowerCase()).join(", ")} DNA, ranked by how many fans watch them.`),
+    title: indexed && fans >= 8
+      ? fitTitle([`Anime Like ${name}: ${fans} Picks Fans Recommend, and Why (${new Date().getFullYear()})`, `Anime Like ${name}: ${fans} Picks Fans Recommend (${new Date().getFullYear()})`, `Anime Like ${name}: ${fans} Fan Picks`, `Anime Like ${name}`])
+      : fitTitle([`Anime Like ${name}: ${n || 20} Shows to Watch Next (${new Date().getFullYear()})`, `Anime Like ${name}: ${n || 20} Shows to Watch Next`, `Anime Like ${name}`]),
+    description: fitDescription(`Finished ${name}? These anime share its ${publicGenres(a.categories).slice(0, 3).map((c) => c.title.toLowerCase()).join(", ")} DNA, ranked by how many fans watch them, with what each one shares with ${name} from AniList's community tags.`),
     alternates: { canonical: `/similar/${a.slug}` },
     robots: robotsFor(indexed),
   };

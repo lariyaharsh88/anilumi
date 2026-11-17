@@ -1,4 +1,4 @@
-import { fitDescription } from "@/lib/titles";
+import { fitDescription, fitTitle } from "@/lib/titles";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "@/components/Link";
@@ -24,7 +24,7 @@ function load(slug: string) {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const a = load((await params).slug);
   return {
-    title: `${a.name}: Hindi Anime Voice Roles (${a.roles.length})${a.roles[0] ? `, ${a.roles[0].character} & More` : ""}`,
+    title: fitTitle([`${a.name}: Hindi Anime Voice Roles (${a.roles.length})${a.roles[0] ? `, ${a.roles[0].character} & More` : ""}`, `${a.name}: Hindi Anime Voice Roles (${a.roles.length})`, `${a.name}: Hindi Voice Artist`]),
     description: fitDescription(`${a.name} voices ${a.roles.slice(0, 3).map((r) => `${r.character} in ${r.anime}`).join(", ")} in the official Hindi dubs. Every confirmed anime role, with sources.`),
     alternates: { canonical: hindiArtistPath(a) },
   };

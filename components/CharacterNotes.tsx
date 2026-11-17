@@ -34,7 +34,7 @@ export default function CharacterNotes({ slug, show }: { slug: string; show: { s
           <p className="mt-2 text-ink/90"><strong>{n.fate.status === "alive" ? "No." : n.fate.status === "dies" ? "Yes." : n.fate.status === "revived" ? "Yes, but not for good." : "It's unclear."}</strong> {n.fate.detail} <span className="text-muted">(As of the {n.fate.basis}.)</span></p>
         </details>
       )}
-      <p className="mt-3 text-[11px] text-muted">{NOTES_REVIEWED ? "Checked" : `Draft, cross-checked${NOTES_CHECKED ? ` on ${fmt(NOTES_CHECKED)}` : ""}`} against the series wiki and Wikipedia. <Link href="/how-we-check" className="underline">How we check</Link></p>
+      <p className="mt-3 text-[11px] text-muted">{NOTES_REVIEWED ? "Checked" : `Cross-checked${NOTES_CHECKED ? ` on ${fmt(NOTES_CHECKED)}` : ""}`} against the series wiki and Wikipedia. <Link href="/how-we-check" className="underline">How we check</Link></p>
     </section>
   );
 }

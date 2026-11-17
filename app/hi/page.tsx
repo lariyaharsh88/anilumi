@@ -1,4 +1,4 @@
-import { fitDescription } from "@/lib/titles";
+import { fitDescription, fitTitle } from "@/lib/titles";
 import type { Metadata } from "next";
 import Link from "@/components/Link";
 import { WATCH_ORDER_OVERRIDES } from "@/data/watch-orders";
@@ -9,7 +9,7 @@ import JsonLd from "@/components/JsonLd";
 
 export const revalidate = 86400;
 export const metadata: Metadata = {
-  title: "Anime Guides in Hindi – एनीमे देखने का सही क्रम, कुल समय और नए सीज़न",
+  title: fitTitle(["Anime Guides in Hindi – एनीमे देखने का सही क्रम, कुल समय और नए सीज़न", "Anime Guides in Hindi – देखने का सही क्रम और नए सीज़न"]),
   description: fitDescription(`${HINDI_SLUGS.length} पॉपुलर एनीमे की हिंदी गाइड: Naruto, One Piece, Demon Slayer, Attack on Titan और बाकी को किस क्रम में देखें, कितना समय लगेगा, फ़िलर और अगला सीज़न कब आएगा।`),
   alternates: { canonical: "/hi", languages: { en: "/watch-order", hi: "/hi", "x-default": "/watch-order" } },
 };

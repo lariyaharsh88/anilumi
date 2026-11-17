@@ -35,7 +35,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       const t = a.titleEn && a.titleEn.length <= 40 ? a.titleEn : a.title, m = cont.medium === "manga" ? "Manga" : "Light Novel", s = start.replace(/^./, (c) => c.toUpperCase());
       return fitTitle([`Where Does the ${t} Anime End in the ${m}? Start at ${s}`, `Where Does ${t} End in the ${m}? ${s}`, `${t}: Continue the ${m} From ${s}`, `${t} ${m}: Start at ${s}`, `Where Does ${t} End in the ${m}?`]);
     })(),
-    description: fitDescription(`Finished ${a.title}? Pick up the ${cont.medium} from ${start}. ${cont.note || ""}`.trim().slice(0, 300)),
+    description: fitDescription(`Finished ${a.title}? Pick up the ${cont.medium} from ${start}. ${cont.note ? `${cont.note} ` : ""}Where the anime stops in the ${cont.medium}, and where to buy it.`.trim().slice(0, 300)),
     alternates: { canonical: `${animePath(a)}/manga` },
   };
 }

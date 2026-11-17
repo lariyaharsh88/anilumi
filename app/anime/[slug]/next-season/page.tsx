@@ -147,7 +147,7 @@ export default async function NextSeasonPage({ params }: Props) {
           <h2 id="news-h" className="text-xs font-semibold uppercase tracking-wider text-muted">Latest official news</h2>
           <p className="mt-1 text-sm text-ink/90">{newsLine}</p>
           <p className="mt-2 flex flex-wrap gap-x-3 gap-y-1 text-[11px] text-muted">
-            <span>{NEWS_REVIEWED ? "Checked" : `Draft, checked${NEWS_CHECKED ? ` on ${fmtDate(NEWS_CHECKED, { day: "numeric", month: "short", year: "numeric" })}` : ""}`} against official announcements and news reports.</span>
+            <span>{NEWS_REVIEWED ? "Checked" : `Checked${NEWS_CHECKED ? ` on ${fmtDate(NEWS_CHECKED, { day: "numeric", month: "short", year: "numeric" })}` : ""}`} against official announcements and news reports.</span>
             {news.sources.slice(0, 3).map((u, i) => <a key={u} href={u} target="_blank" rel="noopener nofollow" className="underline">Source {i + 1}</a>)}
           </p>
         </section>

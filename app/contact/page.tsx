@@ -5,7 +5,7 @@ import { site } from "@/lib/site";
 import PageHero from "@/components/PageHero";
 import CorrectionForm from "@/components/CorrectionForm";
 
-export const metadata: Metadata = { title: "Contact", description: fitDescription(`Send ${site.name} a question, an idea or a correction.`), alternates: { canonical: "/contact" } };
+export const metadata: Metadata = { title: "Contact", description: fitDescription(`Send ${site.name} a question, an idea or a correction. Email ${site.email} or use the form; reports of a wrong dub or stream are checked against the platform's own page.`), alternates: { canonical: "/contact" } };
 
 export default function Contact() {
   return (

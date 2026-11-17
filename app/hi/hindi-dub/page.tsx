@@ -1,4 +1,4 @@
-import { fitDescription } from "@/lib/titles";
+import { fitDescription, fitTitle } from "@/lib/titles";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "@/components/Link";
@@ -32,7 +32,7 @@ const ERA_HI: Record<string, string> = { "Before 2000": "2000 से पहल�
 export function generateMetadata(): Metadata {
   const n = hindiDubbed().length;
   return {
-    title: `Hindi Dubbed Anime List – हिंदी डब एनीमे की लिस्ट और कहाँ देखें (${n} एनीमे)`,
+    title: fitTitle([`Hindi Dubbed Anime List – हिंदी डब एनीमे की लिस्ट और कहाँ देखें (${n} एनीमे)`, `Hindi Dubbed Anime List (${n}) – हिंदी डब एनीमे कहाँ देखें`]),
     description: fitDescription(`${n} पॉपुलर एनीमे जिनका आधिकारिक हिंदी डब है, और हर एक कहाँ देखें: Crunchyroll, Netflix, Prime Video, JioHotstar, मुफ़्त YouTube चैनल और टीवी। नए और आने वाले हिंदी डब भी। ${dubDate("hi")} को जाँचा गया।`),
     alternates: { canonical: "/hi/hindi-dub", languages: { en: "/hindi-dub", hi: "/hi/hindi-dub", "x-default": "/hindi-dub" } },
   };

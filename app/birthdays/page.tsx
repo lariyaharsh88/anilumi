@@ -1,4 +1,4 @@
-import { fitDescription } from "@/lib/titles";
+import { fitDescription, fitTitle } from "@/lib/titles";
 import type { Metadata } from "next";
 import { birthdaysOn, todayJst, bdLabel } from "@/lib/birthdays";
 import BirthdayView from "@/components/BirthdayView";
@@ -11,9 +11,11 @@ export async function generateMetadata(): Promise<Metadata> {
   const { characters } = birthdaysOn(m, d);
   return {
     // Names in the title, like the date pages: "Anime Birthdays Today (October 31): L Lawliet, Kirito & 12 More".
-    title: characters.length
-      ? `Anime Birthdays Today (${bdLabel(m, d)}): ${characters.slice(0, 2).map((c) => c.n).join(", ")}${characters.length > 2 ? ` & ${characters.length - 2} More` : ""}`
-      : `Anime Character Birthdays Today (${bdLabel(m, d)})`,
+    title: fitTitle([
+      characters.length > 0 && `Anime Birthdays Today (${bdLabel(m, d)}): ${characters.slice(0, 2).map((c) => c.n).join(", ")}${characters.length > 2 ? ` & ${characters.length - 2} More` : ""}`,
+      characters.length > 0 && `Anime Birthdays Today (${bdLabel(m, d)}): ${characters[0].n} & More`,
+      `Anime Character Birthdays Today (${bdLabel(m, d)})`,
+    ]),
     description: fitDescription(`Anime characters and voice actors celebrating a birthday today, ${bdLabel(m, d)}${characters[0] ? `: ${characters.slice(0, 3).map((c) => c.n).join(", ")} and more` : ""}.`),
     alternates: { canonical: "/birthdays" },
   };

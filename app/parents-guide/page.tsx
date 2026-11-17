@@ -1,4 +1,4 @@
-import { fitDescription } from "@/lib/titles";
+import { fitDescription, fitTitle } from "@/lib/titles";
 import type { Metadata } from "next";
 import { listAnime, animePath, posterUrl, franchiseRoot, type Anime } from "@/lib/kitsu";
 import PageHero from "@/components/PageHero";
@@ -6,7 +6,7 @@ import ToolList from "@/components/ToolList";
 
 export const revalidate = 86400;
 export const metadata: Metadata = {
-  title: "Best Anime for Kids & Families – Parents' Guides and Age Ratings",
+  title: fitTitle(["Best Anime for Kids & Families – Parents' Guides and Age Ratings", "Best Anime for Kids & Families: Parents' Guides & Ratings"]),
   description: fitDescription("Popular anime rated G and PG for kids and families, plus the popular shows that are best kept for older teens, each with a viewer-rated parents' guide."),
   alternates: { canonical: "/parents-guide" },
 };

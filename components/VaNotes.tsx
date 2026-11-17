@@ -20,7 +20,7 @@ export default function VaNotes({ id }: { id: number }) {
       <dl className="mt-3 grid gap-x-4 gap-y-2 text-sm sm:grid-cols-[9rem_1fr]">
         {rows.map(([k, v]) => <div key={k} className="contents"><dt className="text-muted">{k}</dt><dd className="min-w-0 text-ink/90">{v}</dd></div>)}
       </dl>
-      <p className="mt-3 text-[11px] text-muted">{VA_REVIEWED ? "Checked" : `Draft, cross-checked${VA_CHECKED ? ` on ${fmt(VA_CHECKED)}` : ""}`} against Wikipedia, Anime News Network and agency profiles. <Link href="/how-we-check" className="underline">How we check</Link></p>
+      <p className="mt-3 text-[11px] text-muted">{VA_REVIEWED ? "Checked" : `Cross-checked${VA_CHECKED ? ` on ${fmt(VA_CHECKED)}` : ""}`} against Wikipedia, Anime News Network and agency profiles. <Link href="/how-we-check" className="underline">How we check</Link></p>
     </section>
   );
 }

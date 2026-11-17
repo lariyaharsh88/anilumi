@@ -1,4 +1,4 @@
-import { fitDescription } from "@/lib/titles";
+import { fitDescription, fitTitle } from "@/lib/titles";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "@/components/Link";
@@ -18,7 +18,7 @@ export function generateMetadata(): Metadata {
   const all = hindiArtists();
   return {
     // Named after characters with a confirmed Hindi voice on the list, most famous first.
-    title: `Hindi Anime Dub Voice Artists (${all.length}): Who Voices ${famous(all).join(", ")} & More`,
+    title: fitTitle([`Hindi Anime Dub Voice Artists (${all.length}): Who Voices ${famous(all).join(", ")} & More`, `Hindi Anime Dub Voice Artists (${all.length}): Who Voices ${famous(all).slice(0, 2).join(" & ")}`, `Hindi Anime Dub Voice Artists (${all.length})`]),
     description: fitDescription(`The Indian voice artists behind official Hindi anime dubs: ${all.slice(0, 4).map((a) => a.name).join(", ")} and more, with every confirmed character.`),
     alternates: { canonical: "/hindi-voice-artists" },
   };

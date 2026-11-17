@@ -1,4 +1,4 @@
-import { fitDescription } from "@/lib/titles";
+import { fitDescription, fitTitle } from "@/lib/titles";
 import type { Metadata } from "next";
 import Link from "@/components/Link";
 import Image from "next/image";
@@ -49,7 +49,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { month } = await params;
   const { m, name, characters, people } = load(month);
   return {
-    title: `Anime Characters Born in ${name}: ${characters.length} Birthdays Day by Day`,
+    title: fitTitle([`Anime Characters Born in ${name}: ${characters.length} Birthdays Day by Day`]),
     description: fitDescription(`Every popular anime character with a ${name} birthday, day by day: ${characters.slice(0, 4).map((c) => `${c.n} (${bdLabel(c.m, c.d)})`).join(", ")} and more${people.length ? `, plus ${people.length} voice actors` : ""}.`),
     alternates: { canonical: monthPath(m) },
   };
