@@ -11,6 +11,8 @@ type Entry = MetadataRoute.Sitemap[number];
 export function sitemapGroup(url: string): string {
   const p = new URL(url).pathname;
   if (/^\/anime\/[^/]+\/episode\//.test(p)) return "episodes";
+  // Per-anime Hindi dub pages and the India streaming guide sit with the other Indian-dub pages.
+  if (/^\/anime\/[^/]+\/hindi-dub$/.test(p) || p === "/anime-streaming-sites") return "hindi";
   if (p.startsWith("/anime/")) return "anime";
   if (p.startsWith("/character")) return "characters";
   if (p.startsWith("/watch-order")) return "watch-orders";

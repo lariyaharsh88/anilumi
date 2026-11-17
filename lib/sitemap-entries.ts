@@ -18,9 +18,10 @@ import { HINDI_SLUGS, hindiPath, hindiIndexed } from "@/lib/hindi";
 import { LANG, dubbedIn } from "@/lib/regionaldub";
 import { dubEvents } from "@/lib/dubupdates";
 import { allStreams, streamsPath } from "@/lib/streams";
-import { HINDI_PLATFORMS, dubsOn } from "@/lib/hindidub";
+import { HINDI_PLATFORMS, dubsOn, hindiDubbed, hindiDubPath } from "@/lib/hindidub";
+import { PRICES_CHECKED } from "@/lib/platformprices";
 import { indexedSimilar } from "@/lib/similarhub";
-import { airsSoon, searchShown, searchShownPaths, watchOrderIndexed, characterTableIndexed, notedCharacters, genreIndexed, bestYearIndexed, trendIndexed, voiceActorIndexed, } from "@/lib/indexing";
+import { airsSoon, searchShown, searchShownPaths, watchOrderIndexed, characterTableIndexed, notedCharacters, genreIndexed, bestYearIndexed, trendIndexed, voiceActorIndexed, hindiDubIndexed } from "@/lib/indexing";
 import franchiseData from "@/data/franchises.json";
 import { DATA_DATES as D, STATIC_UPDATED, BIRTHDAY_PAGES_UPDATED, HINDI_HUB_UPDATED, SCENE_PAGE_UPDATED, DUB_GUIDES_ADDED, latest, weekStart, monthStart } from "@/lib/lastmod";
 import { FILLER } from "@/data/filler";
@@ -73,6 +74,9 @@ export async function sitemapEntries(): Promise<MetadataRoute.Sitemap> {
     { url: abs("/new-dubs"), lastModified: at(dubEvents()[0]?.date), changeFrequency: "weekly", priority: 0.7 },
     ...(["ta", "te"] as const).filter((l) => dubbedIn(l).length >= 5).map((l) => ({ url: abs(LANG[l].path), lastModified: at(D.regionalDubs, DUB_GUIDES_ADDED), changeFrequency: "monthly" as const, priority: 0.7 })),
     ...HINDI_PLATFORMS.filter((p) => dubsOn(p).length).map((p) => ({ url: abs(`/hindi-dub/${p.slug}`), lastModified: at(D.dubs, HINDI_HUB_UPDATED), changeFrequency: "monthly" as const, priority: 0.6 })),
+    // Per-anime Hindi dub pages: the most-watched dubs (lib/indexing.ts hindiDubIndexed).
+    ...hindiDubbed().filter((d) => hindiDubIndexed(d.s)).map((d) => ({ url: abs(hindiDubPath(d.s)), lastModified: at(D.dubs, d.checked), changeFrequency: "weekly" as const, priority: 0.7 })),
+    { url: abs("/anime-streaming-sites"), lastModified: at(D.streams, D.dubs, PRICES_CHECKED), changeFrequency: "monthly", priority: 0.8 },
     { url: abs("/where-to-watch"), lastModified: at(D.streams), changeFrequency: "monthly", priority: 0.8 },
     ...allStreams().map((e) => ({ url: abs(streamsPath(e.s)), lastModified: at(D.streams), changeFrequency: "monthly" as const, priority: 0.7 })),
     { url: abs("/dub-schedule"), lastModified: now, changeFrequency: "daily", priority: 0.8 },

@@ -15,6 +15,7 @@ import { WATCH_ORDER_OVERRIDES } from "@/data/watch-orders";
 import { snapshotCore } from "./wosnap";
 import notes from "@/data/character-notes.json";
 import vaNotes from "@/data/va-notes.json";
+import { hindiDubPath, topHindiDub } from "./hindidub";
 
 /** Aired episodes of an airing show that stay indexed, counting back from the latest: just the newest. Older
  * episode pages are the shared synopsis plus a date, which every database has. */
@@ -96,6 +97,8 @@ export function watchOrderIndexed(slug: string, liveParts: number, liveCore?: nu
 /** "Anime like X" lists are generated, so only the ones search already shows are listed and indexed. */
 export const similarSlugs = () => searchShownPaths("/similar/").map((p) => p.slice("/similar/".length));
 export const similarIndexed = (slug: string) => searchShown(`/similar/${slug}`);
+/** A per-anime Hindi dub page: the most-watched dubs (lib/hindidub.ts), plus any Google already shows. */
+export const hindiDubIndexed = (slug: string) => topHindiDub(slug) || searchShown(hindiDubPath(slug));
 
 /** Character tables repeat what the character pages say: indexed only where search already shows them. */
 export const characterTableIndexed = (slug: string) => searchShown(`/anime/${slug}/characters`);

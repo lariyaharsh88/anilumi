@@ -11,6 +11,9 @@ test("sitemap: each URL lands in its page type's child sitemap", () => {
   assert.equal(g("/watch-order/naruto"), "watch-orders");
   assert.equal(g("/birthdays/october/31"), "birthdays");
   assert.equal(g("/hi/anime/naruto"), "hindi");
+  assert.equal(g("/anime/one-piece/hindi-dub"), "hindi");
+  assert.equal(g("/anime-streaming-sites"), "hindi");
+  assert.equal(g("/similar"), "lists");
   assert.equal(g("/voice-actor/95869-saori-hayami"), "people");
   assert.equal(g("/genre/action"), "lists");
   assert.equal(g("/about"), "pages");

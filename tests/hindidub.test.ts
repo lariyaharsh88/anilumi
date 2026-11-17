@@ -38,3 +38,19 @@ test("hindidub: MX Player's free shows stay off the paid Prime Video page", asyn
   assert.ok(prime.match.test("Anime Times (Prime Video channel)"));
   assert.ok(mx.match.test("MX Player (now free on Prime Video)"));
 });
+
+test("Hindi dub pages: the most-watched dubs get their own page, linked from the dub lists", async () => {
+  const { HINDI_DUB_PAGES, dubHref, dubPageEntry, hindiDubPath, topHindiDub, notDubbed: none } = await import("../lib/hindidub");
+  const { hindiDubIndexed } = await import("../lib/indexing");
+  const top = hindiDubbed().slice(0, HINDI_DUB_PAGES);
+  assert.equal(top.length, HINDI_DUB_PAGES);
+  for (const d of top) {
+    assert.ok(topHindiDub(d.s) && hindiDubIndexed(d.s), d.s);
+    assert.equal(dubHref(d), hindiDubPath(d.s));
+    assert.ok(dubPageEntry(d.s));
+  }
+  const rest = hindiDubbed()[HINDI_DUB_PAGES];
+  if (rest) assert.notEqual(dubHref(rest), hindiDubPath(rest.s));
+  // No page for shows without a Hindi dub.
+  if (none()[0]) assert.equal(dubPageEntry(none()[0].s), null);
+});

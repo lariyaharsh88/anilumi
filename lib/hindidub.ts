@@ -51,8 +51,21 @@ export function dubFor(anime: { id: string; slug: string }): Dub | null {
   return found.find((d) => d.status === "available") ?? found[0] ?? null;
 }
 
-/** Where a franchise's guide lives: the watch order when it has several parts, else the anime page. */
-export const dubHref = (d: Pick<Dub, "s">) => ((users.get(d.s)?.n ?? 1) > 1 ? `/watch-order/${d.s}` : `/anime/${d.s}`);
+/** Per-anime Hindi dub pages (/anime/<slug>/hindi-dub): every available dub has one; the most-watched are indexed. */
+export const HINDI_DUB_PAGES = 30;
+export const hindiDubPath = (s: string) => `/anime/${s}/hindi-dub`;
+/** The available dub entry for this exact slug: the page exists only for these. */
+export const dubPageEntry = (s: string): Dub | null => { const d = bySlug.get(s); return d?.status === "available" ? d : null; };
+let top: Set<string> | null = null;
+export const topHindiDub = (s: string) => (top ??= new Set(hindiDubbed().slice(0, HINDI_DUB_PAGES).map((d) => d.s))).has(s);
+
+/**
+ * Where a dub links to: its own Hindi dub page for the most-watched, else the watch order when the franchise has
+ * several parts, else the anime page.
+ */
+export const dubHref = (d: Pick<Dub, "s">) => (topHindiDub(d.s) ? hindiDubPath(d.s) : (users.get(d.s)?.n ?? 1) > 1 ? `/watch-order/${d.s}` : `/anime/${d.s}`);
+/** Platform page (/hindi-dub/<slug>) and price key for a dub platform name, when it has one. */
+export const platformFor = (name: string) => HINDI_PLATFORMS.find((p) => p.match.test(name)) ?? null;
 
 /** Platform → franchises it carries in Hindi, biggest catalogue first. */
 export function byPlatform(): { name: string; kind: PlatformKind; titles: { d: Dub; scope: string }[] }[] {

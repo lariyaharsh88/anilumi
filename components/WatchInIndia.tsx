@@ -1,6 +1,6 @@
 import Link from "@/components/Link";
 import JoinChannels from "@/components/JoinChannels";
-import { platformKind, type Dub } from "@/lib/hindidub";
+import { hindiDubPath, platformKind, topHindiDub, type Dub } from "@/lib/hindidub";
 import { LANG, regionalFor } from "@/lib/regionaldub";
 
 type Row = { lang: string; href: string; platforms: { name: string; url: string }[] };
@@ -11,7 +11,7 @@ type Row = { lang: string; href: string; platforms: { name: string; url: string 
  */
 export default function WatchInIndia({ anime, hindi, className = "" }: { anime: { id: string; slug: string }; hindi: Dub | null; className?: string }) {
   const rows: Row[] = [
-    ...(hindi?.status === "available" ? [{ lang: "Hindi", href: "/hindi-dub", platforms: hindi.platforms }] : []),
+    ...(hindi?.status === "available" ? [{ lang: "Hindi", href: topHindiDub(hindi.s) ? hindiDubPath(hindi.s) : "/hindi-dub", platforms: hindi.platforms }] : []),
     ...(["ta", "te"] as const).flatMap((l) => { const d = regionalFor(anime, l); return d ? [{ lang: LANG[l].name, href: LANG[l].path, platforms: d.platforms }] : []; }),
   ];
   if (!rows.length) return null;
