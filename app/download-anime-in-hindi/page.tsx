@@ -95,7 +95,7 @@ export default function DownloadAnimeInHindi() {
         <h2 id="why-h" className="h-section mb-3">Why not a free download site?</h2>
         <div className="card max-w-3xl space-y-2 p-4 text-sm leading-6 text-ink/85">
           <p>Sites offering free Hindi anime downloads don&rsquo;t license the shows. Their fake download buttons, installers and redirect ads are a common way phones pick up malware.</p>
-          <p>If cost is the reason, {free.length} official Hindi dubs stream free, legally: <Link href="/hindi-dub" className="text-violet hover:underline">see which ones</Link>. Searching for a site by name? See the legal <Link href="/anime-salt-alternatives" className="text-violet hover:underline">Anime Salt</Link> and <Link href="/anime-world-alternatives" className="text-violet hover:underline">Anime World</Link> alternatives.</p>
+          <p>If cost is the reason, {free.length} official Hindi dubs stream free, legally: <Link href="/hindi-dub" className="text-violet hover:underline">see which ones</Link>. Searching for a site by name? See the <Link href="/anime-salt-alternatives" className="text-violet hover:underline">legal alternatives to Anime Salt and Anime World</Link>.</p>
         </div>
         <JoinChannels source="download-hindi" className="mt-5" />
       </section>

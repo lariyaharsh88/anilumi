@@ -6,7 +6,9 @@ import PageHero from "@/components/PageHero";
 import JsonLd from "@/components/JsonLd";
 import Faq, { type FaqItem } from "@/components/Faq";
 import JoinChannels from "@/components/JoinChannels";
-import { getAnimeBySlug, animeBySlugs, animePath, posterUrl } from "@/lib/kitsu";
+import { getAnimeBySlug, animeBySlugs, animePath, posterUrl, buildWatchOrder } from "@/lib/kitsu";
+import { dubShows, premiereAt } from "@/lib/dubschedule";
+import { pricesFor as priceOf, cheapestPlan, PERIOD } from "@/lib/platformprices";
 import { pageAbout } from "@/lib/ld";
 import { fitTitle, fitDescription } from "@/lib/titles";
 import { DUB_CHECKED, dubDate, dubHref, dubPageEntry, dubsOn, hindiDubPath, hindiDubbed, platformFor, platformKind, type Dub, type PlatformKind } from "@/lib/hindidub";
@@ -68,12 +70,36 @@ export default async function HindiDubPage({ params }: Props) {
   const more = (main ? dubsOn(main).map((x) => x.d) : hindiDubbed()).filter((x) => x.s !== d.s).slice(0, 8);
   const kitsu = await animeBySlugs(more.map((x) => x.s), true).catch(() => new Map());
   const poster = a ? posterUrl(a, "medium") : null;
+  // At a glance, from data no other "X in Hindi" page puts together: where the story starts, how long the whole thing
+  // is (the watch order, Kitsu runtimes), when the Hindi dub started (the dub schedule) and the cheapest legal way in.
+  const wo = a && a.subtype !== "movie" ? await buildWatchOrder(a).catch(() => null) : null;
+  const core = wo ? wo.entries.filter((e) => e.kind === "main") : [];
+  const films = wo ? wo.entries.filter((e) => e.kind === "movie").length : 0;
+  const start = core[0]?.anime ?? null;
+  const hours = wo && wo.totalMinutes ? Math.round(wo.totalMinutes / 60) : null;
+  const started = dubShows().filter((e) => e.lang === "hi" && e.slug === d.s && e.premiere).sort((x, y) => premiereAt(x) - premiereAt(y))[0] ?? null;
+  // The lowest monthly plan ("from ₹99 a month"), as people compare; an annual plan only when there's no monthly one.
+  const lowest = (pr: NonNullable<ReturnType<typeof priceOf>>) => [...pr.plans].filter((x) => x.period === "month").sort((x, y) => x.price - y.price)[0] ?? cheapestPlan(pr);
+  const paidFrom = paid.flatMap((r) => { const pr = r.plat ? priceOf(r.plat.slug) : null; const c = pr ? lowest(pr) : null; return c ? [{ name: r.name, c }] : []; }).sort((x, y) => x.c.price - y.c.price)[0] ?? null;
+  const tvOnly = rows.filter((r) => r.kind === "tv");
+  const cheapestWay = free.length ? `Free on ${[...new Set(free.map((r) => r.name))].join(" and ")}` : paidFrom ? `${paidFrom.name}, from ₹${paidFrom.c.price} a ${PERIOD[paidFrom.c.period]}` : tvOnly.length ? `On TV: ${[...new Set(tvOnly.map((r) => r.name))].join(", ")} (in DTH and cable packs)` : null;
+  const fmtDay = (iso: string) => new Date(/T/.test(iso) ? iso : `${iso}T00:00:00Z`).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
+  const glance = [
+    start && core.length > 1 ? { k: "Start with", v: <><Link href={animePath(start)} className="text-violet hover:underline">{start.titleEn || start.title}</Link>{start.startDate ? ` (${start.startDate.slice(0, 4)})` : ""}</> } : null,
+    wo && core.length > 1 ? { k: "The whole story", v: <>{core.length} {core.length === 1 ? "part" : "parts"}{films ? ` + ${films} film${films === 1 ? "" : "s"}` : ""}{hours ? `, about ${hours.toLocaleString("en-IN")} hours (${Math.ceil(hours / 2)} days at 2 hours a day)` : ""}</> } : null,
+    wo && core.length === 1 && a?.subtype !== "movie" && (a?.episodeCount || hours) ? { k: "The whole series", v: <>{a?.episodeCount ? `${a.episodeCount.toLocaleString("en-IN")} episodes` : ""}{a?.episodeCount && hours ? ", " : ""}{hours ? `about ${hours.toLocaleString("en-IN")} hours` : ""}{a?.status === "current" ? " so far" : ""}</> } : null,
+    a?.subtype === "movie" && a.episodeLength ? { k: "Running time", v: <>{Math.floor(a.episodeLength / 60)}h {a.episodeLength % 60}m</> } : null,
+    started ? { k: "Hindi dub started", v: <>{fmtDay(started.premiere!)} on {started.service}</> } : null,
+    cheapestWay ? { k: "Cheapest legal way", v: <>{cheapestWay}</> } : null,
+  ].filter((x): x is { k: string; v: React.ReactElement } => Boolean(x));
 
   const faq: FaqItem[] = [
     { q: `Is ${d.t} dubbed in Hindi?`, a: `Yes. ${d.t} has an official Hindi dub on ${join(names(d))}. ${rows.map((r) => `${r.name}: ${r.scope || "available"}`).join("; ")}.` },
     { q: `Where can I watch ${d.t} in Hindi for free?`, a: free.length ? `Legally, on ${join([...new Set(free.map((r) => r.name))])}, free with ads (${free.map((r) => r.scope).filter(Boolean).join("; ")}).` : `There's no free, legal option on record: the Hindi dub is on ${join([...new Set(paid.concat(rows.filter((r) => r.kind === "tv")).map((r) => r.name))])}. Sites offering it free are unlicensed uploads.` },
     ...(paid.length ? [{ q: `How much does it cost to watch ${d.t} in Hindi?`, a: paid.map((r) => `${r.name}: ${r.price ?? "see the service for current prices"}`).join("; ") + "." }] : []),
     ...rows.filter((r) => r.plat).slice(0, 2).map((r) => ({ q: `How do I switch ${d.t} to Hindi on ${r.plat!.label.replace(/ \(.*\)$/, "")}?`, a: r.plat!.how })),
+    ...(start && core.length > 1 ? [{ q: `Where should I start ${d.t} in Hindi?`, a: `With ${start.titleEn || start.title}${start.startDate ? ` (${start.startDate.slice(0, 4)})` : ""}, then follow the watch order: ${core.length} parts${films ? ` and ${films} film${films === 1 ? "" : "s"}` : ""}. Check the platform list above for which of them have the Hindi audio.` }] : []),
+    ...(hours && core.length > 1 ? [{ q: `How long does it take to watch ${d.t}?`, a: `About ${hours.toLocaleString("en-IN")} hours for the main story${films ? " and films" : ""}, or ${Math.ceil(hours / 2)} days at 2 hours a day.` }] : []),
     ...(regional.length ? [{ q: `Is ${d.t} available in Tamil or Telugu?`, a: regional.map(({ l, x }) => `${LANG[l].name}: ${join([...new Set(x.platforms.map((p) => p.name))])}`).join(". ") + "." }] : []),
     ...(cast.length ? [{ q: `Who voices ${cast[0].character} in the Hindi dub of ${d.t}?`, a: `${cast[0].artist}${cast[0].dub ? ` (${cast[0].dub})` : ""}.${cast.length > 1 ? ` The Hindi cast also includes ${cast.slice(1, 4).map((c) => `${c.artist} as ${c.character}`).join(", ")}.` : ""}` }] : []),
   ];
@@ -94,6 +120,16 @@ export default async function HindiDubPage({ params }: Props) {
         hue={25}
         posters={poster ? [poster] : []}
       />
+
+      {glance.length > 0 && (
+        <section className="reveal mt-10" aria-labelledby="glance-h">
+          <h2 id="glance-h" className="h-section mb-3">{d.t} in Hindi at a glance</h2>
+          <dl className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {glance.map((g) => <div key={g.k} className="card p-4"><dt className="text-xs uppercase tracking-wide text-muted">{g.k}</dt><dd className="mt-1 text-sm font-medium text-ink">{g.v}</dd></div>)}
+          </dl>
+          {wo && core.length > 1 && <p className="mt-3 text-sm"><Link href={`/watch-order/${d.s}`} className="text-violet hover:underline">Full {d.t} watch order →</Link> · <Link href={`${animePath({ slug: d.s })}/how-long-to-watch`} className="text-violet hover:underline">How long to watch →</Link></p>}
+        </section>
+      )}
 
       <section className="reveal mt-10" aria-labelledby="where-h">
         <h2 id="where-h" className="h-section mb-3">Where to watch {d.t} in Hindi</h2>

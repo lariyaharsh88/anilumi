@@ -48,6 +48,8 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       { source: "/:path*", has: [{ type: "host", value: "www.anilumi.in" }], destination: "https://anilumi.in/:path*", permanent: true },
+      // One page answers every unlicensed-site name (components/AltSitePage.tsx); never one near-identical page each.
+      { source: "/:name(anime-world|animetoon)-alternatives", destination: "/anime-salt-alternatives", permanent: true },
       // Episode lists moved from ?page=n to /page/n so they can be cached.
       { source: "/anime/:slug/episodes", has: [{ type: "query", key: "page", value: "(?<p>[2-9]|[1-9][0-9]+)" }], destination: "/anime/:slug/episodes/page/:p", permanent: true },
     ];
