@@ -26,6 +26,14 @@ export const site = {
   },
 };
 
+/**
+ * Open Graph and X fields every page shares. A page that sets its own openGraph or twitter must spread these:
+ * Next.js replaces those keys instead of merging them, so anime pages went out with no og:site_name, og:locale
+ * or twitter:creator.
+ */
+export const OG_BASE = { siteName: site.name, locale: "en_US", type: "website" } as const;
+export const TWITTER_BASE = { card: "summary_large_image", creator: site.twitter } as const;
+
 export function abs(path: string) {
   return `${site.url}${path.startsWith("/") ? path : `/${path}`}`;
 }

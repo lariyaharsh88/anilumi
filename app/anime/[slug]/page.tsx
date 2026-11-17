@@ -7,7 +7,7 @@ import Link from "@/components/Link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { publicGenres, getAnimeBySlug, getCharacters, getEpisodes, getEpisodesAt, listAnime, getRelations, getLastAiredBest, getProductions, buildWatchOrder, type LastAired, type WatchOrder, comparePath, COMPARE_MIN_MEMBERS, franchiseRoot, airingNotice, episodePath, posterUrl, fmtDate, statusLabel, subtypeLabel, animePath, weekdayOf, runtimeMinutes, fmtMinutes, isFuture, Anime, airedOnly, type AiringNotice } from "@/lib/kitsu";
-import { abs } from "@/lib/site";
+import { abs, OG_BASE, TWITTER_BASE } from "@/lib/site";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import JsonLd from "@/components/JsonLd";
 import Faq, { FaqItem } from "@/components/Faq";
@@ -118,8 +118,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     alternates: { canonical: animePath(a) },
     // A rewritten synopsis isn't our own content (15 Nov audit): curated where-to-watch, dub or watch-order data is.
     robots: robotsFor(animeIndexed(a, Boolean(streamsFor(a) || dubFor(a) || WATCH_ORDER_OVERRIDES[a.slug]))),
-    openGraph: { title, description, type: "video.tv_show" },
-    twitter: { card: "summary_large_image", title, description },
+    openGraph: { ...OG_BASE, title, description, type: "video.tv_show" },
+    twitter: { ...TWITTER_BASE, title, description },
   };
 }
 

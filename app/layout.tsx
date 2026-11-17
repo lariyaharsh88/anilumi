@@ -13,7 +13,7 @@ import ServiceWorker from "@/components/ServiceWorker";
 import StickyLeadBar from "@/components/StickyLeadBar";
 import { dbEnabled } from "@/lib/db";
 import { SPOILER_PREPAINT, THEME_PREPAINT } from "@/lib/prepaint";
-import { site } from "@/lib/site";
+import { site, OG_BASE, TWITTER_BASE } from "@/lib/site";
 import { AUTHOR } from "@/lib/author";
 import { INDEX } from "@/lib/indexing";
 
@@ -21,8 +21,8 @@ export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: { default: `${site.name} – ${site.tagline}`, template: `%s | ${site.name}` },
   description: fitDescription(site.description),
-  openGraph: { siteName: site.name, type: "website", locale: "en_US" },
-  twitter: { card: "summary_large_image", creator: site.twitter },
+  openGraph: OG_BASE,
+  twitter: TWITTER_BASE,
   // <meta name="author">, <link rel="author"> and <meta name="publisher">. Search engines read these from the
   // JSON-LD (Organization, author Person); the tags are for tools and readers that look for them in <head>.
   authors: [{ name: AUTHOR.name, url: AUTHOR.path }],

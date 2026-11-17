@@ -38,3 +38,10 @@ test("the Organization lists AniLumi's own channels, not the founder's accounts"
   assert.deepEqual(org.sameAs, ["https://whatsapp.com/channel/0029Vb8zz3r3rZZjTkwgpK3m", "https://t.me/anilumi_in"]);
   assert.ok(!org.sameAs.some((u) => u.includes("x.com") || u.includes("quora")));
 });
+
+test("the Organization names its founder with the founder's own accounts, and where it serves", () => {
+  const org = siteGraph()["@graph"][0] as { founder: { sameAs: string[] }; areaServed: { name: string }; foundingDate: string };
+  assert.ok(org.founder.sameAs.includes("https://x.com/harsh_products"));
+  assert.equal(org.areaServed.name, "India");
+  assert.equal(org.foundingDate, "2026-10");
+});

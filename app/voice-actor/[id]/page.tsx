@@ -1,4 +1,5 @@
 import { fitDescription } from "@/lib/titles";
+import { OG_BASE } from "@/lib/site";
 import type { Metadata } from "next";
 import { robotsFor, voiceActorIndexed } from "@/lib/indexing";
 import { notFound, permanentRedirect } from "next/navigation";
@@ -27,7 +28,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     alternates: { canonical: vaPath(va) },
     // The most-favourited voice actors and any search already shows (lib/indexing.ts).
     robots: robotsFor(voiceActorIndexed(vaPath(va), await popularVoiceActors().then((xs) => { const i = xs.findIndex((x) => x.id === va.id); return i < 0 ? null : i; }).catch(() => null))),
-    openGraph: va.imageLarge ? { images: [{ url: va.imageLarge }] } : undefined,
+    openGraph: { ...OG_BASE, ...(va.imageLarge ? { images: [{ url: va.imageLarge }] } : {}) },
   };
 }
 

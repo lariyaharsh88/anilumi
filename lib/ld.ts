@@ -4,7 +4,7 @@
  */
 import { site, abs } from "./site";
 import { animePath, type Anime } from "./kitsu";
-import { authorRef } from "./author";
+import { authorRef, AUTHOR } from "./author";
 
 const CTX = "https://schema.org";
 export const SITE_ID = `${site.url}/#website`;
@@ -25,7 +25,10 @@ export function siteGraph() {
         email: site.email,
         contactPoint: { "@type": "ContactPoint", contactType: "customer support", email: site.email, availableLanguage: ["English", "Hindi"] },
         sameAs: site.channels.map((c) => c.url),
-        founder: authorRef(),
+        foundingDate: "2026-10",
+        areaServed: { "@type": "Country", name: "India" },
+        // Inline so the founder's accounts are on every page, not only on the author page that defines the Person.
+        founder: { ...authorRef(), sameAs: AUTHOR.sameAs },
       },
       {
         "@type": "WebSite",

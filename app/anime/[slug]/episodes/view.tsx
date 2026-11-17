@@ -1,4 +1,5 @@
 import { robotsFor, episodeListIndexed } from "@/lib/indexing";
+import { OG_BASE } from "@/lib/site";
 import { fitTitle, fitDescription } from "@/lib/titles";
 import { Fragment } from "react";
 import type { Metadata } from "next";
@@ -65,7 +66,7 @@ export async function episodesMetadata(slug: string, page: number): Promise<Meta
         : `Every episode of ${a.title} with titles, air dates and synopses.`),
     alternates: { canonical: episodesPath(a.slug, page) },
     robots: robotsFor(episodeListIndexed({ airing, curated: Boolean(fill), page })),
-    openGraph: { images: posterUrl(a, "large") ? [{ url: posterUrl(a, "large")! }] : [] },
+    openGraph: { ...OG_BASE, images: posterUrl(a, "large") ? [{ url: posterUrl(a, "large")! }] : [] },
   };
 }
 
