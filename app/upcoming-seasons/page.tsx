@@ -3,6 +3,9 @@ import type { Metadata } from "next";
 import { listAnime, getRelations, uniqueById, animePath, posterUrl, fmtDate, type Anime } from "@/lib/kitsu";
 import PageHero from "@/components/PageHero";
 import ToolList, { type ToolRow } from "@/components/ToolList";
+import Link from "@/components/Link";
+import aliases from "@/data/aliases.json";
+import { sequelNews, sequelNewsSlugs, OUTLOOK_LABEL } from "@/lib/sequelnews";
 
 export const revalidate = 21600;
 export const metadata: Metadata = {
@@ -23,6 +26,18 @@ async function sequelsOf(items: Anime[]): Promise<{ a: Anime; prequel: Anime | n
   });
 }
 
+const STATUS_LABEL = { announced: "Announced", dated: "Dated", airing: "Airing", none: "Not yet" } as const;
+
+/** Shows with researched sequel news (data/sequel-news.json), A–Z, each linking to its next-season page. */
+function researched() {
+  const titles = new Map((aliases as { anime: { s: string; t: string }[] }).anime.map((a) => [a.s, a.t]));
+  return sequelNewsSlugs().flatMap((slug) => {
+    const n = sequelNews(slug)!;
+    const title = titles.get(slug);
+    return title ? [{ slug, title, label: n.outlook && n.status === "none" ? OUTLOOK_LABEL[n.outlook] : STATUS_LABEL[n.status] }] : [];
+  }).sort((x, y) => x.title.localeCompare(y.title));
+}
+
 export default async function UpcomingSeasons() {
   const [up1, up2, up3, airing] = await Promise.all([
     ...[0, 20, 40].map((offset) => listAnime({ sort: "-userCount", limit: 20, offset, filter: { status: "upcoming,unreleased" }, unrated: true, revalidate: 21600 })),
@@ -31,6 +46,7 @@ export default async function UpcomingSeasons() {
   const [upcoming, now] = await Promise.all([sequelsOf(uniqueById([...up1.items, ...up2.items, ...up3.items])), sequelsOf(airing.items)]);
   const dated = upcoming.filter((x) => x.a.startDate).sort((x, y) => x.a.startDate!.localeCompare(y.a.startDate!));
   const tba = upcoming.filter((x) => !x.a.startDate);
+  const news = researched();
   const row = ({ a, prequel }: { a: Anime; prequel: Anime | null }, value: string): ToolRow => ({ a, href: prequel ? `${animePath(prequel)}/next-season` : animePath(a), value, sub: prequel ? `Sequel to ${prequel.title}` : "New season" });
   return (
     <div className="container-x pb-8">
@@ -54,6 +70,17 @@ export default async function UpcomingSeasons() {
           <ToolList title="New seasons airing now" subtitle="Already back this season." rows={now.map((x) => row(x, "Airing"))} />
         </div>
       </div>
+      {news.length > 0 && (
+        <section className="reveal mt-12" aria-labelledby="news-h">
+          <h2 id="news-h" className="h-section mb-1">Season 2 status: the latest news</h2>
+          <p className="mb-4 text-sm text-muted">Shows whose next season we&rsquo;ve researched in official announcements and Anime News Network, A–Z.</p>
+          <ul className="grid gap-x-3 text-sm sm:grid-cols-2 lg:grid-cols-3">
+            {news.map((x) => (
+              <li key={x.slug}><Link href={`${animePath({ slug: x.slug })}/next-season`} className="flex items-center justify-between gap-2 rounded-lg px-2 py-1.5 hover:bg-white/[0.05]"><span className="truncate text-ink/90 hover:text-violet-2">{x.title} next season</span><span className="shrink-0 rounded-full border border-line px-1.5 py-0.5 text-[11px] text-muted">{x.label}</span></Link></li>
+            ))}
+          </ul>
+        </section>
+      )}
     </div>
   );
 }

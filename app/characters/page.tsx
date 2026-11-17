@@ -2,7 +2,8 @@ import { fitTitle, fitDescription } from "@/lib/titles";
 import type { Metadata } from "next";
 import Link from "@/components/Link";
 import Image from "next/image";
-import { popularCharacters, snapImage, snapGenerated, type SnapChar } from "@/lib/charsnap";
+import { popularCharacters, snapImage, snapGenerated, snapByPage, type SnapChar } from "@/lib/charsnap";
+import { notedCharacters, searchShownPaths } from "@/lib/indexing";
 import { animePath } from "@/lib/kitsu";
 import PageHero from "@/components/PageHero";
 import Faq from "@/components/Faq";
@@ -21,6 +22,12 @@ export const metadata: Metadata = {
 const fmt = (n: number) => n.toLocaleString("en-US");
 const path = (c: SnapChar) => `/character/${c.k}`;
 
+/** Every indexed character profile (the sitemap's list), A–Z by name, with the series it's from. */
+function allProfiles() {
+  const slugs = new Set([...notedCharacters(), ...searchShownPaths("/character/").map((p) => p.slice("/character/".length))]);
+  return [...slugs].flatMap((k) => { const c = snapByPage(k); return c ? [{ k, n: c.n, t: c.t }] : []; }).sort((x, y) => x.n.localeCompare(y.n));
+}
+
 /** The anime with the most-loved casts: summed favourites of their characters in the top list. */
 function byAnime(chars: SnapChar[], shows = 12, per = 6) {
   const m = new Map<string, { slug: string; title: string; total: number; chars: SnapChar[] }>();
@@ -37,6 +44,7 @@ export default function CharactersHub() {
   const all = popularCharacters(600);
   const top = all.slice(0, 100);
   const shows = byAnime(all);
+  const profiles = allProfiles();
   const female = top.find((c) => c.g === "Female");
   const male = top.find((c) => c.g === "Male");
   const ld = {
@@ -101,6 +109,18 @@ export default function CharactersHub() {
           ))}
         </div>
       </section>
+
+      {profiles.length > 0 && (
+        <section className="reveal mt-12" aria-labelledby="az-h">
+          <h2 id="az-h" className="h-section mb-1">All character profiles, A–Z</h2>
+          <p className="mb-4 text-sm text-muted">{profiles.length} characters with a full profile: age, birthday, the anime they appear in and their voice actors.</p>
+          <ul className="grid gap-x-3 text-sm sm:grid-cols-2 lg:grid-cols-4">
+            {profiles.map((c) => (
+              <li key={c.k}><Link href={`/character/${c.k}`} className="block truncate rounded-lg px-2 py-1 hover:bg-white/[0.05]"><span className="text-ink/90 hover:text-violet-2">{c.n}</span> <span className="text-xs text-muted">· {c.t}</span></Link></li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       <p className="mt-10 flex flex-wrap gap-2 text-sm">
         <Link href="/birthdays" className="chip">🎂 Character birthdays</Link>

@@ -19,6 +19,7 @@ import { WATCH_ORDER_OVERRIDES } from "@/data/watch-orders";
 import Image from "next/image";
 import SectionNav from "@/components/fx/SectionNav";
 import { hasHindiDub, dubFor, platformKind } from "@/lib/hindidub";
+import { indexedSimilar } from "@/lib/similarhub";
 
 // Kitsu's totalLength is sometimes negative or missing: fall back to episodes × length.
 const hours = (x: Anime) => { const m = (x.totalLength && x.totalLength > 0 ? x.totalLength : 0) || (x.episodeCount && x.episodeLength ? x.episodeCount * x.episodeLength : 0); return m ? (m >= 120 ? `${Math.round(m / 60)} h` : `${m} min`) : null; };
@@ -75,7 +76,7 @@ export default async function SimilarPage({ params }: Props) {
   const { slug } = await params;
   const a = await getAnimeBySlug(decodeURIComponent(slug));
   if (!a) notFound();
-  const [items, recs, insight, { alId }] = await Promise.all([similarTo(a), getFanRecommendations(a.id, 12), getAniListInsight(a.id), strong(a.id, a.slug)]);
+  const [items, recs, insight, { alId }, hub] = await Promise.all([similarTo(a), getFanRecommendations(a.id, 12), getAniListInsight(a.id), strong(a.id, a.slug), indexedSimilar().catch(() => [])]);
   const name = WATCH_ORDER_OVERRIDES[a.slug]?.label ?? (a.titleEn && a.titleEn.length <= 40 ? a.titleEn : a.title);
   const picks = fanPicks(recs, alId, name);
   // The closest picks side by side with the show itself; then the ones you can watch in Hindi.
@@ -85,6 +86,9 @@ export default async function SimilarPage({ params }: Props) {
   const topScore = Math.max(...cmp.map((c) => shown(c.anime)));
   const pool = [...picks.map((p) => p.anime), ...items].filter((x, i, arr) => arr.findIndex((y) => y.id === x.id) === i);
   const hindi = pool.filter((x) => hasHindiDub(x.slug)).slice(0, 8);
+  // Picks that have their own indexed "anime like" page: links between those pages, so each one gets found from its neighbours.
+  const hubSlugs = new Set(hub.map((h) => h.slug));
+  const next = pool.filter((x) => x.slug !== a.slug && hubSlugs.has(x.slug)).slice(0, 12);
   return (
     <div className="container-x pb-8">
       <PageHero
@@ -183,6 +187,15 @@ export default async function SimilarPage({ params }: Props) {
       <AdSlot slot="similar-top" />
       <h2 id="genres" data-section className="h-section mb-3 scroll-mt-32 pt-10">Same genres and themes</h2>
       <div><AnimeGrid items={items} startRank={1} ld={`Anime like ${a.title}`} emptyText="Not enough genre data to find matches yet." /></div>
+      {next.length > 0 && (
+        <section className="reveal mt-10" aria-labelledby="next-h">
+          <h2 id="next-h" className="h-section mb-3">Liked one of these? Keep going</h2>
+          <div className="flex flex-wrap gap-2">
+            {next.map((x) => <Link key={x.id} href={`/similar/${x.slug}`} className="chip">Anime like {x.titleEn && x.titleEn.length <= 40 ? x.titleEn : x.title}</Link>)}
+            <Link href="/similar" className="chip">All &ldquo;anime like&rdquo; lists →</Link>
+          </div>
+        </section>
+      )}
       <div id="faq" data-section className="pt-2">
       <Faq
         items={[

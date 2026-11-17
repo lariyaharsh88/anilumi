@@ -17,5 +17,7 @@ export const NEWS_CHECKED = DATA.checked;
 export const NEWS_REVIEWED = DATA.reviewed;
 
 export const sequelNews = (slug: string): SequelNews | null => DATA.shows[slug] ?? null;
+/** Every show with researched sequel news, for the hub's "season 2 status" list. */
+export const sequelNewsSlugs = (): string[] => Object.keys(DATA.shows);
 /** An announcement the automatic verdict ("no sequel yet") hasn't caught up with. */
 export const newsOverrides = (n: SequelNews | null, kind: SequelKind) => Boolean(n && (n.status === "announced" || n.status === "dated") && (kind === "none" || kind === "still-airing"));

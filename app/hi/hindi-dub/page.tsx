@@ -18,9 +18,12 @@ import HindiDubList, { type DubCard } from "@/components/HindiDubList";
 import LeadForm from "@/components/LeadForm";
 import CorrectionForm from "@/components/CorrectionForm";
 import { dbEnabled } from "@/lib/db";
+import { hindiIndexed, hindiPath } from "@/lib/hindi";
 
 export const revalidate = 86400;
 const fmtDay = (iso: string | null) => (iso ? new Date(/T/.test(iso) ? iso : `${iso}T00:00:00Z`).toLocaleDateString("hi-IN", { day: "numeric", month: "short", timeZone: "UTC" }) : "तारीख़ अभी तय नहीं");
+/** A dubbed show's Hindi guide when it has an indexed one, else its English page. */
+const guideLink = (d: Parameters<typeof dubHref>[0]) => (hindiIndexed(d.s) ? { href: hindiPath(d.s) } : { href: dubHref(d), hrefLang: "en" });
 const yearOf = (a: Anime | undefined) => (a?.startDate ? Number(a.startDate.slice(0, 4)) : null);
 // English genre names from Kitsu, shown in Hindi on the chart.
 const GENRE_HI: Record<string, string> = {
@@ -210,11 +213,11 @@ export default async function HindiDubHubHi() {
               <p className="text-xs text-muted">{p.titles.length} एनीमे</p>
               <span className="mt-2 block h-1.5 rounded-full bg-white/10"><span className="block h-1.5 rounded-full bg-violet" style={{ width: `${(p.titles.length / platforms[0].titles.length) * 100}%` }} /></span>
               <ul className="mt-3 flex flex-wrap gap-1.5">
-                {p.titles.slice(0, 8).map(({ d }) => <li key={d.s}><Link href={dubHref(d)} className="chip text-xs" hrefLang="en">{d.t}</Link></li>)}
+                {p.titles.slice(0, 8).map(({ d }) => <li key={d.s}><Link {...guideLink(d)} className="chip text-xs">{d.t}</Link></li>)}
               </ul>
               {p.titles.length > 8 && (platformPage(p.name)
                 ? <Link href={platformPage(p.name)!} className="mt-2 inline-block text-xs font-medium text-violet hover:underline" hrefLang="en">{p.name} पर सभी {p.titles.length} →</Link>
-                : <details className="mt-2 text-xs"><summary className="cursor-pointer text-violet">+{p.titles.length - 8} और</summary><ul className="mt-2 flex flex-wrap gap-1.5">{p.titles.slice(8).map(({ d }) => <li key={d.s}><Link href={dubHref(d)} className="chip text-xs" hrefLang="en">{d.t}</Link></li>)}</ul></details>)}
+                : <details className="mt-2 text-xs"><summary className="cursor-pointer text-violet">+{p.titles.length - 8} और</summary><ul className="mt-2 flex flex-wrap gap-1.5">{p.titles.slice(8).map(({ d }) => <li key={d.s}><Link {...guideLink(d)} className="chip text-xs">{d.t}</Link></li>)}</ul></details>)}
             </div>
           ))}
         </div>
@@ -230,7 +233,7 @@ export default async function HindiDubHubHi() {
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {casts.map(({ d, cast }) => (
               <div key={d.s} className="card p-3.5" lang="en">
-                <h3 className="font-semibold text-ink"><Link href={dubHref(d)} className="hover:text-violet-2">{d.t}</Link></h3>
+                <h3 className="font-semibold text-ink"><Link {...guideLink(d)} className="hover:text-violet-2">{d.t}</Link></h3>
                 <ul className="mt-2 space-y-1 text-sm">
                   {cast.slice(0, 5).map((c) => (
                     <li key={c.character + c.artist} className="flex justify-between gap-2">
@@ -271,12 +274,12 @@ export default async function HindiDubHubHi() {
         <h2 id="none-h" className="h-section mb-1">इनका हिंदी डब अभी नहीं है</h2>
         <p className="mb-4 text-sm text-muted">भारत में इन्हें स्ट्रीम करने वाले प्लेटफ़ॉर्म पर {dubDate("hi")} को हिंदी ऑडियो नहीं मिला।</p>
         <ul className="flex flex-wrap gap-2">
-          {none.slice(0, 40).map((d) => <li key={d.s}><Link href={dubHref(d)} className="chip text-xs" hrefLang="en">{d.t}</Link></li>)}
+          {none.slice(0, 40).map((d) => <li key={d.s}><Link {...guideLink(d)} className="chip text-xs">{d.t}</Link></li>)}
         </ul>
         {none.length > 40 && (
           <details className="mt-3">
             <summary className="cursor-pointer text-sm font-medium text-violet">सभी {none.length} देखें</summary>
-            <ul className="mt-3 flex flex-wrap gap-2">{none.slice(40).map((d) => <li key={d.s}><Link href={dubHref(d)} className="chip text-xs" hrefLang="en">{d.t}</Link></li>)}</ul>
+            <ul className="mt-3 flex flex-wrap gap-2">{none.slice(40).map((d) => <li key={d.s}><Link {...guideLink(d)} className="chip text-xs">{d.t}</Link></li>)}</ul>
           </details>
         )}
         {dbEnabled() && <LeadForm className="mt-6" kind="hindi" source="hindi-nodub-hi" lang="hi" title="🔔 इनमें से किसी का इंतज़ार है?" blurb="इनमें से कोई भी, या कोई और लोकप्रिय एनीमे, आधिकारिक रूप से हिंदी में आए तो एक ईमेल पाएं।" button="मुझे बताएं" />}

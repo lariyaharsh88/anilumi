@@ -81,7 +81,7 @@ export default async function Lists() {
       </section>
       <section className="reveal mt-10">
         <h2 className="h-section mb-3">What to watch next</h2>
-        <div className="flex flex-wrap gap-2">{trending.map((a) => <Link key={a.id} href={`/similar/${a.slug}`} className="chip">Anime like {a.title}</Link>)}</div>
+        <div className="flex flex-wrap gap-2">{trending.map((a) => <Link key={a.id} href={`/similar/${a.slug}`} className="chip">Anime like {a.title}</Link>)}<Link href="/similar" className="chip chip-active">All &ldquo;anime like&rdquo; lists →</Link></div>
       </section>
     </div>
   );

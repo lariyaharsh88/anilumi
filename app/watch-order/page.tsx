@@ -7,6 +7,7 @@ import franchiseData from "@/data/franchises.json";
 import PageHero from "@/components/PageHero";
 import Image from "next/image";
 import FranchiseIndex, { type FranchiseRow } from "@/components/FranchiseIndex";
+import { watchOrderIndexed } from "@/lib/indexing";
 
 export const revalidate = 86400;
 export const metadata: Metadata = {
@@ -23,7 +24,7 @@ export default async function WatchOrderIndex() {
   const items = candidates.filter((_, i) => !rels[i].some((r) => r.role === "prequel")).slice(0, 24);
   const edited = new Set(Object.keys(WATCH_ORDER_OVERRIDES));
   const azRows: FranchiseRow[] = (franchiseData as { franchises: { s: string; t: string; n: number }[] }).franchises
-    .filter((f) => f.n > 1).slice(0, 1000)
+    .filter((f) => f.n > 1 && watchOrderIndexed(f.s, f.n)).slice(0, 1000)
     .sort((x, y) => x.t.localeCompare(y.t))
     .map((f) => ({ s: f.s, t: f.t, n: f.n, ed: edited.has(f.s) }));
   return (
@@ -73,11 +74,12 @@ export default async function WatchOrderIndex() {
         <p className="mt-4 text-sm text-muted">Any title has a watch order: open it and press “Watch order”. Example: <Link href={animePath({ slug: "naruto" })} className="text-violet">Naruto</Link>.</p>
       </section>
 
-      {/* Every franchise with more than one entry (data/franchises.json), A to Z, with a filter and a letter bar. */}
+      {/* Every indexed franchise watch order (the sitemap's list, lib/indexing.ts), A to Z, with a filter and a letter bar:
+          linking only these keeps the hub's link weight on the pages that can rank. */}
       {azRows.length > 0 && (
         <section className="reveal mt-12" aria-labelledby="az-h">
           <h2 id="az-h" className="h-section mb-1">All franchise watch orders, A–Z</h2>
-          <p className="mb-4 text-sm text-muted">{azRows.length} franchises with more than one season, movie or OVA.</p>
+          <p className="mb-4 text-sm text-muted">{azRows.length} franchises with a full watch order guide. Any other title&rsquo;s order is on its page, under &ldquo;Watch order&rdquo;.</p>
           <FranchiseIndex rows={azRows} />
         </section>
       )}
