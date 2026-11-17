@@ -50,6 +50,19 @@ export function genrePicks(slug: string): GenrePick[] {
   }).sort((x, y) => y.weighted - x.weighted);
 }
 
+/**
+ * The best-rated anime overall for /best-anime: titles at least `minVotes` AniList members scored, weighted towards
+ * the mean the same way as genrePicks, so a cult favourite doesn't outrank one loved by half a million. No ecchi.
+ */
+export function allTimePicks(minVotes = 25000): GenrePick[] {
+  const rows = Object.entries(SNAP).filter(([, a]) => a.s && a.sv >= minVotes && !a.g.includes("Ecchi"));
+  if (!rows.length) return [];
+  const mean = rows.reduce((n, [, a]) => n + (a.s ?? 0), 0) / rows.length;
+  const prior = 20000;
+  return rows.map(([id, a]) => ({ anilistId: Number(id), score: a.s!, votes: a.sv, themes: themesOf(alAnime(Number(id))?.t ?? []), weighted: (a.sv * a.s! + prior * mean) / (a.sv + prior) }))
+    .sort((x, y) => y.weighted - x.weighted);
+}
+
 /** Hidden gems: highly rated by fewer people than the genre's typical pick. */
 export function hiddenGems(picks: GenrePick[], n = 6): GenrePick[] {
   if (picks.length < 12) return [];

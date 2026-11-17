@@ -14,12 +14,12 @@ const fmt = (n: number) => (n >= 1000 ? `${(n / 1000).toFixed(n >= 10000 ? 0 : 1
  * (US streaming services from the researched data, and whether it has a Hindi dub), so the list answers more than a
  * poster grid does.
  */
-export default function PickList({ picks, start = 1, compact = false }: { picks: Pick[]; start?: number; compact?: boolean }) {
+export default function PickList({ picks, start = 1, compact = false, region = "US" }: { picks: Pick[]; start?: number; compact?: boolean; /** Whose streaming services to show. */ region?: "US" | "IN" }) {
   return (
     <ol className="grid gap-3 md:grid-cols-2">
       {picks.map(({ anime: a, why, votes, score }, i) => {
         const streams = streamsFor(a);
-        const us = streams ? [...new Set(servicesIn(streams, "US").filter((x) => x.kind !== "buy").map((x) => x.service))].slice(0, 3) : [];
+        const us = streams ? [...new Set(servicesIn(streams, region).filter((x) => x.kind !== "buy").map((x) => x.service))].slice(0, 3) : [];
         const hindi = dubFor(a)?.status === "available";
         const poster = posterUrl(a, "small");
         const eps = a.subtype === "movie" ? "Movie" : a.episodeCount ? `${a.episodeCount} episodes` : subtypeLabel(a.subtype);
@@ -36,7 +36,7 @@ export default function PickList({ picks, start = 1, compact = false }: { picks:
               <p className="text-xs text-muted">{[eps, a.startDate?.slice(0, 4), score ? `${score.toFixed(1)}/10 on AniList` : null, votes ? `👍 ${fmt(votes)} fans recommend` : null].filter(Boolean).join(" · ")}</p>
               <p className="mt-1 text-sm text-ink/85">{why}</p>
               <p className="mt-1 flex flex-wrap gap-x-3 text-xs">
-                {us.length > 0 && <Link href={streamsPath(streams!.s)} className="text-violet hover:underline">▶ {us.join(", ")} (US)</Link>}
+                {us.length > 0 && <Link href={streamsPath(streams!.s)} className="text-violet hover:underline">▶ {us.join(", ")} ({region === "IN" ? "India" : "US"})</Link>}
                 {!us.length && streams && <Link href={streamsPath(streams.s)} className="text-violet hover:underline">▶ Where to watch</Link>}
                 {hindi && <Link href="/hindi-dub" className="text-[#fbbf24] hover:underline">🇮🇳 Hindi dub</Link>}
                 {editorWatched(a) && <Link href="/author/harsh-lariya" rel="author" className="text-emerald-300 hover:underline">✓ Harsh has watched it</Link>}

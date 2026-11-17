@@ -69,6 +69,7 @@ export default async function Lists() {
       </section>
       <section className="reveal mt-10">
         <h2 className="h-section mb-3">Best anime by year</h2>
+        <p className="mb-3 text-sm"><Link href="/best-anime" className="font-medium text-violet hover:underline">🏆 The best anime of all time: top 50, with where to watch in India →</Link></p>
         <div className="flex flex-wrap gap-2">{years.map((yy) => <Link key={yy} href={`/best/${yy}`} className="chip tabular-nums">{yy}</Link>)}</div>
       </section>
       <section className="reveal mt-10">
