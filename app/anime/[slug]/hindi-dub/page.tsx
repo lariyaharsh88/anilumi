@@ -76,7 +76,8 @@ export default async function HindiDubPage({ params }: Props) {
   const wo = a && a.subtype !== "movie" ? await buildWatchOrder(a).catch(() => null) : null;
   const core = wo ? wo.entries.filter((e) => e.kind === "main") : [];
   const films = wo ? wo.entries.filter((e) => e.kind === "movie").length : 0;
-  const start = core[0]?.anime ?? null;
+  // Where to start, only when the order begins with a series: Kitsu roots Doraemon at a 1995 short film.
+  const start = core[0] && ["TV", "ONA"].includes(core[0].anime.subtype) ? core[0].anime : null;
   const hours = wo && wo.totalMinutes ? Math.round(wo.totalMinutes / 60) : null;
   const started = dubShows().filter((e) => e.lang === "hi" && e.slug === d.s && e.premiere).sort((x, y) => premiereAt(x) - premiereAt(y))[0] ?? null;
   // The lowest monthly plan ("from ₹99 a month"), as people compare; an annual plan only when there's no monthly one.

@@ -61,9 +61,9 @@ let top: Set<string> | null = null;
  * Kids' shows people search in Hindi ("shinchan in hindi" 6.6K, "doraemon in hindi" 3.6K, "pokemon in hindi" 1.3K,
  * "beyblade in hindi" 2.8K a month, Keyword Planner, Nov 2026): indexed although they rank below the top 30 here.
  */
-// Not Stand by Me Doraemon: "doraemon in hindi" means the TV series, which the dub list doesn't cover; the film's page
-// stays up, noindexed.
-const KIDS_INDEXED = ["crayon-shin-chan", "pokemon", "beyblade-burst"];
+// "doraemon in hindi" means the TV series (doraemon-2005, on JioHotstar), not the Stand by Me Doraemon films, whose
+// page stays up, noindexed.
+const KIDS_INDEXED = ["crayon-shin-chan", "doraemon-2005", "pokemon", "beyblade-burst"];
 export const topHindiDub = (s: string) => (top ??= new Set([...hindiDubbed().slice(0, HINDI_DUB_PAGES).map((d) => d.s), ...KIDS_INDEXED.filter((k) => dubPageEntry(k))])).has(s);
 
 /**

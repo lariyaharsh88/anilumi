@@ -4131,8 +4131,13 @@
    "t": "Doraemon",
    "ta": {
     "status": "available",
-    "confidence": "medium",
+    "confidence": "high",
     "platforms": [
+     {
+      "name": "JioHotstar",
+      "scope": "Season 17 (52 episodes)",
+      "url": "https://www.hotstar.com/in/shows/doraemon/1260021004"
+     },
      {
       "name": "Hungama TV",
       "scope": "TV series (older dub; reruns also on Disney Channel India)",
@@ -4143,8 +4148,13 @@
    },
    "te": {
     "status": "available",
-    "confidence": "medium",
+    "confidence": "high",
     "platforms": [
+     {
+      "name": "JioHotstar",
+      "scope": "Season 17 (52 episodes)",
+      "url": "https://www.hotstar.com/in/shows/doraemon/1260021004"
+     },
      {
       "name": "Hungama TV",
       "scope": "TV series (older dub; reruns also on Disney Channel India)",
@@ -4154,10 +4164,11 @@
     "added": "2026-11-15"
    },
    "sources": [
+    "https://www.hotstar.com/in/shows/doraemon/1260021004",
     "https://www.afaqs.com/news/media/26611_walt-disney-india-ties-up-with-sun-distribution-services"
    ],
-   "note": "Source is from 2010; current schedule not confirmed.",
-   "checked": "2026-11-15"
+   "note": "JioHotstar's own title page (checked 17 Nov 2026) lists season 17, 52 episodes, in Tamil, Telugu and Hindi. The Hungama TV row comes from a 2010 source; its current schedule isn't confirmed.",
+   "checked": "2026-11-17"
   }
  ],
  "lastScan": "2026-11-15"

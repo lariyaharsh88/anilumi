@@ -4427,6 +4427,25 @@
    ],
    "note": "Crunchyroll added a Hindi dub in April 2024; Muse India streams a Hindi dub free on YouTube from Dec 2025.",
    "added": "2026-11-12"
+  },
+  {
+   "s": "doraemon-2005",
+   "t": "Doraemon",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "JioHotstar",
+     "scope": "Season 17 (52 episodes)",
+     "url": "https://www.hotstar.com/in/shows/doraemon/1260021004"
+    }
+   ],
+   "sources": [
+    "https://www.hotstar.com/in/shows/doraemon/1260021004"
+   ],
+   "note": "JioHotstar's own title page (checked 17 Nov 2026) lists the series' season 17, 52 episodes, in Hindi, Tamil and Telugu. Hindi TV airings (Disney Channel India, earlier Hungama TV) aren't listed here because their current schedules couldn't be confirmed.",
+   "added": "2026-11-17",
+   "checked": "2026-11-17"
   }
  ],
  "lastScan": "2026-11-15"
