@@ -28,8 +28,10 @@ const LAST_GOOD_TTL = 14 * DAY;
 // Generated Open Graph / Twitter cards. Their URLs carry a hash of the image route (`?6cf9…`), so they need no
 // build in their key: they survive deploys, which would otherwise re-render every card.
 const CARD = /\/(opengraph|twitter)-image(-[\w-]+)?$/;
-// Routes with `revalidate = 604800` in the app (characters, watch orders, cast lists): no data on them changes daily.
-const WEEKLY = /^\/(character\/[^/]+|watch-order\/[^/]+|anime\/[^/]+\/(cast|characters))\/?$/;
+// Routes with `revalidate = 604800` in the app (characters, watch orders, cast lists), and long-tail pages whose
+// data changes monthly at most (people, birthdays, similar, an anime's guide subpages): a week here, not a day.
+// Crawlers walk these by the thousand; each day of cache saved a re-render of every one (Workers CPU, Nov 2026).
+const WEEKLY = /^\/(character\/[^/]+|watch-order\/[^/]+|staff\/[^/]+|voice-actor\/[^/]+|hindi-voice-artist\/[^/]+|similar\/[^/]+|birthdays\/[^/]+\/[^/]+|anime\/[^/]+\/(cast|characters|how-long-to-watch|parents-guide|openings-endings|manga|filler-list))\/?$/;
 // Campaign and click tags: the page is the same with or without them, and analytics reads them from the visitor's
 // address bar, not the server. Kept in the cache key, every tagged link (a channel post's utm_source=telegram) was a
 // cold page of its own with no copy to fall back on, so link previews waited on a full render and often gave up.
@@ -41,7 +43,7 @@ const TRACKING = /^(utm_[a-z]+|fbclid|gclid|gbraid|wbraid|msclkid|igshid|mc_cid|
 const KNOWN_PARAMS = new Set(["_rsc", "a", "all", "b", "country", "done", "e", "genre", "id", "ids", "k", "max", "min", "minutes", "ok", "p", "page", "pick", "preset", "q", "retry", "s", "sort", "t", "title", "type", "u", "user"]);
 /** Whether every parameter in `search` is one a page reads. Pure. */
 export const knownSearch = (search) => [...new URLSearchParams(search).keys()].every((k) => KNOWN_PARAMS.has(k));
-const CRAWLER = /googlebot|google-inspectiontool|googleother|adsbot-google|mediapartners-google|bingbot|duckduckbot|yandex|applebot|baiduspider/i;
+const CRAWLER = /googlebot|google-inspectiontool|googleother|adsbot-google|mediapartners-google|bingbot|duckduckbot|yandex|applebot|baiduspider|oai-searchbot|chatgpt-user|perplexitybot|claude-searchbot|claude-user|petalbot/i;
 
 function ttl(path) {
   if (path.startsWith("/_next/static/")) return 365 * DAY;
@@ -227,7 +229,9 @@ async function handle(request, env, ctx) {
   const lastBuild = last?.headers.get("x-build");
   const sameBuild = Boolean(lastBuild) && genq.endsWith(`=${lastBuild}`);
   if (last && (sameBuild || CRAWLER.test(request.headers.get("user-agent") || ""))) {
-    ctx.waitUntil(toOrigin(request, url, 30_000).then((res) => store(res, url, genq, key, lastKey)).catch(() => {}));
+    // Re-render in the background only once the copy is past its TTL. Every hit used to, so after each release
+    // every crawler request still cost a render (most of the Workers CPU bill, Nov 2026).
+    if (copyAge(last) > ttl(url.pathname)) ctx.waitUntil(toOrigin(request, url, 30_000).then((res) => store(res, url, genq, key, lastKey)).catch(() => {}));
     return stale("STALE");
   }
 
@@ -261,6 +265,12 @@ async function handle(request, env, ctx) {
   if (genq) out.headers.set("x-edge-gen", genq.slice(genq.indexOf("=") + 1));
   ctx.waitUntil(store(out, url, genq, key, lastKey));
   return out;
+}
+
+/** Seconds since a last-good copy was stored (x-stored-at); copies from before the stamp count as expired. Pure. */
+export function copyAge(res, now = Date.now()) {
+  const at = Number(res.headers.get("x-stored-at"));
+  return at > 0 ? (now - at) / 1000 : Infinity;
 }
 
 function lastKeyFor(url, genq) {
@@ -316,6 +326,7 @@ async function store(res, url, genq, key, lastKey) {
   if (lastKey) {
     const kept = new Response(res.clone().body, res);
     kept.headers.set("cache-control", `public, max-age=${LAST_GOOD_TTL}`);
+    kept.headers.set("x-stored-at", String(Date.now()));
     kept.headers.delete("vary");
     kept.headers.delete("x-edge-cache");
     puts.push(caches.default.put(lastKey, kept));

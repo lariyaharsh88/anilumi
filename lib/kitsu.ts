@@ -966,6 +966,14 @@ export async function getAniListId(animeId: string): Promise<number | null> {
 }
 
 /**
+ * AniList refuses requests from Cloudflare (174K instant 4xx a day from the app Worker, Nov 2026), so on Workers
+ * the live calls are skipped and each caller falls back as it did after a failed call: the airing snapshot, the
+ * stored copy in MongoDB (lib/alcache.ts), filled hourly by scripts/anilist-sync.mts. ANILIST_FROM_WORKERS=1 turns
+ * them back on.
+ */
+export const ANILIST_SKIPPED = typeof navigator !== "undefined" && navigator.userAgent === "Cloudflare-Workers" && process.env.ANILIST_FROM_WORKERS !== "1";
+
+/**
  * Next airing episode for each AniList id: the airing snapshot first (lib/airing.ts, refreshed every 3 hours),
  * then live AniList for the rest, one request per 50 ids, memoised.
  */
@@ -985,6 +993,7 @@ export async function aniListNextAiring(ids: number[]): Promise<Map<number, AniL
     if (hit && hit.exp > now) { out.set(id, hit.v); return false; }
     return true;
   });
+  if (ANILIST_SKIPPED) return out; // the snapshot covers the airing shows; the rest stay unknown
   for (let i = 0; i < todo.length; i += 50) {
     const chunk = todo.slice(i, i + 50);
     try {
@@ -1184,6 +1193,7 @@ let weekMemo: { v: Broadcast[]; exp: number } | null = null;
 export async function getWeekBroadcasts(): Promise<Broadcast[]> {
   if (process.env.ANILIST_ENRICH === "0") return [];
   if (weekMemo && weekMemo.exp > Date.now()) return weekMemo.v;
+  if (ANILIST_SKIPPED) return [];
   const from = Math.floor(Date.now() / 1000 / 1800) * 1800; // round to 30 min so the fetch cache key is stable
   const to = from + 7 * 86400;
   const out: Broadcast[] = [];

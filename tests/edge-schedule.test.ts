@@ -61,6 +61,14 @@ test("edge cache: only query parameters a page reads are cached", async () => {
   assert.equal(knownSearch("?page=2&cachebust=9"), false);
 });
 
+test("edge: a last-good copy's age comes from its stored-at stamp; unstamped copies count as expired", async () => {
+  const { copyAge } = await import("../edge/worker.js");
+  const now = Date.UTC(2026, 10, 17, 12);
+  assert.equal(copyAge(new Response("", { headers: { "x-stored-at": String(now - 3600_000) } }), now), 3600);
+  assert.equal(copyAge(new Response(""), now), Infinity);
+  assert.equal(copyAge(new Response("", { headers: { "x-stored-at": "garbage" } }), now), Infinity);
+});
+
 test("edge: only /hi and its subpages are treated as Hindi", async () => {
   const { isHindiPath } = await import("../edge/worker.js");
   assert.equal(isHindiPath("/hi"), true);

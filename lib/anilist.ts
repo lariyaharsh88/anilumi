@@ -3,7 +3,7 @@
  * richer than Kitsu's, so voice actors come from here. Everything fails soft (null / empty) and is
  * cached by Next's fetch cache plus a small in-process memo, because the public API is rate-limited.
  */
-import { getAniListId, kitsuByAniListIds, ANILIST_MIN_REVALIDATE, UpstreamError, type Anime } from "./kitsu";
+import { getAniListId, kitsuByAniListIds, ANILIST_MIN_REVALIDATE, ANILIST_SKIPPED, UpstreamError, type Anime } from "./kitsu";
 import { castFromSnapshot } from "./castsnap";
 import { popularFromSnapshot, voiceActorFromSnapshot } from "./vasnap";
 import { alAnime } from "./alsnap";
@@ -21,6 +21,7 @@ export function retryDelay(failure: { status?: number; network?: boolean; retryA
 
 // After AniList says "wait N seconds" beyond what we retried, skip calls until then instead of piling on.
 let coolUntil = 0;
+
 /** Most recent failure, shown by /api/version so Render-only AniList trouble can be seen from outside. */
 export const anilistHealth: { lastFailure: { op: string; why: string; at: string } | null } = { lastFailure: null };
 const opName = (q: string) => q.match(/\{\s*(?:Page\([^)]*\)\s*\{\s*)?(\w+)/)?.[1] || "query";
@@ -38,6 +39,13 @@ export async function anilist<T>(query: string, variables: Record<string, unknow
   const key = durable ? durable.cacheKey(query, variables) : "";
   const saved = durable ? await durable.readCached(key) : null;
   if (saved?.fresh) return saved.data as T;
+  // Not called from Cloudflare (lib/kitsu.ts ANILIST_SKIPPED): stored copy, else queued for the hourly sync job.
+  if (ANILIST_SKIPPED) {
+    if (saved) return saved.data as T;
+    if (durable) durable.enqueue(key, opName(query), query, variables);
+    if (strict) throw new UpstreamError("AniList isn't called from Cloudflare; queued for the sync job");
+    return null;
+  }
   const fail = (why: string) => {
     console.warn(`[anilist] ${opName(query)} failed: ${why}${saved ? " (served the stored copy)" : ""}`);
     anilistHealth.lastFailure = { op: opName(query), why, at: new Date().toISOString() };
