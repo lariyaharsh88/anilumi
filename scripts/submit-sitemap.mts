@@ -6,16 +6,26 @@
  *     property. Skipped with a notice without it. (Google retired its anonymous sitemap "ping" in 2023.)
  *  2. IndexNow (lib/indexnow.ts): the URLs whose data changed in the last LOOKBACK_HOURS. Hourly and daily pages
  *     carry the sitemap's build time rather than a change, so they're skipped; new episodes go as they air
- *     (scripts/send-alerts.mts).
+ *     (scripts/send-alerts.mts). URLs sent in the last 72 hours are skipped (the log at INDEXNOW_SENT_LOG, kept by
+ *     actions/cache); the rest go CHUNK_SIZE at a time, GAP_SECONDS apart, at most MAX_CHUNKS groups a run. What
+ *     doesn't fit waits for the next run: LOOKBACK_HOURS (72) keeps it in view for three daily runs.
  * By hand: GSC_SERVICE_ACCOUNT="$(cat key.json)" npx tsx scripts/submit-sitemap.mts
  */
 import { createSign } from "node:crypto";
-import { changedEntries, submitIndexNow } from "../lib/indexnow";
+import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { tmpdir } from "node:os";
+import { dirname, join } from "node:path";
+import { setTimeout as sleep } from "node:timers/promises";
+import { CHUNK_SIZE, SENT_WINDOW_MS, changedEntries, chunk, freshUrls, recordSent, submitIndexNow, type SentLog } from "../lib/indexnow";
 
 const SITE = "https://anilumi.in";
 const SITEMAP = `${SITE}/sitemap.xml`;
 const PROPERTY = "sc-domain:anilumi.in";
-const LOOKBACK_HOURS = Number(process.env.LOOKBACK_HOURS) || 26;
+// No longer than the sent log's window, or a URL sent once would come back into view and be sent again.
+const LOOKBACK_HOURS = Math.min(Number(process.env.LOOKBACK_HOURS) || 72, SENT_WINDOW_MS / 3600_000);
+const GAP_SECONDS = 90; // between groups
+const MAX_CHUNKS = 5; // a run: 100 URLs, 6 minutes of pauses (the job's timeout is 15)
+const SENT_LOG = process.env.INDEXNOW_SENT_LOG || join(tmpdir(), "anilumi-indexnow-sent.json");
 let problems = 0;
 
 /** OAuth access token for a service account (JWT bearer grant), scoped to Search Console. */
@@ -54,16 +64,39 @@ async function google() {
   if (Number(info.errors) > 0) { problems++; console.log("::warning::Google reports sitemap errors: see Search Console → Sitemaps."); }
 }
 
+function readSentLog(): SentLog {
+  try {
+    const raw = JSON.parse(readFileSync(SENT_LOG, "utf8")) as Record<string, unknown>;
+    return Object.fromEntries(Object.entries(raw).filter((e): e is [string, number] => typeof e[1] === "number"));
+  } catch { return {}; } // first run, or the cache expired: nothing to skip
+}
+function writeSentLog(log: SentLog) {
+  mkdirSync(dirname(SENT_LOG), { recursive: true });
+  writeFileSync(SENT_LOG, JSON.stringify(log));
+}
+
 async function indexNow() {
   // The sitemap is an index of one sitemap per page type: read every child.
   const index = await (await fetch(SITEMAP, { signal: AbortSignal.timeout(60_000) })).text();
   const children = [...index.matchAll(/<sitemap><loc>([^<]+)<\/loc>/g)].map(([, loc]) => loc);
   const xml = children.length ? (await Promise.all(children.map((u) => fetch(u, { signal: AbortSignal.timeout(60_000) }).then((r) => r.text())))).join("\n") : index;
-  const urls = [...new Set(changedEntries(xml, Date.now() - LOOKBACK_HOURS * 3600_000))].slice(0, 10_000);
-  if (!urls.length) { console.log("IndexNow: nothing changed"); return; }
-  const status = await submitIndexNow(urls);
-  if (status === 200 || status === 202) console.log(`IndexNow: ${urls.length} changed URLs sent (HTTP ${status})`);
-  else { problems++; console.log(`::warning::IndexNow: HTTP ${status}`); }
+  const changed = [...new Set(changedEntries(xml, Date.now() - LOOKBACK_HOURS * 3600_000))];
+  let log = recordSent(readSentLog(), [], Date.now()); // drops entries past the window
+  const fresh = freshUrls(changed, log, Date.now());
+  const groups = chunk(fresh, CHUNK_SIZE).slice(0, MAX_CHUNKS);
+  console.log(`IndexNow: ${changed.length} changed in ${LOOKBACK_HOURS} h, ${changed.length - fresh.length} already sent, ${fresh.length} to send`);
+  let sent = 0;
+  for (const [i, urls] of groups.entries()) {
+    if (i) await sleep(GAP_SECONDS * 1000);
+    const status = await submitIndexNow(urls);
+    if (status !== 200 && status !== 202) { problems++; console.log(`::warning::IndexNow: HTTP ${status} on group ${i + 1}; the rest wait for the next run`); break; }
+    log = recordSent(log, urls, Date.now());
+    writeSentLog(log); // after every group, so a run cut short still remembers what went
+    sent += urls.length;
+    console.log(`IndexNow: group ${i + 1}/${groups.length}, ${urls.length} URLs sent (HTTP ${status})`);
+  }
+  writeSentLog(log);
+  if (fresh.length > sent) console.log(`IndexNow: ${fresh.length - sent} URLs left for the next run`);
 }
 
 await google().catch((e) => { problems++; console.log(`::error::Google: ${(e as Error).message}`); });
