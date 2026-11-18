@@ -869,6 +869,72 @@
       "notes": "Checked 2026-11-19. GeyeG Pictures replaced the first-announced Studio MOTHER.",
       "season": 3,
       "name": "Tensei Kizoku Kantei Skill de Nariagaru"
+    },
+    "Kimetsu-no-Yaiba-Hashira-Geikohen": {
+      "status": "announced",
+      "what": "Infinity Castle Part 2, the second of three Infinity Castle films, is confirmed with no release date",
+      "announced": "2024-06-30",
+      "by": "Aniplex / ufotable, at the end of the Hashira Training Arc finale broadcast",
+      "window": "TBA",
+      "confidence": "high",
+      "sources": [
+        "https://www.animenewsnetwork.com/news/2024-06-30/demon-slayer-gets-anime-film-trilogy-adapting-infinity-castle-arc/.212639",
+        "https://en.wikipedia.org/wiki/Demon_Slayer:_Kimetsu_no_Yaiba_%E2%80%93_The_Movie:_Infinity_Castle",
+        "https://screenrant.com/demon-slayer-infinity-castle-part-2-release-date-not-2026/"
+      ],
+      "notes": "Part 1 opened 2025-07-18. ufotable's 2026 lineup video listed Part 2 under future projects, not 2026. The page's 'Movie 2 is confirmed' matches. Placed on the latest season's page on 2026-11-19 (same research as 'kimetsu-no-yaiba').",
+      "season": 5,
+      "name": "Demon Slayer",
+      "headline": "Infinity Castle Films, Part 2 Date TBA ({asOf})"
+    },
+    "haikyuu-to-the-top-2": {
+      "status": "dated",
+      "what": "The second 'Final' film, 'Haikyu!! The Movie: VS the Little Giant', is set for 2027 together with the short 'Where Monsters Go'",
+      "announced": "2025-12-21",
+      "by": "Official Haikyu!! anime, on the Jump Festa 2026 stage",
+      "window": "2027",
+      "confidence": "high",
+      "sources": [
+        "https://www.anitrendz.com/news/2025/12/21/haikyu-vs-little-giants-premieres-in-2027",
+        "https://en.mantan-web.jp/article/20251220dog00m200017000c.html",
+        "https://en.wikipedia.org/wiki/Haikyu!!"
+      ],
+      "notes": "The two final films were first announced on 2022-08-13, and this film's title was revealed on 2025-03-02. There is no exact date yet. The page's main-story list stops at TO THE TOP 2 and leaves out The Dumpster Battle (2024) and this 2027 film. Placed on the latest season's page on 2026-11-19 (same research as 'haikyuu').",
+      "season": 5,
+      "name": "Haikyuu",
+      "headline": "Final Film Coming in 2027 ({asOf})"
+    },
+    "Jujutsu-Kaisen-3": {
+      "status": "announced",
+      "what": "Season 4, 'The Culling Game Part 2', is announced; there is no premiere date",
+      "announced": "2026-03-27",
+      "by": "Official Jujutsu Kaisen anime (TOHO Animation / MAPPA), right after the Season 3 finale",
+      "window": "TBA",
+      "confidence": "high",
+      "sources": [
+        "https://en.wikipedia.org/wiki/List_of_Jujutsu_Kaisen_episodes",
+        "https://finalweapon.net/2026/03/26/jujutsu-kaisen-season-4-will-be-the-culling-game-part-2/",
+        "https://www.animenewsnetwork.com/encyclopedia/anime.php?id=40050"
+      ],
+      "notes": "English outlets date the announcement 2026-03-26 (US time). A teaser was shown 2026-06-19 at a MAPPA event. Reports of a January 2027 premiere are not official. The page's 'Kōhen is confirmed' matches. Placed on the latest season's page on 2026-11-19 (same research as 'jujutsu-kaisen').",
+      "season": 4,
+      "name": "Jujutsu Kaisen"
+    },
+    "one-punch-man-3": {
+      "status": "dated",
+      "what": "Season 3 Part 2 (second cour) premieres January 2027",
+      "announced": "2025-12-28",
+      "by": "Bandai Namco Filmworks / official One-Punch Man anime, after the Season 3 Part 1 finale",
+      "window": "January 2027",
+      "confidence": "high",
+      "sources": [
+        "https://finalweapon.net/2026/10/10/one-punch-man-season-3-part-2-january-2027-release-date/",
+        "https://animecorner.me/one-punch-man-season-3-cour-2-visual-and-trailer-revealed-sets-january-2027-release/",
+        "https://www.animenewsnetwork.com/encyclopedia/anime.php?id=38200"
+      ],
+      "notes": "Part 2 was first announced for 2027. The January 2027 month was announced on about 2026-10-10, with a trailer. The page's 'January 2027' matches. Placed on the latest season's page on 2026-11-19 (same research as 'one-punch-man').",
+      "label": "One Punch Man Season 3 Part 2",
+      "headline": "Premieres January 2027 ({asOf})"
     }
   }
 }
