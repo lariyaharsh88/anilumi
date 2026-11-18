@@ -3,6 +3,8 @@ import { DUBS_SEASON, dubShows, type DubShow } from "@/lib/dubschedule";
 import { seasonDubs, SEASON_DUBS_CHECKED, type SeasonDub } from "@/lib/seasondubs";
 import { previewSnapshot } from "@/lib/preview";
 import MadeBy from "@/components/MadeBy";
+import JsonLd from "@/components/JsonLd";
+import { webPage } from "@/lib/ld";
 import { fitTitle, fitDescription } from "@/lib/titles";
 // the plain URL is served by ../page.tsx from the ISR cache.
 import type { Metadata } from "next";
@@ -90,6 +92,9 @@ export default async function SeasonPage({ params, searchParams }: Props) {
   const next = shiftSeason(s, y, 1);
   const now = seasonOf();
   const isCurrent = now.season === s && now.year === y;
+  // The airing season's list is rebuilt from live data every 6 hours (revalidate), so its date is the render's. Shown
+  // and in dateModified: Bing put a freshness date beside rival season charts and none beside ours (Nov 2026).
+  const updated = isCurrent ? new Date() : null;
 
   const preview = page === 1 ? previewSnapshot().seasons[`${year}-${season}`] ?? [] : [];
   const sn = preview.length >= 10 ? seasonNumbers(preview) : null;
@@ -139,7 +144,9 @@ export default async function SeasonPage({ params, searchParams }: Props) {
         ))}
       </div>
       </PageHero>
+      {updated && page === 1 && <JsonLd data={{ ...webPage("CollectionPage", `/season/${year}/${season}`, `${cap(season)} ${year} anime`), dateModified: updated.toISOString() }} />}
       <MadeBy className="mt-4" method="The season list comes from Kitsu and AniList, ranked by how many people follow each show; air times are checked against the broadcast schedule." />
+      {updated && <p className="mt-1 text-xs text-muted">List updated {updated.toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "Asia/Kolkata" })}; it refreshes every 6 hours as episodes air.</p>}
       {page === 1 && data.total > 0 && (
         <SectionNav sections={[
           { id: "glance", label: "At a glance" },
