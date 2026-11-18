@@ -154,6 +154,9 @@ export async function sitemapEntries(): Promise<MetadataRoute.Sitemap> {
       // Same test as the page: a tag-built guide plus an official rating (lib/indexing.ts parentsGuideIndexed).
       if (al && (alAnime(al)?.t.length ?? 0) > 0 && officialRatings(a.slug)) out.push({ url: abs(`${animePath(a)}/parents-guide`), lastModified: at(D.anilist), changeFrequency: "monthly", priority: 0.5 });
     }
+    // Anime pages Google already shows outside the top 200 (Bing flagged them as missing, Nov 2026). The page
+    // indexes itself on the same test (lib/indexing.ts animeIndexed), so this lists nothing that is noindexed.
+    for (const p of searchShownPaths("/anime/")) if (/^\/anime\/[^/]+$/.test(p)) out.push({ url: abs(p), lastModified: at(D.anilist), changeFrequency: "weekly", priority: 0.5 });
     // "Anime like X" has the best click-through on the site: list it for the 500 most-followed titles (ranked in
     // the alias index, so no extra API calls).
     // Plus every title whose page is strong: 8+ fan picks, 5+ with shared themes (lib/picks.ts, the page's own test).
