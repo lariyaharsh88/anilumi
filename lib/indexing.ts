@@ -100,8 +100,15 @@ export function watchOrderIndexed(slug: string, liveParts: number, liveCore?: nu
 }
 
 /** "Anime like X" lists are generated, so only the ones search already shows are listed and indexed. */
-export const similarSlugs = () => searchShownPaths("/similar/").map((p) => p.slice("/similar/".length));
-export const similarIndexed = (slug: string) => searchShown(`/similar/${slug}`);
+/**
+ * "Anime like X" searched by name, kept indexed whatever Search Console shows since the 1 Nov drop. Google India,
+ * Nov 2026 ("anime like" / "anime similar to"): Solo Leveling 8.1K, Death Note 2.9K + 2.9K, Demon Slayer 2.4K +
+ * 320, Black Clover 1.6K, Naruto 1K, Naruto Shippuden 1K, Attack on Titan 1K, Your Name 880 + 480, Spy x Family
+ * 880, One Piece 590, Jujutsu Kaisen 590 + 480, Haikyuu 480, Tokyo Ghoul 320.
+ */
+const SIMILAR_SEARCHED = ["solo-leveling", "death-note", "kimetsu-no-yaiba", "black-clover-tv", "naruto", "naruto-shippuden", "attack-on-titan", "kimi-no-na-wa", "spy-x-family", "one-piece", "jujutsu-kaisen", "haikyuu", "tokyo-ghoul"];
+export const similarSlugs = () => [...new Set([...SIMILAR_SEARCHED, ...searchShownPaths("/similar/").map((p) => p.slice("/similar/".length))])];
+export const similarIndexed = (slug: string) => SIMILAR_SEARCHED.includes(slug) || searchShown(`/similar/${slug}`);
 /** A per-anime Hindi dub page: the most-watched dubs (lib/hindidub.ts), plus any Google already shows. */
 export const hindiDubIndexed = (slug: string) => topHindiDub(slug) || searchShown(hindiDubPath(slug));
 

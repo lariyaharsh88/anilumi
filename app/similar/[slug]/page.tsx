@@ -58,7 +58,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const a = await getAnimeBySlug(decodeURIComponent(slug));
   if (!a) notFound();
   // English name when it's what people search ("anime like my hero academia"), the real count and the year.
-  const name = WATCH_ORDER_OVERRIDES[a.slug]?.label ?? (a.titleEn && a.titleEn.length <= 40 ? a.titleEn : a.title);
+  // Official titles can end in a full stop ("Your Name."), which then reads "Anime Like Your Name.: …".
+  const name = (WATCH_ORDER_OVERRIDES[a.slug]?.label ?? (a.titleEn && a.titleEn.length <= 40 ? a.titleEn : a.title)).replace(/\.$/, "");
   const n = (await similarTo(a)).length;
   const { indexed, alId } = await strong(a.id, a.slug);
   const fans = indexed ? fanPicks(await getFanRecommendations(a.id, 12), alId, name).length : 0;
@@ -77,7 +78,8 @@ export default async function SimilarPage({ params }: Props) {
   const a = await getAnimeBySlug(decodeURIComponent(slug));
   if (!a) notFound();
   const [items, recs, insight, { alId }, hub] = await Promise.all([similarTo(a), getFanRecommendations(a.id, 12), getAniListInsight(a.id), strong(a.id, a.slug), indexedSimilar().catch(() => [])]);
-  const name = WATCH_ORDER_OVERRIDES[a.slug]?.label ?? (a.titleEn && a.titleEn.length <= 40 ? a.titleEn : a.title);
+  // Official titles can end in a full stop ("Your Name."), which then reads "Anime Like Your Name.: …".
+  const name = (WATCH_ORDER_OVERRIDES[a.slug]?.label ?? (a.titleEn && a.titleEn.length <= 40 ? a.titleEn : a.title)).replace(/\.$/, "");
   const picks = fanPicks(recs, alId, name);
   // The closest picks side by side with the show itself; then the ones you can watch in Hindi.
   const cmp = [{ anime: a, why: "", votes: 0 }, ...picks.slice(0, 5)];
