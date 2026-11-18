@@ -45,7 +45,7 @@ export async function sitemapEntries(): Promise<MetadataRoute.Sitemap> {
     { url: abs("/genre"), lastModified: weekly, changeFrequency: "weekly", priority: 0.6 },
     { url: abs("/watch-order"), lastModified: at(D.watchOrders), changeFrequency: "weekly", priority: 0.7 },
     { url: abs("/lists"), lastModified: weekly, changeFrequency: "weekly", priority: 0.6 },
-    { url: abs("/trends"), lastModified: monthly, changeFrequency: "monthly", priority: 0.6 },
+    { url: abs("/trends"), lastModified: weekly, changeFrequency: "weekly", priority: 0.7 },
     ...TREND_GENRES.filter(([g]) => trendIndexed(g)).map(([g]) => ({ url: abs(`/trends/${g}`), lastModified: monthly, changeFrequency: "monthly" as const, priority: 0.6 })),
     // One watch order per franchise (data/franchises.json, monthly): editorial ones first, then the ones the page
     // itself indexes (lib/indexing.ts watchOrderIndexed: enough parts, two of them core). Season pages point their
