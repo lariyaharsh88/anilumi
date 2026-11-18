@@ -17,7 +17,7 @@ export default function Privacy() {
         <ul>
           <li><strong>Ratings, reactions, hype votes and poll answers</strong>, linked to a random anonymous id kept in a cookie (<code>al_vid</code>), so you can vote once and change your mind. It isn&apos;t linked to your name or email.</li>
           <li><strong>Your synced list</strong>, only if you turn on sync on My list: the shows, progress and list status, stored under a private code. We keep only a one-way hash of the code, so the code itself is never stored. Delete the synced copy from My list at any time.</li>
-          <li><strong>Your email address</strong>, only if you sign up for episode alerts, a digest, a cheat sheet or guide updates, together with what you signed up for, the page you signed up on and when you agreed. Alerts for your whole list are linked to your synced list (by its hash, not the code), so we know which shows to email you about.</li>
+          <li><strong>Your email address</strong>, only if you sign up for episode alerts, a digest, a cheat sheet or guide updates, together with what you signed up for, the page you signed up on, your country (the two-letter code Cloudflare gives us, not your IP address) and when you agreed. Alerts for your whole list are linked to your synced list (by its hash, not the code), so we know which shows to email you about.</li>
           <li><strong>Push alerts</strong>, only if you turn on a 🔔 alert: the address your browser gives us for sending notifications (it identifies the browser&apos;s push service, not you) and the shows or characters you follow. No name, email or IP address.</li>
           <li><strong>Partner enquiries</strong>: the details you type into the form on the Advertise page.</li>
           <li><strong>Abuse protection</strong>: a one-way, daily-changing hash of your IP address, kept for a few minutes to stop spam. We never store the IP address itself.</li>
@@ -38,7 +38,7 @@ export default function Privacy() {
         </ul>
         <h2>Retention</h2>
         <p>Email addresses are kept until you unsubscribe or ask us to delete them. Push alert addresses are kept until you turn alerts off or your browser stops accepting them. Enquiries are kept for up to two years.</p>
-        <p className="text-sm text-muted">Last updated 9 November 2026.</p>
+        <p className="text-sm text-muted">Last updated 18 November 2026.</p>
       </div>
     </div>
   );

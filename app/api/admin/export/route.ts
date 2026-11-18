@@ -15,7 +15,7 @@ export async function GET(req: Request) {
     csv = toCsv(["created", "name", "email", "company", "website", "type", "budget", "message", "status"], rows.map((r) => [r.createdAt, r.name, r.email, r.company, r.website, r.type, r.budget, r.message, r.status]));
   } else {
     const rows = await d.collection("leads").find().sort({ createdAt: -1 }).toArray();
-    csv = toCsv(["created", "email", "kind", "anime", "anime_id", "source", "status", "page", "utm_source", "utm_medium", "utm_campaign"], rows.map((r) => [r.createdAt, r.email, r.kind, r.animeTitle, r.animeId, r.source, r.status, r.page, r.utm?.utm_source, r.utm?.utm_medium, r.utm?.utm_campaign]));
+    csv = toCsv(["created", "email", "kind", "anime", "anime_id", "source", "country", "status", "page", "utm_source", "utm_medium", "utm_campaign"], rows.map((r) => [r.createdAt, r.email, r.kind, r.animeTitle, r.animeId, r.source, r.country, r.status, r.page, r.utm?.utm_source, r.utm?.utm_medium, r.utm?.utm_campaign]));
   }
   return new Response(`﻿${csv}`, {
     headers: { "Content-Type": "text/csv; charset=utf-8", "Content-Disposition": `attachment; filename="anilumi-${type === "partners" ? "partners" : "leads"}-${date}.csv"`, "Cache-Control": "private, no-store" },

@@ -40,6 +40,9 @@ export async function POST(req: Request) {
   const key = { email, kind, animeId };
   const now = new Date();
   const utm = Object.fromEntries(["utm_source", "utm_medium", "utm_campaign"].map((k) => [k, cleanText((b.utm as Record<string, unknown> | undefined)?.[k], 80)]).filter(([, v]) => v));
+  // Two-letter country from Cloudflare (never the IP address), for lead reports by country. XX = unknown.
+  const cc = req.headers.get("cf-ipcountry") ?? "";
+  const country = /^[A-Z]{2}$/.test(cc) && cc !== "XX" ? cc : null;
   const leads = g.d.collection("leads");
   // A visitor who unsubscribed and signs up again starts over as pending.
   await leads.updateOne({ ...key, status: "unsubscribed" }, { $set: { status: "pending" }, $unset: { confirmSentAt: "" } });
@@ -49,7 +52,7 @@ export async function POST(req: Request) {
   await leads.updateOne(
     key,
     {
-      $setOnInsert: { ...key, ...(listId ? { listId } : {}), status: "pending", token: randomBytes(18).toString("base64url"), createdAt: now, consentAt: now },
+      $setOnInsert: { ...key, ...(listId ? { listId } : {}), status: "pending", token: randomBytes(18).toString("base64url"), createdAt: now, consentAt: now, ...(country ? { country } : {}) },
       $set: { animeTitle, source: b.source, page: cleanText(b.page, 300), utm, updatedAt: now },
     },
     { upsert: true },

@@ -35,11 +35,13 @@ export default async function Admin({ searchParams }: Props) {
   if (!d) return <div className="container-x py-16"><h1 className="text-2xl font-bold">Admin</h1><p className="mt-4 text-muted">Database not configured or unreachable.</p></div>;
 
   const week = new Date(Date.now() - 7 * 86400000);
-  const [total, lastWeek, byKind, bySource, leads, partners, rated, hyped, votes, fixes] = await Promise.all([
+  const [total, lastWeek, byKind, bySource, byCountry, leads, partners, rated, hyped, votes, fixes] = await Promise.all([
     d.collection("leads").countDocuments(),
     d.collection("leads").countDocuments({ createdAt: { $gte: week } }),
     d.collection("leads").aggregate<Count>([{ $group: { _id: "$kind", n: { $sum: 1 } } }, { $sort: { n: -1 } }]).toArray(),
     d.collection("leads").aggregate<Count>([{ $group: { _id: "$source", n: { $sum: 1 } } }, { $sort: { n: -1 } }]).toArray(),
+    // Country is stored from 18 Nov 2026 (Cloudflare's code); older leads show as "unknown".
+    d.collection("leads").aggregate<Count>([{ $group: { _id: { $ifNull: ["$country", "unknown"] }, n: { $sum: 1 } } }, { $sort: { n: -1 } }, { $limit: 12 }]).toArray(),
     d.collection("leads").find().sort({ createdAt: -1 }).limit(50).toArray(),
     d.collection("partner_leads").find().sort({ createdAt: -1 }).limit(30).toArray(),
     d.collection<{ _id: string; count: number; sum: number }>("rating_stats").find({ count: { $gt: 0 } }).sort({ count: -1 }).limit(10).toArray(),
@@ -71,6 +73,7 @@ export default async function Admin({ searchParams }: Props) {
       <section className="grid gap-4 lg:grid-cols-2">
         <div className="card p-4"><h2 className="font-semibold">Leads by type</h2><ul className="mt-2 space-y-1 text-sm">{byKind.map((r) => <li key={r._id ?? "-"} className="flex justify-between"><span>{r._id}</span><span className="tabular-nums">{r.n}</span></li>)}</ul></div>
         <div className="card p-4"><h2 className="font-semibold">Leads by CTA</h2><ul className="mt-2 space-y-1 text-sm">{bySource.map((r) => <li key={r._id ?? "-"} className="flex justify-between"><span>{r._id}</span><span className="tabular-nums">{r.n}</span></li>)}</ul></div>
+        <div className="card p-4"><h2 className="font-semibold">Leads by country</h2><ul className="mt-2 space-y-1 text-sm">{byCountry.map((r) => <li key={r._id ?? "-"} className="flex justify-between"><span>{r._id}</span><span className="tabular-nums">{r.n}</span></li>)}</ul></div>
         <div className="card p-4"><h2 className="font-semibold">Most rated</h2><ul className="mt-2 space-y-1 text-sm">{rated.map((r) => <li key={r._id} className="flex justify-between gap-3"><span className="truncate">{name(r._id)}</span><span className="shrink-0 tabular-nums">{(r.sum / r.count).toFixed(1)} · {r.count}</span></li>)}</ul></div>
         <div className="card p-4"><h2 className="font-semibold">Most hyped</h2><ul className="mt-2 space-y-1 text-sm">{hyped.map((r) => <li key={r._id} className="flex justify-between gap-3"><span className="truncate">{name(r._id)}</span><span className="shrink-0 tabular-nums">🔥 {r.count}</span></li>)}</ul></div>
       </section>
@@ -118,7 +121,7 @@ export default async function Admin({ searchParams }: Props) {
         <h2 className="h-section mb-3">Latest email leads</h2>
         <div className="card overflow-x-auto">
           <table className="w-full text-left text-sm">
-            <thead className="text-xs text-muted"><tr>{["When (IST)", "Email", "Type", "Anime", "CTA", "Status", ""].map((h) => <th key={h} className="px-3 py-2 font-medium">{h}</th>)}</tr></thead>
+            <thead className="text-xs text-muted"><tr>{["When (IST)", "Email", "Type", "Anime", "CTA", "Country", "Status", ""].map((h) => <th key={h} className="px-3 py-2 font-medium">{h}</th>)}</tr></thead>
             <tbody className="divide-y divide-line">
               {leads.map((l) => (
                 <tr key={String(l._id)}>
@@ -127,6 +130,7 @@ export default async function Admin({ searchParams }: Props) {
                   <td className="px-3 py-2">{l.kind}</td>
                   <td className="px-3 py-2">{l.animeTitle || ""}</td>
                   <td className="px-3 py-2">{l.source}</td>
+                  <td className="px-3 py-2">{l.country || ""}</td>
                   <td className="px-3 py-2">{l.status}</td>
                   <td className="px-3 py-2"><form action="/api/admin/delete" method="post"><input type="hidden" name="type" value="lead" /><input type="hidden" name="id" value={String(l._id)} /><button className="text-xs text-muted hover:text-accent-2">Delete</button></form></td>
                 </tr>
