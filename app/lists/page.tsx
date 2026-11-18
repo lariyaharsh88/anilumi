@@ -1,7 +1,8 @@
 import { fitDescription, fitTitle } from "@/lib/titles";
 import type { Metadata } from "next";
 import Link from "@/components/Link";
-import { getTrending, getCategories, posterUrl } from "@/lib/kitsu";
+import { getCategories, posterUrl } from "@/lib/kitsu";
+import { onNow } from "@/lib/trending";
 import PageHero from "@/components/PageHero";
 
 export const revalidate = 86400;
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
 
 export default async function Lists() {
   const y = new Date().getFullYear();
-  const [trending, genres] = await Promise.all([getTrending(12), getCategories(10)]);
+  const [trending, genres] = await Promise.all([onNow().then((x) => x.trending.slice(0, 12)), getCategories(10)]);
   const years = Array.from({ length: y - 1999 }, (_, i) => y - i);
   return (
     <div className="container-x pb-8">

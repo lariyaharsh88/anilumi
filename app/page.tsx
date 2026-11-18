@@ -25,6 +25,7 @@ import ToolBand, { type Tool } from "@/components/ToolBand";
 import BingeSearch from "@/components/BingeSearch";
 import AiringNext, { type AirTimes, type NextEp } from "@/components/AiringNext";
 import { airing as airingSnapshot } from "@/lib/airing";
+import { onNow } from "@/lib/trending";
 import { bingeFranchises } from "@/lib/franchiselist";
 
 export const revalidate = 1800;
@@ -82,23 +83,9 @@ export default async function Home() {
   const soonAnime = soon.length ? await listAnime({ filter: { id: [...new Set(soon.map((v) => v.x.k!))].join(",") }, limit: 20, revalidate: 86400 }) : null;
   const byId = new Map((soonAnime?.items || []).map((a) => [a.id, a]));
 
-  // "Trending" and "Airing this week" come from the same snapshot: shows with an episode broadcast this week
-  // (AniList's schedule), ranked by AniList popularity; "trending" keeps those that started in the last two seasons.
-  // Kitsu's /trending was stale (Attack on Titan and My Hero Academia season 1 headlined the homepage in Nov 2026)
-  // and "status: current" listed commercials, shorts and decades-old series. Without a snapshot: this season.
-  const week = airingSnap.shows
-    .filter((x) => x.k && x.n.some(([, t]) => t * 1000 > now - 86400_000 && t * 1000 < now + 7 * 86400_000))
-    .sort((p, q) => q.p - p.p);
-  const fresh = week.filter((x) => x.d && now - Date.parse(x.d) < 200 * 86400_000);
-  const poolIds = [...new Set([...fresh.slice(0, 10), ...week.slice(0, 12)].map((x) => x.k!))].slice(0, 20);
-  const pool = poolIds.length ? await listAnime({ filter: { id: poolIds.join(",") }, limit: 20, revalidate: 3600, withCover: true }).catch(() => null) : null;
-  const poolById = new Map((pool?.items || []).filter((a) => !a.nsfw && a.ageRating !== "R18").map((a) => [a.id, a]));
-  const pick10 = (xs: typeof week, n: number) => xs.flatMap((x) => (poolById.has(x.k!) ? [poolById.get(x.k!)!] : [])).slice(0, n);
-  const trendingNow = pick10(fresh, 10);
-  const trending = trendingNow.length >= 6 ? trendingNow : seasonal.items.slice(0, 10);
-  const airingWeek = pick10(week, 12);
-  const airingItems = airingWeek.length >= 6 ? airingWeek : seasonal.items;
-  const airingCount = week.length || seasonal.total;
+  // Trending and "Airing this week": this week's real broadcasts (lib/trending.ts).
+  const { trending: trendingNow, airing: airingItems, airingCount } = await onNow(now);
+  const trending = trendingNow.slice(0, 10);
   // Every airing show's upcoming episodes, for the visitor's own saved shows ("Your shows", in the browser).
   const airTimes: AirTimes = Object.fromEntries(airingSnap.shows.filter((x) => x.k && x.n.length).map((x) => [x.k!, x.n]));
   const nextEps: NextEp[] = soon.map(({ x, episode, t }) => {

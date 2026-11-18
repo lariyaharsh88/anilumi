@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { searchAnime, getTrending } from "@/lib/kitsu";
+import { searchAnime } from "@/lib/kitsu";
+import { onNow } from "@/lib/trending";
 import AnimeGrid from "@/components/AnimeGrid";
 import SearchBox from "@/components/SearchBox";
 import PageHero from "@/components/PageHero";
@@ -17,7 +18,7 @@ export default async function SearchPage({ searchParams }: Props) {
   const { q = "" } = await searchParams;
   const results = q ? await searchAnime(q, 20) : [];
   const people = q ? searchPeople(q, 12) : [];
-  const trending = q ? [] : await getTrending(10);
+  const trending = q ? [] : (await onNow()).trending.slice(0, 10);
   return (
     <div className="container-x pb-8">
       <PageHero
