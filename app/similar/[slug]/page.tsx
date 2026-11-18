@@ -14,6 +14,7 @@ import { getAniListInsight } from "@/lib/insights";
 import { robotsFor, similarIndexed } from "@/lib/indexing";
 import PickList from "@/components/PickList";
 import { fanPicks } from "@/lib/picks";
+import HindiDubCallout from "@/components/HindiDubCallout";
 import { getAniListId } from "@/lib/kitsu";
 import { WATCH_ORDER_OVERRIDES } from "@/data/watch-orders";
 import Image from "next/image";
@@ -105,6 +106,7 @@ export default async function SimilarPage({ params }: Props) {
         <div className="flex flex-wrap gap-2">{publicGenres(a.categories).slice(0, 6).map((c) => <Link key={c.id} href={`/genre/${c.slug}`} className="chip">{c.title}</Link>)}</div>
       </PageHero>
       <EditorWatched anime={a} className="mt-4" />
+      <HindiDubCallout anime={a} title={name} className="mt-4" />
       <SectionNav sections={[
         { id: "picks", label: "Fan picks" },
         ...(picks.length >= 3 ? [{ id: "compare", label: "Compare" }] : []),

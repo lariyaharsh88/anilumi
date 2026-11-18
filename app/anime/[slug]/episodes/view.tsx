@@ -14,6 +14,7 @@ import FillerToggle from "@/components/FillerToggle";
 import { arcsFor, arcOf, arcRange } from "@/lib/arcs";
 import { fillerFor, fillerSource } from "@/lib/filler";
 import PageHero from "@/components/PageHero";
+import HindiDubCallout from "@/components/HindiDubCallout";
 import { pageAbout, itemList } from "@/lib/ld";
 import JsonLd from "@/components/JsonLd";
 import Pagination from "@/components/Pagination";
@@ -103,6 +104,7 @@ export async function EpisodesView({ slug, page }: { slug: string; page: number 
         backdrop={a.cover?.large || null}
         posters={[posterUrl(a, "medium")]}
       />
+      {page === 1 && <HindiDubCallout anime={a} title={a.titleEn && a.titleEn.length <= 40 ? a.titleEn : a.title} className="mt-4" />}
       {a.status === "current" && a.nextRelease && page === 1 && (
         nextN ? (
           <Link href={episodePath(a, nextN)} className="card mt-5 flex flex-wrap items-center justify-between gap-3 border-accent/40 bg-accent/10 p-4 transition hover:border-accent">

@@ -1,5 +1,6 @@
 import Link from "@/components/Link";
-import { dubDate, platformKind, type Dub, type PlatformKind } from "@/lib/hindidub";
+import { dubDate, hindiDubPath, platformKind, type Dub, type PlatformKind } from "@/lib/hindidub";
+import { hindiDubIndexed } from "@/lib/indexing";
 import { hindiCast } from "@/lib/hindistats";
 import { dbEnabled } from "@/lib/db";
 import LeadForm from "./LeadForm";
@@ -13,6 +14,7 @@ const T = {
     source: "source",
     checked: (d: string) => `Checked against the platforms' own pages on ${d}. Streaming deals change, so confirm the audio menu before you start.`,
     all: "All Hindi-dubbed anime", allHref: "/hindi-dub",
+    guide: (t: string) => `Full guide: ${t} in Hindi, season by season, with prices and how to switch the audio`,
     cast: "Hindi voice cast", free: "Free and legal:", artists: "All Hindi voice artists",
     alert: (t: string) => `🔔 Email me when ${t} gets a Hindi dub`, alertBlurb: "One email if an official Hindi dub is announced or starts streaming, with where to watch it. Nothing else.", alertButton: "Notify me",
   },
@@ -24,6 +26,7 @@ const T = {
     source: "स्रोत",
     checked: (d: string) => `${d} को प्लेटफ़ॉर्म के अपने पेज से जाँचा गया। स्ट्रीमिंग बदलती रहती है, इसलिए देखने से पहले ऑडियो मेनू में हिंदी देख लें।`,
     all: "सभी हिंदी डब एनीमे", allHref: "/hi/hindi-dub",
+    guide: (t: string) => `पूरी गाइड: ${t} हिंदी में, सीज़न, कीमत और ऑडियो कैसे बदलें`,
     cast: "हिंदी आवाज़ कलाकार", free: "मुफ़्त और कानूनी:", artists: "सभी हिंदी आवाज़ कलाकार",
     alert: (t: string) => `🔔 ${t} का हिंदी डब आने पर ईमेल करें`, alertBlurb: "आधिकारिक हिंदी डब की घोषणा होने या स्ट्रीमिंग शुरू होने पर एक ईमेल, कहाँ देखें के साथ। और कुछ नहीं।", alertButton: "मुझे बताएं",
   },
@@ -83,6 +86,8 @@ export default function HindiDub({ dub, title, lang = "en", className = "", aler
         );
       })()}
       {lang === "en" && dub.note && <p className="mt-3 text-sm leading-6 text-ink/80">{dub.note}</p>}
+      {/* The show's own Hindi page, where it has an indexed one: it answers "<show> in Hindi" searches in full. */}
+      {yes && hindiDubIndexed(dub.s) && <p className="mt-3"><Link href={hindiDubPath(dub.s)} className="text-sm font-semibold text-violet hover:text-violet-2">{t.guide(title)} →</Link></p>}
       {!yes && alertId && dbEnabled() && (
         <LeadForm compact className="mt-4 border-t border-line/60 pt-4" kind="hindi" source="hindi-anime" lang={lang} animeId={alertId} animeTitle={title} title={t.alert(title)} blurb={t.alertBlurb} button={t.alertButton} />
       )}

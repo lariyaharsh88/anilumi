@@ -10,6 +10,7 @@ import { robotsFor, nextSeasonIndexed } from "@/lib/indexing";
 import Link from "@/components/Link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
+import HindiDubCallout from "@/components/HindiDubCallout";
 import { getAnimeBySlug, getAniListId, buildWatchOrder, getRelations, kitsuByAniListIds, animePath, posterUrl, fmtDate, statusLabel, subtypeLabel, type Anime } from "@/lib/kitsu";
 import { getAniListSequel } from "@/lib/anilist";
 import { sequelVerdict, seasonGaps, humanMonths, type SequelLike, type SequelKind } from "@/lib/sequel";
@@ -142,6 +143,7 @@ export default async function NextSeasonPage({ params }: Props) {
       </PageHero>
       <EditorWatched anime={a} className="mt-4" />
       <MadeBy className="mt-3" method="Sequel status comes from the studio's and publisher's own announcements and anime news, two sources where possible; release dates from AniList." />
+      <HindiDubCallout anime={a} title={name} className="mt-4" />
 
       {news && (
         <section className="card reveal mt-8 p-4" aria-labelledby="news-h">

@@ -6,6 +6,7 @@ import { getAnimeBySlug, getLastAiredBest, animePath, episodePath, posterUrl } f
 import { fillerFor, fillerSource, formatRanges, kindRuns, type EpisodeKind, type FillerInfo } from "@/lib/filler";
 import PageHero from "@/components/PageHero";
 import ChartFigure from "@/components/ChartFigure";
+import HindiDubCallout from "@/components/HindiDubCallout";
 import { chartFor } from "@/lib/charts";
 import { pageAbout, reviewedBy } from "@/lib/ld";
 import CheckedBy from "@/components/CheckedBy";
@@ -137,6 +138,7 @@ export default async function FillerListPage({ params }: Props) {
       />
       <EditorWatched anime={a} className="mt-4" />
       {chart && <ChartFigure chart={chart} className="mt-6" caption={`${name} at a glance: every episode by type, with what's left to watch once the filler is skipped.`} />}
+      <HindiDubCallout anime={a} title={name} className="mt-4" />
 
       <section className="card reveal mt-8 border-[#f43f5e]/40 bg-[#f43f5e]/[.05] p-4" aria-labelledby="quick-h">
         <h2 id="quick-h" className="font-semibold text-ink">Short answer: which {name} episodes to skip</h2>

@@ -1,4 +1,5 @@
 import { robotsFor, howLongIndexed } from "@/lib/indexing";
+import HindiDubCallout from "@/components/HindiDubCallout";
 import type { Metadata } from "next";
 import MadeBy from "@/components/MadeBy";
 import EditorWatched from "@/components/EditorWatched";
@@ -140,6 +141,7 @@ export default async function HowLongPage({ params }: Props) {
       />
       <EditorWatched anime={a} className="mt-4" />
       <MadeBy className="mt-3" method="Runtimes come from Kitsu and AniList episode lengths; filler skips use our checked filler lists." />
+      <HindiDubCallout anime={a} title={a.titleEn && a.titleEn.length <= 40 ? a.titleEn : a.title} className="mt-4" />
 
       {total > 0 && (
         <>
