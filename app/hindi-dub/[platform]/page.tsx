@@ -12,7 +12,8 @@ import BarChart from "@/components/viz/BarChart";
 import HindiDubList, { type DubCard } from "@/components/HindiDubList";
 import LeadForm from "@/components/LeadForm";
 import { dbEnabled } from "@/lib/db";
-import { cheapestKind, genreCounts, eraCounts, hindiArrivals } from "@/lib/hindistats";
+import { cheapestKind, genreCounts, eraCounts, hindiArrivals, hindiComing } from "@/lib/hindistats";
+import { premiereAt } from "@/lib/dubschedule";
 import { pricesFor, cheapestPlan, startingAt, PERIOD, PRICES_CHECKED } from "@/lib/platformprices";
 import { itemList } from "@/lib/ld";
 import { fitTitle, fitDescription } from "@/lib/titles";
@@ -38,12 +39,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { p, list } = load((await params).platform);
   const y = new Date().getFullYear();
   const name = p.label.replace(/ \(.*\)$/, "");
+  const fresh = hindiArrivals(120).filter((e) => p.match.test(e.service)).length;
+  const coming = hindiComing().filter((e) => p.match.test(e.service)).length;
   return {
-    // Free platforms lead with "free": what people search ("anime in hindi free on youtube").
+    // Free platforms lead with "free": what people search ("anime in hindi free on youtube"). Paid ones say how many
+    // are new, the reason to look again ("crunchyroll hindi dubbed anime" +831% in a year, Google India, Nov 2026).
     title: fitTitle(platformKind(list[0].rows[0].name) === "free"
       ? [`Watch Anime in Hindi Free on ${name} (${y}): ${list.length} Anime`, `Free Hindi Dubbed Anime on ${name} (${y}): ${list.length}`, `Free Hindi Dubbed Anime on ${name}`]
-      : [`${name} Hindi Dubbed Anime List (${y}): ${list.length} Anime`, `${name} Hindi Dubbed Anime (${y}): ${list.length} Anime`, `${name} Hindi Dubbed Anime`]),
-    description: fitDescription(`All ${list.length} anime with an official Hindi dub on ${p.label}, most-watched first: ${list.slice(0, 6).map((x) => x.d.t).join(", ")} and more, with which seasons have Hindi audio. Checked ${dubDate()}.`),
+      : [fresh ? `${name} Hindi Dubbed Anime (${y}): ${list.length} Anime + ${fresh} New Dubs` : null, `${name} Hindi Dubbed Anime List (${y}): ${list.length} Anime`, `${name} Hindi Dubbed Anime (${y}): ${list.length} Anime`, `${name} Hindi Dubbed Anime`]),
+    description: fitDescription(`All ${list.length} anime with an official Hindi dub on ${p.label}, most-watched first: ${list.slice(0, 5).map((x) => x.d.t).join(", ")} and more${fresh ? `; ${fresh} Hindi dubs started in the last 4 months` : ""}${coming ? ` and ${coming} coming soon` : ""}. Checked ${dubDate()}.`),
     alternates: { canonical: `/hindi-dub/${p.slug}` },
   };
 }
@@ -55,6 +59,7 @@ export default async function HindiPlatformPage({ params }: Props) {
   const cheapest = price ? cheapestPlan(price) : null;
   const checkedOn = new Date(`${PRICES_CHECKED}T00:00:00Z`).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
   const fresh = hindiArrivals(120).filter((e) => p.match.test(e.service));
+  const coming = hindiComing().filter((e) => p.match.test(e.service));
   const kitsu = await animeBySlugs([...list.map((x) => x.d.s), ...fresh.flatMap((e) => (e.slug ? [e.slug] : []))], true);
   const posters = list.slice(0, 3).map((x) => { const a = kitsu.get(x.d.s); return a ? posterUrl(a, "medium") : null; });
   const total = hindiDubbed().length;
@@ -73,6 +78,7 @@ export default async function HindiPlatformPage({ params }: Props) {
     { q: `Which anime are in Hindi on ${p.label}?`, a: `${list.length} on our list: ${list.map((x) => x.d.t).join(", ")}.` },
     { q: `How do I watch anime in Hindi on ${p.label}?`, a: p.how },
     ...(price ? [{ q: `How much does ${p.label} cost in India?`, a: price.free ? `Nothing: it's free with ads.${cheapest ? ` An optional ad-free plan costs ₹${cheapest.price.toLocaleString("en-IN")} a ${PERIOD[cheapest.period]}.` : ""} (Checked ${checkedOn}.)` : cheapest ? `${startingAt(price)}; the best value is ${cheapest.name} at ₹${cheapest.price.toLocaleString("en-IN")} a ${PERIOD[cheapest.period]}. ${price.hindiNote ?? ""} (Checked ${checkedOn}; prices change, so confirm before you subscribe.)` : `${price.hindiNote ?? price.notes ?? ""}` }] : []),
+    ...(coming.length ? [{ q: `Which anime are coming to ${p.label} in Hindi?`, a: `${coming.slice(0, 6).map((e) => `${e.t}${Number.isFinite(premiereAt(e)) ? ` (from ${fmtDay(new Date(premiereAt(e)).toISOString())})` : " (date to be announced)"}`).join(", ")}.` }] : []),
     ...(fresh.length ? [{ q: `What's new in Hindi on ${p.label}?`, a: `${fresh.slice(0, 6).map((e) => `${e.t} (from ${fmtDay(e.premiere)})`).join(", ")}.` }] : []),
     { q: `Is ${p.label} free?`, a: kind === "free" ? "Yes. These are official uploads by the licensors, free with ads." : kind === "tv" ? "It is a TV channel, included in cable and DTH packs that carry it." : "No, it needs a subscription. For free and legal Hindi dubs, see the YouTube channels and MX Player on the main Hindi dub list." },
   ];
@@ -98,6 +104,7 @@ export default async function HindiPlatformPage({ params }: Props) {
         { id: "how", label: kind === "subscription" ? "How to switch" : "How to watch" },
         { id: "numbers", label: "In numbers" },
         ...(fresh.length ? [{ id: "new", label: "New" }] : []),
+        ...(coming.length ? [{ id: "coming", label: "Coming soon" }] : []),
         { id: "list", label: `All ${list.length}` },
         ...(alsoFree.length ? [{ id: "also-free", label: "Also free" }] : []),
         ...(price ? [{ id: "price", label: "Price" }] : []),
@@ -146,6 +153,21 @@ export default async function HindiPlatformPage({ params }: Props) {
                 </li>
               );
             })}
+          </ul>
+        </section>
+      )}
+
+      {coming.length > 0 && (
+        <section id="coming" data-section className="reveal pt-10" aria-labelledby="coming-h">
+          <h2 id="coming-h" className="h-section mb-1">Coming soon in Hindi on {p.label}</h2>
+          <p className="mb-3 text-sm text-muted">Announced by {p.label} or the licensor, not out yet. <Link href="/new-dubs" className="text-violet hover:underline">Every new and upcoming Hindi dub →</Link></p>
+          <ul className="grid gap-2 text-sm sm:grid-cols-2 lg:grid-cols-3">
+            {coming.map((e) => (
+              <li key={`${e.t}-${e.service}`} className="card p-3">
+                <p className="font-semibold text-ink">{e.slug ? <Link href={animePath({ slug: e.slug })} className="hover:text-violet-2">{e.t}</Link> : e.t}</p>
+                <p className="mt-0.5 text-xs text-muted">{Number.isFinite(premiereAt(e)) ? `From ${fmtDay(new Date(premiereAt(e)).toISOString())}` : "Date to be announced"}</p>
+              </li>
+            ))}
           </ul>
         </section>
       )}
