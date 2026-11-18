@@ -1,0 +1,81 @@
+{
+  "generated": "2026-11-18",
+  "pages": {
+    "/crunchyroll-price-india": {
+      "src": "/charts/crunchyroll-price-india.png",
+      "alt": "Crunchyroll price comparison for India: Crunchyroll from ₹99 a month with 65 Hindi dubbed anime, ₹1.5 per Hindi anime; Netflix from ₹149 a month with 30 Hindi dubbed anime, ₹5.0 per Hindi anime; JioHotstar from ₹79 a month with 11 Hindi dubbed anime, ₹7.2 per Hindi anime."
+    },
+    "/watch-order/naruto": {
+      "src": "/charts/watch-order-naruto.png",
+      "alt": "Naruto watch order chart: Naruto, then Naruto: Shippuden, then Boruto: Naruto the Movie, then Boruto: Naruto Next Generations, plus 10 movies & 7 OVAs."
+    },
+    "/watch-order/dragon-ball": {
+      "src": "/charts/watch-order-dragon-ball.png",
+      "alt": "Dragon Ball watch order chart: Dragon Ball, then Dragon Ball Z, then Dragon Ball DAIMA, then Dragon Ball Super, then Dragon Ball Super: Broly, then Dragon Ball Super: SUPER HERO, plus 15 movies & 5 OVAs."
+    },
+    "/watch-order/kimetsu-no-yaiba": {
+      "src": "/charts/watch-order-kimetsu-no-yaiba.png",
+      "alt": "Demon Slayer watch order chart: Demon Slayer: Kimetsu no Yaiba, then Kimetsu no Yaiba: Mugen Ressha-hen, then Kimetsu no Yaiba: Yuukaku-hen, then Kimetsu no Yaiba: Katanakaji no Sato…, then Kimetsu no Yaiba: Hashira Geiko-hen, then Kimetsu no Yaiba: Mugenjou-hen Movie…, then Kimetsu no Yaiba: Mugenjou-hen Movie 2, plus 2 OVAs."
+    },
+    "/watch-order/bleach": {
+      "src": "/charts/watch-order-bleach.png",
+      "alt": "Bleach watch order chart: Bleach, then BLEACH: Thousand-Year Blood War, then BLEACH: Sennen Kessen-hen - Ketsubet…, then BLEACH: Sennen Kessen-hen - Soukoku-…, then BLEACH: Sennen Kessen-hen - Kashin-tan, plus 4 movies & 11 OVAs."
+    },
+    "/watch-order/boku-no-hero-academia": {
+      "src": "/charts/watch-order-boku-no-hero-academia.png",
+      "alt": "My Hero Academia watch order chart: My Hero Academia, then My Hero Academia Season 2, then My Hero Academia Season 3, then My Hero Academia Season 4, then My Hero Academia Season 5, then My Hero Academia Season 6, then My Hero Academia Season 7, then My Hero Academia Final Season, then My Hero Academia: More, then My Hero Academia: I am a hero too, plus 4 movies & 7 OVAs."
+    },
+    "/watch-order/one-piece": {
+      "src": "/charts/watch-order-one-piece.png",
+      "alt": "One Piece watch order chart: One Piece, plus 12 movies & 5 OVAs."
+    },
+    "/watch-order/pokemon": {
+      "src": "/charts/watch-order-pokemon.png",
+      "alt": "Pokémon watch order chart: Pokémon, plus 10 movies & 7 OVAs."
+    },
+    "/watch-order/jujutsu-kaisen": {
+      "src": "/charts/watch-order-jujutsu-kaisen.png",
+      "alt": "Jujutsu Kaisen watch order chart: Jujutsu Kaisen 0, then Jujutsu Kaisen, then Jujutsu Kaisen Season 2, then Jujutsu Kaisen: Shimetsu Kaiyū Zenpen, then Jujutsu Kaisen: Shimetsu Kaiyū Kōhen, plus 4 OVAs."
+    },
+    "/watch-order/attack-on-titan": {
+      "src": "/charts/watch-order-attack-on-titan.png",
+      "alt": "Attack on Titan watch order chart: Attack on Titan, then Attack on Titan Season 2, then Attack on Titan Season 3, then Attack on Titan Season 3 Part 2, then Attack on Titan: The Final Season, then Attack on Titan: The Final Season Pa…, then Attack on Titan: The Final Season -…, then Attack on Titan: The Final Season -…, plus 1 movie & 7 OVAs."
+    },
+    "/watch-order/hunter-x-hunter-2011": {
+      "src": "/charts/watch-order-hunter-x-hunter-2011.png",
+      "alt": "Hunter x Hunter watch order chart: Hunter x Hunter (2011), plus 2 movies."
+    },
+    "/anime/naruto-shippuden/filler-list": {
+      "src": "/charts/filler-naruto-shippuden.png",
+      "alt": "Naruto Shippuden filler chart: 297 of 500 episodes to watch, 203 filler and recap episodes to skip, saving about 78 h; the longest filler run is episodes 427 to 450."
+    },
+    "/anime/one-piece/filler-list": {
+      "src": "/charts/filler-one-piece.png",
+      "alt": "One Piece filler chart: 1086 of 1180 episodes to watch, 94 filler and recap episodes to skip, saving about 38 h; the longest filler run is episodes 131 to 143."
+    },
+    "/anime/bleach/filler-list": {
+      "src": "/charts/filler-bleach.png",
+      "alt": "Bleach filler chart: 203 of 366 episodes to watch, 163 filler and recap episodes to skip, saving about 65 h; the longest filler run is episodes 64 to 108."
+    },
+    "/anime/boruto-naruto-next-generations/filler-list": {
+      "src": "/charts/filler-boruto-naruto-next-generations.png",
+      "alt": "Boruto filler chart: 265 of 293 episodes to watch, 28 filler and recap episodes to skip, saving about 11 h; the longest filler run is episodes 112 to 119."
+    },
+    "/anime/naruto/filler-list": {
+      "src": "/charts/filler-naruto.png",
+      "alt": "Naruto filler chart: 130 of 220 episodes to watch, 90 filler and recap episodes to skip, saving about 35 h; the longest filler run is episodes 143 to 219."
+    },
+    "/anime/fairy-tail/filler-list": {
+      "src": "/charts/filler-fairy-tail.png",
+      "alt": "Fairy Tail filler chart: 140 of 175 episodes to watch, 35 filler and recap episodes to skip, saving about 14 h; the longest filler run is episodes 125 to 150."
+    },
+    "/anime/black-clover-tv/filler-list": {
+      "src": "/charts/filler-black-clover-tv.png",
+      "alt": "Black Clover filler chart: 152 of 170 episodes to watch, 18 filler and recap episodes to skip, saving about 7 h; the longest filler run is episodes 142 to 149."
+    },
+    "/anime/dragon-ball-z/filler-list": {
+      "src": "/charts/filler-dragon-ball-z.png",
+      "alt": "Dragon Ball Z filler chart: 253 of 291 episodes to watch, 38 filler and recap episodes to skip, saving about 15 h; the longest filler run is episodes 108 to 117."
+    }
+  }
+}

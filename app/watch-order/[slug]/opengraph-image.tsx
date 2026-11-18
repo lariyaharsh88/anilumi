@@ -1,5 +1,6 @@
 import { getAnimeBySlug, buildWatchOrder, posterUrl, fmtMinutes } from "@/lib/kitsu";
 import { posterCard, OG_SIZE } from "@/lib/og";
+import { chartFor, chartPng } from "@/lib/charts";
 
 export const revalidate = 604800;
 // Render on first request, then serve from the ISR cache until revalidated.
@@ -11,6 +12,9 @@ export const contentType = "image/png";
 
 export default async function OG({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
+  // A drawn chart (scripts/make-charts.mts) is the share image: a static file, nothing to render.
+  const chart = chartFor(`/watch-order/${decodeURIComponent(slug)}`);
+  if (chart) return chartPng(chart);
   const a = await getAnimeBySlug(decodeURIComponent(slug));
   const wo = a ? await buildWatchOrder(a) : null;
   return posterCard({

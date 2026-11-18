@@ -13,7 +13,7 @@ let fontsP: Promise<OgFont[]> | null = null;
  * A file from public/: through the Workers static-assets binding on Cloudflare (Workers have no file system),
  * from disk on Node.
  */
-async function publicFile(path: string): Promise<ArrayBuffer | Buffer> {
+export async function publicFile(path: string): Promise<ArrayBuffer | Buffer> {
   try {
     const { getCloudflareContext } = await import("@opennextjs/cloudflare");
     const { env } = await getCloudflareContext({ async: true });

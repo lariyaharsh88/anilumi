@@ -5,6 +5,8 @@ import Link from "@/components/Link";
 import { getAnimeBySlug, getLastAiredBest, animePath, episodePath, posterUrl } from "@/lib/kitsu";
 import { fillerFor, fillerSource, formatRanges, kindRuns, type EpisodeKind, type FillerInfo } from "@/lib/filler";
 import PageHero from "@/components/PageHero";
+import ChartFigure from "@/components/ChartFigure";
+import { chartFor } from "@/lib/charts";
 import { pageAbout, reviewedBy } from "@/lib/ld";
 import CheckedBy from "@/components/CheckedBy";
 import JsonLd from "@/components/JsonLd";
@@ -104,6 +106,7 @@ export default async function FillerListPage({ params }: Props) {
   const longest = longestRun(f);
   // A long-running show on a break: when it comes back (data/sequel-news.json), e.g. One Piece's 2027 return.
   const news = sequelNews(a.slug);
+  const chart = chartFor(`${animePath(a)}/filler-list`);
 
   const faq: FaqItem[] = [
     { q: `How many filler episodes does ${name} have?`, a: `${f.count} of its ${f.total} episodes${airing ? " aired so far" : ""} are filler (${f.share.toFixed(0)}%)${f.recap.size ? `, and ${f.recap.size} more are recaps` : ""}. ${f.mixed.size ? `Another ${f.mixed.size} mix adapted story with new material, so they're worth watching.` : ""}`.trim() },
@@ -133,6 +136,7 @@ export default async function FillerListPage({ params }: Props) {
         posters={[posterUrl(a, "medium")]}
       />
       <EditorWatched anime={a} className="mt-4" />
+      {chart && <ChartFigure chart={chart} className="mt-6" caption={`${name} at a glance: every episode by type, with what's left to watch once the filler is skipped.`} />}
 
       <section className="card reveal mt-8 border-[#f43f5e]/40 bg-[#f43f5e]/[.05] p-4" aria-labelledby="quick-h">
         <h2 id="quick-h" className="font-semibold text-ink">Short answer: which {name} episodes to skip</h2>

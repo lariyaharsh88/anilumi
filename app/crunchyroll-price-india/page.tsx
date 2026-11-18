@@ -5,6 +5,8 @@ import JsonLd from "@/components/JsonLd";
 import Faq, { type FaqItem } from "@/components/Faq";
 import JoinChannels from "@/components/JoinChannels";
 import AnswerLead from "@/components/AnswerLead";
+import ChartFigure from "@/components/ChartFigure";
+import { chartFor } from "@/lib/charts";
 import { webPage } from "@/lib/ld";
 import { fitTitle, fitDescription } from "@/lib/titles";
 import { dubHref, dubsOn, hindiPlatform, type HindiPlatform } from "@/lib/hindidub";
@@ -91,6 +93,7 @@ export default function CrunchyrollPriceIndia() {
       <AnswerLead checked={checkedOn()}>
         Crunchyroll costs ₹{cheapest.price} a month in India ({cheapest.name}). {monthly.filter((x) => x !== cheapest).map((x) => `${x.name} is ₹${x.price} a month${/offline|download/i.test(x.notes ?? "") ? " and adds offline downloads" : ""}`).join("; ")}. There&rsquo;s no free plan since 31 December 2025. Every plan includes the {hindi.length} anime with Hindi audio.
       </AnswerLead>
+      {chartFor("/crunchyroll-price-india") && <ChartFigure chart={chartFor("/crunchyroll-price-india")!} className="mt-6" caption={`Crunchyroll against Netflix and JioHotstar for anime in Hindi: cheapest monthly plan, Hindi dubbed anime and the cost per Hindi anime. Prices checked ${checkedOn()}.`} />}
 
       <section className="reveal mt-10" aria-labelledby="plans-h">
         <h2 id="plans-h" className="h-section mb-1">Crunchyroll plans and prices</h2>

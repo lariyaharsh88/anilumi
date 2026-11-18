@@ -11,6 +11,8 @@ import BingePlan from "@/components/BingePlan";
 import HindiDub from "@/components/HindiDub";
 import { dubFor, dubFaq } from "@/lib/hindidub";
 import PageHero from "@/components/PageHero";
+import ChartFigure from "@/components/ChartFigure";
+import { chartFor } from "@/lib/charts";
 import JsonLd from "@/components/JsonLd";
 import CheckedBy, { DraftLabel } from "@/components/CheckedBy";
 import { robotsFor, watchOrderIndexed } from "@/lib/indexing";
@@ -94,6 +96,7 @@ export default async function WatchOrderPage({ params }: Props) {
   const skippable = wo.entries.filter((e) => e.kind === "recap" || e.kind === "alt");
   const ordered = wo.entries.filter((e) => e.kind !== "recap" && e.kind !== "alt").map((e, i) => ({ ...e, step: i + 1 }));
   const name = franchiseName(wo);
+  const chart = chartFor(`/watch-order/${watchOrderSlug(wo)}`);
   // "Watch order with movies" answers: each movie and the main entry it follows.
   const mainTitle = new Map(wo.entries.filter((e) => e.kind === "main").map((e) => [e.anime.id, e.anime.title]));
   const movieList = ordered.filter((e) => e.kind === "movie").map((e) => ({ anime: e.anime, after: e.attachedTo ? mainTitle.get(e.attachedTo) ?? null : null }));
@@ -150,6 +153,7 @@ export default async function WatchOrderPage({ params }: Props) {
         {hasHindi(watchOrderSlug(wo)) && <p className="text-sm"><Link href={hindiPath(watchOrderSlug(wo))} className="chip" hrefLang="hi">🇮🇳 हिंदी में पढ़ें</Link></p>}
       </PageHero>
       <EditorWatched anime={wo.root} className="mt-4" />
+      {chart && <ChartFigure chart={chart} className="mt-6" caption={`The ${name} watch order at a glance: the main story with each part's length. Movies, OVAs and what to skip are below.`} />}
 
       {(() => {
         // Franchise-specific advice: the editor's watch-order intro, else the start tip from AniLumi's take.
