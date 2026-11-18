@@ -30,6 +30,19 @@ export function ogFonts(): Promise<OgFont[]> {
   return fontsP;
 }
 
+/**
+ * One card at a time per Worker instance. A render holds the decoded poster, the 1200×630 bitmap and the RGBA copy
+ * compactPng quantises; several at once ran an instance out of its 128 MB ("Exceeded Memory" about 1,700 times a
+ * day in Nov 2026, 70% on share images), and that failed every other request on the instance too. A card that
+ * takes over 15 s (a stuck poster fetch) stops holding up the queue.
+ */
+let queue: Promise<unknown> = Promise.resolve();
+function oneAtATime<T>(job: () => Promise<T>): Promise<T> {
+  const run = queue.then(job, job);
+  queue = Promise.race([run, new Promise((r) => setTimeout(r, 15_000))]).catch(() => {});
+  return run;
+}
+
 /** Mark + "AniLumi" wordmark, as in the site header. */
 export function OgBrand({ size = 40 }: { size?: number }) {
   return (
@@ -59,7 +72,7 @@ function Badge({ text }: { text: string }) {
 /** Shared poster-left / text-right card used by every generated Open Graph image. */
 export async function posterCard(opts: { poster: string | null; kicker: string; title: string; sub: string; badge?: string | null }) {
   const { poster, kicker, title, sub, badge } = opts;
-  return compactPng(new ImageResponse(
+  return oneAtATime(async () => compactPng(new ImageResponse(
     (
       <div style={{ width: "100%", height: "100%", display: "flex", background: "linear-gradient(135deg,#0b0d13 0%,#161b28 70%,#2a2550 100%)", color: "#e8ecf5", fontFamily: "Inter" }}>
         <div style={{ width: 380, height: "100%", display: "flex", alignItems: "center", justifyContent: "center", padding: 40 }}>
@@ -80,7 +93,7 @@ export async function posterCard(opts: { poster: string | null; kicker: string; 
       </div>
     ),
     { ...OG_SIZE, fonts: await ogFonts() },
-  ));
+  )));
 }
 
 /**
@@ -116,7 +129,7 @@ export async function sectionCard(opts: { kicker: string; title: string; sub: st
     { left: 200, top: 30, rotate: 0, z: 3 },
     { left: 400, top: 70, rotate: 9, z: 2 },
   ];
-  return compactPng(new ImageResponse(
+  return oneAtATime(async () => compactPng(new ImageResponse(
     (
       <div style={{ width: "100%", height: "100%", display: "flex", background: "radial-gradient(circle at 85% 15%, rgba(193,60,240,.35), transparent 45%), linear-gradient(135deg,#0b0d13 0%,#161b28 60%,#2a2550 100%)", color: "#e8ecf5", fontFamily: "Inter" }}>
         <div style={{ width: posters.length ? 600 : 1040, display: "flex", flexDirection: "column", justifyContent: "center", padding: "0 0 0 72px" }}>
@@ -137,5 +150,5 @@ export async function sectionCard(opts: { kicker: string; title: string; sub: st
       </div>
     ),
     { ...OG_SIZE, fonts: await ogFonts() },
-  ));
+  )));
 }
