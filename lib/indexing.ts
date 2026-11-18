@@ -86,8 +86,13 @@ export const franchiseParts = (slug: string) => (parts ??= new Map((franchiseDat
  * A watch order is worth indexing with an editor guide, or with at least INDEXED_MIN_PARTS entries of which two are
  * core (seasons or canon films): one season plus recaps and OVAs leaves nothing to order.
  */
+/**
+ * Searched by name ("pokemon watch order" 1.3K a month, Google India, Nov 2026) and indexed by its own page, but the
+ * monthly snapshot counts one core part (the films are missing), so the sitemap left it out.
+ */
+const WATCH_ORDERS_SEARCHED = new Set(["pokemon"]);
 export function watchOrderIndexed(slug: string, liveParts: number, liveCore?: number): boolean {
-  if (slug in WATCH_ORDER_OVERRIDES || searchShown(`/watch-order/${slug}`)) return true;
+  if (slug in WATCH_ORDER_OVERRIDES || WATCH_ORDERS_SEARCHED.has(slug) || searchShown(`/watch-order/${slug}`)) return true;
   // Without an editor guide the list is Kitsu's links: worth a search result only when there's a real order to
   // explain (three or more core seasons and films). "Watch season 1, then season 2" is thin.
   const core = liveCore ?? snapshotCore(slug);

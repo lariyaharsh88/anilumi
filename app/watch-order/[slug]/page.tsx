@@ -58,7 +58,7 @@ function counts(wo: Awaited<ReturnType<typeof buildWatchOrder>>) {
   const seasonal = mains.slice(1).some((e) => /season|\b(2nd|3rd|\d+th)\b|part \d|final|-hen\b|\barc\b/i.test(`${e.anime.title} ${e.anime.slug}`));
   const core = plural(mains.length, seasonal ? "Season" : "Series", seasonal ? "Seasons" : "Series");
   const label = [core, movies && plural(movies, "Movie"), extras && plural(extras, "OVA")].filter(Boolean);
-  return { label: label.length > 1 ? `${label.slice(0, -1).join(" + ")} & ${label[label.length - 1]}` : label[0], movies, extras };
+  return { label: label.length > 1 ? `${label.slice(0, -1).join(" + ")} & ${label[label.length - 1]}` : label[0], core, seasonal, movies, extras };
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -68,12 +68,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const year = new Date().getFullYear();
   const wo = await buildWatchOrder(a);
   const name = franchiseName(wo);
-  const order = wo.entries.filter((e) => e.kind === "main" || e.kind === "movie");
+  const mainsInOrder = wo.entries.filter((e) => e.kind === "main");
+  const shown = (e: (typeof mainsInOrder)[number]) => (e.anime.titleEn && e.anime.titleEn.length <= 40 ? e.anime.titleEn : e.anime.title);
   const c = counts(wo);
   return {
-    title: fitTitle(wo.entries.length > 1 ? [`${name} Watch Order: ${c.label} (${year})`, `${name} Watch Order: ${c.label}`, `${name} Watch Order (${year})`] : [`${name} Watch Order (${year}): Standalone, No Sequels`, `${name} Watch Order: Standalone, No Sequels`, `${name} Watch Order (${year})`]),
+    // "In order" is how people search it ("dragon ball series in order" 5.4K, "naruto in order to watch" 1K a month,
+    // Google India, Nov 2026); the series and film counts stay for the click.
+    title: fitTitle(wo.entries.length > 1 ? [`${name} Watch Order: ${c.core}${c.movies ? ` & ${plural(c.movies, "Movie")}` : ""} in Order (${year})`, `${name} Watch Order: ${c.core}${c.movies ? ` & ${plural(c.movies, "Movie")}` : ""} in Order`, `${name} Watch Order: ${c.label} (${year})`, `${name} Watch Order (${year})`] : [`${name} Watch Order (${year}): Standalone, No Sequels`, `${name} Watch Order: Standalone, No Sequels`, `${name} Watch Order (${year})`]),
+    // The short answer first: the series alone, by their English names where short, then what else the page covers.
     description: fitDescription(wo.entries.length > 1
-      ? `Watch ${name} in this order: ${order.slice(0, 4).map((e, i) => `${i + 1}. ${e.anime.title}`).join(", ")}${order.length > 4 ? ", …" : ""}. Where every movie and OVA fits, which recaps to skip, and the total time (${fmtMinutes(wo.totalMinutes)}).`.slice(0, 300)
+      ? `The ${name} ${c.seasonal ? "seasons" : "series"} in order: ${mainsInOrder.slice(0, 4).map(shown).join(" → ")}${mainsInOrder.length > 4 ? " → …" : ""}. Plus where ${c.movies ? plural(c.movies, "movie") : "each special"} fit${c.movies === 1 ? "s" : ""}, what to skip and the total time (${fmtMinutes(wo.totalMinutes)}).`
       : `${name} is a standalone title with no sequels, prequels or spin-offs on record.`),
     // One URL per franchise: every season's watch-order page points at it, so ranking signals aren't split.
     robots: robotsFor(watchOrderIndexed(watchOrderSlug(wo), wo.entries.length, wo.entries.filter((e) => e.kind === "main" || e.kind === "movie").length)),
@@ -112,6 +116,10 @@ export default async function WatchOrderPage({ params }: Props) {
   const seasonRows = mains.map((e) => ({ e, score: e.anime.rating ? e.anime.rating / 10 : null, filler: fillerFor(e.anime.slug, e.anime.episodeCount), studio: studiosOf.get(e.anime.id)?.join(", ") || null, adapt: adaptationFor(e.anime.slug) }));
   const sourceUnit = seasonRows.find((r) => r.adapt)?.adapt?.medium ?? null;
   const bestSeason = seasonRows.filter((r) => r.score).sort((x, y) => y.score! - x.score!)[0] ?? null;
+  // Skipping filler across the whole franchise: the number the filler lists give one series at a time.
+  const fillerRows = seasonRows.filter((r) => r.filler && r.filler.count > 0);
+  const fillerEps = fillerRows.reduce((n, r) => n + r.filler!.count, 0);
+  const fillerHours = Math.round(fillerRows.reduce((n, r) => n + r.filler!.count * (r.e.anime.episodeLength ?? 24), 0) / 60);
 
   const ld = {
     "@context": "https://schema.org",
@@ -416,6 +424,7 @@ export default async function WatchOrderPage({ params }: Props) {
           ...(timeline ? [{ q: `What is the ${name} chronological order, with the movies?`, a: timeline.map((f) => `${f.title}: ${f.when}${f.canon ? " (canon)" : ""}`).join("; ") + "." }] : movieList.length ? [{ q: `Where do the ${name} movies fit in the watch order?`, a: movieList.map((m) => `${m.anime.title}${m.after ? `: after ${m.after}` : ""}`).join("; ") + "." }] : []),
           ...(skippable.length ? [{ q: `Can I skip the ${name} recaps?`, a: `Yes. ${skippable.map((e) => e.anime.title).join(", ")} retell events you have already seen and can be skipped.` }] : []),
           ...(coverage.length ? [{ q: `Where can I stream all of ${name}?`, a: `${coverage[0].site} lists ${coverage[0].n} of the ${core.length} seasons and movies${coverage[1] ? `, ${coverage[1].site} ${coverage[1].n}` : ""}${coverage[2] ? ` and ${coverage[2].site} ${coverage[2].n}` : ""}. Catalogues differ by country, so check the links on each part above.` }] : []),
+          ...(fillerEps ? [{ q: `How much time does skipping ${name} filler save?`, a: `About ${fillerHours.toLocaleString("en-IN")} hours: ${fillerEps.toLocaleString("en-IN")} filler episodes across ${fillerRows.map((r) => `${r.e.anime.title} (${r.filler!.count})`).join(", ")}. Each filler list marks which ones to skip.` }] : []),
           ...(bestSeason && seasonRows.filter((r) => r.score).length >= 2 ? [{ q: `Which ${name} season is the best?`, a: `By community score on Kitsu, ${bestSeason.e.anime.title} rates highest at ${bestSeason.score!.toFixed(2)}/10. The comparison table above lists every part's score, length, filler share and studio.` }] : []),
           ...(dubQ ? [dubQ] : []),
         ]}
