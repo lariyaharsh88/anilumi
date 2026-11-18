@@ -271,6 +271,8 @@ export type ListOpts = {
   withCategories?: boolean;
   /** Also return each title's streaming links (same request). */
   withStreaming?: boolean;
+  /** Also return each title's cover banner (the homepage spotlight). */
+  withCover?: boolean;
   sort?: string;
   limit?: number;
   offset?: number;
@@ -298,13 +300,13 @@ function kitsuOffsetBug(): Promise<boolean> {
 export const kitsuOffset = (offset: number, limit: number, filtered: boolean, bug: boolean) => (offset > 0 && filtered && bug ? offset + limit : offset);
 
 export async function listAnime(opts: ListOpts = {}): Promise<Paged<Anime>> {
-  const { sort = "-userCount", limit = 20, offset = 0, filter = {}, revalidate = 3600, withCategories = false, withStreaming = false, unrated = false } = opts;
+  const { sort = "-userCount", limit = 20, offset = 0, filter = {}, revalidate = 3600, withCategories = false, withStreaming = false, withCover = false, unrated = false } = opts;
   const include = [withCategories && "categories", withStreaming && "streamingLinks.streamer"].filter(Boolean).join(",");
   const params: Record<string, string | number> = {
     "page[limit]": Math.min(limit, 20),
     "page[offset]": offset,
     sort,
-    "fields[anime]": `${LIST_FIELDS}${withCategories ? ",categories" : ""}${withStreaming ? ",streamingLinks" : ""}`,
+    "fields[anime]": `${LIST_FIELDS}${withCategories ? ",categories" : ""}${withStreaming ? ",streamingLinks" : ""}${withCover ? ",coverImage" : ""}`,
     // Kitsu silently drops filter[id] when filter[ageRating] is also present (it switches to its
     // search index), returning the whole catalogue. For id lookups, filter adult titles after the fact.
     ...(filter.id || unrated ? {} : { "filter[ageRating]": SAFE_RATINGS }),

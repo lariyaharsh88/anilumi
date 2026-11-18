@@ -1,7 +1,7 @@
 import { fitDescription } from "@/lib/titles";
 import Link from "@/components/Link";
 import type { Metadata } from "next";
-import { getTrending, listAnime, getSeason, seasonOf, shiftSeason, cap, getCategories, animePath, posterUrl, subtypeLabel, MAIN_GENRES } from "@/lib/kitsu";
+import { listAnime, getSeason, seasonOf, shiftSeason, cap, getCategories, animePath, posterUrl, subtypeLabel, MAIN_GENRES } from "@/lib/kitsu";
 import { previewSnapshot } from "@/lib/preview";
 import HeroSpotlight, { type Spot } from "@/components/fx/HeroSpotlight";
 import AnimeRail from "@/components/AnimeRail";
@@ -59,9 +59,7 @@ export default async function Home() {
   // Next season's most anticipated shows (weekly AniList snapshot), linking to its preview page.
   const nextSeason = shiftSeason(season, year, 1);
   const nextPreview = (previewSnapshot().seasons[`${nextSeason.year}-${nextSeason.season}`] || []).flatMap((i) => (i.anime ? [i.anime] : [])).slice(0, 12);
-  const [trending, airing, seasonal, upcoming, topRated, movies, genres, news, quote, premieres, pick, airingSnap] = await Promise.all([
-    getTrending(10),
-    listAnime({ filter: { status: "current" }, sort: "-userCount", limit: 12 }),
+  const [seasonal, upcoming, topRated, movies, genres, news, quote, premieres, pick, airingSnap] = await Promise.all([
     getSeason(year, season, 1, 12),
     listAnime({ filter: { status: "upcoming" }, sort: "-userCount", limit: 12 }),
     listAnime({ sort: "ratingRank", limit: 12 }),
@@ -83,6 +81,24 @@ export default async function Home() {
     .sort((p, q) => p.t - q.t);
   const soonAnime = soon.length ? await listAnime({ filter: { id: [...new Set(soon.map((v) => v.x.k!))].join(",") }, limit: 20, revalidate: 86400 }) : null;
   const byId = new Map((soonAnime?.items || []).map((a) => [a.id, a]));
+
+  // "Trending" and "Airing this week" come from the same snapshot: shows with an episode broadcast this week
+  // (AniList's schedule), ranked by AniList popularity; "trending" keeps those that started in the last two seasons.
+  // Kitsu's /trending was stale (Attack on Titan and My Hero Academia season 1 headlined the homepage in Nov 2026)
+  // and "status: current" listed commercials, shorts and decades-old series. Without a snapshot: this season.
+  const week = airingSnap.shows
+    .filter((x) => x.k && x.n.some(([, t]) => t * 1000 > now - 86400_000 && t * 1000 < now + 7 * 86400_000))
+    .sort((p, q) => q.p - p.p);
+  const fresh = week.filter((x) => x.d && now - Date.parse(x.d) < 200 * 86400_000);
+  const poolIds = [...new Set([...fresh.slice(0, 10), ...week.slice(0, 12)].map((x) => x.k!))].slice(0, 20);
+  const pool = poolIds.length ? await listAnime({ filter: { id: poolIds.join(",") }, limit: 20, revalidate: 3600, withCover: true }).catch(() => null) : null;
+  const poolById = new Map((pool?.items || []).filter((a) => !a.nsfw && a.ageRating !== "R18").map((a) => [a.id, a]));
+  const pick10 = (xs: typeof week, n: number) => xs.flatMap((x) => (poolById.has(x.k!) ? [poolById.get(x.k!)!] : [])).slice(0, n);
+  const trendingNow = pick10(fresh, 10);
+  const trending = trendingNow.length >= 6 ? trendingNow : seasonal.items.slice(0, 10);
+  const airingWeek = pick10(week, 12);
+  const airingItems = airingWeek.length >= 6 ? airingWeek : seasonal.items;
+  const airingCount = week.length || seasonal.total;
   // Every airing show's upcoming episodes, for the visitor's own saved shows ("Your shows", in the browser).
   const airTimes: AirTimes = Object.fromEntries(airingSnap.shows.filter((x) => x.k && x.n.length).map((x) => [x.k!, x.n]));
   const nextEps: NextEp[] = soon.map(({ x, episode, t }) => {
@@ -133,7 +149,7 @@ export default async function Home() {
       <StatTiles
         className="mt-6"
         stats={[
-          { label: "Airing right now", value: airing.total.toLocaleString(), sub: "series with new episodes", href: "/schedule", icon: "schedule", hue: 350, live: true },
+          { label: "Airing this week", value: airingCount.toLocaleString(), sub: "series with new episodes", href: "/schedule", icon: "schedule", hue: 350, live: true },
           { label: `${cap(season)} ${year} lineup`, value: seasonal.total.toLocaleString(), sub: "titles this season", href: `/season/${year}/${season}`, icon: "season", hue: 140 },
           { label: "Announced", value: upcoming.total.toLocaleString(), sub: "not aired yet", href: "/top/upcoming", icon: "flame", hue: 40 },
           { label: "Watch-order guides", value: String(Object.keys(WATCH_ORDER_OVERRIDES).length), sub: "with editor notes", href: "/watch-order", icon: "order", hue: 262 },
@@ -141,9 +157,9 @@ export default async function Home() {
       />
 
       <BingeSearch popular={BINGE_POPULAR} />
-      <AnimeRail title="Trending right now" href="/top/popular" items={trending} bigRank eager />
+      <AnimeRail title="Trending right now" href={`/season/${year}/${season}`} items={trending} bigRank eager />
       <ToolBand eyebrow="Plan your next watch" title="Tools for your next binge" tools={PLAN_TOOLS} />
-      <AnimeRail title="Airing this season" href="/schedule" items={airing.items} />
+      <AnimeRail title="Airing this week" href="/schedule" items={airingItems} />
       <section className="reveal mt-12" aria-labelledby="home-genres-h">
         <div className="mb-3 flex items-end justify-between">
           <h2 id="home-genres-h" className="h-section">Browse by genre</h2>
