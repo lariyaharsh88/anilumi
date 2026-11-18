@@ -30,6 +30,11 @@ export const ALT_SITES: Record<string, AltSite> = {
 };
 /** Other unlicensed names people search, covered by the same page (/anime-world-alternatives etc. redirect here). */
 export const ALSO_SEARCHED = ["Anime World", "AnimeToon"];
+/**
+ * More names from Bing's queries for this page's topic (Nov 2026, about 100 impressions a month together). Named
+ * without a verdict on each, since we haven't reviewed them: the page only says which platforms are official.
+ */
+export const OTHER_NAMES = ["Hindi Anime Zone", "Rare Toons India", "Anime Dekho", "Desi Dub", "Rish Anime"];
 export const altPath = (s: AltSite) => `/${s.slug}-alternatives`;
 function data() {
   const dubbed = hindiDubbed();
@@ -70,6 +75,7 @@ export default async function AltSitePage({ site }: { site: AltSite }) {
     { q: "What are the best websites for Hindi dubbed anime?", a: `The official ones: ${platforms.map((p) => `${p.label} (${p.titles.length} Hindi dub${p.titles.length === 1 ? "" : "s"}, ${p.cost.toLowerCase()})`).join("; ")}. Each carries the licensed Hindi audio, so the dub is the real one and the site is safe.` },
     { q: "Which app has the most Hindi dubbed anime?", a: `${most.label}, with ${most.titles.length} of the anime on our list, followed by ${[...platforms].sort((a, b) => b.titles.length - a.titles.length).slice(1, 3).map((p) => `${p.label} (${p.titles.length})`).join(" and ")}.` },
     { q: `Are ${ALSO_SEARCHED.join(" and ")} legal?`, a: `No: like ${site.brand}, they stream anime without a licence, and we don\'t link to them. The legal options are the platforms above, ${free.length} Hindi dubs of them free.` },
+    { q: `Is there an official site like ${OTHER_NAMES[0]} or ${OTHER_NAMES[1]}?`, a: `The official sources for Hindi dubbed anime are ${platforms.map((p) => p.label).join(", ")}, and ${free.length} of the ${dubbed.length} official Hindi dubs are free. AniLumi doesn't review unofficial sites; it lists where each official dub streams.` },
     { q: "Is AniLumi a streaming site?", a: "No. AniLumi doesn't host or stream video. It tells you where each anime streams officially, in which languages, and links you to that platform." },
   ];
 
@@ -145,6 +151,7 @@ export default async function AltSitePage({ site }: { site: AltSite }) {
       <section id="others" data-section className="reveal pt-10" aria-labelledby="others-h">
         <h2 id="others-h" className="h-section mb-1">Looking for {ALSO_SEARCHED.join(" or ")}?</h2>
         <p className="max-w-3xl text-sm leading-6 text-ink/85">Like {site.brand}, {ALSO_SEARCHED.join(" and ")} aren&rsquo;t licensed to stream the anime they carry, so the same answer applies: the {free.length} free official Hindi dubs above, then the platforms by price. AniLumi checks each Hindi dub on the platform&rsquo;s own page, so every show listed here really has the Hindi audio. For offline viewing, see <Link href="/download-anime-in-hindi" className="text-violet hover:underline">how to download Hindi dubbed anime legally</Link>.</p>
+        <p className="mt-3 max-w-3xl text-sm leading-6 text-ink/85">Searched for {OTHER_NAMES.slice(0, -1).join(", ")} or {OTHER_NAMES.at(-1)}? AniLumi doesn&rsquo;t review unofficial sites or channels. It lists where each official Hindi dub streams, checked on the platform itself, so the {dubbed.length} shows on this page are where the licensed Hindi audio is.</p>
       </section>
 
       <section id="why" data-section className="reveal pt-10" aria-labelledby="why-h">
