@@ -77,6 +77,7 @@ export async function sitemapEntries(): Promise<MetadataRoute.Sitemap> {
     // Per-anime Hindi dub pages: the most-watched dubs (lib/indexing.ts hindiDubIndexed).
     ...hindiDubbed().filter((d) => hindiDubIndexed(d.s)).map((d) => ({ url: abs(hindiDubPath(d.s)), lastModified: at(D.dubs, d.checked), changeFrequency: "weekly" as const, priority: 0.7 })),
     { url: abs("/hindi-dub/this-week"), lastModified: now, changeFrequency: "daily", priority: 0.7 },
+    { url: abs("/hindi-dub/movies"), lastModified: at(D.dubs), changeFrequency: "weekly", priority: 0.7 },
     { url: abs("/anime-streaming-sites"), lastModified: at(D.streams, D.dubs, PRICES_CHECKED), changeFrequency: "monthly", priority: 0.8 },
     { url: abs("/where-to-watch"), lastModified: at(D.streams), changeFrequency: "monthly", priority: 0.8 },
     ...allStreams().map((e) => ({ url: abs(streamsPath(e.s)), lastModified: at(D.streams), changeFrequency: "monthly" as const, priority: 0.7 })),

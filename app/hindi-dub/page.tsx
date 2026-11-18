@@ -93,6 +93,7 @@ export default async function HindiDubHub() {
         <p className="flex flex-wrap gap-2 text-sm">
           <Link href="/hi/hindi-dub" className="chip" hrefLang="hi">हिंदी में देखें</Link>
           <Link href="/hindi-dub/this-week" className="chip">📅 This week&rsquo;s Hindi episodes</Link>
+          <Link href="/hindi-dub/movies" className="chip">🎬 Anime movies in Hindi</Link>
           <Link href="/dub-schedule#hindi" className="chip">New Hindi dubs</Link>
           <Link href="/hindi-voice-artists" className="chip">Hindi voice artists</Link>
           <Link href="/where-to-watch" className="chip">Where to watch in India</Link>
