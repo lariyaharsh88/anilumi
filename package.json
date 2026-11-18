@@ -9,6 +9,7 @@
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
     "test": "node --import tsx --test tests/*.test.ts",
+    "charts": "node --import tsx scripts/make-charts.mts",
     "preview": "CF_ALLOW_ENV=1 node scripts/cf-guard.mjs && opennextjs-cloudflare build && opennextjs-cloudflare preview",
     "deploy": "node scripts/cf-guard.mjs && opennextjs-cloudflare build && opennextjs-cloudflare deploy && (gh workflow run warm-cache.yml --repo lariyaharsh88/anilumi -f full=true && echo 'Started the cache warm-up on GitHub.' || echo 'Could not start the warm-up; run it from GitHub Actions.')",
     "upload": "node scripts/cf-guard.mjs && opennextjs-cloudflare build && opennextjs-cloudflare upload",
