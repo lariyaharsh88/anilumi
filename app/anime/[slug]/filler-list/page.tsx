@@ -14,6 +14,7 @@ import LeadForm from "@/components/LeadForm";
 import { dbEnabled } from "@/lib/db";
 import { fitTitle, fitDescription } from "@/lib/titles";
 import { arcsFor, arcOf, arcRange, type Arc } from "@/lib/arcs";
+import { sequelNews } from "@/lib/sequelnews";
 
 export const revalidate = 604800;
 export async function generateStaticParams() { return []; }
@@ -60,6 +61,17 @@ function arcRows(f: FillerInfo, arcs: Arc[]) {
   });
 }
 
+/** The longest stretch of filler and recap episodes in a row, if any. Pure. */
+const longestRun = (f: FillerInfo) => kindRuns(f).filter((r) => r.kind === "filler" || r.kind === "recap").sort((x, y) => y.to - y.from - (x.to - x.from))[0];
+
+/**
+ * Questions a series' searchers ask that its filler list alone doesn't answer. Bleach's searches doubled in 2026
+ * ("bleach filler ep" +112%), with the Thousand-Year Blood War anime airing; it is a separate series with no filler.
+ */
+const EXTRA_FAQ: Record<string, FaqItem[]> = {
+  bleach: [{ q: "Does Bleach: Thousand-Year Blood War have filler?", a: "No. Thousand-Year Blood War (from 2022) is a separate series that adapts the manga's final arc with no filler episodes. This list covers the original 366-episode Bleach (2004-2012)." }],
+};
+
 function counts(f: FillerInfo) {
   const c: Record<EpisodeKind, number> = { canon: 0, "anime-canon": 0, mixed: 0, filler: 0, recap: 0 };
   for (const r of kindRuns(f)) c[r.kind] += r.to - r.from + 1;
@@ -69,9 +81,12 @@ function counts(f: FillerInfo) {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const { a, f, skip, saved, name } = await load(slug);
+  const run = longestRun(f);
   return {
-    title: fitTitle([`${name} Filler List (${new Date().getFullYear()}): ${skip} Episodes to Skip`, `${name} Filler List: ${skip} Episodes to Skip`, `${name} Filler List (${new Date().getFullYear()})`, `${name} Filler List`]),
-    description: fitDescription(`${name} has ${f.count} filler episodes out of ${f.total} (${f.share.toFixed(0)}%)${f.recap.size ? ` plus ${f.recap.size} recaps` : ""}. Full list of filler, mixed and canon episodes${saved ? `; skipping saves about ${hours(saved)}` : ""}.`),
+    // "Filler episodes" is the bigger search ("naruto shippuden filler episodes" 8.1K a month, Google India, Nov 2026).
+    title: fitTitle([`${name} Filler List (${new Date().getFullYear()}): ${skip} Filler Episodes to Skip`, `${name} Filler List: ${skip} Filler Episodes to Skip`, `${name} Filler List (${new Date().getFullYear()}): ${skip} Episodes to Skip`, `${name} Filler List: ${skip} Episodes to Skip`, `${name} Filler List`]),
+    // The answer first: what's left to watch, the time saved and the stretch to skip, then what the page lists.
+    description: fitDescription(`${name}: ${f.count} of ${f.total} episodes are filler (${f.share.toFixed(0)}%). Watch the other ${f.total - skip}${saved ? ` and save about ${hours(saved)}` : ""}${run && run.to > run.from ? `; the longest filler run is episodes ${run.from}-${run.to}` : ""}. Every episode marked filler, mixed or canon.`),
     alternates: { canonical: `${animePath(a)}/filler-list` },
   };
 }
@@ -86,13 +101,17 @@ export default async function FillerListPage({ params }: Props) {
   const runs = kindRuns(f);
   const src = fillerSource(f.entry);
   const watch = Array.from({ length: f.total }, (_, i) => i + 1).filter((n) => !f.filler.has(n) && !f.recap.has(n));
-  const longest = runs.filter((r) => r.kind === "filler" || r.kind === "recap").sort((x, y) => y.to - y.from - (x.to - x.from))[0];
+  const longest = longestRun(f);
+  // A long-running show on a break: when it comes back (data/sequel-news.json), e.g. One Piece's 2027 return.
+  const news = sequelNews(a.slug);
 
   const faq: FaqItem[] = [
     { q: `How many filler episodes does ${name} have?`, a: `${f.count} of its ${f.total} episodes${airing ? " aired so far" : ""} are filler (${f.share.toFixed(0)}%)${f.recap.size ? `, and ${f.recap.size} more are recaps` : ""}. ${f.mixed.size ? `Another ${f.mixed.size} mix adapted story with new material, so they're worth watching.` : ""}`.trim() },
     { q: `Which ${name} episodes can I skip?`, a: `Filler: ${formatRanges(f.filler) || "none"}.${f.recap.size ? ` Recaps: ${formatRanges(f.recap)}.` : ""}` },
     ...(longest && longest.to > longest.from ? [{ q: `What is the longest filler run in ${name}?`, a: `${span(longest.from, longest.to)}: ${longest.to - longest.from + 1} episodes in a row. The story picks up again in episode ${longest.to + 1 <= f.total ? longest.to + 1 : longest.to}.` }] : []),
     ...(saved ? [{ q: `How much time does skipping ${name} filler save?`, a: `About ${hours(saved)}, at ${a.episodeLength} minutes an episode.` }] : []),
+    ...(news && (news.status === "dated" || news.status === "announced") ? [{ q: `When is the next ${name} episode?`, a: `${news.what}${news.window && news.window !== "TBA" && !/\b20\d\d\b/.test(news.what) ? ` (expected ${news.window})` : ""}.` }] : []),
+    ...(EXTRA_FAQ[a.slug] ?? []),
   ];
 
   return (
