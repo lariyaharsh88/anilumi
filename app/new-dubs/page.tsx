@@ -20,14 +20,19 @@ const fmt = (date: string, o: Intl.DateTimeFormatOptions = { day: "numeric", mon
 const weekLabel = (start: string) => `Week of ${fmt(start, { day: "numeric", month: "long", year: "numeric" })}`;
 const FLAG: Record<DubEvent["lang"], string> = { Hindi: "border-orange-400/40 text-orange-200", Tamil: "border-rose-400/40 text-rose-200", Telugu: "border-amber-400/40 text-amber-200" };
 
-/** "New Hindi dubbed anime" and the Tamil and Telugu equivalents, week by week (lib/dubupdates.ts). */
+/**
+ * "New Hindi dubbed anime" and the Tamil and Telugu equivalents, week by week (lib/dubupdates.ts), plus the Hindi dubs
+ * announced but not out yet. Google India, Nov 2026: "new hindi dubbed anime" 320 a month, "upcoming hindi dubbed
+ * anime" 170, Tamil and Telugu far less, so the title leads with Hindi and both words.
+ */
 export function generateMetadata(): Metadata {
   const weeks = dubWeeks(dubEvents());
   const latest = weeks[0];
   const names = latest ? latest.events.slice(0, 3).map((e) => e.t) : [];
+  const coming = hindiComing();
   return {
-    title: fitTitle([`New Hindi, Tamil & Telugu Dubbed Anime: ${latest ? weekLabel(latest.start) : "This Week"}`, "New Hindi, Tamil & Telugu Dubbed Anime This Week", "New Hindi Dubbed Anime This Week"]),
-    description: fitDescription(`What's new in Indian anime dubs, week by week: official Hindi, Tamil and Telugu dubs added to our lists and Hindi dubs that started streaming${names.length ? `, including ${names.join(", ")}` : ""}. Official platforms only.`),
+    title: fitTitle([`New & Upcoming Hindi Dubbed Anime: ${latest ? weekLabel(latest.start) : "This Week"}`, "New & Upcoming Hindi Dubbed Anime (Tamil & Telugu Too)", "New & Upcoming Hindi Dubbed Anime", "New Hindi Dubbed Anime This Week"]),
+    description: fitDescription(`New Hindi dubbed anime, week by week${names.length ? `, including ${names.join(", ")}` : ""}${coming.length ? `, and ${coming.length} Hindi dub${coming.length === 1 ? "" : "s"} coming soon with release dates` : ""}. Tamil and Telugu dubs too. Official platforms only.`),
     alternates: { canonical: "/new-dubs" },
   };
 }
@@ -50,8 +55,8 @@ export default function NewDubs() {
       <PageHero
         crumbs={[{ href: "/", label: "Home" }, { href: "/hindi-dub", label: "Indian dubs" }, { href: "/new-dubs", label: "New dubs" }]}
         eyebrow="🇮🇳 New this week"
-        title={<>New <span className="text-gradient">Hindi, Tamil &amp; Telugu</span> dubbed anime</>}
-        subtitle={`What changed on our Indian dub lists, week by week: new official dubs and Hindi dubs that started streaming. Official platforms only. Last checked for new dubs: ${fmt([DUB_SCANNED, REGIONAL_SCANNED].sort().at(-1)!, { day: "numeric", month: "long", year: "numeric" })}.`}
+        title={<>New &amp; upcoming <span className="text-gradient">Hindi dubbed</span> anime</>}
+        subtitle={`What changed on our Indian dub lists, week by week: new official Hindi, Tamil and Telugu dubs, Hindi dubs that started streaming and the ones coming soon. Official platforms only. Last checked for new dubs: ${fmt([DUB_SCANNED, REGIONAL_SCANNED].sort().at(-1)!, { day: "numeric", month: "long", year: "numeric" })}.`}
         facts={[
           { value: String(started30), label: "Hindi dubs started, last 30 days" },
           { value: String(coming.length), label: "Hindi dubs coming" },
@@ -95,7 +100,7 @@ export default function NewDubs() {
 
       {coming.length > 0 && (
         <section className="reveal pt-10" aria-labelledby="coming-h">
-          <h2 id="coming-h" className="h-section mb-3">Hindi dubs coming soon</h2>
+          <h2 id="coming-h" className="h-section mb-3">Upcoming Hindi dubbed anime</h2>
           <ul className="divide-y divide-line rounded-xl border border-line">
             {coming.map((e) => (
               <li key={`${e.t}-${e.service}`} className="flex flex-wrap items-baseline gap-x-3 p-3 text-sm">
