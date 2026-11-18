@@ -107,7 +107,7 @@ export default async function HindiPlatformPage({ params }: Props) {
       <section id="how" data-section className="reveal pt-10" aria-labelledby="how-h">
         <h2 id="how-h" className="h-section mb-3">{kind === "subscription" ? `How to switch to Hindi on ${p.label}` : `How to watch anime in Hindi on ${p.label}`}</h2>
         <p className="card p-4 text-sm leading-6 text-ink/90">{p.how}</p>
-        {p.slug === "crunchyroll" && <p className="mt-2 text-sm"><Link href="/crunchyroll-price-india" className="text-violet hover:underline">Crunchyroll plans and prices in India →</Link></p>}
+        {p.slug === "crunchyroll" && <p className="mt-2 flex flex-wrap gap-x-4 text-sm"><Link href="/crunchyroll-price-india" className="text-violet hover:underline">Crunchyroll plans and prices in India →</Link><Link href="/schedule/crunchyroll" className="text-violet hover:underline">This week on Crunchyroll →</Link></p>}
       </section>
 
       <section id="numbers" data-section className="reveal pt-10" aria-labelledby="num-h">

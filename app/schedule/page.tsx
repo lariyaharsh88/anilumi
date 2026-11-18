@@ -72,6 +72,7 @@ export default async function SchedulePage() {
         posters={days.flatMap((d) => d.items).sort((x, y) => y.userCount - x.userCount).slice(0, 3).map((x) => x.poster)}
       >
         <p className="flex flex-wrap gap-2 text-sm">
+          <Link href="/schedule/crunchyroll" className="chip">Crunchyroll schedule (IST)</Link>
           <Link href="/dub-schedule" className="chip">🎙 Dub schedule (English &amp; Hindi)</Link>
           <Link href="/where-to-watch" className="chip">Where to watch</Link>
         </p>
