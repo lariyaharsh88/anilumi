@@ -1,6 +1,6 @@
 /**
  * "Which ___ character are you?" quizzes (Google India, Nov 2026: "naruto quiz" 1K a month, "which naruto character
- * are you" 390, "which one piece character are you" 260, "which aot character are you" 170). Eight personality
+ * are you" 390, "which one piece character are you" 260, "which aot character are you" 170; Jujutsu Kaisen and Demon Slayer added for the series most watched in India). Eight personality
  * questions score six traits; the result is the character whose trait profile is closest (cosine similarity).
  * Character profiles are an editor's reading of each character, kept free of story spoilers. Pure.
  */
@@ -8,7 +8,8 @@ import chars from "@/data/characters.json";
 import { snapImage, type SnapChar } from "./charsnap";
 import type { Trait, QuizCharacter } from "./charquiz-core";
 export { QUESTIONS, TRAITS, bestMatch, type QuizCharacter, type QuizQuestion, type Trait, type Weights } from "./charquiz-core";
-export type CharacterQuiz = { slug: string; franchise: string; anime: string; watchOrder: string; characters: QuizCharacter[] };
+/** `titled`: how the character snapshot names the show, when it isn't the franchise's English name. */
+export type CharacterQuiz = { slug: string; franchise: string; anime: string; watchOrder: string; titled?: string; characters: QuizCharacter[] };
 
 const p = (drive: number, calm: number, brains: number, heart: number, loner: number, fun: number): Record<Trait, number> => ({ drive, calm, brains, heart, loner, fun });
 
@@ -62,6 +63,38 @@ export const QUIZZES: CharacterQuiz[] = [
       { key: "annie", name: "Annie Leonhart", why: "Reserved and self-reliant, you keep your feelings close.", profile: p(1, 3, 2, 0, 3, 0) },
     ],
   },
+  {
+    slug: "which-jujutsu-kaisen-character-are-you", franchise: "Jujutsu Kaisen", anime: "jujutsu-kaisen", watchOrder: "jujutsu-kaisen",
+    characters: [
+      { key: "yuji", name: "Yuji Itadori", stored: "Yuuji Itadori", why: "Warm, brave and endlessly loyal: you throw yourself in to protect others.", profile: p(3, 1, 0, 3, 0, 2) },
+      { key: "megumi", name: "Megumi Fushiguro", why: "Serious and clever, you pick who to save on your own terms.", profile: p(2, 3, 3, 1, 2, 0) },
+      { key: "nobara", name: "Nobara Kugisaki", why: "Bold, confident and unapologetically yourself.", profile: p(3, 1, 1, 2, 0, 2) },
+      { key: "gojo", name: "Satoru Gojo", stored: "Satoru Gojou", why: "Playful, cocky and the strongest in any room, with a teacher's heart.", profile: p(1, 2, 3, 2, 0, 3) },
+      { key: "sukuna", name: "Ryomen Sukuna", stored: "Sukuna", why: "Arrogant and ruthless, you answer to no one.", profile: p(2, 3, 2, 0, 3, 1) },
+      { key: "maki", name: "Maki Zenin", why: "Disciplined and determined to prove everyone wrong.", profile: p(3, 2, 1, 1, 2, 0) },
+      { key: "inumaki", name: "Toge Inumaki", why: "Quiet but kind, you say a lot with very few words.", profile: p(1, 2, 1, 3, 1, 1) },
+      { key: "panda", name: "Panda", why: "Easy-going and funny, the friend who keeps the group together.", profile: p(1, 1, 1, 3, 0, 3) },
+      { key: "yuta", name: "Yuta Okkotsu", stored: "Yuuta Okkotsu", why: "Gentle and humble, with far more strength than you let on.", profile: p(2, 2, 1, 3, 1, 0) },
+      { key: "nanami", name: "Kento Nanami", why: "Calm, principled and reliable; you clock out on time.", profile: p(1, 3, 2, 2, 1, 0) },
+      { key: "todo", name: "Aoi Todo", stored: "Aoi Toudou", why: "Loud, intense and fiercely loyal to your best friends.", profile: p(3, 0, 1, 2, 0, 3) },
+    ],
+  },
+  {
+    slug: "which-demon-slayer-character-are-you", franchise: "Demon Slayer", anime: "kimetsu-no-yaiba", watchOrder: "kimetsu-no-yaiba", titled: "Kimetsu no Yaiba",
+    characters: [
+      { key: "tanjiro", name: "Tanjiro Kamado", stored: "Tanjirou Kamado", why: "Kind, hard-working and determined, you never give up on family.", profile: p(3, 1, 1, 3, 0, 1) },
+      { key: "nezuko", name: "Nezuko Kamado", why: "Gentle and protective, you show love through actions, not words.", profile: p(1, 2, 0, 3, 1, 1) },
+      { key: "zenitsu", name: "Zenitsu Agatsuma", why: "Anxious and dramatic, until it really counts.", profile: p(1, 0, 1, 2, 0, 3) },
+      { key: "inosuke", name: "Inosuke Hashibira", why: "Wild, competitive and always charging in head first.", profile: p(3, 0, 0, 1, 2, 3) },
+      { key: "rengoku", name: "Kyojuro Rengoku", stored: "Kyoujurou Rengoku", why: "Warm, passionate and inspiring: you set your heart ablaze.", profile: p(3, 1, 1, 3, 0, 2) },
+      { key: "giyu", name: "Giyu Tomioka", stored: "Giyuu Tomioka", why: "Quiet and reserved, with a strong sense of duty.", profile: p(2, 3, 1, 1, 3, 0) },
+      { key: "shinobu", name: "Shinobu Kocho", stored: "Shinobu Kochou", why: "Smiling and clever, with a sharp edge under the politeness.", profile: p(2, 3, 3, 1, 1, 1) },
+      { key: "tengen", name: "Tengen Uzui", why: "Flashy, confident and loyal to the people you love.", profile: p(2, 1, 2, 2, 0, 3) },
+      { key: "kanao", name: "Kanao Tsuyuri", why: "Quiet and observant, slowly learning to follow your own heart.", profile: p(1, 3, 2, 1, 2, 0) },
+      { key: "muichiro", name: "Muichiro Tokito", stored: "Muichirou Tokitou", why: "Spacey and calm on the surface, a prodigy underneath.", profile: p(1, 3, 3, 0, 3, 0) },
+      { key: "mitsuri", name: "Mitsuri Kanroji", why: "Sweet, affectionate and much stronger than people expect.", profile: p(1, 0, 0, 3, 0, 3) },
+    ],
+  },
 ];
 
 export const quizBySlug = (slug: string) => QUIZZES.find((q) => q.slug === slug) ?? null;
@@ -70,7 +103,7 @@ export const quizBySlug = (slug: string) => QUIZZES.find((q) => q.slug === slug)
 export function characterCards(quiz: CharacterQuiz) {
   const all = (chars as unknown as { characters: SnapChar[] }).characters;
   return quiz.characters.map((c) => {
-    const s = all.find((x) => x.n === (c.stored ?? c.name) && x.t.startsWith(quiz.franchise.split(" ")[0]));
+    const s = all.find((x) => x.n === (c.stored ?? c.name) && x.t.startsWith(quiz.titled ?? quiz.franchise.split(" ")[0]));
     return { ...c, href: s?.k ? `/character/${s.k}` : `/anime/${quiz.anime}`, image: s ? snapImage(s) : null };
   });
 }
