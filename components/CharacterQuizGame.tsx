@@ -47,8 +47,8 @@ export default function CharacterQuizGame({ franchise, path, questions, cards }:
         <p className="mt-3 text-2xl font-extrabold text-ink">{result.name}</p>
         <p className="mx-auto mt-2 max-w-md text-sm leading-6 text-ink/85">{result.why}</p>
         <div className="mt-4 flex flex-wrap justify-center gap-2 text-sm">
-          <a href={`https://wa.me/?text=${encodeURIComponent(`${text} ${url}`)}`} target="_blank" rel="noopener" className="btn-outline" onClick={() => track("share", { method: "whatsapp", content_type: "quiz" })}>Share on WhatsApp</a>
-          <a href={`https://t.me/share/url?url=${encodeURIComponent(url)}&text=${encodeURIComponent(text)}`} target="_blank" rel="noopener" className="btn-outline" onClick={() => track("share", { method: "telegram", content_type: "quiz" })}>Telegram</a>
+          <a href={`https://wa.me/?text=${encodeURIComponent(`${text} ${url}`)}`} target="_blank" rel="noopener nofollow" className="btn-outline" onClick={() => track("share", { method: "whatsapp", content_type: "quiz" })}>Share on WhatsApp</a>
+          <a href={`https://t.me/share/url?url=${encodeURIComponent(url)}&text=${encodeURIComponent(text)}`} target="_blank" rel="noopener nofollow" className="btn-outline" onClick={() => track("share", { method: "telegram", content_type: "quiz" })}>Telegram</a>
           <button type="button" className="btn-outline" onClick={() => { navigator.clipboard?.writeText(`${text} ${url}`).then(() => setCopied(true)).catch(() => {}); track("share", { method: "copy", content_type: "quiz" }); }}>{copied ? "Copied" : "Copy link"}</button>
         </div>
         <p className="mt-4 text-sm"><Link href={result.href} className="text-violet hover:underline">More about {result.name} →</Link> · <button type="button" onClick={restart} className="text-violet hover:underline">Take it again</button></p>
