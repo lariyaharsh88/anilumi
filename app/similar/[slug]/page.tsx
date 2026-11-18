@@ -13,7 +13,7 @@ import { getFanRecommendations } from "@/lib/anilist";
 import { getAniListInsight } from "@/lib/insights";
 import { robotsFor, similarIndexed } from "@/lib/indexing";
 import PickList from "@/components/PickList";
-import { similarStrength, fanPicks } from "@/lib/picks";
+import { fanPicks } from "@/lib/picks";
 import { getAniListId } from "@/lib/kitsu";
 import { WATCH_ORDER_OVERRIDES } from "@/data/watch-orders";
 import Image from "next/image";
@@ -47,10 +47,10 @@ async function similarTo(a: Anime): Promise<Anime[]> {
   return uniqueById(scored.sort((x, y) => y.score - x.score).map((s) => s.a)).slice(0, 20);
 }
 
-/** Indexed when Google already shows it, or when fans recommend 8+ titles and 5+ share themes with it. */
+/** Indexed only when Google already shows it (lib/similarhub.ts says why). */
 async function strong(kitsuId: string, slug: string) {
   const alId = await getAniListId(kitsuId).catch(() => null);
-  return { alId, indexed: similarIndexed(slug) || (alId ? similarStrength(alId).strong : false) };
+  return { alId, indexed: similarIndexed(slug) };
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
