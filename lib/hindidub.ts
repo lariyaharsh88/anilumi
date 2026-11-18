@@ -72,7 +72,7 @@ const SEARCHED_INDEXED = ["sono-bisque-doll-wa-koi-wo-suru", "darling-in-the-fra
 
 /**
  * Parts of a franchise people search by their own name, which its entry already covers ("naruto shippuden hindi
- * dubbed" 2.9K a month, "dragon ball super in hindi" 1K; Keyword Planner, Nov 2026). `title` names them on the page;
+ * dubbed" 2.9K a month, "dragon ball super in hindi" 1K; Keyword Planner, Nov 2026; Pokémon Horizons is in Bing's queries). `title` names them on the page;
  * the answer restates the entry's own scope and its sources (Crunchyroll and Anime News Network, checked 18 Nov 2026).
  */
 export const HINDI_PARTS: Record<string, { title: string; q: string; a: string }> = {
@@ -80,6 +80,11 @@ export const HINDI_PARTS: Record<string, { title: string; q: string; a: string }
     title: "Naruto & Naruto Shippuden",
     q: "Is Naruto Shippuden available in Hindi?",
     a: "Yes. Crunchyroll India has streamed Naruto Shippuden in Hindi since 6 July 2026, starting with the first 220 episodes, released in batches; Sony YAY! airs it in Hindi on TV.",
+  },
+  pokemon: {
+    title: "Pokémon & Pokémon Horizons",
+    q: "Is Pokémon Horizons available in Hindi?",
+    a: "Yes, and free: Pokémon Horizons streams in Hindi on the official Pokémon Asia Hindi YouTube channel, which added the Orange Islands and Diamond & Pearl seasons from October 2025.",
   },
   "dragon-ball": {
     title: "Dragon Ball Super & Daima",
