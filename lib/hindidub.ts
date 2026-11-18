@@ -5,6 +5,7 @@
  */
 import data from "@/data/hindi-dubs.json";
 import franchises from "@/data/franchises.json";
+import schedule from "@/data/dub-schedule.json";
 import { orderSlugs, snapshotId } from "./wosnap";
 
 export type DubPlatform = { name: string; scope: string; url: string };
@@ -43,12 +44,29 @@ export const hindiDubbed = (): Dub[] => D.entries.filter((e) => e.status === "av
 /** Popular franchises checked and found without a Hindi dub. */
 export const notDubbed = (): Dub[] => D.entries.filter((e) => e.status === "none_found" && e.confidence !== "low").sort(byPopularity);
 
-/** The dub entry for an anime: its own slug, else its franchise (any part of its watch order). */
+type ScheduleRow = { t: string; slug: string | null; lang: string; service: string; status: string; weekday?: string | null; note?: string | null; url: string; sources?: string[]; premiere?: string | null };
+/**
+ * A Hindi dub known only from the dub schedule (data/dub-schedule.json): new simuldubs land there first (Crunchyroll
+ * adds several a season), and 38 of them had no entry here (Nov 2026), so their anime pages said nothing about Hindi
+ * while ChatGPT sent people to them asking exactly that. Out or finished only; announced dubs stay on /new-dubs.
+ */
+function fromSchedule(slug: string): Dub | null {
+  const rows = (schedule as { entries: ScheduleRow[] }).entries.filter((e) => e.lang === "hi" && e.slug === slug && (e.status === "airing" || e.status === "complete"));
+  if (!rows.length) return null;
+  return {
+    s: slug, t: rows[0].t, status: "available", confidence: "high", note: rows[0].note ?? "",
+    platforms: rows.map((e) => ({ name: e.service, scope: e.status === "airing" ? `New episodes${e.weekday ? ` every ${e.weekday}` : " weekly"}` : "Hindi dub", url: e.url })),
+    sources: [...new Set(rows.flatMap((e) => e.sources ?? [e.url]))],
+    added: rows[0].premiere?.slice(0, 10),
+  };
+}
+
+/** The dub entry for an anime: its own slug, else its franchise (any part of its watch order), else the dub schedule. */
 export function dubFor(anime: { id: string; slug: string }): Dub | null {
   const own = bySlug.get(anime.slug);
   if (own) return answerable(own) ? own : null;
   const found = orderSlugs(anime.id).flatMap((s) => bySlug.get(s) ?? []).filter(answerable);
-  return found.find((d) => d.status === "available") ?? found[0] ?? null;
+  return found.find((d) => d.status === "available") ?? found[0] ?? fromSchedule(anime.slug);
 }
 
 /** Per-anime Hindi dub pages (/anime/<slug>/hindi-dub): every available dub has one; the most-watched are indexed. */

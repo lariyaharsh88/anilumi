@@ -102,10 +102,18 @@ export async function generateStaticParams() { return []; }
 
 type Props = { params: Promise<{ slug: string }> };
 
+/**
+ * Light-novel titles can run to 250 characters of romaji ("Tsuihou Sareta Cheat Fuyo Majutsushi wa…"), which then
+ * filled the page title and every heading while people search the English name. Over 60 characters, a shorter
+ * English title takes its place for display; the romaji moves to the alternate-title line under the heading.
+ */
+const readable = (a: Anime): Anime => (a.title.length > 60 && a.titleEn && a.titleEn.length < a.title.length ? { ...a, title: a.titleEn, titleEn: a.title } : a);
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const a = await getAnimeBySlug(decodeURIComponent(slug));
-  if (!a) notFound();
+  const raw = await getAnimeBySlug(decodeURIComponent(slug));
+  if (!raw) notFound();
+  const a = readable(raw);
   const year = a.startDate?.slice(0, 4);
   const live = a.status === "current" || a.status === "upcoming";
   const title = fitTitle(live
@@ -152,8 +160,9 @@ const released0 = (a: Anime) => a.status === "current" || a.status === "finished
 
 export default async function AnimePage({ params }: Props) {
   const { slug } = await params;
-  const a = await getAnimeBySlug(decodeURIComponent(slug));
-  if (!a) notFound();
+  const raw = await getAnimeBySlug(decodeURIComponent(slug));
+  if (!raw) notFound();
+  const a = readable(raw);
 
   const mainGenre = publicGenres(a.categories)[0];
   const [characters, episodes, related, relations, latestInfo, productions, insight, malScore, fanRecs, allNews, keyStaff, voiceCast] = await Promise.all([
