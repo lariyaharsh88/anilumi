@@ -12,7 +12,7 @@ import { dubShows, premiereAt } from "@/lib/dubschedule";
 import { pricesFor as priceOf, cheapestPlan, PERIOD } from "@/lib/platformprices";
 import { pageAbout } from "@/lib/ld";
 import { fitTitle, fitDescription } from "@/lib/titles";
-import { DUB_CHECKED, dubDate, dubHref, dubPageEntry, dubsOn, hindiDubPath, hindiDubbed, platformFor, platformKind, type Dub, type PlatformKind } from "@/lib/hindidub";
+import { DUB_CHECKED, HINDI_PARTS, dubDate, dubHref, dubPageEntry, dubsOn, hindiDubPath, hindiDubbed, platformFor, platformKind, type Dub, type PlatformKind } from "@/lib/hindidub";
 import { pricesFor, startingAt } from "@/lib/platformprices";
 import { hindiCast } from "@/lib/hindistats";
 import { LANG, regionalFor } from "@/lib/regionaldub";
@@ -42,7 +42,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const y = new Date().getFullYear();
   const free = d.platforms.some((p) => platformKind(p.name) === "free");
   return {
-    title: fitTitle([`${d.t} in Hindi: Where to Watch the Hindi Dub (${y})`, `${d.t} in Hindi: Where to Watch (${y})`, `${d.t} Hindi Dub: Where to Watch`, `${d.t} in Hindi`]),
+    title: fitTitle([...(HINDI_PARTS[d.s] ? [`${HINDI_PARTS[d.s].title} in Hindi: Where to Watch (${y})`] : []), `${d.t} in Hindi: Where to Watch the Hindi Dub (${y})`, `${d.t} in Hindi: Where to Watch (${y})`, `${d.t} Hindi Dub: Where to Watch`, `${d.t} in Hindi`]),
     description: fitDescription(`${d.t} has an official Hindi dub on ${join(names(d).slice(0, 3))}${free ? ", including a free, legal option" : ""}. Which seasons are in Hindi, what it costs, how to switch the audio, and Tamil and Telugu dubs. Checked ${checkedOn(d)}.`),
     alternates: { canonical: hindiDubPath(d.s) },
     robots: robotsFor(hindiDubIndexed(d.s)),
@@ -101,6 +101,7 @@ export default async function HindiDubPage({ params }: Props) {
 
   const faq: FaqItem[] = [
     { q: `Is ${d.t} dubbed in Hindi?`, a: `Yes. ${d.t} has an official Hindi dub on ${join(names(d))}. ${rows.map((r) => `${r.name}: ${r.scope || "available"}`).join("; ")}.` },
+    ...(HINDI_PARTS[d.s] ? [{ q: HINDI_PARTS[d.s].q, a: HINDI_PARTS[d.s].a }] : []),
     { q: `Where can I watch ${d.t} in Hindi for free?`, a: free.length ? `Legally, on ${join([...new Set(free.map((r) => r.name))])}, free with ads (${free.map((r) => r.scope).filter(Boolean).join("; ")}).` : `There's no free, legal option on record: the Hindi dub is on ${join([...new Set(paid.concat(rows.filter((r) => r.kind === "tv")).map((r) => r.name))])}. Sites offering it free are unlicensed uploads.` },
     ...(paid.length ? [{ q: `How much does it cost to watch ${d.t} in Hindi?`, a: paid.map((r) => `${r.name}: ${r.price ?? "see the service for current prices"}`).join("; ") + "." }] : []),
     ...rows.filter((r) => r.plat).slice(0, 2).map((r) => ({ q: `How do I switch ${d.t} to Hindi on ${r.plat!.label.replace(/ \(.*\)$/, "")}?`, a: r.plat!.how })),

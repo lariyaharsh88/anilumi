@@ -64,8 +64,29 @@ let top: Set<string> | null = null;
 // "doraemon in hindi" means the TV series (doraemon-2005, on JioHotstar), not the Stand by Me Doraemon films, whose
 // page stays up, noindexed.
 const KIDS_INDEXED = ["crayon-shin-chan", "doraemon-2005", "pokemon", "beyblade-burst"];
-/** Same reason, other shows: "my dress up darling hindi dubbed" 210 + "…in hindi" 140, "darling in the franxx hindi" 170. */
-const SEARCHED_INDEXED = ["sono-bisque-doll-wa-koi-wo-suru", "darling-in-the-franxx"];
+/**
+ * Same reason, other shows: "my dress up darling hindi dubbed" 210 + "…in hindi" 140, "darling in the franxx hindi"
+ * 170, "dragon ball super in hindi" 1K.
+ */
+const SEARCHED_INDEXED = ["sono-bisque-doll-wa-koi-wo-suru", "darling-in-the-franxx", "dragon-ball"];
+
+/**
+ * Parts of a franchise people search by their own name, which its entry already covers ("naruto shippuden hindi
+ * dubbed" 2.9K a month, "dragon ball super in hindi" 1K; Keyword Planner, Nov 2026). `title` names them on the page;
+ * the answer restates the entry's own scope and its sources (Crunchyroll and Anime News Network, checked 18 Nov 2026).
+ */
+export const HINDI_PARTS: Record<string, { title: string; q: string; a: string }> = {
+  naruto: {
+    title: "Naruto & Naruto Shippuden",
+    q: "Is Naruto Shippuden available in Hindi?",
+    a: "Yes. Crunchyroll India has streamed Naruto Shippuden in Hindi since 6 July 2026, starting with the first 220 episodes, released in batches; Sony YAY! airs it in Hindi on TV.",
+  },
+  "dragon-ball": {
+    title: "Dragon Ball Super & Daima",
+    q: "Is Dragon Ball Super available in Hindi?",
+    a: "Yes. Dragon Ball Super: Beerus, the remastered edition of Dragon Ball Super, streams in Hindi on Crunchyroll, with a new episode every Thursday since 12 November 2026, four weeks behind the subtitled version. Dragon Ball Daima is on Crunchyroll in Hindi too.",
+  },
+};
 export const topHindiDub = (s: string) => (top ??= new Set([...hindiDubbed().slice(0, HINDI_DUB_PAGES).map((d) => d.s), ...[...KIDS_INDEXED, ...SEARCHED_INDEXED].filter((k) => dubPageEntry(k))])).has(s);
 
 /**

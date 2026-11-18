@@ -52,7 +52,7 @@ test("Hindi dub pages: the most-watched dubs get their own page, linked from the
   const rest = hindiDubbed()[HINDI_DUB_PAGES];
   if (rest) assert.notEqual(dubHref(rest), hindiDubPath(rest.s));
   // Searched by name in Hindi, so indexed below the top 30 too (lib/hindidub.ts SEARCHED_INDEXED).
-  for (const s of ["sono-bisque-doll-wa-koi-wo-suru", "darling-in-the-franxx"]) assert.ok(dubPageEntry(s) && hindiDubIndexed(s), s);
+  for (const s of ["sono-bisque-doll-wa-koi-wo-suru", "darling-in-the-franxx", "dragon-ball"]) assert.ok(dubPageEntry(s) && hindiDubIndexed(s), s);
   // No page for shows without a Hindi dub.
   if (none()[0]) assert.equal(dubPageEntry(none()[0].s), null);
 });
