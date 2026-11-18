@@ -64,7 +64,9 @@ let top: Set<string> | null = null;
 // "doraemon in hindi" means the TV series (doraemon-2005, on JioHotstar), not the Stand by Me Doraemon films, whose
 // page stays up, noindexed.
 const KIDS_INDEXED = ["crayon-shin-chan", "doraemon-2005", "pokemon", "beyblade-burst"];
-export const topHindiDub = (s: string) => (top ??= new Set([...hindiDubbed().slice(0, HINDI_DUB_PAGES).map((d) => d.s), ...KIDS_INDEXED.filter((k) => dubPageEntry(k))])).has(s);
+/** Same reason, other shows: "my dress up darling hindi dubbed" 210 + "…in hindi" 140, "darling in the franxx hindi" 170. */
+const SEARCHED_INDEXED = ["sono-bisque-doll-wa-koi-wo-suru", "darling-in-the-franxx"];
+export const topHindiDub = (s: string) => (top ??= new Set([...hindiDubbed().slice(0, HINDI_DUB_PAGES).map((d) => d.s), ...[...KIDS_INDEXED, ...SEARCHED_INDEXED].filter((k) => dubPageEntry(k))])).has(s);
 
 /**
  * Where a dub links to: its own Hindi dub page for the most-watched, else the watch order when the franchise has
