@@ -682,6 +682,72 @@
       "outlook": "material-left",
       "why": "The 12-episode anime adapts Yukito Ayatsuji's original 2009 novel, whose story it completes. Ayatsuji has since written two follow-ups that were never animated: the spin-off Another Episode S (2013) and a full sequel, Another 2001 (serialised 2014-2020, published as one roughly 1,200-page volume in September 2020). No anime adaptation of either has been announced.",
       "notes": "A 2012 live-action film adapted the first novel. The OVA 'The Other -Karma-' (2012) is a prequel episode 0, not a sequel."
+    },
+    "chainsaw-man": {
+      "status": "announced",
+      "what": "Chainsaw Man – Assassins Arc, the next anime after the Reze Arc film, is in production at MAPPA; whether it is a TV season or another film, and when it comes out, haven't been announced",
+      "announced": "2025-12-21",
+      "by": "Official Chainsaw Man anime announcement at Jump Festa '26, with a teaser visual and video; a second teaser followed on 2026-06-19",
+      "window": "TBA",
+      "confidence": "high",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Chainsaw_Man_(TV_series)",
+        "https://animecorner.me/chainsaw-man-assassins-arc-anime-officially-announced/",
+        "https://www.gamesradar.com/chainsaw-man-season-2-release-date-cast-trailer-crunchyroll/"
+      ],
+      "notes": "Checked 2026-11-18. The page's automatic verdict ('the story continues in a movie') describes the 2025 Reze Arc film; the Assassins Arc is the newer announcement. Sites quoting a late-2026 date have no official source."
+    },
+    "high-school-dxd": {
+      "status": "none",
+      "what": "No fifth season has been announced; the last season, High School DxD Hero, aired in 2018, and the light novels and manga continue",
+      "announced": null,
+      "by": null,
+      "window": null,
+      "confidence": "high",
+      "sources": [
+        "https://myanimelist.net/anime/15451",
+        "https://clevelandesdc.com/is-high-school-dxd-over/"
+      ],
+      "notes": "Checked 2026-11-18. Articles claiming season 5 was confirmed cite no official source."
+    },
+    "tsuki-ga-michibiku-isekai-douchuu": {
+      "status": "announced",
+      "what": "A third season of Tsukimichi: Moonlit Fantasy is confirmed, with no release date yet",
+      "announced": "2024-06-24",
+      "by": "The official anime website and X account, right after the season 2 finale",
+      "window": "TBA",
+      "confidence": "high",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Tsukimichi:_Moonlit_Fantasy",
+        "https://fandomwire.com/tsukimichi-moonlit-fantasy-season-3-release-timeline-manga-arcs-explored/"
+      ],
+      "notes": "Checked 2026-11-18. Season 2 aired 2024-01-08 to 2024-06-25 (J.C.Staff). The 2026 dates on streaming listings are placeholders."
+    },
+    "tower-of-god": {
+      "status": "none",
+      "what": "No third season has been announced; season 2 aired from July to December 2024",
+      "announced": null,
+      "by": null,
+      "window": null,
+      "confidence": "high",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Tower_of_God_season_2",
+        "https://www.thepopverse.com/comics-tower-of-god-manga-manhwa-release-schedule-webtoon"
+      ],
+      "notes": "Checked 2026-11-18. The 'early 2027, MAPPA' claim comes from a fan account on X, not an official source."
+    },
+    "vinland-saga": {
+      "status": "none",
+      "what": "No third season: author Makoto Yukimura said on 2026-10-22 that one isn't in production, though nothing has been cancelled; season 2 aired from January to June 2023",
+      "announced": null,
+      "by": null,
+      "window": null,
+      "confidence": "high",
+      "sources": [
+        "https://www.gamesradar.com/entertainment/anime-shows/vinland-saga-creator-debunks-rumor-that-season-3-is-in-production-that-information-hasnt-reached-me-yet/",
+        "https://animehunch.com/vinland-saga-season-3-no-progress-yukimura/"
+      ],
+      "notes": "Checked 2026-11-18. An article claiming Wit Studio confirmed season 3 has no corroboration and conflicts with the author's statement."
     }
   }
 }

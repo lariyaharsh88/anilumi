@@ -10,7 +10,7 @@ import { fillerSlugs, continuationSlugs } from "@/lib/filler";
 import { characterTableSlugs, BLOOD_TYPES } from "@/lib/charsnap";
 import { hindiArtists, hindiArtistPath } from "@/lib/hindivoices";
 import { summaryFor } from "@/lib/summaries";
-import { sequelNews } from "@/lib/sequelnews";
+import { sequelNews, sequelNewsSlugs } from "@/lib/sequelnews";
 import { officialRatings } from "@/lib/ageratings";
 import { hasSnapshotThemes } from "@/lib/themes";
 import { HINDI_SLUGS, hindiPath, hindiIndexed } from "@/lib/hindi";
@@ -158,6 +158,9 @@ export async function sitemapEntries(): Promise<MetadataRoute.Sitemap> {
     // Anime pages Google already shows outside the top 200 (Bing flagged them as missing, Nov 2026). The page
     // indexes itself on the same test (lib/indexing.ts animeIndexed), so this lists nothing that is noindexed.
     for (const p of searchShownPaths("/anime/")) if (/^\/anime\/[^/]+$/.test(p)) out.push({ url: abs(p), lastModified: at(D.anilist), changeFrequency: "weekly", priority: 0.5 });
+    // Every show with researched sequel news has an indexed next-season page (lib/indexing.ts nextSeasonIndexed),
+    // including those outside the top 100 above ("highschool dxd season 5" 3.6K a month, Nov 2026).
+    for (const s of sequelNewsSlugs()) out.push({ url: abs(`${animePath({ slug: s })}/next-season`), lastModified: weekly, changeFrequency: "weekly", priority: 0.6 });
     // "Anime like X" has the best click-through on the site: list it for the 500 most-followed titles (ranked in
     // the alias index, so no extra API calls).
     // Plus every title whose page is strong: 8+ fan picks, 5+ with shared themes (lib/picks.ts, the page's own test).
