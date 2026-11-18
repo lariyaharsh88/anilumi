@@ -47,7 +47,8 @@ async function load(slug: string) {
   const first = idx <= 0;
   // The name people search ("Demon Slayer Season 2", not "Kimetsu no Yaiba Season 2").
   const name = a.titleEn && a.titleEn.length <= 35 ? a.titleEn : a.title;
-  const label = first ? `${name} Season 2` : `${name} Next Season`;
+  const news = sequelNews(a.slug);
+  const label = news?.label ?? (news?.season ? `${news.name ?? name} Season ${news.season}` : first ? `${name} Season 2` : `${name} Next Season`);
   return { a, chain, idx, next, verdict, label, first, name };
 }
 
@@ -72,7 +73,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   // Official news beats a database status that hasn't caught up (lib/sequelnews.ts).
   const news = sequelNews(a.slug);
   const override = newsOverrides(news, verdict.kind);
-  const title = override ? fitTitle([news!.window && news!.window !== "TBA" ? `${label}: Announced for ${news!.window}` : null, `${label}: Announced (${asOf})`, `${label}: Announced`]) : fitTitle([`${label}${dateQuestion ? " Release Date" : ""}: ${answer[verdict.kind]}`, `${label}: ${answer[verdict.kind]}`]);
+  const title = news?.headline ? fitTitle([`${label}: ${news.headline.replace("{asOf}", asOf)}`]) : override ? fitTitle([news!.window && news!.window !== "TBA" ? `${label}: Announced for ${news!.window}` : null, `${label}: Announced (${asOf})`, `${label}: Announced`]) : fitTitle([`${label}${dateQuestion ? " Release Date" : ""}: ${answer[verdict.kind]}`, `${label}: ${answer[verdict.kind]}`]);
   return {
     title,
     description: fitDescription(`${first ? `Is there a ${a.title} season 2?` : `Will ${a.title} get another season?`} ${override ? `${news!.what}${news!.announced ? ` (announced ${fmtDate(news!.announced, { month: "long", day: "numeric", year: "numeric" })})` : ""}.` : `${verdict.headline} ${verdict.detail}`}`.slice(0, 300)),
