@@ -64,6 +64,7 @@ export async function sitemapEntries(): Promise<MetadataRoute.Sitemap> {
     { url: abs("/voice-actors"), lastModified: at(D.voiceActors), changeFrequency: "weekly", priority: 0.6 },
     { url: abs("/characters"), lastModified: at(D.characters), changeFrequency: "monthly", priority: 0.7 },
     { url: abs("/best-anime"), lastModified: at(D.anilist), changeFrequency: "monthly", priority: 0.8 },
+    { url: abs("/best-anime-for-beginners"), lastModified: at(D.anilist), changeFrequency: "monthly", priority: 0.7 },
     { url: abs("/similar"), lastModified: at(D.anilist, D.aliases), changeFrequency: "monthly", priority: 0.6 },
     { url: abs("/characters/blood-type"), lastModified: at(D.characters), changeFrequency: "monthly", priority: 0.5 },
     ...BLOOD_TYPES.map((t) => ({ url: abs(`/characters/blood-type/${t}`), lastModified: at(D.characters), changeFrequency: "monthly" as const, priority: 0.5 })),

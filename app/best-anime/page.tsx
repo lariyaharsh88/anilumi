@@ -129,6 +129,7 @@ export default async function BestAnime() {
       )}
 
       <p className="mt-10 flex flex-wrap gap-2 text-sm">
+        <Link href="/best-anime-for-beginners" className="chip">Best anime for beginners</Link>
         <Link href="/top/rated" className="chip">Highest rated anime (updated daily)</Link>
         <Link href="/genre" className="chip">Best anime by genre</Link>
         <Link href="/similar" className="chip">Anime like your favourite</Link>
