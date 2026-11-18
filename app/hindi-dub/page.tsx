@@ -29,10 +29,13 @@ const KIND: Record<PlatformKind, string> = { free: "Free", subscription: "Subscr
 export function generateMetadata(): Metadata {
   const n = hindiDubbed().length;
   const free = hindiDubbed().filter((d) => d.platforms.some((p) => platformKind(p.name) === "free")).length;
+  const fresh = hindiArrivals(30).length;
+  // The month the list was last checked: a dated result for "anime hindi dubbed" (74K searches a month in India).
+  const mon = new Date(`${DUB_CHECKED}T00:00:00Z`).toLocaleDateString("en-GB", { month: "short", year: "numeric", timeZone: "UTC" });
   // Searchers ask "where to watch anime in Hindi for free": the title answers that the list includes free, legal options.
   return {
-    title: fitTitle([`Hindi Dubbed Anime List (${new Date().getFullYear()}): ${n} Anime in Hindi, ${free} Free`, `Hindi Dubbed Anime List (${new Date().getFullYear()}): ${n} Anime, ${free} Free`, `Hindi Dubbed Anime List (${new Date().getFullYear()})`]),
-    description: fitDescription(`${n} anime with an official Hindi dub and where to watch each: ${free} free and legal on YouTube (Muse India, Ani-One India) and MX Player (now Prime Video's free tier), the rest on Crunchyroll, Netflix, Prime Video, JioHotstar and TV. Checked ${dubDate()}.`),
+    title: fitTitle([fresh ? `Hindi Dubbed Anime List (${mon}): ${n} Anime, ${free} Free, ${fresh} New` : null, `Hindi Dubbed Anime List (${new Date().getFullYear()}): ${n} Anime in Hindi, ${free} Free`, `Hindi Dubbed Anime List (${new Date().getFullYear()}): ${n} Anime, ${free} Free`, `Hindi Dubbed Anime List (${new Date().getFullYear()})`]),
+    description: fitDescription(`${n} anime with an official Hindi dub and where to watch each${fresh ? `, ${fresh} new in the last 30 days` : ""}: ${free} free and legal on YouTube and Prime Video's free tier, the rest on Crunchyroll, Netflix, JioHotstar and TV. Checked ${dubDate()}.`),
     alternates: { canonical: "/hindi-dub", languages: { en: "/hindi-dub", hi: "/hi/hindi-dub", "x-default": "/hindi-dub" } },
   };
 }

@@ -13,8 +13,10 @@ import { seasonOf } from "@/lib/kitsu";
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: fitTitle(["What Anime Is This? Free Screenshot Search, Episode & Time"]),
-  description: fitDescription("Paste or upload a screenshot to find the anime, the exact episode and the minute it's from, in seconds. Free, no sign-up, with where to watch it next."),
+  // "what anime is this from", "anime finder by image" and "what is the name of this anime" are the variants in Bing's
+  // queries; the description adds what the bigger tools don't: where to watch it in India and whether it's in Hindi.
+  title: fitTitle(["What Anime Is This? Find Any Anime by Screenshot (Free)", "What Anime Is This? Free Screenshot Search, Episode & Time"]),
+  description: fitDescription("Upload or paste a screenshot to find the anime, the exact episode and the minute it's from, in seconds. Free, no sign-up, plus where to watch it in India and whether it's dubbed in Hindi."),
   alternates: { canonical: "/what-anime-is-this" },
 };
 
