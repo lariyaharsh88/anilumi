@@ -748,6 +748,72 @@
         "https://animehunch.com/vinland-saga-season-3-no-progress-yukimura/"
       ],
       "notes": "Checked 2026-11-18. An article claiming Wit Studio confirmed season 3 has no corroboration and conflicts with the author's statement."
+    },
+    "kono-subarashii-sekai-ni-shukufuku-wo": {
+      "status": "dated",
+      "what": "KonoSuba season 4 is confirmed for 2027, with no exact date or episode count yet",
+      "announced": "2026-01-13",
+      "by": "The anime's 10th-anniversary livestream; Takaomi Kanasaki returns as chief director",
+      "window": "2027",
+      "confidence": "high",
+      "sources": [
+        "https://www.animenewsnetwork.com/news/2026-01-13/konosuba-god-blessing-on-this-wonderful-world-anime-confirms-season-4/.233021",
+        "https://us.oricon-group.com/news/9118/",
+        "https://en.wikipedia.org/wiki/List_of_KonoSuba_episodes"
+      ],
+      "notes": "Checked 2026-11-19. Season 3 aired in 2024. Reports name different studios for season 4, so the page doesn't name one."
+    },
+    "arifureta-shokugyou-de-sekai-saikyou": {
+      "status": "none",
+      "what": "No fourth season has been announced; season 3 aired from October 2024 to February 2025",
+      "announced": null,
+      "by": null,
+      "window": null,
+      "confidence": "high",
+      "sources": [
+        "https://en.wikipedia.org/wiki/List_of_Arifureta_episodes",
+        "https://www.themarysue.com/will-there-be-arifureta-season-4-heres-what-we-know-so-far/"
+      ],
+      "notes": "Checked 2026-11-19. Sites giving a season 4 date have no official source."
+    },
+    "overlord": {
+      "status": "none",
+      "what": "No fifth season has been announced; the latest anime is the 2024 film Overlord: The Sacred Kingdom, and the light novels continue",
+      "announced": null,
+      "by": null,
+      "window": null,
+      "confidence": "high",
+      "sources": [
+        "https://otakuapex.com/status/overlord/",
+        "https://businessupturn.com/entertainment/hollywood/hollywood-web-series/will-there-be-overlord-season-5-renewed-or-canceled-everything-we-know-so-far/"
+      ],
+      "notes": "Checked 2026-11-19. 'Season 5 confirmed' claims trace to a 2024 leak, not Kadokawa or Madhouse."
+    },
+    "mob-psycho-100": {
+      "status": "none",
+      "what": "No fourth season: season 3 (2022) adapted the manga to its ending, so there's no story left to animate",
+      "announced": null,
+      "by": null,
+      "window": null,
+      "confidence": "high",
+      "sources": [
+        "https://en.wikipedia.org/wiki/List_of_Mob_Psycho_100_episodes",
+        "https://www.themarysue.com/will-there-be-a-mob-psycho-100-season-4-answered/"
+      ],
+      "notes": "Checked 2026-11-19. An article claiming BONES confirmed season 4 has no corroboration."
+    },
+    "log-horizon": {
+      "status": "none",
+      "what": "No fourth season has been announced; season 3, Destruction of the Round Table, aired in early 2021",
+      "announced": null,
+      "by": null,
+      "window": null,
+      "confidence": "high",
+      "sources": [
+        "https://www.sportskeeda.com/anime/log-horizon-season-4-possibility-new-season-explored",
+        "https://wegotthiscovered.com/anime/will-there-be-a-log-horizon-season-4/"
+      ],
+      "notes": "Checked 2026-11-19. Season 3 adapted up to the latest light novels, so little material is left."
     }
   }
 }
