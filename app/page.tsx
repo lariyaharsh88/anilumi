@@ -27,6 +27,9 @@ import AiringNext, { type AirTimes, type NextEp } from "@/components/AiringNext"
 import { airing as airingSnapshot } from "@/lib/airing";
 import { onNow } from "@/lib/trending";
 import { bingeFranchises } from "@/lib/franchiselist";
+import { hindiDubbed, hindiDubPath, platformKind } from "@/lib/hindidub";
+import { hindiDubIndexed } from "@/lib/indexing";
+import { hindiArrivals } from "@/lib/hindistats";
 
 export const revalidate = 1800;
 
@@ -147,6 +150,7 @@ export default async function Home() {
       <AnimeRail title="Trending right now" href={`/season/${year}/${season}`} items={trending} bigRank eager />
       <ToolBand eyebrow="Plan your next watch" title="Tools for your next binge" tools={PLAN_TOOLS} />
       <AnimeRail title="Airing this week" href="/schedule" items={airingItems} />
+      <HindiBand />
       <section className="reveal mt-12" aria-labelledby="home-genres-h">
         <div className="mb-3 flex items-end justify-between">
           <h2 id="home-genres-h" className="h-section">Browse by genre</h2>
@@ -246,5 +250,51 @@ export default async function Home() {
       <AnimeRail title="Best anime movies" href="/top/movies" items={movies.items} />
       <ToolBand eyebrow="Play and compare" title="Games and handy tools" tools={FUN_TOOLS} />
     </div>
+  );
+}
+
+/**
+ * Anime in Hindi on the home page: Hindi dub pages bring most of the site's visits (ChatGPT and Bing, Nov 2026), and
+ * the home page linked none of them. Bundled dub data only, no API calls.
+ */
+function HindiBand() {
+  const all = hindiDubbed();
+  const free = all.filter((d) => d.platforms.some((p) => platformKind(p.name) === "free")).length;
+  const fresh = hindiArrivals(30).slice(0, 5);
+  const popular = all.filter((d) => hindiDubIndexed(d.s)).slice(0, 12);
+  return (
+    <section className="reveal mt-12 card border-orange-400/30 p-4 sm:p-5" aria-labelledby="home-hindi-h">
+      <div className="mb-3 flex flex-wrap items-end justify-between gap-2">
+        <h2 id="home-hindi-h" className="h-section">🇮🇳 Anime in Hindi</h2>
+        <Link href="/hindi-dub" className="text-sm text-violet hover:underline">All {all.length} Hindi dubbed anime →</Link>
+      </div>
+      <div className="grid gap-5 lg:grid-cols-[1fr_1.4fr]">
+        {fresh.length > 0 && (
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-wider text-muted">New in Hindi</p>
+            <ul className="mt-2 space-y-1.5 text-sm">
+              {fresh.map((e) => (
+                <li key={`${e.t}-${e.service}`} className="flex justify-between gap-3">
+                  <span className="truncate">{e.slug ? <Link href={animePath({ slug: e.slug })} className="text-ink hover:text-violet-2">{e.t}</Link> : e.t}</span>
+                  <span className="shrink-0 text-xs text-muted">{e.service.replace(/ \(.*\)$/, "")}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-wider text-muted">Watch in Hindi</p>
+          <p className="mt-2 flex flex-wrap gap-2 text-sm">
+            {popular.map((d) => <Link key={d.s} href={hindiDubPath(d.s)} className="chip">{d.t}</Link>)}
+          </p>
+        </div>
+      </div>
+      <p className="mt-4 flex flex-wrap gap-2 text-sm">
+        <Link href="/hindi-dub/this-week" className="chip">📅 This week&rsquo;s Hindi episodes</Link>
+        <Link href="/hindi-dub/movies" className="chip">🎬 Anime movies in Hindi</Link>
+        <Link href="/hindi-dub#free" className="chip">🆓 {free} free and legal</Link>
+        <Link href="/new-dubs" className="chip">New &amp; upcoming Hindi dubs</Link>
+      </p>
+    </section>
   );
 }
