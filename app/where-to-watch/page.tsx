@@ -58,6 +58,7 @@ export default async function WhereToWatchHub() {
           <Link href="/sub-vs-dub" className="chip">Sub vs dub</Link>
           <Link href="/hindi-dub" className="chip">Hindi dubbed anime</Link>
           <Link href="/anime-streaming-sites" className="chip">🇮🇳 Streaming sites in India compared</Link>
+          <Link href="/anime-on-netflix-india" className="chip">Anime on Netflix India</Link>
         </p>
       </PageHero>
       <MadeBy className="mt-4" method="Each service is checked on JustWatch's country pages and the service's own title page (Netflix and Prime Video India read from India), with AniList links and news as a second source." date={STREAMS_CHECKED} />

@@ -80,6 +80,7 @@ export async function sitemapEntries(): Promise<MetadataRoute.Sitemap> {
     { url: abs("/hindi-dub/this-week"), lastModified: now, changeFrequency: "daily", priority: 0.7 },
     { url: abs("/schedule/crunchyroll"), lastModified: now, changeFrequency: "daily", priority: 0.7 },
     { url: abs("/hindi-dub/movies"), lastModified: at(D.dubs), changeFrequency: "weekly", priority: 0.7 },
+    { url: abs("/anime-on-netflix-india"), lastModified: at(D.streams), changeFrequency: "monthly", priority: 0.6 },
     { url: abs("/anime-streaming-sites"), lastModified: at(D.streams, D.dubs, PRICES_CHECKED), changeFrequency: "monthly", priority: 0.8 },
     { url: abs("/where-to-watch"), lastModified: at(D.streams), changeFrequency: "monthly", priority: 0.8 },
     ...allStreams().map((e) => ({ url: abs(streamsPath(e.s)), lastModified: at(D.streams), changeFrequency: "monthly" as const, priority: 0.7 })),
