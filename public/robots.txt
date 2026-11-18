@@ -22,12 +22,21 @@ Allow: /apple-icon.png?
 Allow: /*opengraph-image?
 Allow: /*twitter-image?
 
+# SEO-tool crawlers (Semrush, Ahrefs, DataForSEO, Majestic, Moz, BLEXBot) and ElevenlabsCrawler joined 18 Nov: they
+# walked character and voice-actor pages, send no visitors and render on every visit.
 # AI training crawlers send no visitors but render pages on every visit (Cloudflare AI Crawl Control, week to
 # 17 Nov 2026: GPTBot 94K requests, ClaudeBot 77K, Amazonbot 37K), which is most of the Workers CPU bill. The
 # crawlers behind answers that do send visitors stay allowed through "*": OAI-SearchBot and ChatGPT-User
 # (ChatGPT search), Claude-SearchBot and Claude-User, PerplexityBot, Googlebot, Bingbot, DuckDuckBot.
 User-agent: GPTBot
 User-agent: ClaudeBot
+User-agent: ElevenlabsCrawler
+User-agent: SemrushBot
+User-agent: AhrefsBot
+User-agent: DataForSeoBot
+User-agent: MJ12bot
+User-agent: DotBot
+User-agent: BLEXBot
 User-agent: anthropic-ai
 User-agent: Amazonbot
 User-agent: Applebot-Extended
