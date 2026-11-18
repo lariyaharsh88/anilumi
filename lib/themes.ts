@@ -4,6 +4,7 @@
  */
 import { getMalId, UpstreamError } from "./kitsu";
 import snapshot from "@/data/themes.json";
+import { isMiss, markMiss } from "./misscache";
 
 export type ThemeEntry = { version: number | null; episodes: string | null; spoiler: boolean; nsfw: boolean };
 export type Theme = { type: "OP" | "ED"; sequence: number; slug: string; song: string | null; artists: string[]; entries: ThemeEntry[] };
@@ -37,8 +38,10 @@ export const hasSnapshotThemes = (kitsuId: string) => (SNAP[kitsuId]?.t.length ?
  * times out or errors throws UpstreamError, so the page is not cached as empty (and noindexed) while the
  * service is just slow; AnimeThemes often takes 10–20 s.
  */
-// After a failed live call, fail fast for 10 minutes on this instance instead of waiting on AnimeThemes again.
-const DOWN_FOR_MS = 10 * 60_000;
+// After a failed live call, fail fast for 30 minutes instead of asking AnimeThemes again: on this instance, and
+// through the Cache API on every instance in the data centre (each Worker instance asked again otherwise).
+const DOWN_FOR_MS = 30 * 60_000;
+const DOWN_KEY = "animethemes/down";
 let downSince = 0;
 
 export async function getThemes(kitsuId: string): Promise<Themes | null> {
@@ -46,23 +49,22 @@ export async function getThemes(kitsuId: string): Promise<Themes | null> {
   if (snap) return { atSlug: snap.s, themes: snap.t };
   const mal = await getMalId(kitsuId);
   if (!mal) return null;
-  if (Date.now() - downSince < DOWN_FOR_MS) throw new UpstreamError(`AnimeThemes unavailable for MAL ${mal} (down)`);
+  if (Date.now() - downSince < DOWN_FOR_MS || (await isMiss(DOWN_KEY))) throw new UpstreamError(`AnimeThemes unavailable for MAL ${mal} (down)`);
   const url = `https://api.animethemes.moe/anime?filter[has]=resources&filter[site]=MyAnimeList&filter[external_id]=${mal}&include=animethemes.animethemeentries,animethemes.song.artists&fields[anime]=slug&fields[song]=title&fields[artist]=name&fields[animetheme]=type,sequence,slug&fields[animethemeentry]=version,episodes,spoiler,nsfw`;
-  // One retry: AnimeThemes allows 90 requests a minute and is slow under load.
-  for (let attempt = 0; attempt < 2; attempt++) {
-    try {
-      const res = await fetch(url, { headers: { Accept: "application/json", "User-Agent": "AniLumi/1.0 (+https://anilumi.in)" }, next: { revalidate: 86400 * 3 }, signal: AbortSignal.timeout(20_000) });
-      if (res.status === 429 || res.status >= 500) { await new Promise((r) => setTimeout(r, 1500)); continue; }
-      if (res.status === 404) return null;
-      if (!res.ok) break;
+  // One attempt: a retry after a 503 doubled the calls while the service was down (11K 503s a day, Nov 2026).
+  try {
+    const res = await fetch(url, { headers: { Accept: "application/json", "User-Agent": "AniLumi/1.0 (+https://anilumi.in)" }, next: { revalidate: 86400 * 3 }, signal: AbortSignal.timeout(20_000) });
+    if (res.status === 404) return null;
+    if (res.ok) {
       const j = (await res.json()) as { anime?: { slug: string; animethemes: AtTheme[] }[] };
       const a = j.anime?.[0];
       return a ? { atSlug: a.slug, themes: normaliseThemes(a.animethemes || []) } : null;
-    } catch {
-      if (attempt) break;
     }
+  } catch {
+    /* timeout or network error: treated as down */
   }
   downSince = Date.now();
+  await markMiss(DOWN_KEY, DOWN_FOR_MS / 1000);
   throw new UpstreamError(`AnimeThemes unavailable for MAL ${mal}`);
 }
 

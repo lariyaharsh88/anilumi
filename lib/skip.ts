@@ -4,6 +4,7 @@
  * another service; durations are what we rely on. Pure helpers are unit-tested.
  */
 import { getMalId } from "./kitsu";
+import { isMiss, markMiss } from "./misscache";
 
 export type Span = { start: number; end: number };
 export type SkipTimes = { op: Span | null; ed: Span | null; recap: Span | null };
@@ -28,13 +29,17 @@ export const spanSec = (s: Span | null) => (s ? Math.max(0, s.end - s.start) : 0
 
 export async function getSkipTimes(malId: string, episode: number): Promise<SkipTimes | null> {
   if (process.env.ANISKIP === "0" || !Number.isInteger(episode) || episode < 1) return null;
+  const miss = `aniskip/${malId}/${episode}`;
+  if (await isMiss(miss)) return null;
   try {
     const res = await fetch(`https://api.aniskip.com/v2/skip-times/${malId}/${episode}?${TYPES}&episodeLength=0`, {
       headers: { Accept: "application/json" },
       next: { revalidate: 604800 },
       signal: AbortSignal.timeout(5000),
     });
-    if (!res.ok) return null; // 404 = nobody has submitted times for this episode
+    // 404 = nobody has submitted times for this episode; the fetch cache doesn't keep it, so remember it for a week.
+    if (res.status === 404) await markMiss(miss, 604800);
+    if (!res.ok) return null;
     const d = (await res.json()) as { found?: boolean; results?: Raw[] };
     if (!d.found || !d.results?.length) return null;
     const s = pickSkips(d.results);
@@ -70,7 +75,11 @@ export function averageSkips(samples: (SkipTimes | null)[]): SkipAverage | null 
 export async function measuredSkips(kitsuId: string, episodes: number): Promise<SkipAverage | null> {
   const mal = await getMalId(kitsuId);
   if (!mal || episodes < 2) return null;
-  return averageSkips(await Promise.all(sampleEpisodes(episodes).map((n) => getSkipTimes(mal, n))));
+  // Episode 1 first: a show nobody has timed has no data for any episode, so it costs one call, not five.
+  const [first, ...rest] = sampleEpisodes(episodes);
+  const one = await getSkipTimes(mal, first);
+  if (!one) return null;
+  return averageSkips([one, ...(await Promise.all(rest.map((n) => getSkipTimes(mal, n))))]);
 }
 
 /** "1m 30s", "45s". Pure. */
