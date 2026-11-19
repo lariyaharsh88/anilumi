@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   // "what anime is this from", "anime finder by image" and "what is the name of this anime" are the variants in Bing's
   // queries; the description adds what the bigger tools don't: where to watch it in India and whether it's in Hindi.
   title: fitTitle(["What Anime Is This? Find Any Anime by Screenshot (Free)", "What Anime Is This? Free Screenshot Search, Episode & Time"]),
-  description: fitDescription("Upload or paste a screenshot to find the anime, the exact episode and the minute it's from, in seconds. Free, no sign-up, plus where to watch it in India and whether it's dubbed in Hindi."),
+  description: fitDescription("Upload a screenshot or video clip to find the anime, the exact episode and minute it's from. Free, no sign-up, plus where to watch it in India and in Hindi."),
   alternates: { canonical: "/what-anime-is-this" },
 };
 
@@ -37,7 +37,7 @@ export default function WhatAnimeIsThis() {
         browserRequirements: "Requires JavaScript",
         isAccessibleForFree: true,
         offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-        featureList: ["Paste, drop, upload or link a screenshot", "Anime title, episode and timestamp with a preview clip", "Where to watch, watch order and Hindi dub for each match", "No sign-up; the image is not stored"],
+        featureList: ["Paste, drop, upload or link a screenshot", "Pick a frame from a video clip in the browser", "Anime title, episode and timestamp with a preview clip", "Where to watch, watch order and Hindi dub for each match", "No sign-up; the image is not stored"],
         isPartOf: { "@id": SITE_ID },
         publisher: { "@id": ORG_ID },
         inLanguage: "en",
@@ -47,7 +47,7 @@ export default function WhatAnimeIsThis() {
         crumbs={[{ href: "/", label: "Home" }, { href: "/what-anime-is-this", label: "What anime is this?" }]}
         eyebrow="🔍 Scene search"
         title={<>What anime <span className="text-gradient">is this?</span></>}
-        subtitle="Paste a screenshot and get the anime, the episode and the exact moment it's from, with a preview clip to check. Free, no sign-up."
+        subtitle="Paste a screenshot or pick a frame from a video clip, and get the anime, the episode and the exact moment it's from, with a preview to check. Free, no sign-up."
         hue={190}
       />
       <SceneSearch />
@@ -58,7 +58,7 @@ export default function WhatAnimeIsThis() {
         <h2 id="how-h" className="h-section mb-4">How the screenshot search works</h2>
         <ol className="grid gap-3 md:grid-cols-3">
           {[
-            ["1", "Add a frame", "Paste a screenshot (Ctrl+V or ⌘+V), drop an image, upload one, or paste an image link. A still from a video works best."],
+            ["1", "Add a frame", "Paste a screenshot (Ctrl+V or ⌘+V), drop an image, upload one, paste an image link, or choose a video clip and pick the moment."],
             ["2", "It's matched frame by frame", "trace.moe compares it with frames from tens of thousands of hours of anime episodes, not with posters or fan art."],
             ["3", "Check the clip, then watch", "You get the anime, the episode and the minute, with a short preview clip, plus where to stream it, its watch order and whether it has a Hindi dub."],
           ].map(([n, h, t]) => (
@@ -95,6 +95,28 @@ export default function WhatAnimeIsThis() {
         </div>
       </section>
 
+      <section className="reveal pt-12" aria-labelledby="social-h">
+        <h2 id="social-h" className="h-section mb-1">Saw it on TikTok, Instagram Reels or YouTube Shorts?</h2>
+        <p className="mb-4 text-sm text-muted">Grab the clip from your own screen, then search it here. No downloader apps needed.</p>
+        <div className="grid gap-3 md:grid-cols-2">
+          <div className="card p-4 text-sm leading-6 text-ink/90">
+            <h3 className="font-semibold text-ink">📱 Android</h3>
+            <ul className="mt-2 list-disc space-y-1 pl-5">
+              <li>Pause on a clear moment and press <strong>Power + Volume down</strong> for a screenshot.</li>
+              <li>Or pull down Quick Settings, tap <strong>Screen record</strong>, play a few seconds, stop, then choose that recording with &ldquo;Video clip&rdquo; above.</li>
+            </ul>
+          </div>
+          <div className="card p-4 text-sm leading-6 text-ink/90">
+            <h3 className="font-semibold text-ink">🍎 iPhone</h3>
+            <ul className="mt-2 list-disc space-y-1 pl-5">
+              <li>Pause and press <strong>Side button + Volume up</strong> for a screenshot.</li>
+              <li>Or open Control Centre, tap <strong>Screen Recording</strong>, play a few seconds, stop, and pick the recording from Photos with &ldquo;Video clip&rdquo;.</li>
+            </ul>
+          </div>
+        </div>
+        <p className="mt-3 text-sm text-muted">Crop off captions and app buttons if you can: clips on these apps are often mirrored or zoomed, which makes matching harder.</p>
+      </section>
+
       <section className="reveal pt-12" aria-labelledby="else-h">
         <h2 id="else-h" className="h-section mb-1">No screenshot? Other ways to find an anime</h2>
         <p className="mb-4 text-sm text-muted">If all you remember is the story, a character or the vibe:</p>
@@ -116,11 +138,12 @@ export default function WhatAnimeIsThis() {
           { q: "What does the match percentage mean?", a: "How closely your frame matches the one found. Above 90% is almost always right; below about 87% the result is often a different show with a similar-looking scene." },
           { q: "Is it free?", a: "Yes. Each person gets a free monthly allowance of searches from trace.moe, the open scene-search engine that powers this tool. The page shows how many you have left." },
           { q: "Can it find an anime from a TikTok or Instagram clip?", a: "Often, if you screenshot a clean frame. Clips on TikTok and Reels are frequently mirrored, zoomed or filtered to avoid copyright matching, which also stops this search; crop to the picture and try a frame without captions." },
-          { q: "Can it tell me the anime from a GIF or a video?", a: "Pause on a clear frame and take a screenshot, then paste that. The search works on single images; for a GIF, any sharp frame from it will do." },
+          { q: "Can it tell me the anime from a video clip?", a: "Yes. Choose \"Video clip\", scrub to a clear moment and press \"Search this frame\". The clip stays on your device: your browser grabs that one frame and only the frame is sent for matching. MP4, WebM and MOV files work; for a GIF, take a screenshot of a sharp frame." },
+          { q: "Is there a Chrome extension?", a: "One is on the way: right-click any image on a website and choose \"What anime is this?\" to search it here. Until it's in the Chrome Web Store, copy the image link and paste it into the box above." },
           { q: "Do you keep my screenshot?", a: "No. Your browser sends the image straight to trace.moe for matching. AniLumi never receives or stores it." },
         ]}
       />
-      <p className="mt-6 text-xs text-muted">Scene matching by <a href="https://trace.moe" target="_blank" rel="noopener nofollow" className="underline">trace.moe</a>. Titles from AniList.</p>
+      <p className="mt-6 text-xs text-muted">🧩 A Chrome extension is coming soon: right-click any image and search it here. Scene matching by <a href="https://trace.moe" target="_blank" rel="noopener nofollow" className="underline">trace.moe</a>. Titles from AniList.</p>
     </div>
   );
 }

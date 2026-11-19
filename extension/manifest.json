@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "What Anime Is This? by AniLumi",
+  "short_name": "What Anime?",
+  "version": "1.0.0",
+  "description": "Right-click any anime screenshot to find the anime, episode and timestamp, plus where to watch it. Free, no sign-up.",
+  "homepage_url": "https://anilumi.in/what-anime-is-this",
+  "permissions": ["contextMenus"],
+  "background": { "service_worker": "background.js" },
+  "action": {
+    "default_title": "What anime is this?",
+    "default_icon": { "16": "icons/icon-16.png", "32": "icons/icon-32.png" }
+  },
+  "icons": { "16": "icons/icon-16.png", "32": "icons/icon-32.png", "48": "icons/icon-48.png", "128": "icons/icon-128.png" }
+}
