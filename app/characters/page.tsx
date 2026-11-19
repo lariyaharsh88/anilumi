@@ -127,6 +127,7 @@ export default function CharactersHub() {
         <Link href="/voice-actors" className="chip">🎙️ Popular voice actors</Link>
         <Link href="/characters/blood-type" className="chip">🩸 Characters by blood type</Link>
         <Link href="/anime-birthday-twin" className="chip">🎂 Your anime birthday twin</Link>
+        <Link href="/guess-the-anime-character" className="chip">🎯 Guess the character (daily game)</Link>
       </p>
 
       <Faq
