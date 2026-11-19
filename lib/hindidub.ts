@@ -93,9 +93,21 @@ let top: Set<string> | null = null;
 const KIDS_INDEXED = ["crayon-shin-chan", "doraemon-2005", "pokemon", "beyblade-burst"];
 /**
  * Same reason, other shows: "my dress up darling hindi dubbed" 210 + "…in hindi" 140, "darling in the franxx hindi"
- * 170, "dragon ball super in hindi" 1K.
+ * 170, "dragon ball super in hindi" 1K. Then every dubbed show with at least 90 "<name> hindi dubbed" searches a month
+ * (Keyword Planner, India, Nov 2026): Black Clover 1K, Tokyo Revengers 880, Solo Leveling 880, Weathering with You
+ * 390, Suzume 390, Vinland Saga 320, Classroom of the Elite 320, Gintama, Spy x Family, Chainsaw Man, Blue Lock,
+ * Horimiya and Lookism 210, Black Butler and Mushoku Tensei 140, Terror in Resonance, Arifureta, Detective Conan and
+ * Gachiakuta 110, Rent-a-Girlfriend, Baki, Kaiju No. 8 and Wind Breaker 90. Not Ghost in the Shell: its 140 "…in
+ * hindi" are most likely the 2017 film.
  */
-const SEARCHED_INDEXED = ["sono-bisque-doll-wa-koi-wo-suru", "darling-in-the-franxx", "dragon-ball"];
+const SEARCHED_INDEXED = [
+  "sono-bisque-doll-wa-koi-wo-suru", "darling-in-the-franxx", "dragon-ball",
+  "black-clover-tv", "tokyo-revengers", "solo-leveling", "tenki-no-ko-weathering-with-you", "suzume-no-tojimari", "vinland-saga",
+  "youkoso-jitsuryoku-shijou-shugi-no-kyoushitsu-e-tv", "gintama", "spy-x-family", "chainsaw-man", "blue-lock", "horimiya",
+  "oemojisangjuui", "black-butler", "mushoku-tensei-isekai-ittara-honki-dasu", "zankyou-no-terror",
+  "arifureta-shokugyou-de-sekai-saikyou", "detective-conan", "gachiakuta", "kanojo-okarishimasu", "baki-ona", "kaijuu-8-gou",
+  "wind-breaker",
+];
 
 /**
  * Parts of a franchise people search by their own name, which its entry already covers ("naruto shippuden hindi

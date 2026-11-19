@@ -8,6 +8,7 @@ import { abs } from "@/lib/site";
 import { ORG_ID, SITE_ID } from "@/lib/ld";
 import Link from "@/components/Link";
 import { seasonOf } from "@/lib/kitsu";
+import { SCENE_PAGE_UPDATED } from "@/lib/lastmod";
 
 // Daily, so the "browse by season" link follows the current season.
 export const revalidate = 86400;
@@ -40,6 +41,7 @@ export default function WhatAnimeIsThis() {
         isPartOf: { "@id": SITE_ID },
         publisher: { "@id": ORG_ID },
         inLanguage: "en",
+        dateModified: SCENE_PAGE_UPDATED,
       }} />
       <PageHero
         crumbs={[{ href: "/", label: "Home" }, { href: "/what-anime-is-this", label: "What anime is this?" }]}
@@ -49,6 +51,8 @@ export default function WhatAnimeIsThis() {
         hue={190}
       />
       <SceneSearch />
+      {/* A visible date: assistants that recommend tools (ChatGPT sends the most visitors here) favour current pages. */}
+      <p className="mt-3 text-xs text-muted">Matching by <a href="https://trace.moe" target="_blank" rel="noopener nofollow" className="underline hover:text-ink">trace.moe</a>. Page updated <time dateTime={SCENE_PAGE_UPDATED}>{new Date(`${SCENE_PAGE_UPDATED}T00:00:00Z`).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" })}</time>.</p>
 
       <section className="reveal pt-12" aria-labelledby="how-h">
         <h2 id="how-h" className="h-section mb-4">How the screenshot search works</h2>
