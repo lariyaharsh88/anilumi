@@ -2,6 +2,1288 @@
   "checked": "2026-11-19",
   "franchises": [
     {
+      "slug": "doraemon",
+      "name": "Doraemon",
+      "series": "doraemon-2005",
+      "films": [
+        {
+          "year": 1980,
+          "en": "Doraemon: Nobita's Dinosaur",
+          "jp": "Doraemon: Nobita no Kyōryū",
+          "hindi": "none_found",
+          "where": [],
+          "sources": [],
+          "confidence": "medium",
+          "note": "Disney Channel India premiered 'Doraemon: Nobita's Dinosaur' on 27 Nov 2011 but the source doesn't say which version; the 2006 remake is the more likely one, so this original is marked none_found"
+        },
+        {
+          "year": 1981,
+          "en": "Doraemon: The Records of Nobita, Spaceblazer",
+          "jp": "Doraemon: Nobita no Uchū Kaitakushi",
+          "hindi": "none_found",
+          "where": [],
+          "sources": [],
+          "confidence": "medium",
+          "note": "The 2009 remake was dubbed instead"
+        },
+        {
+          "year": 1982,
+          "en": "Doraemon: Nobita and the Haunts of Evil",
+          "jp": "Doraemon: Nobita no Daimakyō",
+          "hindi": "none_found",
+          "where": [],
+          "sources": [],
+          "confidence": "medium",
+          "note": "The 2014 remake was dubbed instead"
+        },
+        {
+          "year": 1983,
+          "en": "Doraemon: Nobita and the Castle of the Undersea Devil",
+          "in": "Doraemon The Movie: Underwater Adventure",
+          "jp": "Doraemon: Nobita no Kaitei Kiganjō",
+          "hindi": "aired",
+          "where": [
+            "Disney Channel India (premiered 19 Sep 2020)",
+            "Hungama TV (aired)"
+          ],
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2020-09-14/doraemon-the-movie-underwater-adventure-film-to-premiere-on-disney-channel-india-on-september-19/.163965",
+            "https://www.animenewsnetwork.com/news/2023-04-23/anime-films-airing-on-indian-tv-april-23-29/.197378",
+            "https://doraemon.fandom.com/wiki/Doraemon_in_India"
+          ],
+          "confidence": "high"
+        },
+        {
+          "year": 1984,
+          "en": "Doraemon: Nobita's Great Adventure into the Underworld",
+          "jp": "Doraemon: Nobita no Makai Daibōken",
+          "hindi": "none_found",
+          "where": [],
+          "sources": [],
+          "confidence": "medium",
+          "note": "The 2007 remake was dubbed instead"
+        },
+        {
+          "year": 1985,
+          "en": "Doraemon: Nobita's Little Star Wars",
+          "in": "Doraemon in Nobita's Little Space War",
+          "jp": "Doraemon: Nobita no Little Star Wars",
+          "hindi": "aired",
+          "where": [
+            "Hungama TV (first Doraemon film on Indian TV, Dec 2010)",
+            "Disney Channel India (aired 2020)"
+          ],
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2020-12-20/anime-films-airing-on-indian-tv-december-20-26/.167636",
+            "https://doraemon.fandom.com/wiki/Doraemon_in_India"
+          ],
+          "confidence": "high"
+        },
+        {
+          "year": 1986,
+          "en": "Doraemon: Nobita and the Steel Troops",
+          "jp": "Doraemon: Nobita to Tetsujin Heidan",
+          "hindi": "none_found",
+          "where": [],
+          "sources": [],
+          "confidence": "medium",
+          "note": "The 2011 remake was dubbed and released in Indian theatres instead"
+        },
+        {
+          "year": 1987,
+          "en": "Doraemon: Nobita and the Knights on Dinosaurs",
+          "in": "Doraemon The Movie: Dinosaur Yoddha",
+          "jp": "Doraemon: Nobita to Ryū no Kishi",
+          "hindi": "aired",
+          "where": [
+            "Hungama TV / Disney Channel India (aired)"
+          ],
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2020-09-26/anime-films-airing-on-indian-tv-september-27-october-3/.164512",
+            "https://www.animenewsnetwork.com/news/2023-04-23/anime-films-airing-on-indian-tv-april-23-29/.197378",
+            "https://doraemon.fandom.com/wiki/Doraemon_in_India"
+          ],
+          "confidence": "high"
+        },
+        {
+          "year": 1988,
+          "en": "Doraemon: The Record of Nobita's Parallel Visit to the West",
+          "in": "Doraemon The Movie: Nobita Bana Superhero",
+          "jp": "Doraemon: Nobita no Parallel Saiyūki",
+          "hindi": "aired",
+          "where": [
+            "Disney Channel India (aired)",
+            "Hungama TV (aired)"
+          ],
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2020-07-26/anime-films-airing-on-indian-tv-july-26-august-1/.162224",
+            "https://www.animenewsnetwork.com/news/2020-12-20/anime-films-airing-on-indian-tv-december-20-26/.167636",
+            "https://doraemon.fandom.com/wiki/Doraemon_in_India"
+          ],
+          "confidence": "high"
+        },
+        {
+          "year": 1989,
+          "en": "Doraemon: Nobita and the Birth of Japan",
+          "jp": "Doraemon: Nobita no Nippon Tanjō",
+          "hindi": "none_found",
+          "where": [],
+          "sources": [],
+          "confidence": "medium",
+          "note": "Sources conflict: the fan wiki dates an Indian airing (12 Sep 2020) to this 1989 film, but ANN's listings name the 2016 remake. Only one version appears to be dubbed, so it is assigned to 2016"
+        },
+        {
+          "year": 1990,
+          "en": "Doraemon: Nobita and the Animal Planet",
+          "in": "Doraemon: Nobita and Jungle Mein Dangal",
+          "jp": "Doraemon: Nobita to Animal Planet",
+          "hindi": "aired",
+          "where": [
+            "Disney Channel India (aired)",
+            "Hungama TV (aired)"
+          ],
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2020-07-26/anime-films-airing-on-indian-tv-july-26-august-1/.162224",
+            "https://www.animenewsnetwork.com/news/2020-08-09/anime-films-airing-on-indian-tv-august-9-15/.162730",
+            "https://doraemon.fandom.com/wiki/Doraemon_in_India"
+          ],
+          "confidence": "high"
+        },
+        {
+          "year": 1991,
+          "en": "Doraemon: Nobita's Dorabian Nights",
+          "in": "Doraemon The Movie: Nobita's Dorabian Nights",
+          "jp": "Doraemon: Nobita no Dorabian Naito",
+          "hindi": "aired",
+          "where": [
+            "Hungama TV / Disney Channel India (aired)"
+          ],
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2020-12-20/anime-films-airing-on-indian-tv-december-20-26/.167636",
+            "https://doraemon.fandom.com/wiki/Doraemon_in_India"
+          ],
+          "confidence": "high"
+        },
+        {
+          "year": 1992,
+          "en": "Doraemon: Nobita and the Kingdom of Clouds",
+          "in": "Doraemon The Movie: Nobita in Jannat No. 1",
+          "jp": "Doraemon: Nobita to Kumo no Ōkoku",
+          "hindi": "aired",
+          "where": [
+            "Hungama TV / Disney Channel India (aired)"
+          ],
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2020-08-09/anime-films-airing-on-indian-tv-august-9-15/.162730",
+            "https://doraemon.fandom.com/wiki/Doraemon_in_India"
+          ],
+          "confidence": "high"
+        },
+        {
+          "year": 1993,
+          "en": "Doraemon: Nobita and the Tin Labyrinth",
+          "in": "Doraemon The Movie: Nobita Aur Khel Khilona Bhool Bhulaiya",
+          "jp": "Doraemon: Nobita to Buriki no Labyrinth",
+          "hindi": "aired",
+          "where": [
+            "Hungama TV / Disney Channel India (aired)"
+          ],
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2020-07-10/doraemon-nobita-aur-khel-khilona-bhul-bhullaiya-doraemon-nobita-aur-jadooi-tapu-films-listed-as-/.161671",
+            "https://www.animenewsnetwork.com/news/2020-08-29/anime-films-airing-on-indian-tv-august-30-september-5/.163435",
+            "https://doraemon.fandom.com/wiki/Doraemon_in_India"
+          ],
+          "confidence": "high"
+        },
+        {
+          "year": 1994,
+          "en": "Doraemon: Nobita's Three Visionary Swordsmen",
+          "in": "Doraemon The Movie: Nobita's 3 Magical Swordsmen",
+          "jp": "Doraemon: Nobita to Mugen Sankenshi",
+          "hindi": "aired",
+          "where": [
+            "Hungama TV / Disney Channel India (aired)"
+          ],
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2020-09-26/anime-films-airing-on-indian-tv-september-27-october-3/.164512",
+            "https://www.animenewsnetwork.com/news/2020-12-20/anime-films-airing-on-indian-tv-december-20-26/.167636",
+            "https://doraemon.fandom.com/wiki/Doraemon_in_India"
+          ],
+          "confidence": "high"
+        },
+        {
+          "year": 1995,
+          "en": "Doraemon: Nobita's Diary on the Creation of the World",
+          "in": "Doraemon The Movie: Nobita Ki Nayi Duniya",
+          "jp": "Doraemon: Nobita no Sōsei Nikki",
+          "hindi": "aired",
+          "where": [
+            "Hungama TV / Disney Channel India (aired)"
+          ],
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2020-08-29/anime-films-airing-on-indian-tv-august-30-september-5/.163435",
+            "https://www.animenewsnetwork.com/news/2020-08-09/anime-films-airing-on-indian-tv-august-9-15/.162730",
+            "https://doraemon.fandom.com/wiki/Doraemon_in_India"
+          ],
+          "confidence": "high"
+        },
+        {
+          "year": 1996,
+          "en": "Doraemon: Nobita and the Galaxy Super-express",
+          "in": "Doraemon The Movie: Galaxy Super Express",
+          "jp": "Doraemon: Nobita to Ginga Express",
+          "hindi": "aired",
+          "where": [
+            "Hungama TV / Disney Channel India (aired)"
+          ],
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2020-09-26/anime-films-airing-on-indian-tv-september-27-october-3/.164512",
+            "https://www.animenewsnetwork.com/news/2020-08-09/anime-films-airing-on-indian-tv-august-9-15/.162730",
+            "https://doraemon.fandom.com/wiki/Doraemon_in_India"
+          ],
+          "confidence": "high"
+        },
+        {
+          "year": 1997,
+          "en": "Doraemon: Nobita and the Spiral City",
+          "in": "Doraemon The Movie: Nobita in Gol Gol Golmaal",
+          "jp": "Doraemon: Nobita no Nejimaki City Bōkenki",
+          "hindi": "aired",
+          "where": [
+            "Hungama TV / Disney Channel India (aired)"
+          ],
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2020-07-26/anime-films-airing-on-indian-tv-july-26-august-1/.162224",
+            "https://www.animenewsnetwork.com/news/2021-11-20/anime-films-airing-on-indian-tv-november-21-27/.179779",
+            "https://doraemon.fandom.com/wiki/Doraemon_in_India"
+          ],
+          "confidence": "high"
+        },
+        {
+          "year": 1998,
+          "en": "Doraemon: Nobita's Great Adventure in the South Seas",
+          "in": "Doraemon in Nobita's Great Adventure to the South Seas",
+          "jp": "Doraemon: Nobita no Nankai Daibōken",
+          "hindi": "aired",
+          "where": [
+            "Hungama TV / Disney Channel India (aired)"
+          ],
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2020-07-26/anime-films-airing-on-indian-tv-july-26-august-1/.162224",
+            "https://www.animenewsnetwork.com/news/2020-09-26/anime-films-airing-on-indian-tv-september-27-october-3/.164512",
+            "https://doraemon.fandom.com/wiki/Doraemon_in_India"
+          ],
+          "confidence": "high"
+        },
+        {
+          "year": 1999,
+          "en": "Doraemon: Nobita Drifts in the Universe",
+          "in": "Doraemon: Nobita Ki Universe Yatra",
+          "jp": "Doraemon: Nobita no Uchū Hyōryūki",
+          "hindi": "aired",
+          "where": [
+            "Hungama TV / Disney Channel India (aired)"
+          ],
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2020-07-26/anime-films-airing-on-indian-tv-july-26-august-1/.162224",
+            "https://www.animenewsnetwork.com/news/2021-07-03/anime-films-airing-on-indian-tv-july-4-10/.174760",
+            "https://doraemon.fandom.com/wiki/Doraemon_in_India"
+          ],
+          "confidence": "high"
+        },
+        {
+          "year": 2000,
+          "en": "Doraemon: Nobita and the Legend of the Sun King",
+          "in": "Doraemon The Movie: Yeh Bhi Tha Nobita Woh Bhi Tha Nobita",
+          "jp": "Doraemon: Nobita no Taiyōō Densetsu",
+          "hindi": "aired",
+          "where": [
+            "Hungama TV / Disney Channel India (aired)"
+          ],
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2020-08-09/anime-films-airing-on-indian-tv-august-9-15/.162730",
+            "https://www.animenewsnetwork.com/news/2021-11-20/anime-films-airing-on-indian-tv-november-21-27/.179779",
+            "https://doraemon.fandom.com/wiki/Doraemon_in_India"
+          ],
+          "confidence": "high"
+        },
+        {
+          "year": 2001,
+          "en": "Doraemon: Nobita and the Winged Braves",
+          "in": "Doraemon The Movie: Nobita Aur Birdopia Ka Sultan",
+          "jp": "Doraemon: Nobita to Tsubasa no Yūsha-tachi",
+          "hindi": "aired",
+          "where": [
+            "Hungama TV / Disney Channel India (aired)"
+          ],
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2020-12-20/anime-films-airing-on-indian-tv-december-20-26/.167636",
+            "https://www.animenewsnetwork.com/news/2020-08-09/anime-films-airing-on-indian-tv-august-9-15/.162730",
+            "https://doraemon.fandom.com/wiki/Doraemon_in_India"
+          ],
+          "confidence": "high"
+        },
+        {
+          "year": 2002,
+          "en": "Doraemon: Nobita in the Robot Kingdom",
+          "in": "Doraemon: Nobita and the Kingdom of Robot Singham",
+          "jp": "Doraemon: Nobita to Robot Kingdom",
+          "hindi": "aired",
+          "where": [
+            "Hungama TV / Disney Channel India (aired)"
+          ],
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2020-12-20/anime-films-airing-on-indian-tv-december-20-26/.167636",
+            "https://www.animenewsnetwork.com/news/2020-08-09/anime-films-airing-on-indian-tv-august-9-15/.162730",
+            "https://doraemon.fandom.com/wiki/Doraemon_in_India"
+          ],
+          "confidence": "high"
+        },
+        {
+          "year": 2003,
+          "en": "Doraemon: Nobita and the Windmasters",
+          "in": "Doraemon The Movie: Toofani Adventure",
+          "jp": "Doraemon: Nobita to Fushigi Kazetsukai",
+          "hindi": "aired",
+          "where": [
+            "Hungama TV / Disney Channel India (aired)"
+          ],
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2020-07-06/doraemon-the-movie-jadoo-mantar-aur-jahnoom-doraemon-movie-toofani-adventure-films-listed-as-airing-/.161493",
+            "https://doraemon.fandom.com/wiki/Doraemon_in_India"
+          ],
+          "confidence": "high"
+        },
+        {
+          "year": 2004,
+          "en": "Doraemon: Nobita in the Wan-Nyan Spacetime Odyssey",
+          "in": "Doraemon The Movie: Nobita in Ichi Mera Dost",
+          "jp": "Doraemon: Nobita no Wan-Nyan Jikūden",
+          "hindi": "aired",
+          "where": [
+            "Hungama TV / Disney Channel India (aired)"
+          ],
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2020-07-26/anime-films-airing-on-indian-tv-july-26-august-1/.162224",
+            "https://www.animenewsnetwork.com/news/2020-12-20/anime-films-airing-on-indian-tv-december-20-26/.167636",
+            "https://doraemon.fandom.com/wiki/Doraemon_in_India"
+          ],
+          "confidence": "high"
+        },
+        {
+          "year": 2006,
+          "en": "Doraemon: Nobita's Dinosaur 2006",
+          "in": "Doraemon The Movie: Nobita's Dinosaur",
+          "jp": "Doraemon: Nobita no Kyōryū 2006",
+          "hindi": "aired",
+          "where": [
+            "Disney Channel India (premiered 27 Nov 2011)",
+            "Hungama TV (aired)"
+          ],
+          "sources": [
+            "https://www.afaqs.com/media-briefs/52240_disney-channel-to-premiere-doraemon-nobitas-dinosaur",
+            "https://doraemon.fandom.com/wiki/Doraemon_in_India"
+          ],
+          "confidence": "medium",
+          "note": "The Disney press release doesn't say whether it was the 1980 film or the 2006 remake; assigned to 2006 as the more likely one"
+        },
+        {
+          "year": 2007,
+          "en": "Doraemon: Nobita's New Great Adventure into the Underworld ~The 7 Magic Users~",
+          "in": "Doraemon The Movie: Jadoo Mantar Aur Jahnoom",
+          "jp": "Eiga Doraemon: Nobita no Shin Makai Daibōken ~7-nin no Mahō Tsukai~",
+          "hindi": "aired",
+          "where": [
+            "Hungama TV / Disney Channel India (aired)"
+          ],
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2020-07-06/doraemon-the-movie-jadoo-mantar-aur-jahnoom-doraemon-movie-toofani-adventure-films-listed-as-airing-/.161493",
+            "https://doraemon.fandom.com/wiki/Doraemon_in_India"
+          ],
+          "confidence": "high"
+        },
+        {
+          "year": 2008,
+          "en": "Doraemon: Nobita and the Green Giant Legend",
+          "in": "Doraemon The Movie: Nobita in Hara Hara Planet",
+          "jp": "Eiga Doraemon: Nobita to Midori no Kyojinden",
+          "hindi": "aired",
+          "where": [
+            "Hungama TV / Disney Channel India (aired)"
+          ],
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2020-08-29/anime-films-airing-on-indian-tv-august-30-september-5/.163435",
+            "https://www.animenewsnetwork.com/news/2020-08-09/anime-films-airing-on-indian-tv-august-9-15/.162730",
+            "https://doraemon.fandom.com/wiki/Doraemon_in_India"
+          ],
+          "confidence": "high"
+        },
+        {
+          "year": 2009,
+          "en": "Doraemon: The New Record of Nobita's Spaceblazer",
+          "in": "Doraemon The Movie: Adventure of Koya Koya Planet",
+          "jp": "Eiga Doraemon: Shin Nobita no Uchū Kaitakushi",
+          "hindi": "aired",
+          "where": [
+            "Hungama TV / Disney Channel India (aired)"
+          ],
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2020-08-29/anime-films-airing-on-indian-tv-august-30-september-5/.163435",
+            "https://www.animenewsnetwork.com/news/2020-08-09/anime-films-airing-on-indian-tv-august-9-15/.162730",
+            "https://doraemon.fandom.com/wiki/Doraemon_in_India"
+          ],
+          "confidence": "high"
+        },
+        {
+          "year": 2010,
+          "en": "Doraemon: Nobita's Great Battle of the Mermaid King",
+          "in": "Doraemon: Nobita Aur Ek Jalpari",
+          "jp": "Doraemon: Nobita no Ningyo Daikaisen",
+          "hindi": "aired",
+          "where": [
+            "Hungama TV / Disney Channel India (aired)"
+          ],
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2020-08-29/anime-films-airing-on-indian-tv-august-30-september-5/.163435",
+            "https://doraemon.fandom.com/wiki/Doraemon_in_India"
+          ],
+          "confidence": "high"
+        },
+        {
+          "year": 2011,
+          "en": "Doraemon: Nobita and the New Steel Troops ~Winged Angels~",
+          "in": "Doraemon in Nobita and the Steel Troops: The New Age",
+          "jp": "Eiga Doraemon: Shin Nobita to Tetsujin Heidan ~Habatake Tenshi-tachi~",
+          "hindi": "aired",
+          "where": [
+            "Indian theatres from 6 Oct 2011 (Disney UTV)",
+            "Hungama TV / Disney Channel India (TV premiere 6 May 2012)"
+          ],
+          "sources": [
+            "https://animemirchi.com/anime-movies-released-in-india",
+            "https://doraemon.fandom.com/wiki/Doraemon:_Nobita_and_the_New_Steel_Troops_~Winged_Angels~",
+            "https://doraemon.fandom.com/wiki/Doraemon_in_India"
+          ],
+          "confidence": "medium",
+          "note": "Theatrical date and Hindi title come only from a fan site and fan wiki; JustWatch IN lists no stream"
+        },
+        {
+          "year": 2012,
+          "en": "Doraemon: Nobita and the Island of Miracles ~Animal Adventure~",
+          "in": "Doraemon The Movie: Nobita Aur Jadooi Tapu",
+          "jp": "Eiga Doraemon: Nobita to Kiseki no Shima ~Animal Adventure~",
+          "hindi": "aired",
+          "where": [
+            "Indian theatres from 24 May 2013 (Disney UTV, Hindi)",
+            "Hungama TV (aired)"
+          ],
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2020-07-10/doraemon-nobita-aur-khel-khilona-bhul-bhullaiya-doraemon-nobita-aur-jadooi-tapu-films-listed-as-/.161671",
+            "https://animemirchi.com/anime-movies-released-in-india",
+            "https://doraemon.fandom.com/wiki/Doraemon_in_India"
+          ],
+          "confidence": "high",
+          "note": "TV airing confirmed by ANN; the theatrical date comes from a fan site and fan wiki"
+        },
+        {
+          "year": 2013,
+          "en": "Doraemon: Nobita's Secret Gadget Museum",
+          "in": "Doraemon The Movie: Gadget Museum Ka Rahasya",
+          "jp": "Eiga Doraemon: Nobita no Himitsu Dōgu Museum",
+          "hindi": "aired",
+          "where": [
+            "Hungama TV / Disney Channel India (aired)"
+          ],
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2020-07-26/anime-films-airing-on-indian-tv-july-26-august-1/.162224",
+            "https://www.animenewsnetwork.com/news/2020-12-20/anime-films-airing-on-indian-tv-december-20-26/.167636",
+            "https://doraemon.fandom.com/wiki/Doraemon_in_India"
+          ],
+          "confidence": "high"
+        },
+        {
+          "year": 2014,
+          "en": "Doraemon: Nobita in the New Haunts of Evil ~Peko and the Five Explorers~",
+          "in": "Doraemon The Movie: Nobita The Explorer Bow! Bow!",
+          "jp": "Eiga Doraemon: Shin Nobita no Daimakyō ~Peko to 5-nin no Tankentai~",
+          "hindi": "aired",
+          "where": [
+            "Hungama TV / Disney Channel India (aired)"
+          ],
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2020-07-26/anime-films-airing-on-indian-tv-july-26-august-1/.162224",
+            "https://www.animenewsnetwork.com/news/2020-08-29/anime-films-airing-on-indian-tv-august-30-september-5/.163435",
+            "https://doraemon.fandom.com/wiki/Doraemon_in_India"
+          ],
+          "confidence": "high"
+        },
+        {
+          "year": 2014,
+          "en": "Stand by Me Doraemon",
+          "in": "Doraemon The Movie: Stand by Me (TV title)",
+          "jp": "STAND BY ME Doraemon",
+          "hindi": "available",
+          "where": [
+            "Netflix India (Hindi audio; checked 19 Nov 2026)",
+            "Hungama TV / Disney Channel India (TV dub aired 2016)"
+          ],
+          "sources": [
+            "https://www.netflix.com/in/title/80158156",
+            "https://www.justwatch.com/in/movie/stand-by-me-doraemon",
+            "https://doraemon.fandom.com/wiki/Doraemon_in_India"
+          ],
+          "confidence": "high",
+          "note": "Netflix India title page lists Hindi audio"
+        },
+        {
+          "year": 2015,
+          "en": "Doraemon: Nobita's Space Heroes",
+          "in": "Doraemon: Nobita Aur Antariksh Daku",
+          "jp": "Eiga Doraemon: Nobita no Space Heroes",
+          "hindi": "aired",
+          "where": [
+            "Hungama TV / Disney Channel India (aired)"
+          ],
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2020-07-26/anime-films-airing-on-indian-tv-july-26-august-1/.162224",
+            "https://www.animenewsnetwork.com/news/2021-07-03/anime-films-airing-on-indian-tv-july-4-10/.174760",
+            "https://doraemon.fandom.com/wiki/Doraemon_in_India"
+          ],
+          "confidence": "high"
+        },
+        {
+          "year": 2016,
+          "en": "Doraemon: Nobita and the Birth of Japan 2016",
+          "in": "Doraemon The Movie: Nobita and the Birth of Japan",
+          "jp": "Eiga Doraemon: Shin Nobita no Nippon Tanjō",
+          "hindi": "aired",
+          "where": [
+            "Disney Channel India / Hungama TV (aired Sep 2020)"
+          ],
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2020-09-26/anime-films-airing-on-indian-tv-september-27-october-3/.164512",
+            "https://www.animenewsnetwork.com/news/2020-08-29/anime-films-airing-on-indian-tv-august-30-september-5/.163435",
+            "https://doraemon.fandom.com/wiki/Doraemon_in_India"
+          ],
+          "confidence": "medium",
+          "note": "ANN names this remake, but the fan wiki assigns the airing to the 1989 original, so it is unclear which version was dubbed"
+        },
+        {
+          "year": 2017,
+          "en": "Doraemon the Movie 2017: Nobita's Great Adventure in the Antarctic Kachi Kochi",
+          "in": "Doraemon The Movie: Nobita Chal Pada Antarctica",
+          "jp": "Eiga Doraemon: Nobita no Nankyoku Kachi Kochi Daibōken",
+          "hindi": "aired",
+          "where": [
+            "Hungama TV (premiered 14 Aug 2022)",
+            "Disney Channel India (aired)"
+          ],
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2022-08-13/hungama-tv-airs-doraemon-the-movie-nobita-chal-pada-antarctica-on-august-14/.188644",
+            "https://www.animenewsnetwork.com/news/2023-04-23/anime-films-airing-on-indian-tv-april-23-29/.197378",
+            "https://doraemon.fandom.com/wiki/Doraemon_in_India"
+          ],
+          "confidence": "high"
+        },
+        {
+          "year": 2018,
+          "en": "Doraemon: Nobita's Treasure Island",
+          "in": "Doraemon The Movie: Nobita's Treasure Island",
+          "jp": "Eiga Doraemon: Nobita no Takarajima",
+          "hindi": "aired",
+          "where": [
+            "Hungama TV (aired from Sep 2022)"
+          ],
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2022-09-18/anime-films-airing-on-indian-tv-september-18-24/.189824",
+            "https://doraemon.fandom.com/wiki/Doraemon_in_India"
+          ],
+          "confidence": "high"
+        },
+        {
+          "year": 2019,
+          "en": "Doraemon: Nobita's Chronicle of the Moon Exploration",
+          "in": "Doraemon The Movie: Nobita Chala Chand Pe",
+          "jp": "Eiga Doraemon: Nobita no Getsumen Tansaki",
+          "hindi": "aired",
+          "where": [
+            "Hungama TV / Disney Channel India (TV premiere Jan 2023)"
+          ],
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2022-01-31/doraemon-films-nobita-chal-pada-antarctica-nobita-chala-chand-pe-dubbed-in-indian-languages/.182072",
+            "https://doraemon.fandom.com/wiki/Doraemon_in_India"
+          ],
+          "confidence": "high",
+          "note": "Hindi dub certified by CBFC (Jan 2022)"
+        },
+        {
+          "year": 2020,
+          "en": "Doraemon: Nobita's New Dinosaur",
+          "in": "Doraemon The Movie: Nobita's New Dinosaur",
+          "jp": "Eiga Doraemon: Nobita no Shin Kyōryū",
+          "hindi": "aired",
+          "where": [
+            "Disney Channel India (TV premiere 25 Dec 2025, Hindi/Tamil/Telugu)"
+          ],
+          "sources": [
+            "https://doraemon.fandom.com/wiki/Doraemon_in_India",
+            "https://doraemon.fandom.com/wiki/Doraemon:_Nobita%27s_New_Dinosaur"
+          ],
+          "confidence": "medium",
+          "note": "Supported by fan wiki only"
+        },
+        {
+          "year": 2020,
+          "en": "Stand by Me Doraemon 2",
+          "jp": "STAND BY ME Doraemon 2",
+          "hindi": "available",
+          "where": [
+            "Netflix India (Hindi audio; on Netflix since 24 Dec 2021; checked 19 Nov 2026)"
+          ],
+          "sources": [
+            "https://www.netflix.com/in/title/81451264",
+            "https://www.justwatch.com/in/movie/stand-by-me-doraemon-2",
+            "https://www.animenewsnetwork.com/news/2021-11-27/netflix-lists-stand-by-me-doraemon-2-cg-anime-film-for-release-in-india-on-december-24/.176264"
+          ],
+          "confidence": "high",
+          "note": "Netflix India title page lists Hindi audio"
+        },
+        {
+          "year": 2022,
+          "en": "Doraemon: Nobita's Little Star Wars 2021",
+          "in": "Doraemon The Movie: Nobita's Little Star Wars 2021",
+          "jp": "Eiga Doraemon: Nobita no Little Star Wars 2021",
+          "hindi": "aired",
+          "where": [
+            "Disney Channel India (TV premiere 31 May 2026, Hindi/Tamil/Telugu)"
+          ],
+          "sources": [
+            "https://doraemon.fandom.com/wiki/Doraemon_in_India",
+            "https://doraemon.fandom.com/wiki/Doraemon:_Nobita%27s_Little_Star_Wars_2021"
+          ],
+          "confidence": "medium",
+          "note": "Supported by fan wiki only. Released in Japan in March 2022 after a delay from 2021"
+        },
+        {
+          "year": 2023,
+          "en": "Doraemon: Nobita's Sky Utopia",
+          "in": "Doraemon The Movie: Nobita's Sky Utopia",
+          "jp": "Eiga Doraemon: Nobita to Sora no Utopia",
+          "hindi": "aired",
+          "where": [
+            "Disney Channel India (TV premiere 4 May 2025, Hindi/Tamil/Telugu)"
+          ],
+          "sources": [
+            "https://doraemon.fandom.com/wiki/Doraemon_in_India",
+            "https://doraemon.fandom.com/wiki/Doraemon:_Nobita%27s_Sky_Utopia"
+          ],
+          "confidence": "medium",
+          "note": "Supported by fan wiki only"
+        },
+        {
+          "year": 2024,
+          "en": "Doraemon: Nobita's Earth Symphony",
+          "in": "Doraemon The Movie: Nobita's Earth Symphony",
+          "jp": "Eiga Doraemon: Nobita no Chikyū Symphony",
+          "hindi": "aired",
+          "where": [
+            "Disney Channel India (TV premiere 14 Nov 2025, Hindi/Tamil/Telugu)"
+          ],
+          "sources": [
+            "https://doraemon.fandom.com/wiki/Doraemon_in_India",
+            "https://animelorehub.blogspot.com/2025/11/doraemon-nobitas-earth-symphony-musical.html"
+          ],
+          "confidence": "medium",
+          "note": "Supported by fan wiki and a blog only"
+        },
+        {
+          "year": 2025,
+          "en": "Doraemon: Nobita's Art World Tales",
+          "jp": "Eiga Doraemon: Nobita no Esekai Monogatari",
+          "hindi": "none_found",
+          "where": [],
+          "sources": [
+            "https://www.justwatch.com/in/search?q=doraemon"
+          ],
+          "confidence": "high",
+          "note": "No Indian release or Hindi dub found; JustWatch IN lists no provider (19 Nov 2026)"
+        },
+        {
+          "year": 2026,
+          "en": "Doraemon the Movie: New Nobita and the Castle of the Undersea Devil",
+          "jp": "Eiga Doraemon: Shin Nobita no Kaitei Kiganjō",
+          "hindi": "available",
+          "where": [
+            "Indian theatres from 2 Oct 2026 (PVR INOX Pictures; Hindi, Tamil and Telugu, including 4DX)"
+          ],
+          "sources": [
+            "https://www.animenewsnetwork.com/press-release/2026-06-18/doraemon-makes-its-big-screen-india-debut-on-october-2/.238662",
+            "https://animationxpress.com/?p=1638562",
+            "https://www.thestatesman.com/entertainment/doraemon-movie-india-theatrical-release-new-nobita-castle-undersea-devil-hindi-tamil-telugu-1503607539.html"
+          ],
+          "confidence": "high",
+          "note": "In cinemas since 2 Oct 2026, the first wide Indian theatrical release for a Doraemon film. By mid-November the run may be ending, so check showtimes; it isn't streaming yet."
+        }
+      ]
+    },
+    {
+      "slug": "shinchan",
+      "name": "Shinchan",
+      "series": "crayon-shin-chan",
+      "films": [
+        {
+          "year": 1993,
+          "en": "Crayon Shin-chan: Action Mask vs. Leotard Devil",
+          "in": "Shinchan Movie: Action Kamen Vs Higure Rakshas",
+          "jp": "Kureyon Shinchan: Akushon Kamen tai Haigure Maō",
+          "hindi": "aired",
+          "where": [
+            "Hungama TV (aired)"
+          ],
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2021-07-03/anime-films-airing-on-indian-tv-july-4-10/.174760",
+            "https://www.animenewsnetwork.com/news/2020-12-20/anime-films-airing-on-indian-tv-december-20-26/.167636",
+            "https://crayonshinchan.fandom.com/wiki/Crayon_Shin-chan_in_India"
+          ],
+          "confidence": "high"
+        },
+        {
+          "year": 1994,
+          "en": "Crayon Shin-chan: The Hidden Treasure of the Buri Buri Kingdom",
+          "in": "Shinchan: Treasures of the Buri Buri Kingdom",
+          "jp": "Kureyon Shinchan: Buriburi Ōkoku no Hihō",
+          "hindi": "aired",
+          "where": [
+            "Hungama TV (first Shin-chan film on Indian TV, Diwali 2009)"
+          ],
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2020-07-26/anime-films-airing-on-indian-tv-july-26-august-1/.162224",
+            "https://www.afaqs.com/media-briefs/42805_shinchan-debuts-in-movies",
+            "https://crayonshinchan.fandom.com/wiki/Crayon_Shin-chan_in_India"
+          ],
+          "confidence": "high"
+        },
+        {
+          "year": 1995,
+          "en": "Crayon Shin-chan: Unkokusai's Ambition",
+          "in": "Shinchan the Movie: Mr. Smelly's Ambition",
+          "jp": "Kureyon Shinchan: Unkokusai no Yabō",
+          "hindi": "aired",
+          "where": [
+            "Sony YAY! (aired 26 Oct 2024)"
+          ],
+          "sources": [
+            "https://animemirchi.com/?p=5975",
+            "https://www.animationxpress.com/latest-news/sony-yay-adds-popular-show-shin-chan-to-its-slate/"
+          ],
+          "confidence": "medium",
+          "note": "Aired on Sony YAY!, whose feeds include Hindi; the airing source doesn't name the language. No current stream found; source is a fan news site"
+        },
+        {
+          "year": 1996,
+          "en": "Crayon Shin-chan: Great Adventure in Henderland",
+          "in": "Shinchan Adventures in Henderland",
+          "jp": "Kureyon Shinchan: Hendārando no Daibōken",
+          "hindi": "aired",
+          "where": [
+            "Hungama TV (aired)",
+            "Sony YAY! (new dub, May 2026)"
+          ],
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2020-08-29/anime-films-airing-on-indian-tv-august-30-september-5/.163435",
+            "https://www.animenewsnetwork.com/news/2020-08-09/anime-films-airing-on-indian-tv-august-9-15/.162730",
+            "https://crayonshinchan.fandom.com/wiki/Crayon_Shin-chan_in_India"
+          ],
+          "confidence": "high"
+        },
+        {
+          "year": 1997,
+          "en": "Crayon Shin-chan: Pursuit of the Balls of Darkness",
+          "in": "Shinchan Movie: Dark Tama Tama (Thrilling Chase)",
+          "jp": "Kureyon Shinchan: Ankoku Tamatama Daitsuiseki",
+          "hindi": "aired",
+          "where": [
+            "Hungama TV (aired)",
+            "Sony YAY! (new dub, 26 Oct 2025)"
+          ],
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2020-07-26/anime-films-airing-on-indian-tv-july-26-august-1/.162224",
+            "https://animenewsindia.com/2025/10/17/sony-yay-lights-up-diwali-with-shinchans-new-season-and-films-including-the-indian-tv-premiere-of-our-dinosaur-diary-in-regional-languages-dubs/",
+            "https://crayonshinchan.fandom.com/wiki/Crayon_Shin-chan_in_India"
+          ],
+          "confidence": "high"
+        },
+        {
+          "year": 1998,
+          "en": "Crayon Shin-chan: Blitzkrieg! Pig's Hoof's Secret Mission",
+          "jp": "Kureyon Shinchan: Dengeki! Buta no Hizume Daisakusen",
+          "hindi": "aired",
+          "where": [
+            "Sony YAY! (aired 2 Nov 2024)"
+          ],
+          "sources": [
+            "https://animemirchi.com/?p=5975",
+            "https://www.animationxpress.com/latest-news/sony-yay-adds-popular-show-shin-chan-to-its-slate/"
+          ],
+          "confidence": "medium",
+          "note": "Aired on Sony YAY!, whose feeds include Hindi; the airing source doesn't name the language. No current stream found; source is a fan news site"
+        },
+        {
+          "year": 1999,
+          "en": "Crayon Shin-chan: Explosion! The Hot Spring's Feel Good Final Battle",
+          "in": "Shinchan: Burst! Hot Spring Battle",
+          "jp": "Kureyon Shinchan: Bakuhatsu! Onsen Wakuwaku Daikessen",
+          "hindi": "aired",
+          "where": [
+            "Sony YAY! (TV premiere 10 May 2025)"
+          ],
+          "sources": [
+            "https://www.dtnext.in/entertainment/ott/catch-shin-chan-movies-premiering-on-indian-television-this-may-833230",
+            "https://www.animationxpress.com/latest-news/sony-yay-adds-popular-show-shin-chan-to-its-slate/"
+          ],
+          "confidence": "medium",
+          "note": "Aired on Sony YAY!, whose feeds include Hindi; the airing source doesn't name the language. No current stream found"
+        },
+        {
+          "year": 2000,
+          "en": "Crayon Shin-chan: Jungle That Invites Storm",
+          "in": "Shinchan: Bungle in the Jungle",
+          "jp": "Kureyon Shinchan: Arashi o Yobu Janguru",
+          "hindi": "aired",
+          "where": [
+            "Indian theatres from 1 Apr 2011 (Hindi dub)",
+            "Hungama TV (aired)",
+            "Sony YAY! (new dub, 25 Oct 2025)"
+          ],
+          "sources": [
+            "https://campaignindia.in/article/friday-box-office/413957",
+            "https://www.animenewsnetwork.com/news/2020-07-05/shinchan-movie-dark-tama-tama-shinchan-bungle-in-the-jungle-films-listed-as-airing-on-hungama-tv/.161443",
+            "https://crayonshinchan.fandom.com/wiki/Crayon_Shin-chan_in_India"
+          ],
+          "confidence": "high",
+          "note": "First Shin-chan film released in Indian theatres"
+        },
+        {
+          "year": 2001,
+          "en": "Crayon Shin-chan: Fierceness That Invites Storm! The Adult Empire Strikes Back",
+          "in": "Shinchan: The Adult Empire Strikes Back",
+          "jp": "Kureyon Shinchan: Arashi o Yobu: Mōretsu! Otona Teikoku no Gyakushū",
+          "hindi": "aired",
+          "where": [
+            "Sony YAY! (TV premiere 11 May 2025)"
+          ],
+          "sources": [
+            "https://www.dtnext.in/entertainment/ott/catch-shin-chan-movies-premiering-on-indian-television-this-may-833230",
+            "https://www.animationxpress.com/latest-news/sony-yay-adds-popular-show-shin-chan-to-its-slate/"
+          ],
+          "confidence": "medium",
+          "note": "Aired on Sony YAY!, whose feeds include Hindi; the airing source doesn't name the language. No current stream found"
+        },
+        {
+          "year": 2002,
+          "en": "Crayon Shin-chan: Fierceness That Invites Storm! The Battle of the Warring States",
+          "in": "Shinchan: The Battle of the Warring States",
+          "jp": "Kureyon Shinchan: Arashi o Yobu: Appare! Sengoku Daikassen",
+          "hindi": "aired",
+          "where": [
+            "Sony YAY! (TV premiere 17 May 2025)"
+          ],
+          "sources": [
+            "https://www.dtnext.in/entertainment/ott/catch-shin-chan-movies-premiering-on-indian-television-this-may-833230",
+            "https://www.animationxpress.com/latest-news/sony-yay-adds-popular-show-shin-chan-to-its-slate/"
+          ],
+          "confidence": "medium",
+          "note": "Aired on Sony YAY!, whose feeds include Hindi; the airing source doesn't name the language. No current stream found"
+        },
+        {
+          "year": 2003,
+          "en": "Crayon Shin-chan: Fierceness That Invites Storm! Yakiniku Road of Honor",
+          "in": "Shinchan Masala Story The Movie",
+          "jp": "Kureyon Shinchan: Arashi o Yobu: Eikō no Yakiniku Rōdo",
+          "hindi": "aired",
+          "where": [
+            "Hungama TV (aired)",
+            "Sony YAY! (aired Dec 2025)"
+          ],
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2020-06-20/shinchan-masala-story-film-listed-as-airing-on-hungama-tv-on-june-21/.160863",
+            "https://crayonshinchan.fandom.com/wiki/Crayon_Shin-chan_in_India"
+          ],
+          "confidence": "high"
+        },
+        {
+          "year": 2004,
+          "en": "Crayon Shin-chan: Fierceness That Invites Storm! The Kasukabe Boys of the Evening Sun",
+          "in": "Shinchan: The Adventures of Kasukabe Boys",
+          "jp": "Kureyon Shinchan: Arashi o Yobu! Yūhi no Kasukabe Bōizu",
+          "hindi": "aired",
+          "where": [
+            "Sony YAY! (TV premiere 4 Jan 2025)"
+          ],
+          "sources": [
+            "https://www.animenewsnetwork.com/press-release/2024-12-13/shin-chan-takes-over-your-saturdays-with-4-hilarious-movies-get-ready-for-a-month-of-mischief-on-/.218981",
+            "https://animemirchi.com/?p=5975"
+          ],
+          "confidence": "medium",
+          "note": "Aired on Sony YAY!, whose feeds include Hindi; the airing source doesn't name the language. No current stream found"
+        },
+        {
+          "year": 2005,
+          "en": "Crayon Shin-chan: The Legend Called Buri Buri 3 Minutes Charge",
+          "jp": "Kureyon Shinchan: Densetsu o Yobu Buriburi Sanpun Pokkiri Daishingeki",
+          "hindi": "aired",
+          "where": [
+            "Sony YAY! (TV premiere 28 Dec 2024)"
+          ],
+          "sources": [
+            "https://www.animenewsnetwork.com/press-release/2024-12-13/shin-chan-takes-over-your-saturdays-with-4-hilarious-movies-get-ready-for-a-month-of-mischief-on-/.218981",
+            "https://animemirchi.com/?p=5975"
+          ],
+          "confidence": "medium",
+          "note": "Aired on Sony YAY!, whose feeds include Hindi; the airing source doesn't name the language. No current stream found"
+        },
+        {
+          "year": 2006,
+          "en": "Crayon Shin-chan: The Legend Called: Dance! Amigo!",
+          "jp": "Kureyon Shinchan: Densetsu o Yobu: Odore! Amīgo!",
+          "hindi": "aired",
+          "where": [
+            "Sony YAY! (TV premiere 21 Dec 2024)"
+          ],
+          "sources": [
+            "https://www.animenewsnetwork.com/press-release/2024-12-13/shin-chan-takes-over-your-saturdays-with-4-hilarious-movies-get-ready-for-a-month-of-mischief-on-/.218981",
+            "https://animemirchi.com/?p=5975"
+          ],
+          "confidence": "medium",
+          "note": "Aired on Sony YAY!, whose feeds include Hindi; the airing source doesn't name the language. No current stream found"
+        },
+        {
+          "year": 2007,
+          "en": "Crayon Shin-chan: Fierceness That Invites Storm! The Singing Buttocks Bomb",
+          "in": "Shinchan: The Singing Bomb",
+          "jp": "Kureyon Shinchan: Arashi o Yobu: Utau Ketsudake Bakudan!",
+          "hindi": "aired",
+          "where": [
+            "Sony YAY! (TV premiere 14 Dec 2024)"
+          ],
+          "sources": [
+            "https://www.animenewsnetwork.com/press-release/2024-12-13/shin-chan-takes-over-your-saturdays-with-4-hilarious-movies-get-ready-for-a-month-of-mischief-on-/.218981",
+            "https://animemirchi.com/?p=5975"
+          ],
+          "confidence": "medium",
+          "note": "Aired on Sony YAY!, whose feeds include Hindi; the airing source doesn't name the language. No current stream found"
+        },
+        {
+          "year": 2008,
+          "en": "Crayon Shin-chan: Fierceness That Invites Storm! The Hero of Kinpoko",
+          "in": "Shinchan Movie: The Golden Sword",
+          "jp": "Kureyon Shinchan: Chō Arashi o Yobu: Kinpoko no Yūsha",
+          "hindi": "aired",
+          "where": [
+            "Hungama TV (aired)"
+          ],
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2022-09-18/anime-films-airing-on-indian-tv-september-18-24/.189824",
+            "https://www.animenewsnetwork.com/news/2021-11-20/anime-films-airing-on-indian-tv-november-21-27/.179779",
+            "https://crayonshinchan.fandom.com/wiki/Crayon_Shin-chan_in_India"
+          ],
+          "confidence": "high"
+        },
+        {
+          "year": 2009,
+          "en": "Crayon Shin-chan: Roar! Kasukabe Animal Kingdom",
+          "in": "Shinchan: The Kasukabe Wild Kingdom",
+          "jp": "Kureyon Shinchan: Otakebe! Kasukabe Yasei Ōkoku",
+          "hindi": "aired",
+          "where": [
+            "Sony YAY! (TV premiere 18 May 2025)"
+          ],
+          "sources": [
+            "https://www.dtnext.in/entertainment/ott/catch-shin-chan-movies-premiering-on-indian-television-this-may-833230",
+            "https://www.animationxpress.com/latest-news/sony-yay-adds-popular-show-shin-chan-to-its-slate/"
+          ],
+          "confidence": "medium",
+          "note": "Aired on Sony YAY!, whose feeds include Hindi; the airing source doesn't name the language. No current stream found"
+        },
+        {
+          "year": 2010,
+          "en": "Crayon Shin-chan: Super-Dimension! The Storm Called My Bride",
+          "in": "Shinchan Movie: Villain Aur Dulhan",
+          "jp": "Kureyon Shinchan: Chōjikū! Arashi o Yobu Ora no Hanayome",
+          "hindi": "aired",
+          "where": [
+            "Hungama TV (aired)",
+            "Sony YAY! (new dub, Dec 2025)"
+          ],
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2022-10-30/anime-films-airing-on-indian-tv-october-30-november-5/.191374",
+            "https://www.animenewsnetwork.com/news/2020-08-29/anime-films-airing-on-indian-tv-august-30-september-5/.163435",
+            "https://crayonshinchan.fandom.com/wiki/Crayon_Shin-chan_in_India"
+          ],
+          "confidence": "high"
+        },
+        {
+          "year": 2011,
+          "en": "Crayon Shin-chan: Fierceness That Invites Storm! Operation Golden Spy",
+          "in": "Shinchan Movie: The Spy",
+          "jp": "Kureyon Shinchan: Arashi o Yobu! Ōgon no Spy Daisakusen",
+          "hindi": "aired",
+          "where": [
+            "Hungama TV (aired)",
+            "Sony YAY! (new dub, 24 May 2025)"
+          ],
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2020-06-21/shinchan-movie-the-spy-film-listed-as-airing-on-hungama-tv-on-june-24/.160879",
+            "https://www.dtnext.in/entertainment/ott/catch-shin-chan-movies-premiering-on-indian-television-this-may-833230",
+            "https://crayonshinchan.fandom.com/wiki/Crayon_Shin-chan_in_India"
+          ],
+          "confidence": "high"
+        },
+        {
+          "year": 2012,
+          "en": "Crayon Shin-chan: Fierceness That Invites Storm! Me and the Space Princess",
+          "in": "Shinchan Movie: Himawari Banegi Rajkumari",
+          "jp": "Kureyon Shinchan: Arashi o Yobu! Ora to Uchū no Princess",
+          "hindi": "aired",
+          "where": [
+            "Hungama TV (aired)"
+          ],
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2020-07-05/shinchan-movie-himawari-banegi-rajkumari-film-listed-as-airing-on-hungama-tv-on-july-6/.161461",
+            "https://www.animenewsnetwork.com/news/2020-12-20/anime-films-airing-on-indian-tv-december-20-26/.167636",
+            "https://crayonshinchan.fandom.com/wiki/Crayon_Shin-chan_in_India"
+          ],
+          "confidence": "high"
+        },
+        {
+          "year": 2013,
+          "en": "Crayon Shin-chan: Very Tasty! B-class Gourmet Survival!!",
+          "in": "Shinchan in Very Very Tasty Tasty",
+          "jp": "Kureyon Shinchan: Bakauma! B-kyū Gurume Sabaibaru!!",
+          "hindi": "aired",
+          "where": [
+            "Hungama TV (aired)",
+            "Sony YAY! (new dub, 18 Oct 2025)"
+          ],
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2020-12-20/anime-films-airing-on-indian-tv-december-20-26/.167636",
+            "https://www.animenewsnetwork.com/news/2020-08-09/anime-films-airing-on-indian-tv-august-9-15/.162730",
+            "https://crayonshinchan.fandom.com/wiki/Crayon_Shin-chan_in_India"
+          ],
+          "confidence": "high"
+        },
+        {
+          "year": 2014,
+          "en": "Crayon Shin-chan: Intense Battle! Robo Dad Strikes Back",
+          "in": "Shinchan Movie: Robot Dad",
+          "jp": "Kureyon Shinchan: Gachinko! Gyakushū no Robo Tō-chan",
+          "hindi": "aired",
+          "where": [
+            "Hungama TV (aired)",
+            "Sony YAY! (new dub, 25 May 2025)"
+          ],
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2020-07-10/doraemon-nobita-aur-khel-khilona-bhul-bhullaiya-doraemon-nobita-aur-jadooi-tapu-films-listed-as-/.161671",
+            "https://www.animenewsnetwork.com/news/2022-10-30/anime-films-airing-on-indian-tv-october-30-november-5/.191374",
+            "https://crayonshinchan.fandom.com/wiki/Crayon_Shin-chan_in_India"
+          ],
+          "confidence": "high"
+        },
+        {
+          "year": 2015,
+          "en": "Crayon Shin-chan: My Moving Story! Cactus Large Attack!",
+          "in": "Shinchan Movie: Kaanta Lagaa",
+          "jp": "Kureyon Shinchan: Ora no Hikkoshi Monogatari ~Saboten Daishūgeki~",
+          "hindi": "aired",
+          "where": [
+            "Hungama TV (aired)",
+            "Sony YAY! (new dub, Jun 2025)"
+          ],
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2020-08-09/anime-films-airing-on-indian-tv-august-9-15/.162730",
+            "https://www.animenewsnetwork.com/news/2023-04-23/anime-films-airing-on-indian-tv-april-23-29/.197378",
+            "https://crayonshinchan.fandom.com/wiki/Crayon_Shin-chan_in_India"
+          ],
+          "confidence": "high"
+        },
+        {
+          "year": 2016,
+          "en": "Crayon Shin-chan: Fast Asleep! The Great Assault on Dreamy World!",
+          "in": "Shinchan in the Dreaming World",
+          "jp": "Kureyon Shinchan: Bakusui! Yumemī Wārudo Daitotsugeki!",
+          "hindi": "aired",
+          "where": [
+            "Sony YAY! (TV premiere 18 Aug 2024)"
+          ],
+          "sources": [
+            "https://animemirchi.com/?p=5975",
+            "https://www.animationxpress.com/latest-news/sony-yay-adds-popular-show-shin-chan-to-its-slate/"
+          ],
+          "confidence": "medium",
+          "note": "Aired on Sony YAY!, whose feeds include Hindi; the airing source doesn't name the language. No current stream found; source is a fan news site"
+        },
+        {
+          "year": 2017,
+          "en": "Crayon Shin-chan: Invasion!! Alien Shiriri",
+          "jp": "Kureyon Shinchan: Shūrai!! Uchūjin Shiriri",
+          "hindi": "aired",
+          "where": [
+            "Sony YAY! (TV premiere 19 Oct 2024)"
+          ],
+          "sources": [
+            "https://animemirchi.com/?p=5975",
+            "https://www.animationxpress.com/latest-news/sony-yay-adds-popular-show-shin-chan-to-its-slate/"
+          ],
+          "confidence": "medium",
+          "note": "Aired on Sony YAY!, whose feeds include Hindi; the airing source doesn't name the language. No current stream found; source is a fan news site"
+        },
+        {
+          "year": 2018,
+          "en": "Crayon Shin-chan: Burst Serving! Kung Fu Boys ~Ramen Rebellion~",
+          "in": "Shinchan: Kung Fu Boys",
+          "jp": "Kureyon Shinchan: Bakumori! Kanfū Bōizu ~Rāmen Tairan~",
+          "hindi": "aired",
+          "where": [
+            "Sony YAY! (TV premiere 22 Jun 2024)"
+          ],
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2024-06-21/26th-shin-chan-film-airs-on-sony-yay-on-june-22/.212075",
+            "https://www.animationxpress.com/latest-news/sony-yay-adds-popular-show-shin-chan-to-its-slate/"
+          ],
+          "confidence": "medium",
+          "note": "Aired on Sony YAY!, whose feeds include Hindi; the airing source doesn't name the language. No current stream found"
+        },
+        {
+          "year": 2019,
+          "en": "Crayon Shin-chan: Honeymoon Hurricane ~The Lost Hiroshi~",
+          "in": "Shinchan the Movie: Dangerous Family Holiday",
+          "jp": "Kureyon Shinchan: Shinkon Ryokō Harikēn ~Ushinawareta Hiroshi~",
+          "hindi": "aired",
+          "where": [
+            "Sony YAY! (TV premiere 12 Oct 2024)"
+          ],
+          "sources": [
+            "https://animemirchi.com/?p=5975",
+            "https://www.animationxpress.com/latest-news/sony-yay-adds-popular-show-shin-chan-to-its-slate/"
+          ],
+          "confidence": "medium",
+          "note": "Aired on Sony YAY!, whose feeds include Hindi; the airing source doesn't name the language. No current stream found; source is a fan news site"
+        },
+        {
+          "year": 2020,
+          "en": "Crayon Shin-chan: Crash! Graffiti Kingdom and Almost Four Heroes",
+          "in": "Shinchan in Rakuga Kingdom",
+          "jp": "Kureyon Shinchan: Gekitotsu! Rakugakingudamu to Hobo Yonin no Yūsha",
+          "hindi": "aired",
+          "where": [
+            "Sony YAY! (TV premiere 15 Jun 2024)"
+          ],
+          "sources": [
+            "https://animemirchi.com/?p=5975",
+            "https://www.animationxpress.com/latest-news/sony-yay-adds-popular-show-shin-chan-to-its-slate/"
+          ],
+          "confidence": "medium",
+          "note": "Aired on Sony YAY!, whose feeds include Hindi; the airing source doesn't name the language. No current stream found; source is a fan news site"
+        },
+        {
+          "year": 2021,
+          "en": "Crayon Shin-chan: Shrouded in Mystery! The Flowers of Tenkazu Academy",
+          "in": "Shinchan: The Mystery of Tenkasu Academy",
+          "jp": "Kureyon Shinchan: Nazo Meki! Hana no Tenkasu Gakuen",
+          "hindi": "aired",
+          "where": [
+            "Sony YAY! (TV premiere 11 Aug 2024)"
+          ],
+          "sources": [
+            "https://animemirchi.com/?p=5975",
+            "https://www.animationxpress.com/latest-news/sony-yay-adds-popular-show-shin-chan-to-its-slate/"
+          ],
+          "confidence": "medium",
+          "note": "Aired on Sony YAY!, whose feeds include Hindi; the airing source doesn't name the language. No current stream found; source is a fan news site"
+        },
+        {
+          "year": 2022,
+          "en": "Crayon Shin-chan: The Tornado Legend of Ninja Mononoke",
+          "in": "Shinchan The Movie: The Legends of Ninja Mononoke",
+          "jp": "Eiga Kureyon Shinchan: Mononoke Ninja Chinpūden",
+          "hindi": "aired",
+          "where": [
+            "Sony YAY! (TV premiere 9 Jun 2024)"
+          ],
+          "sources": [
+            "https://animenewsindia.com/2024/06/08/shinchan-2022-anime-film-to-air-on-sony-yay-on-june-9-2024",
+            "https://animemirchi.com/?p=5975",
+            "https://www.animationxpress.com/latest-news/sony-yay-adds-popular-show-shin-chan-to-its-slate/"
+          ],
+          "confidence": "medium",
+          "note": "Aired on Sony YAY!, whose feeds include Hindi; the airing source doesn't name the language. No current stream found; sources are fan news sites"
+        },
+        {
+          "year": 2023,
+          "en": "New Dimension! Crayon Shin-chan the Movie: Battle of Supernatural Powers ~Flying Sushi~",
+          "in": "Shinchan: Battle of Supernatural Powers ~Flying Sushi~",
+          "jp": "Shin Jigen! Kureyon Shinchan THE MOVIE Chōnōryoku Daikessen ~Tobe Tobe Temakizushi~",
+          "hindi": "aired",
+          "where": [
+            "Sony YAY! (TV premiere 8 Jun 2024, regional dubs)"
+          ],
+          "sources": [
+            "https://animenewsindia.com/2024/06/04/sony-yay-to-premiere-first-ever-3d-cg-shinchan-film-in-india-in-regional-dubs-in-this-june-2024",
+            "https://animemirchi.com/?p=5975",
+            "https://www.animationxpress.com/latest-news/sony-yay-adds-popular-show-shin-chan-to-its-slate/"
+          ],
+          "confidence": "medium",
+          "note": "The franchise's first 3DCG film. Aired on Sony YAY!, whose feeds include Hindi; the airing source doesn't name the language. No current stream found; sources are fan news sites"
+        },
+        {
+          "year": 2024,
+          "en": "Crayon Shin-chan the Movie: Our Dinosaur Diary",
+          "in": "Shinchan: Our Dinosaur Diary",
+          "jp": "Eiga Kureyon Shinchan: Ora-tachi no Kyōryū Nikki",
+          "hindi": "aired",
+          "where": [
+            "Indian theatres from 9 May 2025 (PVR INOX Pictures; Hindi/Tamil/Telugu + Japanese)",
+            "Sony YAY! (TV premiere 19 Oct 2025)"
+          ],
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2025-04-07/indian-release-of-shin-chan-our-dinosaur-diary-anime-film-postponed-to-may-9/.223299",
+            "https://www.koimoi.com/box-office/shinchan-our-dinosaur-diary-box-office-day-6-india-enjoys-rock-steady-hold-in-the-hindi-belt-after-a-historic-release/",
+            "https://www.animenewsnetwork.com/news/2025-10-17/shin-chan-our-dinosaur-diary-film-airs-on-indian-tv-on-october-19/.230027"
+          ],
+          "confidence": "high",
+          "note": "Hindi was about 80% of Indian ticket sales (Koimoi). JustWatch IN lists no stream (19 Nov 2026)"
+        },
+        {
+          "year": 2025,
+          "en": "Crayon Shin-chan the Movie: Super Hot! The Spicy Kasukabe Dancers",
+          "in": "Shin chan: The Spicy Kasukabe Dancers in India",
+          "jp": "Eiga Kureyon Shinchan: Chō Karei! Shakunetsu no Kasukabe Dansāzu",
+          "hindi": "aired",
+          "where": [
+            "Indian theatres from 26 Sep 2025 (PVR INOX Pictures; Hindi/Tamil/Telugu)",
+            "Sony YAY! (TV premiere 25 Dec 2025)"
+          ],
+          "sources": [
+            "https://www.bollywoodhungama.com/news/international/shin-chan-heads-india-spicy-kasukabe-dancers-releasing-september-26/",
+            "https://animationxpress.com/?p=1630638",
+            "https://www.justwatch.com/in/movie/crayon-shin-chan-the-movie-super-hot-the-spicy-kasukabe-dancers"
+          ],
+          "confidence": "high",
+          "note": "Set in India. JustWatch IN lists no stream (19 Nov 2026)"
+        },
+        {
+          "year": 2026,
+          "en": "Crayon Shin-chan the Movie: Spooky! My Yokai Vacation",
+          "jp": "Eiga Kureyon Shinchan: Kikikaikai! Ora no Yōkai Bakēshon",
+          "hindi": "none_found",
+          "where": [],
+          "sources": [],
+          "confidence": "medium",
+          "note": "No Indian release or Hindi dub announcement found as of 19 Nov 2026"
+        }
+      ]
+    },
+    {
       "slug": "pokemon",
       "name": "Pokémon",
       "series": "pokemon",
