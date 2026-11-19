@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { CC_CHECKED } from "@/lib/comiccon";
 import { posterUrl } from "@/lib/kitsu";
 import { alAnime } from "@/lib/alsnap";
 import { abs } from "@/lib/site";
@@ -100,6 +101,7 @@ export async function sitemapEntries(): Promise<MetadataRoute.Sitemap> {
     { url: abs("/tier-list"), lastModified: weekly, changeFrequency: "weekly", priority: 0.6 },
     { url: abs("/what-anime-is-this"), lastModified: at(SCENE_PAGE_UPDATED), changeFrequency: "monthly", priority: 0.8 },
     { url: abs("/news"), lastModified: now, changeFrequency: "hourly", priority: 0.8 },
+    { url: abs("/comic-con-india"), lastModified: at(CC_CHECKED), changeFrequency: "weekly", priority: 0.7 },
     { url: abs("/quiz"), lastModified: at(), changeFrequency: "monthly", priority: 0.6 },
     { url: abs("/japanese-name-generator"), lastModified: at(), changeFrequency: "yearly", priority: 0.5 },
     { url: abs("/anime-name-generator"), lastModified: at(), changeFrequency: "yearly", priority: 0.5 },
