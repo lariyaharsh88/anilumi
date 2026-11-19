@@ -15,7 +15,8 @@ import { WATCH_ORDER_OVERRIDES } from "@/data/watch-orders";
 import { snapshotCore } from "./wosnap";
 import notes from "@/data/character-notes.json";
 import vaNotes from "@/data/va-notes.json";
-import { hindiDubPath, topHindiDub } from "./hindidub";
+import { dubBySlug, dubSlugs, hindiDubPath, topHindiDub } from "./hindidub";
+import { allStreams, streamsBySlug } from "./streams";
 
 /** Aired episodes of an airing show that stay indexed, counting back from the latest: just the newest. Older
  * episode pages are the shared synopsis plus a date, which every database has. */
@@ -141,10 +142,17 @@ export const robotsFor = (indexed: boolean) => (indexed ? INDEX : NOINDEX);
 
 /**
  * Anime pages: Kitsu lists ~20,000 titles, most with nothing beyond the shared database text. Indexed: titles with at
- * least ANIME_MIN_MEMBERS followers (about the top 200, the ones the sitemap lists; was 3,000, about the top 3,500),
- * anything airing or announced, anything with our own content (summary, guide, where-to-watch or dub research), and
- * anything search still shows. The rest stay reachable for visitors.
+ * least ANIME_MIN_MEMBERS followers (about the top 200; was 3,000, about the top 3,500), airing shows with at least
+ * AIRING_MIN_MEMBERS (about the top 150 of ~450; the rest are long-running shorts with a handful of followers),
+ * anything announced, anything with our own content (hasOwnContent) and anything search still shows. The sitemap
+ * lists every one of them (lib/sitemap-entries.ts). The rest stay reachable for visitors.
  */
 export const ANIME_MIN_MEMBERS = 60_000;
+export const AIRING_MIN_MEMBERS = 100;
 export const animeIndexed = (a: { slug: string; userCount: number; status: string }, ownContent: boolean) =>
-  a.userCount >= ANIME_MIN_MEMBERS || a.status === "current" || a.status === "upcoming" || ownContent || searchShown(`/anime/${a.slug}`);
+  a.userCount >= ANIME_MIN_MEMBERS || (a.status === "current" && a.userCount >= AIRING_MIN_MEMBERS) || a.status === "upcoming" || ownContent || searchShown(`/anime/${a.slug}`);
+
+/** Our own research on this exact title (where-to-watch, Hindi dub, hand-checked watch order). Not inherited from the
+ *  franchise: that made ~1,600 entries indexable (every OVA of a researched series), more than the sitemap can list. */
+export const hasOwnContent = (slug: string) => Boolean(streamsBySlug(slug) || dubBySlug(slug) || WATCH_ORDER_OVERRIDES[slug]);
+export const ownContentSlugs = () => [...new Set([...allStreams().map((e) => e.s), ...dubSlugs(), ...Object.keys(WATCH_ORDER_OVERRIDES)])].filter(hasOwnContent);

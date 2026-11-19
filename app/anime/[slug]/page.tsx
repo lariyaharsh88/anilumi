@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import { animeIndexed, robotsFor, voiceActorIndexed } from "@/lib/indexing";
-import { WATCH_ORDER_OVERRIDES } from "@/data/watch-orders";
+import { animeIndexed, hasOwnContent, robotsFor, voiceActorIndexed } from "@/lib/indexing";
 import { fitTitle, fitDescription } from "@/lib/titles";
 import { workType, workId, isoDuration } from "@/lib/ld";
 import Link from "@/components/Link";
@@ -127,7 +126,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description,
     alternates: { canonical: animePath(a) },
     // A rewritten synopsis isn't our own content (15 Nov audit): curated where-to-watch, dub or watch-order data is.
-    robots: robotsFor(animeIndexed(a, Boolean(streamsFor(a) || dubFor(a) || WATCH_ORDER_OVERRIDES[a.slug]))),
+    robots: robotsFor(animeIndexed(a, hasOwnContent(a.slug))),
     openGraph: { ...OG_BASE, title, description, type: "video.tv_show" },
     twitter: { ...TWITTER_BASE, title, description },
   };
@@ -638,7 +637,7 @@ export default async function AnimePage({ params }: Props) {
                     <Link href={e.number ? episodePath(a, e.number) : `${animePath(a)}/episodes`} className="card group flex gap-3 overflow-hidden p-2 transition hover:-translate-y-0.5 hover:border-violet/60">
                       <span className="relative aspect-video w-32 shrink-0 overflow-hidden rounded-lg bg-bg-2">
                         {e.thumbnail && e.number ? (
-                          <SpoilerGate animeId={a.id} ep={e.number}><span className="relative block aspect-video w-32"><Image src={e.thumbnail} alt="" fill sizes="128px" className="object-cover transition duration-300 group-hover:scale-105" /></span></SpoilerGate>
+                          <SpoilerGate animeId={a.id} ep={e.number}><span className="relative block aspect-video w-32"><Image src={e.thumbnail} alt={`${a.title} episode ${e.number}`} fill sizes="128px" className="object-cover transition duration-300 group-hover:scale-105" /></span></SpoilerGate>
                         ) : <span className="grid h-full place-items-center text-xs text-muted">Ep {e.number ?? "–"}</span>}
                         <span className="absolute bottom-1 left-1 rounded bg-black/70 px-1.5 text-[10px] font-bold text-snow">EP {e.number ?? "–"}</span>
                         {latestEps.length > 0 && i === 0 && <span className="absolute left-1 top-1 rounded bg-accent-strong px-1.5 text-[10px] font-bold uppercase text-snow">Latest</span>}

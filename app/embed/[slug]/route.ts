@@ -25,7 +25,7 @@ img{width:56px;height:80px;object-fit:cover;border-radius:8px;background:#242b3b
 .by{margin-left:auto;align-self:flex-end;font-size:10px;color:#8f9ab3;white-space:nowrap}.by b{color:#ff4d6d}
 </style></head><body>
 <a class="card" href="${esc(link)}" target="_top" rel="noopener">
-<img src="${esc(poster)}" alt="">
+<img src="${esc(poster)}" alt="${esc(a.title)}">
 <div style="min-width:0;flex:1"><div class="t">${esc(a.title)}</div><div class="l">${label}</div>${when ? `<div class="w">${esc(when)}${iso && iso.length > 10 ? " JST" : ""}</div>` : ""}
 ${iso ? `<div class="cd" id="cd" data-t="${esc(iso.length > 10 ? iso : `${iso}T00:00:00+09:00`)}"><span><b>--</b><i>d</i></span><span><b>--</b><i>h</i></span><span><b>--</b><i>m</i></span><span><b>--</b><i>s</i></span></div>` : ""}</div>
 <div class="by">by <b>${site.name}</b></div></a>

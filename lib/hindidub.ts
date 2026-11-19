@@ -69,6 +69,15 @@ export function dubFor(anime: { id: string; slug: string }): Dub | null {
   return found.find((d) => d.status === "available") ?? found[0] ?? fromSchedule(anime.slug);
 }
 
+/** The dub entry for this exact slug (or the dub schedule), ignoring the franchise. */
+export function dubBySlug(slug: string): Dub | null {
+  const own = bySlug.get(slug);
+  return own ? (answerable(own) ? own : null) : fromSchedule(slug);
+}
+
+/** Every slug with dub research or a Hindi row in the dub schedule. */
+export const dubSlugs = () => [...new Set([...D.entries.map((e) => e.s), ...(schedule as { entries: ScheduleRow[] }).entries.flatMap((e) => (e.lang === "hi" && e.slug ? [e.slug] : []))])];
+
 /** Per-anime Hindi dub pages (/anime/<slug>/hindi-dub): every available dub has one; the most-watched are indexed. */
 export const HINDI_DUB_PAGES = 30;
 export const hindiDubPath = (s: string) => `/anime/${s}/hindi-dub`;

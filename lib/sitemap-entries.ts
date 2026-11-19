@@ -21,7 +21,7 @@ import { allStreams, streamsPath } from "@/lib/streams";
 import { HINDI_PLATFORMS, dubsOn, hindiDubbed, hindiDubPath } from "@/lib/hindidub";
 import { PRICES_CHECKED } from "@/lib/platformprices";
 import { indexedSimilar } from "@/lib/similarhub";
-import { searchShown, searchShownPaths, watchOrderIndexed, characterTableIndexed, notedCharacters, genreIndexed, bestYearIndexed, trendIndexed, voiceActorIndexed, hindiDubIndexed } from "@/lib/indexing";
+import { searchShown, searchShownPaths, animeIndexed, ownContentSlugs, watchOrderIndexed, characterTableIndexed, notedCharacters, genreIndexed, bestYearIndexed, trendIndexed, voiceActorIndexed, hindiDubIndexed } from "@/lib/indexing";
 import franchiseData from "@/data/franchises.json";
 import { DATA_DATES as D, STATIC_UPDATED, BIRTHDAY_PAGES_UPDATED, HINDI_HUB_UPDATED, SCENE_PAGE_UPDATED, DUB_GUIDES_ADDED, latest, weekStart, monthStart } from "@/lib/lastmod";
 import { FILLER } from "@/data/filler";
@@ -161,6 +161,16 @@ export async function sitemapEntries(): Promise<MetadataRoute.Sitemap> {
       // Same test as the page: a tag-built guide plus an official rating (lib/indexing.ts parentsGuideIndexed).
       if (al && (alAnime(al)?.t.length ?? 0) > 0 && officialRatings(a.slug)) out.push({ url: abs(`${animePath(a)}/parents-guide`), lastModified: at(D.anilist), changeFrequency: "monthly", priority: 0.5 });
     }
+    // Every other anime page that indexes itself (lib/indexing.ts animeIndexed), so none is missing from the sitemap
+    // (Bing flagged airing, announced and researched titles outside the top 200, Nov 2026): airing shows ranked 61-200
+    // (filtered by the members floor), all announced ones (~45) and every title with our own research (local data).
+    // Unrated like /top/airing and /top/upcoming: new shows often have no age rating yet (listAnime still drops adult ones).
+    const more = await Promise.all([
+      ...[60, 80, 100, 120, 140, 160, 180].map((offset) => listAnime({ filter: { status: "current" }, sort: "-userCount", limit: 20, offset, revalidate: 86400, unrated: true })),
+      ...[0, 20, 40].map((offset) => listAnime({ filter: { status: "upcoming" }, sort: "-userCount", limit: 20, offset, revalidate: 86400, unrated: true })),
+    ]);
+    for (const a of more.flatMap((p) => p.items)) if (animeIndexed(a, false)) out.push({ url: abs(animePath(a)), lastModified: now, changeFrequency: "daily", priority: 0.5 });
+    for (const s of ownContentSlugs()) out.push({ url: abs(animePath({ slug: s })), lastModified: at(D.streams, D.dubs), changeFrequency: "weekly", priority: 0.5 });
     // Anime pages Google already shows outside the top 200 (Bing flagged them as missing, Nov 2026). The page
     // indexes itself on the same test (lib/indexing.ts animeIndexed), so this lists nothing that is noindexed.
     for (const p of searchShownPaths("/anime/")) if (/^\/anime\/[^/]+$/.test(p)) out.push({ url: abs(p), lastModified: at(D.anilist), changeFrequency: "weekly", priority: 0.5 });

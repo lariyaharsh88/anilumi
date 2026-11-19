@@ -155,7 +155,7 @@ export async function EpisodesView({ slug, page }: { slug: string; page: number 
             )}
             <li id={e.number ? `ep-${e.number}` : undefined} className="card flex scroll-mt-32 gap-4 p-3" data-filler={e.number && (fill?.filler.has(e.number) || fill?.recap.has(e.number)) ? "" : undefined}>
               <div className="relative hidden aspect-video w-40 shrink-0 overflow-hidden rounded-lg bg-bg-2 sm:block">
-                {e.thumbnail && (e.number ? <SpoilerGate animeId={a.id} ep={e.number}><div className="relative aspect-video w-40"><Image src={e.thumbnail} alt="" fill sizes="160px" className="object-cover" /></div></SpoilerGate> : <Image src={e.thumbnail} alt="" fill sizes="160px" className="object-cover" />)}
+                {e.thumbnail && (e.number ? <SpoilerGate animeId={a.id} ep={e.number}><div className="relative aspect-video w-40"><Image src={e.thumbnail} alt={`${a.title} episode ${e.number}`} fill sizes="160px" className="object-cover" /></div></SpoilerGate> : <Image src={e.thumbnail} alt={`${a.title} episode image`} fill sizes="160px" className="object-cover" />)}
               </div>
               <div className="min-w-0 flex-1">
                 <h2 className="font-semibold">{e.number ? <Link href={episodePath(a, e.number)} className="hover:text-violet"><span className="text-muted">Episode {e.number}</span>{fill?.filler.has(e.number) && <span className="tag-xs">Filler</span>}{fill?.recap.has(e.number) && <span className="tag-xs">Recap</span>}{fill?.mixed.has(e.number) && <span className="tag-xs">Mixed</span>}{e.title ? <> · <SpoilerGate inline animeId={a.id} ep={e.number}>{e.title}</SpoilerGate></> : ""}</Link> : e.title}</h2>

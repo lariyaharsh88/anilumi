@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { episodeIndexed, characterIndexed, robotsFor, searchShown, notedCharacters, INDEX } from "../lib/indexing";
+import { episodeIndexed, characterIndexed, robotsFor, searchShown, notedCharacters, INDEX, animeIndexed, hasOwnContent, ownContentSlugs } from "../lib/indexing";
 import { topCharacterSlugs } from "../lib/charsnap";
 
 const ep = (n: number, over: Partial<Parameters<typeof episodeIndexed>[0]> = {}) =>
@@ -71,4 +71,19 @@ test("similar pages and character tables: only the ones search already shows", a
   // Next season: news, or a title popular enough that people ask anyway.
   assert.equal(nextSeasonIndexed(true), true);
   assert.equal(nextSeasonIndexed(false), false);
+});
+
+test("anime pages: popular, airing with a following, announced or researched; franchise data isn't inherited", () => {
+  const a = (slug: string, userCount: number, status: string) => ({ slug, userCount, status });
+  assert.equal(animeIndexed(a("zz-big", 80_000, "finished"), false), true);
+  assert.equal(animeIndexed(a("zz-airing", 270, "current"), false), true);
+  assert.equal(animeIndexed(a("zz-airing-tiny", 8, "current"), false), false);
+  assert.equal(animeIndexed(a("zz-announced", 15, "upcoming"), false), true);
+  assert.equal(animeIndexed(a("zz-plain", 9_000, "finished"), false), false);
+  assert.equal(animeIndexed(a("zz-plain", 9_000, "finished"), true), true);
+  // Hindi dub research on the title itself counts; an OVA of a researched series doesn't.
+  assert.equal(hasOwnContent("otomege-sekai-wa-mob-ni-kibishii-sekai-desu"), true);
+  assert.equal(hasOwnContent("attack-on-titan-ova"), false);
+  // The sitemap lists exactly the researched titles (lib/sitemap-entries.ts).
+  assert.ok(ownContentSlugs().every(hasOwnContent));
 });
