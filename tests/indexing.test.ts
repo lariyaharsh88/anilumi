@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { episodeIndexed, characterIndexed, robotsFor, searchShown, notedCharacters, INDEX, animeIndexed, hasOwnContent, ownContentSlugs } from "../lib/indexing";
+import { episodeIndexed, characterIndexed, robotsFor, searchShown, notedCharacters, INDEX, animeIndexed, hasOwnContent, ownContentSlugs, demandCharacters } from "../lib/indexing";
 import { topCharacterSlugs } from "../lib/charsnap";
 
 const ep = (n: number, over: Partial<Parameters<typeof episodeIndexed>[0]> = {}) =>
@@ -21,11 +21,14 @@ test("episode pages Google already shows stay indexed", () => {
   assert.equal(ep(5, { path: "/anime/Black-Clover-Season-2/episode/5", airing: false }), true);
 });
 
-test("characters: pages with verified notes or already in search are indexed, plain database pages not", () => {
+test("characters: pages with verified notes, searched facts or already in search are indexed, plain database pages not", () => {
   const all = topCharacterSlugs(5000);
   for (const s of notedCharacters()) assert.equal(characterIndexed(s), true, s);
   assert.equal(characterIndexed("eren-jager"), true); // notes, and shown in Search Console
-  const plain = all.find((s) => !searchShown(`/character/${s}`) && !notedCharacters().includes(s))!;
+  // People search Gojo's height, age and birthday (data/character-demand.json).
+  assert.equal(characterIndexed("jujutsu-kaisen-satoru-gojou"), true);
+  const demand = new Set(demandCharacters());
+  const plain = all.find((s) => !searchShown(`/character/${s}`) && !notedCharacters().includes(s) && !demand.has(s))!;
   assert.equal(characterIndexed(plain), false);
 });
 

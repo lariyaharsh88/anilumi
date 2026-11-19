@@ -1,1 +1,757 @@
-{ "checked": null, "source": "Google Ads Keyword Planner, India + United States", "min": 100, "chars": [] }
+{
+ "checked": "2026-11-19",
+ "source": "Google Ads Keyword Planner, India + United States, 12-month average (Nov 2025-Oct 2026), '<name> height/age/birthday'; names that collide with other things (Robin, Dio, Vanitas, Fern, Subaru, Ace, Rohan) count US only",
+ "min": 100,
+ "chars": [
+  {
+   "k": "jujutsu-kaisen-satoru-gojou",
+   "h": 12000,
+   "a": 9000,
+   "b": 19200
+  },
+  {
+   "k": "luffy-monkey-d",
+   "h": 4500,
+   "a": 7300,
+   "b": 10500
+  },
+  {
+   "k": "naruto-uzumaki",
+   "h": 3500,
+   "a": 2900,
+   "b": 15300
+  },
+  {
+   "k": "goku-son",
+   "h": 7800,
+   "a": 4000,
+   "b": 4300
+  },
+  {
+   "k": "katsuki-bakugou",
+   "h": 2790,
+   "a": 1770,
+   "b": 8490
+  },
+  {
+   "k": "jujutsu-kaisen-megumi-fushiguro",
+   "h": 2780,
+   "a": 3120,
+   "b": 6280
+  },
+  {
+   "k": "zoro-roronoa",
+   "h": 2900,
+   "a": 3400,
+   "b": 4600
+  },
+  {
+   "k": "sasuke-uchiha",
+   "h": 1880,
+   "a": 1110,
+   "b": 7300
+  },
+  {
+   "k": "light-yagami",
+   "h": 2480,
+   "a": 2490,
+   "b": 5120
+  },
+  {
+   "k": "izuku-midoriya",
+   "h": 1920,
+   "a": 1860,
+   "b": 5610
+  },
+  {
+   "k": "nami",
+   "h": 1480,
+   "a": 4480,
+   "b": 3160
+  },
+  {
+   "k": "jujutsu-kaisen-touji-fushiguro",
+   "h": 4800,
+   "a": 2490,
+   "b": 1690
+  },
+  {
+   "k": "vegeta",
+   "h": 6000,
+   "a": 1270,
+   "b": 1690
+  },
+  {
+   "k": "jujutsu-kaisen-sukuna",
+   "h": 3500,
+   "a": 1590,
+   "b": 3780
+  },
+  {
+   "k": "sanji",
+   "h": 1480,
+   "a": 2490,
+   "b": 4320
+  },
+  {
+   "k": "kakashi-hatake",
+   "h": 1880,
+   "a": 3400,
+   "b": 2900
+  },
+  {
+   "k": "chainsaw-man-denji",
+   "h": 1780,
+   "a": 2880,
+   "b": 3040
+  },
+  {
+   "k": "chainsaw-man-reze",
+   "h": 1090,
+   "a": 4880,
+   "b": 1390
+  },
+  {
+   "k": "mikasa-ackerman",
+   "h": 1440,
+   "a": 1390,
+   "b": 4500
+  },
+  {
+   "k": "levi",
+   "h": 4800,
+   "a": 960,
+   "b": 960
+  },
+  {
+   "k": "tornado",
+   "h": 1780,
+   "a": 3990,
+   "b": 120
+  },
+  {
+   "k": "all-might",
+   "h": 2160,
+   "a": 2290,
+   "b": 1390
+  },
+  {
+   "k": "chainsaw-man-makima",
+   "h": 1270,
+   "a": 3380,
+   "b": 1140
+  },
+  {
+   "k": "jujutsu-kaisen-choso",
+   "h": 1990,
+   "a": 0,
+   "b": 3710
+  },
+  {
+   "k": "ichigo-kurosaki",
+   "h": 2900,
+   "a": 1140,
+   "b": 1560
+  },
+  {
+   "k": "jujutsu-kaisen-nobara-kugisaki",
+   "h": 1360,
+   "a": 1320,
+   "b": 2660
+  },
+  {
+   "k": "jujutsu-kaisen-kento-nanami",
+   "h": 1270,
+   "a": 1990,
+   "b": 1770
+  },
+  {
+   "k": "shouta-aizawa",
+   "h": 790,
+   "a": 2570,
+   "b": 1650
+  },
+  {
+   "k": "l-lawliet",
+   "h": 1040,
+   "a": 930,
+   "b": 2790
+  },
+  {
+   "k": "kurapika",
+   "h": 570,
+   "a": 3220,
+   "b": 950
+  },
+  {
+   "k": "chainsaw-man-aki-hayakawa",
+   "h": 480,
+   "a": 3220,
+   "b": 910
+  },
+  {
+   "k": "hinata-hyuuga",
+   "h": 580,
+   "a": 310,
+   "b": 3500
+  },
+  {
+   "k": "killua-zoldyck",
+   "h": 620,
+   "a": 1620,
+   "b": 2070
+  },
+  {
+   "k": "rukia-kuchiki",
+   "h": 2220,
+   "a": 1510,
+   "b": 430
+  },
+  {
+   "k": "edward-elric",
+   "h": 2160,
+   "a": 1070,
+   "b": 730
+  },
+  {
+   "k": "kiyotaka-ayanokouji",
+   "h": 1690,
+   "a": 690,
+   "b": 870
+  },
+  {
+   "k": "tomura-shigaraki",
+   "h": 530,
+   "a": 1740,
+   "b": 900
+  },
+  {
+   "k": "saitama",
+   "h": 1180,
+   "a": 1110,
+   "b": 700
+  },
+  {
+   "k": "eren-jager",
+   "h": 1200,
+   "a": 470,
+   "b": 1310
+  },
+  {
+   "k": "johnny-joestar",
+   "h": 990,
+   "a": 1070,
+   "b": 900
+  },
+  {
+   "k": "osamu-dazai-5df9c678-bb69-4154-84e6-62ec3186738c",
+   "h": 800,
+   "a": 500,
+   "b": 1560
+  },
+  {
+   "k": "shouto-todoroki",
+   "h": 680,
+   "a": 440,
+   "b": 1710
+  },
+  {
+   "k": "joseph-joestar",
+   "h": 680,
+   "a": 760,
+   "b": 1350
+  },
+  {
+   "k": "asuta-sutaria",
+   "h": 1890,
+   "a": 530,
+   "b": 350
+  },
+  {
+   "k": "tobio-kageyama",
+   "h": 1110,
+   "a": 190,
+   "b": 1470
+  },
+  {
+   "k": "rias-gremory",
+   "h": 490,
+   "a": 2010,
+   "b": 230
+  },
+  {
+   "k": "guts",
+   "h": 1720,
+   "a": 500,
+   "b": 310
+  },
+  {
+   "k": "sousuke-aizen",
+   "h": 1200,
+   "a": 580,
+   "b": 580
+  },
+  {
+   "k": "chuuya-nakahara",
+   "h": 890,
+   "a": 250,
+   "b": 1110
+  },
+  {
+   "k": "jujutsu-kaisen-toge-inumaki",
+   "h": 650,
+   "a": 730,
+   "b": 810
+  },
+  {
+   "k": "gyro-zeppeli",
+   "h": 680,
+   "a": 760,
+   "b": 600
+  },
+  {
+   "k": "jousuke-higashikata",
+   "h": 680,
+   "a": 630,
+   "b": 490
+  },
+  {
+   "k": "armin-arelet",
+   "h": 560,
+   "a": 210,
+   "b": 990
+  },
+  {
+   "k": "aoi-toudou-jujutsu-kaisen",
+   "h": 800,
+   "a": 570,
+   "b": 350
+  },
+  {
+   "k": "esdeath",
+   "h": 500,
+   "a": 1020,
+   "b": 100
+  },
+  {
+   "k": "robin-nico",
+   "h": 480,
+   "a": 720,
+   "b": 390
+  },
+  {
+   "k": "yuu-nishinoya",
+   "h": 1090,
+   "a": 110,
+   "b": 370
+  },
+  {
+   "k": "tooru-oikawa",
+   "h": 600,
+   "a": 140,
+   "b": 830
+  },
+  {
+   "k": "kei-tsukishima",
+   "h": 760,
+   "a": 130,
+   "b": 640
+  },
+  {
+   "k": "lelouch-lamperouge",
+   "h": 560,
+   "a": 390,
+   "b": 480
+  },
+  {
+   "k": "shouyou-hinata",
+   "h": 780,
+   "a": 130,
+   "b": 390
+  },
+  {
+   "k": "dio-brando",
+   "h": 720,
+   "a": 170,
+   "b": 320
+  },
+  {
+   "k": "johan-liebert",
+   "h": 600,
+   "a": 310,
+   "b": 220
+  },
+  {
+   "k": "griffith",
+   "h": 600,
+   "a": 260,
+   "b": 160
+  },
+  {
+   "k": "gilgamesh",
+   "h": 550,
+   "a": 110,
+   "b": 80
+  },
+  {
+   "k": "momo-ayase",
+   "h": 480,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "usopp",
+   "h": 480,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "kenma-kozume",
+   "h": 460,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "taiga-aisaka",
+   "h": 430,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "jean-kirschtein",
+   "h": 430,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "megumin",
+   "h": 410,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "ryuk",
+   "h": 410,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "legoshi",
+   "h": 400,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "tetsurou-kuroo",
+   "h": 370,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "ochako-uraraka",
+   "h": 370,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "rei-ayanami",
+   "h": 340,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "gon-freecss",
+   "h": 330,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "chopper-tony-tony",
+   "h": 330,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "gaara",
+   "h": 330,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "leorio-paladiknight",
+   "h": 310,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "shinji-ikari",
+   "h": 300,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "koutaro-bokuto",
+   "h": 300,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "alucard",
+   "h": 300,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "ken-kaneki",
+   "h": 280,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "asuka-langley",
+   "h": 280,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "spike-spiegel",
+   "h": 280,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "madoka-kaname",
+   "h": 270,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "subaru-natsuki",
+   "h": 260,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "rimuru-tempest",
+   "h": 260,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "reiner-braun",
+   "h": 220,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "sebastian-michaelis",
+   "h": 220,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "kazuto-kirigaya",
+   "h": 210,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "yami-sukehiro",
+   "h": 200,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "mai-sakurajima",
+   "h": 190,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "chainsaw-man-power",
+   "h": 190,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "zero-two",
+   "h": 190,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "erwin-smith",
+   "h": 190,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "yoshikage-kira",
+   "h": 190,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "ban-b502349e-2c23-449b-82d8-995b8f5f67f6",
+   "h": 190,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "rem-3",
+   "h": 180,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "misa-amane",
+   "h": 170,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "albedo",
+   "h": 170,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "natsu-dragneel",
+   "h": 170,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "gintoki-sakata",
+   "h": 160,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "rin-tohsaka",
+   "h": 160,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "shouya-ishida",
+   "h": 160,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "asuna-yuuki",
+   "h": 160,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "violet-evergarden",
+   "h": 150,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "misato-katsuragi",
+   "h": 150,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "ryuuko-matoi",
+   "h": 150,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "karma-akabane",
+   "h": 140,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "genos",
+   "h": 140,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "kazuma-satou",
+   "h": 130,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "arataka-reigen",
+   "h": 120,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "akemi-homura",
+   "h": 120,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "alphonse-elric",
+   "h": 120,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "faye-valentine",
+   "h": 120,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "tanya-degurechaff",
+   "h": 120,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "kanna-kamui",
+   "h": 120,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "shigeo-kageyama",
+   "h": 110,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "koyomi-araragi",
+   "h": 110,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "ranpo-edogawa",
+   "h": 110,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "koushi-sugawara",
+   "h": 110,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "saber",
+   "h": 100,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "yuno-gasai",
+   "h": 100,
+   "a": 0,
+   "b": 0
+  }
+ ]
+}
