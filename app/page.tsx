@@ -44,9 +44,15 @@ const PLAN_TOOLS: Tool[] = [
   { href: "/filler-lists", title: "Skip the filler", blurb: "Episode lists for Naruto, One Piece and more", icon: "filler", hue: 20 },
   { href: "/what-anime-is-this", title: "What anime is this?", blurb: "Find a show from a screenshot", icon: "camera", hue: 140 },
 ];
+// Two full rows of four from lg up (a fifth card alone left a gap): the daily game and trivia first, they bring
+// people back; then the pickers and utilities.
 const FUN_TOOLS: Tool[] = [
-  { href: "/quiz", title: "What should I watch?", blurb: "Four quick questions, picks that fit", icon: "quiz", hue: 300 },
+  { href: "/guess-the-anime-character", title: "Guess the character", blurb: "A new anime character every day, 8 guesses", icon: "characters", hue: 280 },
+  { href: "/anime-quiz", title: "Anime trivia quiz", blurb: "10 questions on Naruto, One Piece and more", icon: "quiz", hue: 200 },
+  { href: "/what-anime-should-i-watch", title: "What should I watch?", blurb: "Four taps, three picks, Hindi dub filter", icon: "explore", hue: 300 },
+  { href: "/quiz", title: "Which character are you?", blurb: "Personality quizzes for your favourite shows", icon: "flame", hue: 330 },
   { href: "/tier-list", title: "Tier list maker", blurb: "Rank your favourites, share the image", icon: "tier", hue: 40 },
+  { href: "/anime-name-generator", title: "Anime name generator", blurb: "Character names with kanji and a title", icon: "random", hue: 160 },
   { href: "/compare", title: "Compare two anime", blurb: "Scores, runtime and genres side by side", icon: "compare", hue: 220 },
   { href: "/parents-guide", title: "Parents' guide", blurb: "Is it OK for kids? Content notes per show", icon: "parents", hue: 350 },
 ];
