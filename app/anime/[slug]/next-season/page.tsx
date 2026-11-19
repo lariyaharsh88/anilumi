@@ -74,10 +74,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   // Official news beats a database status that hasn't caught up (lib/sequelnews.ts).
   const news = sequelNews(a.slug);
   const override = newsOverrides(news, verdict.kind);
-  const title = news?.headline ? fitTitle([`${label}: ${news.headline.replace("{asOf}", asOf)}`]) : override ? fitTitle([news!.window && news!.window !== "TBA" ? `${label}: Announced for ${news!.window}` : null, `${label}: Announced (${asOf})`, `${label}: Announced`]) : fitTitle([`${label}${dateQuestion ? " Release Date" : ""}: ${answer[verdict.kind]}`, `${label}: ${answer[verdict.kind]}`]);
+  const title = news?.headline ? fitTitle([`${label}: ${news.headline.replace("{asOf}", asOf)}`]) : override ? fitTitle([news!.window && news!.window !== "TBA" ? `${label}: Announced for ${news!.window}` : null, `${label}: Announced (${asOf})`, `${label}: Announced`]) : fitTitle([`${label}${dateQuestion ? " Release Date" : ""}: ${answer[verdict.kind]}`, `${label}: ${answer[verdict.kind]}`, `${label}: ${answer[verdict.kind].replace(/ \(.*?\)$/, "")}`]);
   return {
     title,
-    description: fitDescription(`${first ? `Is there a ${a.title} season 2?` : `Will ${a.title} get another season?`} ${override ? `${news!.what}${news!.announced ? ` (announced ${fmtDate(news!.announced, { month: "long", day: "numeric", year: "numeric" })})` : ""}.` : `${verdict.headline} ${verdict.detail}`}`.slice(0, 300)),
+    description: fitDescription(`${first ? `Is there ${/^[aeiou]/i.test(a.title) ? "an" : "a"} ${a.title} season 2?` : `Will ${a.title} get another season?`} ${override ? `${news!.what}${news!.announced ? ` (announced ${fmtDate(news!.announced, { month: "long", day: "numeric", year: "numeric" })})` : ""}.` : `${verdict.headline} ${verdict.detail}`}`.slice(0, 300)),
     alternates: { canonical: `${animePath(a)}/next-season` },
     // Films and OVAs never; a series only with an answer: a sequel exists, or researched news (even "story complete").
     ...(a.subtype === "TV" || a.subtype === "ONA" ? { robots: robotsFor(nextSeasonIndexed(Boolean(news) || override || (verdict.kind !== "none" && verdict.kind !== "still-airing"))) } : { robots: { index: false } }),
@@ -103,7 +103,7 @@ export default async function NextSeasonPage({ params }: Props) {
   const seasonLink = nextSeason && previewSnapshot().seasons[`${nextSeason.y}-${nextSeason.s}`]?.length ? `/season/${nextSeason.y}/${nextSeason.s}/preview` : null;
   const then = upcomingLater[0];
   const thenNote = then && (verdict.kind === "out" || verdict.kind === "airing") ? ` After that, ${then.title} is confirmed${then.startDate ? ` for ${fmtDate(then.startDate, { month: "long", year: "numeric" })}` : ""}.` : "";
-  const question = first ? `Is there a ${a.title} season 2?` : `Will ${a.title} get another season?`;
+  const question = first ? `Is there ${/^[aeiou]/i.test(a.title) ? "an" : "a"} ${a.title} season 2?` : `Will ${a.title} get another season?`;
   const news = sequelNews(a.slug);
   const override = newsOverrides(news, verdict.kind);
   // No sequel to wait for: what fans of the show watch instead.

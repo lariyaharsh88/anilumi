@@ -1,4 +1,4 @@
-import { fitDescription } from "@/lib/titles";
+import { fitDescription, fitTitle } from "@/lib/titles";
 import { OG_BASE } from "@/lib/site";
 import type { Metadata } from "next";
 import { robotsFor, voiceActorIndexed } from "@/lib/indexing";
@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!va.roles.length) return { alternates: { canonical: staffPath(va) } };
   const top = signatureRoles(va.roles).slice(0, 3);
   return {
-    title: `${va.name}${va.native ? ` (${va.native})` : ""} – Voice Actor Roles & Characters`,
+    title: fitTitle([va.native && `${va.name} (${va.native}) – Voice Actor Roles & Characters`, `${va.name} – Voice Actor Roles & Characters`, `${va.name} – Voice Actor Roles`]),
     description: fitDescription(`${va.name} is a ${va.language ? `${va.language} ` : ""}voice actor known for ${top.map((r) => `${r.character.name} in ${r.media[0].title}`).join(", ")}. Every anime role by year, with signature characters.`),
     alternates: { canonical: vaPath(va) },
     // The most-favourited voice actors and any search already shows (lib/indexing.ts).

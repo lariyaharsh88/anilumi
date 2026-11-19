@@ -10,7 +10,7 @@ type Props = { searchParams: Promise<{ a?: string; b?: string }> };
 
 export const metadata: Metadata = {
   title: fitTitle(["Compare Anime – Side-by-Side Scores, Length and Popularity"]),
-  description: fitDescription("Put any two anime side by side: community score, how each is rated, members, favourites, runtime and shared genres."),
+  description: fitDescription("Put any two anime side by side: community score, age rating, members, favourites, runtime and shared genres, so you can decide which of the two to watch first."),
   alternates: { canonical: "/compare" },
 };
 

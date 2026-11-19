@@ -8,7 +8,7 @@ import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Advertise & Partner with AniLumi",
-  description: fitDescription("Reach anime fans while they plan what to watch: sponsorships, affiliate partnerships and product placements on AniLumi."),
+  description: fitDescription("Reach anime fans while they plan what to watch next: sponsorships, affiliate partnerships and title-level placements on AniLumi's anime pages and watch orders."),
   alternates: { canonical: "/advertise" },
 };
 

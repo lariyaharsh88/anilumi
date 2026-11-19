@@ -1,4 +1,4 @@
-import { fitDescription } from "@/lib/titles";
+import { fitDescription, fitTitle } from "@/lib/titles";
 import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
@@ -40,7 +40,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const top = items.map(name).filter((t) => t.length <= 28).slice(0, 3);
   return {
     // "winter 2027 anime" searches want the count, the dates and what's worth watching.
-    title: items.length >= 5 ? `${cap(s)} ${y} Anime: ${items.length} Shows, Release Dates & Most Anticipated` : `${cap(s)} ${y} Anime Preview: Every New Show, Sequel & Premiere Date`,
+    title: items.length >= 5 ? fitTitle([`${cap(s)} ${y} Anime: ${items.length} Shows, Release Dates & Most Anticipated`, `${cap(s)} ${y} Anime: ${items.length} Shows & Release Dates`]) : fitTitle([`${cap(s)} ${y} Anime Preview: Every New Show, Sequel & Premiere Date`, `${cap(s)} ${y} Anime Preview: New Shows & Premiere Dates`]),
     description: fitDescription(`${items.length} ${cap(s)} ${y} anime (${MONTHS[s]} ${y}) with premiere dates, studios and which are sequels${top.length ? `: ${top.join(", ")} and more` : ""}.`),
     alternates: { canonical: `/season/${y}/${s}/preview` },
     ...(items.length >= 5 ? {} : { robots: { index: false } }),

@@ -10,7 +10,7 @@ import HypeButton, { HypeProvider } from "@/components/HypeButton";
 export const revalidate = 600;
 export const metadata: Metadata = {
   title: "Most Hyped Upcoming Anime, Voted by Fans",
-  description: fitDescription("The upcoming anime AniLumi fans are most excited for, ranked by hype votes. Add your vote on any upcoming show."),
+  description: fitDescription("The upcoming anime AniLumi fans are most excited for, ranked by hype votes, with premiere dates where confirmed. Add your vote to any show you can't wait for."),
   alternates: { canonical: "/hype" },
 };
 

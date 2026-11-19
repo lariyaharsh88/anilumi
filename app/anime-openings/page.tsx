@@ -11,7 +11,7 @@ import JsonLd from "@/components/JsonLd";
 export const revalidate = 86400;
 export const metadata: Metadata = {
   title: fitTitle(["Best Anime Openings – Theme Songs of the Most Popular Anime"]),
-  description: fitDescription("The opening songs of the most popular anime, with artists and every later opening, plus ending themes for each series."),
+  description: fitDescription("The opening songs of the most popular anime, with the artist behind each one and every later opening in order, plus the ending themes for each series."),
   alternates: { canonical: "/anime-openings" },
 };
 
