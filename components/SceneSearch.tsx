@@ -13,6 +13,19 @@ type State =
   | { kind: "error"; message: string }
   | { kind: "done"; matches: Match[]; hiddenAdult: number; mapped: Mapped };
 
+type Source = "image" | "video" | "url" | "paste";
+type Clip = { src: string; duration: number; at: number };
+
+/** A video frame on a canvas as a JPEG at most 1280px wide. The clip itself never leaves the browser. */
+function frameToBlob(v: HTMLVideoElement): Promise<Blob | null> {
+  const scale = Math.min(1, 1280 / (v.videoWidth || 1280));
+  const c = document.createElement("canvas");
+  c.width = Math.round((v.videoWidth || 1280) * scale);
+  c.height = Math.round((v.videoHeight || 720) * scale);
+  c.getContext("2d")!.drawImage(v, 0, 0, c.width, c.height);
+  return new Promise((res) => c.toBlob((b) => res(b), "image/jpeg", 0.9));
+}
+
 /** Shrink to 640px wide JPEG before upload: faster, and trace.moe matches on small frames anyway. */
 async function shrink(file: File): Promise<Blob> {
   if (!file.type.startsWith("image/") || file.type === "image/gif") return file;
@@ -39,15 +52,18 @@ export default function SceneSearch() {
   const [url, setUrl] = useState("");
   const [quota, setQuota] = useState<{ used: number; total: number } | null>(null);
   const [drag, setDrag] = useState(false);
+  const [clip, setClip] = useState<Clip | null>(null);
   const fileRef = useRef<HTMLInputElement>(null);
   const cameraRef = useRef<HTMLInputElement>(null);
+  const videoFileRef = useRef<HTMLInputElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   const refreshQuota = useCallback(() => {
     fetch(`${API}/me`).then((r) => r.json()).then((d: { quota: number; quotaUsed: number }) => setQuota({ used: d.quotaUsed, total: d.quota })).catch(() => {});
   }, []);
   useEffect(refreshQuota, [refreshQuota]);
 
-  const run = useCallback(async (req: () => Promise<Response>) => {
+  const run = useCallback(async (req: () => Promise<Response>, source: Source) => {
     setState({ kind: "busy" });
     try {
       const res = await req();
@@ -60,7 +76,7 @@ export default function SceneSearch() {
         mapped = m.map || {};
       }
       setState({ kind: "done", matches, hiddenAdult, mapped });
-      track("scene_search", { found: matches.length > 0, top_similarity: matches[0] ? Math.round(matches[0].similarity * 100) : 0 });
+      track("scene_search", { source, found: matches.length > 0, top_similarity: matches[0] ? Math.round(matches[0].similarity * 100) : 0 });
     } catch {
       setState({ kind: "error", message: "Couldn't reach the search service. Check your connection and try again." });
     } finally {
@@ -68,28 +84,59 @@ export default function SceneSearch() {
     }
   }, [refreshQuota]);
 
-  const searchFile = useCallback(async (file: File | null | undefined) => {
+  const postImage = useCallback((blob: Blob, source: Source) => run(() => fetch(`${API}/search?anilistInfo&cutBorders`, { method: "POST", body: blob, headers: { "Content-Type": blob.type || "image/jpeg" } }), source), [run]);
+
+  // A video goes to the frame picker instead: scrub to the moment, then search that one frame.
+  const openClip = useCallback((file: File) => {
+    setClip((old) => { if (old) URL.revokeObjectURL(old.src); return { src: URL.createObjectURL(file), duration: 0, at: 0 }; });
+    setPreview((old) => { if (old?.startsWith("blob:")) URL.revokeObjectURL(old); return null; });
+    setState({ kind: "idle" });
+  }, []);
+
+  const searchFile = useCallback(async (file: File | null | undefined, source: Source = "image") => {
     if (!file) return;
-    if (!/^(image|video)\//.test(file.type)) { setState({ kind: "error", message: "That isn't an image. Paste or upload a screenshot." }); return; }
+    if (file.type.startsWith("video/")) { openClip(file); return; }
+    if (!file.type.startsWith("image/")) { setState({ kind: "error", message: "That isn't an image or a video. Paste or upload a screenshot, or choose a clip." }); return; }
     if (file.size > 25 * 1024 * 1024) { setState({ kind: "error", message: traceError(413) }); return; }
-    setPreview((old) => { if (old) URL.revokeObjectURL(old); return URL.createObjectURL(file); });
-    const blob = await shrink(file);
-    run(() => fetch(`${API}/search?anilistInfo&cutBorders`, { method: "POST", body: blob, headers: { "Content-Type": blob.type || "image/jpeg" } }));
+    setClip((old) => { if (old) URL.revokeObjectURL(old.src); return null; });
+    setPreview((old) => { if (old?.startsWith("blob:")) URL.revokeObjectURL(old); return URL.createObjectURL(file); });
+    postImage(await shrink(file), source);
+  }, [openClip, postImage]);
+
+  const searchFrame = async () => {
+    const v = videoRef.current;
+    if (!v) return;
+    const blob = await frameToBlob(v).catch(() => null);
+    if (!blob) { setState({ kind: "error", message: "Couldn't read that frame. Try another moment, or take a screenshot instead." }); return; }
+    postImage(blob, "video");
+  };
+
+  const runUrl = useCallback((u: string) => {
+    setPreview(u);
+    run(() => fetch(`${API}/search?anilistInfo&cutBorders&url=${encodeURIComponent(u)}`), "url");
   }, [run]);
 
   const searchUrl = (e: React.FormEvent) => {
     e.preventDefault();
     const u = url.trim();
     if (!/^https?:\/\/\S+$/i.test(u)) { setState({ kind: "error", message: "Enter a full image link starting with https://" }); return; }
-    setPreview(u);
-    run(() => fetch(`${API}/search?anilistInfo&cutBorders&url=${encodeURIComponent(u)}`));
+    runUrl(u);
   };
+
+  // ?url=<image link> (the Chrome extension's right-click menu) searches straight away. Read in the browser, so the
+  // page itself stays the same cached HTML for everyone.
+  useEffect(() => {
+    const u = new URLSearchParams(window.location.search).get("url")?.trim();
+    if (u && /^https:\/\/\S+$/i.test(u) && u.length < 2048) { setUrl(u); runUrl(u); }
+    // Once, on load.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // Ctrl/Cmd+V anywhere on the page pastes a screenshot.
   useEffect(() => {
     const onPaste = (e: ClipboardEvent) => {
       const item = [...(e.clipboardData?.items || [])].find((i) => i.type.startsWith("image/"));
-      if (item) { e.preventDefault(); searchFile(item.getAsFile()); }
+      if (item) { e.preventDefault(); searchFile(item.getAsFile(), "paste"); }
     };
     window.addEventListener("paste", onPaste);
     return () => window.removeEventListener("paste", onPaste);
@@ -111,17 +158,51 @@ export default function SceneSearch() {
           ) : null}
           <div className="relative">
             <p className="text-4xl" aria-hidden>🔍</p>
-            <p className="mt-2 font-semibold text-ink">{busy ? "Searching 30,000+ hours of anime…" : "Drop a screenshot here"}</p>
+            <p className="mt-2 font-semibold text-ink">{busy ? "Searching 30,000+ hours of anime…" : "Drop a screenshot or a clip here"}</p>
             <p className="mt-1 text-sm text-muted">or paste it with <kbd className="rounded bg-white/10 px-1.5 py-0.5 text-xs">Ctrl</kbd>/<kbd className="rounded bg-white/10 px-1.5 py-0.5 text-xs">⌘</kbd>+<kbd className="rounded bg-white/10 px-1.5 py-0.5 text-xs">V</kbd></p>
             <div className="mt-4 flex flex-wrap justify-center gap-2">
               <button type="button" disabled={busy} onClick={() => fileRef.current?.click()} className="btn-primary">{busy ? "Searching…" : "Choose image"}</button>
+              <button type="button" disabled={busy} onClick={() => videoFileRef.current?.click()} className="btn-outline">🎬 Video clip</button>
               {/* Phones: photograph the TV or laptop screen directly (crop to the picture for the best match). */}
               <button type="button" disabled={busy} onClick={() => cameraRef.current?.click()} className="btn-outline md:hidden">📷 Take a photo</button>
             </div>
             <input ref={fileRef} type="file" accept="image/*" className="sr-only" onChange={(e) => searchFile(e.target.files?.[0])} />
             <input ref={cameraRef} type="file" accept="image/*" capture="environment" className="sr-only" onChange={(e) => searchFile(e.target.files?.[0])} />
+            <input ref={videoFileRef} type="file" accept="video/mp4,video/webm,video/quicktime,video/*" className="sr-only" onChange={(e) => { const f = e.target.files?.[0]; if (f) openClip(f); e.target.value = ""; }} />
           </div>
         </div>
+
+        {clip && (
+          <div className="card space-y-3 p-3">
+            <p className="text-sm font-semibold text-ink">Pick the moment to search</p>
+            <video
+              ref={videoRef}
+              src={clip.src}
+              muted
+              playsInline
+              preload="auto"
+              onLoadedMetadata={(e) => { const d = e.currentTarget.duration || 0; e.currentTarget.currentTime = Math.min(1, d / 2); setClip((c) => (c ? { ...c, duration: d, at: Math.min(1, d / 2) } : c)); }}
+              className="aspect-video w-full rounded-lg bg-black object-contain"
+            />
+            <label className="block text-xs text-muted" htmlFor="clip-at">Frame at {timecode(clip.at)}{clip.duration ? ` of ${timecode(clip.duration)}` : ""}</label>
+            <input
+              id="clip-at"
+              type="range"
+              min={0}
+              max={clip.duration || 0}
+              step={0.04}
+              value={clip.at}
+              onChange={(e) => { const t = Number(e.target.value); if (videoRef.current) videoRef.current.currentTime = t; setClip((c) => (c ? { ...c, at: t } : c)); }}
+              className="w-full accent-violet"
+              disabled={!clip.duration}
+            />
+            <div className="flex flex-wrap gap-2">
+              <button type="button" disabled={busy || !clip.duration} onClick={searchFrame} className="btn-primary">{busy ? "Searching…" : "Search this frame"}</button>
+              <button type="button" onClick={() => setClip((c) => { if (c) URL.revokeObjectURL(c.src); return null; })} className="btn-outline">Remove clip</button>
+            </div>
+            <p className="text-xs leading-5 text-muted">The clip stays on your device: only the one frame you pick is sent for matching. Pick a clear moment without captions over the picture.</p>
+          </div>
+        )}
 
         <form onSubmit={searchUrl} className="flex gap-2">
           <label className="sr-only" htmlFor="scene-url">Image link</label>
@@ -155,7 +236,7 @@ export default function SceneSearch() {
         {state.kind === "done" && (
           state.matches.length ? (
             <ol className="space-y-3">
-              {(state.matches[0].similarity >= CONFIDENT ? state.matches.filter((m) => m.similarity >= CONFIDENT) : state.matches).map((m, i) => {
+              {(state.matches[0].similarity >= CONFIDENT ? state.matches.filter((m) => m.similarity >= CONFIDENT) : state.matches).slice(0, 3).map((m, i) => {
                 const page = state.mapped[String(m.anilistId)];
                 const sure = m.similarity >= CONFIDENT;
                 return (
@@ -190,12 +271,17 @@ export default function SceneSearch() {
                   </li>
                 );
               })}
-              {state.matches[0].similarity >= CONFIDENT && state.matches.some((m) => m.similarity < CONFIDENT) && (
+              {(() => {
+                // The three best are shown in full above; anything else goes in the "less likely" list.
+                const shown = (state.matches[0].similarity >= CONFIDENT ? state.matches.filter((m) => m.similarity >= CONFIDENT) : state.matches).slice(0, 3);
+                const rest = state.matches.filter((m) => !shown.includes(m));
+                if (!rest.length) return null;
+                return (
                 <li>
                   <details className="group text-sm text-muted">
-                    <summary className="cursor-pointer select-none hover:text-ink">Other, less likely guesses ({state.matches.filter((m) => m.similarity < CONFIDENT).length})</summary>
+                    <summary className="cursor-pointer select-none hover:text-ink">Other, less likely guesses ({rest.length})</summary>
                     <ul className="mt-2 space-y-1">
-                      {state.matches.filter((m) => m.similarity < CONFIDENT).map((m) => {
+                      {rest.map((m) => {
                         const page = state.mapped[String(m.anilistId)];
                         return (
                           <li key={`${m.anilistId}-${m.episode}`}>
@@ -206,7 +292,8 @@ export default function SceneSearch() {
                     </ul>
                   </details>
                 </li>
-              )}
+                );
+              })()}
               {(() => {
                 // A confident match: offer to follow that show, so a one-off visit can become a returning reader.
                 const top = state.matches[0];

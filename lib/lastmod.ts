@@ -40,7 +40,7 @@ export const BIRTHDAY_PAGES_UPDATED = "2026-11-14";
 /** Hindi dub hub template: 14 Nov added the numbers, charts, posters and filters (and the Apple TV fix). */
 export const HINDI_HUB_UPDATED = "2026-11-14";
 /** "What anime is this?" page: 14 Nov added how the search works, tips and the no-screenshot H2s. */
-export const SCENE_PAGE_UPDATED = "2026-11-14";
+export const SCENE_PAGE_UPDATED = "2026-11-19";
 /** /sub-vs-dub, /anime-salt-alternatives, /anime-trailers, /tamil-dub and /telugu-dub, added 15 Nov. */
 export const DUB_GUIDES_ADDED = "2026-11-15";
 

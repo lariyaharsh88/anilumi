@@ -13,6 +13,7 @@
     "preview": "CF_ALLOW_ENV=1 node scripts/cf-guard.mjs && opennextjs-cloudflare build && opennextjs-cloudflare preview",
     "deploy": "node scripts/cf-guard.mjs && opennextjs-cloudflare build && opennextjs-cloudflare deploy && (gh workflow run warm-cache.yml --repo lariyaharsh88/anilumi -f full=true && echo 'Started the cache warm-up on GitHub.' || echo 'Could not start the warm-up; run it from GitHub Actions.')",
     "upload": "node scripts/cf-guard.mjs && opennextjs-cloudflare build && opennextjs-cloudflare upload",
+    "extension:zip": "sh scripts/extension-zip.sh",
     "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
   },
   "dependencies": {
