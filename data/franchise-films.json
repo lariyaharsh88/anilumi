@@ -1,0 +1,418 @@
+{
+  "checked": "2026-11-19",
+  "franchises": [
+    {
+      "slug": "pokemon",
+      "name": "Pokémon",
+      "series": "pokemon",
+      "films": [
+        {
+          "year": 1998,
+          "en": "Pokémon: The First Movie – Mewtwo Strikes Back",
+          "jp": "Gekijōban Poketto Monsutā: Myūtsū no Gyakushū",
+          "live_action": false,
+          "hindi": "available",
+          "where": [
+            "JioHotstar (Hindi audio; title page languages: Hindi, Telugu, Tamil)"
+          ],
+          "sources": [
+            "https://www.hotstar.com/in/movies/mewtwo-strikes-back-pokemon-the-first-movie/1971000798",
+            "https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_in_South_Asia"
+          ],
+          "confidence": "high",
+          "note": "Hindi (Disney/Hungama dub) title: 'Mewtwo Ka Badla'. Language list read from the JioHotstar title page on 2026-11-19. Hindi dub previously aired on Hungama TV / Disney XD."
+        },
+        {
+          "year": 1999,
+          "en": "Pokémon: The Movie 2000 – The Power of One",
+          "jp": "Maboroshi no Pokémon: Lugia Bakutan",
+          "live_action": false,
+          "hindi": "available",
+          "where": [
+            "JioHotstar (Hindi audio; title page languages: Hindi, Telugu, Tamil)"
+          ],
+          "sources": [
+            "https://www.hotstar.com/in/movies/the-power-of-one-pokemon-the-movie-2000/1971000800",
+            "https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_in_South_Asia"
+          ],
+          "confidence": "high",
+          "note": "Hindi (Disney/Hungama dub) title: 'Ash Pikachu aur Lugia in Danger'. Language list read from the JioHotstar title page on 2026-11-19. Hindi dub previously aired on Hungama TV / Disney XD."
+        },
+        {
+          "year": 2000,
+          "en": "Pokémon 3: The Movie – Spell of the Unown",
+          "jp": "Kesshō Tō no Teiō: Entei",
+          "live_action": false,
+          "hindi": "available",
+          "where": [
+            "JioHotstar (Hindi audio; title page languages: Hindi, Telugu, Tamil)"
+          ],
+          "sources": [
+            "https://www.hotstar.com/in/movies/spell-of-the-unknown-pokemon-3-the-movie/1971000812",
+            "https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_in_South_Asia"
+          ],
+          "confidence": "high",
+          "note": "Hindi (Disney/Hungama dub) title: 'Unown ka Tehelka'. Language list read from the JioHotstar title page on 2026-11-19. Hindi dub previously aired on Hungama TV / Disney XD. JioHotstar lists it as 'Spell of the Unknown - Pokemon 3: The Movie'; JustWatch India shows it free with ads."
+        },
+        {
+          "year": 2001,
+          "en": "Pokémon 4Ever: Celebi – Voice of the Forest",
+          "jp": "Celebi: Toki o Koeta Deai",
+          "live_action": false,
+          "hindi": "available",
+          "where": [
+            "JioHotstar (Hindi audio; title page languages: Hindi, Telugu, Tamil)"
+          ],
+          "sources": [
+            "https://www.hotstar.com/in/movies/celebi-voice-of-the-forest-pokemon-4ever/1971000783",
+            "https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_in_South_Asia"
+          ],
+          "confidence": "high",
+          "note": "Hindi (Disney/Hungama dub) title: 'Khatre Ka Jungle'. Language list read from the JioHotstar title page on 2026-11-19. Hindi dub previously aired on Hungama TV / Disney XD."
+        },
+        {
+          "year": 2002,
+          "en": "Pokémon Heroes: Latios and Latias",
+          "jp": "Mizu no Miyako no Mamorigami: Latias to Latios",
+          "live_action": false,
+          "hindi": "available",
+          "where": [
+            "JioHotstar (Hindi audio; title page languages: Hindi, Telugu, Tamil)"
+          ],
+          "sources": [
+            "https://www.hotstar.com/in/movies/latios-and-latias-pokemon-heroes/1971000815",
+            "https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_in_South_Asia"
+          ],
+          "confidence": "high",
+          "note": "Hindi (Disney/Hungama dub) title: 'Soul Dew ka Raaz - Latias and Latios'. Language list read from the JioHotstar title page on 2026-11-19. Hindi dub previously aired on Hungama TV / Disney XD."
+        },
+        {
+          "year": 2003,
+          "en": "Pokémon: Jirachi Wish Maker",
+          "jp": "Nanayo no Negaiboshi: Jirachi",
+          "live_action": false,
+          "hindi": "available",
+          "where": [
+            "JioHotstar (Hindi audio; title page languages: Hindi, Telugu, Tamil)"
+          ],
+          "sources": [
+            "https://www.hotstar.com/in/movies/jirachi-wish-maker-pokemon-the-movie/1971000799",
+            "https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_in_South_Asia"
+          ],
+          "confidence": "high",
+          "note": "Hindi (Disney/Hungama dub) title: 'Jirachi Ka Wonder'. Language list read from the JioHotstar title page on 2026-11-19. Hindi dub previously aired on Hungama TV / Disney XD."
+        },
+        {
+          "year": 2004,
+          "en": "Pokémon: Destiny Deoxys",
+          "jp": "Rekkū no Hōmonsha: Deoxys",
+          "live_action": false,
+          "hindi": "available",
+          "where": [
+            "JioHotstar (Hindi audio; title page languages: Hindi, Telugu, Tamil)"
+          ],
+          "sources": [
+            "https://www.hotstar.com/in/movies/destiny-deoxys-pokemon-the-movie/1971000786",
+            "https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_in_South_Asia"
+          ],
+          "confidence": "high",
+          "note": "Hindi (Disney/Hungama dub) title: 'Deoxy aur Tori ki Story'. Language list read from the JioHotstar title page on 2026-11-19. Hindi dub previously aired on Hungama TV / Disney XD."
+        },
+        {
+          "year": 2005,
+          "en": "Pokémon: Lucario and the Mystery of Mew",
+          "jp": "Myū to Hadō no Yūsha: Rukario",
+          "live_action": false,
+          "hindi": "available",
+          "where": [
+            "JioHotstar (Hindi audio; title page languages: Hindi, Telugu, Tamil)"
+          ],
+          "sources": [
+            "https://www.hotstar.com/in/movies/lucario-and-the-mystery-of-mew-pokemon-the-movie/1971000796",
+            "https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_in_South_Asia"
+          ],
+          "confidence": "high",
+          "note": "Hindi (Disney/Hungama dub) title: 'Lucario ki Toofani Shakti'. Language list read from the JioHotstar title page on 2026-11-19. Hindi dub previously aired on Hungama TV / Disney XD. An earlier Cartoon Network India dub aired in 2009."
+        },
+        {
+          "year": 2006,
+          "en": "Pokémon Ranger and the Temple of the Sea",
+          "jp": "Pokémon Rangers to Umi no Ōji Manaphy",
+          "live_action": false,
+          "hindi": "aired",
+          "where": [
+            "Cartoon Network India (aired 2010)",
+            "JioHotstar (English audio only)"
+          ],
+          "sources": [
+            "https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_in_South_Asia",
+            "https://www.hotstar.com/in/movies/pokemon-ranger-and-the-temple-of-the-sea/1971000811"
+          ],
+          "confidence": "medium",
+          "note": "Only Pokémon film Disney/Hungama never dubbed. Bulbapedia records a Cartoon Network India TV debut in 2010 (CN-era dub). The JioHotstar title page lists English only, so no current legal Hindi stream."
+        },
+        {
+          "year": 2007,
+          "en": "Pokémon: The Rise of Darkrai",
+          "jp": "Dialga VS Palkia VS Darkrai",
+          "live_action": false,
+          "hindi": "available",
+          "where": [
+            "JioHotstar (Hindi audio; title page languages: Hindi, Telugu, Tamil)"
+          ],
+          "sources": [
+            "https://www.hotstar.com/in/movies/the-rise-of-darkrai-pokemon-the-movie/1971000797",
+            "https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_in_South_Asia"
+          ],
+          "confidence": "high",
+          "note": "Hindi (Disney/Hungama dub) title: 'Darkrai - Dost ya Dushman'. Language list read from the JioHotstar title page on 2026-11-19. Hindi dub previously aired on Hungama TV / Disney XD. Also aired on Cartoon Network/Pogo in 2011."
+        },
+        {
+          "year": 2008,
+          "en": "Pokémon: Giratina and the Sky Warrior",
+          "jp": "Giratina to Sora no Hanataba: Shaymin",
+          "live_action": false,
+          "hindi": "available",
+          "where": [
+            "JioHotstar (Hindi audio; title page languages: Hindi, Telugu, Tamil, English)"
+          ],
+          "sources": [
+            "https://www.hotstar.com/in/movies/giratina-and-the-sky-warrior-pokemon-the-movie/1971000787",
+            "https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_in_South_Asia"
+          ],
+          "confidence": "high",
+          "note": "Hindi (Disney/Hungama dub) title: 'Giratina aur ek Mahaa Yodhha'. Language list read from the JioHotstar title page on 2026-11-19. Hindi dub previously aired on Hungama TV / Disney XD."
+        },
+        {
+          "year": 2009,
+          "en": "Pokémon: Arceus and the Jewel of Life",
+          "jp": "Arceus: Chōkoku no Jikū e",
+          "live_action": false,
+          "hindi": "available",
+          "where": [
+            "JioHotstar (Hindi audio; title page languages: Hindi, Telugu, Tamil, English)"
+          ],
+          "sources": [
+            "https://www.hotstar.com/in/movies/arceus-and-the-jewel-of-life-pokemon-the-movie/1971000791",
+            "https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_in_South_Asia"
+          ],
+          "confidence": "high",
+          "note": "Hindi (Disney/Hungama dub) title: 'Arceus Aur Jeevan Ka Jewel'. Language list read from the JioHotstar title page on 2026-11-19. Hindi dub previously aired on Hungama TV / Disney XD."
+        },
+        {
+          "year": 2010,
+          "en": "Pokémon: Zoroark – Master of Illusions",
+          "jp": "Gen'ei no Hasha: Zoroark",
+          "live_action": false,
+          "hindi": "available",
+          "where": [
+            "JioHotstar (Hindi audio; title page languages: Hindi)"
+          ],
+          "sources": [
+            "https://www.hotstar.com/in/movies/zoroark-master-of-illusions-pokemon-the-movie/1971000795",
+            "https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_in_South_Asia"
+          ],
+          "confidence": "high",
+          "note": "Hindi (Disney/Hungama dub) title: 'Zoroark - Mayajaal Ka Ustaad'. Language list read from the JioHotstar title page on 2026-11-19. Hindi dub previously aired on Hungama TV / Disney XD."
+        },
+        {
+          "year": 2011,
+          "en": "Pokémon the Movie: Black – Victini and Reshiram",
+          "jp": "Victini to Shiroki Eiyū: Reshiram",
+          "live_action": false,
+          "hindi": "available",
+          "where": [
+            "JioHotstar (Hindi audio; title page languages: Hindi, Telugu, Tamil, English)"
+          ],
+          "sources": [
+            "https://www.hotstar.com/in/movies/black-victini-and-reshiram-pokemon-the-movie/1971000792",
+            "https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_in_South_Asia"
+          ],
+          "confidence": "high",
+          "note": "Hindi (Disney/Hungama dub) title: 'Victini aur Reshiram'. Language list read from the JioHotstar title page on 2026-11-19. Hindi dub previously aired on Hungama TV / Disney XD. One of two versions of the 14th film (paired with White—Victini and Zekrom)."
+        },
+        {
+          "year": 2011,
+          "en": "Pokémon the Movie: White – Victini and Zekrom",
+          "jp": "Victini to Kuroki Eiyū: Zekrom",
+          "live_action": false,
+          "hindi": "none_found",
+          "where": [],
+          "sources": [
+            "https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_in_South_Asia"
+          ],
+          "confidence": "medium",
+          "note": "Second version of the 14th film. Bulbapedia says Disney India dubbed and aired only the Black version; no JioHotstar title page for White was found in a scan of its Pokémon movie IDs."
+        },
+        {
+          "year": 2012,
+          "en": "Pokémon the Movie: Kyurem vs. the Sword of Justice",
+          "jp": "Kyurem VS Seikenshi Keldeo",
+          "live_action": false,
+          "hindi": "available",
+          "where": [
+            "JioHotstar (Hindi audio; title page languages: Hindi)"
+          ],
+          "sources": [
+            "https://www.hotstar.com/in/movies/kyurem-vs-the-sword-of-justice-pokemon-the-movie/1971000780",
+            "https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_in_South_Asia"
+          ],
+          "confidence": "high",
+          "note": "Hindi (Disney/Hungama dub) title: 'Kyurem ka Muqabala'. Language list read from the JioHotstar title page on 2026-11-19. Hindi dub previously aired on Hungama TV / Disney XD. ANN also reported its Hungama TV premiere on 27 Jun 2020: https://www.animenewsnetwork.com/news/2020-06-26/pokemon-the-movie-kyurem-ka-muqabla-film-airs-on-hungama-tv-on-june-27/.160881"
+        },
+        {
+          "year": 2013,
+          "en": "Pokémon the Movie: Genesect and the Legend Awakened",
+          "jp": "Shinsoku no Genesect: Mewtwo Kakusei",
+          "live_action": false,
+          "hindi": "available",
+          "where": [
+            "JioHotstar (Hindi audio; title page languages: Hindi, Telugu, Tamil, English)"
+          ],
+          "sources": [
+            "https://www.hotstar.com/in/movies/genesect-and-the-legend-awakened-pokemon-the-movie/1971000814",
+            "https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_in_South_Asia"
+          ],
+          "confidence": "high",
+          "note": "Hindi (Disney/Hungama dub) title: 'Genesect Aur Mewtwo - Ek Shaandar Kahani'. Language list read from the JioHotstar title page on 2026-11-19. Hindi dub previously aired on Hungama TV / Disney XD."
+        },
+        {
+          "year": 2014,
+          "en": "Pokémon the Movie: Diancie and the Cocoon of Destruction",
+          "jp": "Hakai no Mayu to Diancie",
+          "live_action": false,
+          "hindi": "available",
+          "where": [
+            "JioHotstar (Hindi audio; title page languages: Hindi, Telugu, Tamil, English)"
+          ],
+          "sources": [
+            "https://www.hotstar.com/in/movies/diancie-and-the-cocoon-of-destruction-pokemon-the-movie/1971000804",
+            "https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_in_South_Asia"
+          ],
+          "confidence": "high",
+          "note": "Hindi (Disney/Hungama dub) title: 'Dabang Diancie Aur Diamond'. Language list read from the JioHotstar title page on 2026-11-19. Hindi dub previously aired on Hungama TV / Disney XD."
+        },
+        {
+          "year": 2015,
+          "en": "Pokémon the Movie: Hoopa and the Clash of Ages",
+          "jp": "Ring no Chōmajin: Hoopa",
+          "live_action": false,
+          "hindi": "available",
+          "where": [
+            "JioHotstar (Hindi audio; title page languages: Hindi, Telugu, Tamil, English)"
+          ],
+          "sources": [
+            "https://www.hotstar.com/in/movies/hoopa-and-the-clash-of-ages-pokemon-the-movie/1971000784",
+            "https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_in_South_Asia"
+          ],
+          "confidence": "high",
+          "note": "Hindi (Disney/Hungama dub) title: 'Hoopa And The Magic Rings'. Language list read from the JioHotstar title page on 2026-11-19. Hindi dub previously aired on Hungama TV / Disney XD. JustWatch India's guide still says 'not available for streaming', but the JioHotstar title page exists and lists the languages."
+        },
+        {
+          "year": 2016,
+          "en": "Pokémon the Movie: Volcanion and the Mechanical Marvel",
+          "jp": "Volcanion to Karakuri no Magearna",
+          "live_action": false,
+          "hindi": "available",
+          "where": [
+            "JioHotstar (Hindi audio; title page languages: Hindi, English)"
+          ],
+          "sources": [
+            "https://www.hotstar.com/in/movies/volcanion-and-the-mechanical-marvel-pokemon-the-movie/1971000820",
+            "https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_in_South_Asia"
+          ],
+          "confidence": "high",
+          "note": "Hindi (Disney/Hungama dub) title: 'Volcanion Ki Kahani'. Language list read from the JioHotstar title page on 2026-11-19. Hindi dub previously aired on Hungama TV / Disney XD. Hindi dub first released on Voot Kids on 2 Oct 2022 and aired on Hungama TV on 8 Jan 2023."
+        },
+        {
+          "year": 2017,
+          "en": "Pokémon the Movie: I Choose You!",
+          "jp": "Kimi ni Kimeta!",
+          "live_action": false,
+          "hindi": "available",
+          "where": [
+            "JioHotstar (Hindi audio; title page languages: Hindi, Telugu, Tamil, English)"
+          ],
+          "sources": [
+            "https://www.hotstar.com/in/movies/i-choose-you-pokemon-the-movie/1971000822",
+            "https://www.animenewsnetwork.com/news/2023-03-17/pokemon-movie-aap-selected-ho-film-airs-on-hungama-tv/.196078",
+            "https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_in_South_Asia"
+          ],
+          "confidence": "high",
+          "note": "Hindi title: 'Aap Selected Ho!'. Aired on Hungama TV on 18 Mar 2023. It was listed for a 2019 PVR release in Indian cinemas, but that release never happened."
+        },
+        {
+          "year": 2018,
+          "en": "Pokémon the Movie: The Power of Us",
+          "jp": "Minna no Monogatari",
+          "live_action": false,
+          "hindi": "aired",
+          "where": [
+            "Hungama TV (Hindi premiere 14 Apr 2024)",
+            "JioHotstar (English audio only)"
+          ],
+          "sources": [
+            "https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_in_South_Asia",
+            "https://www.hotstar.com/in/movies/the-power-of-us-pokemon-the-movie/1971000785"
+          ],
+          "confidence": "medium",
+          "note": "The Hindi TV premiere is sourced only to Bulbapedia. The JioHotstar title page lists English only (checked 2026-11-19), so no current legal Hindi stream."
+        },
+        {
+          "year": 2019,
+          "en": "Pokémon: Mewtwo Strikes Back – Evolution",
+          "jp": "Myūtsū no Gyakushū Evolution",
+          "live_action": false,
+          "hindi": "available",
+          "where": [
+            "Netflix India (Hindi audio)"
+          ],
+          "sources": [
+            "https://www.netflix.com/in/title/81223075",
+            "https://about.netflix.com/news/pokemon-and-netflix-team-up-for-global-release-of-pokemon-mewtwo-strikes-back-evolution",
+            "https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_in_South_Asia"
+          ],
+          "confidence": "high",
+          "note": "Hindi title: 'Mewtwo Ka Hamla - Evolution'. On 2026-11-19 the Netflix India page listed audio as English (incl. audio description), Hindi and Japanese. It has been on Netflix since 27 Feb 2020."
+        },
+        {
+          "year": 2020,
+          "en": "Pokémon the Movie: Secrets of the Jungle",
+          "jp": "Koko",
+          "live_action": false,
+          "hindi": "aired",
+          "where": [
+            "Netflix India (Hindi audio, Oct 2021 – c. Sep 2023; now removed)",
+            "Indian theatres (special screenings Feb 2024 and Oct 2024; language not confirmed)"
+          ],
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2021-09-11/netflix-streams-pokemon-the-movie-secrets-of-the-jungle-film-in-india-on-october-8/.176266",
+            "https://www.netflix.com/in/title/81346307",
+            "https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_in_South_Asia"
+          ],
+          "confidence": "medium",
+          "note": "Hindi title: 'Jungle Ka Raaz'. Premiered on Netflix India on 8 Oct 2021 with a Hindi dub (Bulbapedia; ANN mentions a Hindi trailer). On 2026-11-19 the Netflix India page said the title isn't available in India, and it is not on JioHotstar. Classed as 'aired' because the Hindi dub was released but no current legal stream exists. The Feb 2024 PVR Mumbai screening was English only; the Oct 2024 10-city screenings: https://www.animenewsnetwork.com/news/2024-10-10/pokemon-the-movie-secrets-of-the-jungle-anime-film-gets-theatrical-screening-in-india-on-october-20/.216542"
+        },
+        {
+          "year": 2019,
+          "en": "Pokémon Detective Pikachu",
+          "jp": "Meitantei Pikachū",
+          "live_action": true,
+          "hindi": "available",
+          "where": [
+            "JioHotstar (Hindi + English; subscription)",
+            "Indian theatres (10 May 2019, English and Hindi)",
+            "Amazon Prime Video India (per JustWatch; audio languages not verified)"
+          ],
+          "sources": [
+            "https://www.hotstar.com/in/movies/pokemon-detective-pikachu/1971000393",
+            "https://www.justwatch.com/in/movie/pokemon-detective-pikachu",
+            "https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_in_South_Asia"
+          ],
+          "confidence": "high",
+          "note": "Live-action Legendary/Warner Bros film, not part of the anime film series. JioHotstar listed Hindi and English on 2026-11-19. Netflix India added it in Apr 2021 (ANN), but JustWatch India no longer lists Netflix."
+        }
+      ]
+    }
+  ]
+}

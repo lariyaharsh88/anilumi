@@ -280,6 +280,31 @@
       "confidence": "high",
       "notes": "Read the YouTube Premium page with gl=IN on 2026-11-14 (raw HTML, ₹ prices). It matches Digit's Aug 2024 report of the hike to ₹149 individual and ₹1,490 annual prepaid; that report is older but YouTube's own page confirms it. Some Muse/Ani-One episodes are members-only or geo-limited, which is not covered here."
     },
+    "muse-india": {
+      "label": "Muse India (YouTube)",
+      "free": true,
+      "plans": [
+        {
+          "name": "YouTube Premium (Individual, optional ad-free)",
+          "price": 149,
+          "period": "month",
+          "ads": false,
+          "quality": null,
+          "notes": "Optional; removes ads on YouTube (and YouTube Music). Recurring monthly plan with a 1-month free trial. Prepaid options on the same page: ₹159/1 month, ₹459/3 months, ₹1,490/12 months. A cheaper Premium Lite (₹89/month) still shows ads on music, Shorts and search, so it is left out.",
+          "sources": [
+            "https://www.youtube.com/premium?gl=IN&hl=en-IN",
+            "https://www.digit.in/news/apps/youtube-premium-prices-hike-for-the-first-time-since-2019-plans-prices-and-more.html"
+          ]
+        }
+      ],
+      "hindiNote": "Muse India uploads Hindi-dubbed episodes to YouTube free with ads; YouTube Premium is only needed for ad-free viewing.",
+      "sources": [
+        "https://www.youtube.com/premium?gl=IN&hl=en-IN",
+        "https://www.digit.in/news/apps/youtube-premium-prices-hike-for-the-first-time-since-2019-plans-prices-and-more.html"
+      ],
+      "confidence": "high",
+      "notes": "Same plans as the YouTube entry (Muse India's anime are on YouTube), checked 2026-11-14."
+    },
     "cartoon-network": {
       "label": "Cartoon Network / Sony YAY!",
       "free": false,

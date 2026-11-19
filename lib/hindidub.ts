@@ -176,6 +176,8 @@ export function hasHindiDub(slug: string): boolean {
 /** Platform pages (/hindi-dub/<slug>): the platforms people search with "hindi dubbed anime". */
 export const HINDI_PLATFORMS = [
   { slug: "crunchyroll", label: "Crunchyroll", match: /^crunchyroll/i, how: "Open the episode, then pick Hindi under Audio in the settings menu (the gear icon on the web, the three dots in the app)." },
+  // "muse india anime" 2.9K a month (Keyword Planner, Nov 2026): its own page, though its titles are on the YouTube one too.
+  { slug: "muse-india", label: "Muse India (YouTube, free)", match: /muse/i, how: "Search \"Muse India\" on YouTube: full episodes are free with ads. Playlists can come down when a licence ends, so watch them while they're up." },
   { slug: "youtube", label: "YouTube (free)", match: /youtube/i, how: "Search the channel name on YouTube; full episodes are free with ads and stay up for months, though some playlists are removed when the licence ends." },
   { slug: "netflix", label: "Netflix India", match: /^netflix/i, how: "Open the title, start an episode, then choose Hindi under Audio & Subtitles." },
   { slug: "prime-video", label: "Prime Video (Anime Times)", match: /^(?!.*mx player).*(prime video|anime times)/i, how: "Anime Times is a paid channel inside Prime Video India; subscribe to the channel, then pick Hindi in the audio menu." },

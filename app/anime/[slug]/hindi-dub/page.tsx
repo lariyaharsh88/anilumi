@@ -12,6 +12,7 @@ import { dubShows, premiereAt } from "@/lib/dubschedule";
 import { pricesFor as priceOf, cheapestPlan, PERIOD } from "@/lib/platformprices";
 import { pageAbout } from "@/lib/ld";
 import { fitTitle, fitDescription } from "@/lib/titles";
+import { filmFranchises, filmsPath } from "@/lib/franchisefilms";
 import { DUB_CHECKED, HINDI_PARTS, dubDate, dubHref, dubPageEntry, dubsOn, hindiDubPath, hindiDubbed, platformFor, platformKind, type Dub, type PlatformKind } from "@/lib/hindidub";
 import { pricesFor, startingAt } from "@/lib/platformprices";
 import { hindiCast } from "@/lib/hindistats";
@@ -129,6 +130,9 @@ export default async function HindiDubPage({ params }: Props) {
       />
 
       <AnswerLead checked={checkedOn(d)}>{answer}</AnswerLead>
+      {filmFranchises().filter((f) => f.series === d.s).map((f) => (
+        <p key={f.slug} className="card mt-4 border-orange-400/30 p-3 text-sm">🎬 <strong>{f.name} movies:</strong> {f.films.filter((x) => x.hindi === "available").length} of the {f.films.length} films are in Hindi now. <Link href={filmsPath(f.slug)} className="text-violet hover:underline">Every {f.name} movie and where to watch it in Hindi →</Link></p>
+      ))}
 
       {glance.length > 0 && (
         <section className="reveal mt-10" aria-labelledby="glance-h">

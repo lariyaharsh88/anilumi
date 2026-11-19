@@ -12,6 +12,7 @@ import { animeBySlugs, posterUrl, type Anime } from "@/lib/kitsu";
 import { cheapestKind } from "@/lib/hindistats";
 import { itemList } from "@/lib/ld";
 import { fitTitle, fitDescription } from "@/lib/titles";
+import { filmFranchises, filmsPath } from "@/lib/franchisefilms";
 import { dubDate, dubHref, hindiDubbed, platformFor, platformKind, type Dub } from "@/lib/hindidub";
 
 export const revalidate = 86400;
@@ -92,6 +93,7 @@ export default async function HindiDubMovies() {
         <h2 id="list-h" className="h-section mb-1">All {own.length} anime movies in Hindi</h2>
         <p className="mb-4 text-sm text-muted">Checked {dubDate()}. Each card links to where the Hindi dub is confirmed.</p>
         <HindiDubList items={cards} platforms={byService.map((s) => s.name)} />
+        <p className="mt-4 flex flex-wrap items-center gap-2 text-sm"><span className="text-muted">Every film of a franchise, with its Hindi status:</span>{filmFranchises().map((f) => <Link key={f.slug} href={filmsPath(f.slug)} className="chip">{f.name} movies</Link>)}</p>
       </section>
 
       {inSeries.length > 0 && (
