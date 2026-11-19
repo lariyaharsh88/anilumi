@@ -100,6 +100,7 @@ export default async function BirthdayMonth({ params }: Props) {
         hue={330}
         posters={characters.slice(0, 3).map((c) => c.i)}
       />
+      <p className="mt-4 text-sm"><Link href="/anime-birthday-twin" className="font-medium text-violet hover:underline">🎂 Find your own anime birthday twin →</Link></p>
       <SectionNav sections={[
         { id: "top", label: "Most popular" },
         ...(stats ? [{ id: "glance", label: "At a glance" }] : []),

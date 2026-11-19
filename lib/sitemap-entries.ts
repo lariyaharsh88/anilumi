@@ -100,6 +100,7 @@ export async function sitemapEntries(): Promise<MetadataRoute.Sitemap> {
     { url: abs("/news"), lastModified: now, changeFrequency: "hourly", priority: 0.8 },
     { url: abs("/quiz"), lastModified: at(), changeFrequency: "monthly", priority: 0.6 },
     { url: abs("/japanese-name-generator"), lastModified: at(), changeFrequency: "yearly", priority: 0.5 },
+    { url: abs("/anime-name-generator"), lastModified: at(), changeFrequency: "yearly", priority: 0.5 },
     ...QUIZZES.map((q) => ({ url: abs(`/quiz/${q.slug}`), lastModified: at(), changeFrequency: "monthly" as const, priority: 0.6 })),
     { url: abs("/random-anime-generator"), lastModified: at(D.anilist), changeFrequency: "monthly", priority: 0.6 },
     { url: abs("/what-anime-should-i-watch"), lastModified: at(D.anilist), changeFrequency: "monthly", priority: 0.6 },
