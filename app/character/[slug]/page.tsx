@@ -95,14 +95,16 @@ async function load(slug: string) {
   // Only a one-word nickname that isn't part of the name goes in the title: "Nate River "Near"", "Touka Kirishima "Rabbit"".
   // Kitsu's list only: AniList's alternatives are mostly spellings ("Ryuu" for Ryuk).
   const nick = (c.otherNames || []).find((x) => /^[\p{L}'-]{2,12}$/u.test(x) && !c.name.toLowerCase().includes(x.toLowerCase())) ?? null;
-  return { c, apps, mains, home, homeApp, voiced, bday, facts, fact, bio, al, ranked, rankShow, snapped: Boolean(snap), others: others.filter((o) => o.id !== c.id).slice(0, 12), aliases, sign, span, nick, table, tableShow };
+  return { c, apps, mains, home, homeApp, voiced, bday, facts, fact, bio, al, ranked, rankShow, snapped: Boolean(snap), others: others.filter((o) => o.id !== c.id).slice(0, 12), aliases, sign, span, nick, table, tableShow, spellings: snap?.al ?? [] };
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const { c, home, voiced, facts, fact, bio, aliases, nick } = await load(slug);
-  // The checked name from the notes when there is one ("Monkey D. Luffy", not AniList's "Luffy Monkey D.").
-  const name = characterNote(c.slug)?.name ?? c.name;
+  const { c, home, voiced, facts, fact, bio, aliases, nick, spellings } = await load(slug);
+  // The checked name from the notes when there is one ("Monkey D. Luffy", not AniList's "Luffy Monkey D."); else the
+  // spelling people search when AniList lists it ("Satoru Gojo" for Kitsu's "Satoru Gojou": "gojo height" 5.4K).
+  const plain = c.name.replace(/ou(?![aeiou])/gi, "o").replace(/uu/gi, "u");
+  const name = characterNote(c.slug)?.name ?? (plain !== c.name && spellings.some((s) => s.toLowerCase() === plain.toLowerCase()) ? plain : c.name);
   // Our own words first; the shared database biography only where we have none (those pages aren't indexed).
   const about = characterNote(c.slug)?.about ?? bio;
   // Searchers want quick facts (age, height, birthday, voice actor), so the title and snippet lead with them.
