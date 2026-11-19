@@ -75,6 +75,7 @@ export default async function SchedulePage() {
           <Link href="/schedule/crunchyroll" className="chip">Crunchyroll schedule (IST)</Link>
           <Link href="/dub-schedule" className="chip">🎙 Dub schedule (English &amp; Hindi)</Link>
           <Link href="/where-to-watch" className="chip">Where to watch</Link>
+          <Link href="/comic-con-india" className="chip">🎪 Comic Con India dates</Link>
         </p>
       </PageHero>
       <div className="reveal mt-8">

@@ -1,0 +1,343 @@
+{
+  "checked": "2026-11-19",
+  "organizer": "Comic Con India (NODWIN Gaming)",
+  "tickets": "https://tickets.comicconindia.com/",
+  "editions": [
+    {
+      "city": "Navi Mumbai",
+      "slug": "navi-mumbai",
+      "name": "Navi Mumbai Comic Con 2026",
+      "start": "2026-11-28",
+      "end": "2026-11-29",
+      "venue": "CIDCO Exhibition Centre, Vashi",
+      "address": "CIDCO Exhibition Centre, Vashi, Navi Mumbai",
+      "tickets": [
+        {
+          "type": "Single Day Pass (Day 1, 28 Nov)",
+          "price": 699,
+          "note": "Includes an exclusive manga, an Absolute Batman poster and a BGMI x Comic Con bag"
+        },
+        {
+          "type": "Crunchyroll Power Pass (Day 1)",
+          "price": 1074,
+          "note": "Day pass plus a Crunchyroll annual Fan subscription, no-wait access at the Crunchyroll booth and a Crunchycoin"
+        },
+        {
+          "type": "Superfan Pass (both days)",
+          "price": 3499,
+          "note": "Both days plus a superfan box of goodies"
+        }
+      ],
+      "buy": [
+        {
+          "name": "Comic Con India (official)",
+          "url": "https://shop.comicconindia.com/events/navi-mumbai-comic-con-2026/tickets"
+        }
+      ],
+      "anime": [
+        "Crunchyroll booth with activations (Power Pass holders skip the queue)",
+        "An exclusive manga with every pass"
+      ],
+      "sources": [
+        "https://shop.comicconindia.com/events/navi-mumbai-comic-con-2026/tickets",
+        "https://tickets.comicconindia.com/",
+        "https://www.timeout.com/india/news/comic-con-india-2026-is-coming-to-navi-mumbai-for-the-first-time-090826"
+      ],
+      "confidence": "high",
+      "status": "upcoming",
+      "note": "The first Navi Mumbai edition."
+    },
+    {
+      "city": "Delhi",
+      "slug": "delhi",
+      "name": "Delhi Comic Con 2026",
+      "start": "2026-12-05",
+      "end": "2026-12-06",
+      "venue": "NSIC Exhibition Grounds, Okhla",
+      "address": "NSIC Exhibition Grounds, Okhla, New Delhi",
+      "metro": "Okhla NSIC (Magenta Line); Gate 2 leads to the NSIC Exhibition Complex",
+      "timings": "From 11 am (the 2025 edition ran 11 am to 8 pm); the box office closes 30 minutes before closing time",
+      "tickets": [
+        {
+          "type": "Single Day Pass (Day 1, 5 Dec)",
+          "price": 1199,
+          "note": "Includes an exclusive manga, an Absolute Batman poster and a Chacha Chaudhary x Comic Con bag"
+        },
+        {
+          "type": "Crunchyroll Power Pass (Day 1)",
+          "price": 1574,
+          "note": "Day pass plus a Crunchyroll annual Fan subscription (18+), no-wait access at the Crunchyroll booth and a Crunchycoin"
+        },
+        {
+          "type": "Superfan Pass (both days)",
+          "price": 3499,
+          "note": "Both days plus a superfan box of goodies"
+        }
+      ],
+      "buy": [
+        {
+          "name": "Comic Con India (official)",
+          "url": "https://shop.comicconindia.com/events/delhi-comic-con-2026/tickets"
+        }
+      ],
+      "anime": [
+        "Crunchyroll booth with activations (Power Pass holders skip the queue)",
+        "An exclusive manga with every pass"
+      ],
+      "rules": [
+        "Children aged 3 and above need a ticket; all ages welcome",
+        "Bring the m-ticket or a printout and a photo ID to swap for a wristband",
+        "Re-entry is allowed with an untampered wristband",
+        "No weapons, outside food or drink, large bags, professional cameras, helmets, laser devices or bottles",
+        "Parking is limited: the organisers suggest public transport",
+        "Tickets are valid only for the date bought and are non-refundable unless the event is cancelled"
+      ],
+      "sources": [
+        "https://shop.comicconindia.com/events/delhi-comic-con-2026/tickets",
+        "https://shop.comicconindia.com/events/delhi-comic-con-2026",
+        "https://tickets.comicconindia.com/",
+        "https://en.wikipedia.org/wiki/Okhla_NSIC_metro_station"
+      ],
+      "confidence": "high",
+      "status": "upcoming"
+    },
+    {
+      "city": "Hyderabad",
+      "slug": "hyderabad",
+      "name": "Hyderabad Comic Con 2026 + India Joy",
+      "start": "2026-12-07",
+      "end": "2026-12-13",
+      "venue": "Bharat Future City",
+      "address": "Bharat Future City, Hyderabad",
+      "tickets": [
+        {
+          "type": "Day Pass (India Joy + Comic Con, any one day)",
+          "price": 0,
+          "note": "Free: includes a manga, an Absolute Batman poster and a Chacha Chaudhary x Comic Con bag while stocks last"
+        },
+        {
+          "type": "Superfan Pass (all days)",
+          "price": 3499,
+          "note": "All days plus goodies including a Demon Slayer sling bag and a Wolverine figurine, and NODWIN Gaming Arena events"
+        }
+      ],
+      "buy": [
+        {
+          "name": "Comic Con India (official)",
+          "url": "https://shop.comicconindia.com/events/hyderabad-comic-con-2026/tickets"
+        }
+      ],
+      "anime": [
+        "A Demon Slayer sling bag in the Superfan Pass",
+        "A manga with every pass"
+      ],
+      "sources": [
+        "https://shop.comicconindia.com/events/hyderabad-comic-con-2026/tickets",
+        "https://tickets.comicconindia.com/"
+      ],
+      "confidence": "high",
+      "status": "upcoming",
+      "note": "Runs alongside India Joy, so it lasts a week; the day pass is free."
+    },
+    {
+      "city": "Indore",
+      "slug": "indore",
+      "name": "Indore Comic Con 2026",
+      "start": "2026-12-19",
+      "end": "2026-12-20",
+      "venue": "Brilliant Convention Centre",
+      "address": "Brilliant Convention Centre, Indore",
+      "tickets": [
+        {
+          "type": "Single Day Pass (Day 1, 19 Dec)",
+          "price": 499,
+          "note": "Includes an exclusive manga, an Absolute Batman poster and a BGMI x Comic Con bag"
+        },
+        {
+          "type": "Superfan Pass (both days)",
+          "price": 3499,
+          "note": "Both days plus a superfan box of goodies"
+        }
+      ],
+      "buy": [
+        {
+          "name": "Comic Con India (official)",
+          "url": "https://shop.comicconindia.com/events/indore-comic-con-2026/tickets"
+        }
+      ],
+      "sources": [
+        "https://shop.comicconindia.com/events/indore-comic-con-2026/tickets",
+        "https://tickets.comicconindia.com/"
+      ],
+      "confidence": "high",
+      "status": "upcoming"
+    },
+    {
+      "city": "Chennai",
+      "slug": "chennai",
+      "name": "Chennai Comic Con 2027",
+      "start": "2027-01-16",
+      "end": "2027-01-17",
+      "venue": "Chennai Trade Centre, Nandambakkam",
+      "address": "Chennai Trade Centre, Nandambakkam, Chennai",
+      "tickets": [
+        {
+          "type": "Single Day Pass (Day 1, 16 Jan)",
+          "price": 1099,
+          "note": "Includes an exclusive manga, an Absolute Batman poster and a Chacha Chaudhary x Comic Con bag"
+        },
+        {
+          "type": "Superfan Pass (both days)",
+          "price": 3499,
+          "note": "Both days plus a superfan box of goodies"
+        }
+      ],
+      "buy": [
+        {
+          "name": "Comic Con India (official)",
+          "url": "https://shop.comicconindia.com/events/chennai-comic-con-2027/tickets"
+        }
+      ],
+      "sources": [
+        "https://shop.comicconindia.com/events/chennai-comic-con-2027/tickets",
+        "https://tickets.comicconindia.com/"
+      ],
+      "confidence": "high",
+      "status": "upcoming"
+    },
+    {
+      "city": "Kochi",
+      "slug": "kochi",
+      "name": "Kochi Comic Con 2027",
+      "start": "2027-01-30",
+      "end": "2027-01-31",
+      "venue": "Adlux International Convention Center, Angamaly",
+      "address": "Adlux International Convention Center, Angamaly, Kochi",
+      "tickets": [
+        {
+          "type": "Single Day Pass (Day 1, 30 Jan)",
+          "price": 899,
+          "note": "Includes an exclusive manga, an Absolute Batman poster and a BGMI x Comic Con bag"
+        },
+        {
+          "type": "Superfan Pass (both days)",
+          "price": 3499,
+          "note": "Both days plus a superfan box of goodies"
+        }
+      ],
+      "buy": [
+        {
+          "name": "Comic Con India (official)",
+          "url": "https://shop.comicconindia.com/events/kochi-comic-con-2027/tickets"
+        }
+      ],
+      "sources": [
+        "https://shop.comicconindia.com/events/kochi-comic-con-2027/tickets",
+        "https://tickets.comicconindia.com/"
+      ],
+      "confidence": "high",
+      "status": "upcoming"
+    },
+    {
+      "city": "Pune",
+      "slug": "pune",
+      "name": "Pune Comic Con 2027",
+      "start": "2027-02-06",
+      "end": "2027-02-07",
+      "venue": "Messe Global Laxmi Lawns & Convention Center",
+      "address": "Messe Global Laxmi Lawns & Convention Center, Pune",
+      "tickets": [
+        {
+          "type": "Single Day Pass (Day 1, 6 Feb)",
+          "price": 899,
+          "note": "Includes a manga, an Absolute Batman poster and a BGMI x Comic Con bag"
+        },
+        {
+          "type": "Superfan Pass (both days)",
+          "price": 3499,
+          "note": "Both days plus a superfan box of goodies"
+        }
+      ],
+      "buy": [
+        {
+          "name": "Comic Con India (official)",
+          "url": "https://shop.comicconindia.com/events/pune-comic-con-2027/tickets"
+        }
+      ],
+      "sources": [
+        "https://shop.comicconindia.com/events/pune-comic-con-2027/tickets",
+        "https://tickets.comicconindia.com/"
+      ],
+      "confidence": "high",
+      "status": "upcoming"
+    },
+    {
+      "city": "Bengaluru",
+      "slug": "bengaluru",
+      "name": "Bengaluru Comic Con 2027",
+      "start": "2027-02-13",
+      "end": "2027-02-14",
+      "venue": "KTPO Convention Centre, Whitefield",
+      "address": "KTPO Convention Centre, Whitefield, Bengaluru",
+      "tickets": [
+        {
+          "type": "Single Day Pass (Day 1, 13 Feb)",
+          "price": 1199,
+          "note": "Includes an exclusive manga, an Absolute Batman poster and a Chacha Chaudhary x Comic Con bag"
+        },
+        {
+          "type": "Crunchyroll Power Pass (Day 1)",
+          "price": 1574,
+          "note": "Day pass plus a Crunchyroll annual Fan subscription (18+), no-wait access at the Crunchyroll booth and a Crunchycoin"
+        },
+        {
+          "type": "Superfan Pass (both days)",
+          "price": 3499,
+          "note": "Both days plus a superfan box of goodies"
+        }
+      ],
+      "buy": [
+        {
+          "name": "Comic Con India (official)",
+          "url": "https://shop.comicconindia.com/events/bengaluru-comic-con-2027/tickets"
+        }
+      ],
+      "anime": [
+        "Crunchyroll booth with activations (Power Pass holders skip the queue)",
+        "An exclusive manga with every pass"
+      ],
+      "sources": [
+        "https://shop.comicconindia.com/events/bengaluru-comic-con-2027/tickets",
+        "https://tickets.comicconindia.com/"
+      ],
+      "confidence": "high",
+      "status": "upcoming"
+    }
+  ],
+  "past": [
+    {
+      "city": "Visakhapatnam",
+      "name": "Vizag Comic Con 2026",
+      "start": "2026-10-10",
+      "end": "2026-10-11",
+      "note": "Opened the 2026-27 season; the first Vizag edition.",
+      "source": "https://www.animenewsnetwork.com/press-release/2026-08-25/comic-con-india-the-greatest-pop-culture-celebration-is-back-with-vizag-debuting-as-the-first-host-/.240958"
+    },
+    {
+      "city": "Delhi",
+      "name": "Delhi Comic Con 2025",
+      "start": "2025-12-05",
+      "end": "2025-12-07",
+      "note": "Three days at NSIC Exhibition Grounds, Okhla, 11 am to 8 pm.",
+      "source": "https://respawn.outlookindia.com/pop-culture/pop-culture-news/delhi-comic-con-returns-to-capital-in-december"
+    }
+  ],
+  "cosplay": {
+    "name": "Indian Championship of Cosplay (ICC)",
+    "summary": "Comic Con India's national cosplay contest: city qualifiers (₹50,000 and a finals spot for each winner) lead to a national finale. The 2026 Grand Champion, Arindam Paul, won ₹4 lakh. The 2027 contest hasn't been announced yet.",
+    "sources": [
+      "https://www.animenewsnetwork.com/press-release/2026-07-10/comic-con-india-crowns-arindam-paul-icc-2026-grand-champion-with-india-largest-ever-cosplay-prize-/.239486",
+      "https://www.dtnext.in/entertainment/cinema/arindam-paul-wins-comic-con-indias-icc-2026-grand-champion-title-takes-home-rs-4-lakh-prize"
+    ]
+  }
+}
