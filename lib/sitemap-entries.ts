@@ -24,7 +24,7 @@ import { filmFranchises, filmsPath, hasLang, FILMS_CHECKED, type FilmLang } from
 import { HINDI_PLATFORMS, dubsOn, hindiDubbed, hindiDubPath } from "@/lib/hindidub";
 import { PRICES_CHECKED } from "@/lib/platformprices";
 import { indexedSimilar } from "@/lib/similarhub";
-import { searchShown, searchShownPaths, animeIndexed, ownContentSlugs, watchOrderIndexed, characterTableIndexed, notedCharacters, genreIndexed, bestYearIndexed, trendIndexed, voiceActorIndexed, hindiDubIndexed } from "@/lib/indexing";
+import { searchShown, searchShownPaths, animeIndexed, ownContentSlugs, watchOrderIndexed, characterTableIndexed, notedCharacters, demandCharacters, genreIndexed, bestYearIndexed, trendIndexed, voiceActorIndexed, hindiDubIndexed } from "@/lib/indexing";
 import franchiseData from "@/data/franchises.json";
 import { DATA_DATES as D, STATIC_UPDATED, BIRTHDAY_PAGES_UPDATED, HINDI_HUB_UPDATED, SCENE_PAGE_UPDATED, DUB_GUIDES_ADDED, latest, weekStart, monthStart } from "@/lib/lastmod";
 import { FILLER } from "@/data/filler";
@@ -115,7 +115,7 @@ export async function sitemapEntries(): Promise<MetadataRoute.Sitemap> {
     ...Array.from({ length: 12 }, (_, i) => ({ url: abs(monthPath(i + 1)), lastModified: at(D.birthdays, D.charLines, BIRTHDAY_PAGES_UPDATED), changeFrequency: "monthly" as const, priority: 0.6 })),
     { url: abs("/on-this-day"), lastModified: now, changeFrequency: "daily", priority: 0.7 },
     // Only indexed character pages (lib/indexing.ts): those with verified notes plus any Google already shows.
-    ...[...new Set([...notedCharacters(), ...searchShownPaths("/character/").map((p) => p.slice("/character/".length))])]
+    ...[...new Set([...notedCharacters(), ...demandCharacters(), ...searchShownPaths("/character/").map((p) => p.slice("/character/".length))])]
       .map((s, i) => ({ url: abs(`/character/${s}`), lastModified: at(D.characters, D.charNotes), changeFrequency: "monthly" as const, priority: i < 100 ? 0.6 : 0.4 })),
     ...characterTableSlugs().filter(characterTableIndexed).map((s) => ({ url: abs(`/anime/${s}/characters`), lastModified: at(D.seriesCharacters), changeFrequency: "monthly" as const, priority: 0.5 })),
     { url: abs("/hype"), lastModified: now, changeFrequency: "daily", priority: 0.6 },

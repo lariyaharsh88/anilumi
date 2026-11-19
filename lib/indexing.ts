@@ -9,6 +9,7 @@
  * The bars below were raised so the index is the few hundred pages with something of our own; `shown` is now pages
  * Google still shows after the drop, not every page it tried during the first week.
  */
+import characterDemand from "@/data/character-demand.json";
 import priority from "@/data/warm-priority.json";
 import franchiseData from "@/data/franchises.json";
 import { WATCH_ORDER_OVERRIDES } from "@/data/watch-orders";
@@ -49,12 +50,21 @@ export const searchShownPaths = (prefix: string) => shownList().filter((p) => p.
 export const notedCharacters = () => Object.keys((notes as { characters: Record<string, unknown> }).characters);
 let noted: Set<string> | null = null;
 /**
- * A character page is indexed when it has verified notes or search already shows it. Pages with only the shared
- * AniList facts and a quoted bio (what every database has) stay for visitors, noindexed.
+ * Characters people search by height, age or birthday (data/character-demand.json: Keyword Planner, India + US,
+ * at least `min` searches a month combined; "gojo height" alone is 5.4K in India, answered today by spam pages with
+ * conflicting numbers). Their pages lead with those facts and rank the cast by height.
+ */
+export const demandCharacters = (): string[] => (characterDemand as { chars: { k: string }[] }).chars.map((c) => c.k);
+let demanded: Set<string> | null = null;
+/**
+ * A character page is indexed when it has verified notes, people search its facts (demandCharacters), or search
+ * already shows it. Pages with only the shared AniList facts and a quoted bio that nobody searches for stay for
+ * visitors, noindexed.
  */
 export function characterIndexed(slug: string): boolean {
   noted ??= new Set(notedCharacters());
-  return noted.has(slug) || searchShown(`/character/${slug}`);
+  demanded ??= new Set(demandCharacters());
+  return noted.has(slug) || demanded.has(slug) || searchShown(`/character/${slug}`);
 }
 
 /** Voice actors: the most-favourited (people search them by name) and any search already shows. */
