@@ -18,7 +18,7 @@ import { HINDI_SLUGS, hindiPath, hindiIndexed } from "@/lib/hindi";
 import { LANG, dubbedIn } from "@/lib/regionaldub";
 import { dubEvents } from "@/lib/dubupdates";
 import { allStreams, streamsPath } from "@/lib/streams";
-import { filmFranchises, filmsPath, FILMS_CHECKED } from "@/lib/franchisefilms";
+import { filmFranchises, filmsPath, hasLang, FILMS_CHECKED, type FilmLang } from "@/lib/franchisefilms";
 import { HINDI_PLATFORMS, dubsOn, hindiDubbed, hindiDubPath } from "@/lib/hindidub";
 import { PRICES_CHECKED } from "@/lib/platformprices";
 import { indexedSimilar } from "@/lib/similarhub";
@@ -83,7 +83,7 @@ export async function sitemapEntries(): Promise<MetadataRoute.Sitemap> {
     { url: abs("/schedule/crunchyroll"), lastModified: now, changeFrequency: "daily", priority: 0.7 },
     { url: abs("/hindi-dub/movies"), lastModified: at(D.dubs), changeFrequency: "weekly", priority: 0.7 },
     { url: abs("/hindi-dub/best"), lastModified: at(D.dubs), changeFrequency: "weekly", priority: 0.7 },
-    ...filmFranchises().map((f) => ({ url: abs(filmsPath(f.slug)), lastModified: at(FILMS_CHECKED), changeFrequency: "monthly" as const, priority: 0.7 })),
+    ...filmFranchises().flatMap((f) => ((["hi", "ta", "te"] as FilmLang[]).filter((l) => hasLang(f, l)).map((l) => ({ url: abs(filmsPath(f.slug, l)), lastModified: at(FILMS_CHECKED), changeFrequency: "monthly" as const, priority: 0.7 })))),
     { url: abs("/anime-on-netflix-india"), lastModified: at(D.streams), changeFrequency: "monthly", priority: 0.6 },
     { url: abs("/anime-streaming-sites"), lastModified: at(D.streams, D.dubs, PRICES_CHECKED), changeFrequency: "monthly", priority: 0.8 },
     { url: abs("/where-to-watch"), lastModified: at(D.streams), changeFrequency: "monthly", priority: 0.8 },

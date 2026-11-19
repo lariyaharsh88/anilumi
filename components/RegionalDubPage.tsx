@@ -16,6 +16,7 @@ import { animeBySlugs, posterUrl, type Anime } from "@/lib/kitsu";
 import { itemList } from "@/lib/ld";
 import { fitTitle, fitDescription } from "@/lib/titles";
 import { dubHref, hasHindiDub, platformKind } from "@/lib/hindidub";
+import { filmFranchises, filmsPath, hasLang } from "@/lib/franchisefilms";
 import { LANG, REGIONAL_CHECKED, cheapest, dubbedIn, platformsFor, regionalDate, type RegionalLang } from "@/lib/regionaldub";
 
 /** /tamil-dub and /telugu-dub: every anime with an official dub in the language, free ones first, then by platform. */
@@ -119,6 +120,9 @@ export default async function RegionalDubPage({ lang }: { lang: RegionalLang }) 
         <HindiDubList items={cards} platforms={platforms.map((p) => p.name)} labels={{ searchLabel: `Search ${L.name} dubbed anime`, none: `No ${L.name} dub matches. It may not have one yet, or we haven't confirmed it.`, dub: `${L.name} dub` }} canReport={dbEnabled()} />
         {dbEnabled() && <CorrectionForm kind="dub" className="mt-4" />}
         <MadeBy className="mt-4" method={`Each ${L.name} dub is checked on the platform's own title page (audio languages), the licensor's announcement or Indian anime news; fan lists and unofficial uploads never count.`} date={REGIONAL_CHECKED} />
+        {filmFranchises().some((f) => hasLang(f, lang)) && (
+          <p className="mt-4 flex flex-wrap items-center gap-2 text-sm"><span className="text-muted">Films, with their {L.name} status:</span>{filmFranchises().filter((f) => hasLang(f, lang)).map((f) => <Link key={f.slug} href={filmsPath(f.slug, lang)} className="chip">🎬 {f.name} movies in {L.name}</Link>)}</p>
+        )}
       </section>
 
       {platforms.length > 0 && (

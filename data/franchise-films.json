@@ -14,7 +14,19 @@
           "where": [],
           "sources": [],
           "confidence": "medium",
-          "note": "Disney Channel India premiered 'Doraemon: Nobita's Dinosaur' on 27 Nov 2011 but the source doesn't say which version; the 2006 remake is the more likely one, so this original is marked none_found"
+          "note": "Disney Channel India premiered 'Doraemon: Nobita's Dinosaur' on 27 Nov 2011 but the source doesn't say which version; the 2006 remake is the more likely one, so this original is marked none_found",
+          "ta": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          }
         },
         {
           "year": 1981,
@@ -24,7 +36,19 @@
           "where": [],
           "sources": [],
           "confidence": "medium",
-          "note": "The 2009 remake was dubbed instead"
+          "note": "The 2009 remake was dubbed instead",
+          "ta": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          }
         },
         {
           "year": 1982,
@@ -34,7 +58,19 @@
           "where": [],
           "sources": [],
           "confidence": "medium",
-          "note": "The 2014 remake was dubbed instead"
+          "note": "The 2014 remake was dubbed instead",
+          "ta": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          }
         },
         {
           "year": 1983,
@@ -51,7 +87,19 @@
             "https://www.animenewsnetwork.com/news/2023-04-23/anime-films-airing-on-indian-tv-april-23-29/.197378",
             "https://doraemon.fandom.com/wiki/Doraemon_in_India"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "ta": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          }
         },
         {
           "year": 1984,
@@ -61,7 +109,19 @@
           "where": [],
           "sources": [],
           "confidence": "medium",
-          "note": "The 2007 remake was dubbed instead"
+          "note": "The 2007 remake was dubbed instead",
+          "ta": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          }
         },
         {
           "year": 1985,
@@ -77,7 +137,19 @@
             "https://www.animenewsnetwork.com/news/2020-12-20/anime-films-airing-on-indian-tv-december-20-26/.167636",
             "https://doraemon.fandom.com/wiki/Doraemon_in_India"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "ta": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          }
         },
         {
           "year": 1986,
@@ -87,7 +159,19 @@
           "where": [],
           "sources": [],
           "confidence": "medium",
-          "note": "The 2011 remake was dubbed and released in Indian theatres instead"
+          "note": "The 2011 remake was dubbed and released in Indian theatres instead",
+          "ta": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          }
         },
         {
           "year": 1987,
@@ -103,7 +187,19 @@
             "https://www.animenewsnetwork.com/news/2023-04-23/anime-films-airing-on-indian-tv-april-23-29/.197378",
             "https://doraemon.fandom.com/wiki/Doraemon_in_India"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "ta": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          }
         },
         {
           "year": 1988,
@@ -120,7 +216,19 @@
             "https://www.animenewsnetwork.com/news/2020-12-20/anime-films-airing-on-indian-tv-december-20-26/.167636",
             "https://doraemon.fandom.com/wiki/Doraemon_in_India"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "ta": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          }
         },
         {
           "year": 1989,
@@ -130,7 +238,19 @@
           "where": [],
           "sources": [],
           "confidence": "medium",
-          "note": "Sources conflict: the fan wiki dates an Indian airing (12 Sep 2020) to this 1989 film, but ANN's listings name the 2016 remake. Only one version appears to be dubbed, so it is assigned to 2016"
+          "note": "Sources conflict: the fan wiki dates an Indian airing (12 Sep 2020) to this 1989 film, but ANN's listings name the 2016 remake. Only one version appears to be dubbed, so it is assigned to 2016",
+          "ta": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          }
         },
         {
           "year": 1990,
@@ -147,7 +267,19 @@
             "https://www.animenewsnetwork.com/news/2020-08-09/anime-films-airing-on-indian-tv-august-9-15/.162730",
             "https://doraemon.fandom.com/wiki/Doraemon_in_India"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "ta": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          }
         },
         {
           "year": 1991,
@@ -162,7 +294,19 @@
             "https://www.animenewsnetwork.com/news/2020-12-20/anime-films-airing-on-indian-tv-december-20-26/.167636",
             "https://doraemon.fandom.com/wiki/Doraemon_in_India"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "ta": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          }
         },
         {
           "year": 1992,
@@ -177,7 +321,19 @@
             "https://www.animenewsnetwork.com/news/2020-08-09/anime-films-airing-on-indian-tv-august-9-15/.162730",
             "https://doraemon.fandom.com/wiki/Doraemon_in_India"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "ta": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          }
         },
         {
           "year": 1993,
@@ -193,7 +349,19 @@
             "https://www.animenewsnetwork.com/news/2020-08-29/anime-films-airing-on-indian-tv-august-30-september-5/.163435",
             "https://doraemon.fandom.com/wiki/Doraemon_in_India"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "ta": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          }
         },
         {
           "year": 1994,
@@ -209,7 +377,19 @@
             "https://www.animenewsnetwork.com/news/2020-12-20/anime-films-airing-on-indian-tv-december-20-26/.167636",
             "https://doraemon.fandom.com/wiki/Doraemon_in_India"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "ta": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          }
         },
         {
           "year": 1995,
@@ -225,7 +405,19 @@
             "https://www.animenewsnetwork.com/news/2020-08-09/anime-films-airing-on-indian-tv-august-9-15/.162730",
             "https://doraemon.fandom.com/wiki/Doraemon_in_India"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "ta": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          }
         },
         {
           "year": 1996,
@@ -241,7 +433,19 @@
             "https://www.animenewsnetwork.com/news/2020-08-09/anime-films-airing-on-indian-tv-august-9-15/.162730",
             "https://doraemon.fandom.com/wiki/Doraemon_in_India"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "ta": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          }
         },
         {
           "year": 1997,
@@ -257,7 +461,19 @@
             "https://www.animenewsnetwork.com/news/2021-11-20/anime-films-airing-on-indian-tv-november-21-27/.179779",
             "https://doraemon.fandom.com/wiki/Doraemon_in_India"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "ta": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          }
         },
         {
           "year": 1998,
@@ -273,7 +489,19 @@
             "https://www.animenewsnetwork.com/news/2020-09-26/anime-films-airing-on-indian-tv-september-27-october-3/.164512",
             "https://doraemon.fandom.com/wiki/Doraemon_in_India"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "ta": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          }
         },
         {
           "year": 1999,
@@ -289,7 +517,19 @@
             "https://www.animenewsnetwork.com/news/2021-07-03/anime-films-airing-on-indian-tv-july-4-10/.174760",
             "https://doraemon.fandom.com/wiki/Doraemon_in_India"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "ta": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          }
         },
         {
           "year": 2000,
@@ -305,7 +545,19 @@
             "https://www.animenewsnetwork.com/news/2021-11-20/anime-films-airing-on-indian-tv-november-21-27/.179779",
             "https://doraemon.fandom.com/wiki/Doraemon_in_India"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "ta": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          }
         },
         {
           "year": 2001,
@@ -321,7 +573,19 @@
             "https://www.animenewsnetwork.com/news/2020-08-09/anime-films-airing-on-indian-tv-august-9-15/.162730",
             "https://doraemon.fandom.com/wiki/Doraemon_in_India"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "ta": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          }
         },
         {
           "year": 2002,
@@ -337,7 +601,19 @@
             "https://www.animenewsnetwork.com/news/2020-08-09/anime-films-airing-on-indian-tv-august-9-15/.162730",
             "https://doraemon.fandom.com/wiki/Doraemon_in_India"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "ta": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          }
         },
         {
           "year": 2003,
@@ -352,7 +628,19 @@
             "https://www.animenewsnetwork.com/news/2020-07-06/doraemon-the-movie-jadoo-mantar-aur-jahnoom-doraemon-movie-toofani-adventure-films-listed-as-airing-/.161493",
             "https://doraemon.fandom.com/wiki/Doraemon_in_India"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "ta": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          }
         },
         {
           "year": 2004,
@@ -368,7 +656,19 @@
             "https://www.animenewsnetwork.com/news/2020-12-20/anime-films-airing-on-indian-tv-december-20-26/.167636",
             "https://doraemon.fandom.com/wiki/Doraemon_in_India"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "ta": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          }
         },
         {
           "year": 2006,
@@ -385,7 +685,19 @@
             "https://doraemon.fandom.com/wiki/Doraemon_in_India"
           ],
           "confidence": "medium",
-          "note": "The Disney press release doesn't say whether it was the 1980 film or the 2006 remake; assigned to 2006 as the more likely one"
+          "note": "The Disney press release doesn't say whether it was the 1980 film or the 2006 remake; assigned to 2006 as the more likely one",
+          "ta": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          }
         },
         {
           "year": 2007,
@@ -400,7 +712,19 @@
             "https://www.animenewsnetwork.com/news/2020-07-06/doraemon-the-movie-jadoo-mantar-aur-jahnoom-doraemon-movie-toofani-adventure-films-listed-as-airing-/.161493",
             "https://doraemon.fandom.com/wiki/Doraemon_in_India"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "ta": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          }
         },
         {
           "year": 2008,
@@ -416,7 +740,19 @@
             "https://www.animenewsnetwork.com/news/2020-08-09/anime-films-airing-on-indian-tv-august-9-15/.162730",
             "https://doraemon.fandom.com/wiki/Doraemon_in_India"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "ta": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          }
         },
         {
           "year": 2009,
@@ -432,7 +768,19 @@
             "https://www.animenewsnetwork.com/news/2020-08-09/anime-films-airing-on-indian-tv-august-9-15/.162730",
             "https://doraemon.fandom.com/wiki/Doraemon_in_India"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "ta": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          }
         },
         {
           "year": 2010,
@@ -447,7 +795,19 @@
             "https://www.animenewsnetwork.com/news/2020-08-29/anime-films-airing-on-indian-tv-august-30-september-5/.163435",
             "https://doraemon.fandom.com/wiki/Doraemon_in_India"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "ta": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          }
         },
         {
           "year": 2011,
@@ -465,7 +825,19 @@
             "https://doraemon.fandom.com/wiki/Doraemon_in_India"
           ],
           "confidence": "medium",
-          "note": "Theatrical date and Hindi title come only from a fan site and fan wiki; JustWatch IN lists no stream"
+          "note": "Theatrical date and Hindi title come only from a fan site and fan wiki; JustWatch IN lists no stream",
+          "ta": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          }
         },
         {
           "year": 2012,
@@ -483,7 +855,19 @@
             "https://doraemon.fandom.com/wiki/Doraemon_in_India"
           ],
           "confidence": "high",
-          "note": "TV airing confirmed by ANN; the theatrical date comes from a fan site and fan wiki"
+          "note": "TV airing confirmed by ANN; the theatrical date comes from a fan site and fan wiki",
+          "ta": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          }
         },
         {
           "year": 2013,
@@ -499,7 +883,19 @@
             "https://www.animenewsnetwork.com/news/2020-12-20/anime-films-airing-on-indian-tv-december-20-26/.167636",
             "https://doraemon.fandom.com/wiki/Doraemon_in_India"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "ta": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          }
         },
         {
           "year": 2014,
@@ -515,7 +911,19 @@
             "https://www.animenewsnetwork.com/news/2020-08-29/anime-films-airing-on-indian-tv-august-30-september-5/.163435",
             "https://doraemon.fandom.com/wiki/Doraemon_in_India"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "ta": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          }
         },
         {
           "year": 2014,
@@ -533,7 +941,23 @@
             "https://doraemon.fandom.com/wiki/Doraemon_in_India"
           ],
           "confidence": "high",
-          "note": "Netflix India title page lists Hindi audio"
+          "note": "Netflix India title page lists Hindi audio",
+          "ta": {
+            "status": "none_found",
+            "where": [],
+            "sources": [
+              "https://www.netflix.com/in/title/80158156"
+            ],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "none_found",
+            "where": [],
+            "sources": [
+              "https://www.netflix.com/in/title/80158156"
+            ],
+            "confidence": "medium"
+          }
         },
         {
           "year": 2015,
@@ -549,7 +973,19 @@
             "https://www.animenewsnetwork.com/news/2021-07-03/anime-films-airing-on-indian-tv-july-4-10/.174760",
             "https://doraemon.fandom.com/wiki/Doraemon_in_India"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "ta": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          }
         },
         {
           "year": 2016,
@@ -566,7 +1002,19 @@
             "https://doraemon.fandom.com/wiki/Doraemon_in_India"
           ],
           "confidence": "medium",
-          "note": "ANN names this remake, but the fan wiki assigns the airing to the 1989 original, so it is unclear which version was dubbed"
+          "note": "ANN names this remake, but the fan wiki assigns the airing to the 1989 original, so it is unclear which version was dubbed",
+          "ta": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          }
         },
         {
           "year": 2017,
@@ -583,7 +1031,31 @@
             "https://www.animenewsnetwork.com/news/2023-04-23/anime-films-airing-on-indian-tv-april-23-29/.197378",
             "https://doraemon.fandom.com/wiki/Doraemon_in_India"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "ta": {
+            "status": "aired",
+            "where": [
+              "Hungama TV (Tamil dub, TV premiere 14 Aug 2022)"
+            ],
+            "sources": [
+              "https://www.medianews4u.com/hungama-tv-to-premiere-doraemon-the-movie-nobita-chal-pada-antarctica-on-14th-august/",
+              "https://bestmediainfo.com/2022/08/hungama-tv-to-premiere-doraemon-the-movie-nobita-chal-pada-antarctica-on-august-14",
+              "https://www.animenewsnetwork.com/news/2022-01-31/doraemon-films-nobita-chal-pada-antarctica-nobita-chala-chand-pe-dubbed-in-indian-languages/.182072"
+            ],
+            "confidence": "high"
+          },
+          "te": {
+            "status": "aired",
+            "where": [
+              "Hungama TV (Telugu dub, TV premiere 14 Aug 2022)"
+            ],
+            "sources": [
+              "https://www.medianews4u.com/hungama-tv-to-premiere-doraemon-the-movie-nobita-chal-pada-antarctica-on-14th-august/",
+              "https://bestmediainfo.com/2022/08/hungama-tv-to-premiere-doraemon-the-movie-nobita-chal-pada-antarctica-on-august-14",
+              "https://www.animenewsnetwork.com/news/2022-01-31/doraemon-films-nobita-chal-pada-antarctica-nobita-chala-chand-pe-dubbed-in-indian-languages/.182072"
+            ],
+            "confidence": "high"
+          }
         },
         {
           "year": 2018,
@@ -598,7 +1070,19 @@
             "https://www.animenewsnetwork.com/news/2022-09-18/anime-films-airing-on-indian-tv-september-18-24/.189824",
             "https://doraemon.fandom.com/wiki/Doraemon_in_India"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "ta": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          }
         },
         {
           "year": 2019,
@@ -614,7 +1098,19 @@
             "https://doraemon.fandom.com/wiki/Doraemon_in_India"
           ],
           "confidence": "high",
-          "note": "Hindi dub certified by CBFC (Jan 2022)"
+          "note": "Hindi dub certified by CBFC (Jan 2022)",
+          "ta": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          }
         },
         {
           "year": 2020,
@@ -630,7 +1126,29 @@
             "https://doraemon.fandom.com/wiki/Doraemon:_Nobita%27s_New_Dinosaur"
           ],
           "confidence": "medium",
-          "note": "Supported by fan wiki only"
+          "note": "Supported by fan wiki only",
+          "ta": {
+            "status": "aired",
+            "where": [
+              "Disney Channel India (Tamil feed, TV premiere 25 Dec 2025)"
+            ],
+            "sources": [
+              "https://doraemon.fandom.com/wiki/Doraemon_in_India",
+              "https://doraemon.fandom.com/wiki/Doraemon:_Nobita%27s_New_Dinosaur"
+            ],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "aired",
+            "where": [
+              "Disney Channel India (Telugu feed, TV premiere 25 Dec 2025)"
+            ],
+            "sources": [
+              "https://doraemon.fandom.com/wiki/Doraemon_in_India",
+              "https://doraemon.fandom.com/wiki/Doraemon:_Nobita%27s_New_Dinosaur"
+            ],
+            "confidence": "medium"
+          }
         },
         {
           "year": 2020,
@@ -646,7 +1164,23 @@
             "https://www.animenewsnetwork.com/news/2021-11-27/netflix-lists-stand-by-me-doraemon-2-cg-anime-film-for-release-in-india-on-december-24/.176264"
           ],
           "confidence": "high",
-          "note": "Netflix India title page lists Hindi audio"
+          "note": "Netflix India title page lists Hindi audio",
+          "ta": {
+            "status": "none_found",
+            "where": [],
+            "sources": [
+              "https://www.netflix.com/in/title/81451264"
+            ],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "none_found",
+            "where": [],
+            "sources": [
+              "https://www.netflix.com/in/title/81451264"
+            ],
+            "confidence": "medium"
+          }
         },
         {
           "year": 2022,
@@ -662,7 +1196,29 @@
             "https://doraemon.fandom.com/wiki/Doraemon:_Nobita%27s_Little_Star_Wars_2021"
           ],
           "confidence": "medium",
-          "note": "Supported by fan wiki only. Released in Japan in March 2022 after a delay from 2021"
+          "note": "Supported by fan wiki only. Released in Japan in March 2022 after a delay from 2021",
+          "ta": {
+            "status": "aired",
+            "where": [
+              "Disney Channel India (Tamil feed, TV premiere 31 May 2026)"
+            ],
+            "sources": [
+              "https://doraemon.fandom.com/wiki/Doraemon_in_India",
+              "https://doraemon.fandom.com/wiki/Doraemon:_Nobita%27s_Little_Star_Wars_2021"
+            ],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "aired",
+            "where": [
+              "Disney Channel India (Telugu feed, TV premiere 31 May 2026)"
+            ],
+            "sources": [
+              "https://doraemon.fandom.com/wiki/Doraemon_in_India",
+              "https://doraemon.fandom.com/wiki/Doraemon:_Nobita%27s_Little_Star_Wars_2021"
+            ],
+            "confidence": "medium"
+          }
         },
         {
           "year": 2023,
@@ -678,7 +1234,31 @@
             "https://doraemon.fandom.com/wiki/Doraemon:_Nobita%27s_Sky_Utopia"
           ],
           "confidence": "medium",
-          "note": "Supported by fan wiki only"
+          "note": "Supported by fan wiki only",
+          "ta": {
+            "status": "aired",
+            "where": [
+              "Disney Channel India (Tamil feed, TV premiere 4 May 2025)"
+            ],
+            "sources": [
+              "https://dreamdth.com/threads/anime-movies-tv-premiere-updates.147098/page-3",
+              "https://m.youtube.com/watch?v=ew80Fw57krU",
+              "https://doraemon.fandom.com/wiki/Doraemon_in_India"
+            ],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "aired",
+            "where": [
+              "Disney Channel India (Telugu feed, TV premiere 4 May 2025)"
+            ],
+            "sources": [
+              "https://dreamdth.com/threads/anime-movies-tv-premiere-updates.147098/page-3",
+              "https://m.youtube.com/watch?v=ew80Fw57krU",
+              "https://doraemon.fandom.com/wiki/Doraemon_in_India"
+            ],
+            "confidence": "medium"
+          }
         },
         {
           "year": 2024,
@@ -694,7 +1274,31 @@
             "https://animelorehub.blogspot.com/2025/11/doraemon-nobitas-earth-symphony-musical.html"
           ],
           "confidence": "medium",
-          "note": "Supported by fan wiki and a blog only"
+          "note": "Supported by fan wiki and a blog only",
+          "ta": {
+            "status": "aired",
+            "where": [
+              "Disney Channel India (Tamil feed, TV premiere 14 Nov 2025)"
+            ],
+            "sources": [
+              "https://animelorehub.blogspot.com/2025/11/doraemon-nobitas-earth-symphony-musical.html",
+              "https://dreamdth.com/threads/anime-movies-tv-premiere-updates.147098/page-4",
+              "https://www.youtube.com/watch?v=YWpr32nJ19M"
+            ],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "aired",
+            "where": [
+              "Disney Channel India (Telugu feed, TV premiere 14 Nov 2025)"
+            ],
+            "sources": [
+              "https://animelorehub.blogspot.com/2025/11/doraemon-nobitas-earth-symphony-musical.html",
+              "https://dreamdth.com/threads/anime-movies-tv-premiere-updates.147098/page-4",
+              "https://doraemon.fandom.com/wiki/Doraemon_in_India"
+            ],
+            "confidence": "medium"
+          }
         },
         {
           "year": 2025,
@@ -706,13 +1310,25 @@
             "https://www.justwatch.com/in/search?q=doraemon"
           ],
           "confidence": "high",
-          "note": "No Indian release or Hindi dub found; JustWatch IN lists no provider (19 Nov 2026)"
+          "note": "No Indian release or Hindi dub found; JustWatch IN lists no provider (19 Nov 2026)",
+          "ta": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          }
         },
         {
           "year": 2026,
           "en": "Doraemon the Movie: New Nobita and the Castle of the Undersea Devil",
           "jp": "Eiga Doraemon: Shin Nobita no Kaitei Kiganjō",
-          "hindi": "available",
+          "hindi": "aired",
           "where": [
             "Indian theatres from 2 Oct 2026 (PVR INOX Pictures; Hindi, Tamil and Telugu, including 4DX)"
           ],
@@ -722,7 +1338,31 @@
             "https://www.thestatesman.com/entertainment/doraemon-movie-india-theatrical-release-new-nobita-castle-undersea-devil-hindi-tamil-telugu-1503607539.html"
           ],
           "confidence": "high",
-          "note": "In cinemas since 2 Oct 2026, the first wide Indian theatrical release for a Doraemon film. By mid-November the run may be ending, so check showtimes; it isn't streaming yet."
+          "note": "Released in Indian cinemas on 2 Oct 2026 in Hindi, Tamil and Telugu, the first wide Indian theatrical release for a Doraemon film. Not streaming yet; check showtimes in case it's still playing near you.",
+          "ta": {
+            "status": "aired",
+            "where": [
+              "Indian theatres from 2 Oct 2026 (PVR INOX Pictures; Tamil dub)"
+            ],
+            "sources": [
+              "https://animationxpress.com/?p=1638562",
+              "https://www.animenewsnetwork.com/news/2026-07-28/doraemon-the-movie-new-nobita-and-the-castle-of-the-undersea-devil-film-hindi-tamil-teaser-trailers-/.240040",
+              "https://www.animenewsnetwork.com/press-release/2026-06-18/doraemon-makes-its-big-screen-india-debut-on-october-2/.238662"
+            ],
+            "confidence": "high"
+          },
+          "te": {
+            "status": "aired",
+            "where": [
+              "Indian theatres from 2 Oct 2026 (PVR INOX Pictures; Telugu dub)"
+            ],
+            "sources": [
+              "https://animationxpress.com/?p=1638562",
+              "https://www.animenewsnetwork.com/news/2026-07-28/doraemon-the-movie-new-nobita-and-the-castle-of-the-undersea-devil-film-hindi-tamil-teaser-trailers-/.240040",
+              "https://www.animenewsnetwork.com/press-release/2026-06-18/doraemon-makes-its-big-screen-india-debut-on-october-2/.238662"
+            ],
+            "confidence": "high"
+          }
         }
       ]
     },
@@ -745,7 +1385,19 @@
             "https://www.animenewsnetwork.com/news/2020-12-20/anime-films-airing-on-indian-tv-december-20-26/.167636",
             "https://crayonshinchan.fandom.com/wiki/Crayon_Shin-chan_in_India"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "ta": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          }
         },
         {
           "year": 1994,
@@ -761,7 +1413,19 @@
             "https://www.afaqs.com/media-briefs/42805_shinchan-debuts-in-movies",
             "https://crayonshinchan.fandom.com/wiki/Crayon_Shin-chan_in_India"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "ta": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          }
         },
         {
           "year": 1995,
@@ -777,7 +1441,27 @@
             "https://www.animationxpress.com/latest-news/sony-yay-adds-popular-show-shin-chan-to-its-slate/"
           ],
           "confidence": "medium",
-          "note": "Aired on Sony YAY!, whose feeds include Hindi; the airing source doesn't name the language. No current stream found; source is a fan news site"
+          "note": "Aired on Sony YAY!, whose feeds include Hindi; the airing source doesn't name the language. No current stream found; source is a fan news site",
+          "ta": {
+            "status": "aired",
+            "where": [
+              "Sony YAY! (Tamil feed, TV premiere 26 Oct 2024)"
+            ],
+            "sources": [
+              "https://animemirchi.com/?p=5975"
+            ],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "aired",
+            "where": [
+              "Sony YAY! (Telugu feed, TV premiere 26 Oct 2024)"
+            ],
+            "sources": [
+              "https://animemirchi.com/?p=5975"
+            ],
+            "confidence": "medium"
+          }
         },
         {
           "year": 1996,
@@ -794,7 +1478,27 @@
             "https://www.animenewsnetwork.com/news/2020-08-09/anime-films-airing-on-indian-tv-august-9-15/.162730",
             "https://crayonshinchan.fandom.com/wiki/Crayon_Shin-chan_in_India"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "ta": {
+            "status": "aired",
+            "where": [
+              "Sony YAY! (Tamil feed, TV premiere 17 May 2026, new dub)"
+            ],
+            "sources": [
+              "https://animemirchi.com/?p=5975"
+            ],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "aired",
+            "where": [
+              "Sony YAY! (Telugu feed, TV premiere 17 May 2026, new dub)"
+            ],
+            "sources": [
+              "https://animemirchi.com/?p=5975"
+            ],
+            "confidence": "medium"
+          }
         },
         {
           "year": 1997,
@@ -811,7 +1515,29 @@
             "https://animenewsindia.com/2025/10/17/sony-yay-lights-up-diwali-with-shinchans-new-season-and-films-including-the-indian-tv-premiere-of-our-dinosaur-diary-in-regional-languages-dubs/",
             "https://crayonshinchan.fandom.com/wiki/Crayon_Shin-chan_in_India"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "ta": {
+            "status": "aired",
+            "where": [
+              "Sony YAY! (Tamil feed, TV premiere 26 Oct 2025, new dub)"
+            ],
+            "sources": [
+              "https://animenewsindia.com/2025/10/17/sony-yay-lights-up-diwali-with-shinchans-new-season-and-films-including-the-indian-tv-premiere-of-our-dinosaur-diary-in-regional-languages-dubs/",
+              "https://animemirchi.com/?p=5975"
+            ],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "aired",
+            "where": [
+              "Sony YAY! (Telugu feed, TV premiere 26 Oct 2025, new dub)"
+            ],
+            "sources": [
+              "https://animenewsindia.com/2025/10/17/sony-yay-lights-up-diwali-with-shinchans-new-season-and-films-including-the-indian-tv-premiere-of-our-dinosaur-diary-in-regional-languages-dubs/",
+              "https://animemirchi.com/?p=5975"
+            ],
+            "confidence": "medium"
+          }
         },
         {
           "year": 1998,
@@ -826,7 +1552,29 @@
             "https://www.animationxpress.com/latest-news/sony-yay-adds-popular-show-shin-chan-to-its-slate/"
           ],
           "confidence": "medium",
-          "note": "Aired on Sony YAY!, whose feeds include Hindi; the airing source doesn't name the language. No current stream found; source is a fan news site"
+          "note": "Aired on Sony YAY!, whose feeds include Hindi; the airing source doesn't name the language. No current stream found; source is a fan news site",
+          "ta": {
+            "status": "aired",
+            "where": [
+              "Sony YAY! (Tamil feed, TV premiere 2 Nov 2024)"
+            ],
+            "sources": [
+              "https://animemirchi.com/?p=5975",
+              "https://dreamdth.com/threads/anime-movies-tv-premiere-updates.147098/page-2"
+            ],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "aired",
+            "where": [
+              "Sony YAY! (Telugu feed, TV premiere 2 Nov 2024)"
+            ],
+            "sources": [
+              "https://animemirchi.com/?p=5975",
+              "https://dreamdth.com/threads/anime-movies-tv-premiere-updates.147098/page-2"
+            ],
+            "confidence": "medium"
+          }
         },
         {
           "year": 1999,
@@ -842,7 +1590,29 @@
             "https://www.animationxpress.com/latest-news/sony-yay-adds-popular-show-shin-chan-to-its-slate/"
           ],
           "confidence": "medium",
-          "note": "Aired on Sony YAY!, whose feeds include Hindi; the airing source doesn't name the language. No current stream found"
+          "note": "Aired on Sony YAY!, whose feeds include Hindi; the airing source doesn't name the language. No current stream found",
+          "ta": {
+            "status": "aired",
+            "where": [
+              "Sony YAY! (Tamil feed, TV premiere 10 May 2025)"
+            ],
+            "sources": [
+              "https://dreamdth.com/threads/anime-movies-tv-premiere-updates.147098/page-3",
+              "https://animemirchi.com/?p=5975"
+            ],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "aired",
+            "where": [
+              "Sony YAY! (Telugu feed, TV premiere 10 May 2025)"
+            ],
+            "sources": [
+              "https://dreamdth.com/threads/anime-movies-tv-premiere-updates.147098/page-3",
+              "https://animemirchi.com/?p=5975"
+            ],
+            "confidence": "medium"
+          }
         },
         {
           "year": 2000,
@@ -861,7 +1631,29 @@
             "https://crayonshinchan.fandom.com/wiki/Crayon_Shin-chan_in_India"
           ],
           "confidence": "high",
-          "note": "First Shin-chan film released in Indian theatres"
+          "note": "First Shin-chan film released in Indian theatres",
+          "ta": {
+            "status": "aired",
+            "where": [
+              "Sony YAY! (Tamil feed, TV premiere 25 Oct 2025, new dub)"
+            ],
+            "sources": [
+              "https://animenewsindia.com/2025/10/17/sony-yay-lights-up-diwali-with-shinchans-new-season-and-films-including-the-indian-tv-premiere-of-our-dinosaur-diary-in-regional-languages-dubs/",
+              "https://animemirchi.com/?p=5975"
+            ],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "aired",
+            "where": [
+              "Sony YAY! (Telugu feed, TV premiere 25 Oct 2025, new dub)"
+            ],
+            "sources": [
+              "https://animenewsindia.com/2025/10/17/sony-yay-lights-up-diwali-with-shinchans-new-season-and-films-including-the-indian-tv-premiere-of-our-dinosaur-diary-in-regional-languages-dubs/",
+              "https://animemirchi.com/?p=5975"
+            ],
+            "confidence": "medium"
+          }
         },
         {
           "year": 2001,
@@ -877,7 +1669,29 @@
             "https://www.animationxpress.com/latest-news/sony-yay-adds-popular-show-shin-chan-to-its-slate/"
           ],
           "confidence": "medium",
-          "note": "Aired on Sony YAY!, whose feeds include Hindi; the airing source doesn't name the language. No current stream found"
+          "note": "Aired on Sony YAY!, whose feeds include Hindi; the airing source doesn't name the language. No current stream found",
+          "ta": {
+            "status": "aired",
+            "where": [
+              "Sony YAY! (Tamil feed, TV premiere 11 May 2025)"
+            ],
+            "sources": [
+              "https://dreamdth.com/threads/anime-movies-tv-premiere-updates.147098/page-3",
+              "https://animemirchi.com/?p=5975"
+            ],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "aired",
+            "where": [
+              "Sony YAY! (Telugu feed, TV premiere 11 May 2025)"
+            ],
+            "sources": [
+              "https://dreamdth.com/threads/anime-movies-tv-premiere-updates.147098/page-3",
+              "https://animemirchi.com/?p=5975"
+            ],
+            "confidence": "medium"
+          }
         },
         {
           "year": 2002,
@@ -893,7 +1707,29 @@
             "https://www.animationxpress.com/latest-news/sony-yay-adds-popular-show-shin-chan-to-its-slate/"
           ],
           "confidence": "medium",
-          "note": "Aired on Sony YAY!, whose feeds include Hindi; the airing source doesn't name the language. No current stream found"
+          "note": "Aired on Sony YAY!, whose feeds include Hindi; the airing source doesn't name the language. No current stream found",
+          "ta": {
+            "status": "aired",
+            "where": [
+              "Sony YAY! (Tamil feed, TV premiere 17 May 2025)"
+            ],
+            "sources": [
+              "https://animemirchi.com/?p=5975",
+              "https://www.dtnext.in/entertainment/ott/catch-shin-chan-movies-premiering-on-indian-television-this-may-833230"
+            ],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "aired",
+            "where": [
+              "Sony YAY! (Telugu feed, TV premiere 17 May 2025)"
+            ],
+            "sources": [
+              "https://animemirchi.com/?p=5975",
+              "https://www.dtnext.in/entertainment/ott/catch-shin-chan-movies-premiering-on-indian-television-this-may-833230"
+            ],
+            "confidence": "medium"
+          }
         },
         {
           "year": 2003,
@@ -909,7 +1745,27 @@
             "https://www.animenewsnetwork.com/news/2020-06-20/shinchan-masala-story-film-listed-as-airing-on-hungama-tv-on-june-21/.160863",
             "https://crayonshinchan.fandom.com/wiki/Crayon_Shin-chan_in_India"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "ta": {
+            "status": "aired",
+            "where": [
+              "Sony YAY! (Tamil feed, TV premiere 28 Dec 2025)"
+            ],
+            "sources": [
+              "https://animemirchi.com/?p=5975"
+            ],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "aired",
+            "where": [
+              "Sony YAY! (Telugu feed, TV premiere 28 Dec 2025)"
+            ],
+            "sources": [
+              "https://animemirchi.com/?p=5975"
+            ],
+            "confidence": "medium"
+          }
         },
         {
           "year": 2004,
@@ -925,7 +1781,29 @@
             "https://animemirchi.com/?p=5975"
           ],
           "confidence": "medium",
-          "note": "Aired on Sony YAY!, whose feeds include Hindi; the airing source doesn't name the language. No current stream found"
+          "note": "Aired on Sony YAY!, whose feeds include Hindi; the airing source doesn't name the language. No current stream found",
+          "ta": {
+            "status": "aired",
+            "where": [
+              "Sony YAY! (Tamil feed, TV premiere 4 Jan 2025)"
+            ],
+            "sources": [
+              "https://animemirchi.com/?p=5975",
+              "https://www.animenewsnetwork.com/press-release/2024-12-13/shin-chan-takes-over-your-saturdays-with-4-hilarious-movies-get-ready-for-a-month-of-mischief-on-/.218981"
+            ],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "aired",
+            "where": [
+              "Sony YAY! (Telugu feed, TV premiere 4 Jan 2025)"
+            ],
+            "sources": [
+              "https://animemirchi.com/?p=5975",
+              "https://www.animenewsnetwork.com/press-release/2024-12-13/shin-chan-takes-over-your-saturdays-with-4-hilarious-movies-get-ready-for-a-month-of-mischief-on-/.218981"
+            ],
+            "confidence": "medium"
+          }
         },
         {
           "year": 2005,
@@ -940,7 +1818,29 @@
             "https://animemirchi.com/?p=5975"
           ],
           "confidence": "medium",
-          "note": "Aired on Sony YAY!, whose feeds include Hindi; the airing source doesn't name the language. No current stream found"
+          "note": "Aired on Sony YAY!, whose feeds include Hindi; the airing source doesn't name the language. No current stream found",
+          "ta": {
+            "status": "aired",
+            "where": [
+              "Sony YAY! (Tamil feed, TV premiere 28 Dec 2024)"
+            ],
+            "sources": [
+              "https://animemirchi.com/?p=5975",
+              "https://www.animenewsnetwork.com/press-release/2024-12-13/shin-chan-takes-over-your-saturdays-with-4-hilarious-movies-get-ready-for-a-month-of-mischief-on-/.218981"
+            ],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "aired",
+            "where": [
+              "Sony YAY! (Telugu feed, TV premiere 28 Dec 2024)"
+            ],
+            "sources": [
+              "https://animemirchi.com/?p=5975",
+              "https://www.animenewsnetwork.com/press-release/2024-12-13/shin-chan-takes-over-your-saturdays-with-4-hilarious-movies-get-ready-for-a-month-of-mischief-on-/.218981"
+            ],
+            "confidence": "medium"
+          }
         },
         {
           "year": 2006,
@@ -955,7 +1855,29 @@
             "https://animemirchi.com/?p=5975"
           ],
           "confidence": "medium",
-          "note": "Aired on Sony YAY!, whose feeds include Hindi; the airing source doesn't name the language. No current stream found"
+          "note": "Aired on Sony YAY!, whose feeds include Hindi; the airing source doesn't name the language. No current stream found",
+          "ta": {
+            "status": "aired",
+            "where": [
+              "Sony YAY! (Tamil feed, TV premiere 21 Dec 2024)"
+            ],
+            "sources": [
+              "https://dreamdth.com/threads/anime-movies-tv-premiere-updates.147098/page-2",
+              "https://animemirchi.com/?p=5975"
+            ],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "aired",
+            "where": [
+              "Sony YAY! (Telugu feed, TV premiere 21 Dec 2024)"
+            ],
+            "sources": [
+              "https://dreamdth.com/threads/anime-movies-tv-premiere-updates.147098/page-2",
+              "https://animemirchi.com/?p=5975"
+            ],
+            "confidence": "medium"
+          }
         },
         {
           "year": 2007,
@@ -971,7 +1893,29 @@
             "https://animemirchi.com/?p=5975"
           ],
           "confidence": "medium",
-          "note": "Aired on Sony YAY!, whose feeds include Hindi; the airing source doesn't name the language. No current stream found"
+          "note": "Aired on Sony YAY!, whose feeds include Hindi; the airing source doesn't name the language. No current stream found",
+          "ta": {
+            "status": "aired",
+            "where": [
+              "Sony YAY! (Tamil feed, TV premiere 14 Dec 2024)"
+            ],
+            "sources": [
+              "https://animemirchi.com/?p=5975",
+              "https://www.animenewsnetwork.com/press-release/2024-12-13/shin-chan-takes-over-your-saturdays-with-4-hilarious-movies-get-ready-for-a-month-of-mischief-on-/.218981"
+            ],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "aired",
+            "where": [
+              "Sony YAY! (Telugu feed, TV premiere 14 Dec 2024)"
+            ],
+            "sources": [
+              "https://animemirchi.com/?p=5975",
+              "https://www.animenewsnetwork.com/press-release/2024-12-13/shin-chan-takes-over-your-saturdays-with-4-hilarious-movies-get-ready-for-a-month-of-mischief-on-/.218981"
+            ],
+            "confidence": "medium"
+          }
         },
         {
           "year": 2008,
@@ -987,7 +1931,29 @@
             "https://www.animenewsnetwork.com/news/2021-11-20/anime-films-airing-on-indian-tv-november-21-27/.179779",
             "https://crayonshinchan.fandom.com/wiki/Crayon_Shin-chan_in_India"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "ta": {
+            "status": "aired",
+            "where": [
+              "Hungama TV (Tamil feed, aired 31 Dec 2025 as 'Shinchan: The Golden Sword')"
+            ],
+            "sources": [
+              "https://dreamdth.com/threads/anime-movies-tv-premiere-updates.147098/page-4",
+              "https://crayonshinchan.fandom.com/wiki/Crayon_Shin-chan_in_India"
+            ],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "aired",
+            "where": [
+              "Hungama TV (Telugu feed, aired 31 Dec 2025 as 'Shinchan: The Golden Sword')"
+            ],
+            "sources": [
+              "https://dreamdth.com/threads/anime-movies-tv-premiere-updates.147098/page-4",
+              "https://crayonshinchan.fandom.com/wiki/Crayon_Shin-chan_in_India"
+            ],
+            "confidence": "medium"
+          }
         },
         {
           "year": 2009,
@@ -1003,7 +1969,29 @@
             "https://www.animationxpress.com/latest-news/sony-yay-adds-popular-show-shin-chan-to-its-slate/"
           ],
           "confidence": "medium",
-          "note": "Aired on Sony YAY!, whose feeds include Hindi; the airing source doesn't name the language. No current stream found"
+          "note": "Aired on Sony YAY!, whose feeds include Hindi; the airing source doesn't name the language. No current stream found",
+          "ta": {
+            "status": "aired",
+            "where": [
+              "Sony YAY! (Tamil feed, TV premiere 18 May 2025)"
+            ],
+            "sources": [
+              "https://animemirchi.com/?p=5975",
+              "https://www.dtnext.in/entertainment/ott/catch-shin-chan-movies-premiering-on-indian-television-this-may-833230"
+            ],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "aired",
+            "where": [
+              "Sony YAY! (Telugu feed, TV premiere 18 May 2025)"
+            ],
+            "sources": [
+              "https://animemirchi.com/?p=5975",
+              "https://www.dtnext.in/entertainment/ott/catch-shin-chan-movies-premiering-on-indian-television-this-may-833230"
+            ],
+            "confidence": "medium"
+          }
         },
         {
           "year": 2010,
@@ -1020,7 +2008,27 @@
             "https://www.animenewsnetwork.com/news/2020-08-29/anime-films-airing-on-indian-tv-august-30-september-5/.163435",
             "https://crayonshinchan.fandom.com/wiki/Crayon_Shin-chan_in_India"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "ta": {
+            "status": "aired",
+            "where": [
+              "Sony YAY! (Tamil feed, TV premiere 21 Dec 2025, new dub)"
+            ],
+            "sources": [
+              "https://animemirchi.com/?p=5975"
+            ],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "aired",
+            "where": [
+              "Sony YAY! (Telugu feed, TV premiere 21 Dec 2025, new dub)"
+            ],
+            "sources": [
+              "https://animemirchi.com/?p=5975"
+            ],
+            "confidence": "medium"
+          }
         },
         {
           "year": 2011,
@@ -1037,7 +2045,29 @@
             "https://www.dtnext.in/entertainment/ott/catch-shin-chan-movies-premiering-on-indian-television-this-may-833230",
             "https://crayonshinchan.fandom.com/wiki/Crayon_Shin-chan_in_India"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "ta": {
+            "status": "aired",
+            "where": [
+              "Sony YAY! (Tamil feed, TV premiere 24 May 2025, new dub)"
+            ],
+            "sources": [
+              "https://animemirchi.com/?p=5975",
+              "https://www.dtnext.in/entertainment/ott/catch-shin-chan-movies-premiering-on-indian-television-this-may-833230"
+            ],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "aired",
+            "where": [
+              "Sony YAY! (Telugu feed, TV premiere 24 May 2025, new dub)"
+            ],
+            "sources": [
+              "https://animemirchi.com/?p=5975",
+              "https://www.dtnext.in/entertainment/ott/catch-shin-chan-movies-premiering-on-indian-television-this-may-833230"
+            ],
+            "confidence": "medium"
+          }
         },
         {
           "year": 2012,
@@ -1053,7 +2083,19 @@
             "https://www.animenewsnetwork.com/news/2020-12-20/anime-films-airing-on-indian-tv-december-20-26/.167636",
             "https://crayonshinchan.fandom.com/wiki/Crayon_Shin-chan_in_India"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "ta": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          }
         },
         {
           "year": 2013,
@@ -1070,7 +2112,29 @@
             "https://www.animenewsnetwork.com/news/2020-08-09/anime-films-airing-on-indian-tv-august-9-15/.162730",
             "https://crayonshinchan.fandom.com/wiki/Crayon_Shin-chan_in_India"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "ta": {
+            "status": "aired",
+            "where": [
+              "Sony YAY! (Tamil feed, TV premiere 18 Oct 2025, new dub)"
+            ],
+            "sources": [
+              "https://animenewsindia.com/2025/10/17/sony-yay-lights-up-diwali-with-shinchans-new-season-and-films-including-the-indian-tv-premiere-of-our-dinosaur-diary-in-regional-languages-dubs/",
+              "https://animemirchi.com/?p=5975"
+            ],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "aired",
+            "where": [
+              "Sony YAY! (Telugu feed, TV premiere 18 Oct 2025, new dub)"
+            ],
+            "sources": [
+              "https://animenewsindia.com/2025/10/17/sony-yay-lights-up-diwali-with-shinchans-new-season-and-films-including-the-indian-tv-premiere-of-our-dinosaur-diary-in-regional-languages-dubs/",
+              "https://animemirchi.com/?p=5975"
+            ],
+            "confidence": "medium"
+          }
         },
         {
           "year": 2014,
@@ -1087,7 +2151,29 @@
             "https://www.animenewsnetwork.com/news/2022-10-30/anime-films-airing-on-indian-tv-october-30-november-5/.191374",
             "https://crayonshinchan.fandom.com/wiki/Crayon_Shin-chan_in_India"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "ta": {
+            "status": "aired",
+            "where": [
+              "Sony YAY! (Tamil feed, TV premiere 25 May 2025, new dub)"
+            ],
+            "sources": [
+              "https://animemirchi.com/?p=5975",
+              "https://www.dtnext.in/entertainment/ott/catch-shin-chan-movies-premiering-on-indian-television-this-may-833230"
+            ],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "aired",
+            "where": [
+              "Sony YAY! (Telugu feed, TV premiere 25 May 2025, new dub)"
+            ],
+            "sources": [
+              "https://animemirchi.com/?p=5975",
+              "https://www.dtnext.in/entertainment/ott/catch-shin-chan-movies-premiering-on-indian-television-this-may-833230"
+            ],
+            "confidence": "medium"
+          }
         },
         {
           "year": 2015,
@@ -1104,7 +2190,27 @@
             "https://www.animenewsnetwork.com/news/2023-04-23/anime-films-airing-on-indian-tv-april-23-29/.197378",
             "https://crayonshinchan.fandom.com/wiki/Crayon_Shin-chan_in_India"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "ta": {
+            "status": "aired",
+            "where": [
+              "Sony YAY! (Tamil feed, TV premiere 22 Jun 2025, new dub)"
+            ],
+            "sources": [
+              "https://animemirchi.com/?p=5975"
+            ],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "aired",
+            "where": [
+              "Sony YAY! (Telugu feed, TV premiere 22 Jun 2025, new dub)"
+            ],
+            "sources": [
+              "https://animemirchi.com/?p=5975"
+            ],
+            "confidence": "medium"
+          }
         },
         {
           "year": 2016,
@@ -1120,7 +2226,29 @@
             "https://www.animationxpress.com/latest-news/sony-yay-adds-popular-show-shin-chan-to-its-slate/"
           ],
           "confidence": "medium",
-          "note": "Aired on Sony YAY!, whose feeds include Hindi; the airing source doesn't name the language. No current stream found; source is a fan news site"
+          "note": "Aired on Sony YAY!, whose feeds include Hindi; the airing source doesn't name the language. No current stream found; source is a fan news site",
+          "ta": {
+            "status": "aired",
+            "where": [
+              "Sony YAY! (Tamil feed, TV premiere 18 Aug 2024)"
+            ],
+            "sources": [
+              "https://dreamdth.com/threads/anime-movies-tv-premiere-updates.147098/",
+              "https://animemirchi.com/?p=5975"
+            ],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "aired",
+            "where": [
+              "Sony YAY! (Telugu feed, TV premiere 18 Aug 2024)"
+            ],
+            "sources": [
+              "https://dreamdth.com/threads/anime-movies-tv-premiere-updates.147098/",
+              "https://animemirchi.com/?p=5975"
+            ],
+            "confidence": "medium"
+          }
         },
         {
           "year": 2017,
@@ -1135,7 +2263,29 @@
             "https://www.animationxpress.com/latest-news/sony-yay-adds-popular-show-shin-chan-to-its-slate/"
           ],
           "confidence": "medium",
-          "note": "Aired on Sony YAY!, whose feeds include Hindi; the airing source doesn't name the language. No current stream found; source is a fan news site"
+          "note": "Aired on Sony YAY!, whose feeds include Hindi; the airing source doesn't name the language. No current stream found; source is a fan news site",
+          "ta": {
+            "status": "aired",
+            "where": [
+              "Sony YAY! (Tamil feed, TV premiere 19 Oct 2024)"
+            ],
+            "sources": [
+              "https://animemirchi.com/?p=5975",
+              "https://dreamdth.com/threads/anime-movies-tv-premiere-updates.147098/page-2"
+            ],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "aired",
+            "where": [
+              "Sony YAY! (Telugu feed, TV premiere 19 Oct 2024)"
+            ],
+            "sources": [
+              "https://animemirchi.com/?p=5975",
+              "https://dreamdth.com/threads/anime-movies-tv-premiere-updates.147098/page-2"
+            ],
+            "confidence": "medium"
+          }
         },
         {
           "year": 2018,
@@ -1151,7 +2301,29 @@
             "https://www.animationxpress.com/latest-news/sony-yay-adds-popular-show-shin-chan-to-its-slate/"
           ],
           "confidence": "medium",
-          "note": "Aired on Sony YAY!, whose feeds include Hindi; the airing source doesn't name the language. No current stream found"
+          "note": "Aired on Sony YAY!, whose feeds include Hindi; the airing source doesn't name the language. No current stream found",
+          "ta": {
+            "status": "aired",
+            "where": [
+              "Sony YAY! (Tamil feed, TV premiere 22 Jun 2024)"
+            ],
+            "sources": [
+              "https://dreamdth.com/threads/anime-movies-tv-premiere-updates.147098/",
+              "https://animemirchi.com/?p=5975"
+            ],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "aired",
+            "where": [
+              "Sony YAY! (Telugu feed, TV premiere 22 Jun 2024)"
+            ],
+            "sources": [
+              "https://dreamdth.com/threads/anime-movies-tv-premiere-updates.147098/",
+              "https://animemirchi.com/?p=5975"
+            ],
+            "confidence": "medium"
+          }
         },
         {
           "year": 2019,
@@ -1167,7 +2339,27 @@
             "https://www.animationxpress.com/latest-news/sony-yay-adds-popular-show-shin-chan-to-its-slate/"
           ],
           "confidence": "medium",
-          "note": "Aired on Sony YAY!, whose feeds include Hindi; the airing source doesn't name the language. No current stream found; source is a fan news site"
+          "note": "Aired on Sony YAY!, whose feeds include Hindi; the airing source doesn't name the language. No current stream found; source is a fan news site",
+          "ta": {
+            "status": "aired",
+            "where": [
+              "Sony YAY! (Tamil feed, TV premiere 12 Oct 2024)"
+            ],
+            "sources": [
+              "https://animemirchi.com/?p=5975"
+            ],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "aired",
+            "where": [
+              "Sony YAY! (Telugu feed, TV premiere 12 Oct 2024)"
+            ],
+            "sources": [
+              "https://animemirchi.com/?p=5975"
+            ],
+            "confidence": "medium"
+          }
         },
         {
           "year": 2020,
@@ -1183,7 +2375,29 @@
             "https://www.animationxpress.com/latest-news/sony-yay-adds-popular-show-shin-chan-to-its-slate/"
           ],
           "confidence": "medium",
-          "note": "Aired on Sony YAY!, whose feeds include Hindi; the airing source doesn't name the language. No current stream found; source is a fan news site"
+          "note": "Aired on Sony YAY!, whose feeds include Hindi; the airing source doesn't name the language. No current stream found; source is a fan news site",
+          "ta": {
+            "status": "aired",
+            "where": [
+              "Sony YAY! (Tamil feed, TV premiere 15 Jun 2024)"
+            ],
+            "sources": [
+              "https://en.wikipedia.org/wiki/Crayon_Shin-chan:_Crash!_Graffiti_Kingdom_and_Almost_Four_Heroes",
+              "https://dreamdth.com/threads/anime-movies-tv-premiere-updates.147098/"
+            ],
+            "confidence": "high"
+          },
+          "te": {
+            "status": "aired",
+            "where": [
+              "Sony YAY! (Telugu feed, TV premiere 15 Jun 2024)"
+            ],
+            "sources": [
+              "https://en.wikipedia.org/wiki/Crayon_Shin-chan:_Crash!_Graffiti_Kingdom_and_Almost_Four_Heroes",
+              "https://dreamdth.com/threads/anime-movies-tv-premiere-updates.147098/"
+            ],
+            "confidence": "high"
+          }
         },
         {
           "year": 2021,
@@ -1199,7 +2413,27 @@
             "https://www.animationxpress.com/latest-news/sony-yay-adds-popular-show-shin-chan-to-its-slate/"
           ],
           "confidence": "medium",
-          "note": "Aired on Sony YAY!, whose feeds include Hindi; the airing source doesn't name the language. No current stream found; source is a fan news site"
+          "note": "Aired on Sony YAY!, whose feeds include Hindi; the airing source doesn't name the language. No current stream found; source is a fan news site",
+          "ta": {
+            "status": "aired",
+            "where": [
+              "Sony YAY! (Tamil feed, TV premiere 11 Aug 2024)"
+            ],
+            "sources": [
+              "https://animemirchi.com/?p=5975"
+            ],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "aired",
+            "where": [
+              "Sony YAY! (Telugu feed, TV premiere 11 Aug 2024)"
+            ],
+            "sources": [
+              "https://animemirchi.com/?p=5975"
+            ],
+            "confidence": "medium"
+          }
         },
         {
           "year": 2022,
@@ -1216,7 +2450,29 @@
             "https://www.animationxpress.com/latest-news/sony-yay-adds-popular-show-shin-chan-to-its-slate/"
           ],
           "confidence": "medium",
-          "note": "Aired on Sony YAY!, whose feeds include Hindi; the airing source doesn't name the language. No current stream found; sources are fan news sites"
+          "note": "Aired on Sony YAY!, whose feeds include Hindi; the airing source doesn't name the language. No current stream found; sources are fan news sites",
+          "ta": {
+            "status": "aired",
+            "where": [
+              "Sony YAY! (Tamil feed, TV premiere 9 Jun 2024)"
+            ],
+            "sources": [
+              "https://en.wikipedia.org/wiki/Crayon_Shin-chan:_The_Tornado_Legend_of_Ninja_Mononoke",
+              "https://animemirchi.com/?p=5975"
+            ],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "aired",
+            "where": [
+              "Sony YAY! (Telugu feed, TV premiere 9 Jun 2024)"
+            ],
+            "sources": [
+              "https://en.wikipedia.org/wiki/Crayon_Shin-chan:_The_Tornado_Legend_of_Ninja_Mononoke",
+              "https://animemirchi.com/?p=5975"
+            ],
+            "confidence": "medium"
+          }
         },
         {
           "year": 2023,
@@ -1233,7 +2489,31 @@
             "https://www.animationxpress.com/latest-news/sony-yay-adds-popular-show-shin-chan-to-its-slate/"
           ],
           "confidence": "medium",
-          "note": "The franchise's first 3DCG film. Aired on Sony YAY!, whose feeds include Hindi; the airing source doesn't name the language. No current stream found; sources are fan news sites"
+          "note": "The franchise's first 3DCG film. Aired on Sony YAY!, whose feeds include Hindi; the airing source doesn't name the language. No current stream found; sources are fan news sites",
+          "ta": {
+            "status": "aired",
+            "where": [
+              "Sony YAY! (Tamil feed, TV premiere 8 Jun 2024)"
+            ],
+            "sources": [
+              "https://en.wikipedia.org/wiki/New_Dimension!_Crayon_Shin-chan_the_Movie:_Battle_of_Supernatural_Powers_~Flying_Sushi~",
+              "https://dreamdth.com/threads/anime-movies-tv-premiere-updates.147098/",
+              "https://animenewsindia.com/2024/06/04/sony-yay-to-premiere-first-ever-3d-cg-shinchan-film-in-india-in-regional-dubs-in-this-june-2024"
+            ],
+            "confidence": "high"
+          },
+          "te": {
+            "status": "aired",
+            "where": [
+              "Sony YAY! (Telugu feed, TV premiere 8 Jun 2024)"
+            ],
+            "sources": [
+              "https://en.wikipedia.org/wiki/New_Dimension!_Crayon_Shin-chan_the_Movie:_Battle_of_Supernatural_Powers_~Flying_Sushi~",
+              "https://dreamdth.com/threads/anime-movies-tv-premiere-updates.147098/",
+              "https://animenewsindia.com/2024/06/04/sony-yay-to-premiere-first-ever-3d-cg-shinchan-film-in-india-in-regional-dubs-in-this-june-2024"
+            ],
+            "confidence": "high"
+          }
         },
         {
           "year": 2024,
@@ -1251,7 +2531,31 @@
             "https://www.animenewsnetwork.com/news/2025-10-17/shin-chan-our-dinosaur-diary-film-airs-on-indian-tv-on-october-19/.230027"
           ],
           "confidence": "high",
-          "note": "Hindi was about 80% of Indian ticket sales (Koimoi). JustWatch IN lists no stream (19 Nov 2026)"
+          "note": "Hindi was about 80% of Indian ticket sales (Koimoi). JustWatch IN lists no stream (19 Nov 2026)",
+          "ta": {
+            "status": "aired",
+            "where": [
+              "Indian theatres from 9 May 2025 (PVR INOX Pictures; Tamil dub)",
+              "Sony YAY! (TV premiere 19 Oct 2025, 'regional languages')"
+            ],
+            "sources": [
+              "https://www.animenewsnetwork.com/news/2025-04-07/indian-release-of-shin-chan-our-dinosaur-diary-anime-film-postponed-to-may-9/.223299",
+              "https://animenewsindia.com/2025/10/17/sony-yay-lights-up-diwali-with-shinchans-new-season-and-films-including-the-indian-tv-premiere-of-our-dinosaur-diary-in-regional-languages-dubs/"
+            ],
+            "confidence": "high"
+          },
+          "te": {
+            "status": "aired",
+            "where": [
+              "Indian theatres from 9 May 2025 (PVR INOX Pictures; Telugu dub)",
+              "Sony YAY! (TV premiere 19 Oct 2025, 'regional languages')"
+            ],
+            "sources": [
+              "https://www.animenewsnetwork.com/news/2025-04-07/indian-release-of-shin-chan-our-dinosaur-diary-anime-film-postponed-to-may-9/.223299",
+              "https://animenewsindia.com/2025/10/17/sony-yay-lights-up-diwali-with-shinchans-new-season-and-films-including-the-indian-tv-premiere-of-our-dinosaur-diary-in-regional-languages-dubs/"
+            ],
+            "confidence": "high"
+          }
         },
         {
           "year": 2025,
@@ -1269,7 +2573,29 @@
             "https://www.justwatch.com/in/movie/crayon-shin-chan-the-movie-super-hot-the-spicy-kasukabe-dancers"
           ],
           "confidence": "high",
-          "note": "Set in India. JustWatch IN lists no stream (19 Nov 2026)"
+          "note": "Set in India. JustWatch IN lists no stream (19 Nov 2026)",
+          "ta": {
+            "status": "aired",
+            "where": [
+              "Indian theatres from 26 Sep 2025 (PVR INOX Pictures; Tamil dub)"
+            ],
+            "sources": [
+              "https://animationxpress.com/?p=1630638",
+              "https://ianslive.in/shin-chan-the-spicy-kasukabe-dancers-in-india-to-have-india-premiere-at-japanese-film-festival-2025--20250825193646"
+            ],
+            "confidence": "high"
+          },
+          "te": {
+            "status": "aired",
+            "where": [
+              "Indian theatres from 26 Sep 2025 (PVR INOX Pictures; Telugu dub)"
+            ],
+            "sources": [
+              "https://animationxpress.com/?p=1630638",
+              "https://ianslive.in/shin-chan-the-spicy-kasukabe-dancers-in-india-to-have-india-premiere-at-japanese-film-festival-2025--20250825193646"
+            ],
+            "confidence": "high"
+          }
         },
         {
           "year": 2026,
@@ -1279,7 +2605,19 @@
           "where": [],
           "sources": [],
           "confidence": "medium",
-          "note": "No Indian release or Hindi dub announcement found as of 19 Nov 2026"
+          "note": "No Indian release or Hindi dub announcement found as of 19 Nov 2026",
+          "ta": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "none_found",
+            "where": [],
+            "sources": [],
+            "confidence": "medium"
+          }
         }
       ]
     },
