@@ -98,7 +98,7 @@ export default function GuessGame({ mode, pool, title, url, fallbackHref }: { mo
         <div className="card relative p-4">
           <label htmlFor="guess-input" className="text-sm font-semibold text-ink">Guess {guesses.length + 1} of {MAX_GUESSES}: type a character&apos;s name</label>
           <input
-            ref={input} id="guess-input" value={q} autoComplete="off" spellCheck={false} placeholder="e.g. Gojo, Luffy, Levi…" className="input mt-2 w-full"
+            ref={input} id="guess-input" value={q} autoComplete="off" spellCheck={false} placeholder={`e.g. ${pool.slice(0, 3).map((c) => c.n.split(" ")[0]).join(", ")}…`} className="input mt-2 w-full"
             role="combobox" aria-expanded={hits.length > 0} aria-controls="guess-list" aria-autocomplete="list"
             onChange={(e) => { setQ(e.target.value); setActive(0); }}
             onKeyDown={(e) => {
