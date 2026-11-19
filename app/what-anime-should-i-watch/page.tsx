@@ -45,7 +45,7 @@ async function catalog(): Promise<PickItem[]> {
       s: a.slug, t: a.titleEn && a.titleEn.length <= a.title.length ? a.titleEn : a.title, p: posterUrl(a, "small"),
       y: a.startDate ? Number(a.startDate.slice(0, 4)) : null, sub: a.subtype ?? "TV", st: a.status,
       e: a.episodeCount, min: a.episodeCount && a.episodeLength ? a.episodeCount * a.episodeLength : null,
-      sc: p.score / 10, moods: moodsOf(al?.g ?? [], (al?.t ?? []).filter((t) => t.rank >= 60).map((t) => t.name)), hi, free, why: p.themes,
+      sc: p.score, moods: moodsOf(al?.g ?? [], (al?.t ?? []).filter((t) => t.rank >= 60).map((t) => t.name)), hi, free, why: p.themes,
     });
   }
   return out;

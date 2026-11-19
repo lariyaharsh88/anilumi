@@ -24,8 +24,8 @@ export const MOODS: { key: Mood; label: string; emoji: string; genres: string[];
 ];
 export const LENGTHS: { key: Length; label: string; hint: string }[] = [
   { key: "tonight", label: "Tonight", hint: "a film or under 4 hours" },
-  { key: "weekend", label: "A weekend", hint: "up to 13 episodes" },
-  { key: "weeks", label: "A few weeks", hint: "up to 52 episodes" },
+  { key: "weekend", label: "A weekend", hint: "a series of up to 13 episodes" },
+  { key: "weeks", label: "A few weeks", hint: "a series of up to 52 episodes" },
   { key: "long", label: "A long journey", hint: "any length" },
 ];
 
@@ -36,8 +36,9 @@ export const moodsOf = (genres: string[], tags: string[]): Mood[] =>
 const fitsLength = (x: PickItem, l: Answers["length"]) => {
   if (l === "any" || l === "long") return true;
   if (l === "tonight") return x.sub === "movie" || (x.min !== null && x.min <= 240);
-  if (l === "weekend") return x.sub === "movie" || (x.e !== null && x.e <= 13);
-  return x.sub === "movie" || (x.e !== null && x.e <= 52);
+  // A weekend or a few weeks means a series; films answer "tonight".
+  if (l === "weekend") return x.sub !== "movie" && x.e !== null && x.e <= 13;
+  return x.sub !== "movie" && x.e !== null && x.e <= 52;
 };
 
 const matches = (x: PickItem, a: Answers) =>
