@@ -101,6 +101,7 @@ export default async function WhatAnimeShouldIWatch() {
       </section>
 
       <p className="mt-10 flex flex-wrap gap-2 text-sm">
+        <Link href="/quiz" className="chip">More options (era, intensity, English dub): 30-second quiz</Link>
         <Link href="/best-anime-for-beginners" className="chip">Best anime for beginners</Link>
         <Link href="/random-anime-generator" className="chip">Random anime generator</Link>
         <Link href="/hindi-dub/best" className="chip">Best Hindi dubbed anime</Link>

@@ -1,4 +1,4 @@
-import { fitDescription } from "@/lib/titles";
+import { fitDescription, fitTitle } from "@/lib/titles";
 import type { Metadata } from "next";
 import Link from "@/components/Link";
 import PageHero from "@/components/PageHero";
@@ -8,8 +8,10 @@ import MadeBy from "@/components/MadeBy";
 import { QUIZZES } from "@/lib/charquiz";
 
 export const metadata: Metadata = {
-  title: "What Anime Should I Watch? Take the 30-Second Quiz",
-  description: fitDescription("Answer five quick questions about mood, time, era, intensity and sub or dub (English or Hindi) and get anime picks that fit, ranked by fan scores, with where to watch each."),
+  // "which anime character are you" (1,300 a month US, 390 India); "what anime should I watch" belongs to
+  // /what-anime-should-i-watch, so the two don't compete for one search.
+  title: fitTitle(["Anime Quizzes: Which Anime Character Are You? & More", "Anime Quizzes: Which Character Are You?"]),
+  description: fitDescription("Which anime character are you? Personality quizzes for Naruto, Attack on Titan, JJK and more, plus anime trivia, a daily character guess and a 30-second what-to-watch quiz."),
   alternates: { canonical: "/quiz" },
 };
 
@@ -18,11 +20,12 @@ export default function QuizPage() {
     <div className="container-x pb-8">
       <PageHero
         crumbs={[{ href: "/", label: "Home" }, { href: "/quiz", label: "Quiz" }]}
-        eyebrow="🎯 30-second quiz"
-        title={<>What anime <span className="text-gradient">should I watch?</span></>}
-        subtitle="Five quick questions, including sub, English dub or Hindi dub. We match your answers against thousands of titles, keep only first seasons, and rank what fits by fan score."
+        eyebrow="🎯 Quizzes"
+        title={<>Anime <span className="text-gradient">quizzes</span></>}
+        subtitle="Find out which anime character you are, test your anime knowledge, or answer five quick questions and get anime picks that fit, with sub, English dub or Hindi dub."
         hue={262}
       />
+      <h2 className="h-section mb-3 mt-8">What anime should I watch? The 30-second quiz</h2>
       <QuizForm />
       <MadeBy className="mx-auto mt-6 max-w-2xl text-center" method="Mood maps to genre, time to episode count, era to air year and intensity to age rating; dub answers use our checked Hindi dub list and where-to-watch research." />
       <p className="mt-6 text-center text-sm text-muted">Feeling lucky? <Link href="/random" prefetch={false} className="text-violet hover:underline">Surprise me with a random anime 🎲</Link></p>
