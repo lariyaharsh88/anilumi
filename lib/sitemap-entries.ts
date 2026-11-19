@@ -12,6 +12,7 @@ import { hindiArtists, hindiArtistPath } from "@/lib/hindivoices";
 import { summaryFor } from "@/lib/summaries";
 import { sequelNews, sequelNewsSlugs } from "@/lib/sequelnews";
 import { QUIZZES } from "@/lib/charquiz";
+import { triviaShows, triviaPath } from "@/lib/trivia";
 import { officialRatings } from "@/lib/ageratings";
 import { hasSnapshotThemes } from "@/lib/themes";
 import { HINDI_SLUGS, hindiPath, hindiIndexed } from "@/lib/hindi";
@@ -101,6 +102,7 @@ export async function sitemapEntries(): Promise<MetadataRoute.Sitemap> {
     { url: abs("/quiz"), lastModified: at(), changeFrequency: "monthly", priority: 0.6 },
     { url: abs("/japanese-name-generator"), lastModified: at(), changeFrequency: "yearly", priority: 0.5 },
     ...QUIZZES.map((q) => ({ url: abs(`/quiz/${q.slug}`), lastModified: at(), changeFrequency: "monthly" as const, priority: 0.6 })),
+    ...["/anime-quiz", triviaPath("guess-the-anime"), ...triviaShows().map((s) => triviaPath(s.slug))].map((p) => ({ url: abs(p), lastModified: at(), changeFrequency: "monthly" as const, priority: 0.6 })),
     { url: abs("/random-anime-generator"), lastModified: at(D.anilist), changeFrequency: "monthly", priority: 0.6 },
     { url: abs("/birthdays"), lastModified: now, changeFrequency: "daily", priority: 0.7 },
     { url: abs("/anime-birthday-twin"), lastModified: at(D.birthdays, D.charLines), changeFrequency: "monthly", priority: 0.6 },

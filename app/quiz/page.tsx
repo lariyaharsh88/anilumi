@@ -31,6 +31,7 @@ export default function QuizPage() {
         <p className="flex flex-wrap gap-2 text-sm">
           {QUIZZES.map((q) => <Link key={q.slug} href={`/quiz/${q.slug}`} className="chip">Which {q.franchise} character are you?</Link>)}
           <Link href="/japanese-name-generator" className="chip">🎌 Japanese name generator</Link>
+          <Link href="/anime-quiz" className="chip">🧠 Anime trivia quiz</Link>
         </p>
       </section>
       <Faq title="Anime quiz FAQ" items={[
