@@ -4,6 +4,7 @@
  * 320 a month and "anime character guess" 320 (Keyword Planner, India, Nov 2026); "guess the anime" 4.4K in the US;
  * the per-series modes cover "naruto quiz" 1K, "one piece quiz" 880 and "demon slayer quiz" 1.3K. Server code only.
  */
+import { fanName } from "./charnames";
 import data from "@/data/characters.json";
 import { characterPathFor, type SnapChar } from "./charsnap";
 import { seriesCast, roleIn } from "./seriessnap";
@@ -51,7 +52,7 @@ let cache: Map<GuessMode, GChar[]> | null = null;
 function allPool(): GChar[] {
   return [...chars].sort((x, y) => y.f - x.f).flatMap((c): GChar[] => {
     const role = roleIn(c.s, c.id);
-    const row: GChar = { id: c.id, n: c.n, ...(c.al?.length ? { al: c.al.filter((x) => /^[\x20-\x7e]+$/.test(x)).slice(0, 2) } : {}), ...franchise(c.s, c.t), g: c.g, r: role === "main" ? "M" : role === "supporting" ? "S" : null, m: c.m, h: heightOf(c), a: ageNum(c.age), v: c.jp?.n ?? null, i: img(c.i), p: page(c.id) };
+    const row: GChar = { id: c.id, n: fanName(c), ...(c.al?.length ? { al: c.al.filter((x) => /^[\x20-\x7e]+$/.test(x)).slice(0, 2) } : {}), ...franchise(c.s, c.t), g: c.g, r: role === "main" ? "M" : role === "supporting" ? "S" : null, m: c.m, h: heightOf(c), a: ageNum(c.age), v: c.jp?.n ?? null, i: img(c.i), p: page(c.id) };
     return row.g && facts(row) >= 3 ? [row] : [];
   }).slice(0, 300);
 }
@@ -64,7 +65,7 @@ function seriesPool(slugs: string[]): GChar[] {
     for (const [id, name, file, age, height, month, , gender, fav, role, voice] of seriesCast(slug)?.c ?? []) {
       if (seen.has(id) || fav < 150) continue;
       const snap = byId.get(id);
-      const row: GChar = { id, n: name, ...(snap?.al?.length ? { al: snap.al.filter((x) => /^[\x20-\x7e]+$/.test(x)).slice(0, 2) } : {}), g: gender, r: role, m: month, h: heightCm(height), a: ageNum(age), v: voice?.[1] ?? null, i: img(file), p: page(id) };
+      const row: GChar = { id, n: fanName({ id, n: name }), ...(snap?.al?.length ? { al: snap.al.filter((x) => /^[\x20-\x7e]+$/.test(x)).slice(0, 2) } : {}), g: gender, r: role, m: month, h: heightCm(height), a: ageNum(age), v: voice?.[1] ?? null, i: img(file), p: page(id) };
       if (row.g && facts(row) >= 2) seen.set(id, { row, fav });
     }
   }

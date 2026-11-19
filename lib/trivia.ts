@@ -7,6 +7,7 @@
  * Keyword Planner, India, Nov 2026: "anime quiz" 1.6K a month, "pokemon quiz" 2.9K, "demon slayer quiz" 1.3K,
  * "naruto quiz" 1K, "one piece quiz" 880. They want trivia, not "which character are you" (/quiz/[slug]).
  */
+import { fanName } from "./charnames";
 import snap from "@/data/watch-order-snap.json";
 import themeData from "@/data/themes.json";
 import { characterTable, characterPathFor, allSnapChars, type SnapChar } from "./charsnap";
@@ -64,9 +65,9 @@ type Row = { c: SnapChar; cm: number | null };
 /** The show's characters, most-favourited first, merged across its cast slugs. */
 function castOf(show: TriviaShow): Row[] {
   const byId = new Map<number, Row>();
-  for (const s of show.cast) for (const r of characterTable(s) ?? []) if (!byId.has(r.c.id)) byId.set(r.c.id, { c: r.c, cm: r.cm });
+  for (const s of show.cast) for (const r of characterTable(s) ?? []) if (!byId.has(r.c.id)) byId.set(r.c.id, { c: { ...r.c, n: fanName(r.c) }, cm: r.cm });
   // Characters too few for a table still count (a show's top names in the popular snapshot).
-  for (const c of allSnapChars()) if (show.cast.includes(c.s) && !byId.has(c.id)) byId.set(c.id, { c, cm: null });
+  for (const c of allSnapChars()) if (show.cast.includes(c.s) && !byId.has(c.id)) byId.set(c.id, { c: { ...c, n: fanName(c) }, cm: null });
   return [...byId.values()].sort((a, b) => b.c.f - a.c.f);
 }
 const charHref = (show: TriviaShow, c: SnapChar) => characterPathFor(c.id) ?? `/anime/${show.cast[0]}/characters`;
@@ -205,7 +206,7 @@ export function guessTheAnimeBank(): TriviaQ[] {
   const base = (t: string) => t.toLowerCase().split(/[:(]/)[0].replace(/\s+(season|part)\b.*$/, "").trim();
   const titles = [...new Map(shows.map((x) => [base(x.t), x.t])).values()];
   return shows.filter((x) => titles.includes(x.t)).slice(0, 80).map((x) =>
-    makeQ(`Which anime has these characters: ${x.top.map((c) => c.n).join(", ")}?`, x.t, titles.filter((t) => base(t) !== base(x.t)), `${x.top.map((c) => c.n).join(", ")} are all from ${x.t}.`, `/anime/${x.s}`, r),
+    makeQ(`Which anime has these characters: ${x.top.map(fanName).join(", ")}?`, x.t, titles.filter((t) => base(t) !== base(x.t)), `${x.top.map(fanName).join(", ")} are all from ${x.t}.`, `/anime/${x.s}`, r),
   ).filter((q): q is TriviaQ => q !== null);
 }
 
