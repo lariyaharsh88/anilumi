@@ -16,6 +16,11 @@ test("descriptions: unchanged when short, else cut at the last sentence that fit
   const short = fitDescription(`Eren Yeager from Attack on Titan: age 15, 170 cm (5'7") - 183 cm (6'0") tall, birthday March 30. Voiced by Yuki Kaji (Japanese) and Bryce Papenbrook (English). Also known as Eren Jaeger.`);
   // Was cut after the first sentence (96 characters); now both sentences fit.
   assert.equal(short, `Eren Yeager from Attack on Titan: age 15, 170 cm (5'7") - 183 cm (6'0") tall, birthday March 30. Voiced by Yuki Kaji (Japanese) and Bryce Papenbrook (English).`);
+  // A sentence ending before 140 characters gives way to a fuller word cut; "Dr." doesn't end a sentence.
+  const twoSentences = fitDescription(`${"a ".repeat(65)}end. ${"b ".repeat(40)}`);
+  assert.ok(twoSentences.length > 150 && twoSentences.endsWith("…"));
+  const dr = fitDescription(`Yuusuke Kobayashi is a Japanese voice actor known for Subaru Natsuki in Re:ZERO, Senkuu Ishigami in Dr. Stone and Ainz in Overlord, and many more roles in other popular shows.`);
+  assert.ok(!dr.endsWith("Dr.") && dr.length > 140, dr);
   const words = Array.from({ length: 60 }, (_, i) => `word${i}`).join(" ");
   const cut = fitDescription(words);
   assert.ok(cut.length <= 161 && cut.endsWith("…") && !cut.includes("  "));

@@ -12,7 +12,7 @@ import { watchOrderIndexed } from "@/lib/indexing";
 export const revalidate = 86400;
 export const metadata: Metadata = {
   title: fitTitle(["Anime Watch Order Guides – Every Franchise in the Right Order", "Anime Watch Order Guides for Every Franchise"]),
-  description: fitDescription("Auto-generated watch orders for the biggest anime franchises: seasons, movies, OVAs and which recaps to skip, with total binge time."),
+  description: fitDescription("Watch orders for the biggest anime franchises, hand-checked for the most popular: seasons, movies, OVAs, which recaps to skip and the total binge time."),
   alternates: { canonical: "/watch-order" },
 };
 

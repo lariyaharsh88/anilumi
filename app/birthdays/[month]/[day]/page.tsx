@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         `${bdLabel(p.m, p.d)} Anime Birthdays (${characters.length} Character${characters.length === 1 ? "" : "s"})`,
       ])
       : `${bdLabel(p.m, p.d)} Anime Birthdays: Characters & Voice Actors`,
-    description: fitDescription(`Anime characters born on ${bdLabel(p.m, p.d)}${characters[0] ? `: ${characters.slice(0, 4).map((c) => `${c.n} (${c.t})`).join(", ")}${characters.length > 4 ? ` and ${characters.length - 4} more` : ""}` : ""}${people.length ? `, plus ${people.length} voice actor${people.length === 1 ? "" : "s"} with the same birthday` : ""}. Ages, heights, voice actors and the ${zodiacOf(p.m, p.d).name} sign.`),
+    description: fitDescription(`Anime characters born on ${bdLabel(p.m, p.d)}${characters[0] ? `: ${characters.slice(0, 4).map((c) => `${c.n} (${c.t})`).join(", ")}${characters.length > 4 ? ` and ${characters.length - 4} more` : ""}` : ""}${people.length ? `, plus ${people.length} voice actor${people.length === 1 ? "" : "s"} with the same birthday` : ""}. Ages, heights, voice actors and the ${zodiacOf(p.m, p.d).name} sign, with the anime each character is from.`),
     alternates: { canonical: bdPath(p.m, p.d) },
     ...(characters.length ? {} : { robots: { index: false } }),
   };

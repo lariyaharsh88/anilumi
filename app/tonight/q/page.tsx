@@ -32,7 +32,7 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
   const t = v.minutes >= 600 ? "a Day" : TIMES.find((x) => x.m === v.minutes)!.label.replace(/^1 hour$/, "an Hour");
   return {
     title: `Anime You Can Finish in ${t} – What to Watch Tonight`,
-    description: fitDescription(`Complete anime series and movies that fit into ${label(v.minutes)}, ranked by community score, with exact runtimes. Filter by genre and format.`),
+    description: fitDescription(`Complete anime series and movies that fit into ${label(v.minutes)}, ranked by community score, with exact runtimes. Filter by genre and format to pick what to watch tonight.`),
     alternates: { canonical: `/tonight${v.minutes !== 120 ? `?minutes=${v.minutes}` : ""}` },
     ...(onlyTime ? {} : { robots: { index: false, follow: true } }),
   };

@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const a = load((await params).slug);
   return {
     title: fitTitle([`${a.name}: Hindi Anime Voice Roles (${a.roles.length})${a.roles[0] ? `, ${a.roles[0].character} & More` : ""}`, `${a.name}: Hindi Anime Voice Roles (${a.roles.length})`, `${a.name}: Hindi Voice Artist`]),
-    description: fitDescription(`${a.name} voices ${a.roles.slice(0, 3).map((r) => `${r.character} in ${r.anime}`).join(", ")} in the official Hindi dubs. Every confirmed anime role, with sources.`),
+    description: fitDescription(`${a.name} voices ${a.roles.slice(0, 3).map((r) => `${r.character} in ${r.anime}`).join(", ")} in the official Hindi dubs. Every confirmed anime role, each with the official credit or reports that back it up.`),
     alternates: { canonical: hindiArtistPath(a) },
   };
 }

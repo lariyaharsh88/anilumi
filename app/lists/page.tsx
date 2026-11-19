@@ -8,7 +8,7 @@ import PageHero from "@/components/PageHero";
 export const revalidate = 86400;
 export const metadata: Metadata = {
   title: fitTitle(["Anime Lists – Best of Each Year, Short Binges, Similar Shows"]),
-  description: fitDescription("Curated-by-data anime lists: the best anime of every year, series you can finish in a weekend, and what to watch after your favourite show."),
+  description: fitDescription("Anime lists built from fan data: the best anime of every year, series you can finish in a weekend, and what to watch next after your favourite show ends."),
   alternates: { canonical: "/lists" },
 };
 

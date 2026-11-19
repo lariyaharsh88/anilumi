@@ -21,7 +21,7 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
   const qs = [genre ? `genre=${genre}` : "", m !== 13 ? `max=${m}` : "", Number(page) > 1 ? `page=${page}` : ""].filter(Boolean).join("&");
   return {
     title: `Best Short${g} Anime (${m} Episodes or Less) – Weekend Binges`,
-    description: fitDescription(`Top-rated${g} anime you can finish in a weekend: complete series with ${m} episodes or fewer, ranked by score, with runtime and where to watch.`),
+    description: fitDescription(`Top-rated${g} anime you can finish in a weekend: complete series with ${m} episodes or fewer, ranked by score, with the total runtime and where to watch each one.`),
     alternates: { canonical: `/short-anime${qs ? `?${qs}` : ""}` },
   };
 }

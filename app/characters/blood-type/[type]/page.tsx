@@ -39,7 +39,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { bt, chars } = load((await params).type);
   return {
     title: fitTitle([`Anime Characters With Blood Type ${label(bt)} (${chars.length}): ${chars.slice(0, 2).map((c) => c.n).join(", ")} & More`, `Anime Characters With Blood Type ${label(bt)} (${chars.length}): ${chars[0]?.n ?? ""} & More`, `Anime Characters With Blood Type ${label(bt)} (${chars.length})`]),
-    description: fitDescription(`${chars.length} popular anime characters whose official blood type is ${label(bt)}, most-loved first: ${chars.slice(0, 4).map((c) => c.n).join(", ")} and more.`),
+    description: fitDescription(`${chars.length} popular anime characters whose official blood type is ${label(bt)}, most-loved first: ${chars.slice(0, 4).map((c) => c.n).join(", ")} and more, with the series each is from.`),
     alternates: { canonical: `/characters/blood-type/${bt}` },
   };
 }

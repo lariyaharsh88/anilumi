@@ -11,7 +11,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const { m, d } = nowJst();
   return {
     title: fitTitle([`On This Day in Anime (${bdLabel(m, d)}): Premieres & Anime of the Day`, `On This Day in Anime (${bdLabel(m, d)}): Premieres`]),
-    description: fitDescription(`Anime that first aired on ${bdLabel(m, d)} in past years, with the year each one premiered, plus today's anime of the day. A new page every day.`),
+    description: fitDescription(`Anime that first aired on ${bdLabel(m, d)} in past years, with the year each one premiered, plus today's anime of the day. A new page for every day of the year.`),
     alternates: { canonical: "/on-this-day" },
   };
 }

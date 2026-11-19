@@ -11,7 +11,7 @@ import { WATCHED_COUNT, watchedList } from "@/lib/editor";
 
 export const metadata: Metadata = {
   title: `${AUTHOR.name}, who checks AniLumi's guides`,
-  description: fitDescription(`${AUTHOR.name} runs ${site.name} and checks its watch orders, filler lists and editor's notes by hand. Every guide checked so far, with dates.`),
+  description: fitDescription(`${AUTHOR.name} runs ${site.name} and checks its watch orders, filler lists and editor's notes by hand. Every guide checked so far, with the date each was last checked.`),
   alternates: { canonical: AUTHOR.path },
 };
 

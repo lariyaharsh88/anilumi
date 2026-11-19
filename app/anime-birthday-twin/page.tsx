@@ -14,7 +14,7 @@ export const revalidate = 86400;
 
 export const metadata: Metadata = {
   title: fitTitle(["Anime Birthday Twin: Which Anime Character Shares Your Birthday?", "Anime Birthday Twin: Which Character Shares Your Birthday?"]),
-  description: fitDescription("Enter your birthday to find the anime characters and voice actors born on the same day, your zodiac sign, and a card to share with friends."),
+  description: fitDescription("Enter your birthday to find the anime characters and voice actors born on the same day, your zodiac sign, and a birthday card to share with your friends."),
   alternates: { canonical: "/anime-birthday-twin" },
 };
 

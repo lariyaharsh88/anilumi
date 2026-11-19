@@ -39,7 +39,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const t = trendDirection(rows, lastFull);
   return {
     title: fitTitle([`${headline(name, t.dir)} – Share of New TV Anime by Year (${TREND_FROM}–${lastFull})`, `${headline(name, t.dir)}: Share of New TV Anime (${TREND_FROM}–${lastFull})`, `${headline(name, t.dir)} (${TREND_FROM}–${lastFull})`]),
-    description: fitDescription(`${name} made up ${pct(t.to)} of new TV anime in ${lastFull}, ${t.dir === "steady" ? "close to" : t.dir === "rise" ? "up from" : "down from"} ${pct(t.from)} a decade earlier. Year-by-year counts, shares and defining titles since ${TREND_FROM}.`),
+    description: fitDescription(`${name} made up ${pct(t.to)} of new TV anime in ${lastFull}, ${t.dir === "steady" ? "close to" : t.dir === "rise" ? "up from" : "down from"} ${pct(t.from)} a decade earlier. Year-by-year counts and shares since ${TREND_FROM}, plus the defining ${name.toLowerCase()} series of each decade.`),
     alternates: { canonical: `/trends/${genre}` },
     robots: robotsFor(trendIndexed(genre)),
   };

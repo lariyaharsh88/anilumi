@@ -55,7 +55,7 @@ async function load(slug: string) {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const { a, next, verdict, label, first } = await load(slug);
+  const { a, chain, next, verdict, label, first } = await load(slug);
   // The answer goes in the title: "Akame ga Kill Season 2: Not Announced (Oct 2026)" beats a question.
   const asOf = new Date().toLocaleDateString("en-US", { month: "short", year: "numeric", timeZone: "UTC" });
   const movie = next?.anime?.subtype === "movie";
@@ -77,7 +77,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const title = news?.headline ? fitTitle([`${label}: ${news.headline.replace("{asOf}", asOf)}`]) : override ? fitTitle([news!.window && news!.window !== "TBA" ? `${label}: Announced for ${news!.window}` : null, `${label}: Announced (${asOf})`, `${label}: Announced`]) : fitTitle([`${label}${dateQuestion ? " Release Date" : ""}: ${answer[verdict.kind]}`, `${label}: ${answer[verdict.kind]}`, `${label}: ${answer[verdict.kind].replace(/ \(.*?\)$/, "")}`]);
   return {
     title,
-    description: fitDescription(`${first ? `Is there ${/^[aeiou]/i.test(a.title) ? "an" : "a"} ${a.title} season 2?` : `Will ${a.title} get another season?`} ${override ? `${news!.what}${news!.announced ? ` (announced ${fmtDate(news!.announced, { month: "long", day: "numeric", year: "numeric" })})` : ""}.` : `${verdict.headline} ${verdict.detail}`}`.slice(0, 300)),
+    description: fitDescription(`${first ? `Is there ${/^[aeiou]/i.test(a.title) ? "an" : "a"} ${a.title} season 2?` : `Will ${a.title} get another season?`} ${override ? `${news!.what}${news!.announced ? ` (announced ${fmtDate(news!.announced, { month: "long", day: "numeric", year: "numeric" })})` : ""}.` : `${verdict.headline} ${verdict.detail}`}${chain.length > 1 ? " Plus the season timeline so far, with the wait before each one." : ""}`.slice(0, 300)),
     alternates: { canonical: `${animePath(a)}/next-season` },
     // Films and OVAs never; a series only with an answer: a sequel exists, or researched news (even "story complete").
     ...(a.subtype === "TV" || a.subtype === "ONA" ? { robots: robotsFor(nextSeasonIndexed(Boolean(news) || override || (verdict.kind !== "none" && verdict.kind !== "still-airing"))) } : { robots: { index: false } }),

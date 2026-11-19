@@ -16,7 +16,7 @@ export async function generateMetadata(): Promise<Metadata> {
       characters.length > 0 && `Anime Birthdays Today (${bdLabel(m, d)}): ${characters[0].n} & More`,
       `Anime Character Birthdays Today (${bdLabel(m, d)})`,
     ]),
-    description: fitDescription(`Anime characters and voice actors celebrating a birthday today, ${bdLabel(m, d)}${characters[0] ? `: ${characters.slice(0, 3).map((c) => c.n).join(", ")} and more` : ""}.`),
+    description: fitDescription(`Anime characters and voice actors celebrating a birthday today, ${bdLabel(m, d)}${characters[0] ? `: ${characters.slice(0, 3).map((c) => c.n).join(", ")} and more` : ""}, with the anime each one is from and every other day of the year.`),
     alternates: { canonical: "/birthdays" },
   };
 }
