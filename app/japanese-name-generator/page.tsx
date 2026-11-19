@@ -60,6 +60,7 @@ export default function JapaneseNameGenerator() {
 
       <p className="mt-10 flex flex-wrap gap-2 text-sm">
         <Link href="/anime-name-generator" className="chip">🎴 Anime character name generator</Link>
+        <Link href="/anime-dictionary" className="chip">📖 Anime dictionary: words and meanings</Link>
         <Link href="/quiz/which-naruto-character-are-you" className="chip">Which Naruto character are you?</Link>
         <Link href="/anime-birthday-twin" className="chip">Your anime birthday twin</Link>
         <Link href="/random-anime-generator" className="chip">Random anime generator</Link>

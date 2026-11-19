@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { TERMS, TERMS_CHECKED, termPath, termsPath } from "@/lib/animeterms";
 import { posterUrl } from "@/lib/kitsu";
 import { alAnime } from "@/lib/alsnap";
 import { abs } from "@/lib/site";
@@ -103,6 +104,7 @@ export async function sitemapEntries(): Promise<MetadataRoute.Sitemap> {
     { url: abs("/quiz"), lastModified: at(), changeFrequency: "monthly", priority: 0.6 },
     { url: abs("/japanese-name-generator"), lastModified: at(), changeFrequency: "yearly", priority: 0.5 },
     { url: abs("/anime-name-generator"), lastModified: at(), changeFrequency: "yearly", priority: 0.5 },
+    ...[termsPath, ...TERMS.map((t) => termPath(t.slug))].map((p) => ({ url: abs(p), lastModified: at(TERMS_CHECKED), changeFrequency: "monthly" as const, priority: 0.6 })),
     ...GUESS_MODES.map((m) => ({ url: abs(m.path), lastModified: now, changeFrequency: "daily" as const, priority: 0.6 })),
     ...QUIZZES.map((q) => ({ url: abs(`/quiz/${q.slug}`), lastModified: at(), changeFrequency: "monthly" as const, priority: 0.6 })),
     ...["/anime-quiz", triviaPath("guess-the-anime"), ...triviaShows().map((s) => triviaPath(s.slug))].map((p) => ({ url: abs(p), lastModified: at(), changeFrequency: "monthly" as const, priority: 0.6 })),
