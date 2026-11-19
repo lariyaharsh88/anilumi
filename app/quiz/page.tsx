@@ -32,6 +32,7 @@ export default function QuizPage() {
           {QUIZZES.map((q) => <Link key={q.slug} href={`/quiz/${q.slug}`} className="chip">Which {q.franchise} character are you?</Link>)}
           <Link href="/japanese-name-generator" className="chip">🎌 Japanese name generator</Link>
           <Link href="/guess-the-anime-character" className="chip">🎯 Guess the anime character (daily)</Link>
+          <Link href="/anime-quiz" className="chip">🧠 Anime trivia quiz</Link>
         </p>
       </section>
       <Faq title="Anime quiz FAQ" items={[
