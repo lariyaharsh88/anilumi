@@ -11,4 +11,6 @@ test("sequel news: every entry is sourced; an announcement overrides a stale 'no
   assert.equal(newsOverrides(op, "still-airing"), true);
   assert.equal(newsOverrides(sequelNews("death-note"), "none"), false);
   assert.equal(newsOverrides(op, "dated"), false); // the automatic answer already has a date
+  // "Announced, no date" beats a database date: Kitsu's 31 Dec 2026 for Spy x Family Season 4 is a placeholder.
+  assert.equal(newsOverrides(sequelNews("spy-x-family-season-3"), "dated"), true);
 });

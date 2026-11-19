@@ -111,12 +111,16 @@ export default async function NextSeasonPage({ params }: Props) {
   const [recs, alId] = waiting ? await Promise.all([getFanRecommendations(a.id, 12).catch(() => []), getAniListId(a.id).catch(() => null)]) : [[], null];
   const picks = fanPicks(recs, alId, name).slice(0, 6);
   const why = news?.status === "none" && news.why ? news.why : null;
+  // An earlier season's page (where "solo leveling season 3" searches land) points to the latest season's news.
+  const newer = news ? undefined : [...chain].reverse().find((x) => x.id !== a.id && sequelNews(x.slug));
+  const newerNews = newer ? sequelNews(newer.slug) : null;
+  const newerLabel = newerNews && (newerNews.label ?? (newerNews.season ? `${newerNews.name ?? name} Season ${newerNews.season}` : `${newer!.title}: next season`));
   const newsLine = news ? `${news.what}${news.announced && news.status !== "none" ? `, announced ${fmtDate(news.announced, { month: "long", day: "numeric", year: "numeric" })}${news.by ? ` by ${news.by}` : ""}` : ""}${news.window && news.window !== "TBA" && news.status !== "none" ? `; expected ${news.window}` : ""}.` : "";
 
   const faq: FaqItem[] = [
     { q: question, a: override ? newsLine : `${verdict.headline} ${verdict.detail}${thenNote}` },
     ...(why ? [{ q: `Why is there no ${name} ${first ? "season 2" : "new season"}?`, a: why }] : []),
-    ...(verdict.kind === "dated" && next?.startDate ? [{ q: `When does ${next.title} come out?`, a: `${next.title} is scheduled to premiere on ${fmtDate(next.startDate, { month: "long", day: "numeric", year: "numeric" })} in Japan.` }] : []),
+    ...(verdict.kind === "dated" && !override && next?.startDate ? [{ q: `When does ${next.title} come out?`, a: `${next.title} is scheduled to premiere on ${fmtDate(next.startDate, { month: "long", day: "numeric", year: "numeric" })} in Japan.` }] : []),
     ...(avgGap !== null ? [{ q: `How long is the wait between ${a.title} seasons?`, a: `Across ${gaps.length} gap${gaps.length === 1 ? "" : "s"} so far, new entries in the main story have arrived on average ${humanMonths(avgGap)} after the previous one ended. That's a pattern, not an announcement.` }] : []),
     ...(cont ? [{ q: `Where does the ${a.title} anime end in the ${cont.medium}?`, a: `To keep going, start the ${cont.medium} from ${cont.chapter ? `chapter ${cont.chapter}` : `volume ${cont.volume}`}.${cont.note ? ` ${cont.note}` : ""}` }] : []),
     { q: `How many seasons does ${a.title} have?`, a: chain.length > 1 ? `The main story has ${chain.length} entries so far: ${chain.map((x) => x.title).join(", ")}.` : `${a.title} is a single season so far.` },
@@ -139,11 +143,14 @@ export default async function NextSeasonPage({ params }: Props) {
         backdrop={a.cover?.large || null}
         posters={[posterUrl(a, "medium"), nextAnime ? posterUrl(nextAnime, "medium") : null]}
       >
-        {verdict.kind === "dated" && next?.startDate && <Countdown iso={`${next.startDate.slice(0, 10)}T00:00:00+09:00`} big label="Premieres in" />}
+        {verdict.kind === "dated" && !override && next?.startDate && <Countdown iso={`${next.startDate.slice(0, 10)}T00:00:00+09:00`} big label="Premieres in" />}
       </PageHero>
       <EditorWatched anime={a} className="mt-4" />
       <MadeBy className="mt-3" method="Sequel status comes from the studio's and publisher's own announcements and anime news, two sources where possible; release dates from AniList." />
       <HindiDubCallout anime={a} title={name} className="mt-4" />
+      {newer && newerNews && (
+        <p className="card mt-4 border-violet/40 p-3 text-sm">📢 <strong>Looking for {newerLabel}?</strong> {newerNews.headline ? newerNews.headline.replace(/ ?\(\{asOf\}\)/, "") + "." : newerNews.what.split(";")[0] + "."} <Link href={`${animePath(newer)}/next-season`} className="text-violet hover:underline">Latest {newerLabel} news →</Link></p>
+      )}
 
       {news && (
         <section className="card reveal mt-8 p-4" aria-labelledby="news-h">

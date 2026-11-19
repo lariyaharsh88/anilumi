@@ -49,21 +49,27 @@ export async function episodesMetadata(slug: string, page: number): Promise<Meta
   // Season 1 of a multi-season show gives both counts (14 Nov: these sat at position 9-10 with hundreds of
   // impressions and no clicks while saying only "All 24").
   const all = await allSeasons(a, n, page);
+  // The question people type ("how many episodes in naruto shippuden" 4.4K a month, "one piece total episodes" 22K;
+  // Keyword Planner, India, Nov 2026), with the English name when it's no longer ("Naruto Shippuden", not "Naruto:
+  // Shippuuden") and the month for airing shows, whose count changes.
+  const name = a.titleEn && a.titleEn.length <= a.title.length ? a.titleEn : a.title;
+  const count = n.toLocaleString("en-US");
+  const asOf = new Date().toLocaleDateString("en-US", { month: "short", year: "numeric", timeZone: "UTC" });
   const head = !n
     ? `${a.title} Episode List & Air Dates`
     : airing
-      ? `${a.title} Episode Guide: ${n} Episodes So Far & Next Air Date`
-      : `${a.title} Episode Guide: All ${n} Episodes${fill?.count ? ` (${fill.count} Filler)` : ""}`;
+      ? fitTitle([`How Many Episodes of ${name}? ${count} So Far (${asOf})`, `How Many Episodes of ${name}? ${count} So Far`, `${name}: ${count} Episodes So Far & Next Air Date`, `${name}: ${count} Episodes So Far`])
+      : fitTitle([`How Many Episodes in ${name}? ${count}${fill?.count ? ` (${fill.count} Filler)` : ""}`, `${name} Episode Guide: All ${count} Episodes${fill?.count ? ` (${fill.count} Filler)` : ""}`, `${name}: All ${count} Episodes`]);
   const span = a.startDate ? ` (${fmtDate(a.startDate, { month: "short", year: "numeric" })}${a.endDate ? ` – ${fmtDate(a.endDate, { month: "short", year: "numeric" })}` : airing ? " – now" : ""})` : "";
   const extras = `with titles, air dates and spoiler-safe synopses${fill?.count ? `, plus which ${fill.count} are filler` : ""}`;
   return {
     title: all
       ? fitTitle([`${a.title} Episodes: ${n} in Season 1, ${all} Across All Seasons`, `${a.title} Episodes: ${n} in Season 1, ${all} in All Seasons`, `${a.title} Episodes: ${n} (Season 1), ${all} in All`, `${a.title}: ${all} Episodes, All Seasons`])
-      : `${head}${p}`,
+      : p ? `${typeof head === "object" && head && "absolute" in head ? head.absolute : head}${p}` : head,
     description: fitDescription(all
       ? `${a.title} has ${all} episodes across all its seasons. Season 1${span}: all ${n} episodes ${extras}.`
       : n
-        ? `${airing ? `${n} episodes of ${a.title} have aired so far` : `All ${n} episodes of ${a.title}`}${span}, ${extras}.`
+        ? `${airing ? `${name} has ${count} episodes so far` : `${name} has ${count} episodes in all`}${span}. Every episode is listed ${extras}.`
         : `Every episode of ${a.title} with titles, air dates and synopses.`),
     alternates: { canonical: episodesPath(a.slug, page) },
     robots: robotsFor(episodeListIndexed({ airing, curated: Boolean(fill), page })),

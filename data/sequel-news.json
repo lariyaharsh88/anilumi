@@ -1,5 +1,5 @@
 {
-  "checked": "2026-11-11",
+  "checked": "2026-11-19",
   "reviewed": null,
   "shows": {
     "one-piece": {
@@ -935,6 +935,91 @@
       "notes": "Part 2 was first announced for 2027. The January 2027 month was announced on about 2026-10-10, with a trailer. The page's 'January 2027' matches. Placed on the latest season's page on 2026-11-19 (same research as 'one-punch-man').",
       "label": "One Punch Man Season 3 Part 2",
       "headline": "Premieres January 2027 ({asOf})"
+    },
+    "black-clover-tv": {
+      "status": "airing",
+      "what": "Black Clover's second TV season (Crunchyroll's 'Season 5', after the first series' four seasons) premiered on 3 October 2026 on TV Tokyo, with 26 episodes planned; Crunchyroll streams it weekly",
+      "announced": null,
+      "by": "Official Black Clover anime (Studio Pierrot), TV Tokyo; Crunchyroll streams it",
+      "window": "Airing since 3 Oct 2026",
+      "confidence": "high",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Black_Clover_season_2",
+        "https://animecorner.me/black-clover-season-2-announces-october-3-premiere/",
+        "https://comicbook.com/anime/news/black-clover-season-2-finally-confirms-release-date-ahead-of-fall-2026-premiere/"
+      ],
+      "notes": "Checked 2026-11-19. Searchers say 'season 5' (Crunchyroll numbers the 170-episode first series as four seasons) and 'season 2' (the official name). Kitsu lists it as Black-Clover-Season-2, 26 episodes, current.",
+      "season": 2,
+      "label": "Black Clover Season 2 (Season 5)",
+      "headline": "Airing Now ({asOf})"
+    },
+    "Solo-Leveling-Season-2-Arise-from-the-Shadow": {
+      "status": "announced",
+      "what": "No third TV season has been officially announced: webtoon publisher D&C Media's June 2026 investor material lists Season 3 for 2027–28, and a film set after Season 2, Solo Leveling: Beyond the System, is in production with no release date",
+      "announced": null,
+      "by": "Film announced by Aniplex and Crunchyroll at Anime Expo 2026 (July); the Season 3 window is from D&C Media's investor material, not an announcement",
+      "window": "2027–28 (unofficial)",
+      "confidence": "medium",
+      "sources": [
+        "https://hypebeast.com/2026/7/solo-leveling-beyond-the-system-anime-film-announcement-info",
+        "https://animecorner.me/solo-leveling-beyond-the-system-new-anime-film-announced/",
+        "https://gamerant.com/solo-leveling-season-3-officially-confirmed-dc-media/"
+      ],
+      "notes": "Checked 2026-11-19. November 2026 'Season 3 returns 5 November' headlines are about the webtoon sequel Solo Leveling: Ragnarok, not the anime. Aniplex, Crunchyroll and A-1 Pictures haven't announced Season 3.",
+      "season": 3,
+      "name": "Solo Leveling",
+      "headline": "Expected 2027–28, No Date Yet ({asOf})"
+    },
+    "Blue-Lock-VS-U20-JAPAN": {
+      "status": "announced",
+      "what": "Season 3, adapting the Neo Egoist League arc, is announced; its title and a teaser visual were revealed on Blue Lock Day in June 2026, but there is no premiere date",
+      "announced": "2026-06-08",
+      "by": "Official Blue Lock anime; first announced at Blue Lock Egoist Festa 2025 (September 2025), title and visual revealed 8 June 2026",
+      "window": "TBA",
+      "confidence": "high",
+      "sources": [
+        "https://www.crunchyroll.com/news/latest/2026/6/8/blue-lock-season-3-neo-egoist-league-anime-visual-special-video",
+        "https://www.thepopverse.com/tv-blue-lock-season-3-title-neo-egoist-league-release-date-waiting",
+        "https://www.gamesradar.com/entertainment/anime-shows/blue-lock-season-3-is-well-on-the-way-with-first-look-and-title-despite-those-season-2-animation-controversies/"
+      ],
+      "notes": "Checked 2026-11-19. The 'Summer 2026' and '9 October 2026' dates that circulated were never official.",
+      "season": 3,
+      "name": "Blue Lock",
+      "headline": "Neo Egoist League Announced, No Date ({asOf})"
+    },
+    "tokyo-revengers-tenjikuhen": {
+      "status": "airing",
+      "what": "Season 4, the War of the Three Titans arc (Santen Sensou-hen), adapting the manga's final arc, premiered on 2 October 2026 on TBS/MBS; Disney+ streams it outside Japan",
+      "announced": null,
+      "by": "Official Tokyo Revengers anime (LIDEN FILMS)",
+      "window": "Airing since 2 Oct 2026",
+      "confidence": "high",
+      "sources": [
+        "https://www.anime.com/news/tokyo-revengers-three-titans-arc-october-2-2026",
+        "https://respawn.outlookindia.com/pop-culture/pop-culture-news/tokyo-revengers-season-4-sets-premiere-date",
+        "https://en.wikipedia.org/wiki/2026_in_Japanese_television"
+      ],
+      "notes": "Checked 2026-11-19. Kitsu: Tokyo-Revengers-Zokuhen, 13 episodes, current. Placed on the Tenjiku arc (Season 3) page, whose next entry is this season.",
+      "season": 4,
+      "name": "Tokyo Revengers",
+      "headline": "Airing Now, the Final Arc ({asOf})"
+    },
+    "spy-x-family-season-3": {
+      "status": "announced",
+      "what": "Season 4 and a second film are announced for 2027 in Japan; no premiere dates yet",
+      "announced": "2026-11-08",
+      "by": "Toho and the official anime, at the SPY×FAMILY ANIME EXTRA MISSION II fan event in Tokyo, with a teaser visual",
+      "window": "2027",
+      "confidence": "high",
+      "sources": [
+        "https://anitrendz.net/news/2026/11/08/spy-x-family-season-4-new-anime-film-debut-in-2027/",
+        "https://us.oricon-group.com/news/9485/",
+        "https://comicbook.com/anime/news/spy-x-family-confirms-season-4-return-new-movie-in-2027-first-look-revealed/"
+      ],
+      "notes": "Checked 2026-11-19. Kitsu's 31 December 2026 start date for Season 4 is a placeholder; the official window is 2027.",
+      "season": 4,
+      "name": "Spy x Family",
+      "headline": "Announced for 2027 ({asOf})"
     }
   }
 }

@@ -26,5 +26,8 @@ export const NEWS_REVIEWED = DATA.reviewed;
 export const sequelNews = (slug: string): SequelNews | null => DATA.shows[slug] ?? null;
 /** Every show with researched sequel news, for the hub's "season 2 status" list. */
 export const sequelNewsSlugs = (): string[] => Object.keys(DATA.shows);
-/** An announcement the automatic verdict ("no sequel yet") hasn't caught up with. */
-export const newsOverrides = (n: SequelNews | null, kind: SequelKind) => Boolean(n && (n.status === "announced" || n.status === "dated") && (kind === "none" || kind === "still-airing"));
+/** An announcement the automatic verdict ("no sequel yet") hasn't caught up with, or a database date where the
+ *  official word is "announced, no date": that date is a placeholder (Kitsu gave Spy x Family Season 4 31 Dec 2026
+ *  for a 2027 announcement). */
+export const newsOverrides = (n: SequelNews | null, kind: SequelKind) =>
+  Boolean(n && (((n.status === "announced" || n.status === "dated") && (kind === "none" || kind === "still-airing")) || (n.status === "announced" && kind === "dated")));
