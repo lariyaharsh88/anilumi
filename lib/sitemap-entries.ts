@@ -102,6 +102,7 @@ export async function sitemapEntries(): Promise<MetadataRoute.Sitemap> {
     { url: abs("/japanese-name-generator"), lastModified: at(), changeFrequency: "yearly", priority: 0.5 },
     ...QUIZZES.map((q) => ({ url: abs(`/quiz/${q.slug}`), lastModified: at(), changeFrequency: "monthly" as const, priority: 0.6 })),
     { url: abs("/random-anime-generator"), lastModified: at(D.anilist), changeFrequency: "monthly", priority: 0.6 },
+    { url: abs("/what-anime-should-i-watch"), lastModified: at(D.anilist), changeFrequency: "monthly", priority: 0.6 },
     { url: abs("/birthdays"), lastModified: now, changeFrequency: "daily", priority: 0.7 },
     { url: abs("/anime-birthday-twin"), lastModified: at(D.birthdays, D.charLines), changeFrequency: "monthly", priority: 0.6 },
     // Hindi voice artists: listed once researched (the hub 404s while the data file is empty).

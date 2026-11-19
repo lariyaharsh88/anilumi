@@ -61,7 +61,7 @@ export default async function RandomGenerator() {
       <section className="mt-8" aria-label="Random anime picker">
         <RandomPicker items={items} genres={genres} />
       </section>
-      <p className="mt-6 text-sm text-muted">Want a guided pick instead? Try the <Link href="/quiz" className="text-violet hover:underline">30-second quiz</Link>, or browse the <Link href="/genre" className="text-violet hover:underline">best anime by genre</Link>.</p>
+      <p className="mt-6 text-sm text-muted">Want a guided pick instead? Answer 4 questions in <Link href="/what-anime-should-i-watch" className="text-violet hover:underline">what anime should I watch</Link>, try the <Link href="/quiz" className="text-violet hover:underline">30-second quiz</Link>, or browse the <Link href="/genre" className="text-violet hover:underline">best anime by genre</Link>.</p>
       <Faq title="Random anime generator FAQ" items={[
         { q: "Which anime can it pick?", a: `The ${items.length} most-watched anime on AniList that you can start from: first seasons and standalone films, never a sequel. Adult and ecchi titles are left out.` },
         { q: "How do the filters work?", a: "Genre uses AniList's genres; length counts TV episodes (movies separately); score is AniList's average; the Hindi option keeps only anime with an official Hindi dub on our checked list." },

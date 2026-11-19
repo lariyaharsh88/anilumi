@@ -123,6 +123,7 @@ export default async function BestAnimeForBeginners() {
       )}
 
       <p className="mt-10 flex flex-wrap gap-2 text-sm">
+        <Link href="/what-anime-should-i-watch" className="chip">🎯 What anime should I watch?</Link>
         <Link href="/best-anime" className="chip">Best anime of all time</Link>
         <Link href="/short-anime" className="chip">Short anime</Link>
         <Link href="/quiz" className="chip">What should I watch?</Link>
