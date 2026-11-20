@@ -1,4 +1,4 @@
-import { fitDescription } from "@/lib/titles";
+import { fitDescription, fitTitle } from "@/lib/titles";
 import Link from "@/components/Link";
 import type { Metadata } from "next";
 import { listAnime, Anime, posterUrl, fmtDate, weekdayOf, uniqueById, seasonOf, getWeekBroadcasts, aniListNextEpisodes, animePath } from "@/lib/kitsu";
@@ -13,8 +13,9 @@ import BarChart from "@/components/viz/BarChart";
 
 export const revalidate = 1800;
 export const metadata: Metadata = {
-  title: "Anime Schedule This Week – Daily Airing Calendar (JST)",
-  description: fitDescription("Which anime air today and every day this week, with exact times in JST and your own time zone, countdowns and where to stream. Updated every 30 minutes."),
+  // Bing, Nov 2026: "anime release schedule" (103 impressions at position 8, no clicks), "anime schedule", "weekly anime schedule".
+  title: fitTitle(["Anime Release Schedule This Week: Daily Airing Calendar", "Anime Release Schedule This Week"]),
+  description: fitDescription("The anime release schedule for this week: which anime air today and every day, with exact times in JST and your own time zone, countdowns and where to stream."),
   alternates: { canonical: "/schedule" },
 };
 

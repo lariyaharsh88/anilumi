@@ -61,7 +61,9 @@ const fmtDate = (iso: string) => new Date(`${iso}T00:00:00Z`).toLocaleDateString
 export function generateMetadata(): Metadata {
   const r = rows();
   return {
-    title: fitTitle([`Best Anime Streaming Sites in India (${y}): Free & Legal, with Hindi Dubs`, `Best Anime Streaming Sites in India (${y}): Free & Legal`, `Legal Anime Streaming Sites in India (${y})`]),
+    // Bing, Nov 2026: "where to watch anime online legally" 79 + "how to watch anime online" 68 + "anime streaming
+    // legality" 22 impressions at positions 5-7, no clicks; the India sites stay in the description.
+    title: fitTitle([`Where to Watch Anime Online Legally: Top Sites in India (${y})`, `Best Anime Streaming Sites in India (${y}): Free & Legal, with Hindi Dubs`, `Best Anime Streaming Sites in India (${y}): Free & Legal`, `Legal Anime Streaming Sites in India (${y})`]),
     description: fitDescription(`The ${r.length} legal anime streaming sites in India compared: how many popular anime each has, Hindi, Tamil and Telugu dubs, prices in rupees and the free options (${r.filter((x) => x.site.free).map((x) => x.site.name.replace(/ \(.*\)$/, "")).join(", ")}). Checked ${streamsDate()}.`),
     alternates: { canonical: "/anime-streaming-sites" },
   };
