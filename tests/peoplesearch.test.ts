@@ -7,8 +7,8 @@ test("people search: characters, voice actors and Hindi voice artists by name", 
   assert.equal(top("gojo")?.name, "Satoru Gojou");
   assert.equal(top("gojo")?.kind, "character");
   assert.ok(top("gojo")?.strong);
-  assert.equal(top("nezuko")?.name, "Nezuko Kamado"); // no page of her own: links to the anime
-  assert.match(top("nezuko")!.href, /^\/anime\//);
+  assert.equal(top("nezuko")?.name, "Nezuko Kamado");
+  assert.equal(top("nezuko")!.href, "/character/nezuko-kamado"); // linked to her Kitsu page in Nov 2026
   assert.equal(top("levi ackerman")?.name, "Levi"); // the stored name is part of the query
   assert.equal(top("monkey d luffy")?.name, "Luffy Monkey"); // initials ignored, any word order
   assert.equal(top("kana hanazawa")?.kind, "voice-actor");
