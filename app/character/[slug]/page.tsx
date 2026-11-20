@@ -26,7 +26,7 @@ import JsonLd from "@/components/JsonLd";
 import { workRef } from "@/lib/ld";
 import Faq from "@/components/Faq";
 import { getCast, getAniListCharacter, sameName, vaPath, type Va } from "@/lib/anilist";
-import { snapFor, showRanking, snapToAniList, characterTable } from "@/lib/charsnap";
+import { snapFor, snapByPage, showRanking, snapToAniList, characterTable } from "@/lib/charsnap";
 import { parseKitsuBio, mergeFacts, factsTitle, ageAnswer, zodiac, aliasList, quickAnswer } from "@/lib/charfacts";
 import { formatMix, yearsActive, perYear, castRank, debutAndLatest } from "@/lib/charstats";
 import StatTiles from "@/components/viz/StatTiles";
@@ -59,7 +59,9 @@ async function load(slug: string) {
   const bday = birthdayFor(c.name, apps.map((x) => x.anime.slug));
   // Popular characters come from the monthly AniList snapshot (no live calls: AniList allows ~30 a minute);
   // everyone else falls back to live AniList, which may be missing on a bad minute.
-  const snap = snapFor(c.name, apps.map((x) => x.anime.slug));
+  // The snapshot entry mapped to this Kitsu page first: Kitsu often lists a franchise's later entries instead of
+  // the show the snapshot names (Demon Slayer, Jujutsu Kaisen), so matching by show alone misses them.
+  const snap = snapByPage(c.slug) ?? snapFor(c.name, apps.map((x) => x.anime.slug));
   const person = (p: { id: number; n: string; i: string | null } | null): Va | null => (p ? { id: p.id, name: p.n, native: null, image: p.i } : null);
   // The rest of the cast doesn't depend on the voice lookups below: start it now, in parallel.
   const othersP = home ? getCharacters(home.id, 13) : Promise.resolve([]);
@@ -100,7 +102,8 @@ async function load(slug: string) {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const { c, home, voiced, facts, fact, bio, aliases, nick, spellings } = await load(slug);
+  const { c, home, voiced, facts, fact, bio, aliases, nick, spellings, rankShow } = await load(slug);
+  const latinAliases = aliases.filter((x) => /^[\p{Script=Latin}\p{N}\p{P}\p{Zs}]+$/u.test(x));
   // The checked name from the notes when there is one ("Monkey D. Luffy", not AniList's "Luffy Monkey D."), in the
   // spelling people search when AniList lists it ("Satoru Gojo" for "Satoru Gojou": "gojo height" is 5.4K a month).
   const base = characterNote(c.slug)?.name ?? c.name;
@@ -112,9 +115,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const what = factsTitle(facts.map((f) => f.key), Boolean(voiced?.jp));
   const brief = [fact("age") && `age ${fact("age")}`, fact("height") && `${fact("height")} tall`, fact("birthday") && `birthday ${fact("birthday")}`].filter(Boolean).join(", ");
   const lead = [
-    home && `${name} from ${home.title}${brief ? `: ${brief}` : ""}.`,
+    // Kitsu sometimes has no main show for a character (Demon Slayer): the snapshot's show stands in.
+    (home?.title ?? rankShow) && `${name} from ${home?.title ?? rankShow}${brief ? `: ${brief}` : ""}.`,
     voiced?.jp && `Voiced by ${voiced.jp.name} (Japanese)${voiced.en ? ` and ${voiced.en.name} (English)` : ""}.`,
-    aliases.length > 0 && `Also known as ${aliases.slice(0, 2).join(" and ")}.`,
+    // Latin-script names only in the snippet: Kitsu's lists mix in Japanese and Korean, sometimes with broken characters.
+    latinAliases.length > 0 && `Also known as ${latinAliases.slice(0, 2).join(" and ")}.`,
   ].filter(Boolean).join(" ");
   return {
     // Most informative title that fits a search result (lib/titles.ts): the name and the searched facts first.

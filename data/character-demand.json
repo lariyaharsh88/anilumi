@@ -1,5 +1,5 @@
 {
- "checked": "2026-11-19",
+ "checked": "2026-11-20",
  "source": "Google Ads Keyword Planner, India + United States, 12-month average (Nov 2025-Oct 2026), '<name> height/age/birthday'; names that collide with other things (Robin, Dio, Vanitas, Fern, Subaru, Ace, Rohan) count US only",
  "min": 100,
  "chars": [
@@ -40,10 +40,22 @@
    "b": 6280
   },
   {
+   "k": "nezuko-kamado",
+   "h": 740,
+   "a": 8500,
+   "b": 2900
+  },
+  {
    "k": "zoro-roronoa",
    "h": 2900,
    "a": 3400,
    "b": 4600
+  },
+  {
+   "k": "jujutsu-kaisen-yuji-itadori",
+   "h": 2600,
+   "a": 2780,
+   "b": 5120
   },
   {
    "k": "sasuke-uchiha",
@@ -56,6 +68,12 @@
    "h": 2480,
    "a": 2490,
    "b": 5120
+  },
+  {
+   "k": "tanjirou-kamado",
+   "h": 2000,
+   "a": 4800,
+   "b": 3200
   },
   {
    "k": "izuku-midoriya",
@@ -82,6 +100,12 @@
    "b": 1690
   },
   {
+   "k": "shinobu-kochou",
+   "h": 3500,
+   "a": 2190,
+   "b": 3200
+  },
+  {
    "k": "jujutsu-kaisen-sukuna",
    "h": 3500,
    "a": 1590,
@@ -106,6 +130,12 @@
    "b": 3040
   },
   {
+   "k": "mitsuri-kanroji",
+   "h": 1470,
+   "a": 2990,
+   "b": 2900
+  },
+  {
    "k": "chainsaw-man-reze",
    "h": 1090,
    "a": 4880,
@@ -122,6 +152,18 @@
    "h": 4800,
    "a": 960,
    "b": 960
+  },
+  {
+   "k": "maki-zen-in",
+   "h": 1590,
+   "a": 2880,
+   "b": 1770
+  },
+  {
+   "k": "itachi-uchiha",
+   "h": 1310,
+   "a": 2020,
+   "b": 2600
   },
   {
    "k": "tornado",
@@ -160,6 +202,18 @@
    "b": 2660
   },
   {
+   "k": "zenitsu-agatsuma",
+   "h": 600,
+   "a": 2020,
+   "b": 2600
+  },
+  {
+   "k": "kyoujurou-rengoku",
+   "h": 910,
+   "a": 1780,
+   "b": 2480
+  },
+  {
    "k": "jujutsu-kaisen-kento-nanami",
    "h": 1270,
    "a": 1990,
@@ -196,10 +250,22 @@
    "b": 3500
   },
   {
+   "k": "jujutsu-kaisen-yuta-okkotsu",
+   "h": 1480,
+   "a": 1390,
+   "b": 1470
+  },
+  {
    "k": "killua-zoldyck",
    "h": 620,
    "a": 1620,
    "b": 2070
+  },
+  {
+   "k": "inosuke-hashibira",
+   "h": 690,
+   "a": 1480,
+   "b": 2020
   },
   {
    "k": "rukia-kuchiki",
@@ -214,6 +280,30 @@
    "b": 730
   },
   {
+   "k": "eijirou-kirishima",
+   "h": 610,
+   "a": 330,
+   "b": 2940
+  },
+  {
+   "k": "shanks",
+   "h": 1070,
+   "a": 2180,
+   "b": 600
+  },
+  {
+   "k": "dabi",
+   "h": 680,
+   "a": 1740,
+   "b": 1070
+  },
+  {
+   "k": "giyuu-tomioka",
+   "h": 870,
+   "a": 980,
+   "b": 1470
+  },
+  {
    "k": "kiyotaka-ayanokouji",
    "h": 1690,
    "a": 690,
@@ -224,6 +314,18 @@
    "h": 530,
    "a": 1740,
    "b": 900
+  },
+  {
+   "k": "jotaro-kujo",
+   "h": 1140,
+   "a": 950,
+   "b": 1040
+  },
+  {
+   "k": "hisoka",
+   "h": 530,
+   "a": 1920,
+   "b": 660
   },
   {
    "k": "saitama",
@@ -274,10 +376,22 @@
    "b": 1470
   },
   {
+   "k": "jiraiya",
+   "h": 800,
+   "a": 740,
+   "b": 1200
+  },
+  {
    "k": "rias-gremory",
    "h": 490,
    "a": 2010,
    "b": 230
+  },
+  {
+   "k": "yoruichi-shihouin",
+   "h": 930,
+   "a": 1140,
+   "b": 480
   },
   {
    "k": "guts",
@@ -292,6 +406,12 @@
    "b": 580
   },
   {
+   "k": "thorfinn",
+   "h": 1600,
+   "a": 480,
+   "b": 240
+  },
+  {
    "k": "chuuya-nakahara",
    "h": 890,
    "a": 250,
@@ -302,6 +422,12 @@
    "h": 650,
    "a": 730,
    "b": 810
+  },
+  {
+   "k": "tengen-uzui",
+   "h": 850,
+   "a": 800,
+   "b": 500
   },
   {
    "k": "gyro-zeppeli",
@@ -358,10 +484,22 @@
    "b": 640
   },
   {
+   "k": "ace-portgas-d",
+   "h": 480,
+   "a": 720,
+   "b": 320
+  },
+  {
    "k": "lelouch-lamperouge",
    "h": 560,
    "a": 390,
    "b": 480
+  },
+  {
+   "k": "garou",
+   "h": 910,
+   "a": 320,
+   "b": 70
   },
   {
    "k": "shouyou-hinata",
@@ -388,6 +526,12 @@
    "b": 160
   },
   {
+   "k": "kenpachi-zaraki",
+   "h": 590,
+   "a": 140,
+   "b": 100
+  },
+  {
    "k": "gilgamesh",
    "h": 550,
    "a": 110,
@@ -412,7 +556,19 @@
    "b": 0
   },
   {
+   "k": "izumi-miyamura",
+   "h": 430,
+   "a": 0,
+   "b": 0
+  },
+  {
    "k": "taiga-aisaka",
+   "h": 430,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "minato-namikaze",
    "h": 430,
    "a": 0,
    "b": 0
@@ -438,6 +594,24 @@
   {
    "k": "legoshi",
    "h": 400,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "trafalgar-law",
+   "h": 390,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "chrollo-lucilfer",
+   "h": 390,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "giorno-giovanna",
+   "h": 370,
    "a": 0,
    "b": 0
   },
@@ -478,6 +652,12 @@
    "b": 0
   },
   {
+   "k": "himiko-toga",
+   "h": 330,
+   "a": 0,
+   "b": 0
+  },
+  {
    "k": "leorio-paladiknight",
    "h": 310,
    "a": 0,
@@ -502,6 +682,12 @@
    "b": 0
   },
   {
+   "k": "roy-mustang",
+   "h": 290,
+   "a": 0,
+   "b": 0
+  },
+  {
    "k": "ken-kaneki",
    "h": 280,
    "a": 0,
@@ -515,6 +701,12 @@
   },
   {
    "k": "spike-spiegel",
+   "h": 280,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "hange-zoe",
    "h": 280,
    "a": 0,
    "b": 0
@@ -538,6 +730,24 @@
    "b": 0
   },
   {
+   "k": "jolyne-kujo",
+   "h": 240,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "vanitas",
+   "h": 70,
+   "a": 70,
+   "b": 90
+  },
+  {
+   "k": "nana-osaki",
+   "h": 230,
+   "a": 0,
+   "b": 0
+  },
+  {
    "k": "reiner-braun",
    "h": 220,
    "a": 0,
@@ -551,6 +761,12 @@
   },
   {
    "k": "kazuto-kirigaya",
+   "h": 210,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "shikamaru-nara",
    "h": 210,
    "a": 0,
    "b": 0
@@ -598,6 +814,12 @@
    "b": 0
   },
   {
+   "k": "askeladd",
+   "h": 180,
+   "a": 0,
+   "b": 0
+  },
+  {
    "k": "rem-3",
    "h": 180,
    "a": 0,
@@ -641,6 +863,30 @@
   },
   {
    "k": "asuna-yuuki",
+   "h": 160,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "meruem",
+   "h": 160,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "tohru-honda",
+   "h": 160,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "rudeus-greyrat",
+   "h": 160,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "shouko-komi",
    "h": 160,
    "a": 0,
    "b": 0
@@ -724,7 +970,19 @@
    "b": 0
   },
   {
+   "k": "kaguya-shinomiya",
+   "h": 110,
+   "a": 0,
+   "b": 0
+  },
+  {
    "k": "koyomi-araragi",
+   "h": 110,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "miku-nakano",
    "h": 110,
    "a": 0,
    "b": 0
@@ -742,7 +1000,19 @@
    "b": 0
   },
   {
+   "k": "pain",
+   "h": 110,
+   "a": 0,
+   "b": 0
+  },
+  {
    "k": "saber",
+   "h": 100,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "kyouko-hori",
    "h": 100,
    "a": 0,
    "b": 0
