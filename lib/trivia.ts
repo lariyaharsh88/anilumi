@@ -13,7 +13,7 @@ import themeData from "@/data/themes.json";
 import { characterTable, characterPathFor, allSnapChars, type SnapChar } from "./charsnap";
 import { bdPath, MONTHS } from "./birthdays";
 import { fillerFor } from "./filler";
-import { dubBySlug, dubHref, HINDI_PLATFORMS } from "./hindidub";
+import { dubBySlug, dubHref, HINDI_PLATFORMS, platformKind } from "./hindidub";
 import { filmFranchise, filmsPath } from "./franchisefilms";
 
 export type TriviaQ = { q: string; o: string[]; a: number; x: string; h: string };
@@ -157,7 +157,9 @@ function themeQs(show: TriviaShow, r: () => number): TriviaQ[] {
   return shuffle(ops, r).slice(0, 6).map((song) => makeQ(`Which of these songs is a ${show.name} opening?`, song, others, `"${song}" is an opening theme of ${show.name}.`, h, r)).filter((q): q is TriviaQ => q !== null);
 }
 
-const PLATFORM_NAMES = HINDI_PLATFORMS.map((p) => p.label.replace(/ \(.*\)$/, ""));
+// Streaming services only: a TV channel isn't something that "streams" a show, and our dub rows don't list every
+// channel that has aired one (Doraemon is on Disney Channel), so a channel could be a wrong "wrong answer".
+const PLATFORM_NAMES = HINDI_PLATFORMS.filter((p) => platformKind(p.label) !== "tv").map((p) => p.label.replace(/ \(.*\)$/, ""));
 function hindiQs(show: TriviaShow, r: () => number): TriviaQ[] {
   const d = show.hindi ? dubBySlug(show.hindi) : null;
   if (!d || d.status !== "available") return [];

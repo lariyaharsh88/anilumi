@@ -24,6 +24,7 @@ import { dubEvents } from "@/lib/dubupdates";
 import { allStreams, streamsPath } from "@/lib/streams";
 import { filmFranchises, filmsPath, hasLang, FILMS_CHECKED, type FilmLang } from "@/lib/franchisefilms";
 import { HINDI_PLATFORMS, dubsOn, hindiDubbed, hindiDubPath } from "@/lib/hindidub";
+import { KIDS_TV_CHECKED, KIDS_TV_PATH, kidsChannel } from "@/lib/kidstv";
 import { PRICES_CHECKED } from "@/lib/platformprices";
 import { indexedSimilar } from "@/lib/similarhub";
 import { searchShown, searchShownPaths, animeIndexed, ownContentSlugs, watchOrderIndexed, characterTableIndexed, notedCharacters, demandCharacters, genreIndexed, bestYearIndexed, trendIndexed, voiceActorIndexed, hindiDubIndexed } from "@/lib/indexing";
@@ -80,7 +81,9 @@ export async function sitemapEntries(): Promise<MetadataRoute.Sitemap> {
     // Changes as dubs are added or start streaming: dated by the latest event (lib/dubupdates.ts).
     { url: abs("/new-dubs"), lastModified: at(dubEvents()[0]?.date), changeFrequency: "weekly", priority: 0.7 },
     ...(["ta", "te"] as const).filter((l) => dubbedIn(l).length >= 5).map((l) => ({ url: abs(LANG[l].path), lastModified: at(D.regionalDubs, DUB_GUIDES_ADDED), changeFrequency: "monthly" as const, priority: 0.7 })),
-    ...HINDI_PLATFORMS.filter((p) => dubsOn(p).length).map((p) => ({ url: abs(`/hindi-dub/${p.slug}`), lastModified: at(D.dubs, HINDI_HUB_UPDATED), changeFrequency: "monthly" as const, priority: 0.6 })),
+    ...HINDI_PLATFORMS.filter((p) => dubsOn(p).length || kidsChannel(p.slug)?.page).map((p) => ({ url: abs(`/hindi-dub/${p.slug}`), lastModified: at(D.dubs, HINDI_HUB_UPDATED, kidsChannel(p.slug)?.page ? KIDS_TV_CHECKED : null), changeFrequency: "monthly" as const, priority: 0.6 })),
+    // Kids' TV channels that air anime in Hindi (lib/kidstv.ts); the channel pages are the platform pages above.
+    { url: abs(KIDS_TV_PATH), lastModified: at(KIDS_TV_CHECKED), changeFrequency: "monthly", priority: 0.7 },
     // Per-anime Hindi dub pages: the most-watched dubs (lib/indexing.ts hindiDubIndexed).
     ...hindiDubbed().filter((d) => hindiDubIndexed(d.s)).map((d) => ({ url: abs(hindiDubPath(d.s)), lastModified: at(D.dubs, d.checked), changeFrequency: "weekly" as const, priority: 0.7 })),
     { url: abs("/hindi-dub/this-week"), lastModified: now, changeFrequency: "daily", priority: 0.7 },

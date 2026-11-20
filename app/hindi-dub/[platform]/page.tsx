@@ -18,6 +18,8 @@ import { pricesFor, cheapestPlan, startingAt, PERIOD, PRICES_CHECKED } from "@/l
 import { itemList } from "@/lib/ld";
 import { fitTitle, fitDescription } from "@/lib/titles";
 import { HINDI_PLATFORMS, dubDate, dubHref, dubsOn, hindiDubbed, hindiPlatform, platformKind } from "@/lib/hindidub";
+import { kidsChannel } from "@/lib/kidstv";
+import KidsChannelPage, { kidsChannelMetadata } from "@/components/KidsChannelPage";
 
 export const revalidate = 86400;
 const fmtDay = (iso: string | null) => (iso ? new Date(/T/.test(iso) ? iso : `${iso}T00:00:00Z`).toLocaleDateString("en-GB", { day: "numeric", month: "short", timeZone: "UTC" }) : "");
@@ -36,7 +38,11 @@ function load(slug: string) {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { p, list } = load((await params).platform);
+  const slug = (await params).platform;
+  // Kids' TV channels (Sony YAY!, Hungama, Disney Channel, Nick, Cartoon Network) get the channel page instead.
+  const ch = hindiPlatform(slug) ? kidsChannel(slug) : null;
+  if (ch?.page) return kidsChannelMetadata(ch);
+  const { p, list } = load(slug);
   const y = new Date().getFullYear();
   const name = p.label.replace(/ \(.*\)$/, "");
   const fresh = hindiArrivals(120).filter((e) => p.match.test(e.service)).length;
@@ -54,7 +60,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 /** Every anime a platform carries with Hindi audio, and how to switch the audio on. */
 export default async function HindiPlatformPage({ params }: Props) {
-  const { p, list } = load((await params).platform);
+  const slug = (await params).platform;
+  const ch = hindiPlatform(slug) ? kidsChannel(slug) : null;
+  if (ch?.page) return <KidsChannelPage channel={ch} />;
+  const { p, list } = load(slug);
   const price = pricesFor(p.slug);
   const cheapest = price ? cheapestPlan(price) : null;
   const checkedOn = new Date(`${PRICES_CHECKED}T00:00:00Z`).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });

@@ -328,6 +328,39 @@
         "https://www.medianews4u.com/?p=2493876"
       ],
       "confidence": "medium"
+    },
+    "hungama": {
+      "label": "Hungama TV",
+      "free": false,
+      "plans": [],
+      "hindiNote": "A linear TV channel with a Hindi audio feed, available through DTH or cable, usually inside kids or Hindi packs; prices vary by operator.",
+      "notes": "Same research as the cartoon-network entry: a pay TV channel declared in the TRAI MRP list, bought inside DTH or cable packs; prices vary by operator, so no price is listed.",
+      "sources": [
+        "https://www.trai.gov.in/sites/default/files/2026-09/MRP_02092026.pdf"
+      ],
+      "confidence": "medium"
+    },
+    "disney-channel": {
+      "label": "Disney Channel India",
+      "free": false,
+      "plans": [],
+      "hindiNote": "A linear TV channel with a Hindi audio feed, available through DTH or cable, usually inside kids or Hindi packs; prices vary by operator.",
+      "notes": "Same research as the cartoon-network entry: a pay TV channel declared in the TRAI MRP list, bought inside DTH or cable packs; prices vary by operator, so no price is listed.",
+      "sources": [
+        "https://www.trai.gov.in/sites/default/files/2026-09/MRP_02092026.pdf"
+      ],
+      "confidence": "medium"
+    },
+    "nickelodeon": {
+      "label": "Nickelodeon India (Nick) and Sonic",
+      "free": false,
+      "plans": [],
+      "hindiNote": "Linear TV channels with Hindi audio feeds, available through DTH or cable, usually inside kids or Hindi packs; prices vary by operator.",
+      "notes": "Same research as the cartoon-network entry: a pay TV channel declared in the TRAI MRP list, bought inside DTH or cable packs; prices vary by operator, so no price is listed.",
+      "sources": [
+        "https://www.trai.gov.in/sites/default/files/2026-09/MRP_02092026.pdf"
+      ],
+      "confidence": "medium"
     }
   }
 }
