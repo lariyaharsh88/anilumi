@@ -14,6 +14,9 @@ export const REPO = "lariyaharsh88/anilumi";
  *   health      daily at 05:35 UTC (11:05 IST)
  *   sitemap     daily at 06:05 UTC: resubmit the sitemap to Google, changed URLs to IndexNow
  *   release     every 6 hours (:05); the workflow itself only releases once the last release is 48 hours old
+ *   post        hourly at :35 from 01:35 to 17:35 UTC (07:05-23:05 IST): the Telegram channel's queued posts, in
+ *               lariyaharsh88/channel-bots. Its GitHub schedule fired about twice a day, and the bot drops posts
+ *               more than 6 hours late.
  */
 export function dueWorkflows(date) {
   const h = date.getUTCHours();
@@ -25,11 +28,14 @@ export function dueWorkflows(date) {
   if (!first && h === 5) out.push("health.yml");
   if (first && h === 6) out.push("sitemap.yml");
   if (first && h % 6 === 0) out.push("release.yml");
+  if (!first && h >= 1 && h <= 17) out.push("post.yml");
   return out;
 }
 
 /** Workflow inputs per file. release.yml releases at once when run by hand; from here it waits out its 48 hours. */
 const INPUTS = { "release.yml": { force: "false" } };
+/** Workflows that live in another repo; the token needs Actions write there too. */
+const REPOS = { "post.yml": "lariyaharsh88/channel-bots" };
 
 /** Start each due workflow on main. Needs the secret GH_DISPATCH_TOKEN (Actions: read and write on the repo). */
 export async function dispatchDue(env, date = new Date()) {
@@ -40,7 +46,7 @@ export async function dispatchDue(env, date = new Date()) {
   }
   const results = await Promise.all(
     due.map((file) =>
-      fetch(`https://api.github.com/repos/${REPO}/actions/workflows/${file}/dispatches`, {
+      fetch(`https://api.github.com/repos/${REPOS[file] ?? REPO}/actions/workflows/${file}/dispatches`, {
         method: "POST",
         headers: {
           authorization: `Bearer ${env.GH_DISPATCH_TOKEN}`,

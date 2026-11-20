@@ -5,17 +5,18 @@ import { dispatchDue, dueWorkflows } from "../edge/schedule.js";
 const at = (iso: string) => dueWorkflows(new Date(iso)) as string[];
 
 test("edge cron: alerts every tick, AniList hourly, airing every 3 h, warm-up and release check every 6 h, health daily", () => {
-  assert.deepEqual(at("2026-11-06T01:35:00Z"), ["alerts.yml"]);
+  assert.deepEqual(at("2026-11-06T01:35:00Z"), ["alerts.yml", "post.yml"]);
+  assert.deepEqual(at("2026-11-06T19:35:00Z"), ["alerts.yml"]); // 01:05 IST: no channel posts overnight
   assert.deepEqual(at("2026-11-06T01:05:00Z"), ["alerts.yml", "anilist-sync.yml"]);
   assert.deepEqual(at("2026-11-06T03:05:00Z"), ["alerts.yml", "anilist-sync.yml", "airing.yml"]);
-  assert.deepEqual(at("2026-11-06T06:35:00Z"), ["alerts.yml", "warm-cache.yml"]);
-  assert.deepEqual(at("2026-11-06T05:35:00Z"), ["alerts.yml", "health.yml"]);
+  assert.deepEqual(at("2026-11-06T06:35:00Z"), ["alerts.yml", "warm-cache.yml", "post.yml"]);
+  assert.deepEqual(at("2026-11-06T05:35:00Z"), ["alerts.yml", "health.yml", "post.yml"]);
   assert.deepEqual(at("2026-11-06T06:05:00Z"), ["alerts.yml", "anilist-sync.yml", "airing.yml", "sitemap.yml", "release.yml"]);
   assert.deepEqual(at("2026-11-06T12:05:00Z"), ["alerts.yml", "anilist-sync.yml", "airing.yml", "release.yml"]);
-  // Over a day: 48 alert runs, 24 AniList syncs, 8 airing snapshots, 4 warm-ups, 1 health check, 1 sitemap, 4 release checks.
+  // Over a day: 48 alert runs, 24 AniList syncs, 8 airing snapshots, 4 warm-ups, 1 health check, 1 sitemap, 4 release checks, 17 channel posts.
   const day = Array.from({ length: 48 }, (_, i) => at(new Date(Date.UTC(2026, 10, 6, Math.floor(i / 2), i % 2 ? 35 : 5)).toISOString())).flat();
   const n = (f: string) => day.filter((x) => x === f).length;
-  assert.deepEqual([n("alerts.yml"), n("anilist-sync.yml"), n("airing.yml"), n("warm-cache.yml"), n("health.yml"), n("sitemap.yml"), n("release.yml")], [48, 24, 8, 4, 1, 1, 4]);
+  assert.deepEqual([n("alerts.yml"), n("anilist-sync.yml"), n("airing.yml"), n("warm-cache.yml"), n("health.yml"), n("sitemap.yml"), n("release.yml"), n("post.yml")], [48, 24, 8, 4, 1, 1, 4, 17]);
 });
 
 test("edge cron: dispatches each due workflow on main, and nothing without a token", async () => {
@@ -37,6 +38,10 @@ test("edge cron: dispatches each due workflow on main, and nothing without a tok
     await dispatchDue({ GH_DISPATCH_TOKEN: "t" }, new Date("2026-11-06T12:05:00Z"));
     const release = calls.find((c) => c.url.includes("/release.yml/"));
     assert.equal(release?.body, '{"ref":"main","inputs":{"force":"false"}}', "the cron never forces a release");
+    calls.length = 0;
+    await dispatchDue({ GH_DISPATCH_TOKEN: "t" }, new Date("2026-11-06T08:35:00Z"));
+    const post = calls.find((c) => c.url.includes("/post.yml/"));
+    assert.ok(post?.url.includes("/repos/lariyaharsh88/channel-bots/"), "channel posts start in the channel-bots repo");
   } finally {
     globalThis.fetch = real;
     console.log = log;
