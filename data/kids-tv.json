@@ -1,6 +1,6 @@
 {
   "checked": "2026-11-20",
-  "about": "Indian kids' TV channels that air (or aired) anime in Hindi. A show is listed on a channel only when a dated news report, trade-press article or the channel's own page confirms it; Wikipedia and fan wikis are kept as supporting links only. 'since' is the year of the first confirmed airing on that channel (free text when only an upper bound is known); 'lastSeen' (YYYY-MM) is the latest dated report of it on air, never a guess about today's schedule. 'dub' is the data/hindi-dubs.json slug, used for the link and for where it streams now. Left out as unconfirmed (20 Nov 2026): Ninja Hattori and Perman on Disney Channel (only Wikipedia lists them), Kiteretsu on Disney Channel/Disney XD/Pogo/Cartoon Network and Obocchama-kun on Cartoon Network/Pogo (one fan site), Pokémon on Pogo (fan wikis only), Beyblade: Metal Fusion on Cartoon Network (fan wikis only), Hamtaro and Ultra B on Disney Channel (Wikipedia only), and anything on Discovery Kids. On Sony YAY! (20 Nov 2026): the other Crunchyroll-library shows in its late-night slot in 2025-26 (Radiant, Metallic Rouge, The God of High School, Bucchigiri?!, Mobile Suit Gundam: The Witch from Mercury, Why Raeliana Ended Up at the Duke's Mansion, Hokkaido Gals Are Super Adorable! and more) are listed only by a fan tracker, Demon Slayer and Fullmetal Alchemist were only announced (April 2025, never dated), KochiKame, Black Clover and Demon Slayer aired on Anime Booth, Sony YAY!'s separate Airtel add-on channel, not on Sony YAY! itself, and Tensai Bakabon (Wikipedia only); we found no report of Kiteretsu, Doraemon, Ninja Hattori, Pokémon, Beyblade, Bakugan, Dragon Ball, Spy x Family or Haikyuu on Sony YAY!. 'premieres' are dated announcements of a premiere and its time slot (IST), not a live schedule: we found no current, dated Sony YAY! schedule we could cite.",
+  "about": "Indian kids' TV channels that air (or aired) anime in Hindi. A show is listed on a channel only when a dated news report, trade-press article or the channel's own page confirms it; Wikipedia and fan wikis are kept as supporting links only. 'since' is the year of the first confirmed airing on that channel (free text when only an upper bound is known); 'lastSeen' (YYYY-MM) is the latest dated report of it on air, never a guess about today's schedule. 'dub' is the data/hindi-dubs.json slug, used for the link and for where it streams now. Left out as unconfirmed (20 Nov 2026): Ninja Hattori and Perman on Disney Channel (only Wikipedia lists them), Kiteretsu on Disney Channel/Disney XD/Pogo/Cartoon Network and Obocchama-kun on Cartoon Network/Pogo (one fan site), Pokémon on Pogo (fan wikis only), Beyblade: Metal Fusion on Cartoon Network (fan wikis only), Hamtaro and Ultra B on Disney Channel (Wikipedia only), and anything on Discovery Kids. On Sony YAY! (20 Nov 2026): Girls' Frontline (aired Jan 2026, daily at 10:30 PM, per ANN citing the channel's Instagram; language not confirmed, so not counted), the other Crunchyroll-library shows in its late-night slot in 2025-26 (Radiant, Metallic Rouge, The God of High School, Bucchigiri?!, Mobile Suit Gundam: The Witch from Mercury, Why Raeliana Ended Up at the Duke's Mansion, Hokkaido Gals Are Super Adorable! and more) are listed only by a fan tracker, Demon Slayer and Fullmetal Alchemist were only announced (April 2025, never dated), KochiKame, Black Clover and Demon Slayer aired on Anime Booth, Sony YAY!'s separate Airtel add-on channel, not on Sony YAY! itself, and Tensai Bakabon (Wikipedia only); we found no report of Kiteretsu, Doraemon, Ninja Hattori, Pokémon, Beyblade, Bakugan, Dragon Ball, Spy x Family or Haikyuu on Sony YAY!. 'premieres' are dated announcements of a premiere and its time slot (IST), not a live schedule: we found no current, dated Sony YAY! schedule we could cite.",
   "mrp": {
     "asOf": "2026-08-31",
     "source": "https://www.trai.gov.in/sites/default/files/2026-09/MRP_02092026.pdf",
@@ -91,9 +91,6 @@
     },
     "rantaro": {
       "t": "Ninja Boy Rantaro"
-    },
-    "girls-frontline": {
-      "t": "Girls' Frontline"
     }
   },
   "channels": [
@@ -114,7 +111,7 @@
           "show": "naruto",
           "since": "2022",
           "lastSeen": "2026-10",
-          "note": "Naruto from 15 Aug 2022; Naruto Shippuden from March 2024, episodes 1-390 so far. New episodes from 15 Aug 2025; Season 17 began on 19 Oct 2026, daily at 9 PM.",
+          "note": "Naruto from 15 Aug 2022; Naruto Shippuden from March 2024, with new episodes from 15 Aug 2025. Season 17, from about episode 361, airs daily at 9 PM since 19 Oct 2026.",
           "sources": [
             "https://in.ign.com/naruto-1/174035/news/naruto-to-start-airing-in-india-on-sony-yay-from-august-15",
             "https://www.animenewsnetwork.com/news/2024-03-18/sony-yay-airs-naruto-shippuden-anime-in-india/.208874",
@@ -206,15 +203,6 @@
           "sources": [
             "https://animenewsindia.com/2025/02/28/sony-yay-to-premiere-ninja-boy-rantaro-in-five-languages-on-march-3-2025/"
           ]
-        },
-        {
-          "show": "girls-frontline",
-          "since": "2026",
-          "lastSeen": "2026-01",
-          "note": "Daily at 10:30 PM from January 2026, in the channel's Crunchyroll-branded late-night slot (announced on Sony YAY!'s Instagram; the report doesn't name the dub's languages).",
-          "sources": [
-            "https://www.animenewsnetwork.com/news/2026-01-11/girls-frontline-anime-airs-in-india-on-sony-yay/.232950"
-          ]
         }
       ],
       "premieres": [
@@ -264,15 +252,6 @@
           ],
           "sources": [
             "https://animenewsindia.com/2026/04/08/sony-yay-to-premiere-one-punch-man-season-3-starting-april-11-2026-in-regional-dubs"
-          ]
-        },
-        {
-          "show": "girls-frontline",
-          "what": "Season 1",
-          "date": "2026-01",
-          "slot": "Daily, 10:30 PM",
-          "sources": [
-            "https://www.animenewsnetwork.com/news/2026-01-11/girls-frontline-anime-airs-in-india-on-sony-yay/.232950"
           ]
         },
         {
