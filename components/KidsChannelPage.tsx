@@ -6,18 +6,20 @@ import MadeBy from "@/components/MadeBy";
 import Faq, { type FaqItem } from "@/components/Faq";
 import JsonLd from "@/components/JsonLd";
 import SectionNav from "@/components/fx/SectionNav";
-import KidsShowTable from "@/components/KidsShowTable";
+import KidsShowTable, { KidsPremieres, KidsTimings } from "@/components/KidsShowTable";
 import { animeBySlugs, posterUrl } from "@/lib/kitsu";
 import { itemList } from "@/lib/ld";
 import { fitTitle, fitDescription } from "@/lib/titles";
 import { hindiPlatform } from "@/lib/hindidub";
 import {
-  KIDS_TV_CHECKED, KIDS_TV_MRP, KIDS_TV_PATH, andList, channelHref, channelRows, channelShowIds, kidsPageChannels, kidsShow,
-  monthLabel, recentlyOnAir, showHref, sisterChannels, streamsNow, type KidsChannel,
+  KIDS_TV_CHECKED, KIDS_TV_MRP, KIDS_TV_PATH, andList, channelHref, channelPremieres, channelRows, channelShowIds, dateLabel,
+  kidsPageChannels, kidsShow, latestTimings, monthLabel, recentlyOnAir, showHref, sisterChannels, streamsNow, type KidsChannel,
 } from "@/lib/kidstv";
 
 const fmt = (iso: string) => new Date(`${iso}T00:00:00Z`).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
 const shortName = (c: KidsChannel) => c.name.replace(/ India$/, "");
+/** "Naruto" for "Naruto & Naruto Shippuden", "Sgt. Frog" for "Sgt. Frog (Keroro)". */
+const bare = (t: string) => t.replace(/ \(.*\)$/, "").replace(/ & .*$/, "");
 
 /** The channel's anime, its sister channels' included: on air now first, then the rest. */
 function facts(ch: KidsChannel) {
@@ -29,11 +31,16 @@ function facts(ch: KidsChannel) {
   return { all, ids, recent, latest, names: ids.map((id) => kidsShow(id).t) };
 }
 
-/** 140-160 characters: what it airs (most recent first), what's on now, then what the page adds. */
+/** 140-160 characters: what it airs (most recent first), what's on now, then what the page adds. A channel with dated
+ *  premiere timings says so instead ("sony yay anime timing", "sony yay new anime" are searches). */
 function description(ch: KidsChannel, n: number, names: string[], now: string[]) {
   const who = [ch, ...sisterChannels(ch.slug)].map((c) => c.name);
-  const lead = n === 1 ? `${andList(who)} ${who.length > 1 ? "air" : "airs"} ${names[0]} in Hindi.` : `${andList(who)} ${who.length > 1 ? "have" : "has"} aired ${n} anime in Hindi${n > 4 ? `, including ${andList(names.slice(0, 3))}` : `: ${andList(names)}`}.`;
-  const tail = [now.length ? ` On air at last check: ${andList(now)}.` : "", ` Since when, what's still on and where to stream ${n === 1 ? "it" : "them"} in Hindi.`, ` Checked ${fmt(KIDS_TV_CHECKED)}.`, " Every show sourced."];
+  const timed = latestTimings(ch).length > 0;
+  const top = timed ? names.slice(0, 3).map(bare) : names.slice(0, 3);
+  const lead = n === 1 ? `${andList(who)} ${who.length > 1 ? "air" : "airs"} ${names[0]} in Hindi.` : `${andList(who)} ${who.length > 1 ? "have" : "has"} aired ${n} anime in Hindi${n > 4 ? `, including ${andList(top)}` : `: ${andList(names)}`}.`;
+  const tail = timed
+    ? [" Dated timings, new premieres and where to stream them in Hindi.", " Every show sourced.", ` Checked ${fmt(KIDS_TV_CHECKED)}.`]
+    : [now.length ? ` On air at last check: ${andList(now)}.` : "", ` Since when, what's still on and where to stream ${n === 1 ? "it" : "them"} in Hindi.`, ` Checked ${fmt(KIDS_TV_CHECKED)}.`, " Every show sourced."];
   let out = lead;
   for (const t of tail) if ((out + t).length <= 160) out += t;
   return out;
@@ -43,11 +50,13 @@ export function kidsChannelMetadata(ch: KidsChannel): Metadata {
   const { ids, recent, names } = facts(ch);
   const y = new Date(`${KIDS_TV_CHECKED}T00:00:00Z`).getUTCFullYear();
   const n = ids.length;
-  const top2 = names.slice(0, 2).map((t) => t.replace(/ \(.*\)$/, "").replace(/ & .*$/, ""));
+  const top2 = names.slice(0, 2).map(bare);
   const now = recent.map((id) => kidsShow(id).t);
   return {
     // What people type: "sony yay anime list", "hungama tv anime", "disney channel india anime", "nickelodeon anime hindi".
     title: fitTitle([
+      // With dated time slots: "sony yay anime timing / schedule" (they're announcements, so "Timings", not "Schedule").
+      n >= 4 && latestTimings(ch).length ? `${ch.name} Anime List & Timings (${y}): ${n} Anime in Hindi` : null,
       n >= 4 ? `${ch.name} Anime List (${y}): ${n} Anime in Hindi` : null,
       `${ch.name} Anime (${y}): ${andList(top2)} in Hindi`,
       `${shortName(ch)} Anime (${y}): ${andList(top2)} in Hindi`,
@@ -70,6 +79,10 @@ export default async function KidsChannelPage({ channel: ch }: { channel: KidsCh
   const others = kidsPageChannels().filter((c) => c.slug !== ch.slug);
   const asOf = fmt(KIDS_TV_MRP.asOf);
   const priceLine = (c: KidsChannel) => (c.mrp ? `${c.name} is a pay channel: its declared price is ₹${c.mrp} a month before taxes (TRAI list as on ${asOf}), usually bought inside a DTH or cable pack.` : `${c.name} is a pay channel, bought inside a DTH or cable pack.`);
+  const timings = latestTimings(ch), premieres = channelPremieres(ch);
+  // "Naruto Shippuden Season 17" on its own, "One-Punch Man Season 3" for a bare "Season 3", else "Show: what".
+  const premiereName = (p: (typeof premieres)[number]) => { const t = kidsShow(p.show).t; const w = p.what.replace(/ \(.*\)$/, ""); return w.startsWith(bare(t)) ? w : `${bare(t)}${/^Season /.test(w) ? " " : ": "}${w}`; };
+  const slotLine = (p: (typeof timings)[number]) => `${premiereName(p)} (${p.slot}, from ${dateLabel(p.date)})`;
   const showList = (c: KidsChannel) => andList(channelRows(c).map((r) => `${kidsShow(r.show).t}${r.since ? ` (since ${r.since})` : ""}`));
 
   const faq: FaqItem[] = [
@@ -82,6 +95,13 @@ export default async function KidsChannelPage({ channel: ch }: { channel: KidsCh
           ? `We found no report of an anime on air in the last three months. The most recent was ${kidsShow(latest.show).t} (${monthLabel(latest.lastSeen!)}). Check your DTH or cable guide for today's schedule.`
           : `We found no dated report of what's on air now. Check your DTH or cable guide for today's schedule.`,
     },
+    ...(timings.length ? [{
+      q: `What time does anime air on ${ch.name}?`,
+      a: `The latest announced timings (IST): ${timings.slice(0, 4).map(slotLine).join("; ")}. ${ch.name}'s announcements give the slot a premiere starts in, not a fixed schedule, so check your DTH or cable guide for today's timings.`,
+    }, {
+      q: `What's new on ${ch.name}?`,
+      a: `The latest premieres: ${premieres.slice(0, 3).map((p) => `${premiereName(p)}${p.film ? " (film)" : ""} on ${dateLabel(p.date)}`).join("; ")}. Every premiere since ${premieres[premieres.length - 1].date.slice(0, 4)} is listed above, with its time slot.`,
+    }] : []),
     { q: `Is ${ch.name} free?`, a: `No. ${priceLine(ch)} None of these kids' channels is free-to-air.` },
     {
       q: `Can I watch ${ch.name}'s anime online in Hindi?`,
@@ -117,6 +137,7 @@ export default async function KidsChannelPage({ channel: ch }: { channel: KidsCh
 
       <SectionNav sections={[
         { id: "shows", label: "Anime" },
+        ...(timings.length ? [{ id: "timings", label: "Timings" }, { id: "new", label: "New" }] : []),
         ...sisters.map((s) => ({ id: s.slug, label: s.name })),
         { id: "watch", label: "How to watch" },
         { id: "faq", label: "FAQ" },
@@ -127,6 +148,25 @@ export default async function KidsChannelPage({ channel: ch }: { channel: KidsCh
         <p className="mb-4 max-w-3xl text-sm text-muted">{ch.summary} &ldquo;Still airing&rdquo; gives the latest dated report we found; &ldquo;–&rdquo; under streaming means we found no official Hindi stream.</p>
         <KidsShowTable channel={ch} />
       </section>
+
+      {timings.length > 0 && (
+        <section id="timings" data-section className="reveal scroll-mt-32 pt-10" aria-labelledby="timings-h">
+          <h2 id="timings-h" className="h-section mb-1">{ch.name} anime timings</h2>
+          <p className="mb-4 max-w-3xl text-sm text-muted">
+            The time slot {ch.name} announced for each show&apos;s latest premiere, with the date it started. These are dated announcements, not today&apos;s schedule:
+            we found no current, dated {ch.name} schedule we could cite (checked {fmt(KIDS_TV_CHECKED)}). For today&apos;s timings, check your DTH or cable guide (Tata Play, Airtel Digital TV, JioTV).
+          </p>
+          <KidsTimings channel={ch} />
+        </section>
+      )}
+
+      {premieres.length > 0 && (
+        <section id="new" data-section className="reveal scroll-mt-32 pt-10" aria-labelledby="new-h">
+          <h2 id="new-h" className="h-section mb-1">New on {ch.name}</h2>
+          <p className="mb-4 max-w-3xl text-sm text-muted">Every anime premiere on {ch.name} since {premieres[premieres.length - 1].date.slice(0, 4)} that a dated report or the channel confirmed, newest first.</p>
+          <KidsPremieres channel={ch} />
+        </section>
+      )}
 
       {sisters.map((s) => (
         <section key={s.slug} id={s.slug} data-section className="reveal scroll-mt-32 pt-10" aria-labelledby={`${s.slug}-h`}>

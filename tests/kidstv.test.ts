@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { airingLabel, channelHref, kidsChannels, kidsPageChannels, kidsShow, recentlyOnAir, showIndex, showHref, streamsNow, KIDS_TV_CHECKED } from "../lib/kidstv";
+import { airingLabel, channelHref, channelPremieres, dateLabel, kidsChannels, latestTimings, kidsPageChannels, kidsShow, recentlyOnAir, showIndex, showHref, streamsNow, KIDS_TV_CHECKED } from "../lib/kidstv";
 import { dubBySlug, hindiPlatform, platformKind } from "../lib/hindidub";
 
 test("kids TV: every channel–show pair has a source that isn't only Wikipedia, and dates are well-formed", () => {
@@ -44,4 +44,24 @@ test("kids TV: 'still airing' says yes only for a report within three months", (
   // Shows on several channels come first in the "which channel?" index.
   const idx = showIndex();
   assert.ok(idx[0].on.length >= idx[idx.length - 1].on.length);
+});
+
+test("kids TV: premieres are dated, sourced, on the channel's own list, and give one latest episode slot per show", () => {
+  for (const c of kidsChannels()) {
+    const ps = channelPremieres(c);
+    for (const p of ps) {
+      assert.ok(c.shows.some((r) => r.show === p.show), `${c.slug}/${p.show} premiere of a show not on the channel`);
+      assert.match(p.date, /^\d{4}-\d{2}(-\d{2})?$/, `${c.slug}/${p.show} date`);
+      assert.ok(p.date <= KIDS_TV_CHECKED, `${c.slug}/${p.show} premiere after the check`);
+      assert.ok(p.sources.length && p.sources.every((u) => /^https:\/\//.test(u) && !/wikipedia\.org|fandom\.com/.test(u)), `${c.slug}/${p.show} sources`);
+    }
+    for (let i = 1; i < ps.length; i++) assert.ok(ps[i - 1].date >= ps[i].date, `${c.slug} premieres newest first`);
+    const t = latestTimings(c);
+    assert.equal(new Set(t.map((p) => p.show)).size, t.length, `${c.slug} one timing per show`);
+    assert.ok(t.every((p) => p.slot && !p.film), `${c.slug} timings are episode slots`);
+  }
+  const yay = kidsChannels().find((c) => c.slug === "sony-yay")!;
+  assert.ok(latestTimings(yay).length >= 5);
+  assert.equal(dateLabel("2026-11-08"), "8 Nov 2026");
+  assert.equal(dateLabel("2026-01"), "Jan 2026");
 });
