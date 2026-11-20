@@ -11,6 +11,7 @@
  */
 import characterDemand from "@/data/character-demand.json";
 import priority from "@/data/warm-priority.json";
+import bingShown from "@/data/bing-shown.json";
 import franchiseData from "@/data/franchises.json";
 import { WATCH_ORDER_OVERRIDES } from "@/data/watch-orders";
 import { snapshotCore } from "./wosnap";
@@ -40,7 +41,11 @@ export const INDEX = { index: true, follow: true, googleBot: { index: true, foll
 
 // `shown`: pages with impressions in the latest Search Console export. `paths` is the warm-up order, which also
 // lists pages Google is re-checking; older files have only `paths`.
-const shownList = () => (priority as { paths: string[]; shown?: string[] }).shown ?? (priority as { paths: string[] }).paths;
+// Plus pages Bing shows (data/bing-shown.json, from its Page Traffic export): Bing flags them as "important pages
+// missing in sitemaps" when the Google-based rules leave them noindexed.
+let shownCache: string[] | null = null;
+const shownList = () =>
+  (shownCache ??= [...new Set([...((priority as { paths: string[]; shown?: string[] }).shown ?? (priority as { paths: string[] }).paths), ...(bingShown as { paths: string[] }).paths])]);
 let shown: Set<string> | null = null;
 /** Pages Google already shows in search (Search Console export). */
 export const searchShown = (path: string) => (shown ??= new Set(shownList())).has(path);
