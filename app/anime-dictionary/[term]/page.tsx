@@ -34,8 +34,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const t = load((await params).term);
   const named = t.examples.filter((e) => e.char || e.anime).slice(0, 2).map((e) => e.who);
   return {
-    // "<term> meaning" is the search in both countries; phrases are also looked up as Japanese words.
-    title: fitTitle(t.kind === "phrase"
+    // "<term> meaning" is the search in both countries; phrases and honorifics are also looked up as Japanese words
+    // ("san in japanese meaning", "kun in japanese means").
+    title: fitTitle(t.kind === "phrase" || t.kind === "honorific"
       ? [`${t.term} Meaning in Japanese, Anime & Hindi`, `${t.term} Meaning in Japanese & Hindi`, `${t.term} Meaning`]
       : [`${t.term} Meaning: What It Means in Anime (+ Hindi)`, `${t.term} Meaning in Anime (+ Hindi)`, `${t.term} Meaning`]),
     description: fitDescription(describe(t, named)),

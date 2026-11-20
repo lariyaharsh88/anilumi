@@ -1,13 +1,13 @@
 /**
- * Anime dictionary (app/anime-dictionary): Japanese words, character archetypes and fandom terms people look up
- * while watching, with the Hindi meaning and real anime examples. Volumes are Keyword Planner "<term> meaning"
+ * Anime dictionary (app/anime-dictionary): Japanese words, honorifics, character archetypes and fandom terms people
+ * look up while watching, with the Hindi meaning and real anime examples. Volumes are Keyword Planner "<term> meaning"
  * monthly averages (Nov 2025 to Oct 2026), India and US. Examples were checked against AniLumi's character data
  * (AniList ids) and the sources listed per term; `char` links the character page when we have one, `anime` the
  * show. Pure.
  */
 import type { FaqItem } from "@/components/Faq";
 
-export type TermKind = "archetype" | "phrase" | "fandom";
+export type TermKind = "archetype" | "phrase" | "honorific" | "fandom";
 export type TermExample = { who: string; where: string; note: string; char?: number; anime?: string };
 export type AnimeTerm = {
   slug: string; term: string; kind: TermKind; jp: string; romaji: string;
@@ -19,10 +19,11 @@ export type AnimeTerm = {
   faq: FaqItem[]; sources: string[]; volume: { in: number; us: number };
 };
 
-export const KIND_LABEL: Record<TermKind, string> = { archetype: "Character types", phrase: "Japanese words and phrases", fandom: "Fandom and genre terms" };
+export const KIND_LABEL: Record<TermKind, string> = { archetype: "Character types", phrase: "Japanese words and phrases", honorific: "Honorifics", fandom: "Fandom and genre terms" };
 
 const jisho = (q: string) => `https://jisho.org/search/${encodeURIComponent(q)}`;
 const GLOSSARY = "https://en.wikipedia.org/wiki/Glossary_of_anime_and_manga";
+const HONORIFICS = "https://en.wikipedia.org/wiki/Japanese_honorifics";
 
 export const TERMS: AnimeTerm[] = [
   {
@@ -131,7 +132,7 @@ export const TERMS: AnimeTerm[] = [
     volume: { in: 720, us: 6600 },
   },
   {
-    slug: "senpai", term: "Senpai", kind: "phrase", jp: "先輩 (せんぱい)", romaji: "senpai",
+    slug: "senpai", term: "Senpai", kind: "honorific", jp: "先輩 (せんぱい)", romaji: "senpai",
     short: "Your senior: someone ahead of you at school, work or a club, whom you look up to.",
     literal: "先 (ahead) + 輩 (fellow, companion): a fellow who came before you.",
     usage: "Students call older students senpai, and junior employees use it for colleagues who joined before them. In anime it's often attached to a name (\"Hachiman-senpai\") or used alone as a form of address. The meme \"notice me, senpai\" comes from younger characters crushing on an older student.",
@@ -142,7 +143,7 @@ export const TERMS: AnimeTerm[] = [
       { who: "Hayase Nagatoro", where: "Don't Toy with Me, Miss Nagatoro", note: "Calls the older student she teases simply \"Senpai\".", char: 124696 },
       { who: "Mai Sakurajima", where: "Rascal Does Not Dream of Bunny Girl Senpai", note: "The \"Senpai\" of the title: an older student at Sakuta's school.", char: 127222 },
     ],
-    related: ["sensei", "onii-chan", "kawaii"],
+    related: ["san", "kun", "chan", "sama", "sensei", "onii-chan", "kawaii"],
     confused: [{ term: "Sensei", slug: "sensei", diff: "Sensei is a teacher or master; senpai is a senior peer, someone ahead of you but not your teacher." }],
     faq: [
       { q: "What does \"notice me, senpai\" mean?", a: "It's a fan joke about wanting the attention of someone you admire, from the many anime where a younger character has a crush on an older student." },
@@ -152,7 +153,7 @@ export const TERMS: AnimeTerm[] = [
     volume: { in: 12100, us: 33100 },
   },
   {
-    slug: "sensei", term: "Sensei", kind: "phrase", jp: "先生 (せんせい)", romaji: "sensei",
+    slug: "sensei", term: "Sensei", kind: "honorific", jp: "先生 (せんせい)", romaji: "sensei",
     short: "Teacher or master; also used for doctors, lawyers, authors and manga artists.",
     literal: "先 (before) + 生 (born): one born before, an elder who teaches.",
     usage: "Students call their teacher sensei, often after the name (\"Kakashi-sensei\"). The title also goes to anyone respected for expertise: doctors, martial arts masters, politicians and mangaka. Characters sometimes use it sarcastically for someone who acts like an expert.",
@@ -164,7 +165,7 @@ export const TERMS: AnimeTerm[] = [
       { who: "Koro-sensei", where: "Assassination Classroom", note: "\"Sensei\" is right in his name: the alien teacher his class has to assassinate.", char: 65643 },
       { who: "Satoru Gojo", where: "Jujutsu Kaisen", note: "Itadori and his classmates call him Gojo-sensei.", char: 127691, anime: "jujutsu-kaisen" },
     ],
-    related: ["senpai", "mangaka"],
+    related: ["senpai", "san", "sama", "dono", "mangaka"],
     confused: [{ term: "Senpai", slug: "senpai", diff: "Senpai is a senior classmate or colleague; sensei is a teacher or expert." }],
     faq: [
       { q: "Why are manga artists called sensei?", a: "Sensei is used for anyone respected for expertise, and that includes authors and manga artists: fans and editors call Eiichiro Oda \"Oda-sensei\"." },
@@ -414,7 +415,7 @@ export const TERMS: AnimeTerm[] = [
     volume: { in: 8100, us: 9900 },
   },
   {
-    slug: "onii-chan", term: "Onii-chan", kind: "phrase", jp: "お兄ちゃん (おにいちゃん)", romaji: "onii-chan",
+    slug: "onii-chan", term: "Onii-chan", kind: "honorific", jp: "お兄ちゃん (おにいちゃん)", romaji: "onii-chan",
     short: "Big brother, said affectionately; also used for a young man who's older than the speaker.",
     literal: "お (honorific) + 兄 (older brother) + ちゃん (affectionate suffix).",
     usage: "Younger siblings call their brother onii-chan, and small children use it for any boy or young man older than them. Variations show the relationship: \"onii-san\" is more polite, \"nii-chan\" or \"nii\" more casual, \"aniki\" rougher.",
@@ -425,14 +426,167 @@ export const TERMS: AnimeTerm[] = [
       { who: "Shiro", where: "No Game No Life", note: "Calls her stepbrother Sora \"Nii\", short for onii-chan.", char: 82525, anime: "no-game-no-life" },
       { who: "Onimai: I'm Now Your Sister!", where: "Onii-chan wa Oshimai!", note: "The word is in the Japanese title, which means \"No more big brother!\".", anime: "onii-chan-wa-oshimai" },
     ],
-    related: ["senpai", "kawaii"],
-    confused: [{ term: "Onee-chan", diff: "Onee-chan (お姉ちゃん) is big sister; onii-chan is big brother." }],
+    related: ["onee-chan", "chan", "kun", "senpai", "kawaii"],
+    confused: [{ term: "Onee-chan", slug: "onee-chan", diff: "Onee-chan (お姉ちゃん) is big sister; onii-chan is big brother." }],
     faq: [
       { q: "What's the difference between onii-chan and onii-san?", a: "Both mean big brother. Onii-chan is affectionate and casual; onii-san is more polite and is also used for a young man you don't know." },
       { q: "What is aniki?", a: "A rougher, more masculine word for big brother, also used by gang members for a boss." },
     ],
     sources: [jisho("お兄ちゃん")],
     volume: { in: 5400, us: 8100 },
+  },
+  {
+    slug: "onee-chan", term: "Onee-chan", kind: "honorific", jp: "お姉ちゃん (おねえちゃん)", romaji: "onee-chan",
+    short: "Big sister, said affectionately; also used for a young woman who's older than the speaker.",
+    literal: "お (honorific) + 姉 (older sister) + ちゃん (affectionate suffix).",
+    usage: "Younger siblings call their sister onee-chan, and small children use it for any girl or young woman older than them. Variations show the relationship: \"onee-san\" is more polite and is also how people address a young woman such as a shop assistant, \"nee-chan\" is more casual, \"aneki\" rougher.",
+    nuance: "The male equivalent is \"onii-chan\" (big brother). Like onii-chan, it's an ordinary family word in Japanese, whatever jokes it turns up in online.",
+    hi: { word: "दीदी, बड़ी बहन", gloss: "didi, badi behen" },
+    say: "oh-neh-chahn",
+    examples: [
+      { who: "Ui Hirasawa", where: "K-On!", note: "Calls her older sister Yui \"Onee-chan\", though Ui is the one who looks after the house.", anime: "k-on" },
+      { who: "Mei Kusakabe", where: "My Neighbor Totoro", note: "Calls her big sister Satsuki \"Onee-chan\" and tags along wherever she goes.", anime: "my-neighbor-totoro" },
+    ],
+    related: ["onii-chan", "chan", "senpai", "kawaii"],
+    confused: [{ term: "Onii-chan", slug: "onii-chan", diff: "Onii-chan (お兄ちゃん) is big brother; onee-chan is big sister." }],
+    faq: [
+      { q: "What's the difference between onee-chan and onee-san?", a: "Both mean big sister. Onee-chan is affectionate and casual; onee-san is more polite and is also used for a young woman you don't know." },
+      { q: "What is onee-chan in Hindi?", a: "Didi (दीदी). Like onee-chan, Indian kids use it for their own sister and for any older girl or young woman." },
+    ],
+    sources: [jisho("お姉ちゃん"), HONORIFICS],
+    volume: { in: 880, us: 1900 },
+  },
+  {
+    slug: "san", term: "San", kind: "honorific", jp: "さん", romaji: "-san",
+    short: "A polite name ending, like Mr. or Ms., used for almost anyone you aren't close to.",
+    literal: "A softened form of -sama (様); on its own it has no meaning, it's added after a name.",
+    usage: "Japanese adds -san to a name (\"Tanaka-san\") for classmates, colleagues, neighbours and strangers, men and women alike. It's the safe default. It also goes on jobs and shops: o-isha-san (the doctor), honya-san (the bookshop). In anime, polite characters use -san with almost everyone, and dropping it marks a closer relationship.",
+    nuance: "You never put -san on your own name. Leaving the honorific off (yobisute) is normal with close friends and family, but with anyone else it sounds rude or overfamiliar.",
+    hi: { word: "जी, जैसे शर्मा जी", gloss: "naam ke baad ji, jaise Sharma-ji" },
+    say: "sahn",
+    examples: [
+      { who: "Takagi", where: "Teasing Master Takagi-san", note: "Nishikata calls his classmate \"Takagi-san\", and so does the title.", char: 120800 },
+      { who: "Tanjiro Kamado", where: "Demon Slayer", note: "Respectful with older Demon Slayers: \"Tomioka-san\", \"Rengoku-san\".", char: 126071 },
+      { who: "Shoko Komi", where: "Komi Can't Communicate", note: "Tadano calls her \"Komi-san\", as the Japanese title does (Komi-san wa, Komyushō desu).", char: 121956 },
+    ],
+    related: ["kun", "chan", "sama", "senpai", "sensei"],
+    confused: [{ term: "Sama", slug: "sama", diff: "Sama is a step more respectful, for customers, masters and gods; san is the everyday polite default." }],
+    faq: [
+      { q: "What does -san mean after a name?", a: "It's a polite title like Mr. or Ms., but for men and women alike and with family names or first names. \"Tanaka-san\" is Mr. or Ms. Tanaka." },
+      { q: "What is the difference between san, kun and chan?", a: "San is polite and neutral, for anyone. Kun is for boys and juniors. Chan is affectionate, for children, girls and close friends." },
+    ],
+    sources: [HONORIFICS, jisho("さん")],
+    volume: { in: 4400, us: 4400 },
+  },
+  {
+    slug: "kun", term: "Kun", kind: "honorific", jp: "君 (くん)", romaji: "-kun",
+    short: "A name ending for boys and juniors, used by classmates, teachers and bosses.",
+    literal: "君: originally \"lord, ruler\"; as a suffix it became a friendly title for a male equal or junior.",
+    usage: "Classmates call boys -kun (\"Ikari-kun\"), teachers use it for male students, and older people use it for boys and young men. At work, a senior may call a junior employee -kun, sometimes a woman too. In anime, a girl calling a boy by his name plus -kun is the usual polite-but-friendly form, and dropping it shows they've grown close.",
+    nuance: "Kun is for people your own age or younger, never for your seniors or boss. In Japan's parliament, the chair calls members -kun whatever their gender, a formal tradition.",
+    hi: { word: "लड़कों और जूनियर के लिए", gloss: "Hindi mein bas naam, ya 'bhai'" },
+    say: "koon",
+    examples: [
+      { who: "Hinata Hyuga", where: "Naruto", note: "Calls Naruto \"Naruto-kun\", shy and polite, all through the series.", char: 1555 },
+      { who: "Sakura Haruno", where: "Naruto", note: "Always \"Sasuke-kun\" for Sasuke, but plain \"Naruto\" for Naruto.", char: 145 },
+      { who: "Orihime Inoue", where: "Bleach", note: "Calls Ichigo by his family name: \"Kurosaki-kun\".", char: 7 },
+    ],
+    related: ["san", "chan", "senpai", "onii-chan"],
+    confused: [{ term: "Chan", slug: "chan", diff: "Chan is cuter and more affectionate, for children, girls and close friends; kun is the standard for boys and juniors." }],
+    faq: [
+      { q: "Can you use -kun for a girl?", a: "Sometimes. Teachers and bosses may call a female student or junior -kun, but between friends it's mostly for boys." },
+      { q: "Why do girls in anime say \"-kun\"?", a: "It's the natural, friendly way to address a boy your age or younger. Using his name without it would signal a much closer relationship." },
+    ],
+    sources: [HONORIFICS, jisho("君")],
+    volume: { in: 1900, us: 2900 },
+  },
+  {
+    slug: "chan", term: "Chan", kind: "honorific", jp: "ちゃん", romaji: "-chan",
+    short: "A cute, affectionate name ending for children, girls, close friends, family and pets.",
+    literal: "A baby-talk form of -san, from the way young children pronounce it.",
+    usage: "Parents call children -chan, friends use it for each other (especially girls), and families build it into words like obaa-chan (grandma) and onii-chan (big brother). It goes on pets and celebrity nicknames too. In anime, a boy calling a girl \"Sakura-chan\" shows affection, and someone who uses -chan for a person they've just met is being overfamiliar.",
+    nuance: "Using -chan for an adult you aren't close to can sound condescending, and for a grown man it's teasing unless it's a childhood nickname. Playful variants include -tan, -chin and -cchi.",
+    hi: { word: "प्यार का नाम, जैसे गुड़िया", gloss: "pyaar ka naam" },
+    say: "chahn",
+    examples: [
+      { who: "Naruto Uzumaki", where: "Naruto", note: "Calls his teammate \"Sakura-chan\", a sign of his crush on her.", char: 17 },
+      { who: "Zenitsu Agatsuma", where: "Demon Slayer", note: "Adores Tanjiro's sister from the moment he meets her and calls her \"Nezuko-chan\".", char: 129131 },
+      { who: "Chibi Maruko-chan", where: "Chibi Maruko-chan", note: "-chan is part of the heroine's name in the title: \"little Maruko\".", anime: "chibi-maruko-chan" },
+    ],
+    related: ["san", "kun", "tan", "onii-chan", "onee-chan", "kawaii"],
+    confused: [{ term: "Kun", slug: "kun", diff: "Kun is the standard ending for boys and juniors; chan is softer and cuter, for children, girls and close friends." }],
+    faq: [
+      { q: "Can boys be called -chan?", a: "Yes. Little boys are -chan, and some men keep a childhood \"-chan\" nickname with friends and family. For a grown man otherwise, it's teasing." },
+      { q: "What is the difference between chan and san?", a: "San is polite and neutral, for anyone. Chan is affectionate and casual, for people you're close to or who are much younger than you." },
+    ],
+    sources: [HONORIFICS, jisho("ちゃん")],
+    volume: { in: 1300, us: 3600 },
+  },
+  {
+    slug: "sama", term: "Sama", kind: "honorific", jp: "様 (さま)", romaji: "-sama",
+    short: "A very respectful name ending for customers, masters, nobles and gods; a step above -san.",
+    literal: "様: manner, appearance; as a title after a name it shows high respect.",
+    usage: "Shops call customers okyaku-sama, letters are addressed to \"Tanaka-sama\", and people say kami-sama (god) and o-hime-sama (princess). In anime, servants, followers and devoted fans use -sama for the person they serve or worship, which is why maids and retainers say it constantly.",
+    nuance: "Calling yourself ore-sama (\"my magnificent self\") is a famous sign of arrogance, as with Keigo Atobe in The Prince of Tennis. Between friends, -sama can be sarcastic, mocking someone who acts superior.",
+    hi: { word: "श्रीमान, हुज़ूर, मान्यवर", gloss: "huzoor, sir/madam" },
+    say: "sah-mah",
+    examples: [
+      { who: "Kaguya Shinomiya", where: "Kaguya-sama: Love Is War", note: "\"Kaguya-sama\" is in the title: she's the heiress of a powerful family, and her attendant Hayasaka addresses her that way.", char: 120649 },
+      { who: "Albedo", where: "Overlord", note: "She and the other guardians of Nazarick call their master \"Ainz-sama\".", char: 89122 },
+      { who: "Rem", where: "Re:Zero", note: "As a maid in Roswaal's mansion she says \"Roswaal-sama\" and \"Emilia-sama\", but \"Subaru-kun\".", char: 88575 },
+    ],
+    related: ["san", "dono", "sensei", "kun"],
+    confused: [{ term: "Dono", slug: "dono", diff: "Dono is an old-fashioned, formal title from samurai times; sama is the respectful title still used every day for customers and in letters." }],
+    faq: [
+      { q: "Is -sama higher than -san?", a: "Yes. Sama is the more respectful form, for customers, superiors, nobles and gods; san is everyday politeness." },
+      { q: "What does kami-sama mean?", a: "God, or a god: kami (god, spirit) plus -sama. Characters say it when praying or begging for luck: \"Kami-sama, onegai!\" (\"Please, God!\")." },
+    ],
+    sources: [HONORIFICS, jisho("様")],
+    volume: { in: 1900, us: 2400 },
+  },
+  {
+    slug: "dono", term: "Dono", kind: "honorific", jp: "殿 (どの)", romaji: "-dono",
+    short: "An old-fashioned, formal name ending from samurai times, roughly \"lord\" or \"sir\".",
+    literal: "殿: palace, lord; the same kanji is read tono, a lord.",
+    usage: "In period dramas, samurai address each other and officials with -dono. Today it survives mostly in official documents, certificates and some business letters. In anime it marks a samurai, an old-fashioned speaker or a character who is quirkily formal.",
+    nuance: "Using -dono in normal conversation sounds archaic or playful. Some fans use it online as a jokey way of being extra polite.",
+    hi: { word: "साहब, महोदय", gloss: "sahab, mahoday; purana formal andaaz" },
+    say: "doh-noh",
+    examples: [
+      { who: "Kenshin Himura", where: "Rurouni Kenshin", note: "The wandering swordsman calls Kaoru \"Kaoru-dono\", part of his humble, old-fashioned way of speaking.", char: 147 },
+      { who: "Samurai characters", where: "Period anime", note: "Samurai use -dono as a formal, respectful title for one another." },
+    ],
+    related: ["sama", "san", "sensei"],
+    confused: [{ term: "Sama", slug: "sama", diff: "Sama is the respectful title used every day; dono sounds old-fashioned outside official documents." }],
+    faq: [
+      { q: "Is -dono higher than -sama?", a: "Not today. Sama is the usual respectful title; dono is formal and old-fashioned, and in letters some people now see it as less polite than sama." },
+      { q: "Why does Kenshin say \"-dono\"?", a: "It's part of his humble, old-fashioned speech as a swordsman from the end of the samurai era, along with ending sentences in \"de gozaru\"." },
+    ],
+    sources: [HONORIFICS, jisho("殿")],
+    volume: { in: 480, us: 390 },
+  },
+  {
+    slug: "tan", term: "Tan", kind: "honorific", jp: "たん", romaji: "-tan",
+    short: "A baby-talk -chan: an extra-cute name ending for little kids, mascots and moe characters.",
+    literal: "-chan as a toddler says it; it has no meaning of its own.",
+    usage: "Young children, and people talking to them, turn -chan into -tan. Fans use it for characters and mascots they find adorable, and it often appears in the names of moe mascots and personifications. In anime, a character saying -tan is being deliberately cutesy, or is a very young child.",
+    nuance: "It's very informal and can sound childish, or creepy, if used on a real person you aren't close to. Other playful twists on -chan include -chin and -cchi.",
+    hi: { word: "तोतला प्यार का नाम", gloss: "tootla 'chan'" },
+    say: "tahn",
+    examples: [
+      { who: "OS-tan", where: "Fan art", note: "Windows and other operating systems drawn as moe girls; the name adds -tan to \"OS\"." },
+      { who: "Ryota Kise", where: "Kuroko's Basketball", note: "Uses a related playful ending, -cchi, for players he respects: \"Kurokocchi\".", char: 21332 },
+      { who: "Atsushi Murasakibara", where: "Kuroko's Basketball", note: "Uses -chin, another twist on -chan: \"Kuro-chin\", \"Aka-chin\".", char: 36976 },
+    ],
+    related: ["chan", "kawaii", "moe"],
+    confused: [{ term: "Chan", slug: "chan", diff: "Chan is the everyday affectionate ending; tan is a babyish, extra-cute version of it." }],
+    faq: [
+      { q: "What does -tan mean after a name?", a: "It's a cutesy form of -chan, imitating how small children pronounce it. Fans use it for adorable characters and mascots." },
+      { q: "What do -chin and -cchi mean?", a: "Playful nicknames built from -chan, quirky and personal rather than standard. Kise in Kuroko's Basketball says \"-cchi\" and Murasakibara says \"-chin\"." },
+    ],
+    sources: [HONORIFICS, "https://en.wikipedia.org/wiki/OS-tan"],
+    // "tan meaning" alone is mostly sun tans, so this is "tan meaning japanese".
+    volume: { in: 110, us: 480 },
   },
   {
     slug: "nakama", term: "Nakama", kind: "phrase", jp: "仲間 (なかま)", romaji: "nakama",
@@ -643,7 +797,19 @@ export const TERMS: AnimeTerm[] = [
   },
 ];
 
-export const TERMS_CHECKED = "2026-11-19";
+/** The honorifics side by side for the dictionary hub: [slug, suffix, used for, who uses it, if you leave it off, closest Hindi]. */
+export const HONORIFIC_TABLE: [string, string, string, string, string, string][] = [
+  ["san", "-san", "Adults and anyone you aren't close to", "Anyone; the safe default", "Rude or overfamiliar, unless you're close", "जी"],
+  ["kun", "-kun", "Boys and young men, juniors", "Classmates, teachers to male students, bosses to juniors", "Fine between close friends; otherwise blunt", "बस नाम, दोस्तों में भाई"],
+  ["chan", "-chan", "Children, girls, close friends, pets", "Family, close friends, adults talking to children", "Just the plain name: normal for family and close friends", "प्यार का नाम"],
+  ["sama", "-sama", "Customers, masters, nobles, gods", "Shop staff, servants, letter writers, people praying", "Very rude to a customer or master; san is the polite minimum", "श्रीमान, हुज़ूर"],
+  ["senpai", "-senpai", "Someone ahead of you at school or work", "Juniors, to their seniors", "Can sound disrespectful; san is the polite fallback", "सीनियर"],
+  ["sensei", "-sensei", "Teachers, doctors, masters, authors", "Students, patients, clients, fans", "Disrespectful: teachers are almost always sensei", "गुरु जी, सर"],
+  ["dono", "-dono", "Lords and officials (old-fashioned)", "Samurai in period dramas; official documents", "Nothing odd today: sama or san replaces it", "साहब"],
+  ["tan", "-tan", "Extra-cute nicknames", "Small children, fans, mascot names", "Nothing lost: it's an optional cute nickname", "तोतला प्यार का नाम"],
+];
+
+export const TERMS_CHECKED = "2026-11-20";
 export const termsPath = "/anime-dictionary";
 export const termPath = (slug: string) => `/anime-dictionary/${slug}`;
 export const termBySlug = (slug: string) => TERMS.find((t) => t.slug === slug) ?? null;

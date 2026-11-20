@@ -7,7 +7,7 @@ import JsonLd from "@/components/JsonLd";
 import Faq, { type FaqItem } from "@/components/Faq";
 import { abs } from "@/lib/site";
 import { fitTitle, fitDescription } from "@/lib/titles";
-import { KIND_LABEL, TERMS, sortedTerms, termPath, termsPath, type TermKind } from "@/lib/animeterms";
+import { HONORIFIC_TABLE, KIND_LABEL, TERMS, sortedTerms, termPath, termsPath, type TermKind } from "@/lib/animeterms";
 
 export const revalidate = 2592000;
 
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   alternates: { canonical: termsPath },
 };
 
-const ORDER: TermKind[] = ["archetype", "phrase", "fandom"];
+const ORDER: TermKind[] = ["archetype", "phrase", "honorific", "fandom"];
 
 /** All terms, A–Z within each group, with the one-line meaning. */
 export default function AnimeDictionary() {
@@ -31,6 +31,7 @@ export default function AnimeDictionary() {
   const faq: FaqItem[] = [
     { q: "What is the meaning of anime in Hindi?", a: "Anime (एनीमे) means Japanese animation: cartoons and animated films made in Japan, like Naruto, One Piece and Demon Slayer. In Hindi you can say जापानी एनिमेशन." },
     { q: "What are the most common Japanese words in anime?", a: "Arigatō (thank you), sayonara (goodbye), konnichiwa (hello), senpai (senior), sensei (teacher), kawaii (cute), sugoi (amazing), nani (what?), baka (idiot) and daijōbu (are you OK?) come up in almost every show." },
+    { q: "What do san, kun, chan and sama mean?", a: "They're Japanese honorifics added after a name. San is polite, for almost anyone (like Mr. or Ms.). Kun is for boys and juniors. Chan is affectionate, for children, girls and close friends. Sama is very respectful, for customers, masters and gods." },
     { q: "What do tsundere, yandere, kuudere and dandere mean?", a: "They're character types. Tsundere: harsh outside, loving inside. Yandere: loving to a dangerous, obsessive degree. Kuudere: cool and emotionless on the surface. Dandere: shy and quiet until comfortable." },
   ];
 
@@ -41,12 +42,12 @@ export default function AnimeDictionary() {
         crumbs={[{ href: "/", label: "Home" }, { href: termsPath, label: "Anime dictionary" }]}
         eyebrow="📖 Anime dictionary"
         title={<>Anime <span className="text-gradient">dictionary</span></>}
-        subtitle="The Japanese words, character types and fandom slang you hear in anime, with how to say them, the Hindi meaning and real examples."
+        subtitle="The Japanese words, honorifics, character types and fandom slang you hear in anime, with how to say them, the Hindi meaning and real examples."
         facts={[{ value: String(TERMS.length), label: "terms" }, { value: "हिंदी", label: "Hindi meanings" }, { value: String(TERMS.reduce((n, t) => n + t.examples.length, 0)), label: "anime examples" }]}
         hue={210}
       />
 
-      <AnswerLead>Start with the character types (<Link href={termPath("tsundere")} className="text-violet hover:underline">tsundere</Link>, <Link href={termPath("yandere")} className="text-violet hover:underline">yandere</Link>), the everyday words (<Link href={termPath("senpai")} className="text-violet hover:underline">senpai</Link>, <Link href={termPath("arigato")} className="text-violet hover:underline">arigato</Link>) or the fandom terms (<Link href={termPath("otaku")} className="text-violet hover:underline">otaku</Link>, <Link href={termPath("isekai")} className="text-violet hover:underline">isekai</Link>). Every entry has the Japanese, the Hindi meaning and anime examples.</AnswerLead>
+      <AnswerLead>Start with the character types (<Link href={termPath("tsundere")} className="text-violet hover:underline">tsundere</Link>, <Link href={termPath("yandere")} className="text-violet hover:underline">yandere</Link>), the everyday words (<Link href={termPath("arigato")} className="text-violet hover:underline">arigato</Link>, <Link href={termPath("baka")} className="text-violet hover:underline">baka</Link>), the honorifics (<Link href={termPath("san")} className="text-violet hover:underline">-san</Link>, <Link href={termPath("kun")} className="text-violet hover:underline">-kun</Link>, <Link href={termPath("senpai")} className="text-violet hover:underline">senpai</Link>) or the fandom terms (<Link href={termPath("otaku")} className="text-violet hover:underline">otaku</Link>, <Link href={termPath("isekai")} className="text-violet hover:underline">isekai</Link>). Every entry has the Japanese, the Hindi meaning and anime examples.</AnswerLead>
 
       <nav aria-label="A to Z" className="mt-6 flex flex-wrap gap-1.5 text-sm">
         {letters.map((l) => <a key={l} href={`#letter-${l}`} className="chip">{l}</a>)}
@@ -66,6 +67,25 @@ export default function AnimeDictionary() {
                 </li>
               ))}
             </ul>
+            {kind === "honorific" && (
+              <div className="mt-5 overflow-x-auto">
+                <table className="w-full min-w-[720px] text-left text-sm">
+                  <caption className="sr-only">Japanese honorifics compared</caption>
+                  <thead className="text-xs uppercase tracking-wide text-muted"><tr><th className="py-2 pr-3">Suffix</th><th className="py-2 pr-3">Used for</th><th className="py-2 pr-3">Who uses it</th><th className="py-2 pr-3">If you leave it off</th><th className="py-2">Closest Hindi</th></tr></thead>
+                  <tbody className="divide-y divide-line">
+                    {HONORIFIC_TABLE.map(([slug, suffix, usedFor, who, omitted, hindi]) => (
+                      <tr key={slug} className="align-top">
+                        <td className="py-2.5 pr-3"><Link href={termPath(slug)} className="font-semibold text-ink hover:text-violet-2">{suffix}</Link></td>
+                        <td className="py-2.5 pr-3">{usedFor}</td>
+                        <td className="py-2.5 pr-3 text-ink/85">{who}</td>
+                        <td className="py-2.5 pr-3 text-ink/85">{omitted}</td>
+                        <td className="py-2.5" lang="hi">{hindi}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            )}
           </section>
         );
       })}
