@@ -34,9 +34,11 @@ const ERA_HI: Record<string, string> = { "Before 2000": "2000 से पहल�
 
 export function generateMetadata(): Metadata {
   const n = hindiDubbed().length;
+  const free = hindiDubbed().filter((d) => d.platforms.some((p) => platformKind(p.name) === "free")).length;
   return {
     title: fitTitle([`Hindi Dubbed Anime List – हिंदी डब एनीमे की लिस्ट और कहाँ देखें (${n} एनीमे)`, `Hindi Dubbed Anime List (${n}) – हिंदी डब एनीमे कहाँ देखें`]),
-    description: fitDescription(`${n} पॉपुलर एनीमे जिनका आधिकारिक हिंदी डब है, और हर एक कहाँ देखें: Crunchyroll, Netflix, Prime Video, JioHotstar, मुफ़्त YouTube चैनल और टीवी। नए और आने वाले हिंदी डब भी। ${dubDate("hi")} को जाँचा गया।`),
+    // Leads with what is free to watch, like the English hub (Bing, Nov 2026).
+    description: fitDescription(`${free} एनीमे हिंदी में मुफ़्त देखें: YouTube और Prime Video के फ़्री प्लान पर। साथ में सभी ${n} हिंदी डब एनीमे कहाँ देखें: Crunchyroll, Netflix, JioHotstar और टीवी।`),
     alternates: { canonical: "/hi/hindi-dub", languages: { en: "/hindi-dub", hi: "/hi/hindi-dub", "x-default": "/hindi-dub" } },
   };
 }

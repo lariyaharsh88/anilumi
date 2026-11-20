@@ -35,7 +35,9 @@ export function generateMetadata(): Metadata {
   // Searchers ask "where to watch anime in Hindi for free": the title answers that the list includes free, legal options.
   return {
     title: fitTitle([fresh ? `Hindi Dubbed Anime List (${mon}): ${n} Anime, ${free} Free, ${fresh} New` : null, `Hindi Dubbed Anime List (${new Date().getFullYear()}): ${n} Anime in Hindi, ${free} Free`, `Hindi Dubbed Anime List (${new Date().getFullYear()}): ${n} Anime, ${free} Free`, `Hindi Dubbed Anime List (${new Date().getFullYear()})`]),
-    description: fitDescription(`${n} anime with an official Hindi dub and where to watch each${fresh ? `, ${fresh} new in the last 30 days` : ""}: ${free} free and legal on YouTube and Prime Video's free tier, the rest on Crunchyroll, Netflix, JioHotstar and TV. Checked ${dubDate()}.`),
+    // Bing, Nov 2026: much of the hub's traffic searches for a free Hindi anime site ("anime website hindi free watch
+    // online"), so the snippet leads with what is free to watch rather than "official".
+    description: fitDescription(`Watch ${free} anime free in Hindi on YouTube and Prime Video's free tier, plus where to stream all ${n} Hindi dubbed anime in India${fresh ? ` (${fresh} new this month)` : ""}.`),
     alternates: { canonical: "/hindi-dub", languages: { en: "/hindi-dub", hi: "/hi/hindi-dub", "x-default": "/hindi-dub" } },
   };
 }
@@ -111,7 +113,7 @@ export default async function HindiDubHub() {
         </p>
       </PageHero>
       <AnswerLead checked={dubDate()}>
-        {dubbed.length} anime have an official Hindi dub in India, {free.length} of them free and legal on YouTube (Muse India, Ani-One India) and MX Player. {top.name} has the most ({top.titles.length}), followed by {streamers.slice(1, 3).map((p) => `${p.name.replace(/ \(.*\)$/, "")} (${p.titles.length})`).join(" and ")}.
+        You can watch {free.length} of the {dubbed.length} official Hindi dubbed anime free, on YouTube (Muse India, Ani-One India) and Prime Video&apos;s free tier (formerly MX Player). {top.name} has the most ({top.titles.length}), followed by {streamers.slice(1, 3).map((p) => `${p.name.replace(/ \(.*\)$/, "")} (${p.titles.length})`).join(" and ")}.
       </AnswerLead>
       <SectionNav sections={[
         ...(free.length ? [{ id: "free", label: `Free (${free.length})` }] : []),
