@@ -1,5 +1,5 @@
 {
-  "checked": "2026-11-13",
+  "checked": "2026-11-20",
   "reviewed": null,
   "characters": {
     "eren-jager": {
@@ -9779,6 +9779,879 @@
         "status": "alive",
         "detail": "Chuuya is alive in the anime and in the ongoing manga as of November 2026.",
         "basis": "anime so far"
+      },
+      "hindiVoice": null
+    },
+    "nezuko-kamado": {
+      "name": "Nezuko Kamado",
+      "role": "Tanjiro Kamado's younger sister, turned into a demon in the attack on their family",
+      "debut": {
+        "anime": "Demon Slayer: Kimetsu no Yaiba",
+        "episode": 1,
+        "episodeTitle": "Cruelty",
+        "source": "manga",
+        "chapter": 1,
+        "volume": null
+      },
+      "arcs": [
+        "Unwavering Resolve arc",
+        "Mugen Train arc",
+        "Entertainment District arc",
+        "Swordsmith Village arc",
+        "Hashira Training arc",
+        "Infinity Castle arc"
+      ],
+      "affiliations": [],
+      "relatives": [
+        {
+          "name": "Tanjuro Kamado",
+          "relation": "father"
+        },
+        {
+          "name": "Kie Kamado",
+          "relation": "mother"
+        },
+        {
+          "name": "Tanjiro Kamado",
+          "relation": "older brother"
+        }
+      ],
+      "confidence": "high",
+      "sources": [
+        "https://kimetsu-no-yaiba.fandom.com/wiki/Nezuko_Kamado",
+        "https://kimetsu-no-yaiba.fandom.com/wiki/Chapter_196",
+        "https://en.wikipedia.org/wiki/Nezuko_Kamado",
+        "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
+        "https://en.wikipedia.org/wiki/Demon_Slayer:_Kimetsu_no_Yaiba_season_1",
+        "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_chapters",
+        "https://anilist.co/character/127518",
+        "https://myanimelist.net/character/146157/Nezuko_Kamado"
+      ],
+      "notes": "Arc names follow the anime's season titles. Her marriage in the epilogue is left out of relatives to avoid spoilers.",
+      "abilities": "As a demon she has superhuman strength and rapid healing, and her Blood Demon Art, Exploding Blood, sets her blood alight with flames that burn demons. She sustains herself by sleeping instead of eating people.",
+      "fate": {
+        "status": "alive",
+        "detail": "The medicine developed to cure her works during the final battle and she becomes human again (manga chapter 196, 2020); she survives the series, and the epilogue (chapter 205) shows her descendants in the present day. The anime has not reached her cure as of November 2026.",
+        "basis": "series ending"
+      },
+      "about": "Nezuko Kamado is the eldest daughter of a charcoal-selling family living in the mountains of Taisho-era Japan. While her older brother Tanjiro is away selling charcoal in town, a demon slaughters the rest of the family and leaves Nezuko transformed into a demon herself. Unlike other demons, she keeps enough of her heart to recognise Tanjiro and protect him rather than attack him, and she refuses to feed on people, recovering her strength through long sleep instead. Wearing a bamboo muzzle and carried in a wooden box on Tanjiro's back to shelter from the sun, she travels with him as he trains to become a Demon Slayer and searches for a way to make her human again."
+    },
+    "tanjirou-kamado": {
+      "name": "Tanjiro Kamado",
+      "role": "Protagonist; charcoal seller's son who joins the Demon Slayer Corps to cure his sister Nezuko",
+      "debut": {
+        "anime": "Demon Slayer: Kimetsu no Yaiba",
+        "episode": 1,
+        "episodeTitle": "Cruelty",
+        "source": "manga",
+        "chapter": 1,
+        "volume": null
+      },
+      "arcs": [
+        "Unwavering Resolve arc",
+        "Mugen Train arc",
+        "Entertainment District arc",
+        "Swordsmith Village arc",
+        "Hashira Training arc",
+        "Infinity Castle arc"
+      ],
+      "affiliations": [
+        "Demon Slayer Corps"
+      ],
+      "relatives": [
+        {
+          "name": "Tanjuro Kamado",
+          "relation": "father"
+        },
+        {
+          "name": "Kie Kamado",
+          "relation": "mother"
+        },
+        {
+          "name": "Nezuko Kamado",
+          "relation": "younger sister"
+        }
+      ],
+      "confidence": "high",
+      "sources": [
+        "https://kimetsu-no-yaiba.fandom.com/wiki/Tanjiro_Kamado",
+        "https://kimetsu-no-yaiba.fandom.com/wiki/Chapter_201",
+        "https://kimetsu-no-yaiba.fandom.com/wiki/Chapter_203",
+        "https://en.wikipedia.org/wiki/Tanjiro_Kamado",
+        "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
+        "https://en.wikipedia.org/wiki/Demon_Slayer:_Kimetsu_no_Yaiba_season_1",
+        "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_chapters",
+        "https://anilist.co/character/126071",
+        "https://myanimelist.net/character/146156/Tanjirou_Kamado"
+      ],
+      "notes": "Arc names follow the anime's season titles. His marriage in the epilogue is left out of relatives to avoid spoilers.",
+      "abilities": "Trained by Sakonji Urokodaki in Water Breathing swordsmanship, he later draws on his family's Hinokami Kagura dance in battle, and his unusually keen sense of smell lets him track demons and sense people's emotions.",
+      "fate": {
+        "status": "alive",
+        "detail": "As he dies, Muzan Kibutsuji pours his blood into Tanjiro and turns him into a demon (manga chapter 201, 2020); with help from Nezuko and his friends he is restored to being human in chapter 203 and survives the series. The anime has not reached this as of November 2026.",
+        "basis": "series ending"
+      },
+      "about": "Tanjiro Kamado is the eldest son of a family of charcoal sellers in the mountains of Taisho-era Japan, a kind and hard-working boy who has supported his mother and younger siblings since his father's death. Returning home from town one day, he finds his family slaughtered by a demon and his sister Nezuko turned into a demon herself. Determined to turn her human again and find the demon responsible, he trains under the former swordsman Sakonji Urokodaki, survives the Final Selection and joins the Demon Slayer Corps, carrying Nezuko with him in a wooden box. Gentle even toward the demons he has to kill, he is also remarkably stubborn, and his sharp sense of smell helps him in battle."
+    },
+    "shinobu-kochou": {
+      "name": "Shinobu Kocho",
+      "role": "The Insect Hashira of the Demon Slayer Corps, who kills demons with poison",
+      "debut": {
+        "anime": "Demon Slayer: Kimetsu no Yaiba",
+        "episode": 15,
+        "episodeTitle": "Mount Natagumo",
+        "source": "manga",
+        "chapter": 28,
+        "volume": null
+      },
+      "arcs": [
+        "Unwavering Resolve arc",
+        "Hashira Training arc",
+        "Infinity Castle arc"
+      ],
+      "affiliations": [
+        "Demon Slayer Corps"
+      ],
+      "relatives": [
+        {
+          "name": "Kanae Kocho",
+          "relation": "older sister"
+        },
+        {
+          "name": "Kanao Tsuyuri",
+          "relation": "adoptive younger sister"
+        }
+      ],
+      "confidence": "medium",
+      "sources": [
+        "https://kimetsu-no-yaiba.fandom.com/wiki/Shinobu_Kocho",
+        "https://kimetsu-no-yaiba.fandom.com/wiki/Chapter_143",
+        "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
+        "https://en.wikipedia.org/wiki/Demon_Slayer:_Kimetsu_no_Yaiba_season_1",
+        "https://en.wikipedia.org/wiki/Demon_Slayer:_Kimetsu_no_Yaiba_%E2%80%93_The_Movie:_Infinity_Castle",
+        "https://anilist.co/character/136070",
+        "https://myanimelist.net/character/146736/Shinobu_Kochou"
+      ],
+      "notes": "Episode 15 is confirmed by both sources. Chapter 28 (her full appearance) rests on the Demon Slayer Wiki, which also notes a partial appearance in chapter 4. Arc names follow the anime's season titles.",
+      "abilities": "Too slight to cut off a demon's head, she fights with a thin, sting-like sword that injects a wisteria-based poison she brews herself, using the Insect Breathing style.",
+      "fate": {
+        "status": "dies",
+        "detail": "Shinobu dies fighting Doma, the demon who killed her sister, in the Infinity Castle (manga chapter 143, 2019); she had filled her body with wisteria poison so that his devouring her would weaken him, letting Kanao and Inosuke finish him off. Her death is shown in the film Infinity Castle (2025).",
+        "basis": "series ending"
+      },
+      "about": "Shinobu Kocho is the Insect Hashira, one of the elite swordsmen who lead the Demon Slayer Corps, and she runs the Butterfly Mansion, where wounded Demon Slayers are treated. Small and slender, she cannot behead demons the way other slayers do, so she relies instead on poisons distilled from wisteria flowers and on her medical knowledge. She meets Tanjiro Kamado on Mount Natagumo and wants to kill his demon sister, Nezuko, on sight. Outwardly she is always smiling, calm and teasingly polite, but behind that cheerful manner lies a deep anger at demons for taking her family, and she cares fiercely for the girls under her protection."
+    },
+    "mitsuri-kanroji": {
+      "name": "Mitsuri Kanroji",
+      "role": "The Love Hashira of the Demon Slayer Corps",
+      "debut": {
+        "anime": "Demon Slayer: Kimetsu no Yaiba",
+        "episode": 21,
+        "episodeTitle": "Against Corps Rules",
+        "source": "manga",
+        "chapter": 44,
+        "volume": null
+      },
+      "arcs": [
+        "Swordsmith Village arc",
+        "Hashira Training arc"
+      ],
+      "affiliations": [
+        "Demon Slayer Corps"
+      ],
+      "relatives": [],
+      "confidence": "medium",
+      "sources": [
+        "https://kimetsu-no-yaiba.fandom.com/wiki/Mitsuri_Kanroji",
+        "https://kimetsu-no-yaiba.fandom.com/wiki/Chapter_200",
+        "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
+        "https://en.wikipedia.org/wiki/Demon_Slayer:_Kimetsu_no_Yaiba_season_1",
+        "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_chapters",
+        "https://anilist.co/character/136072",
+        "https://myanimelist.net/character/151145/Mitsuri_Kanroji"
+      ],
+      "notes": "Episode 21 and chapter 44 rest on the Demon Slayer Wiki; the Wikipedia summary of episode 21 ends with Tanjiro in front of the Hashira without naming them. Arc names follow the anime's season titles.",
+      "abilities": "Her unusually dense muscles give her many times normal strength and great flexibility, which she uses with a thin, whip-like sword in her own Love Breathing style.",
+      "fate": {
+        "status": "dies",
+        "detail": "Mitsuri is mortally wounded in the battle against Muzan Kibutsuji and dies in Obanai Iguro's arms after the demon is destroyed (manga chapter 200, 2020). The anime has not reached this as of November 2026.",
+        "basis": "series ending"
+      },
+      "about": "Mitsuri Kanroji is the Love Hashira, one of the elite swordsmen of the Demon Slayer Corps and a former student of Flame Hashira Kyojuro Rengoku. Passionate, affectionate and a little scatterbrained, she wears her feelings openly. Unlike most of her fellow Hashira, she did not join the Corps because demons destroyed her life; she joined to find a place where she could simply be herself instead of bending to what society expected of her. Her unusual strength and flexible, whip-like sword make her formidable in battle, and she treats Tanjiro and his friends with warmth from the start."
+    },
+    "maki-zen-in": {
+      "name": "Maki Zenin",
+      "role": "Second-year student at Tokyo Jujutsu High who fights with cursed tools",
+      "debut": {
+        "anime": "Jujutsu Kaisen",
+        "episode": 5,
+        "episodeTitle": "Curse Womb Must Die -II-",
+        "source": "manga",
+        "chapter": 10,
+        "volume": null
+      },
+      "arcs": [],
+      "affiliations": [
+        "Tokyo Jujutsu High",
+        "Zenin Clan"
+      ],
+      "relatives": [
+        {
+          "name": "Mai Zenin",
+          "relation": "younger twin sister"
+        }
+      ],
+      "confidence": "medium",
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Maki_Zenin",
+        "https://en.wikipedia.org/wiki/Maki_Zen%27in",
+        "https://en.wikipedia.org/wiki/Jujutsu_Kaisen_season_1",
+        "https://en.wikipedia.org/wiki/List_of_Jujutsu_Kaisen_characters",
+        "https://anilist.co/character/134167",
+        "https://myanimelist.net/character/164482/Maki_Zenin"
+      ],
+      "notes": "Episode 5 is confirmed by both sources. Chapter 10 rests on the Jujutsu Kaisen Wiki; both sources agree she first appeared in chapter 1 of the prequel Jujutsu Kaisen 0 (2017). Other relatives left out to avoid spoilers.",
+      "abilities": "Born with almost no cursed energy, she needs special glasses to see curses and fights with cursed tools such as a naginata, relying on exceptional physical strength and weapon skill.",
+      "fate": {
+        "status": "alive",
+        "detail": "Maki survives the final battle against Sukuna and is alive at the series' end (manga chapter 271, 2024). The anime has not reached the final arc as of November 2026.",
+        "basis": "manga ending"
+      },
+      "about": "Maki Zenin is a second-year student at Tokyo Jujutsu High and a member of the Zenin clan, a powerful family of sorcerers. She was born with so little cursed energy that she cannot even see curses without a pair of special glasses, which makes her an outcast in a clan that values only sorcerous talent. Refusing to accept that, she left home to become a sorcerer anyway, fighting with cursed tools and exceptional physical ability. Blunt, tough and quick to tease, she trains alongside her classmates Toge Inumaki and Panda and becomes a hard but supportive senior to Yuji Itadori's year. Her twin sister Mai remains with the clan."
+    },
+    "itachi-uchiha": {
+      "name": "Itachi Uchiha",
+      "role": "Rogue ninja of the Uchiha clan and member of Akatsuki; Sasuke Uchiha's older brother",
+      "debut": {
+        "anime": "Naruto",
+        "episode": 80,
+        "episodeTitle": "The Third Hokage, Forever...",
+        "source": "manga",
+        "chapter": 139,
+        "volume": null
+      },
+      "arcs": [
+        "Search for Tsunade",
+        "Itachi Pursuit Mission",
+        "Fated Battle Between Brothers",
+        "Fourth Shinobi World War: Confrontation"
+      ],
+      "affiliations": [
+        "Akatsuki",
+        "Uchiha Clan"
+      ],
+      "relatives": [
+        {
+          "name": "Fugaku Uchiha",
+          "relation": "father"
+        },
+        {
+          "name": "Mikoto Uchiha",
+          "relation": "mother"
+        },
+        {
+          "name": "Sasuke Uchiha",
+          "relation": "younger brother"
+        }
+      ],
+      "confidence": "medium",
+      "sources": [
+        "https://naruto.fandom.com/wiki/Itachi_Uchiha",
+        "https://en.wikipedia.org/wiki/Itachi_Uchiha",
+        "https://en.wikipedia.org/wiki/Naruto_season_2",
+        "https://anilist.co/character/14",
+        "https://myanimelist.net/character/14/Itachi_Uchiha",
+        "https://en.wikipedia.org/wiki/List_of_Naruto_characters"
+      ],
+      "notes": "Chapter 139 (\"Eulogy\") is confirmed by both sources. Episode 80 rests on Narutopedia; the Wikipedia summaries first name him in episode 81, \"Return of the Morning Mist\". Arcs from Itachi Pursuit Mission on are in Naruto: Shippuden.",
+      "abilities": "A prodigy who wields the Sharingan and its advanced Mangekyo form, with devastating illusions such as Tsukuyomi and the black flames of Amaterasu.",
+      "fate": {
+        "status": "dies",
+        "detail": "Itachi dies at the end of his final battle with Sasuke, succumbing to an illness rather than Sasuke's attacks (manga chapter 393; anime: Naruto Shippuden's Fated Battle Between Brothers arc). Kabuto later brings him back as a reanimated corpse during the Fourth Shinobi World War, and he departs for good after ending the reanimation technique (chapter 590).",
+        "basis": "series ending"
+      },
+      "about": "Itachi Uchiha is the elder brother of Sasuke Uchiha and the man responsible for wiping out the rest of the Uchiha clan in a single night, sparing only Sasuke, who has sworn to kill him in revenge. A prodigy who rose through the ranks of the Leaf Village at a frighteningly young age, he later left as a criminal and joined Akatsuki, a secretive organisation of rogue ninja. After the death of the Third Hokage, he returns to the Leaf Village with his partner Kisame Hoshigaki, hunting for Naruto Uzumaki. Calm, quiet and coolly polite, he treats even his little brother with apparent contempt, and his overwhelming Sharingan abilities make him one of the series' most feared figures."
+    },
+    "jujutsu-kaisen-choso": {
+      "name": "Choso",
+      "role": "Eldest of the Cursed Womb: Death Paintings, half-human, half-curse brothers allied with Mahito's group",
+      "debut": {
+        "anime": "Jujutsu Kaisen",
+        "episode": 24,
+        "episodeTitle": "Accomplices",
+        "source": "manga",
+        "chapter": 62,
+        "volume": null
+      },
+      "arcs": [
+        "Death Painting arc",
+        "Shibuya Incident arc",
+        "Culling Game arc",
+        "Shinjuku Showdown arc"
+      ],
+      "affiliations": [
+        "Mahito's group (formerly)"
+      ],
+      "relatives": [
+        {
+          "name": "Eso",
+          "relation": "younger brother"
+        },
+        {
+          "name": "Kechizu",
+          "relation": "younger brother"
+        }
+      ],
+      "confidence": "medium",
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Choso",
+        "https://jujutsu-kaisen.fandom.com/wiki/Chapter_259",
+        "https://en.wikipedia.org/wiki/List_of_Jujutsu_Kaisen_episodes",
+        "https://en.wikipedia.org/wiki/List_of_Jujutsu_Kaisen_characters",
+        "https://www.comingsoon.net/guides/news/1709122-jujutsu-kaisen-choso-die-death-manga-chapter-259",
+        "https://www.themarysue.com/jujutsu-kaisen-chapter-259-recap-and-spoilers-confirmed/",
+        "https://anilist.co/character/157116",
+        "https://myanimelist.net/character/180764/Chousou",
+        "https://en.wikipedia.org/wiki/Jujutsu_Kaisen_season_2"
+      ],
+      "notes": "Spelled Chousou on AniList and MyAnimeList. Episode 24 and chapter 62 rest on the Jujutsu Kaisen Wiki, which also lists a chapter 60 flashback glimpse; the Wikipedia summary of episode 24 does not name him, and he is first named in season 2 (episode 32). No Hindi voice credit for him was found in the Crunchyroll or Sony YAY! dubs.",
+      "about": "Choso is the first-born of the nine Cursed Womb: Death Paintings, beings born from a human woman and a curse more than a century ago and kept for years as preserved objects. Brought to life in human form, he and his younger brothers Eso and Kechizu join the cursed spirit Mahito and his allies, who intend to unleash curses on humanity. Calm, serious and soft-spoken, Choso cares about almost nothing except his siblings, and he is fiercely protective of them. With long hair in twin tufts and a blood mark across his nose, he looks almost human, and his devotion to family makes him far more sympathetic than most of the series' antagonists.",
+      "abilities": "He uses Blood Manipulation, shaping and firing his own blood as projectiles or blades; as a Death Painting his body can create blood from cursed energy.",
+      "fate": {
+        "status": "dies",
+        "detail": "In manga chapter 259, Choso dies shielding Yuji Itadori from Sukuna's Divine Flame, his body crumbling after he thanks Yuji for being his younger brother. This has not yet been adapted in the anime as of November 2026.",
+        "basis": "series ending"
+      },
+      "hindiVoice": null
+    },
+    "zenitsu-agatsuma": {
+      "name": "Zenitsu Agatsuma",
+      "role": "Demon Slayer and one of Tanjiro Kamado's closest companions",
+      "debut": {
+        "anime": "Demon Slayer: Kimetsu no Yaiba",
+        "episode": 4,
+        "episodeTitle": "Final Selection",
+        "source": "manga",
+        "chapter": 6,
+        "volume": null
+      },
+      "arcs": [
+        "Unwavering Resolve arc",
+        "Mugen Train arc",
+        "Entertainment District arc",
+        "Hashira Training arc",
+        "Infinity Castle arc"
+      ],
+      "affiliations": [
+        "Demon Slayer Corps"
+      ],
+      "relatives": [],
+      "confidence": "medium",
+      "sources": [
+        "https://kimetsu-no-yaiba.fandom.com/wiki/Zenitsu_Agatsuma",
+        "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
+        "https://en.wikipedia.org/wiki/Demon_Slayer:_Kimetsu_no_Yaiba_season_1",
+        "https://en.wikipedia.org/wiki/Demon_Slayer:_Kimetsu_no_Yaiba_%E2%80%93_The_Movie:_Infinity_Castle",
+        "https://anilist.co/character/129131",
+        "https://myanimelist.net/character/146158/Zenitsu_Agatsuma"
+      ],
+      "notes": "Episode 4 and chapter 6 rest on the Demon Slayer Wiki, which places him at the Final Selection; the Wikipedia summaries first name him in episode 11, \"Tsuzumi Mansion\". His marriage in the epilogue is left out of relatives to avoid spoilers. Arc names follow the anime's season titles.",
+      "abilities": "Trained in Thunder Breathing, he can use only its First Form but has perfected it to lightning speed, often fighting best while asleep or unconscious; his extremely sharp hearing lets him sense people's intentions.",
+      "fate": {
+        "status": "alive",
+        "detail": "Zenitsu defeats his former senior Kaigaku in the Infinity Castle (shown in the film Infinity Castle, 2025) and survives the final battle; the epilogue reveals he married Nezuko.",
+        "basis": "series ending"
+      },
+      "about": "Zenitsu Agatsuma is a Demon Slayer who passed the Final Selection in the same year as Tanjiro Kamado. Constantly terrified, he whines, panics and is convinced he will die on every mission, and he is quick to throw himself at girls he has only just met. Yet when fear finally overwhelms him and he passes out, something changes: asleep, he fights with startling speed and precision. He was trained in Thunder Breathing by his master, Jigoro, and can perform only the first of its techniques, but he has refined it to near perfection. His remarkable hearing lets him read people's hearts by sound, which is why he trusts Tanjiro, whose kindness he can hear."
+    },
+    "kyoujurou-rengoku": {
+      "name": "Kyojuro Rengoku",
+      "role": "The Flame Hashira of the Demon Slayer Corps",
+      "debut": {
+        "anime": "Demon Slayer: Kimetsu no Yaiba",
+        "episode": 21,
+        "episodeTitle": "Against Corps Rules",
+        "source": "manga",
+        "chapter": 44,
+        "volume": null
+      },
+      "arcs": [
+        "Mugen Train arc"
+      ],
+      "affiliations": [
+        "Demon Slayer Corps"
+      ],
+      "relatives": [
+        {
+          "name": "Shinjuro Rengoku",
+          "relation": "father"
+        },
+        {
+          "name": "Ruka Rengoku",
+          "relation": "mother"
+        },
+        {
+          "name": "Senjuro Rengoku",
+          "relation": "younger brother"
+        }
+      ],
+      "confidence": "medium",
+      "sources": [
+        "https://kimetsu-no-yaiba.fandom.com/wiki/Kyojuro_Rengoku",
+        "https://kimetsu-no-yaiba.fandom.com/wiki/Chapter_66",
+        "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
+        "https://en.wikipedia.org/wiki/Demon_Slayer:_Kimetsu_no_Yaiba_season_1",
+        "https://en.wikipedia.org/wiki/Demon_Slayer:_Kimetsu_no_Yaiba_season_2",
+        "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_chapters",
+        "https://anilist.co/character/129133",
+        "https://myanimelist.net/character/151143/Kyoujurou_Rengoku"
+      ],
+      "notes": "Episode 21 and chapter 44 rest on the Demon Slayer Wiki; the Wikipedia summary of episode 21 ends with Tanjiro in front of the Hashira without naming them. The Mugen Train story was told in the 2020 film and in the seven-episode Mugen Train Arc TV version.",
+      "abilities": "A master of Flame Breathing who succeeded his father as the Flame Hashira, he fights with blazing, powerful sword techniques and enormous strength and speed.",
+      "fate": {
+        "status": "dies",
+        "detail": "Rengoku is mortally wounded by the Upper Rank demon Akaza after the battle on the Mugen Train and dies at dawn after leaving messages for Tanjiro (manga chapter 66, 2017; the 2020 film Mugen Train and Mugen Train Arc episode 7, \"Set Your Heart Ablaze\").",
+        "basis": "series ending"
+      },
+      "about": "Kyojuro Rengoku is the Flame Hashira, one of the elite swordsmen who lead the Demon Slayer Corps, who succeeded his father Shinjuro in the role. Loud, upbeat and unshakably confident, he speaks in booming declarations and can seem thoroughly eccentric. Beneath the eccentric manner he is honourable and deeply principled: his mother taught him that those born strong have a duty to protect the weak, and he lives by that rule. Sent to investigate a train on which passengers keep disappearing, he is joined by Tanjiro Kamado and his friends, and he quickly becomes a mentor to them."
+    },
+    "hinata-hyuuga": {
+      "name": "Hinata Hyuga",
+      "role": "Heiress of the Hyuga clan and a member of Team Kurenai in the Hidden Leaf Village",
+      "debut": {
+        "anime": "Naruto",
+        "episode": 1,
+        "episodeTitle": "Enter: Naruto Uzumaki!",
+        "source": "manga",
+        "chapter": 34,
+        "volume": null
+      },
+      "arcs": [
+        "Chunin Exams arc",
+        "Konoha Crush arc",
+        "Pain's Assault arc",
+        "Fourth Shinobi World War arc"
+      ],
+      "affiliations": [
+        "Hidden Leaf Village",
+        "Team Kurenai (Team 8)",
+        "Hyuga clan"
+      ],
+      "relatives": [
+        {
+          "name": "Hiashi Hyuga",
+          "relation": "father"
+        },
+        {
+          "name": "Hanabi Hyuga",
+          "relation": "younger sister"
+        },
+        {
+          "name": "Neji Hyuga",
+          "relation": "cousin"
+        }
+      ],
+      "confidence": "medium",
+      "sources": [
+        "https://naruto.fandom.com/wiki/Hinata_Hy%C5%ABga",
+        "https://en.wikipedia.org/wiki/Hinata_Hyuga",
+        "https://en.wikipedia.org/wiki/Naruto_season_1",
+        "https://anilist.co/character/1555",
+        "https://myanimelist.net/character/1555/Hinata_Hyuuga"
+      ],
+      "notes": "Chapter 34 (\"Intruders?\") is confirmed by both sources. Narutopedia lists a cameo in anime episode 1; the Wikipedia season 1 summaries first name her in episode 23, when Team 8 meets the other rookies. Pain's Assault and the Fourth Shinobi World War arcs are in Naruto: Shippuden.",
+      "about": "Hinata Hyuga is the shy elder daughter of the Hyuga clan's head, born into one of the Leaf Village's most prestigious ninja families. Soft-spoken and easily flustered, she lacks confidence and is regarded by her own father as too weak to lead the clan. She has quietly admired Naruto Uzumaki for years, inspired by the way he refuses to give up no matter how often he is mocked, and she tends to faint or stammer whenever he is near. Assigned to Team Kurenai alongside Kiba and Shino, she enters the Chunin Exams determined to change herself, even when it means facing her formidable cousin Neji.",
+      "abilities": "She has the Byakugan, the Hyuga clan's eye technique that sees nearly all around her and reveals chakra points, and fights with the clan's Gentle Fist style.",
+      "fate": {
+        "status": "alive",
+        "detail": "Hinata survives the series. She marries Naruto, as shown in the manga's final chapter and The Last: Naruto the Movie, and is the mother of Boruto and Himawari in the sequel Boruto.",
+        "basis": "manga and anime"
+      },
+      "hindiVoice": null
+    },
+    "jujutsu-kaisen-yuta-okkotsu": {
+      "name": "Yuta Okkotsu",
+      "role": "Protagonist of the prequel Jujutsu Kaisen 0; special grade sorcerer and student at Tokyo Jujutsu High",
+      "debut": {
+        "anime": "Jujutsu Kaisen 0",
+        "episode": null,
+        "episodeTitle": null,
+        "source": "manga",
+        "chapter": 1,
+        "volume": null
+      },
+      "arcs": [],
+      "affiliations": [
+        "Tokyo Jujutsu High"
+      ],
+      "relatives": [],
+      "confidence": "medium",
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuta_Okkotsu",
+        "https://en.wikipedia.org/wiki/Yuta_Okkotsu",
+        "https://en.wikipedia.org/wiki/Jujutsu_Kaisen_0_(film)",
+        "https://en.wikipedia.org/wiki/Jujutsu_Kaisen_season_1",
+        "https://en.wikipedia.org/wiki/Jujutsu_Kaisen_season_2",
+        "https://anilist.co/character/129571",
+        "https://myanimelist.net/character/168067/Yuuta_Okkotsu"
+      ],
+      "notes": "Both sources give his first appearance as chapter 1 of the prequel manga Jujutsu Kaisen 0 (2017); he was first animated in the Jujutsu Kaisen 0 film (December 2021). In the TV series Gojo mentions him in episode 8, and he appears at the end of episode 47 (season 2, \"Shibuya Incident – Gate, Close\"), adapting main-series chapter 137. Family left out to avoid spoilers.",
+      "abilities": "A special grade sorcerer with a vast reserve of cursed energy, haunted and protected by the curse of his childhood friend Rika Orimoto; he fights with a katana and can copy other sorcerers' techniques.",
+      "fate": {
+        "status": "alive",
+        "detail": "Yuta survives the battle against Sukuna, during which he temporarily takes over Gojo's body, and the epilogue shows him alive as head of the Gojo clan with children and grandchildren (manga chapter 271, 2024). The anime has not reached the final arc as of November 2026.",
+        "basis": "manga ending"
+      },
+      "about": "Yuta Okkotsu is a timid, lonely high schooler who is haunted by Rika Orimoto, the childhood friend he promised to marry before she died six years earlier. Her spirit now clings to him as a monstrous curse that lashes out at anyone who threatens him, and the jujutsu world's higher-ups regard him as a danger to be dealt with. Satoru Gojo steps in and enrols him at Tokyo Jujutsu High instead, where he trains alongside Maki Zenin, Toge Inumaki and Panda. Withdrawn and convinced he should not exist, Yuta gradually finds a reason to live by helping others, while learning to control the enormous power that Rika's curse gives him."
+    },
+    "inosuke-hashibira": {
+      "name": "Inosuke Hashibira",
+      "role": "Boar-masked Demon Slayer and one of Tanjiro Kamado's closest companions",
+      "debut": {
+        "anime": "Demon Slayer: Kimetsu no Yaiba",
+        "episode": 11,
+        "episodeTitle": "Tsuzumi Mansion",
+        "source": "manga",
+        "chapter": 21,
+        "volume": null
+      },
+      "arcs": [
+        "Unwavering Resolve arc",
+        "Mugen Train arc",
+        "Entertainment District arc",
+        "Hashira Training arc",
+        "Infinity Castle arc"
+      ],
+      "affiliations": [
+        "Demon Slayer Corps"
+      ],
+      "relatives": [],
+      "confidence": "medium",
+      "sources": [
+        "https://kimetsu-no-yaiba.fandom.com/wiki/Inosuke_Hashibira",
+        "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
+        "https://en.wikipedia.org/wiki/Demon_Slayer:_Kimetsu_no_Yaiba_season_1",
+        "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_chapters",
+        "https://anilist.co/character/129130",
+        "https://myanimelist.net/character/146159/Inosuke_Hashibira"
+      ],
+      "notes": "Episode 11 and chapter 21 rest on the Demon Slayer Wiki; the Wikipedia summary of episode 11 mentions a Demon Slayer in a boar mask, and he is first named in episode 14. Family left out to avoid spoilers. Arc names follow the anime's season titles.",
+      "abilities": "Fights with two jagged, chipped swords in Beast Breathing, a style he invented himself, and his heightened sense of touch lets him detect enemies through vibrations in the air.",
+      "fate": {
+        "status": "alive",
+        "detail": "Inosuke survives the final battle against Muzan Kibutsuji; the epilogue reveals he married Aoi Kanzaki.",
+        "basis": "series ending"
+      },
+      "about": "Inosuke Hashibira is a Demon Slayer who was raised by wild boars in the mountains and grew up with almost no contact with other people. He hides his face under the head of a boar, charges into every fight bare-chested and treats nearly everyone he meets as a rival to be beaten. Self-taught, he fights with two chipped, saw-toothed swords in a style he calls Beast Breathing, and his sense of touch is so acute that he can feel enemies through the air. Loud, competitive and barely civilised, he first attacks Tanjiro Kamado on sight, but he slowly learns friendship and kindness from Tanjiro and Zenitsu."
+    },
+    "eijirou-kirishima": {
+      "name": "Eijiro Kirishima",
+      "role": "Class 1-A student at U.A. High School; hero name Red Riot",
+      "debut": {
+        "anime": "My Hero Academia",
+        "episode": 5,
+        "episodeTitle": "What I Can Do For Now",
+        "source": "manga",
+        "chapter": 3,
+        "volume": null
+      },
+      "arcs": [],
+      "affiliations": [
+        "U.A. High School"
+      ],
+      "relatives": [],
+      "confidence": "medium",
+      "sources": [
+        "https://myheroacademia.fandom.com/wiki/Eijiro_Kirishima",
+        "https://en.wikipedia.org/wiki/List_of_My_Hero_Academia_characters",
+        "https://en.wikipedia.org/wiki/My_Hero_Academia_season_1",
+        "https://anilist.co/character/89243",
+        "https://myanimelist.net/character/118487/Eijirou_Kirishima"
+      ],
+      "notes": "Episode 5 and chapter 3 rest on the My Hero Academia Wiki, which counts a cameo in chapter 3 before his formal introduction in chapter 5; the Wikipedia summaries first name him in episode 15.",
+      "abilities": "His Quirk, Hardening, turns his skin rock-hard so he can shrug off blows and hit back harder, though the effect weakens under heavy damage and drains his stamina.",
+      "fate": {
+        "status": "alive",
+        "detail": "Kirishima survives the final war and is alive at the series' end (manga, 2024; anime final season, 2025).",
+        "basis": "series ending"
+      },
+      "about": "Eijiro Kirishima is a student in Class 1-A at U.A. High School, a training academy for professional heroes, and later takes the hero name Red Riot. He is loud, friendly and obsessed with being 'manly', which to him means standing your ground, protecting others and never abandoning a friend. His Quirk, Hardening, turns his body as tough as stone, making him a natural shield in a fight. Easygoing and loyal, he gets along with almost everyone, including his notoriously abrasive classmate Katsuki Bakugo. He is also hard on himself, haunted by a moment in middle school when fear stopped him from helping someone."
+    },
+    "shanks": {
+      "name": "Shanks",
+      "role": "Captain of the Red Hair Pirates and one of the Four Emperors; Luffy's childhood hero",
+      "debut": {
+        "anime": "One Piece",
+        "episode": 4,
+        "episodeTitle": "Luffy's Past! Enter Red-Haired Shanks!",
+        "source": "manga",
+        "chapter": 1,
+        "volume": null
+      },
+      "arcs": [
+        "Romance Dawn"
+      ],
+      "affiliations": [
+        "Red Hair Pirates",
+        "Roger Pirates (former)"
+      ],
+      "relatives": [],
+      "confidence": "high",
+      "sources": [
+        "https://onepiece.fandom.com/wiki/Shanks",
+        "https://en.wikipedia.org/wiki/Four_Emperors_(One_Piece)#Shanks",
+        "https://en.wikipedia.org/wiki/One_Piece_season_1",
+        "https://anilist.co/character/727",
+        "https://myanimelist.net/character/727/Shanks",
+        "https://en.wikipedia.org/wiki/List_of_One_Piece_characters"
+      ],
+      "notes": "Chapter 1 and episode 4 (in a flashback) are confirmed by both sources; episode title as in the Wikipedia season 1 list. He appears only briefly in most arcs. Family and recent manga revelations left out to avoid spoilers.",
+      "abilities": "A master swordsman and one of the strongest pirates in the world, known above all for his overwhelming Haki; he has no Devil Fruit power.",
+      "fate": {
+        "status": "alive",
+        "detail": "Shanks is alive in the anime and in the ongoing manga (as of November 2026).",
+        "basis": "anime so far"
+      },
+      "about": "Shanks, known as Red-Haired Shanks, is the easygoing captain of the Red Hair Pirates and the man who inspired Monkey D. Luffy to go to sea. When Luffy was a small boy, Shanks's crew spent time in his village, and Shanks laughed off the boy's pleas to join them. After Luffy accidentally ate a Devil Fruit the crew had seized, Shanks saved him from a sea monster at the cost of his own left arm, then entrusted him with his straw hat, to be returned once Luffy became a great pirate. Cheerful, laid-back and fond of drinking, he shrugs off insults, but he turns deadly serious when his friends are threatened. He is later known as one of the Four Emperors who rule the seas."
+    },
+    "dabi": {
+      "name": "Dabi",
+      "role": "Villain of the League of Villains who fights with blue flames",
+      "debut": {
+        "anime": "My Hero Academia",
+        "episode": 31,
+        "episodeTitle": "The Aftermath of Hero Killer: Stain",
+        "source": "manga",
+        "chapter": 57,
+        "volume": null
+      },
+      "arcs": [],
+      "affiliations": [
+        "League of Villains"
+      ],
+      "relatives": [],
+      "confidence": "medium",
+      "sources": [
+        "https://myheroacademia.fandom.com/wiki/Dabi",
+        "https://en.wikipedia.org/wiki/List_of_My_Hero_Academia_characters",
+        "https://en.wikipedia.org/wiki/My_Hero_Academia_season_2",
+        "https://anilist.co/character/126378",
+        "https://myanimelist.net/character/139262/Dabi"
+      ],
+      "notes": "Episode 31 and chapter 57 rest on the My Hero Academia Wiki, which also lists an earlier flashback glimpse; the Wikipedia summaries first mention him, unnamed, as one of two would-be recruits to the League in episode 38. Real name and relatives left out to avoid spoilers.",
+      "abilities": "His Quirk, Blueflame, produces intensely hot blue fire, but his body cannot withstand his own flames for long, which explains the burn scars stapled across his skin.",
+      "fate": {
+        "status": "unclear",
+        "detail": "After the final war he is kept alive on life support in hospital, where his family promises to visit him (manga chapter 424, 2024; shown in the anime's final season, 2025). The My Hero Academia Wiki says he died some time before the eight-years-later epilogue; Wikipedia does not say so.",
+        "basis": "series ending"
+      },
+      "about": "Dabi is a villain who joins the League of Villains after the arrest of the Hero Killer Stain, whose views on fake heroes he claims to share. His face and body are covered in patches of burned skin held together by surgical staples. His Quirk produces blue flames far hotter than ordinary fire, but his body cannot fully withstand them. Cool, sardonic and seemingly bored by most things, he rarely shows emotion and keeps his real name and past to himself. He is ruthless in battle and patient in planning."
+    },
+    "giyuu-tomioka": {
+      "name": "Giyu Tomioka",
+      "role": "The Water Hashira of the Demon Slayer Corps and the first Demon Slayer Tanjiro meets",
+      "debut": {
+        "anime": "Demon Slayer: Kimetsu no Yaiba",
+        "episode": 1,
+        "episodeTitle": "Cruelty",
+        "source": "manga",
+        "chapter": 1,
+        "volume": null
+      },
+      "arcs": [
+        "Unwavering Resolve arc",
+        "Hashira Training arc",
+        "Infinity Castle arc"
+      ],
+      "affiliations": [
+        "Demon Slayer Corps"
+      ],
+      "relatives": [],
+      "confidence": "high",
+      "sources": [
+        "https://kimetsu-no-yaiba.fandom.com/wiki/Giyu_Tomioka",
+        "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
+        "https://en.wikipedia.org/wiki/Demon_Slayer:_Kimetsu_no_Yaiba_season_1",
+        "https://en.wikipedia.org/wiki/Demon_Slayer:_Kimetsu_no_Yaiba_%E2%80%93_The_Movie:_Infinity_Castle",
+        "https://anilist.co/character/130050",
+        "https://myanimelist.net/character/146735/Giyuu_Tomioka"
+      ],
+      "notes": "Episode 1 and chapter 1 are confirmed by both sources. Both say he loses an arm fighting Muzan Kibutsuji, but they disagree on which arm, so it is left out. Arc names follow the anime's season titles.",
+      "abilities": "The Water Hashira, a master of Water Breathing who has also developed a form of his own; calm and precise, he is one of the strongest swordsmen in the Corps.",
+      "fate": {
+        "status": "alive",
+        "detail": "Giyu fights Akaza alongside Tanjiro (shown in the film Infinity Castle, 2025) and later loses an arm in the battle against Muzan Kibutsuji, but he is one of only two Hashira to survive the final battle.",
+        "basis": "series ending"
+      },
+      "about": "Giyu Tomioka is the Water Hashira, one of the elite swordsmen of the Demon Slayer Corps, and the first slayer Tanjiro Kamado ever meets. He arrives just after demons have massacred Tanjiro's family and moves to kill Nezuko, but when she protects her brother instead of eating him, he spares them both and sends Tanjiro to his own old teacher, Sakonji Urokodaki, to train. Quiet and expressionless, Giyu says very little and often comes across as cold, which leaves him on awkward terms with the other Hashira. Underneath he carries guilt from his own Final Selection, where a close friend died, and he doubts that he really deserves his rank."
+    },
+    "jotaro-kujo": {
+      "name": "Jotaro Kujo",
+      "role": "Protagonist of Stardust Crusaders; Joseph Joestar's grandson and the Stand user of Star Platinum",
+      "debut": {
+        "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
+        "episode": 1,
+        "episodeTitle": "The Man Possessed by an Evil Spirit",
+        "source": "manga",
+        "chapter": 114,
+        "volume": null
+      },
+      "arcs": [
+        "Stardust Crusaders",
+        "Diamond Is Unbreakable",
+        "Stone Ocean"
+      ],
+      "affiliations": [],
+      "relatives": [
+        {
+          "name": "Sadao Kujo",
+          "relation": "father"
+        },
+        {
+          "name": "Holly Kujo",
+          "relation": "mother"
+        },
+        {
+          "name": "Joseph Joestar",
+          "relation": "grandfather"
+        }
+      ],
+      "confidence": "high",
+      "sources": [
+        "https://jojo.fandom.com/wiki/Jotaro_Kujo",
+        "https://en.wikipedia.org/wiki/Jotaro_Kujo",
+        "https://en.wikipedia.org/wiki/List_of_JoJo%27s_Bizarre_Adventure:_Stardust_Crusaders_episodes",
+        "https://anilist.co/character/4003",
+        "https://myanimelist.net/character/4003/Joutarou_Kuujou"
+      ],
+      "notes": "Chapter 114 (\"Jotaro Kujo (1)\") and Stardust Crusaders episode 1 are confirmed by both sources. The JoJo Wiki also counts a glimpse at the end of the 2012 series' episode 26 and in chapter 113. His mother's name is spelled Holy on the JoJo Wiki. Later family left out to avoid spoilers.",
+      "abilities": "His Stand, Star Platinum, is a humanoid spirit of immense strength, speed and precision that can catch bullets and land a barrage of punches in an instant.",
+      "fate": {
+        "status": "dies",
+        "detail": "In Stone Ocean (Part 6), Jotaro is killed by Enrico Pucci while protecting his daughter Jolyne in the final battle (Stone Ocean chapter 154), shortly before the universe is reset; it was adapted in the final episodes of the Stone Ocean anime. He appears in Parts 3 to 6.",
+        "basis": "manga and anime"
+      },
+      "about": "Jotaro Kujo is a towering high-school delinquent in late-1980s Japan. When the story opens he has locked himself in a police cell, convinced he is possessed by an evil spirit. His grandfather Joseph Joestar explains that the 'spirit' is a Stand, a fighting manifestation of his own life force, awakened because the Joestar family's old nemesis Dio has returned. When his mother falls gravely ill for the same reason, Jotaro sets out for Egypt with Joseph and their allies to defeat Dio. Laconic and gruff, he is far more loyal and caring than he looks."
+    },
+    "hisoka": {
+      "name": "Hisoka Morow",
+      "role": "Murderous magician who fights for the thrill of facing strong opponents",
+      "debut": {
+        "anime": "Hunter x Hunter (2011)",
+        "episode": 3,
+        "episodeTitle": "Rivals × for × Survival",
+        "source": "manga",
+        "chapter": 5,
+        "volume": null
+      },
+      "arcs": [
+        "Hunter Exam",
+        "Heavens Arena",
+        "Yorknew City",
+        "Greed Island"
+      ],
+      "affiliations": [
+        "Hunter Association"
+      ],
+      "relatives": [],
+      "confidence": "high",
+      "sources": [
+        "https://hunterxhunter.fandom.com/wiki/Hisoka_Morow",
+        "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters",
+        "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_(2011_TV_series)_episodes",
+        "https://anilist.co/character/31",
+        "https://myanimelist.net/character/31/Hisoka_Morow"
+      ],
+      "notes": "Chapter 5 and episode 3 of the 2011 series are confirmed by both sources (episode 6 in the 1999 series, per the Hunter x Hunter Wiki). Wikipedia spells his surname Morrow. Later allegiances left out to avoid spoilers.",
+      "abilities": "A Transmuter whose aura, Bungee Gum, has the properties of both rubber and gum, and who can use Texture Surprise to disguise surfaces; he is also deadly with playing cards.",
+      "fate": {
+        "status": "revived",
+        "detail": "In the manga, Hisoka dies after losing a death match to Chrollo at Heavens Arena, then restarts his own heart and lungs with Bungee Gum and returns to hunt the Phantom Troupe (chapter 357). The 2011 anime ended before this; he is alive in the ongoing manga (as of November 2026).",
+        "basis": "manga"
+      },
+      "about": "Hisoka Morow is a flamboyant, clown-like magician who takes part in the Hunter Exam, where Gon Freecss first encounters him. He lives for battles against powerful opponents and openly delights in violence, killing other candidates with little provocation. Seeing raw potential in Gon and his friends, he decides to let them live and grow stronger, the way a farmer waits for fruit to ripen, so that one day they will make a satisfying fight. Playful, unpredictable and utterly self-interested, he sometimes helps Gon when it suits him, which makes him neither ally nor enemy. He favours playing cards as weapons and has a habit of performing magic tricks."
+    },
+    "jiraiya": {
+      "name": "Jiraiya",
+      "role": "One of the Legendary Sannin of the Leaf Village and Naruto Uzumaki's mentor",
+      "debut": {
+        "anime": "Naruto",
+        "episode": 52,
+        "episodeTitle": "Ebisu Returns: Naruto's Toughest Training Yet!",
+        "source": "manga",
+        "chapter": 90,
+        "volume": null
+      },
+      "arcs": [
+        "Chunin Exams",
+        "Search for Tsunade",
+        "Tale of Jiraiya the Gallant"
+      ],
+      "affiliations": [
+        "Konohagakure",
+        "Mount Myoboku"
+      ],
+      "relatives": [],
+      "confidence": "high",
+      "sources": [
+        "https://naruto.fandom.com/wiki/Jiraiya",
+        "https://en.wikipedia.org/wiki/Jiraiya_(Naruto)",
+        "https://en.wikipedia.org/wiki/Naruto_season_2",
+        "https://anilist.co/character/2423",
+        "https://myanimelist.net/character/2423/Jiraiya",
+        "https://en.wikipedia.org/wiki/List_of_Naruto_characters"
+      ],
+      "notes": "Episode 52 and chapter 90 are confirmed by both sources. Tale of Jiraiya the Gallant is a Naruto: Shippuden arc. His later-revealed ties to Naruto's family are left out to avoid spoilers.",
+      "abilities": "A Sannin who summons giant toads from Mount Myoboku, uses fire-style ninjutsu and the Rasengan, and has extraordinary experience as a ninja and spymaster.",
+      "fate": {
+        "status": "dies",
+        "detail": "Jiraiya is killed while investigating Pain, the leader of Akatsuki, in the Hidden Rain Village; before dying he sends a coded message about Pain's secret back to the Leaf (manga chapter 382; anime: Naruto Shippuden's Tale of Jiraiya the Gallant arc).",
+        "basis": "series ending"
+      },
+      "about": "Jiraiya is one of the Legendary Sannin, the three famous students of the Third Hokage, alongside Tsunade and Orochimaru. Tall and white-haired, he calls himself a toad sage, summons enormous toads in battle and writes the racy Make-Out novel series, gathering 'research' by peeping at women, which earns him Naruto Uzumaki's nickname Pervy Sage. He meets Naruto during the month before the final rounds of the Chunin Exams and takes over his training, teaching him to summon toads and later the Rasengan. Behind the clowning he is one of the most powerful and experienced ninja alive, keeping watch on dangerous figures through his spy network, and he becomes a father figure to Naruto."
+    },
+    "rias-gremory": {
+      "name": "Rias Gremory",
+      "role": "Heroine; a devil heiress who leads Kuoh Academy's Occult Research Club and its devil household",
+      "debut": {
+        "anime": "High School DxD",
+        "episode": 1,
+        "episodeTitle": "I Got a Girlfriend!",
+        "source": "light novel",
+        "chapter": null,
+        "volume": 1
+      },
+      "arcs": [
+        "Diabolos of the Old School Building",
+        "Phoenix of the School Battle",
+        "Excalibur of the Moonlit Schoolyard"
+      ],
+      "affiliations": [
+        "Kuoh Academy",
+        "Occult Research Club",
+        "Gremory clan"
+      ],
+      "relatives": [
+        {
+          "name": "Sirzechs Lucifer",
+          "relation": "older brother"
+        }
+      ],
+      "confidence": "high",
+      "sources": [
+        "https://highschooldxd.fandom.com/wiki/Rias_Gremory",
+        "https://en.wikipedia.org/wiki/List_of_High_School_DxD_characters",
+        "https://en.wikipedia.org/wiki/List_of_High_School_DxD_episodes",
+        "https://anilist.co/character/50389",
+        "https://myanimelist.net/character/50389/Rias_Gremory"
+      ],
+      "notes": "Arcs are the first three light novel volumes, adapted in the first two anime seasons.",
+      "about": "Rias Gremory is a third-year student at Kuoh Academy, admired by the whole school, who is secretly a high-ranking devil and heir to the noble Gremory family. Her Occult Research Club is a front for her household of devil servants, who take contracts from humans at night. When ordinary student Issei Hyodo is murdered by a fallen angel on his first date, Rias brings him back as one of her servants, and his new life as a devil begins. Confident and commanding but genuinely kind to the members she treats as family, Rias is also trying to escape an arranged marriage her family has set up for her.",
+      "abilities": "She commands the Power of Destruction, a crimson demonic energy that erases whatever it hits, and leads her servants as the King of her peerage.",
+      "fate": {
+        "status": "alive",
+        "detail": "Rias is alive in all four anime seasons and in the main light novel series.",
+        "basis": "light novel and anime"
       },
       "hindiVoice": null
     }
