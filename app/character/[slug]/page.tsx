@@ -238,7 +238,7 @@ export default async function CharacterPage({ params }: Props) {
       <SectionNav sections={navSections} />
       {note?.about && (
         <section id="who" data-section className="card reveal mt-5 p-5 sm:p-6" aria-labelledby="bio-h">
-          <h2 id="bio-h" className="h-section mb-2">Who is {c.name}?</h2>
+          <h2 id="bio-h" className="h-section mb-2">Who is {note?.name ?? c.name}?</h2>
           <p className="prose-anime">{note.about}</p>
           <p className="mt-2 text-xs text-muted">Written by AniLumi, spoiler-free, checked against {note.sources.length} sources. <Link href="/how-we-check" className="underline">How we check</Link></p>
         </section>
@@ -278,7 +278,7 @@ export default async function CharacterPage({ params }: Props) {
         <CharacterNotes slug={c.slug} show={home ? { slug: home.slug, title: home.title } : null} />
         {!note?.about && (
         <section className="card reveal p-5 sm:p-6" aria-labelledby="bio-h">
-            <h2 id="bio-h" className="h-section mb-2">Who is {c.name}?</h2>
+            <h2 id="bio-h" className="h-section mb-2">Who is {note?.name ?? c.name}?</h2>
             <p className="prose-anime whitespace-pre-line">{excerpt(bio, 520) || "No biography has been written for this character yet."}</p>
             {bio && <p className="mt-2 text-xs text-muted">Biography excerpt via <a href={home ? `https://kitsu.app/anime/${home.slug}/characters` : "https://kitsu.app"} target="_blank" rel="noopener nofollow" className="underline">Kitsu</a>.</p>}
           </section>
