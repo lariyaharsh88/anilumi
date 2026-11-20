@@ -1,6 +1,6 @@
 {
   "checked": "2026-11-20",
-  "about": "Indian kids' TV channels that air (or aired) anime in Hindi. A show is listed on a channel only when a dated news report, trade-press article or the channel's own page confirms it; Wikipedia and fan wikis are kept as supporting links only. 'since' is the year of the first confirmed airing on that channel (free text when only an upper bound is known); 'lastSeen' (YYYY-MM) is the latest dated report of it on air, never a guess about today's schedule. 'dub' is the data/hindi-dubs.json slug, used for the link and for where it streams now. Left out as unconfirmed (20 Nov 2026): Ninja Hattori and Perman on Disney Channel (only Wikipedia lists them), Kiteretsu on Disney Channel/Disney XD/Pogo/Cartoon Network and Obocchama-kun on Cartoon Network/Pogo (one fan site), Pokémon on Pogo (fan wikis only), Beyblade: Metal Fusion on Cartoon Network (fan wikis only), Hamtaro and Ultra B on Disney Channel (Wikipedia only), and anything on Discovery Kids.",
+  "about": "Indian kids' TV channels that air (or aired) anime in Hindi. A show is listed on a channel only when a dated news report, trade-press article or the channel's own page confirms it; Wikipedia and fan wikis are kept as supporting links only. 'since' is the year of the first confirmed airing on that channel (free text when only an upper bound is known); 'lastSeen' (YYYY-MM) is the latest dated report of it on air, never a guess about today's schedule. 'dub' is the data/hindi-dubs.json slug, used for the link and for where it streams now. Left out as unconfirmed (20 Nov 2026): Ninja Hattori and Perman on Disney Channel (only Wikipedia lists them), Kiteretsu on Disney Channel/Disney XD/Pogo/Cartoon Network and Obocchama-kun on Cartoon Network/Pogo (one fan site), Pokémon on Pogo (fan wikis only), Beyblade: Metal Fusion on Cartoon Network (fan wikis only), Hamtaro and Ultra B on Disney Channel (Wikipedia only), and anything on Discovery Kids. On Sony YAY! (20 Nov 2026): the other Crunchyroll-library shows in its late-night slot in 2025-26 (Radiant, Metallic Rouge, The God of High School, Bucchigiri?!, Mobile Suit Gundam: The Witch from Mercury, Why Raeliana Ended Up at the Duke's Mansion, Hokkaido Gals Are Super Adorable! and more) are listed only by a fan tracker, Demon Slayer and Fullmetal Alchemist were only announced (April 2025, never dated), KochiKame, Black Clover and Demon Slayer aired on Anime Booth, Sony YAY!'s separate Airtel add-on channel, not on Sony YAY! itself, and Tensai Bakabon (Wikipedia only); we found no report of Kiteretsu, Doraemon, Ninja Hattori, Pokémon, Beyblade, Bakugan, Dragon Ball, Spy x Family or Haikyuu on Sony YAY!. 'premieres' are dated announcements of a premiere and its time slot (IST), not a live schedule: we found no current, dated Sony YAY! schedule we could cite.",
   "mrp": {
     "asOf": "2026-08-31",
     "source": "https://www.trai.gov.in/sites/default/files/2026-09/MRP_02092026.pdf",
@@ -88,6 +88,12 @@
     },
     "yo-kai-watch": {
       "t": "Yo-kai Watch"
+    },
+    "rantaro": {
+      "t": "Ninja Boy Rantaro"
+    },
+    "girls-frontline": {
+      "t": "Girls' Frontline"
     }
   },
   "channels": [
@@ -97,40 +103,44 @@
       "owner": "Sony Pictures Networks India",
       "mrp": 6,
       "page": true,
-      "summary": "Sony's kids' channel, launched in April 2017, is now the busiest home of anime on Indian TV: Naruto since 2022, new Shin-chan episodes since 2024, and Jujutsu Kaisen, Dr. Stone and One-Punch Man since 2025, each with its own Hindi dub (most also in Tamil, Telugu, Malayalam and Bengali).",
+      "summary": "Sony's kids' channel, launched in April 2017, is now the busiest home of anime on Indian TV: Naruto since 2022, new Shin-chan episodes since 2024, and Jujutsu Kaisen, Dr. Stone and One-Punch Man since 2025, each with its own Hindi dub (most also in Tamil, Telugu, Malayalam and Bengali). Its nightly anime block, Ani-mazing, starts at 9 PM (launched June 2025).",
       "sources": [
         "https://en.wikipedia.org/wiki/Sony_YAY!",
-        "https://animenewsindia.com/2025/04/02/sony-yay-launches-crunchyroll-anime-block-in-india"
+        "https://animenewsindia.com/2025/04/02/sony-yay-launches-crunchyroll-anime-block-in-india",
+        "https://www.indianbroadcastingworld.com/?p=79264"
       ],
       "shows": [
         {
           "show": "naruto",
           "since": "2022",
           "lastSeen": "2026-10",
-          "note": "Naruto from 15 Aug 2022; Naruto Shippuden from March 2024, episodes 1-390 so far. The latest run began on 19 Oct 2026.",
+          "note": "Naruto from 15 Aug 2022; Naruto Shippuden from March 2024, episodes 1-390 so far. New episodes from 15 Aug 2025; Season 17 began on 19 Oct 2026, daily at 9 PM.",
           "sources": [
             "https://in.ign.com/naruto-1/174035/news/naruto-to-start-airing-in-india-on-sony-yay-from-august-15",
             "https://www.animenewsnetwork.com/news/2024-03-18/sony-yay-airs-naruto-shippuden-anime-in-india/.208874",
-            "https://www.indianbroadcastingworld.com/?p=82428"
+            "https://www.indianbroadcastingworld.com/?p=82428",
+            "https://animenewsindia.com/2026/10/11/naruto-shippuden-returns-to-sony-yay-with-brand-new-episodes-starting-october-192026/"
           ]
         },
         {
           "show": "shinchan",
           "since": "2024",
-          "lastSeen": "2026-04",
-          "note": "Newer episodes, never shown in India before, from May 2024, with fresh batches in Oct 2025, Dec 2025 and from 27 Apr 2026, plus Shin-chan films (Our Dinosaur Diary premiered on 19 Oct 2025).",
+          "lastSeen": "2026-11",
+          "note": "Newer episodes, never shown in India before, from May 2024, with fresh batches in Oct 2025, Dec 2025 and from 27 Apr 2026 (the 'House of Masti' 20th-anniversary block), plus Shin-chan films: Our Dinosaur Diary premiered on 19 Oct 2025, My Moving Story! Cactus Attack! aired on 8 Nov 2026.",
           "sources": [
+            "https://www.animenewsnetwork.com/news/2026-11-07/sony-yay-airs-crayon-shin-chan-my-moving-story-cactus-attack-anime-film-in-india-on-november-8/.243610",
             "https://animenewsindia.com/2024/05/11/sony-yay-introduces-hit-japanese-series-shin-chan-to-its-lineup",
             "https://www.animenewsnetwork.com/news/2024-07-28/sony-yay-licenses-shin-chan-anime-for-broadcast-plans-to-explore-merchandising-opportunities/.213639",
             "https://animenewsindia.com/2025/10/17/sony-yay-lights-up-diwali-with-shinchans-new-season-and-films-including-the-indian-tv-premiere-of-our-dinosaur-diary-in-regional-languages-dubs",
-            "https://www.indianbroadcastingworld.com/?p=85748"
+            "https://www.indianbroadcastingworld.com/?p=85748",
+            "https://indiantelevision.com/?p=220774"
           ]
         },
         {
           "show": "one-punch-man",
           "since": "2025",
           "lastSeen": "2026-04",
-          "note": "Season 1 from 22 Nov 2025; Season 3 from 11 Apr 2026.",
+          "note": "Season 1 from 22 Nov 2025, Season 2 from 28 Nov 2025, Season 3 from 11 Apr 2026.",
           "sources": [
             "https://www.sonypicturesnetworks.com/news-details/0/758/sony-yay-expands-anime-universe-with-the-arrival-of-iconic-series-one-punch-man",
             "https://animenewsindia.com/2026/04/08/sony-yay-to-premiere-one-punch-man-season-3-starting-april-11-2026-in-regional-dubs"
@@ -149,11 +159,12 @@
         },
         {
           "show": "obocchama-kun",
-          "since": "2022",
+          "since": "2021",
           "lastSeen": "2025-08",
-          "note": "On the channel by October 2022. All-new episodes made with TV Asahi started on 4 Aug 2025.",
+          "note": "Premiered on 15 Mar 2021, weekdays at 7:30 PM from 24 May 2021. All-new episodes made with TV Asahi started on 4 Aug 2025.",
           "sources": [
-            "https://www.animenewsnetwork.com/news/2022-10-28/sgt-frog-anime-airs-in-india-on-sony-yay/.191300",
+            "https://animenewsindia.com/2021/03/15/sony-yay-relaunch-obocchama-kun-anime-series-in-india/",
+            "https://www.animenewsnetwork.com/news/2021-05-17/sony-yay-airs-obocchama-kun-anime-on-may-24/.172864",
             "https://indiantelevision.com/news-headline/sony-yay!-and-tv-asahi-collaborate-on-all-new-episodes-of-obocchama-kun-250804/",
             "https://animenewsindia.com/2025/07/26/tv-asahi-and-sony-pictures-networks-india-to-premiere-new-episodes-of-obocchama-kun-anime-series-premiering-august-4-only-on-sony-yay"
           ]
@@ -185,6 +196,220 @@
           "sources": [
             "https://bestmediainfo.com/2022/06/sony-yay-announces-two-new-toon-shows-ha-go-la-and-robotan-",
             "https://www.animenewsnetwork.com/news/2022-10-28/sgt-frog-anime-airs-in-india-on-sony-yay/.191300"
+          ]
+        },
+        {
+          "show": "rantaro",
+          "since": "2025",
+          "lastSeen": "2025-03",
+          "note": "Nintama Rantarō, from 3 Mar 2025, weekdays, in Hindi, Tamil, Telugu, Bengali and Malayalam.",
+          "sources": [
+            "https://animenewsindia.com/2025/02/28/sony-yay-to-premiere-ninja-boy-rantaro-in-five-languages-on-march-3-2025/"
+          ]
+        },
+        {
+          "show": "girls-frontline",
+          "since": "2026",
+          "lastSeen": "2026-01",
+          "note": "Daily at 10:30 PM from January 2026, in the channel's Crunchyroll-branded late-night slot (announced on Sony YAY!'s Instagram; the report doesn't name the dub's languages).",
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2026-01-11/girls-frontline-anime-airs-in-india-on-sony-yay/.232950"
+          ]
+        }
+      ],
+      "premieres": [
+        {
+          "show": "shinchan",
+          "what": "My Moving Story! Cactus Attack! (film)",
+          "date": "2026-11-08",
+          "slot": "1 PM",
+          "film": true,
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2026-11-07/sony-yay-airs-crayon-shin-chan-my-moving-story-cactus-attack-anime-film-in-india-on-november-8/.243610"
+          ]
+        },
+        {
+          "show": "naruto",
+          "what": "Naruto Shippuden Season 17 (new episodes)",
+          "date": "2026-10-19",
+          "slot": "Daily, 9 PM",
+          "langs": [
+            "Hindi",
+            "Tamil",
+            "Telugu",
+            "Malayalam",
+            "Bengali"
+          ],
+          "sources": [
+            "https://animenewsindia.com/2026/10/11/naruto-shippuden-returns-to-sony-yay-with-brand-new-episodes-starting-october-192026/"
+          ]
+        },
+        {
+          "show": "shinchan",
+          "what": "House of Masti, with a world TV premiere, new episodes and films",
+          "date": "2026-04-27",
+          "sources": [
+            "https://indiantelevision.com/?p=220774"
+          ]
+        },
+        {
+          "show": "one-punch-man",
+          "what": "Season 3",
+          "date": "2026-04-11",
+          "slot": "Daily, 9 PM",
+          "langs": [
+            "Hindi",
+            "Tamil",
+            "Telugu"
+          ],
+          "sources": [
+            "https://animenewsindia.com/2026/04/08/sony-yay-to-premiere-one-punch-man-season-3-starting-april-11-2026-in-regional-dubs"
+          ]
+        },
+        {
+          "show": "girls-frontline",
+          "what": "Season 1",
+          "date": "2026-01",
+          "slot": "Daily, 10:30 PM",
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2026-01-11/girls-frontline-anime-airs-in-india-on-sony-yay/.232950"
+          ]
+        },
+        {
+          "show": "one-punch-man",
+          "what": "Season 2",
+          "date": "2025-11-28",
+          "slot": "10 PM",
+          "sources": [
+            "https://animenewsindia.com/2026/04/08/sony-yay-to-premiere-one-punch-man-season-3-starting-april-11-2026-in-regional-dubs"
+          ]
+        },
+        {
+          "show": "one-punch-man",
+          "what": "Season 1",
+          "date": "2025-11-22",
+          "slot": "Daily, 10 PM",
+          "langs": [
+            "Hindi",
+            "Tamil",
+            "Telugu"
+          ],
+          "sources": [
+            "https://www.sonypicturesnetworks.com/news-details/0/758/sony-yay-expands-anime-universe-with-the-arrival-of-iconic-series-one-punch-man",
+            "https://animehunch.com/one-punch-man-season-1-to-air-on-sony-yay-starting-november-22/"
+          ]
+        },
+        {
+          "show": "jujutsu-kaisen",
+          "what": "Jujutsu Kaisen 0 (film, TV premiere)",
+          "date": "2025-11-05",
+          "slot": "9 PM",
+          "langs": [
+            "Hindi",
+            "Tamil",
+            "Telugu",
+            "Malayalam",
+            "Bengali"
+          ],
+          "film": true,
+          "sources": [
+            "https://animenewsindia.com/2025/10/22/jujutsu-kaisen-0-set-to-arrive-on-sony-yay-for-its-indian-tv-premiere-on-november-5-2025-in-regional-languages"
+          ]
+        },
+        {
+          "show": "shinchan",
+          "what": "New episodes, never shown in India before",
+          "date": "2025-10-20",
+          "slot": "Mon-Fri, 1 PM",
+          "langs": [
+            "Hindi",
+            "Tamil",
+            "Telugu",
+            "Malayalam",
+            "Bengali"
+          ],
+          "sources": [
+            "https://www.indianbroadcastingworld.com/?p=85748"
+          ]
+        },
+        {
+          "show": "shinchan",
+          "what": "Our Dinosaur Diary (film, TV premiere)",
+          "date": "2025-10-19",
+          "slot": "11 AM",
+          "film": true,
+          "sources": [
+            "https://animenewsindia.com/2025/10/17/sony-yay-lights-up-diwali-with-shinchans-new-season-and-films-including-the-indian-tv-premiere-of-our-dinosaur-diary-in-regional-languages-dubs"
+          ]
+        },
+        {
+          "show": "naruto",
+          "what": "Naruto Shippuden (new episodes)",
+          "date": "2025-08-15",
+          "slot": "Daily, 9 PM",
+          "langs": [
+            "Hindi",
+            "Tamil",
+            "Telugu",
+            "Malayalam",
+            "Bengali"
+          ],
+          "sources": [
+            "https://animenewsindia.com/2025/07/09/sony-yay-announces-return-of-naruto-shippuden-with-new-episodes-starting-august-15-2025/",
+            "https://www.indianbroadcastingworld.com/?p=82428"
+          ]
+        },
+        {
+          "show": "obocchama-kun",
+          "what": "26 all-new episodes made with TV Asahi",
+          "date": "2025-08-04",
+          "slot": "Mon-Fri, 3 PM",
+          "langs": [
+            "Hindi",
+            "Tamil",
+            "Telugu",
+            "Bengali",
+            "Kannada"
+          ],
+          "sources": [
+            "https://animenewsindia.com/2025/07/26/tv-asahi-and-sony-pictures-networks-india-to-premiere-new-episodes-of-obocchama-kun-anime-series-premiering-august-4-only-on-sony-yay"
+          ]
+        },
+        {
+          "show": "dr-stone",
+          "what": "Season 1, a new Hindi dub",
+          "date": "2025-05-12",
+          "slot": "Mon-Fri, 11 PM",
+          "langs": [
+            "Hindi"
+          ],
+          "sources": [
+            "https://animenewsindia.com/2025/05/06/sony-yay-to-premiere-dr-stone-on-may-12-at-11pm-in-hindi/"
+          ]
+        },
+        {
+          "show": "jujutsu-kaisen",
+          "what": "Season 1 (first time on Indian TV)",
+          "date": "2025-04-07",
+          "slot": "Mon-Fri, 9 PM",
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2025-04-03/sony-yay-airs-jujutsu-kaisen-anime-1st-season-on-indian-tv-from-april-7/.223076"
+          ]
+        },
+        {
+          "show": "rantaro",
+          "what": "Series premiere",
+          "date": "2025-03-03",
+          "slot": "Mon-Fri, 3 PM",
+          "langs": [
+            "Hindi",
+            "Tamil",
+            "Telugu",
+            "Malayalam",
+            "Bengali"
+          ],
+          "sources": [
+            "https://animenewsindia.com/2025/02/28/sony-yay-to-premiere-ninja-boy-rantaro-in-five-languages-on-march-3-2025/"
           ]
         }
       ]

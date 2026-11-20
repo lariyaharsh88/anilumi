@@ -1,7 +1,8 @@
 /**
  * Kids' TV channels that air anime in Hindi (data/kids-tv.json): which channel shows which anime, since when, and the
  * latest dated report of it on air. A show is listed only when a dated news report, trade-press article or the
- * channel's own page confirms it; schedules are never guessed. Channels with `page` get /hindi-dub/<slug> (the same
+ * channel's own page confirms it; schedules are never guessed (a channel's `premieres` are dated announcements of a
+ * premiere and its time slot, shown as such). Channels with `page` get /hindi-dub/<slug> (the same
  * URL as their Hindi dub platform page); sister channels (`parent`) show as a section on their parent's page. Pure.
  */
 import data from "@/data/kids-tv.json";
@@ -9,7 +10,10 @@ import { dubBySlug, dubHref, platformKind, type Dub } from "./hindidub";
 import { filmsPath } from "./franchisefilms";
 
 export type KidsShowRow = { show: string; since: string | null; lastSeen?: string | null; note: string; sources: string[] };
-export type KidsChannel = { slug: string; name: string; owner: string; mrp?: number; page?: boolean; parent?: string; summary: string; sources: string[]; shows: KidsShowRow[] };
+/** A dated announcement of a premiere and its time slot (IST): what the channel said would air, not a live schedule.
+ *  `date` is YYYY-MM-DD, or YYYY-MM when only the month is reported. */
+export type KidsPremiere = { show: string; what: string; date: string; slot?: string | null; langs?: string[]; film?: boolean; sources: string[] };
+export type KidsChannel = { slug: string; name: string; owner: string; mrp?: number; page?: boolean; parent?: string; summary: string; sources: string[]; shows: KidsShowRow[]; premieres?: KidsPremiere[] };
 export type KidsShow = { id: string; t: string; dub?: string; films?: string };
 
 const D = data as unknown as { checked: string; mrp: { asOf: string; source: string; note: string }; shows: Record<string, Omit<KidsShow, "id">>; channels: KidsChannel[] };
@@ -47,6 +51,17 @@ export const monthLabel = (ym: string) => new Date(`${ym}-01T00:00:00Z`).toLocal
 /** The "Still airing?" cell: yes only for a recent report, else the last dated report, else not confirmed. */
 export const airingLabel = (r: KidsShowRow, checked = KIDS_TV_CHECKED) =>
   recentlyOnAir(r, checked) ? `Yes, as of ${monthLabel(r.lastSeen!)}` : r.lastSeen ? `Last reported ${monthLabel(r.lastSeen)}` : "Not confirmed";
+
+/** "8 Nov 2026", or "Jan 2026" for a month-only date. */
+export const dateLabel = (d: string) => (d.length === 7 ? monthLabel(d) : new Date(`${d}T00:00:00Z`).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" }));
+/** A channel's dated premiere announcements, newest first. */
+export const channelPremieres = (c: KidsChannel) => [...(c.premieres ?? [])].sort((a, b) => b.date.localeCompare(a.date));
+/** The latest announced episode slot of each show (one per show, newest first; one-off film airings left out): the
+ *  "what time is X on?" answer, dated. */
+export function latestTimings(c: KidsChannel): KidsPremiere[] {
+  const seen = new Set<string>();
+  return channelPremieres(c).filter((p) => p.slot && !p.film && !seen.has(p.show) && Boolean(seen.add(p.show)));
+}
 
 /** Rows of a channel, most recently reported first (then the longest-running). */
 export const channelRows = (c: KidsChannel) => [...c.shows].sort((a, b) => (b.lastSeen ?? "").localeCompare(a.lastSeen ?? "") || (a.since ?? "9").localeCompare(b.since ?? "9"));
