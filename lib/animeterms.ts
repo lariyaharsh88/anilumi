@@ -58,7 +58,7 @@ export const TERMS: AnimeTerm[] = [
     say: "yahn-deh-reh",
     examples: [
       { who: "Yuno Gasai", where: "Future Diary (Mirai Nikki)", note: "The defining yandere: utterly devoted to Yukiteru and willing to kill for him.", char: 4963, anime: "mirai-nikki-tv" },
-      { who: "Himiko Toga", where: "My Hero Academia", note: "Her idea of love is wanting to become, and bleed, the people she likes.", char: 125619 },
+      { who: "Himiko Toga", where: "My Hero Academia", note: "Her idea of love is becoming the people she likes, by drinking their blood.", char: 125619 },
     ],
     related: ["tsundere", "kuudere", "dandere", "deredere"],
     confused: [{ term: "Tsundere", slug: "tsundere", diff: "A tsundere hides affection behind hostility; a yandere shows affection openly, but it becomes obsessive and dangerous." }],
@@ -66,7 +66,7 @@ export const TERMS: AnimeTerm[] = [
       { q: "Is a yandere a villain?", a: "Often, but not always. Some yandere characters are antagonists, others are protagonists or love interests whose obsession drives the plot." },
       { q: "What's the difference between yandere and tsundere?", a: "Tsundere: harsh outside, loving inside. Yandere: loving outside, obsessive and violent inside." },
     ],
-    sources: ["https://en.wikipedia.org/wiki/Yandere", jisho("yandere")],
+    sources: ["https://en.wikipedia.org/wiki/Yandere", "https://en.wikipedia.org/wiki/Yuno_Gasai", "https://en.wikipedia.org/wiki/List_of_My_Hero_Academia_characters", jisho("yandere")],
     volume: { in: 14800, us: 27100 },
   },
   {
@@ -87,7 +87,7 @@ export const TERMS: AnimeTerm[] = [
       { q: "Is kuudere the same as emotionless?", a: "Not quite. A kuudere seems emotionless, but the point of the archetype is the warmth they show to a few people over time." },
       { q: "What is the difference between kuudere and dandere?", a: "Kuudere: calm and cool by nature. Dandere: shy and nervous, opening up once comfortable." },
     ],
-    sources: [GLOSSARY, jisho("kuudere")],
+    sources: ["https://en.wikipedia.org/wiki/Kuudere", GLOSSARY, jisho("kuudere")],
     volume: { in: 1600, us: 12100 },
   },
   {
@@ -108,7 +108,7 @@ export const TERMS: AnimeTerm[] = [
       { q: "Is Hinata a dandere?", a: "Yes, Hinata Hyuga from Naruto is one of the best-known examples: shy and quiet, especially around Naruto, but strong and caring." },
       { q: "Is dandere the same as introvert?", a: "They overlap, but dandere is an anime archetype about a shy character opening up to someone, usually a love interest." },
     ],
-    sources: [GLOSSARY, jisho("dandere")],
+    sources: [GLOSSARY, "https://www.cbr.com/dandere-anime-character-explained/", "https://en.wikipedia.org/wiki/Komi_Can%27t_Communicate", jisho("dandere")],
     volume: { in: 880, us: 8100 },
   },
   {
@@ -128,14 +128,14 @@ export const TERMS: AnimeTerm[] = [
       { q: "Is deredere the opposite of tsundere?", a: "Yes, in a way: a tsundere hides affection behind hostility, a deredere shows it freely from the start." },
       { q: "What does \"dere\" mean on its own?", a: "\"Dere\" comes from \"deredere\", being lovestruck. In archetype names it marks the affectionate side: tsun-dere, yan-dere, kuu-dere, dan-dere." },
     ],
-    sources: [GLOSSARY, jisho("デレデレ")],
+    sources: [GLOSSARY, "https://www.cbr.com/deredere-anime-characters/", jisho("デレデレ")],
     volume: { in: 720, us: 6600 },
   },
   {
     slug: "senpai", term: "Senpai", kind: "honorific", jp: "先輩 (せんぱい)", romaji: "senpai",
     short: "Your senior: someone ahead of you at school, work or a club, whom you look up to.",
     literal: "先 (ahead) + 輩 (fellow, companion): a fellow who came before you.",
-    usage: "Students call older students senpai, and junior employees use it for colleagues who joined before them. In anime it's often attached to a name (\"Hachiman-senpai\") or used alone as a form of address. The meme \"notice me, senpai\" comes from younger characters crushing on an older student.",
+    usage: "Students call older students senpai, and junior employees use it for colleagues who joined before them. In anime it's often attached to a name (\"Tanaka-senpai\") or used alone as a form of address. The meme \"notice me, senpai\" comes from younger characters crushing on an older student.",
     nuance: "The partner word is kōhai (後輩), the junior. Senpai is respectful but not stiff; it describes a relationship, not a job title.",
     hi: { word: "सीनियर, वरिष्ठ साथी", gloss: "senior, college/office ke seniors" },
     say: "sen-pie",
@@ -162,7 +162,7 @@ export const TERMS: AnimeTerm[] = [
     say: "sen-say",
     examples: [
       { who: "Kakashi Hatake", where: "Naruto", note: "Team 7 call him Kakashi-sensei.", char: 85, anime: "naruto" },
-      { who: "Koro-sensei", where: "Assassination Classroom", note: "\"Sensei\" is right in his name: the alien teacher his class has to assassinate.", char: 65643 },
+      { who: "Koro-sensei", where: "Assassination Classroom", note: "\"Sensei\" is right in his name: the octopus-like teacher his class has to assassinate.", char: 65643 },
       { who: "Satoru Gojo", where: "Jujutsu Kaisen", note: "Itadori and his classmates call him Gojo-sensei.", char: 127691, anime: "jujutsu-kaisen" },
     ],
     related: ["senpai", "san", "sama", "dono", "mangaka"],
@@ -171,13 +171,13 @@ export const TERMS: AnimeTerm[] = [
       { q: "Why are manga artists called sensei?", a: "Sensei is used for anyone respected for expertise, and that includes authors and manga artists: fans and editors call Eiichiro Oda \"Oda-sensei\"." },
       { q: "Is sensei only for teachers?", a: "No. Doctors, lawyers, martial arts masters, writers and politicians are all addressed as sensei in Japan." },
     ],
-    sources: ["https://en.wikipedia.org/wiki/Sensei", "https://www.merriam-webster.com/dictionary/sensei", jisho("先生")],
+    sources: ["https://en.wikipedia.org/wiki/Sensei", "https://www.merriam-webster.com/dictionary/sensei", "https://en.wikipedia.org/wiki/Assassination_Classroom", jisho("先生")],
     volume: { in: 9900, us: 14800 },
   },
   {
     slug: "kawaii", term: "Kawaii", kind: "phrase", jp: "可愛い (かわいい)", romaji: "kawaii",
     short: "Cute, adorable or lovable.",
-    literal: "Cute; the word grew from an older word meaning pitiable, something that makes you want to protect it.",
+    literal: "Cute; from kao hayushi, \"face aglow\" (blushing), the same root as kawaisō, \"pitiable\".",
     usage: "Characters say \"kawaii!\" about cute animals, outfits, babies and each other. It's also a whole aesthetic in Japan: pastel colours, round shapes and mascots, from Hello Kitty to anime merchandise.",
     nuance: "Kawaii is almost always a compliment, for people or things. \"Kawaisō\" (可哀想), which sounds similar, means pitiful, poor thing.",
     hi: { word: "प्यारा, क्यूट", gloss: "pyaara, cute" },
@@ -272,7 +272,7 @@ export const TERMS: AnimeTerm[] = [
       { q: "What does \"omae wa mou shindeiru\" mean?", a: "\"You are already dead\": Kenshiro's line from Fist of the North Star, usually followed by his opponent's \"Nani?!\" (\"What?!\")." },
       { q: "Is \"nani\" rude?", a: "It's casual. With friends it's fine; with strangers or seniors, \"nan desu ka?\" sounds more polite." },
     ],
-    sources: [jisho("何"), "https://en.wikipedia.org/wiki/Omae_wa_mou_shindeiru"],
+    sources: [jisho("何"), "https://en.wikipedia.org/wiki/Kenshiro", "https://www.japanesewithanime.com/2019/03/omae-wa-mou-shindeiru.html"],
     volume: { in: 2400, us: 3600 },
   },
   {
@@ -370,7 +370,7 @@ export const TERMS: AnimeTerm[] = [
       { q: "What does \"daijoubu desu\" mean?", a: "\"I'm fine\" or \"It's all right\", politely. When offered something, it often means \"No, thank you\"." },
       { q: "How do you ask \"are you okay\" in Japanese?", a: "\"Daijōbu?\" casually, or \"Daijōbu desu ka?\" politely." },
     ],
-    sources: [jisho("大丈夫")],
+    sources: [jisho("大丈夫"), "https://ciatr.jp/topics/324258"],
     volume: { in: 3600, us: 6600 },
   },
   {
@@ -382,7 +382,6 @@ export const TERMS: AnimeTerm[] = [
     hi: { word: "खाने से पहले धन्यवाद", gloss: "khana shuru karne se pehle 'shukriya'" },
     say: "ee-tah-dah-kee-mahs",
     examples: [
-      { who: "Megumi Tadokoro and the cast", where: "Food Wars! Shokugeki no Soma", note: "Every tasting starts with \"itadakimasu\" in this cooking anime.", char: 76026, anime: "shokugeki-no-souma" },
       { who: "Family dinner scenes", where: "Across anime", note: "The whole table says it together before eating." },
     ],
     related: ["arigato", "konnichiwa", "daijoubu"],
@@ -397,8 +396,8 @@ export const TERMS: AnimeTerm[] = [
     slug: "dattebayo", term: "Dattebayo", kind: "phrase", jp: "だってばよ", romaji: "dattebayo",
     short: "Naruto Uzumaki's catchphrase: a verbal tic like \"I'm telling you!\", translated as \"Believe it!\" in the English dub.",
     literal: "Da (is) + tte ba (emphasis, \"I said\") + yo (assertion): roughly \"I told you so!\".",
-    usage: "Naruto ends sentences with \"dattebayo\" when he's excited or determined, and it became his signature. It isn't standard Japanese; it's a character quirk. The English dub famously turned it into \"Believe it!\".",
-    nuance: "Using it in real Japanese conversation is a Naruto reference, not normal speech. The habit runs in the family.",
+    usage: "Naruto ends sentences with \"dattebayo\" when he's excited or determined, and it became his signature. The particles are ordinary casual Japanese, but tacking them onto every line is his quirk. The English dub famously turned it into \"Believe it!\".",
+    nuance: "Saying it in real Japanese conversation mostly comes across as a Naruto reference. The habit runs in the family.",
     hi: { word: "Naruto का तकिया कलाम, \"समझे!\"", gloss: "Naruto ka takiya kalaam, 'samjhe!'" },
     say: "dah-teh-bah-yoh",
     examples: [
@@ -424,15 +423,15 @@ export const TERMS: AnimeTerm[] = [
     say: "oh-nee-chahn",
     examples: [
       { who: "Shiro", where: "No Game No Life", note: "Calls her stepbrother Sora \"Nii\", short for onii-chan.", char: 82525, anime: "no-game-no-life" },
-      { who: "Onimai: I'm Now Your Sister!", where: "Onii-chan wa Oshimai!", note: "The word is in the Japanese title, which means \"No more big brother!\".", anime: "onii-chan-wa-oshimai" },
+      { who: "Onimai: I'm Now Your Sister!", where: "Onii-chan wa Oshimai!", note: "The word is in the Japanese title, which means \"Big brother is done for!\".", anime: "onii-chan-wa-oshimai" },
     ],
     related: ["onee-chan", "chan", "kun", "senpai", "kawaii"],
     confused: [{ term: "Onee-chan", slug: "onee-chan", diff: "Onee-chan (お姉ちゃん) is big sister; onii-chan is big brother." }],
     faq: [
       { q: "What's the difference between onii-chan and onii-san?", a: "Both mean big brother. Onii-chan is affectionate and casual; onii-san is more polite and is also used for a young man you don't know." },
-      { q: "What is aniki?", a: "A rougher, more masculine word for big brother, also used by gang members for a boss." },
+      { q: "What is aniki?", a: "A rougher, more masculine word for big brother, also used in gangs for a leader or senior member." },
     ],
-    sources: [jisho("お兄ちゃん")],
+    sources: [jisho("お兄ちゃん"), "https://en.wikipedia.org/wiki/No_Game_No_Life", "https://en.wikipedia.org/wiki/Onimai:_I%27m_Now_Your_Sister!", "https://en.wiktionary.org/wiki/%E5%85%84%E8%B2%B4"],
     volume: { in: 5400, us: 8100 },
   },
   {
@@ -503,7 +502,7 @@ export const TERMS: AnimeTerm[] = [
   {
     slug: "chan", term: "Chan", kind: "honorific", jp: "ちゃん", romaji: "-chan",
     short: "A cute, affectionate name ending for children, girls, close friends, family and pets.",
-    literal: "A baby-talk form of -san, from the way young children pronounce it.",
+    literal: "A familiar, childlike variant of -san; on its own it has no meaning.",
     usage: "Parents call children -chan, friends use it for each other (especially girls), and families build it into words like obaa-chan (grandma) and onii-chan (big brother). It goes on pets and celebrity nicknames too. In anime, a boy calling a girl \"Sakura-chan\" shows affection, and someone who uses -chan for a person they've just met is being overfamiliar.",
     nuance: "Using -chan for an adult you aren't close to can sound condescending, and for a grown man it's teasing unless it's a childhood nickname. Playful variants include -tan, -chin and -cchi.",
     hi: { word: "प्यार का नाम, जैसे गुड़िया", gloss: "pyaar ka naam" },
@@ -519,7 +518,7 @@ export const TERMS: AnimeTerm[] = [
       { q: "Can boys be called -chan?", a: "Yes. Little boys are -chan, and some men keep a childhood \"-chan\" nickname with friends and family. For a grown man otherwise, it's teasing." },
       { q: "What is the difference between chan and san?", a: "San is polite and neutral, for anyone. Chan is affectionate and casual, for people you're close to or who are much younger than you." },
     ],
-    sources: [HONORIFICS, jisho("ちゃん")],
+    sources: [HONORIFICS, jisho("ちゃん"), "https://en.wiktionary.org/wiki/%E3%81%A1%E3%82%83%E3%82%93"],
     volume: { in: 1300, us: 3600 },
   },
   {
@@ -613,7 +612,7 @@ export const TERMS: AnimeTerm[] = [
     short: "A fictional female character a fan loves the most, half-jokingly calling her their wife.",
     literal: "The Japanese pronunciation of the English word \"wife\".",
     usage: "Fans name their favourite female character their waifu (the male version is \"husbando\"). Debates about \"best waifu\" are a running joke in anime communities.",
-    nuance: "Usually playful. The term spread from a scene in Azumanga Daioh where a teacher shows a photo and proudly says \"mai waifu\" (\"my wife\").",
+    nuance: "Usually playful. The term spread from a scene in Azumanga Daioh where a teacher drops a photo and, asked who she is, answers \"mai waifu\" (\"my wife\").",
     hi: { word: "पसंदीदा काल्पनिक \"पत्नी\" (favourite female character)", gloss: "sabse pasandida anime character (mazak mein 'biwi')" },
     say: "why-foo",
     examples: [
@@ -623,9 +622,9 @@ export const TERMS: AnimeTerm[] = [
     related: ["otaku", "weeb", "moe"],
     faq: [
       { q: "What is a husbando?", a: "The male version of waifu: a fan's favourite male character." },
-      { q: "Where did the word waifu come from?", a: "From Azumanga Daioh (2002), where a teacher shows a photo and says \"mai waifu\" in heavily accented English." },
+      { q: "Where did the word waifu come from?", a: "From Azumanga Daioh (2002): Mr. Kimura drops a photo of a woman, and when students ask who she is, he says \"mai waifu\"." },
     ],
-    sources: ["https://en.wikipedia.org/wiki/Waifu"],
+    sources: ["https://en.wikipedia.org/wiki/Waifu", "https://knowyourmeme.com/memes/waifu"],
     volume: { in: 3600, us: 14800 },
   },
   {
@@ -764,7 +763,7 @@ export const TERMS: AnimeTerm[] = [
     hi: { word: "छोटा, गोल-मटोल cute style", gloss: "chhota, gol-matol cute version" },
     say: "chee-bee",
     examples: [
-      { who: "Chibiusa", where: "Sailor Moon", note: "Her nickname means \"little Usa\".", anime: "bishoujo-senshi-sailor-moon" },
+      { who: "Chibiusa", where: "Sailor Moon R", note: "Her name is chibi + Usagi: \"little Usagi\", to tell her apart from Usagi herself.", anime: "bishoujo-senshi-sailor-moon-r" },
       { who: "Chibi Maruko-chan", where: "Chibi Maruko-chan", note: "\"Little Maruko\": the word is in the title.", anime: "chibi-maruko-chan" },
     ],
     related: ["kawaii", "moe"],
@@ -772,7 +771,7 @@ export const TERMS: AnimeTerm[] = [
       { q: "What is chibi style?", a: "A cute, exaggerated style with tiny bodies and big heads, also called super deformed (SD)." },
       { q: "Is chibi an insult in Japanese?", a: "It can tease someone for being short or small, so it depends on tone." },
     ],
-    sources: ["https://en.wikipedia.org/wiki/Super_deformed", jisho("ちび")],
+    sources: ["https://en.wikipedia.org/wiki/Super_deformed", "https://en.wikipedia.org/wiki/Chibiusa", jisho("ちび")],
     volume: { in: 1000, us: 2900 },
   },
   {
