@@ -19,7 +19,8 @@ import { dbEnabled } from "@/lib/db";
 import Link from "@/components/Link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { getCharacterBySlug, getCharacterAppearances, getCharacters, animePath, posterUrl, subtypeLabel, cap } from "@/lib/kitsu";
+import { getCharacterBySlug, getCharacterAppearances, getCharacters, getAnimeBySlug, animePath, posterUrl, subtypeLabel, cap } from "@/lib/kitsu";
+import { baseTitle } from "@/lib/tmdb";
 import { abs } from "@/lib/site";
 import PageHero from "@/components/PageHero";
 import JsonLd from "@/components/JsonLd";
@@ -97,12 +98,16 @@ async function load(slug: string) {
   // Only a one-word nickname that isn't part of the name goes in the title: "Nate River "Near"", "Touka Kirishima "Rabbit"".
   // Kitsu's list only: AniList's alternatives are mostly spellings ("Ryuu" for Ryuk).
   const nick = (c.otherNames || []).find((x) => /^[\p{L}'-]{2,12}$/u.test(x) && !c.name.toLowerCase().includes(x.toLowerCase())) ?? null;
-  return { c, apps, mains, home, homeApp, voiced, bday, facts, fact, bio, al, ranked, rankShow, snapped: Boolean(snap), others: others.filter((o) => o.id !== c.id).slice(0, 12), aliases, sign, span, nick, table, tableShow, spellings: snap?.al ?? [] };
+  // The show's English title for the snippet ("from Demon Slayer", not "Kimetsu no Yaiba"): what people type. Kitsu
+  // sometimes has no main show for a character, so the snapshot's show stands in.
+  const showAnime = home ?? (snap ? await getAnimeBySlug(snap.s).catch(() => null) : null);
+  const showName = showAnime ? baseTitle(showAnime.titleEn && showAnime.titleEn.length <= 45 ? showAnime.titleEn : showAnime.title) : rankShow;
+  return { c, apps, mains, home, homeApp, voiced, bday, facts, fact, bio, al, ranked, rankShow, showName, snapped: Boolean(snap), others: others.filter((o) => o.id !== c.id).slice(0, 12), aliases, sign, span, nick, table, tableShow, spellings: snap?.al ?? [] };
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const { c, home, voiced, facts, fact, bio, aliases, nick, spellings, rankShow } = await load(slug);
+  const { c, home, voiced, facts, fact, bio, aliases, nick, spellings, showName } = await load(slug);
   const latinAliases = aliases.filter((x) => /^[\p{Script=Latin}\p{N}\p{P}\p{Zs}]+$/u.test(x));
   // The checked name from the notes when there is one ("Monkey D. Luffy", not AniList's "Luffy Monkey D."), in the
   // spelling people search when AniList lists it ("Satoru Gojo" for "Satoru Gojou": "gojo height" is 5.4K a month).
@@ -115,8 +120,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const what = factsTitle(facts.map((f) => f.key), Boolean(voiced?.jp));
   const brief = [fact("age") && `age ${fact("age")}`, fact("height") && `${fact("height")} tall`, fact("birthday") && `birthday ${fact("birthday")}`].filter(Boolean).join(", ");
   const lead = [
-    // Kitsu sometimes has no main show for a character (Demon Slayer): the snapshot's show stands in.
-    (home?.title ?? rankShow) && `${name} from ${home?.title ?? rankShow}${brief ? `: ${brief}` : ""}.`,
+    showName && `${name} from ${showName}${brief ? `: ${brief}` : ""}.`,
     voiced?.jp && `Voiced by ${voiced.jp.name} (Japanese)${voiced.en ? ` and ${voiced.en.name} (English)` : ""}.`,
     // Latin-script names only in the snippet: Kitsu's lists mix in Japanese and Korean, sometimes with broken characters.
     latinAliases.length > 0 && `Also known as ${latinAliases.slice(0, 2).join(" and ")}.`,
