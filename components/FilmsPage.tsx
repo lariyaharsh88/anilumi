@@ -108,6 +108,7 @@ export default function FilmsPage({ slug, lang }: { slug: string; lang: FilmLang
         {langs.map((l) => <Link key={l} href={filmsPath(f.slug, l)} className="chip">{f.name} movies in {FILM_LANG[l].name}</Link>)}
         {lang === "hi" && hindiDubIndexed(f.series) && <Link href={hindiDubPath(f.series)} className="chip">{f.name} series in Hindi</Link>}
         {lang === "hi" ? <Link href="/hindi-dub/movies" className="chip">🎬 All anime movies in Hindi</Link> : <Link href={FILM_LANG[lang].hub} className="chip">All {L} dubbed anime</Link>}
+        {lang === "hi" && <Link href="/hindi-dub/kids-tv" className="chip">📺 Which kids&apos; channel shows {f.name} in Hindi</Link>}
         {others.map((o) => <Link key={o.slug} href={filmsPath(o.slug, lang)} className="chip">{o.name} movies in {L}</Link>)}
       </p>
 

@@ -27,7 +27,7 @@ export const DUB_REVIEWED = D.reviewed;
 const KIND: [RegExp, PlatformKind][] = [
   [/youtube|mx player/i, "free"],
   // "Apple TV" is a streaming service, not a channel.
-  [/cartoon network|sony yay|zee caf|nickelodeon|pogo|hungama|disney channel|discovery kids|(?<!apple )\btv\b/i, "tv"],
+  [/cartoon network|sony yay|zee caf|nickelodeon|\bsonic$|pogo|hungama|disney channel|discovery kids|(?<!apple )\btv\b/i, "tv"],
 ];
 export const platformKind = (name: string): PlatformKind => KIND.find(([re]) => re.test(name))?.[1] ?? "subscription";
 
@@ -188,6 +188,11 @@ export const HINDI_PLATFORMS = [
   // "sony yay anime" 1.6K and "sony yay naruto" 880 a month (Keyword Planner, Nov 2026).
   { slug: "sony-yay", label: "Sony YAY!", match: /sony yay/i, how: "A kids' TV channel with a Hindi audio feed: check its schedule on your DTH or cable guide. It isn't a streaming app; for on-demand Hindi episodes, see the other platforms on the Hindi dub list." },
   { slug: "cartoon-network", label: "Cartoon Network India", match: /cartoon network/i, how: "A TV channel: check its schedule; some shows also stream on JioHotstar." },
+  // Kids' channels people search with "anime" ("hungama tv anime", "disney channel india anime", "nickelodeon anime
+  // hindi"): their pages are the channel pages of /hindi-dub/kids-tv (lib/kidstv.ts), with or without dub rows here.
+  { slug: "hungama", label: "Hungama TV", match: /^hungama/i, how: "A kids' TV channel with a Hindi feed, sold in DTH and cable packs: check its schedule in your operator's guide. It isn't a streaming app; for on-demand Hindi episodes, see where each show streams below." },
+  { slug: "disney-channel", label: "Disney Channel India", match: /disney channel/i, how: "A kids' TV channel with a Hindi feed, sold in DTH and cable packs: check its schedule in your operator's guide. Doraemon also streams in Hindi on JioHotstar." },
+  { slug: "nickelodeon", label: "Nickelodeon India (Nick)", match: /^(nickelodeon|nick|sonic)\b/i, how: "Nick and its sister channel Sonic are kids' TV channels with Hindi feeds, sold in DTH and cable packs: check their schedules in your operator's guide." },
 ] as const;
 export type HindiPlatform = (typeof HINDI_PLATFORMS)[number];
 export const hindiPlatform = (slug: string) => HINDI_PLATFORMS.find((p) => p.slug === slug) ?? null;

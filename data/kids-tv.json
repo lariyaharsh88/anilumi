@@ -1,0 +1,470 @@
+{
+  "checked": "2026-11-20",
+  "about": "Indian kids' TV channels that air (or aired) anime in Hindi. A show is listed on a channel only when a dated news report, trade-press article or the channel's own page confirms it; Wikipedia and fan wikis are kept as supporting links only. 'since' is the year of the first confirmed airing on that channel (free text when only an upper bound is known); 'lastSeen' (YYYY-MM) is the latest dated report of it on air, never a guess about today's schedule. 'dub' is the data/hindi-dubs.json slug, used for the link and for where it streams now. Left out as unconfirmed (20 Nov 2026): Ninja Hattori and Perman on Disney Channel (only Wikipedia lists them), Kiteretsu on Disney Channel/Disney XD/Pogo/Cartoon Network and Obocchama-kun on Cartoon Network/Pogo (one fan site), Pokémon on Pogo (fan wikis only), Beyblade: Metal Fusion on Cartoon Network (fan wikis only), Hamtaro and Ultra B on Disney Channel (Wikipedia only), and anything on Discovery Kids.",
+  "mrp": {
+    "asOf": "2026-08-31",
+    "source": "https://www.trai.gov.in/sites/default/files/2026-09/MRP_02092026.pdf",
+    "note": "Maximum retail price per month, excluding taxes, as reported to TRAI by the broadcasters (SD feeds). Every channel here is a pay channel, not free-to-air."
+  },
+  "shows": {
+    "doraemon": {
+      "t": "Doraemon",
+      "dub": "doraemon-2005",
+      "films": "doraemon"
+    },
+    "shinchan": {
+      "t": "Crayon Shin-chan",
+      "dub": "crayon-shin-chan",
+      "films": "shinchan"
+    },
+    "naruto": {
+      "t": "Naruto & Naruto Shippuden",
+      "dub": "naruto"
+    },
+    "jujutsu-kaisen": {
+      "t": "Jujutsu Kaisen",
+      "dub": "jujutsu-kaisen"
+    },
+    "one-punch-man": {
+      "t": "One-Punch Man",
+      "dub": "one-punch-man"
+    },
+    "dr-stone": {
+      "t": "Dr. Stone",
+      "dub": "dr-stone"
+    },
+    "obocchama-kun": {
+      "t": "Obocchama-kun"
+    },
+    "sgt-frog": {
+      "t": "Sgt. Frog (Keroro)"
+    },
+    "robotan": {
+      "t": "Robotan"
+    },
+    "kiteretsu": {
+      "t": "Kiteretsu"
+    },
+    "kochikame": {
+      "t": "KochiKame"
+    },
+    "detective-conan": {
+      "t": "Detective Conan",
+      "dub": "detective-conan"
+    },
+    "pokemon": {
+      "t": "Pokémon",
+      "dub": "pokemon",
+      "films": "pokemon"
+    },
+    "beyblade-burst": {
+      "t": "Beyblade Burst",
+      "dub": "beyblade-burst"
+    },
+    "hagemaru": {
+      "t": "Tsurupika Hagemaru"
+    },
+    "ninja-hattori": {
+      "t": "Ninja Hattori"
+    },
+    "perman": {
+      "t": "Perman"
+    },
+    "dragon-ball": {
+      "t": "Dragon Ball Z & Dragon Ball Super",
+      "dub": "dragon-ball"
+    },
+    "one-piece": {
+      "t": "One Piece",
+      "dub": "one-piece"
+    },
+    "my-hero-academia": {
+      "t": "My Hero Academia",
+      "dub": "boku-no-hero-academia"
+    },
+    "hunter-x-hunter": {
+      "t": "Hunter x Hunter",
+      "dub": "hunter-x-hunter-2011"
+    },
+    "yo-kai-watch": {
+      "t": "Yo-kai Watch"
+    }
+  },
+  "channels": [
+    {
+      "slug": "sony-yay",
+      "name": "Sony YAY!",
+      "owner": "Sony Pictures Networks India",
+      "mrp": 6,
+      "page": true,
+      "summary": "Sony's kids' channel, launched in April 2017, is now the busiest home of anime on Indian TV: Naruto since 2022, new Shin-chan episodes since 2024, and Jujutsu Kaisen, Dr. Stone and One-Punch Man since 2025, each with its own Hindi dub (most also in Tamil, Telugu, Malayalam and Bengali).",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Sony_YAY!",
+        "https://animenewsindia.com/2025/04/02/sony-yay-launches-crunchyroll-anime-block-in-india"
+      ],
+      "shows": [
+        {
+          "show": "naruto",
+          "since": "2022",
+          "lastSeen": "2026-10",
+          "note": "Naruto from 15 Aug 2022; Naruto Shippuden from March 2024, episodes 1-390 so far. The latest run began on 19 Oct 2026.",
+          "sources": [
+            "https://in.ign.com/naruto-1/174035/news/naruto-to-start-airing-in-india-on-sony-yay-from-august-15",
+            "https://www.animenewsnetwork.com/news/2024-03-18/sony-yay-airs-naruto-shippuden-anime-in-india/.208874",
+            "https://www.indianbroadcastingworld.com/?p=82428"
+          ]
+        },
+        {
+          "show": "shinchan",
+          "since": "2024",
+          "lastSeen": "2026-04",
+          "note": "Newer episodes, never shown in India before, from May 2024, with fresh batches in Oct 2025, Dec 2025 and from 27 Apr 2026, plus Shin-chan films (Our Dinosaur Diary premiered on 19 Oct 2025).",
+          "sources": [
+            "https://animenewsindia.com/2024/05/11/sony-yay-introduces-hit-japanese-series-shin-chan-to-its-lineup",
+            "https://www.animenewsnetwork.com/news/2024-07-28/sony-yay-licenses-shin-chan-anime-for-broadcast-plans-to-explore-merchandising-opportunities/.213639",
+            "https://animenewsindia.com/2025/10/17/sony-yay-lights-up-diwali-with-shinchans-new-season-and-films-including-the-indian-tv-premiere-of-our-dinosaur-diary-in-regional-languages-dubs",
+            "https://www.indianbroadcastingworld.com/?p=85748"
+          ]
+        },
+        {
+          "show": "one-punch-man",
+          "since": "2025",
+          "lastSeen": "2026-04",
+          "note": "Season 1 from 22 Nov 2025; Season 3 from 11 Apr 2026.",
+          "sources": [
+            "https://www.sonypicturesnetworks.com/news-details/0/758/sony-yay-expands-anime-universe-with-the-arrival-of-iconic-series-one-punch-man",
+            "https://animenewsindia.com/2026/04/08/sony-yay-to-premiere-one-punch-man-season-3-starting-april-11-2026-in-regional-dubs"
+          ]
+        },
+        {
+          "show": "jujutsu-kaisen",
+          "since": "2025",
+          "lastSeen": "2025-11",
+          "note": "First time on Indian TV: Season 1 from 7 Apr 2025, then Season 2; the Jujutsu Kaisen 0 film on 5 Nov 2025. A separate Hindi dub from Crunchyroll's.",
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2025-04-03/sony-yay-airs-jujutsu-kaisen-anime-1st-season-on-indian-tv-from-april-7/.223076",
+            "https://animenewsindia.com/2025/10/22/jujutsu-kaisen-0-set-to-arrive-on-sony-yay-for-its-indian-tv-premiere-on-november-5-2025-in-regional-languages",
+            "https://www.mediainfoline.com/entertainment/sony-yay-brings-the-global-anime-sensation-jujutsu-kaisen-0-to-indian-television"
+          ]
+        },
+        {
+          "show": "obocchama-kun",
+          "since": "2022",
+          "lastSeen": "2025-08",
+          "note": "On the channel by October 2022. All-new episodes made with TV Asahi started on 4 Aug 2025.",
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2022-10-28/sgt-frog-anime-airs-in-india-on-sony-yay/.191300",
+            "https://indiantelevision.com/news-headline/sony-yay!-and-tv-asahi-collaborate-on-all-new-episodes-of-obocchama-kun-250804/",
+            "https://animenewsindia.com/2025/07/26/tv-asahi-and-sony-pictures-networks-india-to-premiere-new-episodes-of-obocchama-kun-anime-series-premiering-august-4-only-on-sony-yay"
+          ]
+        },
+        {
+          "show": "dr-stone",
+          "since": "2025",
+          "lastSeen": "2025-05",
+          "note": "Season 1 with a new Hindi dub, from 12 May 2025.",
+          "sources": [
+            "https://animenewsindia.com/2025/05/06/sony-yay-to-premiere-dr-stone-on-may-12-at-11pm-in-hindi/"
+          ]
+        },
+        {
+          "show": "sgt-frog",
+          "since": "2023",
+          "lastSeen": "2023-01",
+          "note": "Announced in October 2022; started on 16 Jan 2023.",
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2022-10-28/sgt-frog-anime-airs-in-india-on-sony-yay/.191300",
+            "https://www.animenewsnetwork.com/news/2023-01-15/sony-yay-airs-sgt-frog-anime-on-january-16/.193821"
+          ]
+        },
+        {
+          "show": "robotan",
+          "since": "2022",
+          "lastSeen": "2022-06",
+          "note": "The 1986 series, from 20 Jun 2022.",
+          "sources": [
+            "https://bestmediainfo.com/2022/06/sony-yay-announces-two-new-toon-shows-ha-go-la-and-robotan-",
+            "https://www.animenewsnetwork.com/news/2022-10-28/sgt-frog-anime-airs-in-india-on-sony-yay/.191300"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "hungama",
+      "name": "Hungama TV",
+      "owner": "JioStar (formerly Disney Star)",
+      "mrp": 2,
+      "page": true,
+      "summary": "Hungama brought Doraemon to India in 2005 and Shin-chan in 2006, and its Hindi dubs of both are the ones a generation grew up with. It has aired Pokémon since 2014, including the TV premiere of Pokémon Horizons in May 2024.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Hungama_TV",
+        "https://en.wikipedia.org/wiki/List_of_programmes_broadcast_by_Hungama_TV"
+      ],
+      "shows": [
+        {
+          "show": "doraemon",
+          "since": "2005",
+          "note": "Doraemon's first Indian home, from May 2005. Disney Channel India carries the series now.",
+          "sources": [
+            "https://www.exchange4media.com/amp/kids-news/coming-uphero-on-hungama-tv-16359.html",
+            "https://www.indiantelevision.com/headlines/y2k5/mar/mar186.htm",
+            "https://en.wikipedia.org/wiki/List_of_non-Japanese_Doraemon_versions"
+          ]
+        },
+        {
+          "show": "shinchan",
+          "since": "2006",
+          "lastSeen": "2023-02",
+          "note": "The Hindi dub started on 19 Jun 2006. Classic episodes and films; newer episodes air on Sony YAY! since 2024.",
+          "sources": [
+            "https://indiantelevision.com/television/hungama-tv-to-air-antics-of-shin-chan-from-19-june-2/",
+            "https://www.animenewsnetwork.com/news/2023-02-14/anime-films-airing-on-indian-tv-february-14-18/.194896",
+            "https://animenewsindia.com/2024/05/11/sony-yay-introduces-hit-japanese-series-shin-chan-to-its-lineup"
+          ]
+        },
+        {
+          "show": "pokemon",
+          "since": "2014",
+          "lastSeen": "2024-05",
+          "note": "The anime from 19 May 2014 (new Hindi dubs); Pokémon Horizons had its TV premiere here on 25 May 2024.",
+          "sources": [
+            "https://www.indiantelevision.com/television/tv-channels/kids/pokemon-resonates-with-hungama-s-audiences-vijay-subramaniam-141126",
+            "https://pocketmonsters.net/news/7517"
+          ]
+        },
+        {
+          "show": "beyblade-burst",
+          "since": "2020",
+          "lastSeen": "2020-06",
+          "note": "Season 1 aired in June 2020.",
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2022-08-15/beyblade-burst-turbo-anime-hindi-dub-steams-on-youtube/.188655"
+          ]
+        },
+        {
+          "show": "hagemaru",
+          "since": "2020",
+          "lastSeen": "2020-04",
+          "note": "Relaunched on 17 Apr 2020; the relaunch episode drew 1.6 million kids.",
+          "sources": [
+            "https://indiantelevision.com/news-headline/hagemaru-shows-relaunch-episode-grabs-1-6-mn-kids-eyeballs-on-hungama-tv/"
+          ]
+        },
+        {
+          "show": "detective-conan",
+          "since": "2007",
+          "lastSeen": "2007-12",
+          "note": "Launched as a new series in December 2007.",
+          "sources": [
+            "https://indiantelevision.com/television/santabhai-to-present-new-shows-movies-on-hungama/"
+          ]
+        },
+        {
+          "show": "kiteretsu",
+          "since": "2007",
+          "lastSeen": "2007-10",
+          "note": "From 22 Oct 2007, weekdays.",
+          "sources": [
+            "https://www.afaqs.com/media-briefs/21168_kiteretsu-to-air-on-hungama-tv"
+          ]
+        },
+        {
+          "show": "kochikame",
+          "since": "2007 or earlier",
+          "lastSeen": "2007-12",
+          "note": "Named among Hungama's favourite shows in December 2007.",
+          "sources": [
+            "https://indiantelevision.com/television/santabhai-to-present-new-shows-movies-on-hungama/"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "super-hungama",
+      "name": "Super Hungama",
+      "owner": "JioStar (formerly Disney Star)",
+      "mrp": 4,
+      "parent": "hungama",
+      "summary": "Hungama's sister channel (Disney XD until 2019, then Marvel HQ, Super Hungama since March 2022). Its anime is Pokémon.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Super_Hungama"
+      ],
+      "shows": [
+        {
+          "show": "pokemon",
+          "since": "2023 or earlier",
+          "lastSeen": "2024-04",
+          "note": "Pokémon films in Hindi in September 2023; Pokémon the Series: XYZ from 29 Apr 2024, in Hindi, Tamil and Telugu.",
+          "sources": [
+            "https://animenewsnetwork.com/news/2023-09-24/anime-films-airing-on-indian-tv-september-24-30/.202741",
+            "https://www.animenewsnetwork.com/news/2024-04-22/super-hungama-airs-pokemon-the-series-xyz-anime-starting-on-april-29/.210071"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "disney-channel",
+      "name": "Disney Channel India",
+      "owner": "JioStar (formerly Disney Star)",
+      "mrp": 12,
+      "page": true,
+      "summary": "Disney Channel India shows little anime besides one very big name: Doraemon, both the series and its Hindi-dubbed films. It has carried Doraemon since at least 2013 and ran a Doraemon birthday film week in September 2025.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Disney_Channel_(India)",
+        "https://www.mediainfoline.com/daily-soap/disney-channel-india-marks-doraemons-birthday-with-special-week-long-celebrations"
+      ],
+      "shows": [
+        {
+          "show": "doraemon",
+          "since": "2013 or earlier",
+          "lastSeen": "2025-09",
+          "note": "The series and the Hindi Doraemon films (an 'I Love Doraemon' Christmas special in Dec 2020; a birthday film week from 1 Sep 2025, every evening).",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Disney_Channel_(India)",
+            "https://www.animenewsnetwork.com/news/2020-12-13/disney-channel-in-india-hosts-i-love-doraemon-christmas-special/.167386",
+            "https://animenewsnetwork.com/news/2023-09-24/anime-films-airing-on-indian-tv-september-24-30/.202741",
+            "https://www.mediainfoline.com/daily-soap/disney-channel-india-marks-doraemons-birthday-with-special-week-long-celebrations"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "nickelodeon",
+      "name": "Nickelodeon India",
+      "owner": "JioStar (formerly Viacom18)",
+      "mrp": 19,
+      "page": true,
+      "summary": "Nick India started buying Japanese anime in 2006, and Ninja Hattori became one of its biggest shows. Its sister channel Sonic has shown Ninja Hattori too.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Nickelodeon_(Indian_TV_channel)"
+      ],
+      "shows": [
+        {
+          "show": "ninja-hattori",
+          "since": "2006",
+          "lastSeen": "2012-05",
+          "note": "Acquired in 2006; new episodes from 14 May 2012, weekdays.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Nickelodeon_(Indian_TV_channel)",
+            "https://indiantelevision.com/television/nick-to-air-new-espisodes-of-ninja-hattori/"
+          ]
+        },
+        {
+          "show": "perman",
+          "since": "2006",
+          "lastSeen": "2006-12",
+          "note": "Launched in December 2006, weekdays.",
+          "sources": [
+            "https://indiantelevision.com/television/nick-unveils-two-animated-shows-go-diego-go-perman-2/"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "sonic",
+      "name": "Sonic",
+      "owner": "JioStar (formerly Viacom18)",
+      "mrp": 2,
+      "parent": "nickelodeon",
+      "summary": "Nick's sister channel for older kids (Nickelodeon Sonic until 2025). Its own website has a Ninja Hattori show page.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Nickelodeon_Sonic"
+      ],
+      "shows": [
+        {
+          "show": "ninja-hattori",
+          "since": null,
+          "note": "Listed on the channel's own website, sonicgang.com.",
+          "sources": [
+            "https://www.sonicgang.com/shows/ninja-hattori/"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "cartoon-network",
+      "name": "Cartoon Network India",
+      "owner": "Warner Bros. Discovery",
+      "mrp": 5,
+      "page": true,
+      "summary": "India's first kids' channel (1995) brought Pokémon to India in 2003 and is now the TV home of action anime in Hindi: Dragon Ball, One Piece, My Hero Academia and Hunter x Hunter, several with new Hindi dubs since 2023.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/List_of_programmes_broadcast_by_Cartoon_Network_(India)"
+      ],
+      "shows": [
+        {
+          "show": "hunter-x-hunter",
+          "since": "2025",
+          "lastSeen": "2025-08",
+          "note": "The 2011 series, from 25 Aug 2025.",
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2025-08-25/cartoon-network-india-airs-hunter-x-hunter-anime-on-august-25/.228019"
+          ]
+        },
+        {
+          "show": "one-piece",
+          "since": "2024",
+          "lastSeen": "2025-03",
+          "note": "The Wano arc from May 2024; East Blue (episodes 1-61) from Dec 2024 to Mar 2025, with new regional dubs.",
+          "sources": [
+            "https://animenewsindia.com/2024/11/23/cartoon-network-india-to-re-introduce-one-piece-1999-season-1-from-december-8-in-new-regional-dubs"
+          ]
+        },
+        {
+          "show": "dragon-ball",
+          "since": "2024",
+          "lastSeen": "2024-10",
+          "note": "Dragon Ball Z returned on 25 Aug 2024 with a new Hindi dub; Dragon Ball and Dragon Ball Super also air, and the Battle of Gods film had its TV premiere on 13 Oct 2024.",
+          "sources": [
+            "https://animenewsindia.com/2024/08/08/cartoon-network-india-brings-back-dragon-ball-series-with-new-regional-dubs-from-august-25",
+            "https://animenewsindia.com/2025/06/18/netflix-india-to-stream-dragon-ball-z-for-the-first-time-starting-july-15-2025/",
+            "https://indiantelevision.com/?p=3636"
+          ]
+        },
+        {
+          "show": "my-hero-academia",
+          "since": "2023",
+          "lastSeen": "2023-08",
+          "note": "From August 2023 in Hindi, Tamil, Telugu, Kannada and Malayalam.",
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2023-08-22/my-hero-academia-anime-airs-in-hindi-tamil-telugu-kannada-malayalam-on-cartoon-network-india/.201482"
+          ]
+        },
+        {
+          "show": "pokemon",
+          "since": "2003",
+          "lastSeen": "2014-06",
+          "note": "First in India here, in English and Hindi, from 2003; Tamil and Telugu from May 2007. A new season was announced for monsoon 2014.",
+          "sources": [
+            "https://indiantelevision.com/television/cartoon-network-to-kick-off-pokemon-master-quest-in-tamil-telugu/",
+            "https://www.indiantelevision.com/television/tv-channels/news-broadcasting/cartoon-network-brings-pokemon-latest-season-and-kid-krrish-movie-sequelthis-monsoon-140630",
+            "https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_in_South_Asia"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "pogo",
+      "name": "Pogo",
+      "owner": "Warner Bros. Discovery",
+      "mrp": 5,
+      "parent": "cartoon-network",
+      "summary": "Cartoon Network's sister channel airs mostly Indian cartoons such as Chhota Bheem. The one anime we could confirm there is Yo-kai Watch.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Pogo_(TV_channel)"
+      ],
+      "shows": [
+        {
+          "show": "yo-kai-watch",
+          "since": "2016",
+          "lastSeen": "2016-01",
+          "note": "From 11 Jan 2016.",
+          "sources": [
+            "https://indiantelevision.com/news-headline/pogo-lines-up-two-new-international-shows-in-january",
+            "https://www.exchange4media.com/industry-briefing-news/pogo-to-bring-in-two-new-international-tv-series-62969.html"
+          ]
+        }
+      ]
+    }
+  ]
+}

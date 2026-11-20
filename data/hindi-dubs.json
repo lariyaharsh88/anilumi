@@ -3656,6 +3656,11 @@
      "name": "Netflix",
      "scope": "Pokémon Concierge; Mewtwo Strikes Back Evolution",
      "url": "https://www.netflix.com/in/title/81186864"
+    },
+    {
+     "name": "Hungama TV",
+     "scope": "TV since 2014; Pokémon Horizons premiered on 25 May 2024",
+     "url": "https://pocketmonsters.net/news/7517"
     }
    ],
    "sources": [
@@ -3663,10 +3668,13 @@
     "https://www.animenewsnetwork.com/news/2025-11-18/hindi-dub-of-pokemon-adventures-in-the-orange-islands-streams-on-youtube/.231112",
     "https://tv.apple.com/in/show/pokemon/umc.cmc.721uypshyjjv0u0zbet4rqu71",
     "https://www.netflix.com/in/title/81186864",
-    "https://www.netflix.com/in/title/81223075"
+    "https://www.netflix.com/in/title/81223075",
+    "https://pocketmonsters.net/news/7517",
+    "https://www.indiantelevision.com/television/tv-channels/kids/pokemon-resonates-with-hungama-s-audiences-vijay-subramaniam-141126"
    ],
    "note": "Free Hindi episodes on the official Pokémon Asia Hindi YouTube channel (Horizons from July 2024; Orange Islands and Diamond & Pearl from Oct 2025). Horizons aired on Hungama in May 2024.",
-   "added": "2026-11-12"
+   "added": "2026-11-12",
+   "checked": "2026-11-20"
   },
   {
    "s": "wind-breaker",
@@ -4450,14 +4458,21 @@
      "name": "JioHotstar",
      "scope": "Season 17 (52 episodes)",
      "url": "https://www.hotstar.com/in/shows/doraemon/1260021004"
+    },
+    {
+     "name": "Disney Channel India",
+     "scope": "TV: the series and Hindi Doraemon films (since 2013 or earlier; a birthday film week from 1 Sep 2025)",
+     "url": "https://www.mediainfoline.com/daily-soap/disney-channel-india-marks-doraemons-birthday-with-special-week-long-celebrations"
     }
    ],
    "sources": [
-    "https://www.hotstar.com/in/shows/doraemon/1260021004"
+    "https://www.hotstar.com/in/shows/doraemon/1260021004",
+    "https://www.mediainfoline.com/daily-soap/disney-channel-india-marks-doraemons-birthday-with-special-week-long-celebrations",
+    "https://www.animenewsnetwork.com/news/2020-12-13/disney-channel-in-india-hosts-i-love-doraemon-christmas-special/.167386"
    ],
-   "note": "JioHotstar's own title page (checked 17 Nov 2026) lists the series' season 17, 52 episodes, in Hindi, Tamil and Telugu. Hindi TV airings (Disney Channel India, earlier Hungama TV) aren't listed here because their current schedules couldn't be confirmed.",
+   "note": "JioHotstar's own title page (checked 17 Nov 2026) lists the series' season 17, 52 episodes, in Hindi, Tamil and Telugu. On TV, Disney Channel India airs the Hindi dub and its films (last reported in September 2025); Hungama TV first aired it in India from May 2005.",
    "added": "2026-11-17",
-   "checked": "2026-11-17"
+   "checked": "2026-11-20"
   }
  ],
  "lastScan": "2026-11-15"
