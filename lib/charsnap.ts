@@ -5,6 +5,7 @@
  */
 import data from "@/data/characters.json";
 import extraFacts from "@/data/character-facts-extra.json";
+import extraPages from "@/data/character-pages-extra.json";
 import { ageNum, heightCm, type AniListCharacter } from "./charfacts";
 import { seriesCast, seriesSlugs, type SeriesChar } from "./seriessnap";
 
@@ -23,10 +24,17 @@ const CHAR_IMG = "https://s4.anilist.co/file/anilistcdn/character/medium/";
 // Facts AniList leaves out (data/character-facts-extra.json, two sources each), added where the snapshot has no such
 // line, so pages, comparison tables and the guessing game agree. Naruto's height is the first.
 const extra = (extraFacts as unknown as { characters: Record<string, { lines: [string, string][] }> }).characters;
-const chars = (data as { characters: SnapChar[] }).characters.map((c) => {
+// Pages for characters Kitsu has no entry for (data/character-pages-extra.json, by AniList id): their page renders from
+// the snapshot alone (app/character/[slug]).
+const snapPages = (extraPages as { pages: Record<string, string> }).pages;
+const SNAP_ONLY = new Set(Object.values(snapPages));
+const chars = (data as { characters: SnapChar[] }).characters.map((raw) => {
+  const c = !raw.k && snapPages[raw.id] ? { ...raw, k: snapPages[raw.id] } : raw;
   const add = c.k ? extra[c.k]?.lines.filter(([label]) => !c.l.some(([l]) => l.toLowerCase() === label.toLowerCase())) : null;
   return add?.length ? { ...c, l: [...c.l, ...add] } : c;
 });
+/** True for a page slug that has no Kitsu character behind it: the page is built from the snapshot. */
+export const isSnapOnly = (slug: string) => SNAP_ONLY.has(slug);
 
 const nameKey = (s: string) => s.normalize("NFKD").replace(/[̀-ͯ]/g, "").toLowerCase().split(/[^a-z0-9]+/).filter(Boolean).sort().join(" ");
 let byName: Map<string, SnapChar[]> | null = null;

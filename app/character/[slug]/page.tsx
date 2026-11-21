@@ -19,7 +19,8 @@ import { dbEnabled } from "@/lib/db";
 import Link from "@/components/Link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { getCharacterBySlug, getCharacterAppearances, getCharacters, getAnimeBySlug, animePath, posterUrl, subtypeLabel, cap } from "@/lib/kitsu";
+import { getCharacterBySlug, getCharacterAppearances, getCharacters, getAnimeBySlug, animePath, posterUrl, subtypeLabel, cap, type Character, type Appearance } from "@/lib/kitsu";
+import { roleIn } from "@/lib/seriessnap";
 import { baseTitle } from "@/lib/tmdb";
 import { abs } from "@/lib/site";
 import PageHero from "@/components/PageHero";
@@ -28,7 +29,7 @@ import { workRef } from "@/lib/ld";
 import Faq from "@/components/Faq";
 import { getCast, getAniListCharacter, sameName, vaPath, type Va } from "@/lib/anilist";
 import { CHARACTER_VS, vsPath } from "@/lib/charvs";
-import { snapFor, snapByPage, showRanking, snapToAniList, characterTable } from "@/lib/charsnap";
+import { snapFor, snapByPage, snapImage, isSnapOnly, showRanking, snapToAniList, characterTable } from "@/lib/charsnap";
 import { parseKitsuBio, mergeFacts, factsTitle, ageAnswer, zodiac, aliasList, quickAnswer } from "@/lib/charfacts";
 import { formatMix, yearsActive, perYear, castRank, debutAndLatest } from "@/lib/charstats";
 import StatTiles from "@/components/viz/StatTiles";
@@ -47,10 +48,29 @@ export async function generateStaticParams() { return []; }
 type Props = { params: Promise<{ slug: string }> };
 
 /** Character, appearances, voice cast and birthday: shared by metadata and the page (fetches are cached). */
+/**
+ * A character Kitsu has no entry for (its casts for Spy x Family, Blue Lock, Frieren and others are empty): the page
+ * is built from the AniList snapshot alone, with the show they're from as the one appearance.
+ */
+async function snapCharacter(slug: string): Promise<{ c: Character; apps: Appearance[] } | null> {
+  const s = isSnapOnly(slug) ? snapByPage(slug) : null;
+  if (!s) return null;
+  const anime = await getAnimeBySlug(s.s).catch(() => null);
+  // The slug was picked in the spelling people search ("suguru-geto", "sung-jin-woo"): the name that matches it leads.
+  const key = (n: string) => n.normalize("NFKD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  const plain = s.n.replace(/ou(?![aeiou])/gi, "o").replace(/uu/gi, "u");
+  const name = [s.n, plain, ...(s.al ?? [])].find((n) => key(n) === slug || slug.endsWith(`-${key(n)}`)) ?? s.n;
+  const c: Character = { id: `al-${s.id}`, slug, name, nameJp: null, description: "", image: snapImage(s, "large"), otherNames: (s.al ?? []).filter((n) => n !== name) };
+  return { c, apps: anime ? [{ role: roleIn(s.s, s.id) ?? "supporting", anime }] : [] };
+}
+
 async function load(slug: string) {
-  const c = await getCharacterBySlug(decodeURIComponent(slug));
+  const key = decodeURIComponent(slug);
+  const kc = isSnapOnly(key) ? null : await getCharacterBySlug(key);
+  const only = kc ? null : await snapCharacter(key);
+  const c = kc ?? only?.c;
   if (!c) notFound();
-  const apps = await getCharacterAppearances(c.id);
+  const apps = kc ? await getCharacterAppearances(c.id) : only!.apps;
   const mains = apps.filter((a) => a.role === "main");
   // The show they're known for: a TV series first (main role, then any role), most-followed first. Kishou Arima
   // is "main" only in the Jack OVA, but people know him from Tokyo Ghoul.
@@ -283,10 +303,11 @@ export default async function CharacterPage({ params }: Props) {
           </p>
         </section>
         <CharacterNotes slug={c.slug} show={home ? { slug: home.slug, title: home.title } : null} />
-        {!note?.about && (
+        {/* No section at all when there's nothing to say: snapshot-only pages have no Kitsu biography to quote. */}
+        {!note?.about && bio && (
         <section className="card reveal p-5 sm:p-6" aria-labelledby="bio-h">
             <h2 id="bio-h" className="h-section mb-2">Who is {note?.name ?? c.name}?</h2>
-            <p className="prose-anime whitespace-pre-line">{excerpt(bio, 520) || "No biography has been written for this character yet."}</p>
+            <p className="prose-anime whitespace-pre-line">{excerpt(bio, 520)}</p>
             {bio && <p className="mt-2 text-xs text-muted">Biography excerpt via <a href={home ? `https://kitsu.app/anime/${home.slug}/characters` : "https://kitsu.app"} target="_blank" rel="noopener nofollow" className="underline">Kitsu</a>.</p>}
           </section>
         )}

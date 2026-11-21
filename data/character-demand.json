@@ -1,6 +1,6 @@
 {
- "checked": "2026-11-20",
- "source": "Google Ads Keyword Planner, India + United States, 12-month average (Nov 2025-Oct 2026), '<name> height/age/birthday'; names that collide with other things (Robin, Dio, Vanitas, Fern, Subaru, Ace, Rohan) count US only",
+ "checked": "2026-11-21",
+ "source": "Google Ads Keyword Planner, India + United States, 12-month average (Nov 2025-Oct 2026), '<name> height/age/birthday'; names that collide with other things (Robin, Dio, Vanitas, Fern, Subaru, Ace, Rohan) count US only; Frieren and Sung Jinwoo re-checked 21 Nov 2026 under their searched names (Keyword Planner default targeting)",
  "min": 100,
  "chars": [
   {
@@ -122,6 +122,12 @@
    "h": 1880,
    "a": 3400,
    "b": 2900
+  },
+  {
+   "k": "suguru-geto",
+   "h": 2020,
+   "a": 1090,
+   "b": 4880
   },
   {
    "k": "chainsaw-man-denji",
@@ -292,6 +298,18 @@
    "b": 600
   },
   {
+   "k": "yor-forger",
+   "h": 1180,
+   "a": 930,
+   "b": 1560
+  },
+  {
+   "k": "loid-forger",
+   "h": 980,
+   "a": 1390,
+   "b": 1210
+  },
+  {
    "k": "dabi",
    "h": 680,
    "a": 1740,
@@ -340,6 +358,12 @@
    "b": 1310
   },
   {
+   "k": "yoichi-isagi",
+   "h": 1480,
+   "a": 650,
+   "b": 830
+  },
+  {
    "k": "johnny-joestar",
    "h": 990,
    "a": 1070,
@@ -370,6 +394,12 @@
    "b": 350
   },
   {
+   "k": "seishiro-nagi",
+   "h": 1690,
+   "a": 430,
+   "b": 650
+  },
+  {
    "k": "tobio-kageyama",
    "h": 1110,
    "a": 190,
@@ -392,6 +422,12 @@
    "h": 930,
    "a": 1140,
    "b": 480
+  },
+  {
+   "k": "meguru-bachira",
+   "h": 930,
+   "a": 590,
+   "b": 1020
   },
   {
    "k": "guts",
@@ -490,6 +526,18 @@
    "b": 320
   },
   {
+   "k": "manjiro-sano",
+   "h": 810,
+   "a": 320,
+   "b": 350
+  },
+  {
+   "k": "gabimaru",
+   "h": 560,
+   "a": 890,
+   "b": 0
+  },
+  {
    "k": "lelouch-lamperouge",
    "h": 560,
    "a": 390,
@@ -514,6 +562,12 @@
    "b": 320
   },
   {
+   "k": "frieren-fern",
+   "h": 260,
+   "a": 880,
+   "b": 0
+  },
+  {
    "k": "johan-liebert",
    "h": 600,
    "a": 310,
@@ -532,6 +586,12 @@
    "b": 100
   },
   {
+   "k": "frieren",
+   "h": 210,
+   "a": 590,
+   "b": 30
+  },
+  {
    "k": "gilgamesh",
    "h": 550,
    "a": 110,
@@ -539,6 +599,12 @@
   },
   {
    "k": "momo-ayase",
+   "h": 480,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "ken-ryuguji",
    "h": 480,
    "a": 0,
    "b": 0
@@ -552,6 +618,18 @@
   {
    "k": "kenma-kozume",
    "h": 460,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "sung-jin-woo",
+   "h": 320,
+   "a": 70,
+   "b": 70
+  },
+  {
+   "k": "david-martinez",
+   "h": 440,
    "a": 0,
    "b": 0
   },
@@ -730,6 +808,12 @@
    "b": 0
   },
   {
+   "k": "senku-ishigami",
+   "h": 240,
+   "a": 0,
+   "b": 0
+  },
+  {
    "k": "jolyne-kujo",
    "h": 240,
    "a": 0,
@@ -814,6 +898,18 @@
    "b": 0
   },
   {
+   "k": "ai-hoshino",
+   "h": 190,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "frieren-stark",
+   "h": 190,
+   "a": 0,
+   "b": 0
+  },
+  {
    "k": "askeladd",
    "h": 180,
    "a": 0,
@@ -845,6 +941,12 @@
   },
   {
    "k": "gintoki-sakata",
+   "h": 160,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "anya-forger",
    "h": 160,
    "a": 0,
    "b": 0
@@ -910,6 +1012,12 @@
    "b": 0
   },
   {
+   "k": "edgerunners-rebecca",
+   "h": 150,
+   "a": 0,
+   "b": 0
+  },
+  {
    "k": "karma-akabane",
    "h": 140,
    "a": 0,
@@ -934,6 +1042,12 @@
    "b": 0
   },
   {
+   "k": "hitori-goto",
+   "h": 120,
+   "a": 0,
+   "b": 0
+  },
+  {
    "k": "akemi-homura",
    "h": 120,
    "a": 0,
@@ -941,6 +1055,12 @@
   },
   {
    "k": "alphonse-elric",
+   "h": 120,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "cid-kageno",
    "h": 120,
    "a": 0,
    "b": 0
@@ -989,6 +1109,12 @@
   },
   {
    "k": "ranpo-edogawa",
+   "h": 110,
+   "a": 0,
+   "b": 0
+  },
+  {
+   "k": "chifuyu-matsuno",
    "h": 110,
    "a": 0,
    "b": 0
