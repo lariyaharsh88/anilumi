@@ -12554,6 +12554,1797 @@
         "basis": "anime so far"
       },
       "hindiVoice": null
+    },
+    "ai-hoshino": {
+      "name": "Ai Hoshino",
+      "role": "The star idol and centre of B-Komachi, and the mother of Aqua and Ruby",
+      "debut": {
+        "anime": "[Oshi no Ko]",
+        "episode": 1,
+        "episodeTitle": "Mother and Children",
+        "source": "manga",
+        "chapter": 1,
+        "volume": 1
+      },
+      "arcs": [
+        "Prologue: Childhood"
+      ],
+      "affiliations": [
+        "B-Komachi",
+        "Strawberry Productions"
+      ],
+      "relatives": [
+        {
+          "name": "Aquamarine Hoshino",
+          "relation": "son"
+        },
+        {
+          "name": "Ruby Hoshino",
+          "relation": "daughter"
+        }
+      ],
+      "confidence": "high",
+      "sources": [
+        "https://en.wikipedia.org/wiki/List_of_Oshi_no_Ko_characters",
+        "https://en.wikipedia.org/wiki/List_of_Oshi_no_Ko_episodes",
+        "https://en.wikipedia.org/wiki/List_of_Oshi_no_Ko_chapters",
+        "https://myanimelist.net/character/188037/Ai_Hoshino",
+        "https://anilist.co/character/172759"
+      ],
+      "notes": "The twins' father is left out of relatives because his identity is a major plot reveal. Arc list kept to the prologue, where she is a living lead; she also appears in flashbacks and in later arcs built around her story. No official Hindi dub credit found.",
+      "about": "Ai Hoshino is the dazzling lead singer of the idol group B-Komachi, run by the small agency Strawberry Productions. On stage she seems flawless, with a smile that wins over everyone, but off stage she admits that she is not sure she knows what love feels like, and she treats lying as part of an idol's job. At sixteen she hides a huge secret from the public: she is pregnant with twins. The doctor who helps her, a devoted fan, becomes tied to her family in a way nobody could predict. Ai is cheerful, a little scatterbrained and fiercely ambitious, wanting to keep her career and be a mother at the same time. Her life and career are the centre of the opening episode and the reason the whole story happens.",
+      "abilities": "A naturally magnetic performer who can command a crowd, and a skilled liar who keeps her private life hidden behind a perfect idol image.",
+      "fate": {
+        "status": "dies",
+        "detail": "Ai is stabbed to death at age 20 by an obsessed fan, Ryosuke Sugano, at the end of the first episode; in her last moments she tells her children she loves them and means it. Her death drives Aqua's revenge plot for the rest of the series.",
+        "basis": "series ending"
+      },
+      "hindiVoice": null
+    },
+    "akane-kurokawa": {
+      "name": "Akane Kurokawa",
+      "role": "A gifted method actress from a theatre troupe who co-stars with Aqua on a reality dating show",
+      "debut": {
+        "anime": "[Oshi no Ko]",
+        "episode": 5,
+        "episodeTitle": "Reality Dating Show",
+        "source": "manga",
+        "chapter": 21,
+        "volume": 3
+      },
+      "arcs": [
+        "Dating Reality Show",
+        "2.5D Stage Play",
+        "Private",
+        "Movie",
+        "The End of the Play",
+        "Toward the Stars and Dreams"
+      ],
+      "affiliations": [
+        "Lala Lai Theatrical Company"
+      ],
+      "relatives": [],
+      "confidence": "medium",
+      "sources": [
+        "https://oshinoko.fandom.com/wiki/Akane_Kurokawa",
+        "https://en.wikipedia.org/wiki/List_of_Oshi_no_Ko_characters",
+        "https://en.wikipedia.org/wiki/List_of_Oshi_no_Ko_episodes",
+        "https://en.wikipedia.org/wiki/List_of_Oshi_no_Ko_chapters",
+        "https://anilist.co/character/203384"
+      ],
+      "notes": "The series wiki notes a brief cameo in episode 1 before her real debut in episode 5; episode 5 is used. Troupe name 'Lala Lai' comes from the series wiki only (Wikipedia leaves the troupe unnamed), so confidence is medium. Parents (named in the wiki only) left out as single-sourced. Arc names follow the series wiki's naming. No official Hindi dub credit found.",
+      "about": "Akane Kurokawa is a young stage actress from a respected theatre troupe who joins the reality dating show that Aqua signs up for. At first she seems painfully shy and earnest; she does not know how to stand out when there is no script telling her who to be, and the other cast members easily outshine her. Hoping to help her troupe and prove herself, she pushes too hard and becomes the target of a nasty wave of online criticism. Aqua, who joined the show for his own reasons, steps in to help her. Once Akane finds her footing she reveals a remarkable talent: she studies people so closely that she can rebuild their personalities in her performances. Serious, studious and quietly intense, she becomes one of the sharpest minds around Aqua.",
+      "abilities": "A method actress with a talent for analysing people from tiny details and recreating their personalities almost perfectly, which also makes her a strong amateur detective.",
+      "fate": {
+        "status": "alive",
+        "detail": "Akane survives to the end of the manga. Though she could not stop Aqua's final plan, she is left knowing she helped save him emotionally, and she continues her acting career.",
+        "basis": "manga ending"
+      },
+      "hindiVoice": null
+    },
+    "aquamarine-hoshino": {
+      "name": "Aqua Hoshino",
+      "role": "Ai Hoshino's son, a reincarnated doctor who becomes an actor to find the man behind his mother's death",
+      "debut": {
+        "anime": "[Oshi no Ko]",
+        "episode": 1,
+        "episodeTitle": "Mother and Children",
+        "source": "manga",
+        "chapter": 1,
+        "volume": 1
+      },
+      "arcs": [
+        "Prologue: Childhood",
+        "Dating Reality Show",
+        "2.5D Stage Play",
+        "Private",
+        "Movie",
+        "The End of the Play",
+        "Toward the Stars and Dreams"
+      ],
+      "affiliations": [
+        "Youtou High School",
+        "Strawberry Productions"
+      ],
+      "relatives": [
+        {
+          "name": "Ai Hoshino",
+          "relation": "mother"
+        },
+        {
+          "name": "Ruby Hoshino",
+          "relation": "twin sister"
+        }
+      ],
+      "confidence": "high",
+      "sources": [
+        "https://en.wikipedia.org/wiki/List_of_Oshi_no_Ko_characters",
+        "https://en.wikipedia.org/wiki/Oshi_no_Ko",
+        "https://en.wikipedia.org/wiki/List_of_Oshi_no_Ko_episodes",
+        "https://myanimelist.net/character/185313/Aquamarine_Hoshino",
+        "https://anilist.co/character/183885"
+      ],
+      "notes": "Full name Aquamarine; fans mostly search 'Aqua Hoshino'. Biological father and half-brother omitted because they are major reveals. Strawberry Productions listed because he is raised inside the agency; Youtou High School from the series wiki and fan guides. No official Hindi dub credit found.",
+      "about": "Aqua Hoshino begins life as Gorou Amamiya, a rural doctor and devoted fan of the idol Ai Hoshino. When Ai secretly comes to his hospital to give birth, Gorou is killed before the delivery and wakes up as her newborn son, keeping all his adult memories. He grows up alongside his twin sister Ruby, who has also been reborn, inside the small agency that manages Ai's career. After a tragedy turns his world upside down, Aqua becomes cold, calculating and focused on one goal: finding the person responsible. To get close to the entertainment industry, he takes acting work, enters a high school with a performing arts course and joins a reality show. Aqua is clever and secretive, but he still cares deeply for his sister and the people around him.",
+      "abilities": "Keeps the medical knowledge and adult mind of his past life, and becomes a calculating actor and strategist who manipulates situations to dig up information.",
+      "fate": {
+        "status": "dies",
+        "detail": "In the manga's ending (November 2024) Aqua stabs himself and drags his father Hikaru Kamiki off a cliff into the sea; Hikaru drowns and Aqua dies of his wounds, sacrificing himself to protect Ruby.",
+        "basis": "manga ending"
+      },
+      "hindiVoice": null
+    },
+    "kana-arima": {
+      "name": "Kana Arima",
+      "role": "A former child acting prodigy who later becomes a member of the revived B-Komachi",
+      "debut": {
+        "anime": "[Oshi no Ko]",
+        "episode": 1,
+        "episodeTitle": "Mother and Children",
+        "source": "manga",
+        "chapter": 6,
+        "volume": 1
+      },
+      "arcs": [
+        "Prologue: Childhood",
+        "Dating Reality Show",
+        "2.5D Stage Play",
+        "Private",
+        "Movie",
+        "The End of the Play",
+        "Toward the Stars and Dreams"
+      ],
+      "affiliations": [
+        "Strawberry Productions",
+        "B-Komachi",
+        "Youtou High School"
+      ],
+      "relatives": [],
+      "confidence": "high",
+      "sources": [
+        "https://en.wikipedia.org/wiki/List_of_Oshi_no_Ko_characters",
+        "https://en.wikipedia.org/wiki/List_of_Oshi_no_Ko_episodes",
+        "https://en.wikipedia.org/wiki/List_of_Oshi_no_Ko_chapters",
+        "https://anibase.net/en/character/ma06l/Kana-Arima",
+        "https://oshinoko.fandom.com/wiki/Chapter_6",
+        "https://anilist.co/character/188783"
+      ],
+      "notes": "Manga debut is chapter 6 'Child Actors' (volume 1, which episode 1 adapts). She has little direct role in the 'Dating Reality Show' arc; listed because she appears around it. No official Hindi dub credit found.",
+      "about": "Kana Arima was once a famous child actress, known to the public as the girl who could cry in ten seconds. She first meets Aqua when they are both small children working on the same film, and his unsettling performance leaves a mark on her. Years later her career has faded, the offers have dried up, and she is a sharp-tongued, proud teenager who still badly wants to be needed. When she runs into Aqua and Ruby again at a high school with a performing arts course, she pulls Aqua into a struggling live-action drama and is later talked into joining Ruby's new idol group. Kana acts tough and teases people constantly, but underneath she is insecure, hard-working and very easy to fluster, especially around Aqua.",
+      "abilities": "A highly experienced actress who reads a set well and adjusts her acting to make everyone around her look good; she can also sing, which leads her into idol work.",
+      "fate": {
+        "status": "alive",
+        "detail": "Kana survives the manga. She leaves B-Komachi after two years to return to acting, and is left with feelings for Aqua that she never got to confess before his death.",
+        "basis": "manga ending"
+      },
+      "hindiVoice": null
+    },
+    "anya-forger": {
+      "name": "Anya Forger",
+      "role": "A telepathic little girl adopted by a spy and an assassin, both of whom hide their secrets from each other",
+      "debut": {
+        "anime": "Spy x Family",
+        "episode": 1,
+        "episodeTitle": "Operation Strix",
+        "source": "manga",
+        "chapter": 1,
+        "volume": 1
+      },
+      "arcs": [],
+      "affiliations": [
+        "Forger family",
+        "Eden Academy (Cecile Hall)"
+      ],
+      "relatives": [
+        {
+          "name": "Loid Forger",
+          "relation": "adoptive father"
+        },
+        {
+          "name": "Yor Forger",
+          "relation": "adoptive mother"
+        },
+        {
+          "name": "Bond Forger",
+          "relation": "family dog"
+        }
+      ],
+      "confidence": "high",
+      "sources": [
+        "https://en.wikipedia.org/wiki/List_of_Spy_%C3%97_Family_characters",
+        "https://en.wikipedia.org/wiki/List_of_Spy_%C3%97_Family_episodes",
+        "https://en.wikipedia.org/wiki/Anya_Forger",
+        "https://www.animenewsnetwork.com/press-release/2023-11-06/mission-accepted-spy-x-family-season-one-hindi-dub-streaming-now-on-crunchyroll/.204157",
+        "https://animehunch.com/spy-x-family-season-1-hindi-dub-reveals-release-date-cast/",
+        "https://anilist.co/character/138100"
+      ],
+      "notes": "Arcs left empty: I could not confirm the series wiki's arc names (fandom pages were blocked to the fetcher). Her biological family and the lab where she was a test subject ('Subject 007') are left out as later reveals. Hindi voice is credited for the season 1 Crunchyroll Hindi dub (Nov 2023); I did not confirm whether she returned for the season 3 Hindi dub.",
+      "about": "Anya is a small, pink-haired girl living in an orphanage who has a secret: she can read minds. When a master spy known as Twilight needs a child for his mission, he adopts her under the name Loid Forger, without knowing she can hear his thoughts. Anya is thrilled to learn her new father is a real spy, and later that her new mother, Yor, is secretly an assassin. She keeps her power hidden and quietly tries to help the family stay together, since she wants a home more than anything. Anya is funny, dramatic and not great at studying, and she loves spy cartoons and peanuts. To help Loid's mission she must get into the elite Eden Academy and win over the son of his target.",
+      "abilities": "Telepathy: she can hear the thoughts of people nearby, though she is still a child and often misunderstands what she hears.",
+      "fate": {
+        "status": "alive",
+        "detail": "Anya is alive and the story is ongoing; the manga has not ended and the anime is in production on a fourth season.",
+        "basis": "anime and manga so far"
+      },
+      "hindiVoice": {
+        "name": "Merlyn James",
+        "dub": "Crunchyroll Hindi dub (season 1)",
+        "sources": [
+          "https://www.animenewsnetwork.com/press-release/2023-11-06/mission-accepted-spy-x-family-season-one-hindi-dub-streaming-now-on-crunchyroll/.204157",
+          "https://animehunch.com/spy-x-family-season-1-hindi-dub-reveals-release-date-cast/"
+        ]
+      }
+    },
+    "chifuyu-matsuno": {
+      "name": "Chifuyu Matsuno",
+      "role": "Vice-captain of the Tokyo Manji Gang's First Division and Keisuke Baji's loyal right-hand man",
+      "debut": {
+        "anime": "Tokyo Revengers",
+        "episode": null,
+        "episodeTitle": null,
+        "source": "manga",
+        "chapter": null,
+        "volume": null
+      },
+      "arcs": [
+        "Valhalla",
+        "Black Dragon",
+        "Tenjiku",
+        "Bonten",
+        "Three Titans",
+        "Kanto Manji"
+      ],
+      "affiliations": [
+        "Tokyo Manji Gang (First Division vice-captain)"
+      ],
+      "relatives": [],
+      "confidence": "medium",
+      "sources": [
+        "https://en.wikipedia.org/wiki/List_of_Tokyo_Revengers_characters",
+        "https://en.wikipedia.org/wiki/List_of_Tokyo_Revengers_episodes",
+        "https://quotetheanime.com/tokyo-revengers/chifuyu-matsuno/",
+        "https://www.tvmaze.com/episodes/2120363/tokyo-revengers-1x17-no-way",
+        "https://anilist.co/character/145344"
+      ],
+      "notes": "Debut left null on purpose. Wikipedia's episode list first names him in season 1 episode 17 'No Way', where he approaches Takemichi; a fan site copying the series wiki gives an earlier anime cameo in episode 5 and a manga debut at chapter 41. I could not confirm either with two sources. Arc names follow common arc guides (the series wiki page itself could not be fetched); the anime calls the Three Titans arc 'War of the Three Titans' and some guides call it 'Three Deities'. No official Hindi dub credit found.",
+      "about": "Chifuyu Matsuno is the vice-captain of the Tokyo Manji Gang's First Division, serving under its captain, Keisuke Baji, whom he admires above everyone. With his blond undercut and quick temper he looks like a typical delinquent, but he is fiercely loyal and more thoughtful than he first lets on. When Baji suddenly appears to turn against Toman and join the rival gang Valhalla, Chifuyu refuses to believe his captain has truly betrayed them. He seeks out Takemichi, the time-travelling hero, and asks him to help bring Baji back. Their partnership quickly becomes one of the strongest friendships in the series, with Chifuyu acting as Takemichi's partner, sounding board and backup in his efforts to change the future.",
+      "abilities": "A capable street fighter, but his real strength is his loyalty and level head, which make him Takemichi's most dependable partner.",
+      "fate": {
+        "status": "alive",
+        "detail": "Chifuyu is killed in one of the bad future timelines Takemichi visits, but he is alive in the final timeline at the manga's end (2022), where he runs a pet shop with Kazutora Hanemiya.",
+        "basis": "manga ending"
+      },
+      "hindiVoice": null
+    },
+    "chisato-nishikigi": {
+      "name": "Chisato Nishikigi",
+      "role": "A cheerful elite Lycoris agent who works at Café LycoReco and becomes Takina's partner",
+      "debut": {
+        "anime": "Lycoris Recoil",
+        "episode": 1,
+        "episodeTitle": "Easy does it",
+        "source": null,
+        "chapter": null,
+        "volume": null
+      },
+      "arcs": [],
+      "affiliations": [
+        "Café LycoReco",
+        "Lycoris / Direct Attack (DA)"
+      ],
+      "relatives": [],
+      "confidence": "high",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Lycoris_Recoil",
+        "https://en.wikipedia.org/wiki/List_of_Lycoris_Recoil_episodes",
+        "https://myanimelist.net/anime/50709/Lycoris_Recoil",
+        "https://anilist.co/character/260329"
+      ],
+      "notes": "Anime original (later adapted into manga and novels). Mika, the café manager, raised her as a surrogate daughter but is not a blood relative, so relatives is left empty. Her artificial heart and its origin are later reveals and are kept out of 'about'. No official Hindi dub found.",
+      "about": "Chisato Nishikigi is a member of the Lycoris, a secret group of orphaned girls trained by the agency Direct Attack to quietly stop crime and keep Japan looking peaceful. Instead of working at headquarters, she runs missions out of LycoReco, a cosy café that sells sweets and coffee and also takes odd jobs for customers. When the serious, by-the-book Takina Inoue is demoted to the café, Chisato becomes her partner and mentor. Chisato is bright, playful and endlessly upbeat, and she wants to enjoy every day to the fullest. She is also considered the best Lycoris DA has ever produced, yet she refuses to kill, which puzzles Takina. Their friendship, built on very different outlooks, is the heart of the show.",
+      "abilities": "An exceptional gunfighter who can read an opponent's movements well enough to dodge bullets at point-blank range; she fights with non-lethal rounds by choice.",
+      "fate": {
+        "status": "alive",
+        "detail": "Chisato survives the finale: her failing artificial heart is replaced, and she moves to Hawaii, where the LycoReco staff join her running a mobile café. The 2025 short films show her everyday life.",
+        "basis": "series ending"
+      },
+      "hindiVoice": null
+    },
+    "cid-kageno": {
+      "name": "Cid Kagenou",
+      "role": "A reincarnated noble boy who plays a background extra by day and secretly leads Shadow Garden as 'Shadow'",
+      "debut": {
+        "anime": "The Eminence in Shadow",
+        "episode": 1,
+        "episodeTitle": "The Hated Classmate",
+        "source": "light novel",
+        "chapter": null,
+        "volume": 1
+      },
+      "arcs": [],
+      "affiliations": [
+        "Shadow Garden (founder and leader, as Shadow)",
+        "Midgar Academy for Dark Knights"
+      ],
+      "relatives": [
+        {
+          "name": "Claire Kagenou",
+          "relation": "older sister"
+        }
+      ],
+      "confidence": "high",
+      "sources": [
+        "https://en.wikipedia.org/wiki/The_Eminence_in_Shadow",
+        "https://en.wikipedia.org/wiki/List_of_The_Eminence_in_Shadow_episodes",
+        "https://en.wikipedia.org/wiki/List_of_The_Eminence_in_Shadow_characters",
+        "https://myanimelist.net/character/171572/Cid_Kagenou",
+        "https://myanimelist.net/character/194192",
+        "https://anilist.co/character/136837"
+      ],
+      "notes": "Fans also spell the surname 'Kageno'; the page slug uses that spelling. His past-life name is Minoru Kageno. Light novel chapter numbers are not used, so only volume 1 is given. Arcs left empty because I could not confirm the series wiki's arc names. No official Hindi dub credit found.",
+      "about": "In modern Japan, Minoru Kageno spends his life secretly training for one dream: not to be the hero or the villain, but the mysterious mastermind who pulls the strings from the shadows. After he is hit by a truck, he is reborn in a world of magic as Cid Kagenou, the unremarkable younger son of a country noble. Cid keeps up a perfectly ordinary, forgettable act in public while training in secret. To live out his fantasy, he rescues an elf girl named Alpha and invents a grand story about a hidden cult threatening the world, then names his little band Shadow Garden. Alpha and the girls who join her take it all completely seriously. Cid is cheerfully self-absorbed, and much of the comedy comes from how wrong he is about what is real.",
+      "abilities": "An overwhelmingly strong swordsman and magic user who hides his power; as Shadow he fights with a blade made from his slime bodysuit and flashy, theatrical spells.",
+      "fate": {
+        "status": "alive",
+        "detail": "Cid is alive and his story is ongoing: the light novel continues (volume 7 in April 2026) and a film, Lost Echoes, is due in Japanese cinemas in 2027.",
+        "basis": "anime and light novel so far"
+      },
+      "hindiVoice": null
+    },
+    "david-martinez": {
+      "name": "David Martinez",
+      "role": "A Night City street kid who drops out of Arasaka Academy and becomes an edgerunner",
+      "debut": {
+        "anime": "Cyberpunk: Edgerunners",
+        "episode": 1,
+        "episodeTitle": "Let You Down",
+        "source": null,
+        "chapter": null,
+        "volume": null
+      },
+      "arcs": [],
+      "affiliations": [
+        "Arasaka Academy (former student)",
+        "Maine's crew"
+      ],
+      "relatives": [
+        {
+          "name": "Gloria Martinez",
+          "relation": "mother"
+        }
+      ],
+      "confidence": "high",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Cyberpunk:_Edgerunners",
+        "https://myanimelist.net/anime/42310/Cyberpunk__Edgerunners",
+        "https://www.tvmaze.com/characters/1066013/cyberpunk-edgerunners-lucy",
+        "https://anilist.co/character/284158"
+      ],
+      "notes": "Anime original set in the Cyberpunk 2077 game world (no manga/novel source). Cyberpunk: Edgerunners 2 (Netflix, 2026) is a standalone series with a new story and cast. No Hindi dub found on Netflix listings checked.",
+      "about": "David Martinez is a teenager from the poorer side of Night City, a city run by giant corporations and soaked in cybernetic implants. His mother Gloria works herself to exhaustion so he can attend the elite Arasaka Academy, where he is bullied for being poor. When a sudden tragedy leaves him alone and broke, David finds a powerful military implant called a Sandevistan and has it installed, discovering that his body handles heavy cyberware unusually well. On a train he crosses paths with Lucy, a mysterious netrunner, and soon falls in with her crew of mercenaries, the edgerunners. David is impulsive, warm-hearted and stubborn, and he desperately wants to live up to his mother's hopes for him while finding a place where he belongs.",
+      "abilities": "Uses a Sandevistan implant that lets him move so fast the world seems to freeze, and has a rare tolerance for heavy cyberware.",
+      "fate": {
+        "status": "dies",
+        "detail": "In the finale David stays behind to hold off Adam Smasher so Lucy and Falco can escape, and Smasher kills him. Lucy later reaches the Moon, the dream they had shared.",
+        "basis": "series ending"
+      },
+      "hindiVoice": null
+    },
+    "edgerunners-lucy": {
+      "name": "Lucy",
+      "role": "A skilled netrunner and data thief in Maine's crew who dreams of going to the Moon",
+      "debut": {
+        "anime": "Cyberpunk: Edgerunners",
+        "episode": 1,
+        "episodeTitle": "Let You Down",
+        "source": null,
+        "chapter": null,
+        "volume": null
+      },
+      "arcs": [],
+      "affiliations": [
+        "Maine's crew"
+      ],
+      "relatives": [],
+      "confidence": "high",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Cyberpunk:_Edgerunners",
+        "https://myanimelist.net/anime/42310/Cyberpunk__Edgerunners",
+        "https://www.tvmaze.com/characters/1066013/cyberpunk-edgerunners-lucy",
+        "https://anilist.co/character/284157"
+      ],
+      "notes": "Full name Lucyna Kushinada. Her childhood at Arasaka and her link to Kiwi are left out of 'about' as later reveals. No Hindi dub found.",
+      "about": "Lucy is a quiet, guarded netrunner, a hacker who dives into Night City's networks through cybernetic implants. When David first meets her she is working a train line, stealing data from corporate passengers, and she is more than capable of handling anyone who notices. Impressed by what David can do, she brings him into the crew of mercenaries she runs with, led by the veteran Maine. Lucy keeps her past to herself and seems to carry a deep dislike of the corporations, especially Arasaka. Under her cool exterior she has a soft, dreamy side, and she talks about escaping the city to see the Moon. Her growing bond with David, two lonely people looking for a way out, drives much of the series.",
+      "abilities": "An expert netrunner who can hack people and systems through her cyberware, using monowire cables both for hacking and as a weapon.",
+      "fate": {
+        "status": "alive",
+        "detail": "Lucy survives the finale and finally travels to the Moon, but she goes alone, heartbroken after David's death.",
+        "basis": "series ending"
+      },
+      "hindiVoice": null
+    },
+    "edgerunners-rebecca": {
+      "name": "Rebecca",
+      "role": "A short-tempered, heavily armed gunner in Maine's crew of edgerunners",
+      "debut": {
+        "anime": "Cyberpunk: Edgerunners",
+        "episode": 3,
+        "episodeTitle": "Smooth Criminal",
+        "source": null,
+        "chapter": null,
+        "volume": null
+      },
+      "arcs": [],
+      "affiliations": [
+        "Maine's crew"
+      ],
+      "relatives": [
+        {
+          "name": "Pilar",
+          "relation": "older brother"
+        }
+      ],
+      "confidence": "high",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Rebecca_(Cyberpunk:_Edgerunners)",
+        "https://en.wikipedia.org/wiki/Cyberpunk:_Edgerunners",
+        "https://www.tvmaze.com/characters/1066019/cyberpunk-edgerunners-rebecca",
+        "https://anilist.co/character/284163"
+      ],
+      "notes": "Debut episode 3 is given by both Wikipedia's character article and TVMaze; some fans think of her as appearing earlier with the crew, but no source supports that. No Hindi dub found.",
+      "about": "Rebecca is the smallest member of Maine's crew and easily the loudest. With her neon-green hair, tattoos and oversized guns, she charges into jobs with more enthusiasm than caution, and she loves causing trouble for the big corporations. She works alongside her older brother Pilar, the crew's foul-mouthed techie, and the two bicker constantly. When David joins the team, Rebecca quickly takes a liking to the new kid, teasing him while also looking out for him. She can seem reckless and crude, but she is fiercely loyal to her friends and braver than anyone on the crew. Fans quickly made her one of the show's breakout characters thanks to her chaotic energy and big heart.",
+      "abilities": "A deadly gunner who dual-wields heavy weapons, including her shotgun 'Guts', and later uses Gorilla Arms cyberware for brute strength.",
+      "fate": {
+        "status": "dies",
+        "detail": "During the final battle at Arasaka Tower, Rebecca tries to shoot Adam Smasher and is killed instantly when he lands on her.",
+        "basis": "series ending"
+      },
+      "hindiVoice": null
+    },
+    "frieren": {
+      "name": "Frieren",
+      "role": "An elf mage from the hero party that defeated the Demon King, setting out on a new journey to understand people",
+      "debut": {
+        "anime": "Frieren: Beyond Journey's End",
+        "episode": 1,
+        "episodeTitle": "The Journey's End",
+        "source": "manga",
+        "chapter": 1,
+        "volume": 1
+      },
+      "arcs": [
+        "Aura the Guillotine",
+        "First-Class Mage Exam",
+        "Golden Land"
+      ],
+      "affiliations": [
+        "Hero Himmel's party (former)",
+        "Frieren's party"
+      ],
+      "relatives": [],
+      "confidence": "high",
+      "sources": [
+        "https://en.wikipedia.org/wiki/List_of_Frieren_episodes",
+        "https://en.wikipedia.org/wiki/Frieren",
+        "https://en.wikipedia.org/wiki/List_of_Frieren_chapters",
+        "https://fictionhorizon.com/frieren-beyond-journeys-end-all-arcs-reading-order/",
+        "https://anilist.co/character/176754"
+      ],
+      "notes": "Arc names follow common arc guides and Wikipedia's mention of the 'Golden Land' arc (season 3, due October 2027); the series wiki flags its own arc names as unofficial. A fan site (Anime Mirchi) credits Natasha Chungath as Frieren's Hindi voice in Crunchyroll's Hindi dub, but I found no official or first-hand credit, so hindiVoice is null.",
+      "about": "Frieren is an elf mage who spent ten years travelling with the hero Himmel, the priest Heiter and the dwarf warrior Eisen on a quest to defeat the Demon King. For someone who lives for over a thousand years, that decade felt like a short trip, and she parts from her friends without much thought. Decades later, when the aging Himmel dies, Frieren is struck by how little she bothered to know him, and she sets out on a new journey to understand people better and retrace the old adventure. Frieren is calm, blunt and often lazy, with a love for collecting odd, useless spells. Her slow-burning, reflective story about time, memory and grief is what sets the series apart.",
+      "abilities": "One of the most powerful mages alive, with a huge range of spells and centuries of combat experience; she habitually hides her true mana level from enemies.",
+      "fate": {
+        "status": "alive",
+        "detail": "Frieren is alive and her journey continues in the ongoing manga and anime; season 3 is set for October 2027.",
+        "basis": "anime and manga so far"
+      },
+      "hindiVoice": null
+    },
+    "frieren-fern": {
+      "name": "Fern",
+      "role": "A war orphan raised by the priest Heiter who becomes Frieren's apprentice and travelling companion",
+      "debut": {
+        "anime": "Frieren: Beyond Journey's End",
+        "episode": 1,
+        "episodeTitle": "The Journey's End",
+        "source": "manga",
+        "chapter": 2,
+        "volume": 1
+      },
+      "arcs": [
+        "Aura the Guillotine",
+        "First-Class Mage Exam",
+        "Golden Land"
+      ],
+      "affiliations": [
+        "Frieren's party"
+      ],
+      "relatives": [
+        {
+          "name": "Heiter",
+          "relation": "adoptive father"
+        }
+      ],
+      "confidence": "high",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Fern_(Frieren)",
+        "https://en.wikipedia.org/wiki/List_of_Frieren_episodes",
+        "https://en.wikipedia.org/wiki/List_of_Frieren_chapters",
+        "https://anilist.co/character/183965",
+        "https://animemirchi.com/frieren-in-hindi-dub-voice-cast/"
+      ],
+      "notes": "Manga debut chapter 2 'The Priest's Lie'; the anime's first episode covers this, showing her as a nine-year-old. Arc names follow common guides. Anime Mirchi (fan site) credits Merlyn James as Fern's Hindi voice; not confirmed by an official or first-hand source, so hindiVoice is null.",
+      "about": "Fern lost her parents to war as a small child and was taken in by Heiter, a former hero's companion turned priest. When Frieren visits her old friend, she finds him raising Fern and determined to see her become a mage. Heiter asks Frieren to teach her, and after watching Fern's stubborn, solitary training, Frieren agrees to take her on. Fern grows up into a serious, responsible young woman who keeps the forgetful, sleepy Frieren on schedule, scolds her for wasting money on strange spells and acts like the adult of the pair. She can be quietly sulky when upset, but she is deeply loyal and has a dry sense of humour. Their teacher-student bond is one of the show's warmest threads.",
+      "abilities": "A prodigiously fast and precise mage who specialises in basic offensive magic, firing Zoltraak spells faster than most mages can react; she also hides her mana like Frieren.",
+      "fate": {
+        "status": "alive",
+        "detail": "Fern is alive and still travelling with Frieren in the ongoing manga and anime.",
+        "basis": "anime and manga so far"
+      },
+      "hindiVoice": null
+    },
+    "frieren-stark": {
+      "name": "Stark",
+      "role": "A young warrior trained by Eisen who joins Frieren and Fern as their front-line fighter",
+      "debut": {
+        "anime": "Frieren: Beyond Journey's End",
+        "episode": 5,
+        "episodeTitle": "Phantoms of the Dead",
+        "source": "manga",
+        "chapter": 11,
+        "volume": 2
+      },
+      "arcs": [
+        "Aura the Guillotine",
+        "First-Class Mage Exam",
+        "Golden Land"
+      ],
+      "affiliations": [
+        "Frieren's party"
+      ],
+      "relatives": [
+        {
+          "name": "Stoltz",
+          "relation": "older brother"
+        }
+      ],
+      "confidence": "high",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Stark_(Frieren)",
+        "https://en.wikipedia.org/wiki/List_of_Frieren_episodes",
+        "https://en.wikipedia.org/wiki/List_of_Frieren_chapters",
+        "https://anilist.co/character/184313",
+        "https://animemirchi.com/frieren-in-hindi-dub-voice-cast/"
+      ],
+      "notes": "Both Wikipedia's character article and episode list place his anime debut in episode 5; episode 6 'The Hero of the Village' is his main introduction. Manga chapter 11 is in volume 2 (chapters 8-17) per Wikipedia's chapter list. Stark is mostly absent from the exam arc but listed for completeness. Anime Mirchi (fan site) credits Prithvi Pancholi as his Hindi voice; unconfirmed, so hindiVoice is null.",
+      "about": "Stark is a young warrior who was raised and trained by Eisen, the dwarf from Frieren's old hero party. When Frieren and Fern come looking for help, they find him living in a village that believes he is a hero, because a fearsome dragon nearby has never dared to attack while he is around. The truth is that Stark is terrified of the dragon and sure he is a coward. Frieren and Fern see a different picture: his body is covered in scars from training, and his strength is far greater than he believes. Kind, humble and often hilariously awkward, especially around Fern, Stark joins the party as its front-line fighter and slowly learns to trust his own courage.",
+      "abilities": "An enormously strong axe-wielding warrior with a supernatural gift for combat and a body that can soak up punishing hits to create an opening.",
+      "fate": {
+        "status": "alive",
+        "detail": "Stark is alive and still travelling with Frieren and Fern in the ongoing manga and anime.",
+        "basis": "anime and manga so far"
+      },
+      "hindiVoice": null
+    },
+    "gabimaru": {
+      "name": "Gabimaru",
+      "role": "A legendary shinobi on death row who joins an expedition to a deadly island to win a pardon",
+      "debut": {
+        "anime": "Hell's Paradise",
+        "episode": 1,
+        "episodeTitle": "The Death Row Convict and the Executioner",
+        "source": "manga",
+        "chapter": 1,
+        "volume": 1
+      },
+      "arcs": [],
+      "affiliations": [
+        "Iwagakure (former)",
+        "Shinsenkyo expedition"
+      ],
+      "relatives": [
+        {
+          "name": "Yui",
+          "relation": "wife"
+        },
+        {
+          "name": "Iwagakure Chief",
+          "relation": "father-in-law"
+        }
+      ],
+      "confidence": "high",
+      "sources": [
+        "https://en.wikipedia.org/wiki/List_of_Hell%27s_Paradise:_Jigokuraku_episodes",
+        "https://en.wikipedia.org/wiki/List_of_Hell%27s_Paradise:_Jigokuraku_characters",
+        "https://en.wikipedia.org/wiki/Gabimaru",
+        "https://myanimelist.net/character/171437/Gabimaru",
+        "https://www.animenewsnetwork.com/news/2021-01-18/hell-paradise-manga-ends-on-january-25/.168502",
+        "https://www.spieltimes.io/news/hells-paradise-will-gabimaru-end-up-with-yui-ending-explained",
+        "https://www.sportskeeda.com/anime/does-gabimaru-end-up-with-his-wife-in-hells-paradise",
+        "https://anilist.co/character/137260"
+      ],
+      "notes": "Also known as 'Gabimaru the Hollow'. Arcs left empty; I could not confirm the series wiki's arc names (only the final 'Departure' arc is named in sources). The ending (pardon and reunion with Yui, chapter 127, January 2021) comes from two news sites rather than the series wiki, which could not be fetched. No Hindi dub found.",
+      "about": "Gabimaru was raised in the hidden ninja village of Iwagakure and became its deadliest assassin, earning the nickname 'Gabimaru the Hollow' for seeming to feel nothing at all. Now he sits on death row, yet every attempt to execute him fails because his body simply will not die. The executioner Sagiri Yamada Asaemon realises the truth: Gabimaru does not want to die, because of his wife, the one person who taught him he has feelings. She offers him a deal. If he joins a group of convicts sent to a mysterious island to find the elixir of life, he can win a full pardon. Cold, blunt and ruthless on the surface, Gabimaru is driven by one simple goal: getting home to his wife.",
+      "abilities": "A master shinobi with superhuman toughness and speed whose signature ninja art lets him ignite the oil in his skin and set himself ablaze.",
+      "fate": {
+        "status": "alive",
+        "detail": "Gabimaru survives the island. At the manga's end (chapter 127, January 2021) he is pardoned and reunited with Yui, and they settle into a peaceful life together.",
+        "basis": "manga ending"
+      },
+      "hindiVoice": null
+    },
+    "hina-chono": {
+      "name": "Hina Chono",
+      "role": "Taiki Inomata's teasing childhood friend and a rhythmic gymnast at Eimei High",
+      "debut": {
+        "anime": "Blue Box",
+        "episode": 1,
+        "episodeTitle": "Chinatsu Senpai",
+        "source": "manga",
+        "chapter": null,
+        "volume": 1
+      },
+      "arcs": [],
+      "affiliations": [
+        "Eimei Junior and Senior High School",
+        "Rhythmic gymnastics team"
+      ],
+      "relatives": [],
+      "confidence": "medium",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Blue_Box_(manga)",
+        "https://en.wikipedia.org/wiki/List_of_Blue_Box_episodes",
+        "https://myanimelist.net/character/197750/Hina_Chouno",
+        "https://www.tvmaze.com/characters/1300419/blue-box-hina-chono",
+        "https://www.comicshoplocator.com/2026/07/06/blue-box-chapter-250-finale-shonen-jump-2026/",
+        "https://anilist.co/character/218648"
+      ],
+      "notes": "Also romanised 'Chouno'. Anime debut episode 1 is double-sourced; manga chapter left null because I could not confirm it (almost certainly chapter 1, which is in volume 1). Her school is named by TVMaze and merch listings rather than Wikipedia, hence medium confidence. Blue Box has no named arcs. Correction for the reviewer: the manga ENDED with chapter 250 in July 2026; season 2 of the anime began 4 October 2026. No Hindi dub found.",
+      "about": "Hina Chono is a lively student at Eimei High, a school famous for its sports clubs, where she competes in rhythmic gymnastics. She has been friends with her classmate Taiki Inomata, a member of the badminton team, since junior high, and the two share an easy, bickering friendship. Hina is expressive, dramatic and loves to tease Taiki, especially once she notices his huge crush on Chinatsu Kano, the basketball club's star. She acts like a big sister, poking fun at how flustered he gets while also pushing him to work hard. Hina is a serious athlete too, chasing her own competition goals with real determination. As Taiki and Chinatsu grow closer under unusual circumstances, Hina finds herself examining her own feelings in ways she did not expect.",
+      "abilities": "A talented rhythmic gymnast who competes seriously for her school.",
+      "fate": {
+        "status": "alive",
+        "detail": "Hina is alive at the manga's end (chapter 250, July 2026). Her feelings for Taiki go unreturned, but after a difficult stretch she works to repair their friendship.",
+        "basis": "manga ending"
+      },
+      "hindiVoice": null
+    },
+    "hitori-goto": {
+      "name": "Hitori Gotoh",
+      "role": "A painfully shy high-school guitar prodigy, nicknamed 'Bocchi', who becomes Kessoku Band's lead guitarist",
+      "debut": {
+        "anime": "Bocchi the Rock!",
+        "episode": 1,
+        "episodeTitle": "Lonely Rolling Bocchi",
+        "source": "manga",
+        "chapter": 1,
+        "volume": 1
+      },
+      "arcs": [],
+      "affiliations": [
+        "Kessoku Band",
+        "STARRY (live house)"
+      ],
+      "relatives": [
+        {
+          "name": "Naoki Gotoh",
+          "relation": "father"
+        },
+        {
+          "name": "Michiyo Gotoh",
+          "relation": "mother"
+        },
+        {
+          "name": "Futari Gotoh",
+          "relation": "younger sister"
+        }
+      ],
+      "confidence": "high",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Bocchi_the_Rock!",
+        "https://en.wikipedia.org/wiki/List_of_Bocchi_the_Rock!_episodes",
+        "https://myanimelist.net/anime/47917/Bocchi_the_Rock",
+        "https://anilist.co/character/257562"
+      ],
+      "notes": "Romanised both 'Gotoh' (official) and 'Goto'. Her high school (Shuka High in fan sources) is left out because Wikipedia does not name it. The family dog JimiHen is left out of relatives. Manga is ongoing; anime season 2 announced Feb 2025, and a film about the Ijichi sisters is due in 2027. No official Hindi dub credit found.",
+      "about": "Hitori Gotoh is a high-school girl with crippling social anxiety who picked up the guitar in middle school, hoping that being in a band would finally help her make friends. It did not work out that way: she practised alone in her closet for years and became seriously skilled, gaining a following online as 'Guitarhero', but never managed to talk to anyone at school. Then Nijika Ijichi, a drummer desperate for a last-minute replacement guitarist, finds her sitting alone at a playground and drags her to a small live house called STARRY. There Hitori joins Kessoku Band and gets the nickname 'Bocchi', meaning 'loner'. Her wildly exaggerated panic attacks and daydreams make her one of anime's funniest and most relatable leads.",
+      "abilities": "A highly skilled self-taught guitarist, though her nerves make her play far below her real level when performing with others at first.",
+      "fate": {
+        "status": "alive",
+        "detail": "Hitori is alive; the manga is ongoing and a second anime season is in production.",
+        "basis": "anime and manga so far"
+      },
+      "hindiVoice": null
+    },
+    "kanojo-okarishimasu-chizuru-ichinose": {
+      "name": "Chizuru Mizuhara",
+      "role": "A seemingly perfect rental girlfriend whose real name is Chizuru Ichinose, and who turns out to be Kazuya's neighbour",
+      "debut": {
+        "anime": "Rent-a-Girlfriend",
+        "episode": 1,
+        "episodeTitle": "Rent-a-Girlfriend",
+        "source": "manga",
+        "chapter": 1,
+        "volume": 1
+      },
+      "arcs": [],
+      "affiliations": [
+        "Diamond (rental girlfriend agency)"
+      ],
+      "relatives": [
+        {
+          "name": "Sayuri Ichinose",
+          "relation": "grandmother"
+        }
+      ],
+      "confidence": "high",
+      "sources": [
+        "https://en.wikipedia.org/wiki/List_of_Rent-A-Girlfriend_characters",
+        "https://en.wikipedia.org/wiki/List_of_Rent-A-Girlfriend_episodes",
+        "https://myanimelist.net/anime/40839/Kanojo_Okarishimasu",
+        "https://anilist.co/character/128106"
+      ],
+      "notes": "Fans search both 'Chizuru Mizuhara' (her rental name, the usual search term) and 'Chizuru Ichinose' (her real name). Her late grandfather and absent parents are left out. Crunchyroll released a Hindi dub of season 3, but I found no credited Hindi voice actor, so hindiVoice is null. Five anime seasons have aired (season 5: April-June 2026) and a sixth is announced.",
+      "about": "After his girlfriend dumps him, college student Kazuya Kinoshita rents a date through an app and meets Chizuru Mizuhara, a stunning, attentive girl who seems too good to be true. And she is: Chizuru is a professional rental girlfriend, and once the clock stops she drops the sweet act and tells him exactly what she thinks of him. Things get complicated fast when Kazuya learns that she lives right next door and goes to his university under her real name, Chizuru Ichinose, hiding behind glasses and braids. When both of their grandmothers believe the two are a real couple, they are stuck keeping up the lie. Chizuru is sharp, hard-working and fiercely private, and she is quietly chasing a dream of becoming an actress.",
+      "abilities": null,
+      "fate": {
+        "status": "alive",
+        "detail": "Chizuru is alive; the manga is ongoing and her relationship with Kazuya is still developing. Her grandmother Sayuri falls ill and dies after watching Chizuru's film.",
+        "basis": "anime and manga so far"
+      },
+      "hindiVoice": null
+    },
+    "kaoruko-waguri": {
+      "name": "Kaoruko Waguri",
+      "role": "A cheerful scholarship student at the elite Kikyo girls' school who befriends Rintaro, a boy from the rival school next door",
+      "debut": {
+        "anime": "The Fragrant Flower Blooms with Dignity",
+        "episode": 1,
+        "episodeTitle": "Rintaro and Kaoruko",
+        "source": "manga",
+        "chapter": 1,
+        "volume": 1
+      },
+      "arcs": [],
+      "affiliations": [
+        "Kikyo Private Academy"
+      ],
+      "relatives": [],
+      "confidence": "high",
+      "sources": [
+        "https://en.wikipedia.org/wiki/The_Fragrant_Flower_Blooms_with_Dignity",
+        "https://myanimelist.net/anime/59845/Kaoru_Hana_wa_Rin_to_Saku",
+        "https://anilist.co/character/268676"
+      ],
+      "notes": "Wikipedia names her parents (Fuko and Yosuke) and younger brother (Kosuke), but I could not confirm them in a second source, so relatives is empty. Her school is called Kikyo Private Academy on Wikipedia; fans also say Kikyo Girls' School. Manga ongoing (24 volumes as of September 2026). No official Hindi dub credit found.",
+      "about": "Rintaro Tsumugi is a tall, quiet boy at Chidori, a low-ranked boys' high school whose students are feared as delinquents. Right next door stands Kikyo, an elite girls' school whose students look down on Chidori, and the two schools barely tolerate each other. When Rintaro is helping out at his family's cake shop, he meets Kaoruko Waguri, a bubbly customer who happily eats cake and is not frightened of him at all. Later he discovers she attends Kikyo. Kaoruko is warm, honest and polite, studies hard to keep her scholarship, and judges people by how they act rather than where they come from. She chooses to keep seeing Rintaro despite the rivalry between their schools, setting up a gentle, sincere romance.",
+      "abilities": null,
+      "fate": {
+        "status": "alive",
+        "detail": "Kaoruko is alive; she and Rintaro confess their feelings and start dating, and the manga is ongoing.",
+        "basis": "anime and manga so far"
+      },
+      "hindiVoice": null
+    },
+    "katakuri": {
+      "name": "Charlotte Katakuri",
+      "role": "Big Mom's second son and the strongest of the Big Mom Pirates' Three Sweet Commanders",
+      "debut": {
+        "anime": "One Piece",
+        "episode": 825,
+        "episodeTitle": "A Liar! Luffy and Sanji!!",
+        "source": "manga",
+        "chapter": 860,
+        "volume": 86
+      },
+      "arcs": [
+        "Whole Cake Island"
+      ],
+      "affiliations": [
+        "Big Mom Pirates (Sweet Commander)",
+        "Charlotte Family",
+        "Totto Land (Minister of Flour)"
+      ],
+      "relatives": [
+        {
+          "name": "Charlotte Linlin (Big Mom)",
+          "relation": "mother"
+        }
+      ],
+      "confidence": "high",
+      "sources": [
+        "https://en.wikipedia.org/wiki/One_Piece_season_19",
+        "https://en.wikipedia.org/wiki/List_of_One_Piece_chapters_(807%E2%80%931015)",
+        "https://myanimelist.net/character/150775/Katakuri_Charlotte",
+        "https://www.tvmaze.com/characters/1021380/one-piece-charlotte-katakuri",
+        "https://www.itechpost.com/articles/93059/20170323/one-piece-chapter-860-spoilers-commander-katakuri-finally-introduced-wedding-starts-with-arrival-of-badass-guests.htm",
+        "https://anilist.co/character/124077"
+      ],
+      "notes": "Anime debut is a brief appearance at the end of episode 825 (anime-original placement, earlier than the manga); his manga debut is chapter 860 '10:00 Start' (volume 86), though he is mentioned by name from chapter 843. His many siblings (including triplet brothers Daifuku and Oven and sister Brûlée) are left out because I could only single-source them in this pass. No Hindi dub of the Whole Cake Island arc found.",
+      "about": "Charlotte Katakuri is the second son of the pirate empress Big Mom and one of the Three Sweet Commanders who guard her island nation, Totto Land. Towering, calm and nearly silent, he is treated almost like a legend by his huge family, who believe he has never once been knocked down. His face is always hidden behind a thick scarf. Katakuri is cool-headed, disciplined and fiercely protective of his siblings, and he takes his duty to his mother deadly seriously. When Luffy and the Straw Hats infiltrate Big Mom's lavish wedding tea party to rescue Sanji, Katakuri emerges as the most dangerous obstacle in their way, an opponent who seems to be one step ahead of everything they try.",
+      "abilities": "Eats the Mochi-Mochi Fruit, letting him create, control and turn into sticky mochi, and his Observation Haki is so advanced he can glimpse a few seconds into the future.",
+      "fate": {
+        "status": "alive",
+        "detail": "Luffy defeats Katakuri at the end of their long duel in the Whole Cake Island arc, but he survives and earns Luffy's respect; he has not died as of the latest chapters.",
+        "basis": "anime and manga so far"
+      },
+      "hindiVoice": null
+    },
+    "ken-ryuguji": {
+      "name": "Ken \"Draken\" Ryuguji",
+      "role": "The towering vice-leader of the Tokyo Manji Gang and Mikey's best friend",
+      "debut": {
+        "anime": "Tokyo Revengers",
+        "episode": 3,
+        "episodeTitle": "Resolve",
+        "source": "manga",
+        "chapter": 3,
+        "volume": 1
+      },
+      "arcs": [
+        "Toman Arc",
+        "Moebius Arc",
+        "Valhalla Arc",
+        "Black Dragon Arc",
+        "Tenjiku Arc",
+        "Bonten Arc",
+        "Three Deities Arc"
+      ],
+      "affiliations": [
+        "Tokyo Manji Gang"
+      ],
+      "relatives": [],
+      "confidence": "high",
+      "sources": [
+        "https://tokyorevengers.fandom.com/wiki/Ken_Ryuguji",
+        "https://tokyorevengers.fandom.com/wiki/Manjiro_Sano/Synopsis",
+        "https://en.wikipedia.org/wiki/List_of_Tokyo_Revengers_episodes",
+        "https://en.wikipedia.org/wiki/List_of_Tokyo_Revengers_characters",
+        "https://anilist.co/character/145345",
+        "https://www.sportskeeda.com/anime/tokyo-revengers-chapter-278-every-character-s-occupation-final-timeline-explained",
+        "https://sportskeeda.com/pop-culture/tokyo-revengers-does-draken-die",
+        "https://www.animenewsnetwork.com/news/2026-03-29/tokyo-revengers-war-of-the-three-titans-arc-2nd-trailer-unveils-4-new-cast-members-october-debut/.235913"
+      ],
+      "notes": "Arc names follow the Tokyo Revengers wiki (the Final Arc is split into the Three Deities Arc and Kanto Manji Arc; Draken's death falls in the Three Deities Arc, so Kanto Manji is left off). Relatives left out: his marriage to Emma Sano and expected child exist only in the final timeline (a major ending spoiler); his parents are unnamed. Former Brahman membership omitted as a spoiler. Season 4 of the anime, 'War of the Three Titans Arc', began airing 2 Oct 2026 and adapts the arc where he is shot, so anime-only viewers may reach it this season. A Hindi dub of season 1 streams on Muse India (Anime News Network, 26 Nov 2024), but the only Draken voice credit found was on a fan site (AnimeMirchi), so hindiVoice is null. Japanese voice changed from Tatsuhisa Suzuki (S1) to Masaya Fukunishi (S2 onward).",
+      "about": "Ken Ryuguji, called Draken, is the vice-leader of the Tokyo Manji Gang, or Toman, and the closest friend of its leader, Mikey. Tall, broad and hard to miss with a dragon tattoo on his temple and a neat blond braid, he looks like the scariest member of the gang, but he is really its steady older-brother figure. Where Mikey is playful and unpredictable, Draken keeps him grounded, scolds members who disrespect their leader and cares a lot about the gang behaving with honour. Takemichi Hanagaki, sent back in time to his middle-school days, meets Draken alongside Mikey at a rigged fight club, and Draken soon comes to respect Takemichi for refusing to back down when it counts.",
+      "abilities": "A formidable street fighter and one of Toman's strongest members, able to take down groups of opponents on his own.",
+      "fate": {
+        "status": "alive",
+        "detail": "In the manga, Draken is shot dead in one timeline during the Three Deities Arc, but the final time leap at the series' end creates a new timeline where he is alive, married to Emma Sano and working as head mechanic for Mikey's racing team.",
+        "basis": "manga ending"
+      },
+      "hindiVoice": null
+    },
+    "konosuba-darkness": {
+      "name": "Darkness",
+      "role": "A clumsy, thrill-seeking crusader who joins Kazuma's adventuring party as its armoured frontliner",
+      "debut": {
+        "anime": "KonoSuba",
+        "episode": 2,
+        "episodeTitle": "An Explosion for This Chunibyo!",
+        "source": "light novel",
+        "chapter": null,
+        "volume": 1
+      },
+      "arcs": [],
+      "affiliations": [
+        "Kazuma's party",
+        "Adventurers' Guild",
+        "Dustiness family",
+        "Kingdom of Belzerg"
+      ],
+      "relatives": [
+        {
+          "name": "Ignis Ford Dustiness",
+          "relation": "father"
+        }
+      ],
+      "confidence": "high",
+      "sources": [
+        "https://konosuba.fandom.com/wiki/Darkness",
+        "https://en.wikipedia.org/wiki/List_of_KonoSuba_characters",
+        "https://en.wikipedia.org/wiki/KonoSuba_season_1",
+        "https://anilist.co/character/89363"
+      ],
+      "notes": "Real name: Lalatina Ford Dustiness (dub: Lalatina Dustiness-Ford; the request's 'Lalatina Dustiness Ford' word order differs slightly by translation). Her noble background is revealed later in season 1, so the about text does not mention it. Debut volume refers to light novel volume 1; she debuts in chapter 2 of the manga adaptation. The KonoSuba wiki does not name story arcs, so arcs is []. Cousin Sylphina and her unnamed late mother are wiki-only and left out. The light novels ended in 2020 (volume 17). No Hindi dub of KonoSuba was found.",
+      "about": "Darkness is a tall, blonde crusader who answers Kazuma's ad for new party members in the starter town of Axel. On paper she is exactly what his struggling group needs: a heavily armoured knight with huge stamina and defence who is happy to stand in front of monsters and shield everyone else. The catch shows up fast. She cannot land a hit with her sword to save her life, and her eagerness to take blows comes from the fact that she enjoys pain and humiliation far more than she should. Dignified on the surface but easily flustered, she becomes the third oddball in Kazuma's party alongside the useless goddess Aqua and the one-spell wizard Megumin, multiplying his daily headaches.",
+      "abilities": "As a Crusader she has enormous defence and endurance and can draw enemy attacks onto herself, but her sword attacks almost never hit.",
+      "fate": {
+        "status": "alive",
+        "detail": "Darkness survives the whole story and is still adventuring with Kazuma's party when the light novels end.",
+        "basis": "series ending (light novels)"
+      },
+      "hindiVoice": null
+    },
+    "kurena-kukumila": {
+      "name": "Kurena Kukumila",
+      "role": "The Spearhead Squadron's sharp-shooting long-range specialist, call sign Gunslinger",
+      "debut": {
+        "anime": "86 Eighty-Six",
+        "episode": 1,
+        "episodeTitle": "Undertaker",
+        "source": "light novel",
+        "chapter": 2,
+        "volume": 1
+      },
+      "arcs": [],
+      "affiliations": [
+        "Spearhead Squadron",
+        "Eighty-Six"
+      ],
+      "relatives": [],
+      "confidence": "high",
+      "sources": [
+        "https://86-eighty-six.fandom.com/wiki/Kurena_Kukumila",
+        "https://en.wikipedia.org/wiki/86_(novel_series)",
+        "https://en.wikipedia.org/wiki/List_of_86_episodes",
+        "https://anilist.co/character/174873"
+      ],
+      "notes": "Debut chapter/volume refers to the light novel (volume 1, chapter 2); the manga debut is volume 1, chapter 3. 86 has no named story arcs on its wiki (it is organised by light-novel volume), so arcs is []. Relatives left out: her parents were killed and her sister died as a Processor (background revealed over the first cour), and her later adoptive family in the Giad Federacy is a spoiler for the end of the first cour. Later units (Eighty-Sixth Strike Package etc.) omitted as spoilers. The light novels are still ongoing. No Hindi dub of 86 was found.",
+      "about": "Kurena Kukumila is one of the young Eighty-Six soldiers of the Spearhead Squadron, the battle-hardened unit that the Republic of San Magnolia sends to the deadliest stretch of its front while publicly claiming its war is fought by unmanned drones. Under the call sign Gunslinger she serves as the squad's long-range specialist and one of its platoon leaders. Cheerful and fiercely protective of her comrades, she looks up to squad captain Shin and does not hide it. She is far less warm toward Lena, their new Handler, who commands them by voice link from the safety of the capital. Having lost her family to the Republic's cruelty, Kurena distrusts the privileged Alba and finds Lena's kindness hard to believe at first.",
+      "abilities": "An expert marksman who handles long-range sniping for the squadron from her Juggernaut, picking off enemy units from a distance.",
+      "fate": {
+        "status": "alive",
+        "detail": "Kurena survives the anime and is still alive and fighting in the ongoing light novels.",
+        "basis": "anime and light novels so far"
+      },
+      "hindiVoice": null
+    },
+    "loid-forger": {
+      "name": "Loid Forger",
+      "role": "Westalis's top spy, codename Twilight, posing as a psychiatrist who builds a fake family for a mission",
+      "debut": {
+        "anime": "Spy x Family",
+        "episode": 1,
+        "episodeTitle": "Operation Strix",
+        "source": "manga",
+        "chapter": 1,
+        "volume": 1
+      },
+      "arcs": [
+        "Introduction Arc",
+        "Admissions Interview Arc",
+        "Eden Beginnings Arc",
+        "Secret Police Arc",
+        "Stella Star Arc",
+        "Doggy Crisis Arc",
+        "Midterm Exams Arc",
+        "Campbelldon Tennis Arc",
+        "Imperial Scholars Mixer Arc",
+        "Cruise Adventure Arc",
+        "Loid's Past Arc",
+        "Friendship Schemes Arc",
+        "Bus Hijacking Arc",
+        "Wheeler Arc",
+        "Term Finals Arc",
+        "Term Break Arc",
+        "New Term Arc",
+        "Poacher Hunting Arc",
+        "Eden Scandal Arc",
+        "TV Island Arc",
+        "SSS Gathering Arc",
+        "Hospital Investigation Arc"
+      ],
+      "affiliations": [
+        "WISE (Westalis Intelligence Services)",
+        "Berlint General Hospital (cover job)",
+        "Forger family"
+      ],
+      "relatives": [
+        {
+          "name": "Yor Forger",
+          "relation": "wife (fake marriage)"
+        },
+        {
+          "name": "Anya Forger",
+          "relation": "adopted daughter"
+        }
+      ],
+      "confidence": "high",
+      "sources": [
+        "https://spy-x-family.fandom.com/wiki/Loid_Forger",
+        "https://spy-x-family.fandom.com/wiki/Loid_Forger/Synopsis",
+        "https://en.wikipedia.org/wiki/Spy_%C3%97_Family_season_1",
+        "https://en.wikipedia.org/wiki/Loid_Forger",
+        "https://anilist.co/character/138101",
+        "https://www.animenewsnetwork.com/press-release/2023-11-06/mission-accepted-spy-x-family-season-one-hindi-dub-streaming-now-on-crunchyroll/.204157",
+        "https://animehunch.com/spy-x-family-season-1-hindi-dub-reveals-release-date-cast/"
+      ],
+      "notes": "Arc names follow the Spy x Family wiki's synopsis headings (the unnamed 'Current Arc' and extra chapters are left out). Relatives: Yor and Anya are his cover family; the wiki also lists his brother-in-law Yuri Briar and details of his own lost parents, left out because Loid's past is revealed much later (Loid's Past Arc). His real name is still unknown in the manga. Bond (the family dog) is omitted as a pet. Hindi voice from Crunchyroll's official Hindi dub announcement (season 1, Nov 2023) carried as a press release on Anime News Network.",
+      "about": "Loid Forger is the cover identity of Twilight, the best spy working for Westalis in its cold war with neighbouring Ostania. His new mission, Operation Strix, requires him to get close to a reclusive politician whose only public appearances are at his son's elite private school, so Twilight needs a child enrolled there, and fast. Posing as a psychiatrist in the city of Berlint, he adopts a little girl named Anya and soon finds a wife of convenience in Yor, a city hall clerk who needs a partner of her own. Calm, meticulous and endlessly prepared, Loid treats family life like another assignment, though raising a lively child keeps throwing his plans off balance. He has no idea that Anya can read minds or what Yor does at night.",
+      "abilities": "A master of disguise, combat and intelligence work who can change his face and voice, read people in seconds and improvise his way out of almost any situation.",
+      "fate": {
+        "status": "alive",
+        "detail": "Loid is alive and still running Operation Strix as the Forger family's father in the ongoing manga and anime.",
+        "basis": "anime and manga so far"
+      },
+      "hindiVoice": {
+        "name": "Krutarth Trivedi",
+        "dub": "Crunchyroll Hindi dub",
+        "sources": [
+          "https://www.animenewsnetwork.com/press-release/2023-11-06/mission-accepted-spy-x-family-season-one-hindi-dub-streaming-now-on-crunchyroll/.204157",
+          "https://animehunch.com/spy-x-family-season-1-hindi-dub-reveals-release-date-cast/"
+        ]
+      }
+    },
+    "mami-nanami": {
+      "name": "Mami Nanami",
+      "role": "Kazuya's sweet-seeming ex-girlfriend whose break-up with him kicks off the story",
+      "debut": {
+        "anime": "Rent-a-Girlfriend",
+        "episode": 1,
+        "episodeTitle": "Rent-a-Girlfriend",
+        "source": "manga",
+        "chapter": 1,
+        "volume": 1
+      },
+      "arcs": [
+        "Prologue Arc",
+        "Vacation Arc",
+        "The Ex' Strike Arc"
+      ],
+      "affiliations": [
+        "Nerima University"
+      ],
+      "relatives": [],
+      "confidence": "medium",
+      "sources": [
+        "https://kanokari.fandom.com/wiki/Mami_Nanami",
+        "https://kanokari.fandom.com/wiki/Story_Arcs",
+        "https://en.wikipedia.org/wiki/Rent-A-Girlfriend_season_1",
+        "https://anilist.co/character/154224"
+      ],
+      "notes": "Arcs: the Kanokari wiki has no per-character synopsis, so only the arcs where Mami clearly plays a major role are listed (she also turns up in later arcs); this list is the main reason confidence is medium. Her unnamed father, mother and younger brother are wiki-only and left out. The manga and anime (season 5 aired in 2026) are ongoing. Crunchyroll has Hindi dubs of later seasons, but no official credit naming Mami's Hindi voice was found.",
+      "about": "Mami Nanami is a first-year student at Nerima University and the girl who dumps Kazuya Kinoshita after just one month of dating, leaving him so heartbroken that he turns to a rental-girlfriend app. Cute, blonde and bubbly, she comes across as the perfect, easy-to-like girl, and everyone around her seems to adore her. She keeps crossing paths with Kazuya after the break-up and acts friendly, even concerned, about how he is doing, especially once she notices him with his stunning new 'girlfriend' Chizuru. Yet every so often her sunny smile slips and something colder and sharper shows through, hinting that Mami is far more calculating than the sweet girl she plays in public.",
+      "abilities": null,
+      "fate": {
+        "status": "alive",
+        "detail": "Mami is alive and still a recurring presence in Kazuya's life in the ongoing manga and anime.",
+        "basis": "anime and manga so far"
+      },
+      "hindiVoice": null
+    },
+    "manjiro-sano": {
+      "name": "Manjiro \"Mikey\" Sano",
+      "role": "The carefree but feared founder and leader of the Tokyo Manji Gang",
+      "debut": {
+        "anime": "Tokyo Revengers",
+        "episode": 3,
+        "episodeTitle": "Resolve",
+        "source": "manga",
+        "chapter": 3,
+        "volume": 1
+      },
+      "arcs": [
+        "Toman Arc",
+        "Moebius Arc",
+        "Valhalla Arc",
+        "Black Dragon Arc",
+        "Tenjiku Arc",
+        "Bonten Arc",
+        "Three Deities Arc",
+        "Kanto Manji Arc"
+      ],
+      "affiliations": [
+        "Tokyo Manji Gang"
+      ],
+      "relatives": [
+        {
+          "name": "Emma Sano",
+          "relation": "younger half-sister"
+        },
+        {
+          "name": "Shinichiro Sano",
+          "relation": "older brother"
+        }
+      ],
+      "confidence": "high",
+      "sources": [
+        "https://tokyorevengers.fandom.com/wiki/Manjiro_Sano",
+        "https://tokyorevengers.fandom.com/wiki/Manjiro_Sano/Synopsis",
+        "https://en.wikipedia.org/wiki/List_of_Tokyo_Revengers_episodes",
+        "https://en.wikipedia.org/wiki/List_of_Tokyo_Revengers_characters",
+        "https://anilist.co/character/145341",
+        "https://www.sportskeeda.com/anime/tokyo-revengers-chapter-278-every-character-s-occupation-final-timeline-explained",
+        "https://comicbook.com/anime/news/tokyo-revengers-ending-explained/",
+        "https://www.animenewsnetwork.com/news/2026-03-29/tokyo-revengers-war-of-the-three-titans-arc-2nd-trailer-unveils-4-new-cast-members-october-debut/.235913"
+      ],
+      "notes": "Arc names follow the Tokyo Revengers wiki (Final Arc = Three Deities Arc + Kanto Manji Arc). Relatives left out as spoilers: adoptive older brother Izana Kurokawa and brother-in-law Draken (final timeline). Grandfather Mansaku Sano is on the wiki only, so omitted. Later affiliations (Bonten leader, Kanto Manji Gang) are omitted from affiliations as spoilers but mentioned in the fate. Anime season 4, 'War of the Three Titans Arc', premiered 2 Oct 2026 and is airing now. A Hindi dub of season 1 streams on Muse India (ANN, Nov 2024); the only Mikey voice credit found (Sayantan Bhattacharya) is from a fan site, not an official credit, so hindiVoice is null.",
+      "about": "Manjiro Sano, better known as Mikey, founded the Tokyo Manji Gang and leads it as its commander. He is short, easygoing and often acts like a big kid, joking around, demanding his favourite snacks and ignoring people who bore him, yet everyone in the Tokyo underworld knows him as Invincible Mikey. He dreams of reviving the bold, loyal spirit of old-school biker gangs and starting a new era of delinquents who look after their own. When Takemichi Hanagaki, thrown back into his middle-school years, refuses to give up in a rigged fight, Mikey takes an instant liking to him and declares they are friends, pulling the timid boy into the heart of Toman alongside his best friend Draken.",
+      "abilities": "Nicknamed \"Invincible Mikey\", he is an overwhelming fighter whose kicks can drop much bigger opponents in a single blow.",
+      "fate": {
+        "status": "alive",
+        "detail": "Across the manga's timelines Mikey falls into darkness, leading the criminal groups Kanto Manji and Bonten, but the final time leap he makes with Takemichi resets everything, and in the last timeline he is alive and working as a professional motorcycle racer.",
+        "basis": "manga ending"
+      },
+      "hindiVoice": null
+    },
+    "meguru-bachira": {
+      "name": "Meguru Bachira",
+      "role": "A free-spirited, instinct-driven dribbler and Isagi's first friend in Blue Lock",
+      "debut": {
+        "anime": "Blue Lock",
+        "episode": 1,
+        "episodeTitle": "Dream",
+        "source": "manga",
+        "chapter": 1,
+        "volume": 1
+      },
+      "arcs": [
+        "Introduction Arc",
+        "First Selection Arc",
+        "Second Selection Arc",
+        "Third Selection Arc",
+        "U-20 Arc",
+        "Neo Egoist League Arc",
+        "U-20 World Cup Arc"
+      ],
+      "affiliations": [
+        "Blue Lock",
+        "Team Z",
+        "Namikaze High School"
+      ],
+      "relatives": [],
+      "confidence": "high",
+      "sources": [
+        "https://bluelock.fandom.com/wiki/Meguru_Bachira",
+        "https://bluelock.fandom.com/wiki/Meguru_Bachira/Synopsis",
+        "https://en.wikipedia.org/wiki/Blue_Lock_season_1",
+        "https://bluelock.fandom.com/wiki/Episode_1",
+        "https://anilist.co/character/162213",
+        "https://www.sportskeeda.com/anime/blue-lock-chapter-298-nagi-fails-score-manshine-city-final-rankings-revealed"
+      ],
+      "notes": "Arc names follow the Blue Lock wiki. Later teams (FC Barcha, Blue Lock Eleven, Japan U-20) left out of affiliations as spoilers. His mother, Yu Bachira, appears in his backstory but is named only on the Blue Lock wiki, so relatives is left empty under the two-source rule. Only fan-site Hindi credits were found, so hindiVoice is null.",
+      "about": "Meguru Bachira is a forward from Namikaze High School and one of the 300 strikers summoned to the Blue Lock training facility, where he lands in Team Z with Yoichi Isagi. Playful, carefree and a little strange, he hums to himself, says whatever pops into his head and talks about a 'monster' inside him that plays football with him. On the pitch he is pure instinct, a slippery dribbler who loves weaving past defenders just for the joy of it and hates playing safe. He is the first player in Blue Lock to take a genuine interest in Isagi, sensing that the quiet newcomer might be someone who can keep up with his game.",
+      "abilities": "A brilliant, unpredictable dribbler with close ball control and flashy footwork who plays on instinct rather than tactics.",
+      "fate": {
+        "status": "alive",
+        "detail": "In the ongoing manga Bachira finishes the Neo Egoist League among Blue Lock's top-ranked players, scoring a decisive goal for FC Barcha, and is selected for Japan's U-20 World Cup squad.",
+        "basis": "manga so far"
+      },
+      "hindiVoice": null
+    },
+    "nazuna-nanakusa": {
+      "name": "Nazuna Nanakusa",
+      "role": "A carefree, night-loving vampire who befriends an insomniac boy named Ko",
+      "debut": {
+        "anime": "Call of the Night",
+        "episode": 1,
+        "episodeTitle": "Night Flight",
+        "source": "manga",
+        "chapter": 1,
+        "volume": 1
+      },
+      "arcs": [],
+      "affiliations": [],
+      "relatives": [],
+      "confidence": "high",
+      "sources": [
+        "https://yofukashi-no-uta.fandom.com/wiki/Nazuna_Nanakusa",
+        "https://en.wikipedia.org/wiki/List_of_Call_of_the_Night_episodes",
+        "https://anilist.co/character/168774",
+        "https://www.siliconera.com/call-of-the-night-manga-ends-with-chapter-200/",
+        "https://animecorner.me/call-of-the-night-manga-officially-ends/",
+        "https://epicstream.com/article/call-of-the-night-manga-ending-explained"
+      ],
+      "notes": "The Call of the Night wiki does not name story arcs, so arcs is []. Relatives left out on purpose: her birth mother Haru Nanakusa and adoptive mother Kabura Honda are major mid-series reveals. Her former maid-café job is minor and omitted. The manga ended with chapter 200 on 24 Jan 2024; anime season 2 aired in 2025. Sources disagree on how long she and Ko are apart before the ending (one year to several years), so the fate detail avoids a number. No Hindi dub was found.",
+      "about": "Nazuna Nanakusa is a vampire who lives for the night and thinks the daytime is overrated. She meets Ko Yamori, a 14-year-old who has stopped going to school and wanders the streets because he can't sleep, and casually offers to help cure his insomnia, then bites him and declares his blood unusually delicious. Laid-back, teasing and fond of beer and dirty jokes, she treats the city at night as her playground and is happy to show Ko how much fun staying up can be. When Ko decides he wants to become a vampire too, there is one catch: he has to fall in love with her first, and Nazuna, for all her bravado, gets hopelessly flustered whenever love comes up.",
+      "abilities": "As a vampire she can fly, has superhuman strength and agility, and feeds by drinking human blood; someone she bites can become a vampire only if they are in love with her.",
+      "fate": {
+        "status": "alive",
+        "detail": "Nazuna survives the story. Near the end she leaves Ko to protect him from the danger their love poses, but in the final chapter he finds her again and they reunite in the snow, where she calls him the man she loves.",
+        "basis": "manga ending"
+      },
+      "hindiVoice": null
+    },
+    "nijika-ijichi": {
+      "name": "Nijika Ijichi",
+      "role": "The upbeat drummer and organiser of Kessoku Band who recruits Bocchi",
+      "debut": {
+        "anime": "Bocchi the Rock!",
+        "episode": 1,
+        "episodeTitle": "Lonely Rolling Bocchi",
+        "source": "manga",
+        "chapter": 1,
+        "volume": 1
+      },
+      "arcs": [],
+      "affiliations": [
+        "Kessoku Band",
+        "Shimokitazawa High School",
+        "STARRY (live house)"
+      ],
+      "relatives": [
+        {
+          "name": "Seika Ijichi",
+          "relation": "older sister"
+        }
+      ],
+      "confidence": "high",
+      "sources": [
+        "https://bocchi-the-rock.fandom.com/wiki/Nijika_Ijichi",
+        "https://en.wikipedia.org/wiki/List_of_Bocchi_the_Rock!_episodes",
+        "https://anilist.co/character/261674"
+      ],
+      "notes": "The Bocchi the Rock! wiki does not name story arcs (it is organised by volume), so arcs is []. Her late mother and unnamed father are left out (her family background is a later reveal). The wiki's infobox now also lists her as a Shimokitazawa High graduate attending 'Houdai University' from recent manga chapters; that is single-sourced and spoilery, so it is left out. Anime season 2 has been announced. No Hindi dub was found.",
+      "about": "Nijika Ijichi is a cheerful, energetic high-school student who plays drums and holds together a small band called Kessoku Band, which rehearses and performs at STARRY, the Shimokitazawa live house run by her older sister Seika. When her guitarist bails right before a show, Nijika spots a painfully shy girl sitting alone in a playground with a guitar case and talks her into filling in. That girl is Hitori Gotoh, nicknamed Bocchi. Friendly, practical and quick to smooth over awkward moments, Nijika is the one who keeps the band organised, encourages Bocchi without pushing too hard and manages her eccentric best friend, bassist Ryo. She has big dreams for the band and works hard to make them real.",
+      "abilities": "A solid drummer who keeps the band's rhythm steady, and the group's organiser who handles bookings, practice and morale.",
+      "fate": {
+        "status": "alive",
+        "detail": "Nijika is alive and still drumming for Kessoku Band in the ongoing manga.",
+        "basis": "anime and manga so far"
+      },
+      "hindiVoice": null
+    },
+    "one-piece-kaido": {
+      "name": "Kaido",
+      "role": "Kaido of the Beasts, one of the Four Emperors and the man known as the world's Strongest Creature",
+      "debut": {
+        "anime": "One Piece",
+        "episode": 736,
+        "episodeTitle": "Sending a Shock Wave! The Worst Generation Goes Into Action!",
+        "source": "manga",
+        "chapter": 795,
+        "volume": 79
+      },
+      "arcs": [
+        "Dressrosa Arc",
+        "Wano Country Arc"
+      ],
+      "affiliations": [
+        "Beasts Pirates",
+        "Four Emperors (former)"
+      ],
+      "relatives": [],
+      "confidence": "high",
+      "sources": [
+        "https://onepiece.fandom.com/wiki/Kaidou",
+        "https://onepiece.fandom.com/wiki/Kaidou/History",
+        "https://onepiece.fandom.com/wiki/Episode_736",
+        "https://onepiece.fandom.com/wiki/Episode_739",
+        "https://onepiece.fandom.com/wiki/Chapter_795",
+        "https://en.wikipedia.org/wiki/One_Piece_season_17",
+        "https://en.wikipedia.org/wiki/Kaido_(One_Piece)",
+        "https://anilist.co/character/46109"
+      ],
+      "notes": "Debut: episode 736 (chapter 795, volume 79) is his first on-screen appearance, as a 'mysterious man' who approaches Urouge on a sky island at the end of the Dressrosa Arc; he is named and shown in full in episode 739, 'The Strongest Creature! One of the Four Emperors - Kaido, King of the Beasts!'. He had been mentioned by name since the Thriller Bark Arc (episode 350) and his voice is heard in a Momonosuke flashback earlier in Dressrosa. Arcs list the arcs where he appears in person in the present; he also appears in flashbacks (e.g. Rocks Pirates/God Valley flashbacks in the Elbaph Arc). Relatives left out: Yamato's connection to him is a Wano Country Arc reveal. The Wikipedia title 'Kaido (One Piece)' redirects to the Four Emperors article. One Piece has Hindi dubs, but they had not reached Kaido's arcs in any source found, so hindiVoice is null. Fate: Wikipedia confirms his defeat by Luffy and replacement among the Emperors; the fall into the magma chamber and the 'status unknown' label come from the One Piece wiki (whose editors explicitly say not to mark him deceased).",
+      "about": "Kaido of the Beasts is one of the Four Emperors, the pirates who rule the seas of the New World, and he is famous as the Strongest Creature alive. A towering, horned giant with a heavy drinking habit and wild mood swings, he has been captured, tortured and sentenced to death many times yet has never died, and he is so bored by his own toughness that he jumps off a sky island just to see if the fall will kill him. It doesn't. He was the powerful backer behind Doflamingo's underworld business, so when Luffy and Law smash that operation in Dressrosa, Kaido answers by promising to start the biggest war the world has ever seen. Taking him down becomes the next great goal for Luffy's alliance.",
+      "abilities": "Possesses monstrous strength and a body so durable that executions, falls and battles have failed to kill him, which is why he is called the Strongest Creature in the world.",
+      "fate": {
+        "status": "unclear",
+        "detail": "During the raid on Onigashima, Luffy defeats Kaido (manga chapter 1049, anime episode 1076) and he falls unconscious into Wano's magma chamber as a volcano erupts. His survival has not been confirmed, and he has since been replaced as an Emperor.",
+        "basis": "anime and manga so far"
+      },
+      "hindiVoice": null
+    },
+    "reki-kyan": {
+      "name": "Reki Kyan",
+      "role": "An Okinawan high-school skater and board builder who introduces Langa to the underground race S",
+      "debut": {
+        "anime": "SK8 the Infinity",
+        "episode": 1,
+        "episodeTitle": "Snowfall on a Hot Night",
+        "source": null,
+        "chapter": null,
+        "volume": null
+      },
+      "arcs": [],
+      "affiliations": [
+        "Dope Sketch (skate shop)",
+        "S (underground skate races)"
+      ],
+      "relatives": [],
+      "confidence": "high",
+      "sources": [
+        "https://sk8-the-infinity.fandom.com/wiki/Reki_Kyan",
+        "https://en.wikipedia.org/wiki/SK8_the_Infinity",
+        "https://anilist.co/character/195120"
+      ],
+      "notes": "SK8 the Infinity is an anime original (Bones), so source, chapter and volume are null; a manga adaptation exists in which he appears from chapter 1. No named arcs. His mother Masae and younger sisters Koyomi, Nanaka and Chihiro appear in the anime but are listed only on the fandom wiki (not Wikipedia or AniList), so relatives is left empty. A four-episode OVA ('Extra Part') was released in March 2025 and a second TV season is in production. No Hindi dub was found.",
+      "about": "Reki Kyan is a cheerful, skateboard-obsessed second-year high school student in Okinawa. He works part-time at the Dope Sketch skate shop, where he fixes boards and builds custom decks by hand, and spends his nights at S, a secret no-holds-barred downhill race held in an abandoned mine. When Langa Hasegawa, a quiet transfer student from Canada, joins his class and starts working at the same shop, Reki takes it on himself to teach the newcomer how to skate and drags him into the world of S. Warm, loud and endlessly enthusiastic, Reki loves skateboarding purely for the fun of it, and watching Langa pick it up fast makes him even more excited.",
+      "abilities": "A talented street skater and a skilled craftsman who designs and builds custom skateboards, tuning each one to its rider.",
+      "fate": {
+        "status": "alive",
+        "detail": "Reki is alive and still skating at the end of the first season and the 2025 OVA; a second season is in production.",
+        "basis": "anime so far"
+      },
+      "hindiVoice": null
+    },
+    "ryo-yamada": {
+      "name": "Ryo Yamada",
+      "role": "Kessoku Band's cool, eccentric and permanently broke bassist",
+      "debut": {
+        "anime": "Bocchi the Rock!",
+        "episode": 1,
+        "episodeTitle": "Lonely Rolling Bocchi",
+        "source": "manga",
+        "chapter": 1,
+        "volume": 1
+      },
+      "arcs": [],
+      "affiliations": [
+        "Kessoku Band",
+        "Shimokitazawa High School"
+      ],
+      "relatives": [],
+      "confidence": "high",
+      "sources": [
+        "https://bocchi-the-rock.fandom.com/wiki/Ryo_Yamada",
+        "https://en.wikipedia.org/wiki/List_of_Bocchi_the_Rock!_episodes",
+        "https://anilist.co/character/264529"
+      ],
+      "notes": "No named arcs on the Bocchi the Rock! wiki, so arcs is []. Her parents (Kyoichi and Kyoka Yamada) are named only on the fandom wiki, so relatives is left empty. Her former band is left out as a later reveal. Anime season 2 has been announced; the manga is ongoing. No Hindi dub was found.",
+      "about": "Ryo Yamada is the bassist of Kessoku Band and Nijika Ijichi's best friend. Quiet, deadpan and effortlessly cool-looking, she is a girl of very few words who drifts through life at her own pace and is secretly delighted whenever anyone calls her weird. She comes from a well-off family but spends every yen she has on instruments and gear, which leaves her constantly broke, borrowing money from bandmates and sometimes snacking on wild plants to get by. When the shy guitarist Hitori 'Bocchi' Gotoh is dragged in to save the band's gig, Ryo is one of the first to see something special in her and quietly takes an interest in the new member.",
+      "abilities": "A highly skilled bassist who holds down the low end of Kessoku Band's sound.",
+      "fate": {
+        "status": "alive",
+        "detail": "Ryo is alive and still playing bass for Kessoku Band in the ongoing manga.",
+        "basis": "anime and manga so far"
+      },
+      "hindiVoice": null
+    },
+    "seishiro-nagi": {
+      "name": "Seishiro Nagi",
+      "role": "A lazy prodigy from Hakuho High who has barely played football but has a once-in-a-generation touch",
+      "debut": {
+        "anime": "Blue Lock",
+        "episode": 1,
+        "episodeTitle": "Dream",
+        "source": "manga",
+        "chapter": 22,
+        "volume": 3
+      },
+      "arcs": [
+        "First Selection Arc",
+        "Second Selection Arc",
+        "Third Selection Arc",
+        "U-20 Arc",
+        "Neo Egoist League Arc"
+      ],
+      "affiliations": [
+        "Blue Lock",
+        "Team V",
+        "Hakuho High School"
+      ],
+      "relatives": [],
+      "confidence": "medium",
+      "sources": [
+        "https://bluelock.fandom.com/wiki/Seishiro_Nagi",
+        "https://bluelock.fandom.com/wiki/Seishiro_Nagi/Synopsis",
+        "https://bluelock.fandom.com/wiki/Episode_1",
+        "https://bluelock.fandom.com/wiki/Chapter_22",
+        "https://bluelock.fandom.com/wiki/Side-B",
+        "https://en.wikipedia.org/wiki/Blue_Lock_season_1",
+        "https://anilist.co/character/162969",
+        "https://www.pinkvilla.com/entertainment/anime/blue-lock-chapter-299-nagi-fails-to-make-the-cutoff-recap-release-date-where-to-read-and-more-1381994",
+        "https://www.sportskeeda.com/anime/blue-lock-chapter-300-nagi-exits-blue-lock-isagi-asks-quit-soccer",
+        "https://www.sportskeeda.com/anime/blue-lock-chapter-311-spoilers-buratsuta-announces-side-b-selection-manga-sets-return-major-character",
+        "https://en.wikipedia.org/wiki/List_of_Blue_Lock_characters"
+      ],
+      "notes": "Debut: the Blue Lock wiki lists episode 1 'Dream' as his first anime appearance, but it is only a brief glimpse among the 300 strikers; only the wiki's episode page confirms it (Wikipedia's summary doesn't name him), which is why confidence is medium. His manga debut is chapter 22 (volume 3), and the spin-off 'Blue Lock: Episode Nagi' retells his side of the story. Arc names follow the Blue Lock wiki; his synopsis stops at the Neo Egoist League. Later teams (Manshine City, Blue Lock Eleven, Side-B) left out of affiliations as spoilers. Parents are unnamed. Only fan-site Hindi credits found, so hindiVoice is null.",
+      "about": "Seishiro Nagi is a tall, sleepy-eyed student from Hakuho High School who finds almost everything in life a hassle and would rather be playing mobile games. He only started football because his wealthy classmate Reo Mikage spotted his freakish talent and dragged him onto the team, yet within months the pair had earned invitations to Blue Lock. Nagi has almost no experience, but his ball control is so absurd that he can kill a pass dead from almost any height or angle and turn it straight into a shot. Placed with Reo in Team V, he cruises through the early stages without breaking a sweat, until meeting players like Isagi starts to wake up something he has never felt before.",
+      "abilities": "A natural genius with near-perfect trapping and ball control, able to stop and redirect almost any pass in one touch and score from impossible positions.",
+      "fate": {
+        "status": "alive",
+        "detail": "In the manga Nagi ranks 24th at the end of the Neo Egoist League, misses the cut for Japan's U-20 World Cup squad and leaves Blue Lock, then joins the separate Side-B selection for a last chance at one of the remaining U-20 spots.",
+        "basis": "manga so far"
+      },
+      "hindiVoice": null
+    },
+    "senku-ishigami": {
+      "name": "Senku Ishigami",
+      "role": "A teenage science genius who sets out to rebuild civilisation after all of humanity is turned to stone",
+      "debut": {
+        "anime": "Dr. Stone",
+        "episode": 1,
+        "episodeTitle": "Stone World",
+        "source": "manga",
+        "chapter": 1,
+        "volume": 1
+      },
+      "arcs": [
+        "Stone Formula Arc",
+        "Vs. Tsukasa Arc",
+        "Kingdom of Science Arc",
+        "Village Games Arc",
+        "Village Origins Arc",
+        "Vs. Hyoga Arc",
+        "Communications Arc",
+        "Age of Exploration Arc",
+        "Treasure Island Arc",
+        "New America City Arc",
+        "South America Arc",
+        "New Stone World Arc",
+        "Globetrotting Arc",
+        "Moon Mission Arc"
+      ],
+      "affiliations": [
+        "Kingdom of Science",
+        "Ishigami Village"
+      ],
+      "relatives": [
+        {
+          "name": "Byakuya Ishigami",
+          "relation": "adoptive father"
+        }
+      ],
+      "confidence": "high",
+      "sources": [
+        "https://dr-stone.fandom.com/wiki/Senku_Ishigami",
+        "https://dr-stone.fandom.com/wiki/Senku_Ishigami/Synopsis",
+        "https://en.wikipedia.org/wiki/Senku_Ishigami",
+        "https://en.wikipedia.org/wiki/Dr._Stone",
+        "https://en.wikipedia.org/wiki/Dr._Stone_season_1",
+        "https://anilist.co/character/124142",
+        "https://comicbook.com/anime/news/how-does-dr-stone-end-manga-ending-explained",
+        "https://www.cbr.com/dr-stones-final-chapter-turns-senku-into-terminators-john-connor/"
+      ],
+      "notes": "Arc names follow the Dr. Stone wiki's synopsis headings (the Epilogue is left out). Ruri appears on the wiki and Wikipedia as his 'ex-wife' from a village-contest technicality; left out as a spoiler/gag. Byakuya's later fate is not mentioned. The manga ended with chapter 232 in March 2022, and the anime's fourth and final season, Dr. Stone: Science Future, finished its third cour in June 2026; a 'Terraforming' sequel has been announced. Dr. Stone has Hindi dubs (Crunchyroll for Stone Wars from Aug 2024; Sony YAY from May 2025), but no official credit naming Senku's Hindi voice actor was found, so hindiVoice is null.",
+      "about": "Senku Ishigami is a high-school science prodigy with a sharp tongue, spiky hair and an unshakeable belief that science can solve anything. One day a mysterious flash of light turns every human on Earth to stone. Senku stays conscious inside the stone by counting the seconds, and when he finally breaks free he finds that 3,700 years have passed and civilisation has vanished under forests. Joined by his strong, good-hearted friend Taiju, he sets himself an outrageous goal: rebuild everything humanity lost, from fire and soap all the way to modern technology, and find a way to revive everyone else. Arrogant on the surface but deeply caring, he treats every problem as an exciting experiment.",
+      "abilities": "Has an encyclopaedic knowledge of chemistry, physics and engineering, letting him recreate tools, medicine and machines from raw materials, though he is physically very weak.",
+      "fate": {
+        "status": "alive",
+        "detail": "Senku survives to the end. After leading a mission to the Moon to confront the source of the petrification, he returns home and, years later, is working on a time machine.",
+        "basis": "manga ending"
+      },
+      "hindiVoice": null
+    },
+    "shinoa-hiiragi": {
+      "name": "Shinoa Hiiragi",
+      "role": "A teasing young sergeant of the Japanese Imperial Demon Army who is assigned to supervise Yuichiro",
+      "debut": {
+        "anime": "Seraph of the End",
+        "episode": 2,
+        "episodeTitle": "Humanity After the Fall",
+        "source": "manga",
+        "chapter": 2,
+        "volume": 1
+      },
+      "arcs": [
+        "Second Shibuya High Arc",
+        "Shinjuku Arc",
+        "Post-Shinjuku Arc",
+        "Nagoya Arc",
+        "Post-Nagoya Arc",
+        "Osaka Arc",
+        "Shibuya Arc",
+        "Post-Shibuya Arc",
+        "Akihabara Arc",
+        "Mount Fuji Arc"
+      ],
+      "affiliations": [
+        "Japanese Imperial Demon Army",
+        "Moon Demon Company",
+        "Shinoa Squad",
+        "Hiiragi family",
+        "Second Shibuya High School"
+      ],
+      "relatives": [
+        {
+          "name": "Mahiru Hiiragi",
+          "relation": "older sister"
+        },
+        {
+          "name": "Kureto Hiiragi",
+          "relation": "older half-brother"
+        }
+      ],
+      "confidence": "medium",
+      "sources": [
+        "https://owarinoseraph.fandom.com/wiki/Shinoa_H%C4%ABragi",
+        "https://owarinoseraph.fandom.com/wiki/A_Maiden_in_Love",
+        "https://owarinoseraph.fandom.com/wiki/Chapter_160",
+        "https://owarinoseraph.fandom.com/wiki/Story_Arcs",
+        "https://en.wikipedia.org/wiki/List_of_Seraph_of_the_End_episodes",
+        "https://en.wikipedia.org/wiki/List_of_Seraph_of_the_End_characters",
+        "https://en.wikipedia.org/wiki/List_of_Seraph_of_the_End_chapters",
+        "https://anilist.co/character/83017",
+        "https://mystiqora.com/?p=25973",
+        "https://tvtropes.org/pmwiki/pmwiki.php/Characters/SeraphOfTheEndMoonDemonCompany"
+      ],
+      "notes": "RE-CHECK RESULT: the draft saying she is alive is out of date. The fandom wiki's chapter page for ch. 159 'A Maiden in Love' (English release 3 Sept 2026) says Shinoa confesses her love to Yu, offers to be the sacrifice for the resurrection in his place, and when he refuses she fights him and is killed by a single strike; her infobox now reads 'Deceased' (it still carries a stale 'Alive' category tag). Ch. 158 'A Chain of Meaning' is the lead-in, not the death. Ch. 160 'The Seraph of the End' (English 3 Nov 2026) shows her only in memories. Independent confirmation: a Mystiqora chapter-159 explainer refers to 'Shinoa's death' in ch. 159, and TV Tropes says she confesses and is killed by Yu (TV Tropes gives the chapter as 157, which looks like a numbering slip). I could only read Mystiqora and TV Tropes through search-result excerpts (both sites refused direct fetches), which is why confidence is medium. Wikipedia's character list has not been updated with the death. Yu and Mika's resurrection plan is still in progress and the manga is reportedly heading to its final volume (37), so a reversal is possible; re-check when ch. 161+ release. The 'Current Arc' (unnamed final arc) and the prequel light novel/Catastrophe at Sixteen appearances are left out of arcs. Other half/adoptive siblings (Seishiro, Shinya) and her father Tenri are listed only on the fandom wiki, so they were left out. No official Hindi dub found.",
+      "about": "Shinoa Hiiragi is a young sergeant in the Japanese Imperial Demon Army, the human military fighting back against the vampires who took over the world after a virus wiped out most of humanity. She is assigned to keep an eye on Yuichiro Hyakuya, a hot-headed recruit suspended for refusing to work with anyone, and her task is to get him to make a friend so he can earn his place in the elite Moon Demon Company. Small, sly and almost always smiling, Shinoa loves needling Yu with teasing remarks and deadpan jokes, yet she is sharp and calm when things turn dangerous. She belongs to the powerful Hiiragi family but shows no interest in its power games, preferring to do her job and look after her squad.",
+      "abilities": "She fights with a large scythe, a Cursed Gear weapon powered by a demon called Shikama Doji, and is a quick tactical thinker who leads her own squad in the field.",
+      "fate": {
+        "status": "dies",
+        "detail": "In manga chapter 159 (2026) Shinoa confesses her love to Yu, offers to bear the price of resurrecting the dead in his place, and is killed by Yu in a single exchange when he refuses. As of chapter 160 she has not come back, though Yu's resurrection plan is still unresolved.",
+        "basis": "manga so far (ch. 160, Nov 2026)"
+      },
+      "hindiVoice": null
+    },
+    "suguru-geto": {
+      "name": "Suguru Geto",
+      "role": "A special-grade curse user and Satoru Gojo's former best friend from Tokyo Jujutsu High",
+      "debut": {
+        "anime": "Jujutsu Kaisen",
+        "episode": 5,
+        "episodeTitle": "Curse Womb Must Die -II-",
+        "source": "manga",
+        "chapter": 10,
+        "volume": 2
+      },
+      "arcs": [
+        "Gojo's Past Arc",
+        "Cursed Child Arc",
+        "Shibuya Incident Arc",
+        "Shinjuku Showdown Arc"
+      ],
+      "affiliations": [
+        "Tokyo Jujutsu High (former student)"
+      ],
+      "relatives": [],
+      "confidence": "high",
+      "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Suguru_Geto",
+        "https://jujutsu-kaisen.fandom.com/wiki/Suguru_Geto/Synopsis",
+        "https://en.wikipedia.org/wiki/Suguru_Geto",
+        "https://en.wikipedia.org/wiki/Jujutsu_Kaisen_season_1",
+        "https://en.wikipedia.org/wiki/Jujutsu_Kaisen_season_2",
+        "https://anilist.co/character/133699",
+        "https://www.sportskeeda.com/anime/jujutsu-kaisen-chapter-243-kenjaku-reveals-successor-yuta-defeats",
+        "https://dexerto.com/anime/jujutsu-kaisen-manga-kills-off-takaba-kenjaku-2395296"
+      ],
+      "notes": "Debut: first TV-anime appearance is season 1 episode 5 'Curse Womb Must Die -II-', meeting with the curses Jogo, Hanami and Mahito (the matching manga chapter is 10, volume 2). The figure in those scenes is revealed much later to be Kenjaku using Geto's body, so the about text describes him as viewers first see him. The real Geto appears in flashbacks and in season 2's opening 'Hidden Inventory' (episode 25 overall), and he is the main villain of the film Jujutsu Kaisen 0 (Dec 2021), adapting the prequel manga where he debuts in chapter 0-2. Arc names follow the JJK wiki; the last two cover his body being used by Kenjaku. His adopted daughters Mimiko and Nanako Hasaba are wiki-only here and left out. Crunchyroll's Hindi dub cast announcements did not name a Geto voice actor; a fan wiki credits Krutarth Trivedi for the JJK 0 film, but that is not an official source, so hindiVoice is null.",
+      "about": "Suguru Geto is a special-grade curse user, a sorcerer who has turned his power against the jujutsu world instead of protecting people with it. Tall, calm and softly spoken, he wears a monk's robes, keeps his long black hair tied up and talks with the polite confidence of someone always several moves ahead. Years ago he was a student at Tokyo Jujutsu High and the closest friend and partner of Satoru Gojo, the strongest sorcerer alive, before the two went separate ways. When he first appears in the TV series he is meeting in secret with a group of powerful cursed spirits, coolly planning a way to take Gojo out of the picture rather than fight him head-on.",
+      "abilities": "His cursed technique, Cursed Spirit Manipulation, lets him absorb curses he has defeated and summon and command them in battle, giving him a huge personal army of cursed spirits.",
+      "fate": {
+        "status": "dies",
+        "detail": "Geto is killed by Gojo at the end of Jujutsu Kaisen 0. The sorcerer Kenjaku then takes over his body for the main series, until Yuta Okkotsu decapitates Kenjaku in manga chapter 243, finally freeing Geto's corpse; the manga ended in September 2024.",
+        "basis": "manga ending"
+      },
+      "hindiVoice": null
+    },
+    "sung-jin-woo": {
+      "name": "Sung Jin-Woo",
+      "role": "Known as the world's weakest Hunter, an E-Rank who gets a mysterious second chance to grow stronger",
+      "debut": {
+        "anime": "Solo Leveling",
+        "episode": 1,
+        "episodeTitle": "I'm Used to It",
+        "source": "novel",
+        "chapter": 1,
+        "volume": 1
+      },
+      "arcs": [
+        "D-Rank Dungeon Arc",
+        "Reawakening Arc",
+        "Instant Dungeon Arc",
+        "Dungeon & Lizards Arc",
+        "Dungeon & Prisoners Arc",
+        "Yoo Jinho Raid Party Arc",
+        "Job Change Arc",
+        "Red Gate Arc",
+        "Demon Castle Arc",
+        "Retesting Rank Arc",
+        "Hunters Guild Gate Arc",
+        "Return to Demon Castle Arc",
+        "Jeju Island Arc",
+        "Recruitment Arc",
+        "Ahjin Guild Arc",
+        "Double Dungeon Arc",
+        "Japan Crisis Arc",
+        "International Guild Conference Arc",
+        "Monarchs War Arc",
+        "Final Battle Arc"
+      ],
+      "affiliations": [],
+      "relatives": [
+        {
+          "name": "Park Kyung-Hye",
+          "relation": "mother"
+        },
+        {
+          "name": "Sung Jinah",
+          "relation": "younger sister"
+        }
+      ],
+      "confidence": "high",
+      "sources": [
+        "https://solo-leveling.fandom.com/wiki/Sung_Jinwoo",
+        "https://solo-leveling.fandom.com/wiki/Sung_Jinwoo/History",
+        "https://en.wikipedia.org/wiki/Sung_Jin-woo",
+        "https://en.wikipedia.org/wiki/Solo_Leveling",
+        "https://en.wikipedia.org/wiki/Solo_Leveling_season_1",
+        "https://anilist.co/character/129928",
+        "https://www.animenewsnetwork.com/news/2023-12-12/crunchyroll-hosts-screening-of-solo-leveling-anime-in-mumbai-on-december-20-adds-hindi-dub-on-/.205413",
+        "https://animehunch.com/solo-leveling-season-2-hindi-tamil-telugu-dubs-release-date-cast-details-everything-you-need-to-know/"
+      ],
+      "notes": "Source is the Korean web novel (Chugong), entered as 'novel'; debut chapter/volume refer to the web novel (Wikipedia: first volume; wiki: chapter 1). The webtoon debut is also chapter 1. Arc names follow the Solo Leveling wiki's history headings (Epilogue left out). Affiliations left empty: his guild and later titles are spoilers, and as introduced he is simply a registered E-Rank Hunter. His father, Sung Il-hwan, is left out as a spoiler; wife Cha Hae-In and son Suho appear only in the fate. Anime: seasons 1-2 aired Jan 2024-Mar 2025; a film, Solo Leveling: Beyond the System, has been announced; no third TV season confirmed. Hindi voice: Rajesh Shukla, named in Crunchyroll's Hindi dub cast announcement (ANN, Dec 2023) and again for season 2.",
+      "about": "Sung Jin-Woo lives in a world where portals called Gates open without warning and spill monsters into cities, and where people with awakened powers, known as Hunters, clear the dungeons inside for money. Jin-Woo is a Hunter in name only: an E-Rank so feeble that other Hunters call him the weakest of all mankind, and he is constantly injured on raids. He keeps going anyway because the work pays for his mother's hospital care and helps support his younger sister, Jinah. Quiet, polite and used to being underestimated, he is also stubborn and braver than he looks. When a routine raid on a low-level dungeon turns into a deadly trap, what happens to him there changes his life completely.",
+      "abilities": "Starts as a barely capable E-Rank Hunter, but after the events of the early episodes he gains a mysterious ability to level up like a game character, growing stronger with every fight and quest he completes.",
+      "fate": {
+        "status": "alive",
+        "detail": "Jin-Woo survives the war with the Monarchs that ends the story. In the epilogue he lives a quiet life married to Cha Hae-In, with a son named Suho.",
+        "basis": "series ending (web novel and webtoon)"
+      },
+      "hindiVoice": {
+        "name": "Rajesh Shukla",
+        "dub": "Crunchyroll Hindi dub",
+        "sources": [
+          "https://www.animenewsnetwork.com/news/2023-12-12/crunchyroll-hosts-screening-of-solo-leveling-anime-in-mumbai-on-december-20-adds-hindi-dub-on-/.205413",
+          "https://animehunch.com/solo-leveling-season-2-hindi-tamil-telugu-dubs-release-date-cast-details-everything-you-need-to-know/"
+        ]
+      }
+    },
+    "vladilena-milize": {
+      "name": "Vladilena \"Lena\" Milizé",
+      "role": "A 16-year-old Republic major who commands the Eighty-Six Spearhead Squadron remotely as their Handler",
+      "debut": {
+        "anime": "86 Eighty-Six",
+        "episode": 1,
+        "episodeTitle": "Undertaker",
+        "source": "light novel",
+        "chapter": 1,
+        "volume": 1
+      },
+      "arcs": [],
+      "affiliations": [
+        "Republic of San Magnolia military",
+        "Spearhead Squadron (Handler)"
+      ],
+      "relatives": [],
+      "confidence": "high",
+      "sources": [
+        "https://86-eighty-six.fandom.com/wiki/Vladilena_Miliz%C3%A9",
+        "https://en.wikipedia.org/wiki/86_(novel_series)",
+        "https://en.wikipedia.org/wiki/List_of_86_episodes",
+        "https://anilist.co/character/141061"
+      ],
+      "notes": "Debut chapter/volume refers to the light novel (volume 1, chapter 1); the manga debut is volume 1, chapter 1. No named arcs on the wiki (organised by volume), so arcs is []. Her parents (Václav and Margareta Milizé) and family friend Jérôme Karlstahl are listed only on the fandom wiki, so they were left out. Her later nickname 'Bloody Reina' and later units (Eighty-Sixth Strike Package etc.) are omitted as spoilers. The light novels are still ongoing. No Hindi dub of 86 was found.",
+      "about": "Vladilena Milizé, called Lena, is a 16-year-old major in the army of the Republic of San Magnolia, promoted young thanks to talent and a well-connected family. The Republic tells its citizens that its war against the Legion is fought by unmanned drones, but the machines are actually piloted by the Eighty-Six, a persecuted minority stripped of their rights. As a Handler, Lena guides these soldiers by voice link from the safety of the capital, and unlike most officers she insists on treating them as people. Earnest, idealistic and stubborn, she takes over the notorious Spearhead Squadron, whose captain Shin, the Undertaker, is rumoured to break every Handler assigned to him.",
+      "abilities": "A gifted tactician who directs battles remotely through the Para-RAID link, reading the battlefield and giving orders to the pilots under her command.",
+      "fate": {
+        "status": "alive",
+        "detail": "Lena survives the anime and is still alive, and still commanding, in the ongoing light novels.",
+        "basis": "anime and light novels so far"
+      },
+      "hindiVoice": null
+    },
+    "yoichi-isagi": {
+      "name": "Yoichi Isagi",
+      "role": "An unknown high-school striker who enters the Blue Lock project to become the world's best forward",
+      "debut": {
+        "anime": "Blue Lock",
+        "episode": 1,
+        "episodeTitle": "Dream",
+        "source": "manga",
+        "chapter": 1,
+        "volume": 1
+      },
+      "arcs": [
+        "Introduction Arc",
+        "First Selection Arc",
+        "Second Selection Arc",
+        "Third Selection Arc",
+        "U-20 Arc",
+        "Neo Egoist League Arc",
+        "U-20 World Cup Arc"
+      ],
+      "affiliations": [
+        "Blue Lock",
+        "Team Z",
+        "Ichinan High School"
+      ],
+      "relatives": [],
+      "confidence": "high",
+      "sources": [
+        "https://bluelock.fandom.com/wiki/Yoichi_Isagi",
+        "https://bluelock.fandom.com/wiki/Yoichi_Isagi/Synopsis",
+        "https://en.wikipedia.org/wiki/Blue_Lock_season_1",
+        "https://bluelock.fandom.com/wiki/Episode_1",
+        "https://anilist.co/character/140856",
+        "https://www.animenewsnetwork.com/press-release/2026-06-08/blue-lock-season-3-officially-titled-blue-lock-neo-egoist-league/.238286",
+        "https://en.wikipedia.org/wiki/List_of_Blue_Lock_characters"
+      ],
+      "notes": "Arc names follow the Blue Lock wiki. Later teams (Blue Lock Eleven, Bastard München, Japan U-20) are left out of affiliations as spoilers for later seasons. Season 3 of the anime, 'Blue Lock: Neo Egoist League', was announced in June 2026 with no premiere date yet. Crunchyroll and others have Hindi dubs, but the only Isagi voice credits found were on a fan site, so hindiVoice is null. His parents, Iyo and Issei Isagi, appear in episode 1 but are named only on the Blue Lock wiki (not on Wikipedia or AniList), so relatives is left empty under the two-source rule.",
+      "about": "Yoichi Isagi is a striker for Ichinan High School in Saitama who has always dreamed of becoming the best forward in the world. When his team loses a prefectural final after he passes to a teammate instead of shooting himself, he is left wondering whether playing it safe was the right call. Soon after, he receives a mysterious invitation to Blue Lock, a government-backed training facility where coach Jinpachi Ego locks up 300 young strikers and makes them compete until only one remains to lead Japan's national team. Ranked near the very bottom of the 300 and placed in Team Z, the easygoing, slightly ordinary Isagi has to discover the selfish hunger to score that he never knew he had.",
+      "abilities": "His standout skill is reading the field: he has sharp spatial awareness and an ability to analyse plays and adapt quickly, which lets him find openings that more gifted players miss.",
+      "fate": {
+        "status": "alive",
+        "detail": "In the ongoing manga Isagi finishes the Neo Egoist League at the top of the Blue Lock rankings and earns a starting place on Japan's U-20 squad for the U-20 World Cup.",
+        "basis": "manga so far"
+      },
+      "hindiVoice": null
+    },
+    "yor-forger": {
+      "name": "Yor Forger",
+      "role": "A gentle city hall clerk who is secretly the deadly assassin known as the Thorn Princess",
+      "debut": {
+        "anime": "Spy x Family",
+        "episode": 2,
+        "episodeTitle": "Secure a Wife",
+        "source": "manga",
+        "chapter": 2,
+        "volume": 1
+      },
+      "arcs": [
+        "Introduction Arc",
+        "Admissions Interview Arc",
+        "Eden Beginnings Arc",
+        "Secret Police Arc",
+        "Stella Star Arc",
+        "Doggy Crisis Arc",
+        "Midterm Exams Arc",
+        "Campbelldon Tennis Arc",
+        "Imperial Scholars Mixer Arc",
+        "Cruise Adventure Arc",
+        "Loid's Past Arc",
+        "Friendship Schemes Arc",
+        "Bus Hijacking Arc",
+        "Wheeler Arc",
+        "Term Finals Arc",
+        "Term Break Arc",
+        "New Term Arc",
+        "Poacher Hunting Arc",
+        "Eden Scandal Arc",
+        "TV Island Arc",
+        "SSS Gathering Arc",
+        "Hospital Investigation Arc"
+      ],
+      "affiliations": [
+        "Berlint City Hall",
+        "Garden (secretly)",
+        "Forger family"
+      ],
+      "relatives": [
+        {
+          "name": "Yuri Briar",
+          "relation": "younger brother"
+        },
+        {
+          "name": "Loid Forger",
+          "relation": "husband (marriage of convenience)"
+        },
+        {
+          "name": "Anya Forger",
+          "relation": "adopted daughter"
+        }
+      ],
+      "confidence": "high",
+      "sources": [
+        "https://spy-x-family.fandom.com/wiki/Yor_Forger",
+        "https://spy-x-family.fandom.com/wiki/Yor_Forger/Synopsis",
+        "https://en.wikipedia.org/wiki/Spy_%C3%97_Family_season_1",
+        "https://anilist.co/character/138102",
+        "https://www.animenewsnetwork.com/press-release/2023-11-06/mission-accepted-spy-x-family-season-one-hindi-dub-streaming-now-on-crunchyroll/.204157",
+        "https://animehunch.com/spy-x-family-season-1-hindi-dub-reveals-release-date-cast/"
+      ],
+      "notes": "Arc names follow the Spy x Family wiki's synopsis headings (the unnamed 'Current Arc' and extra chapters left out). Yor's maiden name is Yor Briar. Her late parents are unnamed and left out. Hindi voice from Crunchyroll's official Hindi dub announcement (season 1, Nov 2023) carried as a press release on Anime News Network.",
+      "about": "Yor Briar is a polite, soft-spoken clerk at Berlint City Hall who is also, in secret, the Thorn Princess, a top assassin who works for a shadowy organisation called Garden. At 27 and still single, she is getting suspicious looks from co-workers and pressure from her younger brother Yuri, whom she raised, so she needs a date for a party, and fast. A chance meeting with Loid Forger, a psychiatrist raising a young daughter on his own, turns into a mutually convenient marriage. Kind, earnest and wonderfully awkward at ordinary life, Yor is a terrible cook and unsure how to be a wife or a mother, yet she throws herself into both. She has no idea Loid is a spy.",
+      "abilities": "An elite assassin with superhuman strength, speed and reflexes who fights with a pair of stiletto-like blades, and can take down armed thugs without breaking a sweat.",
+      "fate": {
+        "status": "alive",
+        "detail": "Yor is alive and still living as part of the Forger family in the ongoing manga and anime.",
+        "basis": "anime and manga so far"
+      },
+      "hindiVoice": {
+        "name": "Shilpi Pandey",
+        "dub": "Crunchyroll Hindi dub",
+        "sources": [
+          "https://www.animenewsnetwork.com/press-release/2023-11-06/mission-accepted-spy-x-family-season-one-hindi-dub-streaming-now-on-crunchyroll/.204157",
+          "https://animehunch.com/spy-x-family-season-1-hindi-dub-reveals-release-date-cast/"
+        ]
+      }
     }
   }
 }

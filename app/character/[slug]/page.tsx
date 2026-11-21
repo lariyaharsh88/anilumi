@@ -59,7 +59,8 @@ async function snapCharacter(slug: string): Promise<{ c: Character; apps: Appear
   // The slug was picked in the spelling people search ("suguru-geto", "sung-jin-woo"): the name that matches it leads.
   const key = (n: string) => n.normalize("NFKD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
   const plain = s.n.replace(/ou(?![aeiou])/gi, "o").replace(/uu/gi, "u");
-  const name = [s.n, plain, ...(s.al ?? [])].find((n) => key(n) === slug || slug.endsWith(`-${key(n)}`)) ?? s.n;
+  // A checked note's name wins: it has the order fans use ("Charlotte Katakuri", not AniList's "Katakuri Charlotte").
+  const name = characterNote(slug)?.name ?? [s.n, plain, ...(s.al ?? [])].find((n) => key(n) === slug || slug.endsWith(`-${key(n)}`)) ?? s.n;
   const c: Character = { id: `al-${s.id}`, slug, name, nameJp: null, description: "", image: snapImage(s, "large"), otherNames: (s.al ?? []).filter((n) => n !== name) };
   return { c, apps: anime ? [{ role: roleIn(s.s, s.id) ?? "supporting", anime }] : [] };
 }
