@@ -14352,6 +14352,453 @@
           "https://animehunch.com/spy-x-family-season-1-hindi-dub-reveals-release-date-cast/"
         ]
       }
+    },
+    "hancock-boa": {
+      "name": "Boa Hancock",
+      "role": "Pirate Empress of Amazon Lily, captain of the Kuja Pirates and one of the Seven Warlords of the Sea",
+      "debut": {
+        "anime": "One Piece",
+        "episode": 409,
+        "episodeTitle": "Hurry Back to Your Friends! The Maiden Island Adventure",
+        "source": "manga",
+        "chapter": 516,
+        "volume": 53
+      },
+      "arcs": [
+        "Amazon Lily Arc",
+        "Impel Down Arc",
+        "Marineford Arc",
+        "Post-War Arc"
+      ],
+      "affiliations": [
+        "Kuja Pirates",
+        "Amazon Lily",
+        "Seven Warlords of the Sea (former)"
+      ],
+      "relatives": [
+        {
+          "name": "Boa Sandersonia",
+          "relation": "younger sister"
+        },
+        {
+          "name": "Boa Marigold",
+          "relation": "younger sister"
+        }
+      ],
+      "confidence": "medium",
+      "sources": [
+        "https://en.wikipedia.org/wiki/One_Piece_season_12",
+        "https://en.wikipedia.org/wiki/List_of_One_Piece_chapters_(389%E2%80%93594)",
+        "https://onepiece.fandom.com/wiki/Episode_409",
+        "https://daddyjim.ai/one-piece/manga-chapter/Chapter-516",
+        "https://www.animeoshi.com/anime/one-piece/episode/409",
+        "https://myanimelist.net/character/16342"
+      ],
+      "notes": "Manga debut is chapter 516 ('Pirate Empress Boa Hancock', volume 53), confirmed by Wikipedia's chapter list and fan chapter guides. Anime debut: the One Piece Wiki episode page (seen via search excerpt) and fan episode guides say she first appears at the end of episode 409; Wikipedia's summary of 409 refers only to 'the Snake Princess' and first names her in episode 410 ('Everyone Falls in Love! Pirate Empress Hancock'), hence medium confidence. Episode title is Wikipedia's (Funimation) title. One Piece has Hindi dubs (Cartoon Network India's Wano and East Blue dubs, Crunchyroll's Egghead regional dubs), but no official or first-hand Hindi credit for Hancock was found, so hindiVoice is null.",
+      "about": "Boa Hancock is the Pirate Empress of Amazon Lily, a hidden island in the Calm Belt where only women live, and the captain of the Kuja Pirates. She is also one of the Seven Warlords of the Sea, pirates allowed to sail freely as long as they cooperate with the World Government. Hancock is famed as the most beautiful woman in the world, and she knows it: she is vain, haughty and quick to punish anyone who displeases her, yet her people adore her. Luffy lands on her island by accident after his crew is scattered, which is very bad news for him, since men are forbidden there. Hancock and her two sisters also guard a painful secret, and Luffy stumbles right into it.",
+      "abilities": "She ate the Love-Love Fruit, which turns anyone who feels attraction toward her into stone, and she is also a formidable fighter known for devastating kicks.",
+      "fate": {
+        "status": "alive",
+        "detail": "Hancock is alive in the anime and the ongoing manga (as of November 2026). After the Warlord system is abolished she loses her title, and when the Navy and Blackbeard's crew come to Amazon Lily to seize her powers she escapes capture with help from Silvers Rayleigh.",
+        "basis": "anime and manga so far"
+      },
+      "hindiVoice": null
+    },
+    "doflamingo-donquixote": {
+      "name": "Donquixote Doflamingo",
+      "role": "Captain of the Donquixote Pirates, one of the Seven Warlords of the Sea and the underworld broker known as Joker",
+      "debut": {
+        "anime": "One Piece",
+        "episode": 151,
+        "episodeTitle": "100 Million Man! World's Greatest Power and Pirate Black Beard!",
+        "source": "manga",
+        "chapter": 233,
+        "volume": 25
+      },
+      "arcs": [
+        "Jaya Arc",
+        "Marineford Arc",
+        "Punk Hazard Arc",
+        "Dressrosa Arc"
+      ],
+      "affiliations": [
+        "Donquixote Pirates",
+        "Seven Warlords of the Sea (former)"
+      ],
+      "relatives": [],
+      "confidence": "high",
+      "sources": [
+        "https://en.wikipedia.org/wiki/One_Piece_season_6",
+        "https://en.wikipedia.org/wiki/One_Piece_season_17",
+        "https://daddyjim.ai/one-piece/episode/Episode-151",
+        "https://daddyjim.ai/one-piece/manga-chapter/Chapter-233",
+        "https://fictionhorizon.com/is-doflamingo-really-dead/",
+        "https://myanimelist.net/character/2754"
+      ],
+      "notes": "Debut: episode 151 (chapter 233), the Marine meeting at Mary Geoise about replacing Crocodile as a Warlord. Wikipedia's episode 151 summary describes that meeting; fan episode and chapter guides name Doflamingo among the episode's debuts. Volume 25 covers chapters 227-236. Relatives (his brother and his family history) are left out because they are Dressrosa Arc reveals. Fate: Wikipedia's season 17 list has Luffy's King Kong Gun defeat him in episode 733 and shows him imprisoned in a Marine convoy in episode 746; his life sentence in Impel Down comes from fan reference sources. No official or first-hand Hindi credit found, so hindiVoice is null.",
+      "about": "Donquixote Doflamingo is a tall, grinning pirate in a pink feather coat and wraparound sunglasses, and one of the Seven Warlords of the Sea, the pirates who are allowed to operate freely as allies of the World Government. He first appears at Navy headquarters, where the Marines have gathered to discuss who should replace the disgraced Crocodile as a Warlord. Bored and amused, Doflamingo uses an unseen power to make two Marines fight each other against their will, laughing the whole time, until Fleet Admiral Sengoku has to step in. He treats the world like a game, has no respect for the Navy or its idea of justice, and clearly has ambitions far bigger than being anyone's ally.",
+      "abilities": "He ate the String-String Fruit, which lets him create and control razor-sharp strings, including invisible threads that take over other people's bodies like puppets.",
+      "fate": {
+        "status": "alive",
+        "detail": "Luffy defeats Doflamingo in Dressrosa (episode 733, 'Attack on a Celestial! Luffy's King Kong Gun of Anger!'), ending his rule over the country. He is arrested, stripped of his Warlord title and taken away to the great prison Impel Down, where he remains alive (as of November 2026).",
+        "basis": "anime and manga so far"
+      },
+      "hindiVoice": null
+    },
+    "edward-newgate": {
+      "name": "Edward Newgate",
+      "role": "Whitebeard, captain of the Whitebeard Pirates, one of the Four Emperors and the man called the world's strongest",
+      "debut": {
+        "anime": "One Piece",
+        "episode": 151,
+        "episodeTitle": "100 Million Man! World's Greatest Power and Pirate Black Beard!",
+        "source": "manga",
+        "chapter": 234,
+        "volume": 25
+      },
+      "arcs": [
+        "Jaya Arc",
+        "Post-Enies Lobby Arc",
+        "Marineford Arc"
+      ],
+      "affiliations": [
+        "Whitebeard Pirates",
+        "Four Emperors"
+      ],
+      "relatives": [],
+      "confidence": "high",
+      "sources": [
+        "https://en.wikipedia.org/wiki/One_Piece_season_6",
+        "https://en.wikipedia.org/wiki/One_Piece_season_14",
+        "https://tvtropes.org/pmwiki/pmwiki.php/Sandbox/OnePieceWhitebeard",
+        "https://daddyjim.ai/one-piece/episode/Episode-151",
+        "https://myanimelist.net/character/2751"
+      ],
+      "notes": "Debut: a brief appearance in episode 151 (chapter 234, volume 25), while the World Government's leaders worry about Whitebeard and Shanks; TV Tropes and fan episode guides both give chapter 234 / episode 151, and Wikipedia's episode 151 summary covers the scene. His proper on-screen introduction comes when Shanks visits him in the Post-Enies Lobby Arc. He calls his crew his 'sons', but has no blood relatives in the series. His earlier crew affiliation is left out to avoid spoilers. Fate is from Wikipedia's season 14 summaries (episodes 485 and 486). No official or first-hand Hindi credit found, so hindiVoice is null.",
+      "about": "Edward Newgate, known everywhere as Whitebeard, is one of the Four Emperors who rule the seas of the New World and is widely called the strongest man in the world. A towering old giant with a crescent-shaped white moustache, he captains the Whitebeard Pirates, a huge crew whose members he calls his sons and treats as family; Luffy's brother Ace is one of his commanders. Whitebeard once fought the Pirate King, Gol D. Roger, as an equal, and the Navy and World Government fear him above almost anyone. Even the rumour that Shanks, another Emperor, wants to meet him is enough to alarm the world's leaders. Despite his age and failing health, he still drinks heavily and laughs off danger.",
+      "abilities": "He ate the Tremor-Tremor Fruit, which lets him create earth-shaking quakes in the air and sea, and he fights with a giant bladed spear, a power said to be able to destroy the world.",
+      "fate": {
+        "status": "dies",
+        "detail": "Whitebeard dies at the Battle of Marineford (episode 485, manga chapter 576) after a last stand against the Navy and the Blackbeard Pirates, remaining on his feet to the end. In the next episode Blackbeard takes his Tremor-Tremor Fruit power.",
+        "basis": "anime and manga"
+      },
+      "hindiVoice": null
+    },
+    "jinbei": {
+      "name": "Jinbe",
+      "role": "Whale-shark fish-man, former captain of the Sun Pirates and one of the Seven Warlords of the Sea; later the Straw Hats' helmsman",
+      "debut": {
+        "anime": "One Piece",
+        "episode": 430,
+        "episodeTitle": "A Warlord in Prison! Jimbei the First Son of the Sea!",
+        "source": "manga",
+        "chapter": 528,
+        "volume": 54
+      },
+      "arcs": [
+        "Impel Down Arc",
+        "Marineford Arc",
+        "Post-War Arc",
+        "Fish-Man Island Arc",
+        "Whole Cake Island Arc",
+        "Wano Country Arc",
+        "Egghead Arc"
+      ],
+      "affiliations": [
+        "Sun Pirates (former captain)",
+        "Seven Warlords of the Sea (former)",
+        "Straw Hat Pirates"
+      ],
+      "relatives": [],
+      "confidence": "high",
+      "sources": [
+        "https://en.wikipedia.org/wiki/One_Piece_season_13",
+        "https://en.wikipedia.org/wiki/List_of_One_Piece_chapters_(389%E2%80%93594)",
+        "https://onepiece.fandom.com/wiki/Jinbe",
+        "https://daddyjim.ai/one-piece/manga-chapter/Chapter-528",
+        "https://www.tvmaze.com/characters/966762/one-piece-jinbe",
+        "https://respawn.outlookindia.com/pop-culture/pop-culture-news/crunchyroll-expands-one-piece-egghead-arc-with-regional-dubs"
+      ],
+      "notes": "Debut: episode 430 (chapter 528, volume 54), in Ace's neighbouring cell in Impel Down; Wikipedia's season 13 summary and the One Piece Wiki (via search excerpts) agree. He is first mentioned by name much earlier (chapter 69, Baratie Arc). Wikipedia's episode titles spell him 'Jimbei'; 'Jinbe' is the current official English spelling. Crunchyroll's 2026 Egghead regional-dub announcement (Outlook Respawn) shows him on the poster but names no Hindi cast, and no official or first-hand Hindi credit was found, so hindiVoice is null.",
+      "about": "Jinbe is a huge whale-shark fish-man, the captain of the Sun Pirates and one of the Seven Warlords of the Sea, the pirates who serve as allies of the World Government. When Luffy meets him, though, Jinbe is a prisoner in Impel Down, the world's most secure prison, chained in the cell next to Portgas D. Ace. He was locked up for refusing to join the Navy's coming war against Whitebeard, a man he owes a great debt and will not betray. Calm, formal and deeply honourable, Jinbe speaks like a seasoned warrior, keeps his word no matter the cost and feels responsible for the fate of his fellow fish-men. Luffy quickly finds that he has much in common with him.",
+      "abilities": "A master of Fish-Man Karate, he can strike through the water around and even inside an opponent, and he is an extraordinary swimmer who can call on whale sharks for help.",
+      "fate": {
+        "status": "alive",
+        "detail": "Jinbe survives the Marineford war, gives up his Warlord title and later joins the Straw Hat Pirates as their helmsman during the Wano Country Arc. He is alive in the anime and manga (as of November 2026).",
+        "basis": "anime and manga so far"
+      },
+      "hindiVoice": null
+    },
+    "sabo": {
+      "name": "Sabo",
+      "role": "Luffy and Ace's sworn brother from childhood; later Chief of Staff of the Revolutionary Army",
+      "debut": {
+        "anime": "One Piece",
+        "episode": 494,
+        "episodeTitle": "Here Comes Sabo! The Boy at the Gray Terminal!",
+        "source": "manga",
+        "chapter": 583,
+        "volume": 59
+      },
+      "arcs": [
+        "Post-War Arc",
+        "Dressrosa Arc",
+        "Reverie Arc",
+        "Egghead Arc"
+      ],
+      "affiliations": [
+        "Revolutionary Army"
+      ],
+      "relatives": [
+        {
+          "name": "Portgas D. Ace",
+          "relation": "sworn brother"
+        },
+        {
+          "name": "Monkey D. Luffy",
+          "relation": "sworn brother"
+        }
+      ],
+      "confidence": "high",
+      "sources": [
+        "https://en.wikipedia.org/wiki/One_Piece_season_14",
+        "https://en.wikipedia.org/wiki/List_of_One_Piece_chapters_(389%E2%80%93594)",
+        "https://onepiece.fandom.com/wiki/Episode_494",
+        "https://onepiece.fandom.com/wiki/Chapter_583",
+        "https://fictionhorizon.com/one-piece-when-does-sabo-first-appear/",
+        "https://myanimelist.net/character/32893"
+      ],
+      "notes": "Debut: episode 494 (chapter 583, volume 59), in the Post-War Arc flashback to Luffy's childhood in the Goa Kingdom; Wikipedia's season 14 summary and the One Piece Wiki (search excerpts) agree. Fiction Horizon's 'volume 17' is an error; Wikipedia puts chapter 583 in volume 59 (chapters 574-584). His birth family is left out of relatives to avoid spoilers. The Egghead Arc entry is his return after the Reverie, reported to the Revolutionary Army during that arc. No official or first-hand Hindi credit found, so hindiVoice is null.",
+      "about": "Sabo is a boy Luffy meets as a child in the Goa Kingdom, in a long flashback that shows how Luffy and Ace grew up. Sabo lives in the Gray Terminal, the vast rubbish dump outside the kingdom's walls, where he and Ace have been secretly hiding a stash of treasure for the day they set sail. He wears a top hat, goggles and a blue coat, fights with a metal pipe, and is more thoughtful and polite than the other two, but he shares their dream of leaving the kingdom to live freely as a pirate. The three boys swear to be brothers by sharing cups of sake. Sabo also keeps quiet about where he really comes from, a secret that shapes his life.",
+      "abilities": "As a boy he fights with a metal pipe and holds his own alongside Ace; he is the cleverest and most level-headed of the three brothers.",
+      "fate": {
+        "status": "alive",
+        "detail": "As a boy Sabo is believed killed when a Celestial Dragon fires on his small boat, but he survives with lost memories and grows up in the Revolutionary Army, reappearing as its Chief of Staff in Dressrosa. After the Reverie he is reported to have killed King Cobra, but the manga reveals he is alive and did not commit the murder. Alive as of November 2026.",
+        "basis": "anime and manga so far"
+      },
+      "hindiVoice": null
+    },
+    "mihawk-dracule": {
+      "name": "Dracule Mihawk",
+      "role": "Hawk-Eyes, the world's greatest swordsman and one of the Seven Warlords of the Sea",
+      "debut": {
+        "anime": "One Piece",
+        "episode": 23,
+        "episodeTitle": "Protect Baratie! The Great Pirate, Red Foot Zeff!",
+        "source": "manga",
+        "chapter": 49,
+        "volume": 6
+      },
+      "arcs": [
+        "Baratie Arc",
+        "Marineford Arc",
+        "Post-War Arc"
+      ],
+      "affiliations": [
+        "Seven Warlords of the Sea (former)",
+        "Cross Guild"
+      ],
+      "relatives": [],
+      "confidence": "high",
+      "sources": [
+        "https://en.wikipedia.org/wiki/One_Piece_season_1",
+        "https://daddyjim.ai/one-piece/episode/Episode-23",
+        "https://daddyjim.ai/one-piece/manga-chapter/Chapter-49",
+        "https://www.animeoshi.com/anime/one-piece/episode/23",
+        "https://myanimelist.net/character/2064"
+      ],
+      "notes": "Debut: episode 23 (Funimation title; the 4Kids title was 'The Red Footed Pirate'). Wikipedia's summary of episode 23 has Mihawk arrive and destroy Krieg's ship; his duel with Zoro is episode 24, 'Hawk-Eye Mihawk! The Great Swordsman Zoro Falls at Sea!'. Manga: chapter 49 ('Storm', volume 6), where he is first drawn in silhouette. Cross Guild (with Buggy and Crocodile) dates from after the Warlord system is abolished. No official or first-hand Hindi credit found, so hindiVoice is null.",
+      "about": "Dracule Mihawk, nicknamed Hawk-Eyes, is the greatest swordsman in the world and one of the Seven Warlords of the Sea, the pirates who are licensed by the World Government. He first turns up at the floating restaurant Baratie, chasing the last ship of Don Krieg's pirate fleet, which he wrecked almost single-handedly in the Grand Line. Mihawk sails alone in a small boat shaped like a coffin and carries an enormous black sword on his back, yet he is so far above ordinary fighters that he sees no need to draw it against most of them. Calm, cold and quietly curious, he has piercing yellow eyes like a hawk. Zoro, who has sworn to become the world's best swordsman, challenges him on the spot.",
+      "abilities": "His swordsmanship is unmatched: with his giant black blade he can slice a ship in half from a distance, and against weaker opponents he fights with nothing more than a small knife.",
+      "fate": {
+        "status": "alive",
+        "detail": "Mihawk is alive in the anime and the ongoing manga (as of November 2026). After the Warlord system is abolished he loses his title and becomes a leading member of Cross Guild with Buggy and Crocodile, while training Zoro during the two-year timeskip.",
+        "basis": "anime and manga so far"
+      },
+      "hindiVoice": null
+    },
+    "one-piece-yamato": {
+      "name": "Yamato",
+      "role": "Kaido's child, introduced as Kaido's son, who idolises the legendary samurai Kozuki Oden",
+      "debut": {
+        "anime": "One Piece",
+        "episode": 990,
+        "episodeTitle": "Thunder Bagua! Here Comes Kaido's Son!",
+        "source": "manga",
+        "chapter": 983,
+        "volume": 97
+      },
+      "arcs": [
+        "Wano Country Arc"
+      ],
+      "affiliations": [
+        "Ninja-Pirate-Mink-Samurai Alliance",
+        "Beasts Pirates (former)"
+      ],
+      "relatives": [
+        {
+          "name": "Kaido",
+          "relation": "father"
+        }
+      ],
+      "confidence": "high",
+      "sources": [
+        "https://en.wikipedia.org/wiki/One_Piece_season_20",
+        "https://en.wikipedia.org/wiki/List_of_One_Piece_chapters_(807%E2%80%931015)",
+        "https://animecorner.me/one-piece-episode-990-yamato-is-here/",
+        "https://comicbook.com/anime/news/one-piece-990-yamato-anime-debut-watch-spoilers",
+        "https://www.epicdope.com/one-piece-983-spoilers-is-kaidos-son-on-luffys-side/",
+        "https://www.cnnindonesia.com/hiburan/20200706002203-241-521151/review-manga-one-piece-chapter-984"
+      ],
+      "notes": "Debut: episode 990 (Wikipedia season 20 list), where a masked figure knocks out Ulti with Thunder Bagua and is revealed as Kaido's son; Anime Corner and ComicBook agree. Manga: Yamato first appears masked at the end of chapter 983 ('Thunder') and is unmasked and named in chapter 984 ('My Bible'); both are in volume 97 (chapters 975-984) per Wikipedia. Sources differ on Yamato's pronouns (the anime calls Yamato 'Kaido's son', Wikipedia's summaries use 'she'), so this entry avoids gendered pronouns. Wano is covered by Cartoon Network India's Hindi dub, but no official or first-hand Hindi credit for Yamato was found, so hindiVoice is null.",
+      "about": "Yamato is a powerful fighter in a horned oni mask who suddenly rescues Luffy during the Wano Country Arc, flattening the Beasts Pirates' Ulti with a heavy club and Thunder Bagua, the same attack used by the Emperor Kaido. Unmasked, Yamato is revealed as Kaido's own child, introduced as Kaido's son, yet Yamato despises Kaido and has spent years trapped on Onigashima by explosive handcuffs. Yamato's hero is Kozuki Oden, the legendary samurai of Wano, and Yamato has read Oden's journal so many times that Yamato speaks and acts as Oden would. Cheerful, open and fearless, Yamato dreams of sailing the seas freely and is drawn to Luffy partly because Luffy recalls Ace, whom Yamato once met.",
+      "abilities": "A ferocious fighter with a heavy iron club (kanabo), Yamato uses Kaido-style attacks such as Thunder Bagua and has the strength to match.",
+      "fate": {
+        "status": "alive",
+        "detail": "Yamato fights alongside Luffy's alliance during the raid on Onigashima and survives the battle. Afterwards Yamato decides to stay in Wano rather than sail with the Straw Hats for now, and is alive as of November 2026.",
+        "basis": "anime and manga so far"
+      },
+      "hindiVoice": null
+    },
+    "teach-marshall-d": {
+      "name": "Marshall D. Teach",
+      "role": "Blackbeard, captain of the Blackbeard Pirates and later one of the Four Emperors",
+      "debut": {
+        "anime": "One Piece",
+        "episode": 146,
+        "episodeTitle": "Quit Dreaming! Mock Town, the Town of Ridicule!",
+        "source": "manga",
+        "chapter": 223,
+        "volume": 24
+      },
+      "arcs": [
+        "Jaya Arc",
+        "Post-Enies Lobby Arc",
+        "Impel Down Arc",
+        "Marineford Arc"
+      ],
+      "affiliations": [
+        "Blackbeard Pirates",
+        "Whitebeard Pirates (former)",
+        "Seven Warlords of the Sea (former)",
+        "Four Emperors"
+      ],
+      "relatives": [],
+      "confidence": "high",
+      "sources": [
+        "https://en.wikipedia.org/wiki/One_Piece_season_6",
+        "https://en.wikipedia.org/wiki/One_Piece_season_14",
+        "https://tvtropes.org/pmwiki/pmwiki.php/Characters/OnePieceBlackbeard",
+        "https://daddyjim.ai/one-piece/episode/Episode-146",
+        "https://daddyjim.ai/one-piece/manga-chapter/Chapter-223"
+      ],
+      "notes": "Debut: episode 146 (chapter 223, volume 24), the cherry-pie scene in Mock Town on Jaya; TV Tropes and fan episode and chapter guides give 146/223. Wikipedia's season 6 summaries first mention him in episode 147 ('Luffy, Zoro, and Nami meet the man who is later revealed to be Blackbeard'), where he gives his speech about dreams, so 147 is his larger scene. He is not named or identified as Blackbeard until later. Fate from Wikipedia's season 14 summary (episode 486). Affiliations include later roles. No official or first-hand Hindi credit found, so hindiVoice is null.",
+      "about": "Marshall D. Teach is a huge, gap-toothed pirate with a scruffy black beard whom Luffy and Zoro run into in Mock Town, a rowdy port on the island of Jaya. He has a loud laugh, an enormous appetite and a passion for cherry pie, and he takes a keen interest in Luffy and his bounty. Unlike almost everyone else in town, who mock Luffy for believing in dreams and legends, Teach takes his side and declares that people's dreams never end. He is cheerful and friendly on the surface, but there is something calculating about the way he watches the Straw Hats, and his small crew soon makes a bold move of its own with the Navy.",
+      "abilities": "At first he seems to be simply a big, tough brawler with a huge appetite; the true nature of his strength is kept hidden early on.",
+      "fate": {
+        "status": "alive",
+        "detail": "Teach becomes a Warlord, then at Marineford takes Whitebeard's Tremor-Tremor Fruit power after Whitebeard dies (episode 486), and rises to become one of the Four Emperors. He is alive in the anime and the ongoing manga (as of November 2026).",
+        "basis": "anime and manga so far"
+      },
+      "hindiVoice": null
+    },
+    "ace-portgas-d": {
+      "name": "Portgas D. Ace",
+      "role": "Fire Fist Ace, Luffy's older brother and commander of the Whitebeard Pirates' 2nd Division",
+      "debut": {
+        "anime": "One Piece",
+        "episode": 91,
+        "episodeTitle": "Goodbye Drum Island! I'm Going Out to Sea!",
+        "source": "manga",
+        "chapter": 154,
+        "volume": 17
+      },
+      "arcs": [
+        "Drum Island Arc",
+        "Alabasta Arc",
+        "Post-Enies Lobby Arc",
+        "Impel Down Arc",
+        "Marineford Arc"
+      ],
+      "affiliations": [
+        "Whitebeard Pirates",
+        "Spade Pirates (former)"
+      ],
+      "relatives": [
+        {
+          "name": "Monkey D. Luffy",
+          "relation": "sworn brother"
+        },
+        {
+          "name": "Sabo",
+          "relation": "sworn brother"
+        }
+      ],
+      "confidence": "medium",
+      "sources": [
+        "https://en.wikipedia.org/wiki/One_Piece_season_3",
+        "https://en.wikipedia.org/wiki/One_Piece_season_14",
+        "https://daddyjim.ai/one-piece/episode/Episode-91",
+        "https://daddyjim.ai/one-piece/episode/Episode-94",
+        "https://agbillow.blogspot.com/2014/12/statistics-japanese-name-d-romanized_58.html",
+        "https://www.hobbydb.com/marketplaces/hobbydb/subjects/portgas-d-ace-character",
+        "https://myanimelist.net/character/2072"
+      ],
+      "notes": "Debut: fan wiki-derived sources give chapter 154 (volume 17) and episode 91, a brief appearance at the end of the Drum Island Arc; Wikipedia's episode 91 summary does not mention him, hence medium confidence. He is properly introduced in Nanohana, Alabasta, around episode 94, where he is revealed as Luffy's brother. Episode title is Wikipedia's Funimation title (4Kids: 'Heading For Disaster'). His birth parents are left out of relatives because they are a Marineford reveal. Fate from Wikipedia's season 14 summary (episode 483); chapter 574 from fan chapter guides. No official or first-hand Hindi credit found, so hindiVoice is null.",
+      "about": "Portgas D. Ace is a confident young pirate in an orange cowboy hat, and Luffy's older brother. He is commander of the 2nd Division of the Whitebeard Pirates, the crew of one of the most powerful pirates alive, and he has come into the Grand Line hunting a crewmate who betrayed them. Ace catches up with the Straw Hats in Alabasta, easily holds off the Marine captain Smoker, and travels with them for a short while. Despite his fearsome reputation he is polite and well-mannered, thanks people for their food and has a habit of suddenly falling asleep in the middle of a meal. He is proud of his little brother and looks forward to seeing how far Luffy can go.",
+      "abilities": "He ate the Flame-Flame Fruit, which lets him turn his body into fire and launch blazing attacks such as Fire Fist, so ordinary blows pass straight through him.",
+      "fate": {
+        "status": "dies",
+        "detail": "Ace is captured, sentenced to public execution and rescued by Luffy at Marineford, but he dies shielding Luffy from Admiral Akainu's magma fist (episode 483, 'Looking for the Answer! Fire Fist Ace Dies on the Battlefield!'; manga chapter 574).",
+        "basis": "anime and manga"
+      },
+      "hindiVoice": null
+    },
+    "madara-uchiha": {
+      "name": "Madara Uchiha",
+      "role": "Legendary leader of the Uchiha clan and co-founder of the Hidden Leaf Village; a principal villain of the Fourth Shinobi World War",
+      "debut": {
+        "anime": "Naruto: Shippuuden",
+        "episode": null,
+        "episodeTitle": null,
+        "source": "manga",
+        "chapter": 370,
+        "volume": 41
+      },
+      "arcs": [
+        "Master's Prophecy and Vengeance",
+        "Fourth Shinobi World War: Confrontation",
+        "Fourth Shinobi World War: Climax"
+      ],
+      "affiliations": [
+        "Uchiha clan",
+        "Konohagakure (co-founder, former)"
+      ],
+      "relatives": [
+        {
+          "name": "Izuna Uchiha",
+          "relation": "younger brother"
+        }
+      ],
+      "confidence": "medium",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Madara_Uchiha",
+        "https://en.wikipedia.org/wiki/Naruto:_Shippuden_season_6",
+        "https://en.wikipedia.org/wiki/List_of_Naruto_chapters_(Part_II,_volumes_28%E2%80%9348)",
+        "https://tvtropes.org/pmwiki/pmwiki.php/Characters/NarutoMadaraUchiha",
+        "https://wiki.sportskeeda.com/naruto/madara-uchiha",
+        "https://daddyjim.ai/naruto/manga-chapter/Congratulations",
+        "https://myanimelist.net/character/53901"
+      ],
+      "notes": "Numbering is Naruto Shippuden's own (episode 130 of Shippuden). TV Tropes and Sportskeeda give chapter 370 ('Unease') and Shippuden episode 130; Wikipedia says only that he first appears in Part II, and its episode 130 summary has Jiraiya reveal that the Nine-Tails attack was the work of Madara Uchiha. This first 'appearance' is a reference in Jiraiya's deductions rather than a scene with the real Madara; his resurrected body first fights on screen around episode 322, hence medium confidence. Volume 41 (chapters 370-379) is derived from Wikipedia's per-volume chapter counts. Shippuden arc names follow the site's existing style. Beware the masked Tobi, who uses Madara's name for much of Part II; this entry is about the real Madara. Sony YAY! has aired Naruto Shippuden in Hindi since March 2024, but no official or first-hand Hindi credit for Madara was found (only fan cast pages), so hindiVoice is null. Fate: death scene with Hashirama is chapter 691 ('Congratulations', volume 72) per fan chapter guide and Wikipedia's character article. Debut episode left blank: Shippuden 130 only names him (Jiraiya works out who was behind the Nine-Tails attack); the real Madara first appears in battle around episode 322.",
+      "about": "Madara Uchiha is a legendary shinobi from the age before the Hidden Leaf Village existed, a leader of the proud Uchiha clan who founded the village together with his great rival Hashirama Senju, the First Hokage, before turning against it. Stories describe him as one of the most powerful ninja who ever lived, a master of the Sharingan who could bend even the Nine-Tailed Fox to his will. As far as the world knows, he died long ago after a titanic battle with Hashirama at the place now called the Valley of the End. Yet in the present day his name keeps resurfacing, linked to the Nine-Tails' attack on the village and to the Akatsuki, and whether Madara is truly gone becomes one of the story's great mysteries.",
+      "abilities": "He wields the Mangekyo Sharingan of the Uchiha clan, which let him control the Nine-Tailed Fox, and he was considered the only shinobi who could match the First Hokage.",
+      "fate": {
+        "status": "dies",
+        "detail": "Madara secretly survived his battle with Hashirama, died of old age before the main story after setting a long plan in motion, and is brought back as a reanimated corpse by Kabuto during the Fourth Shinobi World War. He is then fully restored to life and becomes the Ten-Tails' jinchuriki, but Black Zetsu betrays him and uses his body to revive Kaguya Otsutsuki. After Naruto and Sasuke seal Kaguya, Madara, drained of the tailed beasts, dies on the battlefield, making peace with Hashirama in his last moments (manga chapter 691).",
+        "basis": "manga and anime"
+      },
+      "hindiVoice": null
     }
   }
 }
