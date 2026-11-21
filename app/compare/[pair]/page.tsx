@@ -1,6 +1,6 @@
 import { fitDescription } from "@/lib/titles";
 import type { Metadata } from "next";
-import { searchShown } from "@/lib/indexing";
+import { searchShown, SEARCHED_COMPARES } from "@/lib/indexing";
 import Link from "@/components/Link";
 import Image from "next/image";
 import { notFound, permanentRedirect } from "next/navigation";
@@ -45,7 +45,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: fitDescription(`${a.title} vs ${b.title}: community score ${sa ? sa.toFixed(2) : "–"} vs ${sb ? sb.toFixed(2) : "–"}, ${fmtMinutes(runtimeMinutes(a))} vs ${fmtMinutes(runtimeMinutes(b))} to watch, ${a.userCount.toLocaleString()} vs ${b.userCount.toLocaleString()} members. Side-by-side score breakdown and genres.`),
     alternates: { canonical: comparePath(a, b) },
     // Usable by anyone, but generated pairs are thin (15 Nov audit): only pairs search still shows are indexed.
-    ...(compareIndexable(a, b) && searchShown(comparePath(a, b)) ? {} : { robots: { index: false, follow: true } }),
+    ...(compareIndexable(a, b) && (searchShown(comparePath(a, b)) || SEARCHED_COMPARES.includes(comparePath(a, b))) ? {} : { robots: { index: false, follow: true } }),
   };
 }
 

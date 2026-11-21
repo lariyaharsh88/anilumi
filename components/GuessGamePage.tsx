@@ -27,7 +27,7 @@ export function guessMetadata(mode: GuessMode): Metadata {
   return {
     title: fitTitle(all
       ? ["Guess the Anime Character: A New Character Every Day", "Guess the Anime Character (Daily Game)"]
-      : [`${def.name} Character Guessing Game: New Character Daily`, `Guess the ${def.name} Character: New One Daily`, `${def.name} Character Guess (Daily)`]),
+      : [def.dle ? `${def.name} Character Guessing Game: Daily, like ${def.dle}` : null, `${def.name} Character Guessing Game: New Character Daily`, `Guess the ${def.name} Character: New One Daily`, `${def.name} Character Guess (Daily)`]),
     description: fitDescription(all
       ? `Guess today's anime character in ${MAX_GUESSES} tries: each guess shows if the series, gender, role, birthday, height, age and voice actor match. ${pool.length} characters, new daily.`
       : `Guess today's ${def.name} character in ${MAX_GUESSES} tries: each guess shows if gender, role, birthday, height, age and voice actor match. A new one daily at midnight IST.`),
@@ -44,6 +44,7 @@ export default function GuessGamePage({ mode }: { mode: GuessMode }) {
   const fallbackHref = def.anime ? `/anime/${def.anime}/characters` : "/characters";
   const faq: FaqItem[] = [
     { q: "How do I play?", a: `Type a ${label(def.name)} character's name and pick it from the list. Each guess shows how it compares with today's character: ${attrs.map((a) => ATTR_LABEL[a].toLowerCase()).join(", ")}. Green is a match, yellow is close, and an arrow says whether the answer is higher or lower. You have ${MAX_GUESSES} guesses.` },
+    ...(def.dle ? [{ q: `Is this like ${def.dle}?`, a: `Yes, the same idea: one ${def.name} character a day, guessed from hints about each try. It's free, needs no sign-up, and also shows the character's AniLumi page once you've played.` }] : []),
     { q: "When is there a new character?", a: "Every day at midnight India time (IST). Everyone gets the same character, so you can compare results with friends using the Share button." },
     { q: "How do the hints work?", a: "The colours are the hints. A yellow birthday is within a month, a yellow height within 5 cm and a yellow age within 3 years; the arrows tell you which way to go. A dark square means the fact isn't known for one of the two characters." },
     { q: `Which characters can come up?`, a: all ? `The ${pool.length} most popular anime characters on AniList that have enough known facts, from shows like Jujutsu Kaisen, One Piece, Naruto, Attack on Titan and Demon Slayer.` : `${pool.length} characters from ${def.name}'s main and supporting cast, most popular first, each with enough known facts to be guessable.` },

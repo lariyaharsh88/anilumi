@@ -11,10 +11,11 @@ import { seriesCast, roleIn } from "./seriessnap";
 import { ageNum, heightCm } from "./charfacts";
 import type { GChar, GuessMode } from "./guessgame-core";
 
-export type GuessModeDef = { mode: GuessMode; path: string; name: string; series: string[]; anime: string | null; emoji: string };
+/** `dle`: the "-dle" name people search for this kind of game (Bing, Nov 2026: "narutodle" 25K impressions a year). */
+export type GuessModeDef = { mode: GuessMode; path: string; name: string; series: string[]; anime: string | null; emoji: string; dle?: string };
 export const GUESS_MODES: GuessModeDef[] = [
   { mode: "all", path: "/guess-the-anime-character", name: "Anime", series: [], anime: null, emoji: "🎯" },
-  { mode: "naruto", path: "/guess-the-anime-character/naruto", name: "Naruto", series: ["naruto", "naruto-shippuden"], anime: "naruto", emoji: "🍥" },
+  { mode: "naruto", path: "/guess-the-anime-character/naruto", name: "Naruto", series: ["naruto", "naruto-shippuden"], anime: "naruto", emoji: "🍥", dle: "Narutodle" },
   { mode: "one-piece", path: "/guess-the-anime-character/one-piece", name: "One Piece", series: ["one-piece"], anime: "one-piece", emoji: "🏴‍☠️" },
   { mode: "demon-slayer", path: "/guess-the-anime-character/demon-slayer", name: "Demon Slayer", series: ["kimetsu-no-yaiba"], anime: "kimetsu-no-yaiba", emoji: "🗡️" },
   { mode: "jujutsu-kaisen", path: "/guess-the-anime-character/jujutsu-kaisen", name: "Jujutsu Kaisen", series: ["jujutsu-kaisen"], anime: "jujutsu-kaisen", emoji: "🌀" },

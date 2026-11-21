@@ -51,6 +51,13 @@ let shown: Set<string> | null = null;
 export const searchShown = (path: string) => (shown ??= new Set(shownList())).has(path);
 export const searchShownPaths = (prefix: string) => shownList().filter((p) => p.startsWith(prefix));
 
+/**
+ * Comparison pages people search by name, indexed and in the sitemap although robots.txt keeps the rest of /compare/
+ * closed (scrapers walked every pair). Bing keyword research, 21 Nov 2026: "naruto vs bleach" 29K impressions a year
+ * and "bleach vs naruto" 18K, both rising. Each needs an `Allow:` line in public/robots.txt.
+ */
+export const SEARCHED_COMPARES = ["/compare/bleach-vs-naruto"];
+
 /** Characters with verified notes (data/character-notes.json): role, debut, arcs, family. */
 export const notedCharacters = () => Object.keys((notes as { characters: Record<string, unknown> }).characters);
 let noted: Set<string> | null = null;

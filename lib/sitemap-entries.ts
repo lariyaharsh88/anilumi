@@ -27,7 +27,7 @@ import { HINDI_PLATFORMS, dubsOn, hindiDubbed, hindiDubPath } from "@/lib/hindid
 import { KIDS_TV_CHECKED, KIDS_TV_PATH, kidsChannel } from "@/lib/kidstv";
 import { PRICES_CHECKED } from "@/lib/platformprices";
 import { indexedSimilar } from "@/lib/similarhub";
-import { searchShown, searchShownPaths, animeIndexed, ownContentSlugs, watchOrderIndexed, characterTableIndexed, notedCharacters, demandCharacters, genreIndexed, bestYearIndexed, trendIndexed, voiceActorIndexed, hindiDubIndexed } from "@/lib/indexing";
+import { searchShown, searchShownPaths, animeIndexed, ownContentSlugs, watchOrderIndexed, characterTableIndexed, notedCharacters, demandCharacters, genreIndexed, bestYearIndexed, trendIndexed, voiceActorIndexed, hindiDubIndexed, SEARCHED_COMPARES } from "@/lib/indexing";
 import franchiseData from "@/data/franchises.json";
 import { DATA_DATES as D, STATIC_UPDATED, BIRTHDAY_PAGES_UPDATED, HINDI_HUB_UPDATED, SCENE_PAGE_UPDATED, DUB_GUIDES_ADDED, latest, weekStart, monthStart } from "@/lib/lastmod";
 import { FILLER } from "@/data/filler";
@@ -154,6 +154,7 @@ export async function sitemapEntries(): Promise<MetadataRoute.Sitemap> {
     const airingPages = await Promise.all([0, 20, 40].map((offset) => listAnime({ filter: { status: "current" }, sort: "-userCount", limit: 20, offset, revalidate: 86400 })));
     const airing = { items: airingPages.flatMap((p) => p.items) };
     out.push({ url: abs("/compare"), lastModified: at(), changeFrequency: "monthly", priority: 0.5 });
+    for (const p of SEARCHED_COMPARES) out.push({ url: abs(p), lastModified: at(D.anilist), changeFrequency: "monthly", priority: 0.5 });
     // Episode pages aren't listed: robots.txt keeps crawlers off them (scrapers walked every episode, Nov 2026).
     const seen = new Set<string>();
     // Cast and openings pages are listed only when the monthly snapshots have data for them; without it the page

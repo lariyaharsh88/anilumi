@@ -149,6 +149,10 @@ export default async function CharacterPage({ params }: Props) {
   const checked = deep ? DEEP_CHECKED : note ? NOTES_CHECKED : null;
   const sources = [...new Set([...(note?.sources ?? []), ...(deep?.sources ?? [])])];
   const compare = compareSets(c.slug);
+  // The checked name in the FAQ ("Monkey D. Luffy", "Tanjiro Kamado"), as in the title and the bio heading.
+  const nm = note?.name ?? c.name;
+  const later = (deep?.ages ?? []).slice(1);
+  const laterAges = later.length ? `${later.some((x) => x.spoiler) ? "Spoiler: " : ""}${later.map((x) => `${x.when.replace(/^./, (ch) => ch.toLowerCase())}, ${x.age}`).join("; ")}.` : "";
   const family = familyOf(c.slug);
   const navSections: NavSection[] = [
     ...(note?.about ? [{ id: "who", label: "About" }] : []),
@@ -386,28 +390,29 @@ export default async function CharacterPage({ params }: Props) {
       <div id="faq" data-section><Faq
         title={`${c.name} FAQ`}
         items={[
-          { q: `What anime is ${c.name} from?`, a: home ? `${c.name} is ${homeApp?.role === "main" ? "a main character" : "a character"} in ${home.title}${apps.length > 1 ? ` and appears in ${apps.length} titles in total, including ${apps.filter((x) => x.anime.id !== home.id).slice(0, 2).map((x) => x.anime.title).join(" and ")}` : ""}.` : `${c.name}'s appearances have not been catalogued yet.` },
-          ...(fact("age") ? [{ q: `How old is ${c.name}?`, a: ageAnswer(c.name, fact("age")!) }] : []),
-          ...(fact("height") ? [{ q: `How tall is ${c.name}?`, a: `${c.name} is ${fact("height")} tall.` }] : []),
-          ...(bday ? [{ q: `When is ${c.name}'s birthday?`, a: `${c.name}'s birthday is ${bdLabel(bday.m, bday.d)}. See every anime character born on ${bdLabel(bday.m, bday.d)} on AniLumi's birthday page.` }] : fact("birthday") ? [{ q: `When is ${c.name}'s birthday?`, a: `${c.name}'s birthday is ${fact("birthday")}.` }] : []),
-          ...(voiced?.jp ? [{ q: `Who voices ${c.name}?`, a: `${c.name} is voiced by ${voiced.jp.name} in Japanese${voiced.en ? ` and by ${voiced.en.name} in the English dub` : ""}${note?.hindiVoice ? `, and by ${note.hindiVoice.name} in the Hindi dub (${note.hindiVoice.dub})` : ""}.` }] : []),
-          ...(note?.hindiVoice && !voiced?.jp ? [{ q: `Who voices ${c.name} in Hindi?`, a: `${note.hindiVoice.name} voices ${c.name} in the Hindi dub (${note.hindiVoice.dub}).` }] : []),
-          ...(note?.abilities ? [{ q: `What are ${c.name}'s powers and abilities?`, a: note.abilities }] : []),
+          { q: `What anime is ${nm} from?`, a: home ? `${nm} is ${homeApp?.role === "main" ? "a main character" : "a character"} in ${home.title}${apps.length > 1 ? ` and appears in ${apps.length} titles in total, including ${apps.filter((x) => x.anime.id !== home.id).slice(0, 2).map((x) => x.anime.title).join(" and ")}` : ""}.` : `${nm}'s appearances have not been catalogued yet.` },
+          // Later ages from the deep profile too ("how old is Luffy" wants 19 after the timeskip, not just 17).
+          ...(fact("age") ? [{ q: `How old is ${nm}?`, a: `${ageAnswer(nm, fact("age")!)}${laterAges ? ` ${laterAges}` : ""}` }] : []),
+          ...(fact("height") ? [{ q: `How tall is ${nm}?`, a: `${nm} is ${fact("height")} tall.` }] : []),
+          ...(bday ? [{ q: `When is ${nm}'s birthday?`, a: `${nm}'s birthday is ${bdLabel(bday.m, bday.d)}. See every anime character born on ${bdLabel(bday.m, bday.d)} on AniLumi's birthday page.` }] : fact("birthday") ? [{ q: `When is ${nm}'s birthday?`, a: `${nm}'s birthday is ${fact("birthday")}.` }] : []),
+          ...(voiced?.jp ? [{ q: `Who voices ${nm}?`, a: `${nm} is voiced by ${voiced.jp.name} in Japanese${voiced.en ? ` and by ${voiced.en.name} in the English dub` : ""}${note?.hindiVoice ? `, and by ${note.hindiVoice.name} in the Hindi dub (${note.hindiVoice.dub})` : ""}.` }] : []),
+          ...(note?.hindiVoice && !voiced?.jp ? [{ q: `Who voices ${nm} in Hindi?`, a: `${note.hindiVoice.name} voices ${nm} in the Hindi dub (${note.hindiVoice.dub}).` }] : []),
+          ...(note?.abilities ? [{ q: `What are ${nm}'s powers and abilities?`, a: note.abilities }] : []),
           ...(deep ? [
-            { q: `What are ${c.name}'s best qualities?`, a: deep.qualities.map((q) => `${q.trait}: ${q.detail}`).join(" ") },
-            { q: `What can we learn from ${c.name}?`, a: deep.lessons.map((l) => l.lesson).join(" ") },
-            { q: `What is ${c.name}'s backstory?`, a: `Spoiler: ${deep.backstory}` },
+            { q: `What are ${nm}'s best qualities?`, a: deep.qualities.map((q) => `${q.trait}: ${q.detail}`).join(" ") },
+            { q: `What can we learn from ${nm}?`, a: deep.lessons.map((l) => l.lesson).join(" ") },
+            { q: `What is ${nm}'s backstory?`, a: `Spoiler: ${deep.backstory}` },
           ] : []),
-          ...(deep?.strength ? [{ q: `How strong is ${c.name}?`, a: `${deep.strength.spoiler ? "Spoiler: " : ""}${deep.strength.rank}. ${deep.strength.summary}` }] : []),
-          ...(deep?.fights?.some((f) => !f.spoiler) ? [{ q: `What are ${c.name}'s best fights?`, a: deep.fights.filter((f) => !f.spoiler).map((f) => `${f.title}${f.episode ? ` (episode ${f.episode})` : ""}`).join(", ") + "." }] : []),
-          ...(note?.fate ? [{ q: `Does ${c.name} die?`, a: `Spoiler: ${note.fate.status === "alive" ? "no." : note.fate.status === "dies" ? "yes." : note.fate.status === "revived" ? "yes, but not for good." : "it's unclear."} ${note.fate.detail} (As of the ${note.fate.basis}.)` }] : []),
+          ...(deep?.strength ? [{ q: `How strong is ${nm}?`, a: `${deep.strength.spoiler ? "Spoiler: " : ""}${deep.strength.rank}. ${deep.strength.summary}` }] : []),
+          ...(deep?.fights?.some((f) => !f.spoiler) ? [{ q: `What are ${nm}'s best fights?`, a: deep.fights.filter((f) => !f.spoiler).map((f) => `${f.title}${f.episode ? ` (episode ${f.episode})` : ""}`).join(", ") + "." }] : []),
+          ...(note?.fate ? [{ q: `Does ${nm} die?`, a: `Spoiler: ${note.fate.status === "alive" ? "no." : note.fate.status === "dies" ? "yes." : note.fate.status === "revived" ? "yes, but not for good." : "it's unclear."} ${note.fate.detail} (As of the ${note.fate.basis}.)` }] : []),
           // "Sakura Haruno" → "What is Sakura's full name?"; skipped for "Monkey D. Luffy" style names, whose first word isn't the given name.
-          ...(c.name.split(" ").length === 2 ? [{ q: `What is ${c.name.split(" ")[0]}'s full name?`, a: `${c.name.split(" ")[0]}'s full name is ${c.name}${c.nameJp ? ` (${c.nameJp} in Japanese)` : ""}.${aliases.length ? ` ${c.name} is also known as ${aliases.join(", ")}.` : ""}` }] : []),
-          ...(aliases.length && c.name.split(" ").length !== 2 ? [{ q: `What else is ${c.name} called?`, a: `${c.name} is also known as ${aliases.join(", ")}.` }] : []),
-          ...(sign && fact("birthday") ? [{ q: `What is ${c.name}'s zodiac sign?`, a: `${c.name} is ${/^[AEIOU]/.test(sign) ? "an" : "a"} ${sign}: ${fact("gender")?.toLowerCase() === "female" ? "her" : fact("gender")?.toLowerCase() === "male" ? "his" : "the"} birthday is ${fact("birthday")}.` }] : []),
-          ...(firsts ? [{ q: `When did ${c.name} first appear?`, a: `${c.name} first appeared in ${appLabel(firsts.first)}${firsts.latest ? ` and most recently appeared in ${appLabel(firsts.latest)}` : ""}.` }] : []),
-          ...(c.nameJp ? [{ q: `What is ${c.name}'s Japanese name?`, a: `${c.name} is written ${c.nameJp} in Japanese.` }] : []),
-          { q: `Where can I watch ${c.name}?`, a: home ? `Open the ${home.title} page for licensed streaming links and the full episode list.` : "Streaming links are listed on each anime page." },
+          ...(nm.split(" ").length === 2 ? [{ q: `What is ${nm.split(" ")[0]}'s full name?`, a: `${nm.split(" ")[0]}'s full name is ${nm}${c.nameJp ? ` (${c.nameJp} in Japanese)` : ""}.${aliases.length ? ` ${nm} is also known as ${aliases.join(", ")}.` : ""}` }] : []),
+          ...(aliases.length && nm.split(" ").length !== 2 ? [{ q: `What else is ${nm} called?`, a: `${nm} is also known as ${aliases.join(", ")}.` }] : []),
+          ...(sign && fact("birthday") ? [{ q: `What is ${nm}'s zodiac sign?`, a: `${nm} is ${/^[AEIOU]/.test(sign) ? "an" : "a"} ${sign}: ${fact("gender")?.toLowerCase() === "female" ? "her" : fact("gender")?.toLowerCase() === "male" ? "his" : "the"} birthday is ${fact("birthday")}.` }] : []),
+          ...(firsts ? [{ q: `When did ${nm} first appear?`, a: `${nm} first appeared in ${appLabel(firsts.first)}${firsts.latest ? ` and most recently appeared in ${appLabel(firsts.latest)}` : ""}.` }] : []),
+          ...(c.nameJp ? [{ q: `What is ${nm}'s Japanese name?`, a: `${nm} is written ${c.nameJp} in Japanese.` }] : []),
+          { q: `Where can I watch ${nm}?`, a: home ? `Open the ${home.title} page for licensed streaming links and the full episode list.` : "Streaming links are listed on each anime page." },
         ]}
       /></div>
     </article>
