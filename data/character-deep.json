@@ -17991,6 +17991,463 @@
         "https://epicstream.com/article/solo-leveling-ending"
       ],
       "confidence": "high"
+    },
+    "anya-forger": {
+      "qualities": [
+        {
+          "trait": "Secretly telepathic",
+          "detail": "She hears what everyone around her is thinking, which is how she knows from the start that her new father is a spy and her new mother an assassin, and she keeps both secrets to herself."
+        },
+        {
+          "trait": "Thrill-seeker",
+          "detail": "Bored by her years in a lab and an orphanage, she is overjoyed to have a spy for a father and quietly works to keep the Forger household together so the excitement never stops."
+        },
+        {
+          "trait": "Allergic to studying",
+          "detail": "Schoolwork is a constant struggle; she leans on reading classmates' minds for answers, and panics when an exam falls on a new moon, the one time her power switches off."
+        },
+        {
+          "trait": "Braver than she looks",
+          "detail": "While volunteering at a hospital she hears a drowning patient's panicked thoughts and rushes to save him, earning her first Stella Star."
+        },
+        {
+          "trait": "Loyal to her friends",
+          "detail": "She hands Damian her own handkerchief so he won't be punished, then takes a Tonitrus Bolt herself when it turns out she has no spare."
+        },
+        {
+          "trait": "Hilariously expressive",
+          "detail": "Her smug grin, her love of peanuts and the Spy Wars cartoon, and her habit of talking about herself in the third person turned her into the series' mascot."
+        }
+      ],
+      "backstory": "Anya's true past is mostly unknown. She was once Test Subject 007 in experiments run by an unidentified organisation, which left her able to read minds and afraid of being sent back to a lab. After escaping, she was adopted by a series of families who each returned her to the orphanage. That is where the spy Twilight, under his new identity of psychiatrist Loid Forger, finds her: he needs a child to enrol at the elite Eden Academy so he can get close to the reclusive politician Donovan Desmond. Anya reads his mind, uses what she hears to pass his test, and is adopted. She tells him she is six years old, but Loid judges her to be closer to four or five. The only things known for certain about her past are her first name and that her earlier adoptions failed.",
+      "journey": [
+        {
+          "stage": "A spy's daughter (Season 1, part 1)",
+          "summary": "Loid adopts Anya to get into Eden Academy, and she quickly learns his secret along with Yor's when the two marry for cover. Despite a disastrous interview, she is accepted from the waiting list, but on orientation day she punches Damian Desmond, the son of Loid's target, earning her first Tonitrus Bolt."
+        },
+        {
+          "stage": "Making friends at Eden (Season 1, part 1)",
+          "summary": "She befriends the rich and bossy Becky Blackbell, tries and fails to apologise to Damian, loses a dodgeball game she trained for with Yor, and wins her first Stella Star for helping a drowning patient at a hospital."
+        },
+        {
+          "stage": "Bond joins the family (Season 1, part 2)",
+          "summary": "Chasing a white dog she senses can see the future, she stumbles into a terrorist plot, uses the dog's vision to save Loid from a bomb, and names the dog Bond after her favourite cartoon hero. She later battles exams without her powers and keeps trying to win Damian over."
+        },
+        {
+          "stage": "The cruise ship (Season 2)",
+          "summary": "On a family cruise she realises Yor is guarding passengers from hired killers, keeps Loid distracted, turns one fight into a fake circus act for the crowd, and secretly throws Yor her lost stiletto at the decisive moment."
+        },
+        {
+          "stage": "Code: White (film)",
+          "summary": "On a trip to the city of Frigis to find a dessert for a school cooking contest, Anya swallows a microfilm hidden in a chocolate and is kidnapped by a rogue officer, until Loid and Yor rescue her from his airship."
+        },
+        {
+          "stage": "The bus hijacking (Season 3)",
+          "summary": "After a second Tonitrus Bolt for protecting Damian, Anya is taken hostage with her class when the Red Circus hijacks their school bus. She reads the terrorists' minds, stands up to their leader, and comes out with a new Stella Star, a hug from Yor and an apology from Damian."
+        },
+        {
+          "stage": "Still keeping secrets (ongoing)",
+          "summary": "As of November 2026 Anya is still the only Forger who knows everyone's real identity, and she is still working toward the eight Stella Stars that would make her an Imperial Scholar. A fourth anime season and a second film were announced in November 2026 for 2027, and the manga continues."
+        }
+      ],
+      "lessons": [
+        {
+          "lesson": "Feeling wanted changes everything.",
+          "why": "After being returned by several families, Anya fights to keep the Forgers together, and the fake family becomes the first real home she has known."
+        },
+        {
+          "lesson": "Bravery isn't the absence of fear.",
+          "why": "She is a small child who is often scared, yet she keeps stepping up when someone she cares about is in danger."
+        },
+        {
+          "lesson": "Shortcuts only get you so far.",
+          "why": "Mind-reading can't help her on a new moon, and the stars she earns come from courage and kindness rather than copied answers."
+        },
+        {
+          "lesson": "First impressions can be wrong.",
+          "why": "Anya and Damian start with a punch, but after enough shared scrapes even the boy who mocked her admits she is brave."
+        }
+      ],
+      "relationships": [
+        {
+          "name": "Loid Forger",
+          "slug": "loid-forger",
+          "relation": "adoptive father",
+          "detail": "The spy Twilight adopts her purely for his mission. She knows his secret and thinks it's the coolest thing in the world, while he slowly grows protective of her for real.",
+          "spoiler": false
+        },
+        {
+          "name": "Yor Forger",
+          "slug": "yor-forger",
+          "relation": "adoptive mother",
+          "detail": "Anya reads Yor's mind early on and learns she is an assassin, and is delighted. Yor teaches her to defend herself and is fiercely protective of her.",
+          "spoiler": false
+        },
+        {
+          "name": "Damian Desmond",
+          "slug": null,
+          "relation": "classmate and rival",
+          "detail": "The second son of Loid's target. Anya punches him on day one and has to befriend him for the mission, without realising he has a crush on her.",
+          "spoiler": false
+        },
+        {
+          "name": "Becky Blackbell",
+          "slug": null,
+          "relation": "best friend",
+          "detail": "A wealthy, dramatic classmate who takes Anya's side after the punch and becomes her closest friend at Eden Academy.",
+          "spoiler": false
+        },
+        {
+          "name": "Bond Forger",
+          "slug": null,
+          "relation": "family dog",
+          "detail": "A former lab animal who can see glimpses of the future. Anya can read his visions, and the two quietly team up to protect the family.",
+          "spoiler": true
+        },
+        {
+          "name": "Yuri Briar",
+          "slug": null,
+          "relation": "uncle",
+          "detail": "Yor's brother is a secret police officer, which Anya knows from his thoughts. He tutors her for her exams with little success.",
+          "spoiler": true
+        },
+        {
+          "name": "Henry Henderson",
+          "slug": null,
+          "relation": "housemaster",
+          "detail": "The Eden Academy teacher who values 'elegance' helps get her admitted and later encourages her not to give up after her second Tonitrus Bolt.",
+          "spoiler": true
+        }
+      ],
+      "strength": {
+        "rank": "Telepath (Test Subject 007)",
+        "summary": "Anya can hear the thoughts of people and animals around her, which lets her uncover plots, find hidden culprits and steer her parents' missions without them noticing. Through Bond she can also see his visions of the future. Her power stops working on the night of a new moon and struggles when too many minds speak at once. Physically she is an ordinary small child, though Yor's training gives her a few tricks.",
+        "spoiler": false
+      },
+      "fights": [
+        {
+          "title": "The dodgeball tournament",
+          "animeSlug": "spy-x-family",
+          "episode": 10,
+          "summary": "Hoping to win a rumoured Stella Star, Anya trains with Yor and ends up the last player standing against the star athlete Bill Watkins, but her special throw falls flat.",
+          "spoiler": true
+        },
+        {
+          "title": "Saving the drowning patient",
+          "animeSlug": "spy-x-family",
+          "episode": 11,
+          "summary": "Her hospital volunteering goes badly until she picks up a drowning patient's panicked thoughts and rushes to his rescue, winning her first Stella Star.",
+          "spoiler": true
+        },
+        {
+          "title": "Saving Loid from the bomb",
+          "animeSlug": "spy-x-family-part-2",
+          "episode": 2,
+          "summary": "Through Bond's vision she foresees Loid being killed by a booby-trapped door and races to write a warning outside it.",
+          "spoiler": true
+        },
+        {
+          "title": "The cruise ship 'circus act'",
+          "animeSlug": "spy-x-family-season-2",
+          "episode": 7,
+          "summary": "When an assassin attacks Yor in a crowded shop, Anya convinces the onlookers it's a show, giving Yor room to win.",
+          "spoiler": true
+        },
+        {
+          "title": "The bus hijacking",
+          "animeSlug": "spy-x-family-season-3",
+          "episode": 8,
+          "summary": "With a bomb on board and a strike team on the way, Anya stands up to the hijackers' leader and helps change his mind before Martha ends the siege.",
+          "spoiler": true
+        },
+        {
+          "title": "The airship rescue",
+          "animeSlug": "spy-x-family-code-white",
+          "episode": null,
+          "summary": "Held prisoner on Colonel Snidel's airship, she does what she can to keep the microfilm out of his hands until Loid and Yor break in.",
+          "spoiler": true
+        }
+      ],
+      "keyEpisodes": [
+        {
+          "animeSlug": "spy-x-family",
+          "episode": 1,
+          "why": "Debut: Loid adopts Anya, and she discovers her new father is a spy.",
+          "spoiler": false
+        },
+        {
+          "animeSlug": "spy-x-family",
+          "episode": 6,
+          "why": "Orientation day: she punches Damian and earns her first Tonitrus Bolt.",
+          "spoiler": true
+        },
+        {
+          "animeSlug": "spy-x-family-part-2",
+          "episode": 3,
+          "why": "The family adopts the white dog, and Anya names him Bond.",
+          "spoiler": true
+        },
+        {
+          "animeSlug": "spy-x-family-season-3",
+          "episode": 2,
+          "why": "Anya gives Damian her handkerchief and takes a second Tonitrus Bolt for it.",
+          "spoiler": true
+        },
+        {
+          "animeSlug": "spy-x-family-season-3",
+          "episode": 9,
+          "why": "After the hijacking, Damian apologises and Anya earns a new Stella Star.",
+          "spoiler": true
+        }
+      ],
+      "ages": [
+        {
+          "when": "Start of the series",
+          "age": "about 4 to 5 (she claims 6)",
+          "spoiler": false
+        }
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Anya_Forger",
+        "https://en.wikipedia.org/wiki/List_of_Spy_%C3%97_Family_characters",
+        "https://en.wikipedia.org/wiki/Spy_%C3%97_Family_season_1",
+        "https://en.wikipedia.org/wiki/Spy_%C3%97_Family_season_2",
+        "https://en.wikipedia.org/wiki/Spy_%C3%97_Family_season_3",
+        "https://en.wikipedia.org/wiki/Spy_%C3%97_Family_Code:_White",
+        "https://anilist.co/character/138100",
+        "https://gamerant.com/spy-x-family-every-main-character-age-height-birthday/",
+        "https://www.oneesports.gg/anime/who-is-anya-in-spy-x-family-story/",
+        "https://www.thereviewgeek.com/spyxfamily-s1e10review/",
+        "https://thecinemaholic.com/spy-x-family-episode-10-recap-and-ending-explained",
+        "https://www.soapcentral.com/anime/spy-x-family-season-3-episode-9-anya-earns-stella-bus-hijacking-arc-comes-conclusion",
+        "https://animecorner.me/spy-x-family-season-4-and-movie-announced-in-2027/",
+        "https://tribune.com.pk/story/2639300/spy-x-family-season-4-and-new-movie-confirmed-for-2027",
+        "https://kitsu.io/api/edge/anime?filter[text]=spy%20x%20family"
+      ],
+      "confidence": "medium"
+    },
+    "yoichi-isagi": {
+      "qualities": [
+        {
+          "trait": "Reads the whole pitch",
+          "detail": "His real gift is spatial awareness: in only his second Blue Lock match he spots that Team Y's quiet Ikki Niko, not its star, is the one directing the play."
+        },
+        {
+          "trait": "A hidden ego",
+          "detail": "In the very first test, a game of tag, he passes up the easy target and goes after the stronger Ryosuke Kira, the striker whose goal had ended his school's season."
+        },
+        {
+          "trait": "Learns by 'devouring' rivals",
+          "detail": "He studies the players who beat him and makes their tricks his own, like copying Asahi Naruhaya's blind-spot footwork to score the winning goal in the very match where Naruhaya used it on him."
+        },
+        {
+          "trait": "Easygoing off the pitch",
+          "detail": "Away from matches he is friendly and a little plain, and his teammates sometimes find his simple habits irritating, which makes his ruthlessness in front of goal all the more striking."
+        },
+        {
+          "trait": "Refuses to stay beaten",
+          "detail": "Every defeat, from his school's prefectural final to Rin Itoshi's team in the Second Selection, becomes something he picks apart to find his next step."
+        }
+      ],
+      "backstory": "Yoichi Isagi is a second-year student at Ichinan High School in Saitama who grew up watching football and idolising Noel Noa, a striker for France's national team and the best player in the world. He plays striker for his school, but in the prefectural final, with his side a goal down, he follows his coach's team-first advice and passes to a teammate instead of shooting. The chance is missed, the opponents' captain Ryosuke Kira scores, and Isagi's team misses out on nationals. Soon afterwards he is summoned by the Japan Football Union and finds himself one of 300 young strikers locked inside Blue Lock, a facility run by the coach Jinpachi Ego, who personally chose him. Its goal is to create the world's greatest egotistical striker, and anyone who fails is barred from ever playing for Japan. Isagi starts out ranked 299th.",
+      "journey": [
+        {
+          "stage": "First Selection (Season 1)",
+          "summary": "Placed in Team Z with the lowest-ranked players, Isagi survives the opening game of tag, then helps the team recover from a 5-1 loss. His winning goal against Team Y lifts him to the top of Team Z's rankings, and his direct shot in stoppage time beats Nagi's Team V to send Team Z through."
+        },
+        {
+          "stage": "Second Selection (Season 1)",
+          "summary": "He forms a trio with Bachira and Nagi but loses to Rin Itoshi's team, which takes Bachira. Teaming up with Nagi and the selfish Barou, he learns to make other players fit his play, then falls just short in a rematch with Rin's team. Rin picks him to join them, and together they are beaten by the World Five."
+        },
+        {
+          "stage": "Blue Lock vs. Japan U-20 (Season 2)",
+          "summary": "In the tryouts he scores the winner after reaching a 'flow' state between the feuding Rin and Shidou, earning a midfield place in the Blue Lock XI. In the match itself he scores the final goal, beating the U-20 side 4-3 and saving the programme, while Rin declares him his rival."
+        },
+        {
+          "stage": "Neo Egoist League (manga)",
+          "summary": "Blue Lock players join clubs led by the world's top strikers, and Isagi picks Germany's Bastard München, home of his idol Noel Noa. He clashes with the team's ace Michael Kaiser, scores the winning goal in the league's decisive match, and ends the league tied with Rin for the highest transfer bid. A third anime season covering this arc, Blue Lock: Neo Egoist League, was announced in 2025 but had no premiere date as of November 2026."
+        }
+      ],
+      "lessons": [
+        {
+          "lesson": "Wanting something for yourself is not a flaw.",
+          "why": "Isagi's story starts with a selfless pass that ends his season; he grows only once he admits he wants to be the one who scores."
+        },
+        {
+          "lesson": "Study your losses.",
+          "why": "Nearly every big goal he scores is built from something he learned while losing to a better player."
+        },
+        {
+          "lesson": "Talent can be built from awareness.",
+          "why": "He is never the fastest or strongest, but by reading the game better than anyone he keeps up with players who are."
+        },
+        {
+          "lesson": "Rivals make you better.",
+          "why": "Bachira, Nagi, Barou and Rin each push him in ways teammates who simply agreed with him never could."
+        }
+      ],
+      "relationships": [
+        {
+          "name": "Meguru Bachira",
+          "slug": "meguru-bachira",
+          "relation": "first friend and teammate",
+          "detail": "The free-spirited dribbler is the first player in Team Z to bond with Isagi, practising with him on their first night and talking about the 'monster' that drives his play.",
+          "spoiler": false
+        },
+        {
+          "name": "Rin Itoshi",
+          "slug": null,
+          "relation": "rival",
+          "detail": "Blue Lock's top-ranked player beats Isagi in the Second Selection and picks him for his team. After the U-20 match, furious at Isagi's winning goal, he formally names him his rival.",
+          "spoiler": true
+        },
+        {
+          "name": "Seishiro Nagi",
+          "slug": "seishiro-nagi",
+          "relation": "rival turned teammate",
+          "detail": "Isagi's goal against Team V hands the effortless genius his first defeat, and Nagi then chooses to play alongside Isagi in the Second Selection.",
+          "spoiler": true
+        },
+        {
+          "name": "Shoei Barou",
+          "slug": null,
+          "relation": "teammate and rival",
+          "detail": "The self-styled 'king' refuses to pass, so Isagi learns to make Barou follow his lead instead. Barou keeps trying to take the spotlight back.",
+          "spoiler": true
+        },
+        {
+          "name": "Jinpachi Ego",
+          "slug": null,
+          "relation": "coach",
+          "detail": "The creator of Blue Lock personally selected Isagi and keeps pushing him to embrace his ego.",
+          "spoiler": false
+        },
+        {
+          "name": "Hyoma Chigiri",
+          "slug": null,
+          "relation": "teammate",
+          "detail": "Isagi encourages the speedster to risk everything despite an old knee injury, and Chigiri's equaliser against Team W follows.",
+          "spoiler": true
+        },
+        {
+          "name": "Michael Kaiser",
+          "slug": null,
+          "relation": "rival",
+          "detail": "Bastard München's star becomes Isagi's main rival in the manga's Neo Egoist League, before the two are forced to combine in its deciding match.",
+          "spoiler": true
+        }
+      ],
+      "strength": {
+        "rank": "Blue Lock's joint top player (manga)",
+        "summary": "Isagi's weapon is his vision: he reads where every player will move and finds the space to score from. He adds a first-time 'direct shot', borrows techniques from rivals, and learns to enter a flow state in big moments. In the anime he scores the winning goals against Team V and Japan U-20, and in the manga he finishes the Neo Egoist League tied with Rin for the highest bid.",
+        "spoiler": true
+      },
+      "fights": [
+        {
+          "title": "The game of tag",
+          "animeSlug": "blue-lock",
+          "episode": 1,
+          "summary": "With seconds left in Blue Lock's first test, Isagi chooses to hit the stronger Ryosuke Kira instead of the weakest player, knocking Kira out of the programme.",
+          "spoiler": false
+        },
+        {
+          "title": "Team Z vs. Team V",
+          "animeSlug": "blue-lock",
+          "episode": 11,
+          "summary": "Marked by Nagi in stoppage time, he trusts his instinct and fires a direct shot for the goal that sends Team Z through.",
+          "spoiler": true
+        },
+        {
+          "title": "Isagi and Nagi vs. Barou and Naruhaya",
+          "animeSlug": "blue-lock",
+          "episode": 15,
+          "summary": "Copying Naruhaya's trick of moving in an opponent's blind spot, Isagi slips Barou and scores the deciding goal.",
+          "spoiler": true
+        },
+        {
+          "title": "The rematch with Rin's team",
+          "animeSlug": "blue-lock",
+          "episode": 22,
+          "summary": "He levels the score at 4-4 with a back-heel shot Rin didn't see coming, before Rin's team snatches the last goal.",
+          "spoiler": true
+        },
+        {
+          "title": "The tryout decider",
+          "animeSlug": "Blue-Lock-VS-U20-JAPAN",
+          "episode": 3,
+          "summary": "Thinking on instinct for once, Isagi cuts between Rin and Shidou, steals the ball and scores the winning goal for his team.",
+          "spoiler": true
+        },
+        {
+          "title": "The winning goal vs. Japan U-20",
+          "animeSlug": "Blue-Lock-VS-U20-JAPAN",
+          "episode": 14,
+          "summary": "In stoppage time he predicts Rin's clash with his brother Sae, wins the loose ball and scores to beat the U-20 team 4-3.",
+          "spoiler": true
+        }
+      ],
+      "keyEpisodes": [
+        {
+          "animeSlug": "blue-lock",
+          "episode": 1,
+          "why": "Debut: Isagi's passed-up shot costs his team, and he enters Blue Lock.",
+          "spoiler": false
+        },
+        {
+          "animeSlug": "blue-lock",
+          "episode": 5,
+          "why": "His winning goal against Team Y makes him Team Z's top-ranked player.",
+          "spoiler": true
+        },
+        {
+          "animeSlug": "blue-lock",
+          "episode": 23,
+          "why": "Rin's team picks Isagi after beating him, and they go on to face the World Five.",
+          "spoiler": true
+        },
+        {
+          "animeSlug": "Blue-Lock-VS-U20-JAPAN",
+          "episode": 5,
+          "why": "He is named in the midfield of the Blue Lock XI to face Japan U-20.",
+          "spoiler": true
+        },
+        {
+          "animeSlug": "Blue-Lock-VS-U20-JAPAN",
+          "episode": 14,
+          "why": "His goal wins the U-20 match, and Rin declares him a rival.",
+          "spoiler": true
+        }
+      ],
+      "ages": [
+        {
+          "when": "Start of the series",
+          "age": 16,
+          "spoiler": false
+        },
+        {
+          "when": "Later in the story (birthday 1 April)",
+          "age": 17,
+          "spoiler": false
+        }
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Blue_Lock",
+        "https://en.wikipedia.org/wiki/List_of_Blue_Lock_characters",
+        "https://en.wikipedia.org/wiki/List_of_Blue_Lock_episodes",
+        "https://en.wikipedia.org/wiki/Blue_Lock_season_1",
+        "https://en.wikipedia.org/wiki/Blue_Lock_season_2",
+        "https://anilist.co/character/140856",
+        "https://us.oricon-group.com/news/1852/",
+        "https://anibase.net/en/character/1qAv1/Yoichi-Isagi",
+        "https://www.sportskeeda.com/anime/blue-lock-season-2-episode-8-rin-s-bold-moves-chigiri-s-lightning-pace-propel-blue-lock-first-half-lead",
+        "https://www.sportskeeda.com/anime/blue-lock-chapter-298-nagi-fails-score-manshine-city-final-rankings-revealed",
+        "https://www.sportskeeda.com/anime/blue-lock-chapter-295-nagi-reo-change-playstyle-blue-lock-s-no-1-player-revealed",
+        "https://www.animenewsnetwork.com/press-release/2026-06-08/blue-lock-season-3-officially-titled-blue-lock-neo-egoist-league/.238286",
+        "https://www.gamesradar.com/entertainment/anime-shows/blue-lock-season-3-is-well-on-the-way-with-first-look-and-title-despite-those-season-2-animation-controversies/",
+        "https://animecorner.me/blue-lock-season-3-heads-to-neo-egoist-league-with-key-visual-starring-isagi-and-kaiser/",
+        "https://kitsu.io/api/edge/anime?filter[text]=blue%20lock"
+      ],
+      "confidence": "medium"
     }
   }
 }
