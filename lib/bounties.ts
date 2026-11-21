@@ -9,10 +9,11 @@ export type Bounty = {
   /** The poster's condition line when it isn't "DEAD OR ALIVE" (Sanji's "ONLY ALIVE"). */
   poster?: string;
 };
-const D = data as unknown as { checked: string; characters: Record<string, { entries: Bounty[]; sources: string[] }> };
+type Entry = { entries: Bounty[]; sources: string[]; /** The name as fans write it, for characters without a checked note ("Trafalgar Law"). */ name?: string };
+const D = data as unknown as { checked: string; characters: Record<string, Entry> };
 export const BOUNTIES_CHECKED = D.checked;
 
-export const characterBounties = (slug: string): { entries: Bounty[]; sources: string[] } | null => D.characters[slug] ?? null;
+export const characterBounties = (slug: string): Entry | null => D.characters[slug] ?? null;
 /** "3,000,000,000" (bounties are quoted with Western digit groups). */
 export const bountyFigure = (n: number) => n.toLocaleString("en-US");
 /** The FAQ answer: the current bounty, then the whole history as a spoiler. */

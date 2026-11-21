@@ -147,9 +147,10 @@ export default function CharacterDeepProfile({ slug, name }: { slug: string; nam
 export const bountySection = (slug: string) => (characterBounties(slug) ? [{ id: "bounty", label: "Bounty" }] : []);
 
 /** One Piece bounty ("luffy bounty", "zoro wanted poster"): the current poster drawn in our own style, then every bounty in order. */
-export function CharacterBounty({ slug, name }: { slug: string; name: string }) {
+export function CharacterBounty({ slug, name: pageName }: { slug: string; name: string }) {
   const b = characterBounties(slug);
   if (!b?.entries.length) return null;
+  const name = b.name ?? pageName;
   const list = bySpoiler(b.entries), current = b.entries[b.entries.length - 1], me = snapByPage(slug), face = me ? snapImage(me) : null;
   const rises = b.entries.length - 1;
   const item = (x: Bounty) => (
