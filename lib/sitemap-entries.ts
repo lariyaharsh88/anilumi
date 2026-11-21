@@ -10,6 +10,7 @@ import { popularVoiceActors, vaPath } from "@/lib/anilist";
 import { allDays, birthdaysOn, bdPath, monthPath } from "@/lib/birthdays";
 import { fillerSlugs, continuationSlugs } from "@/lib/filler";
 import { characterTableSlugs, BLOOD_TYPES } from "@/lib/charsnap";
+import { CHARACTER_VS, vsPath } from "@/lib/charvs";
 import { hindiArtists, hindiArtistPath } from "@/lib/hindivoices";
 import { summaryFor } from "@/lib/summaries";
 import { sequelNews, sequelNewsSlugs } from "@/lib/sequelnews";
@@ -70,6 +71,7 @@ export async function sitemapEntries(): Promise<MetadataRoute.Sitemap> {
     ...continuationSlugs().map((slug) => ({ url: abs(`${animePath({ slug })}/manga`), lastModified: at(D.manga), changeFrequency: "monthly" as const, priority: 0.6 })),
     { url: abs("/voice-actors"), lastModified: at(D.voiceActors), changeFrequency: "weekly", priority: 0.6 },
     { url: abs("/characters"), lastModified: at(D.characters), changeFrequency: "monthly", priority: 0.7 },
+    ...CHARACTER_VS.map((v) => ({ url: abs(vsPath(v)), lastModified: at(D.characters, D.charNotes), changeFrequency: "monthly" as const, priority: 0.5 })),
     { url: abs("/best-anime"), lastModified: at(D.anilist), changeFrequency: "monthly", priority: 0.8 },
     { url: abs("/best-anime-for-beginners"), lastModified: at(D.anilist), changeFrequency: "monthly", priority: 0.7 },
     { url: abs("/similar"), lastModified: at(D.anilist, D.aliases), changeFrequency: "monthly", priority: 0.6 },

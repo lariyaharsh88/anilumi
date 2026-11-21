@@ -21,6 +21,10 @@ export type CompareRow = {
 };
 
 const BLOOD = /^(A|B|O|AB)$/i;
+const maxAge = (age: string | null | undefined): number | null => {
+  const ns = (age ?? "").match(/\d+/g)?.map(Number).filter((n) => n < 5000) ?? [];
+  return ns.length ? Math.max(...ns) : ageNum(age);
+};
 
 export function compareRow(c: SnapChar): CompareRow {
   const slug = c.k ?? null;
@@ -29,7 +33,9 @@ export function compareRow(c: SnapChar): CompareRow {
   const h = c.l.find(([l]) => l.toLowerCase() === "height")?.[1];
   return {
     id: c.id, name: note?.name ?? c.n, href: characterPathFor(c.id), image: snapImage(c), series: c.t, role: roleIn(c.s, c.id),
-    age: c.age ? c.age.replace(/-$/, "+") : null, ageNum: ageNum(c.age), heightCm: heightCm(h), birthday: c.m && c.d ? bdLabel(c.m, c.d) : null,
+    // Open-ended ages ("27-") read "27+"; sorting uses the highest listed age, like height uses the tallest
+    // ("12-17 (Naruto), 27- (Boruto)" sorts as 27, not 12).
+    age: c.age ? c.age.replace(/(\d)-(?=\s|\)|,|$)/g, "$1+") : null, ageNum: maxAge(c.age), heightCm: heightCm(h), birthday: c.m && c.d ? bdLabel(c.m, c.d) : null,
     sign: c.m && c.d ? zodiac(c.m, c.d) : null, bloodType: c.bt && BLOOD.test(c.bt) ? c.bt.toUpperCase() : null,
     favourites: c.f, jp: c.jp?.n ?? null, en: c.en?.n ?? null, hindi: note?.hindiVoice?.name ?? null,
     fate: note?.fate?.status ?? null, strength: deep?.strength?.rank ?? null,

@@ -100,7 +100,7 @@ export default function CharacterCompare({ self = null, sameSeries = [], similar
       {cols.some((r) => r.strength || r.fate) && <label className="mt-3 inline-flex cursor-pointer items-center gap-2 text-sm text-ink">
         <input type="checkbox" checked={spoilers} onChange={(e) => setSpoilers(e.target.checked)} className="h-4 w-4 accent-violet" /> Show spoilers (strength and who survives)
       </label>}
-      <p className="mt-1 text-xs text-muted">Heights are the tallest listed (after any time skip). Popularity is AniList favourites. 👑 marks the highest in each row.</p>
+      <p className="mt-1 text-xs text-muted">Heights and ages are the highest listed (after any time skip or sequel). Popularity is AniList favourites. 👑 marks the highest in each row.</p>
     </div>
   );
 }

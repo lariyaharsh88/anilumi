@@ -27,6 +27,7 @@ import JsonLd from "@/components/JsonLd";
 import { workRef } from "@/lib/ld";
 import Faq from "@/components/Faq";
 import { getCast, getAniListCharacter, sameName, vaPath, type Va } from "@/lib/anilist";
+import { CHARACTER_VS, vsPath } from "@/lib/charvs";
 import { snapFor, snapByPage, showRanking, snapToAniList, characterTable } from "@/lib/charsnap";
 import { parseKitsuBio, mergeFacts, factsTitle, ageAnswer, zodiac, aliasList, quickAnswer } from "@/lib/charfacts";
 import { formatMix, yearsActive, perYear, castRank, debutAndLatest } from "@/lib/charstats";
@@ -139,6 +140,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     robots: robotsFor(characterIndexed(c.slug)),
   };
 }
+
+const vsFor = (slug: string) => CHARACTER_VS.filter((v) => v.a === slug || v.b === slug);
 
 export default async function CharacterPage({ params }: Props) {
   const { slug } = await params;
@@ -300,6 +303,7 @@ export default async function CharacterPage({ params }: Props) {
           <h2 id="compare-h" className="h-section mb-1"><span aria-hidden className="mr-2">⚖️</span>{note?.name ?? c.name} compared with similar characters</h2>
           <p className="mb-4 text-sm text-muted">Side by side with {compare.sameSeries.length ? "the most-loved characters of the same series" : ""}{compare.sameSeries.length && compare.similar.length ? " and " : ""}{compare.similar.length ? "the leads of anime fans recommend alongside it" : ""}. Tick who to include and sort the table.</p>
           <CharacterCompare {...compare} />
+          {vsFor(c.slug).map((v) => <p key={v.slug} className="mt-3 text-sm"><Link href={vsPath(v)} className="font-semibold text-accent-2 hover:underline">{v.an} vs {v.bn}: height, age, powers and who would win →</Link></p>)}
         </section>
       )}
       {stats.length >= 2 && (
@@ -403,6 +407,7 @@ export default async function CharacterPage({ params }: Props) {
             { q: `What can we learn from ${nm}?`, a: deep.lessons.map((l) => l.lesson).join(" ") },
             { q: `What is ${nm}'s backstory?`, a: `Spoiler: ${deep.backstory}` },
           ] : []),
+          ...(deep?.latest ? [{ q: deep.latest.q, a: `${deep.latest.spoiler ? "Spoiler: " : ""}${deep.latest.answer}` }] : []),
           ...(deep?.strength ? [{ q: `How strong is ${nm}?`, a: `${deep.strength.spoiler ? "Spoiler: " : ""}${deep.strength.rank}. ${deep.strength.summary}` }] : []),
           ...(deep?.fights?.some((f) => !f.spoiler) ? [{ q: `What are ${nm}'s best fights?`, a: deep.fights.filter((f) => !f.spoiler).map((f) => `${f.title}${f.episode ? ` (episode ${f.episode})` : ""}`).join(", ") + "." }] : []),
           ...(note?.fate ? [{ q: `Does ${nm} die?`, a: `Spoiler: ${note.fate.status === "alive" ? "no." : note.fate.status === "dies" ? "yes." : note.fate.status === "revived" ? "yes, but not for good." : "it's unclear."} ${note.fate.detail} (As of the ${note.fate.basis}.)` }] : []),

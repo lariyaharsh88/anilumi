@@ -18,6 +18,8 @@ export type CharacterDeep = {
   fights?: ({ title: string; summary: string } & EpisodeRef & Spoiler)[];
   keyEpisodes?: ({ why: string } & EpisodeRef & Spoiler)[];
   ages?: ({ when: string; age: string | number } & Spoiler)[];
+  /** Something new in the source that people search for right now ("luffy new form"): its own block and FAQ answer. */
+  latest?: ({ nav: string; title: string; q: string; answer: string } & Spoiler) | null;
   sources: string[];
   confidence: "high" | "medium";
 };

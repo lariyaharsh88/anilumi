@@ -31,6 +31,7 @@ export function deepSections(slug: string): { id: string; label: string }[] {
   return [
     { id: "qualities", label: "Qualities" },
     ...(d.relationships?.length ? [{ id: "relationships", label: "Relationships" }] : []),
+    ...(d.latest ? [{ id: "latest", label: d.latest.nav }] : []),
     ...(d.strength ? [{ id: "strength", label: "Strength" }] : []),
     ...(d.fights?.length ? [{ id: "fights", label: "Best fights" }] : []),
     ...(d.keyEpisodes?.length ? [{ id: "episodes", label: "Key episodes" }] : []),
@@ -88,6 +89,13 @@ export default function CharacterDeepProfile({ slug, name }: { slug: string; nam
         <Block id="relationships" icon="🤝" title={`${name}'s relationships`}>
           {rel.open.length > 0 && <ul className="grid gap-3 sm:grid-cols-2">{rel.open.map(relItem)}</ul>}
           {rel.hidden.length > 0 && <Spoilers label={`${rel.hidden.length} more relationships`}><ul className="grid gap-3 sm:grid-cols-2">{rel.hidden.map(relItem)}</ul></Spoilers>}
+        </Block>
+      )}
+      {d.latest && (
+        <Block id="latest" icon="🆕" title={d.latest.title}>
+          {d.latest.spoiler
+            ? <Spoilers label={d.latest.nav}><p className="text-sm leading-6 text-ink/85">{d.latest.answer}</p></Spoilers>
+            : <div className="card p-4"><p className="text-sm leading-6 text-ink/85">{d.latest.answer}</p></div>}
         </Block>
       )}
       {d.strength && (
