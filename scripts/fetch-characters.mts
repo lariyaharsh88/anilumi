@@ -9,6 +9,8 @@ import { cleanBio } from "../lib/anilist";
 import { shownLines } from "../lib/charfacts";
 
 const TOP = Number(process.env.TOP) || 2000;
+// EXTRA_ONLY=1 fetches just the data/character-pages-extra.json characters missing from the file and appends them.
+const EXTRA_ONLY = process.env.EXTRA_ONLY === "1";
 const PER = 25;
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
@@ -18,11 +20,13 @@ type Ch = {
   dateOfBirth: { month: number | null; day: number | null }; description: string | null;
   media: { edges: { node: { id: number; isAdult: boolean; title: { romaji: string; english: string | null } }; voiceActorRoles: { voiceActor: Va | null }[] }[] };
 };
-const QUERY = `query($p:Int,$n:Int){Page(page:$p,perPage:$n){characters(sort:FAVOURITES_DESC){id name{full native alternative} image{medium} favourites age gender bloodType dateOfBirth{month day} description media(perPage:1,sort:POPULARITY_DESC,type:ANIME){edges{node{id isAdult title{romaji english}} voiceActorRoles(sort:[RELEVANCE,ID]){voiceActor{id name{full} image{medium} languageV2}}}}}}}`;
+const FIELDS = `id name{full native alternative} image{medium} favourites age gender bloodType dateOfBirth{month day} description media(perPage:1,sort:POPULARITY_DESC,type:ANIME){edges{node{id isAdult title{romaji english}} voiceActorRoles(sort:[RELEVANCE,ID]){voiceActor{id name{full} image{medium} languageV2}}}}`;
+const QUERY = `query($p:Int,$n:Int){Page(page:$p,perPage:$n){characters(sort:FAVOURITES_DESC){${FIELDS}}}}`;
+const QUERY_IDS = `query($ids:[Int]){Page(page:1,perPage:50){characters(id_in:$ids){${FIELDS}}}}`;
 
-async function page(p: number): Promise<Ch[]> {
+async function page(p: number, ids?: number[]): Promise<Ch[]> {
   for (let i = 0; i < 6; i++) {
-    const res = await fetch("https://graphql.anilist.co", { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify({ query: QUERY, variables: { p, n: PER } }), signal: AbortSignal.timeout(30000) }).catch(() => null);
+    const res = await fetch("https://graphql.anilist.co", { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify(ids ? { query: QUERY_IDS, variables: { ids } } : { query: QUERY, variables: { p, n: PER } }), signal: AbortSignal.timeout(30000) }).catch(() => null);
     if (res?.ok) return ((await res.json()) as { data: { Page: { characters: Ch[] } } }).data.Page.characters;
     const wait = res?.status === 429 ? (Number(res.headers.get("retry-after")) || 30) * 1000 : 5000 * (i + 1);
     console.warn(`page ${p}: ${res ? `HTTP ${res.status}` : "network error"}, retrying in ${wait / 1000}s`);
@@ -31,12 +35,21 @@ async function page(p: number): Promise<Ch[]> {
   throw new Error(`AniList kept failing on page ${p}`);
 }
 
+const FILE = new URL("../data/characters.json", import.meta.url);
+const prevFile = existsSync(FILE) ? (JSON.parse(readFileSync(FILE, "utf8")) as { generated: string; characters: { id: number; k?: string }[] }) : null;
+const prev = prevFile?.characters ?? [];
 const chars: Ch[] = [];
-for (let p = 1; p <= Math.ceil(TOP / PER); p++) {
+if (!EXTRA_ONLY) for (let p = 1; p <= Math.ceil(TOP / PER); p++) {
   chars.push(...(await page(p)));
   process.stdout.write(`characters ${chars.length}\r`);
   await sleep(2500); // stay under ~30 requests a minute
 }
+// Characters with a snapshot-only page (Kitsu has no entry) who are outside the top list, e.g. One Piece's Kaido:
+// fetched by id so their pages survive the monthly refresh.
+const pageIds = Object.keys((JSON.parse(readFileSync(new URL("../data/character-pages-extra.json", import.meta.url), "utf8")) as { pages: Record<string, string> }).pages).map(Number);
+const have = new Set([...chars, ...(EXTRA_ONLY ? prev : [])].map((c) => c.id));
+const missing = pageIds.filter((id) => !have.has(id));
+for (let i = 0; i < missing.length; i += 50) { chars.push(...(await page(0, missing.slice(i, i + 50)))); await sleep(2500); }
 
 // AniList media id → Kitsu slug/title (20 per request), skipping adult titles.
 const usable = chars.filter((c) => c.media.edges[0] && !c.media.edges[0].node.isAdult);
@@ -63,14 +76,13 @@ const va = (roles: { voiceActor: Va | null }[], lang: string) => {
   return v ? { id: v.id, n: v.name.full.trim(), i: v.image?.medium || null } : null;
 };
 // Keep last month's Kitsu slugs (scripts/map-character-slugs.mts then only matches newcomers).
-const FILE = new URL("../data/characters.json", import.meta.url);
 const prevK = new Map<number, string>();
-if (existsSync(FILE)) for (const c of (JSON.parse(readFileSync(FILE, "utf8")) as { characters: { id: number; k?: string }[] }).characters) if (c.k) prevK.set(c.id, c.k);
+for (const c of prev) if (c.k) prevK.set(c.id, c.k);
 /** Other names fans search by ("Eren Jaeger", "Near"); AniList keeps spoiler names in a separate field we don't fetch. */
 const aliases = (c: Ch) => [...new Set((c.name.alternative || []).map((x) => (x || "").trim()).filter((x) => x && x.length <= 40 && x.toLowerCase() !== c.name.full.trim().toLowerCase()))].slice(0, 4);
 const IMG = "https://s4.anilist.co/file/anilistcdn/character/medium/";
 const out = {
-  generated: new Date().toISOString().slice(0, 10),
+  generated: EXTRA_ONLY && prevFile ? prevFile.generated : new Date().toISOString().slice(0, 10),
   characters: usable.flatMap((c) => {
     const e = c.media.edges[0];
     const k = kitsu.get(e.node.id);
@@ -88,5 +100,6 @@ const out = {
     }];
   }),
 };
+if (EXTRA_ONLY) out.characters = [...(prev as typeof out.characters), ...out.characters];
 writeFileSync(FILE, JSON.stringify(out));
 console.log(`\nwrote ${out.characters.length} of ${chars.length} characters`);

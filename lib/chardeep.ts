@@ -20,6 +20,8 @@ export type CharacterDeep = {
   ages?: ({ when: string; age: string | number } & Spoiler)[];
   /** Something new in the source that people search for right now ("luffy new form"): its own block and FAQ answer. */
   latest?: ({ nav: string; title: string; q: string; answer: string } & Spoiler) | null;
+  /** One Piece bounties, oldest first ("luffy bounty", "luffy wanted poster"); chapter and episode only where two sources agree. */
+  bounties?: ({ amount: number; arc: string; why: string; chapter: number | null; episode: number | null } & Spoiler)[];
   sources: string[];
   confidence: "high" | "medium";
 };
