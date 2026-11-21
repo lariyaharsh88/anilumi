@@ -527,7 +527,6 @@
         "https://en.wikipedia.org/wiki/Monkey_D._Luffy",
         "https://onepiece.fandom.com/wiki/Monkey_D._Luffy",
         "https://onepiece.fandom.com/wiki/Monkey_D._Luffy/History",
-        "https://en.wikipedia.org/wiki/One_Piece_season_1",
         "https://en.wikipedia.org/wiki/One_Piece_season_4",
         "https://en.wikipedia.org/wiki/One_Piece_season_9",
         "https://en.wikipedia.org/wiki/One_Piece_season_14",
@@ -543,12 +542,7 @@
         "https://onepiece.fandom.com/wiki/Episode_1076",
         "https://anilist.co/character/40",
         "https://comicbook.com/anime/feature/one-piece-changes-forever-with-luffys-surprising-new-transformation/",
-        "https://gamerant.com/one-piece-luffy-monkey-god-nika-form/",
-        "https://fictionhorizon.com/one-piece-all-of-luffys-bounties/",
-        "https://comicbook.com/anime/news/one-piece-what-is-luffy-bounty-manga-anime",
-        "https://comicbook.com/anime/news/one-piece-luffy-new-bounty-billion-anime",
-        "https://sportskeeda.com/anime/one-piece-episode-1080-luffy-gets-new-bounty-tengu-reveals-true-identity-ryokugyu-displays-devil-fruit-ability",
-        "https://screenrant.com/one-piece-1053-most-wanted-pirate-shanks-luffy/"
+        "https://gamerant.com/one-piece-luffy-monkey-god-nika-form/"
       ],
       "confidence": "high",
       "relationships": [
@@ -694,65 +688,7 @@
         "q": "What is Luffy's new form?",
         "spoiler": true,
         "answer": "In manga chapter 1198 (November 2026), fighting Imu in the Elbaf arc, Luffy takes a new transformation beyond Gear 5: his whole body darkens with his Devil Fruit's pattern across it, his teeth become fangs and he laughs and screeches like a monkey. It has no official name yet. Fans and news sites call it the Monkey God form, and it isn't officially Gear 6. The anime hasn't reached it."
-      },
-      "bounties": [
-        {
-          "amount": 30000000,
-          "arc": "Arlong Park",
-          "why": "His first bounty, for beating Buggy, Don Krieg and Arlong: the highest in the East Blue, and the poster that makes him known as Straw Hat Luffy.",
-          "chapter": null,
-          "episode": 45,
-          "spoiler": false
-        },
-        {
-          "amount": 100000000,
-          "arc": "Alabasta",
-          "why": "For defeating Crocodile, one of the Seven Warlords of the Sea.",
-          "chapter": null,
-          "episode": null,
-          "spoiler": true
-        },
-        {
-          "amount": 300000000,
-          "arc": "Enies Lobby",
-          "why": "For the attack on the World Government's judicial island to rescue Robin, where he beats Rob Lucci of CP9.",
-          "chapter": null,
-          "episode": null,
-          "spoiler": true
-        },
-        {
-          "amount": 400000000,
-          "arc": "Marineford",
-          "why": "For punching a World Noble at Sabaody, breaking into Impel Down and joining the war at Marineford; shown when the story resumes after the two-year timeskip.",
-          "chapter": null,
-          "episode": null,
-          "spoiler": true
-        },
-        {
-          "amount": 500000000,
-          "arc": "Dressrosa",
-          "why": "For defeating Doflamingo, another of the Seven Warlords.",
-          "chapter": null,
-          "episode": null,
-          "spoiler": true
-        },
-        {
-          "amount": 1500000000,
-          "arc": "Whole Cake Island",
-          "why": "For beating two of Big Mom's Sweet Commanders, Cracker and Katakuri, and escaping her territory. Luffy first misreads it as 150 million.",
-          "chapter": 903,
-          "episode": 879,
-          "spoiler": true
-        },
-        {
-          "amount": 3000000000,
-          "arc": "Wano Country",
-          "why": "For defeating Kaido. He is named one of the Four Emperors, and Law and Kid get the same bounty.",
-          "chapter": 1053,
-          "episode": 1080,
-          "spoiler": true
-        }
-      ]
+      }
     },
     "zoro-roronoa": {
       "qualities": [

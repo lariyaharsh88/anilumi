@@ -31,9 +31,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { v, sides: [a, b] } = await load(params);
   if (v.canon) {
     const n = v.canon.bouts.length;
+    const animated = v.canon.bouts.some((f) => f.from);
+    const ch = v.canon.bouts.find((f) => f.chapters)?.chapters;
     return {
-      title: fitTitle([`${v.an} vs ${v.bn}: Who Wins, Every Fight & Episode`, `${v.an} vs ${v.bn}: Who Wins & Which Episode`, `${v.an} vs ${v.bn}`]),
-      description: fitDescription(`${v.an} vs ${v.bn} in ${a.row.series}'s ${v.canon.arc} arc: who wins${n > 1 ? ` each of their ${n} fights` : ""}, with episode numbers, plus height, age${v.bounty ? ", bounty" : ""} and powers side by side.`),
+      title: fitTitle(animated
+        ? [`${v.an} vs ${v.bn}: Who Wins, Every Fight & Episode`, `${v.an} vs ${v.bn}: Who Wins & Which Episode`, `${v.an} vs ${v.bn}`]
+        : [`${v.an} vs ${v.bn}: Who Wins, Which Chapter & Anime Episode`, `${v.an} vs ${v.bn}: Who Wins & Which Chapter`, `${v.an} vs ${v.bn}`]),
+      description: fitDescription(animated
+        ? `${v.an} vs ${v.bn} in ${a.row.series}'s ${v.canon.arc} arc: who wins${n > 1 ? ` each of their ${n} fights` : ""}, with episode numbers, plus height, age${v.bounty ? ", bounty" : ""} and powers side by side.`
+        : `${v.an} vs ${v.bn} in ${a.row.series}'s ${v.canon.arc} arc: who wins, the manga chapters${ch ? ` (${ch[0]}-${ch[1]})` : ""}, when the anime gets there, and their heights, ages and powers.`),
       alternates: { canonical: vsPath(v) },
     };
   }
@@ -53,11 +59,11 @@ export default async function CharacterVsPage({ params }: Props) {
   const loved = a.row.favourites >= b.row.favourites ? a : b;
   const short = (s: VsSide) => (s === a ? v.an : v.bn);
   const canon = v.canon;
-  const bouts = canon?.bouts.map((f) => ({ ...f, eps: f.to ? `episodes ${f.from}–${f.to}` : `episode ${f.from}` })) ?? [];
+  const bouts = canon?.bouts.map((f) => ({ ...f, eps: f.from ? (f.to ? `episodes ${f.from}–${f.to}` : `episode ${f.from}`) : f.chapters ? `manga chapters ${f.chapters[0]}–${f.chapters[1]} (not animated yet)` : "not animated yet" })) ?? [];
   const richer = v.bounty ? (v.bounty.a >= v.bounty.b ? a : b) : null;
   const faq: FaqItem[] = canon ? [
     { q: `Who wins, ${v.an} or ${v.bn}?`, a: `Spoiler for the ${canon.arc} arc: ${canon.summary}` },
-    { q: `What episode does ${v.an} fight ${v.bn}?`, a: bouts.map((f) => `${f.title}: ${f.eps}.`).join(" ") },
+    { q: `What episode does ${v.an} fight ${v.bn}?`, a: [bouts.map((f) => `${f.title}: ${f.eps}.`).join(" "), canon.animeStatus].filter(Boolean).join(" ") },
     ...(v.bounty && richer ? [{ q: `Whose bounty is higher, ${v.an} or ${v.bn}?`, a: `${short(richer)}'s: ${a.row.name}'s latest bounty is ${berries(v.bounty.a)} and ${b.row.name}'s is ${berries(v.bounty.b)}.` }] : []),
     ...(a.row.heightCm && b.row.heightCm ? [{ q: `How tall are ${v.an} and ${v.bn}?`, a: `${a.row.name} is ${cm(a.row.heightCm)} and ${b.row.name} is ${cm(b.row.heightCm)}, as AniList lists them.` }] : []),
     ...(a.row.age && b.row.age ? [{ q: `How old are ${v.an} and ${v.bn}?`, a: `${a.row.name}: ${a.row.age}. ${b.row.name}: ${b.row.age}.` }] : []),
@@ -76,7 +82,7 @@ export default async function CharacterVsPage({ params }: Props) {
         eyebrow="⚖️ Character match-up"
         title={<>{v.an} <span className="text-gradient">vs</span> {v.bn}</>}
         subtitle={canon
-          ? `${a.row.name} and ${b.row.name} in ${a.row.series}: who wins each fight and the episodes to watch, then height, age, voice actors and what each can do.`
+          ? `${a.row.name} and ${b.row.name} in ${a.row.series}: who wins${bouts.length > 1 ? " each fight" : ""} and ${bouts.some((f) => f.from) ? "the episodes to watch" : "which manga chapters"}, then height, age, voice actors and what each can do.`
           : `${a.row.name} (${a.row.series}) and ${b.row.name} (${b.row.series}) side by side: height, age, birthday, voice actors, popularity and what each can do.`}
         facts={[
           ...(a.row.heightCm ? [{ value: cm(a.row.heightCm), label: `${v.an}'s height` }] : []),
@@ -89,8 +95,9 @@ export default async function CharacterVsPage({ params }: Props) {
       {canon ? (
         <>
           <p className="mt-5 max-w-3xl text-base leading-7 text-ink/90">
-            {v.an} and {v.bn} fight {bouts.length > 1 ? `${bouts.length} times` : "one long duel"} in the {canon.arc} arc. The result and every fight, with the episodes to watch, are under the spoiler toggle; their facts and powers are compared below it.
+            {v.an} and {v.bn} fight {bouts.length > 1 ? `${bouts.length} times` : "one long duel"} in the {canon.arc} arc. The result{bouts.length > 1 ? " and every fight" : ""}, with {bouts.some((f) => f.from) ? "the episodes to watch" : "the manga chapters"}, {bouts.length > 1 ? "are" : "is"} under the spoiler toggle; their facts and powers are compared below it.
           </p>
+          {canon.animeStatus && <p className="mt-3 max-w-3xl rounded-xl border border-line bg-white/[.03] p-3 text-sm text-ink/85"><span aria-hidden className="mr-1.5">📺</span>{canon.animeStatus}</p>}
           <section className="reveal mt-6" aria-labelledby="fights-h">
             <h2 id="fights-h" className="h-section mb-3">Who wins: {bouts.length > 1 ? "every fight" : "the fight"}</h2>
             <details className="group rounded-xl border border-dashed border-line bg-white/[.02] p-4 open:border-solid">
@@ -101,11 +108,13 @@ export default async function CharacterVsPage({ params }: Props) {
                   <li key={f.title} className="card flex flex-col p-3">
                     <p className="font-semibold text-ink">{f.title}</p>
                     <p className="mt-1 flex-1 text-sm text-ink/85">{f.result}</p>
-                    <Link href={episodePath({ slug: f.animeSlug }, f.from)} className="mt-2 inline-flex w-fit items-center gap-1 rounded-full bg-violet/15 px-2.5 py-0.5 text-xs font-semibold text-violet-2 hover:bg-violet/25">▶ {f.to ? `Episodes ${f.from}–${f.to}` : `Episode ${f.from}`}</Link>
+                    {f.animeSlug && f.from
+                      ? <Link href={episodePath({ slug: f.animeSlug }, f.from)} className="mt-2 inline-flex w-fit items-center gap-1 rounded-full bg-violet/15 px-2.5 py-0.5 text-xs font-semibold text-violet-2 hover:bg-violet/25">▶ {f.to ? `Episodes ${f.from}–${f.to}` : `Episode ${f.from}`}</Link>
+                      : f.chapters && <span className="mt-2 inline-flex w-fit items-center gap-1 rounded-full bg-white/5 px-2.5 py-0.5 text-xs font-semibold text-ink/80">📖 Manga chapters {f.chapters[0]}–{f.chapters[1]}</span>}
                   </li>
                 ))}
               </ol>
-              <p className="mt-3 text-xs text-muted">Checked against {canon.sources.length} sources, including the episode list.</p>
+              <p className="mt-3 text-xs text-muted">Checked against {canon.sources.length} sources{bouts.some((f) => f.from) ? ", including the episode list" : ""}.</p>
             </details>
           </section>
         </>

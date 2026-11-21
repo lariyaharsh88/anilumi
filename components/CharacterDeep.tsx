@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "@/components/Link";
 import { characterDeep, bySpoiler, type EpisodeRef } from "@/lib/chardeep";
+import { characterBounties, bountyFigure, type Bounty } from "@/lib/bounties";
 import { snapByPage, snapImage } from "@/lib/charsnap";
 import { animePath, episodePath } from "@/lib/kitsu";
 
@@ -32,7 +33,6 @@ export function deepSections(slug: string): { id: string; label: string }[] {
     { id: "qualities", label: "Qualities" },
     ...(d.relationships?.length ? [{ id: "relationships", label: "Relationships" }] : []),
     ...(d.latest ? [{ id: "latest", label: d.latest.nav }] : []),
-    ...(d.bounties?.length ? [{ id: "bounty", label: "Bounty" }] : []),
     ...(d.strength ? [{ id: "strength", label: "Strength" }] : []),
     ...(d.fights?.length ? [{ id: "fights", label: "Best fights" }] : []),
     ...(d.keyEpisodes?.length ? [{ id: "episodes", label: "Key episodes" }] : []),
@@ -78,13 +78,6 @@ export default function CharacterDeepProfile({ slug, name }: { slug: string; nam
       <span className="text-ink/85">{e.why}</span>
     </li>
   );
-  const bounty = bySpoiler(d.bounties), current = d.bounties?.at(-1), me = snapByPage(slug), face = me ? snapImage(me) : null;
-  const bountyItem = (b: NonNullable<typeof d.bounties>[number]) => (
-    <li key={b.amount} className="flex items-start gap-3 py-2 text-sm">
-      <span className="w-36 shrink-0 font-bold tabular-nums text-ink">฿{b.amount.toLocaleString("en-US")}</span>
-      <span className="text-ink/85"><span className="font-semibold text-ink">{b.arc}.</span> {b.why}{b.chapter || b.episode ? <span className="text-muted"> ({[b.chapter && `chapter ${b.chapter}`, b.episode && `episode ${b.episode}`].filter(Boolean).join(", ")})</span> : null}</span>
-    </li>
-  );
   const ageItem = (a: NonNullable<typeof d.ages>[number]) => <li key={a.when} className="flex justify-between gap-4 py-2 text-sm"><span className="text-muted">{a.when}</span><span className="font-semibold text-ink">{a.age}</span></li>;
   return (
     <>
@@ -104,26 +97,6 @@ export default function CharacterDeepProfile({ slug, name }: { slug: string; nam
           {d.latest.spoiler
             ? <Spoilers label={d.latest.nav}><p className="text-sm leading-6 text-ink/85">{d.latest.answer}</p></Spoilers>
             : <div className="card p-4"><p className="text-sm leading-6 text-ink/85">{d.latest.answer}</p></div>}
-        </Block>
-      )}
-      {current && (
-        // "luffy bounty" / "luffy wanted poster": the current poster drawn in our own style, then every bounty in order.
-        <Block id="bounty" icon="💰" title={`${name}'s bounty and wanted poster`}>
-          <div className="grid gap-5 sm:grid-cols-[13rem_minmax(0,1fr)] sm:items-start">
-            <figure className="mx-auto w-52 rounded-sm bg-[#efe2c0] p-3 text-center text-[#3b2a1a] shadow-lg shadow-black/30 ring-1 ring-[#c9b48a]" aria-label={`Wanted poster: ${name}, ${current.amount.toLocaleString("en-US")} berries`}>
-              <p className="font-serif text-3xl font-black tracking-[0.2em]">WANTED</p>
-              <div className="relative mx-auto mt-2 aspect-[4/3] w-full overflow-hidden border-2 border-[#3b2a1a] bg-[#d9c79d]">{face && <Image src={face} alt={`${name} on the wanted poster`} fill sizes="200px" className="object-cover object-top sepia-[.35]" />}</div>
-              <p className="mt-2 text-[11px] font-bold tracking-[0.3em]">DEAD OR ALIVE</p>
-              <p className="mt-1 font-serif text-lg font-black uppercase leading-tight">{name}</p>
-              <p className="mt-1 font-serif text-lg font-black tabular-nums">฿{current.amount.toLocaleString("en-US")}-</p>
-              <p className="mt-1 text-[10px] font-bold tracking-[0.4em]">MARINE</p>
-            </figure>
-            <div>
-              <p className="text-sm text-ink/90">{name}&apos;s bounty is <strong className="text-ink">{current.amount.toLocaleString("en-US")} berries</strong>, since the {current.arc} arc. It has risen {d.bounties!.length - 1} times since the first poster; the later bounties are under the spoiler toggle, because each one names a defeated enemy.</p>
-              {bounty.open.length > 0 && <ul className="card mt-3 divide-y divide-line/60 px-3">{bounty.open.map(bountyItem)}</ul>}
-              {bounty.hidden.length > 0 && <Spoilers label={`${bounty.hidden.length} later bounties`}><ul className="divide-y divide-line/60">{bounty.hidden.map(bountyItem)}</ul></Spoilers>}
-            </div>
-          </div>
         </Block>
       )}
       {d.strength && (
@@ -167,5 +140,45 @@ export default function CharacterDeepProfile({ slug, name }: { slug: string; nam
         <p className="mt-2 text-xs text-muted">AniLumi&apos;s take, drawn from what {name} does in the story; facts checked against {d.sources.length} sources. <Link href="/how-we-check" className="underline">How we check</Link></p>
       </Block>
     </>
+  );
+}
+
+/** Which jump-bar entry the bounty block adds. */
+export const bountySection = (slug: string) => (characterBounties(slug) ? [{ id: "bounty", label: "Bounty" }] : []);
+
+/** One Piece bounty ("luffy bounty", "zoro wanted poster"): the current poster drawn in our own style, then every bounty in order. */
+export function CharacterBounty({ slug, name }: { slug: string; name: string }) {
+  const b = characterBounties(slug);
+  if (!b?.entries.length) return null;
+  const list = bySpoiler(b.entries), current = b.entries[b.entries.length - 1], me = snapByPage(slug), face = me ? snapImage(me) : null;
+  const rises = b.entries.length - 1;
+  const item = (x: Bounty) => (
+    <li key={x.amount} className="flex items-start gap-3 py-2 text-sm">
+      <span className="w-36 shrink-0 font-bold tabular-nums text-ink">฿{bountyFigure(x.amount)}</span>
+      <span className="text-ink/85"><span className="font-semibold text-ink">{x.arc}.</span> {x.why}{x.chapter || x.episode ? <span className="text-muted"> ({[x.chapter && `chapter ${x.chapter}`, x.episode && `episode ${x.episode}`].filter(Boolean).join(", ")})</span> : null}</span>
+    </li>
+  );
+  return (
+    <Block id="bounty" icon="💰" title={`${name}'s bounty and wanted poster`}>
+      <div className="grid gap-5 sm:grid-cols-[13rem_minmax(0,1fr)] sm:items-start">
+        <figure className="mx-auto w-52 rounded-sm bg-[#efe2c0] p-3 text-center text-[#3b2a1a] shadow-lg shadow-black/30 ring-1 ring-[#c9b48a]" aria-label={`Wanted poster: ${name}, ${bountyFigure(current.amount)} berries`}>
+          <p className="font-serif text-3xl font-black tracking-[0.2em]">WANTED</p>
+          <div className="relative mx-auto mt-2 aspect-[4/3] w-full overflow-hidden border-2 border-[#3b2a1a] bg-[#d9c79d]">{face && <Image src={face} alt={`${name} on the wanted poster`} fill sizes="200px" className="object-cover object-top sepia-[.35]" />}</div>
+          <p className="mt-2 text-[11px] font-bold tracking-[0.3em]">{current.poster ?? "DEAD OR ALIVE"}</p>
+          <p className="mt-1 font-serif text-lg font-black uppercase leading-tight">{name}</p>
+          <p className="mt-1 font-serif text-lg font-black tabular-nums">฿{bountyFigure(current.amount)}-</p>
+          <p className="mt-1 text-[10px] font-bold tracking-[0.4em]">MARINE</p>
+        </figure>
+        <div>
+          <p className="text-sm text-ink/90">
+            {name}&apos;s bounty is <strong className="text-ink">{bountyFigure(current.amount)} berries</strong>, since the {current.arc} arc.
+            {rises > 0 && ` It has risen ${rises} ${rises === 1 ? "time" : "times"} since the first poster; the later bounties are under the spoiler toggle, because each one names a defeated enemy.`}
+          </p>
+          {list.open.length > 0 && <ul className="card mt-3 divide-y divide-line/60 px-3">{list.open.map(item)}</ul>}
+          {list.hidden.length > 0 && <Spoilers label={`${list.hidden.length} later ${list.hidden.length === 1 ? "bounty" : "bounties"}`}><ul className="divide-y divide-line/60">{list.hidden.map(item)}</ul></Spoilers>}
+          <p className="mt-2 text-xs text-muted">Each amount checked against two sources; the poster is AniLumi&apos;s own drawing of the design.</p>
+        </div>
+      </div>
+    </Block>
   );
 }

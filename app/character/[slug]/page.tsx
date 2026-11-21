@@ -6,7 +6,8 @@ import EditorWatched from "@/components/EditorWatched";
 import { authorRef } from "@/lib/author";
 import { NOTES_CHECKED } from "@/lib/charnotes";
 import { DEEP_CHECKED } from "@/lib/chardeep";
-import CharacterDeepProfile, { deepSections } from "@/components/CharacterDeep";
+import CharacterDeepProfile, { deepSections, CharacterBounty, bountySection } from "@/components/CharacterDeep";
+import { bountyAnswer } from "@/lib/bounties";
 import CharacterCompare from "@/components/CharacterCompare";
 import FamilyTree from "@/components/FamilyTree";
 import { familyOf } from "@/lib/family";
@@ -182,6 +183,7 @@ export default async function CharacterPage({ params }: Props) {
     ...(note?.about ? [{ id: "who", label: "About" }] : []),
     { id: "facts", label: "Facts" },
     ...(family ? [{ id: "family", label: "Family" }] : []),
+    ...bountySection(c.slug),
     ...deepSections(c.slug),
     ...(compare ? [{ id: "compare", label: "Compare" }] : []),
     ...(apps.length ? [{ id: "appearances", label: "Appearances" }] : []),
@@ -319,6 +321,7 @@ export default async function CharacterPage({ params }: Props) {
           <FamilyTree slug={c.slug} name={note?.name ?? c.name} image={c.image} />
         </section>
       )}
+      <CharacterBounty slug={c.slug} name={note?.name ?? c.name} />
       <CharacterDeepProfile slug={c.slug} name={note?.name ?? c.name} />
       {compare && (
         <section id="compare" data-section className="reveal pt-10" aria-labelledby="compare-h">
@@ -430,7 +433,7 @@ export default async function CharacterPage({ params }: Props) {
             { q: `What is ${nm}'s backstory?`, a: `Spoiler: ${deep.backstory}` },
           ] : []),
           ...(deep?.latest ? [{ q: deep.latest.q, a: `${deep.latest.spoiler ? "Spoiler: " : ""}${deep.latest.answer}` }] : []),
-          ...(deep?.bounties?.length ? [{ q: `What is ${nm}'s bounty?`, a: `${deep.bounties.at(-1)!.amount.toLocaleString("en-US")} berries, since the ${deep.bounties.at(-1)!.arc} arc. Spoiler, every bounty: ${deep.bounties.map((b) => `${b.amount.toLocaleString("en-US")} (${b.arc})`).join(", ")}.` }] : []),
+          ...(bountyAnswer(c.slug) ? [{ q: `What is ${nm}'s bounty?`, a: bountyAnswer(c.slug)! }] : []),
           ...(deep?.strength ? [{ q: `How strong is ${nm}?`, a: `${deep.strength.spoiler ? "Spoiler: " : ""}${deep.strength.rank}. ${deep.strength.summary}` }] : []),
           ...(deep?.fights?.some((f) => !f.spoiler) ? [{ q: `What are ${nm}'s best fights?`, a: deep.fights.filter((f) => !f.spoiler).map((f) => `${f.title}${f.episode ? ` (episode ${f.episode})` : ""}`).join(", ") + "." }] : []),
           ...(note?.fate ? [{ q: `Does ${nm} die?`, a: `Spoiler: ${note.fate.status === "alive" ? "no." : note.fate.status === "dies" ? "yes." : note.fate.status === "revived" ? "yes, but not for good." : "it's unclear."} ${note.fate.detail} (As of the ${note.fate.basis}.)` }] : []),
