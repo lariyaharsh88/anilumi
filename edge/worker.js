@@ -206,7 +206,7 @@ async function handle(request, env, ctx) {
     const fresh = age < ttl(url.pathname);
     // Keep it here too: for the rest of its TTL, or a minute when stale so this colo refreshes it at most that often.
     ctx.waitUntil(cache.put(key, withMaxAge(global.response.clone(), fresh ? Math.ceil(ttl(url.pathname) - age) : 60)));
-    if (!fresh) ctx.waitUntil(toOrigin(request, url, 30_000).then((res) => store(res, url, genq, key, lastKeyFor(url, genq))).catch(() => {}));
+    if (!fresh) ctx.waitUntil(toOrigin(request, url, 30_000).then((res) => store(res, url, genq, key, lastKeyFor(url, genq), !CRAWLER.test(request.headers.get("user-agent") || ""))).catch(() => {}));
     const out = new Response(global.response.body, global.response);
     out.headers.set("x-edge-cache", fresh ? "GLOBAL-HIT" : "GLOBAL-STALE");
     if (genq) out.headers.set("x-edge-gen", genq.slice(genq.indexOf("=") + 1));
@@ -226,12 +226,15 @@ async function handle(request, env, ctx) {
   // Crawlers get the last good copy straight away; the current build's copy is fetched in the background. So does
   // everyone else when that copy is from the live build (its hour or day ran out, or this colo evicted the key):
   // same build, same JS chunks, so it's safe to show while the fresh one renders.
+  // Global (R2) copies are paid per write and only save a render when another data centre asks for the same page:
+  // visitors' popular pages do, crawlers' long tail (each page once per TTL) mostly doesn't. Copies only for visitors.
+  const crawler = CRAWLER.test(request.headers.get("user-agent") || "");
   const lastBuild = last?.headers.get("x-build");
   const sameBuild = Boolean(lastBuild) && genq.endsWith(`=${lastBuild}`);
-  if (last && (sameBuild || CRAWLER.test(request.headers.get("user-agent") || ""))) {
+  if (last && (sameBuild || crawler)) {
     // Re-render in the background only once the copy is past its TTL. Every hit used to, so after each release
     // every crawler request still cost a render (most of the Workers CPU bill, Nov 2026).
-    if (copyAge(last) > ttl(url.pathname)) ctx.waitUntil(toOrigin(request, url, 30_000).then((res) => store(res, url, genq, key, lastKey)).catch(() => {}));
+    if (copyAge(last) > ttl(url.pathname)) ctx.waitUntil(toOrigin(request, url, 30_000).then((res) => store(res, url, genq, key, lastKey, !crawler)).catch(() => {}));
     return stale("STALE");
   }
 
@@ -263,7 +266,7 @@ async function handle(request, env, ctx) {
   const out = new Response(res.body, res);
   out.headers.set("x-edge-cache", "MISS");
   if (genq) out.headers.set("x-edge-gen", genq.slice(genq.indexOf("=") + 1));
-  ctx.waitUntil(store(out, url, genq, key, lastKey));
+  ctx.waitUntil(store(out, url, genq, key, lastKey, !crawler));
   return out;
 }
 
@@ -309,15 +312,18 @@ async function storeGlobal(res, key) {
   await pages.put(r2Key(key), body, { customMetadata: { h: meta } });
 }
 
-/** Cache a 200 page from the live build under its build key (here and globally), and as the page's last good copy. */
-async function store(res, url, genq, key, lastKey) {
+/**
+ * Cache a 200 page from the live build under its build key (here, and globally when `global`), and as the page's
+ * last good copy.
+ */
+async function store(res, url, genq, key, lastKey, global = true) {
   // Pages only from the live build: mid-deploy, the old instance can still answer and would be cached as new.
   const build = res.headers.get("x-build");
   const sameBuild = !genq || !build || genq.endsWith(`=${build}`);
   if (res.status !== 200 || res.headers.has("set-cookie") || !sameBuild) return;
   const puts = [];
   // Build assets stay out of R2: the app serves them from static assets, which costs no Worker time.
-  if (pages && !url.pathname.startsWith("/_next/static/")) puts.push(storeGlobal(res.clone(), key).catch((err) => console.error("r2 store failed", key.url, String(err))));
+  if (pages && global && !url.pathname.startsWith("/_next/static/")) puts.push(storeGlobal(res.clone(), key).catch((err) => console.error("r2 store failed", key.url, String(err))));
   const stored = new Response(res.clone().body, res); // own copy: headers from fetch() are immutable
   stored.headers.set("cache-control", `public, max-age=${ttl(url.pathname)}`);
   stored.headers.delete("vary"); // the key already excludes RSC requests; Vary would split or block caching

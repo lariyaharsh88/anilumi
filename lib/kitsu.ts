@@ -11,11 +11,11 @@ import statusFixes from "@/data/status-fixes.json";
 
 const BASE = "https://kitsu.io/api/edge";
 /**
- * Floors for upstream cache lifetimes. A page re-renders as often as its shortest-lived fetch, so a
- * single 30-minute call made every anime page rebuild (and re-write the ISR cache) twice an hour.
- * Catalogue data barely changes; next-episode times come from AniList and refresh every 6 hours.
+ * Floors for upstream cache lifetimes. Each expired fetch is re-written to the shared fetch cache in R2 (paid per
+ * write, Nov 2026: R2 writes were the largest item on the bill), and catalogue data barely changes; next-episode
+ * times come from the airing snapshot. Two days, not 12 hours.
  */
-export const KITSU_MIN_REVALIDATE = Number(process.env.KITSU_MIN_REVALIDATE) || 43200;
+export const KITSU_MIN_REVALIDATE = Number(process.env.KITSU_MIN_REVALIDATE) || 172800;
 const KITSU_EDGE_TTL = 21600;
 export const ANILIST_MIN_REVALIDATE =Number(process.env.ANILIST_MIN_REVALIDATE) || 21600;
 const SAFE_RATINGS = "G,PG,R"; // excludes R18 catalogue entries site-wide

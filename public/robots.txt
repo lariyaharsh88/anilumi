@@ -48,6 +48,10 @@ User-agent: Bytespider
 User-agent: CCBot
 User-agent: meta-externalagent
 User-agent: FacebookBot
+# YandexBot made 90 of 119 sampled page requests and 57 of 61 renders on 21 Nov 2026; Russia sends this site no
+# visitors to speak of.
+User-agent: Yandex
+User-agent: YandexBot
 Disallow: /
 
 # meta-webindexer (Meta AI search) used a third of the Workers CPU on 18 Nov, almost all on the long-tail families
