@@ -16,4 +16,6 @@ test("character notes: arcs link to the show's arc list where names match; debut
   assert.ok(arcs.length > 0 && arcs.every((a) => a.arc !== null));
   assert.equal(debutInShow(killua, "Hunter x Hunter (2011)"), true);
   assert.equal(debutInShow(killua, "Naruto"), false);
+  // Notes use the English title, Kitsu often the romaji one: either matches.
+  assert.equal(debutInShow({ debut: { anime: "Haikyu!!", episode: 1 } } as never, "Haikyuu!!", "Haikyu!!"), true);
 });

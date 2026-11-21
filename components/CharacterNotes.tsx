@@ -5,12 +5,12 @@ import { hindiArtistByName, hindiArtistPath } from "@/lib/hindivoices";
 const fmt = (iso: string) => new Date(`${iso}T12:00:00Z`).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" });
 
 /** Role, first appearance, key arcs, affiliations and family for a top character (lib/charnotes.ts). */
-export default function CharacterNotes({ slug, show }: { slug: string; show: { slug: string; title: string } | null }) {
+export default function CharacterNotes({ slug, show }: { slug: string; show: { slug: string; title: string; titleEn?: string | null } | null }) {
   const n = characterNote(slug);
   if (!n) return null;
   const arcs = linkedArcs(n, show?.slug);
   const d = n.debut;
-  const epLink = d && show && debutInShow(n, show.title) ? `/anime/${show.slug}/episode/${d.episode}` : null;
+  const epLink = d && show && debutInShow(n, show.title, show.titleEn) ? `/anime/${show.slug}/episode/${d.episode}` : null;
   const rows: [string, React.ReactNode][] = [];
   if (n.role) rows.push(["Role", n.role]);
   if (d?.anime && (d.episode || d.episodeTitle)) rows.push(["First appears", <>{epLink ? <Link href={epLink} className="text-violet-2 hover:underline">{d.anime} episode {d.episode}</Link> : `${d.anime}${d.episode ? ` episode ${d.episode}` : ""}`}{d.episodeTitle ? <span className="text-muted">: “{d.episodeTitle}”</span> : null}</>]);

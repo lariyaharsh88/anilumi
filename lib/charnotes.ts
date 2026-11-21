@@ -34,5 +34,6 @@ export function linkedArcs(note: CharacterNote, showSlug: string | null | undefi
 }
 
 /** "Episode 1 of Attack on Titan" link target, when the debut is in the character's main show. */
-export const debutInShow = (note: CharacterNote, showTitle: string | null | undefined) =>
-  Boolean(note.debut?.anime && note.debut.episode && showTitle && bare(note.debut.anime) === bare(showTitle));
+/** The notes name the show as fans do ("Haikyu!!"), Kitsu often in romaji ("Haikyuu!!"): either title matches. */
+export const debutInShow = (note: CharacterNote, ...showTitles: (string | null | undefined)[]) =>
+  Boolean(note.debut?.anime && note.debut.episode && showTitles.some((t) => t && bare(note.debut!.anime!) === bare(t)));

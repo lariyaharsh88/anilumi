@@ -302,7 +302,7 @@ export default async function CharacterPage({ params }: Props) {
             <Link href="/characters" className="chip">👤 Most popular characters</Link>
           </p>
         </section>
-        <CharacterNotes slug={c.slug} show={home ? { slug: home.slug, title: home.title } : null} />
+        <CharacterNotes slug={c.slug} show={home ? { slug: home.slug, title: home.title, titleEn: home.titleEn } : null} />
         {/* No section at all when there's nothing to say: snapshot-only pages have no Kitsu biography to quote. */}
         {!note?.about && bio && (
         <section className="card reveal p-5 sm:p-6" aria-labelledby="bio-h">
