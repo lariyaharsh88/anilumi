@@ -17265,6 +17265,732 @@
         "https://www.ibtimes.com/new-one-piece-vivre-card-pack-reveals-interesting-details-about-kaido-yamato-more-3287099"
       ],
       "confidence": "medium"
+    },
+    "suguru-geto": {
+      "qualities": [
+        {
+          "trait": "Calm and courteous",
+          "detail": "Even when he walks into Jujutsu High as a wanted man, he speaks softly, smiles and greets his old classmates with polite small talk before saying anything threatening."
+        },
+        {
+          "trait": "Persuasive leader",
+          "detail": "He runs a religious group and gathers a loyal band of curse users who follow him without question and call him their master."
+        },
+        {
+          "trait": "Driven by a fixed ideal",
+          "detail": "As a student he insists that sorcerers exist to protect the weak, and he lectures Gojo about it; whatever he believes, he believes completely."
+        },
+        {
+          "trait": "Contempt for non-sorcerers",
+          "detail": "By the time of Jujutsu Kaisen 0 he openly dismisses ordinary people as 'monkeys' and wants a world where only sorcerers remain."
+        },
+        {
+          "trait": "Protective of his own",
+          "detail": "He treats the two girls he rescued, Nanako and Mimiko, as his daughters, and he thinks of his followers as family."
+        }
+      ],
+      "backstory": "Geto was born to ordinary parents who could not see curses, but he could see them from childhood. His cursed technique, Cursed Spirit Manipulation, lets him defeat a curse, compress it into a dark ball, swallow it and then command it, and he enrolled at Tokyo Jujutsu High under the teacher Masamichi Yaga. There he shared a year with Satoru Gojo and Shoko Ieiri, and he and Gojo became close friends and the two strongest students of their generation. In 2006 the pair were sent to guard Riko Amanai, a girl chosen to merge with the immortal sorcerer Tengen, and the assassin Toji Fushiguro killed her while they watched over her. The failure, and the sight of people celebrating her death, started Geto doubting whether non-sorcerers were worth protecting. A year later his junior Yu Haibara died on a mission, and on another assignment Geto found two young sorcerer girls locked in a cage by villagers who blamed them for curses. He killed the whole village, more than a hundred people, and then his own parents, and left Jujutsu High as a curse user marked for execution.",
+      "journey": [
+        {
+          "stage": "Hidden Inventory (Season 2)",
+          "summary": "As second-years, Geto and Gojo escort Riko Amanai and fight off the assassins sent after her. Toji Fushiguro shoots Riko just as Geto is about to take her home, then beats Geto badly. Afterwards Geto stops a furious Gojo from killing the cult members applauding her death, saying it would mean nothing."
+        },
+        {
+          "stage": "Premature Death (Season 2)",
+          "summary": "Gojo now works alone, and Geto grows thin and isolated. A talk with the special-grade sorcerer Yuki Tsukumo about ending curses by getting rid of the people who produce them plants an idea, and after Haibara's death and the caged girls in the village he massacres the villagers and his parents. He meets Gojo one last time in Shinjuku, and Gojo lets him walk away."
+        },
+        {
+          "stage": "Jujutsu Kaisen 0",
+          "summary": "Ten years later he leads a cult and a band of curse users. He returns to Jujutsu High to recruit Yuta Okkotsu, then announces the Night Parade of a Hundred Demons for 24 December, releasing curses on Shinjuku and Kyoto. The attack is a decoy to get at Yuta and the special-grade curse Rika; he defeats Maki, Panda and Inumaki, but Yuta and Rika leave him crippled. In an alley, Gojo finds him and kills him."
+        },
+        {
+          "stage": "Body thief (Seasons 1 to 3)",
+          "summary": "The man with Geto's face who directs Jogo, Mahito and Hanami in season 1 is not Geto. In Shibuya he is revealed to be an ancient sorcerer, later named Kenjaku, who moved into Geto's corpse to use his technique and his face against Gojo. When Gojo calls out to his friend, Geto's own hand briefly grabs Kenjaku by the throat. Season 3, which aired from January to March 2026, keeps Kenjaku in Geto's body as the mind behind the Culling Game."
+        },
+        {
+          "stage": "Shinjuku Showdown (manga)",
+          "summary": "In the manga Yuta finally beheads Kenjaku. When Gojo dies fighting Sukuna in chapter 236, he finds himself in a dreamlike airport with Geto and other dead friends and talks with him one last time. The anime had not reached these chapters as of November 2026."
+        }
+      ],
+      "lessons": [
+        {
+          "lesson": "Burnout can change a person quietly.",
+          "why": "Geto's slide happens over a year of small losses and endless missions, and even his closest friend notices too late."
+        },
+        {
+          "lesson": "An ideal held too tightly can turn cruel.",
+          "why": "The same certainty that made him want to protect the weak becomes the certainty that ordinary people deserve to die."
+        },
+        {
+          "lesson": "Talk about what's weighing on you.",
+          "why": "Geto keeps his doubts to himself until he acts on them, and by the time he and Gojo really talk it's in Shinjuku, after the massacre."
+        }
+      ],
+      "relationships": [
+        {
+          "name": "Satoru Gojo",
+          "slug": "jujutsu-kaisen-satoru-gojou",
+          "relation": "best friend",
+          "detail": "His classmate and partner at Jujutsu High. Gojo lets him go after the massacre, and ten years later he is the one who kills him.",
+          "spoiler": false
+        },
+        {
+          "name": "Shoko Ieiri",
+          "slug": null,
+          "relation": "classmate",
+          "detail": "The third member of his year at Jujutsu High, who later becomes the school's doctor.",
+          "spoiler": false
+        },
+        {
+          "name": "Yuta Okkotsu",
+          "slug": "jujutsu-kaisen-yuta-okkotsu",
+          "relation": "enemy",
+          "detail": "Geto wants the curse Rika that haunts Yuta. Yuta refuses to join him and, with Rika's full power, defeats him.",
+          "spoiler": false
+        },
+        {
+          "name": "Nanako and Mimiko",
+          "slug": null,
+          "relation": "adopted daughters",
+          "detail": "Two young sorcerer girls he found caged and abused by villagers. He takes them with him and raises them, and they remain loyal to him after his death.",
+          "spoiler": true
+        },
+        {
+          "name": "Toji Fushiguro",
+          "slug": "jujutsu-kaisen-touji-fushiguro",
+          "relation": "enemy",
+          "detail": "The assassin who kills Riko Amanai in front of him and beats him in their fight during the Star Plasma Vessel mission.",
+          "spoiler": true
+        },
+        {
+          "name": "Yuki Tsukumo",
+          "slug": "jujutsu-kaisen-yuki-tsukumo",
+          "relation": "catalyst",
+          "detail": "Her theory that curses would end if only sorcerers existed gives Geto's growing resentment a direction.",
+          "spoiler": true
+        },
+        {
+          "name": "Yu Haibara",
+          "slug": null,
+          "relation": "junior",
+          "detail": "A cheerful underclassman whose death on a mission is one of the last blows before Geto breaks.",
+          "spoiler": true
+        },
+        {
+          "name": "Kenjaku",
+          "slug": null,
+          "relation": "body thief",
+          "detail": "The ancient sorcerer who takes over Geto's corpse after his death and uses his technique and face in Shibuya and beyond.",
+          "spoiler": true
+        }
+      ],
+      "strength": {
+        "rank": "Special-grade curse user",
+        "summary": "One of only a handful of special-grade sorcerers, he has absorbed a huge stock of curses and can field them in waves. His strongest move, Maximum: Uzumaki, compresses many of his curses into a single blast. In Hidden Inventory he holds his own as Gojo's equal, but Toji's cursed tools and skill beat him, and ten years later he still cannot overcome Yuta with Rika fully unleashed.",
+        "spoiler": false
+      },
+      "fights": [
+        {
+          "title": "Clearing out Q",
+          "animeSlug": "jujutsu-kaisen-2",
+          "episode": 2,
+          "summary": "Geto and Gojo beat the curse users of the group Q who come to kill Riko Amanai.",
+          "spoiler": true
+        },
+        {
+          "title": "Geto vs. Toji Fushiguro",
+          "animeSlug": "jujutsu-kaisen-2",
+          "episode": 4,
+          "summary": "Right after Riko is shot, Geto throws his curses at Toji, but the assassin cuts through them and leaves him beaten.",
+          "spoiler": true
+        },
+        {
+          "title": "The Night Parade at Jujutsu High",
+          "animeSlug": "jujutsu-kaisen-movie-0",
+          "episode": null,
+          "summary": "While the city is in chaos, Geto goes for Yuta at the school, overwhelms Maki, Panda and Inumaki, then loses to Yuta and Rika at full power.",
+          "spoiler": true
+        }
+      ],
+      "keyEpisodes": [
+        {
+          "animeSlug": "jujutsu-kaisen",
+          "episode": 5,
+          "why": "A man with Geto's face first appears, meeting with the curses Jogo, Hanami and Mahito.",
+          "spoiler": false
+        },
+        {
+          "animeSlug": "jujutsu-kaisen-movie-0",
+          "episode": null,
+          "why": "His main appearance: the Night Parade of a Hundred Demons, his defeat by Yuta, and his last words to Gojo.",
+          "spoiler": true
+        },
+        {
+          "animeSlug": "jujutsu-kaisen-2",
+          "episode": 1,
+          "why": "Hidden Inventory begins with Geto and Gojo as teenage partners at Jujutsu High.",
+          "spoiler": false
+        },
+        {
+          "animeSlug": "jujutsu-kaisen-2",
+          "episode": 4,
+          "why": "Riko dies and Geto watches a crowd applaud it, the moment his doubts begin.",
+          "spoiler": true
+        },
+        {
+          "animeSlug": "jujutsu-kaisen-2",
+          "episode": 5,
+          "why": "Premature Death: Haibara's death, the village massacre and the farewell in Shinjuku.",
+          "spoiler": true
+        },
+        {
+          "animeSlug": "jujutsu-kaisen-2",
+          "episode": 9,
+          "why": "In Shibuya the 'Geto' who traps Gojo is revealed to be someone else wearing his body.",
+          "spoiler": true
+        },
+        {
+          "animeSlug": "jujutsu-kaisen-2",
+          "episode": 10,
+          "why": "Geto's own hand seizes the impostor's throat when Gojo speaks to his friend.",
+          "spoiler": true
+        }
+      ],
+      "ages": [
+        {
+          "when": "Hidden Inventory and Premature Death (2006 to 2007)",
+          "age": "16 to 17",
+          "spoiler": false
+        },
+        {
+          "when": "At his death in Jujutsu Kaisen 0 (December 2017)",
+          "age": 27,
+          "spoiler": true
+        }
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Suguru_Geto",
+        "https://en.wikipedia.org/wiki/Jujutsu_Kaisen_season_1",
+        "https://en.wikipedia.org/wiki/Jujutsu_Kaisen_season_2",
+        "https://en.wikipedia.org/wiki/Jujutsu_Kaisen_season_3",
+        "https://en.wikipedia.org/wiki/Jujutsu_Kaisen_0_(film)",
+        "https://anilist.co/character/133699",
+        "https://myanimelist.net/character/175542/Suguru_Getou",
+        "https://epicdope.com/how-did-suguru-geto-die-in-jujutsu-kaisen-the-tragic-end-explained",
+        "https://sportskeeda.com/anime/jujutsu-kaisen-0-ending-explained",
+        "https://animehunch.com/jujutsu-kaisen-0-night-parade-of-a-100-demons-explained/",
+        "https://fictionhorizon.com/jujutsu-kaisen-here-is-how-geto-became-a-villain-killed-the-village/",
+        "https://www.sportskeeda.com/anime/did-gojo-inspire-geto-break-kenjaku-s-control-jujutsu-kaisen-episode-34-the-mysterious-reaction-explored",
+        "https://www.sportskeeda.com/anime/jujutsu-kaisen-season-2-episode-9-pseudo-geto-s-true-identity-revealed-satoru-gojo-gets-caught-prison-realm",
+        "https://www.sportskeeda.com/anime/jujutsu-kaisen-chapter-236-spoilers-raw-scans-gojo-sees-geto-vision-biggest-death-series-occurs",
+        "https://comicbook.com/anime/news/jujutsu-kaisen-airport-scene-importance-explained",
+        "https://www.sportskeeda.com/anime/jujutsu-kaisen-season-2-episode-4-gojo-returns-dead-fight-toji-geto-loses-battle",
+        "https://bleedingcool.com/tv/jujutsu-kaisen-s02e04-hidden-inventory-4-review-gojo-on-the-edge",
+        "https://fictionhorizon.com/jujutsu-kaisen-heres-why-geto-hates-humans-calls-them-monkeys/",
+        "https://sportskeeda.com/anime/understanding-getou-suguru-jujutsu-kaisen"
+      ],
+      "confidence": "high"
+    },
+    "frieren": {
+      "qualities": [
+        {
+          "trait": "Slow to notice feelings",
+          "detail": "At Himmel's funeral she realises she spent ten years travelling with him and never really got to know him, and only then starts to cry."
+        },
+        {
+          "trait": "Obsessed with odd spells",
+          "detail": "She will take on a job for the reward of a grimoire that does something trivial, such as making flowers bloom or flipping pancakes, and gets genuinely excited about it."
+        },
+        {
+          "trait": "Keeps her old friends' habits",
+          "detail": "She helps villagers for tiny rewards and cleans statues of forgotten heroes because that is what Himmel would have done."
+        },
+        {
+          "trait": "Ruthless toward demons",
+          "detail": "Easygoing in daily life, she turns cold and businesslike the moment demons are involved and refuses to believe their words."
+        },
+        {
+          "trait": "Childish streaks",
+          "detail": "She hates getting up early, needs Fern to drag her out of bed, and still sticks her head into treasure chests that turn out to be mimics."
+        }
+      ],
+      "backstory": "Frieren is an elf who has lived for more than a thousand years. Her home village was destroyed by the Demon King's army, and the human mage Flamme found her and became her teacher. Flamme taught her to keep her mana suppressed at all times so that demons, who judge strength by mana, would underestimate her, and Frieren has kept that habit ever since. Centuries later she joined the hero Himmel, the priest Heiter and the dwarf warrior Eisen, and after ten years together the party defeated the Demon King. To Frieren the journey was a short episode in a very long life. The group parted promising to watch a meteor shower together in fifty years, and when she returns for it, Himmel is an old man who dies soon afterwards.",
+      "journey": [
+        {
+          "stage": "After the hero's funeral (Season 1)",
+          "summary": "Shaken by Himmel's death, she sets out to understand people better. She agrees to teach magic to Fern, the orphan Heiter raised, and after Heiter dies the two travel together. Flamme's grimoire mentions Aureole, the place where souls are said to rest, and Frieren heads north to reach it and talk with Himmel again."
+        },
+        {
+          "stage": "Qual and Aura (Season 1)",
+          "summary": "She destroys Qual, a demon the hero party sealed decades earlier, after humans have learned to block his once-deadly spell. She recruits Eisen's apprentice Stark as the party's front-line fighter. In a city threatened by Aura the Guillotine, she reveals how much mana she has really been hiding and turns Aura's own magic against her."
+        },
+        {
+          "stage": "The road north (Season 1)",
+          "summary": "Travelling through the northern lands, she winters with another elf, takes in the priest Sein for a while, and keeps remembering moments with Himmel she failed to value at the time, including the ring he knelt to put on her finger."
+        },
+        {
+          "stage": "First-Class Mage Exam (Season 1)",
+          "summary": "To pass through the dangerous northern regions she needs a first-class mage, so she and Fern enter the exam. She beats Serie's barrier and the veteran mage Denken, and helps defeat a dungeon that copies the examinees, but in the final interview the ancient elf Serie fails her. Fern passes and turns down Serie's offer of an apprenticeship."
+        },
+        {
+          "stage": "Continued northern travels (Season 2)",
+          "summary": "Season 2, which aired from January to March 2026, follows the party across the northern plateau: a statue of the Hero of the South, a hunt for a demon with first-class mages Genau and Methode, and odd jobs to pay for the trip. It ends with the party still heading for Aureole, and a third season covering the Golden Land arc is set for October 2027."
+        },
+        {
+          "stage": "Golden Land and beyond (manga)",
+          "summary": "In the manga she helps free the city of Weise, which the demon Macht turned to gold, and Denken defeats Macht. A later arc sees the party travel to the northern empire, where Serie's life is in danger at a founding festival. The manga paused for the creators' health after chapter 147 in October 2025, with Aureole still not reached."
+        }
+      ],
+      "lessons": [
+        {
+          "lesson": "Pay attention to people while they're here.",
+          "why": "Frieren's regret at Himmel's funeral is not that he died, but that she never tried to know him when she could."
+        },
+        {
+          "lesson": "Small kindnesses outlive you.",
+          "why": "Decades after his death, villagers still remember Himmel for minor favours, and Frieren keeps doing the same small jobs in his name."
+        },
+        {
+          "lesson": "Patience is a kind of strength.",
+          "why": "She hides her true power for a lifetime, and that long, unglamorous habit is exactly what lets her beat enemies who judge by appearances."
+        },
+        {
+          "lesson": "It's never too late to change.",
+          "why": "After a thousand years of keeping to herself, she starts learning what makes people tick and slowly becomes someone her companions can lean on."
+        }
+      ],
+      "relationships": [
+        {
+          "name": "Himmel",
+          "slug": null,
+          "relation": "former party leader",
+          "detail": "The hero she travelled with for ten years. His death is what sends her on a new journey, and he appears constantly in her memories.",
+          "spoiler": false
+        },
+        {
+          "name": "Fern",
+          "slug": "frieren-fern",
+          "relation": "apprentice",
+          "detail": "The orphan Heiter raised. Frieren teaches her magic and they travel together, with Fern often acting as the responsible one.",
+          "spoiler": false
+        },
+        {
+          "name": "Stark",
+          "slug": "frieren-stark",
+          "relation": "companion",
+          "detail": "Eisen's apprentice, a warrior who doubts himself; Frieren recruits him to fight on the front line.",
+          "spoiler": false
+        },
+        {
+          "name": "Heiter",
+          "slug": null,
+          "relation": "former party member",
+          "detail": "The priest from the hero party who asks her to stay and teach Fern during his last years.",
+          "spoiler": false
+        },
+        {
+          "name": "Eisen",
+          "slug": null,
+          "relation": "former party member",
+          "detail": "The dwarf warrior of the hero party, too old to join her new journey, who sends his apprentice Stark instead.",
+          "spoiler": false
+        },
+        {
+          "name": "Flamme",
+          "slug": null,
+          "relation": "teacher",
+          "detail": "The human mage who rescued her as a child and taught her the habit of hiding her mana.",
+          "spoiler": false
+        },
+        {
+          "name": "Serie",
+          "slug": null,
+          "relation": "master's master",
+          "detail": "An ancient elf and Flamme's teacher, one of the few mages Frieren admits is beyond her; she fails Frieren in the exam's final stage.",
+          "spoiler": true
+        },
+        {
+          "name": "Aura",
+          "slug": null,
+          "relation": "enemy",
+          "detail": "One of the Demon King's generals, who survived the hero party and returns to face Frieren decades later.",
+          "spoiler": true
+        },
+        {
+          "name": "Sein",
+          "slug": null,
+          "relation": "former companion",
+          "detail": "A gifted priest she talks into adventuring. He travels with the party for a while before leaving to search for his own childhood friend.",
+          "spoiler": true
+        }
+      ],
+      "strength": {
+        "rank": "One of the strongest mages alive",
+        "summary": "Known to demons as Frieren the Slayer, she has spent more than a thousand years learning magic and fighting the Demon King's forces. Because she always suppresses her mana, enemies who judge strength by mana badly misjudge her. She still names a few beings, such as Serie, as stronger than herself, and casting leaves her briefly unable to sense mana, a weakness Fern exploits during the exam.",
+        "spoiler": false
+      },
+      "fights": [
+        {
+          "title": "Frieren vs. Qual",
+          "animeSlug": "sousou-no-frieren",
+          "episode": 3,
+          "summary": "She lets the sealed demon out and shows him that the killing spell he invented is now ordinary human magic that anyone can block.",
+          "spoiler": false
+        },
+        {
+          "title": "Frieren vs. Draht",
+          "animeSlug": "sousou-no-frieren",
+          "episode": 8,
+          "summary": "Locked up in the city, she disposes of the demon assassin sent to kill her and walks out to face his master.",
+          "spoiler": true
+        },
+        {
+          "title": "Frieren vs. Aura",
+          "animeSlug": "sousou-no-frieren",
+          "episode": 10,
+          "summary": "Aura stakes everything on the Scales of Obedience, but Frieren releases her full mana, takes control of the demon and orders her to kill herself.",
+          "spoiler": true
+        },
+        {
+          "title": "Frieren vs. Denken",
+          "animeSlug": "sousou-no-frieren",
+          "episode": 21,
+          "summary": "In the first exam she breaks a barrier made by Serie and defeats the veteran court mage Denken.",
+          "spoiler": true
+        },
+        {
+          "title": "Frieren vs. her replica",
+          "animeSlug": "sousou-no-frieren",
+          "episode": 26,
+          "summary": "Deep in the exam dungeon she faces a perfect copy of herself and holds it off until Fern lands the finishing blow.",
+          "spoiler": true
+        }
+      ],
+      "keyEpisodes": [
+        {
+          "animeSlug": "sousou-no-frieren",
+          "episode": 1,
+          "why": "Himmel's funeral, and the regret that starts Frieren's new journey.",
+          "spoiler": false
+        },
+        {
+          "animeSlug": "sousou-no-frieren",
+          "episode": 2,
+          "why": "Years of teaching Fern, Heiter's death and the start of their journey together.",
+          "spoiler": false
+        },
+        {
+          "animeSlug": "sousou-no-frieren",
+          "episode": 10,
+          "why": "Frieren shows her real power against Aura, with flashbacks to Flamme's lessons.",
+          "spoiler": true
+        },
+        {
+          "animeSlug": "sousou-no-frieren",
+          "episode": 14,
+          "why": "A flashback reveals the ring Himmel knelt to place on her finger, and what its flower meant.",
+          "spoiler": true
+        },
+        {
+          "animeSlug": "sousou-no-frieren",
+          "episode": 27,
+          "why": "Serie fails Frieren in the final exam interview while Fern passes.",
+          "spoiler": true
+        },
+        {
+          "animeSlug": "sousou-no-frieren-season-2",
+          "episode": 2,
+          "why": "Frieren remembers the Hero of the South, a hero she met before Himmel's party.",
+          "spoiler": true
+        },
+        {
+          "animeSlug": "sousou-no-frieren-season-2",
+          "episode": 10,
+          "why": "Season 2 ends with the party crossing the northern plateau, still bound for Aureole.",
+          "spoiler": true
+        }
+      ],
+      "ages": [
+        {
+          "when": "Throughout the story",
+          "age": "Over 1,000",
+          "spoiler": false
+        }
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Frieren_(character)",
+        "https://en.wikipedia.org/wiki/List_of_Frieren_episodes",
+        "https://en.wikipedia.org/wiki/List_of_Frieren_characters",
+        "https://anilist.co/character/176754",
+        "https://www.animenewsnetwork.com/review/frieren-beyond-journey-end/episode-14/.205355",
+        "https://sportskeeda.com/anime/frieren-anime-episode-14-sein-resolves-fern-stark-s-quarrel-elven-mage-remembers-himmel-s-precious-gift",
+        "https://www.oneesports.gg/anime/did-himmel-love-frieren-ring/",
+        "https://epicstream.com/article/do-frieren-and-fern-pass-mage-exam",
+        "https://www.sportskeeda.com/anime/frieren-beyond-journey-s-end-episode-27-serie-hosts-final-test",
+        "https://wrongeverytime.com/2024/05/17/frieren-beyond-journeys-end-episode-2/",
+        "https://www.avclub.com/frieren-beyond-journeys-end-recap-season-2-episode-2",
+        "https://www.avclub.com/frieren-beyond-journeys-end-recap-season-2-episode-10",
+        "https://otakuorbit.com/frieren-beyond-journeys-end-season-2-the-hero-of-the-south",
+        "https://inbetweendrafts.com/frieren-beyond-journeys-end-season-2-episode-7-review-the-divine-revolte/",
+        "https://www.thepopverse.com/comics-manga-frieren-beyond-journeys-end-manga-release-schedule",
+        "https://comicbook.com/anime/news/frieren-beyond-journeys-end-returns-with-release-amid-indefinite-hiatus/"
+      ],
+      "confidence": "high"
+    },
+    "sung-jin-woo": {
+      "qualities": [
+        {
+          "trait": "Devoted to his family",
+          "detail": "He keeps risking his life in dungeons that could kill him because his mother lies in a hospital bed and his younger sister Jin-ah depends on him."
+        },
+        {
+          "trait": "Selfless under pressure",
+          "detail": "In the double dungeon he stays behind so the other survivors can escape, even though he is the weakest Hunter there."
+        },
+        {
+          "trait": "Relentless self-improver",
+          "detail": "Once the System gives him a way to grow, he does his daily training without fail and goes looking for harder fights to level up faster."
+        },
+        {
+          "trait": "Quietly secretive",
+          "detail": "He hides how strong he is becoming, letting people keep thinking of him as an E-rank, and only reveals his power when he has to."
+        },
+        {
+          "trait": "Cold toward those who betray him",
+          "detail": "He has little patience for Hunters who try to sacrifice others for profit, and he deals with them without hesitation."
+        }
+      ],
+      "backstory": "Years before the story begins, gates to other dimensions started appearing around the world, and some people awakened as Hunters with powers to fight the monsters inside. Jin-woo awakened as an E-rank, the lowest grade, and became known as the world's weakest Hunter. His father, also a Hunter, had gone missing, and his mother has fallen into a long coma, so Jin-woo keeps taking low-level raids to pay her hospital bills and support his sister, often coming home injured. His ordinary life ends in a hidden 'double dungeon' beneath a low-rank gate, where a temple full of statues slaughters most of his raid party.",
+      "journey": [
+        {
+          "stage": "The double dungeon (Season 1)",
+          "summary": "Trapped in the temple, Jin-woo works out the rules that the statues follow, but most of the party dies. On the brink of death he is offered the chance to become a 'Player' and wakes three days later in hospital with a game-like System only he can see."
+        },
+        {
+          "stage": "Levelling up in secret (Season 1)",
+          "summary": "Daily quests, penalties and instance dungeons make him stronger. He survives a set-up by Hwang Dongsuk's party, helps the wealthy Yoo Jin-ho, faces the guardian of the Demon's Castle while seeking a cure for his mother, and kills the murderous Hunter Kang Taeshik."
+        },
+        {
+          "stage": "Job change (Season 1)",
+          "summary": "A job-change quest pits him against waves of knights and their commander, Igris. Nearly overwhelmed, he finishes the quest and gains the power to raise the dead as his own shadow soldiers, using the word 'Arise'."
+        },
+        {
+          "stage": "Red Gate and the S-rank reveal (Season 2)",
+          "summary": "A training raid turns into a deadly red gate in a frozen world, where he beats the ice elves' leader Baruka and turns the treacherous A-rank Kim Chul into a shadow. A reassessment makes him South Korea's tenth S-rank Hunter, and he meets Cha Hae-in while secretly helping a raid."
+        },
+        {
+          "stage": "Demon's Castle (Season 2)",
+          "summary": "He climbs the Demon's Castle, makes a deal with the demon noble Esil, defeats the Demon King Baran and gains the dragon Kaisel as a shadow. With the Elixir of Life he finally wakes his mother."
+        },
+        {
+          "stage": "Jeju Island (Season 2)",
+          "summary": "When the joint Korean and Japanese raid on the ant nest goes wrong, he arrives by swapping places with one of his shadows, defeats the Ant King and makes it his shadow soldier Beru. Season 2 ended in March 2025, and a theatrical film, Solo Leveling: Beyond the System, was announced in July 2026 to continue the story, with no release date yet."
+        },
+        {
+          "stage": "The Shadow Monarch (webtoon and novel)",
+          "summary": "In the original story he learns that he has inherited the power of Ashborn, the Shadow Monarch, and is caught in a war between the Monarchs and the Rulers. His missing father returns only to die, and Jin-woo defeats Antares, the strongest Monarch. He then uses the Cup of Reincarnation to restart time, revives his father, and in the new timeline marries Cha Hae-in and has a son, Suho."
+        }
+      ],
+      "lessons": [
+        {
+          "lesson": "Being underestimated can be a head start.",
+          "why": "Everyone writes Jin-woo off as the weakest Hunter, which gives him room to grow without anyone watching."
+        },
+        {
+          "lesson": "Small daily effort adds up.",
+          "why": "His growth comes from showing up for the same training every day, not from one lucky break."
+        },
+        {
+          "lesson": "Know why you fight.",
+          "why": "Every risk he takes early on is for his mother and sister, and that clear purpose keeps him going when he wants to quit."
+        }
+      ],
+      "relationships": [
+        {
+          "name": "Sung Jin-ah",
+          "slug": null,
+          "relation": "younger sister",
+          "detail": "A high-school student who worries about her brother's injuries and is one of the main reasons he keeps going.",
+          "spoiler": false
+        },
+        {
+          "name": "Park Kyung-hye",
+          "slug": null,
+          "relation": "mother",
+          "detail": "Hospitalised in a long coma at the start of the story; paying for her care and finding a cure drives Jin-woo's early choices.",
+          "spoiler": false
+        },
+        {
+          "name": "Yoo Jin-ho",
+          "slug": null,
+          "relation": "friend and partner",
+          "detail": "A wealthy young Hunter whom Jin-woo saves in a C-rank raid; he becomes Jin-woo's loyal partner and keeps asking him to start a guild together.",
+          "spoiler": false
+        },
+        {
+          "name": "Igris",
+          "slug": null,
+          "relation": "shadow knight",
+          "detail": "The red knight commander of the job-change quest, who becomes one of Jin-woo's most trusted shadow soldiers.",
+          "spoiler": true
+        },
+        {
+          "name": "Cha Hae-in",
+          "slug": null,
+          "relation": "love interest",
+          "detail": "An S-rank Hunter of the Hunters Guild who finds the smell of other Hunters' mana unbearable, except for Jin-woo's. In the original story's epilogue they marry.",
+          "spoiler": true
+        },
+        {
+          "name": "Beru",
+          "slug": null,
+          "relation": "shadow soldier",
+          "detail": "The Ant King that devastated the Jeju Island raid; after defeating it, Jin-woo raises it as a shadow and names it Beru.",
+          "spoiler": true
+        },
+        {
+          "name": "Hwang Dongsuk",
+          "slug": null,
+          "relation": "enemy",
+          "detail": "A Hunter who tries to sacrifice Jin-woo and Jin-ho in a C-rank dungeon and dies for it; his S-rank brother Hwang Dongsoo then wants revenge.",
+          "spoiler": true
+        },
+        {
+          "name": "Sung Il-hwan",
+          "slug": null,
+          "relation": "father",
+          "detail": "A Hunter who disappeared years before the story. In the original story he returns tied to the Rulers, dies, and is revived when Jin-woo restarts time.",
+          "spoiler": true
+        }
+      ],
+      "strength": {
+        "rank": "From E-rank to S-rank and beyond",
+        "summary": "Thanks to the System he levels up when other Hunters' powers stay fixed. By season 2 he is officially South Korea's tenth S-rank, commands an army of shadow soldiers he can swap places with, and single-handedly beats a Demon King and the Ant King that crushed several S-ranks. In the original story he grows into the Shadow Monarch, strong enough to defeat the strongest of the Monarchs.",
+        "spoiler": true
+      },
+      "fights": [
+        {
+          "title": "The instance dungeon",
+          "animeSlug": "solo-leveling",
+          "episode": 4,
+          "summary": "In his first instance dungeon he kills a pack of wolves far stronger than him and the boss, gaining his first real levels.",
+          "spoiler": false
+        },
+        {
+          "title": "Betrayed in a C-rank dungeon",
+          "animeSlug": "solo-leveling",
+          "episode": 6,
+          "summary": "Left to die with a giant spider, he kills the boss himself and then turns on Hwang Dongsuk's party.",
+          "spoiler": true
+        },
+        {
+          "title": "Jin-woo vs. Kang Taeshik",
+          "animeSlug": "solo-leveling",
+          "episode": 9,
+          "summary": "A B-rank Hunter who has been killing people in the dungeon tries to add him to the list and loses.",
+          "spoiler": true
+        },
+        {
+          "title": "Jin-woo vs. Igris",
+          "animeSlug": "solo-leveling",
+          "episode": 11,
+          "summary": "During the job-change quest he barely defeats the Bloodred Commander after battling waves of knights.",
+          "spoiler": true
+        },
+        {
+          "title": "Red gate: Baruka and Kim Chul",
+          "animeSlug": "Solo-Leveling-Season-2-Arise-from-the-Shadow",
+          "episode": 2,
+          "summary": "With his shadow army he defeats the ice elves, kills the treacherous Kim Chul and raises him to finish the boss.",
+          "spoiler": true
+        },
+        {
+          "title": "Jin-woo vs. Kargalgan",
+          "animeSlug": "Solo-Leveling-Season-2-Arise-from-the-Shadow",
+          "episode": 6,
+          "summary": "Dropping his disguise as a porter, he kills the high orc shaman and makes it a shadow.",
+          "spoiler": true
+        },
+        {
+          "title": "Jin-woo vs. Baran",
+          "animeSlug": "Solo-Leveling-Season-2-Arise-from-the-Shadow",
+          "episode": 8,
+          "summary": "At the top of the Demon's Castle he defeats the Demon King Baran.",
+          "spoiler": true
+        },
+        {
+          "title": "Jin-woo vs. the Ant King",
+          "animeSlug": "Solo-Leveling-Season-2-Arise-from-the-Shadow",
+          "episode": 12,
+          "summary": "On Jeju Island he faces the monster that overwhelmed the S-rank raid team and defeats it.",
+          "spoiler": true
+        }
+      ],
+      "keyEpisodes": [
+        {
+          "animeSlug": "solo-leveling",
+          "episode": 1,
+          "why": "Debut as the world's weakest Hunter and the descent into the double dungeon.",
+          "spoiler": false
+        },
+        {
+          "animeSlug": "solo-leveling",
+          "episode": 2,
+          "why": "Facing death in the temple, he is offered the chance to become a Player.",
+          "spoiler": false
+        },
+        {
+          "animeSlug": "solo-leveling",
+          "episode": 12,
+          "why": "'Arise': he completes the job change and raises his first shadow soldiers.",
+          "spoiler": true
+        },
+        {
+          "animeSlug": "Solo-Leveling-Season-2-Arise-from-the-Shadow",
+          "episode": 4,
+          "why": "A reassessment reveals him as South Korea's tenth S-rank Hunter, and he meets Cha Hae-in.",
+          "spoiler": true
+        },
+        {
+          "animeSlug": "Solo-Leveling-Season-2-Arise-from-the-Shadow",
+          "episode": 9,
+          "why": "The Elixir of Life wakes his mother.",
+          "spoiler": true
+        },
+        {
+          "animeSlug": "Solo-Leveling-Season-2-Arise-from-the-Shadow",
+          "episode": 13,
+          "why": "He raises the Ant King as Beru and is hailed as a hero after Jeju Island.",
+          "spoiler": true
+        }
+      ],
+      "ages": [
+        {
+          "when": "Start of the series",
+          "age": "Early 20s",
+          "spoiler": false
+        }
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Solo_Leveling",
+        "https://en.wikipedia.org/wiki/List_of_Solo_Leveling_episodes",
+        "https://en.wikipedia.org/wiki/Solo_Leveling_season_1",
+        "https://en.wikipedia.org/wiki/Solo_Leveling_season_2",
+        "https://www.tvmaze.com/shows/64632/solo-leveling/episodeguide",
+        "https://anilist.co/character/129928",
+        "https://sportskeeda.com/anime/solo-leveling-episode-12-jinwoo-becomes-shadow-monarch-jeju-island-arc-officially-begins",
+        "https://dexerto.com/anime/solo-leveling-episode-12-ending-explained-2621040",
+        "https://sportskeeda.com/anime/solo-leveling-season-2-episode-4-jinwoo-steps-spotlight-s-rank-hunter-crosses-paths-cha-hae-in",
+        "https://sportskeeda.com/anime/why-cha-hae-in-cover-nose-around-hunters-solo-leveling-season-2-episode-4-explained",
+        "https://www.sportskeeda.com/anime/solo-leveling-season-2-episode-8-jinwoo-defeats-baran-goto-ryuji-s-introduction-kicks-jeju-island-arc",
+        "https://leisurebyte.com/solo-leveling-season-2-episode-9-review/",
+        "https://www.sportskeeda.com/anime/solo-leveling-season-2-episode-12-review-a-1-pictures-raises-hype-finale-epic-jinwoo-vs-ant-king-fight",
+        "https://sportskeeda.com/anime/solo-leveling-season-2-episode-13-finale-jeju-island-arc-concludes-jinwoo-acquiring-beru-new-characters-introduced",
+        "https://www.thewrap.com/creative-content/movies/solo-leveling-beyond-the-system-feature-film-crunchyroll-in-production/",
+        "https://www.gamesradar.com/entertainment/anime-movies/surprise-solo-leveling-movie-is-a-continuation-of-the-series-as-animes-cinema-takeover-continues/",
+        "https://epicstream.com/article/solo-leveling-ending"
+      ],
+      "confidence": "high"
     }
   }
 }
