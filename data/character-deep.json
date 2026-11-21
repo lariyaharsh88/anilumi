@@ -1,5 +1,5 @@
 {
-  "checked": "2026-11-13",
+  "checked": "2026-11-21",
   "characters": {
     "eren-jager": {
       "qualities": [
@@ -16800,6 +16800,469 @@
         "https://houseki-no-kuni.fandom.com/wiki/Episode_10",
         "https://houseki-no-kuni.fandom.com/wiki/Episode_12",
         "https://anilist.co/character/123385"
+      ],
+      "confidence": "medium"
+    },
+    "yor-forger": {
+      "qualities": [
+        {
+          "trait": "Polite to the point of comedy",
+          "detail": "She talks about breaking necks in the same soft, formal voice she uses to apologise for being late, and rarely notices how alarming she sounds."
+        },
+        {
+          "trait": "Devoted older sister",
+          "detail": "With no parents to rely on, she took on paid work while still a child so her younger brother Yuri could eat and go to school."
+        },
+        {
+          "trait": "Inhumanly strong",
+          "detail": "On the night of her fake engagement she flattens a whole squad of armed men in heels and a party dress while holding a conversation with Loid."
+        },
+        {
+          "trait": "Insecure about being a 'normal' wife",
+          "detail": "She worries constantly that she can't cook, can't hold a conversation with her coworkers and will be replaced, even as the Forgers grow attached to her."
+        },
+        {
+          "trait": "Protective instinct",
+          "detail": "When she sees Anya grabbed by a stranger she steps in before thinking, and later agrees to teach her how to defend herself."
+        }
+      ],
+      "backstory": "Yor Briar lost her parents when she was young and became the only person looking after her little brother, Yuri. To earn enough for both of them she started working for Garden, a secret organisation of assassins in the country of Ostania, at an early age, and she became its most feared killer under the codename Thorn Princess. Her contracts come through a man known only as the Shopkeeper, and she fights with a pair of thin, guardless stilettos. By day she works as a clerk at Berlint City Hall, where her coworkers tease her for being single. In a country gripped by fear of spies, an unmarried 27-year-old woman draws questions, so she starts looking for a man who will pose as her partner. Yuri, now grown up, believes she is just an ordinary office worker, and she has no idea that he works for the secret police.",
+      "journey": [
+        {
+          "stage": "A marriage of convenience (Season 1, part 1)",
+          "summary": "Yor meets Loid Forger at a tailor's shop and asks him to pose as her date for a party; he arrives late and calls himself her husband, and after an attack on the way home they agree to marry for real on paper. She moves in, accepts Anya as her stepdaughter, survives Yuri's suspicious visit and starts teaching Anya self-defence."
+        },
+        {
+          "stage": "Becoming family (Season 1, part 2)",
+          "summary": "She learns to cook a stew from her childhood, helps save Anya from terrorists by kicking a getaway car off the road, and the family adopts Bond. When Loid's colleague Fiona Frost shows up hoping to replace her, Yor crushes her at tennis but is left doubting herself, until Loid makes clear he isn't looking for anyone else."
+        },
+        {
+          "stage": "The cruise ship mission (Season 2)",
+          "summary": "Garden assigns her to guard a mother and son fleeing a crime family aboard a luxury liner, the same ship the rest of the Forgers happen to be holidaying on. She fights off wave after wave of hired killers, and in the hardest moment she realises she is fighting to protect the life she has with her family and friends, not just for Yuri."
+        },
+        {
+          "stage": "The Desmond connection (Season 3)",
+          "summary": "After saving a stranger from a fall, Yor is welcomed into the Lady Patriots Society by Melinda Desmond, the wife of Loid's target, which hands Loid an unexpected route to his mission. She comforts Anya after the Eden Academy bus hijacking and, after a drunken work outing, has an embarrassing moment with Loid that she has to explain the next morning."
+        },
+        {
+          "stage": "Still undercover (ongoing)",
+          "summary": "As of November 2026, Yor still doesn't know Loid is a spy, and he still doesn't know she's an assassin. Her friendship with Melinda and her feelings for Loid keep growing, and the manga continues the story."
+        }
+      ],
+      "lessons": [
+        {
+          "lesson": "Being 'normal' matters less than being kind.",
+          "why": "Yor tortures herself over not being the wife society expects, yet the Forgers come to rely on exactly the warmth she thinks is not enough."
+        },
+        {
+          "lesson": "Know what you are fighting for.",
+          "why": "Yor started killing only to provide for her brother; over time she fights to protect a whole circle of people she cares about, and that gives her new resolve."
+        },
+        {
+          "lesson": "Talk it out before assuming the worst.",
+          "why": "When Fiona appears, Yor quietly convinces herself she's about to be replaced; a single honest conversation with Loid clears it up."
+        },
+        {
+          "lesson": "Family can be built, not just born into.",
+          "why": "Yor, Loid and Anya are strangers who agreed to a fake household, and the pretend family slowly turns into something real for each of them."
+        }
+      ],
+      "relationships": [
+        {
+          "name": "Loid Forger",
+          "slug": "loid-forger",
+          "relation": "husband (by arrangement)",
+          "detail": "They marry purely as cover for their secret jobs, neither knowing the other's, but Yor gradually develops real feelings for the calm, kind psychiatrist she thinks he is.",
+          "spoiler": false
+        },
+        {
+          "name": "Anya Forger",
+          "slug": "anya-forger",
+          "relation": "stepdaughter",
+          "detail": "Yor believes Anya is Loid's daughter from an earlier marriage. Anya, who can read minds, knows her new mother is an assassin and thinks it's wonderful.",
+          "spoiler": false
+        },
+        {
+          "name": "Yuri Briar",
+          "slug": null,
+          "relation": "younger brother",
+          "detail": "The brother she raised alone adores her to an extreme degree. He thinks she is just a clerk, and she doesn't know he is an officer in Ostania's secret police.",
+          "spoiler": true
+        },
+        {
+          "name": "Bond Forger",
+          "slug": null,
+          "relation": "family dog",
+          "detail": "The big white dog that can see glimpses of the future joins the family after the terrorist plot, and he dreads the meals Yor cooks.",
+          "spoiler": true
+        },
+        {
+          "name": "Fiona Frost",
+          "slug": null,
+          "relation": "rival",
+          "detail": "Loid's spy colleague wants to take Yor's place as his wife; Yor has no idea, but she wins their tennis match with sheer strength.",
+          "spoiler": true
+        },
+        {
+          "name": "Melinda Desmond",
+          "slug": null,
+          "relation": "friend",
+          "detail": "The wife of Loid's political target invites Yor into her circle of society women, not knowing how useful that makes Yor to Loid's mission.",
+          "spoiler": true
+        },
+        {
+          "name": "Camilla",
+          "slug": null,
+          "relation": "coworker",
+          "detail": "The City Hall colleague who teases Yor for being single, but who later helps her learn to cook.",
+          "spoiler": false
+        }
+      ],
+      "strength": {
+        "rank": "Garden's top assassin",
+        "summary": "Yor's speed and strength go far beyond human: she kicks a moving car off the road, cuts a tennis ball apart with a racket, carries on fighting after being shot and shrugs off poison that would kill an ordinary person. Her weapons are a pair of needle-like stilettos, and on the cruise ship she takes on a long series of professional killers almost single-handed. Her only real weaknesses are alcohol and her own cooking.",
+        "spoiler": true
+      },
+      "fights": [
+        {
+          "title": "The party ambush",
+          "animeSlug": "spy-x-family",
+          "episode": 2,
+          "summary": "Hunted by the men chasing Loid, Yor dispatches them one by one while the two of them discuss getting married.",
+          "spoiler": false
+        },
+        {
+          "title": "Stopping Keith's car",
+          "animeSlug": "spy-x-family-part-2",
+          "episode": 3,
+          "summary": "Searching for Anya during the dog-bomb plot, Yor brings the fleeing terrorist leader's car to a halt with a single kick.",
+          "spoiler": true
+        },
+        {
+          "title": "Yor vs. Fiona at tennis",
+          "animeSlug": "spy-x-family-part-2",
+          "episode": 11,
+          "summary": "Fiona challenges her in the park to prove she is the better partner for Loid; Yor wins with shots strong enough to shred the ball.",
+          "spoiler": true
+        },
+        {
+          "title": "Yor vs. Barnaby",
+          "animeSlug": "spy-x-family-season-2",
+          "episode": 7,
+          "summary": "Aboard the Princess Lorelei she beats the assassin in the middle of a crowd, which takes their fight for a circus act thanks to Anya.",
+          "spoiler": true
+        },
+        {
+          "title": "Yor vs. the swordsman",
+          "animeSlug": "spy-x-family-season-2",
+          "episode": 9,
+          "summary": "Cornered by the strongest of the hired killers on the cruise ship, Yor regains her resolve and, with a little secret help from Anya, defeats him.",
+          "spoiler": true
+        }
+      ],
+      "keyEpisodes": [
+        {
+          "animeSlug": "spy-x-family",
+          "episode": 2,
+          "why": "Debut: Yor meets Loid, and the fake marriage begins with a proposal in the middle of a fight.",
+          "spoiler": false
+        },
+        {
+          "animeSlug": "spy-x-family",
+          "episode": 9,
+          "why": "After Yuri's visit, Loid tells Yor to stop worrying about seeming like a perfect wife, and she says how glad she is to be his partner.",
+          "spoiler": true
+        },
+        {
+          "animeSlug": "spy-x-family-part-2",
+          "episode": 4,
+          "why": "Yor's Kitchen: she learns to cook a dish from her childhood and realises how much the Forgers mean to her.",
+          "spoiler": true
+        },
+        {
+          "animeSlug": "spy-x-family-season-2",
+          "episode": 8,
+          "why": "Cornered on the cruise ship, she thinks of Yuri and the Forgers and finds the will to fight back.",
+          "spoiler": true
+        },
+        {
+          "animeSlug": "spy-x-family-season-3",
+          "episode": 5,
+          "why": "Yor meets Melinda Desmond and is invited into the Lady Patriots Society.",
+          "spoiler": true
+        }
+      ],
+      "ages": [
+        {
+          "when": "Start of the series",
+          "age": 27,
+          "spoiler": false
+        }
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Yor_Forger",
+        "https://en.wikipedia.org/wiki/List_of_Spy_%C3%97_Family_characters",
+        "https://en.wikipedia.org/wiki/Spy_%C3%97_Family_season_1",
+        "https://en.wikipedia.org/wiki/Spy_%C3%97_Family_season_2",
+        "https://en.wikipedia.org/wiki/Spy_%C3%97_Family_season_3",
+        "https://anilist.co/character/138102",
+        "https://myanimelist.net/character/170329",
+        "https://www.oneesports.gg/anime/who-is-yor-in-spy-x-family-story/",
+        "https://www.sportskeeda.com/anime/spy-x-family-season-2-episode-9-yor-s-mission-cruise-ship-ends-looks-forward-holiday",
+        "https://thecinemaholic.com/spy-x-family-season-2-episode-9-recap/",
+        "https://animecorner.me/spy-x-family-season-2-the-forgers-cruise-adventure-gets-a-happy-ending/",
+        "https://kitsu.io/api/edge/anime?filter[text]=spy%20x%20family"
+      ],
+      "confidence": "high"
+    },
+    "one-piece-kaido": {
+      "qualities": [
+        {
+          "trait": "Seemingly unkillable",
+          "detail": "He leaps off a sky island thousands of metres up as one of his many attempts to die, and walks away from the crater with nothing worse than a headache."
+        },
+        {
+          "trait": "Hungry for war",
+          "detail": "On his first appearance he tells a group of rival pirates that what he wants is to start an enormous war."
+        },
+        {
+          "trait": "Wild when drunk",
+          "detail": "Drink swings his mood between sobbing, laughing and rage; in one drunken fit he flies over Wano and blasts a mountaintop apart with his breath."
+        },
+        {
+          "trait": "Wants a fair fight",
+          "detail": "When a captured Big Mom is brought to Onigashima, he has her Seastone cuffs taken off so he can face her at full strength."
+        },
+        {
+          "trait": "Collects strong fighters",
+          "detail": "He builds his crew by beating powerful rookies and pirates and inviting them to serve him rather than simply killing them."
+        }
+      ],
+      "backstory": "Kaido grew up in the Vodka Kingdom, a poor nation that raided its neighbours to pay its tribute to the World Government. By the age of ten he was its most powerful child soldier, and his king handed him over to the Marines so the kingdom could attend the Levely. Kaido turned on his captors and became a wanted man, letting himself be caught again and again only to break out and help himself to Marine supplies. At fifteen he joined the Rocks Pirates as an apprentice, sailing alongside future Emperors such as Big Mom and Whitebeard, until the crew was destroyed at God Valley 38 years before the story. He later founded the Beasts Pirates, gained a Devil Fruit that turns him into an azure dragon, and allied with Kurozumi Orochi to take over Wano Country, crushing the samurai Kozuki Oden twenty years before Luffy arrives. With Orochi installed as shogun, he turned Wano into a weapons factory for his crew and became known as the world's Strongest Creature, one of the Four Emperors of the sea.",
+      "journey": [
+        {
+          "stage": "The Emperor in the background",
+          "summary": "For hundreds of episodes Kaido is only a name, one of the Four Emperors. After Doflamingo's fall he finally appears, jumping from a sky island and announcing that he wants a great war; he has already beaten Eustass Kid and forced other rookies to submit."
+        },
+        {
+          "stage": "Wano, Act 1",
+          "summary": "Drunk and angry, he destroys the ruins of Oden Castle. Luffy attacks him with everything he has, but Kaido knocks him out with a single blow of his club and has him thrown into a prison mine."
+        },
+        {
+          "stage": "Twenty years earlier (flashback)",
+          "summary": "Oden and his retainers charge Kaido, and Oden leaves him with a great X-shaped scar before a trick involving a disguised hostage lets Kaido strike him down. Kaido breaks his promise to free Oden's retainers and kills Oden himself after the samurai survives an hour in boiling oil."
+        },
+        {
+          "stage": "Raid on Onigashima",
+          "summary": "At his Fire Festival banquet Kaido reveals an alliance with Big Mom, beheads Orochi and announces a plan to enslave all of Wano. He holds off the Nine Red Scabbards on the rooftop, then fights Luffy, Zoro, Law, Kid and Killer together with Big Mom, and knocks Luffy into the sea. His own child, Yamato, then stands against him."
+        },
+        {
+          "stage": "The final round",
+          "summary": "Luffy returns, awakens Gear 5 and, after a long battle, drives Kaido through Onigashima with one last giant punch. Unconscious, Kaido falls into a magma chamber with Big Mom. Luffy is named an Emperor in his place, and as of November 2026 the story has not confirmed whether Kaido survived."
+        }
+      ],
+      "lessons": [
+        {
+          "lesson": "A bully's promise is worth nothing.",
+          "why": "Every deal Kaido and Orochi offer the people of Wano is a trick to buy time or remove a rival, and the people who trust those deals pay for it."
+        },
+        {
+          "lesson": "Losing once doesn't decide the war.",
+          "why": "Luffy is flattened by a single blow in their first fight, but he trains in prison, learns from the defeat and comes back stronger every time they meet."
+        },
+        {
+          "lesson": "Ruling by fear leaves you alone.",
+          "why": "Kaido's crew follows him out of fear or ambition, and even his own child would rather fight him than inherit his empire."
+        },
+        {
+          "lesson": "Despair can turn into cruelty.",
+          "why": "Kaido keeps trying to die and wants a war that will swallow the world, and the people of Wano are the ones who suffer for his restlessness."
+        }
+      ],
+      "relationships": [
+        {
+          "name": "Monkey D. Luffy",
+          "slug": "luffy-monkey-d",
+          "relation": "nemesis",
+          "detail": "Luffy wrecked Kaido's weapons deal with Doflamingo, so Kaido swears to kill him himself, while Luffy comes to Wano determined to bring him down.",
+          "spoiler": false
+        },
+        {
+          "name": "Kozuki Oden",
+          "slug": null,
+          "relation": "enemy he respected",
+          "detail": "The samurai lord gave Kaido the scar across his chest. Kaido treats Oden as a worthy enemy, yet still has him killed after their deal.",
+          "spoiler": true
+        },
+        {
+          "name": "Kurozumi Orochi",
+          "slug": null,
+          "relation": "puppet shogun",
+          "detail": "For twenty years Kaido props up Orochi's rule in return for Wano's weapons, then cuts off his head when Orochi objects to Kaido's new plan.",
+          "spoiler": true
+        },
+        {
+          "name": "Yamato",
+          "slug": null,
+          "relation": "child",
+          "detail": "Kaido's child idolises Oden, the man Kaido killed. Kaido keeps Yamato bound to Wano with explosive cuffs and wants them to be shogun under him, but Yamato fights him instead.",
+          "spoiler": true
+        },
+        {
+          "name": "Charlotte Linlin (Big Mom)",
+          "slug": null,
+          "relation": "old crewmate and ally",
+          "detail": "They met as young members of the Rocks Pirates. Decades later they clash on Onigashima, then team up against Luffy's alliance.",
+          "spoiler": true
+        },
+        {
+          "name": "King",
+          "slug": null,
+          "relation": "right-hand man",
+          "detail": "Kaido freed him from Marine experiments on Punk Hazard, named him King and made him his most trusted commander.",
+          "spoiler": true
+        },
+        {
+          "name": "Kozuki Momonosuke",
+          "slug": null,
+          "relation": "Oden's son",
+          "detail": "Kaido killed the boy's father and hunts him when he returns to Wano, asking again whether he is truly Oden's son.",
+          "spoiler": false
+        },
+        {
+          "name": "Trafalgar Law",
+          "slug": "trafalgar-law",
+          "relation": "enemy",
+          "detail": "Law brings Luffy into the plan to topple Kaido, and joins the rooftop battle against him on Onigashima.",
+          "spoiler": true
+        },
+        {
+          "name": "Eustass Kid",
+          "slug": null,
+          "relation": "enemy",
+          "detail": "Kaido beat Kid when he refused to join, and threw him into the same prison mine as Luffy; Kid later fights him on the rooftop.",
+          "spoiler": true
+        }
+      ],
+      "strength": {
+        "rank": "The Strongest Creature",
+        "summary": "Kaido's bounty of 4,611,100,000 berries was the highest known for any living pirate. His Mythical Zoan fruit turns him into a huge azure dragon that breathes fire, makes lightning and creates flame clouds strong enough to carry an island. He infuses his club with Armament and Conqueror's Haki, can read moves before they happen, and has survived dozens of execution attempts.",
+        "spoiler": true
+      },
+      "fights": [
+        {
+          "title": "Luffy vs. Kaido, round 1",
+          "animeSlug": "one-piece",
+          "episode": 915,
+          "summary": "At Kuri, Luffy pours Gear Third and Gear Fourth into Kaido without hurting him, and Kaido ends the fight with one swing of his club.",
+          "spoiler": true
+        },
+        {
+          "title": "Kaido vs. Oden",
+          "animeSlug": "one-piece",
+          "episode": 972,
+          "summary": "Twenty years earlier, Oden scars Kaido, then hesitates when Momonosuke appears to be taken hostage, and Kaido strikes him down.",
+          "spoiler": true
+        },
+        {
+          "title": "Kaido vs. Big Mom",
+          "animeSlug": "one-piece",
+          "episode": 952,
+          "summary": "Freed from her cuffs on his order, Big Mom fights Kaido on Onigashima before the two old crewmates form an alliance.",
+          "spoiler": true
+        },
+        {
+          "title": "Kaido vs. the Nine Red Scabbards",
+          "animeSlug": "one-piece",
+          "episode": 1004,
+          "summary": "Oden's retainers attack him on the Skull Dome roof and reopen Oden's scar with Oden's own sword style, but Kaido gets back up.",
+          "spoiler": true
+        },
+        {
+          "title": "Rooftop battle, round 2",
+          "animeSlug": "one-piece",
+          "episode": 1033,
+          "summary": "After holding off Luffy, Zoro, Law, Kid and Killer alongside Big Mom, Kaido wins his duel with Luffy and knocks him off Onigashima into the sea.",
+          "spoiler": true
+        },
+        {
+          "title": "Kaido vs. Yamato",
+          "animeSlug": "one-piece",
+          "episode": 1041,
+          "summary": "Yamato refuses to become shogun under him and holds him on the rooftop until Luffy returns.",
+          "spoiler": true
+        },
+        {
+          "title": "Luffy vs. Kaido, final round",
+          "animeSlug": "one-piece",
+          "episode": 1076,
+          "summary": "Gear 5 Luffy's last giant punch drives Kaido down through the island, ending his rule over Wano.",
+          "spoiler": true
+        }
+      ],
+      "keyEpisodes": [
+        {
+          "animeSlug": "one-piece",
+          "episode": 736,
+          "why": "A mysterious figure approaches Urouge on a sky island: Kaido's first appearance in person.",
+          "spoiler": false
+        },
+        {
+          "animeSlug": "one-piece",
+          "episode": 739,
+          "why": "He jumps from the sky island, is named for the first time and says he wants to start a great war.",
+          "spoiler": false
+        },
+        {
+          "animeSlug": "one-piece",
+          "episode": 915,
+          "why": "Kaido beats Luffy with a single blow at Kuri.",
+          "spoiler": true
+        },
+        {
+          "animeSlug": "one-piece",
+          "episode": 958,
+          "why": "The Marines reveal his 4,611,100,000-berry bounty and his past in the Rocks Pirates.",
+          "spoiler": true
+        },
+        {
+          "animeSlug": "one-piece",
+          "episode": 994,
+          "why": "He beheads Orochi and announces his plan to turn Wano into a pirate nation.",
+          "spoiler": true
+        },
+        {
+          "animeSlug": "one-piece",
+          "episode": 1077,
+          "why": "Defeated and unconscious, he falls into magma beneath Onigashima with Big Mom.",
+          "spoiler": true
+        }
+      ],
+      "ages": [
+        {
+          "when": "Joining the Rocks Pirates (flashback)",
+          "age": 15,
+          "spoiler": true
+        },
+        {
+          "when": "Wano Country arc",
+          "age": 59,
+          "spoiler": false
+        }
+      ],
+      "sources": [
+        "https://onepiece.fandom.com/wiki/Kaidou",
+        "https://onepiece.fandom.com/wiki/Episode_736",
+        "https://onepiece.fandom.com/wiki/Episode_739",
+        "https://en.wikipedia.org/wiki/One_Piece_season_20",
+        "https://en.wikipedia.org/wiki/One_Piece_season_21",
+        "https://comicbook.com/anime/news/one-piece-manga-chapter-1049-spoilers-kaido-origin-story",
+        "https://comicbook.com/anime/news/one-piece-four-emperors-yonko-bounties-update-anime",
+        "https://comicbook.com/anime/news/one-piece-whitebeard-gol-d-roger-bounties-chapter-957",
+        "https://piunikaweb.com/2019/09/27/one-piece-chapter-957-spoilers-detail-the-god-valley-incident-yonko-bounties/",
+        "https://www.animenewsnetwork.com/review/one-piece/episode-958/.168505",
+        "https://fictionhorizon.com/how-old-are-kaido-and-big-mom-in-one-piece/",
+        "https://www.ibtimes.com/new-one-piece-vivre-card-pack-reveals-interesting-details-about-kaido-yamato-more-3287099"
       ],
       "confidence": "medium"
     }

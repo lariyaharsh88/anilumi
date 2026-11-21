@@ -235,6 +235,24 @@
         "https://comicbook.com/anime/news/one-piece-manga-bounty-luffy-law-kid",
         "https://sportskeeda.com/anime/one-piece-just-saw-biggest-bounty-increase-history"
       ]
+    },
+    "one-piece-kaido": {
+      "entries": [
+        {
+          "amount": 4611100000,
+          "arc": "Wano Country",
+          "why": "His bounty as one of the Four Emperors, revealed when the Marines go over the Emperors' bounties after the Levely; the highest known for any pirate alive at the time.",
+          "chapter": 957,
+          "episode": 958,
+          "spoiler": false
+        }
+      ],
+      "sources": [
+        "https://comicbook.com/anime/news/one-piece-whitebeard-gol-d-roger-bounties-chapter-957",
+        "https://comicbook.com/anime/news/one-piece-four-emperors-yonko-bounties-update-anime",
+        "https://en.wikipedia.org/wiki/One_Piece_season_20",
+        "https://www.cbr.com/one-piece-highest-bounties"
+      ]
     }
   }
 }
