@@ -34,8 +34,11 @@ export const ALSO_SEARCHED = ["Anime World", "AnimeToon"];
  * More names from Bing's queries for this page's topic (Nov 2026, about 100 impressions a month together). Named
  * without a verdict on each, since we haven't reviewed them: the page only says which platforms are official.
  */
-// Bing (Nov 2026) also shows "animedubhindi", "animebudhindi" and "[animedubhindi]".
-export const OTHER_NAMES = ["Hindi Anime Zone", "Rare Toons India", "Anime Dekho", "Desi Dub", "AnimeDubHindi", "Rish Anime"];
+// Bing (Nov 2026) also shows "animedubhindi", "animebudhindi" and "[animedubhindi]". Bing keyword research (21 Nov,
+// impressions a year): toonstream 29.8K, blakite anime 4.5K (rising), hinime 1.6K, subdub anime 1.5K (rising),
+// pikahd 1.3K, hydraflix 1.3K, animerulz hindi 0.5K. Left out: Kartoon (a licensed kids' channel) and names we
+// couldn't place.
+export const OTHER_NAMES = ["Hindi Anime Zone", "Rare Toons India", "Anime Dekho", "Desi Dub", "AnimeDubHindi", "Rish Anime", "Toonstream", "Blakite", "Hinime", "SubDub Anime", "PikaHD", "Hydraflix", "AnimeRulz"];
 export const altPath = (s: AltSite) => `/${s.slug}-alternatives`;
 function data() {
   const dubbed = hindiDubbed();
