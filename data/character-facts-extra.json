@@ -1,0 +1,10 @@
+{
+  "checked": "2026-11-21",
+  "note": "Facts AniList leaves out, added to the monthly character snapshot when it loads (lib/charsnap.ts). Each from two sources that cite the official data books.",
+  "characters": {
+    "naruto-uzumaki": {
+      "lines": [["Height", "145.3-147.5 cm (Part I), 166 cm (Part II), 180 cm (adult)"]],
+      "sources": ["https://www.cbr.com/how-tall-are-the-naruto-characters/", "https://fictionhorizon.com/how-tall-are-naruto-characters/"]
+    }
+  }
+}

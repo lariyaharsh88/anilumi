@@ -5,8 +5,7 @@
  * the per-series modes cover "naruto quiz" 1K, "one piece quiz" 880 and "demon slayer quiz" 1.3K. Server code only.
  */
 import { fanName } from "./charnames";
-import data from "@/data/characters.json";
-import { characterPathFor, type SnapChar } from "./charsnap";
+import { allSnapChars, characterPathFor, type SnapChar } from "./charsnap";
 import { seriesCast, roleIn } from "./seriessnap";
 import { ageNum, heightCm } from "./charfacts";
 import type { GChar, GuessMode } from "./guessgame-core";
@@ -22,7 +21,8 @@ export const GUESS_MODES: GuessModeDef[] = [
 ];
 export const guessMode = (mode: string) => GUESS_MODES.find((m) => m.mode === mode) ?? null;
 
-const chars = (data as { characters: SnapChar[] }).characters;
+// The snapshot with the extra checked facts merged in (lib/charsnap.ts), so heights match the character pages.
+const chars: SnapChar[] = allSnapChars();
 /** Image file under AniList's medium character folder, and our page slug: the browser adds the prefixes (smaller pages). */
 const img = (file: string | null | undefined) => (!file ? null : file.replace(/^https?:\/\/[^]*\/character\/(medium|large)\//, ""));
 const page = (id: number) => characterPathFor(id)?.replace(/^\/character\//, "") ?? null;
