@@ -18448,6 +18448,757 @@
         "https://kitsu.io/api/edge/anime?filter[text]=blue%20lock"
       ],
       "confidence": "medium"
+    },
+    "nezuko-kamado": {
+      "qualities": [
+        {
+          "trait": "Protective",
+          "detail": "Minutes after being turned, she shields Tanjiro from Giyu instead of attacking him, and from then on she throws herself between her brother and danger."
+        },
+        {
+          "trait": "Strong-willed",
+          "detail": "Even as a demon she refuses human flesh. When the Wind Hashira slashes his own arm and waves his blood in her face, she turns her head away."
+        },
+        {
+          "trait": "Gentle at heart",
+          "detail": "Sakonji's hypnosis teaches her to protect every human, and she treats even the friendly demons Tamayo and Yushiro as people."
+        },
+        {
+          "trait": "Selfless",
+          "detail": "When the sun rises in the Swordsmith Village and Tanjiro hesitates between saving her and saving the villagers, she kicks him away so he will go."
+        },
+        {
+          "trait": "Quietly playful",
+          "detail": "Muzzled with a bamboo gag and unable to speak, she still pats heads, naps in her box and fusses over Tanjiro's friends like a younger sister."
+        }
+      ],
+      "backstory": "Nezuko was the eldest daughter of the Kamado family, charcoal sellers who lived on a snowy mountain in Taisho-era Japan. Her father, Tanjuro, had died of illness, and while her older brother Tanjiro sold charcoal in town, Nezuko helped their mother, Kie, look after the four younger children at home. One winter night, while Tanjiro was stuck in town, the demon king Muzan Kibutsuji came to the house and killed everyone inside. Nezuko alone survived, but Muzan's blood had entered her wounds and turned her into a demon. Tanjiro found her and tried to carry her down the mountain for help, and she attacked him, but something of her old self held her back.",
+      "journey": [
+        {
+          "stage": "A demon who won't eat people (Season 1)",
+          "summary": "Giyu Tomioka spares her after she protects Tanjiro and sends the siblings to Sakonji Urokodaki. She sleeps for two years while Tanjiro trains, then travels with him in a wooden box on his back, fighting demons by night with kicks and her ability to change size."
+        },
+        {
+          "stage": "Blood Demon Art and the Hashira trial (Season 1)",
+          "summary": "On Mount Natagumo she awakens Exploding Blood, fire in her blood that burns demons and their threads but not humans, helping Tanjiro against Rui. At the Hashira meeting she resists Sanemi's offer of blood, and Kagaya Ubuyashiki recognises her as part of the Corps."
+        },
+        {
+          "stage": "Mugen Train and Entertainment District (Season 2)",
+          "summary": "On the train she burns the ropes tying the slayers into Enmu's dreams and protects the passengers. In Yoshiwara she enters a berserk demon form to fight Daki, almost attacks a human before Tanjiro holds her back, then later burns Gyutaro's poison out of her wounded friends."
+        },
+        {
+          "stage": "Swordsmith Village (Season 3)",
+          "summary": "She fights the clones of Upper Four Hantengu beside Tanjiro and Genya and befriends Mitsuri Kanroji. At dawn she is caught in the sun, yet instead of burning she survives and speaks again, making her the demon Muzan most wants to devour."
+        },
+        {
+          "stage": "Hashira Training and Infinity Castle",
+          "summary": "With Muzan now hunting her, the Corps keeps her out of the fighting. While the slayers are drawn into the Infinity Castle, she takes the medicine Tamayo and Shinobu made to turn her human, and in the first Infinity Castle film (2025) she lies unconscious in Sakonji's care."
+        },
+        {
+          "stage": "Becoming human (manga)",
+          "summary": "In the manga the medicine works: she wakes as a human with her memories back, runs to Tanjiro after Muzan's death and helps pull him back when Muzan turns him into a demon. In the epilogue she lives with the survivors and later marries Zenitsu. The anime had not reached these events as of November 2026; the second Infinity Castle film had no release date."
+        }
+      ],
+      "lessons": [
+        {
+          "lesson": "Who you are can survive what happens to you.",
+          "why": "Nezuko is turned into a demon against her will, yet she keeps choosing to protect people rather than eat them."
+        },
+        {
+          "lesson": "Family is something you keep choosing.",
+          "why": "She and Tanjiro carry each other through the whole series, each refusing to give up on the other."
+        },
+        {
+          "lesson": "Strength doesn't need to be loud.",
+          "why": "Nearly silent for most of the story, she changes the outcome of fight after fight without speeches."
+        }
+      ],
+      "relationships": [
+        {
+          "name": "Tanjiro Kamado",
+          "slug": "tanjirou-kamado",
+          "relation": "older brother",
+          "detail": "Her only surviving family, who becomes a Demon Slayer to find a way to make her human again and carries her everywhere in a box.",
+          "spoiler": false
+        },
+        {
+          "name": "Giyu Tomioka",
+          "slug": "giyuu-tomioka",
+          "relation": "the slayer who spared her",
+          "detail": "The Water Hashira who finds the siblings first and, instead of killing her, sends them to his old teacher.",
+          "spoiler": false
+        },
+        {
+          "name": "Sakonji Urokodaki",
+          "slug": null,
+          "relation": "guardian",
+          "detail": "Tanjiro's teacher, who watches over her while she sleeps for two years and stakes his life on her never eating a human.",
+          "spoiler": false
+        },
+        {
+          "name": "Zenitsu Agatsuma",
+          "slug": "zenitsu-agatsuma",
+          "relation": "admirer",
+          "detail": "Smitten the moment he sees her, he guards her box with his life even when Inosuke attacks it.",
+          "spoiler": false
+        },
+        {
+          "name": "Inosuke Hashibira",
+          "slug": "inosuke-hashibira",
+          "relation": "friend",
+          "detail": "The boar-masked slayer who travels with the siblings and slowly softens towards her.",
+          "spoiler": false
+        },
+        {
+          "name": "Tamayo",
+          "slug": null,
+          "relation": "doctor",
+          "detail": "A demon physician who studies Nezuko's blood in search of a cure and later makes the medicine that turns her human.",
+          "spoiler": false
+        },
+        {
+          "name": "Mitsuri Kanroji",
+          "slug": "mitsuri-kanroji",
+          "relation": "friend",
+          "detail": "The Love Hashira takes to her during the Swordsmith Village attack and fights beside her against Hantengu.",
+          "spoiler": true
+        },
+        {
+          "name": "Muzan Kibutsuji",
+          "slug": null,
+          "relation": "the demon who turned her",
+          "detail": "He killed her family and made her a demon, and once she conquers the sun he wants to absorb her to become immortal.",
+          "spoiler": true
+        }
+      ],
+      "strength": {
+        "rank": "A demon unlike any other",
+        "summary": "She heals quickly, can shrink to fit in a box or grow to adult size, and fights with powerful kicks. Her Blood Demon Art, Exploding Blood, sets her blood alight to burn demons, poison and even Tanjiro's sword without harming humans. In a berserk form she outfights an Upper Rank demon, and by the end of the Swordsmith Village arc she no longer burns in sunlight.",
+        "spoiler": true
+      },
+      "fights": [
+        {
+          "title": "The swamp demon",
+          "animeSlug": "kimetsu-no-yaiba",
+          "episode": 7,
+          "summary": "On Tanjiro's first mission she guards the villagers and holds off one of the demon's bodies while her brother hunts the others.",
+          "spoiler": false
+        },
+        {
+          "title": "Susamaru's temari",
+          "animeSlug": "kimetsu-no-yaiba",
+          "episode": 10,
+          "summary": "Healed by Tamayo after losing a leg, she kicks the demon's balls straight back at her.",
+          "spoiler": false
+        },
+        {
+          "title": "Rui's threads",
+          "animeSlug": "kimetsu-no-yaiba",
+          "episode": 19,
+          "summary": "Bound and cut by Rui's threads, she awakens her Blood Demon Art and sets them alight, just as Tanjiro strikes with Hinokami Kagura.",
+          "spoiler": true
+        },
+        {
+          "title": "Nezuko vs. Daki",
+          "animeSlug": "kimetsu-no-yaiba-yuukaku-hen",
+          "episode": 7,
+          "summary": "In her new demon form she regenerates almost instantly and overwhelms Upper Six's sister until Tanjiro has to stop her.",
+          "spoiler": true
+        },
+        {
+          "title": "Against Hantengu's clones",
+          "animeSlug": "kimetsu-no-yaiba-katanakaji-no-satohen",
+          "episode": 5,
+          "summary": "Pinned under debris, she grips Tanjiro's blade and coats it in her burning blood, turning it red.",
+          "spoiler": true
+        }
+      ],
+      "keyEpisodes": [
+        {
+          "animeSlug": "kimetsu-no-yaiba",
+          "episode": 1,
+          "why": "Her family is killed, she is turned into a demon and still protects her brother.",
+          "spoiler": false
+        },
+        {
+          "animeSlug": "kimetsu-no-yaiba",
+          "episode": 23,
+          "why": "She turns away Sanemi's blood in front of the Hashira and is accepted.",
+          "spoiler": true
+        },
+        {
+          "animeSlug": "kimetsu-no-yaiba-mugen-ressha-hen",
+          "episode": 4,
+          "why": "She burns the ropes tying the slayers into Enmu's dreams.",
+          "spoiler": true
+        },
+        {
+          "animeSlug": "kimetsu-no-yaiba-yuukaku-hen",
+          "episode": 11,
+          "why": "Her fire burns Gyutaro's poison out of Tengen, Inosuke and Zenitsu.",
+          "spoiler": true
+        },
+        {
+          "animeSlug": "kimetsu-no-yaiba-katanakaji-no-satohen",
+          "episode": 11,
+          "why": "She survives the sunrise and speaks to her brother.",
+          "spoiler": true
+        },
+        {
+          "animeSlug": "Kimetsu-no-Yaiba-Mugenjou-hen",
+          "episode": null,
+          "why": "She takes the medicine meant to make her human and sleeps under Sakonji's watch.",
+          "spoiler": true
+        }
+      ],
+      "ages": [
+        {
+          "when": "When her family is killed",
+          "age": 12,
+          "spoiler": false
+        },
+        {
+          "when": "After Tanjiro's two years of training, for the rest of the story",
+          "age": 14,
+          "spoiler": false
+        }
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Nezuko_Kamado",
+        "https://en.wikipedia.org/wiki/Demon_Slayer:_Kimetsu_no_Yaiba_season_1",
+        "https://en.wikipedia.org/wiki/Demon_Slayer:_Kimetsu_no_Yaiba_season_2",
+        "https://en.wikipedia.org/wiki/Demon_Slayer:_Kimetsu_no_Yaiba_season_3",
+        "https://en.wikipedia.org/wiki/Demon_Slayer:_Kimetsu_no_Yaiba_season_4",
+        "https://en.wikipedia.org/wiki/Demon_Slayer:_Kimetsu_no_Yaiba_–_The_Movie:_Infinity_Castle",
+        "https://anilist.co/character/127518",
+        "https://www.animenewsnetwork.com/review/demon-slayer-kimetsu-no-yaiba/episode-19/.149929",
+        "https://www.fandompost.com/2019/08/15/demon-slayer-kimetsu-no-yaiba-episodes-18-19-anime-review/",
+        "https://animenewsnetwork.com/review/demon-slayer-kimetsu-no-yaiba-entertainment-district-arc/episode-7/.181626",
+        "https://butwhytho.net/2022/01/16/review-demon-slayer-kimetsu-no-yaiba-entertainment-district-arc-episode-7-transformation/",
+        "https://thecinemaholic.com/demon-slayer-kimetsu-no-yaiba-season-3-finale-and-ending-explained",
+        "https://www.thereviewgeek.com/demonslayer-s3endingexplained/",
+        "https://www.dexerto.com/anime/how-old-is-nezuko-in-demon-slayer-2641157/",
+        "https://sportskeeda.com/anime/how-old-nezuko-demon-slayer-the-mystery-age-explained",
+        "https://comicbook.com/anime/feature/demon-slayer-infinity-castle-part-2-shares-major-release-date-update-it-will-disappoint-fans/"
+      ],
+      "confidence": "medium"
+    },
+    "tanjirou-kamado": {
+      "qualities": [
+        {
+          "trait": "Kind to a fault",
+          "detail": "After killing the Hand Demon that murdered Sakonji's students, he holds the dying demon's hand and prays it will have a better life."
+        },
+        {
+          "trait": "Determined",
+          "detail": "Sakonji sets him the task of cutting a huge boulder, and he keeps failing for months on end before he finally splits it."
+        },
+        {
+          "trait": "Honest",
+          "detail": "He is a hopeless liar; his face twists so badly when he tries to bluff that even strangers can tell."
+        },
+        {
+          "trait": "Fiercely protective",
+          "detail": "He carries Nezuko on his back for the whole story and charges a Hashira without hesitating when Sanemi stabs through her box."
+        },
+        {
+          "trait": "Empathetic toward enemies",
+          "detail": "He senses the sadness in demons as they die, comforting Rui and acknowledging the drum demon Kyogai's art in his last moments."
+        }
+      ],
+      "backstory": "Tanjiro was the eldest son of the Kamado family, charcoal burners living on a mountain in Taisho-era Japan. After his father, Tanjuro, died of illness, he took on the job of selling charcoal in town to support his mother and five younger siblings. From his father he inherited a pair of hanafuda earrings and the memory of the Hinokami Kagura, a ritual dance performed through the night each New Year. He was also born with an extraordinary sense of smell that lets him read people's emotions. One winter day he stayed overnight in town, and came home to find that the demon Muzan Kibutsuji had killed his whole family except his sister Nezuko, who had been turned into a demon.",
+      "journey": [
+        {
+          "stage": "Training and Final Selection (Season 1)",
+          "summary": "Giyu Tomioka spares the siblings and sends them to Sakonji Urokodaki. After two years of Water Breathing training, helped by the spirits of Sabito and Makomo, Tanjiro cuts the boulder, survives Final Selection and receives a black Nichirin blade."
+        },
+        {
+          "stage": "First missions and Mount Natagumo (Season 1)",
+          "summary": "He comes face to face with Muzan in Asakusa, allies with the demon doctor Tamayo to search for a cure, and teams up with Zenitsu and Inosuke. On Mount Natagumo, close to death against Rui, he remembers his father's dance and uses Hinokami Kagura. After the Hashira put the siblings on trial, Kagaya Ubuyashiki accepts them and Tanjiro trains at the Butterfly Mansion."
+        },
+        {
+          "stage": "Mugen Train (Season 2)",
+          "summary": "Aboard the train with the Flame Hashira Kyojuro Rengoku, he breaks out of Enmu's dream by cutting his own throat in it and beheads the demon. Then Upper Three Akaza appears and kills Rengoku, whose last words tell Tanjiro to set his heart ablaze."
+        },
+        {
+          "stage": "Entertainment District (Season 2)",
+          "summary": "Rengoku's father tells him his earrings mark the first breathing style, Sun Breathing. Undercover in Yoshiwara with the Sound Hashira Tengen Uzui, he fights Upper Six, the siblings Daki and Gyutaro, and a demon slayer mark appears on his forehead as they win."
+        },
+        {
+          "stage": "Swordsmith Village (Season 3)",
+          "summary": "Waiting for a new sword, he trains against an old clockwork doll and finds an ancient blade inside it. When Upper Four Hantengu and Upper Five Gyokko attack the village, he fights Hantengu's clones with Genya and Nezuko and beheads the real demon at dawn."
+        },
+        {
+          "stage": "Hashira Training (Season 4)",
+          "summary": "He passes through each Hashira's training, helps Giyu face his guilt over Sabito, and is pulled into Muzan's Infinity Castle when Muzan attacks the Ubuyashiki mansion."
+        },
+        {
+          "stage": "Infinity Castle film (2025)",
+          "summary": "With Giyu he faces Akaza again. He reaches the Transparent World, a state in which he sees through his opponent's body and hides his own fighting intent, and beheads Akaza, who chooses to die after recovering his human memories."
+        },
+        {
+          "stage": "The end (manga)",
+          "summary": "In the manga he takes up Sun Breathing in the final battle, loses an eye and the use of an arm, and helps hold Muzan until sunrise. Muzan turns him into a demon as he dies, but Nezuko, his friends and the human-restoring medicine made by Tamayo and Shinobu bring him back. He later marries Kanao. The anime had not reached these events as of November 2026; the second Infinity Castle film had no release date."
+        }
+      ],
+      "lessons": [
+        {
+          "lesson": "Kindness and strength can live together.",
+          "why": "Tanjiro never stops being gentle, yet he fights on through injuries that would stop anyone else."
+        },
+        {
+          "lesson": "Keep the people you lost close.",
+          "why": "In his hardest moments he draws on his father's dance and his family's memory rather than anger."
+        },
+        {
+          "lesson": "Grief can become purpose.",
+          "why": "Losing his family could have broken him; instead he turns it into a promise to save his sister."
+        }
+      ],
+      "relationships": [
+        {
+          "name": "Nezuko Kamado",
+          "slug": "nezuko-kamado",
+          "relation": "younger sister",
+          "detail": "The only other survivor of his family. Turning her back into a human is the reason he becomes a Demon Slayer.",
+          "spoiler": false
+        },
+        {
+          "name": "Giyu Tomioka",
+          "slug": "giyuu-tomioka",
+          "relation": "first ally",
+          "detail": "The Water Hashira who spares Nezuko, sends Tanjiro to Sakonji and later stakes his own life on the siblings.",
+          "spoiler": false
+        },
+        {
+          "name": "Sakonji Urokodaki",
+          "slug": null,
+          "relation": "teacher",
+          "detail": "The retired Water Hashira who trains him for two years and gives him a mask to ward off evil.",
+          "spoiler": false
+        },
+        {
+          "name": "Zenitsu Agatsuma",
+          "slug": "zenitsu-agatsuma",
+          "relation": "friend",
+          "detail": "A cowardly Thunder Breathing user who joins him on missions and proves fearless when asleep.",
+          "spoiler": false
+        },
+        {
+          "name": "Inosuke Hashibira",
+          "slug": "inosuke-hashibira",
+          "relation": "friend and rival",
+          "detail": "A boar-masked slayer raised in the mountains who meets Tanjiro by picking a fight and ends up a firm friend.",
+          "spoiler": false
+        },
+        {
+          "name": "Kyojuro Rengoku",
+          "slug": "kyoujurou-rengoku",
+          "relation": "mentor",
+          "detail": "The Flame Hashira who leads the Mugen Train mission and whose last words become Tanjiro's motto.",
+          "spoiler": true
+        },
+        {
+          "name": "Kanao Tsuyuri",
+          "slug": null,
+          "relation": "friend, later wife",
+          "detail": "Shinobu's protégé, whom Tanjiro encourages to follow her heart instead of a coin toss; in the manga's epilogue they marry.",
+          "spoiler": true
+        },
+        {
+          "name": "Muzan Kibutsuji",
+          "slug": null,
+          "relation": "nemesis",
+          "detail": "The first demon, who killed his family and fears the earrings Tanjiro wears.",
+          "spoiler": false
+        }
+      ],
+      "strength": {
+        "rank": "Inheritor of Sun Breathing",
+        "summary": "He starts with Water Breathing, then learns Hinokami Kagura, his family's dance, which turns out to come from Sun Breathing, the original style. His keen nose finds the 'gap' in a demon's defence, and later he gains a slayer mark and reaches the Transparent World. By the first Infinity Castle film he and Giyu defeat Upper Three Akaza.",
+        "spoiler": true
+      },
+      "fights": [
+        {
+          "title": "The Hand Demon",
+          "animeSlug": "kimetsu-no-yaiba",
+          "episode": 4,
+          "summary": "At Final Selection he beheads the demon that had killed Sabito, Makomo and other students of Sakonji.",
+          "spoiler": false
+        },
+        {
+          "title": "Tanjiro vs. Kyogai",
+          "animeSlug": "kimetsu-no-yaiba",
+          "episode": 13,
+          "summary": "Inside the drum demon's shifting mansion, he adapts to the rooms rotating with each beat and beheads him.",
+          "spoiler": false
+        },
+        {
+          "title": "Tanjiro vs. Rui",
+          "animeSlug": "kimetsu-no-yaiba",
+          "episode": 19,
+          "summary": "Trapped in Rui's threads, he switches to his father's Hinokami Kagura and nearly cuts off the Lower Five's head.",
+          "spoiler": true
+        },
+        {
+          "title": "Tanjiro vs. Enmu",
+          "animeSlug": "kimetsu-no-yaiba-mugen-ressha-hen",
+          "episode": 5,
+          "summary": "With Inosuke he hunts for the demon's neck in the locomotive while Enmu's flesh spreads through the train.",
+          "spoiler": true
+        },
+        {
+          "title": "Tanjiro vs. Gyutaro",
+          "animeSlug": "kimetsu-no-yaiba-yuukaku-hen",
+          "episode": 10,
+          "summary": "Wounded and poisoned, he headbutts Upper Six, stabs him with a poisoned kunai and keeps forcing his blade into Gyutaro's neck as his friends hold Daki off.",
+          "spoiler": true
+        },
+        {
+          "title": "Tanjiro vs. Hantengu",
+          "animeSlug": "kimetsu-no-yaiba-katanakaji-no-satohen",
+          "episode": 11,
+          "summary": "Using a Thunder Breathing step Zenitsu taught him and an ancient sword, he chases down Hantengu's true body.",
+          "spoiler": true
+        },
+        {
+          "title": "Tanjiro and Giyu vs. Akaza",
+          "animeSlug": "Kimetsu-no-Yaiba-Mugenjou-hen",
+          "episode": null,
+          "summary": "Inside the Infinity Castle he reaches the Transparent World and beheads Upper Three.",
+          "spoiler": true
+        }
+      ],
+      "keyEpisodes": [
+        {
+          "animeSlug": "kimetsu-no-yaiba",
+          "episode": 1,
+          "why": "His family is killed and he chooses to save his demon sister.",
+          "spoiler": false
+        },
+        {
+          "animeSlug": "kimetsu-no-yaiba",
+          "episode": 19,
+          "why": "Hinokami Kagura, the moment the series became a phenomenon.",
+          "spoiler": true
+        },
+        {
+          "animeSlug": "kimetsu-no-yaiba",
+          "episode": 22,
+          "why": "The Hashira put him and Nezuko on trial.",
+          "spoiler": true
+        },
+        {
+          "animeSlug": "kimetsu-no-yaiba-mugen-ressha-hen",
+          "episode": 7,
+          "why": "Rengoku dies after his fight with Akaza and tells him to set his heart ablaze.",
+          "spoiler": true
+        },
+        {
+          "animeSlug": "kimetsu-no-yaiba-yuukaku-hen",
+          "episode": 1,
+          "why": "Rengoku's father tells him about Sun Breathing.",
+          "spoiler": true
+        },
+        {
+          "animeSlug": "kimetsu-no-yaiba-katanakaji-no-satohen",
+          "episode": 11,
+          "why": "He must choose between shielding Nezuko from the sun and saving the villagers.",
+          "spoiler": true
+        },
+        {
+          "animeSlug": "Kimetsu-no-Yaiba-Hashira-Geikohen",
+          "episode": 8,
+          "why": "Muzan attacks the Ubuyashiki mansion and Tanjiro is pulled into the Infinity Castle.",
+          "spoiler": true
+        }
+      ],
+      "ages": [
+        {
+          "when": "When his family is killed",
+          "age": 13,
+          "spoiler": false
+        },
+        {
+          "when": "After two years of training, from Final Selection on",
+          "age": 15,
+          "spoiler": false
+        },
+        {
+          "when": "Final battle with Muzan (manga)",
+          "age": "15 to 16 (sources differ)",
+          "spoiler": true
+        }
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Tanjiro_Kamado",
+        "https://en.wikipedia.org/wiki/Demon_Slayer:_Kimetsu_no_Yaiba_season_1",
+        "https://en.wikipedia.org/wiki/Demon_Slayer:_Kimetsu_no_Yaiba_season_2",
+        "https://en.wikipedia.org/wiki/Demon_Slayer:_Kimetsu_no_Yaiba_season_3",
+        "https://en.wikipedia.org/wiki/Demon_Slayer:_Kimetsu_no_Yaiba_season_4",
+        "https://en.wikipedia.org/wiki/Demon_Slayer:_Kimetsu_no_Yaiba_–_The_Movie:_Infinity_Castle",
+        "https://anilist.co/character/126071",
+        "https://www.animenewsnetwork.com/review/demon-slayer-kimetsu-no-yaiba/episode-19/.149929",
+        "https://www.fandompost.com/2019/08/15/demon-slayer-kimetsu-no-yaiba-episodes-18-19-anime-review/",
+        "https://escapistmagazine.com/how-old-is-tanjiro-in-demon-slayer-answered",
+        "https://www.sportskeeda.com/anime/how-old-tanjiro-demon-slayer-season-3-explained",
+        "https://www.cheatsheet.com/entertainment/demon-slayer-how-old-tanjiro-main-characters.html",
+        "https://designbeep.com/2026/05/13/does-tanjiro-become-a-demon/",
+        "https://comicbook.com/anime/feature/demon-slayer-infinity-castle-part-2-shares-major-release-date-update-it-will-disappoint-fans/",
+        "https://respawn.outlookindia.com/pop-culture/pop-culture-news/demon-slayer-infinity-castle-part-2-delayed-2027"
+      ],
+      "confidence": "medium"
+    },
+    "itachi-uchiha": {
+      "qualities": [
+        {
+          "trait": "Calm and composed",
+          "detail": "When he walks back into the Leaf as a wanted man, he barely raises his voice, and he takes Kakashi down without breaking a sweat."
+        },
+        {
+          "trait": "Devoted older brother",
+          "detail": "As a child he answers Sasuke's pleas to train with a poke to the forehead and a promise of 'next time', a gesture that comes back at the very end."
+        },
+        {
+          "trait": "Loyal to the village",
+          "detail": "Even after everything the Leaf asked of him, he tells Kabuto he still counts himself a ninja of the Hidden Leaf."
+        },
+        {
+          "trait": "Haunted by war",
+          "detail": "Seeing the battlefield as a small child leaves him hating conflict and willing to pay almost any price for peace."
+        },
+        {
+          "trait": "Humble about himself",
+          "detail": "When Sasuke insists his brother was perfect, Itachi flatly disagrees and admits his own mistakes."
+        }
+      ],
+      "backstory": "Itachi was the elder son of Fugaku Uchiha, head of the Uchiha clan and its village police force, and the prodigy against whom everyone measured the younger Sasuke. Growing up during the Third Great Ninja War gave him a lasting horror of bloodshed. After the Nine-Tails' attack on the Leaf, the village distrusted the Uchiha, and the clan began to plan a coup. Itachi joined the Anbu and quietly passed the clan's plans to the village leadership. His closest friend, Shisui, tried to stop the coup with his eye technique, but Danzo Shimura stole one of his eyes; Shisui gave Itachi the other and took his own life, and his death awakened Itachi's Mangekyo Sharingan. Given the order to wipe out his clan to prevent a civil war, Itachi accepted on condition that Sasuke be spared. At about thirteen he killed the Uchiha, including his parents, then made Sasuke believe he had done it only to measure his own abilities, so that his brother would grow strong enough to kill him one day. He left the village a criminal and joined Akatsuki to keep watch on it from the inside.",
+      "journey": [
+        {
+          "stage": "Return to the Leaf (Naruto)",
+          "summary": "After the Third Hokage's death, Itachi and his partner Kisame slip into the Leaf, defeat Asuma, Kurenai and Kakashi, and reveal that Akatsuki is after Naruto. When Sasuke catches up with them, Itachi crushes him with the Tsukuyomi and tells him he is still too weak."
+        },
+        {
+          "stage": "Kazekage Rescue (Shippuden)",
+          "summary": "While Akatsuki seals the One-Tail, a copy of Itachi built on another ninja's body holds off Kakashi's team, until Naruto and Kakashi defeat it and find a Sand jonin underneath."
+        },
+        {
+          "stage": "Waiting for Sasuke (Shippuden)",
+          "summary": "Hearing that Sasuke has killed Orochimaru, Itachi prepares for their reunion. Before it, he quietly meets Naruto, tests how he feels about Sasuke and leaves something with him as insurance."
+        },
+        {
+          "stage": "The brothers' battle (Shippuden)",
+          "summary": "At the Uchiha hideout he fights Sasuke with genjutsu, Amaterasu and finally Susanoo, rips the remnants of Orochimaru out of his brother, and dies with one last poke to Sasuke's forehead. Afterwards Tobi tells Sasuke the truth about the massacre."
+        },
+        {
+          "stage": "Reanimated (Shippuden)",
+          "summary": "Kabuto brings him back as a corpse soldier during the Fourth Great Ninja War. The crow he gave Naruto frees him from Kabuto's control; he helps Naruto and Killer Bee seal Nagato, then fights Kabuto beside Sasuke and traps him in Izanami. He tells Sasuke the full story, says he will love him always, and passes on."
+        },
+        {
+          "stage": "Itachi's Story: Light and Darkness (Shippuden)",
+          "summary": "Late in Shippuden, as Sasuke waits out the Infinite Tsukuyomi, a long flashback replays Itachi's whole life, from his childhood in the war to Shisui's death, the Anbu years and his time in Akatsuki."
+        }
+      ],
+      "lessons": [
+        {
+          "lesson": "The truth about a person is often hidden.",
+          "why": "For most of the series Itachi is the villain of Sasuke's life; only after his death do we learn what he gave up."
+        },
+        {
+          "lesson": "Protecting someone isn't the same as deciding for them.",
+          "why": "Itachi tries to control Sasuke's path by himself, and in the end admits he should have trusted his brother with the truth."
+        },
+        {
+          "lesson": "Love can outlast a terrible choice.",
+          "why": "His last words to Sasuke are not a justification, just a promise that he will love him whatever he does next."
+        }
+      ],
+      "relationships": [
+        {
+          "name": "Sasuke Uchiha",
+          "slug": "sasuke-uchiha",
+          "relation": "younger brother",
+          "detail": "The one Uchiha he spares, and the brother he sets on a path of revenge so that Sasuke will someday be strong enough to defeat him.",
+          "spoiler": false
+        },
+        {
+          "name": "Kisame Hoshigaki",
+          "slug": null,
+          "relation": "Akatsuki partner",
+          "detail": "The shark-like swordsman who travels with him and comes to care about him more than an Akatsuki partner usually would.",
+          "spoiler": false
+        },
+        {
+          "name": "Kakashi Hatake",
+          "slug": "kakashi-hatake",
+          "relation": "opponent",
+          "detail": "Kakashi fights him when he returns to the Leaf and is left unconscious by the Tsukuyomi.",
+          "spoiler": false
+        },
+        {
+          "name": "Naruto Uzumaki",
+          "slug": "naruto-uzumaki",
+          "relation": "Akatsuki target",
+          "detail": "Akatsuki wants the Nine-Tails inside him, but Itachi comes to trust Naruto to look after Sasuke and the village.",
+          "spoiler": false
+        },
+        {
+          "name": "Shisui Uchiha",
+          "slug": null,
+          "relation": "best friend",
+          "detail": "A fellow Uchiha who shared his love of the village; his death awakens Itachi's Mangekyo Sharingan.",
+          "spoiler": true
+        },
+        {
+          "name": "Danzo Shimura",
+          "slug": null,
+          "relation": "the one who gave the order",
+          "detail": "The Leaf elder who presses him to wipe out the Uchiha; Itachi warns him never to touch Sasuke.",
+          "spoiler": true
+        },
+        {
+          "name": "Fugaku and Mikoto Uchiha",
+          "slug": null,
+          "relation": "parents",
+          "detail": "The clan head and his wife, whom Itachi kills on the night of the massacre.",
+          "spoiler": false
+        },
+        {
+          "name": "Nagato (Pain)",
+          "slug": "pain",
+          "relation": "reanimated partner",
+          "detail": "Brought back alongside Itachi in the war; once free, Itachi seals him away with Naruto and Killer Bee's help.",
+          "spoiler": true
+        }
+      ],
+      "strength": {
+        "rank": "Uchiha prodigy and S-rank rogue ninja",
+        "summary": "A master of genjutsu, he can trap someone in the Tsukuyomi, where days of torture pass in an instant, and burn targets with the black flames of Amaterasu. His Susanoo carries the Totsuka Blade, which seals whoever it pierces, and the Yata Mirror, which blocks almost any attack. Late in the war he uses Izanami to stop Kabuto. A hidden illness was weakening him for years before his final fight.",
+        "spoiler": true
+      },
+      "fights": [
+        {
+          "title": "Itachi vs. Kakashi",
+          "animeSlug": "naruto",
+          "episode": 82,
+          "summary": "Sharingan meets Sharingan on the river, and one Tsukuyomi leaves Kakashi collapsed.",
+          "spoiler": false
+        },
+        {
+          "title": "Brother vs. brother at the inn",
+          "animeSlug": "naruto",
+          "episode": 85,
+          "summary": "Sasuke charges in with the Chidori; Itachi knocks the attack aside, pins him against the wall and traps him in the Tsukuyomi.",
+          "spoiler": false
+        },
+        {
+          "title": "Itachi's copy vs. Team Kakashi",
+          "animeSlug": "naruto-shippuden",
+          "episode": 13,
+          "summary": "Facing Kakashi, Naruto, Sakura and Chiyo, he pulls Naruto into a genjutsu full of crows.",
+          "spoiler": true
+        },
+        {
+          "title": "Itachi vs. Sasuke",
+          "animeSlug": "naruto-shippuden",
+          "episode": 138,
+          "summary": "Sasuke calls down Kirin, Itachi answers with Susanoo, seals Orochimaru away and collapses at his brother's feet.",
+          "spoiler": true
+        },
+        {
+          "title": "Freeing himself to fight Nagato",
+          "animeSlug": "naruto-shippuden",
+          "episode": 299,
+          "summary": "With Naruto and Killer Bee he breaks Nagato's Chibaku Tensei and seals him with the Totsuka Blade.",
+          "spoiler": true
+        },
+        {
+          "title": "Itachi and Sasuke vs. Kabuto",
+          "animeSlug": "naruto-shippuden",
+          "episode": 337,
+          "summary": "The brothers fight side by side until Itachi springs Izanami, trapping Kabuto in a loop of his own actions.",
+          "spoiler": true
+        }
+      ],
+      "keyEpisodes": [
+        {
+          "animeSlug": "naruto",
+          "episode": 81,
+          "why": "Itachi and Kisame enter the Leaf in his first proper appearance.",
+          "spoiler": false
+        },
+        {
+          "animeSlug": "naruto",
+          "episode": 131,
+          "why": "Sasuke remembers the night of the massacre and what Itachi told him.",
+          "spoiler": true
+        },
+        {
+          "animeSlug": "naruto-shippuden",
+          "episode": 126,
+          "why": "Itachi meets Naruto alone, shortly before his last fight.",
+          "spoiler": true
+        },
+        {
+          "animeSlug": "naruto-shippuden",
+          "episode": 138,
+          "why": "The brothers' battle ends with his death.",
+          "spoiler": true
+        },
+        {
+          "animeSlug": "naruto-shippuden",
+          "episode": 141,
+          "why": "Sasuke learns what Itachi was really doing.",
+          "spoiler": true
+        },
+        {
+          "animeSlug": "naruto-shippuden",
+          "episode": 339,
+          "why": "'I will love you always': his farewell to Sasuke.",
+          "spoiler": true
+        },
+        {
+          "animeSlug": "naruto-shippuden",
+          "episode": 455,
+          "why": "Itachi's Story shows Shisui's death and his rise in the Anbu.",
+          "spoiler": true
+        }
+      ],
+      "ages": [
+        {
+          "when": "The Uchiha massacre",
+          "age": 13,
+          "spoiler": false
+        },
+        {
+          "when": "Part I (Naruto)",
+          "age": "17–18",
+          "spoiler": false
+        },
+        {
+          "when": "At his death in Part II (Naruto: Shippuden)",
+          "age": 21,
+          "spoiler": true
+        }
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Itachi_Uchiha",
+        "https://en.wikipedia.org/wiki/Naruto_season_2",
+        "https://en.wikipedia.org/wiki/Naruto_season_3",
+        "https://en.wikipedia.org/wiki/Naruto:_Shippuden_season_1",
+        "https://en.wikipedia.org/wiki/Naruto:_Shippuden_season_6",
+        "https://en.wikipedia.org/wiki/Naruto:_Shippuden_season_14",
+        "https://en.wikipedia.org/wiki/Naruto:_Shippuden_season_15",
+        "https://en.wikipedia.org/wiki/Naruto:_Shippuden_season_20",
+        "https://anilist.co/character/14",
+        "https://myanimelist.net/character/14",
+        "https://fictionhorizon.com/how-old-was-itachi-when-he-killed-his-clan/",
+        "https://sportskeeda.com/anime/how-much-older-itachi-sasuke-naruto-age-difference-explained",
+        "https://slashfilm.com/1987502/why-itachi-uchiha-killed-clan-naruto",
+        "https://wiki.sportskeeda.com/naruto/who-is-itachi-in-naruto",
+        "https://tvtropes.org/pmwiki/pmwiki.php/Characters/NarutoItachiUchiha"
+      ],
+      "confidence": "medium"
     }
   }
 }
