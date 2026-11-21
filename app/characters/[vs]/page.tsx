@@ -24,6 +24,8 @@ async function load(params: Props["params"]) {
 }
 
 const cm = (n: number | null) => (n ? `${n} cm` : "not listed");
+/** "arcs" when a match-up spans two ("Sasuke Recovery Mission and Fourth Shinobi World War"). */
+const arcWord = (arc: string) => (/ and /.test(arc) ? "arcs" : "arc");
 /** "฿3B", "฿4.61B": short enough for a hero fact. */
 const bn = (n: number) => `฿${+(n / 1e9).toFixed(2)}B`;
 
@@ -38,8 +40,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         ? [`${v.an} vs ${v.bn}: Who Wins, Every Fight & Episode`, `${v.an} vs ${v.bn}: Who Wins & Which Episode`, `${v.an} vs ${v.bn}`]
         : [`${v.an} vs ${v.bn}: Who Wins, Which Chapter & Anime Episode`, `${v.an} vs ${v.bn}: Who Wins & Which Chapter`, `${v.an} vs ${v.bn}`]),
       description: fitDescription(animated
-        ? `${v.an} vs ${v.bn} in ${a.row.series}'s ${v.canon.arc} arc: who wins${n > 1 ? ` each of their ${n} fights` : ""}, with episode numbers, plus height, age${v.bounty ? ", bounty" : ""} and powers side by side.`
-        : `${v.an} vs ${v.bn} in ${a.row.series}'s ${v.canon.arc} arc: who wins, the manga chapters${ch ? ` (${ch[0]}-${ch[1]})` : ""}, when the anime gets there, and their heights, ages and powers.`),
+        ? `${v.an} vs ${v.bn} in ${a.row.series}'s ${v.canon.arc} ${arcWord(v.canon.arc)}: who wins${n > 1 ? ` each of their ${n} fights` : ""}, with episode numbers, plus height, age${v.bounty ? ", bounty" : ""} and powers side by side.`
+        : `${v.an} vs ${v.bn} in ${a.row.series}'s ${v.canon.arc} ${arcWord(v.canon.arc)}: who wins, the manga chapters${ch ? ` (${ch[0]}-${ch[1]})` : ""}, when the anime gets there, and their heights, ages and powers.`),
       alternates: { canonical: vsPath(v) },
     };
   }
@@ -62,7 +64,7 @@ export default async function CharacterVsPage({ params }: Props) {
   const bouts = canon?.bouts.map((f) => ({ ...f, eps: f.from ? (f.to ? `episodes ${f.from}–${f.to}` : `episode ${f.from}`) : f.chapters ? `manga chapters ${f.chapters[0]}–${f.chapters[1]} (not animated yet)` : "not animated yet" })) ?? [];
   const richer = v.bounty ? (v.bounty.a >= v.bounty.b ? a : b) : null;
   const faq: FaqItem[] = canon ? [
-    { q: `Who wins, ${v.an} or ${v.bn}?`, a: `Spoiler for the ${canon.arc} arc: ${canon.summary}` },
+    { q: `Who wins, ${v.an} or ${v.bn}?`, a: `Spoiler for the ${canon.arc} ${arcWord(canon.arc)}: ${canon.summary}` },
     { q: `What episode does ${v.an} fight ${v.bn}?`, a: [bouts.map((f) => `${f.title}: ${f.eps}.`).join(" "), canon.animeStatus].filter(Boolean).join(" ") },
     ...(v.bounty && richer ? [{ q: `Whose bounty is higher, ${v.an} or ${v.bn}?`, a: `${short(richer)}'s: ${a.row.name}'s latest bounty is ${berries(v.bounty.a)} and ${b.row.name}'s is ${berries(v.bounty.b)}.` }] : []),
     ...(a.row.heightCm && b.row.heightCm ? [{ q: `How tall are ${v.an} and ${v.bn}?`, a: `${a.row.name} is ${cm(a.row.heightCm)} and ${b.row.name} is ${cm(b.row.heightCm)}, as AniList lists them.` }] : []),
@@ -95,13 +97,13 @@ export default async function CharacterVsPage({ params }: Props) {
       {canon ? (
         <>
           <p className="mt-5 max-w-3xl text-base leading-7 text-ink/90">
-            {v.an} and {v.bn} fight {bouts.length > 1 ? `${bouts.length} times` : "one long duel"} in the {canon.arc} arc. The result{bouts.length > 1 ? " and every fight" : ""}, with {bouts.some((f) => f.from) ? "the episodes to watch" : "the manga chapters"}, {bouts.length > 1 ? "are" : "is"} under the spoiler toggle; their facts and powers are compared below it.
+            {v.an} and {v.bn} fight {bouts.length > 1 ? `${bouts.length} times` : "one long duel"} in the {canon.arc} {arcWord(canon.arc)}. The result{bouts.length > 1 ? " and every fight" : ""}, with {bouts.some((f) => f.from) ? "the episodes to watch" : "the manga chapters"}, {bouts.length > 1 ? "are" : "is"} under the spoiler toggle; their facts and powers are compared below it.
           </p>
           {canon.animeStatus && <p className="mt-3 max-w-3xl rounded-xl border border-line bg-white/[.03] p-3 text-sm text-ink/85"><span aria-hidden className="mr-1.5">📺</span>{canon.animeStatus}</p>}
           <section className="reveal mt-6" aria-labelledby="fights-h">
             <h2 id="fights-h" className="h-section mb-3">Who wins: {bouts.length > 1 ? "every fight" : "the fight"}</h2>
             <details className="group rounded-xl border border-dashed border-line bg-white/[.02] p-4 open:border-solid">
-              <summary className="cursor-pointer list-none text-sm font-semibold text-ink"><span aria-hidden className="mr-1.5">🔒</span>Who wins and how <span className="font-normal text-muted group-open:hidden">· spoilers for the {canon.arc} arc, tap to show</span></summary>
+              <summary className="cursor-pointer list-none text-sm font-semibold text-ink"><span aria-hidden className="mr-1.5">🔒</span>Who wins and how <span className="font-normal text-muted group-open:hidden">· spoilers for the {canon.arc} {arcWord(canon.arc)}, tap to show</span></summary>
               <p className="mt-3 text-sm leading-6 text-ink/90">{canon.summary}</p>
               <ol className="mt-4 grid gap-3 sm:grid-cols-2">
                 {bouts.map((f) => (
