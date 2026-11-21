@@ -20,12 +20,13 @@ test("character match-ups: both sides resolve, and same-series pairs carry a sou
 });
 
 test("bounties rise in order, only the first is open, and each has two sources", () => {
-  for (const slug of ["luffy-monkey-d", "zoro-roronoa", "sanji", "trafalgar-law", "one-piece-kaido"]) {
+  for (const slug of ["luffy-monkey-d", "zoro-roronoa", "sanji", "trafalgar-law", "one-piece-kaido", "shanks", "usopp", "ace-portgas-d", "nami", "teach-marshall-d", "robin-nico"]) {
     const { entries: b, sources } = characterBounties(slug)!;
     assert.deepEqual(b.map((x) => x.amount), [...b.map((x) => x.amount)].sort((x, y) => x - y), slug);
     assert.ok(b.every((x, i) => x.spoiler === i > 0), `${slug}: spoiler flags`);
     assert.ok(sources.length >= 2, slug);
   }
   assert.equal(characterBounties("luffy-monkey-d")!.entries.at(-1)!.amount, 3_000_000_000);
+  assert.match(bountyAnswer("ace-portgas-d")!, /final bounty/);
   assert.match(bountyAnswer("luffy-monkey-d")!, /^3,000,000,000 berries, since the Wano Country arc\. Spoiler/);
 });

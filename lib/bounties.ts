@@ -9,7 +9,13 @@ export type Bounty = {
   /** The poster's condition line when it isn't "DEAD OR ALIVE" (Sanji's "ONLY ALIVE"). */
   poster?: string;
 };
-type Entry = { entries: Bounty[]; sources: string[]; /** The name as fans write it, for characters without a checked note ("Trafalgar Law"). */ name?: string };
+type Entry = {
+  entries: Bounty[]; sources: string[];
+  /** The name as fans write it, for characters without a checked note ("Trafalgar Law"). */
+  name?: string;
+  /** The character's bounty ended with them (Ace at Marineford): "final bounty", not "since". */
+  final?: boolean;
+};
 const D = data as unknown as { checked: string; characters: Record<string, Entry> };
 export const BOUNTIES_CHECKED = D.checked;
 
@@ -21,6 +27,7 @@ export function bountyAnswer(slug: string): string | null {
   const b = characterBounties(slug)?.entries;
   if (!b?.length) return null;
   const now = b[b.length - 1];
+  if (characterBounties(slug)!.final) return `${bountyFigure(now.amount)} berries, the final bounty, in force at the time of the ${now.arc} arc.`;
   return b.length === 1
     ? `${bountyFigure(now.amount)} berries, since the ${now.arc} arc.`
     : `${bountyFigure(now.amount)} berries, since the ${now.arc} arc. Spoiler, every bounty: ${b.map((x) => `${bountyFigure(x.amount)} (${x.arc})`).join(", ")}.`;

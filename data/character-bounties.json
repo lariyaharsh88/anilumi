@@ -74,7 +74,7 @@
       "entries": [
         {
           "amount": 60000000,
-          "arc": "Arabasta",
+          "arc": "Alabasta",
           "why": "His first bounty, for cutting down Mr. 1 (Daz Bonez) of Baroque Works in Arabasta and earlier beating around a hundred bounty hunters at Whisky Peak. The poster went out alongside Luffy's 100 million one.",
           "chapter": 213,
           "episode": 128,
@@ -252,6 +252,185 @@
         "https://comicbook.com/anime/news/one-piece-four-emperors-yonko-bounties-update-anime",
         "https://en.wikipedia.org/wiki/One_Piece_season_20",
         "https://www.cbr.com/one-piece-highest-bounties"
+      ]
+    },
+    "shanks": {
+      "entries": [
+        {
+          "amount": 4048900000,
+          "arc": "Wano Country",
+          "why": "His bounty as one of the Four Emperors, revealed when the Marines list the Emperors' bounties. It is the highest of any Emperor now active, even though he never seeks out fights. The numbers 4-8-9 can be read as \"shi-ya-ku\", a pun on Shanks.",
+          "chapter": 957,
+          "episode": 958,
+          "spoiler": false
+        }
+      ],
+      "sources": [
+        "https://onepiece.fandom.com/wiki/Shanks",
+        "https://en.wikipedia.org/wiki/Four_Emperors_(One_Piece)",
+        "https://comicbook.com/anime/news/one-piece-four-emperors-yonko-bounties-update-anime",
+        "https://comicbook.com/anime/news/one-piece-bounties-yonko-blackbeard-shanks-kaido-big-mom-manga",
+        "https://www.ibtimes.com/one-piece-spoilers-new-bounties-released-god-valley-incident-revisited-3125028",
+        "https://ciatr.jp/topics/320974",
+        "https://comicbook.com/anime/news/one-piece-red-shanks-bounty-young/",
+        "https://sportskeeda.com/anime/news-one-piece-film-red-spoiler-reveals-shanks-old-bounty"
+      ]
+    },
+    "usopp": {
+      "entries": [
+        {
+          "amount": 200000000,
+          "arc": "Dressrosa",
+          "why": "His first bounty under his own name, after he knocked out Sugar and broke the toy curse at Dressrosa. The poster uses an unflattering photo of him passed out and calls him \"God\" Usopp, a title fans and the press gave him there. Before this, his only bounty was 30 million as \"Sogeking\", his masked alter ego, from Enies Lobby.",
+          "chapter": 801,
+          "episode": 746,
+          "spoiler": false
+        },
+        {
+          "amount": 500000000,
+          "arc": "Wano Country",
+          "why": "Raised after the raid on Onigashima, where he got the credit for taking down Kaido's officers Page One and Ulti, though he did not really beat either of them alone. The poster still says \"God\" Usopp, and the amount matches the 500 million Doflamingo put on his head in his Dressrosa game.",
+          "chapter": 1058,
+          "episode": 1086,
+          "spoiler": true
+        }
+      ],
+      "sources": [
+        "https://onepiece.fandom.com/wiki/Usopp",
+        "https://onepiece.fandom.com/wiki/Usopp/Personality_and_Relationships",
+        "https://en.wikipedia.org/wiki/Usopp",
+        "https://gamerant.com/one-piece-every-straw-hat-pirate-ranked-according-bounty/",
+        "https://www.cbr.com/one-piece-straw-hat-post-wano-bounties-explained/",
+        "https://comicbook.com/anime/news/one-piece-anime-straw-hat-crew-bounties/",
+        "https://en.wikipedia.org/wiki/Nico_Robin"
+      ]
+    },
+    "ace-portgas-d": {
+      "final": true,
+      "entries": [
+        {
+          "amount": 550000000,
+          "arc": "Marineford",
+          "why": "His bounty as second division commander of the Whitebeard Pirates, still in force when he was executed at Marineford. It was the highest bounty revealed before the timeskip, and the same as his crewmate Little Oars Jr.'s. The figure was first shown at the One Piece Ten exhibition, not in a chapter.",
+          "chapter": null,
+          "episode": null,
+          "spoiler": false
+        }
+      ],
+      "sources": [
+        "https://onepiece.fandom.com/wiki/Portgas_D._Ace",
+        "https://onepiece.fandom.com/wiki/Bounty",
+        "https://www.cbr.com/one-piece-trivia-portgas-d-ace/",
+        "https://gamerant.com/one-piece-inactive-bounties/"
+      ]
+    },
+    "nami": {
+      "entries": [
+        {
+          "amount": 16000000,
+          "arc": "Enies Lobby",
+          "why": "Her first bounty, for her part in the attack on Enies Lobby. The photo is a posed pin-up by a pool, which worried Genzo back home more than the bounty itself, and she was the only Straw Hat who complained about getting a bounty at all.",
+          "chapter": 435,
+          "episode": 320,
+          "spoiler": false
+        },
+        {
+          "amount": 66000000,
+          "arc": "Dressrosa",
+          "why": "Raised by 50 million after the crew helped bring down Doflamingo at Dressrosa. The new photo is another posed poolside shot.",
+          "chapter": 801,
+          "episode": 746,
+          "spoiler": true
+        },
+        {
+          "amount": 366000000,
+          "arc": "Wano Country",
+          "why": "Raised by 300 million after the raid on Onigashima, where she beat Ulti with help from Zeus, the thundercloud she took from Big Mom. It is her current bounty.",
+          "chapter": 1058,
+          "episode": 1086,
+          "spoiler": true
+        }
+      ],
+      "sources": [
+        "https://onepiece.fandom.com/wiki/Nami",
+        "https://onepiece.fandom.com/wiki/Nami/Personality_and_Relationships",
+        "https://gamerant.com/one-piece-every-straw-hat-pirate-ranked-according-bounty/",
+        "https://www.cbr.com/one-piece-straw-hat-post-wano-bounties-explained/",
+        "https://comicbook.com/anime/news/one-piece-anime-straw-hat-crew-bounties/",
+        "https://en.wikipedia.org/wiki/One_Piece_season_9",
+        "https://en.wikipedia.org/wiki/Nico_Robin"
+      ]
+    },
+    "teach-marshall-d": {
+      "name": "Blackbeard",
+      "entries": [
+        {
+          "amount": 2247600000,
+          "arc": "Marineford",
+          "why": "His first money bounty, set during the timeskip after he left the Warlords, broke prisoners out of Impel Down and took Whitebeard's place as an Emperor. Before this, Kuma said his bounty was zero, and it was only revealed during Wano.",
+          "chapter": 925,
+          "episode": 917,
+          "spoiler": false
+        },
+        {
+          "amount": 3996000000,
+          "arc": "Wano Country",
+          "why": "Raised after Kaido and Big Mom fell at Wano, for reasons the story does not give. It is the second highest among the current Emperors after Shanks, and 9-6 can be read as \"kuro\", meaning black.",
+          "chapter": 1059,
+          "episode": null,
+          "spoiler": true
+        }
+      ],
+      "sources": [
+        "https://onepiece.fandom.com/wiki/Marshall_D._Teach",
+        "https://comicbook.com/anime/news/one-piece-blackbeard-bounty-update-wano-manga",
+        "https://criticalhits.com.br/anime/episodio-917-de-one-piece-nos-revela-o-valor-da-recompensa-do-yonkou-barba-negra/",
+        "https://gamerant.com/one-piece-blackbeard-3996-billion-berries-bounty/",
+        "https://sportskeeda.com/anime/one-piece-chapter-1059-initial-spoilers-new-pacifista-model-revealed-koby-captured"
+      ]
+    },
+    "robin-nico": {
+      "entries": [
+        {
+          "amount": 79000000,
+          "arc": "Alabasta",
+          "why": "Set when she was 8, after the Buster Call on Ohara, because she could read Poneglyphs; the Government claimed she sank six warships. The poster kept her childhood photo for twenty years, until a Marine in Arabasta recognised her from it.",
+          "chapter": 201,
+          "episode": 122,
+          "spoiler": false
+        },
+        {
+          "amount": 80000000,
+          "arc": "Enies Lobby",
+          "why": "Raised by just 1 million after the crew rescued her from Enies Lobby, but the poster finally swapped her childhood picture for a new adult photo.",
+          "chapter": 435,
+          "episode": 320,
+          "spoiler": true
+        },
+        {
+          "amount": 130000000,
+          "arc": "Dressrosa",
+          "why": "Raised after the crew's part in toppling Doflamingo at Dressrosa.",
+          "chapter": 801,
+          "episode": 746,
+          "spoiler": true
+        },
+        {
+          "amount": 930000000,
+          "arc": "Wano Country",
+          "why": "Raised by 800 million after the raid on Onigashima, where she beat Black Maria, and because she can still read Poneglyphs. It is the highest Straw Hat bounty under a billion and her current one.",
+          "chapter": 1058,
+          "episode": 1086,
+          "spoiler": true
+        }
+      ],
+      "sources": [
+        "https://onepiece.fandom.com/wiki/Nico_Robin",
+        "https://onepiece.fandom.com/wiki/Nico_Robin/History",
+        "https://en.wikipedia.org/wiki/Nico_Robin",
+        "https://www.cbr.com/one-piece-straw-hat-post-wano-bounties-explained/",
+        "https://comicbook.com/anime/news/one-piece-anime-straw-hat-crew-bounties/",
+        "https://sportskeeda.com/anime/one-piece-10-women-highest-bounties-wano-arc"
       ]
     }
   }

@@ -172,7 +172,9 @@ export function CharacterBounty({ slug, name: pageName }: { slug: string; name: 
         </figure>
         <div>
           <p className="text-sm text-ink/90">
-            {name}&apos;s bounty is <strong className="text-ink">{bountyFigure(current.amount)} berries</strong>, since the {current.arc} arc.
+            {b.final
+              ? <>{name}&apos;s final bounty was <strong className="text-ink">{bountyFigure(current.amount)} berries</strong>, in force at the time of the {current.arc} arc.</>
+              : <>{name}&apos;s bounty is <strong className="text-ink">{bountyFigure(current.amount)} berries</strong>, since the {current.arc} arc.</>}
             {rises > 0 && ` It has risen ${rises} ${rises === 1 ? "time" : "times"} since the first poster; the later bounties are under the spoiler toggle, because each one names a defeated enemy.`}
           </p>
           {list.open.length > 0 && <ul className="card mt-3 divide-y divide-line/60 px-3">{list.open.map(item)}</ul>}
