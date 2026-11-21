@@ -7,12 +7,13 @@ import Faq, { type FaqItem } from "@/components/Faq";
 import CharacterCompare from "@/components/CharacterCompare";
 import { webPage } from "@/lib/ld";
 import { fitTitle, fitDescription } from "@/lib/titles";
-import { CHARACTER_VS, characterVs, vsPath, vsSides, berries, type VsSide } from "@/lib/charvs";
+import { characterVs, vsPath, vsSides, berries, type VsSide } from "@/lib/charvs";
 import { episodePath } from "@/lib/kitsu";
 
 export const revalidate = 86400;
-export const dynamicParams = false;
-export const generateStaticParams = () => CHARACTER_VS.map((v) => ({ vs: v.slug }));
+// Rendered on first request like the other content pages (OpenNext 404s build-time pages with dynamicParams = false);
+// slugs not in CHARACTER_VS are notFound() in load().
+export async function generateStaticParams() { return []; }
 
 type Props = { params: Promise<{ vs: string }> };
 
