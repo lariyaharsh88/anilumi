@@ -392,10 +392,10 @@ export default async function AnimePage({ params }: Props) {
         <div className="absolute inset-0 -z-10" aria-hidden>
           {cover && (
             <div className="parallax-bg absolute inset-0">
-              <Image src={cover} alt="" fill className="scale-110 object-cover opacity-40 blur-2xl" sizes="96px" quality={40} loading="eager" />
+              <Image src={cover} alt={`${a.title} cover art`} fill className="scale-110 object-cover opacity-40 blur-2xl" sizes="96px" quality={40} loading="eager" />
             </div>
           )}
-          {coverLarge && <Backdrop src={coverLarge} className="opacity-[.42] [mask-image:linear-gradient(180deg,#000_55%,transparent)]" position="center 25%" />}
+          {coverLarge && <Backdrop src={coverLarge} alt={`${a.title} key art`} className="opacity-[.42] [mask-image:linear-gradient(180deg,#000_55%,transparent)]" position="center 25%" />}
           <div className="aurora opacity-50"><span /></div>
           <div className="absolute inset-0 veil-down" />
           <div className="absolute inset-0 veil-side max-lg:hidden" />
