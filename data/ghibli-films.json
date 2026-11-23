@@ -1,0 +1,1204 @@
+{
+ "checked": "2026-11-23",
+ "films": [
+  {
+   "t": "Nausicaä of the Valley of the Wind",
+   "year": 1984,
+   "director": "Hayao Miyazaki",
+   "kitsu": "nausicaa-of-the-valley-of-the-wind",
+   "regions": {
+    "US": [
+     {
+      "service": "HBO Max",
+      "kind": "subscription",
+      "audio": [
+       "ja",
+       "en"
+      ],
+      "url": "https://www.hbomax.com/movie/ed66031b-6353-4019-ba54-35488468a4db",
+      "confidence": "high"
+     }
+    ],
+    "IN": [
+     {
+      "service": "Netflix",
+      "kind": "subscription",
+      "audio": [
+       "ja",
+       "en"
+      ],
+      "url": "https://www.netflix.com/in/title/70019062",
+      "confidence": "high"
+     }
+    ],
+    "GB": [
+     {
+      "service": "Netflix",
+      "kind": "subscription",
+      "audio": [],
+      "url": "https://www.netflix.com/title/70019062",
+      "confidence": "high"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.justwatch.com/us/movie/nausicaa-of-the-valley-of-the-wind",
+    "https://www.justwatch.com/in/movie/nausicaa-of-the-valley-of-the-wind",
+    "https://www.justwatch.com/uk/movie/nausicaa-of-the-valley-of-the-wind",
+    "https://www.hbomax.com/movie/c357bcf1-2d7f-4393-b3f4-d1e779806228",
+    "https://www.hbomax.com/movie/ed66031b-6353-4019-ba54-35488468a4db",
+    "https://www.netflix.com/in/title/70019062"
+   ],
+   "note": "US: HBO Max lists two entries, a '(Japanese Audio)' version and an English-dub version (plain title). GB: on Netflix per JustWatch UK (also on the Standard with Ads plan); UK audio tracks not confirmed (netflix.com/gb redirected to the India site from this network and JustWatch UK has no audio data)."
+  },
+  {
+   "t": "Castle in the Sky",
+   "year": 1986,
+   "director": "Hayao Miyazaki",
+   "kitsu": "laputa-castle-in-the-sky",
+   "regions": {
+    "US": [
+     {
+      "service": "HBO Max",
+      "kind": "subscription",
+      "audio": [
+       "ja",
+       "en"
+      ],
+      "url": "https://www.hbomax.com/movie/f5a73239-ea89-43e5-83e7-b01a63769f03",
+      "confidence": "high"
+     }
+    ],
+    "IN": [
+     {
+      "service": "Netflix",
+      "kind": "subscription",
+      "audio": [
+       "ja",
+       "en"
+      ],
+      "url": "https://www.netflix.com/in/title/60027393",
+      "confidence": "high"
+     }
+    ],
+    "GB": [
+     {
+      "service": "Netflix",
+      "kind": "subscription",
+      "audio": [],
+      "url": "https://www.netflix.com/title/60027393",
+      "confidence": "high"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.justwatch.com/us/movie/castle-in-the-sky",
+    "https://www.justwatch.com/in/movie/castle-in-the-sky",
+    "https://www.justwatch.com/uk/movie/castle-in-the-sky",
+    "https://www.hbomax.com/movie/872e2c55-c8f1-49a8-9cfd-0ac782e532d1",
+    "https://www.hbomax.com/movie/f5a73239-ea89-43e5-83e7-b01a63769f03",
+    "https://www.netflix.com/in/title/60027393"
+   ],
+   "note": "US: HBO Max lists two entries, a '(Japanese Audio)' version and an English-dub version (plain title). GB: on Netflix per JustWatch UK (also on the Standard with Ads plan); UK audio tracks not confirmed (netflix.com/gb redirected to the India site from this network and JustWatch UK has no audio data)."
+  },
+  {
+   "t": "My Neighbor Totoro",
+   "year": 1988,
+   "director": "Hayao Miyazaki",
+   "kitsu": "my-neighbor-totoro",
+   "regions": {
+    "US": [
+     {
+      "service": "HBO Max",
+      "kind": "subscription",
+      "audio": [
+       "ja",
+       "en"
+      ],
+      "url": "https://www.hbomax.com/movie/5e1eb7b5-c256-402d-b63a-4ce7676a3c8e",
+      "confidence": "high"
+     }
+    ],
+    "IN": [
+     {
+      "service": "Netflix",
+      "kind": "subscription",
+      "audio": [
+       "ja",
+       "en",
+       "hi"
+      ],
+      "url": "https://www.netflix.com/in/title/60032294",
+      "confidence": "high"
+     }
+    ],
+    "GB": [
+     {
+      "service": "Netflix",
+      "kind": "subscription",
+      "audio": [],
+      "url": "https://www.netflix.com/title/60032294",
+      "confidence": "high"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.justwatch.com/us/movie/my-neighbor-totoro",
+    "https://www.justwatch.com/in/movie/my-neighbor-totoro",
+    "https://www.justwatch.com/uk/movie/my-neighbor-totoro",
+    "https://www.hbomax.com/movie/24ec30ba-4fa5-4c95-b474-f6a7fea66e73",
+    "https://www.hbomax.com/movie/5e1eb7b5-c256-402d-b63a-4ce7676a3c8e",
+    "https://www.netflix.com/in/title/60032294"
+   ],
+   "note": "US: HBO Max lists two entries, a '(Japanese Audio)' version and an English-dub version (plain title). IN: Netflix India title page lists Hindi audio. GB: on Netflix per JustWatch UK (also on the Standard with Ads plan); UK audio tracks not confirmed (netflix.com/gb redirected to the India site from this network and JustWatch UK has no audio data)."
+  },
+  {
+   "t": "Grave of the Fireflies",
+   "year": 1988,
+   "director": "Isao Takahata",
+   "kitsu": "grave-of-the-fireflies",
+   "regions": {
+    "US": [
+     {
+      "service": "Netflix",
+      "kind": "subscription",
+      "audio": [],
+      "url": "https://www.netflix.com/title/557010",
+      "confidence": "high"
+     }
+    ],
+    "IN": [
+     {
+      "service": "Netflix",
+      "kind": "subscription",
+      "audio": [
+       "ja",
+       "en"
+      ],
+      "url": "https://www.netflix.com/in/title/557010",
+      "confidence": "high"
+     }
+    ],
+    "GB": [
+     {
+      "service": "Netflix",
+      "kind": "subscription",
+      "audio": [],
+      "url": "https://www.netflix.com/title/557010",
+      "confidence": "high"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.justwatch.com/us/movie/hotaru-no-haka",
+    "https://www.justwatch.com/in/movie/grave-of-the-fireflies",
+    "https://www.justwatch.com/uk/movie/grave-of-the-fireflies-1988",
+    "https://www.netflix.com/in/title/557010",
+    "https://about.netflix.com/en/news/grave-of-the-fireflies-streams-september-16"
+   ],
+   "note": "US: not on HBO Max (Ghibli's US deal via GKIDS excludes it; US rights are separate). JustWatch US lists Netflix (incl. Standard with Ads). US audio tracks not confirmed (Netflix geo-redirected this checker to India). IN: Netflix India audio is Japanese [Original] and English, plus audio-description tracks in both; no Hindi audio (Hindi subtitles only). GB: on Netflix per JustWatch UK (also on the Standard with Ads plan); UK audio tracks not confirmed (netflix.com/gb redirected to the India site from this network and JustWatch UK has no audio data). Unusually, Grave of the Fireflies IS on the same service as the rest in IN and GB (Netflix); only the US differs."
+  },
+  {
+   "t": "Kiki's Delivery Service",
+   "year": 1989,
+   "director": "Hayao Miyazaki",
+   "kitsu": "kiki-s-delivery-service",
+   "regions": {
+    "US": [
+     {
+      "service": "HBO Max",
+      "kind": "subscription",
+      "audio": [
+       "ja",
+       "en"
+      ],
+      "url": "https://www.hbomax.com/movie/b7788922-e4c4-42f8-918b-304a7a187f38",
+      "confidence": "high"
+     }
+    ],
+    "IN": [
+     {
+      "service": "Netflix",
+      "kind": "subscription",
+      "audio": [
+       "ja",
+       "en",
+       "hi"
+      ],
+      "url": "https://www.netflix.com/in/title/60027106",
+      "confidence": "high"
+     }
+    ],
+    "GB": [
+     {
+      "service": "Netflix",
+      "kind": "subscription",
+      "audio": [],
+      "url": "https://www.netflix.com/title/60027106",
+      "confidence": "high"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.justwatch.com/us/movie/kikis-delivery-service",
+    "https://www.justwatch.com/in/movie/kikis-delivery-service",
+    "https://www.justwatch.com/uk/movie/kikis-delivery-service",
+    "https://www.hbomax.com/movie/24568aaa-6cbd-4d57-8980-c1a709eac673",
+    "https://www.hbomax.com/movie/b7788922-e4c4-42f8-918b-304a7a187f38",
+    "https://www.netflix.com/in/title/60027106"
+   ],
+   "note": "US: HBO Max lists two entries, a '(Japanese Audio)' version and an English-dub version (plain title). IN: Netflix India title page lists Hindi audio. GB: on Netflix per JustWatch UK (also on the Standard with Ads plan); UK audio tracks not confirmed (netflix.com/gb redirected to the India site from this network and JustWatch UK has no audio data)."
+  },
+  {
+   "t": "Only Yesterday",
+   "year": 1991,
+   "director": "Isao Takahata",
+   "kitsu": "only-yesterday",
+   "regions": {
+    "US": [
+     {
+      "service": "HBO Max",
+      "kind": "subscription",
+      "audio": [
+       "ja",
+       "en"
+      ],
+      "url": "https://www.hbomax.com/movie/c66dcc25-7d67-45c9-8276-c1f4fb19a2b5",
+      "confidence": "high"
+     }
+    ],
+    "IN": [
+     {
+      "service": "Netflix",
+      "kind": "subscription",
+      "audio": [
+       "ja",
+       "en"
+      ],
+      "url": "https://www.netflix.com/in/title/80092922",
+      "confidence": "high"
+     }
+    ],
+    "GB": [
+     {
+      "service": "Netflix",
+      "kind": "subscription",
+      "audio": [],
+      "url": "https://www.netflix.com/title/80092922",
+      "confidence": "high"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.justwatch.com/us/movie/only-yesterday",
+    "https://www.justwatch.com/in/movie/only-yesterday",
+    "https://www.justwatch.com/uk/movie/only-yesterday",
+    "https://www.hbomax.com/movie/79b84af3-6273-4106-bfd4-d95796e132b3",
+    "https://www.hbomax.com/movie/c66dcc25-7d67-45c9-8276-c1f4fb19a2b5",
+    "https://www.netflix.com/in/title/80092922"
+   ],
+   "note": "US: HBO Max lists two entries, a '(Japanese Audio)' version and an English-dub version (plain title). GB: on Netflix per JustWatch UK (also on the Standard with Ads plan); UK audio tracks not confirmed (netflix.com/gb redirected to the India site from this network and JustWatch UK has no audio data)."
+  },
+  {
+   "t": "Porco Rosso",
+   "year": 1992,
+   "director": "Hayao Miyazaki",
+   "kitsu": "porco-rosso",
+   "regions": {
+    "US": [
+     {
+      "service": "HBO Max",
+      "kind": "subscription",
+      "audio": [
+       "ja",
+       "en"
+      ],
+      "url": "https://www.hbomax.com/movie/06951f7d-ecd0-4bc0-8cfa-867e3b443cb2",
+      "confidence": "high"
+     }
+    ],
+    "IN": [
+     {
+      "service": "Netflix",
+      "kind": "subscription",
+      "audio": [
+       "ja",
+       "en"
+      ],
+      "url": "https://www.netflix.com/in/title/70019060",
+      "confidence": "high"
+     }
+    ],
+    "GB": [
+     {
+      "service": "Netflix",
+      "kind": "subscription",
+      "audio": [],
+      "url": "https://www.netflix.com/title/70019060",
+      "confidence": "high"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.justwatch.com/us/movie/porco-rosso",
+    "https://www.justwatch.com/in/movie/porco-rosso",
+    "https://www.justwatch.com/uk/movie/porco-rosso",
+    "https://www.hbomax.com/movie/53201926-f79e-44ff-8667-a1cb771adadf",
+    "https://www.hbomax.com/movie/06951f7d-ecd0-4bc0-8cfa-867e3b443cb2",
+    "https://www.netflix.com/in/title/70019060"
+   ],
+   "note": "US: HBO Max lists two entries, a '(Japanese Audio)' version and an English-dub version (plain title). GB: on Netflix per JustWatch UK (also on the Standard with Ads plan); UK audio tracks not confirmed (netflix.com/gb redirected to the India site from this network and JustWatch UK has no audio data)."
+  },
+  {
+   "t": "Ocean Waves",
+   "year": 1993,
+   "director": "Tomomi Mochizuki",
+   "kitsu": "umi-ga-kikoeru",
+   "regions": {
+    "US": [
+     {
+      "service": "HBO Max",
+      "kind": "subscription",
+      "audio": [
+       "ja"
+      ],
+      "url": "https://www.hbomax.com/movie/e15404ab-052c-4bc7-bd26-942fe5d0d9c2",
+      "confidence": "high"
+     }
+    ],
+    "IN": [
+     {
+      "service": "Netflix",
+      "kind": "subscription",
+      "audio": [
+       "ja"
+      ],
+      "url": "https://www.netflix.com/in/title/80158668",
+      "confidence": "high"
+     }
+    ],
+    "GB": [
+     {
+      "service": "Netflix",
+      "kind": "subscription",
+      "audio": [],
+      "url": "https://www.netflix.com/title/80158668",
+      "confidence": "high"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.justwatch.com/us/movie/ocean-waves",
+    "https://www.justwatch.com/in/movie/ocean-waves",
+    "https://www.justwatch.com/uk/movie/ocean-waves",
+    "https://www.hbomax.com/movie/e15404ab-052c-4bc7-bd26-942fe5d0d9c2",
+    "https://www.netflix.com/in/title/80158668"
+   ],
+   "note": "US: only a '(Japanese Audio)' entry on HBO Max; no English dub found. IN: Netflix India lists Japanese [Original] audio only. Kitsu lists it as subtype 'special' (TV film), not 'movie'. GB: on Netflix per JustWatch UK (also on the Standard with Ads plan); UK audio tracks not confirmed (netflix.com/gb redirected to the India site from this network and JustWatch UK has no audio data)."
+  },
+  {
+   "t": "Pom Poko",
+   "year": 1994,
+   "director": "Isao Takahata",
+   "kitsu": "pom-poko",
+   "regions": {
+    "US": [
+     {
+      "service": "HBO Max",
+      "kind": "subscription",
+      "audio": [
+       "ja",
+       "en"
+      ],
+      "url": "https://www.hbomax.com/movie/43b30e7e-80ee-4d12-8f06-3b777fe33ce9",
+      "confidence": "high"
+     }
+    ],
+    "IN": [
+     {
+      "service": "Netflix",
+      "kind": "subscription",
+      "audio": [
+       "ja",
+       "en"
+      ],
+      "url": "https://www.netflix.com/in/title/70035036",
+      "confidence": "high"
+     }
+    ],
+    "GB": [
+     {
+      "service": "Netflix",
+      "kind": "subscription",
+      "audio": [],
+      "url": "https://www.netflix.com/title/70035036",
+      "confidence": "high"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.justwatch.com/us/movie/pom-poko",
+    "https://www.justwatch.com/in/movie/pom-poko",
+    "https://www.justwatch.com/uk/movie/pom-poko",
+    "https://www.hbomax.com/movie/f8a14d21-3e76-445e-bcc1-82e453c4ae24",
+    "https://www.hbomax.com/movie/43b30e7e-80ee-4d12-8f06-3b777fe33ce9",
+    "https://www.netflix.com/in/title/70035036"
+   ],
+   "note": "US: HBO Max lists two entries, a '(Japanese Audio)' version and an English-dub version (plain title). GB: on Netflix per JustWatch UK (also on the Standard with Ads plan); UK audio tracks not confirmed (netflix.com/gb redirected to the India site from this network and JustWatch UK has no audio data)."
+  },
+  {
+   "t": "Whisper of the Heart",
+   "year": 1995,
+   "director": "Yoshifumi Kondō",
+   "kitsu": "whisper-of-the-heart",
+   "regions": {
+    "US": [
+     {
+      "service": "HBO Max",
+      "kind": "subscription",
+      "audio": [
+       "ja",
+       "en"
+      ],
+      "url": "https://www.hbomax.com/movie/a6f09773-9e6c-43ee-9930-6e98da95dc94",
+      "confidence": "high"
+     }
+    ],
+    "IN": [
+     {
+      "service": "Netflix",
+      "kind": "subscription",
+      "audio": [
+       "ja",
+       "en"
+      ],
+      "url": "https://www.netflix.com/in/title/70045021",
+      "confidence": "high"
+     }
+    ],
+    "GB": [
+     {
+      "service": "Netflix",
+      "kind": "subscription",
+      "audio": [],
+      "url": "https://www.netflix.com/title/70045021",
+      "confidence": "high"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.justwatch.com/us/movie/whisper-of-the-heart",
+    "https://www.justwatch.com/in/movie/whisper-of-the-heart",
+    "https://www.justwatch.com/uk/movie/whisper-of-the-heart",
+    "https://www.hbomax.com/movie/89352fe1-965e-43a1-99b5-55250f55e073",
+    "https://www.hbomax.com/movie/a6f09773-9e6c-43ee-9930-6e98da95dc94",
+    "https://www.netflix.com/in/title/70045021"
+   ],
+   "note": "US: HBO Max lists two entries, a '(Japanese Audio)' version and an English-dub version (plain title). US: JustWatch US also lists Xumo Play (free with ads); the Xumo page is US-geo-locked and could not be checked, and this conflicts with HBO Max's exclusive US Ghibli deal, so treat as unverified. GB: on Netflix per JustWatch UK (also on the Standard with Ads plan); UK audio tracks not confirmed (netflix.com/gb redirected to the India site from this network and JustWatch UK has no audio data)."
+  },
+  {
+   "t": "Princess Mononoke",
+   "year": 1997,
+   "director": "Hayao Miyazaki",
+   "kitsu": "princess-mononoke",
+   "regions": {
+    "US": [
+     {
+      "service": "HBO Max",
+      "kind": "subscription",
+      "audio": [
+       "ja",
+       "en"
+      ],
+      "url": "https://www.hbomax.com/movie/e31c2dc2-cb8b-416e-9eda-769be3bb3a6b",
+      "confidence": "high"
+     }
+    ],
+    "IN": [
+     {
+      "service": "Netflix",
+      "kind": "subscription",
+      "audio": [
+       "ja",
+       "en",
+       "hi"
+      ],
+      "url": "https://www.netflix.com/in/title/28630857",
+      "confidence": "high"
+     }
+    ],
+    "GB": [
+     {
+      "service": "Netflix",
+      "kind": "subscription",
+      "audio": [],
+      "url": "https://www.netflix.com/title/28630857",
+      "confidence": "high"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.justwatch.com/us/movie/princess-mononoke",
+    "https://www.justwatch.com/in/movie/princess-mononoke",
+    "https://www.justwatch.com/uk/movie/princess-mononoke",
+    "https://www.hbomax.com/movie/792d242d-33e5-4e85-8637-1b859d1b3dcf",
+    "https://www.hbomax.com/movie/e31c2dc2-cb8b-416e-9eda-769be3bb3a6b",
+    "https://www.netflix.com/in/title/28630857"
+   ],
+   "note": "US: HBO Max lists two entries, a '(Japanese Audio)' version and an English-dub version (plain title). IN: Netflix India title page lists Hindi audio. GB: on Netflix per JustWatch UK (also on the Standard with Ads plan); UK audio tracks not confirmed (netflix.com/gb redirected to the India site from this network and JustWatch UK has no audio data)."
+  },
+  {
+   "t": "My Neighbors the Yamadas",
+   "year": 1999,
+   "director": "Isao Takahata",
+   "kitsu": "tonari-no-yamada-kun",
+   "regions": {
+    "US": [
+     {
+      "service": "HBO Max",
+      "kind": "subscription",
+      "audio": [
+       "ja",
+       "en"
+      ],
+      "url": "https://www.hbomax.com/movie/2912734a-7222-4650-8af3-05dfda83237d",
+      "confidence": "high"
+     }
+    ],
+    "IN": [
+     {
+      "service": "Netflix",
+      "kind": "subscription",
+      "audio": [
+       "ja",
+       "en"
+      ],
+      "url": "https://www.netflix.com/in/title/70035035",
+      "confidence": "high"
+     }
+    ],
+    "GB": [
+     {
+      "service": "Netflix",
+      "kind": "subscription",
+      "audio": [],
+      "url": "https://www.netflix.com/title/70035035",
+      "confidence": "high"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.justwatch.com/us/movie/my-neighbors-the-yamadas",
+    "https://www.justwatch.com/in/movie/my-neighbors-the-yamadas",
+    "https://www.justwatch.com/uk/movie/my-neighbors-the-yamadas",
+    "https://www.hbomax.com/movie/bd06b383-cc6f-484c-a4fd-a16f41dcec60",
+    "https://www.hbomax.com/movie/2912734a-7222-4650-8af3-05dfda83237d",
+    "https://www.netflix.com/in/title/70035035"
+   ],
+   "note": "US: HBO Max lists two entries, a '(Japanese Audio)' version and an English-dub version (plain title). GB: on Netflix per JustWatch UK (also on the Standard with Ads plan); UK audio tracks not confirmed (netflix.com/gb redirected to the India site from this network and JustWatch UK has no audio data)."
+  },
+  {
+   "t": "Spirited Away",
+   "year": 2001,
+   "director": "Hayao Miyazaki",
+   "kitsu": "spirited-away",
+   "regions": {
+    "US": [
+     {
+      "service": "HBO Max",
+      "kind": "subscription",
+      "audio": [
+       "ja",
+       "en"
+      ],
+      "url": "https://www.hbomax.com/movie/3deab668-d0a4-4a8d-9bc8-0952a0ad836e",
+      "confidence": "high"
+     }
+    ],
+    "IN": [
+     {
+      "service": "Netflix",
+      "kind": "subscription",
+      "audio": [
+       "ja",
+       "en",
+       "hi"
+      ],
+      "url": "https://www.netflix.com/in/title/60023642",
+      "confidence": "high"
+     }
+    ],
+    "GB": [
+     {
+      "service": "Netflix",
+      "kind": "subscription",
+      "audio": [],
+      "url": "https://www.netflix.com/title/60023642",
+      "confidence": "high"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.justwatch.com/us/movie/spirited-away",
+    "https://www.justwatch.com/in/movie/spirited-away",
+    "https://www.justwatch.com/uk/movie/spirited-away",
+    "https://www.hbomax.com/movie/00ad6746-f3f0-4f6b-b8ea-0997f5880aa5",
+    "https://www.hbomax.com/movie/3deab668-d0a4-4a8d-9bc8-0952a0ad836e",
+    "https://www.netflix.com/in/title/60023642"
+   ],
+   "note": "US: HBO Max lists two entries, a '(Japanese Audio)' version and an English-dub version (plain title). IN: Netflix India title page lists Hindi audio. GB: on Netflix per JustWatch UK (also on the Standard with Ads plan); UK audio tracks not confirmed (netflix.com/gb redirected to the India site from this network and JustWatch UK has no audio data)."
+  },
+  {
+   "t": "The Cat Returns",
+   "year": 2002,
+   "director": "Hiroyuki Morita",
+   "kitsu": "the-cat-returns",
+   "regions": {
+    "US": [
+     {
+      "service": "HBO Max",
+      "kind": "subscription",
+      "audio": [
+       "ja",
+       "en"
+      ],
+      "url": "https://www.hbomax.com/movie/944a2c83-3fbf-433c-9962-3794ece5fb98",
+      "confidence": "high"
+     }
+    ],
+    "IN": [
+     {
+      "service": "Netflix",
+      "kind": "subscription",
+      "audio": [
+       "ja",
+       "en"
+      ],
+      "url": "https://www.netflix.com/in/title/70019058",
+      "confidence": "high"
+     }
+    ],
+    "GB": [
+     {
+      "service": "Netflix",
+      "kind": "subscription",
+      "audio": [],
+      "url": "https://www.netflix.com/title/70019058",
+      "confidence": "high"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.justwatch.com/us/movie/the-cat-returns",
+    "https://www.justwatch.com/in/movie/the-cat-returns",
+    "https://www.justwatch.com/uk/movie/the-cat-returns",
+    "https://www.hbomax.com/movie/5b4b92fa-768e-4d30-a9f2-ef393190b802",
+    "https://www.hbomax.com/movie/944a2c83-3fbf-433c-9962-3794ece5fb98",
+    "https://www.netflix.com/in/title/70019058"
+   ],
+   "note": "US: HBO Max lists two entries, a '(Japanese Audio)' version and an English-dub version (plain title). GB: on Netflix per JustWatch UK (also on the Standard with Ads plan); UK audio tracks not confirmed (netflix.com/gb redirected to the India site from this network and JustWatch UK has no audio data)."
+  },
+  {
+   "t": "Howl's Moving Castle",
+   "year": 2004,
+   "director": "Hayao Miyazaki",
+   "kitsu": "howl-s-moving-castle",
+   "regions": {
+    "US": [
+     {
+      "service": "HBO Max",
+      "kind": "subscription",
+      "audio": [
+       "ja",
+       "en"
+      ],
+      "url": "https://www.hbomax.com/movie/7a7a03ca-dd3a-4e62-9e43-e845f338f85e",
+      "confidence": "high"
+     }
+    ],
+    "IN": [
+     {
+      "service": "Netflix",
+      "kind": "subscription",
+      "audio": [
+       "ja",
+       "en",
+       "hi"
+      ],
+      "url": "https://www.netflix.com/in/title/70028883",
+      "confidence": "high"
+     }
+    ],
+    "GB": [
+     {
+      "service": "Netflix",
+      "kind": "subscription",
+      "audio": [],
+      "url": "https://www.netflix.com/title/70028883",
+      "confidence": "high"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.justwatch.com/us/movie/howls-moving-castle",
+    "https://www.justwatch.com/in/movie/howls-moving-castle",
+    "https://www.justwatch.com/uk/movie/howls-moving-castle",
+    "https://www.hbomax.com/movie/a95fecb0-ad4f-4849-a5cb-5e192ca92f03",
+    "https://www.hbomax.com/movie/7a7a03ca-dd3a-4e62-9e43-e845f338f85e",
+    "https://www.netflix.com/in/title/70028883"
+   ],
+   "note": "US: HBO Max lists two entries, a '(Japanese Audio)' version and an English-dub version (plain title). IN: Netflix India title page lists Hindi audio. GB: on Netflix per JustWatch UK (also on the Standard with Ads plan); UK audio tracks not confirmed (netflix.com/gb redirected to the India site from this network and JustWatch UK has no audio data)."
+  },
+  {
+   "t": "Tales from Earthsea",
+   "year": 2006,
+   "director": "Gorō Miyazaki",
+   "kitsu": "tales-from-earthsea",
+   "regions": {
+    "US": [
+     {
+      "service": "HBO Max",
+      "kind": "subscription",
+      "audio": [
+       "ja",
+       "en"
+      ],
+      "url": "https://www.hbomax.com/movie/c1ce8cf3-1903-4969-890a-7022dbe786c5",
+      "confidence": "high"
+     }
+    ],
+    "IN": [
+     {
+      "service": "Netflix",
+      "kind": "subscription",
+      "audio": [
+       "ja",
+       "en"
+      ],
+      "url": "https://www.netflix.com/in/title/70142821",
+      "confidence": "high"
+     }
+    ],
+    "GB": [
+     {
+      "service": "Netflix",
+      "kind": "subscription",
+      "audio": [],
+      "url": "https://www.netflix.com/title/70142821",
+      "confidence": "high"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.justwatch.com/us/movie/tales-from-earthsea",
+    "https://www.justwatch.com/in/movie/tales-from-earthsea",
+    "https://www.justwatch.com/uk/movie/tales-from-earthsea",
+    "https://www.hbomax.com/movie/bc631eb9-6e6e-48ac-8bf6-a11cc4b10c78",
+    "https://www.hbomax.com/movie/c1ce8cf3-1903-4969-890a-7022dbe786c5",
+    "https://www.netflix.com/in/title/70142821"
+   ],
+   "note": "US: HBO Max lists two entries, a '(Japanese Audio)' version and an English-dub version (plain title). GB: on Netflix per JustWatch UK (also on the Standard with Ads plan); UK audio tracks not confirmed (netflix.com/gb redirected to the India site from this network and JustWatch UK has no audio data)."
+  },
+  {
+   "t": "Ponyo",
+   "year": 2008,
+   "director": "Hayao Miyazaki",
+   "kitsu": "ponyo-on-a-cliff",
+   "regions": {
+    "US": [
+     {
+      "service": "HBO Max",
+      "kind": "subscription",
+      "audio": [
+       "ja",
+       "en"
+      ],
+      "url": "https://www.hbomax.com/movie/cb37168b-290a-4e59-bf82-1b1a7f75b6ae",
+      "confidence": "high"
+     }
+    ],
+    "IN": [
+     {
+      "service": "Netflix",
+      "kind": "subscription",
+      "audio": [
+       "ja",
+       "en",
+       "hi"
+      ],
+      "url": "https://www.netflix.com/in/title/70106454",
+      "confidence": "high"
+     }
+    ],
+    "GB": [
+     {
+      "service": "Netflix",
+      "kind": "subscription",
+      "audio": [],
+      "url": "https://www.netflix.com/title/70106454",
+      "confidence": "high"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.justwatch.com/us/movie/ponyo",
+    "https://www.justwatch.com/in/movie/ponyo",
+    "https://www.justwatch.com/uk/movie/ponyo",
+    "https://www.hbomax.com/movie/fac01140-58d6-4b7f-be8e-5116a1ff78bc",
+    "https://www.hbomax.com/movie/cb37168b-290a-4e59-bf82-1b1a7f75b6ae",
+    "https://www.netflix.com/in/title/70106454"
+   ],
+   "note": "US: HBO Max lists two entries, a '(Japanese Audio)' version and an English-dub version (plain title). IN: Netflix India title page lists Hindi audio. GB: on Netflix per JustWatch UK (also on the Standard with Ads plan); UK audio tracks not confirmed (netflix.com/gb redirected to the India site from this network and JustWatch UK has no audio data)."
+  },
+  {
+   "t": "The Secret World of Arrietty",
+   "year": 2010,
+   "director": "Hiromasa Yonebayashi",
+   "kitsu": "the-secret-world-of-arrietty",
+   "regions": {
+    "US": [
+     {
+      "service": "HBO Max",
+      "kind": "subscription",
+      "audio": [
+       "ja",
+       "en"
+      ],
+      "url": "https://www.hbomax.com/movie/97782fe5-a4ab-43b2-bf05-179688ec483c",
+      "confidence": "high"
+     }
+    ],
+    "IN": [
+     {
+      "service": "Netflix",
+      "kind": "subscription",
+      "audio": [
+       "ja",
+       "en"
+      ],
+      "url": "https://www.netflix.com/in/title/70216227",
+      "confidence": "high"
+     }
+    ],
+    "GB": [
+     {
+      "service": "Netflix",
+      "kind": "subscription",
+      "audio": [],
+      "url": "https://www.netflix.com/title/70216227",
+      "confidence": "high"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.justwatch.com/us/movie/the-secret-world-of-arrietty",
+    "https://www.justwatch.com/in/movie/the-secret-world-of-arrietty",
+    "https://www.justwatch.com/uk/movie/the-secret-world-of-arrietty",
+    "https://www.hbomax.com/movie/4c3cc9c5-86e1-454c-a43e-1e884c05fe5c",
+    "https://www.hbomax.com/movie/97782fe5-a4ab-43b2-bf05-179688ec483c",
+    "https://www.netflix.com/in/title/70216227"
+   ],
+   "note": "US: HBO Max lists two entries, a '(Japanese Audio)' version and an English-dub version (plain title). GB: on Netflix per JustWatch UK (also on the Standard with Ads plan); UK audio tracks not confirmed (netflix.com/gb redirected to the India site from this network and JustWatch UK has no audio data)."
+  },
+  {
+   "t": "From Up on Poppy Hill",
+   "year": 2011,
+   "director": "Gorō Miyazaki",
+   "kitsu": "from-up-on-poppy-hill",
+   "regions": {
+    "US": [
+     {
+      "service": "HBO Max",
+      "kind": "subscription",
+      "audio": [
+       "ja",
+       "en"
+      ],
+      "url": "https://www.hbomax.com/movie/d780c956-ba30-4d46-bef2-c18b722226f3",
+      "confidence": "high"
+     }
+    ],
+    "IN": [
+     {
+      "service": "Netflix",
+      "kind": "subscription",
+      "audio": [
+       "ja",
+       "en"
+      ],
+      "url": "https://www.netflix.com/in/title/70262786",
+      "confidence": "high"
+     }
+    ],
+    "GB": [
+     {
+      "service": "Netflix",
+      "kind": "subscription",
+      "audio": [],
+      "url": "https://www.netflix.com/title/70262786",
+      "confidence": "high"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.justwatch.com/us/movie/from-up-on-poppy-hill",
+    "https://www.justwatch.com/in/movie/from-up-on-poppy-hill",
+    "https://www.justwatch.com/uk/movie/from-up-on-poppy-hill",
+    "https://www.hbomax.com/movie/afe880b0-8364-4a59-b6ea-93566648e3f5",
+    "https://www.hbomax.com/movie/d780c956-ba30-4d46-bef2-c18b722226f3",
+    "https://www.netflix.com/in/title/70262786"
+   ],
+   "note": "US: HBO Max lists two entries, a '(Japanese Audio)' version and an English-dub version (plain title). GB: on Netflix per JustWatch UK (also on the Standard with Ads plan); UK audio tracks not confirmed (netflix.com/gb redirected to the India site from this network and JustWatch UK has no audio data)."
+  },
+  {
+   "t": "The Wind Rises",
+   "year": 2013,
+   "director": "Hayao Miyazaki",
+   "kitsu": "the-wind-rises",
+   "regions": {
+    "US": [
+     {
+      "service": "HBO Max",
+      "kind": "subscription",
+      "audio": [
+       "ja",
+       "en"
+      ],
+      "url": "https://www.hbomax.com/movie/c7d93333-0d3c-405c-86d5-355ce5dce17f",
+      "confidence": "high"
+     }
+    ],
+    "IN": [
+     {
+      "service": "Netflix",
+      "kind": "subscription",
+      "audio": [
+       "ja",
+       "en"
+      ],
+      "url": "https://www.netflix.com/in/title/70293674",
+      "confidence": "high"
+     }
+    ],
+    "GB": [
+     {
+      "service": "Netflix",
+      "kind": "subscription",
+      "audio": [],
+      "url": "https://www.netflix.com/title/70293674",
+      "confidence": "high"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.justwatch.com/us/movie/the-wind-rises",
+    "https://www.justwatch.com/in/movie/the-wind-rises",
+    "https://www.justwatch.com/uk/movie/the-wind-rises",
+    "https://www.hbomax.com/movie/f769960a-91db-4e24-8ecc-de9bd41b8102",
+    "https://www.hbomax.com/movie/c7d93333-0d3c-405c-86d5-355ce5dce17f",
+    "https://www.netflix.com/in/title/70293674"
+   ],
+   "note": "US: HBO Max lists two entries, a '(Japanese Audio)' version and an English-dub version (plain title). GB: on Netflix per JustWatch UK (also on the Standard with Ads plan); UK audio tracks not confirmed (netflix.com/gb redirected to the India site from this network and JustWatch UK has no audio data)."
+  },
+  {
+   "t": "The Tale of the Princess Kaguya",
+   "year": 2013,
+   "director": "Isao Takahata",
+   "kitsu": "kaguya-hime-no-monogatari",
+   "regions": {
+    "US": [
+     {
+      "service": "HBO Max",
+      "kind": "subscription",
+      "audio": [
+       "ja",
+       "en"
+      ],
+      "url": "https://www.hbomax.com/movie/0c7e4781-f546-4409-bfd5-375e49125b47",
+      "confidence": "high"
+     }
+    ],
+    "IN": [
+     {
+      "service": "Netflix",
+      "kind": "subscription",
+      "audio": [
+       "ja",
+       "en"
+      ],
+      "url": "https://www.netflix.com/in/title/80013552",
+      "confidence": "high"
+     }
+    ],
+    "GB": [
+     {
+      "service": "Netflix",
+      "kind": "subscription",
+      "audio": [],
+      "url": "https://www.netflix.com/title/80013552",
+      "confidence": "high"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.justwatch.com/us/movie/the-tale-of-the-princess-kaguya",
+    "https://www.justwatch.com/in/movie/the-tale-of-the-princess-kaguya",
+    "https://www.justwatch.com/uk/movie/the-tale-of-the-princess-kaguya",
+    "https://www.hbomax.com/movie/7fc64c26-d358-4b83-8a9a-ad9399ce1a2a",
+    "https://www.hbomax.com/movie/0c7e4781-f546-4409-bfd5-375e49125b47",
+    "https://www.netflix.com/in/title/80013552"
+   ],
+   "note": "US: HBO Max lists two entries, a '(Japanese Audio)' version and an English-dub version (plain title). GB: on Netflix per JustWatch UK (also on the Standard with Ads plan); UK audio tracks not confirmed (netflix.com/gb redirected to the India site from this network and JustWatch UK has no audio data)."
+  },
+  {
+   "t": "When Marnie Was There",
+   "year": 2014,
+   "director": "Hiromasa Yonebayashi",
+   "kitsu": "omoide-no-marnie",
+   "regions": {
+    "US": [
+     {
+      "service": "HBO Max",
+      "kind": "subscription",
+      "audio": [
+       "ja",
+       "en"
+      ],
+      "url": "https://www.hbomax.com/movie/f5ef46ac-e54e-4319-ac7e-0fbf5099f77f",
+      "confidence": "high"
+     }
+    ],
+    "IN": [
+     {
+      "service": "Netflix",
+      "kind": "subscription",
+      "audio": [
+       "ja",
+       "en"
+      ],
+      "url": "https://www.netflix.com/in/title/80036398",
+      "confidence": "high"
+     }
+    ],
+    "GB": [
+     {
+      "service": "Netflix",
+      "kind": "subscription",
+      "audio": [],
+      "url": "https://www.netflix.com/title/80036398",
+      "confidence": "high"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.justwatch.com/us/movie/when-marnie-was-there",
+    "https://www.justwatch.com/in/movie/when-marnie-was-there",
+    "https://www.justwatch.com/uk/movie/when-marnie-was-there",
+    "https://www.hbomax.com/movie/30ea4cf0-0cb5-406b-be39-1afaae758cb0",
+    "https://www.hbomax.com/movie/f5ef46ac-e54e-4319-ac7e-0fbf5099f77f",
+    "https://www.netflix.com/in/title/80036398"
+   ],
+   "note": "US: HBO Max lists two entries, a '(Japanese Audio)' version and an English-dub version (plain title). GB: on Netflix per JustWatch UK (also on the Standard with Ads plan); UK audio tracks not confirmed (netflix.com/gb redirected to the India site from this network and JustWatch UK has no audio data)."
+  },
+  {
+   "t": "Earwig and the Witch",
+   "year": 2020,
+   "director": "Gorō Miyazaki",
+   "kitsu": "aya-and-the-witch",
+   "regions": {
+    "US": [
+     {
+      "service": "HBO Max",
+      "kind": "subscription",
+      "audio": [
+       "ja",
+       "en"
+      ],
+      "url": "https://www.hbomax.com/movie/30a6e1d0-4464-4bf9-8773-7a830ca20112",
+      "confidence": "high"
+     }
+    ],
+    "IN": [
+     {
+      "service": "Netflix",
+      "kind": "subscription",
+      "audio": [
+       "en"
+      ],
+      "url": "https://www.netflix.com/in/title/81316559",
+      "confidence": "high"
+     }
+    ],
+    "GB": [
+     {
+      "service": "Netflix",
+      "kind": "subscription",
+      "audio": [],
+      "url": "https://www.netflix.com/title/81316559",
+      "confidence": "high"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.justwatch.com/us/movie/earwig-and-the-witch",
+    "https://www.justwatch.com/in/movie/earwig-and-the-witch",
+    "https://www.justwatch.com/uk/movie/earwig-and-the-witch",
+    "https://www.hbomax.com/movie/13c61891-8f96-499a-b65e-3e80f3db9172",
+    "https://www.hbomax.com/movie/30a6e1d0-4464-4bf9-8773-7a830ca20112",
+    "https://www.netflix.com/in/title/81316559"
+   ],
+   "note": "US: HBO Max lists two entries, a '(Japanese Audio)' version and an English-dub version (plain title). IN: Netflix India title page lists English audio only (no Japanese, no Hindi). GB: on Netflix per JustWatch UK (also on the Standard with Ads plan); UK audio tracks not confirmed (netflix.com/gb redirected to the India site from this network and JustWatch UK has no audio data)."
+  },
+  {
+   "t": "The Boy and the Heron",
+   "year": 2023,
+   "director": "Hayao Miyazaki",
+   "kitsu": "kimitachi-wa-dou-ikiru-ka",
+   "regions": {
+    "US": [
+     {
+      "service": "HBO Max",
+      "kind": "subscription",
+      "audio": [
+       "ja",
+       "en",
+       "es"
+      ],
+      "url": "https://www.hbomax.com/movie/a654e7de-e954-411e-8304-73b5060e6dcc",
+      "confidence": "high"
+     }
+    ],
+    "IN": [
+     {
+      "service": "Netflix",
+      "kind": "subscription",
+      "audio": [
+       "ja",
+       "en"
+      ],
+      "url": "https://www.netflix.com/in/title/81725555",
+      "confidence": "high"
+     }
+    ],
+    "GB": [
+     {
+      "service": "Netflix",
+      "kind": "subscription",
+      "audio": [],
+      "url": "https://www.netflix.com/title/81725555",
+      "confidence": "high"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.justwatch.com/us/movie/kimitachi-wa-do-ikiru-ka",
+    "https://www.justwatch.com/in/movie/kimitachi-wa-do-ikiru-ka",
+    "https://www.justwatch.com/uk/movie/kimitachi-wa-do-ikiru-ka",
+    "https://www.hbomax.com/movie/a654e7de-e954-411e-8304-73b5060e6dcc",
+    "https://www.netflix.com/in/title/81725555",
+    "https://ca.news.yahoo.com/boy-heron-heads-max-studio-205845531.html"
+   ],
+   "note": "US: single HBO Max entry; audio ja/en/es per JustWatch US (HBO Max Amazon Channel offer). GB: on Netflix per JustWatch UK (also on the Standard with Ads plan); UK audio tracks not confirmed (netflix.com/gb redirected to the India site from this network and JustWatch UK has no audio data)."
+  }
+ ]
+}

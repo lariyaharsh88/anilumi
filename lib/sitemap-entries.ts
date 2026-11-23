@@ -1,3 +1,4 @@
+import { GHIBLI_CHECKED } from "@/lib/ghibli";
 import type { MetadataRoute } from "next";
 import { CC_CHECKED } from "@/lib/comiccon";
 import { TERMS, TERMS_CHECKED, termPath, termsPath } from "@/lib/animeterms";
@@ -95,6 +96,7 @@ export async function sitemapEntries(): Promise<MetadataRoute.Sitemap> {
     ...filmFranchises().flatMap((f) => ((["hi", "ta", "te"] as FilmLang[]).filter((l) => hasLang(f, l)).map((l) => ({ url: abs(filmsPath(f.slug, l)), lastModified: at(FILMS_CHECKED), changeFrequency: "monthly" as const, priority: 0.7 })))),
     { url: abs("/anime-on-netflix-india"), lastModified: at(D.streams), changeFrequency: "monthly", priority: 0.6 },
     { url: abs("/anime-streaming-sites"), lastModified: at(D.streams, D.dubs, PRICES_CHECKED), changeFrequency: "monthly", priority: 0.8 },
+    { url: abs("/studio-ghibli"), lastModified: at(GHIBLI_CHECKED), changeFrequency: "monthly", priority: 0.8 },
     { url: abs("/hianime-alternatives"), lastModified: at(D.streams), changeFrequency: "monthly", priority: 0.7 },
     { url: abs("/free-anime-websites"), lastModified: at(D.streams, D.dubs, PRICES_CHECKED), changeFrequency: "monthly", priority: 0.8 },
     { url: abs("/where-to-watch"), lastModified: at(D.streams), changeFrequency: "monthly", priority: 0.8 },
