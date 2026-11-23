@@ -474,6 +474,218 @@
           "why": "Letters from her future self ask Naho to change the past and save a classmate."
         }
       ]
+    },
+    "horimiya": {
+      "about": "Sweet school romances, couples who actually get together, and people who are different from their school image.",
+      "picks": [
+        {
+          "s": "ore-monogatari",
+          "why": "Like Horimiya, the couple gets together early, and the joy is watching a gentle giant and his girlfriend learn each other."
+        },
+        {
+          "s": "kimi-ni-todoke",
+          "why": "A shy girl everyone misreads as creepy slowly opens up to the most popular boy in class; the classic slow-burn version."
+        },
+        {
+          "s": "sono-bisque-doll-wa-koi-wo-suru",
+          "why": "A shy doll-maker and the most popular girl in class bond over cosplay, another romance about the real person behind the school image."
+        },
+        {
+          "s": "komi-san-wa-komyushou-desu",
+          "why": "The school idol can barely speak to anyone, and the ordinary boy beside her helps her make a hundred friends."
+        },
+        {
+          "s": "wotaku-ni-koi-wa-muzukashii",
+          "why": "Two otaku co-workers start dating in the first episode: the grown-up version of Horimiya's couple."
+        },
+        {
+          "s": "boku-no-kokoro-no-yabai-yatsu",
+          "why": "A gloomy boy who daydreams about violence slowly falls for the class idol, and she for him."
+        },
+        {
+          "s": "skip-to-loafer",
+          "why": "A country girl starts high school in Tokyo and befriends a laid-back popular boy; gentle and warm."
+        },
+        {
+          "s": "toradora",
+          "why": "Two classmates team up to help each other with their crushes and end up falling for each other."
+        },
+        {
+          "s": "tomo-chan-wa-onna-no-ko",
+          "why": "A tomboy tries to get her childhood friend to see her as a girl; loud, sweet and quick."
+        },
+        {
+          "s": "karakai-jouzu-no-takagi-san",
+          "why": "A girl teases the boy next to her every day, and he never quite notices she likes him."
+        },
+        {
+          "s": "yubisaki-to-renren",
+          "why": "A deaf university student falls for a well-travelled friend who speaks several languages."
+        },
+        {
+          "s": "kaguya-sama-wa-kokurasetai-tensai-tachi-no-renai-zunousen",
+          "why": "The comedy version: two student council geniuses too proud to confess first."
+        }
+      ]
+    },
+    "jujutsu-kaisen": {
+      "about": "Monster hunters with dangerous powers inside them, clever power systems and brutal, stylish fights.",
+      "picks": [
+        {
+          "s": "chainsaw-man",
+          "why": "The closest pick: devil hunters at a government agency, a hero with a monster inside him and fights just as brutal."
+        },
+        {
+          "s": "DAN-DA-DAN",
+          "why": "Yokai, aliens and curses fought by two teenagers with borrowed powers; the most fun pick here."
+        },
+        {
+          "s": "kimetsu-no-yaiba",
+          "why": "An elite corps against man-eating demons, and a hero who keeps a dangerous power close to him."
+        },
+        {
+          "s": "mob-psycho-100",
+          "why": "A schoolboy with enormous psychic power works for a fake psychic, exorcising spirits for cash."
+        },
+        {
+          "s": "hunter-x-hunter-2011",
+          "why": "A power system as clever as cursed techniques, with fights decided by rules and tricks rather than strength."
+        },
+        {
+          "s": "jigokuraku",
+          "why": "A death-row ninja and his executioner face monsters on a cursed island, with the same mix of gore and strategy."
+        },
+        {
+          "s": "ao-no-exorcist",
+          "why": "An exorcist school, demons, and a boy with the devil's power sealed inside him."
+        },
+        {
+          "s": "undead-unluck",
+          "why": "A girl whose touch brings bad luck and an undead man take on an organisation of people with rule-breaking powers."
+        },
+        {
+          "s": "bleach",
+          "why": "The classic version of a high schooler who takes on a death god's powers to hunt spirits."
+        },
+        {
+          "s": "kaijuu-8-gou",
+          "why": "A monster-fighting corps and a hero who becomes part monster himself."
+        },
+        {
+          "s": "enen-no-shouboutai",
+          "why": "Special fire brigades fight people who turn into flaming monsters, with conspiracies behind them."
+        },
+        {
+          "s": "tokyo-ghoul",
+          "why": "A student turned half-ghoul, caught between the monsters and the investigators who hunt them."
+        }
+      ]
+    },
+    "spy-x-family": {
+      "about": "Found families, secret double lives, and action-comedy with a lot of heart.",
+      "picks": [
+        {
+          "s": "buddy-daddies",
+          "why": "The closest pick: two assassins suddenly have to raise a four-year-old girl."
+        },
+        {
+          "s": "sakamoto-days",
+          "why": "A legendary hitman retired to run a corner shop with his family, until assassins come for him."
+        },
+        {
+          "s": "yozakura-san-chi-no-daisakusen",
+          "why": "A shy boy marries into a family of spies where every member is a professional."
+        },
+        {
+          "s": "gokushufudou",
+          "why": "A feared yakuza becomes a devoted househusband and brings the same intensity to housework."
+        },
+        {
+          "s": "hinamatsuri",
+          "why": "A yakuza ends up raising a girl with psychic powers who drops into his apartment."
+        },
+        {
+          "s": "bunny-drop",
+          "why": "A single man in his thirties takes in his grandfather's six-year-old daughter; gentle found family."
+        },
+        {
+          "s": "amaama-to-inazuma",
+          "why": "A widowed teacher learns to cook so he can make real meals for his young daughter."
+        },
+        {
+          "s": "barakamon",
+          "why": "A city calligrapher moves to an island and gets adopted by the village kids."
+        },
+        {
+          "s": "lycoris-recoil",
+          "why": "Two girl agents run a café between missions; action and comedy, like Loid's day job."
+        },
+        {
+          "s": "ansatsu-kyoushitsu-tv",
+          "why": "Comedy with assassins: a class trains to kill their teacher, who turns out to be the best teacher they've had."
+        },
+        {
+          "s": "gintama",
+          "why": "An odd-jobs samurai crew in an alien-occupied Edo; comedy that turns serious when it counts."
+        },
+        {
+          "s": "kaguya-sama-wa-kokurasetai-tensai-tachi-no-renai-zunousen",
+          "why": "Scheming geniuses and romantic misunderstandings, like Loid and Yor's marriage."
+        }
+      ]
+    },
+    "vinland-saga": {
+      "about": "War, revenge and what it does to people, swords in history, and stories about choosing not to kill.",
+      "picks": [
+        {
+          "s": "berserk",
+          "why": "The closest in tone: a mercenary's brutal life in a medieval war, and what revenge does to him."
+        },
+        {
+          "s": "kingdom",
+          "why": "A war orphan sets out to become the greatest general of China's Warring States."
+        },
+        {
+          "s": "rurouni-kenshin",
+          "why": "A former assassin swears never to kill again, much like Thorfinn's vow in the farm arc."
+        },
+        {
+          "s": "golden-kamuy",
+          "why": "A war veteran and an Ainu girl hunt for hidden gold across Hokkaido, through history, survival and violence."
+        },
+        {
+          "s": "attack-on-titan",
+          "why": "War and revenge that grow into a question about why people fight at all."
+        },
+        {
+          "s": "arslan-senki-tv",
+          "why": "A young prince loses his kingdom and builds an army to win it back."
+        },
+        {
+          "s": "dororo",
+          "why": "A swordsman in feudal Japan wins his body back piece by piece; history, violence and humanity."
+        },
+        {
+          "s": "angolmois-genkou-kassenki",
+          "why": "Exiled samurai defend Tsushima island against the Mongol invasion of 1274."
+        },
+        {
+          "s": "samurai-champloo",
+          "why": "Two very different swordsmen and a girl travel across Edo-era Japan."
+        },
+        {
+          "s": "sword-of-the-stranger",
+          "why": "A film: a nameless swordsman who refuses to draw his blade protects a boy hunted by soldiers."
+        },
+        {
+          "s": "jigokuraku",
+          "why": "An assassin who wants to stop killing is sent to an island of monsters to earn a pardon."
+        },
+        {
+          "s": "fullmetal-alchemist-brotherhood",
+          "why": "Two brothers pay for their mistakes and fight their way through a war-scarred country's secrets."
+        }
+      ]
     }
   }
 }

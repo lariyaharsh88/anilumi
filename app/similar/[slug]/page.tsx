@@ -94,6 +94,8 @@ export default async function SimilarPage({ params }: Props) {
   // Hand-picked list first, when there is one (lib/similarpicks.ts).
   const editor = editorPicks(a.slug);
   const editorAnime = editor ? await animeBySlugs(editor.picks.map((p) => p.s), true).catch(() => new Map<string, Anime>()) : null;
+  // Kitsu's multi-slug filter silently drops some titles (Dandadan, Nov 2026): fetch those one by one.
+  if (editor && editorAnime) await Promise.all(editor.picks.filter((p) => !editorAnime.has(p.s)).map(async (p) => { const x = await getAnimeBySlug(p.s).catch(() => null); if (x) editorAnime.set(p.s, x); }));
   // English names where Kitsu has none ("Overgeared", not "Temppal: Item no Chikara"; lib/searchname.ts).
   const handPicked = editor && editorAnime ? editor.picks.flatMap((p) => { const x = editorAnime.get(p.s); return x ? [{ anime: p.name ? { ...x, titleEn: p.name } : x.titleEn ? x : { ...x, titleEn: englishName(x) }, why: p.why }] : []; }) : [];
   const shortName = (x: Anime) => x.titleEn || x.title;
