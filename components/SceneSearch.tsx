@@ -303,7 +303,11 @@ export default function SceneSearch() {
                   <li>
                     {page.status === "current" && page.id
                       ? <LeadForm compact kind="alert" source="scene-alert" animeId={page.id} animeTitle={page.title} title={`🔔 Email me when the next ${page.title} episode is out`} button="Notify me" />
-                      : <LeadForm compact kind="digest" source="scene-digest" title="📰 New episodes and premieres, every Friday" button="Subscribe" />}
+                      // Most visitors are in India and arrive asking where to watch: a finished show with no official
+                      // Hindi dub gets a dub alert for that show (same alert as its anime page).
+                      : !page.hindi && page.id
+                        ? <LeadForm compact kind="hindi" source="scene-hindi" animeId={page.id} animeTitle={page.title} title={`🇮🇳 Email me if ${page.title} gets an official Hindi dub`} button="Notify me" />
+                        : <LeadForm compact kind="digest" source="scene-digest" title="📰 New episodes and premieres, every Friday" button="Subscribe" />}
                   </li>
                 );
               })()}

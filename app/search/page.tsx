@@ -6,6 +6,8 @@ import SearchBox from "@/components/SearchBox";
 import PageHero from "@/components/PageHero";
 import Link from "@/components/Link";
 import { searchPeople } from "@/lib/peoplesearch";
+import LeadForm from "@/components/LeadForm";
+import { dbEnabled } from "@/lib/db";
 
 type Props = { searchParams: Promise<{ q?: string }> };
 
@@ -54,6 +56,8 @@ export default async function SearchPage({ searchParams }: Props) {
         {q && people.length > 0 && <h2 className="h-section mb-3">Anime</h2>}
         {q ? <AnimeGrid items={results} emptyText={`No anime matched “${q}”. Try the Japanese or English title.`} /> : <><h2 className="h-section mb-3">Trending searches</h2><AnimeGrid items={trending} /></>}
       </div>
+      {/* /search is the second most-viewed page (Nov 2026), mostly visitors from India looking for a show to watch. */}
+      {dbEnabled() && <LeadForm compact className="card mt-8 p-4" kind="hindi" source="search-hindi" title="🇮🇳 Get an email the day a new anime gets an official Hindi dub" blurb="With where to watch it and whether it's free. No pirate links." button="Notify me" />}
       <p className="mt-8 text-xs text-muted">Search understands nicknames and common misspellings, using alternative titles from the <a href="https://github.com/manami-project/anime-offline-database" rel="noopener nofollow" className="underline">anime-offline-database</a> (ODbL).</p>
     </div>
   );

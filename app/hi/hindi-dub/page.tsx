@@ -108,6 +108,7 @@ export default async function HindiDubHubHi() {
           <Link href="/anime-salt-alternatives" className="chip" hrefLang="en">Anime Salt के कानूनी विकल्प</Link>
         </p>
       </PageHero>
+      {dbEnabled() && <LeadForm compact lang="hi" className="card mt-4 p-4" kind="hindi" source="hindi-top-hi" title="🔔 कोई नया एनीमे आधिकारिक रूप से हिंदी में आए, उसी दिन ईमेल पाएं" button="मुझे बताएं" />}
       <SectionNav sections={[
         ...(free.length ? [{ id: "free", label: `मुफ़्त (${free.length})` }] : []),
         ...(arrivals.length ? [{ id: "new", label: "नए डब" }] : []),

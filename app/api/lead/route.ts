@@ -8,7 +8,7 @@ import { normalizeCode } from "@/lib/syncmerge";
 import { listAnime } from "@/lib/kitsu";
 
 /** A repeat signup re-sends the confirmation at most this often. */
-const RESEND_AFTER_MS = 10 * 60_000;
+const RESEND_AFTER_MS = 2 * 60_000; // the confirmation step offers "send it again" after 2 minutes (components/LeadForm)
 /** At most this many confirmation emails to one address a day, across every kind and show: no email bombing. */
 const MAX_CONFIRMS_PER_DAY = 3;
 const DAY_MS = 86_400_000;

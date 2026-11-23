@@ -116,6 +116,9 @@ export default async function HindiDubHub() {
       <AnswerLead checked={dubDate()}>
         You can watch {free.length} of the {dubbed.length} official Hindi dubbed anime free, on YouTube (Muse India, Ani-One India) and Prime Video&apos;s free tier (formerly MX Player). {top.name} has the most ({top.titles.length}), followed by {streamers.slice(1, 3).map((p) => `${p.name.replace(/ \(.*\)$/, "")} (${p.titles.length})`).join(" and ")}.
       </AnswerLead>
+      {/* Most visitors (ChatGPT links) read the answer above and leave; the hub's main signup sits after three
+          sections and got 2 signups from 1,800 visitors in Nov 2026. A compact one here, measured as hindi-top. */}
+      {dbEnabled() && <LeadForm compact className="card mt-4 p-4" kind="hindi" source="hindi-top" title="🔔 Get an email the day a new anime gets an official Hindi dub" button="Notify me" />}
       <SectionNav sections={[
         ...(free.length ? [{ id: "free", label: `Free (${free.length})` }] : []),
         ...(arrivals.length ? [{ id: "new", label: "New" }] : []),

@@ -4,6 +4,7 @@ import Link from "@/components/Link";
 import { send } from "@/lib/community-client";
 import { track } from "@/lib/track";
 import type { LeadKind } from "@/lib/community";
+import { mailApp } from "@/lib/mailapp";
 
 type Props = {
   kind: LeadKind;
@@ -26,22 +27,25 @@ type Props = {
 
 const T = {
   en: {
-    inbox: "📬 Check your inbox to confirm.", listed: "✓ You're on the list.",
-    tap: "Tap the link in the email we just sent. Not there in a minute? Look in Promotions or Spam, and mark it \"Not spam\" so the alerts reach your inbox. ",
-    gmail: "Open Gmail", only: "We'll only email you about what you signed up for, and every email has a one-click unsubscribe.",
+    inbox: "📬 One more step: confirm your email", listed: "✓ You're on the list.",
+    sent: "We sent a confirmation link to", change: "Wrong address? Change it",
+    tap: "Not in your inbox in a minute? Check Promotions or Spam, and mark it \"Not spam\" so the alerts reach you.",
+    open: (app: string) => `Open ${app}`, resend: "Didn't get it? Send it again", resent: "Sent again. It can take a minute.",
+    only: "We'll only email you about what you signed up for, and every email has a one-click unsubscribe.",
     agree: "Please tick the box to agree to the emails.", saving: "Saving…", consent: "Email me about this from AniLumi. Unsubscribe any time.", privacy: "Privacy", label: "Email address",
   },
   hi: {
-    inbox: "📬 पुष्टि के लिए अपना ईमेल देखें।", listed: "✓ आप लिस्ट में जुड़ गए हैं।",
-    tap: "हमने अभी जो ईमेल भेजा है, उसमें लिंक पर टैप करें। एक मिनट में न दिखे तो Promotions या Spam देखें, और \"Not spam\" चुनें ताकि अलर्ट इनबॉक्स में आएं। ",
-    gmail: "Gmail खोलें", only: "हम सिर्फ़ उसी के बारे में ईमेल भेजेंगे जिसके लिए आपने साइन अप किया है। हर ईमेल में एक क्लिक में अनसब्सक्राइब का लिंक होता है।",
+    inbox: "📬 बस एक कदम: अपना ईमेल पक्का करें", listed: "✓ आप लिस्ट में जुड़ गए हैं।",
+    sent: "हमने पुष्टि का लिंक भेजा है:", change: "पता गलत है? बदलें",
+    tap: "एक मिनट में इनबॉक्स में न दिखे तो Promotions या Spam देखें, और \"Not spam\" चुनें ताकि अलर्ट आप तक पहुंचें।",
+    open: (app: string) => `${app} खोलें`, resend: "ईमेल नहीं मिला? दोबारा भेजें", resent: "दोबारा भेज दिया। एक मिनट लग सकता है।",
+    only: "हम सिर्फ़ उसी के बारे में ईमेल भेजेंगे जिसके लिए आपने साइन अप किया है। हर ईमेल में एक क्लिक में अनसब्सक्राइब का लिंक होता है।",
     agree: "ईमेल पाने के लिए बॉक्स पर टिक करें।", saving: "सेव हो रहा है…", consent: "AniLumi से इसके बारे में ईमेल भेजें। कभी भी अनसब्सक्राइब करें।", privacy: "प्राइवेसी", label: "ईमेल पता",
   },
 };
 
-/** Gmail's search for the confirmation email, Promotions and Spam included. */
-const GMAIL = "https://mail.google.com/mail/u/0/#search/from%3Aanilumi.in+in%3Aanywhere";
-const isGmail = (email: string) => /@(gmail|googlemail)\.com$/i.test(email.trim());
+/** The server sends a confirmation again after 2 minutes (app/api/lead), at most 3 a day. */
+const RESEND_AFTER_MS = 2 * 60_000;
 
 const utm = () => {
   try { const q = new URLSearchParams(location.search); return Object.fromEntries(["utm_source", "utm_medium", "utm_campaign"].map((k) => [k, q.get(k) || ""])); } catch { return {}; }
@@ -55,22 +59,44 @@ export default function LeadForm({ kind, source, title, blurb, button = "Notify 
   const [state, setState] = useState<"idle" | "busy" | "ok">("idle");
   const [err, setErr] = useState("");
   const [confirm, setConfirm] = useState(false);
+  const [canResend, setCanResend] = useState(false);
+  const [resent, setResent] = useState(false);
+  const [payload, setPayload] = useState<Record<string, unknown> | null>(null);
+  useEffect(() => {
+    if (state !== "ok" || !confirm || resent) return;
+    const t = setTimeout(() => setCanResend(true), RESEND_AFTER_MS);
+    return () => clearTimeout(t);
+  }, [state, confirm, resent]);
   // Until hydrated, a submit would do a plain page reload; keep the button off until the handler is attached.
   const [ready, setReady] = useState(false);
   useEffect(() => setReady(true), []);
   const id = `lead-${source}`;
 
-  if (state === "ok")
+  if (state === "ok") {
+    const app = confirm ? mailApp(email) : null;
     return (
       <div className={`${compact ? "" : "card p-4"} ${className}`} role="status">
         <p className="font-semibold text-ink">{confirm ? t.inbox : t.listed}</p>
-        {done}
-        <p className="mt-1 text-sm text-muted">{confirm ? t.tap : ""}{t.only}</p>
-        {confirm && isGmail(email) && (
-          <a href={GMAIL} target="_blank" rel="noopener nofollow" onClick={() => track("lead_open_gmail", { source })} className="btn-outline mt-3 inline-flex">✉ {t.gmail}</a>
+        {confirm && (
+          <p className="mt-1 text-sm text-ink/85">
+            {t.sent} <strong className="break-all text-ink">{email.trim()}</strong>.{" "}
+            <button type="button" className="underline text-muted hover:text-ink" onClick={() => { setState("idle"); setConfirm(false); setCanResend(false); setResent(false); }}>{t.change}</button>
+          </p>
         )}
+        {done}
+        {app && (
+          // Kept as "lead_open_gmail" for every provider so the GA4 series stays continuous.
+          <a href={app[2]} target="_blank" rel="noopener nofollow" onClick={() => track("lead_open_gmail", { source, app: app[1] })} className="btn-primary mt-3 inline-flex">✉ {t.open(app[1])}</a>
+        )}
+        {confirm && <p className="mt-2 text-sm text-muted">{t.tap}</p>}
+        {confirm && canResend && !resent && payload && (
+          <button type="button" className="mt-2 text-sm underline text-muted hover:text-ink" onClick={async () => { setResent(true); track("lead_resend", { source }); await send("/api/lead", payload); }}>{t.resend}</button>
+        )}
+        {resent && <p className="mt-2 text-sm text-muted">{t.resent}</p>}
+        <p className="mt-2 text-xs text-muted">{t.only}</p>
       </div>
     );
+  }
 
   return (
     <form
@@ -82,9 +108,11 @@ export default function LeadForm({ kind, source, title, blurb, button = "Notify 
         const hp = (e.currentTarget.elements.namedItem("website") as HTMLInputElement | null)?.value || "";
         const extra = prepare ? await prepare() : {};
         if ("error" in extra && typeof extra.error === "string") { setState("idle"); return setErr(extra.error); }
-        const res = await send<{ ok: boolean; confirm?: boolean }>("/api/lead", { ...extra, email, kind, source, animeId, animeTitle, consent, website: hp, page: location.pathname, utm: utm() });
+        const body = { ...extra, email, kind, source, animeId, animeTitle, consent, website: hp, page: location.pathname, utm: utm() };
+        const res = await send<{ ok: boolean; confirm?: boolean }>("/api/lead", body);
         if (res.error) { setState("idle"); return setErr(res.error); }
         setConfirm(Boolean(res.confirm));
+        setPayload(body);
         setState("ok");
         track("generate_lead", { source, kind, anime_id: animeId });
       }}
