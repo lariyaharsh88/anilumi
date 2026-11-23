@@ -314,6 +314,166 @@
           "why": "The classic delinquent hero: a street fighter who dies saving a child comes back as a spirit detective."
         }
       ]
+    },
+    "naruto": {
+      "about": "Long shonen journeys, outcasts with one big dream, training arcs and rivals who become friends.",
+      "picks": [
+        {
+          "s": "black-clover-tv",
+          "why": "The closest in spirit: an outcast orphan born without magic wants to become Wizard King, with a gifted rival from the same village."
+        },
+        {
+          "s": "boruto-naruto-next-generations",
+          "why": "The direct sequel: Naruto is Hokage, and his son Boruto starts his own ninja career."
+        },
+        {
+          "s": "bleach",
+          "why": "The other big shonen of Naruto's era: a hot-headed hero with a giant sword, a huge cast and long arcs."
+        },
+        {
+          "s": "one-piece",
+          "why": "The third of the big three: a boy with one dream gathers a crew of misfits who would do anything for him."
+        },
+        {
+          "s": "hunter-x-hunter-2011",
+          "why": "Two friends, a deep power system and an exam that tests far more than strength, like the Chunin Exams."
+        },
+        {
+          "s": "jujutsu-kaisen",
+          "why": "A school of fighters, a mentor everyone loves and a dangerous power sealed inside the hero, like the Nine-Tails."
+        },
+        {
+          "s": "boku-no-hero-academia",
+          "why": "A powerless boy trains to become the greatest hero, with a class full of rivals and a mentor who believes in him."
+        },
+        {
+          "s": "kimetsu-no-yaiba",
+          "why": "Training arcs, a hero fighting to protect his sister and a corps of elite fighters to measure himself against."
+        },
+        {
+          "s": "fairy-tail",
+          "why": "Friendship as a superpower: Natsu and his guild take on anyone who hurts one of their own."
+        },
+        {
+          "s": "yu-yu-hakusho",
+          "why": "A delinquent turned spirit detective, tournaments and rivals who become friends."
+        },
+        {
+          "s": "shaman-king-2021",
+          "why": "A laid-back boy who can see spirits enters a tournament to become Shaman King, gathering friends from his rivals."
+        },
+        {
+          "s": "dragon-ball-z",
+          "why": "The classic Naruto's generation grew up on: Goku and his friends defend Earth from ever-stronger enemies."
+        }
+      ]
+    },
+    "attack-on-titan": {
+      "about": "Humanity on the edge, brutal fights against monsters, and stories that turn into war and conspiracy.",
+      "picks": [
+        {
+          "s": "vinland-saga",
+          "why": "The closest in weight: a boy raised among Viking warriors chases revenge for his father, and the story grows into a question of what fighting is for."
+        },
+        {
+          "s": "koutetsujou-no-kabaneri",
+          "why": "The most similar setup: humanity hides from undead monsters behind walled stations and armoured trains."
+        },
+        {
+          "s": "fullmetal-alchemist-brotherhood",
+          "why": "Two brothers pay a terrible price and uncover a conspiracy that reaches the top of their military state."
+        },
+        {
+          "s": "yakusoku-no-neverland",
+          "why": "Children find out the truth about the walls around their home and plan an escape."
+        },
+        {
+          "s": "eighty-six",
+          "why": "Teenagers forced to fight a war their own country pretends is fought by drones."
+        },
+        {
+          "s": "code-geass-lelouch-of-the-rebellion",
+          "why": "A rebellion against an empire, giant mechs and a lead who will do anything to win."
+        },
+        {
+          "s": "tokyo-ghoul",
+          "why": "A student becomes part ghoul, a monster that eats people, and has to live on both sides, much like Eren and his titan."
+        },
+        {
+          "s": "kiseijuu",
+          "why": "Alien parasites take over human bodies; one ends up in Shinichi's right hand, and the two have to fight together to survive."
+        },
+        {
+          "s": "claymore",
+          "why": "Half-human warriors hunt shape-shifting monsters that eat people, always at risk of becoming one themselves."
+        },
+        {
+          "s": "owari-no-seraph",
+          "why": "Vampires rule what's left of humanity after a virus, and a boy joins the army to take revenge."
+        },
+        {
+          "s": "neon-genesis-evangelion",
+          "why": "Teenagers pilot giant machines against mysterious giants, and it turns far darker and stranger than it first looks."
+        },
+        {
+          "s": "chainsaw-man",
+          "why": "Brutal, unpredictable and willing to kill off anyone."
+        }
+      ]
+    },
+    "kimi-no-na-wa": {
+      "about": "Makoto Shinkai's other films, bittersweet romance, time and memory, and films that make people cry.",
+      "picks": [
+        {
+          "s": "tenki-no-ko-weathering-with-you",
+          "why": "Makoto Shinkai's next film after Your Name: a runaway boy in Tokyo meets a girl who can make the sun come out."
+        },
+        {
+          "s": "suzume-no-tojimari",
+          "why": "Shinkai again: a girl travels across Japan closing mysterious doors that let disasters through.",
+          "name": "Suzume"
+        },
+        {
+          "s": "koe-no-katachi",
+          "why": "A former bully seeks out the deaf girl he tormented at school; quieter than Your Name, and just as moving."
+        },
+        {
+          "s": "five-centimeters-per-second",
+          "why": "Shinkai's earlier film about two friends drifting apart over years and distance."
+        },
+        {
+          "s": "the-garden-of-words",
+          "why": "Shinkai's short film: a student and an older woman keep meeting on rainy mornings in a Tokyo garden."
+        },
+        {
+          "s": "kimi-no-suizou-wo-tabetai",
+          "why": "A loner learns a popular classmate's secret illness and spends her last months with her."
+        },
+        {
+          "s": "the-girl-who-leapt-through-time",
+          "why": "A girl finds she can leap back in time and spends it on small things until it really matters."
+        },
+        {
+          "s": "shigatsu-wa-kimi-no-uso",
+          "why": "A pianist who stopped playing meets a free-spirited violinist who brings music back into his life."
+        },
+        {
+          "s": "anohana-the-flower-we-saw-that-day",
+          "why": "Childhood friends who drifted apart reunite when the ghost of the friend they lost appears to one of them."
+        },
+        {
+          "s": "violet-evergarden",
+          "why": "A former soldier writes letters for other people and slowly learns what love means."
+        },
+        {
+          "s": "josee-to-tora-to-sakana-tachi",
+          "why": "A diving student and a young woman who uses a wheelchair grow close over one summer."
+        },
+        {
+          "s": "orange",
+          "why": "Letters from her future self ask Naho to change the past and save a classmate."
+        }
+      ]
     }
   }
 }

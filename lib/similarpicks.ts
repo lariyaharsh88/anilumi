@@ -6,7 +6,8 @@
  */
 import data from "@/data/similar-picks.json";
 
-export type EditorPick = { s: string; why: string };
+/** `name`: the English name people know, when Kitsu's is a literal translation ("Suzume", not "Sparrow's Door Tightening"). */
+export type EditorPick = { s: string; why: string; name?: string };
 export type EditorList = { about: string; picks: EditorPick[] };
 const D = data as { checked: string; lists: Record<string, EditorList> };
 export const EDITOR_PICKS_CHECKED = D.checked;

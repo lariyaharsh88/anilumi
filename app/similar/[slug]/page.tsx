@@ -95,7 +95,7 @@ export default async function SimilarPage({ params }: Props) {
   const editor = editorPicks(a.slug);
   const editorAnime = editor ? await animeBySlugs(editor.picks.map((p) => p.s), true).catch(() => new Map<string, Anime>()) : null;
   // English names where Kitsu has none ("Overgeared", not "Temppal: Item no Chikara"; lib/searchname.ts).
-  const handPicked = editor && editorAnime ? editor.picks.flatMap((p) => { const x = editorAnime.get(p.s); return x ? [{ anime: x.titleEn ? x : { ...x, titleEn: englishName(x) }, why: p.why }] : []; }) : [];
+  const handPicked = editor && editorAnime ? editor.picks.flatMap((p) => { const x = editorAnime.get(p.s); return x ? [{ anime: p.name ? { ...x, titleEn: p.name } : x.titleEn ? x : { ...x, titleEn: englishName(x) }, why: p.why }] : []; }) : [];
   const shortName = (x: Anime) => x.titleEn || x.title;
   const handHindi = handPicked.filter((p) => hasHindiDub(p.anime.slug));
   // The closest picks side by side with the show itself; then the ones you can watch in Hindi.
