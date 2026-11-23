@@ -15,3 +15,9 @@ test("no English name when it's the same, contained, too long or not Latin", () 
   assert.equal(englishName({ id: "1", title: "Temppal", titleEn: "템빨" }, none), null);
   assert.equal(englishName({ id: "1", title: "Temppal", titleEn: null }, none), null);
 });
+
+test("researched names win for donghua and Ghibli films titled in pinyin or romaji", () => {
+  assert.equal(englishName({ id: "1", slug: "xian-wang-de-richang-shenghuo", title: "Xian Wang de Richang Shenghuo", titleEn: null }, () => null), "The Daily Life of the Immortal King");
+  assert.equal(englishName({ id: "1", slug: "kimitachi-wa-dou-ikiru-ka", title: "Kimitachi wa Dou Ikiru ka", titleEn: null }, () => null), "The Boy and the Heron");
+  assert.equal(englishName({ id: "1", slug: "spirited-away", title: "Spirited Away", titleEn: "Spirited Away" }, () => null), null);
+});

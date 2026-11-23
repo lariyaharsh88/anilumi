@@ -1,0 +1,2232 @@
+{
+ "checked": "2026-11-23",
+ "titles": [
+  {
+   "t": "Ne Zha 2",
+   "cn": "Nezha zhi Mo Tong Nao Hai",
+   "type": "film",
+   "status": "finished (released 29 Jan 2025)",
+   "demand": 110000,
+   "regions": {
+    "IN": [
+     {
+      "service": "JioHotstar",
+      "kind": "subscription",
+      "audio": [
+       "zh",
+       "hi",
+       "en"
+      ],
+      "subs": [],
+      "url": "https://www.hotstar.com/in/movies/ne-zha-2/1271537249"
+     },
+     {
+      "service": "Apple TV",
+      "kind": "buy",
+      "audio": [
+       "hi"
+      ],
+      "subs": [
+       "en",
+       "ta",
+       "te"
+      ],
+      "url": "https://tv.apple.com/in/movie/i-am-ne-zha-2/umc.cmc.1qa5qqta6hyxycgad02e9dsi0"
+     }
+    ],
+    "US": [
+     {
+      "service": "HBO Max",
+      "kind": "subscription",
+      "audio": [
+       "en"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://play.hbomax.com/show/d4cdfb64-ec7d-4837-be1d-a4f713319b87"
+     },
+     {
+      "service": "Prime Video",
+      "kind": "buy",
+      "audio": [
+       "en"
+      ],
+      "subs": [
+       "en",
+       "es"
+      ],
+      "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.ef847e64-ff55-491f-aacd-550d93b9b0a1"
+     },
+     {
+      "service": "Apple TV",
+      "kind": "buy",
+      "audio": [
+       "en"
+      ],
+      "subs": [
+       "en",
+       "es",
+       "fr"
+      ],
+      "url": "https://tv.apple.com/us/movie/ne-zha-ii/umc.cmc.1qa5qqta6hyxycgad02e9dsi0"
+     },
+     {
+      "service": "Fandango at Home",
+      "kind": "buy",
+      "audio": [
+       "en"
+      ],
+      "subs": [],
+      "url": "https://athome.fandango.com/content/browse/details/Ne-Zha-II/4413161"
+     }
+    ],
+    "GB": []
+   },
+   "hindi": {
+    "available": true,
+    "where": "JioHotstar; Apple TV (rent or buy)",
+    "source": "https://www.republicworld.com/entertainment/ott/movies/ne-zha-2-on-ott-22-billion-grossing-animated-film-to-stream-one-year-after-theatrical-release-know-when-and-where-to-watch"
+   },
+   "kitsu": "nezha-zhi-mo-tong-nao-hai",
+   "sources": [
+    "https://www.justwatch.com/in/movie/ne-zha-2",
+    "https://www.justwatch.com/us/movie/ne-zha-2",
+    "https://www.justwatch.com/uk/movie/ne-zha-2",
+    "https://www.republicworld.com/entertainment/ott/movies/ne-zha-2-on-ott-22-billion-grossing-animated-film-to-stream-one-year-after-theatrical-release-know-when-and-where-to-watch"
+   ],
+   "confidence": "high",
+   "note": "JustWatch UK lists no streaming/buy offer for Ne Zha 2 as of 23 Nov 2026. US HBO Max offer lists English audio only. Apple TV India lists only the Hindi track (odd; Mandarin may exist). Kitsu slug is not English: 'nezha-zhi-mo-tong-nao-hai' (2019 Ne Zha is 'ne-zha-zhi-mo-tong-jiang-shi'). Hindi audio on JioHotstar is from a news report (Republic World); JustWatch lists JioHotstar."
+  },
+  {
+   "t": "The Daily Life of the Immortal King",
+   "cn": "Xian Wang de Richang Shenghuo",
+   "type": "series",
+   "status": "finished (5 seasons; S5 12 eps ended 22 Feb 2026)",
+   "demand": 73000,
+   "regions": {
+    "IN": [
+     {
+      "service": "Crunchyroll",
+      "kind": "subscription",
+      "audio": [
+       "zh",
+       "en",
+       "hi",
+       "ta",
+       "te",
+       "th"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://www.crunchyroll.com/series/G7PU4798V"
+     },
+     {
+      "service": "Crunchyroll on Prime Video",
+      "kind": "subscription",
+      "audio": [
+       "en",
+       "hi",
+       "ta",
+       "te",
+       "th"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.ea36f87a-7976-4456-bb65-aeb03c505e11"
+     }
+    ],
+    "US": [
+     {
+      "service": "Crunchyroll",
+      "kind": "subscription",
+      "audio": [
+       "zh",
+       "en",
+       "hi",
+       "ta",
+       "te",
+       "th"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://www.crunchyroll.com/series/G7PU4798V"
+     },
+     {
+      "service": "Prime Video",
+      "kind": "buy",
+      "audio": [],
+      "subs": [],
+      "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.b2766909-6a22-4599-9bc2-900c7c860e35"
+     }
+    ],
+    "GB": [
+     {
+      "service": "Crunchyroll",
+      "kind": "subscription",
+      "audio": [
+       "zh",
+       "en",
+       "hi",
+       "ta",
+       "te",
+       "th"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://www.crunchyroll.com/series/G7PU4798V"
+     }
+    ]
+   },
+   "hindi": {
+    "available": true,
+    "where": "Crunchyroll, Season 5",
+    "source": "https://animemirchi.com/crunchyroll-winter-2026-hindi-tamil-telugu-lineup/"
+   },
+   "kitsu": "xian-wang-de-richang-shenghuo",
+   "sources": [
+    "https://www.justwatch.com/in/tv-show/the-daily-life-of-the-immortal-king",
+    "https://www.justwatch.com/us/tv-show/the-daily-life-of-the-immortal-king",
+    "https://www.justwatch.com/uk/tv-series/the-daily-life-of-the-immortal-king",
+    "https://animemirchi.com/crunchyroll-winter-2026-hindi-tamil-telugu-lineup/",
+    "https://tv.apple.com/in/show/the-daily-life-of-the-immortal-king/umc.cmc.5yw3schkot1vpg8d0i3y4enkd"
+   ],
+   "confidence": "high",
+   "note": "Hindi dub is per-season (confirmed for S5 only); audio lists from JustWatch are series-wide. Crunchyroll page itself returned 403 to the fetcher, URL is the series ID JustWatch links to. Kitsu has separate slugs per season (…-2nd-season, -3, -4, -5)."
+  },
+  {
+   "t": "Lord of Mysteries",
+   "cn": "Guimi zhi Zhu",
+   "type": "series",
+   "status": "on break (S1 13 eps ended Aug 2025; special 'Liewu' Jun 2026; S2 trailed for 2027)",
+   "demand": 45200,
+   "regions": {
+    "IN": [
+     {
+      "service": "Crunchyroll",
+      "kind": "subscription",
+      "audio": [
+       "zh",
+       "en",
+       "hi",
+       "es",
+       "fr",
+       "de",
+       "pt",
+       "id",
+       "th",
+       "tl"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://www.crunchyroll.com/watch/GE00353734TLPH"
+     },
+     {
+      "service": "Crunchyroll on Prime Video",
+      "kind": "subscription",
+      "audio": [
+       "en",
+       "hi",
+       "es",
+       "fr",
+       "de",
+       "pt",
+       "id",
+       "th",
+       "tl"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.1e09fc29-2212-42a7-a8aa-f4724e54575e"
+     }
+    ],
+    "US": [
+     {
+      "service": "Crunchyroll",
+      "kind": "subscription",
+      "audio": [
+       "zh",
+       "en",
+       "hi",
+       "es",
+       "fr",
+       "de",
+       "pt",
+       "id",
+       "th",
+       "tl"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://www.crunchyroll.com/watch/GE00353734TLPH"
+     },
+     {
+      "service": "Prime Video",
+      "kind": "buy",
+      "audio": [
+       "en",
+       "hi",
+       "es",
+       "fr",
+       "de",
+       "pt"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.1e09fc29-2212-42a7-a8aa-f4724e54575e"
+     },
+     {
+      "service": "Apple TV",
+      "kind": "buy",
+      "audio": [],
+      "subs": [],
+      "url": "https://tv.apple.com/us/show/lord-of-mysteries/umc.cmc.5caonzi80yk933epz0ke37a0w"
+     }
+    ],
+    "GB": [
+     {
+      "service": "Crunchyroll",
+      "kind": "subscription",
+      "audio": [
+       "zh",
+       "en",
+       "hi",
+       "es",
+       "fr",
+       "de",
+       "pt",
+       "id",
+       "th",
+       "tl"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://www.crunchyroll.com/watch/GE00353734TLPH"
+     },
+     {
+      "service": "Apple TV",
+      "kind": "buy",
+      "audio": [],
+      "subs": [],
+      "url": "https://tv.apple.com/gb/show/lord-of-mysteries/umc.cmc.5caonzi80yk933epz0ke37a0w"
+     }
+    ]
+   },
+   "hindi": {
+    "available": true,
+    "where": "Crunchyroll",
+    "source": "https://tv.apple.com/in/show/lord-of-mysteries/umc.cmc.5caonzi80yk933epz0ke37a0w"
+   },
+   "kitsu": "guimi-zhi-zhu",
+   "sources": [
+    "https://www.justwatch.com/in/tv-show/lord-of-the-mysteries",
+    "https://www.justwatch.com/us/tv-show/lord-of-the-mysteries",
+    "https://www.justwatch.com/uk/tv-series/lord-of-the-mysteries",
+    "https://tv.apple.com/in/show/lord-of-mysteries/umc.cmc.5caonzi80yk933epz0ke37a0w",
+    "https://animecorner.me/lord-of-mysteries-chinese-series-dub-crunchyroll-english/"
+   ],
+   "confidence": "high",
+   "note": "Crunchyroll announced dubs in English, Spanish, Hindi, Portuguese, French (Anime Corner); no dated Hindi premiere announcement found, but JustWatch's Crunchyroll IN offer and Apple TV India both list Hindi. Not on the official Tencent YouTube channel (searched). Aired on Bilibili in China."
+  },
+  {
+   "t": "To Be Hero X",
+   "cn": "Tu Bian Yingxiong X",
+   "type": "series",
+   "status": "finished (S1 24 eps, Apr-Sep 2025)",
+   "demand": 22200,
+   "regions": {
+    "IN": [
+     {
+      "service": "Crunchyroll",
+      "kind": "subscription",
+      "audio": [
+       "zh",
+       "ja",
+       "en",
+       "hi",
+       "ta",
+       "te",
+       "es",
+       "fr",
+       "de",
+       "pt"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://www.crunchyroll.com/watch/GE00351328TEIN"
+     },
+     {
+      "service": "Crunchyroll on Prime Video",
+      "kind": "subscription",
+      "audio": [
+       "ja",
+       "en",
+       "hi",
+       "ta",
+       "te",
+       "es",
+       "fr",
+       "de",
+       "pt"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.779ee7b9-2ae1-4142-a353-4a4ed5d293f7"
+     }
+    ],
+    "US": [
+     {
+      "service": "Crunchyroll",
+      "kind": "subscription",
+      "audio": [
+       "zh",
+       "ja",
+       "en",
+       "hi",
+       "ta",
+       "te",
+       "es",
+       "fr",
+       "de",
+       "pt"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://www.crunchyroll.com/watch/GE00351328TEIN"
+     },
+     {
+      "service": "Apple TV",
+      "kind": "buy",
+      "audio": [],
+      "subs": [],
+      "url": "https://tv.apple.com/us/show/to-be-hero-x/umc.cmc.286sijfgcfk0eun62dl2jowhl"
+     },
+     {
+      "service": "Prime Video",
+      "kind": "buy",
+      "audio": [],
+      "subs": [],
+      "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.f98a920a-293e-45df-b3c4-67da64a2fdf6"
+     }
+    ],
+    "GB": [
+     {
+      "service": "Crunchyroll",
+      "kind": "subscription",
+      "audio": [
+       "zh",
+       "ja",
+       "en",
+       "hi",
+       "ta",
+       "te",
+       "es",
+       "fr",
+       "de",
+       "pt"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://www.crunchyroll.com/watch/GE00351328TEIN"
+     },
+     {
+      "service": "Apple TV",
+      "kind": "buy",
+      "audio": [],
+      "subs": [],
+      "url": "https://tv.apple.com/gb/show/to-be-hero-x/umc.cmc.286sijfgcfk0eun62dl2jowhl"
+     }
+    ]
+   },
+   "hindi": {
+    "available": true,
+    "where": "Crunchyroll",
+    "source": "https://animemirchi.com/crunchyroll-winter-2026-hindi-tamil-telugu-lineup/"
+   },
+   "kitsu": "to-be-hero-x",
+   "sources": [
+    "https://www.justwatch.com/in/tv-show/to-be-hero-x",
+    "https://www.justwatch.com/us/tv-show/to-be-hero-x",
+    "https://www.justwatch.com/uk/tv-series/to-be-hero-x",
+    "https://animemirchi.com/crunchyroll-winter-2026-hindi-tamil-telugu-lineup/",
+    "https://tv.apple.com/in/show/to-be-hero-x/umc.cmc.286sijfgcfk0eun62dl2jowhl"
+   ],
+   "confidence": "high",
+   "note": "Chinese-Japanese co-production (Bilibili/Aniplex); Japanese is the primary original audio on most listings, Mandarin also available."
+  },
+  {
+   "t": "Heaven Official's Blessing",
+   "cn": "Tian Guan Ci Fu",
+   "type": "series",
+   "status": "finished (S1 11+special 2020-21, S2 12 eps 2023-24; no S3 date confirmed)",
+   "demand": 18100,
+   "regions": {
+    "IN": [
+     {
+      "service": "Prime Video's free tier",
+      "kind": "free",
+      "audio": [
+       "zh",
+       "hi"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://www.primevideo.com/detail/0OMT48GLYSF6KY0H30GU4DNS7I"
+     },
+     {
+      "service": "Crunchyroll",
+      "kind": "subscription",
+      "audio": [
+       "zh",
+       "ja",
+       "en"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://www.crunchyroll.com/watch/GN7UD4PE5"
+     },
+     {
+      "service": "Crunchyroll on Prime Video",
+      "kind": "subscription",
+      "audio": [
+       "en",
+       "ja",
+       "hi"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.b72c0c98-4bf8-43dd-b604-8ecb91e05bea"
+     }
+    ],
+    "US": [
+     {
+      "service": "Crunchyroll",
+      "kind": "subscription",
+      "audio": [
+       "zh",
+       "ja",
+       "en"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://www.crunchyroll.com/watch/GN7UD4PE5"
+     },
+     {
+      "service": "Rakuten Viki",
+      "kind": "free",
+      "audio": [
+       "zh"
+      ],
+      "subs": [
+       "en",
+       "es",
+       "fr",
+       "de"
+      ],
+      "url": "https://www.viki.com/videos/1272811v-heaven-officials-blessing-episode-1"
+     },
+     {
+      "service": "Rakuten Viki",
+      "kind": "subscription",
+      "audio": [
+       "zh"
+      ],
+      "subs": [
+       "en",
+       "es",
+       "fr",
+       "de"
+      ],
+      "url": "https://www.viki.com/videos/1272813v-heaven-officials-blessing-episode-3"
+     },
+     {
+      "service": "Prime Video",
+      "kind": "buy",
+      "audio": [],
+      "subs": [],
+      "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.fd2093b4-c440-4581-b7a9-626629fa68e0"
+     },
+     {
+      "service": "Apple TV",
+      "kind": "buy",
+      "audio": [],
+      "subs": [],
+      "url": "https://tv.apple.com/us/show/heaven-officials-blessing/umc.cmc.xrer4gtln49fk888llconlxp"
+     }
+    ],
+    "GB": [
+     {
+      "service": "Crunchyroll",
+      "kind": "subscription",
+      "audio": [
+       "zh",
+       "ja",
+       "en"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://www.crunchyroll.com/watch/GN7UD4PE5"
+     },
+     {
+      "service": "Apple TV",
+      "kind": "buy",
+      "audio": [],
+      "subs": [],
+      "url": "https://tv.apple.com/gb/show/heaven-officials-blessing/umc.cmc.xrer4gtln49fk888llconlxp"
+     }
+    ]
+   },
+   "hindi": {
+    "available": true,
+    "where": "Prime Video's free tier, Season 1",
+    "source": "https://www.primevideo.com/detail/0OMT48GLYSF6KY0H30GU4DNS7I"
+   },
+   "kitsu": "tian-guan-ci-fu",
+   "sources": [
+    "https://www.justwatch.com/in/tv-show/heaven-officials-blessing",
+    "https://www.justwatch.com/us/tv-show/heaven-officials-blessing",
+    "https://www.justwatch.com/uk/tv-series/heaven-officials-blessing",
+    "https://www.primevideo.com/detail/0OMT48GLYSF6KY0H30GU4DNS7I",
+    "https://tv.apple.com/in/show/heaven-officials-blessing/umc.cmc.xrer4gtln49fk888llconlxp"
+   ],
+   "confidence": "high",
+   "note": "Hindi dub is not on Crunchyroll itself (Crunchyroll offer: zh/ja/en); it is on the Prime Video/MX Player free tier in India. Prime Video page confirmed Hindi for Season 1; S2 Hindi not confirmed. Kitsu S2 slug: tian-guan-ci-fu-2."
+  },
+  {
+   "t": "Spare Me, Great Lord!",
+   "cn": "Da Wang Rao Ming",
+   "type": "series",
+   "status": "airing (S3 'Master's Mercy 3', since Oct 2026, 8 eps as of 23 Nov; Kitsu lists 16 eps); weekly, Tencent Video; official YouTube members-early uploads every Friday",
+   "demand": 18100,
+   "regions": {
+    "IN": [
+     {
+      "service": "YouTube (Tencent, official)",
+      "kind": "free",
+      "audio": [
+       "zh"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://www.youtube.com/watch?v=XClhZWg2-2M"
+     }
+    ],
+    "US": [
+     {
+      "service": "YouTube (Tencent, official)",
+      "kind": "free",
+      "audio": [
+       "zh"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://www.youtube.com/watch?v=XClhZWg2-2M"
+     }
+    ],
+    "GB": [
+     {
+      "service": "YouTube (Tencent, official)",
+      "kind": "free",
+      "audio": [
+       "zh"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://www.youtube.com/watch?v=XClhZWg2-2M"
+     }
+    ]
+   },
+   "hindi": {
+    "available": false,
+    "where": "",
+    "source": null
+   },
+   "kitsu": "dawang-raoming",
+   "sources": [
+    "https://www.youtube.com/@TencentVideoAnimation/search?query=%E5%A4%A7%E7%8E%8B%E9%A5%B6%E5%91%BD",
+    "https://www.youtube.com/watch?v=XClhZWg2-2M",
+    "https://www.youtube.com/watch?v=FYalrYdtQLA",
+    "https://www.youtube.com/watch?v=TuM4C1w9yag",
+    "https://www.youtube.com/watch?v=ab5CR92hOTY",
+    "https://www.justwatch.com/us/tv-show/spare-me-your-mercy"
+   ],
+   "confidence": "medium",
+   "note": "No JustWatch entry found in IN/US/UK (searches returned unrelated titles). Official Tencent channel has S1 EP01 and an S2 EP01-12 compilation (ENG SUB) viewable in IN/US/GB; S3 episodes are 'Members Premiere' (paid YouTube channel membership, MULTI SUB), so S3 is not free yet. Tencent's English title for S3 is 'Master's Mercy'. S1 full free availability not verified beyond EP01. Exact China release weekday not confirmed. Kitsu: S1 'dawang-raoming', S2 'da-wang-rao-ming-2', S3 'da-wang-rao-ming-3'."
+  },
+  {
+   "t": "Battle Through the Heavens",
+   "cn": "Doupo Cangqiong",
+   "type": "series",
+   "status": "airing (S5 annual series since 3 Aug 2025, Kitsu lists 62 eps); weekly Sunday, Tencent Video",
+   "demand": 24700,
+   "regions": {
+    "IN": [],
+    "US": [
+     {
+      "service": "Prime Video",
+      "kind": "buy",
+      "audio": [],
+      "subs": [],
+      "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.bc42ccbb-03bc-4a94-b583-1c85b56abb57"
+     }
+    ],
+    "GB": [
+     {
+      "service": "Prime Video",
+      "kind": "subscription",
+      "audio": [
+       "zh"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://watch.amazon.co.uk/detail?gti=amzn1.dv.gti.d215b624-5ac2-4eff-9bf0-7de3a99d728e"
+     },
+     {
+      "service": "Prime Video",
+      "kind": "buy",
+      "audio": [],
+      "subs": [],
+      "url": "https://watch.amazon.co.uk/detail?gti=amzn1.dv.gti.17665867-5833-4333-8a96-e15f51a6373d"
+     }
+    ]
+   },
+   "hindi": {
+    "available": false,
+    "where": "",
+    "source": null
+   },
+   "kitsu": "doupo-cangqiong",
+   "sources": [
+    "https://www.justwatch.com/us/tv-show/fights-break-sphere",
+    "https://www.justwatch.com/uk/tv-series/fights-break-sphere",
+    "https://www.justwatch.com/in/tv-show/fights-break-sphere",
+    "https://www.youtube.com/watch?v=j83im8Vfb14",
+    "https://www.youtube.com/@TencentVideoAnimation/search?query=Battle%20Through%20the%20Heavens"
+   ],
+   "confidence": "medium",
+   "note": "JustWatch lists the donghua as 'Fights Break Sphere' (2017, 8 seasons). The India JustWatch 'Fights Break Sphere' entry (MX Player / Prime Video free, Hindi audio) is the 2018 LIVE-ACTION drama (same IMDb id tt9248626 as the Viki live-action listing), not the donghua - do not use it. Official Tencent YouTube has only isolated BTTH uploads (e.g. S2 EP01, available IN/US/GB), no full current-season playlist found. WeTV likely carries it but no country page confirmed. Release weekday (Sunday) from Kitsu start date 2025-08-03 and prior seasons; Kitsu current-season slug 'dou-po-cangqiong-nian-fan-4'."
+  },
+  {
+   "t": "Link Click",
+   "cn": "Shiguang Dailiren",
+   "type": "series",
+   "status": "on break (S1 2021, S2 2023, Bridon arc special 2024-25, S3 Part 1 12 eps ended 23 Oct 2026; Part 2 TBA)",
+   "demand": 14800,
+   "regions": {
+    "IN": [
+     {
+      "service": "Crunchyroll",
+      "kind": "subscription",
+      "audio": [
+       "zh",
+       "en",
+       "ar",
+       "es",
+       "fr",
+       "it",
+       "pt",
+       "th"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://www.crunchyroll.com/watch/GX9U3M7W7"
+     },
+     {
+      "service": "Crunchyroll on Prime Video",
+      "kind": "subscription",
+      "audio": [
+       "en",
+       "ar",
+       "es",
+       "fr",
+       "it",
+       "pt"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.9b191118-c882-4efd-bfbb-ad4be58cacaf"
+     }
+    ],
+    "US": [
+     {
+      "service": "Crunchyroll",
+      "kind": "subscription",
+      "audio": [
+       "zh",
+       "en",
+       "ar",
+       "es",
+       "fr",
+       "it",
+       "pt",
+       "th"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://www.crunchyroll.com/watch/GX9U3M7W7"
+     }
+    ],
+    "GB": [
+     {
+      "service": "Crunchyroll",
+      "kind": "subscription",
+      "audio": [
+       "zh",
+       "en",
+       "ar",
+       "es",
+       "fr",
+       "it",
+       "pt",
+       "th"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://www.crunchyroll.com/watch/GX9U3M7W7"
+     }
+    ]
+   },
+   "hindi": {
+    "available": false,
+    "where": "",
+    "source": null
+   },
+   "kitsu": "shiguang-daili-ren",
+   "sources": [
+    "https://www.justwatch.com/in/tv-show/link-click",
+    "https://www.justwatch.com/us/tv-show/link-click",
+    "https://www.justwatch.com/uk/tv-series/link-click"
+   ],
+   "confidence": "high",
+   "note": "No Hindi audio in any listing checked. Kitsu slugs: S1 'shiguang-daili-ren', S2 'shiguang-dailiren-2nd-season', S3 'shiguang-dailiren-iii'. Bilibili production."
+  },
+  {
+   "t": "Scissor Seven",
+   "cn": "Cike Wu Liuqi",
+   "type": "series",
+   "status": "finished (5 seasons on Netflix)",
+   "demand": 14800,
+   "regions": {
+    "IN": [
+     {
+      "service": "Netflix",
+      "kind": "subscription",
+      "audio": [
+       "zh",
+       "en"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://www.netflix.com/in/title/81156880"
+     }
+    ],
+    "US": [
+     {
+      "service": "Netflix",
+      "kind": "subscription",
+      "audio": [
+       "zh",
+       "en"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://www.netflix.com/title/81156880"
+     }
+    ],
+    "GB": [
+     {
+      "service": "Netflix",
+      "kind": "subscription",
+      "audio": [
+       "zh",
+       "en"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://www.netflix.com/title/81156880"
+     }
+    ]
+   },
+   "hindi": {
+    "available": false,
+    "where": "",
+    "source": "https://www.netflix.com/in/title/81156880"
+   },
+   "kitsu": "cike-wu-liuqi",
+   "sources": [
+    "https://www.justwatch.com/in/tv-show/killer-seven",
+    "https://www.justwatch.com/us/tv-show/killer-seven",
+    "https://www.justwatch.com/uk/tv-series/killer-seven",
+    "https://www.netflix.com/in/title/81156880"
+   ],
+   "confidence": "high",
+   "note": "Netflix India page lists audio English, Mandarin (original) + Mandarin AD; subtitles English. No Hindi. Audio for US/UK assumed same as India page (not opened separately)."
+  },
+  {
+   "t": "Renegade Immortal",
+   "cn": "Xian Ni",
+   "type": "series",
+   "status": "airing (EP166 on 22 Nov 2026); weekly Sunday, Tencent Video",
+   "demand": 12100,
+   "regions": {
+    "IN": [
+     {
+      "service": "Crunchyroll",
+      "kind": "subscription",
+      "audio": [
+       "zh"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://www.crunchyroll.com/watch/G0DUMNZQX"
+     },
+     {
+      "service": "YouTube (Tencent, official)",
+      "kind": "free",
+      "audio": [
+       "zh"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://www.youtube.com/watch?v=AvrsnNTAcTc"
+     }
+    ],
+    "US": [
+     {
+      "service": "Crunchyroll",
+      "kind": "subscription",
+      "audio": [
+       "zh"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://www.crunchyroll.com/watch/G0DUMNZQX"
+     },
+     {
+      "service": "WeTV",
+      "kind": "subscription",
+      "audio": [
+       "zh"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": null
+     }
+    ],
+    "GB": [
+     {
+      "service": "Crunchyroll",
+      "kind": "subscription",
+      "audio": [
+       "zh"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://www.crunchyroll.com/watch/G0DUMNZQX"
+     },
+     {
+      "service": "YouTube (Tencent, official)",
+      "kind": "free",
+      "audio": [
+       "zh"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://www.youtube.com/watch?v=AvrsnNTAcTc"
+     }
+    ]
+   },
+   "hindi": {
+    "available": false,
+    "where": "",
+    "source": null
+   },
+   "kitsu": "xian-ni",
+   "sources": [
+    "https://www.justwatch.com/in/tv-show/renegade-immortal",
+    "https://www.justwatch.com/us/tv-show/renegade-immortal",
+    "https://www.justwatch.com/uk/tv-series/renegade-immortal",
+    "https://www.youtube.com/watch?v=AvrsnNTAcTc",
+    "https://www.youtube.com/watch?v=SF-Nf6QraNs",
+    "https://www.youtube.com/watch?v=hMJbVkNj5VI",
+    "https://www.youtube.com/@TencentVideoAnimation/search?query=Renegade%20Immortal"
+   ],
+   "confidence": "high",
+   "note": "Official Tencent YouTube uploads (EP01-100, 101-125, 151-160 compilations etc.) are available in IN and GB but geo-blocked in the US (availableCountries). Newest episodes appear first as 'Members Premiere' (paid channel membership, MULTI SUB); free compilations lag. JustWatch lists WeTV ('Tencent Video') in US only, with audio en+zh claimed (en not verified, recorded zh). Weekday from YouTube upload dates (EP165 15 Nov, EP166 22 Nov, both Sunday)."
+  },
+  {
+   "t": "Swallowed Star",
+   "cn": "Tunshi Xingkong",
+   "type": "series",
+   "status": "airing (EP251 trailer posted 16 Nov 2026; ~1 ep/week); weekly, Tencent Video",
+   "demand": 12100,
+   "regions": {
+    "IN": [
+     {
+      "service": "Crunchyroll",
+      "kind": "subscription",
+      "audio": [
+       "zh"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://www.crunchyroll.com/watch/GPWU8KXWQ"
+     },
+     {
+      "service": "YouTube (Tencent, official)",
+      "kind": "free",
+      "audio": [
+       "zh"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://www.youtube.com/watch?v=MrCmUHxifMw"
+     }
+    ],
+    "US": [
+     {
+      "service": "Crunchyroll",
+      "kind": "subscription",
+      "audio": [
+       "zh"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://www.crunchyroll.com/watch/GPWU8KXWQ"
+     },
+     {
+      "service": "WeTV",
+      "kind": "subscription",
+      "audio": [
+       "zh"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": null
+     }
+    ],
+    "GB": [
+     {
+      "service": "Crunchyroll",
+      "kind": "subscription",
+      "audio": [
+       "zh"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://www.crunchyroll.com/watch/GPWU8KXWQ"
+     },
+     {
+      "service": "YouTube (Tencent, official)",
+      "kind": "free",
+      "audio": [
+       "zh"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://www.youtube.com/watch?v=MrCmUHxifMw"
+     }
+    ]
+   },
+   "hindi": {
+    "available": false,
+    "where": "",
+    "source": null
+   },
+   "kitsu": "tunshi-xingkong",
+   "sources": [
+    "https://www.justwatch.com/in/tv-show/swallowed-star",
+    "https://www.justwatch.com/us/tv-show/swallowed-star",
+    "https://www.justwatch.com/uk/tv-series/swallowed-star",
+    "https://www.youtube.com/watch?v=shtKrQ9zRJY",
+    "https://www.youtube.com/watch?v=ba2gO2vldTs",
+    "https://www.youtube.com/watch?v=TcR-oGT202g",
+    "https://www.youtube.com/watch?v=TI7kmKcKdrc",
+    "https://www.youtube.com/@TencentVideoAnimation/search?query=%E5%90%9E%E5%99%AC%E6%98%9F%E7%A9%BA"
+   ],
+   "confidence": "high",
+   "note": "Official Tencent YouTube full-episode uploads (ENG SUB) reach only EP211 (Feb 2026) and are IN/GB only (US geo-blocked); recent weeks only have trailers (249 on 2 Nov, 251 on 16 Nov). Release weekday not confirmed (historically Wednesday). JustWatch WeTV US audio claims en+zh; en not verified. Kitsu splits seasons: tunshi-xingkong, -2nd-season, -3, -4 (current)."
+  },
+  {
+   "t": "Tomb of Fallen Gods",
+   "cn": "Shen Mu",
+   "type": "series",
+   "status": "airing (S3 annual series since 8 Aug 2025 per Kitsu/MAL, 52 eps listed); weekly, Youku (weekday unconfirmed)",
+   "demand": 12100,
+   "regions": {
+    "IN": [],
+    "US": [],
+    "GB": []
+   },
+   "hindi": {
+    "available": false,
+    "where": "",
+    "source": null
+   },
+   "kitsu": "shen-mu",
+   "sources": [
+    "https://www.youtube.com/@YoukuAnimation/search?query=%E7%A5%9E%E5%A2%93",
+    "https://www.youtube.com/@TencentVideoAnimation/search?query=Tombs%20of%20Fallen",
+    "https://www.youtube.com/watch?v=PBVLyf31rLI"
+   ],
+   "confidence": "medium",
+   "note": "No legal option confirmed in IN/US/UK: no JustWatch entry found, not on the official YOUKU ANIMATION YouTube channel (searched English and Chinese titles). Tencent's 'Tombs of Fallen Immortals' uploads are a DIFFERENT show (Xian Mu, protagonist Lu Yun) - do not map. Youku app/international availability in these countries not verified. Kitsu: shen-mu, shen-mu-2nd-season, shen-mu-3rd-season."
+  },
+  {
+   "t": "Soul Land",
+   "cn": "Douluo Dalu",
+   "type": "series",
+   "status": "Soul Land 1 finished (265 eps, 2018-2023). Soul Land 2: The Peerless Tang Clan airing (EP181 trailer 20 Nov 2026); weekly Saturday, Tencent Video",
+   "demand": 12000,
+   "regions": {
+    "IN": [
+     {
+      "service": "YouTube (Tencent, official)",
+      "kind": "free",
+      "audio": [
+       "zh"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://www.youtube.com/watch?v=ouMAXr5U620"
+     }
+    ],
+    "US": [
+     {
+      "service": "WeTV",
+      "kind": "subscription",
+      "audio": [
+       "zh"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": null
+     }
+    ],
+    "GB": [
+     {
+      "service": "YouTube (Tencent, official)",
+      "kind": "free",
+      "audio": [
+       "zh"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://www.youtube.com/watch?v=ouMAXr5U620"
+     }
+    ]
+   },
+   "hindi": {
+    "available": false,
+    "where": "",
+    "source": null
+   },
+   "kitsu": "douluo-dalu",
+   "sources": [
+    "https://www.justwatch.com/us/tv-show/soul-land",
+    "https://www.justwatch.com/us/tv-show/soul-land-2-the-peerless-tang-clan",
+    "https://www.justwatch.com/in/tv-show/soul-land-2-the-peerless-tang-clan",
+    "https://www.justwatch.com/uk/tv-series/soul-land-2-the-peerless-tang-clan",
+    "https://www.youtube.com/watch?v=ouMAXr5U620",
+    "https://www.youtube.com/watch?v=6ZHAm9tOSxM",
+    "https://www.youtube.com/watch?v=JGErzLYyn-U",
+    "https://www.youtube.com/watch?v=8rW5veHRVTo",
+    "https://www.youtube.com/watch?v=Pedi94SwPHM",
+    "https://www.youtube.com/watch?v=W446j2MwXDI"
+   ],
+   "confidence": "high",
+   "note": "JustWatch has no streaming offer for Soul Land 1 in any of the 3 countries; Soul Land 2 only WeTV in US. JustWatch 'Douluo Continent' (Prime Video/Viki) is the LIVE-ACTION drama - do not use. Official Tencent YouTube has Soul Land 1 complete (EP01-265 incl. director's-cut finale) and Soul Land 2 compilations to EP140, ENG SUB, available IN + GB, geo-blocked in US; latest SL2 episodes only as trailers/members. Kitsu 'douluo-dalu-2' (2018) is NOT Soul Land 2 - it is a Soul Land 1 season split; use 'douluo-dalu-2-jueshi-tangmen'. Weekday from trailer upload cadence (Fri US time = Sat China)."
+  },
+  {
+   "t": "The King's Avatar",
+   "cn": "Quanzhi Gaoshou",
+   "type": "series",
+   "status": "finished (S1 2017 12 eps, S2 2020 12 eps, S3 2024 17 eps; plus specials and mini-theatre spin-offs); Tencent Video",
+   "demand": 6600,
+   "regions": {
+    "IN": [
+     {
+      "service": "Crunchyroll on Prime Video",
+      "kind": "subscription",
+      "audio": [],
+      "subs": [
+       "en"
+      ],
+      "url": null
+     },
+     {
+      "service": "Sony LIV",
+      "kind": "subscription",
+      "audio": [],
+      "subs": [
+       "en"
+      ],
+      "url": null
+     },
+     {
+      "service": "YouTube (Tencent, official)",
+      "kind": "free",
+      "audio": [
+       "zh"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://www.youtube.com/watch?v=O-9D65trtXE"
+     }
+    ],
+    "US": [
+     {
+      "service": "Crunchyroll on Prime Video",
+      "kind": "subscription",
+      "audio": [],
+      "subs": [
+       "en"
+      ],
+      "url": null
+     },
+     {
+      "service": "WeTV",
+      "kind": "subscription",
+      "audio": [
+       "zh"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://wetv.vip/en/play/pnumjfjcvuau4sr"
+     },
+     {
+      "service": "Prime Video",
+      "kind": "buy",
+      "audio": [],
+      "subs": [],
+      "url": null
+     },
+     {
+      "service": "YouTube (Tencent, official)",
+      "kind": "free",
+      "audio": [
+       "zh"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://www.youtube.com/watch?v=O-9D65trtXE"
+     }
+    ],
+    "GB": [
+     {
+      "service": "Crunchyroll on Prime Video",
+      "kind": "subscription",
+      "audio": [],
+      "subs": [
+       "en"
+      ],
+      "url": null
+     },
+     {
+      "service": "Prime Video",
+      "kind": "subscription",
+      "audio": [
+       "zh"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": null
+     },
+     {
+      "service": "Prime Video",
+      "kind": "buy",
+      "audio": [],
+      "subs": [],
+      "url": null
+     },
+     {
+      "service": "YouTube (Tencent, official)",
+      "kind": "free",
+      "audio": [
+       "zh"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://www.youtube.com/watch?v=O-9D65trtXE"
+     }
+    ]
+   },
+   "hindi": {
+    "available": false,
+    "where": "JustWatch IN (covers Netflix, Prime Video, Apple TV, JioHotstar, Crunchyroll, Sony LIV, MX Player) shows no Hindi audio; no official Hindi YouTube upload found",
+    "source": "https://www.justwatch.com/in/tv-show/the-kings-avatar"
+   },
+   "kitsu": "quan-zhi-gao-shou",
+   "sources": [
+    "https://www.justwatch.com/in/tv-show/the-kings-avatar",
+    "https://www.justwatch.com/us/tv-show/the-kings-avatar",
+    "https://www.justwatch.com/uk/tv-show/the-kings-avatar",
+    "https://wetv.vip/en/play/pnumjfjcvuau4sr",
+    "https://www.youtube.com/@TencentVideoAnimation/search?query=King%27s%20Avatar",
+    "https://www.youtube.com/watch?v=O-9D65trtXE",
+    "https://www.youtube.com/watch?v=aLlRbRDzNGk",
+    "https://animemirchi.com/sony-liv-adds-7-anime-in-hindi-tamil-telugu/"
+   ],
+   "confidence": "high",
+   "note": "Netflix 'The King's Avatar' (netflix.com/title/81175361) is the 2019 LIVE-ACTION drama, not the donghua; do not list it. The JustWatch Crunchyroll entry is the Prime Video channel only; a direct Crunchyroll listing was not confirmed. Offer data pulled from JustWatch's own GraphQL API (apis.justwatch.com), the same data as the JustWatch country pages listed in sources."
+  },
+  {
+   "t": "Mo Dao Zu Shi",
+   "cn": "Mo Dao Zu Shi",
+   "type": "series",
+   "status": "finished (S1 2018 15 eps, S2 2019 8 eps, S3 'Final' 2021 12 eps = 35; plus a Q chibi spin-off); Tencent Video",
+   "demand": 6120,
+   "regions": {
+    "IN": [
+     {
+      "service": "Crunchyroll",
+      "kind": "subscription",
+      "audio": [
+       "zh"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": null
+     },
+     {
+      "service": "Crunchyroll on Prime Video",
+      "kind": "subscription",
+      "audio": [],
+      "subs": [
+       "en"
+      ],
+      "url": null
+     }
+    ],
+    "US": [
+     {
+      "service": "Crunchyroll",
+      "kind": "subscription",
+      "audio": [
+       "zh"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": null
+     },
+     {
+      "service": "Crunchyroll on Prime Video",
+      "kind": "subscription",
+      "audio": [],
+      "subs": [
+       "en"
+      ],
+      "url": null
+     },
+     {
+      "service": "WeTV",
+      "kind": "subscription",
+      "audio": [
+       "zh"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://wetv.vip/en/play/r8t02fkxr9jyvvn-The%20Founder%20of%20Diabolism"
+     }
+    ],
+    "GB": [
+     {
+      "service": "Crunchyroll",
+      "kind": "subscription",
+      "audio": [
+       "zh"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": null
+     },
+     {
+      "service": "Crunchyroll on Prime Video",
+      "kind": "subscription",
+      "audio": [],
+      "subs": [
+       "en"
+      ],
+      "url": null
+     }
+    ]
+   },
+   "hindi": {
+    "available": false,
+    "where": "JustWatch IN (covers Netflix, Prime Video, Apple TV, JioHotstar, Crunchyroll, Sony LIV, MX Player) shows no Hindi audio; no official Hindi YouTube upload found; Crunchyroll audio listed as zh only",
+    "source": "https://www.justwatch.com/in/tv-show/the-founder-of-diabolism"
+   },
+   "kitsu": "mo-dao-zu-shi",
+   "sources": [
+    "https://www.justwatch.com/in/tv-show/the-founder-of-diabolism",
+    "https://www.justwatch.com/us/tv-show/the-founder-of-diabolism",
+    "https://www.justwatch.com/uk/tv-show/the-founder-of-diabolism",
+    "https://wetv.vip/en/play/r8t02fkxr9jyvvn-The%20Founder%20of%20Diabolism",
+    "https://www.youtube.com/@TencentVideoAnimation/search?query=Founder%20of%20Diabolism"
+   ],
+   "confidence": "high",
+   "note": "Tencent's official YouTube channel has only OST and promo clips for this show, no episodes. Offer data pulled from JustWatch's own GraphQL API (apis.justwatch.com), the same data as the JustWatch country pages listed in sources. Also known as The Founder of Diabolism and Grandmaster of Demonic Cultivation."
+  },
+  {
+   "t": "Tales of Herding Gods",
+   "cn": "Mu Shen Ji",
+   "type": "series",
+   "status": "airing, about 110 eps (bilibili.tv shows 'Update to EP 109'); Bilibili (China) weekly, probably Sunday; bilibili.tv international updates Tuesdays 08:00",
+   "demand": 5400,
+   "regions": {
+    "IN": [],
+    "US": [
+     {
+      "service": "Bilibili",
+      "kind": "free",
+      "audio": [
+       "zh"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://www.bilibili.tv/en/play/2117053"
+     }
+    ],
+    "GB": [
+     {
+      "service": "Bilibili",
+      "kind": "free",
+      "audio": [
+       "zh"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://www.bilibili.tv/en/play/2117053"
+     }
+    ]
+   },
+   "hindi": {
+    "available": false,
+    "where": "Not available in India at all: bilibili.tv geo-blocks IN (checked from an Indian IP), and it is not on JustWatch IN",
+    "source": "https://www.bilibili.tv/en/play/2117053"
+   },
+   "kitsu": "mushen-ji",
+   "sources": [
+    "https://www.bilibili.tv/en/play/2117053",
+    "https://www.youtube.com/@TencentVideoAnimation/search?query=Tales%20of%20Herding%20Gods",
+    "https://myanimelist.net/anime/59953"
+   ],
+   "confidence": "high",
+   "note": "Not on JustWatch in any region. The Chinese weekly day (Sunday) is inferred from episode dates on unofficial trackers plus the Kitsu start date of 27 Oct 2024 (a Sunday), so it is medium confidence. Kitsu also has a separate entry, mu-shen-ji-2, for the later cour."
+  },
+  {
+   "t": "Against the Gods",
+   "cn": "Ni Tian Xie Shen",
+   "type": "series",
+   "status": "airing: 'Against the Gods II' (2026 annual series) is around EP 31-33, about EP 61-64 overall; iQIYI, weekly on Thursday",
+   "demand": 5400,
+   "regions": {
+    "IN": [
+     {
+      "service": "iQIYI",
+      "kind": "free",
+      "audio": [
+       "zh"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://www.iq.com/album/%EC%97%AD%EC%B2%9C%EC%82%AC%EC%8B%A0-2023-20yoqe7hzcx?lang=en_us"
+     },
+     {
+      "service": "YouTube (iQIYI, official)",
+      "kind": "free",
+      "audio": [
+       "zh"
+      ],
+      "subs": [],
+      "url": "https://www.youtube.com/watch?v=JReiKNWc0U0"
+     }
+    ],
+    "US": [
+     {
+      "service": "iQIYI",
+      "kind": "free",
+      "audio": [
+       "zh"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://www.iq.com/album/%EC%97%AD%EC%B2%9C%EC%82%AC%EC%8B%A0-2023-20yoqe7hzcx?lang=en_us"
+     },
+     {
+      "service": "YouTube (iQIYI, official)",
+      "kind": "free",
+      "audio": [
+       "zh"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://www.youtube.com/watch?v=0V67VNwi_kc"
+     }
+    ],
+    "GB": [
+     {
+      "service": "iQIYI",
+      "kind": "free",
+      "audio": [
+       "zh"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://www.iq.com/album/%EC%97%AD%EC%B2%9C%EC%82%AC%EC%8B%A0-2023-20yoqe7hzcx?lang=en_us"
+     },
+     {
+      "service": "YouTube (iQIYI, official)",
+      "kind": "free",
+      "audio": [
+       "zh"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://www.youtube.com/watch?v=0V67VNwi_kc"
+     }
+    ]
+   },
+   "hindi": {
+    "available": false,
+    "where": "JustWatch IN (covers Netflix, Prime Video, Apple TV, JioHotstar, Crunchyroll, Sony LIV, MX Player) shows no Hindi audio; no official Hindi YouTube upload found",
+    "source": "https://www.iq.com/album/%EC%97%AD%EC%B2%9C%EC%82%AC%EC%8B%A0-2023-20yoqe7hzcx?lang=en_us"
+   },
+   "kitsu": "nitian-xie-shen-2023",
+   "sources": [
+    "https://www.iq.com/album/%EC%97%AD%EC%B2%9C%EC%82%AC%EC%8B%A0-2023-20yoqe7hzcx?lang=en_us",
+    "https://www.youtube.com/@iQIYIAnimation/search?query=Against%20the%20Gods",
+    "https://www.youtube.com/watch?v=JReiKNWc0U0",
+    "https://www.youtube.com/watch?v=0V67VNwi_kc"
+   ],
+   "confidence": "high",
+   "note": "Not on JustWatch. Kitsu entries: nitian-xie-shen-2023 (main 2023 series, 30 eps), nitian-xie-shen-2nd-season (2026 annual series, started 16 Apr 2026), and nitian-xie-shen (an older 2019 low-budget version, 384 eps on iQIYI; do not confuse them). The Thursday day comes from the Kitsu start date plus the weekly EP count, so it is medium confidence."
+  },
+  {
+   "t": "Martial Universe",
+   "cn": "Wu Dong Qian Kun",
+   "type": "series",
+   "status": "on break: 6 seasons of 12 eps (S6 Nov 2025); Kitsu lists S7 as upcoming (31 Dec 2026, unconfirmed); Tencent Video",
+   "demand": 4400,
+   "regions": {
+    "IN": [
+     {
+      "service": "YouTube (Tencent, official)",
+      "kind": "free",
+      "audio": [
+       "zh"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://www.youtube.com/watch?v=6xXUEJFHJpo"
+     }
+    ],
+    "US": [
+     {
+      "service": "Prime Video",
+      "kind": "buy",
+      "audio": [],
+      "subs": [],
+      "url": null
+     },
+     {
+      "service": "YouTube (Tencent, official)",
+      "kind": "free",
+      "audio": [
+       "zh"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://www.youtube.com/watch?v=6xXUEJFHJpo"
+     }
+    ],
+    "GB": [
+     {
+      "service": "Prime Video",
+      "kind": "subscription",
+      "audio": [
+       "zh"
+      ],
+      "subs": [
+       "en",
+       "fr"
+      ],
+      "url": null
+     },
+     {
+      "service": "Prime Video",
+      "kind": "buy",
+      "audio": [],
+      "subs": [],
+      "url": null
+     },
+     {
+      "service": "YouTube (Tencent, official)",
+      "kind": "free",
+      "audio": [
+       "zh"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://www.youtube.com/watch?v=6xXUEJFHJpo"
+     }
+    ]
+   },
+   "hindi": {
+    "available": false,
+    "where": "JustWatch IN (covers Netflix, Prime Video, Apple TV, JioHotstar, Crunchyroll, Sony LIV, MX Player) shows no Hindi audio; no official Hindi YouTube upload found",
+    "source": "https://www.justwatch.com/in/tv-show/martial-universe"
+   },
+   "kitsu": "wu-dong-qian-kun",
+   "sources": [
+    "https://www.justwatch.com/in/tv-show/martial-universe",
+    "https://www.justwatch.com/us/tv-show/martial-universe",
+    "https://www.justwatch.com/uk/tv-show/martial-universe",
+    "https://www.youtube.com/@TencentVideoAnimation/search?query=Martial%20Universe",
+    "https://www.youtube.com/watch?v=6xXUEJFHJpo"
+   ],
+   "confidence": "high",
+   "note": "No paid service in India; only the official YouTube S1 upload. The season count comes from Kitsu. Offer data pulled from JustWatch's own GraphQL API (apis.justwatch.com), the same data as the JustWatch country pages listed in sources."
+  },
+  {
+   "t": "Throne of Seal",
+   "cn": "Shen Yin Wangzuo",
+   "type": "series",
+   "status": "finished at EP 208 (spring 2026); WeTV lists all 208 eps released; Tencent Video",
+   "demand": 4400,
+   "regions": {
+    "IN": [
+     {
+      "service": "Crunchyroll",
+      "kind": "subscription",
+      "audio": [
+       "zh"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": null
+     },
+     {
+      "service": "Crunchyroll on Prime Video",
+      "kind": "subscription",
+      "audio": [],
+      "subs": [
+       "en"
+      ],
+      "url": null
+     },
+     {
+      "service": "YouTube (Tencent, official)",
+      "kind": "free",
+      "audio": [
+       "zh"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://www.youtube.com/watch?v=_NE5Auyipb4"
+     }
+    ],
+    "US": [
+     {
+      "service": "Crunchyroll",
+      "kind": "subscription",
+      "audio": [
+       "zh"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": null
+     },
+     {
+      "service": "Crunchyroll on Prime Video",
+      "kind": "subscription",
+      "audio": [],
+      "subs": [
+       "en"
+      ],
+      "url": null
+     },
+     {
+      "service": "WeTV",
+      "kind": "subscription",
+      "audio": [
+       "zh"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://wetv.vip/en/play/nxxyh0x1vp4nydt"
+     }
+    ],
+    "GB": [
+     {
+      "service": "Crunchyroll",
+      "kind": "subscription",
+      "audio": [
+       "zh"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": null
+     },
+     {
+      "service": "Crunchyroll on Prime Video",
+      "kind": "subscription",
+      "audio": [],
+      "subs": [
+       "en"
+      ],
+      "url": null
+     },
+     {
+      "service": "YouTube (Tencent, official)",
+      "kind": "free",
+      "audio": [
+       "zh"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://www.youtube.com/watch?v=_NE5Auyipb4"
+     }
+    ]
+   },
+   "hindi": {
+    "available": false,
+    "where": "JustWatch IN (covers Netflix, Prime Video, Apple TV, JioHotstar, Crunchyroll, Sony LIV, MX Player) shows no Hindi audio; no official Hindi YouTube upload found; YouTube 'Hindi dubbed' playlists are fan uploads",
+    "source": "https://www.justwatch.com/in/tv-show/throne-of-seal"
+   },
+   "kitsu": "shen-yin-wangzuo",
+   "sources": [
+    "https://www.justwatch.com/in/tv-show/throne-of-seal",
+    "https://www.justwatch.com/us/tv-show/throne-of-seal",
+    "https://www.justwatch.com/uk/tv-show/throne-of-seal",
+    "https://wetv.vip/en/play/nxxyh0x1vp4nydt",
+    "https://www.youtube.com/watch?v=_NE5Auyipb4",
+    "https://www.youtube.com/watch?v=hnpWALx672Q",
+    "https://www.tvmaze.com/shows/62188/throne-of-seal"
+   ],
+   "confidence": "high",
+   "note": "The 'finished' status is medium confidence: WeTV shows 208/208 eps and Kitsu marks S3 (52 eps) finished, but I found no official finale announcement. A further season is possible. Offer data pulled from JustWatch's own GraphQL API (apis.justwatch.com), the same data as the JustWatch country pages listed in sources."
+  },
+  {
+   "t": "Jade Dynasty",
+   "cn": "Zhu Xian",
+   "type": "series",
+   "status": "airing: Final Season (from Aug 2026, 26 eps planned), WeTV at EP 94 of 104; Tencent Video, weekly (WeTV Express+ lists Thursday)",
+   "demand": 3600,
+   "regions": {
+    "IN": [
+     {
+      "service": "YouTube (Tencent, official)",
+      "kind": "free",
+      "audio": [
+       "zh"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://www.youtube.com/watch?v=dOzZCedkiMI"
+     }
+    ],
+    "US": [
+     {
+      "service": "Rakuten Viki",
+      "kind": "free",
+      "audio": [
+       "zh"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://www.viki.com/videos/1237597v-jade-dynasty-episode-1"
+     },
+     {
+      "service": "WeTV",
+      "kind": "subscription",
+      "audio": [
+       "zh"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://wetv.vip/en/play/62e9ut2hxil9sgj"
+     },
+     {
+      "service": "YouTube (Tencent, official)",
+      "kind": "free",
+      "audio": [
+       "zh"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://www.youtube.com/watch?v=dOzZCedkiMI"
+     }
+    ],
+    "GB": [
+     {
+      "service": "YouTube (Tencent, official)",
+      "kind": "free",
+      "audio": [
+       "zh"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://www.youtube.com/watch?v=dOzZCedkiMI"
+     }
+    ]
+   },
+   "hindi": {
+    "available": false,
+    "where": "Not yet. AnimeMirchi lists Jade Dynasty as an UPCOMING Hindi dub on Amazon MX Player (date TBA). Nothing on JustWatch IN.",
+    "source": "https://animemirchi.com/mx-player-donghua-in-hindi-list/"
+   },
+   "kitsu": "zhu-xian",
+   "sources": [
+    "https://www.justwatch.com/us/tv-show/jade-dynasty",
+    "https://www.viki.com/videos/1237597v-jade-dynasty-episode-1",
+    "https://wetv.vip/en/play/62e9ut2hxil9sgj",
+    "https://www.youtube.com/watch?v=dOzZCedkiMI",
+    "https://www.youtube.com/watch?v=Oj9wB5UhDwU",
+    "https://animemirchi.com/mx-player-donghua-in-hindi-list/"
+   ],
+   "confidence": "high",
+   "note": "JustWatch's 'Jade Dynasty' movie (2019) is the live-action film; skip it. The MX Player Hindi claim comes from a single fan-news source, so watch for it. Kitsu: zhu-xian, zhu-xian-2, zhu-xian-3, zhu-xian-final. Offer data pulled from JustWatch's own GraphQL API (apis.justwatch.com), the same data as the JustWatch country pages listed in sources."
+  },
+  {
+   "t": "Shrouding the Heavens",
+   "cn": "Zhe Tian",
+   "type": "series",
+   "status": "airing, about EP 188-190 in China; Tencent Video, weekly (Wednesday in China; WeTV lists Tue or Wed depending on region); a theatrical movie and a spin-off, 'Shrouding the Heavens: The Imperial Path' (WeTV 2026), also exist",
+   "demand": 3600,
+   "regions": {
+    "IN": [],
+    "US": [
+     {
+      "service": "WeTV",
+      "kind": "subscription",
+      "audio": [
+       "zh"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://wetv.vip/en/play/trgza49c2hkavdx"
+     }
+    ],
+    "GB": []
+   },
+   "hindi": {
+    "available": false,
+    "where": "No legal option in India found at all (not on JustWatch IN; WeTV banned; not on Tencent's official YouTube)",
+    "source": "https://www.youtube.com/@TencentVideoAnimation/search?query=Shrouding%20the%20Heavens"
+   },
+   "kitsu": "zhe-tian",
+   "sources": [
+    "https://wetv.vip/en/play/trgza49c2hkavdx",
+    "https://www.youtube.com/@TencentVideoAnimation/search?query=Shrouding%20the%20Heavens",
+    "https://www.youtube.com/@TencentVideoAnimation/search?query=%E9%81%AE%E5%A4%A9"
+   ],
+   "confidence": "medium",
+   "note": "The series is not on JustWatch. Only the movie 'Zhe Tian: Bei Guan Zhan Wang Teng' is listed, with no offers. The episode count comes from unofficial trackers; WeTV's own counters (104 total, 44 for 'country') are inconsistent. GB availability on WeTV is unverified."
+  },
+  {
+   "t": "Fog Hill of Five Elements",
+   "cn": "Wu Shan Wu Xing",
+   "type": "series",
+   "status": "on break: S1 2020 (3 eps), S2 'Xichuan Huan Zi Lin' 2023 (4 eps); a third part ('Feng Jie Dazhan') is listed as TBA on Kitsu; Bilibili (China)",
+   "demand": 3600,
+   "regions": {
+    "IN": [],
+    "US": [],
+    "GB": []
+   },
+   "hindi": {
+    "available": false,
+    "where": "No legal option found in any of the three countries",
+    "source": "https://www.livechart.me/anime/9027/streams"
+   },
+   "kitsu": "wu-shan-wu-xing",
+   "sources": [
+    "https://www.livechart.me/anime/9027/streams",
+    "https://www.youtube.com/@bilibili_donghua/search?query=Fog%20Hill"
+   ],
+   "confidence": "medium",
+   "note": "Not on JustWatch. LiveChart says no known official streams. The bilibili.tv results are all user re-uploads (not official), so do NOT list them. It appears to be legally streamable only on Bilibili mainland China."
+  },
+  {
+   "t": "A Will Eternal",
+   "cn": "Yi Nian Yong Heng",
+   "type": "series",
+   "status": "airing: Final Season ('Wanjie Ji', started 22 Jul 2026, from EP 166), WeTV at EP 185 of 212; Tencent Video, weekly on Wednesday",
+   "demand": 2900,
+   "regions": {
+    "IN": [
+     {
+      "service": "YouTube (Tencent, official)",
+      "kind": "free",
+      "audio": [
+       "zh"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://www.youtube.com/watch?v=Hfa0l1438qA"
+     }
+    ],
+    "US": [
+     {
+      "service": "WeTV",
+      "kind": "subscription",
+      "audio": [
+       "zh"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://wetv.vip/en/play/ciw7o8319w2cx15-A%20Will%20Eternal"
+     },
+     {
+      "service": "YouTube (Tencent, official)",
+      "kind": "free",
+      "audio": [
+       "zh"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://www.youtube.com/watch?v=Hfa0l1438qA"
+     }
+    ],
+    "GB": [
+     {
+      "service": "YouTube (Tencent, official)",
+      "kind": "free",
+      "audio": [
+       "zh"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://www.youtube.com/watch?v=Hfa0l1438qA"
+     }
+    ]
+   },
+   "hindi": {
+    "available": false,
+    "where": "Not yet. AnimeMirchi lists A Will Eternal as an UPCOMING Hindi dub on Amazon MX Player (date TBA).",
+    "source": "https://animemirchi.com/mx-player-donghua-in-hindi-list/"
+   },
+   "kitsu": "yi-nian-yong-heng",
+   "sources": [
+    "https://www.justwatch.com/us/tv-show/a-will-eternal",
+    "https://wetv.vip/en/play/ciw7o8319w2cx15-A%20Will%20Eternal",
+    "https://www.youtube.com/watch?v=Hfa0l1438qA",
+    "https://www.youtube.com/watch?v=b9Swv82Ge64",
+    "https://animemirchi.com/mx-player-donghua-in-hindi-list/"
+   ],
+   "confidence": "high",
+   "note": "JustWatch has the title (US) but no offers in IN/US/GB. Kitsu: yi-nian-yong-heng, yi-nian-yong-heng-chuan-cheng-pian, yi-nian-yong-heng-wanjie-ji."
+  },
+  {
+   "t": "Martial Master",
+   "cn": "Wu Shen Zhu Zai",
+   "type": "series",
+   "status": "airing, about 700 eps (WeTV 700 of 776 listed); Tencent Video, several eps per week (WeTV schedule varies by region)",
+   "demand": 2400,
+   "regions": {
+    "IN": [
+     {
+      "service": "YouTube (Tencent, official)",
+      "kind": "free",
+      "audio": [
+       "zh"
+      ],
+      "subs": [],
+      "url": "https://www.youtube.com/watch?v=Z9_4FQ9MXxo"
+     }
+    ],
+    "US": [
+     {
+      "service": "WeTV",
+      "kind": "subscription",
+      "audio": [
+       "zh"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://wetv.vip/en/play/bem4rashikd14fq"
+     },
+     {
+      "service": "YouTube (Tencent, official)",
+      "kind": "free",
+      "audio": [
+       "zh"
+      ],
+      "subs": [],
+      "url": "https://www.youtube.com/watch?v=Z9_4FQ9MXxo"
+     }
+    ],
+    "GB": [
+     {
+      "service": "YouTube (Tencent, official)",
+      "kind": "free",
+      "audio": [
+       "zh"
+      ],
+      "subs": [],
+      "url": "https://www.youtube.com/watch?v=Z9_4FQ9MXxo"
+     }
+    ]
+   },
+   "hindi": {
+    "available": false,
+    "where": "JustWatch IN (covers Netflix, Prime Video, Apple TV, JioHotstar, Crunchyroll, Sony LIV, MX Player) shows no Hindi audio; no official Hindi YouTube upload found",
+    "source": "https://www.justwatch.com/in/tv-show/the-god-of-war-dominates"
+   },
+   "kitsu": "wushen-zhuzai",
+   "sources": [
+    "https://www.justwatch.com/in/tv-show/the-god-of-war-dominates",
+    "https://www.justwatch.com/us/tv-show/the-god-of-war-dominates",
+    "https://wetv.vip/en/play/bem4rashikd14fq",
+    "https://www.youtube.com/watch?v=Z9_4FQ9MXxo",
+    "https://www.youtube.com/watch?v=UFwMozy8za0"
+   ],
+   "confidence": "high",
+   "note": "The official English title on Tencent/WeTV/JustWatch is 'The God of War Dominates'; add it as an alias. Kitsu's episode count (272, 'finished') is stale. Offer data pulled from JustWatch's own GraphQL API (apis.justwatch.com), the same data as the JustWatch country pages listed in sources."
+  },
+  {
+   "t": "The Great Ruler",
+   "cn": "Da Zhuzai",
+   "type": "series",
+   "status": "airing: annual series S2 ('Da Zhu Zai Nian Fan 2'), around EP 98-100 overall; iQIYI; weekly day unconfirmed",
+   "demand": 2400,
+   "regions": {
+    "IN": [
+     {
+      "service": "YouTube (iQIYI, official)",
+      "kind": "free",
+      "audio": [
+       "zh"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://www.youtube.com/watch?v=WQsdviSE2A4"
+     },
+     {
+      "service": "iQIYI",
+      "kind": "free",
+      "audio": [
+       "zh",
+       "en"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://www.iq.com/album/%E5%A4%A7%E4%B8%BB%E5%AE%B0%E5%B9%B4%E7%95%AA-2023-1fr4mggsp0t?lang=en_us"
+     }
+    ],
+    "US": [
+     {
+      "service": "YouTube (iQIYI, official)",
+      "kind": "free",
+      "audio": [
+       "zh"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://www.youtube.com/watch?v=SU4SUnB8mw4"
+     },
+     {
+      "service": "iQIYI",
+      "kind": "free",
+      "audio": [
+       "zh",
+       "en"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://www.iq.com/album/%E5%A4%A7%E4%B8%BB%E5%AE%B0%E5%B9%B4%E7%95%AA-2023-1fr4mggsp0t?lang=en_us"
+     }
+    ],
+    "GB": [
+     {
+      "service": "YouTube (iQIYI, official)",
+      "kind": "free",
+      "audio": [
+       "zh"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://www.youtube.com/watch?v=SU4SUnB8mw4"
+     },
+     {
+      "service": "iQIYI",
+      "kind": "free",
+      "audio": [
+       "zh",
+       "en"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://www.iq.com/album/%E5%A4%A7%E4%B8%BB%E5%AE%B0%E5%B9%B4%E7%95%AA-2023-1fr4mggsp0t?lang=en_us"
+     }
+    ]
+   },
+   "hindi": {
+    "available": false,
+    "where": "JustWatch IN (covers Netflix, Prime Video, Apple TV, JioHotstar, Crunchyroll, Sony LIV, MX Player) shows no Hindi audio; no official Hindi YouTube upload found",
+    "source": "https://www.youtube.com/@iQIYIAnimation/search?query=Great%20Ruler"
+   },
+   "kitsu": "da-zhu-zai-nian-fan",
+   "sources": [
+    "https://www.youtube.com/@iQIYIAnimation/search?query=Great%20Ruler",
+    "https://www.youtube.com/watch?v=WQsdviSE2A4",
+    "https://www.youtube.com/watch?v=SU4SUnB8mw4",
+    "https://www.youtube.com/watch?v=BiwlreaUdPA",
+    "https://www.iq.com/album/%E5%A4%A7%E4%B8%BB%E5%AE%B0%E5%B9%B4%E7%95%AA-2023-1fr4mggsp0t?lang=en_us"
+   ],
+   "confidence": "medium",
+   "note": "JustWatch 'The Great Ruler' (ts224948, Viki/iQIYI US) is the 2020 LIVE-ACTION drama; skip it. There is also an older 2019 12-ep donghua (Kitsu da-zhu-zai). Kitsu: da-zhu-zai-nian-fan (2023 annual, 52 eps) and da-zhu-zai-2023-2nd-season. iQIYI region availability for IN is inferred from Against the Gods (allowed), not shown on this page."
+  },
+  {
+   "t": "Perfect World",
+   "cn": "Wanmei Shijie",
+   "type": "series",
+   "status": "on break after EP 288; returns 31 Dec 2026 / 1 Jan 2027 with the 'Battle of Imperial Pass' arc; Tencent Video, weekly on Friday; a theatrical film, 'Perfect World The Movie' (Aug 2026), also exists",
+   "demand": 4000,
+   "regions": {
+    "IN": [
+     {
+      "service": "YouTube (Tencent, official)",
+      "kind": "free",
+      "audio": [
+       "zh"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://www.youtube.com/watch?v=bkoAA2Nk_sY"
+     }
+    ],
+    "US": [
+     {
+      "service": "WeTV",
+      "kind": "subscription",
+      "audio": [
+       "zh"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://wetv.vip/en/play/oz5ppkfjx9niv57-Perfect+World"
+     }
+    ],
+    "GB": [
+     {
+      "service": "YouTube (Tencent, official)",
+      "kind": "free",
+      "audio": [
+       "zh"
+      ],
+      "subs": [
+       "en"
+      ],
+      "url": "https://www.youtube.com/watch?v=bkoAA2Nk_sY"
+     }
+    ]
+   },
+   "hindi": {
+    "available": false,
+    "where": "Not yet. AnimeMirchi lists Perfect World as an UPCOMING Hindi dub on Amazon MX Player (date TBA).",
+    "source": "https://animemirchi.com/mx-player-donghua-in-hindi-list/"
+   },
+   "kitsu": "wanmei-shijie",
+   "sources": [
+    "https://www.justwatch.com/us/tv-show/wanmei-shijie",
+    "https://wetv.vip/en/play/oz5ppkfjx9niv57-Perfect+World",
+    "https://www.youtube.com/watch?v=bkoAA2Nk_sY",
+    "https://www.youtube.com/watch?v=BdgOW4di8wY",
+    "https://www.youtube.com/@TencentVideoAnimation/search?query=Perfect%20World",
+    "https://animemirchi.com/mx-player-donghua-in-hindi-list/"
+   ],
+   "confidence": "high",
+   "note": "The break and return date come from WeTV's own schedule text ('Pause Airing | Continue airing on January 1, 2027') and the official YouTube PV ('Return Dec31'). JustWatch IN 'Perfect World' (2019) is a Japanese live-action show; skip it. Kitsu splits it into wanmei-shijie, -2 ... -6. Offer data pulled from JustWatch's own GraphQL API (apis.justwatch.com), the same data as the JustWatch country pages listed in sources."
+  }
+ ]
+}

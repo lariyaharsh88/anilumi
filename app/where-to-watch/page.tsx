@@ -61,6 +61,7 @@ export default async function WhereToWatchHub() {
           <Link href="/anime-streaming-sites" className="chip">🇮🇳 Streaming sites in India compared</Link>
           <Link href="/free-anime-websites" className="chip">🆓 Free anime websites &amp; apps</Link>
           <Link href="/hianime-alternatives" className="chip">HiAnime alternatives</Link>
+          <Link href="/donghua" className="chip">🇨🇳 Donghua (Chinese anime)</Link>
           <Link href="/studio-ghibli" className="chip">🎬 Studio Ghibli</Link>
           <Link href="/anime-on-netflix-india" className="chip">Anime on Netflix India</Link>
         </p>
