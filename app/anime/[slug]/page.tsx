@@ -1,3 +1,4 @@
+import { englishName } from "@/lib/searchname";
 import type { Metadata } from "next";
 import { animeIndexed, hasOwnContent, robotsFor, voiceActorIndexed } from "@/lib/indexing";
 import { fitTitle, fitDescription } from "@/lib/titles";
@@ -106,21 +107,27 @@ type Props = { params: Promise<{ slug: string }> };
  * filled the page title and every heading while people search the English name. Over 60 characters, a shorter
  * English title takes its place for display; the romaji moves to the alternate-title line under the heading.
  */
+// Kitsu has no English title for many new shows ("Overgeared" is "Temppal: Item no Chikara"): AniList's fills it in.
+const withEnglish = (a: Anime): Anime => (a.titleEn ? a : { ...a, titleEn: englishName(a) });
 const readable = (a: Anime): Anime => (a.title.length > 60 && a.titleEn && a.titleEn.length < a.title.length ? { ...a, title: a.titleEn, titleEn: a.title } : a);
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const raw = await getAnimeBySlug(decodeURIComponent(slug));
   if (!raw) notFound();
-  const a = readable(raw);
+  const a = readable(withEnglish(raw));
   const year = a.startDate?.slice(0, 4);
   const live = a.status === "current" || a.status === "upcoming";
-  const title = fitTitle(live
+  // The English name first when the title is romaji: it's what most people search ("my hero academia", "overgeared").
+  const en = englishName(a);
+  const title = fitTitle(en
+    ? [`${en} (${a.title}) – Episodes & Where to Watch`, `${en} (${a.title}) – Where to Watch`, `${en}${year ? ` (${year})` : ""} – ${live ? "Episodes, Release Date" : "Episodes"} & Where to Watch`, `${en} – ${live ? "Next Episode" : "Episodes"} & Where to Watch`, `${en} – Where to Watch`, en]
+    : live
     ? [`${a.title}${year ? ` (${year})` : ""} – Episodes, Release Date & Where to Watch`, `${a.title} – Release Date, Episodes & Where to Watch`, `${a.title} – Next Episode & Where to Watch`, `${a.title} – Release Date`, a.title]
     : [`${a.title}${year ? ` (${year})` : ""} – Episodes & Where to Watch`, `${a.title} – Episodes & Where to Watch`, `${a.title} – Where to Watch`, a.title]);
   // Our own summary where there is one, not Kitsu's synopsis (lib/summaries.ts).
   const blurb = summaryFor(a.slug)?.summary ?? a.synopsis;
-  const description = fitDescription(`${a.title}: ${a.episodeCount ? `${a.episodeCount} episodes` : subtypeLabel(a.subtype)}, ${statusLabel(a.status).toLowerCase()}${a.rating ? `, rated ${(a.rating / 10).toFixed(1)}/10` : ""}. ${blurb.slice(0, 120).replace(/\s+\S*$/, "")}…`);
+  const description = fitDescription(`${en ? `${en} (${a.title})` : a.title}: ${a.episodeCount ? `${a.episodeCount} episodes` : subtypeLabel(a.subtype)}, ${statusLabel(a.status).toLowerCase()}${a.rating ? `, rated ${(a.rating / 10).toFixed(1)}/10` : ""}. ${blurb.slice(0, 120).replace(/\s+\S*$/, "")}…`);
   return {
     title,
     description,
@@ -161,7 +168,7 @@ export default async function AnimePage({ params }: Props) {
   const { slug } = await params;
   const raw = await getAnimeBySlug(decodeURIComponent(slug));
   if (!raw) notFound();
-  const a = readable(raw);
+  const a = readable(withEnglish(raw));
 
   const mainGenre = publicGenres(a.categories)[0];
   const [characters, episodes, related, relations, latestInfo, productions, insight, malScore, fanRecs, allNews, keyStaff, voiceCast] = await Promise.all([
