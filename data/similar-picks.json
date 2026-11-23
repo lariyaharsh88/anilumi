@@ -212,6 +212,108 @@
           "why": "Gifted children outthink the adults who control them and plan an escape under their noses."
         }
       ]
+    },
+    "black-clover-tv": {
+      "about": "Underdogs who never stop training, magic and power systems, and squads of rivals with one big dream.",
+      "picks": [
+        {
+          "s": "boku-no-hero-academia",
+          "why": "Deku is born without powers in a world where nearly everyone has one, inherits a hero's power and trains to be the greatest; he and Asta could be brothers."
+        },
+        {
+          "s": "naruto",
+          "why": "The village outcast who wants to lead it: Naruto's dream of becoming Hokage is Asta's Wizard King dream, rival and all."
+        },
+        {
+          "s": "fairy-tail",
+          "why": "The closest match for the magic and the squads: Natsu and his guild take on jobs and dark guilds with a lot of heart and loud fights."
+        },
+        {
+          "s": "mashle",
+          "why": "A boy born with no magic in a world built on it punches his way through magic school, Asta's story played as comedy."
+        },
+        {
+          "s": "nanatsu-no-taizai",
+          "why": "A kingdom of knights and magic powers, and a band of disgraced heroes setting out to clear their names."
+        },
+        {
+          "s": "magi-the-labyrinth-of-magic",
+          "why": "Magic, dungeons and a friendship at the centre: Aladdin and Alibaba clear magical dungeons across a world of kingdoms."
+        },
+        {
+          "s": "hunter-x-hunter-2011",
+          "why": "Gon sets out to become a Hunter and find his father, with a power system as inventive as the grimoires."
+        },
+        {
+          "s": "bleach",
+          "why": "Squads and captains with their own powers, like the Magic Knights, and a hot-headed hero with a giant sword."
+        },
+        {
+          "s": "kimetsu-no-yaiba",
+          "why": "A kind-hearted hero who never stops training, and an elite corps whose strongest fighters lead it, like the Magic Knight captains."
+        },
+        {
+          "s": "one-piece",
+          "why": "A crew of misfits chasing one huge dream, with the same loyalty and an endless line of rivals."
+        },
+        {
+          "s": "solo-leveling",
+          "why": "Another underdog climb: Jinwoo, the weakest hunter, gets the power to level up and goes from E-rank to the top."
+        },
+        {
+          "s": "jujutsu-kaisen",
+          "why": "A newer shonen with a school of fighters, ranked sorcerers and big power battles."
+        }
+      ]
+    },
+    "tokyo-revengers": {
+      "about": "Going back in time to change the past, and delinquents who fight for their friends.",
+      "picks": [
+        {
+          "s": "boku-dake-ga-inai-machi",
+          "why": "The closest: a man sent back to his school days has to change the past to save someone, just like Takemichi."
+        },
+        {
+          "s": "summertime-render",
+          "why": "After a childhood friend's death, Shinpei goes home to his island and gets caught in a time loop, trying again and again to save her and his friends."
+        },
+        {
+          "s": "re-zero-kara-hajimeru-isekai-seikatsu",
+          "why": "Subaru goes back to a set point every time he dies and has to find the one path where everyone lives."
+        },
+        {
+          "s": "steins-gate",
+          "why": "Messages to the past change the present, and every change costs someone; the best-known time-travel anime."
+        },
+        {
+          "s": "orange",
+          "why": "Letters from her future self ask Naho to change the past and save a classmate before it's too late."
+        },
+        {
+          "s": "wind-breaker",
+          "why": "Delinquents who protect their town: Haruka Sakura joins Furin High, a school of fighters who guard its streets."
+        },
+        {
+          "s": "oemojisangjuui",
+          "why": "A bullied teen wakes up in a second, stronger body and gets pulled into school gangs and street fights."
+        },
+        {
+          "s": "great-teacher-onizuka",
+          "why": "A former gang leader becomes a teacher and fights for his students; delinquent life with a big heart."
+        },
+        {
+          "s": "durarara",
+          "why": "Colour gangs, a headless rider and urban legends on the streets of Ikebukuro."
+        },
+        {
+          "s": "banana-fish",
+          "why": "Ash Lynx, a New York gang leader, uncovers the conspiracy behind a drug called Banana Fish; darker and more grown-up."
+        },
+        {
+          "s": "yu-yu-hakusho",
+          "why": "The classic delinquent hero: a street fighter who dies saving a child comes back as a spirit detective."
+        }
+      ]
     }
   }
 }
