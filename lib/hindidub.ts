@@ -61,6 +61,17 @@ function fromSchedule(slug: string): Dub | null {
   };
 }
 
+export type PendingDub = { service: string; premiere: string | null };
+/**
+ * A Hindi dub announced for this exact season but not out yet (data/dub-schedule.json), so a sequel's page doesn't
+ * answer "Yes" from its franchise's entry: Black Clover Season 2 (201K searches in India, Oct 2026) said "Yes" because
+ * Season 1 is in Hindi, while Season 2's dub was only announced.
+ */
+export function pendingDub(slug: string): PendingDub | null {
+  const row = (schedule as { entries: ScheduleRow[] }).entries.find((e) => e.lang === "hi" && e.slug === slug && e.status === "announced");
+  return row ? { service: row.service, premiere: row.premiere?.slice(0, 10) ?? null } : null;
+}
+
 /** The dub entry for an anime: its own slug, else its franchise (any part of its watch order), else the dub schedule. */
 export function dubFor(anime: { id: string; slug: string }): Dub | null {
   const own = bySlug.get(anime.slug);
@@ -161,13 +172,16 @@ export const dubDate = (lang: "en" | "hi" = "en", iso = DUB_CHECKED) =>
 const platformList = (d: Dub, lang: "en" | "hi") => d.platforms.map((p) => `${p.name}${p.scope ? ` (${p.scope})` : ""}`).join(lang === "hi" ? ", " : "; ");
 
 /** The FAQ entry for "Is X dubbed in Hindi?", matching the card. */
-export function dubFaq(d: Dub | null, title: string, lang: "en" | "hi" = "en"): { q: string; a: string } | null {
+export function dubFaq(d: Dub | null, title: string, lang: "en" | "hi" = "en", pending: PendingDub | null = null): { q: string; a: string } | null {
   if (!d) return null;
+  if (pending && lang === "en") return { q: `Is ${title} dubbed in Hindi?`, a: `Not yet. ${pending.service} has announced a Hindi dub of ${title}${pending.premiere ? ` from ${pendingDate(pending.premiere)}` : ", with no start date yet"} (checked ${dubDate("en")}).${d.status === "available" ? ` Earlier seasons are in Hindi on ${platformList(d, "en")}.` : ""}` };
   const yes = d.status === "available";
   return lang === "hi"
     ? { q: `क्या ${title} हिंदी डब में है?`, a: yes ? `हाँ, ${title} का आधिकारिक हिंदी डब यहाँ है: ${platformList(d, "hi")}।` : `${dubDate("hi")} तक ${title} का कोई आधिकारिक हिंदी डब नहीं मिला।` }
     : { q: `Is ${title} dubbed in Hindi?`, a: yes ? `Yes. ${title} has an official Hindi dub on ${platformList(d, "en")}.` : `No official Hindi dub has been released as of ${dubDate("en")}. ${d.note}` };
 }
+
+const pendingDate = (iso: string) => new Date(`${iso}T00:00:00Z`).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
 
 /** Whether a franchise (by any of its slugs) has an official Hindi dub on record. */
 export function hasHindiDub(slug: string): boolean {

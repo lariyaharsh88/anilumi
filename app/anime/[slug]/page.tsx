@@ -28,7 +28,7 @@ import { snapshotOrder } from "@/lib/wosnap";
 import PushButton from "@/components/PushButton";
 import HindiDub from "@/components/HindiDub";
 import WatchInIndia from "@/components/WatchInIndia";
-import { dubFor, dubFaq } from "@/lib/hindidub";
+import { dubFor, dubFaq, pendingDub } from "@/lib/hindidub";
 import { animeTopic } from "@/lib/push";
 import SpoilerGate from "@/components/SpoilerGate";
 import StoryGuide from "@/components/StoryGuide";
@@ -282,7 +282,9 @@ export default async function AnimePage({ params }: Props) {
   const arcs = a.subtype === "movie" ? null : arcsFor(a.slug);
   if (arcs) faqExtra.push({ q: `What are the ${a.title} arcs in order?`, a: `${a.title} has ${arcs.length} story arcs: ${arcSummary(arcs)}.` });
   const dub = dubFor(a);
-  const dubQ = dubFaq(dub, a.title);
+  // A later season whose own Hindi dub is only announced: say so, not "Yes" from the franchise's earlier seasons.
+  const pending = dub && dub.s !== a.slug ? pendingDub(a.slug) : null;
+  const dubQ = dubFaq(dub, a.title, "en", pending);
   if (dubQ) faqExtra.push(dubQ);
   const faq = buildFaq(a, faqExtra, { planned, aired: airedCount }, notice);
   const year = a.startDate?.slice(0, 4);
@@ -598,7 +600,7 @@ export default async function AnimePage({ params }: Props) {
                 <p className="mt-2 text-[11px] text-muted">{ADAPT_REVIEWED ? "Checked" : `Draft${ADAPT_CHECKED ? `, cross-checked on ${new Date(`${ADAPT_CHECKED}T12:00:00Z`).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" })}` : ""}`} against the series wiki and episode lists. <Link href="/how-we-check" className="underline">How we check</Link></p>
               </div>
             )}
-            <HindiDub dub={dub} title={a.title} className="mt-8" alertId={a.id} />
+            <HindiDub dub={dub} title={a.title} className="mt-8" alertId={a.id} pending={pending} />
             <MerchBlock name={a.title} source="anime" manga={false} className="mt-8" />
             {franchise.length > 0 && (
               <MobileFold label="franchise" className="mt-8">

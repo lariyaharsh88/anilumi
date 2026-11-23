@@ -1,5 +1,5 @@
 import Link from "@/components/Link";
-import { dubDate, hindiDubPath, platformKind, type Dub, type PlatformKind } from "@/lib/hindidub";
+import { dubDate, hindiDubPath, platformKind, type Dub, type PendingDub, type PlatformKind } from "@/lib/hindidub";
 import { hindiDubIndexed } from "@/lib/indexing";
 import { hindiCast } from "@/lib/hindistats";
 import { dbEnabled } from "@/lib/db";
@@ -10,6 +10,7 @@ const T = {
     q: (t: string) => `Is ${t} dubbed in Hindi?`,
     yes: "Yes. The official Hindi dub streams here:",
     no: "No official Hindi dub found yet.",
+    pending: (service: string, date: string | null) => `Not yet for this season: ${service} has announced a Hindi dub${date ? ` from ${date}` : ", with no start date yet"}. Earlier seasons are in Hindi here:`,
     kind: { free: "Free", subscription: "Subscription", tv: "TV channel" } as Record<PlatformKind, string>,
     source: "source",
     checked: (d: string) => `Checked against the platforms' own pages on ${d}. Streaming deals change, so confirm the audio menu before you start.`,
@@ -22,6 +23,7 @@ const T = {
     q: (t: string) => `क्या ${t} हिंदी डब में है?`,
     yes: "हाँ, आधिकारिक हिंदी डब यहाँ देख सकते हैं:",
     no: "अभी तक कोई आधिकारिक हिंदी डब नहीं मिला।",
+    pending: (service: string, date: string | null) => `इस सीज़न का अभी नहीं: ${service} ने हिंदी डब की घोषणा की है${date ? `, ${date} से` : ", तारीख़ अभी तय नहीं"}। पिछले सीज़न हिंदी में यहाँ हैं:`,
     kind: { free: "मुफ़्त", subscription: "सब्सक्रिप्शन", tv: "टीवी चैनल" } as Record<PlatformKind, string>,
     source: "स्रोत",
     checked: (d: string) => `${d} को प्लेटफ़ॉर्म के अपने पेज से जाँचा गया। स्ट्रीमिंग बदलती रहती है, इसलिए देखने से पहले ऑडियो मेनू में हिंदी देख लें।`,
@@ -42,15 +44,17 @@ export const KIND_CLASS: Record<PlatformKind, string> = {
  * "Is X dubbed in Hindi?" answered from data/hindi-dubs.json: each platform with its seasons, how you watch it
  * and the page that confirms it, or a clear "no" when the check found none. English or Hindi; server component.
  */
-/** `alertId` (a Kitsu anime id) adds an "email me when it's dubbed" signup to a "no Hindi dub yet" answer. */
-export default function HindiDub({ dub, title, lang = "en", className = "", alertId }: { dub: Dub | null; title: string; lang?: "en" | "hi"; className?: string; alertId?: string }) {
+/** `alertId` (a Kitsu anime id) adds an "email me when it's dubbed" signup to a "no Hindi dub yet" answer. `pending`:
+ *  this season's Hindi dub is announced but not out, while `dub` is the franchise's (earlier seasons). */
+export default function HindiDub({ dub, title, lang = "en", className = "", alertId, pending = null }: { dub: Dub | null; title: string; lang?: "en" | "hi"; className?: string; alertId?: string; pending?: PendingDub | null }) {
   if (!dub) return null;
+  const pendingDay = pending?.premiere ? new Date(`${pending.premiere}T00:00:00Z`).toLocaleDateString(lang === "hi" ? "hi-IN" : "en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }) : null;
   const t = T[lang];
   const yes = dub.status === "available";
   return (
     <section className={`card reveal p-4 sm:p-5 ${yes ? "border-orange-400/30" : ""} ${className}`} aria-labelledby="hindi-dub-h">
       <h2 id="hindi-dub-h" className="flex items-center gap-2 font-semibold text-ink"><span aria-hidden>🇮🇳</span> {t.q(title)}</h2>
-      <p className="mt-1 text-sm text-ink/90">{yes ? t.yes : t.no}</p>
+      <p className="mt-1 text-sm text-ink/90">{pending ? t.pending(pending.service, pendingDay) : yes ? t.yes : t.no}</p>
       {yes && (
         <ul className="mt-3 space-y-2">
           {dub.platforms.map((p) => (
@@ -88,7 +92,7 @@ export default function HindiDub({ dub, title, lang = "en", className = "", aler
       {lang === "en" && dub.note && <p className="mt-3 text-sm leading-6 text-ink/80">{dub.note}</p>}
       {/* The show's own Hindi page, where it has an indexed one: it answers "<show> in Hindi" searches in full. */}
       {yes && hindiDubIndexed(dub.s) && <p className="mt-3"><Link href={hindiDubPath(dub.s)} className="text-sm font-semibold text-violet hover:text-violet-2">{t.guide(title)} →</Link></p>}
-      {!yes && alertId && dbEnabled() && (
+      {(!yes || pending) && alertId && dbEnabled() && (
         <LeadForm compact className="mt-4 border-t border-line/60 pt-4" kind="hindi" source="hindi-anime" lang={lang} animeId={alertId} animeTitle={title} title={t.alert(title)} blurb={t.alertBlurb} button={t.alertButton} />
       )}
       <p className="mt-3 text-xs text-muted">{t.checked(dubDate(lang))} <Link href={t.allHref} className="font-medium text-violet hover:text-violet-2">{t.all} →</Link></p>

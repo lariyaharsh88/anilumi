@@ -56,3 +56,13 @@ test("Hindi dub pages: the most-watched dubs get their own page, linked from the
   // No page for shows without a Hindi dub.
   if (none()[0]) assert.equal(dubPageEntry(none()[0].s), null);
 });
+
+test("a sequel whose own Hindi dub is only announced says 'Not yet', not the franchise's 'Yes'", async () => {
+  const { pendingDub, dubFaq, dubBySlug } = await import("../lib/hindidub");
+  const p = pendingDub("Black-Clover-Season-2");
+  assert.equal(p?.service, "Crunchyroll");
+  const faq = dubFaq(dubBySlug("black-clover-tv"), "Black Clover Season 2", "en", p);
+  assert.match(faq!.a, /^Not yet\. Crunchyroll has announced a Hindi dub of Black Clover Season 2/);
+  assert.match(faq!.a, /Earlier seasons are in Hindi on/);
+  assert.equal(pendingDub("black-clover-tv"), null);
+});
