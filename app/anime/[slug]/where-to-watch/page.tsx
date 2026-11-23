@@ -28,14 +28,23 @@ async function load(slug: string) {
 
 const names = (e: Streams, r: Region) => [...new Set(servicesIn(e, r).filter((x) => x.kind !== "buy").map((x) => x.service))];
 const join = (xs: string[]) => (xs.length <= 1 ? xs.join("") : `${xs.slice(0, -1).join(", ")} and ${xs[xs.length - 1]}`);
+/** The brands a show streams on, most countries first ("Crunchyroll on Sony LIV" counts as Crunchyroll). */
+function topBrands(e: Streams, n = 2): string[] {
+  const count = new Map<string, number>();
+  for (const r of REGIONS) for (const s of new Set(names(e, r).map((x) => x.replace(/ on .*$| \(.*\)$/, "")))) count.set(s, (count.get(s) ?? 0) + 1);
+  return [...count.entries()].sort((a, b) => b[1] - a[1]).slice(0, n).map(([s]) => s);
+}
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const { e } = await load(slug);
   const us = names(e, "US"), inn = names(e, "IN");
   const lead = [us.length ? `${join(us.slice(0, 3))} in the US` : null, inn.length ? `${join(inn.slice(0, 3))} in India` : null].filter(Boolean).join("; ");
+  // The services by name: US searches pair them with the show ("crunchyroll one piece" 110K a month, "crunchyroll demon
+  // slayer" 27K; Keyword Planner, Nov 2026).
+  const brands = topBrands(e);
   return {
-    title: fitTitle([`Where to Watch ${e.t}: Streaming in the US, India & UK (Sub & Dub)`, `Where to Watch ${e.t}: US, India & UK Streaming`, `Where to Watch ${e.t} (Sub & Dub)`, `Where to Watch ${e.t}`]),
+    title: fitTitle([brands.length ? `Where to Watch ${e.t}: ${brands.join(" & ")} (Sub & Dub)` : null, brands.length ? `Where to Watch ${e.t}: ${brands.join(" & ")}` : null, brands.length ? `${e.t}: ${brands.join(" & ")} & More, Where to Watch` : null, `Where to Watch ${e.t}: Streaming in the US, India & UK (Sub & Dub)`, `Where to Watch ${e.t}: US, India & UK Streaming`, `Where to Watch ${e.t} (Sub & Dub)`, `Where to Watch ${e.t}`]),
     description: fitDescription(`${lead ? `${e.t} streams on ${lead}.` : `Where ${e.t} streams legally.`} Every legal option by country, with sub, English dub${dubbedIn(e, "IN", "hi") ? " and Hindi dub" : ""}, free options and which seasons each service has. Checked ${streamsDate()}.`.slice(0, 300)),
     alternates: { canonical: streamsPath(e.s) },
   };
@@ -51,6 +60,10 @@ export default async function WhereToWatchPage({ params }: Props) {
       const n = names(e, r);
       return { q: `Where can I watch ${e.t} in ${r === "US" ? "the US" : r === "GB" ? "the UK" : "India"}?`, a: n.length ? `On ${join(n)}. ${servicesIn(e, r).filter((x) => x.kind !== "buy").map((x) => `${x.service}: ${x.scope || "available"}`).join("; ")}.` : `We found no legal streaming service for ${e.t} in ${REGION_NAME[r]} on ${streamsDate()}.` };
     }),
+    ...(() => {
+      const on = REGIONS.filter((r) => names(e, r).some((x) => /^crunchyroll/i.test(x)));
+      return [{ q: `Is ${e.t} on Crunchyroll?`, a: on.length ? `Yes, in ${join(on.map((r) => (r === "US" ? "the US" : r === "GB" ? "the UK" : "India")))}${on.length < REGIONS.length ? `; not in ${join(REGIONS.filter((r) => !on.includes(r)).map((r) => (r === "US" ? "the US" : r === "GB" ? "the UK" : "India")))}` : ""}. ${servicesIn(e, on[0]).filter((x) => /^crunchyroll/i.test(x.service)).map((x) => x.scope).filter(Boolean).map((x) => (/[.!?]$/.test(x) ? x : `${x}.`))[0] ?? ""}`.trim() : `Not in the US, India or the UK, as far as we found. It streams on ${join(topBrands(e, 3)) || "no legal service we found"}.` }];
+    })(),
     { q: `Can I watch ${e.t} for free?`, a: free.length ? `Yes, legally: ${free.map((r) => `${freeIn(e, r).map((x) => x.service).join(", ")} in ${REGION_SHORT[r]}`).join("; ")}. Usually with ads.` : `Not legally, as far as we found. Sites offering it free are unlicensed uploads.` },
     { q: `Is ${e.t} dubbed in English?`, a: REGIONS.some((r) => dubbedIn(e, r, "en")) ? `Yes. The English dub is on ${join([...new Set(REGIONS.flatMap((r) => servicesIn(e, r).filter((x) => x.audio.includes("en")).map((x) => `${x.service} (${REGION_SHORT[r]})`)))])}.` : `We found no English dub on the services we checked.` },
   ];
