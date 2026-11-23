@@ -8,7 +8,7 @@ import MadeBy from "@/components/MadeBy";
 import JoinChannels from "@/components/JoinChannels";
 import { itemList } from "@/lib/ld";
 import { fitTitle, fitDescription } from "@/lib/titles";
-import { DONGHUA_CHECKED, donghuaList, freeIn, inHindi, servicesIn, type Donghua, type DonghuaRegion } from "@/lib/donghua";
+import { DONGHUA_CHECKED, donghuaList, freeIn, inHindi, orderPath, ordersFor, servicesIn, type Donghua, type DonghuaRegion } from "@/lib/donghua";
 
 export const revalidate = 86400;
 
@@ -55,6 +55,7 @@ function Card({ d }: { d: Donghua }) {
         })}
       </ul>
       {inHindi(d) && <p className="mt-2 text-sm font-medium text-orange-300">🇮🇳 Hindi audio{d.hindi.where ? `: ${d.hindi.where}` : ""}</p>}
+      {ordersFor(d.t).length > 0 && <p className="mt-2 flex flex-wrap gap-2 text-sm">{ordersFor(d.t).map((o) => <Link key={o.slug} href={orderPath(o.slug)} className="font-medium text-violet hover:text-violet-2">{o.short} watch order →</Link>)}</p>}
       {d.note && <p className="mt-2 text-xs leading-5 text-muted">{d.note}</p>}
     </li>
   );

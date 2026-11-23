@@ -1,5 +1,5 @@
 import { GHIBLI_CHECKED } from "@/lib/ghibli";
-import { DONGHUA_CHECKED } from "@/lib/donghua";
+import { DONGHUA_CHECKED, ORDERS_CHECKED, donghuaOrders, orderPath } from "@/lib/donghua";
 import type { MetadataRoute } from "next";
 import { CC_CHECKED } from "@/lib/comiccon";
 import { TERMS, TERMS_CHECKED, termPath, termsPath } from "@/lib/animeterms";
@@ -100,6 +100,7 @@ export async function sitemapEntries(): Promise<MetadataRoute.Sitemap> {
     { url: abs("/anime-streaming-sites"), lastModified: at(D.streams, D.dubs, PRICES_CHECKED), changeFrequency: "monthly", priority: 0.8 },
     { url: abs("/studio-ghibli"), lastModified: at(GHIBLI_CHECKED), changeFrequency: "monthly", priority: 0.8 },
     { url: abs("/donghua"), lastModified: at(DONGHUA_CHECKED), changeFrequency: "weekly", priority: 0.8 },
+    ...donghuaOrders().map((o) => ({ url: abs(orderPath(o.slug)), lastModified: at(ORDERS_CHECKED), changeFrequency: "weekly" as const, priority: 0.7 })),
     { url: abs("/hianime-alternatives"), lastModified: at(D.streams), changeFrequency: "monthly", priority: 0.7 },
     { url: abs("/free-anime-websites"), lastModified: at(D.streams, D.dubs, PRICES_CHECKED), changeFrequency: "monthly", priority: 0.8 },
     { url: abs("/where-to-watch"), lastModified: at(D.streams), changeFrequency: "monthly", priority: 0.8 },

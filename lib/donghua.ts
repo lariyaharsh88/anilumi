@@ -8,6 +8,7 @@
  * re-uploads never count. Pure.
  */
 import data from "@/data/donghua.json";
+import orders from "@/data/donghua-orders.json";
 
 export type DonghuaRegion = "IN" | "US" | "GB";
 export type DonghuaService = { service: string; kind: "subscription" | "free" | "buy"; audio?: string[]; subs?: string[]; url: string | null };
@@ -28,3 +29,19 @@ export const freeIn = (d: Donghua, r: DonghuaRegion) => servicesIn(d, r).filter(
 export const inHindi = (d: Donghua) => d.hindi.available;
 /** "Crunchyroll, Netflix" for a region, or null when nothing legal was found there. */
 export const whereIn = (d: Donghua, r: DonghuaRegion) => { const s = [...new Set(servicesIn(d, r).map((x) => x.service))]; return s.length ? s.join(", ") : null; };
+
+/**
+ * Season-by-season watch orders for the long-running donghua (data/donghua-orders.json), researched 23 Nov 2026 from
+ * Wikipedia, MyAnimeList, AniList, TheTVDB and the platforms; "battle through the heavens season 5" 1.3K a month in India,
+ * "season 1" 880 (Keyword Planner, Nov 2026). Pure.
+ */
+export type OrderPart = { name: string; kind: "season" | "annual" | "special" | "film"; episodes: number | string; years: string; skippable?: boolean; what?: string };
+export type DonghuaOrder = { slug: string; t: string; short: string; hub: string; cn?: string; start: string; status: string; novel?: string; parts: OrderPart[]; sources: string[]; note?: string };
+const O = orders as unknown as { checked: string; series: DonghuaOrder[] };
+export const ORDERS_CHECKED = O.checked;
+export const donghuaOrders = (): DonghuaOrder[] => O.series;
+export const donghuaOrder = (slug: string): DonghuaOrder | null => O.series.find((s) => s.slug === slug) ?? null;
+/** Guides for a hub title (Soul Land has two: Soul Land and Soul Land 2). */
+export const ordersFor = (hubTitle: string): DonghuaOrder[] => O.series.filter((s) => s.hub === hubTitle);
+export const donghuaByTitle = (t: string): Donghua | null => D.titles.find((d) => d.t === t) ?? null;
+export const orderPath = (slug: string) => `/donghua/${slug}`;

@@ -1,0 +1,648 @@
+{
+ "checked": "2026-11-23",
+ "series": [
+  {
+   "slug": "battle-through-the-heavens",
+   "t": "Battle Through the Heavens",
+   "short": "Battle Through the Heavens",
+   "hub": "Battle Through the Heavens",
+   "cn": "斗破苍穹 (Doupo Cangqiong)",
+   "start": "Season 1 (2017) EP 1. The skippable specials can be left out.",
+   "status": "Finished. The annual series ended with EP 219 on Sun 15 Nov 2026, and the finale film 'Battle of the Two Emperors' (双帝之战) premiered on Tencent Video on 22 Nov 2026.",
+   "novel": "Doupo Cangqiong (斗破苍穹) by Tiancan Tudou (天蚕土豆)",
+   "parts": [
+    {
+     "name": "Battle Through the Heavens Season 1 (Doupo Cangqiong)",
+     "kind": "season",
+     "episodes": 12,
+     "years": "2017",
+     "skippable": false,
+     "what": "Xiao Yan, a fallen prodigy, finds the soul of the alchemist Yao Lao living in his mother's ring and starts rebuilding his strength."
+    },
+    {
+     "name": "Special: Encounter / Separation (Doupo Cangqiong Tebie Pian)",
+     "kind": "special",
+     "episodes": 2,
+     "years": "2017",
+     "skippable": true,
+     "what": "A two-part side special released between S1 and S2.",
+     "note": "AniList lists it as a side story; TheTVDB titles are 'Encounter' and 'Separation'."
+    },
+    {
+     "name": "Battle Through the Heavens Season 2 (Doupo Cangqiong Di Er Ji)",
+     "kind": "season",
+     "episodes": 12,
+     "years": "2018",
+     "skippable": false,
+     "what": "Xiao Yan leaves home to train and toughen up in the wider world."
+    },
+    {
+     "name": "Special: Sands of Song (Doupo Cangqiong Tebie Pian 2: Sha Zhi Lan Ge)",
+     "kind": "special",
+     "episodes": 3,
+     "years": "2019",
+     "skippable": true,
+     "what": "A desert side story released before S3."
+    },
+    {
+     "name": "Battle Through the Heavens Season 3 (Doupo Cangqiong Di San Ji)",
+     "kind": "season",
+     "episodes": 12,
+     "years": "2019",
+     "skippable": false,
+     "what": "Continues Xiao Yan's training and rising conflicts."
+    },
+    {
+     "name": "Battle Through the Heavens Season 4 (Doupo Cangqiong Di Si Ji)",
+     "kind": "season",
+     "episodes": 24,
+     "years": "2021",
+     "skippable": false,
+     "what": "Xiao Yan's next stage of growth, in a longer 24-episode season."
+    },
+    {
+     "name": "Battle Through the Heavens: Three-Year Agreement (Doupo Cangqiong: San Nian Zhi Yue)",
+     "kind": "season",
+     "episodes": 13,
+     "years": "2021-2022",
+     "skippable": false,
+     "what": "Xiao Yan comes back to settle the three-year pact made at the start of the story.",
+     "note": "Fans call it Season 5. TheTVDB files it under Season 4 specials."
+    },
+    {
+     "name": "Battle Through the Heavens: Origins (Doupo Cangqiong: Yuanqi)",
+     "kind": "special",
+     "episodes": 3,
+     "years": "2022",
+     "skippable": true,
+     "what": "Recap of the story so far, released before the annual series."
+    },
+    {
+     "name": "Battle Through the Heavens Annual 1 (Doupo Cangqiong Nian Fan)",
+     "kind": "annual",
+     "episodes": "EP 1-52",
+     "years": "2022-2023",
+     "skippable": false,
+     "what": "The weekly annual series begins and carries the main story forward.",
+     "note": "Tencent numbers the four annual series continuously, EP 1-219."
+    },
+    {
+     "name": "Battle Through the Heavens Annual 2 (Doupo Cangqiong Nian Fan 2)",
+     "kind": "annual",
+     "episodes": "EP 53-105",
+     "years": "2023-2024",
+     "skippable": false,
+     "what": "The annual series continues."
+    },
+    {
+     "name": "Battle Through the Heavens Annual 3 (Doupo Cangqiong Nian Fan 3)",
+     "kind": "annual",
+     "episodes": "EP 106-157",
+     "years": "2024-2025",
+     "skippable": false,
+     "what": "The annual series continues."
+    },
+    {
+     "name": "Battle Through the Heavens Annual 4 (Doupo Cangqiong Nian Fan 4)",
+     "kind": "annual",
+     "episodes": "EP 158-219",
+     "years": "2025-2026",
+     "skippable": false,
+     "what": "The final annual block, building to the climax.",
+     "note": "Planned for 209 episodes, extended to 219. The series paused after EP 207 (12 Jul 2026) for seven weeks of recap episodes, then resumed on 6 Sep 2026 with two episodes."
+    },
+    {
+     "name": "Battle Through the Heavens Movie: Battle of the Two Emperors (Doupo Cangqiong Juchangban: Shuang Di Zhi Zhan)",
+     "kind": "film",
+     "episodes": 1,
+     "years": "2026",
+     "skippable": false,
+     "what": "The finale film: the closing battle that ends the animated story.",
+     "note": "Premiered 22 Nov 2026 on Tencent Video and Jiguang TV (ifeng, 5 Nov 2026)."
+    }
+   ],
+   "sources": [
+    "https://anilist.co/anime/102464",
+    "https://anilist.co/anime/196613",
+    "https://anilist.co/anime/219986",
+    "https://thetvdb.com/series/battle-through-the-heavens/allseasons/official",
+    "https://www.ithome.com/0/975/644.htm",
+    "https://c.m.163.com/news/a/L1MU50MP0511CPVM.html",
+    "https://tech.ifeng.com/c/8xnzfjEWJ3d",
+    "https://zh.wikipedia.org/wiki/斗破苍穹",
+    "https://en.wikipedia.org/wiki/Battle_Through_the_Heavens"
+   ],
+   "note": "AniList and TheTVDB agree on episode counts, with dates one day apart because TheTVDB uses US dates. TheTVDB puts all 219 annual episodes in one 'Season 5'. English Wikipedia's 'Battle Through the Heavens' page covers the 2018 live-action drama, not the donghua. AniList data was read through its GraphQL API."
+  },
+  {
+   "slug": "soul-land",
+   "t": "Soul Land",
+   "short": "Soul Land",
+   "hub": "Soul Land",
+   "cn": "斗罗大陆 (Douluo Dalu)",
+   "start": "EP 1 (2018).",
+   "status": "Finished: EP 263 on 10 Jun 2023 (Tencent Video).",
+   "novel": "Douluo Dalu (斗罗大陆) by Tang Jia San Shao (唐家三少)",
+   "parts": [
+    {
+     "name": "Soul Land (Douluo Dalu), opening run",
+     "kind": "season",
+     "episodes": "EP 1-26",
+     "years": "2018",
+     "skippable": false,
+     "what": "Tang San, reborn in a world of martial spirits, starts training as a spirit master.",
+     "note": "Followed by a roughly 21-week break (Jul to Dec 2018)."
+    },
+    {
+     "name": "Soul Land: Elite Tournament arc (Douluo Dalu: Jingying Sai)",
+     "kind": "season",
+     "episodes": "EP 27-78",
+     "years": "2018-2019",
+     "skippable": false,
+     "what": "Tang San and his team enter the continental spirit master tournament.",
+     "note": "AniList splits the continuous run into named arcs. Episode numbers here are counted from its counts."
+    },
+    {
+     "name": "Soul Land, continuous weekly run (Douluo Dalu)",
+     "kind": "season",
+     "episodes": "EP 79-263",
+     "years": "2019-2023",
+     "skippable": false,
+     "what": "Tang San's story continues weekly to its ending.",
+     "note": "AniList breaks this into many 3- to 13-episode arcs (Haotian Yang Wei, Xiaowu Juebie, Haishen Zhi Guang and others). Tencent shows it as one numbered run."
+    },
+    {
+     "name": "Soul Land Ending, Director's Cut (Douluo Jieju Daoyan Jianji Ban)",
+     "kind": "special",
+     "episodes": 1,
+     "years": "2023",
+     "skippable": true,
+     "what": "Re-edited version of the finale.",
+     "note": "Listed only on TheTVDB (2 Dec 2023)."
+    },
+    {
+     "name": "Soul Land Movie: Sword Dao Chen Xin (Douluo Dalu Juchangban: Jiandao Chen Xin)",
+     "kind": "film",
+     "episodes": 1,
+     "years": "2025",
+     "skippable": true,
+     "what": "Side-story film about the Sword Douluo, Chen Xin.",
+     "note": "Listed on AniList (Jul 2025). Details not checked anywhere else."
+    }
+   ],
+   "sources": [
+    "https://anilist.co/anime/101920",
+    "https://anilist.co/anime/103543",
+    "https://thetvdb.com/series/342329-show/allseasons/official",
+    "https://zh.wikipedia.org/wiki/斗罗大陆"
+   ],
+   "note": "TheTVDB shows 264 entries, but its final entry is labelled 第263话, so the official count is 263. A 2023 'Battle of Two Gods' item on TheTVDB is a motion comic and is left out. The 2021 live-action drama (40 episodes) and 'Douluo Dalu: Ran Hun Zhan' (2024) are live-action and also left out."
+  },
+  {
+   "slug": "soul-land-2",
+   "t": "Soul Land 2: The Peerless Tang Clan",
+   "short": "Soul Land 2",
+   "hub": "Soul Land",
+   "cn": "斗罗大陆2绝世唐门 (Douluo Dalu 2: Jueshi Tangmen)",
+   "start": "EP 1 (2023). It works on its own, since it is set long after Soul Land, but Soul Land 1 gives useful background.",
+   "status": "Airing on Tencent Video. Latest is EP 180 (Sat 21 Nov 2026); new episodes come out Saturdays at 10:00 China time, and EP 181 is due 28 Nov 2026.",
+   "novel": "Douluo Dalu II: Jueshi Tangmen (斗罗大陆II绝世唐门) by Tang Jia San Shao (唐家三少)",
+   "parts": [
+    {
+     "name": "Soul Land 2: The Peerless Tang Clan (Douluo Dalu 2: Jueshi Tangmen)",
+     "kind": "season",
+     "episodes": "EP 1-180 (airing)",
+     "years": "2023-2026",
+     "skippable": false,
+     "what": "Ten thousand years after Soul Land, Huo Yuhao sets out to become a spirit master and revive the Tang Sect.",
+     "note": "One continuous weekly run with no season splits on AniList or TheTVDB."
+    }
+   ],
+   "sources": [
+    "https://anilist.co/anime/137683",
+    "https://thetvdb.com/series/iitang-me-b/allseasons/official"
+   ],
+   "note": "AniList and TheTVDB both list 182 episodes, which would end the run around 5 Dec 2026, but no official finale announcement was found. AniList also lists a sequel film, 'Douluo Dalu: Shenjie Chuanshuo' (斗罗大陆之神界传说), for 2027; this was not checked anywhere else."
+  },
+  {
+   "slug": "swallowed-star",
+   "t": "Swallowed Star",
+   "short": "Swallowed Star",
+   "hub": "Swallowed Star",
+   "cn": "吞噬星空 (Tunshi Xingkong)",
+   "start": "Season 1, EP 1 (2020).",
+   "status": "Airing on Tencent Video. Latest is EP 250 (Season 5 EP 42), released 16-17 Nov 2026; EP 251 is due 23-24 Nov 2026. New episodes come out Tuesdays at 10:00 China time per AniList; TheTVDB lists Mondays, which is likely the paid early-access slot. The main run is planned to end at about EP 260, around early 2027.",
+   "novel": "Swallowed Star (吞噬星空) by I Eat Tomatoes (我吃西红柿)",
+   "parts": [
+    {
+     "name": "Swallowed Star Season 1 (Tunshi Xingkong)",
+     "kind": "season",
+     "episodes": "EP 1-26",
+     "years": "2020-2021",
+     "skippable": false,
+     "what": "After a virus remakes Earth, student Luo Feng trains to become a warrior against monsters."
+    },
+    {
+     "name": "Swallowed Star Season 2 (Tunshi Xingkong Di Er Ji)",
+     "kind": "season",
+     "episodes": "EP 27-52",
+     "years": "2021-2022",
+     "skippable": false,
+     "what": "Luo Feng's rise on Earth continues."
+    },
+    {
+     "name": "Swallowed Star Season 3 (Tunshi Xingkong Di San Ji)",
+     "kind": "season",
+     "episodes": "EP 53-85",
+     "years": "2022-2023",
+     "skippable": false,
+     "what": "The story moves beyond Earth."
+    },
+    {
+     "name": "Swallowed Star Season 4, part 1 (Tunshi Xingkong Di Si Ji)",
+     "kind": "season",
+     "episodes": "EP 86-148",
+     "years": "2023-2025",
+     "skippable": false,
+     "what": "Luo Feng's journey through the wider universe begins."
+    },
+    {
+     "name": "Swallowed Star Movie: Blood Luo Continent (Tunshi Xingkong Juchangban: Xueluo Dalu)",
+     "kind": "film",
+     "episodes": 1,
+     "years": "2024",
+     "skippable": false,
+     "what": "Adapts the novel's Blood Luo world arc (about 93 minutes).",
+     "note": "According to TVmaze, which was seen only in a search snippet, the film sits between EP 148 and EP 149. Later episodes assume you have seen it. AniList tags it as a side story."
+    },
+    {
+     "name": "Swallowed Star Season 4, part 2",
+     "kind": "season",
+     "episodes": "EP 149-208",
+     "years": "2025-2026",
+     "skippable": false,
+     "what": "Season 4 continues to its end (S4 has 123 episodes on TheTVDB)."
+    },
+    {
+     "name": "Swallowed Star Season 5 (Tunshi Xingkong Di Wu Ji)",
+     "kind": "season",
+     "episodes": "EP 209-250 (airing)",
+     "years": "2026",
+     "skippable": false,
+     "what": "The final stretch of the main story.",
+     "note": "TheTVDB splits Season 5 from Season 4 in early 2026. AniList keeps them together as 'Season 4' with 175 episodes, which would end at EP 260."
+    },
+    {
+     "name": "Swallowed Star Movie: Decisive Battle on Primal Star (Tunshi Xingkong Juchangban: Juezhan Yuanshi Xing)",
+     "kind": "film",
+     "episodes": 1,
+     "years": "2026",
+     "skippable": false,
+     "what": "Luo Feng fights alien forces during his time on Primal Star.",
+     "note": "Released 1 May 2026 on Tencent Video. Where it fits in the episode order is not confirmed."
+    }
+   ],
+   "sources": [
+    "https://anilist.co/anime/117012",
+    "https://anilist.co/anime/166219",
+    "https://anilist.co/anime/185724",
+    "https://anilist.co/anime/213516",
+    "https://thetvdb.com/series/swallowed-star/allseasons/official",
+    "https://en.wikipedia.org/wiki/Swallowed_Star"
+   ],
+   "note": "AniList's airing schedule for this show stops at its S4 EP 123 (27 Jan 2026), so the current position comes from TheTVDB. The figure of 260 total episodes comes from AniList's episode count plus an unverified Douyin fan video. The episode numbering is continuous, as used by TheTVDB and fans."
+  },
+  {
+   "slug": "renegade-immortal",
+   "t": "Renegade Immortal",
+   "short": "Renegade Immortal",
+   "hub": "Renegade Immortal",
+   "cn": "仙逆 (Xian Ni)",
+   "start": "EP 1 (2023). Watch both films where shown below; the second one is required before EP 152.",
+   "status": "Airing on Tencent Video. Latest is EP 168 (Mon 23 Nov 2026); new episodes come out Mondays at 10:00 China time (TheTVDB lists Sundays, likely the paid early-access slot), and EP 169 is due 30 Nov 2026. The current plan runs to about EP 180-181, around Feb 2027.",
+   "novel": "Xian Ni (仙逆) by Er Gen (耳根)",
+   "parts": [
+    {
+     "name": "Renegade Immortal (Xian Ni)",
+     "kind": "season",
+     "episodes": "EP 1-89",
+     "years": "2023-2025",
+     "skippable": false,
+     "what": "Wang Lin, a poor village boy with weak talent, finds the Heaven Defying Bead and begins cultivating.",
+     "note": "It started as a seasonal show and became a year-round weekly annual series in 2024. Tencent's annual block boundaries were not verified."
+    },
+    {
+     "name": "Renegade Immortal Movie: Battle of Gods (Xian Ni Juchangban: Shenlin Zhi Zhan)",
+     "kind": "film",
+     "episodes": 1,
+     "years": "2025",
+     "skippable": false,
+     "what": "Feature-length special (Wang Lin at the Eternal Night demon city).",
+     "note": "Released 30 May 2025. TheTVDB places it before EP 90; no official placement was found."
+    },
+    {
+     "name": "Renegade Immortal (Xian Ni), continued",
+     "kind": "annual",
+     "episodes": "EP 90-151",
+     "years": "2025-2026",
+     "skippable": false,
+     "what": "The weekly annual run continues."
+    },
+    {
+     "name": "Renegade Immortal Movie: Slaying the Blood Progenitor (Xian Ni Juchangban: Shi Xian Zhi Zhan)",
+     "kind": "film",
+     "episodes": 1,
+     "years": "2026",
+     "skippable": false,
+     "what": "Wang Lin's clash with the Blood Progenitor and the breakthrough that follows.",
+     "note": "Released 1 Oct 2026, after EP 152 had already aired (Aug 2026). EP 152 skips this material, so viewers are told to watch the film between EP 151 and EP 152."
+    },
+    {
+     "name": "Renegade Immortal (Xian Ni), continued",
+     "kind": "annual",
+     "episodes": "EP 152-168 (airing)",
+     "years": "2026",
+     "skippable": false,
+     "what": "The weekly annual run continues."
+    }
+   ],
+   "sources": [
+    "https://anilist.co/anime/137653",
+    "https://anilist.co/anime/185121",
+    "https://anilist.co/anime/217627",
+    "https://thetvdb.com/series/xian-ni/allseasons/official",
+    "https://en.wikipedia.org/wiki/Renegade_Immortal",
+    "https://m.tech.china.com/articles/20261002/202610021963489.html",
+    "https://www.163.com/dy/article/L3EEAG4S0556OHS1.html"
+   ],
+   "note": "Planned total: AniList says 180, TheTVDB says 181. A Feb 2025 user post says the episode count was extended from 76 to 128, which suggests later extensions too. English Wikipedia's infobox says 4 seasons, but it is out of date (141 episodes). The EP 151/152 film placement comes from several Chinese self-media articles seen in search snippets; quality varies."
+  },
+  {
+   "slug": "tomb-of-fallen-gods",
+   "t": "Tomb of Fallen Gods",
+   "short": "Tomb of Fallen Gods",
+   "hub": "Tomb of Fallen Gods",
+   "cn": "神墓 (Shen Mu)",
+   "start": "Season 1, EP 1 (2022).",
+   "status": "On break. Season 3 (the annual) finished with its EP 52 (EP 95 overall) on 23 Jul 2026 on Youku. No Season 4 or premiere date was found.",
+   "novel": "Shen Mu (神墓) by Chen Dong (辰东)",
+   "parts": [
+    {
+     "name": "Tomb of Fallen Gods Season 1: Chen Nan's Awakening (Shen Mu: Chen Nan Juexing Pian)",
+     "kind": "season",
+     "episodes": 16,
+     "years": "2022",
+     "skippable": false,
+     "what": "Chen Nan wakes in a graveyard of gods and demons after ten thousand years and finds the world changed."
+    },
+    {
+     "name": "Tomb of Fallen Gods Season 2: Academy City (Shen Mu Di Er Ji: Xuecheng Fengyun Pian)",
+     "kind": "season",
+     "episodes": 27,
+     "years": "2024-2025",
+     "skippable": false,
+     "what": "Chen Nan's adventures continue in a new setting."
+    },
+    {
+     "name": "Tomb of Fallen Gods Season 3 / Annual (Shen Mu Nian Fan)",
+     "kind": "annual",
+     "episodes": 52,
+     "years": "2025-2026",
+     "skippable": false,
+     "what": "The year-long annual run continues the main story."
+    }
+   ],
+   "sources": [
+    "https://anilist.co/anime/129251",
+    "https://anilist.co/anime/155319",
+    "https://anilist.co/anime/198701",
+    "https://myanimelist.net/anime/61921/Shen_Mu_3rd_Season",
+    "https://thetvdb.com/series/422610-/allseasons/official"
+   ],
+   "note": "Youku numbers each season from 1. Counted continuously, the three seasons are EP 1-16, 17-43 and 44-95. A Youku 2026 slate mentions '神墓 年番', which probably means Season 3. Not to be confused with 'Tales of Herding Gods' (牧神记)."
+  },
+  {
+   "slug": "perfect-world",
+   "t": "Perfect World",
+   "short": "Perfect World",
+   "hub": "Perfect World",
+   "cn": "完美世界 (Wanmei Shijie)",
+   "start": "Season 1, EP 1 (2021).",
+   "status": "Airing on Tencent Video. Season 7 (EP 287 onward) started 18 Sep 2026, with new episodes on Fridays (older posts say early access on Thursdays at 18:00). The latest episode number could not be confirmed: TheTVDB's last dated entry is EP 288 (24-25 Sep 2026). If there has been no break, it should be at about EP 296 now. MAL lists 338 planned episodes, meaning Season 7 runs to EP 338 in about late 2027.",
+   "novel": "Wanmei Shijie (完美世界) by Chen Dong (辰东)",
+   "parts": [
+    {
+     "name": "Perfect World Season 1 (Wanmei Shijie)",
+     "kind": "season",
+     "episodes": "EP 1-26",
+     "years": "2021",
+     "skippable": false,
+     "what": "Shi Hao, a gifted child of the Stone Village, starts his rise in a wild world of ancient beasts."
+    },
+    {
+     "name": "Perfect World Season 2 (Wanmei Shijie Di Er Ji)",
+     "kind": "season",
+     "episodes": "EP 27-78",
+     "years": "2021-2022",
+     "skippable": false,
+     "what": "Shi Hao leaves the village and enters the wider world."
+    },
+    {
+     "name": "Perfect World Season 3 (Wanmei Shijie Di San Ji)",
+     "kind": "season",
+     "episodes": "EP 79-130",
+     "years": "2022-2023",
+     "skippable": false,
+     "what": "The story continues."
+    },
+    {
+     "name": "Perfect World Season 4 (Wanmei Shijie Di Si Ji)",
+     "kind": "season",
+     "episodes": "EP 131-182",
+     "years": "2023-2024",
+     "skippable": false,
+     "what": "The story continues."
+    },
+    {
+     "name": "Perfect World Movie: Ashes of Fire (Wanmei Shijie Juchangban: Huo Zhi Huijin)",
+     "kind": "film",
+     "episodes": 1,
+     "years": "2024",
+     "skippable": true,
+     "what": "A 90-minute film with an original story, released 14 Sep 2024 (also shown as 3 parts).",
+     "note": "Beijing News calls it an original plot."
+    },
+    {
+     "name": "Perfect World Season 5 (Wanmei Shijie Di Wu Ji)",
+     "kind": "season",
+     "episodes": "EP 183-234",
+     "years": "2024-2025",
+     "skippable": false,
+     "what": "The story continues."
+    },
+    {
+     "name": "Perfect World Season 6 (Wanmei Shijie Di Liu Ji)",
+     "kind": "season",
+     "episodes": "EP 235-286",
+     "years": "2025-2026",
+     "skippable": false,
+     "what": "The story continues."
+    },
+    {
+     "name": "Perfect World Movie: Nine Tribulations Burning the Heavens (Wanmei Shijie Juchangban: Jiu Jie Fen Tian)",
+     "kind": "film",
+     "episodes": 1,
+     "years": "2026",
+     "skippable": false,
+     "what": "Second Perfect World film.",
+     "note": "Released 8 Aug 2026; by date it falls between EP 281 and EP 282. It is not confirmed whether this is main-story or side-story material."
+    },
+    {
+     "name": "Perfect World Season 7 (Wanmei Shijie Di Qi Ji)",
+     "kind": "season",
+     "episodes": "EP 287- (airing)",
+     "years": "2026-",
+     "skippable": false,
+     "what": "The current annual season."
+    },
+    {
+     "name": "Perfect World: Shuang Shi Ji (Wanmei Shijie: Shuang Shi Ji)",
+     "kind": "special",
+     "episodes": 6,
+     "years": "2016",
+     "skippable": true,
+     "what": "An unrelated five-minute chibi food comedy from before the main series."
+    }
+   ],
+   "sources": [
+    "https://anilist.co/anime/120218",
+    "https://anilist.co/anime/199363",
+    "https://anilist.co/anime/217628",
+    "https://anilist.co/anime/182563",
+    "https://anilist.co/anime/187594",
+    "https://myanimelist.net/anime/47405",
+    "https://thetvdb.com/series/394900-/allseasons/official",
+    "https://www.bjnews.com.cn/detail/1726311163168350.html"
+   ],
+   "note": "The season ranges are AniList's per-season counts (26 + 5 x 52), laid onto TheTVDB's continuous numbering. They line up: EP 286 aired 10-11 Sep 2026, the end of Season 6. MAL treats the whole show as one 338-episode entry. Perfect World shares a universe with Shrouding the Heavens, and Perfect World comes first in story time."
+  },
+  {
+   "slug": "a-will-eternal",
+   "t": "A Will Eternal",
+   "short": "A Will Eternal",
+   "hub": "A Will Eternal",
+   "cn": "一念永恒 (Yi Nian Yong Heng)",
+   "start": "Season 1, EP 1 (2020).",
+   "status": "Airing on Tencent Video. Latest is EP 185 (Season 4 EP 20, Wed 18 Nov 2026); new episodes come out Wednesdays at 10:00 China time, and EP 186 is due 25 Nov 2026. Season 4 is planned at 46 episodes, ending at EP 211 in about mid-2027.",
+   "novel": "Yi Nian Yong Heng (一念永恒) by Er Gen (耳根)",
+   "parts": [
+    {
+     "name": "A Will Eternal Season 1 (Yi Nian Yong Heng)",
+     "kind": "season",
+     "episodes": "EP 1-52",
+     "years": "2020-2021",
+     "skippable": false,
+     "what": "Bai Xiaochun, a comically death-fearing youth, joins a sect in pursuit of eternal life."
+    },
+    {
+     "name": "A Will Eternal mini-theatre shorts (Yi Nian Yong Heng Xiao Juchang)",
+     "kind": "special",
+     "episodes": 30,
+     "years": "2021-2022",
+     "skippable": true,
+     "what": "Comedy shorts released between seasons.",
+     "note": "Listed on TheTVDB as specials."
+    },
+    {
+     "name": "A Will Eternal Season 2 (Yi Nian Yong Heng Di Er Ji)",
+     "kind": "season",
+     "episodes": "EP 53-106",
+     "years": "2022-2023",
+     "skippable": false,
+     "what": "Bai Xiaochun's sect life widens into bigger conflicts.",
+     "note": "AniList splits it into arcs: Chuancheng Pian (20), Hezong Pian (16), Ni Zhan Pian (15) and Zhizi Pian (3)."
+    },
+    {
+     "name": "A Will Eternal Season 3 (Yi Nian Yong Heng Di San Ji)",
+     "kind": "season",
+     "episodes": "EP 107-165",
+     "years": "2024-2025",
+     "skippable": false,
+     "what": "The story continues in a 59-episode season."
+    },
+    {
+     "name": "A Will Eternal Season 4 (Yi Nian Yong Heng Di Si Ji)",
+     "kind": "season",
+     "episodes": "EP 166-185 (airing)",
+     "years": "2026-",
+     "skippable": false,
+     "what": "The current season, planned at 46 episodes."
+    },
+    {
+     "name": "A Will Eternal mini-theatre 2026 (Yi Nian Yong Heng Mini Juchang)",
+     "kind": "special",
+     "episodes": 13,
+     "years": "2026",
+     "skippable": true,
+     "what": "Comedy shorts released during Season 4 (Sep-Oct 2026).",
+     "note": "Listed only on TheTVDB."
+    }
+   ],
+   "sources": [
+    "https://anilist.co/anime/110595",
+    "https://anilist.co/anime/137742",
+    "https://anilist.co/anime/168104",
+    "https://anilist.co/anime/199409",
+    "https://thetvdb.com/series/388680-/allseasons/official",
+    "https://zh.wikipedia.org/wiki/耳根"
+   ],
+   "note": "TheTVDB labels the seasons differently, with Season 1 as 'Mo Li Pian' and Season 3 as 'Zhi Zi Pian', while AniList puts Zhizi Pian at the end of Season 2. The episode numbers (第1-185集) are the same on both sites."
+  },
+  {
+   "slug": "shrouding-the-heavens",
+   "t": "Shrouding the Heavens",
+   "short": "Shrouding the Heavens",
+   "hub": "Shrouding the Heavens",
+   "cn": "遮天 (Zhe Tian)",
+   "start": "EP 1 (2023).",
+   "status": "Airing on Tencent Video. Latest is EP 190 (Wed 18 Nov 2026); new episodes come out Wednesdays at 10:00 for VIP members, with paid early access on Tuesdays at 18:00. EP 191 is due 25 Nov 2026. AniList lists 208 planned episodes, ending in about early 2027.",
+   "novel": "Zhe Tian (遮天) by Chen Dong (辰东)",
+   "parts": [
+    {
+     "name": "Shrouding the Heavens (Zhe Tian)",
+     "kind": "season",
+     "episodes": "EP 1-190 (airing)",
+     "years": "2023-2026",
+     "skippable": false,
+     "what": "Ye Fan and his classmates are carried from modern Earth to a cultivation world by nine dragons pulling a bronze coffin.",
+     "note": "One continuous weekly run, numbered straight through."
+    },
+    {
+     "name": "Shrouding the Heavens Movie: Carrying the Coffin to Fight Wang Teng (Zhe Tian Juchangban: Bei Guan Zhan Wang Teng)",
+     "kind": "film",
+     "episodes": 1,
+     "years": "2026",
+     "skippable": false,
+     "what": "Ye Fan's showdown with Wang Teng, as a feature film.",
+     "note": "Released 3-4 Apr 2026; TheTVDB lists it as 'The Imperial Path'. Where it fits in the episode order is not confirmed."
+    },
+    {
+     "name": "Shrouding the Heavens Special: Destroying Divine Spirit Valley (Zhe Tian: Tumie Shenling Gu Tebie Pian)",
+     "kind": "special",
+     "episodes": 1,
+     "years": "2026",
+     "skippable": false,
+     "what": "A special episode on Tencent Video.",
+     "note": "Released 20 Oct 2026 per the official Weibo, as mirrored on sina.cn. Not confirmed whether it is required viewing."
+    }
+   ],
+   "sources": [
+    "https://anilist.co/anime/137671",
+    "https://anilist.co/anime/213664",
+    "https://thetvdb.com/series/434304-series/allseasons/official",
+    "https://www.sina.cn/media/7661212901"
+   ],
+   "note": "AniList's schedule for this show stops at EP 160 (Apr 2026), so the current position comes from TheTVDB plus official Weibo posts mirrored on sina.cn. TheTVDB shows EP 180 and EP 181 on the same day (15 Sep 2026) and a 10-day gap in May 2025. A second TheTVDB entry, ID 434262, is an unrelated live-action listing."
+  }
+ ]
+}
