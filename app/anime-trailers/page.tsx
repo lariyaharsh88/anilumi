@@ -4,6 +4,7 @@ import PageHero from "@/components/PageHero";
 import Faq from "@/components/Faq";
 import JsonLd from "@/components/JsonLd";
 import SectionNav from "@/components/fx/SectionNav";
+import AnswerLead from "@/components/AnswerLead";
 import YouTubeFacade from "@/components/YouTubeFacade";
 import { animePath, cap, seasonOf, shiftSeason, type Season } from "@/lib/kitsu";
 import { getSeasonPreview, type PreviewItem } from "@/lib/preview";
@@ -87,6 +88,11 @@ export default async function AnimeTrailers() {
           <Link href="/upcoming-seasons" className="chip">Confirmed sequels</Link>
         </p>
       </PageHero>
+      {first && (
+        <AnswerLead>
+          {total} upcoming anime have an official trailer or PV: {groups.map((g) => `${g.items.length} for ${g.label}`).join(", ")}. The most anticipated {first.label} trailers are {first.items.slice(0, 4).map((i) => `${name(i)} (${when(i.date)})`).join(", ")}. New PVs land with each announcement wave; Jump Festa in December is the next big one.
+        </AnswerLead>
+      )}
       <SectionNav sections={[...groups.map((g) => ({ id: `${g.season}-${g.year}`, label: g.label })), { id: "faq", label: "FAQ" }]} />
 
       {groups.map((g) => (

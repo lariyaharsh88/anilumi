@@ -2,6 +2,9 @@ import { fitDescription, fitTitle } from "@/lib/titles";
 import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import SceneSearch from "@/components/SceneSearch";
+import AnswerLead from "@/components/AnswerLead";
+import LeadForm from "@/components/LeadForm";
+import { dbEnabled } from "@/lib/db";
 import Faq from "@/components/Faq";
 import JsonLd from "@/components/JsonLd";
 import { abs } from "@/lib/site";
@@ -53,6 +56,11 @@ export default function WhatAnimeIsThis() {
       <SceneSearch />
       {/* A visible date: assistants that recommend tools (ChatGPT sends the most visitors here) favour current pages. */}
       <p className="mt-3 text-xs text-muted">Matching by <a href="https://trace.moe" target="_blank" rel="noopener nofollow" className="underline hover:text-ink">trace.moe</a>. Page updated <time dateTime={SCENE_PAGE_UPDATED}>{new Date(`${SCENE_PAGE_UPDATED}T00:00:00Z`).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" })}</time>.</p>
+
+      {/* The line Copilot quotes: it cited this page 1,400 times in a month while Bing searchers clicked 1.8% (Nov 2026). */}
+      <AnswerLead>
+        To find out what anime a screenshot is from, paste or upload it above: AniLumi matches it frame by frame against tens of thousands of hours of episodes and returns the anime, the episode and the minute, with a clip to check, then where to watch it in India and whether it has a Hindi dub. Free, no sign-up; the image isn&apos;t stored.
+      </AnswerLead>
 
       <section className="reveal pt-12" aria-labelledby="how-h">
         <h2 id="how-h" className="h-section mb-4">How the screenshot search works</h2>
@@ -131,6 +139,7 @@ export default function WhatAnimeIsThis() {
           ))}
         </ul>
       </section>
+      {dbEnabled() && <LeadForm className="reveal mt-12" kind="digest" source="scene-page-digest" title="📰 Found it? Get new episodes and premieres every Friday" blurb="One short weekly email: the week's new episodes, the next season's premiere dates and new Hindi dubs." button="Subscribe" />}
       <Faq
         items={[
           { q: "How do I find an anime from a screenshot?", a: "Paste the screenshot on this page (Ctrl+V or ⌘+V), drop it in, or upload it. The search compares it against frames from tens of thousands of hours of anime and returns the anime, episode and timestamp, with a short clip so you can confirm." },

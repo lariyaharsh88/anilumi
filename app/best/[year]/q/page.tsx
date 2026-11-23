@@ -1,5 +1,5 @@
 // Query-string variants (?page=, ?sort=, filters). Reached only through the rewrites in next.config.ts;
-import { fitDescription } from "@/lib/titles";
+import { fitDescription, fitTitle } from "@/lib/titles";
 import { robotsFor, bestYearIndexed } from "@/lib/indexing";
 // the plain URL is served by ../page.tsx from the ISR cache.
 import type { Metadata } from "next";
@@ -11,6 +11,7 @@ import PageHero from "@/components/PageHero";
 import Pagination from "@/components/Pagination";
 import Faq from "@/components/Faq";
 import AdSlot from "@/components/AdSlot";
+import AnswerLead from "@/components/AnswerLead";
 
 const LIMIT = 20;
 const MIN_YEAR = 1980;
@@ -26,7 +27,10 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
   const s = SORTS[sort || "rated"] ? sort || "rated" : "rated";
   const cur = Number(year) === new Date().getFullYear();
   return {
-    title: `Best Anime of ${year}${cur ? " (So Far)" : ""} – ${SORTS[s].label}${Number(page) > 1 ? ` Page ${page}` : ""}`,
+    // "top-rated anime of the year" and "best anime of <year>" (Bing, Nov 2026); year-end lists peak in December.
+    title: Number(page) > 1 || s !== "rated"
+      ? `Best Anime of ${year}${cur ? " (So Far)" : ""} – ${SORTS[s].label}${Number(page) > 1 ? ` Page ${page}` : ""}`
+      : fitTitle([`Best Anime of ${year}${cur ? " (So Far)" : ""}: Top-Rated Shows of the Year, Ranked`, `Best Anime of ${year}${cur ? " (So Far)" : ""}: Top Rated, Ranked`, `Best Anime of ${year} – Top Rated`]),
     description: fitDescription(`The best anime that premiered in ${year}, ranked by ${s === "rated" ? "average fan score" : "how many fans watched them"} on Kitsu, with scores, episode counts, genres and where to watch each one legally.`),
     alternates: { canonical: `/best/${year}${s !== "rated" ? `?sort=${s}` : ""}${Number(page) > 1 ? `${s !== "rated" ? "&" : "?"}page=${page}` : ""}` },
     // The last ten years and any year search already shows; never the sorted or paged copies.
@@ -64,6 +68,11 @@ export default async function BestOfYear({ params, searchParams }: Props) {
         ))}
       </div>
       </PageHero>
+      {page === 1 && sortKey === "rated" && data.items.length >= 3 && (
+        <AnswerLead checked={cur ? new Date().toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "Asia/Kolkata" }) : undefined}>
+          The best anime of {year}{cur ? " so far" : ""}, by fan score: {data.items.slice(0, 5).map((a, i) => `${i + 1}. ${a.title}${a.rating ? ` (${(a.rating / 10).toFixed(1)})` : ""}`).join(", ")}. Kitsu lists {data.total.toLocaleString()} anime that premiered in {year}{cur ? "; the ranking updates as the year goes on" : ""}.
+        </AnswerLead>
+      )}
       <AdSlot slot="best-top" />
       <div className="mt-6"><AnimeGrid items={data.items} startRank={(page - 1) * LIMIT + 1} ld={`Best anime of ${year}: ${SORTS[sortKey].label.toLowerCase()}`} /></div>
       <Pagination page={page} total={Math.min(data.total, LIMIT * 25)} limit={LIMIT} base={`/best/${year}${sortKey !== "rated" ? `?sort=${sortKey}` : ""}`} />

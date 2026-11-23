@@ -4,7 +4,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import Link from "@/components/Link";
 import { SEASONS, cap, shiftSeason, animePath, type Season } from "@/lib/kitsu";
-import { getSeasonPreview, premiereCalendar, type PreviewItem } from "@/lib/preview";
+import { getSeasonPreview, premiereCalendar, previewSnapshot, type PreviewItem } from "@/lib/preview";
 import PageHero from "@/components/PageHero";
 import Faq, { type FaqItem } from "@/components/Faq";
 import AdSlot from "@/components/AdSlot";
@@ -13,6 +13,9 @@ import HypeBoard from "@/components/HypeBoard";
 import LeadForm from "@/components/LeadForm";
 import { dbEnabled } from "@/lib/db";
 import Countdown from "@/components/Countdown";
+import AnswerLead from "@/components/AnswerLead";
+import { dubFor, dubHref } from "@/lib/hindidub";
+import { seasonDubs } from "@/lib/seasondubs";
 
 export const revalidate = 86400;
 export async function generateStaticParams() { return []; }
@@ -104,6 +107,15 @@ export default async function SeasonPreview({ params }: Props) {
       a: `${name(i)} ${i.date.day ? "premieres on" : "is scheduled for"} ${when(i.date)}${i.date.day ? "" : ` (${label})`} in Japan${i.studio ? `, animated by ${i.studio}` : ""}.${i.prequel ? ` It follows ${i.prequelAnime?.title || i.prequel.title}.` : ""}`,
     })),
   ];
+  // India: announced Hindi dubs for the season, and sequels whose earlier seasons already have an official Hindi dub
+  // (the likeliest to get one; nothing here claims the new season is dubbed unless it's announced).
+  const announcedHi = seasonDubs(y, s)?.hi ?? [];
+  const hindiLikely = sequels.flatMap((i) => {
+    const base = i.prequelAnime ?? i.anime;
+    const d = base ? dubFor(base) : null;
+    return d?.status === "available" && !announcedHi.some((e) => e.t === name(i) || (e.slug && e.slug === i.anime?.slug)) ? [{ i, d }] : [];
+  });
+  const updated = previewSnapshot().generated;
   // Countdown to the season's first dated premiere (midnight JST), while it's still ahead.
   const firstIso = cal[0] ? `${cal[0].date}T00:00:00+09:00` : null;
   const upcoming = firstIso && new Date(firstIso).getTime() > Date.now();
@@ -139,6 +151,15 @@ export default async function SeasonPreview({ params }: Props) {
           <Link href={`/season/${next.year}/${next.season}/preview`} className="chip">{cap(next.season)} {next.year} →</Link>
         </div>
       </PageHero>
+
+      {items.length >= 5 && (
+        <AnswerLead checked={updated ? new Date(`${updated}T00:00:00Z`).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }) : undefined}>
+          {label} anime run from {MONTHS[s]} {y}: {items.length - movies.length} series ({sequels.length} sequels, {fresh.length} new) and {movies.length} {movies.length === 1 ? "film" : "films"} announced so far.
+          {cal[0] ? ` The first premiere is ${name(cal[0].items[0])} on ${dayLabel(cal[0].date)}.` : ""}
+          {` The most anticipated are ${items.slice(0, 4).map(name).join(", ")}.`}
+          {announcedHi.length ? ` ${announcedHi.length} ${announcedHi.length === 1 ? "has" : "have"} a Hindi dub announced.` : hindiLikely.length ? ` No Hindi dubs are announced yet; ${hindiLikely.length} sequels continue series already dubbed in Hindi.` : ""}
+        </AnswerLead>
+      )}
 
       {items.length > 0 && (
         <section className="reveal mt-10" aria-labelledby="top-h">
@@ -188,6 +209,26 @@ export default async function SeasonPreview({ params }: Props) {
               </li>
             ))}
           </ol>
+        </section>
+      )}
+
+      {(announcedHi.length > 0 || hindiLikely.length > 0) && (
+        <section className="reveal mt-10" aria-labelledby="hi-h">
+          <h2 id="hi-h" className="h-section">{label} anime in India: Hindi dubs</h2>
+          <p className="mt-1 max-w-3xl text-sm text-muted">Hindi dubs usually arrive months after Japan, on the platform that dubbed the earlier seasons. We add each one to the <Link href="/hindi-dub" className="text-violet hover:underline">Hindi dub list</Link> once the platform announces it.</p>
+          {announcedHi.length > 0 && (
+            <>
+              <h3 className="mt-3 text-xs font-semibold uppercase tracking-wide text-muted">Announced</h3>
+              <ul className="mt-1.5 flex flex-wrap gap-1.5">{announcedHi.map((e) => <li key={`${e.t}-${e.service}`}><Link href={e.slug ? `/anime/${e.slug}` : "/hindi-dub"} className="chip text-xs">{e.t}<span className="text-muted"> · {e.service}</span></Link></li>)}</ul>
+            </>
+          )}
+          {hindiLikely.length > 0 && (
+            <>
+              <h3 className="mt-3 text-xs font-semibold uppercase tracking-wide text-muted">Earlier seasons already in Hindi</h3>
+              <p className="mt-1 text-xs text-muted">Not announced for {label} yet: these continue a series with an official Hindi dub, so they&apos;re the likeliest to get one.</p>
+              <ul className="mt-1.5 flex flex-wrap gap-1.5">{hindiLikely.map(({ i, d }) => <li key={i.id}><Link href={dubHref(d)} className="chip text-xs">{name(i)}<span className="text-muted"> · {d.platforms[0]?.name ?? "Hindi dub"}</span></Link></li>)}</ul>
+            </>
+          )}
         </section>
       )}
 

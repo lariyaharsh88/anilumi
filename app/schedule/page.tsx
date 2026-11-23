@@ -10,6 +10,7 @@ import Faq from "@/components/Faq";
 import AdSlot from "@/components/AdSlot";
 import ScheduleBoard, { BoardDay, BoardItem } from "@/components/ScheduleBoard";
 import BarChart from "@/components/viz/BarChart";
+import AnswerLead from "@/components/AnswerLead";
 
 export const revalidate = 1800;
 export const metadata: Metadata = {
@@ -56,6 +57,12 @@ export default async function SchedulePage() {
     items: (byDay.get(day) || []).sort((x, y) => Number(x.estimated) - Number(y.estimated) || (x.nextRelease || "").localeCompare(y.nextRelease || "") || y.userCount - x.userCount),
   }));
 
+  const weekTotal = days.reduce((n, d) => n + d.items.length, 0);
+  const busiest = days.reduce((x, y) => (y.items.length > x.items.length ? y : x));
+  const popular = (xs: BoardItem[], n: number) => [...xs].sort((x, y) => y.userCount - x.userCount).slice(0, n).map((x) => x.title);
+  const list = (xs: string[]) => (xs.length > 1 ? `${xs.slice(0, -1).join(", ")} and ${xs[xs.length - 1]}` : xs[0] ?? "");
+  const checked = new Date().toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "Asia/Kolkata" });
+
   return (
     <div className="container-x pb-8">
       <JsonLd data={itemList("Anime airing this week", days.flatMap((d) => d.items).map((x) => ({ url: animePath(x), name: x.title })))} />
@@ -79,6 +86,10 @@ export default async function SchedulePage() {
           <Link href="/comic-con-india" className="chip">🎪 Comic Con India dates</Link>
         </p>
       </PageHero>
+      {/* The quotable answer: Copilot cited this page for under 1% of "anime release schedule" answers (Bing, Nov 2026). */}
+      <AnswerLead checked={checked}>
+        Today ({todayJst} in Japan) {days[0].items.length} anime air{days[0].items.length ? `, including ${list(popular(days[0].items, 3))}` : ""}. This week {weekTotal} episodes of the most-followed airing series come out; {busiest.day} is the busiest day ({busiest.items.length}{busiest.day === days[0].day ? ", today" : ""}). Times are Japan time (JST), 3½ hours ahead of India; simulcasts usually go live within a couple of hours.
+      </AnswerLead>
       <div className="reveal mt-8">
         <BarChart
           title="Episodes this week"
@@ -112,6 +123,8 @@ export default async function SchedulePage() {
       )}
       <Faq
         items={[
+          { q: "Which anime come out each day this week?", a: days.map((d) => `${d.day}: ${d.items.length ? list(popular(d.items, 3)) + (d.items.length > 3 ? ` and ${d.items.length - 3} more` : "") : "none"}`).join(". ") + "." },
+          { q: "What time do new anime episodes come out in India?", a: "Japan is 3½ hours ahead of India, so an episode that airs at 11:00 PM JST in Japan airs at 7:30 PM IST the same day; a slot just after midnight in Japan (1:00 AM Saturday JST) is 9:30 PM Friday in India. Crunchyroll usually posts the subtitled episode within an hour or two of the broadcast. See the Crunchyroll schedule in IST for exact times." },
           { q: "What time zone is the schedule in?", a: "All times are Japan Standard Time (JST, UTC+9), when episodes first broadcast, with the equivalent in your own time zone next to it. Simulcasts on Crunchyroll and other services usually go live within an hour or two after that." },
           { q: "What does “time not listed” mean?", a: "Kitsu has not recorded an exact broadcast time for that series yet, so it is placed on the weekday it premiered, which is when weekly TV anime normally continue to air." },
           { q: "How do I see only my shows?", a: "Press “+ My list” on any series, then tick “Only my list” at the top of this page. The list is stored in your browser; no account is needed." },

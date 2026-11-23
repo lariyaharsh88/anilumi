@@ -96,6 +96,7 @@ export default function AnimeStreamingSites() {
     // anime site/website" ~1K (Bing keyword research, Nov 2026): people looking for a site called SubDub Anime. Named
     // without a verdict, since we haven't reviewed it; the answer is where both versions stream legally.
     { q: "Is there a legal site like SubDub Anime, with both sub and dub?", a: `AniLumi doesn't review or link to unofficial streaming sites. For anime with both subtitles and dubs, legally: ${name(most)} streams most shows subtitled and many with an English dub, Netflix lets you switch the audio and subtitle language on most of its anime, and ${free.map(name).join(" and ")} are free with ads. Each show's page on AniLumi says whether it has an English or Hindi dub and where each version streams.` },
+    { q: "Is anime streaming legal in India?", a: `Yes, on licensed services such as ${list.slice(0, 4).map(name).join(", ")} and the licensors' YouTube channels. Unlicensed sites infringe the Copyright Act, 1957, and Indian courts regularly order internet providers to block them.` },
     { q: "Is it legal to watch anime on free anime websites?", a: "Only on the licensed ones listed here. Sites that offer every new anime free, without ads from the licensor, are unlicensed uploads: they pay nothing to the studios, and their pop-up ads and fake download buttons are a common way to get malware." },
   ];
 
@@ -187,6 +188,16 @@ export default function AnimeStreamingSites() {
             </article>
           );
         })}
+      </section>
+
+      {/* Bing, Nov 2026: "anime streaming legality" at position 3.5 and "where to watch anime online legally" at 6.2, no clicks. */}
+      <section className="reveal mt-10" aria-labelledby="legal-h">
+        <h2 id="legal-h" className="h-section mb-3">Is anime streaming legal in India?</h2>
+        <div className="card max-w-3xl space-y-2 p-4 text-sm leading-6 text-ink/85">
+          <p><strong className="text-ink">Yes, on licensed services.</strong> Watching anime on {list.map(name).filter((n) => n !== "YouTube").slice(0, 5).join(", ")} or the licensors&rsquo; own YouTube channels is legal: they pay the studios for the right to stream each show in India, which is also why a show can be on one service here and another abroad.</p>
+          <p><strong className="text-ink">Unlicensed sites are not.</strong> Sites that copy episodes without a licence infringe the Copyright Act, 1957, and Indian courts regularly order internet providers to block them, including &ldquo;dynamic&rdquo; Delhi High Court orders that also cover their mirror domains. Downloading or sharing episodes from them can infringe too.</p>
+          <p><strong className="text-ink">How to tell the difference:</strong> a legal service has a company behind it, a catalogue that changes as licences start and end, and no pop-ups or &ldquo;download&rdquo; buttons. If a site has every anime ever made, free, the day it airs, it isn&rsquo;t licensed.</p>
+        </div>
       </section>
 
       <section className="reveal mt-10" aria-labelledby="free-h">

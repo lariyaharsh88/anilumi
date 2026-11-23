@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import MadeBy from "@/components/MadeBy";
+import AnswerLead from "@/components/AnswerLead";
 import Link from "@/components/Link";
 import PageHero from "@/components/PageHero";
 import Faq from "@/components/Faq";
@@ -61,6 +62,10 @@ export default async function WhereToWatchHub() {
           <Link href="/anime-on-netflix-india" className="chip">Anime on Netflix India</Link>
         </p>
       </PageHero>
+      {/* Bing, Nov 2026: 333 impressions a month, 1 click; Copilot quotes a page's first plain-text answer. */}
+      <AnswerLead checked={streamsDate()}>
+        The biggest legal anime services: in the US {topIn("US")}; in India {topIn("IN")}; in the UK {topIn("GB")} (how many of the {all.length} most-followed anime each one streams). {freeCount("IN")} of them are free and legal in India and {freeCount("US")} in the US. Pick a show below for every service it&apos;s on in your country, with sub or dub.
+      </AnswerLead>
       <MadeBy className="mt-4" method="Each service is checked on JustWatch's country pages and the service's own title page (Netflix and Prime Video India read from India), with AniList links and news as a second source." date={STREAMS_CHECKED} />
 
       <div className="mt-8">

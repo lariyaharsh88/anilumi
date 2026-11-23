@@ -1,7 +1,10 @@
 // Query-string variants (?page=, ?sort=, filters). Reached only through the rewrites in next.config.ts;
 import { DUBS_SEASON, dubShows, type DubShow } from "@/lib/dubschedule";
 import { seasonDubs, SEASON_DUBS_CHECKED, type SeasonDub } from "@/lib/seasondubs";
-import { previewSnapshot } from "@/lib/preview";
+import { premiereCalendar, previewSnapshot } from "@/lib/preview";
+import AnswerLead from "@/components/AnswerLead";
+import LeadForm from "@/components/LeadForm";
+import { dbEnabled } from "@/lib/db";
 import MadeBy from "@/components/MadeBy";
 import JsonLd from "@/components/JsonLd";
 import { webPage } from "@/lib/ld";
@@ -96,6 +99,7 @@ export default async function SeasonPage({ params, searchParams }: Props) {
   const next = shiftSeason(s, y, 1);
   const now = seasonOf();
   const isCurrent = now.season === s && now.year === y;
+  const isFuture = y > now.year || (y === now.year && SEASONS.indexOf(s) > SEASONS.indexOf(now.season));
   // The airing season's list is rebuilt from live data every 6 hours (revalidate), so its date is the render's. Shown
   // and in dateModified: Bing put a freshness date beside rival season charts and none beside ours (Nov 2026).
   const updated = isCurrent ? new Date() : null;
@@ -123,6 +127,16 @@ export default async function SeasonPage({ params, searchParams }: Props) {
   const nameLink = (i: PreviewItem) => (i.anime ? <Link href={animePath(i.anime)} className="text-ink hover:text-violet-2">{showName(i)}</Link> : <span className="text-ink">{showName(i)}</span>);
 
   const months: Record<Season, string> = { winter: "January to March", spring: "April to June", summer: "July to September", fall: "October to December" };
+  // The answer AI assistants quote: Copilot cited the Fall 2026 page 1,900 times in a month (Bing, Nov 2026) while
+  // Bing searchers clicked none of its 571 impressions, so the first line carries the numbers and names.
+  const topNames = [...preview].sort((a, b) => b.popularity - a.popularity).slice(0, 4).map(showName);
+  const liveDubs = label === DUBS_SEASON ? dubShows().filter((e) => e.status !== "complete") : [];
+  const dubLine = liveDubs.length ? ` ${liveDubs.filter((e) => e.lang === "en").length} have an English dub and ${liveDubs.filter((e) => e.lang === "hi").length} a Hindi dub this season.` : "";
+  // In a season's last month, people start searching the next one ("winter anime 2027" appeared on Bing in November):
+  // point the current chart at the next season's preview, with its first premiere date.
+  const lastMonth = isCurrent && new Date().getUTCMonth() % 3 === 2;
+  const nextFirst = lastMonth ? premiereCalendar(nextPreview.filter((i) => i.kind !== "movie"))[0] : null;
+  const nextLabel = `${cap(next.season)} ${next.year}`;
 
   return (
     <div className="container-x pb-8">
@@ -150,6 +164,19 @@ export default async function SeasonPage({ params, searchParams }: Props) {
       </PageHero>
       {updated && page === 1 && <JsonLd data={{ ...webPage("CollectionPage", `/season/${year}/${season}`, `${cap(season)} ${year} anime`), dateModified: updated.toISOString() }} />}
       <MadeBy className="mt-4" method="The season list comes from Kitsu and AniList, ranked by how many people follow each show; air times are checked against the broadcast schedule." />
+      {page === 1 && data.total > 0 && (
+        <AnswerLead checked={updated ? updated.toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "Asia/Kolkata" }) : undefined}>
+          {isCurrent ? `${data.total} anime are airing in ${label} (${months[s]} ${year}), ${airingNow} of them with new episodes every week.` : `${label} (${months[s]} ${year}) has ${data.total} anime listed so far.`}
+          {topNames.length ? ` The most followed are ${topNames.slice(0, -1).join(", ")}${topNames.length > 1 ? " and " : ""}${topNames[topNames.length - 1]}.` : ""}
+          {sn?.busiestDay.items.length ? ` ${sn.busiestDay.day} is the busiest day.` : ""}{dubLine}
+        </AnswerLead>
+      )}
+      {page === 1 && lastMonth && nextPreview.length > 0 && (
+        <p className="mt-3 max-w-3xl text-sm text-ink/85">
+          ❄️ <strong className="text-ink">{nextLabel} is next:</strong> {nextPreview.length} shows announced{nextFirst ? `, starting ${new Date(`${nextFirst.date}T00:00:00Z`).toLocaleDateString("en-GB", { day: "numeric", month: "long", timeZone: "UTC" })}` : ""}.{" "}
+          <Link href={`/season/${next.year}/${next.season}/preview`} className="font-semibold text-violet hover:text-violet-2">See every {nextLabel} premiere date →</Link>
+        </p>
+      )}
       {updated && <p className="mt-1 text-xs text-muted">List updated {updated.toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "Asia/Kolkata" })}; it refreshes every 6 hours as episodes air.</p>}
       {page === 1 && data.total > 0 && (
         <SectionNav sections={[
@@ -320,6 +347,17 @@ export default async function SeasonPage({ params, searchParams }: Props) {
             {[...nextPreview].sort((a, b) => b.popularity - a.popularity).slice(0, 6).map((i) => <li key={i.id} className="min-w-0"><PosterCard i={i} badge={KIND_LABEL[i.kind]} /></li>)}
           </ul>
         </section>
+      )}
+
+      {page === 1 && dbEnabled() && (isCurrent || isFuture) && data.total > 0 && (
+        <LeadForm
+          className="reveal mt-10"
+          kind="digest"
+          source="season-digest"
+          title={`📅 ${isCurrent ? nextLabel : label} premieres in your inbox`}
+          blurb={`Every Friday: the week's new episodes and premieres, plus each ${isCurrent ? nextLabel : label} show as its date is confirmed.`}
+          button="Subscribe"
+        />
       )}
 
       <div id="faq" data-section className="pt-2">

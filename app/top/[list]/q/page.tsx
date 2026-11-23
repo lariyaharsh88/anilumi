@@ -11,6 +11,7 @@ import Pagination from "@/components/Pagination";
 import Faq from "@/components/Faq";
 import AdSlot from "@/components/AdSlot";
 import BrowseFilter from "@/components/BrowseFilter";
+import AnswerLead from "@/components/AnswerLead";
 import { LISTS } from "./lists";
 
 const LIMIT = 20;
@@ -50,6 +51,12 @@ export default async function TopPage({ params, searchParams }: Props) {
           ))}
         </div>
       </PageHero>
+      {/* Names only: Kitsu's ratingRank weights vote counts, so raw scores would look out of order. "highest rated anime" and "top 100 anime" (Bing, Nov 2026: 836 impressions a month at position 7.5, 11 clicks). */}
+      {page === 1 && data.items.length >= 5 && (
+        <AnswerLead checked={new Date().toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "Asia/Kolkata" })}>
+          {list === "rated" ? "The highest-rated anime of all time, by average fan score" : `${def.h1}, right now`}: {data.items.slice(0, 5).map((a, i) => `${i + 1}. ${a.title}`).join(", ")}. The full top 100 is below, with where to stream each one.
+        </AnswerLead>
+      )}
       <AdSlot slot="top-top" />
       <BrowseFilter source={`top=${list}`} label="this list's top 100">
         <div className="mt-6">
