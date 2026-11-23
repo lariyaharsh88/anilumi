@@ -106,6 +106,112 @@
           "why": "The lighter pick: two genius student council leaders turn a crush into a battle of wits, each scheming to make the other confess first."
         }
       ]
+    },
+    "kimetsu-no-yaiba": {
+      "about": "Swords against monsters, found family and big animated fights, much of it set in old Japan.",
+      "picks": [
+        {
+          "s": "jujutsu-kaisen",
+          "why": "The closest pick: Yuji swallows a cursed finger and joins the sorcerers who hunt curses, with the same mix of brutal fights, teachers worth following and found family."
+        },
+        {
+          "s": "chainsaw-man",
+          "why": "Devil hunters instead of demon slayers: Denji merges with his chainsaw devil and joins Public Safety to hunt devils."
+        },
+        {
+          "s": "jigokuraku",
+          "why": "Swords against monsters in old Japan: the death-row ninja Gabimaru is sent to an island of monsters to find the elixir of life in exchange for a pardon."
+        },
+        {
+          "s": "dororo",
+          "why": "Feudal Japan and demons: Hyakkimaru, whose body was traded to demons before he was born, wins back a piece of himself with every demon he kills."
+        },
+        {
+          "s": "bleach",
+          "why": "The classic sword-and-spirit fighter: Ichigo gains a Soul Reaper's powers and cuts down hollows with a giant sword."
+        },
+        {
+          "s": "attack-on-titan",
+          "why": "Soldiers fight man-eating giants with blades, and like Tanjiro, Eren sets out after a monster takes his family from him."
+        },
+        {
+          "s": "inuyasha",
+          "why": "The original demon-hunting adventure in feudal Japan: a half-demon and a schoolgirl hunt down the shards of a sacred jewel."
+        },
+        {
+          "s": "ao-no-exorcist",
+          "why": "Rin learns he is Satan's son and trains as an exorcist, fighting demons with a sword that seals his own demon power."
+        },
+        {
+          "s": "enen-no-shouboutai",
+          "why": "Special fire brigades fight people who turn into flaming monsters, with a hero whose feet blaze like rockets."
+        },
+        {
+          "s": "black-clover-tv",
+          "why": "Another underdog with a big heart: Asta, born without magic, swings anti-magic swords on his way to becoming Wizard King."
+        },
+        {
+          "s": "kaijuu-8-gou",
+          "why": "A monster-fighting corps and a hero who is part monster himself: Kafka gains a kaiju's power and joins the Defense Force anyway."
+        },
+        {
+          "s": "akame-ga-kill",
+          "why": "Darker, with heavy losses: a young swordsman joins a band of assassins fighting a corrupt empire."
+        }
+      ]
+    },
+    "youkoso-jitsuryoku-shijou-shugi-no-kyoushitsu-e-tv": {
+      "about": "Hidden geniuses, school power games and mind games where the quiet one is always three steps ahead.",
+      "picks": [
+        {
+          "s": "kakegurui",
+          "why": "The closest in mood: a school run on gambling, where a calm transfer student reads every opponent and exposes every cheat."
+        },
+        {
+          "s": "mahouka-koukou-no-rettousei",
+          "why": "Tatsuya is ranked in the lowest tier at an elite magic school yet is secretly stronger and smarter than anyone, much like Ayanokoji."
+        },
+        {
+          "s": "code-geass-lelouch-of-the-rebellion",
+          "why": "A student genius who manipulates everyone around him: Lelouch leads a masked rebellion against an empire while attending school."
+        },
+        {
+          "s": "yahari-ore-no-seishun-love-comedy-wa-machigatteiru",
+          "why": "A cynical loner who reads people better than they read themselves, untangling his classmates' problems in a school club."
+        },
+        {
+          "s": "kaguya-sama-wa-kokurasetai-tensai-tachi-no-renai-zunousen",
+          "why": "School mind games played for laughs: two genius student council leaders scheme to make the other confess first."
+        },
+        {
+          "s": "tomodachi-game",
+          "why": "Five friends in a game built to make them betray each other, and the lead is far more calculating than he looks."
+        },
+        {
+          "s": "death-note",
+          "why": "A brilliant high schooler hides behind a model-student face while running the deadliest game in Japan."
+        },
+        {
+          "s": "kage-no-jitsuryokusha-ni-naritakute",
+          "why": "Another lead who hides his real power behind an ordinary face, played half for laughs."
+        },
+        {
+          "s": "ansatsu-kyoushitsu-tv",
+          "why": "The lowest-ranked class at an elite school, written off by the system, gets a year to kill their teacher and grows through it."
+        },
+        {
+          "s": "danganronpa-kibou-no-gakuen-to-zetsubou-no-koukousei-the-animation",
+          "why": "Elite high school students locked inside their school are forced into a killing game, with trials to unmask each killer."
+        },
+        {
+          "s": "gyakkyou-burai-kaiji-ultimate-survivor",
+          "why": "Mind games with real stakes: a broke young man is pulled into high-stakes gambling where every bluff could ruin him."
+        },
+        {
+          "s": "yakusoku-no-neverland",
+          "why": "Gifted children outthink the adults who control them and plan an escape under their noses."
+        }
+      ]
     }
   }
 }
