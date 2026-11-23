@@ -205,7 +205,7 @@ export default function AnimeStreamingSites() {
         <div className="card max-w-3xl space-y-2 p-4 text-sm leading-6 text-ink/85">
           <p>Sites that put every new episode up for free, the day it airs, are unlicensed. They pay nothing to the studios, and their pop-up ads and fake &ldquo;download&rdquo; buttons are a common source of malware and scams.</p>
           <p>The free options above are the licensors&rsquo; own uploads: {free.map((r) => `${r.site.name} (${r.streams.length} popular anime, ${r.hindi.length} Hindi dubs)`).join(" and ")}. They show ads, and some playlists come down when a licence ends.</p>
-          <p><Link href="/free-anime-websites" className="text-violet hover:underline">Every free anime website and app →</Link> · <Link href="/hindi-dub" className="text-violet hover:underline">See which {freeHindi.length} anime are free in Hindi →</Link> · <Link href="/anime-salt-alternatives" className="text-violet hover:underline">Legal alternatives to Anime Salt →</Link></p>
+          <p><Link href="/free-anime-websites" className="text-violet hover:underline">Every free anime website and app →</Link> · <Link href="/hindi-dub" className="text-violet hover:underline">See which {freeHindi.length} anime are free in Hindi →</Link> · <Link href="/anime-salt-alternatives" className="text-violet hover:underline">Legal alternatives to Anime Salt →</Link> · <Link href="/hianime-alternatives" className="text-violet hover:underline">HiAnime alternatives →</Link></p>
         </div>
         <JoinChannels source="streaming-sites" className="mt-5" />
       </section>

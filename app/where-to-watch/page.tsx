@@ -60,6 +60,7 @@ export default async function WhereToWatchHub() {
           <Link href="/hindi-dub" className="chip">Hindi dubbed anime</Link>
           <Link href="/anime-streaming-sites" className="chip">🇮🇳 Streaming sites in India compared</Link>
           <Link href="/free-anime-websites" className="chip">🆓 Free anime websites &amp; apps</Link>
+          <Link href="/hianime-alternatives" className="chip">HiAnime alternatives</Link>
           <Link href="/anime-on-netflix-india" className="chip">Anime on Netflix India</Link>
         </p>
       </PageHero>

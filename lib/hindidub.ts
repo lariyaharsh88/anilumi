@@ -99,7 +99,8 @@ const KIDS_INDEXED = ["crayon-shin-chan", "doraemon-2005", "pokemon", "beyblade-
  * Horimiya and Lookism 210, Black Butler and Mushoku Tensei 140, Terror in Resonance, Arifureta, Detective Conan and
  * Gachiakuta 110, Rent-a-Girlfriend, Baki, Kaiju No. 8 and Wind Breaker 90. Not Ghost in the Shell: its 140 "…in
  * hindi" are most likely the 2017 film. Your Name added 23 Nov 2026: "your name hindi dubbed" 390 a month, 1,300 in
- * December 2025, and on Bing's queries ("anime hindi dub your name").
+ * December 2025, and on Bing's queries ("anime hindi dub your name"). Overgeared (Kitsu: Temppal) added 23 Nov:
+ * "overgeared hindi dubbed" 480 a month in Oct 2026, from nothing in August.
  */
 const SEARCHED_INDEXED = [
   "sono-bisque-doll-wa-koi-wo-suru", "darling-in-the-franxx", "dragon-ball",
@@ -107,7 +108,7 @@ const SEARCHED_INDEXED = [
   "youkoso-jitsuryoku-shijou-shugi-no-kyoushitsu-e-tv", "gintama", "spy-x-family", "chainsaw-man", "blue-lock", "horimiya",
   "oemojisangjuui", "black-butler", "mushoku-tensei-isekai-ittara-honki-dasu", "zankyou-no-terror",
   "arifureta-shokugyou-de-sekai-saikyou", "detective-conan", "gachiakuta", "kanojo-okarishimasu", "baki-ona", "kaijuu-8-gou",
-  "wind-breaker", "kimi-no-na-wa",
+  "wind-breaker", "kimi-no-na-wa", "temppal-item-no-chikara",
 ];
 
 /**

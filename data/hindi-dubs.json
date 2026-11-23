@@ -4474,6 +4474,27 @@
    "note": "JioHotstar's own title page (checked 17 Nov 2026) lists the series' season 17, 52 episodes, in Hindi, Tamil and Telugu. On TV, Disney Channel India airs the Hindi dub and its films (last reported in September 2025); Hungama TV first aired it in India from May 2005.",
    "added": "2026-11-17",
    "checked": "2026-11-20"
+  },
+  {
+   "s": "temppal-item-no-chikara",
+   "t": "Overgeared",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Crunchyroll",
+     "scope": "Season 1 (simuldub, new episodes Sundays 8:00 p.m. IST; also in Tamil and Telugu)",
+     "url": "https://otakukart.com/crunchyroll-announces-hindi-tamil-and-telugu-dub-releases-for-black-clover-the-apothecary-diaries-season-3-and-more/"
+    }
+   ],
+   "sources": [
+    "https://otakukart.com/crunchyroll-announces-hindi-tamil-and-telugu-dub-releases-for-black-clover-the-apothecary-diaries-season-3-and-more/",
+    "https://animemirchi.com/crunchyroll-fall-2026-hindi-tamil-telugu-lineup/",
+    "https://animehunch.com/crunchyroll-unveils-fall-2026-anime-lineup-for-india-featuring-the-apothecary-diaries-season-3-black-clover-season-2-more/"
+   ],
+   "note": "Crunchyroll's Fall 2026 India line-up: Hindi, Tamil and Telugu simuldub from 27 Sep 2026, the same day as Japan (OtakuKart, 16 Oct 2026; AnimeMirchi; AnimeHunch). Kitsu lists it as Temppal: Item no Chikara.",
+   "added": "2026-11-23",
+   "checked": "2026-11-23"
   }
  ],
  "lastScan": "2026-11-15"

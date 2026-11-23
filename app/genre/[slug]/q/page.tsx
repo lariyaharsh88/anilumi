@@ -19,6 +19,7 @@ import { snapshotOrder } from "@/lib/wosnap";
 import { animeBySlugs, posterUrl as poster } from "@/lib/kitsu";
 import { dubHref, hindiDubbed, platformKind, type Dub } from "@/lib/hindidub";
 import Image from "next/image";
+import AnswerLead from "@/components/AnswerLead";
 
 const LIMIT = 20;
 const why = (p: GenrePick, genre: string) => (p.themes.length ? `${p.themes.join(", ")}.` : `A top-rated ${genre} anime.`) + ` Rated ${p.score.toFixed(1)}/10 by ${p.votes.toLocaleString("en-US")} AniList members.`;
@@ -121,6 +122,13 @@ export default async function GenrePage({ params, searchParams }: Props) {
           <p className="mt-3 text-sm"><Link href={`/trends/${slug}`} className="text-violet underline decoration-violet/40 underline-offset-2 hover:text-violet-2 hover:decoration-violet-2">📈 How {g.title.toLowerCase()} has grown or shrunk since 2000 →</Link></p>
         )}
       </PageHero>
+      {/* The quotable answer for "best <genre> anime" ("best isekai anime" 6.6K a month in India, Nov 2026). */}
+      {picks && (
+        <AnswerLead>
+          The best {g1} anime, by fan score: {picks.top.slice(0, 5).map((x, i) => `${i + 1}. ${x.anime.titleEn && x.anime.titleEn.length <= 40 ? x.anime.titleEn : x.anime.title}`).join(", ")}.
+          {hindi.length ? ` ${hindi.length} ${g1} anime have an official Hindi dub${hindi.some((x) => x.free) ? `, ${hindi.filter((x) => x.free).length} of them free` : ""}.` : ""} Each pick below says what it&apos;s about and where it streams.
+        </AnswerLead>
+      )}
       {picks && (
         <section className="reveal mt-10" aria-labelledby="picks-h">
           <h2 id="picks-h" className="h-section mb-1">The 10 best {g.title.toLowerCase()} anime</h2>
