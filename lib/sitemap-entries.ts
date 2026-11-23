@@ -95,6 +95,7 @@ export async function sitemapEntries(): Promise<MetadataRoute.Sitemap> {
     ...filmFranchises().flatMap((f) => ((["hi", "ta", "te"] as FilmLang[]).filter((l) => hasLang(f, l)).map((l) => ({ url: abs(filmsPath(f.slug, l)), lastModified: at(FILMS_CHECKED), changeFrequency: "monthly" as const, priority: 0.7 })))),
     { url: abs("/anime-on-netflix-india"), lastModified: at(D.streams), changeFrequency: "monthly", priority: 0.6 },
     { url: abs("/anime-streaming-sites"), lastModified: at(D.streams, D.dubs, PRICES_CHECKED), changeFrequency: "monthly", priority: 0.8 },
+    { url: abs("/free-anime-websites"), lastModified: at(D.streams, D.dubs, PRICES_CHECKED), changeFrequency: "monthly", priority: 0.8 },
     { url: abs("/where-to-watch"), lastModified: at(D.streams), changeFrequency: "monthly", priority: 0.8 },
     ...allStreams().map((e) => ({ url: abs(streamsPath(e.s)), lastModified: at(D.streams), changeFrequency: "monthly" as const, priority: 0.7 })),
     { url: abs("/dub-schedule"), lastModified: now, changeFrequency: "daily", priority: 0.8 },

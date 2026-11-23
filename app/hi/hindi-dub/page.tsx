@@ -65,6 +65,8 @@ export default async function HindiDubHubHi() {
   const faq = [
     { q: "किन एनीमे का आधिकारिक हिंदी डब है?", a: `हमारी लिस्ट में ${dubbed.length} पॉपुलर एनीमे का हिंदी डब है, जैसे ${dubbed.slice(0, 8).map((d) => d.t).join(", ")}।` },
     ...(free.length ? [{ q: "एनीमे हिंदी में मुफ़्त कहाँ देखें?", a: `${freePlatforms.join(", ")} पर हिंदी डब मुफ़्त है, जैसे ${free.slice(0, 6).map((d) => d.t).join(", ")}।` }] : []),
+    // "anime dekho" (1.5M searches a month in India, Keyword Planner, Nov 2026).
+    { q: "एनीमे देखो: हिंदी में एनीमे कहाँ देखें?", a: `${dubbed.length} एनीमे का आधिकारिक हिंदी डब है, और इनमें से ${free.length} YouTube और Prime Video के फ़्री प्लान पर मुफ़्त देख सकते हैं। सबसे ज़्यादा हिंदी डब ${platforms[0].name} पर हैं। हर एनीमे के पेज पर लिखा है कि उसका हिंदी ऑडियो किस प्लेटफ़ॉर्म पर है।` },
     { q: "सबसे ज़्यादा हिंदी डब एनीमे किस प्लेटफ़ॉर्म पर हैं?", a: `${platforms[0].name} पर, इस लिस्ट के ${platforms[0].titles.length} एनीमे के साथ।` },
     ...(arrivals.length ? [{ q: "हाल में किन एनीमे का हिंदी डब आया?", a: `${arrivals.slice(0, 6).map((e) => `${e.t} (${e.service}, ${fmtDay(e.premiere)})`).join(", ")}।` }] : []),
     ...(coming.length ? [{ q: "कौन-से हिंदी डब जल्द आने वाले हैं?", a: `${coming.map((e) => `${e.t}, ${e.service}${e.premiere ? ` पर ${fmtDay(e.premiere)} से` : " पर (तारीख़ अभी तय नहीं)"}`).join("; ")}।` }] : []),

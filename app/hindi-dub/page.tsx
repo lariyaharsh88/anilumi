@@ -71,6 +71,8 @@ export default async function HindiDubHub() {
     { q: "Where can I watch anime in Hindi for free?", a: free.length ? `${platforms.filter((p) => p.kind === "free").map((p) => p.name).join(", ")} carry Hindi dubs at no cost, for example ${free.slice(0, 6).map((d) => d.t).join(", ")}.` : "None of the dubs on our list is free right now." },
     // Bing: "hindi dub anime website free", "free anime website hindi" and similar, many with high click-through.
     { q: "Which websites have anime in Hindi for free?", a: `Legally, the licensors' own YouTube channels (Muse India, Ani-One India) and MX Player, now Prime Video's free tier: ${free.length} anime between them, free with ads. Sites that put every show up free are unlicensed. All legal sites, compared on price and catalogue: anilumi.in/anime-streaming-sites.` },
+    // "anime dekho" (Hinglish for "watch anime"): 1.5M searches a month in India (Keyword Planner, Nov 2026).
+    { q: "Anime dekho: where can I watch anime in Hindi?", a: `Legally, on ${streamers.slice(0, 4).map((p) => p.name).join(", ")} and the other platforms above: ${dubbed.length} anime have an official Hindi dub, and ${free.length} of them are free to watch on YouTube and Prime Video's free tier. Every show's page here says which platform has its Hindi audio.` },
     { q: "Which platform has the most Hindi-dubbed anime?", a: `${top.name}, with ${top.titles.length} of the anime on this list, followed by ${platforms.slice(1, 3).map((p) => `${p.name} (${p.titles.length})`).join(" and ")}.` },
     ...(arrivals.length ? [{ q: "Which anime got a Hindi dub recently?", a: `${arrivals.slice(0, 6).map((e) => `${e.t} (${e.service}, ${fmtDay(e.premiere)})`).join(", ")}. The newest are listed under New Hindi dubbed anime above.` }] : []),
     ...(coming.length ? [{ q: "Which Hindi dubs are coming soon?", a: `${coming.map((e) => `${e.t} on ${e.service}${e.premiere ? ` from ${fmtDay(e.premiere)}` : ""}`).join("; ")}.` }] : []),
@@ -105,6 +107,7 @@ export default async function HindiDubHub() {
           <Link href="/hindi-voice-artists" className="chip">Hindi voice artists</Link>
           <Link href="/where-to-watch" className="chip">Where to watch in India</Link>
           <Link href="/anime-streaming-sites" className="chip">Streaming sites in India</Link>
+          <Link href="/free-anime-websites" className="chip">Free anime websites</Link>
           <Link href="/download-anime-in-hindi" className="chip">Download Hindi anime legally</Link>
           <Link href="/crunchyroll-price-india" className="chip">Crunchyroll price in India</Link>
           <Link href="/anime-salt-alternatives" className="chip">Anime Salt alternatives</Link>

@@ -28,8 +28,9 @@ export type AltSite = { slug: string; brand: string; /** How people search it, s
 export const ALT_SITES: Record<string, AltSite> = {
   "anime-salt": { slug: "anime-salt", brand: "Anime Salt", search: "Anime Salt Hindi" },
 };
-/** Other unlicensed names people search, covered by the same page (/anime-world-alternatives etc. redirect here). */
-export const ALSO_SEARCHED = ["Anime World", "AnimeToon"];
+/** Other unlicensed names people search, covered by the same page (/anime-world-alternatives etc. redirect here).
+ *  "anime world india" is the big one: 301K searches a month in India (Keyword Planner, Nov 2026). */
+export const ALSO_SEARCHED = ["Anime World India", "AnimeToon"];
 /**
  * More names from Bing's queries for this page's topic (Nov 2026, about 100 impressions a month together). Named
  * without a verdict on each, since we haven't reviewed them: the page only says which platforms are official.
@@ -38,7 +39,7 @@ export const ALSO_SEARCHED = ["Anime World", "AnimeToon"];
 // impressions a year): toonstream 29.8K, blakite anime 4.5K (rising), hinime 1.6K, subdub anime 1.5K (rising),
 // pikahd 1.3K, hydraflix 1.3K, animerulz hindi 0.5K. Left out: Kartoon (a licensed kids' channel) and names we
 // couldn't place.
-export const OTHER_NAMES = ["Hindi Anime Zone", "Rare Toons India", "Anime Dekho", "Desi Dub", "AnimeDubHindi", "Rish Anime", "Toonstream", "Blakite", "Hinime", "SubDub Anime", "PikaHD", "Hydraflix", "AnimeRulz"];
+export const OTHER_NAMES = ["Hindi Anime Zone", "Rare Toons India", "Desi Dub", "AnimeDubHindi", "Rish Anime", "Toonstream", "Blakite", "Hinime", "SubDub Anime", "PikaHD", "Hydraflix", "AnimeRulz"];
 export const altPath = (s: AltSite) => `/${s.slug}-alternatives`;
 function data() {
   const dubbed = hindiDubbed();
@@ -60,7 +61,7 @@ export function altMetadata(site: AltSite): Metadata {
     // The title leads with how people search the name (ALT_SITES).
     // Bing keyword research (23 Nov 2026): "anime salt hindi" 6.3K impressions in 3 months and rising; the title
     // leads with that exact phrase.
-    title: fitTitle([`${site.search} & Anime World Alternatives: ${dubbed.length} Legal Dubs`, `Anime Salt & Anime World Alternatives: ${dubbed.length} Legal Hindi Dubs`, `${site.search} Alternatives: ${dubbed.length} Legal Hindi Dubs, ${free.length} Free`, `${site.search} Alternatives: Legal Hindi Dubbed Anime (${new Date().getFullYear()})`, `${site.search} Alternatives (${new Date().getFullYear()})`]),
+    title: fitTitle([`${site.search} & Anime World India Alternatives: ${dubbed.length} Legal Dubs`, `${site.search} & Anime World Alternatives: ${dubbed.length} Legal Dubs`, `Anime Salt & Anime World Alternatives: ${dubbed.length} Legal Hindi Dubs`, `${site.search} Alternatives: ${dubbed.length} Legal Hindi Dubs, ${free.length} Free`, `${site.search} Alternatives: Legal Hindi Dubbed Anime (${new Date().getFullYear()})`, `${site.search} Alternatives (${new Date().getFullYear()})`]),
     description: fitDescription(`Looking for ${[site.brand, ...ALSO_SEARCHED].join(", ")}? ${dubbed.length} anime have an official Hindi dub, ${free.length} of them free on YouTube and Prime Video's free tier. Every legal platform compared by price, with the shows on each. Checked ${dubDate()}.`),
     alternates: { canonical: altPath(site) },
   };
@@ -82,6 +83,7 @@ export default async function AltSitePage({ site }: { site: AltSite }) {
     { q: "Which app has the most Hindi dubbed anime?", a: `${most.label}, with ${most.titles.length} of the anime on our list, followed by ${[...platforms].sort((a, b) => b.titles.length - a.titles.length).slice(1, 3).map((p) => `${p.label} (${p.titles.length})`).join(" and ")}.` },
     { q: `Are ${ALSO_SEARCHED.join(" and ")} legal?`, a: `No: like ${site.brand}, they stream anime without a licence, and we don\'t link to them. The legal options are the platforms above, ${free.length} Hindi dubs of them free.` },
     { q: `Is there an official site like ${OTHER_NAMES[0]} or ${OTHER_NAMES[1]}?`, a: `The official sources for Hindi dubbed anime are ${platforms.map((p) => p.label).join(", ")}, and ${free.length} of the ${dubbed.length} official Hindi dubs are free. AniLumi doesn't review unofficial sites; it lists where each official dub streams.` },
+    { q: "Where can I anime dekho in Hindi, free?", a: `"Anime dekho" just means "watch anime": legally, ${free.length} official Hindi dubs are free on the licensors' YouTube channels and Prime Video's free tier, and ${dubbed.length} are on the paid platforms above. AniLumi doesn't review a site called Anime Dekho.` },
     { q: "Is AniLumi a streaming site?", a: "No. AniLumi doesn't host or stream video. It tells you where each anime streams officially, in which languages, and links you to that platform." },
   ];
 
@@ -111,6 +113,7 @@ export default async function AltSitePage({ site }: { site: AltSite }) {
         ...(free.length ? [{ id: "free", label: "Free" }] : []),
         { id: "platforms", label: "All platforms" },
         { id: "others", label: ALSO_SEARCHED[0] },
+        { id: "dekho", label: "Anime dekho" },
         { id: "why", label: "Why official" },
         { id: "faq", label: "FAQ" },
       ]} />
@@ -158,6 +161,14 @@ export default async function AltSitePage({ site }: { site: AltSite }) {
         <h2 id="others-h" className="h-section mb-1">Looking for {ALSO_SEARCHED.join(" or ")}?</h2>
         <p className="max-w-3xl text-sm leading-6 text-ink/85">Like {site.brand}, {ALSO_SEARCHED.join(" and ")} aren&rsquo;t licensed to stream the anime they carry, so the same answer applies: the {free.length} free official Hindi dubs above, then the platforms by price. AniLumi checks each Hindi dub on the platform&rsquo;s own page, so every show listed here really has the Hindi audio. For offline viewing, see <Link href="/download-anime-in-hindi" className="text-violet hover:underline">how to download Hindi dubbed anime legally</Link>.</p>
         <p className="mt-3 max-w-3xl text-sm leading-6 text-ink/85">Searched for {OTHER_NAMES.slice(0, -1).join(", ")} or {OTHER_NAMES.at(-1)}? AniLumi doesn&rsquo;t review unofficial sites or channels. It lists where each official Hindi dub streams, checked on the platform itself, so the {dubbed.length} shows on this page are where the licensed Hindi audio is.</p>
+      </section>
+
+      {/* "anime dekho" is Hinglish for "watch anime": 1.5M searches a month in India (Keyword Planner, Nov 2026), mostly
+          people who want to watch anime in Hindi; some mean a site of that name, which we haven't reviewed. */}
+      <section id="dekho" data-section className="reveal pt-10" aria-labelledby="dekho-h">
+        <h2 id="dekho-h" className="h-section mb-1">Anime dekho in Hindi: free and legal</h2>
+        <p className="max-w-3xl text-sm leading-6 text-ink/85">Want to watch anime in Hindi? Start with the {free.length} official Hindi dubs that cost nothing, on the licensors&rsquo; YouTube channels and Prime Video&rsquo;s free tier: {free.slice(0, 6).map((d, j) => <span key={d.s}>{j ? ", " : ""}<Link href={dubHref(d)} className="text-violet hover:underline">{d.t}</Link></span>)} and more. For the full {dubbed.length}, {most.label} has the most ({most.titles.length}). <Link href="/free-anime-websites" className="text-violet hover:underline">Every free anime website and app →</Link></p>
+        <p className="mt-3 max-w-3xl text-sm leading-6 text-ink/85">Looking for a site called Anime Dekho? AniLumi doesn&rsquo;t review unofficial sites. Every show listed here is where its licensed Hindi audio streams, checked on the platform.</p>
       </section>
 
       <section id="why" data-section className="reveal pt-10" aria-labelledby="why-h">

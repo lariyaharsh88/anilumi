@@ -13,6 +13,7 @@ test("sitemap: each URL lands in its page type's child sitemap", () => {
   assert.equal(g("/hi/anime/naruto"), "hindi");
   assert.equal(g("/anime/one-piece/hindi-dub"), "hindi");
   assert.equal(g("/anime-streaming-sites"), "hindi");
+  assert.equal(g("/free-anime-websites"), "hindi");
   assert.equal(g("/similar"), "lists");
   assert.equal(g("/best-anime"), "lists");
   assert.equal(g("/anime-salt-alternatives"), "hindi");
