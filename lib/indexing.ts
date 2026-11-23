@@ -9,6 +9,7 @@
  * The bars below were raised so the index is the few hundred pages with something of our own; `shown` is now pages
  * Google still shows after the drop, not every page it tried during the first week.
  */
+import { editorPicks, editorPickSlugs } from "./similarpicks";
 import characterDemand from "@/data/character-demand.json";
 import priority from "@/data/warm-priority.json";
 import bingShown from "@/data/bing-shown.json";
@@ -130,8 +131,9 @@ export function watchOrderIndexed(slug: string, liveParts: number, liveCore?: nu
  * 880, One Piece 590, Jujutsu Kaisen 590 + 480, Haikyuu 480, Tokyo Ghoul 320.
  */
 const SIMILAR_SEARCHED = ["solo-leveling", "death-note", "kimetsu-no-yaiba", "black-clover-tv", "naruto", "naruto-shippuden", "attack-on-titan", "kimi-no-na-wa", "spy-x-family", "one-piece", "jujutsu-kaisen", "haikyuu", "tokyo-ghoul"];
-export const similarSlugs = () => [...new Set([...SIMILAR_SEARCHED, ...searchShownPaths("/similar/").map((p) => p.slice("/similar/".length))])];
-export const similarIndexed = (slug: string) => SIMILAR_SEARCHED.includes(slug) || searchShown(`/similar/${slug}`);
+export const similarSlugs = () => [...new Set([...SIMILAR_SEARCHED, ...editorPickSlugs(), ...searchShownPaths("/similar/").map((p) => p.slice("/similar/".length))])];
+/** Also every hand-picked list (lib/similarpicks.ts): written reasons, not just shared tags. */
+export const similarIndexed = (slug: string) => SIMILAR_SEARCHED.includes(slug) || Boolean(editorPicks(slug)) || searchShown(`/similar/${slug}`);
 /** A per-anime Hindi dub page: the most-watched dubs (lib/hindidub.ts), plus any Google already shows. */
 export const hindiDubIndexed = (slug: string) => topHindiDub(slug) || searchShown(hindiDubPath(slug));
 

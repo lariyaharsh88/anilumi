@@ -1,0 +1,111 @@
+{
+  "checked": "2026-11-23",
+  "lists": {
+    "solo-leveling": {
+      "about": "Weakest-to-strongest climbs, dungeons and levelling, and the Korean web novels and webtoons Solo Leveling came from.",
+      "picks": [
+        {
+          "s": "temppal-item-no-chikara",
+          "why": "The closest new one, also from a Korean web novel: Grid, an unlucky low-level player in the VR game Satisfy, lands a legendary class and grinds his way up. Its Hindi dub on Crunchyroll came out alongside Japan's broadcast."
+        },
+        {
+          "s": "arifureta-shokugyou-de-sekai-saikyou",
+          "why": "The nearest premise to Jinwoo's double dungeon: Hajime, the weakest student summoned to another world, is left for dead at the bottom of a dungeon and climbs out as the strongest."
+        },
+        {
+          "s": "tower-of-god",
+          "why": "Another Korean webtoon hit: Bam enters a tower where every floor is a deadly test and climbs it to find his friend Rachel."
+        },
+        {
+          "s": "ragna-crimson",
+          "why": "A weak, low-ranked dragon hunter gains the power of his future self and goes after the strongest dragons."
+        },
+        {
+          "s": "tate-no-yuusha-no-nariagari",
+          "why": "Summoned as the weakest of four heroes and framed soon after he arrives, Naofumi builds his strength from nothing, on his own terms."
+        },
+        {
+          "s": "kage-no-jitsuryokusha-ni-naritakute",
+          "why": "For the moments where Jinwoo finally shows how strong he is: Cid hides overwhelming power and steps out of the shadows when it counts."
+        },
+        {
+          "s": "shangri-la-frontier",
+          "why": "The game side of Solo Leveling: a gamer who masters broken games takes on a VR world's toughest monsters and levels up through hard-won fights."
+        },
+        {
+          "s": "dungeon-ni-deai-wo-motomeru-no-wa-machigatteiru-no-darou-ka",
+          "why": "Dungeon crawling and levels done straight: Bell Cranell starts at Level 1 in a city built around a monster-filled dungeon and climbs faster than anyone."
+        },
+        {
+          "s": "kaijuu-8-gou",
+          "why": "A late bloomer like E-rank Jinwoo: Kafka, 32 and stuck cleaning up after monster fights, gains monstrous power overnight and joins the people who fight them."
+        },
+        {
+          "s": "black-clover-tv",
+          "why": "A long underdog climb: Asta, born with no magic in a world where everyone has it, outworks everyone on his way to becoming Wizard King."
+        },
+        {
+          "s": "jujutsu-kaisen",
+          "why": "Curses instead of gates, but the same ranked hunters, monster-fighting organisations and huge power fights."
+        },
+        {
+          "s": "the-god-of-highschool-series",
+          "why": "A Korean webtoon of fights that keep escalating: a martial-arts tournament that turns into a war of borrowed gods."
+        }
+      ]
+    },
+    "death-note": {
+      "about": "Mind games, cat-and-mouse thrillers and morally grey geniuses, like Light against L.",
+      "picks": [
+        {
+          "s": "code-geass-lelouch-of-the-rebellion",
+          "why": "The closest match: Lelouch gains the power to make anyone obey one command and leads a masked rebellion against an empire, a genius anti-hero who plans ten moves ahead like Light."
+        },
+        {
+          "s": "monster",
+          "why": "The best slow-burn cat and mouse: a brilliant surgeon saves a boy who grows up into a serial killer, then hunts him across Germany."
+        },
+        {
+          "s": "youkoso-jitsuryoku-shijou-shugi-no-kyoushitsu-e-tv",
+          "why": "A quiet mastermind: Ayanokoji hides how clever he is in a school ruled by points and outplans everyone from the back row."
+        },
+        {
+          "s": "yakusoku-no-neverland",
+          "why": "Children in an idyllic orphanage find out what it really is and plot an escape under the nose of a caretaker who is always a step ahead."
+        },
+        {
+          "s": "psycho-pass",
+          "why": "Death Note's big question as a police thriller: a system reads people's minds to judge criminals before they act, and the detectives have to decide whether to trust it."
+        },
+        {
+          "s": "yuukoku-no-moriarty",
+          "why": "The criminal genius is the hero: William James Moriarty plots against Britain's corrupt nobility while Sherlock Holmes closes in."
+        },
+        {
+          "s": "boku-dake-ga-inai-machi",
+          "why": "A mystery against the clock: a man is sent back to his childhood and has to stop the murders that took his classmates."
+        },
+        {
+          "s": "kakegurui",
+          "why": "Mind games through gambling: at a school where students rank by their bets, Yumeko reads every opponent and keeps raising the stakes."
+        },
+        {
+          "s": "tomodachi-game",
+          "why": "Five friends in a game built to make them betray each other over a debt, and the lead is far more calculating than he looks."
+        },
+        {
+          "s": "steins-gate",
+          "why": "A self-proclaimed mad scientist finds he can send messages to the past and is pulled into a conspiracy where every change has a price."
+        },
+        {
+          "s": "mirai-nikki-tv",
+          "why": "Twelve people with diaries that predict the future fight to the death for the right to become god."
+        },
+        {
+          "s": "kaguya-sama-wa-kokurasetai-tensai-tachi-no-renai-zunousen",
+          "why": "The lighter pick: two genius student council leaders turn a crush into a battle of wits, each scheming to make the other confess first."
+        }
+      ]
+    }
+  }
+}

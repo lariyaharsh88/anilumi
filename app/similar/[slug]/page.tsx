@@ -17,6 +17,10 @@ import { fanPicks } from "@/lib/picks";
 import HindiDubCallout from "@/components/HindiDubCallout";
 import { getAniListId } from "@/lib/kitsu";
 import { WATCH_ORDER_OVERRIDES } from "@/data/watch-orders";
+import { editorPicks } from "@/lib/similarpicks";
+import { englishName } from "@/lib/searchname";
+import AnswerLead from "@/components/AnswerLead";
+import { animeBySlugs } from "@/lib/kitsu";
 import Image from "next/image";
 import SectionNav from "@/components/fx/SectionNav";
 import { hasHindiDub, dubFor, platformKind } from "@/lib/hindidub";
@@ -64,11 +68,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const n = (await similarTo(a)).length;
   const { indexed, alId } = await strong(a.id, a.slug);
   const fans = indexed ? fanPicks(await getFanRecommendations(a.id, 12), alId, name).length : 0;
+  const editor = editorPicks(a.slug);
   return {
-    title: indexed && fans >= 8
+    title: editor
+      ? fitTitle([`Anime Like ${name}: ${editor.picks.length} Picks, Why Each Fits & Where to Watch`, `Anime Like ${name}: ${editor.picks.length} Picks and Why (${new Date().getFullYear()})`, `Anime Like ${name}: ${editor.picks.length} Picks`, `Anime Like ${name}`])
+      : indexed && fans >= 8
       ? fitTitle([`Anime Like ${name}: ${fans} Picks Fans Recommend, and Why (${new Date().getFullYear()})`, `Anime Like ${name}: ${fans} Picks Fans Recommend (${new Date().getFullYear()})`, `Anime Like ${name}: ${fans} Fan Picks`, `Anime Like ${name}`])
       : fitTitle([`Anime Like ${name}: ${n || 20} Shows to Watch Next (${new Date().getFullYear()})`, `Anime Like ${name}: ${n || 20} Shows to Watch Next`, `Anime Like ${name}`]),
-    description: fitDescription(`Finished ${name}? These anime share its ${publicGenres(a.categories).slice(0, 3).map((c) => c.title.toLowerCase()).join(", ")} DNA, ranked by how many fans watch them, with what each one shares with ${name} from AniList's community tags.`),
+    description: editor
+      ? fitDescription(`Finished ${name}? ${editor.picks.length} anime to watch next, each with why it fits: ${editor.about.replace(/\.$/, "")}. With where to stream in India and which have Hindi dubs.`)
+      : fitDescription(`Finished ${name}? These anime share its ${publicGenres(a.categories).slice(0, 3).map((c) => c.title.toLowerCase()).join(", ")} DNA, ranked by how many fans watch them, with what each one shares with ${name} from AniList's community tags.`),
     alternates: { canonical: `/similar/${a.slug}` },
     robots: robotsFor(indexed),
   };
@@ -82,6 +91,13 @@ export default async function SimilarPage({ params }: Props) {
   // Official titles can end in a full stop ("Your Name."), which then reads "Anime Like Your Name.: …".
   const name = (WATCH_ORDER_OVERRIDES[a.slug]?.label ?? (a.titleEn && a.titleEn.length <= 40 ? a.titleEn : a.title)).replace(/\.$/, "");
   const picks = fanPicks(recs, alId, name);
+  // Hand-picked list first, when there is one (lib/similarpicks.ts).
+  const editor = editorPicks(a.slug);
+  const editorAnime = editor ? await animeBySlugs(editor.picks.map((p) => p.s), true).catch(() => new Map<string, Anime>()) : null;
+  // English names where Kitsu has none ("Overgeared", not "Temppal: Item no Chikara"; lib/searchname.ts).
+  const handPicked = editor && editorAnime ? editor.picks.flatMap((p) => { const x = editorAnime.get(p.s); return x ? [{ anime: x.titleEn ? x : { ...x, titleEn: englishName(x) }, why: p.why }] : []; }) : [];
+  const shortName = (x: Anime) => x.titleEn || x.title;
+  const handHindi = handPicked.filter((p) => hasHindiDub(p.anime.slug));
   // The closest picks side by side with the show itself; then the ones you can watch in Hindi.
   const cmp = [{ anime: a, why: "", votes: 0 }, ...picks.slice(0, 5)];
   // Compared as shown (one decimal), so ties all get the star.
@@ -97,8 +113,8 @@ export default async function SimilarPage({ params }: Props) {
       <PageHero
         crumbs={[{ href: "/", label: "Home" }, { href: animePath(a), label: a.title }, { href: `/similar/${a.slug}`, label: "Similar anime" }]}
         eyebrow="What to watch next"
-        title={<>Anime like <span className="text-gradient">{a.title}</span></>}
-        subtitle={`Matched on ${publicGenres(a.categories).slice(0, 4).map((c) => c.title).join(", ")}. Titles that share more of these tags rank higher; ties go to the more popular show.`}
+        title={<>Anime like <span className="text-gradient">{name}</span></>}
+        subtitle={handPicked.length ? editor!.about : `Matched on ${publicGenres(a.categories).slice(0, 4).map((c) => c.title).join(", ")}. Titles that share more of these tags rank higher; ties go to the more popular show.`}
         hue={262}
         backdrop={a.cover?.large || null}
         posters={[posterUrl(a, "medium"), ...items.slice(0, 2).map((x) => posterUrl(x, "medium"))]}
@@ -107,13 +123,26 @@ export default async function SimilarPage({ params }: Props) {
       </PageHero>
       <EditorWatched anime={a} className="mt-4" />
       <HindiDubCallout anime={a} title={name} className="mt-4" />
+      {handPicked.length >= 4 && (
+        <AnswerLead>
+          If you liked {name}, watch {handPicked.slice(0, 5).map((p) => shortName(p.anime)).join(", ")} next. {handHindi.length ? `${handHindi.length} of the ${handPicked.length} picks below have an official Hindi dub, including ${handHindi.slice(0, 3).map((p) => shortName(p.anime)).join(", ")}.` : ""}
+        </AnswerLead>
+      )}
       <SectionNav sections={[
+        ...(handPicked.length >= 4 ? [{ id: "ours", label: "Our picks" }] : []),
         { id: "picks", label: "Fan picks" },
         ...(picks.length >= 3 ? [{ id: "compare", label: "Compare" }] : []),
         ...(hindi.length >= 2 ? [{ id: "hindi", label: "In Hindi" }] : []),
         { id: "genres", label: "Same genres" },
         { id: "faq", label: "FAQ" },
       ]} />
+      {handPicked.length >= 4 && (
+        <section id="ours" data-section className="reveal scroll-mt-32 pt-10" aria-labelledby="ours-h">
+          <h2 id="ours-h" className="h-section mb-1">{handPicked.length} anime like {name}, and why each fits</h2>
+          <p className="mb-4 text-sm text-muted">Chosen and written by AniLumi, closest first, with where each streams in India and whether it&apos;s in Hindi.</p>
+          <PickList picks={handPicked} region="IN" />
+        </section>
+      )}
       <div id="picks" data-section className="scroll-mt-32" />
       {picks.length >= 4 ? (
         <section className="reveal mt-10" aria-labelledby="picks-h">
@@ -207,7 +236,8 @@ export default async function SimilarPage({ params }: Props) {
           ...(picks.length >= 3 ? [{ q: `Which anime like ${name} is shortest to watch?`, a: (() => { const short = [...picks.slice(0, 8)].filter((p) => p.anime.episodeCount).sort((x, y) => (x.anime.episodeCount ?? 0) - (y.anime.episodeCount ?? 0)).slice(0, 3); return short.length ? `${short.map((p) => `${p.anime.title} (${p.anime.episodeCount} episodes)`).join(", ")}.` : "See the comparison table above."; })() }] : []),
           ...(recs[0] ? [{ q: `What do ${a.title} fans recommend?`, a: `AniList members most often recommend ${recs.slice(0, 3).map((r) => `${r.title} (${r.votes.toLocaleString("en-US")} votes)`).join(", ")}.` }] : []),
           { q: `What should I watch after ${a.title}?`, a: items[0] ? `${items.slice(0, 3).map((x) => x.title).join(", ")} are the closest matches: they share ${a.title}'s main genres and have large audiences.` : "Recommendations appear once the title has genre tags." },
-          { q: "How are these picked?", a: "Automatically, from genre and theme tags on Kitsu, weighted by how many tags overlap and then by popularity. No editorial opinion is involved, so treat it as a starting point." },
+          ...(handPicked.length >= 4 ? [{ q: `What is the best anime like ${name}?`, a: `${shortName(handPicked[0].anime)}: ${handPicked[0].why}` }] : []),
+          { q: "How are these picked?", a: handPicked.length >= 4 ? `The first ${handPicked.length} are chosen and written by AniLumi. The fan picks come from AniList members' recommendations, and the rest automatically from genre and theme tags on Kitsu, weighted by overlap and then popularity.` : "Automatically, from genre and theme tags on Kitsu, weighted by how many tags overlap and then by popularity. No editorial opinion is involved, so treat it as a starting point." },
         ]}
       />
       </div>
