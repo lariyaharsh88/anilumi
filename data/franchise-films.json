@@ -1,5 +1,5 @@
 {
-  "checked": "2026-11-19",
+  "checked": "2026-11-23",
   "franchises": [
     {
       "slug": "doraemon",
@@ -3031,6 +3031,697 @@
           ],
           "confidence": "high",
           "note": "Live-action Legendary/Warner Bros film, not part of the anime film series. JioHotstar listed Hindi and English on 2026-11-19. Netflix India added it in Apr 2021 (ANN), but JustWatch India no longer lists Netflix."
+        }
+      ]
+    },
+    {
+      "slug": "dragon-ball",
+      "name": "Dragon Ball",
+      "series": "dragon-ball",
+      "films": [
+        {
+          "year": 1986,
+          "en": "Dragon Ball: Curse of the Blood Rubies",
+          "jp": "Dragon Ball: Shenron no Densetsu",
+          "live_action": false,
+          "hindi": "none_found",
+          "where": [],
+          "sources": [],
+          "confidence": "medium"
+        },
+        {
+          "year": 1987,
+          "en": "Dragon Ball: Sleeping Princess in Devil's Castle",
+          "jp": "Dragon Ball: Majinjō no Nemuri Hime",
+          "live_action": false,
+          "hindi": "none_found",
+          "where": [],
+          "sources": [],
+          "confidence": "medium"
+        },
+        {
+          "year": 1988,
+          "en": "Dragon Ball: Mystical Adventure",
+          "jp": "Dragon Ball: Makafushigi Daibōken",
+          "live_action": false,
+          "hindi": "none_found",
+          "where": [],
+          "sources": [],
+          "confidence": "medium"
+        },
+        {
+          "year": 1989,
+          "en": "Dragon Ball Z: Dead Zone",
+          "jp": "Dragon Ball Z: Ora no Gohan wo Kaese!!",
+          "live_action": false,
+          "hindi": "none_found",
+          "where": [],
+          "sources": [
+            "https://www.animenewsnetwork.com/encyclopedia/company.php?id=7015"
+          ],
+          "confidence": "medium",
+          "note": "Cartoon Network India aired the English version (ANN broadcaster credit); no evidence of an official Hindi dub."
+        },
+        {
+          "year": 1990,
+          "en": "Dragon Ball Z: The World's Strongest",
+          "jp": "Dragon Ball Z: Kono Yo de Ichiban Tsuyoi Yatsu",
+          "live_action": false,
+          "hindi": "none_found",
+          "where": [],
+          "sources": [
+            "https://www.animenewsnetwork.com/encyclopedia/company.php?id=7015"
+          ],
+          "confidence": "medium",
+          "note": "Cartoon Network India aired the English version (ANN broadcaster credit); no evidence of an official Hindi dub."
+        },
+        {
+          "year": 1990,
+          "en": "Dragon Ball Z: The Tree of Might",
+          "jp": "Dragon Ball Z: Chikyū Marugoto Chōkessen",
+          "live_action": false,
+          "hindi": "none_found",
+          "where": [],
+          "sources": [
+            "https://www.animenewsnetwork.com/encyclopedia/company.php?id=7015"
+          ],
+          "confidence": "medium",
+          "note": "Cartoon Network India aired the English version (ANN broadcaster credit); no evidence of an official Hindi dub."
+        },
+        {
+          "year": 1990,
+          "en": "Dragon Ball Z: Bardock – The Father of Goku",
+          "jp": "Dragon Ball Z: Tatta Hitori no Saishū Kessen",
+          "live_action": false,
+          "hindi": "aired",
+          "where": [
+            "Cartoon Network India (aired)"
+          ],
+          "sources": [
+            "https://animemirchi.com/anime-movies-on-cartoon-network-india/",
+            "https://animenewsindia.com/2025/12/22/cartoon-network-india-kicks-off-holiday-season-with-dragon-ball-z-movie-marathon-from-december-222025-to-january-1-2026",
+            "https://en.wikipedia.org/wiki/Cartoon_Network_(India)"
+          ],
+          "confidence": "high",
+          "note": "TV special (not a theatrical film), commonly searched as a movie. CN India premiere 1 Sep 2024; re-aired in Dec 2025 movie marathon in Hindi/Tamil/Telugu/Kannada/Malayalam.",
+          "ta": {
+            "status": "aired",
+            "where": [
+              "Cartoon Network India (aired)"
+            ],
+            "sources": [
+              "https://animemirchi.com/anime-movies-on-cartoon-network-india/",
+              "https://animenewsindia.com/2025/12/22/cartoon-network-india-kicks-off-holiday-season-with-dragon-ball-z-movie-marathon-from-december-222025-to-january-1-2026"
+            ],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "aired",
+            "where": [
+              "Cartoon Network India (aired)"
+            ],
+            "sources": [
+              "https://animemirchi.com/anime-movies-on-cartoon-network-india/",
+              "https://animenewsindia.com/2025/12/22/cartoon-network-india-kicks-off-holiday-season-with-dragon-ball-z-movie-marathon-from-december-222025-to-january-1-2026"
+            ],
+            "confidence": "medium"
+          }
+        },
+        {
+          "year": 1991,
+          "en": "Dragon Ball Z: Lord Slug",
+          "jp": "Dragon Ball Z: Super Saiyajin da Son Gokū",
+          "live_action": false,
+          "hindi": "none_found",
+          "where": [],
+          "sources": [
+            "https://www.animenewsnetwork.com/encyclopedia/company.php?id=7015"
+          ],
+          "confidence": "medium",
+          "note": "Cartoon Network India aired the English version (ANN broadcaster credit); no evidence of an official Hindi dub."
+        },
+        {
+          "year": 1991,
+          "en": "Dragon Ball Z: Cooler's Revenge",
+          "jp": "Dragon Ball Z: Tobikkiri no Saikyō tai Saikyō",
+          "live_action": false,
+          "hindi": "aired",
+          "where": [
+            "Cartoon Network India (aired)"
+          ],
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2023-04-21/cartoon-network-airs-dragon-ball-z-kai-anime-in-india-on-sundays-dragon-ball-z-cooler-revenge-film-/.197211",
+            "https://en.wikipedia.org/wiki/Cartoon_Network_(India)",
+            "https://animemirchi.com/anime-movies-on-cartoon-network-india/",
+            "https://animenewsindia.com/2025/12/22/cartoon-network-india-kicks-off-holiday-season-with-dragon-ball-z-movie-marathon-from-december-222025-to-january-1-2026"
+          ],
+          "confidence": "high",
+          "note": "New Hindi dub premiered on CN India 23 Apr 2023 (DBZ Blockbuster block); re-aired Dec 2025 marathon.",
+          "ta": {
+            "status": "aired",
+            "where": [
+              "Cartoon Network India (aired)"
+            ],
+            "sources": [
+              "https://animemirchi.com/anime-movies-on-cartoon-network-india/",
+              "https://animenewsindia.com/2025/12/22/cartoon-network-india-kicks-off-holiday-season-with-dragon-ball-z-movie-marathon-from-december-222025-to-january-1-2026"
+            ],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "aired",
+            "where": [
+              "Cartoon Network India (aired)"
+            ],
+            "sources": [
+              "https://animemirchi.com/anime-movies-on-cartoon-network-india/",
+              "https://animenewsindia.com/2025/12/22/cartoon-network-india-kicks-off-holiday-season-with-dragon-ball-z-movie-marathon-from-december-222025-to-january-1-2026"
+            ],
+            "confidence": "medium"
+          }
+        },
+        {
+          "year": 1992,
+          "en": "Dragon Ball Z: The Return of Cooler",
+          "jp": "Dragon Ball Z: Gekitotsu!! 100-oku Power no Senshi-tachi",
+          "live_action": false,
+          "hindi": "aired",
+          "where": [
+            "Cartoon Network India (aired)"
+          ],
+          "sources": [
+            "https://animemirchi.com/anime-movies-on-cartoon-network-india/",
+            "https://animenewsindia.com/2025/12/22/cartoon-network-india-kicks-off-holiday-season-with-dragon-ball-z-movie-marathon-from-december-222025-to-january-1-2026",
+            "https://www.kanzenshuu.com/forum/viewtopic.php?t=48240"
+          ],
+          "confidence": "high",
+          "note": "CN India premiere 21 May 2023; re-aired Dec 2025 marathon. Also aired earlier in English on CN India.",
+          "ta": {
+            "status": "aired",
+            "where": [
+              "Cartoon Network India (aired)"
+            ],
+            "sources": [
+              "https://animemirchi.com/anime-movies-on-cartoon-network-india/",
+              "https://animenewsindia.com/2025/12/22/cartoon-network-india-kicks-off-holiday-season-with-dragon-ball-z-movie-marathon-from-december-222025-to-january-1-2026"
+            ],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "aired",
+            "where": [
+              "Cartoon Network India (aired)"
+            ],
+            "sources": [
+              "https://animemirchi.com/anime-movies-on-cartoon-network-india/",
+              "https://animenewsindia.com/2025/12/22/cartoon-network-india-kicks-off-holiday-season-with-dragon-ball-z-movie-marathon-from-december-222025-to-january-1-2026"
+            ],
+            "confidence": "medium"
+          }
+        },
+        {
+          "year": 1992,
+          "en": "Dragon Ball Z: Super Android 13!",
+          "jp": "Dragon Ball Z: Kyokugen Battle!! San Dai Super Saiyajin",
+          "live_action": false,
+          "hindi": "aired",
+          "where": [
+            "Cartoon Network India (aired)"
+          ],
+          "sources": [
+            "https://animemirchi.com/anime-movies-on-cartoon-network-india/",
+            "https://animenewsindia.com/2025/12/22/cartoon-network-india-kicks-off-holiday-season-with-dragon-ball-z-movie-marathon-from-december-222025-to-january-1-2026",
+            "https://www.kanzenshuu.com/forum/viewtopic.php?t=48240"
+          ],
+          "confidence": "high",
+          "note": "CN India premiere 7 May 2023; re-aired 1 Jan 2026 in marathon.",
+          "ta": {
+            "status": "aired",
+            "where": [
+              "Cartoon Network India (aired)"
+            ],
+            "sources": [
+              "https://animemirchi.com/anime-movies-on-cartoon-network-india/",
+              "https://animenewsindia.com/2025/12/22/cartoon-network-india-kicks-off-holiday-season-with-dragon-ball-z-movie-marathon-from-december-222025-to-january-1-2026"
+            ],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "aired",
+            "where": [
+              "Cartoon Network India (aired)"
+            ],
+            "sources": [
+              "https://animemirchi.com/anime-movies-on-cartoon-network-india/",
+              "https://animenewsindia.com/2025/12/22/cartoon-network-india-kicks-off-holiday-season-with-dragon-ball-z-movie-marathon-from-december-222025-to-january-1-2026"
+            ],
+            "confidence": "medium"
+          }
+        },
+        {
+          "year": 1993,
+          "en": "Dragon Ball Z: The History of Trunks",
+          "jp": "Dragon Ball Z: Zetsubō e no Hankō!! Nokosareta Chō-Senshi – Gohan to Trunks",
+          "live_action": false,
+          "hindi": "aired",
+          "where": [
+            "Cartoon Network India (aired)"
+          ],
+          "sources": [
+            "https://animemirchi.com/anime-movies-on-cartoon-network-india/",
+            "https://www.medianews4u.com/?p=2432915",
+            "https://animenewsindia.com/2025/12/22/cartoon-network-india-kicks-off-holiday-season-with-dragon-ball-z-movie-marathon-from-december-222025-to-january-1-2026"
+          ],
+          "confidence": "high",
+          "note": "TV special (not a theatrical film), commonly searched as a movie. CN India premiere 22 Sep 2024; re-aired Dec 2025 marathon.",
+          "ta": {
+            "status": "aired",
+            "where": [
+              "Cartoon Network India (aired)"
+            ],
+            "sources": [
+              "https://animemirchi.com/anime-movies-on-cartoon-network-india/",
+              "https://animenewsindia.com/2025/12/22/cartoon-network-india-kicks-off-holiday-season-with-dragon-ball-z-movie-marathon-from-december-222025-to-january-1-2026"
+            ],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "aired",
+            "where": [
+              "Cartoon Network India (aired)"
+            ],
+            "sources": [
+              "https://animemirchi.com/anime-movies-on-cartoon-network-india/",
+              "https://animenewsindia.com/2025/12/22/cartoon-network-india-kicks-off-holiday-season-with-dragon-ball-z-movie-marathon-from-december-222025-to-january-1-2026"
+            ],
+            "confidence": "medium"
+          }
+        },
+        {
+          "year": 1993,
+          "en": "Dragon Ball Z: Broly – The Legendary Super Saiyan",
+          "jp": "Dragon Ball Z: Moetsukiro!! Nessen Ressen Chō-Gekisen",
+          "live_action": false,
+          "hindi": "aired",
+          "where": [
+            "Cartoon Network India (aired)"
+          ],
+          "sources": [
+            "https://animemirchi.com/anime-movies-on-cartoon-network-india/",
+            "https://animenewsindia.com/2025/12/22/cartoon-network-india-kicks-off-holiday-season-with-dragon-ball-z-movie-marathon-from-december-222025-to-january-1-2026",
+            "https://www.kanzenshuu.com/forum/viewtopic.php?t=48240"
+          ],
+          "confidence": "high",
+          "note": "CN India premiere 11 Jun 2023 in Hindi/Tamil/Telugu/Kannada/Malayalam; re-aired Dec 2025 marathon.",
+          "ta": {
+            "status": "aired",
+            "where": [
+              "Cartoon Network India (aired)"
+            ],
+            "sources": [
+              "https://animemirchi.com/anime-movies-on-cartoon-network-india/",
+              "https://animenewsindia.com/2025/12/22/cartoon-network-india-kicks-off-holiday-season-with-dragon-ball-z-movie-marathon-from-december-222025-to-january-1-2026"
+            ],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "aired",
+            "where": [
+              "Cartoon Network India (aired)"
+            ],
+            "sources": [
+              "https://animemirchi.com/anime-movies-on-cartoon-network-india/",
+              "https://animenewsindia.com/2025/12/22/cartoon-network-india-kicks-off-holiday-season-with-dragon-ball-z-movie-marathon-from-december-222025-to-january-1-2026"
+            ],
+            "confidence": "medium"
+          }
+        },
+        {
+          "year": 1993,
+          "en": "Dragon Ball Z: Bojack Unbound",
+          "jp": "Dragon Ball Z: Ginga Girigiri!! Butchigiri no Sugoi Yatsu",
+          "live_action": false,
+          "hindi": "aired",
+          "where": [
+            "Cartoon Network India (aired)"
+          ],
+          "sources": [
+            "https://animemirchi.com/anime-movies-on-cartoon-network-india/",
+            "https://animenewsindia.com/2025/12/22/cartoon-network-india-kicks-off-holiday-season-with-dragon-ball-z-movie-marathon-from-december-222025-to-january-1-2026"
+          ],
+          "confidence": "high",
+          "note": "CN India premiere 23 Jul 2023; re-aired Dec 2025 marathon.",
+          "ta": {
+            "status": "aired",
+            "where": [
+              "Cartoon Network India (aired)"
+            ],
+            "sources": [
+              "https://animemirchi.com/anime-movies-on-cartoon-network-india/",
+              "https://animenewsindia.com/2025/12/22/cartoon-network-india-kicks-off-holiday-season-with-dragon-ball-z-movie-marathon-from-december-222025-to-january-1-2026"
+            ],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "aired",
+            "where": [
+              "Cartoon Network India (aired)"
+            ],
+            "sources": [
+              "https://animemirchi.com/anime-movies-on-cartoon-network-india/",
+              "https://animenewsindia.com/2025/12/22/cartoon-network-india-kicks-off-holiday-season-with-dragon-ball-z-movie-marathon-from-december-222025-to-january-1-2026"
+            ],
+            "confidence": "medium"
+          }
+        },
+        {
+          "year": 1994,
+          "en": "Dragon Ball Z: Broly – Second Coming",
+          "jp": "Dragon Ball Z: Kiken na Futari! Super Senshi wa Nemurenai",
+          "live_action": false,
+          "hindi": "none_found",
+          "where": [],
+          "sources": [],
+          "confidence": "medium"
+        },
+        {
+          "year": 1994,
+          "en": "Dragon Ball Z: Bio-Broly",
+          "jp": "Dragon Ball Z: Super Senshi Gekiha!! Katsu no wa Ore da",
+          "live_action": false,
+          "hindi": "none_found",
+          "where": [],
+          "sources": [],
+          "confidence": "medium"
+        },
+        {
+          "year": 1995,
+          "en": "Dragon Ball Z: Fusion Reborn",
+          "jp": "Dragon Ball Z: Fukkatsu no Fusion!! Gokū to Vegeta",
+          "live_action": false,
+          "hindi": "aired",
+          "where": [
+            "Cartoon Network India (aired)"
+          ],
+          "sources": [
+            "https://animemirchi.com/anime-movies-on-cartoon-network-india/",
+            "https://animenewsindia.com/2025/12/22/cartoon-network-india-kicks-off-holiday-season-with-dragon-ball-z-movie-marathon-from-december-222025-to-january-1-2026"
+          ],
+          "confidence": "high",
+          "note": "CN India premiere 20 Aug 2023; re-aired Dec 2025 marathon.",
+          "ta": {
+            "status": "aired",
+            "where": [
+              "Cartoon Network India (aired)"
+            ],
+            "sources": [
+              "https://animemirchi.com/anime-movies-on-cartoon-network-india/",
+              "https://animenewsindia.com/2025/12/22/cartoon-network-india-kicks-off-holiday-season-with-dragon-ball-z-movie-marathon-from-december-222025-to-january-1-2026"
+            ],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "aired",
+            "where": [
+              "Cartoon Network India (aired)"
+            ],
+            "sources": [
+              "https://animemirchi.com/anime-movies-on-cartoon-network-india/",
+              "https://animenewsindia.com/2025/12/22/cartoon-network-india-kicks-off-holiday-season-with-dragon-ball-z-movie-marathon-from-december-222025-to-january-1-2026"
+            ],
+            "confidence": "medium"
+          }
+        },
+        {
+          "year": 1995,
+          "en": "Dragon Ball Z: Wrath of the Dragon",
+          "jp": "Dragon Ball Z: Ryūken Bakuhatsu!! Gokū ga Yaraneba Dare ga Yaru",
+          "live_action": false,
+          "hindi": "aired",
+          "where": [
+            "Cartoon Network India (aired)"
+          ],
+          "sources": [
+            "https://animemirchi.com/anime-movies-on-cartoon-network-india/",
+            "https://animenewsindia.com/2025/12/22/cartoon-network-india-kicks-off-holiday-season-with-dragon-ball-z-movie-marathon-from-december-222025-to-january-1-2026"
+          ],
+          "confidence": "high",
+          "note": "CN India premiere 3 Sep 2023; re-aired Dec 2025 marathon.",
+          "ta": {
+            "status": "aired",
+            "where": [
+              "Cartoon Network India (aired)"
+            ],
+            "sources": [
+              "https://animemirchi.com/anime-movies-on-cartoon-network-india/",
+              "https://animenewsindia.com/2025/12/22/cartoon-network-india-kicks-off-holiday-season-with-dragon-ball-z-movie-marathon-from-december-222025-to-january-1-2026"
+            ],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "aired",
+            "where": [
+              "Cartoon Network India (aired)"
+            ],
+            "sources": [
+              "https://animemirchi.com/anime-movies-on-cartoon-network-india/",
+              "https://animenewsindia.com/2025/12/22/cartoon-network-india-kicks-off-holiday-season-with-dragon-ball-z-movie-marathon-from-december-222025-to-january-1-2026"
+            ],
+            "confidence": "medium"
+          }
+        },
+        {
+          "year": 1996,
+          "en": "Dragon Ball: The Path to Power",
+          "jp": "Dragon Ball: Saikyō e no Michi",
+          "live_action": false,
+          "hindi": "none_found",
+          "where": [],
+          "sources": [],
+          "confidence": "medium"
+        },
+        {
+          "year": 1997,
+          "en": "Dragon Ball GT: A Hero's Legacy",
+          "jp": "Dragon Ball GT: Gokū Gaiden! Yūki no Akashi wa Sūshinchū",
+          "live_action": false,
+          "hindi": "none_found",
+          "where": [],
+          "sources": [],
+          "confidence": "medium",
+          "note": "TV special (not a theatrical film), commonly listed with the movies."
+        },
+        {
+          "year": 2013,
+          "en": "Dragon Ball Z: Battle of Gods",
+          "jp": "Dragon Ball Z: Kami to Kami",
+          "live_action": false,
+          "hindi": "aired",
+          "where": [
+            "Cartoon Network India (aired)"
+          ],
+          "sources": [
+            "https://animemirchi.com/anime-movies-on-cartoon-network-india/",
+            "https://www.kanzenshuu.com/forum/viewtopic.php?p=1802708",
+            "https://en.wikipedia.org/wiki/Cartoon_Network_(India)"
+          ],
+          "confidence": "medium",
+          "note": "TV premiere on CN India 13 Oct 2024 (animemirchi lists 3 Oct, likely a typo); Hindi inferred from animemirchi's note that all CN India DBZ movies aired in 5 languages, not stated for this film by a dated report."
+        },
+        {
+          "year": 2015,
+          "en": "Dragon Ball Z: Resurrection 'F'",
+          "jp": "Dragon Ball Z: Fukkatsu no 'F'",
+          "live_action": false,
+          "hindi": "none_found",
+          "where": [],
+          "sources": [
+            "https://www.kanzenshuu.com/forum/viewtopic.php?p=1802708"
+          ],
+          "confidence": "medium",
+          "note": "Only fan speculation (Sep 2024) about a CN India Hindi airing; no confirmed broadcast."
+        },
+        {
+          "year": 2018,
+          "en": "Dragon Ball Super: Broly",
+          "jp": "Dragon Ball Super: Broly",
+          "live_action": false,
+          "hindi": "none_found",
+          "where": [],
+          "sources": [
+            "https://animenewsindia.com/2019/03/09/pvr-cinemas-to-release-dragon-ball-super-broly-in-india",
+            "https://comicbook.com/anime/news/dragon-ball-super-broly-theatrical-release-date-india/"
+          ],
+          "confidence": "medium",
+          "note": "Released in Indian cinemas by PVR on 29 Mar 2019 in the English dub only; no Hindi dub found."
+        },
+        {
+          "year": 2022,
+          "en": "Dragon Ball Super: Super Hero",
+          "jp": "Dragon Ball Super: Super Hero",
+          "live_action": false,
+          "hindi": "available",
+          "where": [
+            "Crunchyroll (Hindi audio)"
+          ],
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2023-06-27/crunchyroll-streams-dragon-ball-super-super-hero-film-on-july-12/.199677",
+            "https://animenewsindia.com/2023/06/28/dragon-ball-super-super-hero-streamingexclusively-on-crunchyroll-july-12",
+            "https://animenewsnetwork.com/news/2022-08-20/dragon-ball-super-super-hero-film-reveals-hindi-dub-cast/.188810"
+          ],
+          "confidence": "high",
+          "note": "First anime film released in Indian theatres in Hindi (26 Aug 2022, Sony Pictures/Crunchyroll); Hindi dub on Crunchyroll since 12 Jul 2023. Crunchyroll title page blocked our fetch, so current listing not re-checked.",
+          "ta": {
+            "status": "none_found",
+            "where": [],
+            "sources": [
+              "https://www.animenewsnetwork.com/news/2023-06-27/crunchyroll-streams-dragon-ball-super-super-hero-film-on-july-12/.199677"
+            ],
+            "confidence": "medium"
+          },
+          "te": {
+            "status": "none_found",
+            "where": [],
+            "sources": [
+              "https://www.animenewsnetwork.com/news/2023-06-27/crunchyroll-streams-dragon-ball-super-super-hero-film-on-july-12/.199677"
+            ],
+            "confidence": "medium"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "naruto",
+      "name": "Naruto",
+      "series": "naruto",
+      "films": [
+        {
+          "year": 2004,
+          "en": "Naruto the Movie: Ninja Clash in the Land of Snow",
+          "jp": "Gekijouban Naruto: Daikatsugeki! Yukihime Ninpouchou Dattebayo!!",
+          "live_action": false,
+          "hindi": "aired",
+          "where": [
+            "Indian theatres (Reliance Entertainment, Hindi dub, released 27 Jun 2025)"
+          ],
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2025-06-28/naruto-the-movie-ninja-clash-in-the-land-of-snow-film-opens-in-indian-theaters-in-japanese-hindi-/.226106",
+            "https://www.animenewsnetwork.com/news/2025-04-11/naruto-the-movie-ninja-clash-in-the-land-of-snow-film-planned-for-indian-theatrical-release-in-june/.223436",
+            "https://animemirchi.com/naruto-ninja-clash-in-the-land-of-snow-india/",
+            "https://www.justwatch.com/in/movie/naruto-the-movie-ninja-clash-in-the-land-of-snow"
+          ],
+          "confidence": "high",
+          "note": "Official Hindi dub was a THEATRICAL release (Reliance Entertainment / TV Tokyo / Happening 365), not TV. It uses a separate cast from Sony YAY!'s dub, except Pooja Punjabi as Naruto. Not streaming in Hindi: JustWatch India lists only the Anime Times Amazon Channel, with English/Japanese audio (checked 23 Nov 2026)."
+        },
+        {
+          "year": 2005,
+          "en": "Naruto the Movie: Legend of the Stone of Gelel",
+          "jp": "Gekijouban Naruto: Dai Gekitotsu! Maboroshi no Chiteiiseki Dattebayo!",
+          "live_action": false,
+          "hindi": "none_found",
+          "where": [],
+          "sources": [],
+          "confidence": "medium",
+          "note": "No Indian theatrical, TV or streaming Hindi release found; Reliance's 2025 India theatrical deal covers 'the Naruto films' but only Land of Snow has been released."
+        },
+        {
+          "year": 2006,
+          "en": "Naruto the Movie: Guardians of the Crescent Moon Kingdom",
+          "jp": "Gekijouban Naruto: Daikoufun! Mikazukijima no Animaru Panikku Dattebayo!",
+          "live_action": false,
+          "hindi": "none_found",
+          "where": [],
+          "sources": [],
+          "confidence": "medium",
+          "note": "No Indian theatrical, TV or streaming Hindi release found; Reliance's 2025 India theatrical deal covers 'the Naruto films' but only Land of Snow has been released."
+        },
+        {
+          "year": 2007,
+          "en": "Naruto Shippuden the Movie",
+          "jp": "Gekijouban Naruto Shippuuden",
+          "live_action": false,
+          "hindi": "none_found",
+          "where": [],
+          "sources": [],
+          "confidence": "medium",
+          "note": "No Indian theatrical, TV or streaming Hindi release found; Reliance's 2025 India theatrical deal covers 'the Naruto films' but only Land of Snow has been released."
+        },
+        {
+          "year": 2008,
+          "en": "Naruto Shippuden the Movie: Bonds",
+          "jp": "Gekijouban Naruto Shippuuden: Kizuna",
+          "live_action": false,
+          "hindi": "none_found",
+          "where": [],
+          "sources": [],
+          "confidence": "medium",
+          "note": "No Indian theatrical, TV or streaming Hindi release found; Reliance's 2025 India theatrical deal covers 'the Naruto films' but only Land of Snow has been released."
+        },
+        {
+          "year": 2009,
+          "en": "Naruto Shippuden the Movie: The Will of Fire",
+          "jp": "Gekijouban Naruto Shippuuden: Hi no Ishi wo Tsugu Mono",
+          "live_action": false,
+          "hindi": "none_found",
+          "where": [],
+          "sources": [],
+          "confidence": "medium",
+          "note": "No Indian theatrical, TV or streaming Hindi release found; Reliance's 2025 India theatrical deal covers 'the Naruto films' but only Land of Snow has been released."
+        },
+        {
+          "year": 2010,
+          "en": "Naruto Shippuden the Movie: The Lost Tower",
+          "jp": "Gekijouban Naruto Shippuuden: The Lost Tower",
+          "live_action": false,
+          "hindi": "none_found",
+          "where": [],
+          "sources": [],
+          "confidence": "medium",
+          "note": "No Indian theatrical, TV or streaming Hindi release found; Reliance's 2025 India theatrical deal covers 'the Naruto films' but only Land of Snow has been released."
+        },
+        {
+          "year": 2011,
+          "en": "Naruto Shippuden the Movie: Blood Prison",
+          "jp": "Gekijouban Naruto: Blood Prison",
+          "live_action": false,
+          "hindi": "none_found",
+          "where": [],
+          "sources": [],
+          "confidence": "medium",
+          "note": "No Indian theatrical, TV or streaming Hindi release found; Reliance's 2025 India theatrical deal covers 'the Naruto films' but only Land of Snow has been released."
+        },
+        {
+          "year": 2012,
+          "en": "Road to Ninja: Naruto the Movie",
+          "jp": "Road to Ninja: Naruto the Movie",
+          "live_action": false,
+          "hindi": "none_found",
+          "where": [],
+          "sources": [],
+          "confidence": "medium",
+          "note": "No Indian theatrical, TV or streaming Hindi release found; Reliance's 2025 India theatrical deal covers 'the Naruto films' but only Land of Snow has been released."
+        },
+        {
+          "year": 2014,
+          "en": "The Last: Naruto the Movie",
+          "jp": "The Last: Naruto the Movie",
+          "live_action": false,
+          "hindi": "none_found",
+          "where": [],
+          "sources": [],
+          "confidence": "medium",
+          "note": "No Indian theatrical, TV or streaming Hindi release found; Reliance's 2025 India theatrical deal covers 'the Naruto films' but only Land of Snow has been released."
+        },
+        {
+          "year": 2015,
+          "en": "Boruto: Naruto the Movie",
+          "jp": "Boruto: Naruto the Movie",
+          "live_action": false,
+          "hindi": "none_found",
+          "where": [],
+          "sources": [],
+          "confidence": "medium",
+          "note": "No Indian theatrical, TV or streaming Hindi release found; Reliance's 2025 India theatrical deal covers 'the Naruto films' but only Land of Snow has been released. Only an unofficial fan upload turned up; it was ignored."
         }
       ]
     }

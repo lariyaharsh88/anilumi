@@ -12,7 +12,8 @@ import { hindiDubPath } from "@/lib/hindidub";
 import { hindiDubIndexed } from "@/lib/indexing";
 
 /**
- * Every film of a big kids' franchise and whether it's dubbed in one language, newest first, with where and a
+ * Every film of a big franchise people search in Indian languages (Doraemon, Shinchan, Pokémon, Dragon Ball,
+ * Naruto) and whether it's dubbed in one language, newest first, with where and a
  * source. Keyword Planner, India, Nov 2026: "doraemon movie in hindi" 40.5K a month, "doraemon movie in telugu"
  * 8.1K, "doraemon movie in tamil" 6.6K, "shinchan movie in hindi" 18.1K, "shinchan movie in tamil" 2.4K. Today's
  * results are spam lists and partial fan pages with no dub status. Rendered by /hindi-dub, /tamil-dub and
@@ -51,7 +52,7 @@ export default function FilmsPage({ slug, lang }: { slug: string; lang: FilmLang
     { q: `What is the new ${f.name} movie?`, a: `${title(latest.x)}, released in Japan in ${latest.x.year}. ${latest.dub.status === "available" ? `It's in ${L} on ${latest.dub.where.join(", ")}.` : latest.dub.status === "aired" ? `Its ${L} dub came out on ${latest.dub.where.join(", ")}.` : `No ${L} dub has been announced yet.`}` },
     { q: `How many ${f.name} movies are there?`, a: `${films.length} films so far, from ${oldest.en} (${oldest.year}) to ${latest.x.en} (${latest.x.year}).` },
     { q: `Which ${f.name} movies are in ${L}?`, a: dubbed.length ? `${dubbed.length} have had an official ${L} dub${now.length ? `, and ${now.length} can be watched in ${L} now: ${now.map((r) => `${r.x.en} (${r.dub.where.join(", ")})`).join("; ")}` : ""}.` : "None that we could confirm." },
-    { q: `Where can I watch ${f.name} movies in ${L}?`, a: now.length ? `${[...new Set(now.flatMap((r) => r.dub.where))].join(", ")}. Films that only aired on TV come back on those channels from time to time; check their schedules.` : "Right now, only on TV reruns: check the channels listed on each film." },
+    { q: `Where can I watch ${f.name} movies in ${L}?`, a: now.length ? `${[...new Set(now.flatMap((r) => r.dub.where))].join(", ")}. Films that only aired on TV come back on those channels from time to time; check their schedules.` : dubbed.length ? `None streams in ${L} right now. ${dubbed.map((r) => `${r.x.en}: ${r.dub.where.join(", ")}`).join("; ")}.` : `None: no official ${L} dub found yet.` },
   ];
   const Badge = ({ s }: { s: keyof typeof label }) => (
     <span className={`rounded-full px-2 py-0.5 text-[11px] font-semibold ${s === "available" ? "bg-emerald-500/15 text-emerald-300" : s === "aired" ? "bg-amber-500/15 text-amber-300" : "bg-white/5 text-muted"}`}>{label[s]}</span>

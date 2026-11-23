@@ -1,6 +1,8 @@
 /**
- * Every film of the big kids' franchises and whether it's dubbed (data/franchise-films.json): Doraemon, Crayon
- * Shin-chan and Pokémon, each year's film with its Indian title, Hindi status (top-level fields) and, where
+ * Every film of the big franchises and whether it's dubbed (data/franchise-films.json): Doraemon, Crayon
+ * Shin-chan, Pokémon, Dragon Ball and Naruto (the last two added 23 Nov 2026; Dragon Ball's list includes three TV
+ * specials, marked in their notes; "naruto movie in hindi" 720 searches a month, "dragon ball movie in hindi" 110 and
+ * "dragon ball z movies in hindi" 90, Keyword Planner, India), each year's film with its Indian title, Hindi status (top-level fields) and, where
  * researched, Tamil and Telugu status (`ta`, `te`), with where and the sources. Researched 19 Nov 2026 from platform
  * pages, broadcaster and distributor announcements and news; fan wikis count only as support for TV-aired dubs
  * (confidence "medium"). Pure.

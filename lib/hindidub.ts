@@ -98,7 +98,8 @@ const KIDS_INDEXED = ["crayon-shin-chan", "doraemon-2005", "pokemon", "beyblade-
  * 390, Suzume 390, Vinland Saga 320, Classroom of the Elite 320, Gintama, Spy x Family, Chainsaw Man, Blue Lock,
  * Horimiya and Lookism 210, Black Butler and Mushoku Tensei 140, Terror in Resonance, Arifureta, Detective Conan and
  * Gachiakuta 110, Rent-a-Girlfriend, Baki, Kaiju No. 8 and Wind Breaker 90. Not Ghost in the Shell: its 140 "…in
- * hindi" are most likely the 2017 film.
+ * hindi" are most likely the 2017 film. Your Name added 23 Nov 2026: "your name hindi dubbed" 390 a month, 1,300 in
+ * December 2025, and on Bing's queries ("anime hindi dub your name").
  */
 const SEARCHED_INDEXED = [
   "sono-bisque-doll-wa-koi-wo-suru", "darling-in-the-franxx", "dragon-ball",
@@ -106,7 +107,7 @@ const SEARCHED_INDEXED = [
   "youkoso-jitsuryoku-shijou-shugi-no-kyoushitsu-e-tv", "gintama", "spy-x-family", "chainsaw-man", "blue-lock", "horimiya",
   "oemojisangjuui", "black-butler", "mushoku-tensei-isekai-ittara-honki-dasu", "zankyou-no-terror",
   "arifureta-shokugyou-de-sekai-saikyou", "detective-conan", "gachiakuta", "kanojo-okarishimasu", "baki-ona", "kaijuu-8-gou",
-  "wind-breaker",
+  "wind-breaker", "kimi-no-na-wa",
 ];
 
 /**

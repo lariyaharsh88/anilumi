@@ -19,7 +19,8 @@
     },
     "naruto": {
       "t": "Naruto & Naruto Shippuden",
-      "dub": "naruto"
+      "dub": "naruto",
+      "films": "naruto"
     },
     "jujutsu-kaisen": {
       "t": "Jujutsu Kaisen",
@@ -72,7 +73,8 @@
     },
     "dragon-ball": {
       "t": "Dragon Ball Z & Dragon Ball Super",
-      "dub": "dragon-ball"
+      "dub": "dragon-ball",
+      "films": "dragon-ball"
     },
     "one-piece": {
       "t": "One Piece",

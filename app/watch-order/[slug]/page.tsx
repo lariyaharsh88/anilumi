@@ -10,6 +10,7 @@ import { AUTHOR } from "@/lib/author";
 import BingePlan from "@/components/BingePlan";
 import HindiDub from "@/components/HindiDub";
 import { dubFor, dubFaq } from "@/lib/hindidub";
+import { sequelNews, NEWS_CHECKED } from "@/lib/sequelnews";
 import PageHero from "@/components/PageHero";
 import ChartFigure from "@/components/ChartFigure";
 import { chartFor } from "@/lib/charts";
@@ -124,6 +125,12 @@ export default async function WatchOrderPage({ params }: Props) {
   const fillerEps = fillerRows.reduce((n, r) => n + r.filler!.count, 0);
   const fillerHours = Math.round(fillerRows.reduce((n, r) => n + r.filler!.count * (r.e.anime.episodeLength ?? 24), 0) / 60);
 
+  // The franchise's latest researched news (data/sequel-news.json sits on whichever season it continues), so the
+  // franchise page says a new season is airing or announced: Bing sent "tokyo revengers season" here (Nov 2026).
+  // Only the newest season with research counts: an older season's "dated" news is stale once a later one says "none".
+  const newest = [...wo.entries].reverse().flatMap((e) => { const n = sequelNews(e.anime.slug); return n ? [{ e, n }] : []; })[0] ?? null;
+  const latest = newest && newest.n.status !== "none" ? newest : null;
+
   const ld = {
     "@context": "https://schema.org",
     "@type": "ItemList",
@@ -153,6 +160,13 @@ export default async function WatchOrderPage({ params }: Props) {
         {hasHindi(watchOrderSlug(wo)) && <p className="text-sm"><Link href={hindiPath(watchOrderSlug(wo))} className="chip" hrefLang="hi">🇮🇳 हिंदी में पढ़ें</Link></p>}
       </PageHero>
       <EditorWatched anime={wo.root} className="mt-4" />
+      {latest && (
+        <p className="card mt-4 max-w-3xl border-violet/30 p-3 text-sm leading-6 text-ink/90">
+          📡 <strong className="text-ink">{latest.n.status === "airing" ? "Airing now" : latest.n.status === "dated" ? "Coming next" : "Announced"}:</strong> {latest.n.what.replace(/\.$/, "")}.{" "}
+          <Link href={`/anime/${latest.e.anime.slug}/next-season`} className="font-medium text-violet hover:text-violet-2">Release details →</Link>
+          {NEWS_CHECKED && <span className="ml-1.5 whitespace-nowrap text-xs text-muted">Checked {new Date(`${NEWS_CHECKED}T00:00:00Z`).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" })}.</span>}
+        </p>
+      )}
       {chart && <ChartFigure chart={chart} className="mt-6" caption={`The ${name} watch order at a glance: the main story with each part's length. Movies, OVAs and what to skip are below.`} />}
 
       {(() => {
