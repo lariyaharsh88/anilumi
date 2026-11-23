@@ -58,7 +58,9 @@ export function altMetadata(site: AltSite): Metadata {
   const { dubbed, free } = data();
   return {
     // The title leads with how people search the name (ALT_SITES).
-    title: fitTitle([`Anime Salt & Anime World Alternatives: ${dubbed.length} Legal Hindi Dubs`, `${site.search} Alternatives: ${dubbed.length} Legal Hindi Dubs, ${free.length} Free`, `${site.search} Alternatives: Legal Hindi Dubbed Anime (${new Date().getFullYear()})`, `${site.search} Alternatives (${new Date().getFullYear()})`]),
+    // Bing keyword research (23 Nov 2026): "anime salt hindi" 6.3K impressions in 3 months and rising; the title
+    // leads with that exact phrase.
+    title: fitTitle([`${site.search} & Anime World Alternatives: ${dubbed.length} Legal Dubs`, `Anime Salt & Anime World Alternatives: ${dubbed.length} Legal Hindi Dubs`, `${site.search} Alternatives: ${dubbed.length} Legal Hindi Dubs, ${free.length} Free`, `${site.search} Alternatives: Legal Hindi Dubbed Anime (${new Date().getFullYear()})`, `${site.search} Alternatives (${new Date().getFullYear()})`]),
     description: fitDescription(`Looking for ${[site.brand, ...ALSO_SEARCHED].join(", ")}? ${dubbed.length} anime have an official Hindi dub, ${free.length} of them free on YouTube and Prime Video's free tier. Every legal platform compared by price, with the shows on each. Checked ${dubDate()}.`),
     alternates: { canonical: altPath(site) },
   };
@@ -89,7 +91,7 @@ export default async function AltSitePage({ site }: { site: AltSite }) {
       <PageHero
         crumbs={[{ href: "/", label: "Home" }, { href: "/hindi-dub", label: "Hindi dubbed anime" }, { href: altPath(site), label: `${site.brand} alternatives` }]}
         eyebrow="🇮🇳 Legal Hindi anime"
-        title={<>{site.brand} alternatives: <span className="text-gradient">legal Hindi dubbed anime</span></>}
+        title={<>{site.search} alternatives: <span className="text-gradient">where to watch legally</span></>}
         subtitle={`Searching for ${site.brand}, ${ALSO_SEARCHED.join(" or ")}? These are the official places to watch anime in Hindi, free ones first. AniLumi isn't affiliated with any of them and doesn't link to unlicensed sites.`}
         facts={[
           { value: String(dubbed.length), label: "anime in Hindi" },

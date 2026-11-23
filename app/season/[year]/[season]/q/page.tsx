@@ -66,7 +66,11 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
       total ? `${label} Anime: All ${total} Shows${current ? " Airing Now" : ""}, Ranked` : null,
       `${label} Anime – Full Season Chart`,
     ]),
-    description: fitDescription(`${total ? `All ${total} ${label} anime${current ? " airing now" : ""}` : `Every ${label} anime`} with air days, where to stream${dubs ? `, ${dubs} English dubs` : ""} and fan scores${tops.length ? `: ${tops.join(", ")} and more` : ""}.`),
+    // Airing now: the snippet leads with shows a searcher recognises and the day each episode comes out (Bing kept the
+    // page near #2 for "anime airing in fall 2026" with no clicks after the title matched the query, Nov 2026).
+    description: fitDescription(current && total && tops.length
+      ? `${label} anime airing now: ${tops.join(", ")} and ${total - tops.length} more, with the day each new episode comes out, where to stream it${dubs ? ` and the ${dubs} with English dubs` : ""}.`
+      : `${total ? `All ${total} ${label} anime${current ? " airing now" : ""}` : `Every ${label} anime`} with air days, where to stream${dubs ? `, ${dubs} English dubs` : ""} and fan scores${tops.length ? `: ${tops.join(", ")} and more` : ""}.`),
     alternates: { canonical: `/season/${year}/${season}${Number(page) > 1 ? `?page=${page}` : ""}` },
   };
 }

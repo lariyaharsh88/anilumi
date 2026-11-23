@@ -92,6 +92,10 @@ export default function AnimeStreamingSites() {
     { q: "Which sites have anime in Tamil and Telugu?", a: `${name(tamil)} has the most: ${tamil.ta.length} anime in ${LANG.ta.name} and ${tamil.te.length} in ${LANG.te.name}. ${list.filter((r) => r !== tamil && r.ta.length).map((r) => `${name(r)} has ${r.ta.length}`).join(", ")}.` },
     // Bing keyword research (21 Nov 2026): "hianime" 675K impressions a year, "hi anime" 141K, "hianime site" 6K.
     { q: "Is HiAnime legal, and what are the legal alternatives?", a: `No: HiAnime streams anime without a licence, and AniLumi doesn't link to it. The legal alternatives in India are ${name(most)} for the biggest catalogue and ${free.map(name).join(" and ")} for free anime with ads; each show's page on AniLumi lists every legal place it streams.` },
+    // "sub dub anime" 3.2K Bing impressions in 3 months and climbing since August, plus "subdub anime" 1.5K and "sub dub
+    // anime site/website" ~1K (Bing keyword research, Nov 2026): people looking for a site called SubDub Anime. Named
+    // without a verdict, since we haven't reviewed it; the answer is where both versions stream legally.
+    { q: "Is there a legal site like SubDub Anime, with both sub and dub?", a: `AniLumi doesn't review or link to unofficial streaming sites. For anime with both subtitles and dubs, legally: ${name(most)} streams most shows subtitled and many with an English dub, Netflix lets you switch the audio and subtitle language on most of its anime, and ${free.map(name).join(" and ")} are free with ads. Each show's page on AniLumi says whether it has an English or Hindi dub and where each version streams.` },
     { q: "Is it legal to watch anime on free anime websites?", a: "Only on the licensed ones listed here. Sites that offer every new anime free, without ads from the licensor, are unlicensed uploads: they pay nothing to the studios, and their pop-up ads and fake download buttons are a common way to get malware." },
   ];
 
