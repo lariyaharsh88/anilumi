@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import Script from "next/script";
 import Link from "@/components/Link";
 import { isAutomated, mustAsk, OPEN_EVENT, readChoice, saveChoice, withdraw, type Choice } from "@/lib/consent";
+import { aiSource } from "@/lib/aireferral";
+import { track } from "@/lib/track";
 
 /**
  * Plausible (NEXT_PUBLIC_PLAUSIBLE_DOMAIN, cookieless, always on), GA4 (NEXT_PUBLIC_GA_ID) and Microsoft Clarity
@@ -28,6 +30,11 @@ export default function Analytics() {
     window.addEventListener(OPEN_EVENT, open);
     return () => { live = false; window.removeEventListener(OPEN_EVENT, open); };
   }, [ga, clarity]);
+
+  // Visitors sent by an AI assistant (lib/aireferral.ts), once per visit: a Plausible goal (cookieless, always on)
+  // and, once GA is allowed and loaded, a GA4 ai_referral event. Each waits up to ~10 s for its script.
+  useEffect(() => sendAiReferral("plausible"), []);
+  useEffect(() => (allowed ? sendAiReferral("ga") : undefined), [allowed]);
 
   // The digest bar waits while the banner is up, so the two never stack.
   useEffect(() => { (window as unknown as { __alConsentAsk?: boolean }).__alConsentAsk = ask; }, [ask]);
@@ -67,4 +74,31 @@ export default function Analytics() {
       )}
     </>
   );
+}
+
+/** One AI-referral event per visit and per tool; returns the effect's cleanup. */
+function sendAiReferral(to: "plausible" | "ga"): (() => void) | undefined {
+  if (isAutomated()) return;
+  let source: string | null = null;
+  try {
+    source = sessionStorage.getItem("al_ai_ref") ?? aiSource(document.referrer, location.search);
+    if (!source || sessionStorage.getItem(`al_ai_ref_${to}`)) return;
+    sessionStorage.setItem("al_ai_ref", source);
+  } catch { source = aiSource(document.referrer, location.search); }
+  if (!source) return;
+  const src = source;
+  let tries = 0;
+  const id = window.setInterval(() => {
+    const w = window as unknown as { plausible?: (e: string, o: object) => void; gtag?: unknown };
+    const ready = to === "ga" ? Boolean(w.gtag) : Boolean(w.plausible);
+    if (!ready && ++tries < 20) return;
+    window.clearInterval(id);
+    if (!ready) return;
+    try {
+      if (to === "ga") track("ai_referral", { ai_source: src, landing: location.pathname });
+      else w.plausible?.("AI referral", { props: { source: src } });
+      sessionStorage.setItem(`al_ai_ref_${to}`, "1");
+    } catch { /* analytics must never break the page */ }
+  }, 500);
+  return () => window.clearInterval(id);
 }
