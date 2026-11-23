@@ -16,13 +16,15 @@ export const revalidate = 86400;
  * Legal alternatives to HiAnime for viewers anywhere (the India-only Hindi page is /anime-salt-alternatives).
  * Keyword Planner, India, 2026: "hianime alternative" 8.1K a month in May, 1.3K in October; "aniwatch alternative"
  * 880. Bing keyword research (Nov 2026, impressions a year): hianime 675K, aniwatch 519K, hi anime 141K, anime kai
- * 126K, zoro anime 17K, animesuge 17K. Counts come from the where-to-watch research (lib/streams), by country.
+ * 126K, zoro anime 17K, animesuge 17K. Keyword Planner (Nov 2026, a month): KissAnime 2.24M in India; GogoAnime 246K in
+ * India, 201K in the US, 135K in the Philippines; AnimeDAO 22K in the US. Counts come from the where-to-watch research
+ * (lib/streams), by country.
  */
 const y = new Date().getFullYear();
 const list = (xs: string[]) => (xs.length > 1 ? `${xs.slice(0, -1).join(", ")} and ${xs[xs.length - 1]}` : xs[0] ?? "");
 const short = (service: string) => service.replace(/ \(now free on Prime Video\)$/, " (Prime Video's free tier)");
 /** Names people search alongside HiAnime. Named without a verdict on each: we haven't reviewed them. */
-const ALSO = ["Aniwatch", "Zoro", "Anime Kai", "AnimeSuge"];
+const ALSO = ["Aniwatch", "Zoro", "Anime Kai", "AnimeSuge", "AnimeDAO"];
 
 type Row = { service: string; free: boolean; titles: Streams[]; dubbed: number };
 function rows(r: Region): Row[] {
@@ -46,8 +48,8 @@ export function generateMetadata(): Metadata {
   const { all, by } = data();
   const best = by.US[0];
   return {
-    title: fitTitle([`HiAnime Alternatives (${y}): Legal Sites With Sub & Dub`, `HiAnime Alternatives (${y}): Legal Anime Sites`, `HiAnime Alternatives (${y})`]),
-    description: fitDescription(`Legal alternatives to HiAnime, by country: ${best.service} streams ${best.titles.length} of the ${all.length} most-followed anime in the US, with free options in the US, India and the UK and which have English and Hindi dubs. Checked ${streamsDate()}.`),
+    title: fitTitle([`HiAnime, GogoAnime & KissAnime Alternatives (${y}): Legal Sites`, `HiAnime, GogoAnime & KissAnime Alternatives (${y})`, `HiAnime Alternatives (${y}): Legal Sites With Sub & Dub`, `HiAnime Alternatives (${y}): Legal Anime Sites`, `HiAnime Alternatives (${y})`]),
+    description: fitDescription(`Legal alternatives to HiAnime, GogoAnime and KissAnime, by country: ${best.service} streams ${best.titles.length} of the ${all.length} most-followed anime in the US, with free options in the US, India and the UK and which have English and Hindi dubs. Checked ${streamsDate()}.`),
     alternates: { canonical: "/hianime-alternatives" },
   };
 }
@@ -65,6 +67,8 @@ export default function HiAnimeAlternatives() {
     { q: "Is there a free alternative to HiAnime?", a: `Yes, with ads and a smaller catalogue: ${list(freeOf("US").slice(0, 3).map((x) => x.service))} in the US; ${list(freeOf("IN").slice(0, 2).map((x) => short(x.service).replace(/ \(YouTube\)$/, " on YouTube")))} in India, where ${freeHindi} anime are also free in Hindi. See every free anime website and app.` },
     { q: "Which HiAnime alternative has English dubs?", a: `In the US, ${dubsMost("US").service}: ${dubsMost("US").dubbed} of the most-followed anime have an English dub there. In the UK, ${dubsMost("GB").service} (${dubsMost("GB").dubbed}); in India, ${dubsMost("IN").service} (${dubsMost("IN").dubbed}).` },
     { q: "Is HiAnime legal?", a: "No. HiAnime streams anime without a licence from the studios or distributors, so AniLumi doesn't link to it. Every service on this page licenses the shows it streams." },
+    { q: "Is GogoAnime legal?", a: "No. Like HiAnime, GogoAnime streams anime without licences from the studios, so AniLumi doesn't link to it. The services on this page carry the same popular shows legally." },
+    { q: "What happened to KissAnime?", a: "KissAnime shut down in 2020, and sites using the name since then are copies run by other people. Either way it was never licensed. The services on this page are the legal way to watch the shows it carried." },
     { q: "Is HiAnime safe?", a: "Unlicensed streaming sites pay their way with pop-ups and redirect ads, a common route for scams and malware, especially on phones. The services here are apps and sites run by the licensors, with no pop-ups." },
     { q: `What about ${list(ALSO)}?`, a: "AniLumi doesn't review unofficial sites. The legal options are the same: the services on this page, and each show's page on AniLumi lists every place it streams in your country." },
     { q: "Where can I watch anime in Hindi instead?", a: `${freeHindi} anime are free and legal in Hindi on the licensors' YouTube channels and Prime Video's free tier, and more on Crunchyroll, Netflix and JioHotstar. See the Hindi alternatives to Anime Salt and Anime World.` },
@@ -74,10 +78,10 @@ export default function HiAnimeAlternatives() {
     <div className="container-x pb-8">
       <JsonLd data={itemList("Legal alternatives to HiAnime", REGIONS.flatMap((r) => by[r].slice(0, 4).map((x) => ({ url: `/hianime-alternatives#${r.toLowerCase()}`, name: `${x.service} (${REGION_NAME[r]})` }))))} />
       <PageHero
-        crumbs={[{ href: "/", label: "Home" }, { href: "/where-to-watch", label: "Where to watch" }, { href: "/hianime-alternatives", label: "HiAnime alternatives" }]}
+        crumbs={[{ href: "/", label: "Home" }, { href: "/where-to-watch", label: "Where to watch" }, { href: "/hianime-alternatives", label: "HiAnime, GogoAnime & KissAnime alternatives" }]}
         eyebrow="✅ Legal anime sites"
-        title={<>HiAnime alternatives: <span className="text-gradient">legal sites with sub &amp; dub</span></>}
-        subtitle={`Looking for HiAnime, ${list(ALSO)}? These are the licensed services that come closest, country by country, with how many popular anime each has and which have dubs. AniLumi isn't affiliated with any of them.`}
+        title={<>HiAnime, GogoAnime &amp; KissAnime alternatives: <span className="text-gradient">legal sites with sub &amp; dub</span></>}
+        subtitle={`Looking for HiAnime, GogoAnime, KissAnime, ${list(ALSO)}? These are the licensed services that come closest, country by country, with how many popular anime each has and which have dubs. AniLumi isn't affiliated with any of them.`}
         facts={[
           { value: String(all.length), label: "anime checked" },
           { value: String(REGIONS.length), label: "countries" },
@@ -125,7 +129,7 @@ export default function HiAnimeAlternatives() {
       ))}
 
       <section className="reveal pt-10" aria-labelledby="why-h">
-        <h2 id="why-h" className="h-section mb-3">Why not HiAnime?</h2>
+        <h2 id="why-h" className="h-section mb-3">Why not HiAnime, GogoAnime or KissAnime?</h2>
         <ul className="grid gap-3 md:grid-cols-3">
           <li className="card p-4 text-sm leading-6 text-ink/90"><strong className="block text-ink">It isn&apos;t licensed</strong>The studios and distributors who make the shows aren&apos;t paid, and AniLumi doesn&apos;t link to it.</li>
           <li className="card p-4 text-sm leading-6 text-ink/90"><strong className="block text-ink">Pop-ups and redirects</strong>Unlicensed sites run on ads that open new tabs and fake download buttons, a common way to get malware on a phone.</li>

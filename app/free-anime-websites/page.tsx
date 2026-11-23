@@ -148,10 +148,10 @@ export default function FreeAnimeWebsites() {
       )}
 
       <section className="reveal pt-10" aria-labelledby="pirate-h">
-        <h2 id="pirate-h" className="h-section mb-3">What about HiAnime, Aniwatch and the other &ldquo;free anime sites&rdquo;?</h2>
+        <h2 id="pirate-h" className="h-section mb-3">What about HiAnime, GogoAnime, KissAnime and the other &ldquo;free anime sites&rdquo;?</h2>
         <div className="card max-w-3xl space-y-2 p-4 text-sm leading-6 text-ink/85">
           <p>Sites that put every anime up free, the day it airs, aren&apos;t licensed: they pay nothing to the studios, and their pop-ups and fake download buttons are a common way to get malware on a phone. AniLumi doesn&apos;t link to them.</p>
-          <p>Everything above is the licensors&apos; own free option. <Link href="/anime-streaming-sites#legal-h" className="text-violet hover:underline">Is anime streaming legal in India? →</Link> · <Link href="/hianime-alternatives" className="text-violet hover:underline">HiAnime alternatives →</Link> · <Link href="/anime-salt-alternatives" className="text-violet hover:underline">Legal alternatives to Anime Salt and Anime World →</Link></p>
+          <p>Everything above is the licensors&apos; own free option. <Link href="/anime-streaming-sites#legal-h" className="text-violet hover:underline">Is anime streaming legal in India? →</Link> · <Link href="/hianime-alternatives" className="text-violet hover:underline">HiAnime, GogoAnime &amp; KissAnime alternatives →</Link> · <Link href="/anime-salt-alternatives" className="text-violet hover:underline">Legal alternatives to Anime Salt and Anime World →</Link></p>
         </div>
         <JoinChannels source="free-anime-websites" className="mt-5" />
       </section>
