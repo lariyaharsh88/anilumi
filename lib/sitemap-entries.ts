@@ -22,7 +22,7 @@ import { triviaShows, triviaPath } from "@/lib/trivia";
 import { officialRatings } from "@/lib/ageratings";
 import { hasSnapshotThemes } from "@/lib/themes";
 import { HINDI_SLUGS, hindiPath, hindiIndexed } from "@/lib/hindi";
-import { LANG, dubbedIn } from "@/lib/regionaldub";
+import { LANG, dubbedIn, regionalPath, topRegional } from "@/lib/regionaldub";
 import { dubEvents } from "@/lib/dubupdates";
 import { allStreams, streamsPath } from "@/lib/streams";
 import { filmFranchises, filmsPath, hasLang, FILMS_CHECKED, type FilmLang } from "@/lib/franchisefilms";
@@ -90,6 +90,7 @@ export async function sitemapEntries(): Promise<MetadataRoute.Sitemap> {
     { url: abs(KIDS_TV_PATH), lastModified: at(KIDS_TV_CHECKED), changeFrequency: "monthly", priority: 0.7 },
     // Per-anime Hindi dub pages: the most-watched dubs (lib/indexing.ts hindiDubIndexed).
     ...hindiDubbed().filter((d) => hindiDubIndexed(d.s)).map((d) => ({ url: abs(hindiDubPath(d.s)), lastModified: at(D.dubs, d.checked), changeFrequency: "weekly" as const, priority: 0.7 })),
+    ...(["ta", "te"] as const).flatMap((l) => dubbedIn(l).filter((d) => topRegional(d.s, l)).map((d) => ({ url: abs(regionalPath(d.s, l)), lastModified: at(D.regionalDubs, d.checked), changeFrequency: "monthly" as const, priority: 0.6 }))),
     { url: abs("/hindi-dub/this-week"), lastModified: now, changeFrequency: "daily", priority: 0.7 },
     { url: abs("/schedule/crunchyroll"), lastModified: now, changeFrequency: "daily", priority: 0.7 },
     { url: abs("/hindi-dub/movies"), lastModified: at(D.dubs), changeFrequency: "weekly", priority: 0.7 },

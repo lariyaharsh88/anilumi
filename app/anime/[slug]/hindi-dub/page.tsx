@@ -16,7 +16,7 @@ import { filmFranchises, filmsPath } from "@/lib/franchisefilms";
 import { DUB_CHECKED, HINDI_PARTS, dubDate, dubHref, dubPageEntry, dubsOn, hindiDubPath, hindiDubbed, platformFor, platformKind, type Dub, type PlatformKind } from "@/lib/hindidub";
 import { pricesFor, startingAt } from "@/lib/platformprices";
 import { hindiCast } from "@/lib/hindistats";
-import { LANG, regionalFor } from "@/lib/regionaldub";
+import { LANG, regionalFor, regionalPageEntry, regionalPath } from "@/lib/regionaldub";
 import { hindiIndexed, hindiPath } from "@/lib/hindi";
 import { hindiDubIndexed, robotsFor } from "@/lib/indexing";
 import { streamsBySlug, streamsPath } from "@/lib/streams";
@@ -185,7 +185,7 @@ export default async function HindiDubPage({ params }: Props) {
           <ul className="grid gap-3 md:grid-cols-2">
             {regional.map(({ l, x }) => (
               <li key={l} className="card p-4 text-sm">
-                <p className="font-semibold text-ink"><Link href={LANG[l].path} className="hover:text-violet-2">{LANG[l].name} dub</Link></p>
+                <p className="font-semibold text-ink"><Link href={regionalPageEntry(x.s, l) ? regionalPath(x.s, l) : LANG[l].path} className="hover:text-violet-2">{LANG[l].name} dub</Link></p>
                 <p className="mt-1 text-ink/85">{x.platforms.map((p) => `${p.name}${p.scope ? ` (${p.scope})` : ""}`).join("; ")}</p>
               </li>
             ))}

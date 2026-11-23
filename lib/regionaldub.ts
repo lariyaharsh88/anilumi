@@ -59,3 +59,18 @@ export function platformsFor(dubs: RegionalDub[]): { name: string; kind: Platfor
 
 /** "15 November 2026": when the list was last checked. */
 export const regionalDate = () => new Date(`${D.checked}T00:00:00Z`).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
+
+/**
+ * Single-show Tamil and Telugu pages (/anime/<slug>/tamil-dub, /telugu-dub): every anime with its own confirmed dub in
+ * that language has one, and the most-watched REGIONAL_PAGES are indexed ("anime tamil" 18.1K + "anime in tamil" 12.1K a
+ * month in India, "naruto shippuden tamil" 3.6K; Keyword Planner, Nov 2026). Pure.
+ */
+export const REGIONAL_PAGES = 25;
+export const regionalPath = (slug: string, lang: RegionalLang) => `/anime/${slug}/${lang === "ta" ? "tamil" : "telugu"}-dub`;
+/** The dub in `lang` on this exact slug (not inherited from the franchise): the page exists only for these. */
+export function regionalPageEntry(slug: string, lang: RegionalLang): RegionalDub | null {
+  const e = bySlug.get(slug), x = e?.[lang];
+  return e && x?.status === "available" && x.platforms.length ? { s: e.s, t: e.t, confidence: x.confidence, platforms: x.platforms, checked: e.checked ?? D.checked, added: x.added } : null;
+}
+const top: Partial<Record<RegionalLang, Set<string>>> = {};
+export const topRegional = (slug: string, lang: RegionalLang) => (top[lang] ??= new Set(dubbedIn(lang).slice(0, REGIONAL_PAGES).map((d) => d.s))).has(slug);

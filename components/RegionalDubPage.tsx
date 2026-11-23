@@ -17,7 +17,10 @@ import { itemList } from "@/lib/ld";
 import { fitTitle, fitDescription } from "@/lib/titles";
 import { dubHref, hasHindiDub, platformKind } from "@/lib/hindidub";
 import { filmFranchises, filmsPath, hasLang } from "@/lib/franchisefilms";
-import { LANG, REGIONAL_CHECKED, cheapest, dubbedIn, platformsFor, regionalDate, type RegionalLang } from "@/lib/regionaldub";
+import { LANG, REGIONAL_CHECKED, cheapest, dubbedIn, platformsFor, regionalDate, regionalPath, topRegional, type RegionalLang } from "@/lib/regionaldub";
+
+/** The show's own page in this language when it has an indexed one, else its Hindi-dub link. */
+const hrefIn = (d: { s: string }, lang: RegionalLang) => (topRegional(d.s, lang) ? regionalPath(d.s, lang) : dubHref(d));
 
 /** /tamil-dub and /telugu-dub: every anime with an official dub in the language, free ones first, then by platform. */
 export function regionalMetadata(lang: RegionalLang): Metadata {
@@ -47,7 +50,7 @@ export default async function RegionalDubPage({ lang }: { lang: RegionalLang }) 
   for (const p of platforms) p.titles.sort(byFollowers);
   const poster = (s: string, size: "small" | "medium" = "small") => { const a = kitsu.get(s); return a ? posterUrl(a, size) : null; };
   const cards: DubCard[] = dubs.map((d) => ({
-    s: d.s, t: d.t, href: dubHref(d), poster: poster(d.s), year: yearOf(kitsu.get(d.s)), cheapest: cheapest(d), checked: d.checked, oneSource: d.confidence === "medium",
+    s: d.s, t: d.t, href: hrefIn(d, lang), poster: poster(d.s), year: yearOf(kitsu.get(d.s)), cheapest: cheapest(d), checked: d.checked, oneSource: d.confidence === "medium",
     platforms: d.platforms.map((p) => ({ name: p.name, scope: p.scope, url: p.url, kind: platformKind(p.name) })),
   }));
   const top = platforms[0];
@@ -61,7 +64,7 @@ export default async function RegionalDubPage({ lang }: { lang: RegionalLang }) 
 
   return (
     <div className="container-x pb-8">
-      <JsonLd data={itemList(`Anime with an official ${L.name} dub`, dubs.map((d) => ({ url: dubHref(d), name: `${d.t} (${L.name} dub)` })))} />
+      <JsonLd data={itemList(`Anime with an official ${L.name} dub`, dubs.map((d) => ({ url: hrefIn(d, lang), name: `${d.t} (${L.name} dub)` })))} />
       <PageHero
         crumbs={[{ href: "/", label: "Home" }, { href: "/hindi-dub", label: "Indian dubs" }, { href: L.path, label: `${L.name} dubbed anime` }]}
         eyebrow={`🇮🇳 ${L.name} dub · ${L.native}`}
@@ -98,7 +101,7 @@ export default async function RegionalDubPage({ lang }: { lang: RegionalLang }) 
           <ul className="grid grid-cols-3 gap-3 sm:grid-cols-5 lg:grid-cols-8">
             {free.map((d) => (
               <li key={d.s} className="min-w-0">
-                <Link href={dubHref(d)} className="group block">
+                <Link href={hrefIn(d, lang)} className="group block">
                   <span className="relative block aspect-[5/7] overflow-hidden rounded-xl border border-emerald-500/30 bg-bg-2">
                     {poster(d.s) && <Image src={poster(d.s)!} alt={`${d.t} poster`} fill sizes="(max-width:640px) 30vw, 160px" className="object-cover transition duration-500 group-hover:scale-105" />}
                     <span className="absolute left-1.5 top-1.5 rounded-full bg-emerald-600/90 px-1.5 py-0.5 text-[10px] font-bold text-white">FREE</span>
@@ -135,7 +138,7 @@ export default async function RegionalDubPage({ lang }: { lang: RegionalLang }) 
               {platforms.map((p) => (
                 <li key={p.name} className="card p-3">
                   <p className="font-semibold text-ink">{p.name} <span className="text-xs font-normal text-muted">· {p.kind === "free" ? "Free" : p.kind === "tv" ? "TV channel" : "Subscription"} · {p.titles.length} anime</span></p>
-                  <p className="mt-0.5 text-ink/80">{p.titles.slice(0, 6).map((d, i) => <span key={d.s}>{i ? ", " : ""}<Link href={dubHref(d)} className="hover:text-violet-2 hover:underline">{d.t}</Link></span>)}{p.titles.length > 6 ? ` and ${p.titles.length - 6} more` : ""}</p>
+                  <p className="mt-0.5 text-ink/80">{p.titles.slice(0, 6).map((d, i) => <span key={d.s}>{i ? ", " : ""}<Link href={hrefIn(d, lang)} className="hover:text-violet-2 hover:underline">{d.t}</Link></span>)}{p.titles.length > 6 ? ` and ${p.titles.length - 6} more` : ""}</p>
                 </li>
               ))}
             </ul>
