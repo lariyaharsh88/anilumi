@@ -127,7 +127,7 @@ export default async function SimilarPage({ params }: Props) {
       <HindiDubCallout anime={a} title={name} className="mt-4" />
       {handPicked.length >= 4 && (
         <AnswerLead>
-          If you liked {name}, watch {handPicked.slice(0, 5).map((p) => shortName(p.anime)).join(", ")} next. {handHindi.length ? `${handHindi.length} of the ${handPicked.length} picks below have an official Hindi dub, including ${handHindi.slice(0, 3).map((p) => shortName(p.anime)).join(", ")}.` : ""}
+          If you liked {name}, watch {handPicked.slice(0, 5).map((p) => shortName(p.anime)).join(", ")} next. {handHindi.length === 1 ? `1 of the ${handPicked.length} picks below has an official Hindi dub: ${shortName(handHindi[0].anime)}.` : handHindi.length ? `${handHindi.length} of the ${handPicked.length} picks below have an official Hindi dub, including ${handHindi.slice(0, 3).map((p) => shortName(p.anime)).join(", ")}.` : ""}
         </AnswerLead>
       )}
       <SectionNav sections={[
