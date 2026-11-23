@@ -18,9 +18,15 @@ const upstream = (req) => (app ? app.fetch(req) : fetch(req));
 // binding the edge works as before.
 let pages = null;
 const R2_PREFIX = "edge/";
+// One shared last good copy of each page for search engines, from any build (R2, under last/, overwritten in place, so
+// bounded by the number of real pages; no lifecycle rule). Googlebot asks for long-tail pages a few times a month from
+// whichever data centre, so the per-colo last copy and the per-build R2 copy were almost never there: each crawl was a
+// full render, 2.4 s on average for HTML on 21 Nov 2026 (Search Console crawl stats), and Google crawls slow sites less.
+const SHARED_PREFIX = "last/";
 // Pages that change through the day get an hour; everything else a day. Build assets have hashed names.
 const FRESH = new Set(["/", "/schedule", "/tonight", "/birthdays", "/sitemap.xml", "/feed.xml", "/news", "/hype"]);
 const DAY = 86400;
+const SHARED_MAX_AGE = 30 * DAY;
 // Render free has 0.1 CPU: a dozen uncached pages at once take 5-12 s each, and Googlebot counts slow or failed
 // fetches against the host ("server connectivity"). Past this budget a visitor gets the last good copy instead.
 const ORIGIN_BUDGET_MS = 12_000;
@@ -43,6 +49,9 @@ const TRACKING = /^(utm_[a-z]+|fbclid|gclid|gbraid|wbraid|msclkid|igshid|mc_cid|
 const KNOWN_PARAMS = new Set(["_rsc", "a", "all", "b", "country", "done", "e", "genre", "id", "ids", "k", "max", "min", "minutes", "ok", "p", "page", "pick", "preset", "q", "retry", "s", "sort", "t", "title", "type", "u", "user"]);
 /** Whether every parameter in `search` is one a page reads. Pure. */
 export const knownSearch = (search) => [...new URLSearchParams(search).keys()].every((k) => KNOWN_PARAMS.has(k));
+/** Search engines whose crawl rate follows our response time: they get, and keep, the shared last copy. */
+const SEARCH_BOT = /googlebot|google-inspectiontool|bingbot/i;
+export const isSearchBot = (ua) => SEARCH_BOT.test(ua || "");
 const CRAWLER = /googlebot|google-inspectiontool|googleother|adsbot-google|mediapartners-google|bingbot|duckduckbot|yandex|applebot|baiduspider|oai-searchbot|chatgpt-user|perplexitybot|claude-searchbot|claude-user|petalbot/i;
 
 function ttl(path) {
@@ -206,7 +215,7 @@ async function handle(request, env, ctx) {
     const fresh = age < ttl(url.pathname);
     // Keep it here too: for the rest of its TTL, or a minute when stale so this colo refreshes it at most that often.
     ctx.waitUntil(cache.put(key, withMaxAge(global.response.clone(), fresh ? Math.ceil(ttl(url.pathname) - age) : 60)));
-    if (!fresh) ctx.waitUntil(toOrigin(request, url, 30_000).then((res) => store(res, url, genq, key, lastKeyFor(url, genq), !CRAWLER.test(request.headers.get("user-agent") || ""))).catch(() => {}));
+    if (!fresh) { const ua = request.headers.get("user-agent") || ""; ctx.waitUntil(toOrigin(request, url, 30_000).then((res) => store(res, url, genq, key, lastKeyFor(url, genq), !CRAWLER.test(ua), isSearchBot(ua))).catch(() => {})); }
     const out = new Response(global.response.body, global.response);
     out.headers.set("x-edge-cache", fresh ? "GLOBAL-HIT" : "GLOBAL-STALE");
     if (genq) out.headers.set("x-edge-gen", genq.slice(genq.indexOf("=") + 1));
@@ -216,10 +225,18 @@ async function handle(request, env, ctx) {
   // Last good copy of a page, from any build: survives deploys, which otherwise send every crawler request to
   // Render at once. Only plain page HTML (an RSC payload from another build would make Next.js hard-reload).
   const lastKey = lastKeyFor(url, genq);
-  const last = lastKey ? await cache.match(lastKey) : null;
+  const ua = request.headers.get("user-agent") || "";
+  const search = isSearchBot(ua);
+  let last = lastKey ? await cache.match(lastKey) : null;
+  // Nothing in this data centre: a search engine gets the shared copy (any build, up to 30 days old), kept here too.
+  let shared = false;
+  if (!last && search && lastKey) {
+    last = await sharedMatch(lastKey);
+    if (last) { shared = true; ctx.waitUntil(cache.put(lastKey, withMaxAge(last.clone(), LAST_GOOD_TTL)).catch(() => {})); }
+  }
   const stale = (why) => {
     const out = new Response(last.body, last);
-    out.headers.set("x-edge-cache", why);
+    out.headers.set("x-edge-cache", shared ? `${why}-SHARED` : why);
     return out;
   };
 
@@ -228,13 +245,13 @@ async function handle(request, env, ctx) {
   // same build, same JS chunks, so it's safe to show while the fresh one renders.
   // Global (R2) copies are paid per write and only save a render when another data centre asks for the same page:
   // visitors' popular pages do, crawlers' long tail (each page once per TTL) mostly doesn't. Copies only for visitors.
-  const crawler = CRAWLER.test(request.headers.get("user-agent") || "");
+  const crawler = CRAWLER.test(ua);
   const lastBuild = last?.headers.get("x-build");
   const sameBuild = Boolean(lastBuild) && genq.endsWith(`=${lastBuild}`);
   if (last && (sameBuild || crawler)) {
     // Re-render in the background only once the copy is past its TTL. Every hit used to, so after each release
     // every crawler request still cost a render (most of the Workers CPU bill, Nov 2026).
-    if (copyAge(last) > ttl(url.pathname)) ctx.waitUntil(toOrigin(request, url, 30_000).then((res) => store(res, url, genq, key, lastKey, !crawler)).catch(() => {}));
+    if (copyAge(last) > ttl(url.pathname)) ctx.waitUntil(toOrigin(request, url, 30_000).then((res) => store(res, url, genq, key, lastKey, !crawler, search)).catch(() => {}));
     return stale("STALE");
   }
 
@@ -266,7 +283,7 @@ async function handle(request, env, ctx) {
   const out = new Response(res.body, res);
   out.headers.set("x-edge-cache", "MISS");
   if (genq) out.headers.set("x-edge-gen", genq.slice(genq.indexOf("=") + 1));
-  ctx.waitUntil(store(out, url, genq, key, lastKey, !crawler));
+  ctx.waitUntil(store(out, url, genq, key, lastKey, !crawler, search));
   return out;
 }
 
@@ -304,6 +321,26 @@ async function globalMatch(key) {
   }
 }
 
+const sharedKey = (lastKey) => SHARED_PREFIX + lastKey.url.slice(`https://${SITE}/`.length);
+
+/** Whether a shared copy uploaded at `uploadedMs` may still be served to a search engine. Pure. */
+export const sharedUsable = (uploadedMs, now = Date.now()) => now - uploadedMs < SHARED_MAX_AGE * 1000;
+
+/** The shared last copy of a page, stamped with its upload time (x-stored-at), or null (none, too old, no R2). */
+async function sharedMatch(lastKey) {
+  if (!pages) return null;
+  try {
+    const obj = await pages.get(sharedKey(lastKey));
+    if (!obj) return null;
+    if (!sharedUsable(obj.uploaded.getTime())) { await obj.body?.cancel?.(); return null; }
+    const headers = new Headers(JSON.parse(obj.customMetadata?.h || "{}"));
+    headers.set("x-stored-at", String(obj.uploaded.getTime()));
+    return new Response(obj.body, { status: 200, headers });
+  } catch {
+    return null;
+  }
+}
+
 async function storeGlobal(res, key) {
   const h = [...res.headers].filter(([name]) => !DROP.has(name));
   const meta = JSON.stringify(h);
@@ -312,16 +349,30 @@ async function storeGlobal(res, key) {
   await pages.put(r2Key(key), body, { customMetadata: { h: meta } });
 }
 
+async function storeShared(res, lastKey) {
+  const h = [...res.headers].filter(([name]) => !DROP.has(name));
+  const meta = JSON.stringify(h);
+  if (meta.length > 1800) return;
+  await pages.put(sharedKey(lastKey), await res.arrayBuffer(), { customMetadata: { h: meta } });
+}
+
 /**
  * Cache a 200 page from the live build under its build key (here, and globally when `global`), and as the page's
  * last good copy.
  */
-async function store(res, url, genq, key, lastKey, global = true) {
+async function store(res, url, genq, key, lastKey, global = true, shared = false) {
+  // A page that's gone: drop its last copies, or search engines would keep getting it.
+  if ((res.status === 404 || res.status === 410) && lastKey) {
+    await Promise.all([caches.default.delete(lastKey), caches.default.delete(key), pages ? pages.delete(sharedKey(lastKey)) : null, pages ? pages.delete(r2Key(key)) : null].map((p) => Promise.resolve(p).catch(() => {})));
+    return;
+  }
   // Pages only from the live build: mid-deploy, the old instance can still answer and would be cached as new.
   const build = res.headers.get("x-build");
   const sameBuild = !genq || !build || genq.endsWith(`=${build}`);
   if (res.status !== 200 || res.headers.has("set-cookie") || !sameBuild) return;
   const puts = [];
+  // A search engine's render becomes the shared last copy (a few writes a day: Googlebot asks for ~70 pages).
+  if (pages && shared && lastKey && (res.headers.get("content-type") || "").includes("text/html")) puts.push(storeShared(res.clone(), lastKey).catch((err) => console.error("r2 shared store failed", lastKey.url, String(err))));
   // Build assets stay out of R2: the app serves them from static assets, which costs no Worker time.
   if (pages && global && !url.pathname.startsWith("/_next/static/")) puts.push(storeGlobal(res.clone(), key).catch((err) => console.error("r2 store failed", key.url, String(err))));
   const stored = new Response(res.clone().body, res); // own copy: headers from fetch() are immutable

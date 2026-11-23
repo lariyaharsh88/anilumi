@@ -17,6 +17,8 @@ crons = ["5,35 * * * *"]
 
 # Global page cache (see worker.js): shares the app's bucket under edge/. Old builds' copies are never read again;
 # a lifecycle rule clears them: npx wrangler r2 bucket lifecycle add anilumi-next-cache edge-expiry edge/ --expire-days 30
+# Search engines' shared last copies live under last/ (one per page, overwritten in place; deleted when the page
+# 404s): no lifecycle rule, they're bounded by the number of real pages.
 [[r2_buckets]]
 binding = "PAGES"
 bucket_name = "anilumi-next-cache"
