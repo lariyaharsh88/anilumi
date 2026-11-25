@@ -1,0 +1,368 @@
+{
+ "checked": "2026-11-25",
+ "titles": [
+  {
+   "t": "One-Punch Man",
+   "kitsu": "one-punch-man",
+   "mc": "Saitama",
+   "group": "start",
+   "isekai": false,
+   "how": "Saitama trained until he could end any fight with a single punch, and now he is bored because no opponent can challenge him.",
+   "eps": "3 seasons, 36 episodes (S3 aired Oct-Dec 2025; its second cour starts Jan 2027)",
+   "sources": [
+    "https://en.wikipedia.org/wiki/One-Punch_Man"
+   ]
+  },
+  {
+   "t": "Mob Psycho 100",
+   "kitsu": "mob-psycho-100",
+   "mc": "Shigeo \"Mob\" Kageyama",
+   "group": "start",
+   "isekai": false,
+   "how": "Mob looks like an ordinary middle schooler but is an esper with immense psychic power, which he keeps in check by bottling up his emotions.",
+   "eps": "3 seasons, 37 episodes (complete, 2016-2022)",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mob_Psycho_100"
+   ]
+  },
+  {
+   "t": "The Disastrous Life of Saiki K.",
+   "kitsu": "saiki-kusuo-no-psi-nan-tv",
+   "mc": "Kusuo Saiki",
+   "group": "start",
+   "isekai": false,
+   "how": "Saiki is a high schooler born with a huge range of psychic powers, including psychokinesis and teleportation, and he works hard to hide them so he can live a normal life.",
+   "eps": "2 TV seasons (2016-2018) plus the 6-episode Netflix sequel Reawakened (2019)",
+   "sources": [
+    "https://en.wikipedia.org/wiki/The_Disastrous_Life_of_Saiki_K."
+   ]
+  },
+  {
+   "t": "Sakamoto Days",
+   "kitsu": "sakamoto-days",
+   "mc": "Taro Sakamoto",
+   "group": "start",
+   "isekai": false,
+   "how": "Sakamoto was once the underworld's unrivaled, legendary hitman; now retired, out of shape and running a corner store, he still has to fight off the assassins who come after him.",
+   "eps": "1 season, 22 episodes (2025); season 2 starts Jan 2027",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Sakamoto_Days"
+   ]
+  },
+  {
+   "t": "Mashle: Magic and Muscles",
+   "kitsu": "mashle",
+   "mc": "Mash Burnedead",
+   "group": "start",
+   "isekai": false,
+   "how": "Mash cannot use any magic in a world run by it, so he enrolls in magic school and takes on wizards with pure trained muscle.",
+   "eps": "2 seasons, 24 episodes (2023-2024); season 3 starts Jan 2027",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mashle"
+   ]
+  },
+  {
+   "t": "The Daily Life of the Immortal King",
+   "kitsu": "xian-wang-de-richang-shenghuo",
+   "mc": "Wang Ling",
+   "group": "start",
+   "isekai": false,
+   "how": "Wang Ling is a cultivation genius who has reached a new realm every two years since age one, making him a near-invincible being who now just wants a low-key life in senior high school.",
+   "eps": "5 seasons (donghua, Bilibili, 2020-2026); a sixth season is announced",
+   "sources": [
+    "https://en.wikipedia.org/wiki/The_Daily_Life_of_the_Immortal_King",
+    "https://kitsu.io/api/edge/anime?filter[slug]=xian-wang-de-richang-shenghuo"
+   ]
+  },
+  {
+   "t": "The Irregular at Magic High School",
+   "kitsu": "mahouka-koukou-no-rettousei",
+   "mc": "Tatsuya Shiba",
+   "group": "start",
+   "isekai": false,
+   "how": "Placed in the lower course because his practical test scores make him look magically inept, Tatsuya actually has extraordinary technical knowledge, combat skills and unique magic, which makes him the school's 'irregular'.",
+   "eps": "3 seasons, 52 episodes (2014, 2020, 2024); spin-off The Honor Student at Magic High School (2021)",
+   "sources": [
+    "https://en.wikipedia.org/wiki/The_Irregular_at_Magic_High_School"
+   ]
+  },
+  {
+   "t": "The Misfit of Demon King Academy",
+   "kitsu": "maou-gakuin-no-futekigousha-shijou-saikyou-no-maou-no-shiso-tensei-shite-shison-tachi-no-gakkou-e-kayou",
+   "mc": "Anos Voldigoad",
+   "group": "start",
+   "isekai": false,
+   "how": "Anos, the demon king its full Japanese title calls the strongest in history, is reborn 2,000 years later and finds that magic has grown very weak, yet the academy for his own descendants rates him a misfit.",
+   "eps": "2 seasons, 37 episodes (2020; 2023-2024)",
+   "sources": [
+    "https://en.wikipedia.org/wiki/The_Misfit_of_Demon_King_Academy"
+   ]
+  },
+  {
+   "t": "The Greatest Demon Lord Is Reborn as a Typical Nobody",
+   "kitsu": "shijou-saikyou-no-daimaou-murabito-a-ni-tensei-suru",
+   "mc": "Ard Meteor (Varvatos)",
+   "group": "start",
+   "isekai": false,
+   "how": "Bored because no one could challenge his vast power, the Demon Lord Varvatos is reborn 3,000 years later as the villager Ard Meteor, and he is still extraordinarily powerful.",
+   "eps": "1 season, 12 episodes (2022)",
+   "sources": [
+    "https://en.wikipedia.org/wiki/The_Greatest_Demon_Lord_Is_Reborn_as_a_Typical_Nobody"
+   ]
+  },
+  {
+   "t": "Overlord",
+   "kitsu": "overlord",
+   "mc": "Ainz Ooal Gown (Momonga)",
+   "group": "start",
+   "isekai": true,
+   "how": "When his VR game shuts down, Momonga, a powerful undead wizard who leads one of the game's strongest guilds, ends up in another world in the body of his max-level avatar.",
+   "eps": "4 seasons, 52 episodes (2015-2022) plus the film The Sacred Kingdom (2024)",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Overlord_(novel_series)"
+   ]
+  },
+  {
+   "t": "Cautious Hero: The Hero Is Overpowered but Overly Cautious",
+   "kitsu": "kono-yuusha-ga-ore-tueee-kuse-ni-shinchou-sugiru",
+   "mc": "Seiya Ryuuguuin",
+   "group": "start",
+   "isekai": true,
+   "how": "The goddess Ristarte summons Seiya because his stats are many times higher than any other candidate's, but he is so cautious that he will not start the quest until he has over-prepared.",
+   "eps": "1 season, 12 episodes (2019)",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Cautious_Hero:_The_Hero_Is_Overpowered_but_Overly_Cautious"
+   ]
+  },
+  {
+   "t": "Tsukimichi: Moonlit Fantasy",
+   "kitsu": "tsuki-ga-michibiku-isekai-douchuu",
+   "mc": "Makoto Misumi",
+   "group": "start",
+   "isekai": true,
+   "how": "The goddess who summoned Makoto calls him ugly and throws him to the edge of her world, but the moon god Tsukuyomi saves him and gives him great power so he can live freely.",
+   "eps": "2 seasons, 37 episodes (2021; 2024); a third season is announced",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Tsukimichi:_Moonlit_Fantasy"
+   ]
+  },
+  {
+   "t": "Black Summoner",
+   "kitsu": "kuro-no-shoukanshi",
+   "mc": "Kelvin",
+   "group": "start",
+   "isekai": true,
+   "how": "Kelvin traded away the memories of his past life for powerful new abilities when he moved to another world, where he starts as a Summoner with a goddess as his first follower.",
+   "eps": "1 season, 12 episodes (2022)",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Black_Summoner"
+   ]
+  },
+  {
+   "t": "Wise Man's Grandchild",
+   "kitsu": "kenja-no-mago",
+   "mc": "Shin Wolford",
+   "group": "start",
+   "isekai": true,
+   "how": "Reborn in a world of magic and raised by the hero-sage Merlin, Shin grows up with incredible powers, but Merlin forgot to teach him common sense.",
+   "eps": "1 season, 12 episodes (2019)",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Wise_Man%27s_Grandchild"
+   ]
+  },
+  {
+   "t": "In Another World with My Smartphone",
+   "kitsu": "isekai-wa-smartphone-to-tomo-ni",
+   "mc": "Touya Mochizuki",
+   "group": "start",
+   "isekai": true,
+   "how": "God accidentally kills Touya and makes up for it by reviving him in a fantasy world, boosting his physical, magical and mental abilities until he is an adventurer of overwhelming power, and letting him keep his smartphone.",
+   "eps": "2 seasons, 24 episodes (2017; 2023)",
+   "sources": [
+    "https://en.wikipedia.org/wiki/In_Another_World_with_My_Smartphone"
+   ]
+  },
+  {
+   "t": "Didn't I Say to Make My Abilities Average in the Next Life?!",
+   "kitsu": "watashi-nouryoku-wa-heikinchi-de-itta-yo-ne",
+   "mc": "Mile (Misato Kurihara / Adele von Ascham)",
+   "group": "start",
+   "isekai": true,
+   "how": "Misato asks to be reborn with average abilities, but this world sets 'average' between its strongest and weakest beings, so she ends up about 6,800 times stronger than a normal human.",
+   "eps": "1 season, 12 episodes (2019)",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Didn%27t_I_Say_to_Make_My_Abilities_Average_in_the_Next_Life%3F!"
+   ]
+  },
+  {
+   "t": "I've Been Killing Slimes for 300 Years and Maxed Out My Level",
+   "kitsu": "slime-taoshite-300-nen-shiranai-uchi-ni-level-max-ni-nattemashita",
+   "mc": "Azusa Aizawa",
+   "group": "start",
+   "isekai": true,
+   "how": "Reborn as an immortal witch, Azusa spends 300 years killing only slimes and finds she has quietly reached the maximum level, making her extremely powerful.",
+   "eps": "2 seasons, 24 episodes (2021; 2025)",
+   "sources": [
+    "https://en.wikipedia.org/wiki/I%27ve_Been_Killing_Slimes_for_300_Years_and_Maxed_Out_My_Level"
+   ]
+  },
+  {
+   "t": "Chillin' in Another World with Level 2 Super Cheat Powers",
+   "kitsu": "lv2-kara-cheat-datta-moto-yuusha-kouho-no-mattari-isekai-life",
+   "mc": "Banaza (Flio)",
+   "group": "start",
+   "isekai": true,
+   "how": "Summoned as a hero candidate and thrown out for weak skills, Banaza kills a single slime, reaches level 2 and gets infinite stats and god-like powers.",
+   "eps": "1 season, 12 episodes (2024); a second season is announced",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Chillin%27_in_Another_World_with_Level_2_Super_Cheat_Powers"
+   ]
+  },
+  {
+   "t": "My Instant Death Ability Is So Overpowered, No One in This Other World Stands a Chance Against Me!",
+   "kitsu": "sokushi-cheat-ga-saikyou-sugite-isekai-no-yatsura-ga-marude-aite-ni-naranai-n-desu-ga",
+   "mc": "Yogiri Takatou",
+   "group": "start",
+   "isekai": true,
+   "how": "Left for dead with his class in another world, Yogiri stays calm because he can kill anything or anyone just by willing it.",
+   "eps": "1 season, 12 episodes (2024)",
+   "sources": [
+    "https://en.wikipedia.org/wiki/My_Instant_Death_Ability_Is_So_Overpowered"
+   ]
+  },
+  {
+   "t": "The Strongest Sage with the Weakest Crest",
+   "kitsu": "shikkakumon-no-saikyou-kenja",
+   "mc": "Matthias Hildesheimr",
+   "group": "start",
+   "isekai": false,
+   "how": "An incredibly skilled sage reincarnates thousands of years later to get the combat crest he wanted, and finds that people's knowledge of magic and swordsmanship has badly declined.",
+   "eps": "1 season, 12 episodes (2022)",
+   "sources": [
+    "https://en.wikipedia.org/wiki/The_Strongest_Sage_with_the_Weakest_Crest"
+   ]
+  },
+  {
+   "t": "Solo Leveling",
+   "kitsu": "solo-leveling",
+   "mc": "Sung Jinwoo",
+   "group": "becomes",
+   "isekai": false,
+   "how": "Sung Jinwoo, the weakest hunter, is chosen by a mysterious System as its only player, which lets him level up in a world where no other hunter can get stronger.",
+   "eps": "2 seasons, 25 episodes (2024; 2025); a sequel film, Beyond the System, is announced",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Solo_Leveling"
+   ]
+  },
+  {
+   "t": "That Time I Got Reincarnated as a Slime",
+   "kitsu": "tensei-shitara-slime-datta-ken",
+   "mc": "Rimuru Tempest (Satoru Mikami)",
+   "group": "becomes",
+   "isekai": true,
+   "how": "Reborn as a slime with the 'Predator' skill, which lets him devour anything and copy its form and skills, Rimuru builds a nation that grows quickly through his strength.",
+   "eps": "4 seasons (S4 began Apr 2026) plus a 2022 film and spin-offs",
+   "sources": [
+    "https://en.wikipedia.org/wiki/That_Time_I_Got_Reincarnated_as_a_Slime"
+   ]
+  },
+  {
+   "t": "Arifureta: From Commonplace to World's Strongest",
+   "kitsu": "arifureta-shokugyou-de-sekai-saikyou",
+   "mc": "Hajime Nagumo",
+   "group": "becomes",
+   "isekai": true,
+   "how": "Summoned with his class but given only a common crafting skill, Hajime is betrayed and dropped to the bottom of a dungeon, where he gets stronger by eating monster flesh; the title promises he becomes the world's strongest.",
+   "eps": "3 seasons, 41 episodes (2019; 2022; 2024-2025)",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Arifureta"
+   ]
+  },
+  {
+   "t": "I Got a Cheat Skill in Another World and Became Unrivaled in the Real World, Too",
+   "kitsu": "isekai-de-cheat-skill-wo-te-ni-shita-ore-wa-genjitsu-sekai-wo-mo-musou-suru-level-up-wa-jinsei-wo-kaeta",
+   "mc": "Yuuya Tenjou",
+   "group": "becomes",
+   "isekai": true,
+   "how": "Bullied Yuuya finds a door to another world in his late grandfather's house, levels up there, and becomes unrivaled in both worlds.",
+   "eps": "1 season, 13 episodes (2023) plus a TV special (Mar 2026); season 2 starts Jan 2027",
+   "sources": [
+    "https://en.wikipedia.org/wiki/I_Got_a_Cheat_Skill_in_Another_World_and_Became_Unrivaled_in_the_Real_World,_Too"
+   ]
+  },
+  {
+   "t": "Failure Frame: I Became the Strongest and Annihilated Everything with Low-Level Spells",
+   "kitsu": "hazure-waku-no-joutai-ijou-skill-de-saikyou-ni-natta-ore-ga-subete-wo-juurin-suru-made",
+   "mc": "Touka Mimori",
+   "group": "becomes",
+   "isekai": true,
+   "how": "Rated E-rank and thrown into a deadly dungeon by the goddess who summoned his class, Touka finds his status-effect skills are far stronger than they look, and the title says he becomes the strongest.",
+   "eps": "1 season, 12 episodes (2024)",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Failure_Frame"
+   ]
+  },
+  {
+   "t": "My Unique Skill Makes Me OP Even at Level 1",
+   "kitsu": "level-1-dakedo-unique-skill-de-saikyou-desu",
+   "mc": "Ryota Sato",
+   "group": "becomes",
+   "isekai": true,
+   "how": "Reborn stuck at level 1 forever, Ryota has a unique skill that is already maxed and gets him extremely rare monster drops, which he uses to get stronger without levelling up.",
+   "eps": "1 season, 12 episodes (2023)",
+   "sources": [
+    "https://en.wikipedia.org/wiki/My_Unique_Skill_Makes_Me_OP_Even_at_Level_1"
+   ]
+  },
+  {
+   "t": "Berserk of Gluttony",
+   "kitsu": "boushoku-no-berserk",
+   "mc": "Fate Graphite",
+   "group": "becomes",
+   "isekai": false,
+   "how": "Mocked for a useless skill, Fate learns that his 'Gluttony' skill makes him stronger by absorbing the skills of those he kills.",
+   "eps": "1 season, 12 episodes (2023); season 2 starts Apr 2027",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Berserk_of_Gluttony"
+   ]
+  },
+  {
+   "t": "My Isekai Life",
+   "kitsu": "tensei-kenja-no-isekai-life-dai-2-no-shokugyou-wo-ete-sekai-saikyou-ni-narimashita",
+   "mc": "Yuji Sano",
+   "group": "becomes",
+   "isekai": true,
+   "how": "Pulled into a game-like world with the Monster Tamer class, said to be the weakest, Yuji befriends slimes, gains a second class as a Sage, and quickly becomes one of the world's most powerful people.",
+   "eps": "1 season, 12 episodes (2022)",
+   "sources": [
+    "https://en.wikipedia.org/wiki/My_Isekai_Life"
+   ]
+  }
+ ],
+ "excluded": [
+  {
+   "t": "The Eminence in Shadow",
+   "why": "The official synopsis (Crunchyroll/Yen Press) and Wikipedia premise describe Cid's wish to be a hidden mastermind and his made-up cult, not overwhelming strength. Calling him OP is viewer judgement, not the premise."
+  },
+  {
+   "t": "Kaiju No. 8",
+   "why": "The premise is that Kafka gains the ability to turn into a kaiju and must keep it secret. No official synopsis says he is overwhelmingly strong."
+  },
+  {
+   "t": "Campfire Cooking in Another World with My Absurd Skill",
+   "why": "Mukohda's only power is 'Online Supermarket', which is not a combat power. The overwhelming strength belongs to his familiar Fel, not to the protagonist."
+  },
+  {
+   "t": "The Melancholy of Haruhi Suzumiya",
+   "why": "The narrator and lead is Kyon, an ordinary student. Haruhi's reality-altering power is unknown to her and is not a strength premise."
+  },
+  {
+   "t": "The Iceblade Sorcerer Shall Rule the World",
+   "why": "The Wikipedia premise only says Ray White enrolls as a commoner after winning a war. It never states that he is overwhelmingly strong."
+  },
+  {
+   "t": "Jujutsu Kaisen",
+   "why": "Its famously overpowered character, Satoru Gojo, is not the protagonist. Yuji Itadori's premise is about growth and hosting Sukuna, not supremacy."
+  }
+ ]
+}
