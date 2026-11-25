@@ -10,6 +10,7 @@ import CharacterDeepProfile, { deepSections, CharacterBounty, bountySection } fr
 import { bountyAnswer } from "@/lib/bounties";
 import CharacterCompare from "@/components/CharacterCompare";
 import FamilyTree from "@/components/FamilyTree";
+import { powersFor, powersPath, leadsWithForms } from "@/lib/powers";
 import { familyOf } from "@/lib/family";
 import { compareSets } from "@/lib/charcompare";
 import SectionNav, { type NavSection } from "@/components/fx/SectionNav";
@@ -320,6 +321,9 @@ export default async function CharacterPage({ params }: Props) {
           <h2 id="family-h" className="h-section mb-3"><span aria-hidden className="mr-2">🌳</span>{note?.name ?? c.name}&apos;s family tree</h2>
           <FamilyTree slug={c.slug} name={note?.name ?? c.name} image={c.image} />
         </section>
+      )}
+      {powersFor(c.slug) && (
+        <p className="reveal mt-8"><Link href={powersPath(c.slug)} className="card inline-flex items-center gap-2 px-4 py-3 text-sm font-semibold text-ink hover:border-white/20">⚡ {leadsWithForms(powersFor(c.slug)!) ? `All ${note?.name ?? c.name} transformations in order` : `${note?.name ?? c.name}'s powers explained`} →</Link></p>
       )}
       <CharacterBounty slug={c.slug} name={note?.name ?? c.name} />
       <CharacterDeepProfile slug={c.slug} name={note?.name ?? c.name} />
