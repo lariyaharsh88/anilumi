@@ -326,7 +326,7 @@ export default async function CharacterPage({ params }: Props) {
         </section>
       )}
       {powersFor(c.slug) && (
-        <p className="reveal mt-8"><Link href={powersPath(c.slug)} className="card inline-flex items-center gap-2 px-4 py-3 text-sm font-semibold text-ink hover:border-white/20">⚡ {leadsWithForms(powersFor(c.slug)!) ? `All ${powersFor(c.slug)!.short ?? note?.name ?? c.name} transformations in order` : `${powersFor(c.slug)!.short ?? note?.name ?? c.name}'s powers explained`} →</Link></p>
+        <p className="reveal mt-8"><Link href={powersPath(c.slug)} className="card inline-flex items-center gap-2 px-4 py-3 text-sm font-semibold text-ink hover:border-white/20">⚡ {leadsWithForms(powersFor(c.slug)!) ? `All ${powersFor(c.slug)!.short ?? note?.name ?? c.name} ${(powersFor(c.slug)!.formsWord ?? "transformations").toLowerCase()} in order` : `${powersFor(c.slug)!.short ?? note?.name ?? c.name}'s powers explained`} →</Link></p>
       )}
       <CharacterBounty slug={c.slug} name={note?.name ?? c.name} />
       <CharacterDeepProfile slug={c.slug} name={note?.name ?? c.name} />

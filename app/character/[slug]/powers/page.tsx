@@ -35,12 +35,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const { p, short, main } = load(slug);
   const forms = leadsWithForms(p);
+  const F = p.formsWord ?? "Transformations", f = F.toLowerCase();
   return {
     title: fitTitle(forms
-      ? [`All ${short} Transformations in Order (${y}): Every Form Explained`, `All ${short} Transformations in Order`, `${short} Transformations in Order`]
+      ? [`All ${short} ${F} in Order (${y}): Every Form Explained`, `All ${short} ${F} in Order`, `${short} ${F} in Order`]
       : [`${short}'s Powers Explained: ${p.hook ?? list(p.abilities.slice(0, 3).map((a) => a.name.split(" (")[0]))}`, `${short}'s Powers Explained (${y})`, `${short}'s Powers Explained`]),
     description: fitDescription(forms
-      ? `Every ${short} transformation in story order, from ${main[0]?.name} to ${main[main.length - 1]?.name}, with where each first appears, plus his techniques and limits. Spoilers hidden.`
+      ? `Every ${short} ${F === "Transformations" ? "transformation" : f.replace(/s$/, "")} in story order, from ${main[0]?.name} to ${main[main.length - 1]?.name}, with where each first appears, plus his techniques and limits. Spoilers hidden.`
       : `${short}'s powers explained in plain English: ${p.hook ?? list(p.abilities.slice(0, 4).map((a) => a.name.split(" (")[0]))}, how each works, their limits, and who has beaten him.`),
     alternates: { canonical: powersPath(decodeURIComponent(slug)) },
   };
@@ -69,13 +70,14 @@ export default async function PowersPage({ params }: Props) {
   const slug = decodeURIComponent(raw);
   const { p, img, short, main } = load(slug);
   const forms = leadsWithForms(p);
+  const F = p.formsWord ?? "Transformations", f = F.toLowerCase();
   const extra = [...new Set(p.forms.filter((f) => f.group !== "main").map((f) => f.group))];
   const vs = CHARACTER_VS.filter((v) => v.a === slug || v.b === slug);
   const ranked = rankingSlugs().find((s) => ranking(s)!.tiers.some((t) => t.chars.some((c) => c.slug === slug)));
 
   const faq: FaqItem[] = [
     ...(forms ? [
-      { q: `How many transformations does ${short} have?`, a: `${main.length} in the main story, in this order: ${list(main.map((f) => f.name))}.${extra.length ? ` Separate from that: ${list(extra.map((g) => `${p.forms.filter((f) => f.group === g).length} in ${GROUP[g] ?? g}`))}.` : ""}` },
+      { q: `How many ${f} does ${short} have?`, a: `${main.length} in the main story, in this order: ${list(main.map((f) => f.name))}.${extra.length ? ` Separate from that: ${list(extra.map((g) => `${p.forms.filter((f) => f.group === g).length} in ${GROUP[g] ?? g}`))}.` : ""}` },
       { q: `What is ${short}'s strongest form?`, a: `The last one in the main story is ${main[main.length - 1].name}. Where it first appears is under its spoiler toggle on this page.` },
     ] : []),
     { q: `What are ${short}'s powers?`, a: `${list(p.abilities.map((a) => a.name))}. ${p.summary}` },
@@ -88,11 +90,11 @@ export default async function PowersPage({ params }: Props) {
 
   return (
     <div className="container-x pb-8">
-      <JsonLd data={webPage("WebPage", powersPath(slug), forms ? `All ${short} transformations in order` : `${short}'s powers explained`)} />
+      <JsonLd data={webPage("WebPage", powersPath(slug), forms ? `All ${short} ${f} in order` : `${short}'s powers explained`)} />
       <PageHero
-        crumbs={[{ href: "/", label: "Home" }, { href: `/character/${slug}`, label: p.name }, { href: powersPath(slug), label: forms ? "Transformations" : "Powers" }]}
+        crumbs={[{ href: "/", label: "Home" }, { href: `/character/${slug}`, label: p.name }, { href: powersPath(slug), label: forms ? F : "Powers" }]}
         eyebrow={`⚡ ${p.series}`}
-        title={forms ? <>All {short} transformations <span className="text-gradient">in order</span></> : <>{short}&apos;s powers <span className="text-gradient">explained</span></>}
+        title={forms ? <>All {short} {f} <span className="text-gradient">in order</span></> : <>{short}&apos;s powers <span className="text-gradient">explained</span></>}
         subtitle={p.summary}
         facts={[
           ...(main.length ? [{ value: String(main.length), label: "forms in the main story" }] : []),
@@ -111,7 +113,7 @@ export default async function PowersPage({ params }: Props) {
 
       <AnswerLead checked={fmt(POWERS_CHECKED)}>
         {forms
-          ? <>{short} has {main.length} transformations in the main story, in this order: {list(main.map((f) => f.name))}.{extra.length ? ` ${list(extra.map((g) => GROUP[g] ?? g))} add${extra.length === 1 ? "s" : ""} more, listed separately.` : ""}</>
+          ? <>{short} has {main.length} {f} in the main story, in this order: {list(main.map((f) => f.name))}.{extra.length ? ` More are listed separately under ${list(extra.map((g) => GROUP[g] ?? g))}.` : ""}</>
           : <>{short}&apos;s powers are {p.powersLine ?? list(p.abilities.slice(0, 4).map((a) => a.name))}. {p.summary}</>}
       </AnswerLead>
 
@@ -119,7 +121,7 @@ export default async function PowersPage({ params }: Props) {
 
       {forms && (
         <section className="reveal pt-10" aria-labelledby="forms-h">
-          <h2 id="forms-h" className="h-section mb-4">Every {short} transformation in order</h2>
+          <h2 id="forms-h" className="h-section mb-4">Every {short} {F === "Transformations" ? "transformation" : f.replace(/s$/, "")} in order</h2>
           <ol className="grid gap-3 md:grid-cols-2">{main.map((f, i) => <Item key={f.name} x={f} n={i + 1} />)}</ol>
           {extra.map((g) => (
             <div key={g} className="mt-8">
@@ -168,7 +170,7 @@ export default async function PowersPage({ params }: Props) {
         </details>
       )}
       <MadeBy className="mt-8" method="Techniques, forms and fights come from the series wikis and Wikipedia, with first appearances only where a source gives the episode or chapter." date={POWERS_CHECKED} />
-      <Faq title={forms ? `${short}'s transformations: FAQ` : `${short}'s powers: FAQ`} items={faq} />
+      <Faq title={forms ? `${short}'s ${f}: FAQ` : `${short}'s powers: FAQ`} items={faq} />
     </div>
   );
 }

@@ -14,6 +14,8 @@ export type Powers = {
   name: string; series: string; summary: string; abilities: Ability[]; forms: Form[];
   /** The name people search ("Goku", not "Son"), a short powers list for titles, and the same in a sentence. */
   short?: string; hook?: string; powersLine?: string;
+  /** What the forms are called in searches ("Gears" for Luffy); "Transformations" by default. */
+  formsWord?: string;
   limits: (Src & { what: string })[]; beaten: (Src & { who: string; how: string; where?: string | null })[]; notes?: string;
 };
 const D = data as unknown as { checked: string; characters: Record<string, Powers> };

@@ -950,6 +950,1192 @@
     "For abilities, the numbers mean when the technique first appears. Where Naruto's own first use differs (Rasengan), that is stated in 'note'."
    ],
    "short": "Naruto"
+  },
+  "luffy-monkey-d": {
+   "name": "Monkey D. Luffy",
+   "series": "One Piece",
+   "summary": "Luffy ate the Gum-Gum Fruit as a child, so his whole body stretches like rubber. He fights by turning that rubber body into weapons, then stacking power-ups on top of it: his numbered Gears and, after the two-year timeskip, all three types of Haki.",
+   "abilities": [
+    {
+     "name": "Gum-Gum Fruit: rubber body",
+     "what": "His body is rubber. He can stretch, bounce, twist and inflate any part of himself, shrug off blunt hits and bullets (he bounces them back) and is immune to lightning.",
+     "firstEpisode": 4,
+     "episodeSeries": "One Piece",
+     "firstChapter": 1,
+     "chapterSeries": "One Piece (manga)",
+     "spoiler": false,
+     "confidence": "high",
+     "note": "Numbers mark where he eats the fruit (the anime shows it in a flashback in episode 4). Its true name is revealed much later (see Hito Hito no Mi, Model: Nika).",
+     "sources": [
+      "https://onepiece.fandom.com/wiki/Monkey_D._Luffy/Abilities_and_Powers",
+      "https://onepiece.fandom.com/wiki/Gomu_Gomu_no_Mi",
+      "https://en.wikipedia.org/wiki/Monkey_D._Luffy"
+     ]
+    },
+    {
+     "name": "Gum-Gum techniques",
+     "what": "His basic moves stretch a limb back and snap it forward: the Pistol punch, the rapid-fire Gatling, the two-handed Bazooka, the sweeping Whip kick and many more, mostly named after firearms.",
+     "firstEpisode": null,
+     "episodeSeries": null,
+     "firstChapter": 1,
+     "chapterSeries": "One Piece (manga)",
+     "spoiler": false,
+     "confidence": "high",
+     "note": "The Pistol is used in chapter 1. The wiki pairs that scene with episode 504's retelling, so no single first anime episode is given.",
+     "sources": [
+      "https://onepiece.fandom.com/wiki/Gomu_Gomu_no_Mi/Techniques",
+      "https://en.wikipedia.org/wiki/Monkey_D._Luffy"
+     ]
+    },
+    {
+     "name": "Conqueror's Haki (Supreme King Haki)",
+     "what": "A rare Haki that only people with a 'king's' quality have. Luffy's willpower knocks weaker people and animals unconscious. Before the timeskip it bursts out by accident, for example at Amazon Lily and at Marineford.",
+     "firstEpisode": 389,
+     "episodeSeries": "One Piece",
+     "firstChapter": 495,
+     "chapterSeries": "One Piece (manga)",
+     "spoiler": false,
+     "confidence": "high",
+     "note": "Numbers are the wiki's first unintentional use (stopping a bison on Sabaody). Better-known early uses: chapter 519 / episode 413 (Amazon Lily) and chapter 569 / episode 478 (Marineford).",
+     "sources": [
+      "https://onepiece.fandom.com/wiki/Monkey_D._Luffy/Abilities_and_Powers",
+      "https://onepiece.fandom.com/wiki/Haki",
+      "https://en.wikipedia.org/wiki/Monkey_D._Luffy"
+     ]
+    },
+    {
+     "name": "Armament Haki",
+     "what": "Learned from Rayleigh during the two-year timeskip. It hardens his limbs black, adding power and defense, and lets him hit Logia users like Caesar Clown who would otherwise turn intangible.",
+     "firstEpisode": null,
+     "episodeSeries": null,
+     "firstChapter": null,
+     "chapterSeries": null,
+     "spoiler": true,
+     "confidence": "high",
+     "note": "No first post-timeskip use was confirmed, so the numbers are left null.",
+     "sources": [
+      "https://onepiece.fandom.com/wiki/Monkey_D._Luffy/Abilities_and_Powers",
+      "https://onepiece.fandom.com/wiki/Haki",
+      "https://en.wikipedia.org/wiki/Monkey_D._Luffy"
+     ]
+    },
+    {
+     "name": "Observation Haki",
+     "what": "Also learned during the timeskip. It lets him sense people's presence, emotions and intentions, so he can dodge bullets and attacks before they land.",
+     "firstEpisode": 518,
+     "episodeSeries": "One Piece",
+     "firstChapter": 599,
+     "chapterSeries": "One Piece (manga)",
+     "spoiler": true,
+     "confidence": "high",
+     "sources": [
+      "https://onepiece.fandom.com/wiki/Monkey_D._Luffy/Abilities_and_Powers",
+      "https://onepiece.fandom.com/wiki/Haki",
+      "https://en.wikipedia.org/wiki/Monkey_D._Luffy"
+     ]
+    },
+    {
+     "name": "Future Sight (advanced Observation Haki)",
+     "what": "Pushed to his limit by Katakuri, Luffy learns to see a few seconds into the future. In Wano he can read the short-term future as smoothly as Katakuri.",
+     "firstEpisode": 869,
+     "episodeSeries": "One Piece",
+     "firstChapter": 894,
+     "chapterSeries": "One Piece (manga)",
+     "spoiler": true,
+     "confidence": "high",
+     "sources": [
+      "https://onepiece.fandom.com/wiki/Monkey_D._Luffy/Abilities_and_Powers",
+      "https://en.wikipedia.org/wiki/Monkey_D._Luffy"
+     ]
+    },
+    {
+     "name": "Advanced Armament Haki (Emission and Internal Destruction)",
+     "what": "Trained by Hyougoro in Udon prison, he learns to project Haki a short distance without touching the target, and to send it inside a target to destroy it from within. This is how he finally hurts Kaidou.",
+     "firstEpisode": 945,
+     "episodeSeries": "One Piece",
+     "firstChapter": 946,
+     "chapterSeries": "One Piece (manga)",
+     "spoiler": true,
+     "confidence": "high",
+     "note": "Numbers are his first Internal Destruction. Wikipedia names both applications.",
+     "sources": [
+      "https://onepiece.fandom.com/wiki/Monkey_D._Luffy/Abilities_and_Powers",
+      "https://en.wikipedia.org/wiki/Monkey_D._Luffy"
+     ]
+    },
+    {
+     "name": "Conqueror's Haki coating (advanced Conqueror's Haki)",
+     "what": "During the Kaidou fight he learns to wrap his fists in Conqueror's Haki, shown by black lightning. Only a handful of top fighters can do this. His clashes with Kaidou split the sky.",
+     "firstEpisode": 1028,
+     "episodeSeries": "One Piece",
+     "firstChapter": 1010,
+     "chapterSeries": "One Piece (manga)",
+     "spoiler": true,
+     "confidence": "high",
+     "sources": [
+      "https://onepiece.fandom.com/wiki/Monkey_D._Luffy/Abilities_and_Powers",
+      "https://onepiece.fandom.com/wiki/Haki"
+     ]
+    },
+    {
+     "name": "Hito Hito no Mi, Model: Nika",
+     "what": "The Gum-Gum Fruit's real identity: a Mythical Zoan fruit that turns him into the sun god Nika, the 'Warrior of Liberation'. Its awakening (Gear 5) makes his rubber body almost limitless. Luffy himself does not know this yet.",
+     "firstEpisode": 1071,
+     "episodeSeries": "One Piece",
+     "firstChapter": 1044,
+     "chapterSeries": "One Piece (manga)",
+     "spoiler": true,
+     "confidence": "high",
+     "sources": [
+      "https://onepiece.fandom.com/wiki/Monkey_D._Luffy/Abilities_and_Powers",
+      "https://onepiece.fandom.com/wiki/Gomu_Gomu_no_Mi/Gear_5_Techniques",
+      "https://en.wikipedia.org/wiki/Monkey_D._Luffy"
+     ]
+    }
+   ],
+   "forms": [
+    {
+     "name": "Gear 2",
+     "group": "main",
+     "firstEpisode": 272,
+     "episodeSeries": "One Piece",
+     "firstChapter": 387,
+     "chapterSeries": "One Piece (manga)",
+     "arc": "Enies Lobby Arc",
+     "what": "He pumps blood through his body at high speed, like doping. His rubber blood vessels survive the pressure, so he becomes far faster and hits harder, giving off steam while it lasts.",
+     "spoiler": false,
+     "confidence": "high",
+     "note": "Debut numbers are from the One Piece Wiki infobox (first used against Blueno).",
+     "sources": [
+      "https://onepiece.fandom.com/wiki/Gomu_Gomu_no_Mi/Gear_2_Techniques",
+      "https://onepiece.fandom.com/wiki/Monkey_D._Luffy/Abilities_and_Powers",
+      "https://en.wikipedia.org/wiki/Monkey_D._Luffy"
+     ]
+    },
+    {
+     "name": "Gear 3",
+     "group": "main",
+     "firstEpisode": 288,
+     "episodeSeries": "One Piece",
+     "firstChapter": 403,
+     "chapterSeries": "One Piece (manga)",
+     "arc": "Enies Lobby Arc",
+     "what": "He bites his thumb and blows air into his bones, inflating a limb to giant size for huge, slow, crushing blows.",
+     "spoiler": false,
+     "confidence": "high",
+     "note": "Chapter 403 / episode 288 is the first (off-panel) use on a steel door. It is first fully shown in chapter 421 / episode 304 against Rob Lucci.",
+     "sources": [
+      "https://onepiece.fandom.com/wiki/Gomu_Gomu_no_Mi/Gear_3_Techniques",
+      "https://onepiece.fandom.com/wiki/Monkey_D._Luffy/Abilities_and_Powers",
+      "https://en.wikipedia.org/wiki/Monkey_D._Luffy"
+     ]
+    },
+    {
+     "name": "Nightmare Luffy",
+     "group": "other",
+     "firstEpisode": 370,
+     "episodeSeries": "One Piece",
+     "firstChapter": 476,
+     "chapterSeries": "One Piece (manga)",
+     "arc": "Thriller Bark Arc",
+     "what": "A one-off power-up: 100 stolen shadows are packed into Luffy, making him huge, blue and much stronger for about ten minutes. One shadow even lets him use a sword.",
+     "spoiler": false,
+     "confidence": "medium",
+     "note": "One-time situational form, not a Gear. Only the One Piece Wiki was checked for the numbers.",
+     "sources": [
+      "https://onepiece.fandom.com/wiki/Monkey_D._Luffy/Abilities_and_Powers"
+     ]
+    },
+    {
+     "name": "Gear 4: Boundman",
+     "group": "main",
+     "firstEpisode": 726,
+     "episodeSeries": "One Piece",
+     "firstChapter": 784,
+     "chapterSeries": "One Piece (manga)",
+     "arc": "Dressrosa Arc",
+     "what": "He inflates his muscles, coats his body in Armament Haki and becomes a bouncing rubber ball. He compresses his limbs into his body and fires them out with huge force, and can fly by bouncing off the air.",
+     "spoiler": true,
+     "confidence": "high",
+     "note": "He starts activating it at the end of chapter 783 / episode 725. Gear 4 was developed during the two-year timeskip.",
+     "sources": [
+      "https://onepiece.fandom.com/wiki/Gomu_Gomu_no_Mi/Gear_4_Techniques",
+      "https://onepiece.fandom.com/wiki/Monkey_D._Luffy/Abilities_and_Powers",
+      "https://en.wikipedia.org/wiki/Monkey_D._Luffy"
+     ]
+    },
+    {
+     "name": "Gear 4: Tankman",
+     "group": "main",
+     "firstEpisode": 806,
+     "episodeSeries": "One Piece",
+     "firstChapter": 842,
+     "chapterSeries": "One Piece (manga)",
+     "arc": "Whole Cake Island Arc",
+     "what": "A huge, round, defensive Gear 4 shape. Attacks bounce off him and their recoil is thrown back at the attacker. It has only been seen in its 'full stomach' version after he ate a mountain of Cracker's biscuits.",
+     "spoiler": true,
+     "confidence": "high",
+     "sources": [
+      "https://onepiece.fandom.com/wiki/Gomu_Gomu_no_Mi/Gear_4_Techniques",
+      "https://onepiece.fandom.com/wiki/Monkey_D._Luffy/Abilities_and_Powers"
+     ]
+    },
+    {
+     "name": "Gear 4: Snakeman",
+     "group": "main",
+     "firstEpisode": 869,
+     "episodeSeries": "One Piece",
+     "firstChapter": 894,
+     "chapterSeries": "One Piece (manga)",
+     "arc": "Whole Cake Island Arc",
+     "what": "A slimmer, speed-focused Gear 4. His punches keep accelerating and can change direction mid-flight to chase the target, at the cost of less defense.",
+     "spoiler": true,
+     "confidence": "high",
+     "note": "Numbers are where he first names Snakeman against Katakuri. The form's power is explained in chapter 895 / episode 870.",
+     "sources": [
+      "https://onepiece.fandom.com/wiki/Gomu_Gomu_no_Mi/Gear_4_Techniques",
+      "https://onepiece.fandom.com/wiki/Monkey_D._Luffy/Abilities_and_Powers"
+     ]
+    },
+    {
+     "name": "Gear 5",
+     "group": "main",
+     "firstEpisode": 1071,
+     "episodeSeries": "One Piece",
+     "firstChapter": 1044,
+     "chapterSeries": "One Piece (manga)",
+     "arc": "Wano Country Arc",
+     "what": "After his Devil Fruit awakens, Luffy turns white and fights like a cartoon: he can reshape his body however he imagines and even turn the ground, objects and people around him into rubber. He calls it the peak of his power.",
+     "spoiler": true,
+     "confidence": "high",
+     "note": "Also appears in One Piece Film: Red, but chapter 1044 / episode 1071 is the canon debut.",
+     "sources": [
+      "https://onepiece.fandom.com/wiki/Gomu_Gomu_no_Mi/Gear_5_Techniques",
+      "https://en.wikipedia.org/wiki/Monkey_D._Luffy",
+      "https://www.animenewsnetwork.com/review/one-piece/episode-1071/.201089"
+     ]
+    }
+   ],
+   "limits": [
+    {
+     "what": "Like every Devil Fruit user he cannot swim. Seawater and Seastone drain his strength, and Seastone cuffs stop his powers entirely.",
+     "spoiler": false,
+     "confidence": "high",
+     "sources": [
+      "https://en.wikipedia.org/wiki/Monkey_D._Luffy",
+      "https://onepiece.fandom.com/wiki/Gomu_Gomu_no_Mi"
+     ]
+    },
+    {
+     "what": "Rubber only protects him from blunt force. Blades and cutting attacks hurt him normally, and shockwave attacks such as Fish-Man Karate get through too.",
+     "spoiler": false,
+     "confidence": "high",
+     "sources": [
+      "https://onepiece.fandom.com/wiki/Gomu_Gomu_no_Mi",
+      "https://onepiece.fandom.com/wiki/Monkey_D._Luffy/Abilities_and_Powers"
+     ]
+    },
+    {
+     "what": "Gear 2 burns huge amounts of energy, leaving him starving or barely able to move, and Rob Lucci warns it can shorten his life.",
+     "spoiler": false,
+     "confidence": "high",
+     "sources": [
+      "https://onepiece.fandom.com/wiki/Gomu_Gomu_no_Mi/Gear_2_Techniques",
+      "https://en.wikipedia.org/wiki/Monkey_D._Luffy"
+     ]
+    },
+    {
+     "what": "Before the timeskip, Gear 3 shrank him to a tiny, weak size for a while after each use.",
+     "spoiler": false,
+     "confidence": "high",
+     "sources": [
+      "https://onepiece.fandom.com/wiki/Gomu_Gomu_no_Mi/Gear_3_Techniques",
+      "https://en.wikipedia.org/wiki/Monkey_D._Luffy"
+     ]
+    },
+    {
+     "what": "When Gear 4 runs out he is drained and cannot use Haki for about ten minutes, On Whole Cake Island, while his Haki recharged, even Gear 3 could not break through Perospero's candy wall.",
+     "spoiler": true,
+     "confidence": "high",
+     "sources": [
+      "https://onepiece.fandom.com/wiki/Gomu_Gomu_no_Mi/Gear_4_Techniques",
+      "https://onepiece.fandom.com/wiki/Monkey_D._Luffy/Abilities_and_Powers"
+     ]
+    },
+    {
+     "what": "Gear 5 uses up his stamina fast. When it ends he looks like a shriveled old man until he eats or rests, and its changes to the world are temporary. As an awakened Zoan it also carries a risk of Nika's nature taking over his mind, and he is still vulnerable to cuts.",
+     "spoiler": true,
+     "confidence": "high",
+     "sources": [
+      "https://onepiece.fandom.com/wiki/Gomu_Gomu_no_Mi/Gear_5_Techniques",
+      "https://onepiece.fandom.com/wiki/Monkey_D._Luffy/Abilities_and_Powers"
+     ]
+    }
+   ],
+   "beaten": [
+    {
+     "who": "Crocodile",
+     "how": "In their first fight in the desert, Crocodile's sand powers dried out Luffy's arm and he was left in quicksand for dead. Luffy only beat him in their third fight.",
+     "where": "Alabasta Arc; first fight chapters 177–178, episodes 110–111",
+     "spoiler": false,
+     "confidence": "high",
+     "sources": [
+      "https://onepiece.fandom.com/wiki/Chapter_178",
+      "https://onepiece.fandom.com/wiki/Episode_111",
+      "https://en.wikipedia.org/wiki/Monkey_D._Luffy"
+     ]
+    },
+    {
+     "who": "Aokiji (Kuzan)",
+     "how": "Luffy fought the Admiral one-on-one and was frozen solid. Aokiji left without killing him and the crew thawed him out.",
+     "where": "Long Ring Long Land Arc; chapter 321, episode 228",
+     "spoiler": false,
+     "confidence": "high",
+     "sources": [
+      "https://onepiece.fandom.com/wiki/Chapter_321",
+      "https://onepiece.fandom.com/wiki/Episode_228",
+      "https://en.wikipedia.org/wiki/Monkey_D._Luffy"
+     ]
+    },
+    {
+     "who": "Kaido",
+     "how": "Luffy hit Kaidou with Gear 3 and Gear 4 but was knocked out with a single blow and thrown in prison. Kaidou downed him again during the Onigashima raid before Luffy awakened Gear 5 and finally beat him.",
+     "where": "Wano Country Arc; first loss chapter 923, episode 915; Luffy's win chapter 1049, episode 1076",
+     "spoiler": true,
+     "confidence": "high",
+     "sources": [
+      "https://onepiece.fandom.com/wiki/Chapter_923",
+      "https://onepiece.fandom.com/wiki/Episode_915",
+      "https://onepiece.fandom.com/wiki/Monkey_D._Luffy/Abilities_and_Powers",
+      "https://en.wikipedia.org/wiki/Monkey_D._Luffy"
+     ]
+    }
+   ],
+   "notes": [
+    "Episode numbers are the One Piece TV anime's running numbers. Chapter numbers are the One Piece manga.",
+    "Debut numbers come from the One Piece Wiki's infobox and citation fields. Wikipedia confirms each form and Haki type exists but does not give numbers.",
+    "Spoiler cut-off: after Marineford (chapter 597 / episode 516). That is why Armament and Observation Haki are marked as spoilers: Luffy learns them in the two-year timeskip.",
+    "No new Gear beyond Gear 5 was found in the sources checked. Gear 5 moves like Gomu Gomu no Majin are techniques, not new forms."
+   ],
+   "short": "Luffy",
+   "hook": "All Gears in order (2 to 5), Haki & Nika",
+   "powersLine": "his Gears (Gear 2, Gear 3, the three Gear 4 forms and Gear 5), his rubber body from the Gum-Gum Fruit, and all three types of Haki",
+   "formsWord": "Gears"
+  },
+  "jujutsu-kaisen-sukuna": {
+   "name": "Ryomen Sukuna",
+   "series": "Jujutsu Kaisen",
+   "summary": "Sukuna is the King of Curses, a sorcerer from the Heian era so strong that his soul survived death split across twenty cursed fingers. When Yuji Itadori eats one, Sukuna wakes up inside him. His power is built on invisible slashes, a fire arrow, a domain that cuts everything around him, and very fast healing.",
+   "abilities": [
+    {
+     "name": "Shrine: Dismantle",
+     "what": "Sukuna's main cursed technique. Dismantle is an invisible slash that flies at the target, usually aimed with a point of the finger. How deep it cuts depends on how much cursed energy he puts in.",
+     "firstEpisode": 4,
+     "episodeSeries": "Jujutsu Kaisen (anime)",
+     "firstChapter": 8,
+     "chapterSeries": "Jujutsu Kaisen (manga)",
+     "spoiler": false,
+     "confidence": "medium",
+     "note": "The numbers are the wiki's debut for Shrine as a whole. Dismantle and Cleave are first named and explained in the Shibuya arc (chapter 119 / episode 41).",
+     "sources": [
+      "https://jujutsu-kaisen.fandom.com/wiki/Shrine",
+      "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+     ]
+    },
+    {
+     "name": "Shrine: Cleave",
+     "what": "A slash that adjusts its strength to the target's toughness and cursed energy, so it cuts them apart in one hit. Outside his domain Sukuna has to touch the target to use it.",
+     "firstEpisode": 4,
+     "episodeSeries": "Jujutsu Kaisen (anime)",
+     "firstChapter": 8,
+     "chapterSeries": "Jujutsu Kaisen (manga)",
+     "spoiler": false,
+     "confidence": "medium",
+     "note": "Same debut note as Dismantle. The touch requirement is stated in chapter 246.",
+     "sources": [
+      "https://jujutsu-kaisen.fandom.com/wiki/Shrine",
+      "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+     ]
+    },
+    {
+     "name": "Domain Expansion: Malevolent Shrine",
+     "what": "His domain summons a shrine decorated with skulls. Instead of closing the space with a barrier, it covers the surrounding area, and everything inside is shredded nonstop by Dismantle and Cleave. Leaving an escape route works like a binding vow that hugely enlarges its range.",
+     "firstEpisode": 4,
+     "episodeSeries": "Jujutsu Kaisen (anime)",
+     "firstChapter": 8,
+     "chapterSeries": "Jujutsu Kaisen (manga)",
+     "spoiler": false,
+     "confidence": "medium",
+     "note": "Debut numbers are from the wiki, where the shrine first appears. Its first full use in a big fight comes later in the story (Wikipedia, season 2).",
+     "sources": [
+      "https://jujutsu-kaisen.fandom.com/wiki/Malevolent_Shrine",
+      "https://jujutsu-kaisen.fandom.com/wiki/Shrine",
+      "https://en.wikipedia.org/wiki/Jujutsu_Kaisen_season_2"
+     ]
+    },
+    {
+     "name": "Reverse Cursed Technique",
+     "what": "He turns cursed energy into positive energy to heal instantly, even regrowing Yuji's severed hand in moments. Unusually, he can also heal other people.",
+     "firstEpisode": 4,
+     "episodeSeries": "Jujutsu Kaisen (anime)",
+     "firstChapter": 8,
+     "chapterSeries": "Jujutsu Kaisen (manga)",
+     "spoiler": false,
+     "confidence": "high",
+     "sources": [
+      "https://jujutsu-kaisen.fandom.com/wiki/Sukuna",
+      "https://en.wikipedia.org/wiki/Jujutsu_Kaisen_season_1"
+     ]
+    },
+    {
+     "name": "Divine Flame (fire arrow, 'Fuga' / 'Open')",
+     "what": "After using Dismantle and Cleave, he says 'Open', shapes fire into an arrow and fires it. Its flames overpower Jogo, a special-grade curse made of fire. The technique's real name, Divine Flame, is only revealed much later.",
+     "firstEpisode": 40,
+     "episodeSeries": "Jujutsu Kaisen (anime)",
+     "firstChapter": 115,
+     "chapterSeries": "Jujutsu Kaisen (manga)",
+     "spoiler": true,
+     "confidence": "high",
+     "note": "First used against Jogo in chapters 115–116, episode 40. The name 'Divine Flame' is first given in chapter 258–259.",
+     "sources": [
+      "https://jujutsu-kaisen.fandom.com/wiki/Shrine",
+      "https://jujutsu-kaisen.fandom.com/wiki/Sukuna",
+      "https://en.wikipedia.org/wiki/Jujutsu_Kaisen_season_2"
+     ]
+    },
+    {
+     "name": "Ten Shadows Technique and Mahoraga",
+     "what": "After taking Megumi's body he can use Megumi's shikigami, which are stronger in his hands. That includes Mahoraga, which Sukuna had defeated in Shibuya. He uses Mahoraga's ability to adapt to anything against Gojo, and copies its adaptation to learn a slash that can cut through Gojo's Infinity.",
+     "firstEpisode": null,
+     "episodeSeries": null,
+     "firstChapter": 229,
+     "chapterSeries": "Jujutsu Kaisen (manga)",
+     "spoiler": true,
+     "confidence": "medium",
+     "note": "Number is where Sukuna summons Mahoraga against Gojo. He first fights Mahoraga, summoned by Megumi, in chapters 118–119 / episode 41.",
+     "sources": [
+      "https://jujutsu-kaisen.fandom.com/wiki/Satoru_Gojo_vs._Sukuna",
+      "https://jujutsu-kaisen.fandom.com/wiki/Sukuna",
+      "https://en.wikipedia.org/wiki/Jujutsu_Kaisen_season_2"
+     ]
+    },
+    {
+     "name": "World-cutting slash",
+     "what": "Using Mahoraga's adaptation as a model, he upgrades Dismantle so it cuts space itself. This is how he gets past Gojo's Infinity.",
+     "firstEpisode": null,
+     "episodeSeries": null,
+     "firstChapter": 236,
+     "chapterSeries": "Jujutsu Kaisen (manga)",
+     "spoiler": true,
+     "confidence": "high",
+     "note": "Manga only.",
+     "sources": [
+      "https://jujutsu-kaisen.fandom.com/wiki/Shrine",
+      "https://en.wikipedia.org/wiki/Ryomen_Sukuna"
+     ]
+    }
+   ],
+   "forms": [
+    {
+     "name": "Sukuna in Yuji's body",
+     "group": "other",
+     "firstEpisode": 1,
+     "episodeSeries": "Jujutsu Kaisen (anime)",
+     "firstChapter": 1,
+     "chapterSeries": "Jujutsu Kaisen (manga)",
+     "arc": "Fearsome Womb Arc onward",
+     "what": "Sukuna's usual state for most of the story. When he takes over, Yuji's body grows Sukuna's tattoos and a second pair of eyes. Sukuna can also open a mouth or eye on Yuji's cheek to talk while Yuji is in control.",
+     "spoiler": false,
+     "confidence": "high",
+     "note": "Numbers are when Yuji eats the first finger.",
+     "sources": [
+      "https://jujutsu-kaisen.fandom.com/wiki/Sukuna",
+      "https://en.wikipedia.org/wiki/Jujutsu_Kaisen_season_1"
+     ]
+    },
+    {
+     "name": "Sukuna in Megumi's body",
+     "group": "other",
+     "firstEpisode": null,
+     "episodeSeries": null,
+     "firstChapter": 212,
+     "chapterSeries": "Jujutsu Kaisen (manga)",
+     "arc": "Culling Game Arc",
+     "what": "Sukuna turns one of Yuji's fingers into a cursed object, forces Megumi to swallow it and moves into Megumi's body. This gives him Megumi's Ten Shadows Technique.",
+     "spoiler": true,
+     "confidence": "high",
+     "note": "Manga only. No anime episode was found in any source checked.",
+     "sources": [
+      "https://jujutsu-kaisen.fandom.com/wiki/Sukuna",
+      "https://en.wikipedia.org/wiki/Ryomen_Sukuna"
+     ]
+    },
+    {
+     "name": "Sukuna's true form",
+     "group": "main",
+     "firstEpisode": null,
+     "episodeSeries": null,
+     "firstChapter": 237,
+     "chapterSeries": "Jujutsu Kaisen (manga)",
+     "arc": "Shinjuku Showdown Arc",
+     "what": "His original Heian-era body: four arms, four eyes and a second mouth on his stomach. The extra arms let him make hand signs while still fighting, and the second mouth can chant without tiring him.",
+     "spoiler": true,
+     "confidence": "high",
+     "note": "The transformation happens in chapter 237. The wiki explains the body's advantages in chapter 238. Manga only.",
+     "sources": [
+      "https://jujutsu-kaisen.fandom.com/wiki/Sukuna",
+      "https://comicbook.com/anime/news/jujutsu-kaisen-237-sukuna-original-body-manga",
+      "https://en.wikipedia.org/wiki/Ryomen_Sukuna"
+     ]
+    }
+   ],
+   "limits": [
+    {
+     "what": "For most of the story he is stuck inside Yuji and rarely in control. His 'Enchain' deal gives him only one minute in charge, and Yuji made him promise not to hurt anyone during it.",
+     "spoiler": false,
+     "confidence": "high",
+     "sources": [
+      "https://jujutsu-kaisen.fandom.com/wiki/Sukuna",
+      "https://en.wikipedia.org/wiki/Jujutsu_Kaisen_season_1"
+     ]
+    },
+    {
+     "what": "His strength depends on how many fingers he has eaten. With only a few, he is far below his full power.",
+     "spoiler": false,
+     "confidence": "medium",
+     "sources": [
+      "https://jujutsu-kaisen.fandom.com/wiki/Sukuna",
+      "https://en.wikipedia.org/wiki/Ryomen_Sukuna"
+     ]
+    },
+    {
+     "what": "After losing a hand, he needed a binding vow to keep using the world-cutting slash: each use now needs the hand sign, the spoken incantation and aiming with his palm.",
+     "spoiler": true,
+     "confidence": "high",
+     "sources": [
+      "https://jujutsu-kaisen.fandom.com/wiki/Shrine",
+      "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+     ]
+    },
+    {
+     "what": "Divine Flame is slow and narrow, so he swore a binding vow not to use it when outnumbered unless he is inside his domain. In return, his domain turns into a giant explosion when he fires it.",
+     "spoiler": true,
+     "confidence": "high",
+     "sources": [
+      "https://jujutsu-kaisen.fandom.com/wiki/Shrine",
+      "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+     ]
+    }
+   ],
+   "beaten": [
+    {
+     "who": "Yuji Itadori (with Nobara, Megumi and the other sorcerers)",
+     "how": "Sukuna killed Gojo, but the remaining sorcerers kept fighting him in relays. Yuji trapped him in his own domain. Nobara's Resonance on the last finger broke Sukuna's domain, and Megumi's soul resisted from inside. Yuji's final punch tore Megumi free, and Sukuna refused Yuji's offer to live with him and disintegrated.",
+     "where": "Shinjuku Showdown Arc; manga chapter 268",
+     "spoiler": true,
+     "confidence": "high",
+     "sources": [
+      "https://jujutsu-kaisen.fandom.com/wiki/Jujutsu_Sorcerers_vs._Sukuna",
+      "https://en.wikipedia.org/wiki/Ryomen_Sukuna"
+     ]
+    }
+   ],
+   "notes": [
+    "Anime episode numbers are series-wide: season 2 episode 1 = episode 25, so episode 41 = season 2 episode 17.",
+    "Chapter numbers are the main Jujutsu Kaisen manga.",
+    "Spoiler cut-off: the Shibuya Incident onward (chapter 83 / episode 30).",
+    "Culling Game and Shinjuku material from chapter 212 on is marked manga only: no source checked gives an anime episode, so firstEpisode is null.",
+    "In the Heian era Sukuna was never defeated. His only loss is the Shinjuku battle."
+   ],
+   "short": "Sukuna",
+   "hook": "Shrine, Malevolent Shrine & the fire arrow",
+   "powersLine": "his cursed technique Shrine (Dismantle and Cleave), the fire arrow, his Domain Expansion Malevolent Shrine, and Reverse Cursed Technique"
+  },
+  "sung-jin-woo": {
+   "name": "Sung Jin-Woo",
+   "series": "Solo Leveling",
+   "summary": "Jin-Woo starts as the weakest E-rank hunter. After nearly dying in the Double Dungeon he becomes the 'Player' of a mysterious System that lets him level up like a video game character. His job change turns him into a necromancer-type class who raises defeated enemies as a loyal shadow army.",
+   "abilities": [
+    {
+     "name": "The System (Player)",
+     "what": "A game-like screen only he can see. It gives him daily quests, levels, stat points, skills, rewards, an inventory and a shop, and sends him to a penalty zone if he skips a daily quest.",
+     "firstEpisode": 2,
+     "episodeSeries": "Solo Leveling (anime)",
+     "firstChapter": 10,
+     "chapterSeries": "Solo Leveling (webtoon)",
+     "spoiler": false,
+     "confidence": "high",
+     "note": "In the anime the 'Player' offer arrives at the end of episode 2 and he sees the System properly in episode 3.",
+     "sources": [
+      "https://solo-leveling.fandom.com/wiki/System",
+      "https://en.wikipedia.org/wiki/Solo_Leveling_season_1"
+     ]
+    },
+    {
+     "name": "Shadow Extraction ('Arise')",
+     "what": "He can pull the shadow out of a defeated enemy's body and raise it as a loyal shadow soldier. It costs no mana and works over a wide area, so he can raise many soldiers at once.",
+     "firstEpisode": 12,
+     "episodeSeries": "Solo Leveling (anime)",
+     "firstChapter": 45,
+     "chapterSeries": "Solo Leveling (webtoon)",
+     "spoiler": false,
+     "confidence": "high",
+     "note": "Gained as the reward for the job-change quest. Wikipedia's episode 12 summary says the anime calls the new title 'Shadow Monarch'.",
+     "sources": [
+      "https://solo-leveling.fandom.com/wiki/Shadow_Extraction",
+      "https://en.wikipedia.org/wiki/Solo_Leveling_season_1"
+     ]
+    },
+    {
+     "name": "Shadow army",
+     "what": "His raised soldiers keep their skills and fight for him. Key soldiers include Igris (the knight from his job-change quest), Iron, Tusk, Kaisel (Baran's dragon) and Beru (the Ant King), who can talk.",
+     "firstEpisode": 12,
+     "episodeSeries": "Solo Leveling (anime)",
+     "firstChapter": 45,
+     "chapterSeries": "Solo Leveling (webtoon)",
+     "spoiler": false,
+     "confidence": "high",
+     "note": "Igris: chapter 45 / episode 12. Beru: chapter 105 / episode 25. Iron, Tusk and Kaisel are raised in episodes 14, 18 and 20.",
+     "sources": [
+      "https://solo-leveling.fandom.com/wiki/Igris",
+      "https://solo-leveling.fandom.com/wiki/Beru",
+      "https://en.wikipedia.org/wiki/Solo_Leveling_season_1",
+      "https://en.wikipedia.org/wiki/Solo_Leveling_season_2"
+     ]
+    },
+    {
+     "name": "Shadow Preservation (Shadow Storage)",
+     "what": "He keeps his shadow soldiers stored inside his own shadow and can summon or recall them at will. At a higher level he can also see and hear through them.",
+     "firstEpisode": 12,
+     "episodeSeries": "Solo Leveling (anime)",
+     "firstChapter": 45,
+     "chapterSeries": "Solo Leveling (webtoon)",
+     "spoiler": false,
+     "confidence": "medium",
+     "note": "Only the Solo Leveling Wiki gives this skill's debut.",
+     "sources": [
+      "https://solo-leveling.fandom.com/wiki/Shadow_Preservation"
+     ]
+    },
+    {
+     "name": "Shadow Exchange",
+     "what": "He swaps places with any of his shadow soldiers, no matter how far away. He gets it for beating Demon King Baran and uses it to join the Jeju Island fight.",
+     "firstEpisode": 20,
+     "episodeSeries": "Solo Leveling (anime)",
+     "firstChapter": 88,
+     "chapterSeries": "Solo Leveling (webtoon)",
+     "spoiler": false,
+     "confidence": "high",
+     "note": "Episode number is from Wikipedia's episode 20 summary. The wiki gives only the webtoon chapter.",
+     "sources": [
+      "https://solo-leveling.fandom.com/wiki/Shadow_Exchange",
+      "https://en.wikipedia.org/wiki/Solo_Leveling_season_2"
+     ]
+    },
+    {
+     "name": "Ruler's Hand",
+     "what": "A telekinesis skill from the rune stone he gets for beating Igris. He uses it to move objects and pull back his thrown dagger.",
+     "firstEpisode": 12,
+     "episodeSeries": "Solo Leveling (anime)",
+     "firstChapter": 40,
+     "chapterSeries": "Solo Leveling (webtoon)",
+     "spoiler": false,
+     "confidence": "medium",
+     "note": "The wiki lists chapter 40 / episode 12 as the debut.",
+     "sources": [
+      "https://solo-leveling.fandom.com/wiki/Ruler's_Authority",
+      "https://solo-leveling.fandom.com/wiki/Dagger_Rush"
+     ]
+    },
+    {
+     "name": "Ruler's Authority",
+     "what": "Ruler's Hand evolves into a full-strength telekinesis that can pin many enemies at once, push off the air to fly and dodge, and work against Monarch-level foes.",
+     "firstEpisode": null,
+     "episodeSeries": null,
+     "firstChapter": 126,
+     "chapterSeries": "Solo Leveling (webtoon)",
+     "spoiler": true,
+     "confidence": "medium",
+     "note": "Evolves during his fight with Kandiaru's statues in the Double Dungeon (webtoon chapter 126). No anime episode yet.",
+     "sources": [
+      "https://solo-leveling.fandom.com/wiki/Ruler's_Authority",
+      "https://solo-leveling.fandom.com/wiki/Sung_Jinwoo"
+     ]
+    },
+    {
+     "name": "Bloodlust (Murderous Intent)",
+     "what": "He frightens targets into freezing in place and halves their stats for a short time. It works on several enemies at once. He first gets it as a reward for the System quest to kill Hwang Dongsuk's group.",
+     "firstEpisode": 6,
+     "episodeSeries": "Solo Leveling (anime)",
+     "firstChapter": 24,
+     "chapterSeries": "Solo Leveling (webtoon)",
+     "spoiler": false,
+     "confidence": "high",
+     "note": "The anime calls it Murderous Intent.",
+     "sources": [
+      "https://solo-leveling.fandom.com/wiki/Bloodlust",
+      "https://en.wikipedia.org/wiki/Solo_Leveling_season_1"
+     ]
+    },
+    {
+     "name": "Quicksilver (Sprint / Dash)",
+     "what": "A speed boost that starts at +30% and grows as the skill levels up.",
+     "firstEpisode": 6,
+     "episodeSeries": "Solo Leveling (anime)",
+     "firstChapter": 22,
+     "chapterSeries": "Solo Leveling (webtoon)",
+     "spoiler": false,
+     "confidence": "medium",
+     "sources": [
+      "https://solo-leveling.fandom.com/wiki/Quicksilver"
+     ]
+    },
+    {
+     "name": "Mutilation (Critical Attack / Fatal Strike)",
+     "what": "A dagger skill that targets vital points. Its evolved form rips an enemy apart with a rapid chain of slashes.",
+     "firstEpisode": 10,
+     "episodeSeries": "Solo Leveling (anime)",
+     "firstChapter": 36,
+     "chapterSeries": "Solo Leveling (webtoon)",
+     "spoiler": false,
+     "confidence": "medium",
+     "sources": [
+      "https://solo-leveling.fandom.com/wiki/Mutilation"
+     ]
+    },
+    {
+     "name": "Dagger Rush (Dagger Throw)",
+     "what": "He throws daggers with high accuracy. The evolved version hits the target with daggers from every direction.",
+     "firstEpisode": 12,
+     "episodeSeries": "Solo Leveling (anime)",
+     "firstChapter": 43,
+     "chapterSeries": "Solo Leveling (webtoon)",
+     "spoiler": false,
+     "confidence": "medium",
+     "sources": [
+      "https://solo-leveling.fandom.com/wiki/Dagger_Rush"
+     ]
+    },
+    {
+     "name": "Stealth",
+     "what": "He hides his body and presence, becoming physically and magically invisible. It drains mana quickly.",
+     "firstEpisode": 9,
+     "episodeSeries": "Solo Leveling (anime)",
+     "firstChapter": 33,
+     "chapterSeries": "Solo Leveling (webtoon)",
+     "spoiler": false,
+     "confidence": "medium",
+     "note": "The numbers are the skill's debut, when Kang Taeshik uses it on Jin-Woo's group. Jin-Woo uses it after that.",
+     "sources": [
+      "https://solo-leveling.fandom.com/wiki/Stealth",
+      "https://en.wikipedia.org/wiki/Solo_Leveling_season_1"
+     ]
+    },
+    {
+     "name": "Monarch's Domain",
+     "what": "His shadow spreads over the battlefield and makes all his shadow soldiers 50% stronger.",
+     "firstEpisode": null,
+     "episodeSeries": null,
+     "firstChapter": 73,
+     "chapterSeries": "Solo Leveling (webtoon)",
+     "spoiler": false,
+     "confidence": "medium",
+     "note": "Only the webtoon chapter is listed. No anime episode is cited.",
+     "sources": [
+      "https://solo-leveling.fandom.com/wiki/Monarch's_Domain",
+      "https://solo-leveling.fandom.com/wiki/Sung_Jinwoo"
+     ]
+    },
+    {
+     "name": "Dragon's Fear",
+     "what": "A mana-filled roar that throws everyone weaker than him into panic and despair.",
+     "firstEpisode": null,
+     "episodeSeries": null,
+     "firstChapter": null,
+     "chapterSeries": null,
+     "spoiler": true,
+     "confidence": "medium",
+     "note": "The wiki gives only a web novel chapter (173), so the webtoon chapter is left null.",
+     "sources": [
+      "https://solo-leveling.fandom.com/wiki/Dragon's_Fear",
+      "https://solo-leveling.fandom.com/wiki/Sung_Jinwoo"
+     ]
+    },
+    {
+     "name": "Shadow Monarch's true power",
+     "what": "He learns he was chosen as the successor of Ashborn, the original Shadow Monarch, and inherits his full power: he stops aging, gains near-unlimited mana and total control of shadows, and Shadow Exchange loses its limits so he can teleport anywhere.",
+     "firstEpisode": null,
+     "episodeSeries": null,
+     "firstChapter": null,
+     "chapterSeries": null,
+     "spoiler": true,
+     "confidence": "medium",
+     "note": "ComicBook places his meeting with Ashborn in webtoon chapter 162 and his return in chapter 164. The wiki puts the upgraded Shadow Exchange at chapter 165. No single first chapter is given here.",
+     "sources": [
+      "https://solo-leveling.fandom.com/wiki/Sung_Jinwoo",
+      "https://solo-leveling.fandom.com/wiki/Ashborn",
+      "https://en.wikipedia.org/wiki/Sung_Jin-woo",
+      "https://comicbook.com/anime/news/solo-leveling-best-fight-jinwoo-vs-three-monarchs"
+     ]
+    }
+   ],
+   "forms": [],
+   "limits": [
+    {
+     "what": "Skipping the System's daily quest sends him to a deadly penalty zone. He nearly dies the first time.",
+     "spoiler": false,
+     "confidence": "high",
+     "sources": [
+      "https://en.wikipedia.org/wiki/Solo_Leveling_season_1",
+      "https://solo-leveling.fandom.com/wiki/Sung_Jinwoo/History"
+     ]
+    },
+    {
+     "what": "Shadow Extraction can fail. The odds depend on how strong the target is and how long it has been dead, he gets only three tries per corpse, and targets much stronger than him cannot be raised.",
+     "spoiler": false,
+     "confidence": "high",
+     "sources": [
+      "https://solo-leveling.fandom.com/wiki/Shadow_Extraction"
+     ]
+    },
+    {
+     "what": "Shadow Extraction cannot raise Rulers or Monarchs, whose bodies are made of mana.",
+     "spoiler": true,
+     "confidence": "medium",
+     "sources": [
+      "https://solo-leveling.fandom.com/wiki/Shadow_Extraction"
+     ]
+    },
+    {
+     "what": "Stealth can be seen through by mages and monsters with detection skills. In the anime, mages break his Stealth in episode 11.",
+     "spoiler": false,
+     "confidence": "medium",
+     "sources": [
+      "https://solo-leveling.fandom.com/wiki/Stealth"
+     ]
+    },
+    {
+     "what": "At first, Shadow Exchange only worked if a shadow soldier was already at the destination, and it had a three-hour cooldown.",
+     "spoiler": false,
+     "confidence": "high",
+     "sources": [
+      "https://solo-leveling.fandom.com/wiki/Shadow_Exchange"
+     ]
+    },
+    {
+     "what": "Dragon's Fear hits everyone weaker than him nearby, allies included, and does nothing to stronger enemies.",
+     "spoiler": true,
+     "confidence": "medium",
+     "sources": [
+      "https://solo-leveling.fandom.com/wiki/Dragon's_Fear"
+     ]
+    }
+   ],
+   "beaten": [
+    {
+     "who": "The statues of the Double Dungeon (Statue of God)",
+     "how": "Already missing a leg, Jin-Woo stayed behind so the others could escape and was skewered by the statues. As he was dying, the System offered him the chance to become a Player and he accepted.",
+     "where": "Double Dungeon; webtoon chapter 10, anime episode 2",
+     "spoiler": false,
+     "confidence": "high",
+     "sources": [
+      "https://solo-leveling.fandom.com/wiki/Sung_Jinwoo/History",
+      "https://en.wikipedia.org/wiki/Solo_Leveling_season_1"
+     ]
+    },
+    {
+     "who": "Rakan (with Sillad), Monarchs",
+     "how": "While Jin-Woo was fighting Sillad, Rakan struck him from behind with a fatal blow. Inside, Jin-Woo met Ashborn, came back with the Shadow Monarch's full power and defeated both of them.",
+     "where": "Monarchs War Arc; fatal blow in webtoon chapter 161, return in chapter 164",
+     "spoiler": true,
+     "confidence": "high",
+     "sources": [
+      "https://comicbook.com/anime/news/solo-leveling-best-fight-jinwoo-vs-three-monarchs",
+      "https://solo-leveling.fandom.com/wiki/Ashborn",
+      "https://solo-leveling.fandom.com/wiki/Sung_Jinwoo"
+     ]
+    }
+   ],
+   "notes": [
+    "Chapter numbers are the Solo Leveling webtoon (KakaoPage / Webtoon). Web novel numbers are different and are only mentioned in notes.",
+    "Episode numbers run across seasons: season 1 is episodes 1–12 and season 2 (Arise from the Shadow) is episodes 13–25.",
+    "Spoiler cut-off: anything after season 2 ends (webtoon chapter 110), plus everything about what being the 'Shadow Monarch' really means (Ashborn, Rulers, Monarchs).",
+    "Most debut numbers come only from the Solo Leveling Wiki's skill infoboxes. Wikipedia's episode summaries confirm System, Shadow Extraction, the soldiers, Shadow Exchange and Bloodlust.",
+    "No sourced transformations, so forms is empty."
+   ],
+   "short": "Sung Jin-Woo",
+   "hook": "The System, Shadow Extraction & the shadow army",
+   "powersLine": "the System that levels him up, Shadow Extraction ('Arise') and his shadow army, Shadow Exchange, Ruler's Hand, and his dagger skills"
+  },
+  "itachi-uchiha": {
+   "name": "Itachi Uchiha",
+   "series": "Naruto",
+   "summary": "Itachi is an Uchiha prodigy and Sasuke's older brother, known as the man who wiped out his own clan and joined the Akatsuki. He is one of the series' best genjutsu users. His Mangekyō Sharingan gives him a mind-breaking illusion, black flames that will not go out, and a giant spectral guardian, but every use costs him his eyesight.",
+   "abilities": [
+    {
+     "name": "Sharingan",
+     "what": "He awakened the Sharingan at age 8. It lets him see chakra, read and predict movements, and cast genjutsu with a look. He can even turn an enemy's genjutsu back on them.",
+     "firstEpisode": 81,
+     "episodeSeries": "Naruto",
+     "firstChapter": 141,
+     "chapterSeries": "Naruto (manga)",
+     "spoiler": false,
+     "confidence": "medium",
+     "note": "Numbers are the debut of the genjutsu he reflects back at Kurenai in his first fight in Konoha. Wikipedia's episode 82 summary describes his Sharingan duel with Kakashi.",
+     "sources": [
+      "https://naruto.fandom.com/wiki/Itachi_Uchiha",
+      "https://naruto.fandom.com/wiki/Demonic_Illusion:_Mirror_Heaven_and_Earth_Change",
+      "https://en.wikipedia.org/wiki/Naruto_season_2"
+     ]
+    },
+    {
+     "name": "Genjutsu",
+     "what": "His specialty. His illusions are strong even without the Sharingan, can be cast just by pointing, and often use crows. He uses them to pass on information or to end a fight instantly.",
+     "firstEpisode": 81,
+     "episodeSeries": "Naruto",
+     "firstChapter": 141,
+     "chapterSeries": "Naruto (manga)",
+     "spoiler": false,
+     "confidence": "medium",
+     "note": "Same debut as the Sharingan entry.",
+     "sources": [
+      "https://naruto.fandom.com/wiki/Itachi_Uchiha",
+      "https://naruto.fandom.com/wiki/Demonic_Illusion:_Mirror_Heaven_and_Earth_Change"
+     ]
+    },
+    {
+     "name": "Mangekyō Sharingan",
+     "what": "His advanced Sharingan, awakened after Shisui's death, with a three-curve pattern. It unlocks Tsukuyomi, Amaterasu and, with both eyes, Susanoo.",
+     "firstEpisode": 82,
+     "episodeSeries": "Naruto",
+     "firstChapter": 142,
+     "chapterSeries": "Naruto (manga)",
+     "spoiler": false,
+     "confidence": "high",
+     "note": "The full story of how he awakened it is part of the later reveals about Itachi.",
+     "sources": [
+      "https://naruto.fandom.com/wiki/Mangekyō_Sharingan",
+      "https://naruto.fandom.com/wiki/Itachi_Uchiha",
+      "https://en.wikipedia.org/wiki/Naruto_season_2"
+     ]
+    },
+    {
+     "name": "Tsukuyomi",
+     "what": "A Mangekyō genjutsu that traps the victim in a world Itachi controls, where days of torture can pass in an instant. It can break the mind badly enough to put strong ninja in the hospital.",
+     "firstEpisode": 82,
+     "episodeSeries": "Naruto",
+     "firstChapter": 142,
+     "chapterSeries": "Naruto (manga)",
+     "spoiler": false,
+     "confidence": "high",
+     "note": "Used on Kakashi in episode 82 and on Sasuke in episodes 84–85.",
+     "sources": [
+      "https://naruto.fandom.com/wiki/Tsukuyomi",
+      "https://en.wikipedia.org/wiki/Naruto_season_2",
+      "https://en.wikipedia.org/wiki/Naruto_season_3"
+     ]
+    },
+    {
+     "name": "Amaterasu",
+     "what": "Black flames that ignite wherever he looks, using his right eye. They burn even through other fire and do not go out until he lets them.",
+     "firstEpisode": 85,
+     "episodeSeries": "Naruto",
+     "firstChapter": 148,
+     "chapterSeries": "Naruto (manga)",
+     "spoiler": false,
+     "confidence": "high",
+     "note": "Numbers are the wiki's debut, in his Part I clash with Jiraiya. Wikipedia's Shippuden episode 137 summary shows him using it on Sasuke.",
+     "sources": [
+      "https://naruto.fandom.com/wiki/Amaterasu",
+      "https://naruto.fandom.com/wiki/Itachi_Uchiha",
+      "https://en.wikipedia.org/wiki/Naruto:_Shippuden_season_6"
+     ]
+    },
+    {
+     "name": "Susanoo",
+     "what": "Using both Mangekyō eyes, he summons a giant spectral warrior around himself that blocks almost any attack. Even partial versions give him extra arms or ribs for defense.",
+     "firstEpisode": 138,
+     "episodeSeries": "Naruto Shippuden",
+     "firstChapter": 391,
+     "chapterSeries": "Naruto (manga)",
+     "spoiler": false,
+     "confidence": "high",
+     "note": "Revealed in his fight with Sasuke. Episode 138 is Naruto Shippuden numbering.",
+     "sources": [
+      "https://naruto.fandom.com/wiki/Susanoo",
+      "https://naruto.fandom.com/wiki/Itachi_Uchiha",
+      "https://en.wikipedia.org/wiki/Naruto:_Shippuden_season_6"
+     ]
+    },
+    {
+     "name": "Sword of Totsuka",
+     "what": "The ethereal sword of Itachi's Susanoo. Anyone it pierces is sealed inside the gourd at its hilt.",
+     "firstEpisode": 138,
+     "episodeSeries": "Naruto Shippuden",
+     "firstChapter": 392,
+     "chapterSeries": "Naruto (manga)",
+     "spoiler": false,
+     "confidence": "high",
+     "sources": [
+      "https://naruto.fandom.com/wiki/Sword_of_Totsuka",
+      "https://naruto.fandom.com/wiki/Itachi_Uchiha",
+      "https://en.wikipedia.org/wiki/Itachi_Uchiha"
+     ]
+    },
+    {
+     "name": "Yata Mirror",
+     "what": "The shield of Itachi's Susanoo. It is said to bounce back any attack by changing its chakra nature to cancel it out. With the sword and shield together, his Susanoo is described as almost invincible.",
+     "firstEpisode": 138,
+     "episodeSeries": "Naruto Shippuden",
+     "firstChapter": 392,
+     "chapterSeries": "Naruto (manga)",
+     "spoiler": false,
+     "confidence": "medium",
+     "sources": [
+      "https://naruto.fandom.com/wiki/Yata_Mirror",
+      "https://naruto.fandom.com/wiki/Itachi_Uchiha"
+     ]
+    },
+    {
+     "name": "Shadow Clone Explosion",
+     "what": "He makes shadow clones that blow up, using them as decoys that explode in the enemy's face.",
+     "firstEpisode": 82,
+     "episodeSeries": "Naruto",
+     "firstChapter": 142,
+     "chapterSeries": "Naruto (manga)",
+     "spoiler": false,
+     "confidence": "medium",
+     "note": "The English anime calls it Shadow Clone Explosion. The wiki's name is Clone Great Explosion.",
+     "sources": [
+      "https://naruto.fandom.com/wiki/Clone_Great_Explosion",
+      "https://naruto.fandom.com/wiki/Itachi_Uchiha"
+     ]
+    },
+    {
+     "name": "Crow Clone and crows",
+     "what": "He summons flocks of crows to distract and blind opponents, and builds crows into clones of himself.",
+     "firstEpisode": 14,
+     "episodeSeries": "Naruto Shippuden",
+     "firstChapter": 259,
+     "chapterSeries": "Naruto (manga)",
+     "spoiler": false,
+     "confidence": "medium",
+     "note": "Episode 14 is Naruto Shippuden numbering.",
+     "sources": [
+      "https://naruto.fandom.com/wiki/Crow_Clone_Technique",
+      "https://naruto.fandom.com/wiki/Itachi_Uchiha"
+     ]
+    },
+    {
+     "name": "Fire Release",
+     "what": "As an Uchiha he is a master of fire. He learned the clan's Great Fireball Technique very young and coats shuriken in flames. He can also use Water Release without a nearby water source.",
+     "firstEpisode": null,
+     "episodeSeries": null,
+     "firstChapter": null,
+     "chapterSeries": null,
+     "spoiler": false,
+     "confidence": "medium",
+     "note": "No first chapter or episode was confirmed.",
+     "sources": [
+      "https://naruto.fandom.com/wiki/Itachi_Uchiha"
+     ]
+    },
+    {
+     "name": "Amaterasu sealed in Sasuke's eye",
+     "what": "Before dying, Itachi poked Sasuke's forehead and sealed Amaterasu into his eye, set to fire automatically if Tobi's Sharingan ever met it.",
+     "firstEpisode": 139,
+     "episodeSeries": "Naruto Shippuden",
+     "firstChapter": 397,
+     "chapterSeries": "Naruto (manga)",
+     "spoiler": true,
+     "confidence": "high",
+     "note": "Chapter 397 is where the seal is explained (wiki). Wikipedia's Shippuden episode 139 summary shows the flames bursting from Sasuke's eye at Tobi.",
+     "sources": [
+      "https://naruto.fandom.com/wiki/Itachi_Uchiha",
+      "https://en.wikipedia.org/wiki/Naruto:_Shippuden_season_6",
+      "https://en.wikipedia.org/wiki/Itachi_Uchiha"
+     ]
+    },
+    {
+     "name": "Izanami",
+     "what": "An Uchiha genjutsu that traps the target in an endless loop of the same moments. The only way out is to stop fighting fate and accept who you are. Itachi uses it on Kabuto to make him end the Impure World Reincarnation.",
+     "firstEpisode": 337,
+     "episodeSeries": "Naruto Shippuden",
+     "firstChapter": 586,
+     "chapterSeries": "Naruto (manga)",
+     "spoiler": true,
+     "confidence": "high",
+     "note": "Fourth Great Ninja War, so it is a spoiler.",
+     "sources": [
+      "https://naruto.fandom.com/wiki/Izanami",
+      "https://en.wikipedia.org/wiki/Naruto:_Shippuden_season_15",
+      "https://en.wikipedia.org/wiki/Itachi_Uchiha"
+     ]
+    }
+   ],
+   "forms": [],
+   "limits": [
+    {
+     "what": "Every use of the Mangekyō Sharingan worsens his eyesight. At first his eyes only bled, but by his fight with Sasuke he can barely see. He tells Sasuke the only cure is to take a sibling's eyes.",
+     "spoiler": false,
+     "confidence": "high",
+     "sources": [
+      "https://naruto.fandom.com/wiki/Itachi_Uchiha",
+      "https://en.wikipedia.org/wiki/Naruto:_Shippuden_season_6"
+     ]
+    },
+    {
+     "what": "The Mangekyō uses a huge amount of chakra. Three uses in one day left him unable to use even the normal Sharingan until he had rested a long time.",
+     "spoiler": false,
+     "confidence": "high",
+     "sources": [
+      "https://naruto.fandom.com/wiki/Itachi_Uchiha",
+      "https://naruto.fandom.com/wiki/Amaterasu"
+     ]
+    },
+    {
+     "what": "He was secretly dying of an incurable illness, kept alive by medicine and willpower so he could last until Sasuke came for him. That is why he avoided long fights. After he was brought back by Impure World Reincarnation, his illness and eye damage were gone.",
+     "spoiler": true,
+     "confidence": "high",
+     "sources": [
+      "https://naruto.fandom.com/wiki/Itachi_Uchiha",
+      "https://en.wikipedia.org/wiki/Itachi_Uchiha"
+     ]
+    },
+    {
+     "what": "Izanami always leaves an escape route: the victim gets out by accepting their fate. Itachi chose to give Kabuto that chance.",
+     "spoiler": true,
+     "confidence": "high",
+     "sources": [
+      "https://naruto.fandom.com/wiki/Izanami",
+      "https://en.wikipedia.org/wiki/Naruto:_Shippuden_season_15"
+     ]
+    }
+   ],
+   "beaten": [
+    {
+     "who": "Sasuke Uchiha",
+     "how": "Their fight seems to end in Sasuke's favour. Itachi survives Kirin with Susanoo and seals away Orochimaru, but then, coughing blood and with Sasuke helpless in front of him, he only pokes Sasuke's forehead and collapses dead. The series later reveals he was already dying of illness and had planned the fight to free Sasuke from Orochimaru and make him a hero.",
+     "where": "Fated Battle Between Brothers; manga chapter 393, Naruto Shippuden episode 138",
+     "spoiler": true,
+     "confidence": "high",
+     "sources": [
+      "https://naruto.fandom.com/wiki/Itachi_Uchiha",
+      "https://naruto.fandom.com/wiki/The_End",
+      "https://en.wikipedia.org/wiki/Naruto:_Shippuden_season_6",
+      "https://en.wikipedia.org/wiki/Itachi_Uchiha"
+     ]
+    }
+   ],
+   "notes": [
+    "Episode numbers use the 'episodeSeries' field: Naruto (2002) for Part I, Naruto Shippuden for Part II. Do not mix them.",
+    "Spoiler cut-off: the Fourth Great Ninja War (about chapter 515 / Shippuden episode 197) and the truth behind Itachi (chapter 399 onward). His illness, his real plan for the Sasuke fight and his later reveals are all marked as spoilers.",
+    "Ability numbers are the Naruto Wiki's 'debut manga' and 'debut anime' fields. For Tsukuyomi, Amaterasu, Susanoo, Totsuka, Yata, Shadow Clone Explosion and Izanami, Itachi is the first person to use the technique.",
+    "In the main story, the Sasuke fight is the only time Itachi 'loses', and the series presents it as a loss he chose."
+   ],
+   "short": "Itachi",
+   "hook": "Sharingan, Tsukuyomi, Amaterasu & Susanoo",
+   "powersLine": "his Sharingan and genjutsu, the Mangekyō Sharingan (Tsukuyomi, Amaterasu and Susanoo with the Sword of Totsuka and Yata Mirror), Shadow Clone Explosion and Izanami"
   }
  }
 }
