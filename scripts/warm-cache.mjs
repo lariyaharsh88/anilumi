@@ -1,6 +1,7 @@
 // Builds every page before real visitors or Google ask for it: loads the whole sitemap through anilumi.in (the edge
 // cache and the Workers app), so each page is rendered once and stored (edge cache, saved copy, app page cache).
-// Order: pages Google already shows most (data/warm-priority.json, from a Search Console export), today's and the
+// Order: the pages visitors open most (data/warm-priority.json `visitors`, from Cloudflare Web Analytics), pages
+// Google already shows most (`paths`, from a Search Console export), today's and the
 // coming days' birthday pages, then the sitemap by priority. CONC pages at a time; a page that was already cached
 // costs no render, so a full pass over a warm site takes minutes. Runs from .github/workflows/warm-cache.yml.
 // SCOPE=top (the 6-hourly pass) stops after those first pages: warming the whole long tail every 6 hours re-rendered
@@ -22,8 +23,11 @@ const LINKS = TOP_ONLY ? 0 : Number(process.env.LINKS ?? 3000);
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 let priority = [];
+let visitors = [];
 try {
-  priority = JSON.parse(readFileSync(new URL("../data/warm-priority.json", import.meta.url), "utf8")).paths;
+  const list = JSON.parse(readFileSync(new URL("../data/warm-priority.json", import.meta.url), "utf8"));
+  priority = list.paths;
+  visitors = list.visitors || []; // the pages real visitors open most (Cloudflare Web Analytics): first of all
 } catch { /* no list: sitemap order only */ }
 
 // Birthday pages for today and the next 3 days in Japan: "october 31 anime birthdays" is searched on the day.
@@ -43,7 +47,7 @@ const bySitemap = [...xml.matchAll(/<url>([\s\S]*?)<\/url>/g)]
   .filter((u) => u.loc)
   .sort((a, b) => b.p - a.p)
   .map((u) => { const x = new URL(u.loc); return x.pathname + x.search; }); // sitemap lists anilumi.in; base may be the origin
-const urls = [...new Set(["/", "/birthdays", ...days, ...priority, ...(TOP_ONLY ? [] : bySitemap)])].slice(0, LIMIT).map((p) => base + p);
+const urls = [...new Set([...visitors, "/", "/birthdays", ...days, ...priority, ...(TOP_ONLY ? [] : bySitemap)])].slice(0, LIMIT).map((p) => base + p);
 
 const tally = { cached: 0, built: 0, failed: 0 };
 const slow = [];

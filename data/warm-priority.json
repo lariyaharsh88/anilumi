@@ -1,5 +1,5 @@
 {
- "source": "Search Console, 9 Nov 2026: the 315 pages that returned server errors 29 Oct\u20131 Nov (re-checked by 'Validate fix'), then pages by impressions and clicks, 22 Oct\u20138 Nov. `shown` (15 Nov 2026): pages Google still shows after the 1 Nov drop, i.e. every page with a click 18 Oct\u201313 Nov or an impression 7\u201313 Nov (birthday pages, always indexed, left out); lib/indexing.ts",
+ "source": "Search Console, 9 Nov 2026: the 315 pages that returned server errors 29 Oct–1 Nov (re-checked by 'Validate fix'), then pages by impressions and clicks, 22 Oct–8 Nov. `shown` (15 Nov 2026): pages Google still shows after the 1 Nov drop, i.e. every page with a click 18 Oct–13 Nov or an impression 7–13 Nov (birthday pages, always indexed, left out); lib/indexing.ts",
  "paths": [
   "/voice-actor/109131-kotori-koiwai",
   "/character/piccolo",
@@ -1146,5 +1146,23 @@
   "/watch-order/shingeki-no-kyojin-3-part-2",
   "/watch-order/the-melancholy-of-haruhi-suzumiya",
   "/watch-order/zankyou-no-terror"
- ]
+ ],
+ "visitors": [
+  "/hindi-dub",
+  "/search",
+  "/what-anime-is-this",
+  "/hi/hindi-dub",
+  "/",
+  "/tamil-dub",
+  "/anime/naruto-shippuden",
+  "/telugu-dub",
+  "/hindi-dub/movies/doraemon",
+  "/top/rated",
+  "/dub-schedule",
+  "/anime/attack-on-titan/hindi-dub",
+  "/anime/attack-on-titan",
+  "/anime/naruto/hindi-dub",
+  "/anime-streaming-sites"
+ ],
+ "visitorsSource": "Cloudflare Web Analytics (bots excluded), top 15 paths by page views, 27 Oct-26 Nov 2026 (40%+ of all page views). Warmed first, in both the 6-hourly and the post-release pass: after a release no copy of the old build can be shown to visitors, so these would otherwise render for real people."
 }
