@@ -31,6 +31,7 @@ import { KIDS_TV_CHECKED, KIDS_TV_PATH, kidsChannel } from "@/lib/kidstv";
 import { PRICES_CHECKED } from "@/lib/platformprices";
 import { indexedSimilar } from "@/lib/similarhub";
 import funimation from "@/data/funimation.json";
+import { GEMS_UPDATED } from "@/lib/underrated";
 import crunchyrollPlans from "@/data/crunchyroll-plans.json";
 import { searchShown, searchShownPaths, animeIndexed, ownContentSlugs, watchOrderIndexed, characterTableIndexed, notedCharacters, demandCharacters, genreIndexed, bestYearIndexed, trendIndexed, voiceActorIndexed, hindiDubIndexed, SEARCHED_COMPARES } from "@/lib/indexing";
 import franchiseData from "@/data/franchises.json";
@@ -114,6 +115,7 @@ export async function sitemapEntries(): Promise<MetadataRoute.Sitemap> {
     { url: abs("/anime-salt-alternatives"), lastModified: at(D.dubs, HINDI_HUB_UPDATED, DUB_GUIDES_ADDED), changeFrequency: "monthly", priority: 0.7 },
     { url: abs("/download-anime-in-hindi"), lastModified: at(D.dubs, PRICES_CHECKED), changeFrequency: "monthly", priority: 0.7 },
     { url: abs("/crunchyroll-price-india"), lastModified: at(PRICES_CHECKED, D.dubs, D.regionalDubs), changeFrequency: "monthly", priority: 0.7 },
+    { url: abs("/underrated-anime"), lastModified: at(GEMS_UPDATED), changeFrequency: "monthly", priority: 0.7 },
     { url: abs("/crunchyroll-price"), lastModified: at(CRUNCHYROLL_CHECKED), changeFrequency: "weekly", priority: 0.7 },
     { url: abs("/funimation"), lastModified: at(FUNIMATION_CHECKED), changeFrequency: "yearly", priority: 0.6 },
     ...HINDI_SLUGS.filter(hindiIndexed).map((s) => ({ url: abs(hindiPath(s)), lastModified: at(D.watchOrders, D.dubs), changeFrequency: "weekly" as const, priority: 0.6, alternates: { languages: { en: abs(`/watch-order/${s}`), hi: abs(hindiPath(s)) } } })),
