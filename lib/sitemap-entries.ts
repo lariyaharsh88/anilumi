@@ -34,6 +34,7 @@ import funimation from "@/data/funimation.json";
 import { GEMS_UPDATED } from "@/lib/underrated";
 import { STRONGEST_CHECKED, rankingSlugs, strongestPath } from "@/lib/strongest";
 import { POWERS_CHECKED, powersSlugs, powersPath } from "@/lib/powers";
+import { CLASSIC_CHECKED, DIRECTORS, directorPath, type DirectorSlug } from "@/lib/classicfilms";
 import crunchyrollPlans from "@/data/crunchyroll-plans.json";
 import opMc from "@/data/op-mc-anime.json";
 import opBounties from "@/data/one-piece-bounties.json";
@@ -122,6 +123,8 @@ export async function sitemapEntries(): Promise<MetadataRoute.Sitemap> {
     { url: abs("/download-anime-in-hindi"), lastModified: at(D.dubs, PRICES_CHECKED), changeFrequency: "monthly", priority: 0.7 },
     { url: abs("/crunchyroll-price-india"), lastModified: at(PRICES_CHECKED, D.dubs, D.regionalDubs), changeFrequency: "monthly", priority: 0.7 },
     ...powersSlugs().map((s) => ({ url: abs(powersPath(s)), lastModified: at(POWERS_CHECKED), changeFrequency: "monthly" as const, priority: 0.7 })),
+    { url: abs("/classic-anime-movies"), lastModified: at(CLASSIC_CHECKED), changeFrequency: "monthly", priority: 0.7 },
+    ...(Object.keys(DIRECTORS) as DirectorSlug[]).map((s) => ({ url: abs(directorPath(s)), lastModified: at(CLASSIC_CHECKED), changeFrequency: "monthly" as const, priority: 0.7 })),
     { url: abs("/one-piece-bounties"), lastModified: at(BOUNTY_RANK_CHECKED), changeFrequency: "weekly", priority: 0.7 },
     { url: abs("/strongest-anime-characters"), lastModified: at(STRONGEST_CHECKED), changeFrequency: "monthly", priority: 0.7 },
     ...rankingSlugs().map((s) => ({ url: abs(strongestPath(s)), lastModified: at(STRONGEST_CHECKED), changeFrequency: "monthly" as const, priority: 0.7 })),

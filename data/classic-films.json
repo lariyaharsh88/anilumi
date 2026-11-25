@@ -1,0 +1,1284 @@
+{
+ "checked": "2026-11-25",
+ "films": [
+  {
+   "t": "Royal Space Force: The Wings of Honnêamise",
+   "year": 1987,
+   "director": "Hiroyuki Yamaga",
+   "kitsu": "ouritsu-uchuugun-honneamise-no-tsubasa",
+   "group": "classic",
+   "regions": {
+    "US": [],
+    "IN": [],
+    "GB": [
+     {
+      "service": "Prime Video",
+      "kind": "buy",
+      "audio": [
+       "ja",
+       "en"
+      ],
+      "url": "https://watch.amazon.co.uk/detail?gti=amzn1.dv.gti.e146cde0-4d53-4634-9806-067e9696d32e",
+      "confidence": "medium"
+     },
+     {
+      "service": "Apple TV",
+      "kind": "buy",
+      "audio": [
+       "ja",
+       "en"
+      ],
+      "url": "https://tv.apple.com/gb/movie/royal-space-force-the-wings-of-honneamise/umc.cmc.3p0zznapdmnf20oe1tquurtrp",
+      "confidence": "medium"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.justwatch.com/us/movie/royal-space-force-wings-of-honneamise",
+    "https://www.justwatch.com/uk/movie/royal-space-force-the-wings-of-honneamise",
+    "https://www.livechart.me/anime/4404/streams"
+   ],
+   "note": "No subscription or free stream found in any of the three countries. US: JustWatch lists only the Blu-ray (no digital rental); one aggregator mentions HIDIVE but JustWatch and HIDIVE links do not confirm it. IN: not in JustWatch India's catalogue. GB: rent/buy on Prime Video, Apple TV, Sky Store per JustWatch UK. 'buy' entries mean rent or buy."
+  },
+  {
+   "t": "Akira",
+   "year": 1988,
+   "director": "Katsuhiro Otomo",
+   "kitsu": "akira",
+   "group": "classic",
+   "regions": {
+    "US": [
+     {
+      "service": "Crunchyroll",
+      "kind": "subscription",
+      "audio": [
+       "ja",
+       "en"
+      ],
+      "url": "https://www.crunchyroll.com/watch/GPWUK44ZQ",
+      "confidence": "medium"
+     }
+    ],
+    "IN": [],
+    "GB": [
+     {
+      "service": "Disney+",
+      "kind": "subscription",
+      "audio": [
+       "ja",
+       "en"
+      ],
+      "url": "https://www.disneyplus.com/browse/entity-bfa0745e-a8c9-4202-866b-edb3c7d8d634",
+      "confidence": "high"
+     },
+     {
+      "service": "Netflix",
+      "kind": "subscription",
+      "audio": [],
+      "url": "https://www.netflix.com/title/60021103",
+      "confidence": "medium"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.justwatch.com/us/movie/akira",
+    "https://www.justwatch.com/in/movie/akira-1988",
+    "https://www.justwatch.com/uk/movie/akira",
+    "https://press.disneyplus.com/news/disneyplus-animeltd",
+    "https://www.netflix.com/in/title/60021103"
+   ],
+   "note": "US: Crunchyroll (also via the Crunchyroll Prime Video channel); JustWatch lists Japanese and English audio. IN: no legal stream, rental or purchase listed on JustWatch India, and Netflix's title 60021103 returns 404 on netflix.com/in. GB: Disney+ (part of the July 2026 Disney+/Anime Ltd deal, tagged UK & Ireland only) and Netflix per JustWatch UK; the Netflix UK listing is JustWatch-only (a 2026 German report says Netflix dropped it there), UK Netflix audio not confirmed. Searches: Keyword Planner (Nov 2026) about 450K/month in the US, noted in lib/ghibli.ts.",
+   "searches": {
+    "US": 450000
+   }
+  },
+  {
+   "t": "Ninja Scroll",
+   "year": 1993,
+   "director": "Yoshiaki Kawajiri",
+   "kitsu": "juubee-ninpuuchou",
+   "group": "classic",
+   "regions": {
+    "US": [
+     {
+      "service": "HIDIVE",
+      "kind": "subscription",
+      "audio": [
+       "ja",
+       "en"
+      ],
+      "url": "https://www.hidive.com/interstitial/715215",
+      "confidence": "high"
+     }
+    ],
+    "IN": [],
+    "GB": []
+   },
+   "sources": [
+    "https://www.justwatch.com/us/movie/jubei-ninpucho",
+    "https://www.justwatch.com/in/movie/ninja-scroll",
+    "https://www.justwatch.com/uk/movie/ninja-scroll",
+    "https://www.hidive.com/interstitial/715215"
+   ],
+   "note": "US: HIDIVE (Japanese + English audio per JustWatch's HIDIVE Prime Video channel listing). IN and GB: no stream, rental or purchase listed on JustWatch."
+  },
+  {
+   "t": "Ghost in the Shell",
+   "year": 1995,
+   "director": "Mamoru Oshii",
+   "kitsu": "ghost-in-the-shell",
+   "group": "classic",
+   "regions": {
+    "US": [
+     {
+      "service": "MovieSphere+ (Prime Video Channels)",
+      "kind": "subscription",
+      "audio": [
+       "en"
+      ],
+      "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.075ca341-5bdc-478d-8a8c-99b83e95b2da",
+      "confidence": "medium"
+     },
+     {
+      "service": "Hoopla",
+      "kind": "free",
+      "audio": [
+       "en"
+      ],
+      "url": "https://www.hoopladigital.com/title/11078910",
+      "confidence": "high"
+     },
+     {
+      "service": "Fandango at Home",
+      "kind": "free",
+      "audio": [
+       "en"
+      ],
+      "url": "https://athome.fandango.com/content/browse/details/Ghost-in-the-Shell/12422",
+      "confidence": "medium"
+     },
+     {
+      "service": "YouTube",
+      "kind": "free",
+      "audio": [
+       "ja"
+      ],
+      "url": "https://www.youtube.com/watch?v=iHil4Y4r3Wk",
+      "confidence": "medium"
+     },
+     {
+      "service": "Tubi",
+      "kind": "free",
+      "audio": [
+       "en"
+      ],
+      "url": "https://tubitv.com/movies/289816",
+      "confidence": "medium"
+     }
+    ],
+    "IN": [],
+    "GB": [
+     {
+      "service": "Lionsgate+ (Prime Video Channels)",
+      "kind": "subscription",
+      "audio": [
+       "ja"
+      ],
+      "url": "https://watch.amazon.co.uk/detail?gti=amzn1.dv.gti.075ca341-5bdc-478d-8a8c-99b83e95b2da",
+      "confidence": "medium"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.justwatch.com/us/movie/ghost-in-the-shell",
+    "https://www.justwatch.com/in/movie/ghost-in-the-shell-1995",
+    "https://www.justwatch.com/uk/movie/ghost-in-the-shell",
+    "https://www.hoopladigital.com/movie/11078910",
+    "https://www.youtube.com/watch?v=iHil4Y4r3Wk"
+   ],
+   "note": "US: free with ads on Tubi, YouTube (YouTube Movies channel; JustWatch lists Japanese audio there) and Fandango at Home, free with a library card on Hoopla, and in the MovieSphere+ Prime Video channel (add-on, not included with Prime). Also on Plex per JustWatch. IN: nothing listed on JustWatch India. GB: only the Lionsgate+ Prime Video channel (add-on); the Disney+ UK deal covers Ghost in the Shell 2: Innocence, not this film."
+  },
+  {
+   "t": "Perfect Blue",
+   "year": 1997,
+   "director": "Satoshi Kon",
+   "kitsu": "perfect-blue",
+   "group": "satoshi-kon",
+   "regions": {
+    "US": [
+     {
+      "service": "HBO Max",
+      "kind": "subscription",
+      "audio": [
+       "en"
+      ],
+      "url": "https://www.hbomax.com/movie/d6f89801-dca7-48d3-9fb7-f4f8c70793af",
+      "confidence": "high"
+     }
+    ],
+    "IN": [],
+    "GB": [
+     {
+      "service": "Netflix",
+      "kind": "subscription",
+      "audio": [],
+      "url": "https://www.netflix.com/title/60000043",
+      "confidence": "high"
+     },
+     {
+      "service": "Disney+",
+      "kind": "subscription",
+      "audio": [
+       "ja",
+       "en"
+      ],
+      "url": "https://www.disneyplus.com/browse/entity-8efb174f-da27-4039-b456-e5577bcdd978",
+      "confidence": "high"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.justwatch.com/us/movie/perfect-blue",
+    "https://www.justwatch.com/in/movie/perfect-blue",
+    "https://www.justwatch.com/uk/movie/perfect-blue",
+    "https://www.hbomax.com/movie/d6f89801-dca7-48d3-9fb7-f4f8c70793af",
+    "https://press.disneyplus.com/news/disneyplus-animeltd",
+    "https://www.whats-on-netflix.com/news/anime/perfect-blue-anime-movie-netflix-release-date/",
+    "https://www.netflix.com/in/title/60000043"
+   ],
+   "note": "US: HBO Max (title page lists US availability); JustWatch shows English audio on HBO Max and Japanese + English on the HBO Max Prime Video channel, so HBO Max's own Japanese track is not confirmed. IN: no stream on JustWatch India; Netflix title 60000043 returns 404 on netflix.com/in. GB: Netflix (added 1 Sep 2026 per What's on Netflix) and Disney+ (Anime Ltd deal). Released in Japan in Feb 1998 after a 1997 festival premiere."
+  },
+  {
+   "t": "Jin-Roh: The Wolf Brigade",
+   "year": 1999,
+   "director": "Hiroyuki Okiura",
+   "kitsu": "jin-roh-the-wolf-brigade",
+   "group": "classic",
+   "regions": {
+    "US": [
+     {
+      "service": "Crunchyroll",
+      "kind": "subscription",
+      "audio": [
+       "ja",
+       "en"
+      ],
+      "url": "https://www.crunchyroll.com/watch/GR49M3K36",
+      "confidence": "medium"
+     },
+     {
+      "service": "Tubi",
+      "kind": "free",
+      "audio": [
+       "en"
+      ],
+      "url": "https://tubitv.com/movies/460471",
+      "confidence": "medium"
+     }
+    ],
+    "IN": [],
+    "GB": []
+   },
+   "sources": [
+    "https://www.justwatch.com/us/movie/jin-roh-the-wolf-brigade",
+    "https://www.justwatch.com/in/movie/jin-roh-the-wolf-brigade",
+    "https://www.justwatch.com/uk/movie/jin-roh-the-wolf-brigade"
+   ],
+   "note": "US: Crunchyroll (Japanese + English audio per JustWatch) and free with ads on Tubi (English audio); JustWatch-only. IN and GB: no stream, rental or purchase listed on JustWatch."
+  },
+  {
+   "t": "Millennium Actress",
+   "year": 2001,
+   "director": "Satoshi Kon",
+   "kitsu": "millennium-actress",
+   "group": "satoshi-kon",
+   "regions": {
+    "US": [
+     {
+      "service": "HBO Max",
+      "kind": "subscription",
+      "audio": [
+       "en"
+      ],
+      "url": "https://www.hbomax.com/movie/6f6a74ef-fa5f-454b-b343-3d014d129df0",
+      "confidence": "high"
+     },
+     {
+      "service": "RetroCrush",
+      "kind": "subscription",
+      "audio": [
+       "en"
+      ],
+      "url": "https://www.retrocrush.tv/details/65023802e6eab177891ee13c/millennium-actress-english-language-version",
+      "confidence": "medium"
+     }
+    ],
+    "IN": [],
+    "GB": []
+   },
+   "sources": [
+    "https://www.justwatch.com/us/movie/millennium-actress",
+    "https://www.justwatch.com/in/movie/millennium-actress",
+    "https://www.justwatch.com/uk/movie/millennium-actress",
+    "https://www.hbomax.com/movie/6f6a74ef-fa5f-454b-b343-3d014d129df0"
+   ],
+   "note": "US: HBO Max (title page lists US availability; JustWatch shows English audio on HBO Max) and RetroCrush (English-language version; also on AsianCrush and Plex per JustWatch). IN and GB: no stream, rental or purchase listed on JustWatch."
+  },
+  {
+   "t": "Tokyo Godfathers",
+   "year": 2003,
+   "director": "Satoshi Kon",
+   "kitsu": "tokyo-godfathers",
+   "group": "satoshi-kon",
+   "regions": {
+    "US": [
+     {
+      "service": "Hoopla",
+      "kind": "free",
+      "audio": [
+       "ja"
+      ],
+      "url": "https://www.hoopladigital.com/title/13345147",
+      "confidence": "high"
+     }
+    ],
+    "IN": [
+     {
+      "service": "Prime Video",
+      "kind": "buy",
+      "audio": [
+       "ja"
+      ],
+      "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.d81cb632-d867-4796-8ae6-91ff0ff70d2b",
+      "confidence": "medium"
+     }
+    ],
+    "GB": [
+     {
+      "service": "Apple TV",
+      "kind": "buy",
+      "audio": [
+       "ja"
+      ],
+      "url": "https://tv.apple.com/gb/movie/tokyo-godfathers/umc.cmc.3clh5wigrj6nrii23l4miv11j",
+      "confidence": "medium"
+     },
+     {
+      "service": "Prime Video",
+      "kind": "buy",
+      "audio": [
+       "ja"
+      ],
+      "url": "https://watch.amazon.co.uk/detail?gti=amzn1.dv.gti.d81cb632-d867-4796-8ae6-91ff0ff70d2b",
+      "confidence": "medium"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.justwatch.com/us/movie/tokyo-godfathers",
+    "https://www.justwatch.com/in/movie/tokyo-godfathers",
+    "https://www.justwatch.com/uk/movie/tokyo-godfathers",
+    "https://www.hoopladigital.com/movie/13345147"
+   ],
+   "note": "No subscription stream in any of the three countries. US: free with a library card on Hoopla (Japanese audio per JustWatch); also rent/buy on Apple TV. IN: rent/buy on Prime Video only. GB: rent/buy on Prime Video, Apple TV and Sky Store. 'buy' entries mean rent or buy."
+  },
+  {
+   "t": "Paprika",
+   "year": 2006,
+   "director": "Satoshi Kon",
+   "kitsu": "paprika",
+   "group": "satoshi-kon",
+   "regions": {
+    "US": [
+     {
+      "service": "Sony Pictures Core (Prime Video Channels)",
+      "kind": "subscription",
+      "audio": [
+       "ja"
+      ],
+      "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.94a9f69e-b3a8-c246-663d-85fe411575e8",
+      "confidence": "medium"
+     },
+     {
+      "service": "YouTube",
+      "kind": "free",
+      "audio": [
+       "ja"
+      ],
+      "url": "https://www.youtube.com/watch?v=L-IjCaEMcK0",
+      "confidence": "medium"
+     },
+     {
+      "service": "Tubi",
+      "kind": "free",
+      "audio": [
+       "ja"
+      ],
+      "url": "https://tubitv.com/movies/100006197",
+      "confidence": "medium"
+     }
+    ],
+    "IN": [
+     {
+      "service": "Prime Video",
+      "kind": "buy",
+      "audio": [
+       "ja"
+      ],
+      "url": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.94a9f69e-b3a8-c246-663d-85fe411575e8",
+      "confidence": "medium"
+     }
+    ],
+    "GB": [
+     {
+      "service": "Apple TV",
+      "kind": "buy",
+      "audio": [
+       "ja",
+       "en"
+      ],
+      "url": "https://tv.apple.com/gb/movie/paprika/umc.cmc.6i2m8ev8mr7b498w9orw4kiht",
+      "confidence": "medium"
+     },
+     {
+      "service": "Prime Video",
+      "kind": "buy",
+      "audio": [
+       "ja"
+      ],
+      "url": "https://watch.amazon.co.uk/detail?gti=amzn1.dv.gti.94a9f69e-b3a8-c246-663d-85fe411575e8",
+      "confidence": "medium"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.justwatch.com/us/movie/paprika",
+    "https://www.justwatch.com/in/movie/paprika",
+    "https://www.justwatch.com/uk/movie/paprika",
+    "https://www.youtube.com/watch?v=L-IjCaEMcK0"
+   ],
+   "note": "US: free with ads on Tubi and YouTube (YouTube Movies channel), Japanese audio per JustWatch; also in the Sony Pictures Core Prime Video channel (add-on). IN: rent/buy on Prime Video only. GB: no stream; rent/buy on Prime Video, Apple TV, Sky Store. 'buy' entries mean rent or buy."
+  },
+  {
+   "t": "The Girl Who Leapt Through Time",
+   "year": 2006,
+   "director": "Mamoru Hosoda",
+   "kitsu": "the-girl-who-leapt-through-time",
+   "group": "hosoda",
+   "regions": {
+    "US": [
+     {
+      "service": "HBO Max",
+      "kind": "subscription",
+      "audio": [
+       "en"
+      ],
+      "url": "https://www.hbomax.com/movie/14052378-2c08-400b-9916-1b78dc421a00",
+      "confidence": "high"
+     }
+    ],
+    "IN": [],
+    "GB": [
+     {
+      "service": "Disney+",
+      "kind": "subscription",
+      "audio": [
+       "ja",
+       "en"
+      ],
+      "url": "https://www.disneyplus.com/browse/entity-e4715d21-93a2-4f26-afb5-d3a1e8acaacc",
+      "confidence": "high"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.justwatch.com/us/movie/the-girl-who-leapt-through-time",
+    "https://www.justwatch.com/in/movie/the-girl-who-leapt-through-time",
+    "https://www.justwatch.com/uk/movie/the-girl-who-leapt-through-time",
+    "https://www.hbomax.com/movie/14052378-2c08-400b-9916-1b78dc421a00",
+    "https://press.disneyplus.com/news/disneyplus-animeltd"
+   ],
+   "note": "US: HBO Max (GKIDS catalogue; JustWatch shows English audio on HBO Max, Japanese + English on the HBO Max Prime Video channel). IN: nothing on JustWatch India. GB: Disney+ (UK streaming debut under the 2026 Anime Ltd deal)."
+  },
+  {
+   "t": "5 Centimeters per Second",
+   "year": 2007,
+   "director": "Makoto Shinkai",
+   "kitsu": "five-centimeters-per-second",
+   "group": "shinkai",
+   "regions": {
+    "US": [
+     {
+      "service": "HBO Max",
+      "kind": "subscription",
+      "audio": [
+       "en"
+      ],
+      "url": "https://www.hbomax.com/movie/593657e5-4a25-45d4-8730-18457a5563ee",
+      "confidence": "high"
+     }
+    ],
+    "IN": [
+     {
+      "service": "Crunchyroll",
+      "kind": "subscription",
+      "audio": [
+       "ja"
+      ],
+      "url": "https://www.crunchyroll.com/watch/G4GFQ723X",
+      "confidence": "high"
+     },
+     {
+      "service": "Sony LIV",
+      "kind": "subscription",
+      "audio": [
+       "ja"
+      ],
+      "url": "https://www.sonyliv.com/movies/5-centimeters-per-second-1090524953",
+      "confidence": "medium"
+     }
+    ],
+    "GB": [
+     {
+      "service": "Apple TV",
+      "kind": "buy",
+      "audio": [
+       "ja",
+       "en"
+      ],
+      "url": "https://tv.apple.com/gb/movie/5-centimeters-per-second/umc.cmc.5vzmu3bq6xmqslk2q0ui34xs2",
+      "confidence": "medium"
+     },
+     {
+      "service": "Prime Video",
+      "kind": "buy",
+      "audio": [
+       "ja",
+       "en"
+      ],
+      "url": "https://watch.amazon.co.uk/detail?gti=amzn1.dv.gti.80ba48d8-8002-c8a4-33f0-6ddc09ec8d7f",
+      "confidence": "medium"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.justwatch.com/us/movie/5-centimeters-per-second",
+    "https://www.justwatch.com/in/movie/5-centimeters-per-second",
+    "https://www.justwatch.com/uk/movie/5-centimeters-per-second",
+    "https://www.hbomax.com/movie/593657e5-4a25-45d4-8730-18457a5563ee",
+    "https://www.animenewsnetwork.com/news/2025-11-21/hindi-dubs-of-weathering-with-you-your-name-more-makoto-shinkai-films-stream-on-crunchyroll-on-/.231155"
+   ],
+   "note": "US: HBO Max (JustWatch shows English audio there). IN: Crunchyroll (one of eight Shinkai films added in India from Dec 2025; no Hindi dub) and Sony LIV per JustWatch India. GB: no stream; rent/buy on Prime Video, Apple TV, Sky Store. 'buy' entries mean rent or buy."
+  },
+  {
+   "t": "Summer Wars",
+   "year": 2009,
+   "director": "Mamoru Hosoda",
+   "kitsu": "summer-wars",
+   "group": "hosoda",
+   "regions": {
+    "US": [
+     {
+      "service": "HBO Max",
+      "kind": "subscription",
+      "audio": [
+       "en"
+      ],
+      "url": "https://www.hbomax.com/movie/df846337-c196-4cfc-a7a5-04acb99252b1",
+      "confidence": "high"
+     }
+    ],
+    "IN": [],
+    "GB": [
+     {
+      "service": "Disney+",
+      "kind": "subscription",
+      "audio": [
+       "ja",
+       "en"
+      ],
+      "url": "https://www.disneyplus.com/browse/entity-7c8a4e5c-59b9-4387-b4f6-70e03178f950",
+      "confidence": "high"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.justwatch.com/us/movie/summer-wars",
+    "https://www.justwatch.com/uk/movie/summer-wars",
+    "https://www.hbomax.com/movie/df846337-c196-4cfc-a7a5-04acb99252b1",
+    "https://press.disneyplus.com/news/disneyplus-animeltd"
+   ],
+   "note": "US: HBO Max (JustWatch shows English audio there). IN: the film is not in JustWatch India's catalogue at all; no Indian stream found. GB: Disney+ (Anime Ltd deal)."
+  },
+  {
+   "t": "Redline",
+   "year": 2009,
+   "director": "Takeshi Koike",
+   "kitsu": "redline",
+   "group": "classic",
+   "regions": {
+    "US": [
+     {
+      "service": "MovieSphere+ (Prime Video Channels)",
+      "kind": "subscription",
+      "audio": [
+       "en"
+      ],
+      "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.46b7025d-3caf-e2da-b5b4-aac63ae9fdcb",
+      "confidence": "medium"
+     },
+     {
+      "service": "Kanopy",
+      "kind": "free",
+      "audio": [],
+      "url": "https://www.kanopy.com/product/justwatch-13339623",
+      "confidence": "medium"
+     },
+     {
+      "service": "Tubi",
+      "kind": "free",
+      "audio": [
+       "en"
+      ],
+      "url": "https://tubitv.com/movies/283992",
+      "confidence": "medium"
+     }
+    ],
+    "IN": [],
+    "GB": [
+     {
+      "service": "Apple TV",
+      "kind": "buy",
+      "audio": [
+       "en"
+      ],
+      "url": "https://tv.apple.com/gb/movie/redline/umc.cmc.5n4ji3xf2hstua2ytc56fn525",
+      "confidence": "medium"
+     },
+     {
+      "service": "Prime Video",
+      "kind": "buy",
+      "audio": [
+       "en"
+      ],
+      "url": "https://watch.amazon.co.uk/detail?gti=amzn1.dv.gti.46b7025d-3caf-e2da-b5b4-aac63ae9fdcb",
+      "confidence": "medium"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.justwatch.com/us/movie/redline",
+    "https://www.justwatch.com/in/movie/redline",
+    "https://www.justwatch.com/uk/movie/redline-2010"
+   ],
+   "note": "US: free with ads on Tubi (English audio per JustWatch), Kanopy (library card), and the MovieSphere+ Prime Video channel (add-on). Tubi pages could not be opened from outside the US. IN: nothing on JustWatch India. GB: no stream; rent/buy on Prime Video, Apple TV, Sky Store. 'buy' entries mean rent or buy."
+  },
+  {
+   "t": "Wolf Children",
+   "year": 2012,
+   "director": "Mamoru Hosoda",
+   "kitsu": "wolf-children",
+   "group": "hosoda",
+   "regions": {
+    "US": [
+     {
+      "service": "HBO Max",
+      "kind": "subscription",
+      "audio": [
+       "en"
+      ],
+      "url": "https://www.hbomax.com/movie/b3594af4-bba9-4bc6-b42b-185d2d1a1271",
+      "confidence": "high"
+     }
+    ],
+    "IN": [],
+    "GB": [
+     {
+      "service": "Disney+",
+      "kind": "subscription",
+      "audio": [
+       "ja",
+       "en"
+      ],
+      "url": "https://www.disneyplus.com/browse/entity-fa6361ce-458d-4554-8164-700d96b9021d",
+      "confidence": "high"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.justwatch.com/us/movie/wolf-children",
+    "https://www.justwatch.com/in/movie/wolf-children",
+    "https://www.justwatch.com/uk/movie/wolf-children",
+    "https://www.hbomax.com/movie/b3594af4-bba9-4bc6-b42b-185d2d1a1271",
+    "https://press.disneyplus.com/news/disneyplus-animeltd"
+   ],
+   "note": "US: HBO Max (JustWatch shows English audio there). IN: nothing on JustWatch India. GB: Disney+ (Anime Ltd deal)."
+  },
+  {
+   "t": "The Garden of Words",
+   "year": 2013,
+   "director": "Makoto Shinkai",
+   "kitsu": "the-garden-of-words",
+   "group": "shinkai",
+   "regions": {
+    "US": [
+     {
+      "service": "HIDIVE",
+      "kind": "subscription",
+      "audio": [],
+      "url": "https://www.hidive.com/interstitial/575811",
+      "confidence": "high"
+     },
+     {
+      "service": "Criterion Channel",
+      "kind": "subscription",
+      "audio": [
+       "ja"
+      ],
+      "url": "https://www.criterionchannel.com/films/jSZJhdbh/the-garden-of-words",
+      "confidence": "medium"
+     },
+     {
+      "service": "Kanopy",
+      "kind": "free",
+      "audio": [],
+      "url": "https://www.kanopy.com/product/justwatch-13867458",
+      "confidence": "medium"
+     }
+    ],
+    "IN": [
+     {
+      "service": "Crunchyroll",
+      "kind": "subscription",
+      "audio": [
+       "ja"
+      ],
+      "url": "https://www.crunchyroll.com/watch/GZ7UDVKV0",
+      "confidence": "high"
+     },
+     {
+      "service": "Sony LIV",
+      "kind": "subscription",
+      "audio": [
+       "ja"
+      ],
+      "url": "https://www.sonyliv.com/movies/the-garden-of-words-1090527973",
+      "confidence": "medium"
+     }
+    ],
+    "GB": [
+     {
+      "service": "Apple TV",
+      "kind": "buy",
+      "audio": [
+       "ja"
+      ],
+      "url": "https://tv.apple.com/gb/movie/the-garden-of-words/umc.cmc.6v366c7lqqo9gffg074b35w0c",
+      "confidence": "medium"
+     },
+     {
+      "service": "Prime Video",
+      "kind": "buy",
+      "audio": [
+       "ja"
+      ],
+      "url": "https://watch.amazon.co.uk/detail?gti=amzn1.dv.gti.5eb24827-72b5-ad94-a6d0-94f005b75350",
+      "confidence": "medium"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.justwatch.com/us/movie/the-garden-of-words",
+    "https://www.justwatch.com/in/movie/the-garden-of-words",
+    "https://www.justwatch.com/uk/movie/the-garden-of-words",
+    "https://www.hidive.com/interstitial/575811",
+    "https://www.animenewsnetwork.com/news/2025-11-21/hindi-dubs-of-weathering-with-you-your-name-more-makoto-shinkai-films-stream-on-crunchyroll-on-/.231155"
+   ],
+   "note": "US: HIDIVE, Criterion Channel (Japanese audio) and Kanopy (free with a library card). IN: Crunchyroll (Dec 2025 Shinkai launch, no Hindi dub) and Sony LIV per JustWatch India. GB: no stream; rent/buy on Prime Video, Apple TV. 'buy' entries mean rent or buy."
+  },
+  {
+   "t": "The Boy and the Beast",
+   "year": 2015,
+   "director": "Mamoru Hosoda",
+   "kitsu": "bakemono-no-ko",
+   "group": "hosoda",
+   "regions": {
+    "US": [
+     {
+      "service": "HBO Max",
+      "kind": "subscription",
+      "audio": [
+       "en"
+      ],
+      "url": "https://www.hbomax.com/movie/7a25d8c8-4aa9-4145-acc6-3c8b5b23e033",
+      "confidence": "high"
+     }
+    ],
+    "IN": [],
+    "GB": [
+     {
+      "service": "Prime Video",
+      "kind": "buy",
+      "audio": [
+       "ja"
+      ],
+      "url": "https://watch.amazon.co.uk/detail?gti=amzn1.dv.gti.7df073cc-993d-40d3-95ea-765c34434998",
+      "confidence": "medium"
+     },
+     {
+      "service": "Apple TV",
+      "kind": "buy",
+      "audio": [
+       "ja"
+      ],
+      "url": "https://tv.apple.com/gb/movie/the-boy-and-the-beast/umc.cmc.2ame68ohvp4g4yaoyx4pid08p",
+      "confidence": "medium"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.justwatch.com/us/movie/the-boy-and-the-beast",
+    "https://www.justwatch.com/in/movie/the-boy-and-the-beast",
+    "https://www.justwatch.com/uk/movie/the-boy-and-the-beast",
+    "https://www.hbomax.com/movie/7a25d8c8-4aa9-4145-acc6-3c8b5b23e033"
+   ],
+   "note": "US: HBO Max (JustWatch shows English audio there); also in the Crunchyroll Prime Video channel (Japanese audio). IN: nothing on JustWatch India. GB: no stream (not in the Disney+ deal); rent/buy on Prime Video, Apple TV, Rakuten TV, Sky Store. 'buy' entries mean rent or buy."
+  },
+  {
+   "t": "Your Name.",
+   "year": 2016,
+   "director": "Makoto Shinkai",
+   "kitsu": "kimi-no-na-wa",
+   "group": "shinkai",
+   "regions": {
+    "US": [
+     {
+      "service": "HBO Max",
+      "kind": "subscription",
+      "audio": [
+       "en"
+      ],
+      "url": "https://www.hbomax.com/movie/e95b27d7-7fba-4b3b-bed9-a134dd1bc6ba",
+      "confidence": "high"
+     }
+    ],
+    "IN": [
+     {
+      "service": "Crunchyroll",
+      "kind": "subscription",
+      "audio": [
+       "ja",
+       "en",
+       "hi"
+      ],
+      "url": "https://www.crunchyroll.com/watch/G7PU34EG0",
+      "confidence": "high"
+     },
+     {
+      "service": "Sony LIV",
+      "kind": "subscription",
+      "audio": [
+       "ja",
+       "hi"
+      ],
+      "url": "https://www.sonyliv.com/movies/your-name-1090528296",
+      "confidence": "medium"
+     }
+    ],
+    "GB": [
+     {
+      "service": "Disney+",
+      "kind": "subscription",
+      "audio": [
+       "ja",
+       "en"
+      ],
+      "url": "https://www.disneyplus.com/browse/entity-bd02fbb8-38b5-44fe-a85b-98cb13e1a8c2",
+      "confidence": "high"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.justwatch.com/us/movie/your-name",
+    "https://www.justwatch.com/in/movie/your-name",
+    "https://www.justwatch.com/uk/movie/your-name",
+    "https://www.hbomax.com/movie/e95b27d7-7fba-4b3b-bed9-a134dd1bc6ba",
+    "https://www.animenewsnetwork.com/news/2025-11-21/hindi-dubs-of-weathering-with-you-your-name-more-makoto-shinkai-films-stream-on-crunchyroll-on-/.231155",
+    "https://www.animenewsnetwork.com/news/2025-12-04/weathering-with-you-hindi-dub-streams-on-december-11-your-name-hindi-dub-on-december-18/.231614",
+    "https://press.disneyplus.com/news/disneyplus-animeltd"
+   ],
+   "note": "US: HBO Max (JustWatch shows English audio there). IN: Crunchyroll with a Hindi dub (from 18 Dec 2025 per ANN) and Sony LIV (Hindi + Japanese per JustWatch India; not confirmed on Sony LIV's own page, which did not load). GB: Disney+ (Anime Ltd deal)."
+  },
+  {
+   "t": "A Silent Voice",
+   "year": 2016,
+   "director": "Naoko Yamada",
+   "kitsu": "koe-no-katachi",
+   "group": "classic",
+   "regions": {
+    "US": [
+     {
+      "service": "Crunchyroll",
+      "kind": "subscription",
+      "audio": [
+       "ja"
+      ],
+      "url": "https://www.crunchyroll.com/watch/GMEE00111886ESES",
+      "confidence": "medium"
+     }
+    ],
+    "IN": [
+     {
+      "service": "Crunchyroll",
+      "kind": "subscription",
+      "audio": [
+       "ja"
+      ],
+      "url": "https://www.crunchyroll.com/watch/GMEE00111886ITIT",
+      "confidence": "medium"
+     },
+     {
+      "service": "Sony LIV",
+      "kind": "subscription",
+      "audio": [
+       "ja",
+       "en"
+      ],
+      "url": "https://www.sonyliv.com/movies/a-silent-voice-1090528282",
+      "confidence": "medium"
+     }
+    ],
+    "GB": [
+     {
+      "service": "Disney+",
+      "kind": "subscription",
+      "audio": [
+       "ja",
+       "en"
+      ],
+      "url": "https://www.disneyplus.com/browse/entity-af8a602e-4bdf-4222-826f-1f14294a0f32",
+      "confidence": "high"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.justwatch.com/us/movie/a-silent-voice",
+    "https://www.justwatch.com/in/movie/a-silent-voice",
+    "https://www.justwatch.com/uk/movie/a-silent-voice",
+    "https://press.disneyplus.com/news/disneyplus-animeltd"
+   ],
+   "note": "US: Crunchyroll per JustWatch; JustWatch lists Japanese plus European dubs there but no English track. IN: Crunchyroll and Sony LIV per JustWatch India (JustWatch-only; no Hindi dub listed). GB: Disney+ (Anime Ltd deal, tagged UK & Ireland only)."
+  },
+  {
+   "t": "Mirai",
+   "year": 2018,
+   "director": "Mamoru Hosoda",
+   "kitsu": "mirai-no-mirai",
+   "group": "hosoda",
+   "regions": {
+    "US": [
+     {
+      "service": "Prime Video",
+      "kind": "buy",
+      "audio": [
+       "en"
+      ],
+      "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.fcb476a2-f125-b119-968e-09e465e718cd",
+      "confidence": "medium"
+     }
+    ],
+    "IN": [],
+    "GB": [
+     {
+      "service": "Disney+",
+      "kind": "subscription",
+      "audio": [
+       "ja",
+       "en"
+      ],
+      "url": "https://www.disneyplus.com/browse/entity-14ec7105-d32c-43c5-a836-1f93837feac6",
+      "confidence": "high"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.justwatch.com/us/movie/mirai",
+    "https://www.justwatch.com/in/movie/mirai",
+    "https://www.justwatch.com/uk/movie/mirai",
+    "https://press.disneyplus.com/news/disneyplus-animeltd",
+    "https://www.animenewsnetwork.com/news/2020-06-01/netflix-streams-mirai-anime-film-in-u.s/.160137"
+   ],
+   "note": "US: no subscription stream now (it was on Netflix US from 2020 but JustWatch no longer lists it); rent/buy on Prime Video. IN: nothing on JustWatch India. GB: Disney+ (Anime Ltd deal). 'buy' entries mean rent or buy."
+  },
+  {
+   "t": "Weathering with You",
+   "year": 2019,
+   "director": "Makoto Shinkai",
+   "kitsu": "tenki-no-ko-weathering-with-you",
+   "group": "shinkai",
+   "regions": {
+    "US": [
+     {
+      "service": "HBO Max",
+      "kind": "subscription",
+      "audio": [
+       "ja",
+       "en"
+      ],
+      "url": "https://www.hbomax.com/movie/87cba30c-2349-4276-95c1-011ade9eaff3",
+      "confidence": "high"
+     },
+     {
+      "service": "Hoopla",
+      "kind": "free",
+      "audio": [
+       "en"
+      ],
+      "url": "https://www.hoopladigital.com/title/13621897",
+      "confidence": "high"
+     }
+    ],
+    "IN": [
+     {
+      "service": "Crunchyroll",
+      "kind": "subscription",
+      "audio": [
+       "ja",
+       "hi"
+      ],
+      "url": "https://www.crunchyroll.com/watch/GMEE00111967HIIN",
+      "confidence": "high"
+     },
+     {
+      "service": "Sony LIV",
+      "kind": "subscription",
+      "audio": [
+       "ja",
+       "hi"
+      ],
+      "url": "https://www.sonyliv.com/movies/weathering-with-you-1090528620",
+      "confidence": "medium"
+     }
+    ],
+    "GB": [
+     {
+      "service": "Disney+",
+      "kind": "subscription",
+      "audio": [
+       "ja",
+       "en"
+      ],
+      "url": "https://www.disneyplus.com/browse/entity-74a10b8a-a4e1-4d7e-b292-b1d41b463e10",
+      "confidence": "high"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.justwatch.com/us/movie/weathering-with-you",
+    "https://www.justwatch.com/in/movie/weathering-with-you",
+    "https://www.justwatch.com/uk/movie/weathering-with-you",
+    "https://www.hbomax.com/movie/87cba30c-2349-4276-95c1-011ade9eaff3",
+    "https://www.hbomax.com/movie/ba3f075a-bd48-4985-9e89-1469e6a7338a",
+    "https://www.hoopladigital.com/movie/13621897",
+    "https://www.animenewsnetwork.com/news/2025-12-04/weathering-with-you-hindi-dub-streams-on-december-11-your-name-hindi-dub-on-december-18/.231614",
+    "https://press.disneyplus.com/news/disneyplus-animeltd"
+   ],
+   "note": "US: HBO Max lists two entries, a '(Japanese Audio)' version (hbomax.com/movie/ba3f075a-bd48-4985-9e89-1469e6a7338a) and an English-dub version (plain title); also free with a library card on Hoopla. IN: Crunchyroll with a Hindi dub (from Dec 2025 per ANN) and Sony LIV (Hindi + Japanese per JustWatch India only). GB: Disney+ (Anime Ltd deal)."
+  },
+  {
+   "t": "Belle",
+   "year": 2021,
+   "director": "Mamoru Hosoda",
+   "kitsu": "ryuu-to-sobakasu-no-hime",
+   "group": "hosoda",
+   "regions": {
+    "US": [
+     {
+      "service": "HBO Max",
+      "kind": "subscription",
+      "audio": [
+       "en"
+      ],
+      "url": "https://www.hbomax.com/movie/78c442ff-3421-4f41-991b-9bc1002d9a0d",
+      "confidence": "high"
+     }
+    ],
+    "IN": [],
+    "GB": [
+     {
+      "service": "Disney+",
+      "kind": "subscription",
+      "audio": [
+       "ja",
+       "en"
+      ],
+      "url": "https://www.disneyplus.com/browse/entity-7d7072d3-3a62-4d6f-90f6-32faac39f7fe",
+      "confidence": "high"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.justwatch.com/us/movie/belle-the-dragon-and-the-freckled-princess",
+    "https://www.justwatch.com/in/movie/belle-the-dragon-and-the-freckled-princess",
+    "https://www.justwatch.com/uk/movie/belle-the-dragon-and-the-freckled-princess",
+    "https://www.hbomax.com/movie/78c442ff-3421-4f41-991b-9bc1002d9a0d",
+    "https://www.hbomax.com/movie/6ce41405-2f24-4554-8c2f-30efa59c194d",
+    "https://press.disneyplus.com/news/disneyplus-animeltd"
+   ],
+   "note": "US: HBO Max. HBO Max has two separate 'Belle' pages (78c442ff and 6ce41405); one is probably the Japanese-audio version but neither page says so. JustWatch also lists Philo. IN: nothing on JustWatch India. GB: Disney+ (Anime Ltd deal)."
+  },
+  {
+   "t": "Suzume",
+   "year": 2022,
+   "director": "Makoto Shinkai",
+   "kitsu": "suzume-no-tojimari",
+   "group": "shinkai",
+   "regions": {
+    "US": [
+     {
+      "service": "Netflix",
+      "kind": "subscription",
+      "audio": [],
+      "url": "https://www.netflix.com/title/81696498",
+      "confidence": "high"
+     },
+     {
+      "service": "Hulu",
+      "kind": "subscription",
+      "audio": [],
+      "url": "https://www.hulu.com/movie/suzume-fdbedca4-b075-47ab-baf8-83f365f38aa9",
+      "confidence": "high"
+     },
+     {
+      "service": "Crunchyroll",
+      "kind": "subscription",
+      "audio": [
+       "ja",
+       "en",
+       "hi"
+      ],
+      "url": "https://www.crunchyroll.com/watch/GJWU29952",
+      "confidence": "high"
+     }
+    ],
+    "IN": [
+     {
+      "service": "Crunchyroll",
+      "kind": "subscription",
+      "audio": [
+       "ja",
+       "en",
+       "hi"
+      ],
+      "url": "https://www.crunchyroll.com/watch/G8WU7NXNE",
+      "confidence": "high"
+     },
+     {
+      "service": "Sony LIV",
+      "kind": "subscription",
+      "audio": [
+       "ja",
+       "en",
+       "hi"
+      ],
+      "url": "https://www.sonyliv.com/movies/suzume-1090528309",
+      "confidence": "medium"
+     }
+    ],
+    "GB": [
+     {
+      "service": "Crunchyroll",
+      "kind": "subscription",
+      "audio": [
+       "ja",
+       "en",
+       "hi"
+      ],
+      "url": "https://www.crunchyroll.com/watch/GJWU29952",
+      "confidence": "high"
+     },
+     {
+      "service": "Netflix",
+      "kind": "subscription",
+      "audio": [],
+      "url": "https://www.netflix.com/title/81696498",
+      "confidence": "medium"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.justwatch.com/us/movie/suzume-no-tojimari",
+    "https://www.justwatch.com/in/movie/suzume-no-tojimari",
+    "https://www.justwatch.com/uk/movie/suzume-no-tojimari",
+    "https://www.animenewsnetwork.com/news/2024-04-05/netflix-adds-makoto-shinkai-suzume-film/.209588",
+    "https://fandomwire.com/makoto-shinkai-suzume-hulu-streaming-september/",
+    "https://www.cartoonbrew.com/?p=234825",
+    "https://www.animenewsnetwork.com/news/2025-11-21/hindi-dubs-of-weathering-with-you-your-name-more-makoto-shinkai-films-stream-on-crunchyroll-on-/.231155"
+   ],
+   "note": "US: Crunchyroll (since Nov 2023), Netflix (since Apr 2024) and Hulu (from Sep 2026, sub and dub). Crunchyroll audio per JustWatch includes Japanese, English and Hindi. IN: Crunchyroll with a Hindi dub (from 4 Dec 2025 per ANN) and Sony LIV (English, Hindi, Japanese per JustWatch India). Netflix title 81696498 returns 404 on netflix.com/in. GB: Crunchyroll (its 2023 launch covered Europe except France) and Netflix per JustWatch UK; UK Netflix audio not confirmed."
+  },
+  {
+   "t": "Scarlet",
+   "year": 2025,
+   "director": "Mamoru Hosoda",
+   "kitsu": "scarlet",
+   "group": "hosoda",
+   "regions": {
+    "US": [
+     {
+      "service": "Netflix",
+      "kind": "subscription",
+      "audio": [],
+      "url": "https://www.netflix.com/title/82888057",
+      "confidence": "high"
+     }
+    ],
+    "IN": [
+     {
+      "service": "Netflix",
+      "kind": "subscription",
+      "audio": [
+       "ja",
+       "en",
+       "hi"
+      ],
+      "url": "https://www.netflix.com/in/title/82888057",
+      "confidence": "high"
+     }
+    ],
+    "GB": [
+     {
+      "service": "Prime Video",
+      "kind": "buy",
+      "audio": [
+       "ja",
+       "en",
+       "hi"
+      ],
+      "url": "https://watch.amazon.co.uk/detail?gti=amzn1.dv.gti.9a001bc0-718e-4acb-8909-aaad6633e395",
+      "confidence": "medium"
+     },
+     {
+      "service": "Apple TV",
+      "kind": "buy",
+      "audio": [
+       "ja",
+       "en"
+      ],
+      "url": "https://tv.apple.com/gb/movie/scarlet/umc.cmc.2gnoah2xxly9xz4drkel9qo0o",
+      "confidence": "medium"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.justwatch.com/us/movie/scarlet-2025",
+    "https://www.justwatch.com/in/movie/scarlet-2025",
+    "https://www.justwatch.com/uk/movie/scarlet-2025",
+    "https://www.netflix.com/in/title/82888057",
+    "https://www.whats-on-netflix.com/news/anime/scarlet-anime-movie-netflix-us-release-date/",
+    "https://respawn.outlookindia.com/pop-culture/pop-culture-news/netflix-india-to-stream-mamoru-hosodas-scarlet-anime-movie"
+   ],
+   "note": "Released in Japan 21 Nov 2025. US: Netflix since 6 Jun 2026 (What's on Netflix); US audio tracks not confirmed. JustWatch also maps Roku Channel and Fawesome to this title, but the Fawesome page is a different (Nigerian) film called Scarlet, so both were left out. IN: Netflix since 17 May 2026; the Netflix India title page lists audio in English, Hindi, Japanese [Original], Tamil and Telugu. GB: no stream yet; rent/buy on Prime Video, Apple TV, Rakuten TV, Sky Store. 'buy' entries mean rent or buy."
+  }
+ ]
+}
