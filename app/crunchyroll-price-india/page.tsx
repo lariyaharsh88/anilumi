@@ -158,7 +158,7 @@ export default function CrunchyrollPriceIndia() {
         <h2 id="alt-h" className="h-section mb-3">Is Crunchyroll worth it in India?</h2>
         <div className="card max-w-3xl space-y-2 p-4 text-sm leading-6 text-ink/85">
           <p>If you watch new anime each season, yes: it has the biggest catalogue of the popular shows in India and the most Hindi dubs of any service. If you only want a few classics in Hindi, compare first: some are free on YouTube and MX Player, and Netflix has its own Hindi dubs.</p>
-          <p><Link href="/anime-streaming-sites" className="text-violet hover:underline">Every streaming site in India compared →</Link> · <Link href="/download-anime-in-hindi" className="text-violet hover:underline">Downloading Hindi anime offline →</Link></p>
+          <p><Link href="/anime-streaming-sites" className="text-violet hover:underline">Every streaming site in India compared →</Link> · <Link href="/download-anime-in-hindi" className="text-violet hover:underline">Downloading Hindi anime offline →</Link> · <Link href="/crunchyroll-price" className="text-violet hover:underline">Crunchyroll prices in the US, UK and other countries →</Link></p>
         </div>
       </section>
 

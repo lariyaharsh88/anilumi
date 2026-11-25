@@ -1,0 +1,20 @@
+{
+  "checked": "2026-11-25",
+  "timeline": [
+    { "date": "2020-12-09", "what": "Sony's Funimation agrees to buy Crunchyroll from AT&T for $1.175 billion." },
+    { "date": "2021-08-09", "what": "The deal closes: Funimation and Crunchyroll are now one Sony company." },
+    { "date": "2022-03-01", "what": "Funimation, Wakanim and VRV are announced as merging into Crunchyroll; from the Spring 2022 season, new simulcasts stream only on Crunchyroll, and Funimation's library starts moving there." },
+    { "date": "2022-04-05", "what": "Funimation's YouTube channel becomes Crunchyroll Dubs; discs switch to the Crunchyroll brand from June 2022 and the Funimation Shop moves to the Crunchyroll Store." },
+    { "date": "2024-02-07", "what": "Crunchyroll announces that the Funimation app and website will close, with accounts moving to Crunchyroll." },
+    { "date": "2024-04-02", "what": "Funimation closes. funimation.com now redirects to crunchyroll.com." }
+  ],
+  "regions": "the US and Canada, the UK and Ireland (from 2016), Australia and New Zealand (from 2021, after AnimeLab), Mexico and Brazil (from 2020), and Colombia, Chile and Peru (from 2021). We found no source showing it ever ran a streaming service in India.",
+  "sources": [
+    "https://www.animenewsnetwork.com/news/2024-02-07/funimation-app-shuts-down-on-april-2-as-its-accounts-merge-with-crunchyroll/.207344",
+    "https://www.engadget.com/funimation-will-stream-its-last-anime-on-april-2-131526671.html",
+    "https://www.siliconera.com/funimation-app-and-website-to-close-in-april-2024/",
+    "https://www.gamespot.com/articles/funimation-shuttering-but-your-digital-movie-copies-wont-transfer-to-crunchyroll/1100-6520940/",
+    "https://en.wikipedia.org/wiki/Funimation",
+    "https://en.wikipedia.org/wiki/Crunchyroll"
+  ]
+}

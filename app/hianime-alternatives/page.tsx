@@ -17,14 +17,14 @@ export const revalidate = 86400;
  * Keyword Planner, India, 2026: "hianime alternative" 8.1K a month in May, 1.3K in October; "aniwatch alternative"
  * 880. Bing keyword research (Nov 2026, impressions a year): hianime 675K, aniwatch 519K, hi anime 141K, anime kai
  * 126K, zoro anime 17K, animesuge 17K. Keyword Planner (Nov 2026, a month): KissAnime 2.24M in India; GogoAnime 246K in
- * India, 201K in the US, 135K in the Philippines; AnimeDAO 22K in the US. Counts come from the where-to-watch research
+ * India, 201K in the US, 135K in the Philippines; AnimeDAO 22K in the US; Chia-Anime 6.6K in the US. Counts come from the where-to-watch research
  * (lib/streams), by country.
  */
 const y = new Date().getFullYear();
 const list = (xs: string[]) => (xs.length > 1 ? `${xs.slice(0, -1).join(", ")} and ${xs[xs.length - 1]}` : xs[0] ?? "");
 const short = (service: string) => service.replace(/ \(now free on Prime Video\)$/, " (Prime Video's free tier)");
 /** Names people search alongside HiAnime. Named without a verdict on each: we haven't reviewed them. */
-const ALSO = ["Aniwatch", "Zoro", "Anime Kai", "AnimeSuge", "AnimeDAO"];
+const ALSO = ["Aniwatch", "Zoro", "Anime Kai", "AnimeSuge", "AnimeDAO", "Chia-Anime"];
 
 type Row = { service: string; free: boolean; titles: Streams[]; dubbed: number };
 function rows(r: Region): Row[] {
@@ -70,6 +70,7 @@ export default function HiAnimeAlternatives() {
     { q: "Is GogoAnime legal?", a: "No. Like HiAnime, GogoAnime streams anime without licences from the studios, so AniLumi doesn't link to it. The services on this page carry the same popular shows legally." },
     { q: "What happened to KissAnime?", a: "KissAnime shut down in 2020, and sites using the name since then are copies run by other people. Either way it was never licensed. The services on this page are the legal way to watch the shows it carried." },
     { q: "Is HiAnime safe?", a: "Unlicensed streaming sites pay their way with pop-ups and redirect ads, a common route for scams and malware, especially on phones. The services here are apps and sites run by the licensors, with no pop-ups." },
+    { q: "Is Chia-Anime legal?", a: "No. Chia-Anime streams anime without licences, and many look-alike sites use the name; German tech outlets GIGA and kino.de (2023) both call it illegal. The services on this page carry the same shows legally." },
     { q: `What about ${list(ALSO)}?`, a: "AniLumi doesn't review unofficial sites. The legal options are the same: the services on this page, and each show's page on AniLumi lists every place it streams in your country." },
     { q: "Where can I watch anime in Hindi instead?", a: `${freeHindi} anime are free and legal in Hindi on the licensors' YouTube channels and Prime Video's free tier, and more on Crunchyroll, Netflix and JioHotstar. See the Hindi alternatives to Anime Salt and Anime World.` },
   ];
