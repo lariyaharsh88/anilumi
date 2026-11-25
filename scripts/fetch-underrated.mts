@@ -3,7 +3,8 @@
  * least 2,000 members) that comparatively few have watched (under 120,000 members, against 500K to 1M+ for the hits).
  * First seasons and stand-alone films only, so sequels and recap films don't crowd the list, and nothing from the
  * current year (too new to call underrated); no adult titles or shorts. Each is
- * mapped to its Kitsu slug for the anime page link. By hand: npx tsx scripts/fetch-underrated.mts
+ * mapped to its Kitsu slug for the anime page link. Monthly in .github/workflows/refresh-data.yml; by hand: npx tsx
+ * scripts/fetch-underrated.mts
  */
 import { writeFileSync } from "node:fs";
 
