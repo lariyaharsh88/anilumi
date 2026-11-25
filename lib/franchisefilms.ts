@@ -12,7 +12,16 @@ import data from "@/data/franchise-films.json";
 export type FilmStatus = "available" | "aired" | "none_found";
 export type FilmDub = { status: FilmStatus; where: string[]; sources: string[]; confidence: "high" | "medium" };
 export type Film = { year: number; en: string; in?: string | null; jp: string; live_action?: boolean; hindi: FilmStatus; where: string[]; sources: string[]; confidence: "high" | "medium"; note?: string; ta?: FilmDub; te?: FilmDub };
-export type FilmFranchise = { slug: string; name: string; series: string; films: Film[] };
+/** Where to watch the franchise in India beyond the film list: TV channels, streaming, the next film, and for
+ *  Pokémon the seasons in order. Researched 25 Nov 2026 (two sources each where possible). */
+export type FranchiseWatch = {
+  about: string;
+  tv: { channel: string; status: "airing" | "ended" | "unclear"; note: string; sources: string[] }[];
+  streaming: { service: string; what: string; url: string | null }[];
+  next?: { t: string; year: number; note: string; sources: string[] } | null;
+  seasons?: { n: number; t: string; years: string; hindi: string; where: string | null }[];
+};
+export type FilmFranchise = { slug: string; name: string; series: string; films: Film[]; watch?: FranchiseWatch };
 export type FilmLang = "hi" | "ta" | "te";
 
 const D = data as unknown as { checked: string; franchises: FilmFranchise[] };

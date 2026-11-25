@@ -34,7 +34,9 @@ export function filmsMetadata(slug: string, lang: FilmLang): Metadata {
   const L = FILM_LANG[lang].name;
   const y = new Date().getFullYear();
   return {
-    title: fitTitle([`${f.name} Movies in ${L} (${y}): All ${films.length} Films & Where to Watch`, `${f.name} Movies in ${L} (${y}): All ${films.length} Films`, `All ${f.name} Movies List in ${L} (${y})`, `${f.name} Movies in ${L}`]),
+    // Hindi: "doraemon movies" is 165K searches a month in India, "shinchan movies" 74K, "all doraemon movie" 18.1K,
+    // "pokemon movies in order" 3.6K (Keyword Planner, Nov 2026), so the list-in-order wording leads.
+    title: fitTitle([...(lang === "hi" ? [...(latest.x.year >= y - 1 || f.watch?.next ? [`All ${films.length} ${f.name} Movies in Order (${y}): Hindi & New Movie`] : []), `All ${films.length} ${f.name} Movies in Order (${y}), in Hindi`] : []), `${f.name} Movies in ${L} (${y}): All ${films.length} Films & Where to Watch`, `${f.name} Movies in ${L} (${y}): All ${films.length} Films`, `All ${f.name} Movies List in ${L} (${y})`, `${f.name} Movies in ${L}`]),
     description: fitDescription(`All ${films.length} ${f.name} movies in order, newest first: ${latest.x.en} (${latest.x.year}) and every earlier film, with which ${dubbed.length} have a ${L} dub and where to watch them in India. Checked ${checked()}.`),
     alternates: { canonical: filmsPath(f.slug, lang) },
   };
@@ -48,9 +50,14 @@ export default function FilmsPage({ slug, lang }: { slug: string; lang: FilmLang
   const others = filmFranchises().filter((x) => x.slug !== f.slug && hasLang(x, lang));
   const langs = (Object.keys(FILM_LANG) as FilmLang[]).filter((l) => l !== lang && hasLang(f, l));
   const oldest = films[films.length - 1].x;
+  const inOrder = [...films].reverse();
+  const w = f.watch;
+  const airing = w?.tv.filter((t) => t.status === "airing") ?? [];
   const faq = [
     { q: `What is the new ${f.name} movie?`, a: `${title(latest.x)}, released in Japan in ${latest.x.year}. ${latest.dub.status === "available" ? `It's in ${L} on ${latest.dub.where.join(", ")}.` : latest.dub.status === "aired" ? `Its ${L} dub came out on ${latest.dub.where.join(", ")}.` : `No ${L} dub has been announced yet.`}` },
-    { q: `How many ${f.name} movies are there?`, a: `${films.length} films so far, from ${oldest.en} (${oldest.year}) to ${latest.x.en} (${latest.x.year}).` },
+    { q: `How many ${f.name} movies are there?`, a: `${films.length} films so far, from ${oldest.en} (${oldest.year}) to ${latest.x.en} (${latest.x.year}).${w?.next ? ` The next, ${w.next.t}, is due in ${w.next.year}.` : ""}` },
+    ...(w?.tv.length ? [{ q: `Which channel shows ${f.name} in India?`, a: airing.length ? `${airing.map((t) => `${t.channel}: ${t.note}`).join(" ")}` : `No channel is confirmed to be airing it right now. ${w.tv.map((t) => `${t.channel}: ${t.note}`).join(" ")}` }] : []),
+    ...(w?.streaming.length ? [{ q: `Where can I stream ${f.name} in India?`, a: w.streaming.map((x) => `${x.service}: ${x.what}`).join("; ") + "." }] : []),
     { q: `Which ${f.name} movies are in ${L}?`, a: dubbed.length ? `${dubbed.length} have had an official ${L} dub${now.length ? `, and ${now.length} can be watched in ${L} now: ${now.map((r) => `${r.x.en} (${r.dub.where.join(", ")})`).join("; ")}` : ""}.` : "None that we could confirm." },
     { q: `Where can I watch ${f.name} movies in ${L}?`, a: now.length ? `${[...new Set(now.flatMap((r) => r.dub.where))].join(", ")}. Films that only aired on TV come back on those channels from time to time; check their schedules.` : dubbed.length ? `None streams in ${L} right now. ${dubbed.map((r) => `${r.x.en}: ${r.dub.where.join(", ")}`).join("; ")}.` : `None: no official ${L} dub found yet.` },
   ];
@@ -75,7 +82,7 @@ export default function FilmsPage({ slug, lang }: { slug: string; lang: FilmLang
       />
       <MadeBy className="mt-4" date={FILMS_CHECKED} method={`Each ${L} status is from the platform's own page, the broadcaster's or distributor's announcement, or news reports; fan wikis count only as support for TV dubs. No unofficial uploads.`} />
 
-      <SectionNav sections={[{ id: "latest", label: "Newest film" }, { id: "list", label: `All ${films.length}` }, { id: "faq", label: "FAQ" }]} />
+      <SectionNav sections={[{ id: "latest", label: "Newest film" }, { id: "list", label: `All ${films.length} in order` }, ...(w ? [{ id: "watch", label: "Where to watch" }] : []), ...(w?.seasons?.length ? [{ id: "seasons", label: "Seasons" }] : []), { id: "faq", label: "FAQ" }]} />
 
       <section id="latest" data-section className="reveal pt-10" aria-labelledby="latest-h">
         <h2 id="latest-h" className="h-section mb-3">The newest {f.name} movie</h2>
@@ -84,15 +91,16 @@ export default function FilmsPage({ slug, lang }: { slug: string; lang: FilmLang
           {latest.dub.where.length > 0 && <p className="mt-1 text-sm text-ink/90">{latest.dub.where.join(" · ")}</p>}
           {lang === "hi" && latest.x.note && <p className="mt-1 text-sm text-muted">{latest.x.note}</p>}
         </div>
+        {w?.next && <p className="mt-3 text-sm text-ink/85"><span className="font-semibold text-ink">Next: </span>{w.next.t} ({w.next.year}). {w.next.note}</p>}
       </section>
 
       <section id="list" data-section className="reveal pt-10" aria-labelledby="list-h">
-        <h2 id="list-h" className="h-section mb-1">All {films.length} {f.name} movies</h2>
-        <p className="mb-4 text-sm text-muted">Newest first. Checked {checked()}. &ldquo;{label.aired}&rdquo; means it was shown in {L} on TV or in cinemas but isn&apos;t streaming legally right now.</p>
+        <h2 id="list-h" className="h-section mb-1">All {films.length} {f.name} movies in order</h2>
+        <p className="mb-4 text-sm text-muted">In release order, oldest first. Checked {checked()}. &ldquo;{label.aired}&rdquo; means it was shown in {L} on TV or in cinemas but isn&apos;t streaming legally right now.</p>
         <ol className="space-y-2">
-          {films.map(({ x, dub }) => (
+          {inOrder.map(({ x, dub }, i) => (
             <li key={`${x.year}-${x.en}`} className="card p-3 text-sm">
-              <p className="flex flex-wrap items-center gap-x-2 gap-y-1"><span className="w-12 shrink-0 font-semibold text-muted">{x.year}</span><span className="font-semibold text-ink">{title(x)}</span><Badge s={dub.status} />{x.live_action && <span className="text-[11px] text-muted">Live action</span>}</p>
+              <p className="flex flex-wrap items-center gap-x-2 gap-y-1"><span className="w-12 shrink-0 font-semibold text-muted"><span className="mr-1 text-[11px] tabular-nums text-muted/70">{i + 1}.</span>{x.year}</span><span className="font-semibold text-ink">{title(x)}</span><Badge s={dub.status} />{x.live_action && <span className="text-[11px] text-muted">Live action</span>}</p>
               <p className="mt-0.5 pl-14 text-xs text-muted" lang="ja-Latn">{x.jp}</p>
               {(dub.where.length > 0 || dub.sources.length > 0) && (
                 <p className="mt-1 flex flex-wrap gap-x-3 pl-14 text-xs text-muted">
@@ -104,6 +112,30 @@ export default function FilmsPage({ slug, lang }: { slug: string; lang: FilmLang
           ))}
         </ol>
       </section>
+
+      {w && (
+        <section id="watch" data-section className="reveal pt-10" aria-labelledby="watch-h">
+          <h2 id="watch-h" className="h-section mb-1">Where to watch {f.name} in India</h2>
+          <p className="mb-4 max-w-3xl text-sm text-muted">{w.about}</p>
+          <div className="grid gap-4 md:grid-cols-2">
+            <div className="card p-4">
+              <h3 className="font-semibold text-ink">📺 On TV</h3>
+              <ul className="mt-2 space-y-2 text-sm">{w.tv.map((t) => <li key={t.channel}><span className="font-medium text-ink">{t.channel}</span> <span className={`ml-1 rounded-full px-2 py-0.5 text-[11px] ${t.status === "airing" ? "bg-emerald-500/15 text-emerald-300" : "bg-white/5 text-muted"}`}>{t.status === "airing" ? "Airing" : t.status === "ended" ? "Ended" : "Not confirmed lately"}</span><p className="mt-0.5 leading-6 text-ink/80">{t.note}</p></li>)}</ul>
+            </div>
+            <div className="card p-4">
+              <h3 className="font-semibold text-ink">▶️ Streaming and cinemas</h3>
+              <ul className="mt-2 space-y-2 text-sm">{w.streaming.map((x) => <li key={x.service}>{x.url ? <a href={x.url} target="_blank" rel="noopener nofollow" className="font-medium text-ink hover:text-violet-2 hover:underline">{x.service} ↗</a> : <span className="font-medium text-ink">{x.service}</span>}<p className="mt-0.5 leading-6 text-ink/80">{x.what}</p></li>)}</ul>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {w?.seasons?.length ? (
+        <section id="seasons" data-section className="reveal pt-10" aria-labelledby="seasons-h">
+          <h2 id="seasons-h" className="h-section mb-3">{f.name} seasons in order</h2>
+          <ol className="grid gap-2 md:grid-cols-2">{w.seasons.map((x) => <li key={x.n} className="card p-3 text-sm"><span className="mr-1.5 tabular-nums text-muted">{x.n}.</span><span className="font-semibold text-ink">{x.t}</span> <span className="text-muted">({x.years})</span>{x.where && <p className="mt-0.5 text-xs text-ink/80">{x.hindi === "available" ? "In Hindi: " : ""}{x.where}</p>}</li>)}</ol>
+        </section>
+      ) : null}
 
       <p className="mt-10 flex flex-wrap gap-2 text-sm">
         {langs.map((l) => <Link key={l} href={filmsPath(f.slug, l)} className="chip">{f.name} movies in {FILM_LANG[l].name}</Link>)}

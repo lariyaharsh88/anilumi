@@ -1364,7 +1364,60 @@
             "confidence": "high"
           }
         }
-      ]
+      ],
+      "watch": {
+        "about": "A blue robot cat from the 22nd century travels back in time to help the hapless schoolboy Nobita with gadgets from his four-dimensional pocket. The TV Asahi series has run since 1979 (the current one since 2005); the Hindi dub began on Hungama TV in May 2005.",
+        "tv": [
+          {
+            "channel": "Disney Channel India",
+            "status": "airing",
+            "note": "The main Hindi home of the series and its films since about 2010. The latest dated reports: a birthday film week from 1 Sep 2025 (films every evening, 6:30–8:30 PM) and a daily Doraemon movies block at noon in late December 2025.",
+            "sources": [
+              "https://www.mediainfoline.com/daily-soap/disney-channel-india-marks-doraemons-birthday-with-special-week-long-celebrations",
+              "https://www.indianbroadcastingworld.com/?p=83344",
+              "https://www.medianews4u.com/?p=2471134",
+              "https://animenewsindia.com/2025/12/22/cartoon-network-india-kicks-off-holiday-season-with-dragon-ball-z-movie-marathon-from-december-222025-to-january-1-2026"
+            ]
+          },
+          {
+            "channel": "Hungama TV",
+            "status": "unclear",
+            "note": "Doraemon's first Indian home (Hindi from May 2005). The last confirmed Doraemon airing we found was a film in September 2022.",
+            "sources": [
+              "https://www.exchange4media.com/amp/kids-news/coming-uphero-on-hungama-tv-16359.html",
+              "https://www.animenewsnetwork.com/news/2022-08-13/hungama-tv-airs-doraemon-the-movie-nobita-chal-pada-antarctica-on-august-14/.188644",
+              "https://www.animenewsnetwork.com/news/2022-09-18/anime-films-airing-on-indian-tv-september-18-24/.189824",
+              "https://animenewsnetwork.com/news/2023-04-23/anime-films-airing-on-indian-tv-april-23-29/.197378"
+            ]
+          }
+        ],
+        "streaming": [
+          {
+            "service": "JioHotstar",
+            "what": "The TV series in Hindi, Tamil and Telugu (recent seasons, with a JioHotstar plan)",
+            "url": "https://www.hotstar.com/in/shows/doraemon/1260021004"
+          },
+          {
+            "service": "Netflix",
+            "what": "Stand by Me Doraemon (2014) and Stand by Me Doraemon 2, both with Hindi audio",
+            "url": "https://www.netflix.com/in/title/80158156"
+          },
+          {
+            "service": "Cinemas",
+            "what": "The 2026 film, New Nobita and the Castle of the Undersea Devil, in Hindi, Tamil and Telugu since 2 Oct 2026: Doraemon's first wide Indian cinema release. No streaming date yet.",
+            "url": null
+          }
+        ],
+        "next": {
+          "t": "Doraemon the Movie: Nobita's Steam-Powered Time Machine",
+          "year": 2027,
+          "note": "Opens in Japan on 5 March 2027 (the 46th film); no India date announced yet.",
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2026-09-14/2027-doraemon-film-teaser-unveils-march-5-opening-in-japan/.241749",
+            "https://www.animenewsnetwork.com/news/2026-07-23/2027-doraemon-film-heads-to-19th-century-london/.239920"
+          ]
+        }
+      }
     },
     {
       "slug": "shinchan",
