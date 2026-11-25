@@ -1681,6 +1681,530 @@
      ]
     }
    ]
+  },
+  "bleach": {
+   "name": "Bleach",
+   "anime": "bleach",
+   "searches": {
+    "US": 2900
+   },
+   "asOf": "Manga: complete at chapter 686 (Weekly Shonen Jump, 2001-2016). Anime: Bleach: Thousand-Year Blood War is finished: Part 4 'The Calamity' (10 episodes) aired 25 Jul-27 Oct 2026 on TV Tokyo, after episodes 49-50 were pushed back a month, and episode 50 adapts the manga's final chapter, so the anime now covers the whole story. The English dubs of episodes 49-50 come out on Hulu/Disney+ on 23 and 30 Nov 2026. Checked 25 Nov 2026.",
+   "basis": "Ranked by what happens in the manga: official rank first (Captain-Commander, Gotei 13 captain, Espada number, Sternritter title), then on-page fight results and explicit statements inside each tier. No fan power-scaling: where two characters never fought and the story doesn't separate them, we say so.",
+   "notes": "How we ordered each tier. Top tier: Ichigo is listed first because he is the only character with on-page wins over both Aizen (ch. 418-421) and Yhwach (ch. 683-684). Neither win was solo, though: Urahara's kido sealed Aizen, and Ichigo only beat Yhwach after Aizen's illusion and Uryū's silver arrow (which briefly cancelled The Almighty) set it up. Yhwach had beaten Ichigo earlier, breaking his Bankai and taking his powers, so this order is medium-confidence. Captain-Commander level: Yamamoto above Shunsui by rank and record. Yamamoto says no Shinigami matched him in 1,000 years, and Aizen admits Yamamoto is stronger one-on-one (Fake Karakura Town arc). Captains: the only head-to-head result is Kenpachi over Unohana (ch. 520-527). Everyone else has no canon order and is listed by their most decisive win. Sternritter: Haschwalth (Grandmaster) above Uryū (named successor). Their fight was interrupted, not won. Espada: by official number (Starrk 1st, Ulquiorra 4th, Grimmjow 6th). Lieutenants: Rukia first, because she is promoted to captain of the 13th Division in the 10-year epilogue (ch. 685). Episode numbers: TYBW episodes are counted 1-50 here (the wiki counts them as 367-416, continuing from the 2004 anime). The TYBW anime adds some scenes Kubo supervised, but we rank by the manga. Left out because the evidence is thinner or the character has no page here: Ichibe Hyōsube (head of the Royal Guard, killed by Yhwach, ch. 605-613), Gerard Valkyrie, Lille Barro, Gremmy Thoumeaux, Yoruichi, Shinji Hirako, Gin Ichimaru, Nelliel, Chad and Orihime. Spoiler flag: anything that relies on Thousand-Year Blood War events (ch. 480 onward) is marked as a spoiler.",
+   "tiers": [
+    {
+     "name": "Top tier (decided the Thousand-Year Blood War)",
+     "chars": [
+      {
+       "name": "Ichigo Kurosaki",
+       "slug": "ichigo-kurosaki",
+       "why": "Beat Aizen with the Final Getsuga Tenshō (ch. 418-421) and struck the killing blow on Yhwach after Uryū's arrow cancelled The Almighty (ch. 683-684, TYBW anime ep. 49); earlier he beat Byakuya, Grimmjow and Ulquiorra.",
+       "spoiler": true,
+       "sources": [
+        "https://bleach.fandom.com/wiki/Ichigo_Kurosaki",
+        "https://bleach.fandom.com/wiki/Final_Blood_War:_Three_Worlds_vs._Yhwach",
+        "https://bleach.fandom.com/wiki/Ichigo_Kurosaki_vs._Sousuke_Aizen",
+        "https://en.wikipedia.org/wiki/Ichigo_Kurosaki"
+       ],
+       "confidence": "medium"
+      },
+      {
+       "name": "Yhwach",
+       "slug": null,
+       "why": "The Quincy King: he killed Captain-Commander Yamamoto (ch. 510-511) and Royal Guard leader Ichibe (ch. 605-613) without injury and absorbed the Soul King, but Ichigo finally killed him (ch. 683-684).",
+       "spoiler": true,
+       "sources": [
+        "https://bleach.fandom.com/wiki/Yhwach",
+        "https://bleach.fandom.com/wiki/Genry%C5%ABsai_Shigekuni_Yamamoto_vs._Yhwach",
+        "https://en.wikipedia.org/wiki/List_of_Bleach_characters#A:_Yhwach"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "Sousuke Aizen",
+       "slug": "sousuke-aizen",
+       "why": "Beat Isshin, Urahara and Yoruichi at once in Fake Karakura Town (ch. 396-406) before Ichigo's Final Getsuga Tenshō stopped him and Urahara sealed him (ch. 418-422); in the final battle his Kanzen Saimin illusion fooled Yhwach so Ichigo could cut him (ch. 683).",
+       "spoiler": true,
+       "sources": [
+        "https://bleach.fandom.com/wiki/Sousuke_Aizen",
+        "https://bleach.fandom.com/wiki/Isshin_Kurosaki,_Kisuke_Urahara,_&_Yoruichi_Shih%C5%8Din_vs._Sousuke_Aizen",
+        "https://en.wikipedia.org/wiki/Sousuke_Aizen"
+       ],
+       "confidence": "high"
+      }
+     ]
+    },
+    {
+     "name": "Captain-Commander level",
+     "chars": [
+      {
+       "name": "Genryūsai Shigekuni Yamamoto",
+       "slug": "shigekuni-yamamoto-genryuusai",
+       "why": "Captain-Commander of the Gotei 13 for 1,000 years, who says no Shinigami ever rivalled him; he burned Sternritter Royd Lloyd (ch. 505-510) but was killed by the real Yhwach (ch. 510-511).",
+       "spoiler": true,
+       "sources": [
+        "https://bleach.fandom.com/wiki/Genry%C5%ABsai_Shigekuni_Yamamoto",
+        "https://bleach.fandom.com/wiki/Genry%C5%ABsai_Shigekuni_Yamamoto_vs._Yhwach",
+        "https://en.wikipedia.org/wiki/List_of_Soul_Reapers_in_Bleach#Genry%C5%ABsai_Shigekuni_Yamamoto"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "Shunsui Kyōraku",
+       "slug": null,
+       "why": "Killed the 1st Espada Coyote Starrk (ch. 372-375) and succeeded Yamamoto as Captain-Commander (ch. 520); his Bankai fight with Schutzstaffel Lille Barro ended in a draw (ch. 644-650).",
+       "spoiler": true,
+       "sources": [
+        "https://bleach.fandom.com/wiki/Shunsui_Ky%C5%8Draku",
+        "https://bleach.fandom.com/wiki/Shunsui_Ky%C5%8Draku_vs._Coyote_Starrk:_Final_Fight",
+        "https://en.wikipedia.org/wiki/List_of_Soul_Reapers_in_Bleach#Shunsui_Ky%C5%8Draku"
+       ],
+       "confidence": "high"
+      }
+     ]
+    },
+    {
+     "name": "Gotei 13 captains (and former captains)",
+     "chars": [
+      {
+       "name": "Kenpachi Zaraki",
+       "slug": "kenpachi-zaraki",
+       "why": "Captain of the 11th Division who killed Unohana, the first Kenpachi, in their duel (ch. 520-527, TYBW ep. 10), and also beat the 5th Espada Nnoitra (ch. 296-313) and Sternritter Gremmy (ch. 572-580).",
+       "spoiler": true,
+       "sources": [
+        "https://bleach.fandom.com/wiki/Kenpachi_Zaraki",
+        "https://bleach.fandom.com/wiki/Kenpachi_Zaraki_vs._Retsu_Unohana",
+        "https://en.wikipedia.org/wiki/Kenpachi_Zaraki"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "Retsu Unohana",
+       "slug": "retsu-unohana",
+       "why": "Revealed as the first Kenpachi and a founding captain of the Gotei 13 (ch. 517), she lost her duel to Zaraki to its fatal end (ch. 520-527).",
+       "spoiler": true,
+       "sources": [
+        "https://bleach.fandom.com/wiki/Retsu_Unohana",
+        "https://bleach.fandom.com/wiki/Kenpachi_Zaraki_vs._Retsu_Unohana",
+        "https://en.wikipedia.org/wiki/List_of_Soul_Reapers_in_Bleach#4th_Division"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "Kisuke Urahara",
+       "slug": "kisuke-urahara",
+       "why": "Former 12th Division captain whose kido sealed Aizen after Ichigo's Final Getsuga Tenshō (ch. 422); in the final war he beat Schutzstaffel Askin Nakk Le Vaar with Grimmjow's help (ch. 663-666).",
+       "spoiler": true,
+       "sources": [
+        "https://bleach.fandom.com/wiki/Kisuke_Urahara",
+        "https://bleach.fandom.com/wiki/Kisuke_Urahara_vs._Askin_Nakk_Le_Vaar",
+        "https://en.wikipedia.org/wiki/List_of_Bleach_characters#Kisuke_Urahara"
+       ],
+       "confidence": "medium"
+      },
+      {
+       "name": "Byakuya Kuchiki",
+       "slug": "byakuya-kuchiki",
+       "why": "Captain of the 6th Division who killed the 7th Espada Zommari in Hueco Mundo (ch. 297-304), but lost to Ichigo in the Soul Society arc (ch. 166-167).",
+       "spoiler": false,
+       "sources": [
+        "https://bleach.fandom.com/wiki/Byakuya_Kuchiki",
+        "https://bleach.fandom.com/wiki/Byakuya_Kuchiki_vs._Zommari_Rureaux",
+        "https://en.wikipedia.org/wiki/Byakuya_Kuchiki"
+       ],
+       "confidence": "medium"
+      },
+      {
+       "name": "Mayuri Kurotsuchi",
+       "slug": "mayuri-kurotsuchi",
+       "why": "Captain of the 12th Division who beat the 8th Espada Szayelaporro (ch. 298-307) and destroyed Schutzstaffel Pernida (ch. 629-644).",
+       "spoiler": true,
+       "sources": [
+        "https://bleach.fandom.com/wiki/Mayuri_Kurotsuchi",
+        "https://bleach.fandom.com/wiki/Mayuri_Kurotsuchi_&_Nemu_Kurotsuchi_vs._Pernida_Parnkgjas",
+        "https://en.wikipedia.org/wiki/Mayuri_Kurotsuchi"
+       ],
+       "confidence": "medium"
+      },
+      {
+       "name": "Tōshirō Hitsugaya",
+       "slug": "toshiro-hitsugaya",
+       "why": "Captain of the 10th Division who beat Sternritter Cang Du with his Bankai (ch. 551-559, TYBW ep. 17-19).",
+       "spoiler": true,
+       "sources": [
+        "https://bleach.fandom.com/wiki/T%C5%8Dshir%C5%8D_Hitsugaya",
+        "https://bleach.fandom.com/wiki/T%C5%8Dshir%C5%8D_Hitsugaya_vs._Cang_Du",
+        "https://en.wikipedia.org/wiki/T%C5%8Dshir%C5%8D_Hitsugaya"
+       ],
+       "confidence": "medium"
+      },
+      {
+       "name": "Soi Fon",
+       "slug": "soi-fon",
+       "why": "Captain of the 2nd Division who, with Hachigen Ushōda, beat the 2nd Espada Baraggan (ch. 368-371).",
+       "spoiler": false,
+       "sources": [
+        "https://bleach.fandom.com/wiki/Su%C3%AC-F%C4%93ng",
+        "https://bleach.fandom.com/wiki/Hachigen_Ush%C5%8Dda_&_Su%C3%AC-F%C4%93ng_vs._Baraggan_Louisenbairn",
+        "https://en.wikipedia.org/wiki/List_of_Soul_Reapers_in_Bleach#Soi_Fon"
+       ],
+       "confidence": "medium"
+      }
+     ]
+    },
+    {
+     "name": "Sternritter leadership",
+     "chars": [
+      {
+       "name": "Jugram Haschwalth",
+       "slug": null,
+       "why": "Sternritter Grandmaster and Yhwach's stand-in while he sleeps (ch. 547, ch. 565); he killed Bazz-B (ch. 623-634), and his last fight with Uryū was interrupted when Yhwach took back his power.",
+       "spoiler": true,
+       "sources": [
+        "https://bleach.fandom.com/wiki/Jugram_Haschwalth",
+        "https://bleach.fandom.com/wiki/Bazz-B_vs._Jugram_Haschwalth",
+        "https://en.wikipedia.org/wiki/List_of_Bleach_characters#B:_Jugram_Haschwalth"
+       ],
+       "confidence": "medium"
+      },
+      {
+       "name": "Uryū Ishida",
+       "slug": "uryuu-ishida",
+       "why": "Named Yhwach's successor (ch. 543) and given the Schrift 'A'; his silver-arrowhead shot cancelled The Almighty so Ichigo could kill Yhwach (ch. 684, TYBW anime ep. 49).",
+       "spoiler": true,
+       "sources": [
+        "https://bleach.fandom.com/wiki/Ury%C5%AB_Ishida",
+        "https://bleach.fandom.com/wiki/Ury%C5%AB's_Gambit",
+        "https://en.wikipedia.org/wiki/List_of_Bleach_characters#Ury%C5%AB_Ishida"
+       ],
+       "confidence": "medium"
+      }
+     ]
+    },
+    {
+     "name": "Espada",
+     "chars": [
+      {
+       "name": "Coyote Starrk",
+       "slug": null,
+       "why": "The Primera (1st) Espada, Aizen's highest-ranked Arrancar, killed by Shunsui Kyōraku (ch. 372-375).",
+       "spoiler": false,
+       "sources": [
+        "https://bleach.fandom.com/wiki/Coyote_Starrk",
+        "https://bleach.fandom.com/wiki/Shunsui_Ky%C5%8Draku_vs._Coyote_Starrk:_Final_Fight",
+        "https://en.wikipedia.org/wiki/List_of_Hollows_in_Bleach#Coyote_Stark_%26_Lilinette_Gingerbuck"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "Ulquiorra Cifer",
+       "slug": "ulquiorra-cifer",
+       "why": "The Cuatro (4th) Espada, who beat Ichigo in their first fight (ch. 269-271) and lost only to Ichigo's Hollow form (ch. 350-353).",
+       "spoiler": false,
+       "sources": [
+        "https://bleach.fandom.com/wiki/Ulquiorra_Cifer",
+        "https://bleach.fandom.com/wiki/Ichigo_Kurosaki_vs._Ulquiorra_Cifer:_Final_Fight",
+        "https://en.wikipedia.org/wiki/List_of_Hollows_in_Bleach#Ulquiorra_Cifer"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "Grimmjow Jaegerjaquez",
+       "slug": "grimmjow-jaegerjaquez",
+       "why": "The Sexta (6th) Espada, beaten by Ichigo in Hueco Mundo (ch. 277-286); in the final war he helped Urahara beat Askin (ch. 663-666).",
+       "spoiler": false,
+       "sources": [
+        "https://bleach.fandom.com/wiki/Grimmjow_Jaegerjaquez",
+        "https://bleach.fandom.com/wiki/Ichigo_Kurosaki_vs._Grimmjow_Jaegerjaquez:_Final_Fight",
+        "https://en.wikipedia.org/wiki/List_of_Hollows_in_Bleach#Grimmjow_Jaegerjaquez"
+       ],
+       "confidence": "high"
+      }
+     ]
+    },
+    {
+     "name": "Lieutenants (later captains)",
+     "chars": [
+      {
+       "name": "Rukia Kuchiki",
+       "slug": "rukia-kuchiki",
+       "why": "Killed Sternritter Äs Nödt with her newly revealed Bankai (ch. 558-569), and in the 10-year epilogue she is made captain of the 13th Division (ch. 685, TYBW ep. 50).",
+       "spoiler": true,
+       "sources": [
+        "https://bleach.fandom.com/wiki/Rukia_Kuchiki",
+        "https://bleach.fandom.com/wiki/Rukia_Kuchiki_vs._%C3%84s_N%C3%B6dt",
+        "https://en.wikipedia.org/wiki/Rukia_Kuchiki"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "Renji Abarai",
+       "slug": "renji-abarai",
+       "why": "Lieutenant of the 6th Division who killed Sternritter Mask De Masculine without injury, using his true Bankai (ch. 558-566).",
+       "spoiler": true,
+       "sources": [
+        "https://bleach.fandom.com/wiki/Renji_Abarai",
+        "https://bleach.fandom.com/wiki/Renji_Abarai_vs._Mask_De_Masculine",
+        "https://en.wikipedia.org/wiki/Renji_Abarai"
+       ],
+       "confidence": "medium"
+      }
+     ]
+    }
+   ]
+  },
+  "my-hero-academia": {
+   "name": "My Hero Academia",
+   "anime": "boku-no-hero-academia",
+   "searches": {
+    "US": 170
+   },
+   "asOf": "Manga: complete at chapter 430 (Weekly Shonen Jump, Jul 2014-Aug 2024), plus the extra chapter 431 'More' printed in volume 42. Anime: complete. The Final Season (season 8, episodes 160-170) aired 4 Oct-13 Dec 2025, and the bonus episode 'More' (170+1, which adapts chapter 431) aired in early May 2026. Checked 25 Nov 2026.",
+   "basis": "Ranked by what happens in the story: fight results first, then official Hero Billboard Chart JP rankings and explicit statements inside each tier. No fan power-scaling: where two characters never fought and the story doesn't separate them, we say so.",
+   "notes": "How we ordered each tier. Top tier: Deku beat Shigaraki and the All For One inside him in the final battle (ch. 410-423). Shigaraki is above All For One because he broke free of All For One's control over his body (ch. 366-369). All Might is above All For One because he beat him at Kamino while he still had One For All (ch. 89-94). His Final War loss to All For One came when he had no Quirk and fought in an armored suit. Bakugo beat All For One in the Final War (ch. 405-410), but All For One's body was already rewinding and falling apart, so we didn't place Bakugo above him (medium confidence). Pro Heroes follow the Hero Billboard Chart JP from ch. 184-185 (ep. 87): 1 Endeavor, 2 Hawks, 3 Best Jeanist, 4 Edgeshot, 5 Mirko. The chart eight years later (ch. 431, the 'More' episode) is not used for strength: Hawks reworked it to reward rescue, charity and other contributions, so it ranks Lemillion 1, Shoto 2 and Mt. Lady 3, with Bakugo at 15 and Uraraka at 24. Students and villains: Bakugo beat Deku in their second fight (ch. 117-121), and Dabi lost to Shoto and Endeavor. The other entries have no head-to-head results and are listed by their most decisive event (no canon order). Episode numbers are overall numbers (1-170). Left out because the evidence is thinner or the character has no page here: Best Jeanist, Mirko, Edgeshot, Mirio Togata, Star and Stripe, Gigantomachia, Overhaul, Shinso and Mt. Lady. Spoiler flag: anything from the Final War arc or after season 6 (episode 139 onward) is marked as a spoiler.",
+   "tiers": [
+    {
+     "name": "Top tier (One For All vs. All For One)",
+     "chars": [
+      {
+       "name": "Izuku Midoriya",
+       "slug": "izuku-midoriya",
+       "why": "Won the final battle with Tomura Shigaraki and the All For One inside him (ch. 410-423, eps. 164-167), using up the last of One For All to end the Final War.",
+       "spoiler": true,
+       "sources": [
+        "https://myheroacademia.fandom.com/wiki/Izuku_Midoriya",
+        "https://myheroacademia.fandom.com/wiki/Heroes_vs._All_For_One",
+        "https://en.wikipedia.org/wiki/Izuku_Midoriya"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "Tomura Shigaraki",
+       "slug": "tomura-shigaraki",
+       "why": "In the Final War he took out most of the U.A. team sent to stop him (ch. 346-366, eps. 144-150) and broke free of All For One's control over his body (ch. 366-369), before losing to Deku (ch. 410-423).",
+       "spoiler": true,
+       "sources": [
+        "https://myheroacademia.fandom.com/wiki/Tomura_Shigaraki",
+        "https://myheroacademia.fandom.com/wiki/U.A._Team_vs._Tomura_Shigaraki",
+        "https://en.wikipedia.org/wiki/List_of_My_Hero_Academia_characters#Tomura_Shigaraki"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "Toshinori Yagi (All Might)",
+       "slug": "all-might",
+       "why": "The No. 1 Hero for decades, until he retired (ranked No. 1 up to ch. 183); he beat All For One at Kamino with the last of his power (ch. 89-94, eps. 48-49).",
+       "spoiler": false,
+       "sources": [
+        "https://myheroacademia.fandom.com/wiki/Toshinori_Yagi",
+        "https://myheroacademia.fandom.com/wiki/Toshinori_Yagi_vs._All_For_One:_Rematch",
+        "https://en.wikipedia.org/wiki/List_of_My_Hero_Academia_characters#Toshinori_Yagi"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "All For One",
+       "slug": null,
+       "why": "Lost to All Might at Kamino (ch. 89-94, ep. 49). In the Final War he beat a Quirkless All Might in his armored suit (ch. 396-404), then lost to Bakugo while his body was rewinding (ch. 405-410, eps. 162-163).",
+       "spoiler": true,
+       "sources": [
+        "https://myheroacademia.fandom.com/wiki/All_For_One",
+        "https://myheroacademia.fandom.com/wiki/Katsuki_Bakugo_vs._All_For_One",
+        "https://en.wikipedia.org/wiki/List_of_My_Hero_Academia_characters#All_For_One"
+       ],
+       "confidence": "medium"
+      }
+     ]
+    },
+    {
+     "name": "Top-ranked Pro Heroes",
+     "chars": [
+      {
+       "name": "Enji Todoroki (Endeavor)",
+       "slug": "enji-todoroki",
+       "why": "Became the No. 1 Hero after All Might retired (ch. 184-185, ep. 87), beat the High-End Nomu Hood with Hawks (ch. 186-190, eps. 87-88), and stopped Dabi together with Shoto (ch. 387-390, ep. 157).",
+       "spoiler": true,
+       "sources": [
+        "https://myheroacademia.fandom.com/wiki/Enji_Todoroki",
+        "https://myheroacademia.fandom.com/wiki/Hero_Billboard_Chart_JP",
+        "https://en.wikipedia.org/wiki/List_of_My_Hero_Academia_characters#Enji_Todoroki"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "Keigo Takami (Hawks)",
+       "slug": null,
+       "why": "The No. 2 Hero on the Billboard Chart (ch. 185, ep. 87), who killed Twice while undercover in the Paranormal Liberation Front (ch. 264-267, eps. 116-117).",
+       "spoiler": false,
+       "sources": [
+        "https://myheroacademia.fandom.com/wiki/Keigo_Takami",
+        "https://myheroacademia.fandom.com/wiki/Keigo_Takami_vs._Jin_Bubaigawara_&_Dabi",
+        "https://en.wikipedia.org/wiki/List_of_My_Hero_Academia_characters#Keigo_Takami"
+       ],
+       "confidence": "high"
+      }
+     ]
+    },
+    {
+     "name": "Final War frontline (U.A. students)",
+     "chars": [
+      {
+       "name": "Katsuki Bakugo",
+       "slug": "katsuki-bakugou",
+       "why": "Beat All For One in the Final War, saving All Might (ch. 405-410, eps. 162-163); he also won his second fight with Deku (ch. 117-121, eps. 60-61).",
+       "spoiler": true,
+       "sources": [
+        "https://myheroacademia.fandom.com/wiki/Katsuki_Bakugo",
+        "https://myheroacademia.fandom.com/wiki/Katsuki_Bakugo_vs._All_For_One",
+        "https://en.wikipedia.org/wiki/Katsuki_Bakugo"
+       ],
+       "confidence": "medium"
+      },
+      {
+       "name": "Shoto Todoroki",
+       "slug": "shouto-todoroki",
+       "why": "With Endeavor he defeated his brother Dabi in the Final War (ch. 387-390, ep. 157), and he is the No. 2 Hero in the eight-year epilogue (ch. 431).",
+       "spoiler": true,
+       "sources": [
+        "https://myheroacademia.fandom.com/wiki/Shoto_Todoroki",
+        "https://myheroacademia.fandom.com/wiki/Todoroki_Family_vs._Dabi",
+        "https://en.wikipedia.org/wiki/Shoto_Todoroki"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "Fumikage Tokoyami",
+       "slug": "fumikage-tokoyami",
+       "why": "Saved Hawks from Dabi with Dark Shadow during the Paranormal Liberation War (ch. 271, ep. 118).",
+       "spoiler": false,
+       "sources": [
+        "https://myheroacademia.fandom.com/wiki/Fumikage_Tokoyami",
+        "https://myheroacademia.fandom.com/wiki/Fumikage_Tokoyami_vs._Dabi",
+        "https://en.wikipedia.org/wiki/List_of_My_Hero_Academia_characters#Fumikage_Tokoyami"
+       ],
+       "confidence": "medium"
+      },
+      {
+       "name": "Ochaco Uraraka",
+       "slug": "ochako-uraraka",
+       "why": "Ended Himiko Toga's Final War rampage by reaching her heart, after which Toga's doubles disappeared (ch. 389-395, eps. 153-159).",
+       "spoiler": true,
+       "sources": [
+        "https://myheroacademia.fandom.com/wiki/Ochaco_Uraraka",
+        "https://myheroacademia.fandom.com/wiki/Pro_Heroes_&_Trainees_vs._Himiko_Toga_&_Doubles",
+        "https://en.wikipedia.org/wiki/Ochaco_Uraraka"
+       ],
+       "confidence": "medium"
+      }
+     ]
+    },
+    {
+     "name": "League of Villains and other major villains",
+     "chars": [
+      {
+       "name": "Dabi",
+       "slug": "dabi",
+       "why": "Badly burned Hawks in the Paranormal Liberation War before Tokoyami flew Hawks to safety (ch. 264-271), and was finally defeated by Endeavor and Shoto in the Final War (ch. 387-390, ep. 157).",
+       "spoiler": true,
+       "sources": [
+        "https://myheroacademia.fandom.com/wiki/Dabi",
+        "https://myheroacademia.fandom.com/wiki/Todoroki_Family_vs._Dabi",
+        "https://en.wikipedia.org/wiki/List_of_My_Hero_Academia_characters#Toya_Todoroki"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "Himiko Toga",
+       "slug": "himiko-toga",
+       "why": "Retreated from Uraraka and Tsuyu in the Paranormal Liberation War (ch. 288-289, eps. 123-124); in the Final War her army of doubles vanished when Uraraka reached her (ch. 389-395, eps. 153-159).",
+       "spoiler": true,
+       "sources": [
+        "https://myheroacademia.fandom.com/wiki/Himiko_Toga",
+        "https://myheroacademia.fandom.com/wiki/Pro_Heroes_&_Trainees_vs._Himiko_Toga_&_Doubles",
+        "https://en.wikipedia.org/wiki/List_of_My_Hero_Academia_characters#Himiko_Toga"
+       ],
+       "confidence": "medium"
+      },
+      {
+       "name": "Jin Bubaigawara (Twice)",
+       "slug": "jin-bubaigawara",
+       "why": "Killed by Hawks in the Paranormal Liberation War before his doubles army could overrun the heroes (ch. 264-267, eps. 116-117).",
+       "spoiler": false,
+       "sources": [
+        "https://myheroacademia.fandom.com/wiki/Jin_Bubaigawara",
+        "https://myheroacademia.fandom.com/wiki/Keigo_Takami_vs._Jin_Bubaigawara_&_Dabi",
+        "https://en.wikipedia.org/wiki/List_of_My_Hero_Academia_characters#Twice"
+       ],
+       "confidence": "medium"
+      },
+      {
+       "name": "Chizome Akaguro (Stain)",
+       "slug": "chizome-akaguro",
+       "why": "The Hero Killer who beat Ingenium, Native and Tenya Iida, and was finally taken down by Deku, Iida and Todoroki together in Hosu (ch. 51-55, eps. 28-30).",
+       "spoiler": false,
+       "sources": [
+        "https://myheroacademia.fandom.com/wiki/Chizome_Akaguro",
+        "https://myheroacademia.fandom.com/wiki/Izuku_Midoriya,_Tenya_Ida_&_Shoto_Todoroki_vs._Chizome_Akaguro",
+        "https://en.wikipedia.org/wiki/List_of_My_Hero_Academia_characters#Chizome_Akaguro"
+       ],
+       "confidence": "high"
+      }
+     ]
+    },
+    {
+     "name": "Supporting Pro Heroes and U.A. students",
+     "chars": [
+      {
+       "name": "Shota Aizawa (Eraser Head)",
+       "slug": "shouta-aizawa",
+       "why": "Pro Hero whose Erasure shut off Shigaraki's Quirks during the Jaku Hospital raid, so the other heroes could attack him (ch. 273-290, eps. 119-124).",
+       "spoiler": false,
+       "sources": [
+        "https://myheroacademia.fandom.com/wiki/Shota_Aizawa",
+        "https://myheroacademia.fandom.com/wiki/Hospital_Raid_Team_&_Trainees_vs._Tomura_Shigaraki",
+        "https://en.wikipedia.org/wiki/Shota_Aizawa"
+       ],
+       "confidence": "medium"
+      },
+      {
+       "name": "Eijiro Kirishima",
+       "slug": "eijirou-kirishima",
+       "why": "With Fat Gum he beat Rappa and Tengai (ch. 142-145, ep. 72), and he threw the sedative into Gigantomachia's mouth (ch. 280, ep. 121).",
+       "spoiler": false,
+       "sources": [
+        "https://myheroacademia.fandom.com/wiki/Eijiro_Kirishima",
+        "https://myheroacademia.fandom.com/wiki/Eijiro_Kirishima_&_Taishiro_Toyomitsu_vs._Kendo_Rappa_&_Hekiji_Tengai",
+        "https://en.wikipedia.org/wiki/List_of_My_Hero_Academia_characters#Eijiro_Kirishima"
+       ],
+       "confidence": "medium"
+      },
+      {
+       "name": "Momo Yaoyorozu",
+       "slug": "momo-yaoyorozu",
+       "why": "Planned and led the students' operation to sedate Gigantomachia (ch. 278-280, eps. 120-121); the sedative took effect later in the war (ch. 293, ep. 125).",
+       "spoiler": false,
+       "sources": [
+        "https://myheroacademia.fandom.com/wiki/Momo_Yaoyorozu",
+        "https://myheroacademia.fandom.com/wiki/Gigantomachia",
+        "https://en.wikipedia.org/wiki/List_of_My_Hero_Academia_characters#Momo_Yaoyorozu"
+       ],
+       "confidence": "medium"
+      },
+      {
+       "name": "Tenya Iida",
+       "slug": "tenya-iida",
+       "why": "Helped Deku and Todoroki beat the Hero Killer Stain, the villain who had crippled his brother (ch. 51-55, eps. 28-30).",
+       "spoiler": false,
+       "sources": [
+        "https://myheroacademia.fandom.com/wiki/Tenya_Ida",
+        "https://myheroacademia.fandom.com/wiki/Izuku_Midoriya,_Tenya_Ida_&_Shoto_Todoroki_vs._Chizome_Akaguro",
+        "https://en.wikipedia.org/wiki/List_of_My_Hero_Academia_characters#Tenya_Iida"
+       ],
+       "confidence": "low"
+      }
+     ]
+    }
+   ]
   }
  }
 }
