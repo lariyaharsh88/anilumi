@@ -24,7 +24,7 @@ import { arcsFor, type Arc } from "@/lib/arcs";
 
 /** Hindi wording for the new sections (arcs, source material). */
 const hiArcRange = (x: Arc) => (x.to === null ? `${x.from} से आगे` : x.from === x.to ? String(x.from) : `${x.from}–${x.to}`);
-const hiSource = (x: Adaptation) => (x.unit === "chapter" ? "मंगा के चैप्टर" : "लाइट नॉवेल के वॉल्यूम");
+const hiSource = (x: Adaptation) => (x.unit === "volume" ? "लाइट नॉवेल के वॉल्यूम" : x.medium === "webtoon" ? "वेबटून के चैप्टर" : "मंगा के चैप्टर");
 const hiShortRange = (x: Adaptation) => `${x.unit === "chapter" ? "चै." : "वॉ."} ${x.from === x.to ? x.from : `${x.from}–${x.to}`}`;
 
 export const revalidate = 86400;
@@ -124,7 +124,7 @@ export default async function HindiGuide({ params }: Props) {
     { q: `${name} देखने में कितना समय लगेगा?`, a: wo.totalMinutes ? `मुख्य कहानी और मूवीज़ मिलाकर लगभग ${hiDuration(wo.totalMinutes)}। रोज़ 2 घंटे देखें तो करीब ${hiDays(wo.totalMinutes)} दिन लगेंगे।` : "पूरा रनटाइम अभी उपलब्ध नहीं है।" },
     ...(coverage.length ? [{ q: `${name} कहाँ देखें?`, a: `${coverage[0].site} पर ${core.length} में से ${coverage[0].n} सीज़न और मूवीज़ हैं${coverage[1] ? `, ${coverage[1].site} पर ${coverage[1].n}` : ""}। हर देश में कैटलॉग अलग होता है, इसलिए ऊपर हर हिस्से के लिंक देखें।` }] : []),
     { q: `${name} का अगला सीज़न कब आएगा?`, a: next },
-    ...(sourceRow?.adapt ? [{ q: `${name} का ${sourceRow.adapt.medium === "manga" ? "मंगा" : "लाइट नॉवेल"} कहाँ से पढ़ें?`, a: `${sourceRow.e.anime.title} में ${hiSource(sourceRow.adapt)} ${sourceRow.adapt.from}–${sourceRow.adapt.to} हैं।${sourceRow.adapt.continue ? ` आगे की कहानी के लिए ${sourceRow.adapt.unit === "chapter" ? "चैप्टर" : "वॉल्यूम"} ${sourceRow.adapt.continue} से पढ़ें।` : ""}` }] : []),
+    ...(sourceRow?.adapt ? [{ q: `${name} का ${sourceRow.adapt.medium === "manga" ? "मंगा" : sourceRow.adapt.medium === "webtoon" ? "वेबटून" : "लाइट नॉवेल"} कहाँ से पढ़ें?`, a: `${sourceRow.e.anime.title} में ${hiSource(sourceRow.adapt)} ${sourceRow.adapt.from}–${sourceRow.adapt.to} हैं।${sourceRow.adapt.continue ? ` आगे की कहानी के लिए ${sourceRow.adapt.unit === "chapter" ? "चैप्टर" : "वॉल्यूम"} ${sourceRow.adapt.continue} से पढ़ें।` : ""}` }] : []),
     ...(movies.length ? [{ q: `क्या ${name} की मूवीज़ देखना ज़रूरी है?`, a: `मूवीज़ ज़्यादातर ऑप्शनल हैं, पर कहानी का मज़ा बढ़ाती हैं: ${movies.map((m) => `${m.anime.title}${m.attachedTo && mainTitle.get(m.attachedTo) ? ` (${mainTitle.get(m.attachedTo)} के बाद)` : ""}`).join("; ")}।` }] : []),
     ...(filler ? [{ q: `${a.title} में कितने फ़िलर एपिसोड हैं?`, a: `${filler.total} में से ${filler.count} एपिसोड (${filler.share.toFixed(0)}%) फ़िलर हैं, जिन्हें आप छोड़ सकते हैं।` }] : []),
     ...(arcGroups[0] ? [{ q: `${arcGroups[0].e.anime.title} में कौन-कौन से आर्क हैं?`, a: `${arcGroups[0].arcs.length} आर्क, क्रम से: ${arcGroups[0].arcs.filter((x) => !x.filler).map((x) => x.name).join(", ")}${arcGroups[0].arcs.some((x) => x.filler) ? " (फ़िलर आर्क अलग से ऊपर दिखाए गए हैं)" : ""}।` }] : []),

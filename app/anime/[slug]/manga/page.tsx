@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "@/components/Link";
 import { getAnimeBySlug, animePath, posterUrl } from "@/lib/kitsu";
-import { continuationFor, continuationSlugs, startAt } from "@/lib/filler";
+import { continuationFor, continuationSlugs, startAt, mediumLabel } from "@/lib/filler";
 import AmazonLink from "@/components/AmazonLink";
 import AffiliateNote from "@/components/AffiliateNote";
 import PageHero from "@/components/PageHero";
@@ -32,10 +32,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     // The English name when it's short (what people search), and the longest title that fits a result.
     title: (() => {
-      const t = a.titleEn && a.titleEn.length <= 40 ? a.titleEn : a.title, m = cont.medium === "manga" ? "Manga" : "Light Novel", s = start.replace(/^./, (c) => c.toUpperCase());
+      const t = cont.name ?? (a.titleEn && a.titleEn.length <= 40 ? a.titleEn : a.title), m = mediumLabel(cont.medium).replace(/ n/, " N"), s = start.replace(/^./, (c) => c.toUpperCase());
       return fitTitle([`Where Does the ${t} Anime End in the ${m}? Start at ${s}`, `Where Does ${t} End in the ${m}? ${s}`, `${t}: Continue the ${m} From ${s}`, `${t} ${m}: Start at ${s}`, `Where Does ${t} End in the ${m}?`]);
     })(),
-    description: fitDescription(`Finished ${a.title}? Pick up the ${cont.medium} from ${start}. ${cont.note ? `${cont.note} ` : ""}Where the anime stops in the ${cont.medium}, which ${cont.medium === "manga" ? "volume" : "book"} to buy first and where to get it.`.trim().slice(0, 300)),
+    description: fitDescription(`Finished ${cont.name ?? a.title}? Pick up the ${cont.medium} from ${start}. ${cont.note ? `${cont.note} ` : ""}Where the anime stops in the ${cont.medium}, which ${cont.medium === "manga" ? "volume" : "book"} to buy first and where to get it.`.trim().slice(0, 300)),
     alternates: { canonical: `${animePath(a)}/manga` },
   };
 }
@@ -44,16 +44,18 @@ export default async function MangaPage({ params }: Props) {
   const { slug } = await params;
   const { a, cont, start } = await load(slug);
   const medium = cont.medium;
+  const name = cont.name ?? a.title;
   // Other seasons or films that continue the same book.
   const siblings = (await Promise.all(continuationSlugs().filter((s) => s !== a.slug && continuationFor(s)!.search === cont.search).map(getAnimeBySlug)))
     .filter((x) => x !== null);
   const draft = !cont.reviewed;
 
   const faq: FaqItem[] = [
-    { q: `Where does the ${a.title} anime end in the ${medium}?`, a: `It covers the story up to just before ${start}, so start the ${medium} there.${cont.note ? ` ${cont.note}` : ""}` },
-    { q: `What ${cont.chapter ? "chapter" : "volume"} should I read after ${a.title}?`, a: `Start at ${start}${cont.volume && cont.chapter ? ` (volume ${cont.volume})` : ""}.` },
+    { q: `Where does the ${name} anime end in the ${medium}?`, a: `It covers the story up to just before ${start}, so start the ${medium} there.${cont.note ? ` ${cont.note}` : ""}` },
+    { q: `What ${cont.chapter ? "chapter" : "volume"} should I read after ${name}?`, a: `Start at ${start}${cont.volume && cont.chapter ? ` (volume ${cont.volume})` : ""}.` },
     { q: `Should I read the ${medium} from the beginning instead?`, a: `If you have time, yes: adaptations trim inner monologue, side scenes and author notes. If you just want to know what happens next, ${start} is the place to start.` },
-    { q: `Will ${a.title} get another season?`, a: `See the season 2 / next season tracker for ${a.title}: it shows any announced sequel, release date and the usual wait between seasons.` },
+    ...(cont.faq ?? []),
+    ...(cont.faq?.some((f) => /season 3|another season|next season/i.test(f.q)) ? [] : [{ q: `Will ${name} get another season?`, a: `See the season 2 / next season tracker for ${name}: it shows any announced sequel, release date and the usual wait between seasons.` }]),
   ];
 
   return (
@@ -62,11 +64,11 @@ export default async function MangaPage({ params }: Props) {
       <PageHero
         crumbs={[{ href: "/", label: "Home" }, { href: animePath(a), label: a.title }, { href: `${animePath(a)}/manga`, label: `Continue in the ${medium}` }]}
         eyebrow={<><span className="mr-2 inline-flex items-center rounded-full bg-white/10 px-2 py-0.5 text-[11px] tracking-normal text-ink normal-case">{draft ? "Draft · being verified" : "Reviewed"}</span>Anime → {medium}</>}
-        title={`Where does the ${a.title} anime end in the ${medium}?`}
+        title={`Where does the ${name} anime end in the ${medium}?`}
         subtitle={<>To keep going after the anime, start the {medium} at <strong className="text-ink">{start}</strong>.{cont.note ? ` ${cont.note}` : ""}</>}
         facts={[
           { value: start.replace(/^./, (c) => c.toUpperCase()), label: "start reading here" },
-          { value: medium === "manga" ? "Manga" : "Light novel", label: "source" },
+          { value: mediumLabel(medium), label: "source" },
         ]}
         hue={262}
         backdrop={a.cover?.large || null}
@@ -86,6 +88,21 @@ export default async function MangaPage({ params }: Props) {
         {cont.reviewedOn && <CheckedBy date={cont.reviewedOn} className="mt-4" />}
         {draft && <p className="mt-4 text-xs text-muted">This continuation point is a draft and is still being checked against the {medium}. Flip back a chapter or two if something feels skipped.</p>}
       </section>
+
+      {cont.read && cont.read.length > 0 && (
+        <section className="reveal mt-10" aria-labelledby="read-h">
+          <h2 id="read-h" className="h-section mb-1">Where to read {name} legally</h2>
+          <p className="mb-4 max-w-3xl text-sm text-muted">Official English editions only{cont.checked ? `, checked ${new Date(`${cont.checked}T00:00:00Z`).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" })}` : ""}. Scan and reupload sites don&apos;t pay the creators and aren&apos;t listed.</p>
+          <ul className="grid gap-3 md:grid-cols-3">
+            {cont.read.map((r) => (
+              <li key={r.service} className="card p-4 text-sm">
+                <a href={r.url} target="_blank" rel="noopener nofollow" className="font-semibold text-ink hover:text-violet-2 hover:underline">{r.service} ↗</a>
+                <p className="mt-1 leading-6 text-ink/85">{r.how}</p>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       {siblings.length > 0 && (
         <section className="reveal mt-10" aria-labelledby="sib-h">

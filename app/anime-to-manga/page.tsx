@@ -1,7 +1,7 @@
 import { fitDescription, fitTitle } from "@/lib/titles";
 import type { Metadata } from "next";
 import { getAnimeBySlug, animePath, posterUrl, type Anime } from "@/lib/kitsu";
-import { continuationFor, continuationSlugs } from "@/lib/filler";
+import { mediumLabel, continuationFor, continuationSlugs } from "@/lib/filler";
 import PageHero from "@/components/PageHero";
 import ToolList from "@/components/ToolList";
 
@@ -32,7 +32,7 @@ export default async function AnimeToManga() {
           subtitle="Most-watched first."
           rows={rows.map((a) => {
             const c = continuationFor(a.slug)!;
-            return { a, href: `${animePath(a)}/manga`, value: c.chapter ? `Ch. ${c.chapter}` : `Vol. ${c.volume}`, sub: c.medium === "manga" ? "Manga" : "Light novel" };
+            return { a, href: `${animePath(a)}/manga`, value: c.chapter ? `Ch. ${c.chapter}` : `Vol. ${c.volume}`, sub: mediumLabel(c.medium) };
           })}
         />
       </div>

@@ -1428,6 +1428,40 @@
     "https://myanimelist.net/forum/message/59397072?goto=topic",
     "https://en.wikipedia.org/wiki/Hyouka"
    ]
+  },
+  "solo-leveling": {
+   "franchise": "Solo Leveling",
+   "medium": "webtoon",
+   "unit": "chapter",
+   "from": 1,
+   "to": 45,
+   "continue": 46,
+   "confidence": "high",
+   "notes": "Episode 12 ends with chapters 41–45.",
+   "sources": [
+    "https://solo-leveling.fandom.com/wiki/Episode_12",
+    "https://solo-leveling.fandom.com/wiki/Episode_25",
+    "https://solo-leveling.fandom.com/wiki/Chapter_111",
+    "https://www.epicdope.com/how-far-did-solo-leveling-season-2-adapt-the-manhwa",
+    "https://comicbook.com/anime/news/where-to-read-solo-leveling-after-season-2-finale-explainer"
+   ]
+  },
+  "Solo-Leveling-Season-2-Arise-from-the-Shadow": {
+   "franchise": "Solo Leveling",
+   "medium": "webtoon",
+   "unit": "chapter",
+   "from": 46,
+   "to": 110,
+   "continue": 111,
+   "confidence": "high",
+   "notes": "Episode 25 skips most of the Recruitment arc (about chapters 105–109); chapter 110 ends volume 7 of the English books.",
+   "sources": [
+    "https://solo-leveling.fandom.com/wiki/Episode_12",
+    "https://solo-leveling.fandom.com/wiki/Episode_25",
+    "https://solo-leveling.fandom.com/wiki/Chapter_111",
+    "https://www.epicdope.com/how-far-did-solo-leveling-season-2-adapt-the-manhwa",
+    "https://comicbook.com/anime/news/where-to-read-solo-leveling-after-season-2-finale-explainer"
+   ]
   }
  }
 }

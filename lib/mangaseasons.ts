@@ -6,7 +6,7 @@
 import data from "@/data/manga-seasons.json";
 
 export type Adaptation = {
-  franchise?: string; medium: "manga" | "light novel"; unit: "chapter" | "volume";
+  franchise?: string; medium: "manga" | "light novel" | "webtoon"; unit: "chapter" | "volume";
   from: number; to: number; continue: number | null; notes?: string; sources?: string[]; confidence?: string;
 };
 const DATA = data as unknown as { checked: string | null; reviewed: string | null; seasons: Record<string, Adaptation> };

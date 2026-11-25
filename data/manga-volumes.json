@@ -44,7 +44,8 @@
   "The Devil Is a Part-Timer!": "The Devil Is a Part-Timer!",
   "Durarara!!": "Durarara!!",
   "Rascal Does Not Dream": "Rascal Does Not Dream",
-  "Bleach": "Bleach"
+  "Bleach": "Bleach",
+  "Solo Leveling": "Solo Leveling Comic"
  },
  "seasons": {
   "attack-on-titan": {
@@ -1007,6 +1008,26 @@
    "notes": "Vol 5 is ふたりの距離の概算 (Futari no Kyori no Gaisan). No English edition of this volume as of Nov 2026; Japanese volume.",
    "printTitle": "古典部シリーズ",
    "english": false
+  },
+  "solo-leveling": {
+   "vol": 4,
+   "startsAt": "middle",
+   "confidence": "medium",
+   "notes": "Chapters 45 and 46 are both in volume 4 of the Ize Press comic (Solo Leveling wiki chapter pages); not to be confused with the separate Solo Leveling novel volumes.",
+   "sources": [
+    "https://solo-leveling.fandom.com/wiki/Chapter_45",
+    "https://solo-leveling.fandom.com/wiki/Chapter_46"
+   ]
+  },
+  "Solo-Leveling-Season-2-Arise-from-the-Shadow": {
+   "vol": 8,
+   "startsAt": "start",
+   "confidence": "high",
+   "notes": "Volume 7 ends with chapter 110 (the Season 2 finale); chapter 111 opens volume 8 (Solo Leveling wiki, The Outer Haven's volume 7 review). Ize Press comic, not the novel.",
+   "sources": [
+    "https://solo-leveling.fandom.com/wiki/Chapter_111",
+    "https://www.theouterhaven.net/2023/08/comic-review-solo-leveling-vol-7"
+   ]
   }
  }
 }

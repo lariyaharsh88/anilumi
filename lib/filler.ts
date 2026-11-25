@@ -86,6 +86,8 @@ export function fillerSource(e: FillerEntry): { label: string; tone: "ok" | "dra
 
 export const fillerSlugs = (): string[] => Object.keys(ALL);
 export const continuationFor = (slug: string): ContinueEntry | null => CONTINUE[slug] ?? null;
+/** "Manga", "Light novel", "Webtoon": the source's name as a label. Pure. */
+export const mediumLabel = (m: ContinueEntry["medium"]) => (m === "light novel" ? "Light novel" : m === "webtoon" ? "Webtoon" : "Manga");
 /** "chapter 39" / "volume 14": where to pick the source up. Pure. */
 export const startAt = (c: ContinueEntry): string => (c.chapter ? `chapter ${c.chapter}` : `volume ${c.volume}`);
 export const continuationSlugs = (): string[] => Object.keys(CONTINUE);

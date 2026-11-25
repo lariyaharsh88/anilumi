@@ -166,10 +166,35 @@ export const FILLER: Record<string, FillerEntry> = {
   },
 };
 
-export type ContinueEntry = { medium: "manga" | "light novel"; chapter?: number; volume?: number; note?: string; reviewed: boolean; reviewedOn?: string; search: string };
+export type ContinueEntry = {
+  medium: "manga" | "light novel" | "webtoon"; chapter?: number; volume?: number; note?: string; reviewed: boolean; reviewedOn?: string; search: string;
+  /** The name people search the show by, for titles ("Solo Leveling", not "Ore dake Level Up na Ken"). */
+  name?: string;
+  /** Legal places to read it, each checked on the service itself and a second source. */
+  read?: { service: string; how: string; url: string }[];
+  /** What people search about the source (sequels, films, a closing app), answered from two sources each. */
+  faq?: { q: string; a: string }[];
+  checked?: string; sources?: string[];
+};
+
+// Solo Leveling (25 Nov 2026, Bing keyword research a year: "where to read solo leveling after anime" 3.5K, "solo
+// leveling ragnarok" 6.1K and tripling since the webtoon's Season 3 return on 5 Nov, "solo leveling movie" 3.2K).
+// Tapas, the main English app, closes on 31 March 2027 (ANN, ICv2), so Tappytoon leads.
+const SOLO_LEVELING: Omit<ContinueEntry, "chapter" | "volume" | "note"> = { medium: "webtoon", reviewed: false, search: "Solo Leveling comic", name: "Solo Leveling", read: [
+    { service: "Tappytoon", how: "Official English webtoon: wait-until-free, or unlock with paid points. Tappytoon says titles vary by country.", url: "https://www.tappytoon.com/en/book/solo-leveling-official" },
+    { service: "Ize Press books", how: "15 full-colour volumes in print and ebook: Yen Press in the US, Hachette in the UK and India.", url: "https://yenpress.com/titles/9798400904646-solo-leveling-vol-14-comic" },
+    { service: "Tapas", how: "Closes on 31 March 2027: Ink can no longer be bought and unlocked episodes won't carry over, so don't start here.", url: "https://tapas.io/series/solo-leveling-comic/info" },
+  ], faq: [
+    { q: "Where can I read Solo Leveling legally?", a: "In English on Tappytoon (wait-until-free or paid points), or in Ize Press's 15 full-colour volumes, sold by Yen Press in the US and Hachette in the UK and India. Tapas also has it but closes on 31 March 2027, and episodes unlocked there won't carry over." },
+    { q: "Is Solo Leveling: Ragnarok getting an anime?", a: "No anime of Ragnarok has been announced. Ragnarok is the sequel webtoon, following Sung Jin-Woo's son Suho. Its Season 3 started on KakaoPage on 5 November 2026 and in English on Tappytoon on 11 November, weekly on Saturdays: the \"Solo Leveling Season 3 returns 5 November\" news is about the webtoon, not the anime." },
+    { q: "Is there a Solo Leveling movie?", a: "Two. Solo Leveling -ReAwakening- (2024) is a Season 1 recap plus the first two Season 2 episodes; it opened in Japan on 29 November 2024, in India on 4 December and in the US and UK on 6 December. Solo Leveling: Beyond the System, announced in July 2026, is a new film set after Season 2 from A-1 Pictures, with no release date yet." },
+    { q: "Is Solo Leveling Season 3 confirmed?", a: "Not officially. The webtoon's publisher, D&C Media, expects Season 3 in 2027–28, but Aniplex, A-1 Pictures and Crunchyroll haven't announced it; in July 2026 they announced the film Beyond the System instead." },
+  ], checked: "2026-11-25", sources: ["https://solo-leveling.fandom.com/wiki/Episode_25", "https://solo-leveling.fandom.com/wiki/Chapter_110", "https://solo-leveling.fandom.com/wiki/Chapter_111", "https://www.epicdope.com/how-far-did-solo-leveling-season-2-adapt-the-manhwa", "https://comicbook.com/anime/news/where-to-read-solo-leveling-after-season-2-finale-explainer", "https://www.animenewsnetwork.com/news/2026-07-03/solo-leveling-series-gets-solo-leveling-beyond-the-system-anime-film/.239268", "https://www.animenewsnetwork.com/news/2024-12-02/solo-leveling-reawakening-anime-indian-release-preponed-to-december-4/.218420", "https://fandomwire.com/solo-leveling-ragnarok-season-3-returns/", "https://yenpress.com/titles/9798400904660-solo-leveling-vol-15-comic"] };
 
 /** Where the source picks up after the season or film with this slug ends. */
 export const CONTINUE: Record<string, ContinueEntry> = {
+  "solo-leveling": { ...SOLO_LEVELING, name: "Solo Leveling Season 1", chapter: 46, note: "Season 2, Arise from the Shadow, picks up here and adapts chapters 46–110." },
+  "Solo-Leveling-Season-2-Arise-from-the-Shadow": { ...SOLO_LEVELING, chapter: 111, volume: 8, note: "Season 2 ends with chapter 110, the end of volume 7 of the English books. Episode 25 skips most of the Recruitment arc (about chapters 105–109): start at chapter 108 to read it." },
   "yakusoku-no-neverland": { medium: "manga", chapter: 38, note: "Season 2 departs from the manga almost immediately, so read from here instead.", reviewed: false, search: "The Promised Neverland manga" },
   "chainsaw-man": { medium: "manga", chapter: 39, note: "The Reze Arc film adapts chapters 39–52.", reviewed: false, search: "Chainsaw Man manga" },
   "Chainsaw-Man--The-Movie-Reze-Arc": { medium: "manga", chapter: 53, reviewed: false, search: "Chainsaw Man manga" },
