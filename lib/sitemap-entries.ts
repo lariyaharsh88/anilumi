@@ -35,10 +35,11 @@ import { GEMS_UPDATED } from "@/lib/underrated";
 import { STRONGEST_CHECKED, rankingSlugs, strongestPath } from "@/lib/strongest";
 import { POWERS_CHECKED, powersSlugs, powersPath } from "@/lib/powers";
 import { CLASSIC_CHECKED, DIRECTORS, directorPath, type DirectorSlug } from "@/lib/classicfilms";
+import { RELEASE_DATE, inRelease } from "@/lib/release";
 import crunchyrollPlans from "@/data/crunchyroll-plans.json";
 import opMc from "@/data/op-mc-anime.json";
 import opBounties from "@/data/one-piece-bounties.json";
-import { searchShown, searchShownPaths, animeIndexed, ownContentSlugs, watchOrderIndexed, characterTableIndexed, notedCharacters, demandCharacters, genreIndexed, bestYearIndexed, trendIndexed, voiceActorIndexed, hindiDubIndexed, SEARCHED_COMPARES, SEARCHED_CHARACTER_TABLES } from "@/lib/indexing";
+import { searchShown, searchShownPaths, animeIndexed, ownContentSlugs, watchOrderIndexed, characterTableIndexed, notedCharacters, demandCharacters, genreIndexed, bestYearIndexed, trendIndexed, voiceActorIndexed, hindiDubIndexed, SEARCHED_COMPARES, SEARCHED_CHARACTER_TABLES, SEARCHED_ANIME } from "@/lib/indexing";
 import franchiseData from "@/data/franchises.json";
 import { DATA_DATES as D, STATIC_UPDATED, BIRTHDAY_PAGES_UPDATED, HINDI_HUB_UPDATED, SCENE_PAGE_UPDATED, DUB_GUIDES_ADDED, latest, weekStart, monthStart } from "@/lib/lastmod";
 import { FILLER } from "@/data/filler";
@@ -212,14 +213,15 @@ export async function sitemapEntries(): Promise<MetadataRoute.Sitemap> {
     }
     // Every other anime page that indexes itself (lib/indexing.ts animeIndexed), so none is missing from the sitemap
     // (Bing flagged airing, announced and researched titles outside the top 200, Nov 2026): airing shows ranked 61-200
-    // (filtered by the members floor), all announced ones (~45) and every title with our own research (local data).
+    // (filtered by the members floor), every announced one with a following (Kitsu lists ~100) and every title with our own research (local data).
     // Unrated like /top/airing and /top/upcoming: new shows often have no age rating yet (listAnime still drops adult ones).
     const more = await Promise.all([
       ...[60, 80, 100, 120, 140, 160, 180].map((offset) => listAnime({ filter: { status: "current" }, sort: "-userCount", limit: 20, offset, revalidate: 86400, unrated: true })),
-      ...[0, 20, 40].map((offset) => listAnime({ filter: { status: "upcoming" }, sort: "-userCount", limit: 20, offset, revalidate: 86400, unrated: true })),
+      ...[0, 20, 40, 60, 80, 100].map((offset) => listAnime({ filter: { status: "upcoming" }, sort: "-userCount", limit: 20, offset, revalidate: 86400, unrated: true })),
     ]);
     for (const a of more.flatMap((p) => p.items)) if (animeIndexed(a, false)) out.push({ url: abs(animePath(a)), lastModified: now, changeFrequency: "daily", priority: 0.5 });
     for (const s of ownContentSlugs()) out.push({ url: abs(animePath({ slug: s })), lastModified: at(D.streams, D.dubs), changeFrequency: "weekly", priority: 0.5 });
+    for (const s of SEARCHED_ANIME) out.push({ url: abs(animePath({ slug: s })), lastModified: at(D.anilist), changeFrequency: "weekly", priority: 0.5 });
     // Anime pages Google already shows outside the top 200 (Bing flagged them as missing, Nov 2026). The page
     // indexes itself on the same test (lib/indexing.ts animeIndexed), so this lists nothing that is noindexed.
     for (const p of searchShownPaths("/anime/")) if (/^\/anime\/[^/]+$/.test(p)) out.push({ url: abs(p), lastModified: at(D.anilist), changeFrequency: "weekly", priority: 0.5 });
@@ -235,7 +237,10 @@ export async function sitemapEntries(): Promise<MetadataRoute.Sitemap> {
   } catch {
     /* upstream hiccup: ship the static part of the sitemap */
   }
-  // One entry per URL (several sources list the same page, e.g. /similar/… for top anime), first one wins.
+  // One entry per URL (several sources list the same page, e.g. /similar/… for top anime), first one wins. Pages the
+  // current release changed (lib/release.ts) carry its date, so the IndexNow job sends them after the deploy.
   const seen = new Set<string>();
-  return out.filter((e) => !seen.has(e.url) && Boolean(seen.add(e.url)));
+  const releaseDay = latest(now, RELEASE_DATE);
+  return out.filter((e) => !seen.has(e.url) && Boolean(seen.add(e.url)))
+    .map((e) => (inRelease(new URL(e.url).pathname) && (!e.lastModified || new Date(e.lastModified) < releaseDay) ? { ...e, lastModified: releaseDay } : e));
 }

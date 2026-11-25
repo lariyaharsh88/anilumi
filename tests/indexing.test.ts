@@ -76,14 +76,17 @@ test("similar pages and character tables: only the ones search already shows", a
   assert.equal(nextSeasonIndexed(false), false);
 });
 
-test("anime pages: popular, airing with a following, announced or researched; franchise data isn't inherited", () => {
+test("anime pages: popular, airing or announced with a following, or researched; franchise data isn't inherited", () => {
   const a = (slug: string, userCount: number, status: string) => ({ slug, userCount, status });
   assert.equal(animeIndexed(a("zz-big", 80_000, "finished"), false), true);
   assert.equal(animeIndexed(a("zz-airing", 270, "current"), false), true);
   assert.equal(animeIndexed(a("zz-airing-tiny", 8, "current"), false), false);
-  assert.equal(animeIndexed(a("zz-announced", 15, "upcoming"), false), true);
+  assert.equal(animeIndexed(a("zz-announced", 45, "upcoming"), false), true);
+  assert.equal(animeIndexed(a("zz-announced-tiny", 15, "upcoming"), false), false);
   assert.equal(animeIndexed(a("zz-plain", 9_000, "finished"), false), false);
   assert.equal(animeIndexed(a("zz-plain", 9_000, "finished"), true), true);
+  // Searched by name despite a small following (Dragon Ball Kai 40.5K searches a month in the US).
+  assert.equal(animeIndexed(a("dragon-ball-kai", 27_000, "finished"), false), true);
   // Hindi dub research on the title itself counts; an OVA of a researched series doesn't.
   assert.equal(hasOwnContent("otomege-sekai-wa-mob-ni-kibishii-sekai-desu"), true);
   assert.equal(hasOwnContent("attack-on-titan-ova"), false);
@@ -101,4 +104,13 @@ test("searched character lists: each has a table and at least 3 verified notes f
     assert.ok(notedCast(rows).length >= 3, `${slug}: ${notedCast(rows).length} noted characters`);
     assert.equal(characterTableIndexed(slug), true);
   }
+});
+
+test("release list: real paths, a valid date, and dated pages go to the sitemap as changed", async () => {
+  const data = (await import("../data/release-urls.json")).default as { date: string; paths: string[] };
+  const { inRelease, RELEASE_DATE } = await import("../lib/release");
+  assert.ok(!isNaN(new Date(RELEASE_DATE).getTime()));
+  assert.equal(new Set(data.paths).size, data.paths.length);
+  for (const p of data.paths) assert.ok(p.startsWith("/") && !p.endsWith("/") && inRelease(p), p);
+  assert.equal(inRelease("/zzz-not-in-release"), false);
 });

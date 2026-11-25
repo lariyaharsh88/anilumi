@@ -195,13 +195,20 @@ export const robotsFor = (indexed: boolean) => (indexed ? INDEX : NOINDEX);
  * Anime pages: Kitsu lists ~20,000 titles, most with nothing beyond the shared database text. Indexed: titles with at
  * least ANIME_MIN_MEMBERS followers (about the top 200; was 3,000, about the top 3,500), airing shows with at least
  * AIRING_MIN_MEMBERS (about the top 150 of ~450; the rest are long-running shorts with a handful of followers),
- * anything announced, anything with our own content (hasOwnContent) and anything search still shows. The sitemap
- * lists every one of them (lib/sitemap-entries.ts). The rest stay reachable for visitors.
+ * announced titles with at least UPCOMING_MIN_MEMBERS (Kitsu lists ~100 announced; many have 0-20 followers and a
+ * page with nothing but a title, which Bing flagged as missing from the sitemap, Nov 2026), anything with our own
+ * content (hasOwnContent) and anything search still shows. The sitemap lists every one of them
+ * (lib/sitemap-entries.ts). The rest stay reachable for visitors.
  */
 export const ANIME_MIN_MEMBERS = 60_000;
 export const AIRING_MIN_MEMBERS = 100;
+export const UPCOMING_MIN_MEMBERS = 20;
+/** Titles under the member floor that people search by name (Keyword Planner, Nov 2026, a month, US / India; Bing
+ *  flagged them as important but noindexed): Dragon Ball Kai 40.5K / 6.6K, Bofuri 9.9K / 1.9K, Nande Koko ni Sensei
+ *  ga!? 8.1K / 1.9K, Pokémon Ranger and the Temple of the Sea 2.9K / 1K. Listed in the sitemap too. */
+export const SEARCHED_ANIME = ["dragon-ball-kai", "itai-no-wa-lya-nano-de-bougyoryoku-ni-kyokufuri-shitai-to-omoimasu", "nande-koko-ni-sensei-ga", "pokemon-advanced-generation-pokemon-ranger-to-umi-no-ouji-manaphy"];
 export const animeIndexed = (a: { slug: string; userCount: number; status: string }, ownContent: boolean) =>
-  a.userCount >= ANIME_MIN_MEMBERS || (a.status === "current" && a.userCount >= AIRING_MIN_MEMBERS) || a.status === "upcoming" || ownContent || searchShown(`/anime/${a.slug}`);
+  a.userCount >= ANIME_MIN_MEMBERS || (a.status === "current" && a.userCount >= AIRING_MIN_MEMBERS) || (a.status === "upcoming" && a.userCount >= UPCOMING_MIN_MEMBERS) || ownContent || SEARCHED_ANIME.includes(a.slug) || searchShown(`/anime/${a.slug}`);
 
 /** Our own research on this exact title (where-to-watch, Hindi dub, hand-checked watch order). Not inherited from the
  *  franchise: that made ~1,600 entries indexable (every OVA of a researched series), more than the sitemap can list. */
