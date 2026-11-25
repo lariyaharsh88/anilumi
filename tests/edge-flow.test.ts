@@ -88,3 +88,30 @@ test("the warm-up's render becomes the search engines' shared copy", async () =>
   await s.flush();
   assert.equal(s.r2.text("last/anime/warm-me?__last=1"), "fresh /anime/warm-me");
 });
+
+test("Googlebot on a current, unexpired copy: served, nothing re-rendered", async () => {
+  const s = setup();
+  await s.r2.put("last/anime/fresh-show?__last=1", new TextEncoder().encode("current page").buffer as ArrayBuffer, { customMetadata: meta(BUILD) });
+  const res = await worker.fetch(new Request("https://anilumi.in/anime/fresh-show", { headers: { "user-agent": GOOGLEBOT } }), s.env, s.ctx);
+  assert.equal(await res.text(), "current page");
+  await s.flush();
+  assert.equal(s.renders(), 0);
+});
+
+test("warm-up link pass: a page with a fresh shared copy is skipped, one with only a build copy is copied, one with neither is rendered", async () => {
+  const s = setup();
+  const warm = (path: string) => worker.fetch(new Request(`https://anilumi.in${path}`, { headers: { "user-agent": "AniLumi cache warmer", "x-warm-mode": "shared" } }), s.env, s.ctx);
+  await s.r2.put("last/character/has-copy?__last=1", new TextEncoder().encode("copy").buffer as ArrayBuffer, { customMetadata: meta(BUILD) });
+  await s.r2.put(`edge/character/build-only?__gen=${BUILD}`, new TextEncoder().encode("build copy").buffer as ArrayBuffer, { customMetadata: meta(BUILD) });
+  const a = await warm("/character/has-copy");
+  assert.equal(a.status, 204);
+  assert.equal(a.headers.get("x-edge-cache"), "SHARED-FRESH");
+  const b = await warm("/character/build-only");
+  assert.equal(b.headers.get("x-edge-cache"), "SHARED-FROM-GLOBAL");
+  assert.equal(s.r2.text("last/character/build-only?__last=1"), "build copy");
+  const c = await warm("/character/no-copy");
+  assert.equal(c.status, 200);
+  await s.flush();
+  assert.equal(s.r2.text("last/character/no-copy?__last=1"), "fresh /character/no-copy");
+  assert.equal(s.renders(), 1);
+});

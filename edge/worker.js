@@ -26,7 +26,9 @@ const SHARED_PREFIX = "last/";
 // Pages that change through the day get an hour; everything else a day. Build assets have hashed names.
 const FRESH = new Set(["/", "/schedule", "/tonight", "/birthdays", "/sitemap.xml", "/feed.xml", "/news", "/hype"]);
 const DAY = 86400;
-const SHARED_MAX_AGE = 30 * DAY;
+// Served (and refreshed in the background past the page's TTL) for up to 90 days, so a page Google crawled once stays
+// fast even if it comes back rarely (30 days sent those visits back to a full render).
+const SHARED_MAX_AGE = 90 * DAY;
 // Render free has 0.1 CPU: a dozen uncached pages at once take 5-12 s each, and Googlebot counts slow or failed
 // fetches against the host ("server connectivity"). Past this budget a visitor gets the last good copy instead.
 const ORIGIN_BUDGET_MS = 12_000;
@@ -202,6 +204,11 @@ async function handle(request, env, ctx) {
   // Preview images carry a version hash (opengraph-image?d53d2c13…) and build files their own: both are cached as is.
   if (url.search && !CARD.test(url.pathname) && !url.pathname.startsWith("/_next/") && !knownSearch(url.search)) return toOrigin(request, url);
 
+  // The warm-up's link pass (scripts/warm-cache.mjs, x-warm-mode: shared) only needs a search engines' copy to exist.
+  if (WARMER.test(request.headers.get("user-agent") || "") && request.headers.get("x-warm-mode") === "shared") {
+    const done = await warmSharedCopy(url, ctx);
+    if (done) return done;
+  }
   // Search engines straight to their copy of the page: no wait for the live build's number (on a fresh Worker
   // instance that was an app call of up to a second, and Googlebot's sparse requests nearly always land on one) and
   // no R2 lookup of the build copy. The build check and any refresh happen after the answer is sent.
@@ -353,6 +360,30 @@ async function searchBotCopy(request, url, ctx) {
   const out = new Response(last.body, last);
   out.headers.set("x-edge-cache", shared ? "STALE-SHARED" : "STALE");
   return out;
+}
+
+/**
+ * The warm-up's link pass: 204 when the page already has a search engines' copy within its TTL, or when the live
+ * build's global copy could be made into one (no render). Null means render it (the normal path; the warm-up's
+ * renders become the shared copy).
+ */
+async function warmSharedCopy(url, ctx) {
+  const lastKey = lastKeyFor(url, "?__gen=any");
+  if (!lastKey || !pages) return null;
+  const done = (why) => new Response(null, { status: 204, headers: { "x-edge-cache": why } });
+  const shared = await sharedMatch(lastKey);
+  if (shared && copyAge(shared) <= ttl(url.pathname)) { await shared.body?.cancel?.(); return done("SHARED-FRESH"); }
+  await shared?.body?.cancel?.();
+  const g = await generation(ctx);
+  if (g === "0") return null;
+  const key = new Request(`https://${SITE}${url.pathname}${url.search}${url.search ? "&" : "?"}__gen=${g}`, { method: "GET" });
+  // This data centre's copy of the live build (cached within its TTL), else the global one.
+  const local = await caches.default.match(key);
+  if (local) { await refreshLastCopy(local, lastKey, Date.now()); return done("SHARED-FROM-LOCAL"); }
+  const global = await globalMatch(key);
+  if (!global || Date.now() - global.uploaded > ttl(url.pathname) * 1000) { await global?.response.body?.cancel?.(); return null; }
+  await refreshLastCopy(global.response, lastKey, global.uploaded);
+  return done("SHARED-FROM-GLOBAL");
 }
 
 /** Make a page from the current build (an R2 build copy) the last good copy, here and shared. */

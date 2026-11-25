@@ -171,6 +171,12 @@ export default async function AnimePage({ params }: Props) {
   const a = readable(withEnglish(raw));
 
   const mainGenre = publicGenres(a.categories)[0];
+  // Started now, awaited where used: they need only the record above, and each is a network call (the ratings
+  // database, the airing index). One after another at the end, they added their full latency to every first render.
+  const community = dbEnabled();
+  const released = a.status === "current" || a.status === "finished";
+  const ratingsP = community && released ? ratingStats(a.id).catch(() => null) : Promise.resolve(null);
+  const airingP = a.status === "current" && !a.episodeCount ? airing().catch(() => null) : Promise.resolve(null);
   const [characters, episodes, related, relations, latestInfo, productions, insight, malScore, fanRecs, allNews, keyStaff, voiceCast] = await Promise.all([
     getCharacters(a.id, 12),
     a.subtype === "movie" ? Promise.resolve({ items: [], total: 0, limit: 0, offset: 0 }) : getEpisodes(a.id, 1, 6),
@@ -194,12 +200,23 @@ export default async function AnimePage({ params }: Props) {
   // Full order for the "Watch order" card. The live walk needs one Kitsu call per season (~10 s for a long
   // franchise), so it gets 1.5 s; past that the card uses the monthly snapshot of the same order (lib/wosnap.ts)
   // rather than shrinking to the direct prequel/sequel, which then stayed cached.
-  const order = relations.some((r) => r.role === "prequel" || r.role === "sequel")
-    ? (await Promise.race([
-        buildWatchOrder(a, (id) => (id === a.id ? Promise.resolve(relations) : getRelations(id))).catch(() => null),
-        new Promise<WatchOrder | null>((r) => setTimeout(() => r(null), 1500)),
-      ])) ?? snapshotOrder(a.id)
-    : null;
+  // The watch-order walk, the newest aired episodes and the genre benchmark depend only on the batch above: run
+  // them together rather than one after another.
+  const hasChain = relations.some((r) => r.role === "prequel" || r.role === "sequel");
+  const airingList = a.status === "current" && latestInfo.lastAired > 0 && latestInfo.reliable;
+  const dropPre = insight ? dropStats(insight.dist) : null;
+  const benchGenre = insight?.genres.find((g) => g !== "Ecchi" && g !== "Hentai") ?? null;
+  const [liveOrder, newestEps, bench] = await Promise.all([
+    hasChain
+      ? Promise.race([
+          buildWatchOrder(a, (id) => (id === a.id ? Promise.resolve(relations) : getRelations(id))).catch(() => null),
+          new Promise<WatchOrder | null>((r) => setTimeout(() => r(null), 1500)),
+        ])
+      : Promise.resolve(null),
+    airingList && latestInfo.lastAired > episodes.items.length ? getEpisodesAt(a.id, Math.max(0, latestInfo.lastAired - 6), 6).then((r) => r.items) : Promise.resolve(episodes.items),
+    dropPre && dropPre.started >= 200 && benchGenre ? genreDropBenchmark(benchGenre) : Promise.resolve(null),
+  ]);
+  const order = hasChain ? liveOrder ?? snapshotOrder(a.id) : null;
   // "Season 2?" on finished series: the next main entry in the order, else Kitsu's sequel link, else AniList
   // (same rule as the next-season page, which has the full answer).
   let sequel: (SequelLike & { href?: string }) | null = null;
@@ -225,26 +242,19 @@ export default async function AnimePage({ params }: Props) {
   if (latestInfo.nextAt) a.nextRelease = latestInfo.nextAt; // AniList pair: number and time stay consistent
   const lastAired = latestInfo.lastAired;
   // An airing season's planned length: Kitsu's count, else AniList's (airing snapshot). Aired only when reliable.
-  const planned = a.status === "current" ? a.episodeCount || (await airing()).byKitsu.get(a.id)?.e || null : null;
+  const planned = a.status === "current" ? a.episodeCount || (await airingP)?.byKitsu.get(a.id)?.e || null : null;
   const airedCount = a.status === "current" && latestInfo.reliable && lastAired > 0 ? lastAired : null;
   const runtime = runtimeMinutes(airedOnly(a, airedCount)); // aired episodes only, for a show still airing
   // Airing shows list their newest aired episodes first. Kitsu's total also counts placeholder records for
   // episodes that haven't aired (One Piece: 1,410 records, 1,180 aired), so the heading uses the aired count.
   // Only with a reliable count: when AniList is rate-limited the fallback is Kitsu's air dates, which stop at
   // One Piece episode 743; then the list starts at episode 1 and the heading shows no count.
-  const airingList = a.status === "current" && lastAired > 0 && latestInfo.reliable;
-  const latestEps = airingList
-    ? (lastAired > episodes.items.length ? (await getEpisodesAt(a.id, Math.max(0, lastAired - 6), 6)).items : episodes.items)
-        .filter((e) => e.number !== null && e.number <= lastAired)
-        .reverse()
-    : [];
+  const latestEps = airingList ? newestEps.filter((e) => e.number !== null && e.number <= lastAired).reverse() : [];
   const epList = latestEps.length ? latestEps : episodes.items;
   const epCount = airingList ? lastAired : a.status === "current" ? 0 : a.episodeCount || episodes.total;
   const studios = productions.filter((p) => p.role === "studio");
-  const drop = insight ? dropStats(insight.dist) : null;
+  const drop = dropPre;
   const dropOk = drop && drop.started >= 200 ? drop : null;
-  const benchGenre = insight?.genres.find((g) => g !== "Ecchi" && g !== "Hentai") ?? null;
-  const bench = dropOk && benchGenre ? await genreDropBenchmark(benchGenre) : null;
   const guide: ParentsGuide | null = insight ? parentsGuide(insight.tags, insight.genres, a.ageRating) : null;
   const licensors = productions.filter((p) => p.role === "licensor");
   const nextN = a.status === "current" && a.nextRelease && latestInfo.reliable ? lastAired + 1 : null;
@@ -310,10 +320,8 @@ export default async function AnimePage({ params }: Props) {
     pairs: fanRecs.slice(0, 2).map((r) => r.title),
   }) : [];
   const changing = a.status === "current" || a.status === "upcoming";
-  const community = dbEnabled();
-  const released = a.status === "current" || a.status === "finished";
   // Read when the page (re)renders, i.e. at most daily: fresh enough for search engines; the widget shows live numbers.
-  const fanRating = community && released ? aggregateRating(summarize(await ratingStats(a.id))) : undefined;
+  const fanRating = community && released ? aggregateRating(summarize(await ratingsP)) : undefined;
 
   const director = keyStaff.find((k) => k.role === "Director")?.people ?? [];
   const creator = keyStaff.find((k) => k.role === "Original creator")?.people ?? [];

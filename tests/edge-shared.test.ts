@@ -12,8 +12,8 @@ test("only search engines get the shared last copy", () => {
   assert.equal(isSearchBot(null), false);
 });
 
-test("a shared copy is served for 30 days after it was stored", () => {
+test("a shared copy is served for 90 days after it was stored", () => {
   const now = Date.UTC(2026, 10, 23);
-  assert.equal(sharedUsable(now - 29 * 86400_000, now), true);
-  assert.equal(sharedUsable(now - 31 * 86400_000, now), false);
+  assert.equal(sharedUsable(now - 89 * 86400_000, now), true);
+  assert.equal(sharedUsable(now - 91 * 86400_000, now), false);
 });
