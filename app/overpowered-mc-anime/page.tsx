@@ -116,7 +116,7 @@ export default function OverpoweredMcPage() {
         </section>
       )}
 
-      <MadeBy className="mt-8" method="A show qualifies when its own premise, in Wikipedia's plot section or the official synopsis, says the protagonist is overwhelmingly strong; each line paraphrases that premise, with no spoilers past the opening episodes." date={D.checked} />
+      <MadeBy className="mt-8" path="/overpowered-mc-anime" method="A show qualifies when its own premise, in Wikipedia's plot section or the official synopsis, says the protagonist is overwhelmingly strong; each line paraphrases that premise, with no spoilers past the opening episodes." date={D.checked} />
       <Faq title="OP MC anime: FAQ" items={faq} />
     </div>
   );

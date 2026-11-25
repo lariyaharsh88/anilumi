@@ -105,7 +105,7 @@ export default function FunimationPage() {
         </div>
       </section>
 
-      <MadeBy className="mt-8" method="Dates and changes are checked against Crunchyroll's announcements as reported by Anime News Network, Engadget, Siliconera and GameSpot, with Wikipedia as a second source." date={D.checked} />
+      <MadeBy className="mt-8" path="/funimation" method="Dates and changes are checked against Crunchyroll's announcements as reported by Anime News Network, Engadget, Siliconera and GameSpot, with Wikipedia as a second source." date={D.checked} />
       <Faq title="Funimation: FAQ" items={faq} />
     </div>
   );

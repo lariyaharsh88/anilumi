@@ -198,7 +198,7 @@ export default function CrunchyrollPricePage() {
 
       <p className="mt-8 max-w-3xl text-sm text-muted">In India, Crunchyroll has its own prices and the Hindi-dubbed catalogue: see <Link href="/crunchyroll-price-india" className="text-violet hover:underline">Crunchyroll price in India</Link>. For legal anime that costs nothing, see <Link href="/free-anime-websites" className="text-violet hover:underline">free anime websites</Link>.</p>
 
-      <MadeBy className="mt-8" method={`Prices come from Crunchyroll's help center and price announcements as reported by TheWrap, MobileSyrup and WhistleOut, cross-checked with each country's App Store listing; the free-tier and trial rules from Crunchyroll's help center. Sources: ${list(["help.crunchyroll.com", "TheWrap", "MobileSyrup", "WhistleOut", "Anime News Network"])}.`} date={D.checked} />
+      <MadeBy className="mt-8" path="/crunchyroll-price" method={`Prices come from Crunchyroll's help center and price announcements as reported by TheWrap, MobileSyrup and WhistleOut, cross-checked with each country's App Store listing; the free-tier and trial rules from Crunchyroll's help center. Sources: ${list(["help.crunchyroll.com", "TheWrap", "MobileSyrup", "WhistleOut", "Anime News Network"])}.`} date={D.checked} />
       <Faq title="Crunchyroll price: FAQ" items={faq} />
     </div>
   );

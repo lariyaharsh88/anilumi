@@ -112,7 +112,7 @@ export default async function StrongestPage({ params }: Props) {
         <p className="mt-8 flex flex-wrap gap-2 text-sm">{others.map(({ s, r: o }) => <Link key={s} href={strongestPath(s)} className="chip">⚔️ Strongest {o.name} characters</Link>)}</p>
       )}
 
-      <MadeBy className="mt-8" method={`Placed by official titles and ranks, bounties and fight results in the anime and manga, from the series wikis, Wikipedia and Anime News Network; "(debated)" marks a placement with one source or a real argument behind it. As of ${fmt(r.asOf)}.`} date={STRONGEST_CHECKED} />
+      <MadeBy className="mt-8" path={strongestPath(series)} method={`Placed by official titles and ranks, bounties and fight results in the anime and manga, from the series wikis, Wikipedia and Anime News Network; "(debated)" marks a placement with one source or a real argument behind it. As of ${fmt(r.asOf)}.`} date={STRONGEST_CHECKED} />
       <Faq title={`Strongest ${r.name} characters: FAQ`} items={faq} />
     </div>
   );

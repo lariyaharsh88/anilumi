@@ -169,7 +169,7 @@ export default async function PowersPage({ params }: Props) {
           <p className="mt-2">{p.notes}</p>
         </details>
       )}
-      <MadeBy className="mt-8" method="Techniques, forms and fights come from the series wikis and Wikipedia, with first appearances only where a source gives the episode or chapter." date={POWERS_CHECKED} />
+      <MadeBy className="mt-8" path={powersPath(slug)} method="Techniques, forms and fights come from the series wikis and Wikipedia, with first appearances only where a source gives the episode or chapter." date={POWERS_CHECKED} />
       <Faq title={forms ? `${short}'s ${f}: FAQ` : `${short}'s powers: FAQ`} items={faq} />
     </div>
   );

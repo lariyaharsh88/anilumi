@@ -80,7 +80,7 @@ export default function StrongestHub() {
         </section>
       )}
 
-      <MadeBy className="mt-8" method="Each series is ranked by official titles and ranks, bounties and fight results in its anime and manga, from the series wikis, Wikipedia and Anime News Network; no cross-series winners are named." date={STRONGEST_CHECKED} />
+      <MadeBy className="mt-8" path="/strongest-anime-characters" method="Each series is ranked by official titles and ranks, bounties and fight results in its anime and manga, from the series wikis, Wikipedia and Anime News Network; no cross-series winners are named." date={STRONGEST_CHECKED} />
       <Faq title="Strongest anime characters: FAQ" items={faq} />
     </div>
   );

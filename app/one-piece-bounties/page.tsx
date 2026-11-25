@@ -131,7 +131,7 @@ export default function OnePieceBountiesPage() {
         <ul className="grid gap-2 md:grid-cols-2">{D.excluded.map((e) => <li key={e.name} className="card p-3 text-sm"><span className="font-semibold text-ink">{e.name}:</span> <span className="text-ink/85">{e.why}</span></li>)}</ul>
       </section>
 
-      <MadeBy className="mt-8" method={`Each amount appears on both the One Piece Wiki's bounty list and the character's own wiki page; chapters 1131 to ${D.asOf.match(/ch\. (\d+)/)?.[1] ?? "the latest"} were checked for newer reveals.`} date={D.checked} />
+      <MadeBy className="mt-8" path="/one-piece-bounties" method={`Each amount appears on both the One Piece Wiki's bounty list and the character's own wiki page; chapters 1131 to ${D.asOf.match(/ch\. (\d+)/)?.[1] ?? "the latest"} were checked for newer reveals.`} date={D.checked} />
       <Faq title="One Piece bounties: FAQ" items={faq} />
     </div>
   );

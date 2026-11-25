@@ -80,7 +80,7 @@ export default function FilmsPage({ slug, lang }: { slug: string; lang: FilmLang
         ]}
         hue={25}
       />
-      <MadeBy className="mt-4" date={FILMS_CHECKED} method={`Each ${L} status is from the platform's own page, the broadcaster's or distributor's announcement, or news reports; fan wikis count only as support for TV dubs. No unofficial uploads.`} />
+      <MadeBy className="mt-4" path={filmsPath(f.slug, lang)} date={FILMS_CHECKED} method={`Each ${L} status is from the platform's own page, the broadcaster's or distributor's announcement, or news reports; fan wikis count only as support for TV dubs. No unofficial uploads.`} />
 
       <SectionNav sections={[{ id: "latest", label: "Newest film" }, { id: "list", label: `All ${films.length} in order` }, ...(w ? [{ id: "watch", label: "Where to watch" }] : []), ...(w?.seasons?.length ? [{ id: "seasons", label: "Seasons" }] : []), { id: "faq", label: "FAQ" }]} />
 

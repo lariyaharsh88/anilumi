@@ -109,7 +109,7 @@ export default function UnderratedAnimePage() {
         </section>
       ))}
 
-      <MadeBy className="mt-8" method={`Built from AniList: average score ${GEM_RULES.minScore}+ from at least ${k(GEM_RULES.minPopularity)} members, under ${k(GEM_RULES.maxPopularity)} members in total, first seasons and stand-alone films only, nothing from this year, no adult titles.`} date={GEMS_UPDATED} />
+      <MadeBy className="mt-8" path="/underrated-anime" method={`Built from AniList: average score ${GEM_RULES.minScore}+ from at least ${k(GEM_RULES.minPopularity)} members, under ${k(GEM_RULES.maxPopularity)} members in total, first seasons and stand-alone films only, nothing from this year, no adult titles.`} date={GEMS_UPDATED} />
       <Faq title="Underrated anime: FAQ" items={faq} />
     </div>
   );

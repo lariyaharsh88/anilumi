@@ -69,12 +69,21 @@ export default function ClassicAnimeMovies() {
       {(Object.keys(DIRECTORS) as DirectorSlug[]).map((s) => (
         <section key={s} className="reveal pt-10" aria-labelledby={`d-${s}`}>
           <h2 id={`d-${s}`} className="h-section mb-1"><Link href={directorPath(s)} className="hover:text-violet-2">{DIRECTORS[s].name}&apos;s films →</Link></h2>
-          <p className="mb-4 max-w-3xl text-sm text-muted">{DIRECTORS[s].blurb}</p>
-          <ClassicFilmsTable films={filmsBy(s)} />
+          <p className="mb-3 max-w-3xl text-sm text-muted">{DIRECTORS[s].blurb}</p>
+          {/* The full where-to-watch table lives on the director's page; here, the films and a one-line answer each. */}
+          <ul className="grid gap-2 md:grid-cols-2">
+            {filmsBy(s).map((f) => (
+              <li key={f.t} className="card p-3 text-sm">
+                <Link href={`/anime/${f.kitsu}`} className="font-semibold text-ink hover:text-violet-2">{f.t.replace(/\.$/, "")}</Link> <span className="text-muted">({f.year})</span>
+                <p className="mt-0.5 text-xs leading-5 text-ink/75">{whereSentence(f)}.</p>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-3 text-sm"><Link href={directorPath(s)} className="font-medium text-violet hover:underline">All {DIRECTORS[s].name} films, with Hindi audio and free options marked →</Link></p>
         </section>
       ))}
 
-      <MadeBy className="mt-8" method="Each film is checked on JustWatch's US, India and UK pages and the platforms' own title pages; Hindi audio is read from the platform's page or confirmed by Anime News Network. Rent-only films are marked." date={CLASSIC_CHECKED} />
+      <MadeBy className="mt-8" path="/classic-anime-movies" method="Each film is checked on JustWatch's US, India and UK pages and the platforms' own title pages; Hindi audio is read from the platform's page or confirmed by Anime News Network. Rent-only films are marked." date={CLASSIC_CHECKED} />
       <Faq title="Classic anime films: FAQ" items={faq} />
     </div>
   );

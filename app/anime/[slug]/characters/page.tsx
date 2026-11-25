@@ -22,6 +22,8 @@ import { bountyFigure } from "@/lib/bounties";
 import Faq from "@/components/Faq";
 import AdSlot from "@/components/AdSlot";
 import AnswerLead from "@/components/AnswerLead";
+import CheckedBy from "@/components/CheckedBy";
+import { reviewedOn } from "@/lib/reviews";
 import { notedCast, shortRole, debutInShow, characterNote } from "@/lib/charnotes";
 import { roleIn } from "@/lib/seriessnap";
 
@@ -109,6 +111,7 @@ export default async function CharactersTable({ params }: Props) {
         posters={rows.slice(0, 3).map((r) => snapImage(r.c, "large"))}
       />
 
+      {reviewedOn(`${base}/characters`) && <CheckedBy date={reviewedOn(`${base}/characters`)!} className="mt-4" />}
       {cast.length > 0 && (
         <AnswerLead>
           The main {name} characters are {list(cast.slice(0, 6).map((m) => m.note.name))}. Below are {rows.length} characters with their ages, heights, birthdays and Japanese voice actors.

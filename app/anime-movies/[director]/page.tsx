@@ -74,7 +74,7 @@ export default async function DirectorFilms({ params }: Props) {
         <ClassicFilmsTable films={films} />
       </section>
 
-      <MadeBy className="mt-8" method="Each film is checked on JustWatch's US, India and UK pages and the platforms' own title pages; Hindi audio is read from the platform's page or confirmed by Anime News Network." date={CLASSIC_CHECKED} />
+      <MadeBy className="mt-8" path={directorPath(s)} method="Each film is checked on JustWatch's US, India and UK pages and the platforms' own title pages; Hindi audio is read from the platform's page or confirmed by Anime News Network." date={CLASSIC_CHECKED} />
       <Faq title={`${d.name} movies: FAQ`} items={faq} />
     </div>
   );
