@@ -1,6 +1,588 @@
 {
  "checked": "2026-11-25",
  "series": {
+  "one-piece": {
+   "name": "One Piece",
+   "anime": "one-piece",
+   "searches": {
+    "US": 9900,
+    "IN": 8100
+   },
+   "asOf": "Manga: chapter 1199 (Weekly Shonen Jump, 22-23 Nov 2026; mid-Elbaph arc). Anime: episode 1180 (27 Sep 2026), which adapts up to about chapter 1150; the anime is on break until 2027. Checked 25 Nov 2026.",
+   "basis": "Ranked by in-story status first (Emperor, Admiral, commander), then by on-page fight results and bounties inside each tier; we never use fan power-scaling, and where two characters never fought and the evidence can't separate them we say so.",
+   "notes": "How we ordered each tier: Top tier and Emperors go by bounty, except that a fight result wins over a bounty (Luffy beat Kaido, so he sits above him even though Kaido's bounty is higher). Shanks, Blackbeard and Luffy have never fought each other, so there is no canon order between them; they are listed by current bounty. Kizaru, Kuzan, Garp, Mihawk and Rayleigh have no head-to-head results except Akainu beating Kuzan and Kuzan beating Garp. Mihawk's 3.59 billion bounty is higher than Luffy's, but he is placed by status (former Warlord, not an Emperor). Law and Kid can't be separated (same bounty, same joint win), so they are listed by popularity. Commanders are listed by bounty: Doflamingo's 340 million is from before he became a Warlord, so his place there is low-confidence. Buggy is officially an Emperor (bounty 3,189,000,000, ch. 1053), but the story says he got the title through misunderstandings, the same way he became a Warlord, so we left him out of the ranking. Left out because the evidence is thinner: Sabo (his 602 million bounty comes from a magazine, and his Vivre Card says 'unknown'), Boa Hancock (1,659,000,000) and Crocodile (1,965,000,000), both Cross Guild or former Warlords with no recent decisive fight, and Jinbe (1.1 billion). Manga vs anime: the anime stopped at ep. 1180 (Domi Reversi, about ch. 1150) and returns in 2027, so Imu arriving at Elbaph, his fights with Zoro, Sanji and Loki, Luffy's new form and Sanji's Supreme King Haki (ch. 1179-1199) are manga-only. Spoiler flag: anything after Marineford is marked as a spoiler, so almost every entry is flagged, because bounties were revealed in Wano (ch. 957/1053/1058).",
+   "tiers": [
+    {
+     "name": "Top tier (legends of the last era)",
+     "chars": [
+      {
+       "name": "Gol D. Roger",
+       "slug": null,
+       "why": "The Pirate King, the only pirate to sail the whole Grand Line; his 5,564,800,000-berry bounty, revealed in ch. 957 (ep. 958), is the highest ever recorded.",
+       "spoiler": true,
+       "sources": [
+        "https://onepiece.fandom.com/wiki/Gol_D._Roger",
+        "https://onepiece.fandom.com/wiki/Chapter_957",
+        "https://en.wikipedia.org/wiki/List_of_One_Piece_pirates#Gol_D._Roger"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "Edward Newgate (Whitebeard)",
+       "slug": "edward-newgate",
+       "why": "Called the \"Strongest Man in the World\" in the story, with a 5,046,000,000 bounty (ch. 957). At Marineford he kept fighting while ill and badly hurt, and died standing after Blackbeard's crew ganged up on him (ch. 576).",
+       "spoiler": true,
+       "sources": [
+        "https://onepiece.fandom.com/wiki/Edward_Newgate",
+        "https://onepiece.fandom.com/wiki/Chapter_576",
+        "https://en.wikipedia.org/wiki/Four_Emperors_(One_Piece)#Edward_Newgate"
+       ],
+       "confidence": "high"
+      }
+     ]
+    },
+    {
+     "name": "Emperor level",
+     "chars": [
+      {
+       "name": "Shanks",
+       "slug": "shanks",
+       "why": "One of the Four Emperors with the highest active Emperor bounty, 4,048,900,000 (ch. 957, ch. 1053). He ended the Marineford war just by arriving (ch. 580), beat Eustass Kid and Killer with a single strike (ch. 1079, ep. 1112), and made Admiral Ryokugyu back off Wano with his Haki alone (ch. 1055).",
+       "spoiler": true,
+       "sources": [
+        "https://onepiece.fandom.com/wiki/Shanks",
+        "https://onepiece.fandom.com/wiki/Chapter_1079",
+        "https://onepiece.fandom.com/wiki/Four_Emperors",
+        "https://en.wikipedia.org/wiki/Four_Emperors_(One_Piece)#Shanks"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "Marshall D. Teach (Blackbeard)",
+       "slug": "teach-marshall-d",
+       "why": "An Emperor with a bounty of 3,996,000,000 (ch. 1053, ep. 1080). He took Whitebeard's Devil Fruit power at Marineford, and later beat Trafalgar Law and the Heart Pirates at Winner Island (ch. 1064 and ch. 1081, ep. 1093 and ep. 1115). Shanks's eye scars came from an old fight with him (ch. 434).",
+       "spoiler": true,
+       "sources": [
+        "https://onepiece.fandom.com/wiki/Marshall_D._Teach",
+        "https://onepiece.fandom.com/wiki/Chapter_1081",
+        "https://en.wikipedia.org/wiki/Four_Emperors_(One_Piece)#Marshall_D._Teach"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "Monkey D. Luffy",
+       "slug": "luffy-monkey-d",
+       "why": "Named an Emperor with a 3,000,000,000 bounty after he defeated Kaido (ch. 1049, ep. 1076; ch. 1053, ep. 1080). He then fought Admiral Kizaru at Egghead until both were exhausted (ch. 1095, ep. 1129). In the Elbaph manga chapters, in a new form, he is now fighting Imu (ch. 1186-1199, ongoing).",
+       "spoiler": true,
+       "sources": [
+        "https://onepiece.fandom.com/wiki/Monkey_D._Luffy",
+        "https://onepiece.fandom.com/wiki/Chapter_1049",
+        "https://onepiece.fandom.com/wiki/Chapter_1053",
+        "https://en.wikipedia.org/wiki/Monkey_D._Luffy"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "Kaido",
+       "slug": "one-piece-kaido",
+       "why": "A former Emperor called the world's \"Strongest Creature\" (ch. 697). He had the highest active bounty of his time, 4,611,100,000 (ch. 957), and beat Luffy earlier in Wano, but lost the final fight to him on Onigashima (ch. 1049, ep. 1076).",
+       "spoiler": true,
+       "sources": [
+        "https://onepiece.fandom.com/wiki/Kaidou",
+        "https://onepiece.fandom.com/wiki/Chapter_1049",
+        "https://en.wikipedia.org/wiki/Four_Emperors_(One_Piece)"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "Charlotte Linlin (Big Mom)",
+       "slug": null,
+       "why": "A former Emperor with a 4,388,000,000 bounty (ch. 957). Trafalgar Law and Eustass Kid defeated her together at Onigashima (ch. 1040, ep. 1067).",
+       "spoiler": true,
+       "sources": [
+        "https://onepiece.fandom.com/wiki/Charlotte_Linlin",
+        "https://onepiece.fandom.com/wiki/Chapter_1040",
+        "https://en.wikipedia.org/wiki/Four_Emperors_(One_Piece)"
+       ],
+       "confidence": "high"
+      }
+     ]
+    },
+    {
+     "name": "Admiral level",
+     "chars": [
+      {
+       "name": "Sakazuki (Akainu)",
+       "slug": null,
+       "why": "Fleet Admiral of the Marines. He killed Ace and wounded Whitebeard at Marineford (ch. 574-576), then beat Kuzan in a 10-day duel for the Fleet Admiral seat (revealed in ch. 650, ep. 570).",
+       "spoiler": true,
+       "sources": [
+        "https://onepiece.fandom.com/wiki/Sakazuki",
+        "https://onepiece.fandom.com/wiki/Chapter_574",
+        "https://onepiece.fandom.com/wiki/Kuzan",
+        "https://en.wikipedia.org/wiki/List_of_One_Piece_characters"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "Borsalino (Kizaru)",
+       "slug": null,
+       "why": "Admiral. He beat several of the Supernovas at Sabaody (ch. 507-510), and at Egghead fought Gear 5 Luffy, by then an Emperor, until both were exhausted (ch. 1095, ep. 1129).",
+       "spoiler": true,
+       "sources": [
+        "https://onepiece.fandom.com/wiki/Borsalino",
+        "https://onepiece.fandom.com/wiki/Chapter_510",
+        "https://onepiece.fandom.com/wiki/Four_Emperors",
+        "https://en.wikipedia.org/wiki/List_of_One_Piece_characters"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "Kuzan (Aokiji)",
+       "slug": "kuzan",
+       "why": "Former Admiral. He lost the 10-day duel with Akainu (ch. 650, ep. 570), and as a Blackbeard Pirates captain he ran Garp through with ice on Hachinosu (ch. 1088, ep. 1122), after which Garp was held prisoner (ch. 1126).",
+       "spoiler": true,
+       "sources": [
+        "https://onepiece.fandom.com/wiki/Kuzan",
+        "https://onepiece.fandom.com/wiki/Monkey_D._Garp",
+        "https://onepiece.fandom.com/wiki/Chapter_1088",
+        "https://en.wikipedia.org/wiki/List_of_One_Piece_characters"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "Monkey D. Garp",
+       "slug": null,
+       "why": "The Vice Admiral called the \"Hero of the Marines\". He fought Rocks alongside Roger at God Valley (from ch. 1096, with the rest shown in Elbaph-arc flashbacks), but was defeated by Kuzan and the Blackbeard Pirates on Hachinosu while covering his crew's escape (ch. 1088).",
+       "spoiler": true,
+       "sources": [
+        "https://onepiece.fandom.com/wiki/Monkey_D._Garp",
+        "https://onepiece.fandom.com/wiki/Chapter_1088",
+        "https://en.wikipedia.org/wiki/List_of_One_Piece_characters"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "Dracule Mihawk",
+       "slug": "mihawk-dracule",
+       "why": "Holds the in-story title \"World's Strongest Swordsman\". He beat Zoro with one cut (ch. 51-52, ep. 24), and his bounty as a Cross Guild leader is 3,590,000,000 (ch. 1058, ep. 1086).",
+       "spoiler": true,
+       "sources": [
+        "https://onepiece.fandom.com/wiki/Dracule_Mihawk",
+        "https://onepiece.fandom.com/wiki/Chapter_1058",
+        "https://en.wikipedia.org/wiki/List_of_One_Piece_pirates"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "Silvers Rayleigh",
+       "slug": "rayleigh-silvers",
+       "why": "Roger's first mate. He stepped in to hold off Admiral Kizaru at Sabaody so the Straw Hats could get away (ch. 511-512, ep. 403-404).",
+       "spoiler": false,
+       "sources": [
+        "https://onepiece.fandom.com/wiki/Silvers_Rayleigh",
+        "https://onepiece.fandom.com/wiki/Chapter_510",
+        "https://en.wikipedia.org/wiki/List_of_One_Piece_pirates"
+       ],
+       "confidence": "medium"
+      }
+     ]
+    },
+    {
+     "name": "Emperor-challenger level (Supernova captains)",
+     "chars": [
+      {
+       "name": "Trafalgar Law",
+       "slug": "trafalgar-law",
+       "why": "Bounty 3,000,000,000 after he and Kid defeated Big Mom (ch. 1040, ep. 1067; ch. 1053). He then lost to Blackbeard at Winner Island (ch. 1064 and ch. 1081, ep. 1093 and ep. 1115).",
+       "spoiler": true,
+       "sources": [
+        "https://onepiece.fandom.com/wiki/Trafalgar_D._Water_Law",
+        "https://onepiece.fandom.com/wiki/Chapter_1040",
+        "https://onepiece.fandom.com/wiki/Chapter_1081",
+        "https://en.wikipedia.org/wiki/List_of_One_Piece_pirates#Trafalgar_Law"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "Eustass Kid",
+       "slug": "eustass-kid",
+       "why": "Bounty 3,000,000,000 (ch. 1053, ep. 1080) after he and Law defeated Big Mom (ch. 1040). Shanks then beat him with a single strike at Elbaph (ch. 1079, ep. 1112).",
+       "spoiler": true,
+       "sources": [
+        "https://onepiece.fandom.com/wiki/Eustass_Kid",
+        "https://onepiece.fandom.com/wiki/Chapter_1079",
+        "https://en.wikipedia.org/wiki/List_of_One_Piece_pirates"
+       ],
+       "confidence": "high"
+      }
+     ]
+    },
+    {
+     "name": "Commander level",
+     "chars": [
+      {
+       "name": "Marco",
+       "slug": "marco-635005a3-e733-4b23-a8b0-db0321e1eee0",
+       "why": "Whitebeard's 1st division commander, with a bounty of 1,374,000,000. At Onigashima he held off King and Queen at the same time (ch. 1006, ep. 1022).",
+       "spoiler": true,
+       "sources": [
+        "https://onepiece.fandom.com/wiki/Marco",
+        "https://onepiece.fandom.com/wiki/Chapter_1006",
+        "https://en.wikipedia.org/wiki/Four_Emperors_(One_Piece)"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "Roronoa Zoro",
+       "slug": "zoro-roronoa",
+       "why": "Bounty 1,111,000,000 (ch. 1058) after he beat King, Kaido's right-hand man, with a Supreme King Haki-coated attack (ch. 1035).",
+       "spoiler": true,
+       "sources": [
+        "https://onepiece.fandom.com/wiki/Roronoa_Zoro",
+        "https://onepiece.fandom.com/wiki/Chapter_1035",
+        "https://en.wikipedia.org/wiki/Roronoa_Zoro"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "Charlotte Katakuri",
+       "slug": "katakuri",
+       "why": "Big Mom's Sweet Commander, with a bounty of 1,057,000,000. He lost to Luffy after a long fight in the Mirro-World (ch. 896, ep. 871).",
+       "spoiler": true,
+       "sources": [
+        "https://onepiece.fandom.com/wiki/Charlotte_Katakuri",
+        "https://onepiece.fandom.com/wiki/Chapter_896",
+        "https://en.wikipedia.org/wiki/List_of_One_Piece_pirates"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "Sanji",
+       "slug": "sanji",
+       "why": "Bounty 1,032,000,000 (ch. 1058) after he beat Queen (ch. 1035). In the Elbaph manga chapters he used Supreme King Haki to break Killingham's armor and then his neck (ch. 1198-1199).",
+       "spoiler": true,
+       "sources": [
+        "https://onepiece.fandom.com/wiki/Sanji",
+        "https://onepiece.fandom.com/wiki/Chapter_1035",
+        "https://onepiece.fandom.com/wiki/Chapter_1198",
+        "https://en.wikipedia.org/wiki/Sanji_(One_Piece)"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "Portgas D. Ace",
+       "slug": "ace-portgas-d",
+       "why": "Whitebeard's 2nd division commander, with a 550,000,000 bounty, the highest shown in the first half of the story. He lost to Blackbeard on Banaro Island (ch. 440-441) and was killed by Akainu at Marineford (ch. 574).",
+       "spoiler": false,
+       "sources": [
+        "https://onepiece.fandom.com/wiki/Portgas_D._Ace",
+        "https://onepiece.fandom.com/wiki/Chapter_441",
+        "https://onepiece.fandom.com/wiki/Chapter_574",
+        "https://en.wikipedia.org/wiki/Four_Emperors_(One_Piece)#Portgas_D._Ace"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "Donquixote Doflamingo",
+       "slug": "doflamingo-donquixote",
+       "why": "A Warlord and the ruler of Dressrosa. Luffy beat him in Gear 4 to end the Dressrosa arc (ch. 790-791).",
+       "spoiler": true,
+       "sources": [
+        "https://onepiece.fandom.com/wiki/Donquixote_Doflamingo",
+        "https://onepiece.fandom.com/wiki/Chapter_790",
+        "https://onepiece.fandom.com/wiki/Chapter_791"
+       ],
+       "confidence": "medium"
+      }
+     ]
+    },
+    {
+     "name": "Not ranked yet (fight still going on in the manga)",
+     "chars": [
+      {
+       "name": "Imu (Saint Nerona Imu)",
+       "slug": null,
+       "why": "The secret \"King of the World\". At Elbaph (manga only) he brushed off Zoro, overpowered Sanji (ch. 1180) and struck Loki down (ch. 1198). His Domi Reversi did nothing to Luffy and Loki (ch. 1178), he admits he has reached his limit away from Mary Geoise (ch. 1198), and his fight with Luffy has no result yet.",
+       "spoiler": true,
+       "sources": [
+        "https://onepiece.fandom.com/wiki/Nerona_Imu",
+        "https://onepiece.fandom.com/wiki/Elbaph_Arc",
+        "https://onepiece.fandom.com/wiki/Chapter_1198",
+        "https://onepiece.fandom.com/wiki/Chapter_1199"
+       ],
+       "confidence": "medium"
+      }
+     ]
+    }
+   ]
+  },
+  "naruto": {
+   "name": "Naruto",
+   "anime": "naruto",
+   "searches": {
+    "US": 6600,
+    "IN": 8100
+   },
+   "asOf": "Naruto is complete: the manga ended with ch. 700 (Nov 2014) and Naruto Shippuden ended with ep. 500 (Mar 2017). Chapter numbers are from the manga. Checked 25 Nov 2026.",
+   "basis": "Ranked by on-page fight results and official titles (Hokage, Kazekage) in Naruto and Shippuden, plus explicit in-story statements; Boruto is kept out of the ranking and covered only in the note.",
+   "notes": "Ordering: Naruto and Sasuke only beat Kaguya together, so the three can't be split one-on-one; we list them by popularity, with Naruto first because Sasuke conceded their final fight. Inside the legendary Kage tier, Hashirama is first because he beat Madara outright. Guy, Minato and Tobirama never fought each other; Guy is second because of the Night Guy result. In the Kage tier, Pain is first because he beat Jiraiya and Kakashi, Itachi second because he beat Kakashi and sealed Orochimaru. Jiraiya, Orochimaru, Kakashi and Tsunade have no head-to-head results with each other, so after the listed fights they are ordered by popularity. Deidara sits above Gaara because he beat him, though the story notes that Gaara spent his chakra shielding the village. Konan and Sasori have no canon order. Pain and Itachi only meet when the reanimated Itachi, Naruto and Killer B seal the reanimated Nagato (ch. 548-552), so that isn't a clean one-on-one. Left out for thin on-page evidence: Shisui Uchiha (slug shisui-uchiha), whose 'Shisui of the Body Flicker' reputation and 'strongest Uchiha' praise mostly come from the novels and an OVA rather than manga fights; also Hiruzen, the Fourth Raikage, Ōnoki, Kisame and Kabuto, who have no slugs. Spoiler flag: any evidence from the Fourth Great Ninja War (about ch. 515 onward) is marked as a spoiler, including the identity of the masked man as Obito (ch. 599). BORUTO (separate; not ranked): in Boruto: Naruto Next Generations, Naruto loses Kurama after using Baryon Mode against Isshiki Ōtsutsuki, and Sasuke loses his Rinnegan in the same arc. Later Kawaki seals Naruto and Hinata away in a pocket dimension. Boruto: Two Blue Vortex (from Aug 2023) is still running, so any Boruto-era ranking would change month to month; we keep it out of this page.",
+   "tiers": [
+    {
+     "name": "Kaguya level",
+     "chars": [
+      {
+       "name": "Naruto Uzumaki",
+       "slug": "naruto-uzumaki",
+       "why": "Given Six Paths power by Hagoromo (ch. 671), he sealed Kaguya together with Sasuke (ch. 690). Their final battle ended with both losing an arm and Sasuke admitting defeat, and he becomes the Seventh Hokage (ch. 700).",
+       "spoiler": true,
+       "sources": [
+        "https://naruto.fandom.com/wiki/Naruto_Uzumaki",
+        "https://naruto.fandom.com/wiki/Six_Paths_—_Chibaku_Tensei",
+        "https://en.wikipedia.org/wiki/Naruto_Uzumaki"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "Sasuke Uchiha",
+       "slug": "sasuke-uchiha",
+       "why": "Received the Rinnegan and Six Paths power (ch. 671-672), and sealed Kaguya with Naruto (ch. 690). He fought Naruto to a mutual standstill at the Valley of the End and then conceded.",
+       "spoiler": true,
+       "sources": [
+        "https://naruto.fandom.com/wiki/Sasuke_Uchiha",
+        "https://naruto.fandom.com/wiki/Six_Paths_—_Chibaku_Tensei",
+        "https://en.wikipedia.org/wiki/Sasuke_Uchiha"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "Kaguya Ōtsutsuki",
+       "slug": null,
+       "why": "The progenitor of chakra and the final villain. It took Naruto and Sasuke's combined Six Paths – Chibaku Tensei, with help from Sakura and Kakashi, to seal her (ch. 690).",
+       "spoiler": true,
+       "sources": [
+        "https://naruto.fandom.com/wiki/Kaguya_Ōtsutsuki",
+        "https://naruto.fandom.com/wiki/Six_Paths_—_Chibaku_Tensei",
+        "https://en.wikipedia.org/wiki/List_of_Naruto_characters#Kaguya_Ōtsutsuki"
+       ],
+       "confidence": "high"
+      }
+     ]
+    },
+    {
+     "name": "Six Paths level (Ten-Tails jinchūriki)",
+     "chars": [
+      {
+       "name": "Madara Uchiha",
+       "slug": "madara-uchiha",
+       "why": "Reanimated, he defeated all five Kage by himself (ch. 601), then beat the tailed beasts, became the Ten-Tails' jinchūriki and survived Guy's Night Guy (ch. 658-672), before Black Zetsu betrayed him to revive Kaguya.",
+       "spoiler": true,
+       "sources": [
+        "https://naruto.fandom.com/wiki/Madara_Uchiha",
+        "https://en.wikipedia.org/wiki/Madara_Uchiha"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "Tobi (the masked man)",
+       "slug": "tobi-9cc076e2-995b-48d5-8ca0-91a075b2adfb",
+       "why": "As the masked man he forced Konan to burn through his Izanagi (ch. 509-510), and he became the Ten-Tails' jinchūriki (ch. 637-639). It took the whole Allied Shinobi Forces, led by Naruto and Sasuke, to bring him down, and Madara said he could overpower him (ch. 656). (The masked man is revealed to be Obito Uchiha in ch. 599.)",
+       "spoiler": true,
+       "sources": [
+        "https://naruto.fandom.com/wiki/Obito_Uchiha",
+        "https://naruto.fandom.com/wiki/Madara_Uchiha",
+        "https://en.wikipedia.org/wiki/Obito_Uchiha"
+       ],
+       "confidence": "high"
+      }
+     ]
+    },
+    {
+     "name": "Legendary Kage level",
+     "chars": [
+      {
+       "name": "Hashirama Senju",
+       "slug": "hashirama-senju",
+       "why": "The First Hokage, called the \"God of Shinobi\". He beat Madara and the Nine-Tails at what became the Valley of the End (flashback, ch. 626), and Madara admitted he was weaker than Hashirama all his life.",
+       "spoiler": true,
+       "sources": [
+        "https://naruto.fandom.com/wiki/Hashirama_Senju",
+        "https://en.wikipedia.org/wiki/List_of_Naruto_characters#Hashirama_Senju"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "Might Guy",
+       "slug": "guy-might",
+       "why": "Opening all Eight Gates, his Night Guy kick nearly killed the Ten-Tails jinchūriki Madara, who called him the strongest taijutsu user he had ever faced (ch. 672). The technique cost Guy the use of his leg.",
+       "spoiler": true,
+       "sources": [
+        "https://naruto.fandom.com/wiki/Might_Guy",
+        "https://naruto.fandom.com/wiki/Madara_Uchiha",
+        "https://en.wikipedia.org/wiki/List_of_Naruto_characters"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "Minato Namikaze",
+       "slug": "minato-namikaze",
+       "why": "The Fourth Hokage. During the Nine-Tails attack he drove off the masked man and sealed the fox, giving his life to do it (ch. 500-503).",
+       "spoiler": false,
+       "sources": [
+        "https://naruto.fandom.com/wiki/Minato_Namikaze",
+        "https://naruto.fandom.com/wiki/Kurama",
+        "https://en.wikipedia.org/wiki/List_of_Naruto_characters#Minato_Namikaze"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "Tobirama Senju",
+       "slug": "tobirama-senju",
+       "why": "The Second Hokage, who created Edo Tensei and the Flying Thunder God. He died as a decoy against the Kinkaku Force after passing the title to Hiruzen (ch. 481), and was reanimated to fight alongside the other Hokage in the Fourth War.",
+       "spoiler": true,
+       "sources": [
+        "https://naruto.fandom.com/wiki/Tobirama_Senju",
+        "https://en.wikipedia.org/wiki/List_of_Naruto_characters"
+       ],
+       "confidence": "medium"
+      },
+      {
+       "name": "Kurama (Nine-Tails)",
+       "slug": "kurama-cb892b26-debe-41d0-b380-7d4d1c0d5c0f",
+       "why": "Hashirama captured it, and Minato sealed it after it attacked Konoha (ch. 500-503). In the war, the reanimated Madara outfought it and the other tailed beasts (ch. 658-661).",
+       "spoiler": true,
+       "sources": [
+        "https://naruto.fandom.com/wiki/Kurama",
+        "https://en.wikipedia.org/wiki/List_of_Naruto_characters#Kurama"
+       ],
+       "confidence": "medium"
+      }
+     ]
+    },
+    {
+     "name": "Kage level",
+     "chars": [
+      {
+       "name": "Pain (Nagato)",
+       "slug": "pain",
+       "why": "Leader of Akatsuki. He killed Jiraiya (ch. 372-383), killed Kakashi and flattened Konoha, then was defeated by Sage Mode Naruto (ch. 422-449).",
+       "spoiler": false,
+       "sources": [
+        "https://naruto.fandom.com/wiki/Nagato",
+        "https://en.wikipedia.org/wiki/Nagato_(Naruto)"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "Itachi Uchiha",
+       "slug": "itachi-uchiha",
+       "why": "Beat Kakashi with Tsukuyomi (ch. 142-143) and sealed Orochimaru with the Totsuka Blade during his last fight with Sasuke, which ended with Itachi dying of illness (ch. 384-393).",
+       "spoiler": false,
+       "sources": [
+        "https://naruto.fandom.com/wiki/Itachi_Uchiha",
+        "https://en.wikipedia.org/wiki/Itachi_Uchiha"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "Jiraiya",
+       "slug": "jiraiya",
+       "why": "One of the Legendary Sannin. He made Itachi and Kisame retreat (ch. 147-148), and died fighting Pain's six bodies in Sage Mode (ch. 372-383).",
+       "spoiler": false,
+       "sources": [
+        "https://naruto.fandom.com/wiki/Jiraiya",
+        "https://en.wikipedia.org/wiki/List_of_Naruto_characters"
+       ],
+       "confidence": "medium"
+      },
+      {
+       "name": "Orochimaru",
+       "slug": "orochimaru",
+       "why": "One of the Legendary Sannin. He fought the Third Hokage to the death during the Konoha Crush, losing the use of his arms, and Itachi sealed him away (ch. 392).",
+       "spoiler": false,
+       "sources": [
+        "https://naruto.fandom.com/wiki/Orochimaru",
+        "https://en.wikipedia.org/wiki/List_of_Naruto_characters"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "Kakashi Hatake",
+       "slug": "kakashi-hatake",
+       "why": "Becomes the Sixth Hokage (ch. 700). He lost to Itachi (ch. 142-143) and was killed by Pain before being revived (ch. 422-449), and fought Kaguya with Team 7 using power lent by Obito (ch. 686-691).",
+       "spoiler": true,
+       "sources": [
+        "https://naruto.fandom.com/wiki/Kakashi_Hatake",
+        "https://en.wikipedia.org/wiki/Kakashi_Hatake"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "Tsunade",
+       "slug": null,
+       "why": "The Fifth Hokage and one of the Legendary Sannin. She was one of the five Kage the reanimated Madara defeated by himself in the Fourth War (ch. 601).",
+       "spoiler": true,
+       "sources": [
+        "https://naruto.fandom.com/wiki/Tsunade",
+        "https://naruto.fandom.com/wiki/Madara_Uchiha",
+        "https://en.wikipedia.org/wiki/List_of_Naruto_characters"
+       ],
+       "confidence": "medium"
+      },
+      {
+       "name": "Deidara",
+       "slug": "deidara",
+       "why": "An Akatsuki member who beat and captured the Fifth Kazekage Gaara (ch. 249-252), who was busy shielding his village. He died by blowing himself up against Sasuke, who survived (ch. 357-362).",
+       "spoiler": false,
+       "sources": [
+        "https://naruto.fandom.com/wiki/Deidara",
+        "https://naruto.fandom.com/wiki/Gaara",
+        "https://en.wikipedia.org/wiki/List_of_Naruto_characters#Akatsuki"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "Gaara",
+       "slug": "gaara",
+       "why": "The Fifth Kazekage. He lost to Deidara while protecting Sunagakure (ch. 249-252), and in the war he was one of the five Kage Madara defeated (ch. 601).",
+       "spoiler": false,
+       "sources": [
+        "https://naruto.fandom.com/wiki/Gaara",
+        "https://en.wikipedia.org/wiki/List_of_Naruto_characters"
+       ],
+       "confidence": "high"
+      }
+     ]
+    },
+    {
+     "name": "Elite level (Akatsuki)",
+     "chars": [
+      {
+       "name": "Konan",
+       "slug": "konan",
+       "why": "Pain's partner in Akatsuki. Against the masked man she forced him to use Izanagi, at the cost of an eye, before he killed her (ch. 509-510).",
+       "spoiler": false,
+       "sources": [
+        "https://naruto.fandom.com/wiki/Konan",
+        "https://en.wikipedia.org/wiki/List_of_Naruto_characters#Akatsuki"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "Sasori",
+       "slug": "sasori-22264b27-61ca-474a-a955-f41720347234",
+       "why": "An Akatsuki puppet master who was defeated by Sakura and his grandmother Chiyo working together (ch. 264-280).",
+       "spoiler": false,
+       "sources": [
+        "https://naruto.fandom.com/wiki/Sasori",
+        "https://en.wikipedia.org/wiki/List_of_Naruto_characters#Akatsuki"
+       ],
+       "confidence": "high"
+      }
+     ]
+    }
+   ]
+  },
   "dragon-ball": {
    "name": "Dragon Ball",
    "anime": "dragon-ball-z",

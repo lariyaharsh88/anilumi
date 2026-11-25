@@ -86,8 +86,10 @@ export default async function StrongestPage({ params }: Props) {
       </PageHero>
 
       <AnswerLead checked={fmt(STRONGEST_CHECKED)}>
-        By what happens in the story, the strongest {r.name} characters are {list(all.slice(0, 5).map((c) => c.name))}. The page places {all.length} characters in {r.tiers.length} tiers, from &ldquo;{r.tiers[0].name}&rdquo; down to &ldquo;{r.tiers[r.tiers.length - 1].name}&rdquo;.
+        By what happens in the story, the strongest {r.name} characters are {list(all.slice(0, 5).map((c) => c.name))}. The page places {all.length} characters in {r.tiers.length} tiers, from &ldquo;{r.tiers[0].name}&rdquo; down to &ldquo;{r.tiers.filter((t) => !/^not ranked/i.test(t.name)).at(-1)!.name}&rdquo;.
       </AnswerLead>
+
+      <p className="mt-6 max-w-3xl text-xs text-muted">Heads-up for anime-only viewers: names and tiers alone can give away later arcs. The reasons for each placement stay hidden until you tap.</p>
 
       {r.tiers.map((t) => (
         <section key={t.name} className="reveal pt-10" aria-labelledby={`t-${t.name}`}>
@@ -98,8 +100,11 @@ export default async function StrongestPage({ params }: Props) {
       ))}
 
       <section className="reveal pt-10" aria-labelledby="notes-h">
-        <h2 id="notes-h" className="h-section mb-3">Anime, manga and what counts</h2>
-        <p className="card max-w-3xl p-4 text-sm leading-6 text-ink/85">{r.notes}</p>
+        <h2 id="notes-h" className="h-section mb-3">How the order was decided</h2>
+        <details className="group card max-w-3xl p-4">
+          <summary className="cursor-pointer list-none text-sm font-semibold text-ink"><span aria-hidden className="mr-1.5">🔒</span>Tie-breaks, who was left out, and where the anime stands <span className="font-normal text-muted group-open:hidden">· spoilers, tap to show</span></summary>
+          <p className="mt-3 text-sm leading-6 text-ink/85">{r.notes}</p>
+        </details>
       </section>
 
       {others.length > 0 && (
