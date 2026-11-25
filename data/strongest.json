@@ -1120,6 +1120,567 @@
      ]
     }
    ]
+  },
+  "demon-slayer": {
+   "name": "Demon Slayer",
+   "anime": "kimetsu-no-yaiba",
+   "searches": {
+    "US": 880
+   },
+   "asOf": "Manga: complete, 205 chapters (Weekly Shonen Jump, 2016-2020). Anime: the TV series covers up to ch. 139 (Hashira Training), and the film Infinity Castle Part 1: Akaza Returns (Japan 18 Jul 2025; on Crunchyroll since 28 Jul 2026) covers ch. 140-157. Infinity Castle Part 2 has no release date and will not come out in 2026, so ch. 158-205 (Doma's death, Kokushibo, Muzan's final battle) are manga-only. Checked 25 Nov 2026.",
+   "basis": "Ranked by what happens in the story: rank (Twelve Kizuki number, Hashira), who beat whom and with how much help, and what the story itself says (for example, Gyomei being called the strongest in the Corps). No fan power-scaling; where two characters never fought and nothing in the story separates them we say there is no canon order.",
+   "notes": "How we ordered it: Yoriichi is placed with Muzan, and listed first, because he is the only character to beat Muzan in a fight (ch. 187); Muzan lived only by splitting into pieces and running. Kokushibo has a tier of his own because it took two Hashira and two other slayers, both of whom died, to kill him. Doma and Akaza follow their Kizuki numbers (Two and Three). In the Hashira tier only Gyomei has an explicit in-story ranking (called the strongest in the Corps); the others never fought each other, so they are listed by the hardest opponent each helped beat, which is not a canon order. Tanjiro is placed with the Hashira because of his part in beating Akaza, Hantengu and Muzan, not because of any official rank (he never became a Hashira). Upper Moons Four (Hantengu) and Six (Gyutaro and Daki) sit below the Hashira because groups of slayers beat them and Muichiro beat Upper Five on his own (ch. 121). Zenitsu beat a newer Upper Six (Kaigaku) alone, but Kaigaku was a recent replacement, so we kept Zenitsu in the lower tier. Left out: Gyokko (Upper Five, beaten by Muichiro), Nakime (the later Upper Four, who does not fight directly), Genya and Tamayo. Spoiler flag: anything not yet animated after the Entertainment District arc, and every Infinity Castle or final-battle outcome, is marked as a spoiler, even if Infinity Castle Part 1 already showed it.",
+   "tiers": [
+    {
+     "name": "Sun Breathing origin and the Progenitor",
+     "note": "Yoriichi is listed first because he beat Muzan; Muzan escaped by splitting himself (ch. 187).",
+     "chars": [
+      {
+       "name": "Yoriichi Tsugikuni",
+       "slug": null,
+       "why": "The creator of Sun Breathing, called the strongest Demon Slayer ever; centuries before the story he cut Muzan apart so badly that Muzan only got away by splitting into 1,800 pieces (ch. 187), and as an old man he nearly killed Kokushibo.",
+       "spoiler": true,
+       "sources": [
+        "https://kimetsu-no-yaiba.fandom.com/wiki/Yoriichi_Tsugikuni",
+        "https://kimetsu-no-yaiba.fandom.com/wiki/Chapter_187",
+        "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "Muzan Kibutsuji",
+       "slug": null,
+       "why": "The Demon King, the first demon and leader of the Twelve Kizuki; in the final battle it took the surviving Hashira, Tanjiro and the rest of the Corps, plus Tamayo's drug, to hold him in place until sunrise, when he finally disintegrated (ch. 199).",
+       "spoiler": true,
+       "sources": [
+        "https://kimetsu-no-yaiba.fandom.com/wiki/Muzan_Kibutsuji",
+        "https://kimetsu-no-yaiba.fandom.com/wiki/Chapter_199",
+        "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Muzan_Kibutsuji"
+       ],
+       "confidence": "high"
+      }
+     ]
+    },
+    {
+     "name": "Upper Moon One",
+     "chars": [
+      {
+       "name": "Kokushibo",
+       "slug": null,
+       "why": "Upper Rank One, the strongest of the Twelve Kizuki; it took Hashira Gyomei and Sanemi plus Muichiro and Genya, who both died, to behead him (ch. 175).",
+       "spoiler": true,
+       "sources": [
+        "https://kimetsu-no-yaiba.fandom.com/wiki/Kokushibo",
+        "https://kimetsu-no-yaiba.fandom.com/wiki/Chapter_175",
+        "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Upper_Ranks"
+       ],
+       "confidence": "high"
+      }
+     ]
+    },
+    {
+     "name": "Upper Moons Two and Three",
+     "note": "Ordered by their Kizuki numbers.",
+     "chars": [
+      {
+       "name": "Doma",
+       "slug": null,
+       "why": "Upper Rank Two; he killed Hashira Shinobu Kocho (ch. 143, shown in Infinity Castle Part 1) and died only after the poison she had built up in her body stopped his healing, so Kanao and Inosuke could behead him (ch. 162).",
+       "spoiler": true,
+       "sources": [
+        "https://kimetsu-no-yaiba.fandom.com/wiki/Doma",
+        "https://kimetsu-no-yaiba.fandom.com/wiki/Chapter_162",
+        "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Upper_Ranks"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "Akaza",
+       "slug": null,
+       "why": "Upper Rank Three; he killed Kyojuro Rengoku and got away before sunrise (ch. 65, Mugen Train), then lost to Tanjiro and Giyu in the Infinity Castle and chose to let his body fall apart (ch. 156, Infinity Castle Part 1).",
+       "spoiler": true,
+       "sources": [
+        "https://kimetsu-no-yaiba.fandom.com/wiki/Akaza",
+        "https://kimetsu-no-yaiba.fandom.com/wiki/Chapter_156",
+        "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Upper_Ranks"
+       ],
+       "confidence": "high"
+      }
+     ]
+    },
+    {
+     "name": "Hashira (and Tanjiro)",
+     "note": "Gyomei first, because the story calls him the strongest in the Corps. No canon order for the rest; they are listed by the toughest opponent each helped beat.",
+     "chars": [
+      {
+       "name": "Gyomei Himejima",
+       "slug": null,
+       "why": "The Stone Hashira, called the strongest Demon Slayer in the Corps by Tanjiro and Inosuke during Hashira Training (anime 2024); he helped behead Upper One Kokushibo (ch. 175) and fought Muzan until dawn before dying of his wounds (ch. 200).",
+       "spoiler": true,
+       "sources": [
+        "https://kimetsu-no-yaiba.fandom.com/wiki/Gyomei_Himejima",
+        "https://kimetsu-no-yaiba.fandom.com/wiki/Chapter_175",
+        "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Hashira"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "Tanjiro Kamado",
+       "slug": "tanjirou-kamado",
+       "why": "He never became a Hashira, but he beheaded Upper Four Hantengu (ch. 126), beat Upper Three Akaza together with Giyu (ch. 156), and pinned Muzan down in the last minutes before dawn (ch. 198-199).",
+       "spoiler": true,
+       "sources": [
+        "https://kimetsu-no-yaiba.fandom.com/wiki/Tanjiro_Kamado",
+        "https://kimetsu-no-yaiba.fandom.com/wiki/Chapter_198",
+        "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Tanjiro_Kamado"
+       ],
+       "confidence": "medium"
+      },
+      {
+       "name": "Giyu Tomioka",
+       "slug": "giyuu-tomioka",
+       "why": "The Water Hashira; he fought Upper Three Akaza with Tanjiro until Akaza gave up and died (ch. 156, Infinity Castle Part 1), and he survived the final battle with Muzan (ch. 200).",
+       "spoiler": true,
+       "sources": [
+        "https://kimetsu-no-yaiba.fandom.com/wiki/Giyu_Tomioka",
+        "https://kimetsu-no-yaiba.fandom.com/wiki/Chapter_156",
+        "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Hashira"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "Sanemi Shinazugawa",
+       "slug": null,
+       "why": "The Wind Hashira; together with Gyomei he struck the blow that beheaded Upper One Kokushibo (ch. 175), and he survived the battle against Muzan (ch. 200).",
+       "spoiler": true,
+       "sources": [
+        "https://kimetsu-no-yaiba.fandom.com/wiki/Sanemi_Shinazugawa",
+        "https://kimetsu-no-yaiba.fandom.com/wiki/Chapter_175",
+        "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Hashira"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "Muichiro Tokito",
+       "slug": null,
+       "why": "The Mist Hashira; he beat Upper Five Gyokko alone in the Swordsmith Village (ch. 121, shown in the anime) and died helping to kill Upper One Kokushibo (ch. 175).",
+       "spoiler": true,
+       "sources": [
+        "https://kimetsu-no-yaiba.fandom.com/wiki/Muichiro_Tokito",
+        "https://kimetsu-no-yaiba.fandom.com/wiki/Chapter_121",
+        "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Hashira"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "Obanai Iguro",
+       "slug": null,
+       "why": "The Serpent Hashira; he fought Muzan in the final battle and pulled Tanjiro out of Muzan's reach just before dawn (ch. 198), then died of his wounds (ch. 200).",
+       "spoiler": true,
+       "sources": [
+        "https://kimetsu-no-yaiba.fandom.com/wiki/Obanai_Iguro",
+        "https://kimetsu-no-yaiba.fandom.com/wiki/Chapter_198",
+        "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Hashira"
+       ],
+       "confidence": "medium"
+      },
+      {
+       "name": "Mitsuri Kanroji",
+       "slug": "mitsuri-kanroji",
+       "why": "The Love Hashira; she held off Hantengu's strongest clone, Zohakuten, in the Swordsmith Village (ch. 122-123, shown in the anime) and later fought Muzan in the final battle (ch. 198).",
+       "spoiler": true,
+       "sources": [
+        "https://kimetsu-no-yaiba.fandom.com/wiki/Mitsuri_Kanroji",
+        "https://kimetsu-no-yaiba.fandom.com/wiki/Chapter_123",
+        "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Hashira"
+       ],
+       "confidence": "medium"
+      },
+      {
+       "name": "Kyojuro Rengoku",
+       "slug": "kyoujurou-rengoku",
+       "why": "The Flame Hashira; he fought Upper Three Akaza until Akaza ran from the sunrise, but died of his wounds (ch. 65-66, Mugen Train).",
+       "spoiler": false,
+       "sources": [
+        "https://kimetsu-no-yaiba.fandom.com/wiki/Kyojuro_Rengoku",
+        "https://kimetsu-no-yaiba.fandom.com/wiki/Chapter_65",
+        "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Hashira"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "Tengen Uzui",
+       "slug": "tengen-uzui",
+       "why": "The Sound Hashira; together with Tanjiro, Zenitsu and Inosuke he beheaded Upper Six Gyutaro and Daki (ch. 94, Entertainment District), and then retired after losing a hand and an eye.",
+       "spoiler": false,
+       "sources": [
+        "https://kimetsu-no-yaiba.fandom.com/wiki/Tengen_Uzui",
+        "https://kimetsu-no-yaiba.fandom.com/wiki/Chapter_94",
+        "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Hashira"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "Shinobu Kocho",
+       "slug": "shinobu-kochou",
+       "why": "The Insect Hashira, who was not strong enough to behead demons and fought with poison; Upper Two Doma killed her (ch. 143, Infinity Castle Part 1), but the poison in her body is what later let Kanao and Inosuke finish him (ch. 162).",
+       "spoiler": true,
+       "sources": [
+        "https://kimetsu-no-yaiba.fandom.com/wiki/Shinobu_Kocho",
+        "https://kimetsu-no-yaiba.fandom.com/wiki/Chapter_143",
+        "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Hashira"
+       ],
+       "confidence": "high"
+      }
+     ]
+    },
+    {
+     "name": "Upper Moons Four and Six",
+     "note": "Both were beaten by groups of Demon Slayers, in arcs the anime has already shown.",
+     "chars": [
+      {
+       "name": "Hantengu",
+       "slug": null,
+       "why": "Upper Rank Four; it took Tanjiro, Nezuko, Genya and Mitsuri a whole night to corner his real body, which Tanjiro beheaded at dawn (ch. 126, Swordsmith Village).",
+       "spoiler": false,
+       "sources": [
+        "https://kimetsu-no-yaiba.fandom.com/wiki/Hantengu",
+        "https://kimetsu-no-yaiba.fandom.com/wiki/Chapter_126",
+        "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Upper_Ranks"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "Gyutaro and Daki",
+       "slug": null,
+       "why": "Upper Rank Six, a brother and sister who had to be beheaded at the same moment; Tanjiro and Tengen cut Gyutaro's head off while Zenitsu and Inosuke took Daki's (ch. 94, Entertainment District).",
+       "spoiler": false,
+       "sources": [
+        "https://kimetsu-no-yaiba.fandom.com/wiki/Gyutaro",
+        "https://kimetsu-no-yaiba.fandom.com/wiki/Chapter_94",
+        "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Upper_Ranks"
+       ],
+       "confidence": "high"
+      }
+     ]
+    },
+    {
+     "name": "Demon Slayers below Hashira (and Nezuko)",
+     "note": "No canon order.",
+     "chars": [
+      {
+       "name": "Zenitsu Agatsuma",
+       "slug": "zenitsu-agatsuma",
+       "why": "He beheaded Kaigaku, the new Upper Rank Six, on his own with a seventh form of Thunder Breathing he made himself (ch. 145, Infinity Castle Part 1), and earlier helped behead Daki (ch. 94).",
+       "spoiler": true,
+       "sources": [
+        "https://kimetsu-no-yaiba.fandom.com/wiki/Zenitsu_Agatsuma",
+        "https://kimetsu-no-yaiba.fandom.com/wiki/Chapter_145",
+        "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Zenitsu_Agatsuma"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "Kanao Tsuyuri",
+       "slug": null,
+       "why": "With Inosuke's help she beheaded Upper Two Doma once Shinobu's poison had weakened him (ch. 162).",
+       "spoiler": true,
+       "sources": [
+        "https://kimetsu-no-yaiba.fandom.com/wiki/Kanao_Tsuyuri",
+        "https://kimetsu-no-yaiba.fandom.com/wiki/Chapter_162",
+        "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Butterfly_Mansion"
+       ],
+       "confidence": "medium"
+      },
+      {
+       "name": "Inosuke Hashibira",
+       "slug": "inosuke-hashibira",
+       "why": "He helped behead Daki in the Entertainment District (ch. 94) and Upper Two Doma alongside Kanao (ch. 162).",
+       "spoiler": true,
+       "sources": [
+        "https://kimetsu-no-yaiba.fandom.com/wiki/Inosuke_Hashibira",
+        "https://kimetsu-no-yaiba.fandom.com/wiki/Chapter_162",
+        "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Inosuke_Hashibira"
+       ],
+       "confidence": "medium"
+      },
+      {
+       "name": "Nezuko Kamado",
+       "slug": "nezuko-kamado",
+       "why": "A demon who never eats people; she fought Daki in the Entertainment District, helped against Upper Four Hantengu, and became the first demon to survive sunlight (ch. 126, Swordsmith Village).",
+       "spoiler": false,
+       "sources": [
+        "https://kimetsu-no-yaiba.fandom.com/wiki/Nezuko_Kamado",
+        "https://kimetsu-no-yaiba.fandom.com/wiki/Chapter_126",
+        "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Nezuko_Kamado"
+       ],
+       "confidence": "medium"
+      }
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Who is the strongest Hashira?",
+     "a": "Gyomei Himejima, the Stone Hashira: in the Hashira Training arc (anime, 2024) he is called the strongest in the Demon Slayer Corps. The other Hashira have no canon order between them; how each fares in the final battle is under the spoiler toggles on this page."
+    }
+   ]
+  },
+  "solo-leveling": {
+   "name": "Solo Leveling",
+   "anime": "solo-leveling",
+   "searches": {
+    "US": 260,
+    "IN": 70
+   },
+   "asOf": "Webtoon: complete (main story ch. 1-179, side stories to ch. 200). Anime: season 1 (2024) and season 2, Arise from the Shadow (Jan-Mar 2025), 25 episodes covering webtoon ch. 1-110 (Jeju Island raid and its aftermath). The film Solo Leveling: Beyond the System was announced at Anime Expo 2026 but has no release date, and season 3 is not officially announced. Checked 25 Nov 2026.",
+   "basis": "Ranked by what happens in the webtoon: official ranks (S-Rank, the five National Level Hunters and their world ranking, shadow grades), who beat whom, and what the story says outright (for example, Antares being the strongest Monarch). No fan power-scaling; where nothing in the story separates two characters we say there is no canon order.",
+   "notes": "How we ordered it: Jinwoo and Ashborn never fought, so there is no canon order between them; Jinwoo is listed first because he killed Antares, the strongest Monarch. Antares leads the Monarchs because the story says so; Rakan, Sillad and Querehsha have no canon order between them. National Level Hunters follow the world ranking given in ch. 149 (Thomas Andre 1st, Liu Zhigang 2nd, Christopher Reed 3rd); Siddharth Bachchan (4th) appears only in the novel, so he is left out. The shadows tier has no fight against a National Level Hunter, so it is placed above the S-Ranks only because the Ant King (Beru) beat the Korean and Japanese S-Ranks on Jeju. Bellion is over Beru because he beat him (ch. 167). Igris sits with the S-Ranks because he lost a test duel to Cha Hae-in (ch. 113). In the S-Rank tier only the first few have something in the story to order them by; Cha Hae-in, Choi Jong-in and Baek Yoonho have no canon order. Left out: the Rulers and the Absolute Being (beings outside the hunter system with no clear fight result), Legia, Baran, Tarnak and Yogumunt (Monarchs with less evidence), and Kamish (the dragon killed eight years before the story). Spoiler flag: anything past webtoon ch. 110, every Monarch, and the Shadow Monarch reveal are marked as spoilers.",
+   "tiers": [
+    {
+     "name": "Shadow Monarchs",
+     "note": "No canon order: the two never fought.",
+     "chars": [
+      {
+       "name": "Sung Jinwoo",
+       "slug": "sung-jin-woo",
+       "why": "He rose from E-Rank to Korea's 10th S-Rank (anime ep. 19) and killed the Ant King on Jeju (ep. 24); after inheriting the Shadow Monarch's power he killed the Monarchs Querehsha, Rakan and Sillad (webtoon ch. 160-165) and, in the new timeline, Antares (ch. 178).",
+       "spoiler": true,
+       "sources": [
+        "https://solo-leveling.fandom.com/wiki/Sung_Jinwoo",
+        "https://solo-leveling.fandom.com/wiki/Monarchs_War_Arc",
+        "https://en.wikipedia.org/wiki/Sung_Jin-woo"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "Ashborn",
+       "slug": null,
+       "why": "The first Shadow Monarch, described as the greatest Fragment of Brilliant Light; by his own account (ch. 163), when the Monarchs Rakan and Baran ambushed him he beat them both and killed Baran.",
+       "spoiler": true,
+       "sources": [
+        "https://solo-leveling.fandom.com/wiki/Ashborn",
+        "https://solo-leveling.fandom.com/wiki/Monarchs"
+       ],
+       "confidence": "medium"
+      }
+     ]
+    },
+    {
+     "name": "Monarchs",
+     "note": "Antares first, because the story calls him the strongest Monarch. No canon order for the other three.",
+     "chars": [
+      {
+       "name": "Antares",
+       "slug": null,
+       "why": "The King of Dragons, called the strongest and oldest of the nine Monarchs; Jinwoo cut him nearly in half before the Rulers finished him off (ch. 176-177), and in the new timeline Jinwoo killed him outright (ch. 178).",
+       "spoiler": true,
+       "sources": [
+        "https://solo-leveling.fandom.com/wiki/Antares",
+        "https://solo-leveling.fandom.com/wiki/Final_Battle_Arc"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "Rakan",
+       "slug": null,
+       "why": "The Monarch of Fangs; he beat Thomas Andre, the world's top-ranked hunter, in Seoul (ch. 158) and helped kill Jinwoo once (ch. 161), but Jinwoo killed him after reviving (ch. 165).",
+       "spoiler": true,
+       "sources": [
+        "https://solo-leveling.fandom.com/wiki/Rakan",
+        "https://solo-leveling.fandom.com/wiki/Monarchs_War_Arc"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "Sillad",
+       "slug": null,
+       "why": "The Monarch of Frost; he killed Go Gunhee (ch. 150-151) and, with Rakan, killed Jinwoo once (ch. 161), before the revived Jinwoo killed him (ch. 165).",
+       "spoiler": true,
+       "sources": [
+        "https://solo-leveling.fandom.com/wiki/Sillad",
+        "https://solo-leveling.fandom.com/wiki/Monarchs_War_Arc"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "Querehsha",
+       "slug": null,
+       "why": "The Monarch of Plagues; together with Rakan and Tarnak she killed Christopher Reed, a National Level Hunter (ch. 140), and she was the first of the three Monarchs Jinwoo killed in Seoul (ch. 160).",
+       "spoiler": true,
+       "sources": [
+        "https://solo-leveling.fandom.com/wiki/Querehsha",
+        "https://solo-leveling.fandom.com/wiki/Monarchs_War_Arc"
+       ],
+       "confidence": "high"
+      }
+     ]
+    },
+    {
+     "name": "National Level Hunters",
+     "note": "Ordered by the world ranking the story gives (ch. 149).",
+     "chars": [
+      {
+       "name": "Thomas Andre",
+       "slug": null,
+       "why": "America's strongest hunter, ranked 1st of the five National Level Hunters (ch. 149); he still lost to Jinwoo, who beat him nearly to death bare-handed (ch. 147), and to the Monarch Rakan (ch. 158).",
+       "spoiler": true,
+       "sources": [
+        "https://solo-leveling.fandom.com/wiki/Thomas_Andre",
+        "https://solo-leveling.fandom.com/wiki/International_Guild_Conference_Arc"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "Liu Zhigang",
+       "slug": null,
+       "why": "China's strongest hunter, ranked 2nd of the National Level Hunters; he wiped out the ants that reached China's coast (ch. 107, anime ep. 25) and later told a reporter that Jinwoo was far above him in strength.",
+       "spoiler": true,
+       "sources": [
+        "https://solo-leveling.fandom.com/wiki/Liu_Zhigang",
+        "https://solo-leveling.fandom.com/wiki/Chapter_107"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "Christopher Reed",
+       "slug": null,
+       "why": "Ranked 3rd of the National Level Hunters and one of America's two strongest; three Monarchs (Tarnak, Rakan and Querehsha) killed him in his home, off-panel (ch. 140).",
+       "spoiler": true,
+       "sources": [
+        "https://solo-leveling.fandom.com/wiki/Christopher_Reed",
+        "https://solo-leveling.fandom.com/wiki/International_Guild_Conference_Arc"
+       ],
+       "confidence": "high"
+      }
+     ]
+    },
+    {
+     "name": "Shadow army generals",
+     "note": "No canon fight against a National Level Hunter; Bellion is over Beru because he beat him.",
+     "chars": [
+      {
+       "name": "Bellion",
+       "slug": null,
+       "why": "Grand-Marshal of the shadow army, called the strongest shadow; he beat Beru in a fight (ch. 167) and fought alongside Thomas Andre and Beru to kill the Monarch Tarnak (ch. 173).",
+       "spoiler": true,
+       "sources": [
+        "https://solo-leveling.fandom.com/wiki/Bellion",
+        "https://solo-leveling.fandom.com/wiki/Final_Battle_Arc"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "Beru",
+       "slug": "beru",
+       "why": "As the Ant King he tore through the Korean and Japanese S-Ranks on Jeju, killing the healer Min Byung-gyu and Japan's top hunter Goto Ryuji, until Jinwoo beat him and raised him as a shadow (anime ep. 23-25).",
+       "spoiler": false,
+       "sources": [
+        "https://solo-leveling.fandom.com/wiki/Beru",
+        "https://en.wikipedia.org/wiki/Solo_Leveling_season_2"
+       ],
+       "confidence": "high"
+      }
+     ]
+    },
+    {
+     "name": "S-Rank hunters (and Igris)",
+     "note": "Sung Il-hwan, Go Gunhee and Goto Ryuji are ordered by what the story shows of them; no canon order for Cha Hae-in, Choi Jong-in and Baek Yoonho.",
+     "chars": [
+      {
+       "name": "Sung Il-hwan",
+       "slug": null,
+       "why": "Jinwoo's father, an unofficial S-Rank carrying a Ruler's power; he put Hwang Dongsoo in hospital (anime ep. 15) and held off two Monarchs, Rakan and Sillad, until Jinwoo revived (ch. 164).",
+       "spoiler": true,
+       "sources": [
+        "https://solo-leveling.fandom.com/wiki/Sung_Il-Hwan",
+        "https://solo-leveling.fandom.com/wiki/Monarchs_War_Arc"
+       ],
+       "confidence": "medium"
+      },
+      {
+       "name": "Go Gunhee",
+       "slug": null,
+       "why": "Chairman of the Korean Hunters Association; the story says he became Korea's strongest hunter as soon as he awakened, before age forced him to retire, and later reveals he carried a Ruler's power; Sillad killed him (ch. 150-151).",
+       "spoiler": true,
+       "sources": [
+        "https://solo-leveling.fandom.com/wiki/Go_Gunhee",
+        "https://solo-leveling.fandom.com/wiki/Monarchs_War_Arc"
+       ],
+       "confidence": "medium"
+      },
+      {
+       "name": "Goto Ryuji",
+       "slug": null,
+       "why": "Japan's strongest hunter; his practice duel with Jinwoo was called off when it got out of hand (anime ep. 22), and the Ant King killed him quickly on Jeju (ep. 23).",
+       "spoiler": false,
+       "sources": [
+        "https://solo-leveling.fandom.com/wiki/Goto_Ryuji",
+        "https://en.wikipedia.org/wiki/Solo_Leveling_season_2"
+       ],
+       "confidence": "medium"
+      },
+      {
+       "name": "Cha Hae-in",
+       "slug": "cha-hae-in",
+       "why": "A Korean S-Rank and vice-master of the Hunters Guild; the Ant King badly wounded her on Jeju (anime ep. 23), and in her guild test she beat Igris but lost to Beru (ch. 113-114).",
+       "spoiler": true,
+       "sources": [
+        "https://solo-leveling.fandom.com/wiki/Cha_Hae-In",
+        "https://solo-leveling.fandom.com/wiki/Chapter_114",
+        "https://en.wikipedia.org/wiki/Solo_Leveling_season_2"
+       ],
+       "confidence": "medium"
+      },
+      {
+       "name": "Choi Jong-in",
+       "slug": null,
+       "why": "A Korean S-Rank and master of the Hunters Guild, Korea's top fire mage; he was one of the Korean S-Ranks who survived the Jeju raid (anime ep. 22-25).",
+       "spoiler": false,
+       "sources": [
+        "https://solo-leveling.fandom.com/wiki/Choi_Jong-In",
+        "https://en.wikipedia.org/wiki/Solo_Leveling_season_2"
+       ],
+       "confidence": "medium"
+      },
+      {
+       "name": "Baek Yoonho",
+       "slug": null,
+       "why": "A Korean S-Rank and master of the White Tiger Guild; he survived the Ant King's attack on the Jeju raid (anime ep. 23-25).",
+       "spoiler": false,
+       "sources": [
+        "https://solo-leveling.fandom.com/wiki/Baek_Yoonho",
+        "https://en.wikipedia.org/wiki/Solo_Leveling_season_2"
+       ],
+       "confidence": "medium"
+      },
+      {
+       "name": "Igris",
+       "slug": "igris",
+       "why": "Jinwoo's first knight shadow; he overpowered Jinwoo before losing to him in the job-change quest (ch. 40, anime ep. 12), and later lost a test duel to Cha Hae-in (ch. 113).",
+       "spoiler": true,
+       "sources": [
+        "https://solo-leveling.fandom.com/wiki/Igris",
+        "https://solo-leveling.fandom.com/wiki/Chapter_40",
+        "https://solo-leveling.fandom.com/wiki/Chapter_114"
+       ],
+       "confidence": "medium"
+      },
+      {
+       "name": "Hwang Dongsoo",
+       "slug": null,
+       "why": "A Korean S-Rank working in America; Sung Il-hwan put him in hospital (anime ep. 15), and Jinwoo killed him for torturing Yoo Jinho (ch. 147).",
+       "spoiler": true,
+       "sources": [
+        "https://solo-leveling.fandom.com/wiki/Hwang_Dongsoo",
+        "https://solo-leveling.fandom.com/wiki/International_Guild_Conference_Arc",
+        "https://en.wikipedia.org/wiki/Solo_Leveling_season_2"
+       ],
+       "confidence": "high"
+      }
+     ]
+    }
+   ]
   }
  }
 }

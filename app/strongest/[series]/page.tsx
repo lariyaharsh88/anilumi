@@ -64,6 +64,7 @@ export default async function StrongestPage({ params }: Props) {
   const faq: FaqItem[] = [
     { q: `Who is the strongest ${r.name} character?`, a: `${all[0].name}, by what happens in the story${all[1] ? `, followed by ${list(all.slice(1, 3).map((c) => c.name))}` : ""}. The reasons are on this page; the ones from later arcs sit behind spoiler toggles.` },
     { q: "How is this ranking made?", a: r.basis },
+    ...(r.faq ?? []),
     ...r.tiers.slice(0, 3).map((t) => ({ q: `Who is in the ${t.name} tier?`, a: `${list(t.chars.map((c) => c.name))}.${t.note ? ` ${t.note}` : ""}` })),
   ];
 

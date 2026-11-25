@@ -10,7 +10,7 @@ import { snapByPage, snapImage } from "./charsnap";
 
 export type RankedChar = { name: string; slug: string | null; why: string; spoiler: boolean; sources: string[]; confidence: "high" | "medium" };
 export type Tier = { name: string; note?: string; chars: RankedChar[] };
-export type Ranking = { name: string; anime: string; searches: { US: number; IN: number }; asOf: string; basis: string; notes: string; tiers: Tier[] };
+export type Ranking = { name: string; anime: string; searches: { US: number; IN?: number }; asOf: string; basis: string; notes: string; tiers: Tier[]; faq?: { q: string; a: string }[] };
 const D = data as unknown as { checked: string; series: Record<string, Ranking> };
 export const STRONGEST_CHECKED = D.checked;
 export const rankingSlugs = () => Object.keys(D.series);
