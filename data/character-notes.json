@@ -15462,6 +15462,176 @@
         "basis": "anime and manga so far"
       },
       "hindiVoice": null
+    },
+    "chainsaw-man-himeno": {
+      "name": "Himeno",
+      "role": "Veteran Public Safety Devil Hunter in Tokyo Special Division 4 and Aki Hayakawa's longtime partner",
+      "debut": {
+        "anime": "Chainsaw Man",
+        "episode": 4,
+        "episodeTitle": "Rescue",
+        "source": "manga",
+        "chapter": 10,
+        "volume": 2
+      },
+      "arcs": [
+        "Public Safety Saga"
+      ],
+      "affiliations": [
+        "Public Safety Devil Hunters",
+        "Tokyo Special Division 4"
+      ],
+      "relatives": [],
+      "confidence": "medium",
+      "sources": [
+        "https://chainsaw-man.fandom.com/wiki/Himeno",
+        "https://chainsaw-man.fandom.com/wiki/Episode_4",
+        "https://chainsaw-man.fandom.com/wiki/Chapter_10",
+        "https://en.wikipedia.org/wiki/List_of_Chainsaw_Man_episodes",
+        "https://en.wikipedia.org/wiki/List_of_Chainsaw_Man_characters",
+        "https://en.wikipedia.org/wiki/List_of_Chainsaw_Man_chapters",
+        "https://www.animenewsnetwork.com/news/2023-07-28/crunchyroll-adds-hindi-dub-of-chainsaw-man-anime-on-july-29/.200742",
+        "https://animationxpress.com/?p=1603729",
+        "https://anilist.co/character/144596"
+      ],
+      "notes": "Episode 4 and chapter 10 debuts are from the Chainsaw Man Wiki; Wikipedia's summaries first name her in episode 5, 'Gun Devil', and its chapter list confirms she enters in volume 2. Relatives left out to avoid spoilers.",
+      "abilities": "A seasoned Public Safety devil hunter contracted to the Ghost Devil: in exchange for her right eye, she controls the Ghost Devil's invisible right hand, which copies the movements of her own.",
+      "fate": {
+        "status": "dies",
+        "detail": "During the Gun Devil-backed ambush on Public Safety she is shot, then gives her entire body to the Ghost Devil to save Aki from Katana Man and vanishes (manga chapter 25; anime episode 8, 'Gunfire').",
+        "basis": "manga and anime"
+      },
+      "hindiVoice": {
+        "name": "Surabhi Shrivastava",
+        "dub": "Crunchyroll Hindi",
+        "sources": [
+          "https://www.animenewsnetwork.com/news/2023-07-28/crunchyroll-adds-hindi-dub-of-chainsaw-man-anime-on-july-29/.200742",
+          "https://animationxpress.com/?p=1603729"
+        ]
+      },
+      "about": "Himeno is a veteran devil hunter in Public Safety's Tokyo Special Division 4 and Aki Hayakawa's longtime partner, the senior who showed him the ropes when he joined. Tall, with short black hair and a black patch over her right eye, she is easygoing and teasing on the surface, smokes and drinks heavily, and is the reason Aki took up cigarettes. Having lost partner after partner to the job, she holds a bleak view of a devil hunter's life expectancy and badly wants Aki to stay alive. When Denji and Power join the squad she leads them into the field alongside the rookies Kobeni and Arai, motivating Denji with the promise of his first kiss, and she soon strikes up an unlikely friendship with him."
+    },
+    "chainsaw-man-kishibe": {
+      "name": "Kishibe",
+      "role": "Veteran Public Safety Devil Hunter who trains Denji and Power",
+      "debut": {
+        "anime": "Chainsaw Man",
+        "episode": 10,
+        "episodeTitle": "Bruised & Battered",
+        "source": "manga",
+        "chapter": 29,
+        "volume": 4
+      },
+      "arcs": [
+        "Public Safety Saga"
+      ],
+      "affiliations": [
+        "Public Safety Devil Hunters",
+        "Tokyo Special Division 1 (formerly)",
+        "Tokyo Special Division 4"
+      ],
+      "relatives": [],
+      "confidence": "medium",
+      "sources": [
+        "https://chainsaw-man.fandom.com/wiki/Kishibe",
+        "https://chainsaw-man.fandom.com/wiki/Kishibe/History",
+        "https://chainsaw-man.fandom.com/wiki/Episode_10",
+        "https://chainsaw-man.fandom.com/wiki/Chapter_29",
+        "https://en.wikipedia.org/wiki/List_of_Chainsaw_Man_episodes",
+        "https://en.wikipedia.org/wiki/List_of_Chainsaw_Man_characters",
+        "https://en.wikipedia.org/wiki/List_of_Chainsaw_Man_chapters",
+        "https://www.oneesports.gg/anime/who-is-nayuta-in-chainsaw-man-part/",
+        "https://anilist.co/character/144593"
+      ],
+      "notes": "Episode 10 is where both the Chainsaw Man Wiki and Wikipedia first show him in person; he appears earlier only in brief flashbacks (episode 5 and chapter 14 per the Wiki; Wikipedia names him in the episode 7 flashback). The Wiki's own appearance table lists episode 9, but its episode 9 page does not include him, so episode 10 is used. Chapter 29 rests on the Wiki; Wikipedia's chapter list confirms volume 4. His later affiliations are left out to avoid spoilers. A Hindi voice (Vinod Sharma) appears only on a fan site (animemirchi.com), not in the official Crunchyroll cast announcements, so hindiVoice is null.",
+      "abilities": "A hard-drinking veteran billed as Public Safety's strongest devil hunter, with superhuman strength, speed and reflexes and deadly skill with knives and in hand-to-hand combat.",
+      "fate": {
+        "status": "alive",
+        "detail": "Kishibe survives Part 1: after Makima's defeat (manga chapter 97, December 2020) he entrusts her reincarnation, a girl named Nayuta, to Denji and leaves. In Part 2 he is only mentioned (chapter 162). The anime has not reached this yet.",
+        "basis": "manga ending"
+      },
+      "hindiVoice": null,
+      "about": "Kishibe is a grizzled veteran of Public Safety's devil hunters, a tall man with a scarred cheek and a hip flask who has survived in a job where most people last only months. Formerly of Tokyo Special Division 1, he trained Himeno and Aki Hayakawa in their early days, and Makima calls on him to toughen up Denji and Power. Calling himself the strongest devil hunter around, he treats training as a brutal game, beating the pair senseless again and again because they can heal from almost anything, and insists that the hunters devils fear most are the ones with a few screws loose. Deadpan and hard to read, he says horrifying things with a straight face, yet he slowly warms to his two unruly students."
+    },
+    "chainsaw-man-angel-devil": {
+      "name": "Angel Devil",
+      "role": "Devil working as a Public Safety Devil Hunter in Tokyo Special Division 4",
+      "debut": {
+        "anime": "Chainsaw Man",
+        "episode": 11,
+        "episodeTitle": "Mission Start",
+        "source": "manga",
+        "chapter": 34,
+        "volume": 4
+      },
+      "arcs": [
+        "Public Safety Saga"
+      ],
+      "affiliations": [
+        "Public Safety Devil Hunters",
+        "Tokyo Special Division 4"
+      ],
+      "relatives": [],
+      "confidence": "medium",
+      "sources": [
+        "https://chainsaw-man.fandom.com/wiki/Angel_Devil",
+        "https://chainsaw-man.fandom.com/wiki/Angel_Devil/History",
+        "https://chainsaw-man.fandom.com/wiki/Episode_11",
+        "https://chainsaw-man.fandom.com/wiki/Chapter_34",
+        "https://en.wikipedia.org/wiki/List_of_Chainsaw_Man_episodes",
+        "https://en.wikipedia.org/wiki/List_of_Chainsaw_Man_characters",
+        "https://en.wikipedia.org/wiki/List_of_Chainsaw_Man_chapters",
+        "https://www.sportskeeda.com/anime/news-chainsaw-man-announces-details-part-2-manga-jump-festa-2022",
+        "https://anilist.co/character/152231"
+      ],
+      "notes": "He first appears in the TV series, episode 11 (Chainsaw Man Wiki, Wikipedia episode summary, AniList), not first in the film; his bigger anime role is in Chainsaw Man – The Movie: Reze Arc (2025). Chapter 34 ('Full Team') rests on the Wiki; Wikipedia's chapter list places his introduction at the end of volume 4, which ends with chapter 34. A Hindi voice (Mani Puhan) appears only on a fan site (animemirchi.com), which also credits the same actor as Michiko Tendo; it is not in the official Crunchyroll cast announcements, so hindiVoice is null.",
+      "abilities": "A devil who drains the lifespan of anyone whose bare skin touches his; he can fly on his angel wings, which are tough enough to block bullets.",
+      "fate": {
+        "status": "dies",
+        "detail": "In the Gun Devil arc of the manga's Part 1 (around chapter 75), he tries to attack Makima and is brought under her control, and she later wields his powers as one of her weapons; creator Tatsuki Fujimoto confirmed his death at Jump Festa 2022. The anime has not reached this yet.",
+        "basis": "manga ending"
+      },
+      "hindiVoice": null,
+      "about": "The Angel Devil is a devil who works as a devil hunter for Public Safety in Tokyo Special Division 4, rare among devils for having no hostility toward humans. He looks like a beautiful, androgynous youth with shoulder-length red hair, a halo and a pair of white wings, and wears the standard Public Safety suit. Anyone who touches his bare skin has their lifespan drained away, so he keeps his distance from people and keeps mostly to himself. Listless and unenthusiastic about the job, he is paired with Aki Hayakawa, and their slowly growing partnership is one of the quieter threads of the Reze arc."
+    },
+    "chainsaw-man-beam": {
+      "name": "Beam",
+      "role": "Shark Fiend and Public Safety Devil Hunter in Tokyo Special Division 4 who idolises Denji",
+      "debut": {
+        "anime": "Chainsaw Man",
+        "episode": 11,
+        "episodeTitle": "Mission Start",
+        "source": "manga",
+        "chapter": 34,
+        "volume": 4
+      },
+      "arcs": [
+        "Public Safety Saga"
+      ],
+      "affiliations": [
+        "Public Safety Devil Hunters",
+        "Tokyo Special Division 4"
+      ],
+      "relatives": [],
+      "confidence": "medium",
+      "sources": [
+        "https://chainsaw-man.fandom.com/wiki/Beam",
+        "https://chainsaw-man.fandom.com/wiki/Episode_11",
+        "https://chainsaw-man.fandom.com/wiki/Chapter_34",
+        "https://en.wikipedia.org/wiki/List_of_Chainsaw_Man_episodes",
+        "https://en.wikipedia.org/wiki/List_of_Chainsaw_Man_characters",
+        "https://en.wikipedia.org/wiki/List_of_Chainsaw_Man_chapters",
+        "https://anilist.co/character/157232"
+      ],
+      "notes": "He first appears, unnamed as the Shark Fiend, in the TV series, episode 11 (Chainsaw Man Wiki, Wikipedia episode summary, AniList), not first in the film; his main anime role is in Chainsaw Man – The Movie: Reze Arc (2025). Chapter 34 ('Full Team') rests on the Wiki; Wikipedia's chapter list places his introduction at the end of volume 4, which ends with chapter 34. A Hindi voice (Manikant Sarbhoy) appears only on a fan site (animemirchi.com), not in the official Crunchyroll cast announcements, so hindiVoice is null.",
+      "abilities": "A Shark Fiend who can swim through walls and floors as if they were water and turn his head into a huge, many-eyed shark's head to bite through enemies.",
+      "fate": {
+        "status": "dies",
+        "detail": "In the International Assassins arc of the manga's Part 1 (chapter 65), trapped in Hell, he feeds Denji his blood to revive him and is cut to pieces by the Darkness Devil. The anime has not reached this yet.",
+        "basis": "manga ending"
+      },
+      "hindiVoice": null,
+      "about": "Beam is a Fiend, a devil that has taken over a human corpse, specifically the Shark Devil, and he works as a Public Safety Devil Hunter in Tokyo Special Division 4. He has a muscular body topped by a shark's snout and fin, a mouth full of sharp teeth, and wears nothing but swimming trunks. Wild, childlike and mostly uninterested in other people, he worships Denji, calls him 'Lord Chainsaw', and will cheerfully go along with even his most reckless plans. When Power is taken off duty for a while, Beam asks to become Denji's partner, following him on patrol by swimming through the floor beneath his feet."
     }
   }
 }
