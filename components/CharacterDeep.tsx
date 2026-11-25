@@ -1,8 +1,10 @@
 import Image from "next/image";
+import opBounties from "@/data/one-piece-bounties.json";
 import Link from "@/components/Link";
 import { characterDeep, bySpoiler, type EpisodeRef } from "@/lib/chardeep";
 import { characterBounties, bountyFigure, type Bounty } from "@/lib/bounties";
 import { snapByPage, snapImage } from "@/lib/charsnap";
+import { characterNote } from "@/lib/charnotes";
 import { animePath, episodePath } from "@/lib/kitsu";
 
 const epHref = (e: EpisodeRef) => (e.episode ? episodePath({ slug: e.animeSlug }, e.episode) : animePath({ slug: e.animeSlug }));
@@ -147,6 +149,15 @@ export default function CharacterDeepProfile({ slug, name }: { slug: string; nam
 export const bountySection = (slug: string) => (characterBounties(slug) ? [{ id: "bounty", label: "Bounty" }] : []);
 
 /** One Piece bounty ("luffy bounty", "zoro wanted poster"): the current poster drawn in our own style, then every bounty in order. */
+// Characters in the in-story bounty ranking (data/one-piece-bounties.json); false for ones it leaves out (Ace's 550M
+// comes from the One Piece Ten exhibition poster), null for anyone it doesn't mention.
+const inRanking = (slug: string): boolean | null => {
+  const r = opBounties as { bounties: { slug: string | null }[]; excluded: { name: string }[] };
+  if (r.bounties.some((x) => x.slug === slug)) return true;
+  const note = characterNote(slug)?.name;
+  return note && r.excluded.some((x) => x.name === note) ? false : null;
+};
+
 export function CharacterBounty({ slug, name: pageName }: { slug: string; name: string }) {
   const b = characterBounties(slug);
   if (!b?.entries.length) return null;
@@ -179,7 +190,8 @@ export function CharacterBounty({ slug, name: pageName }: { slug: string; name: 
           </p>
           {list.open.length > 0 && <ul className="card mt-3 divide-y divide-line/60 px-3">{list.open.map(item)}</ul>}
           {list.hidden.length > 0 && <Spoilers label={`${list.hidden.length} later ${list.hidden.length === 1 ? "bounty" : "bounties"}`}><ul className="divide-y divide-line/60">{list.hidden.map(item)}</ul></Spoilers>}
-          <p className="mt-2 text-xs text-muted">Each amount checked against two sources; the poster is AniLumi&apos;s own drawing of the design.</p>
+          {inRanking(slug) === false && <p className="mt-2 text-xs text-ink/80">This amount wasn&apos;t revealed in a chapter or episode, so it isn&apos;t counted in <Link href="/one-piece-bounties" className="text-violet hover:underline">our ranking of One Piece bounties</Link>, which lists only bounties shown in the story.</p>}
+          <p className="mt-2 text-xs text-muted">Each amount checked against two sources; the poster is AniLumi&apos;s own drawing of the design. <Link href="/one-piece-bounties" className="underline hover:text-ink">Every One Piece bounty, ranked</Link>.</p>
         </div>
       </div>
     </Block>

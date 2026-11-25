@@ -152,8 +152,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     // Most informative title that fits a search result (lib/titles.ts): the name and the searched facts first.
     title: fitTitle([
-      `${name}${nick ? ` "${nick}"` : ""}${home ? ` (${home.title})` : ""}: ${what || "Character Profile & Appearances"}`,
-      home && `${name} (${home.title}): ${what || "Character Profile"}`,
+      // The show's English name, as in the snippet ("Igris (Solo Leveling)", not "Ore dake Level Up na Ken").
+      `${name}${nick ? ` "${nick}"` : ""}${home ? ` (${showName ?? home.title})` : ""}: ${what || "Character Profile & Appearances"}`,
+      home && `${name} (${showName ?? home.title}): ${what || "Character Profile"}`,
       `${name}: ${what || "Character Profile & Appearances"}`,
       what.includes("Voice Actor") && `${name}: ${what.replace(/,? ?(& )?Voice Actor$/, "").replace(/, ([^,]+)$/, " & $1")}`,
       `${name}: Age, Birthday & More`,
