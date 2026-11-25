@@ -3,6 +3,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import SiteHeader from "@/components/SiteHeader";
 import NavProgress from "@/components/NavProgress";
+import NavSkeleton from "@/components/NavSkeleton";
 import SiteFooter from "@/components/SiteFooter";
 import JsonLd from "@/components/JsonLd";
 import { siteGraph } from "@/lib/ld";
@@ -43,6 +44,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* Theme + spoiler shield: run synchronously before any content paints (see lib/prepaint.ts). */}
         <script dangerouslySetInnerHTML={{ __html: THEME_PREPAINT + SPOILER_PREPAINT }} />
         <NavProgress />
+        <NavSkeleton />
         <JsonLd data={siteGraph()} />
         <Analytics />
         <MotionProvider>
