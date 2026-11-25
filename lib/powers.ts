@@ -8,10 +8,12 @@
 import data from "@/data/character-powers.json";
 
 type Src = { sources?: string[]; spoiler: boolean };
-export type Ability = Src & { name: string; what: string; firstEpisode: number | null; firstChapter: number | null };
+export type Ability = Src & { name: string; what: string; firstEpisode: number | null; firstChapter: number | null; episodeSeries?: string | null; chapterSeries?: string | null };
 export type Form = Ability & { group: string; arc?: string | null };
 export type Powers = {
   name: string; series: string; summary: string; abilities: Ability[]; forms: Form[];
+  /** The name people search ("Goku", not "Son"), a short powers list for titles, and the same in a sentence. */
+  short?: string; hook?: string; powersLine?: string;
   limits: (Src & { what: string })[]; beaten: (Src & { who: string; how: string; where?: string | null })[]; notes?: string;
 };
 const D = data as unknown as { checked: string; characters: Record<string, Powers> };
@@ -22,6 +24,6 @@ export const powersPath = (slug: string) => `/character/${slug}/powers`;
 
 /** What people search for each: Goku and Naruto by their forms, Gojo by his powers. */
 export const leadsWithForms = (p: Powers) => p.forms.filter((f) => f.group === "main").length >= 4;
-/** "Episode 12 / chapter 3", whichever the sources gave. */
-export const firstSeen = (x: { firstEpisode: number | null; firstChapter: number | null }) =>
-  [x.firstEpisode ? `episode ${x.firstEpisode}` : null, x.firstChapter ? `chapter ${x.firstChapter}` : null].filter(Boolean).join(" · ") || null;
+/** "Dragon Ball Z episode 29 · chapter 226", whichever the sources gave; episode numbers restart in each series. */
+export const firstSeen = (x: Pick<Ability, "firstEpisode" | "firstChapter" | "episodeSeries" | "chapterSeries">) =>
+  [x.firstEpisode ? `${x.episodeSeries ? `${x.episodeSeries} ` : ""}episode ${x.firstEpisode}` : null, x.firstChapter ? `${x.chapterSeries ? `${x.chapterSeries} ` : ""}chapter ${x.firstChapter}` : null].filter(Boolean).join(" · ") || null;

@@ -1,1 +1,955 @@
-{"checked":"2026-11-25","characters":{}}
+{
+ "checked": "2026-11-25",
+ "characters": {
+  "jujutsu-kaisen-satoru-gojou": {
+   "name": "Satoru Gojo",
+   "series": "Jujutsu Kaisen",
+   "summary": "Gojo is a special grade sorcerer who is widely called the strongest of his era. He fights by controlling space itself: attacks slow down before they can reach him, and he can pull, push or erase anything in front of him.",
+   "abilities": [
+    {
+     "name": "Limitless: Infinity",
+     "what": "Gojo's inherited technique puts an 'infinity' of space between him and anything coming at him, so attacks slow down and never actually touch him. Since his student days he keeps it switched on all the time and lets it decide automatically what to block.",
+     "firstEpisode": 2,
+     "firstChapter": 2,
+     "spoiler": false,
+     "confidence": "high",
+     "note": "Episode/chapter are the wiki's debut fields for Limitless/Infinity; Wikipedia's episode 7 summary describes the Infinity barrier being explained.",
+     "sources": [
+      "https://jujutsu-kaisen.fandom.com/wiki/Limitless",
+      "https://en.wikipedia.org/wiki/Jujutsu_Kaisen_season_1"
+     ]
+    },
+    {
+     "name": "Cursed Technique Lapse: Blue",
+     "what": "Blue boosts Limitless to create a point that pulls everything around it inward, like a small black hole. Gojo uses it to drag enemies together, crush them, or yank himself across short distances at high speed.",
+     "firstEpisode": 20,
+     "firstChapter": 52,
+     "spoiler": false,
+     "confidence": "medium",
+     "note": "Numbers from the wiki's debut fields only (publication order).",
+     "sources": [
+      "https://jujutsu-kaisen.fandom.com/wiki/Cursed_Technique_Lapse:_Blue",
+      "https://jujutsu-kaisen.fandom.com/wiki/Satoru_Gojo"
+     ]
+    },
+    {
+     "name": "Cursed Technique Reversal: Red",
+     "what": "Red reverses Blue: by running positive energy from his reverse cursed technique through Limitless, Gojo creates a repelling blast that throws targets away. The wiki notes it has at least twice Blue's output.",
+     "firstEpisode": 7,
+     "firstChapter": 14,
+     "spoiler": false,
+     "confidence": "medium",
+     "note": "Numbers from the wiki's debut fields only.",
+     "sources": [
+      "https://jujutsu-kaisen.fandom.com/wiki/Cursed_Technique_Reversal:_Red",
+      "https://jujutsu-kaisen.fandom.com/wiki/Limitless"
+     ]
+    },
+    {
+     "name": "Hollow Technique: Purple",
+     "what": "Gojo smashes Blue and Red together to create 'imaginary mass' and fires it forward. It erases everything in its path.",
+     "firstEpisode": 20,
+     "firstChapter": 52,
+     "spoiler": false,
+     "confidence": "high",
+     "note": "First shown (publication order) against Hanami at the Kyoto Goodwill Event. In story order he first creates it in the Gojo's Past flashback (Wikipedia, season 2 episode 28 summary: 'another first').",
+     "sources": [
+      "https://jujutsu-kaisen.fandom.com/wiki/Hollow_Technique:_Purple",
+      "https://en.wikipedia.org/wiki/Satoru_Gojo",
+      "https://en.wikipedia.org/wiki/Jujutsu_Kaisen_season_2"
+     ]
+    },
+    {
+     "name": "Six Eyes",
+     "what": "These are rare eyes passed down in the Gojo clan. They let him see cursed energy in very fine detail, even through a blindfold. They also make his techniques so efficient that he wastes almost no cursed energy, which is why he can keep Limitless running.",
+     "firstEpisode": 7,
+     "firstChapter": 15,
+     "spoiler": false,
+     "confidence": "medium",
+     "note": "Numbers from the wiki's debut fields only; Wikipedia's character article describes what the Six Eyes do.",
+     "sources": [
+      "https://jujutsu-kaisen.fandom.com/wiki/Six_Eyes",
+      "https://en.wikipedia.org/wiki/Satoru_Gojo"
+     ]
+    },
+    {
+     "name": "Domain Expansion: Unlimited Void",
+     "what": "Gojo traps opponents in his domain and floods their minds with endless information, so they cannot think or move. He and anyone he is touching are unaffected.",
+     "firstEpisode": 7,
+     "firstChapter": 15,
+     "spoiler": false,
+     "confidence": "high",
+     "sources": [
+      "https://jujutsu-kaisen.fandom.com/wiki/Unlimited_Void",
+      "https://en.wikipedia.org/wiki/Jujutsu_Kaisen_season_1"
+     ]
+    },
+    {
+     "name": "Reverse Cursed Technique",
+     "what": "He turns cursed energy into positive energy that heals his body. Gojo learned it while near death in his first fight with Toji, and it also powers Red and keeps his brain fresh while Infinity runs nonstop.",
+     "firstEpisode": 28,
+     "firstChapter": 74,
+     "spoiler": false,
+     "confidence": "high",
+     "note": "This is Gojo's first use. The technique itself appears earlier with other characters.",
+     "sources": [
+      "https://jujutsu-kaisen.fandom.com/wiki/Satoru_Gojo",
+      "https://en.wikipedia.org/wiki/Jujutsu_Kaisen_season_2"
+     ]
+    },
+    {
+     "name": "Black Flash",
+     "what": "When cursed energy hits within a millionth of a second of a punch, space distorts and the blow lands far harder than normal (the wiki gives it 2.5 times the power). Gojo is first shown landing one on Sukuna, knocking him out for a moment.",
+     "firstEpisode": null,
+     "firstChapter": 232,
+     "spoiler": true,
+     "confidence": "high",
+     "note": "Manga only. No anime episode is cited.",
+     "sources": [
+      "https://jujutsu-kaisen.fandom.com/wiki/Satoru_Gojo",
+      "https://comicbook.com/anime/news/jujutsu-kaisen-manga-black-flash-gojo"
+     ]
+    }
+   ],
+   "forms": [],
+   "limits": [
+    {
+     "what": "Infinity can be cancelled. A domain (expansion or amplification) can dismiss it, and so can cursed tools with special techniques. Toji's Inverted Spear of Heaven is one example.",
+     "spoiler": false,
+     "confidence": "high",
+     "sources": [
+      "https://jujutsu-kaisen.fandom.com/wiki/Limitless",
+      "https://jujutsu-kaisen.fandom.com/wiki/Satoru_Gojo_vs._Toji_Fushiguro"
+     ]
+    },
+    {
+     "what": "Keeping Infinity running is tiring. As a student he wore himself out holding it for days, which Toji took advantage of. As an adult he keeps his brain fresh by using reverse cursed technique nonstop.",
+     "spoiler": false,
+     "confidence": "high",
+     "sources": [
+      "https://jujutsu-kaisen.fandom.com/wiki/Satoru_Gojo",
+      "https://en.wikipedia.org/wiki/Jujutsu_Kaisen_season_2"
+     ]
+    },
+    {
+     "what": "Civilians limit his domain. In Shibuya he could only risk a 0.2-second Unlimited Void because the crowd was trapped with him. Clearing the transfigured humans afterwards left him drained, and that was when the Prison Realm was used.",
+     "spoiler": true,
+     "confidence": "high",
+     "sources": [
+      "https://jujutsu-kaisen.fandom.com/wiki/Unlimited_Void",
+      "https://en.wikipedia.org/wiki/Jujutsu_Kaisen_season_2"
+     ]
+    },
+    {
+     "what": "After each Domain Expansion his cursed technique burns out. Against Sukuna he had to repair it with reverse cursed technique each time, and he could not manage a sixth Unlimited Void.",
+     "spoiler": true,
+     "confidence": "medium",
+     "sources": [
+      "https://jujutsu-kaisen.fandom.com/wiki/Unlimited_Void",
+      "https://jujutsu-kaisen.fandom.com/wiki/Satoru_Gojo"
+     ]
+    }
+   ],
+   "beaten": [
+    {
+     "who": "Toji Fushiguro",
+     "how": "In 2006 Toji ambushed the exhausted student Gojo right after he dropped Infinity, stabbed him and won their first fight. Gojo survived by awakening reverse cursed technique and killed Toji with Hollow Purple in the rematch.",
+     "where": "Gojo's Past (Hidden Inventory) arc, chapters 70–72, episode 27; rematch chapter 75, episode 28",
+     "spoiler": true,
+     "confidence": "high",
+     "sources": [
+      "https://jujutsu-kaisen.fandom.com/wiki/Satoru_Gojo_vs._Toji_Fushiguro",
+      "https://en.wikipedia.org/wiki/Satoru_Gojo",
+      "https://en.wikipedia.org/wiki/Jujutsu_Kaisen_season_2"
+     ]
+    },
+    {
+     "who": "Kenjaku (in Suguru Geto's body), using the Prison Realm",
+     "how": "Gojo was worn down by the 0.2-second domain and the transfigured humans. Seeing his dead friend Geto's face froze him long enough for the Prison Realm to seal him.",
+     "where": "Shibuya Incident arc, chapters 90–91, episodes 33–34 (the seal completes in episode 34)",
+     "spoiler": true,
+     "confidence": "high",
+     "sources": [
+      "https://jujutsu-kaisen.fandom.com/wiki/Prison_Realm",
+      "https://en.wikipedia.org/wiki/Jujutsu_Kaisen_season_2",
+      "https://en.wikipedia.org/wiki/Satoru_Gojo"
+     ]
+    },
+    {
+     "who": "Ryomen Sukuna",
+     "how": "Their domains matched and Gojo came close to winning. Sukuna then used Mahoraga's adaptation as a model for a slash that cuts the space Gojo stands in, which bypassed Infinity and killed him.",
+     "where": "Shinjuku Showdown arc, chapters 223–236 (Gojo dies in chapter 236); manga, no anime episode cited",
+     "spoiler": true,
+     "confidence": "high",
+     "sources": [
+      "https://jujutsu-kaisen.fandom.com/wiki/Satoru_Gojo_vs._Sukuna",
+      "https://en.wikipedia.org/wiki/Satoru_Gojo"
+     ]
+    }
+   ],
+   "notes": [
+    "Anime episode numbers are series-wide: season 2 episode 1 = episode 25, so episode 28 = season 2 episode 4.",
+    "Chapter numbers are from the main Jujutsu Kaisen manga (not Jujutsu Kaisen 0).",
+    "For 'who can beat Gojo': Toji (first fight), Kenjaku's Prison Realm seal (Shibuya), and Sukuna in Shinjuku. Sukuna is the only one who defeats him in a straight fight that he does not survive.",
+    "Shinjuku material (Black Flash, domain burnout, the Sukuna result) had not been animated in any source checked, so episode is null."
+   ],
+   "short": "Gojo",
+   "hook": "Limitless, Six Eyes & Unlimited Void",
+   "powersLine": "Limitless (Infinity, Blue, Red and Hollow Purple), the Six Eyes, his Domain Expansion, Unlimited Void, and Reverse Cursed Technique"
+  },
+  "goku-son": {
+   "name": "Son Goku",
+   "series": "Dragon Ball (Dragon Ball, Z, Super; GT and Daima listed separately)",
+   "summary": "Goku is a Saiyan martial artist who lives for fighting stronger opponents and keeps pushing past his limits. He mixes hand-to-hand combat with energy blasts and a long line of power-up transformations.",
+   "abilities": [
+    {
+     "name": "Kamehameha",
+     "what": "Goku cups his hands, gathers his ki and fires it as a beam. It is Master Roshi's technique, but young Goku copied it after seeing it only once.",
+     "firstEpisode": 8,
+     "episodeSeries": "Dragon Ball",
+     "firstChapter": null,
+     "spoiler": false,
+     "confidence": "high",
+     "note": "Goku's first Kamehameha is in Dragon Ball episode 8, where Wikipedia's summary has him copying it 'on the first try'. The technique first appears in manga chapter 14 when Roshi uses it, but the chapter where Goku first fires it was not confirmed.",
+     "sources": [
+      "https://en.wikipedia.org/wiki/List_of_Dragon_Ball_episodes",
+      "https://dragonball.fandom.com/wiki/Kamehameha",
+      "https://en.wikipedia.org/wiki/Goku"
+     ]
+    },
+    {
+     "name": "Kaio-ken",
+     "what": "King Kai's technique multiplies Goku's power, speed and senses for a short time by flooding his body with ki. The higher the multiplier, the harder it is on his body.",
+     "firstEpisode": 29,
+     "episodeSeries": "Dragon Ball Z",
+     "firstChapter": 226,
+     "chapterSeries": "Dragon Ball manga (continuous numbering; DBZ ch. 32 in Viz)",
+     "spoiler": false,
+     "confidence": "medium",
+     "note": "Numbers from the Dragon Ball Wiki's debut fields.",
+     "sources": [
+      "https://dragonball.fandom.com/wiki/Kaio-ken",
+      "https://en.wikipedia.org/wiki/Goku"
+     ]
+    },
+    {
+     "name": "Spirit Bomb",
+     "what": "Goku raises his hands and gathers energy from living things around him into one huge sphere. It needs time to charge and a pure heart to control, so it works best when others give their energy willingly.",
+     "firstEpisode": 21,
+     "episodeSeries": "Dragon Ball Z",
+     "firstChapter": 212,
+     "chapterSeries": "Dragon Ball manga (continuous numbering; DBZ ch. 18 in Viz)",
+     "spoiler": false,
+     "confidence": "medium",
+     "note": "Numbers from the Dragon Ball Wiki's debut fields. Wikipedia confirms that Goku finishes Kid Buu with a Spirit Bomb.",
+     "sources": [
+      "https://dragonball.fandom.com/wiki/Spirit_Bomb",
+      "https://en.wikipedia.org/wiki/Goku"
+     ]
+    },
+    {
+     "name": "Instant Transmission",
+     "what": "Goku locks on to someone's ki and appears next to them at once, even across planets, taking along anyone touching him. He learned it from the people of planet Yardrat.",
+     "firstEpisode": 123,
+     "episodeSeries": "Dragon Ball Z",
+     "firstChapter": 336,
+     "chapterSeries": "Dragon Ball manga (continuous numbering; DBZ ch. 142 in Viz)",
+     "spoiler": false,
+     "confidence": "medium",
+     "note": "Numbers from the Dragon Ball Wiki; Wikipedia confirms where he learned it.",
+     "sources": [
+      "https://dragonball.fandom.com/wiki/Instant_Transmission",
+      "https://en.wikipedia.org/wiki/Goku"
+     ]
+    },
+    {
+     "name": "Flight (Bukū-jutsu)",
+     "what": "By controlling his ki, Goku can fly on his own, so after training with Kami he stops relying on the Flying Nimbus.",
+     "firstEpisode": null,
+     "firstChapter": null,
+     "spoiler": false,
+     "confidence": "medium",
+     "note": "No source gave a first-appearance number for Goku's flight.",
+     "sources": [
+      "https://en.wikipedia.org/wiki/Goku"
+     ]
+    }
+   ],
+   "forms": [
+    {
+     "name": "Great Ape (Ōzaru)",
+     "group": "main",
+     "firstEpisode": 12,
+     "episodeSeries": "Dragon Ball",
+     "firstChapter": 21,
+     "arc": "Emperor Pilaf Saga",
+     "what": "When a tailed Saiyan looks at a full moon, he turns into a giant, rampaging ape.",
+     "spoiler": false,
+     "confidence": "high",
+     "sources": [
+      "https://dragonball.fandom.com/wiki/Great_Ape",
+      "https://en.wikipedia.org/wiki/Goku"
+     ]
+    },
+    {
+     "name": "Kaio-ken",
+     "group": "main",
+     "firstEpisode": 29,
+     "episodeSeries": "Dragon Ball Z",
+     "firstChapter": 226,
+     "arc": "Vegeta Saga",
+     "what": "A short burst that multiplies all his stats, at the cost of heavy strain on his body.",
+     "spoiler": false,
+     "confidence": "medium",
+     "sources": [
+      "https://dragonball.fandom.com/wiki/Kaio-ken",
+      "https://en.wikipedia.org/wiki/Goku"
+     ]
+    },
+    {
+     "name": "Super Saiyan",
+     "group": "main",
+     "firstEpisode": 95,
+     "episodeSeries": "Dragon Ball Z",
+     "firstChapter": 317,
+     "arc": "Frieza Saga",
+     "what": "The legendary golden-haired transformation, set off by rage when Frieza kills Krillin.",
+     "spoiler": false,
+     "confidence": "high",
+     "sources": [
+      "https://dragonball.fandom.com/wiki/Super_Saiyan",
+      "https://en.wikipedia.org/wiki/Goku"
+     ]
+    },
+    {
+     "name": "Super Saiyan 2",
+     "group": "main",
+     "firstEpisode": null,
+     "firstChapter": null,
+     "arc": "Majin Buu Saga (Babidi arc, vs. Majin Vegeta)",
+     "what": "A sharper, spikier step up from Super Saiyan with crackling lightning. Goku reveals it against Majin Vegeta.",
+     "spoiler": false,
+     "confidence": "medium",
+     "note": "The form first appears with Gohan (manga chapter 408, DBZ episode 184). No source gave Goku's first chapter or episode in it.",
+     "sources": [
+      "https://dragonball.fandom.com/wiki/Super_Saiyan_2"
+     ]
+    },
+    {
+     "name": "Super Saiyan 3",
+     "group": "main",
+     "firstEpisode": 245,
+     "episodeSeries": "Dragon Ball Z",
+     "firstChapter": 474,
+     "arc": "Majin Buu Saga",
+     "what": "Very long hair, no eyebrows and a huge jump in power, but it burns through his energy fast.",
+     "spoiler": false,
+     "confidence": "medium",
+     "sources": [
+      "https://dragonball.fandom.com/wiki/Super_Saiyan_3",
+      "https://en.wikipedia.org/wiki/Goku"
+     ]
+    },
+    {
+     "name": "Super Saiyan God",
+     "group": "main",
+     "firstEpisode": 9,
+     "episodeSeries": "Dragon Ball Super",
+     "firstChapter": 4,
+     "chapterSeries": "Dragon Ball Super manga",
+     "arc": "God of Destruction Beerus Saga (film: Battle of Gods, 2013)",
+     "what": "A slimmer, red-haired god form created by a ritual in which six Saiyans pour their power into him.",
+     "spoiler": false,
+     "confidence": "high",
+     "note": "Manga chapter from the Dragon Ball Wiki only.",
+     "sources": [
+      "https://en.wikipedia.org/wiki/List_of_Dragon_Ball_Super_episodes",
+      "https://dragonball.fandom.com/wiki/Super_Saiyan_God",
+      "https://en.wikipedia.org/wiki/Goku"
+     ]
+    },
+    {
+     "name": "Super Saiyan Blue (Super Saiyan God Super Saiyan)",
+     "group": "main",
+     "firstEpisode": 24,
+     "episodeSeries": "Dragon Ball Super",
+     "firstChapter": 5,
+     "chapterSeries": "Dragon Ball Super manga",
+     "arc": "Golden Frieza Saga (film: Resurrection 'F', 2015)",
+     "what": "Super Saiyan with god ki, blue hair and calm, tight control over his energy.",
+     "spoiler": false,
+     "confidence": "medium",
+     "note": "Wikipedia's episode 25 summary has Goku explaining his 'new transformation' to Frieza. Episode 24 and chapter 5 come from the Dragon Ball Wiki.",
+     "sources": [
+      "https://dragonball.fandom.com/wiki/Super_Saiyan_Blue",
+      "https://en.wikipedia.org/wiki/Goku",
+      "https://en.wikipedia.org/wiki/List_of_Dragon_Ball_Super_episodes"
+     ]
+    },
+    {
+     "name": "Super Saiyan Blue Kaio-ken",
+     "group": "main",
+     "firstEpisode": 39,
+     "episodeSeries": "Dragon Ball Super",
+     "firstChapter": 39,
+     "chapterSeries": "Dragon Ball Super manga",
+     "arc": "Universe 6 Saga (vs. Hit)",
+     "what": "Kaio-ken stacked on top of Super Saiyan Blue. Blue's control makes the combination survivable, but it is still risky.",
+     "spoiler": false,
+     "confidence": "high",
+     "note": "Manga chapter from the Dragon Ball Wiki only.",
+     "sources": [
+      "https://en.wikipedia.org/wiki/List_of_Dragon_Ball_Super_episodes",
+      "https://dragonball.fandom.com/wiki/Super_Saiyan_Blue_Kaio-ken",
+      "https://en.wikipedia.org/wiki/Goku"
+     ]
+    },
+    {
+     "name": "Ultra Instinct Sign",
+     "group": "main",
+     "firstEpisode": 110,
+     "episodeSeries": "Dragon Ball Super",
+     "firstChapter": 39,
+     "chapterSeries": "Dragon Ball Super manga",
+     "arc": "Universe Survival Saga (Tournament of Power)",
+     "what": "A divine state in which his body dodges and counters on its own without conscious thought. Its raw attack power is weaker than its defence.",
+     "spoiler": true,
+     "confidence": "high",
+     "sources": [
+      "https://en.wikipedia.org/wiki/List_of_Dragon_Ball_Super_episodes",
+      "https://dragonball.fandom.com/wiki/Ultra_Instinct_Sign"
+     ]
+    },
+    {
+     "name": "Mastered Ultra Instinct",
+     "group": "main",
+     "firstEpisode": 129,
+     "episodeSeries": "Dragon Ball Super",
+     "firstChapter": null,
+     "arc": "Universe Survival Saga (vs. Jiren)",
+     "what": "The completed Ultra Instinct, with silver hair. He both defends and attacks automatically.",
+     "spoiler": true,
+     "confidence": "high",
+     "note": "The Dragon Ball Wiki now calls this 'Perfected Ultra Instinct'. Goku also reaches it against Jiren in the manga, but the chapter number was not confirmed.",
+     "sources": [
+      "https://en.wikipedia.org/wiki/List_of_Dragon_Ball_Super_episodes",
+      "https://dragonball.fandom.com/wiki/Perfected_Ultra_Instinct"
+     ]
+    },
+    {
+     "name": "True Ultra Instinct",
+     "group": "main",
+     "firstEpisode": null,
+     "firstChapter": 85,
+     "chapterSeries": "Dragon Ball Super manga",
+     "arc": "Granolah the Survivor Saga (manga only)",
+     "what": "Goku's own version of Ultra Instinct, which lets him fight with his Saiyan emotions instead of the calm, emotionless state it normally needs.",
+     "spoiler": true,
+     "confidence": "medium",
+     "note": "Manga only. Chapter from the Dragon Ball Wiki only.",
+     "sources": [
+      "https://dragonball.fandom.com/wiki/True_Ultra_Instinct"
+     ]
+    },
+    {
+     "name": "Golden Great Ape",
+     "group": "GT",
+     "firstEpisode": 33,
+     "episodeSeries": "Dragon Ball GT",
+     "firstChapter": null,
+     "arc": "Baby Saga",
+     "what": "A golden Great Ape, which Goku reaches after regrowing his tail. He struggles to control it.",
+     "spoiler": false,
+     "confidence": "high",
+     "sources": [
+      "https://dragonball.fandom.com/wiki/Golden_Great_Ape",
+      "https://en.wikipedia.org/wiki/List_of_Dragon_Ball_GT_episodes"
+     ]
+    },
+    {
+     "name": "Super Saiyan 4 (GT)",
+     "group": "GT",
+     "firstEpisode": 34,
+     "episodeSeries": "Dragon Ball GT",
+     "firstChapter": null,
+     "arc": "Baby Saga",
+     "what": "Red fur, black hair and the power of the Golden Great Ape in a human-sized body. It also returns child Goku to adult size.",
+     "spoiler": false,
+     "confidence": "medium",
+     "note": "The Dragon Ball Wiki lists 'Back in the Game' (episode 34) as the debut. Wikipedia's summaries show him fully in the form from episode 35 ('Goku's Ascension'), so he probably transforms at the end of 34.",
+     "sources": [
+      "https://dragonball.fandom.com/wiki/Super_Saiyan_4",
+      "https://en.wikipedia.org/wiki/List_of_Dragon_Ball_GT_episodes"
+     ]
+    },
+    {
+     "name": "Super Saiyan 4 (Daima)",
+     "group": "Daima",
+     "firstEpisode": 18,
+     "episodeSeries": "Dragon Ball Daima",
+     "firstChapter": null,
+     "arc": "Daima Saga (final battle vs. Gomah)",
+     "what": "A redesigned Super Saiyan 4 by Akira Toriyama that follows Super Saiyan 3. Neva unlocks it in Mini Goku, and in Daima Goku had already trained for it after Majin Buu.",
+     "spoiler": true,
+     "confidence": "high",
+     "sources": [
+      "https://www.animenewsnetwork.com/review/dragon-ball-daima/episode-18/.221246",
+      "https://dragonball.fandom.com/wiki/Super_Saiyan_4",
+      "https://en.wikipedia.org/wiki/Goku"
+     ]
+    }
+   ],
+   "limits": [
+    {
+     "what": "Kaio-ken strains his body. King Kai warns that pushing the multiplier too far makes it backfire, and after using Kaio-ken in Super Saiyan Blue against Hit, Goku could not control his ki for a while.",
+     "spoiler": false,
+     "confidence": "high",
+     "sources": [
+      "https://dragonball.fandom.com/wiki/Kaio-ken",
+      "https://en.wikipedia.org/wiki/List_of_Dragon_Ball_Super_episodes"
+     ]
+    },
+    {
+     "what": "Super Saiyan 3 uses up energy very quickly. In a living body against Kid Buu, it drained him so badly that he could not recover his power.",
+     "spoiler": false,
+     "confidence": "medium",
+     "sources": [
+      "https://dragonball.fandom.com/wiki/Super_Saiyan_3"
+     ]
+    },
+    {
+     "what": "Ultra Instinct wears out his body. Against Jiren and Kefla he could not keep the state up, and in the manga against Granolah it grew less accurate the longer he fought.",
+     "spoiler": true,
+     "confidence": "high",
+     "sources": [
+      "https://en.wikipedia.org/wiki/List_of_Dragon_Ball_Super_episodes",
+      "https://en.wikipedia.org/wiki/Goku"
+     ]
+    },
+    {
+     "what": "Instant Transmission needs a ki signature to lock on to. In the Cell Games Saga he could not reach New Namek because their ki was too far away to sense.",
+     "spoiler": false,
+     "confidence": "medium",
+     "sources": [
+      "https://dragonball.fandom.com/wiki/Instant_Transmission"
+     ]
+    }
+   ],
+   "beaten": [
+    {
+     "who": "Jackie Chun (Master Roshi in disguise)",
+     "how": "After a long, even final, both fighters were exhausted. Goku fainted mid-sentence while claiming the title, so Jackie Chun won.",
+     "where": "21st World Martial Arts Tournament final; manga chapter 53, Dragon Ball episode 28",
+     "spoiler": false,
+     "confidence": "high",
+     "sources": [
+      "https://dragonball.fandom.com/wiki/The_Final_Blow",
+      "https://en.wikipedia.org/wiki/List_of_Dragon_Ball_episodes",
+      "https://en.wikipedia.org/wiki/Goku"
+     ]
+    },
+    {
+     "who": "Tien Shinhan",
+     "how": "Tien won the 22nd tournament final and Goku finished runner-up again. Toriyama says he deliberately had Goku lose the first two tournaments and win the third.",
+     "where": "22nd World Martial Arts Tournament; the final starts in manga chapter 128 / Dragon Ball episode 97",
+     "spoiler": false,
+     "confidence": "high",
+     "sources": [
+      "https://dragonball.fandom.com/wiki/Goku_vs._Tenshinhan",
+      "https://en.wikipedia.org/wiki/Goku"
+     ]
+    },
+    {
+     "who": "King Piccolo",
+     "how": "In their first fight King Piccolo overpowered young Goku and left him for dead. Goku came back stronger and won the rematch.",
+     "where": "King Piccolo Saga; Dragon Ball episode 109",
+     "spoiler": false,
+     "confidence": "medium",
+     "sources": [
+      "https://en.wikipedia.org/wiki/List_of_Dragon_Ball_episodes",
+      "https://dragonball.fandom.com/wiki/Goku_vs._King_Piccolo"
+     ]
+    },
+    {
+     "who": "Beerus",
+     "how": "Beerus knocked Goku out with two blows on King Kai's planet. Later, even as a Super Saiyan God, Goku lost the Battle of Gods, though Beerus chose to spare Earth.",
+     "where": "God of Destruction Beerus Saga; Dragon Ball Super episodes 5 and 14 (also the film Battle of Gods)",
+     "spoiler": true,
+     "confidence": "high",
+     "sources": [
+      "https://en.wikipedia.org/wiki/List_of_Dragon_Ball_Super_episodes",
+      "https://en.wikipedia.org/wiki/Goku"
+     ]
+    },
+    {
+     "who": "Hit (match result)",
+     "how": "Their fight reached a stalemate, then Goku jumped out of the ring because he had hit the limit of his Kaio-ken, so he lost on a technicality. Hit later threw his next match.",
+     "where": "Universe 6 Saga; Dragon Ball Super episode 40",
+     "spoiler": true,
+     "confidence": "high",
+     "sources": [
+      "https://en.wikipedia.org/wiki/List_of_Dragon_Ball_Super_episodes",
+      "https://dragonball.fandom.com/wiki/Super_Saiyan_Blue_Kaio-ken"
+     ]
+    },
+    {
+     "who": "Jiren",
+     "how": "Even with Mastered Ultra Instinct, Goku could not beat Jiren alone. Goku and Frieza finally pushed Jiren out together in a triple elimination, and Android 17 won.",
+     "where": "Universe Survival Saga (Tournament of Power); Dragon Ball Super episodes 129–131",
+     "spoiler": true,
+     "confidence": "high",
+     "sources": [
+      "https://en.wikipedia.org/wiki/Goku",
+      "https://en.wikipedia.org/wiki/List_of_Dragon_Ball_Super_episodes"
+     ]
+    },
+    {
+     "who": "Moro (manga)",
+     "how": "On New Namek, Moro used magic to drain Goku and Vegeta's life energy until they were close to death.",
+     "where": "Galactic Patrol Prisoner Saga (manga only); chapter not confirmed",
+     "spoiler": true,
+     "confidence": "medium",
+     "sources": [
+      "https://en.wikipedia.org/wiki/Goku"
+     ]
+    },
+    {
+     "who": "Granolah (manga)",
+     "how": "Granolah beat Goku, whose Ultra Instinct was straining his body and losing accuracy.",
+     "where": "Granolah the Survivor Saga (manga only); chapter not confirmed",
+     "spoiler": true,
+     "confidence": "medium",
+     "sources": [
+      "https://en.wikipedia.org/wiki/Goku"
+     ]
+    },
+    {
+     "who": "Black Frieza (manga)",
+     "how": "Frieza came back in his new Black Frieza form and knocked out both Goku and Vegeta with a single blow.",
+     "where": "End of the Granolah the Survivor Saga; Dragon Ball Super manga chapter 87",
+     "spoiler": true,
+     "confidence": "medium",
+     "sources": [
+      "https://dragonball.fandom.com/wiki/Black_Frieza"
+     ]
+    }
+   ],
+   "notes": [
+    "Episode numbers are per series: check 'episodeSeries' (Dragon Ball, Dragon Ball Z, Dragon Ball Super, GT, Daima). Do not mix them.",
+    "Dragon Ball manga chapters use the Japanese continuous numbering (1–519). Viz's 'DBZ' numbering is noted where it differs. Super chapters use the Dragon Ball Super manga's own numbering.",
+    "GT and Daima are listed as separate groups. GT is not part of the Super-era continuity. Daima's Super Saiyan 4 is a different version designed by Toriyama.",
+    "'Debut' numbers from the Dragon Ball Wiki are when the form or technique first appears on page or screen. For Super Saiyan 2 the form debuts with Gohan, so Goku's numbers are null."
+   ],
+   "short": "Goku"
+  },
+  "naruto-uzumaki": {
+   "name": "Naruto Uzumaki",
+   "series": "Naruto / Naruto Shippuden (Boruto-era forms listed separately)",
+   "summary": "Naruto is a ninja who wins through sheer stamina and stubbornness, swamping enemies with clones and finishing them with spinning chakra attacks. As the host of the Nine-Tailed Fox Kurama he has huge chakra reserves, and his strength grows as he learns to work with the fox.",
+   "abilities": [
+    {
+     "name": "Shadow Clone Technique (Multiple Shadow Clones)",
+     "what": "Naruto makes solid copies of himself, often hundreds at once, to outnumber, trick or scout. When a clone disappears, its experience goes back to him, which he also uses to train faster.",
+     "firstEpisode": 1,
+     "firstChapter": 1,
+     "spoiler": false,
+     "confidence": "high",
+     "sources": [
+      "https://naruto.fandom.com/wiki/Multiple_Shadow_Clone_Technique",
+      "https://naruto.fandom.com/wiki/Naruto_Uzumaki"
+     ]
+    },
+    {
+     "name": "Rasengan",
+     "what": "A ball of chakra spinning in many directions that grinds into whatever it hits. Naruto first needed a shadow clone to shape it while he supplied the chakra.",
+     "firstEpisode": 86,
+     "firstChapter": 150,
+     "spoiler": false,
+     "confidence": "high",
+     "note": "These are the numbers for when the technique first appears and Jiraiya starts teaching it. Naruto's first completed Rasengan hits Kabuto in episode 94 (Wikipedia), which the Naruto Wiki cites as chapter 168. Wikipedia's episode list maps episode 94 to chapters 165–167.",
+     "sources": [
+      "https://naruto.fandom.com/wiki/Rasengan",
+      "https://en.wikipedia.org/wiki/Naruto_season_3"
+     ]
+    },
+    {
+     "name": "Wind Release: Rasenshuriken",
+     "what": "Naruto adds his wind chakra to the Rasengan, making a shuriken-shaped blast that cuts his target at the cellular level. It was key to beating Kakuzu, and later he learned to throw it.",
+     "firstEpisode": 87,
+     "episodeSeries": "Naruto Shippuden",
+     "firstChapter": 339,
+     "spoiler": false,
+     "confidence": "medium",
+     "note": "Numbers from the Naruto Wiki's debut fields.",
+     "sources": [
+      "https://naruto.fandom.com/wiki/Wind_Release:_Rasenshuriken",
+      "https://en.wikipedia.org/wiki/Naruto_Uzumaki"
+     ]
+    },
+    {
+     "name": "Sage Mode (Senjutsu)",
+     "what": "Naruto blends natural energy with his own chakra, which strengthens his body and techniques and lets him sense chakra from far away. He has to stay still to gather the energy, so he leaves clones behind to collect it for him.",
+     "firstEpisode": 156,
+     "episodeSeries": "Naruto Shippuden",
+     "firstChapter": null,
+     "spoiler": false,
+     "confidence": "high",
+     "note": "Episode 156 ('Surpassing the Master') is where Wikipedia's summary says he first masters it. He first uses it in battle in episode 163 ('Explode! Sage Mode'). The manga chapter of his first Sage Mode was not confirmed.",
+     "sources": [
+      "https://en.wikipedia.org/wiki/Naruto:_Shippuden_season_8",
+      "https://naruto.fandom.com/wiki/Sage_Mode"
+     ]
+    },
+    {
+     "name": "Nine-Tails Chakra Mode / Kurama Mode",
+     "what": "Naruto pulls Kurama's chakra into a glowing yellow cloak that boosts his speed and strength and gives him chakra arms and small Tailed Beast Balls. Once he and Kurama became partners, it turned into Kurama Mode and Tailed Beast Mode, a giant fox avatar of chakra.",
+     "firstEpisode": 247,
+     "episodeSeries": "Naruto Shippuden",
+     "firstChapter": 499,
+     "spoiler": true,
+     "confidence": "high",
+     "note": "These numbers are for Nine-Tails Chakra Mode. For Kurama Mode, see the forms list.",
+     "sources": [
+      "https://naruto.fandom.com/wiki/Nine-Tails_Chakra_Mode",
+      "https://en.wikipedia.org/wiki/Naruto:_Shippuden_season_12"
+     ]
+    },
+    {
+     "name": "Six Paths Sage Mode / Six Paths Senjutsu",
+     "what": "Hagoromo, the Sage of the Six Paths, gives Naruto power that lets him fly, sense almost anything and form Truth-Seeking Balls from every nature type. It also makes all his other modes much stronger.",
+     "firstEpisode": 421,
+     "episodeSeries": "Naruto Shippuden",
+     "firstChapter": 670,
+     "spoiler": true,
+     "confidence": "high",
+     "sources": [
+      "https://naruto.fandom.com/wiki/Six_Paths_Sage_Mode",
+      "https://en.wikipedia.org/wiki/Naruto:_Shippuden_season_20",
+      "https://en.wikipedia.org/wiki/Naruto_Uzumaki"
+     ]
+    }
+   ],
+   "forms": [
+    {
+     "name": "Nine-Tails Chakra Cloak: Version 1",
+     "group": "main",
+     "firstEpisode": null,
+     "firstChapter": null,
+     "arc": "Sasuke Recovery Mission (Valley of the End), Part I",
+     "what": "A bubbling red cloak of Kurama's chakra with one or more tails. It makes him stronger but slowly burns his own body.",
+     "spoiler": false,
+     "confidence": "medium",
+     "note": "The Naruto Wiki cites chapters 230–232 for the one-tailed cloak at the Valley of the End. Naruto draws on raw red chakra earlier, without the cloak shape. No single first chapter or episode was confirmed.",
+     "sources": [
+      "https://naruto.fandom.com/wiki/Jinchūriki_Forms",
+      "https://en.wikipedia.org/wiki/Naruto_Uzumaki"
+     ]
+    },
+    {
+     "name": "Nine-Tails Chakra Cloak: Version 2",
+     "group": "main",
+     "firstEpisode": null,
+     "firstChapter": null,
+     "arc": "Tenchi Bridge Reconnaissance Mission (vs. Orochimaru), Part II",
+     "what": "Starting at four tails, the cloak darkens into a mini-fox body around him and he loses control of himself.",
+     "spoiler": false,
+     "confidence": "medium",
+     "note": "Wikipedia's Shippuden season 2 summaries show the Four-Tailed form against Orochimaru around episodes 40–41, and Jiraiya describes an earlier off-screen four-tail incident before that. The Naruto Wiki cites chapter 291 for the 'demon fox cloak'. Exact first numbers were left null.",
+     "sources": [
+      "https://naruto.fandom.com/wiki/Jinchūriki_Forms",
+      "https://en.wikipedia.org/wiki/Naruto:_Shippuden_season_2"
+     ]
+    },
+    {
+     "name": "Sage Mode",
+     "group": "main",
+     "firstEpisode": 156,
+     "episodeSeries": "Naruto Shippuden",
+     "firstChapter": null,
+     "arc": "Pain's Assault (training at Mount Myōboku)",
+     "what": "Orange markings around toad-like eyes; natural energy boosts everything he does.",
+     "spoiler": false,
+     "confidence": "high",
+     "sources": [
+      "https://en.wikipedia.org/wiki/Naruto:_Shippuden_season_8",
+      "https://naruto.fandom.com/wiki/Sage_Mode"
+     ]
+    },
+    {
+     "name": "Nine-Tails Chakra Mode",
+     "group": "main",
+     "firstEpisode": 247,
+     "episodeSeries": "Naruto Shippuden",
+     "firstChapter": 499,
+     "arc": "Fourth Shinobi World War: Countdown (Island Turtle training)",
+     "what": "A golden chakra cloak he gets after pulling Kurama's chakra out by force, before the two became partners.",
+     "spoiler": true,
+     "confidence": "high",
+     "note": "Chapter 499 is just before the war (around chapter 515), but Shippuden episode 247 is past the episode 197 cut-off, so it is marked as a spoiler to be safe.",
+     "sources": [
+      "https://naruto.fandom.com/wiki/Nine-Tails_Chakra_Mode",
+      "https://en.wikipedia.org/wiki/Naruto:_Shippuden_season_12"
+     ]
+    },
+    {
+     "name": "Kurama Mode (with Tailed Beast Mode)",
+     "group": "main",
+     "firstEpisode": null,
+     "firstChapter": 571,
+     "arc": "Fourth Shinobi World War: Confrontation",
+     "what": "After Naruto learns Kurama's name and the two become partners, the cloak takes on a haori shape, works without the earlier drawbacks, and lets him form a full Kurama avatar.",
+     "spoiler": true,
+     "confidence": "medium",
+     "note": "The chapter comes from the Naruto Wiki. Wikipedia's summaries put the partnership in Shippuden episodes 329–330, but the exact first episode was not confirmed.",
+     "sources": [
+      "https://naruto.fandom.com/wiki/Nine-Tails_Chakra_Mode",
+      "https://en.wikipedia.org/wiki/Naruto:_Shippuden_season_15"
+     ]
+    },
+    {
+     "name": "Six Paths Sage Mode",
+     "group": "main",
+     "firstEpisode": 421,
+     "episodeSeries": "Naruto Shippuden",
+     "firstChapter": 670,
+     "arc": "Fourth Shinobi World War: Climax",
+     "what": "Hagoromo's gift: cross-shaped pupils, flight and Truth-Seeking Balls, plus a stronger Kurama cloak on top.",
+     "spoiler": true,
+     "confidence": "high",
+     "sources": [
+      "https://naruto.fandom.com/wiki/Six_Paths_Sage_Mode",
+      "https://en.wikipedia.org/wiki/Naruto:_Shippuden_season_20"
+     ]
+    },
+    {
+     "name": "Baryon Mode",
+     "group": "Boruto",
+     "firstEpisode": 216,
+     "episodeSeries": "Boruto: Naruto Next Generations (anime)",
+     "firstChapter": 51,
+     "chapterSeries": "Boruto: Naruto Next Generations (manga)",
+     "arc": "Boruto: Kawaki arc (vs. Isshiki Ōtsutsuki)",
+     "what": "Naruto and Kurama burn their chakra together, a process the wiki compares to nuclear fusion, for a huge boost that also shortens the opponent's life on contact. It costs Kurama his life.",
+     "spoiler": true,
+     "confidence": "medium",
+     "note": "Numbers from the Naruto Wiki only. Wikipedia confirms the combination and its cost.",
+     "sources": [
+      "https://naruto.fandom.com/wiki/Baryon_Mode",
+      "https://en.wikipedia.org/wiki/Naruto_Uzumaki"
+     ]
+    }
+   ],
+   "limits": [
+    {
+     "what": "Sage Mode needs stillness. He must stay perfectly still to gather natural energy and it runs out mid-fight, so he leaves clones behind to collect more. It runs out against Pain in Shippuden episode 164 ('Danger! Sage Mode Limit Reached').",
+     "spoiler": false,
+     "confidence": "high",
+     "sources": [
+      "https://naruto.fandom.com/wiki/Sage_Mode",
+      "https://en.wikipedia.org/wiki/Naruto:_Shippuden_season_8"
+     ]
+    },
+    {
+     "what": "Before he controlled it, Kurama's red cloak burned his own body, and every extra tail cost him more control. At four tails he went berserk and once badly wounded Jiraiya.",
+     "spoiler": false,
+     "confidence": "high",
+     "sources": [
+      "https://naruto.fandom.com/wiki/Jinchūriki_Forms",
+      "https://en.wikipedia.org/wiki/Naruto:_Shippuden_season_2"
+     ]
+    },
+    {
+     "what": "Before Kurama cooperated, using Nine-Tails Chakra Mode was a tug-of-war over chakra that could have killed him.",
+     "spoiler": true,
+     "confidence": "medium",
+     "sources": [
+      "https://naruto.fandom.com/wiki/Naruto_Uzumaki"
+     ]
+    },
+    {
+     "what": "Baryon Mode uses up Naruto's and Kurama's life force. Kurama died from it, and Naruto lost all of Kurama's chakra.",
+     "spoiler": true,
+     "confidence": "high",
+     "sources": [
+      "https://naruto.fandom.com/wiki/Naruto_Uzumaki",
+      "https://en.wikipedia.org/wiki/Naruto_Uzumaki"
+     ]
+    }
+   ],
+   "beaten": [
+    {
+     "who": "Sasuke Uchiha (Part I)",
+     "how": "Their Rasengan and Chidori clashed at the Valley of the End. Sasuke won but could not bring himself to kill Naruto, and left.",
+     "where": "Sasuke Recovery Mission; climax around chapter 232, Naruto episode 134 ('The End of Tears', covering chapters 231–235)",
+     "spoiler": true,
+     "confidence": "high",
+     "sources": [
+      "https://en.wikipedia.org/wiki/Naruto_Uzumaki",
+      "https://naruto.fandom.com/wiki/The_Valley_of_the_End_(chapter)",
+      "https://naruto.fandom.com/wiki/The_End_of_Tears"
+     ]
+    },
+    {
+     "who": "Pain",
+     "how": "Pain's Preta Path caught Naruto and pinned him down with chakra receivers. Naruto broke free after Minato restored the seal and went on to defeat Pain.",
+     "where": "Pain's Assault; Naruto Shippuden episodes 165–166",
+     "spoiler": true,
+     "confidence": "high",
+     "sources": [
+      "https://en.wikipedia.org/wiki/Naruto:_Shippuden_season_8",
+      "https://en.wikipedia.org/wiki/Naruto_Uzumaki"
+     ]
+    },
+    {
+     "who": "Sasuke Uchiha (final battle)",
+     "how": "Their rematch at the Valley of the End ended in a draw. Each lost an arm, and then they made peace.",
+     "where": "Kaguya Ōtsutsuki Strikes arc; begins in chapters 692–693 / Shippuden episode 475",
+     "spoiler": true,
+     "confidence": "high",
+     "sources": [
+      "https://en.wikipedia.org/wiki/Naruto_Uzumaki",
+      "https://naruto.fandom.com/wiki/The_Valley_of_the_End_(episode)"
+     ]
+    },
+    {
+     "who": "Momoshiki and Kinshiki Ōtsutsuki",
+     "how": "They captured Naruto during the Chūnin Exams. Boruto, Sasuke and the Kage rescued him.",
+     "where": "Boruto: Naruto the Movie (2015)",
+     "spoiler": true,
+     "confidence": "high",
+     "sources": [
+      "https://en.wikipedia.org/wiki/Naruto_Uzumaki"
+     ]
+    },
+    {
+     "who": "Jigen (Isshiki Ōtsutsuki's vessel)",
+     "how": "After unleashing Isshiki's full Kāma power, Jigen beat both Naruto and Sasuke and sealed Naruto away. The strain forced Jigen to withdraw.",
+     "where": "Boruto: Kawaki arc; Boruto manga chapter 38, anime episode 204 (covers chapters 37–39)",
+     "spoiler": true,
+     "confidence": "high",
+     "sources": [
+      "https://naruto.fandom.com/wiki/Jigen",
+      "https://naruto.fandom.com/wiki/He's_Bad_News_(episode)"
+     ]
+    },
+    {
+     "who": "Kawaki",
+     "how": "To keep Naruto out of his war on the Ōtsutsuki, Kawaki sent Naruto and Hinata into Daikokuten, a dimension where time stands still.",
+     "where": "End of Boruto: Naruto Next Generations; manga chapter 77",
+     "spoiler": true,
+     "confidence": "high",
+     "sources": [
+      "https://naruto.fandom.com/wiki/Daikokuten",
+      "https://en.wikipedia.org/wiki/Naruto_Uzumaki"
+     ]
+    }
+   ],
+   "notes": [
+    "firstEpisode for Part I items uses Naruto (2002) numbering. Items marked episodeSeries 'Naruto Shippuden' use Shippuden numbering, and Baryon Mode uses Boruto anime numbering.",
+    "Spoiler cut-off: Fourth Great Ninja War onward (about chapter 515 / Shippuden episode 197), plus all Boruto material.",
+    "For abilities, the numbers mean when the technique first appears. Where Naruto's own first use differs (Rasengan), that is stated in 'note'."
+   ],
+   "short": "Naruto"
+  }
+ }
+}

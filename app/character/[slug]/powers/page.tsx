@@ -27,7 +27,7 @@ function load(slug: string) {
   const p = powersFor(decodeURIComponent(slug));
   if (!p) notFound();
   const c = snapByPage(decodeURIComponent(slug));
-  const short = p.name.split(" ")[p.name.startsWith("Satoru") ? 1 : 0];
+  const short = p.short ?? p.name.split(" ")[0];
   return { p, img: c ? snapImage(c, "large") : null, short, main: p.forms.filter((f) => f.group === "main") };
 }
 
@@ -38,10 +38,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: fitTitle(forms
       ? [`All ${short} Transformations in Order (${y}): Every Form Explained`, `All ${short} Transformations in Order`, `${short} Transformations in Order`]
-      : [`${short}'s Powers Explained: ${list(p.abilities.slice(0, 3).map((a) => a.name.split(" (")[0]))}`, `${short}'s Powers Explained (${y})`, `${short}'s Powers Explained`]),
+      : [`${short}'s Powers Explained: ${p.hook ?? list(p.abilities.slice(0, 3).map((a) => a.name.split(" (")[0]))}`, `${short}'s Powers Explained (${y})`, `${short}'s Powers Explained`]),
     description: fitDescription(forms
       ? `Every ${short} transformation in story order, from ${main[0]?.name} to ${main[main.length - 1]?.name}, with where each first appears, plus his techniques and limits. Spoilers hidden.`
-      : `${short}'s powers explained in plain English: ${list(p.abilities.slice(0, 4).map((a) => a.name.split(" (")[0]))}, their limits, and who has beaten him. Spoilers hidden until you tap.`),
+      : `${short}'s powers explained in plain English: ${p.hook ?? list(p.abilities.slice(0, 4).map((a) => a.name.split(" (")[0]))}, how each works, their limits, and who has beaten him.`),
     alternates: { canonical: powersPath(decodeURIComponent(slug)) },
   };
 }
@@ -112,7 +112,7 @@ export default async function PowersPage({ params }: Props) {
       <AnswerLead checked={fmt(POWERS_CHECKED)}>
         {forms
           ? <>{short} has {main.length} transformations in the main story, in this order: {list(main.map((f) => f.name))}.{extra.length ? ` ${list(extra.map((g) => GROUP[g] ?? g))} add${extra.length === 1 ? "s" : ""} more, listed separately.` : ""}</>
-          : <>{short}&apos;s main powers are {list(p.abilities.slice(0, 4).map((a) => a.name))}. {p.summary}</>}
+          : <>{short}&apos;s powers are {p.powersLine ?? list(p.abilities.slice(0, 4).map((a) => a.name))}. {p.summary}</>}
       </AnswerLead>
 
       <p className="mt-4 max-w-3xl text-xs text-muted">Anything first shown in a later arc is hidden until you tap, along with how it happens.</p>
