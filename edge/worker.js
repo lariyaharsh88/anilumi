@@ -31,6 +31,10 @@ const SHARED_MAX_AGE = 30 * DAY;
 // fetches against the host ("server connectivity"). Past this budget a visitor gets the last good copy instead.
 const ORIGIN_BUDGET_MS = 12_000;
 const LAST_GOOD_TTL = 14 * DAY;
+// With no copy to fall back on, how long a request waits for a render before getting a retryable 503 (the render
+// carries on and is cached). Googlebot gives up at about 30 s; most renders take 2-7 s.
+const NO_COPY_BUDGET_MS = 20_000;
+let noCopyBudget = NO_COPY_BUDGET_MS; // env.NO_COPY_BUDGET_MS overrides it (tests)
 // Generated Open Graph / Twitter cards. Their URLs carry a hash of the image route (`?6cf9…`), so they need no
 // build in their key: they survive deploys, which would otherwise re-render every card.
 const CARD = /\/(opengraph|twitter)-image(-[\w-]+)?$/;
@@ -52,6 +56,8 @@ export const knownSearch = (search) => [...new URLSearchParams(search).keys()].e
 /** Search engines whose crawl rate follows our response time: they get, and keep, the shared last copy. */
 const SEARCH_BOT = /googlebot|google-inspectiontool|bingbot/i;
 export const isSearchBot = (ua) => SEARCH_BOT.test(ua || "");
+/** scripts/warm-cache.mjs */
+const WARMER = /AniLumi cache warmer/;
 const CRAWLER = /googlebot|google-inspectiontool|googleother|adsbot-google|mediapartners-google|bingbot|duckduckbot|yandex|applebot|baiduspider|oai-searchbot|chatgpt-user|perplexitybot|claude-searchbot|claude-user|petalbot/i;
 
 function ttl(path) {
@@ -184,6 +190,7 @@ export default {
 async function handle(request, env, ctx) {
   app = env.APP || null;
   pages = env.PAGES || null;
+  noCopyBudget = Number(env.NO_COPY_BUDGET_MS) || NO_COPY_BUDGET_MS;
   const url = new URL(request.url);
   if (url.hostname === `www.${SITE}`) {
     url.hostname = SITE;
@@ -194,6 +201,12 @@ async function handle(request, env, ctx) {
   if (url.search) url.search = cleanSearch(url.search);
   // Preview images carry a version hash (opengraph-image?d53d2c13…) and build files their own: both are cached as is.
   if (url.search && !CARD.test(url.pathname) && !url.pathname.startsWith("/_next/") && !knownSearch(url.search)) return toOrigin(request, url);
+
+  // Search engines straight to their copy of the page: no wait for the live build's number (on a fresh Worker
+  // instance that was an app call of up to a second, and Googlebot's sparse requests nearly always land on one) and
+  // no R2 lookup of the build copy. The build check and any refresh happen after the answer is sent.
+  const fast = await searchBotCopy(request, url, ctx);
+  if (fast) return fast;
 
   const cache = caches.default;
   // Hashed build assets and cards never change; pages are keyed by the live build too.
@@ -227,6 +240,9 @@ async function handle(request, env, ctx) {
   const lastKey = lastKeyFor(url, genq);
   const ua = request.headers.get("user-agent") || "";
   const search = isSearchBot(ua);
+  // The post-release warm-up's renders replace the search engines' shared copies too, so Googlebot's first visit
+  // after a release already gets the new build's page.
+  const shareRender = search || WARMER.test(ua);
   let last = lastKey ? await cache.match(lastKey) : null;
   // Nothing in this data centre: a search engine gets the shared copy (any build, up to 30 days old), kept here too.
   let shared = false;
@@ -251,13 +267,25 @@ async function handle(request, env, ctx) {
   if (last && (sameBuild || crawler)) {
     // Re-render in the background only once the copy is past its TTL. Every hit used to, so after each release
     // every crawler request still cost a render (most of the Workers CPU bill, Nov 2026).
-    if (copyAge(last) > ttl(url.pathname)) ctx.waitUntil(toOrigin(request, url, 30_000).then((res) => store(res, url, genq, key, lastKey, !crawler, search)).catch(() => {}));
+    if (copyAge(last) > ttl(url.pathname)) ctx.waitUntil(toOrigin(request, url, 30_000).then((res) => store(res, url, genq, key, lastKey, !crawler, shareRender)).catch(() => {}));
     return stale("STALE");
   }
 
   let res;
   try {
-    res = await toOrigin(request, url, last ? ORIGIN_BUDGET_MS : 0); // no fallback: wait as long as the app needs
+    if (last) res = await toOrigin(request, url, ORIGIN_BUDGET_MS);
+    else {
+      // No copy to fall back on: wait up to NO_COPY_BUDGET_MS, then answer "retry soon" while the render goes on in
+      // the background and is cached for the next request. Before, a render stuck on a slow upstream held the
+      // connection for minutes (Googlebot logged "page could not be reached" and slowed its crawl, Nov 2026).
+      const render = toOrigin(request, url);
+      const timer = new Promise((r) => setTimeout(() => r(null), noCopyBudget));
+      res = await Promise.race([render, timer]);
+      if (!res) {
+        ctx.waitUntil(render.then((r) => store(r, url, genq, key, lastKey, !crawler, shareRender)).catch(() => {}));
+        return new Response("AniLumi is busy, please retry in a minute.", { status: 503, headers: { "retry-after": "60", "content-type": "text/plain; charset=utf-8", "cache-control": "no-store", "x-edge-cache": "ORIGIN-SLOW" } });
+      }
+    }
   } catch {
     // Timed out or unreachable: the last good copy, else a retryable 503 (never a hung connection).
     if (last) return stale("STALE-TIMEOUT");
@@ -283,8 +311,57 @@ async function handle(request, env, ctx) {
   const out = new Response(res.body, res);
   out.headers.set("x-edge-cache", "MISS");
   if (genq) out.headers.set("x-edge-gen", genq.slice(genq.indexOf("=") + 1));
-  ctx.waitUntil(store(out, url, genq, key, lastKey, !crawler, search));
+  ctx.waitUntil(store(out, url, genq, key, lastKey, !crawler, shareRender));
   return out;
+}
+
+/**
+ * For Googlebot and Bingbot on a page (not build files, cards or navigation payloads): the page's last good copy
+ * (this data centre, else the shared R2 one), or null to take the normal path. Search engines' crawl rate follows
+ * response time, and this answers from cache without first learning the live build. Afterwards, in the background:
+ * a copy from an older build is replaced by the current build's global copy when the warm-up made one (no render),
+ * else re-rendered; a current copy is re-rendered only past its TTL, as before.
+ */
+async function searchBotCopy(request, url, ctx) {
+  const ua = request.headers.get("user-agent") || "";
+  if (!isSearchBot(ua) || url.pathname.startsWith("/_next/") || CARD.test(url.pathname) || url.searchParams.has("_rsc")) return null;
+  const lastKey = lastKeyFor(url, "?__gen=any"); // the last-copy key doesn't depend on the build
+  if (!lastKey) return null;
+  const cache = caches.default;
+  let last = await cache.match(lastKey);
+  let shared = false;
+  if (!last) {
+    last = await sharedMatch(lastKey);
+    if (!last) return null;
+    shared = true;
+    ctx.waitUntil(cache.put(lastKey, withMaxAge(last.clone(), LAST_GOOD_TTL)).catch(() => {}));
+  }
+  const copyBuild = last.headers.get("x-build");
+  const expired = copyAge(last) > ttl(url.pathname);
+  ctx.waitUntil((async () => {
+    const g = await generation(ctx);
+    if (g === "0") return;
+    const genq = `${url.search ? "&" : "?"}__gen=${g}`;
+    const key = new Request(`https://${SITE}${url.pathname}${url.search}${genq}`, { method: "GET" });
+    if (copyBuild && copyBuild !== g) {
+      const global = await globalMatch(key);
+      if (global) return refreshLastCopy(global.response, lastKey, global.uploaded);
+    } else if (!expired) return;
+    const res = await toOrigin(request, url, 30_000);
+    await store(res, url, genq, key, lastKey, false, true);
+  })().catch(() => {}));
+  const out = new Response(last.body, last);
+  out.headers.set("x-edge-cache", shared ? "STALE-SHARED" : "STALE");
+  return out;
+}
+
+/** Make a page from the current build (an R2 build copy) the last good copy, here and shared. */
+async function refreshLastCopy(res, lastKey, storedAt) {
+  if (!(res.headers.get("content-type") || "").includes("text/html")) return;
+  const kept = new Response(res.clone().body, res);
+  kept.headers.set("cache-control", `public, max-age=${LAST_GOOD_TTL}`);
+  kept.headers.set("x-stored-at", String(storedAt));
+  await Promise.all([caches.default.put(lastKey, kept), pages ? storeShared(res, lastKey) : null].map((p) => Promise.resolve(p).catch(() => {})));
 }
 
 /** Seconds since a last-good copy was stored (x-stored-at); copies from before the stamp count as expired. Pure. */

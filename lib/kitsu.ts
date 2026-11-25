@@ -106,15 +106,17 @@ async function kitsu(path: string, params: Record<string, string | number> = {},
     .map(([k, v]) => `${encodeURIComponent(k)}=${encodeURIComponent(String(v))}`)
     .join("&");
   const url = `${BASE}${path}${qs ? `?${qs}` : ""}`;
-  // Four tries with growing waits (0.5 s, 1.5 s, 3 s) and a per-try timeout, so a slow or flaky Kitsu
-  // doesn't hang a render or fail it on the first blip.
-  const waits = [500, 1500, 3000];
-  for (let attempt = 0; attempt < 4; attempt++) {
+  // Three tries with short waits (0.4 s, 1.2 s) and a 6 s per-try timeout: at most ~20 s per call, so a slow Kitsu
+  // can't hold a render for minutes (four 10 s tries plus waits was up to 45 s per call, and pages make several;
+  // Googlebot saw hung requests, Nov 2026), while a single blip still gets retried.
+  const waits = [400, 1200];
+  const tries = waits.length + 1;
+  for (let attempt = 0; attempt < tries; attempt++) {
     try {
       const res = await fetch(url, {
         headers: { Accept: "application/vnd.api+json", "User-Agent": "AniLumi/1.0 (+https://github.com/harshlariya98)" },
         next: { revalidate: Math.max(revalidate, KITSU_MIN_REVALIDATE) },
-        signal: AbortSignal.timeout(Number(process.env.KITSU_TIMEOUT_MS) || 10000),
+        signal: AbortSignal.timeout(Number(process.env.KITSU_TIMEOUT_MS) || 6000),
         // On Cloudflare Workers, also keep the response in Cloudflare's HTTP cache. Next's fetch cache missed for most
         // calls (164k Kitsu subrequests a day, 0% cached); with this, repeats of a URL within 6 h never leave
         // Cloudflare. Ignored on Node. Adds at most 6 h to the age of catalogue data (floor above: 12 h).
@@ -122,16 +124,16 @@ async function kitsu(path: string, params: Record<string, string | number> = {},
       });
       if (res.status === 404) return null;
       if (res.status === 429 || res.status >= 500) {
-        if (attempt < 3) await new Promise((r) => setTimeout(r, waits[attempt]));
+        if (attempt < tries - 1) await new Promise((r) => setTimeout(r, waits[attempt]));
         continue;
       }
       if (!res.ok) return null;
       return (await res.json()) as JsonApiDoc;
     } catch {
-      if (attempt < 3) await new Promise((r) => setTimeout(r, waits[attempt]));
+      if (attempt < tries - 1) await new Promise((r) => setTimeout(r, waits[attempt]));
     }
   }
-  console.warn(`[kitsu] ${path} failed after 4 attempts`);
+  console.warn(`[kitsu] ${path} failed after ${tries} attempts`);
   if (strict) throw new UpstreamError(`Kitsu unavailable: ${path}`);
   return null;
 }
