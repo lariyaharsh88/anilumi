@@ -2672,7 +2672,45 @@
             "confidence": "medium"
           }
         }
-      ]
+      ],
+      "watch": {
+        "about": "Five-year-old Shinnosuke \"Shin-chan\" Nohara's mischief has run on Japan's TV Asahi since 1992. The Hindi dub began on Hungama TV; after a 2008 ban it returned in 2009 with cuts and a redub, and Sony YAY! has aired newer episodes since 2024.",
+        "tv": [
+          {
+            "channel": "Sony YAY!",
+            "status": "airing",
+            "note": "Newer episodes since May 2024. The latest reports: new episodes from 2 Nov 2026, Monday to Friday at 1 PM, and the Cactus Attack film on 8 Nov 2026; it also ran a 16-film marathon from 20 Dec 2025 to 7 Jan 2026.",
+            "sources": [
+              "https://www.animenewsnetwork.com/news/2026-11-07/sony-yay-airs-crayon-shin-chan-my-moving-story-cactus-attack-anime-film-in-india-on-november-8/.243610",
+              "https://www.animenewsnetwork.com/news/2026-10-25/sony-yay-airs-new-episodes-of-shin-chan-tv-anime-in-india-on-november-2/.243157",
+              "https://indiantelevision.com/?p=220774"
+            ]
+          },
+          {
+            "channel": "Hungama TV",
+            "status": "unclear",
+            "note": "Shin-chan's first Hindi home. The latest dated report of it airing there is from May 2024; nothing newer for 2025–26.",
+            "sources": [
+              "https://animenewsindia.com/2024/05/11/sony-yay-introduces-hit-japanese-series-shin-chan-to-its-lineup",
+              "https://indiantelevision.com/television/hungama-tv-to-air-antics-of-shin-chan-from-19-june-2/",
+              "https://www.animenewsnetwork.com/news/2008-12-05/india-reportedly-bans-crayon-shin-chan-from-tv"
+            ]
+          }
+        ],
+        "streaming": [
+          {
+            "service": "JioHotstar",
+            "what": "The TV series, free with ads, in Hindi, Tamil and Telugu",
+            "url": "https://www.hotstar.com/in/1260021800"
+          },
+          {
+            "service": "Films",
+            "what": "None of the Shin-chan films streams legally in India right now; they come back on Sony YAY! from time to time. The last two cinema releases were Our Dinosaur Diary (May 2025) and The Spicy Kasukabe Dancers (Sep 2025)",
+            "url": null
+          }
+        ],
+        "next": null
+      }
     },
     {
       "slug": "pokemon",
