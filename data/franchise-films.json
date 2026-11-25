@@ -3085,7 +3085,267 @@
           "confidence": "high",
           "note": "Live-action Legendary/Warner Bros film, not part of the anime film series. JioHotstar listed Hindi and English on 2026-11-19. Netflix India added it in Apr 2021 (ANN), but JustWatch India no longer lists Netflix."
         }
-      ]
+      ],
+      "watch": {
+        "about": "Ash, and later Liko and Roy, travel with their Pokémon in the anime that has run in Japan since 1997: 29 seasons and 23 films so far. Hindi dubs aired on Indian TV for years, and today the official Pokémon Asia Hindi channel on YouTube streams several series free.",
+        "tv": [
+          {
+            "channel": "Hungama TV",
+            "status": "unclear",
+            "note": "Pokémon's long-time Hindi home. The latest dated report we found is the Pokémon Horizons premiere on 25 May 2024; nothing newer for 2025–26.",
+            "sources": [
+              "https://www.animenewsnetwork.com/news/2024-05-03/pokemon-horizons-the-series-anime-airs-in-india-on-may-25/.210398",
+              "https://medianews4u.com/?p=2419782",
+              "https://t2online.in/screen/tv/a-brand-new-pokemon-series-is-set-to-hit-hungama-screens-across-the-country-on-may-25.-t2-was-there-for-the-unveiling-of-the-series-in-mumbai/911540"
+            ]
+          },
+          {
+            "channel": "Super Hungama",
+            "status": "unclear",
+            "note": "Aired Pokémon XYZ from 29 April 2024; no later report found.",
+            "sources": [
+              "https://www.animenewsnetwork.com/news/2024-04-22/super-hungama-airs-pokemon-the-series-xyz-anime-starting-on-april-29/.210071",
+              "https://indiantelevision.com/news-headline/disney-kids-to-launch-new-channel-super-hungama-on-1-march/",
+              "https://cdn.jiostar.com/jiostar/wp-content/uploads/2026/02/Application-for-request-of-signals-of-JIOSTAR-channels.pdf"
+            ]
+          }
+        ],
+        "streaming": [
+          {
+            "service": "Pokémon Asia Hindi (YouTube)",
+            "what": "Free and official: Pokémon Horizons (seasons 1 and 2), Diamond & Pearl (new episodes Monday, Wednesday and Friday), XY and Journeys, in Hindi",
+            "url": "https://www.youtube.com/@PokemonAsiaHindiOfficial"
+          },
+          {
+            "service": "Prime Video and Amazon MX Player",
+            "what": "The first five seasons (Indigo League to Master Quest) in Hindi, Tamil and Telugu, free with ads",
+            "url": null
+          },
+          {
+            "service": "JioHotstar",
+            "what": "Many of the Pokémon films with Hindi audio (some free with ads), and Detective Pikachu",
+            "url": null
+          },
+          {
+            "service": "Netflix",
+            "what": "Pokémon: Mewtwo Strikes Back – Evolution and Pokémon Concierge, with Hindi audio",
+            "url": "https://www.netflix.com/in/title/81186864"
+          }
+        ],
+        "next": {
+          "t": "Pokémon: Wild Card",
+          "year": 2027,
+          "note": "The first animated Pokémon film since 2020, from CloverWorks, announced on 31 August 2026; no India date yet.",
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2026-08-31/pokemon-wild-card-anime-film-announced-for-2027/.241147"
+          ]
+        },
+        "seasons": [
+          {
+            "n": 1,
+            "t": "Indigo League",
+            "years": "1997–1999",
+            "hindi": "available",
+            "where": "Prime Video / Amazon MX Player"
+          },
+          {
+            "n": 2,
+            "t": "Adventures in the Orange Islands",
+            "years": "1999",
+            "hindi": "available",
+            "where": "Prime Video / Amazon MX Player"
+          },
+          {
+            "n": 3,
+            "t": "The Johto Journeys",
+            "years": "1999–2000",
+            "hindi": "available",
+            "where": "Prime Video / Amazon MX Player"
+          },
+          {
+            "n": 4,
+            "t": "Johto League Champions",
+            "years": "2000–2001",
+            "hindi": "available",
+            "where": "Prime Video / Amazon MX Player"
+          },
+          {
+            "n": 5,
+            "t": "Master Quest",
+            "years": "2001–2002",
+            "hindi": "available",
+            "where": "Prime Video / Amazon MX Player"
+          },
+          {
+            "n": 6,
+            "t": "Advanced",
+            "years": "2002–2003",
+            "hindi": "tv-only",
+            "where": "Shown on TV in Hindi; not streaming now"
+          },
+          {
+            "n": 7,
+            "t": "Advanced Challenge",
+            "years": "2003–2004",
+            "hindi": "tv-only",
+            "where": "Shown on TV in Hindi; not streaming now"
+          },
+          {
+            "n": 8,
+            "t": "Advanced Battle",
+            "years": "2004–2005",
+            "hindi": "tv-only",
+            "where": "Shown on TV in Hindi; not streaming now"
+          },
+          {
+            "n": 9,
+            "t": "Battle Frontier",
+            "years": "2005–2006",
+            "hindi": "tv-only",
+            "where": "Shown on TV in Hindi; not streaming now"
+          },
+          {
+            "n": 10,
+            "t": "Diamond and Pearl",
+            "years": "2006–2007",
+            "hindi": "available",
+            "where": "Pokémon Asia Hindi, Diamond and Pearl playlist"
+          },
+          {
+            "n": 11,
+            "t": "DP: Battle Dimension",
+            "years": "2007–2008",
+            "hindi": "available",
+            "where": "Pokémon Asia Hindi, uploading now"
+          },
+          {
+            "n": 12,
+            "t": "DP: Galactic Battles",
+            "years": "2008–2009",
+            "hindi": "tv-only",
+            "where": "Shown on TV in Hindi; not streaming now"
+          },
+          {
+            "n": 13,
+            "t": "DP: Sinnoh League Victors",
+            "years": "2010",
+            "hindi": "tv-only",
+            "where": "Shown on TV in Hindi; not streaming now"
+          },
+          {
+            "n": 14,
+            "t": "Black & White",
+            "years": "2010–2011",
+            "hindi": "tv-only",
+            "where": "Shown on TV in Hindi; not streaming now"
+          },
+          {
+            "n": 15,
+            "t": "BW: Rival Destinies",
+            "years": "2011–2012",
+            "hindi": "tv-only",
+            "where": "Shown on TV in Hindi; not streaming now"
+          },
+          {
+            "n": 16,
+            "t": "BW: Adventures in Unova and Beyond",
+            "years": "2012–2013",
+            "hindi": "tv-only",
+            "where": "Shown on TV in Hindi; not streaming now"
+          },
+          {
+            "n": 17,
+            "t": "XY",
+            "years": "2013–2014",
+            "hindi": "available",
+            "where": "Pokémon Asia Hindi, XY playlist"
+          },
+          {
+            "n": 18,
+            "t": "XY: Kalos Quest",
+            "years": "2014–2015",
+            "hindi": "available",
+            "where": "Pokémon Asia Hindi, XY playlist"
+          },
+          {
+            "n": 19,
+            "t": "XYZ",
+            "years": "2015–2016",
+            "hindi": "available",
+            "where": "Pokémon Asia Hindi, XY playlist"
+          },
+          {
+            "n": 20,
+            "t": "Sun & Moon",
+            "years": "2016–2017",
+            "hindi": "tv-only",
+            "where": "Shown on TV in Hindi; not streaming now"
+          },
+          {
+            "n": 21,
+            "t": "Sun & Moon: Ultra Adventures",
+            "years": "2017–2018",
+            "hindi": "not-found",
+            "where": null
+          },
+          {
+            "n": 22,
+            "t": "Sun & Moon: Ultra Legends",
+            "years": "2018–2019",
+            "hindi": "not-found",
+            "where": null
+          },
+          {
+            "n": 23,
+            "t": "Journeys",
+            "years": "2019–2020",
+            "hindi": "available",
+            "where": "Pokémon Asia Hindi, Journeys playlist"
+          },
+          {
+            "n": 24,
+            "t": "Master Journeys",
+            "years": "2020–2021",
+            "hindi": "available",
+            "where": "Pokémon Asia Hindi, Journeys playlist"
+          },
+          {
+            "n": 25,
+            "t": "Ultimate Journeys",
+            "years": "2021–2023",
+            "hindi": "available",
+            "where": "Pokémon Asia Hindi, Journeys playlist"
+          },
+          {
+            "n": 26,
+            "t": "Horizons",
+            "years": "2023–2024",
+            "hindi": "available",
+            "where": "Pokémon Asia Hindi, Horizons show"
+          },
+          {
+            "n": 27,
+            "t": "Horizons – The Search for Laqua",
+            "years": "2024–2025",
+            "hindi": "available",
+            "where": "Pokémon Asia Hindi, Horizons show, Season 2"
+          },
+          {
+            "n": 28,
+            "t": "Horizons – Rising Hope",
+            "years": "2025–2026",
+            "hindi": "not-found",
+            "where": null
+          },
+          {
+            "n": 29,
+            "t": "Horizons – Wonders Ahead",
+            "years": "2026–",
+            "hindi": "not-found",
+            "where": null
+          }
+        ]
+      }
     },
     {
       "slug": "dragon-ball",
