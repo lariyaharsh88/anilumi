@@ -137,8 +137,30 @@ export const similarIndexed = (slug: string) => SIMILAR_SEARCHED.includes(slug) 
 /** A per-anime Hindi dub page: the most-watched dubs (lib/hindidub.ts), plus any Google already shows. */
 export const hindiDubIndexed = (slug: string) => topHindiDub(slug) || searchShown(hindiDubPath(slug));
 
-/** Character tables repeat what the character pages say: indexed only where search already shows them. */
-export const characterTableIndexed = (slug: string) => searchShown(`/anime/${slug}/characters`);
+/**
+ * Character lists people search as "<show> characters", with the name they search by (Keyword Planner, US, Nov 2026,
+ * a month; India is 15-25% of that; Bing keyword research 25 Nov: "demon slayer characters" 23K impressions, the
+ * top English query for the show, "haikyuu characters" 5.6K, "attack on titan characters" 5.5K). Each has at least
+ * 4 characters with verified notes for its main-characters section (tests/indexing.test.ts).
+ */
+export const SEARCHED_CHARACTER_TABLES: Record<string, { name: string; searches: number }> = {
+  "kimetsu-no-yaiba": { name: "Demon Slayer", searches: 246000 },
+  "jujutsu-kaisen": { name: "Jujutsu Kaisen", searches: 246000 }, // "jjk characters"; "jujutsu kaisen characters" 90.5K
+  "boku-no-hero-academia": { name: "My Hero Academia", searches: 201000 },
+  "one-piece": { name: "One Piece", searches: 165000 },
+  naruto: { name: "Naruto", searches: 135000 },
+  bleach: { name: "Bleach", searches: 90500 },
+  "death-note": { name: "Death Note", searches: 74000 },
+  "attack-on-titan": { name: "Attack on Titan", searches: 60500 },
+  "chainsaw-man": { name: "Chainsaw Man", searches: 60500 },
+  "hunter-x-hunter-2011": { name: "Hunter x Hunter", searches: 60500 },
+  haikyuu: { name: "Haikyuu!!", searches: 40500 },
+  "black-clover-tv": { name: "Black Clover", searches: 33100 },
+};
+
+/** Character tables repeat what the character pages say: indexed where people search the show's characters or
+ *  search already shows them. */
+export const characterTableIndexed = (slug: string) => slug in SEARCHED_CHARACTER_TABLES || searchShown(`/anime/${slug}/characters`);
 
 /** "Next season" pages: indexed only with an answer (a sequel announced, dated, airing or out, or official news);
  *  "not announced" pages were thin and Google left them unindexed (15 Nov audit). */

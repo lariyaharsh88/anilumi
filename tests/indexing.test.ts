@@ -90,3 +90,15 @@ test("anime pages: popular, airing with a following, announced or researched; fr
   // The sitemap lists exactly the researched titles (lib/sitemap-entries.ts).
   assert.ok(ownContentSlugs().every(hasOwnContent));
 });
+
+test("searched character lists: each has a table and at least 4 verified notes for its main cast", async () => {
+  const { SEARCHED_CHARACTER_TABLES, characterTableIndexed } = await import("../lib/indexing");
+  const { characterTable } = await import("../lib/charsnap");
+  const { notedCast } = await import("../lib/charnotes");
+  for (const slug of Object.keys(SEARCHED_CHARACTER_TABLES)) {
+    const rows = characterTable(slug);
+    assert.ok(rows, `${slug}: no character table`);
+    assert.ok(notedCast(rows).length >= 4, `${slug}: ${notedCast(rows).length} noted characters`);
+    assert.equal(characterTableIndexed(slug), true);
+  }
+});

@@ -37,3 +37,16 @@ export function linkedArcs(note: CharacterNote, showSlug: string | null | undefi
 /** The notes name the show as fans do ("Haikyu!!"), Kitsu often in romaji ("Haikyuu!!"): either title matches. */
 export const debutInShow = (note: CharacterNote, ...showTitles: (string | null | undefined)[]) =>
   Boolean(note.debut?.anime && note.debut.episode && showTitles.some((t) => t && bare(note.debut!.anime!) === bare(t)));
+
+/** The characters in a list that have verified notes, in the list's order: the main cast for a show's character
+ *  page ("Who are the main Attack on Titan characters?"). */
+export const notedCast = <T extends { c: { k?: string } }>(rows: T[]): (T & { note: CharacterNote })[] =>
+  rows.flatMap((r) => { const note = r.c.k ? characterNote(r.c.k) : null; return note ? [{ ...r, note }] : []; });
+
+/** A role's first clause, for one-line lists: "Protagonist; member of the Survey Corps" → "Protagonist", "Tanjiro
+ *  Kamado's younger sister, turned into a demon…" → "Tanjiro Kamado's younger sister". */
+export function shortRole(role: string | null): string | null {
+  const r = role?.split(/;|, /)[0].trim();
+  if (!r) return null;
+  return r.length > 60 ? r.split(/ (?:and|who|whose) /)[0] : r;
+}

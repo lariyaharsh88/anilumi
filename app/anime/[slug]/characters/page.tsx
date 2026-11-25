@@ -1,6 +1,6 @@
-import { fitDescription } from "@/lib/titles";
+import { fitDescription, fitTitle } from "@/lib/titles";
 import type { Metadata } from "next";
-import { robotsFor, characterTableIndexed } from "@/lib/indexing";
+import { robotsFor, characterTableIndexed, SEARCHED_CHARACTER_TABLES } from "@/lib/indexing";
 import Link from "@/components/Link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
@@ -16,6 +16,8 @@ import StatTiles from "@/components/viz/StatTiles";
 import BarChart from "@/components/viz/BarChart";
 import Faq from "@/components/Faq";
 import AdSlot from "@/components/AdSlot";
+import AnswerLead from "@/components/AnswerLead";
+import { notedCast, shortRole, debutInShow } from "@/lib/charnotes";
 
 // Built from the monthly character snapshot; Kitsu is only asked for the backdrop.
 export const revalidate = 604800;
@@ -24,6 +26,7 @@ type Props = { params: Promise<{ slug: string }> };
 
 const ageText = (a: string | null) => (a ? a.replace(/-$/, "+") : null); // "15-" in AniList means "15 and up"
 const charPath = (r: TableRow) => (r.c.k ? `/character/${r.c.k}` : null);
+const list = (xs: string[]) => (xs.length > 1 ? `${xs.slice(0, -1).join(", ")} and ${xs[xs.length - 1]}` : xs[0] ?? "");
 
 function load(slug: string) {
   const rows = characterTable(decodeURIComponent(slug));
@@ -31,16 +34,26 @@ function load(slug: string) {
   const title = rows[0].c.t;
   const tall = rows.filter((r) => r.cm).sort((a, b) => b.cm! - a.cm!);
   const aged = rows.filter((r) => r.ageN !== null).sort((a, b) => a.ageN! - b.ageN!);
-  return { rows, title, tall, aged };
+  // The name people search the show's characters by ("Demon Slayer", not "Kimetsu no Yaiba"), and its main cast.
+  const name = SEARCHED_CHARACTER_TABLES[decodeURIComponent(slug)]?.name ?? title;
+  // Protagonists first, then by popularity: "the main characters are Eren, Levi, Mikasa…" reads as people expect.
+  const noted = notedCast(rows);
+  const lead = (m: (typeof noted)[number]) => /^protagonist/i.test(m.note.role ?? "");
+  const cast = [...noted.filter(lead), ...noted.filter((m) => !lead(m))];
+  return { rows, title, name, tall, aged, cast: cast.length >= 3 ? cast : [] };
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const { rows, title } = load(slug);
+  const { rows, name, cast } = load(slug);
   const lead = rows.slice(0, 3).map((r) => `${r.c.n} (${[ageText(r.age), r.cm && `${r.cm} cm`].filter(Boolean).join(", ") || "profile"})`).join(", ");
   return {
-    title: `${title} Characters: Ages, Heights & Birthdays`,
-    description: fitDescription(`How old and how tall are the ${title} characters? Ages, heights, birthdays and voice actors of ${rows.length} characters: ${lead} and more, with a height chart.`),
+    title: cast.length
+      ? fitTitle([`${name} Characters: Main Cast, Ages, Heights & Birthdays`, `${name} Characters: Main Cast, Ages & Heights`, `${name} Characters: Main Cast & Ages`, `${name} Characters`])
+      : `${name} Characters: Ages, Heights & Birthdays`,
+    description: fitDescription(cast.length
+      ? `Who the main ${name} characters are (${list(cast.slice(0, 3).map((m) => m.note.name))}), plus ages, heights, birthdays and voice actors of ${rows.length} characters.`
+      : `How old and how tall are the ${name} characters? Ages, heights, birthdays and voice actors of ${rows.length} characters: ${lead} and more, with a height chart.`),
     alternates: { canonical: `/anime/${slug}/characters` },
     robots: robotsFor(characterTableIndexed(slug)),
   };
@@ -48,7 +61,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function CharactersTable({ params }: Props) {
   const { slug } = await params;
-  const { rows, title, tall, aged } = load(slug);
+  const { rows, title, name, tall, aged, cast } = load(slug);
   const anime = await getAnimeBySlug(decodeURIComponent(slug)).catch(() => null);
   const base = animePath({ slug });
   const bdays = rows.filter((r) => r.c.m && r.c.d).sort((a, b) => a.c.m! - b.c.m! || a.c.d! - b.c.d!);
@@ -60,18 +73,44 @@ export default async function CharactersTable({ params }: Props) {
 
   return (
     <div className="container-x pb-8">
-      {anime && <JsonLd data={pageAbout(anime, `${base}/characters`, `${title} characters: ages, heights & birthdays`)} />}
-      <JsonLd data={itemList(`${title} characters`, rows.flatMap((r) => (charPath(r) ? [{ url: charPath(r)!, name: r.c.n }] : [])))} />
+      {anime && <JsonLd data={pageAbout(anime, `${base}/characters`, `${name} characters: ages, heights & birthdays`)} />}
+      <JsonLd data={itemList(`${name} characters`, rows.flatMap((r) => (charPath(r) ? [{ url: charPath(r)!, name: r.c.n }] : [])))} />
       <PageHero
         crumbs={[{ href: "/", label: "Home" }, { href: base, label: title }, { href: `${base}/characters`, label: "Characters" }]}
         eyebrow="📏 Character stats"
-        title={<>{title} characters: <span className="text-gradient">ages, heights &amp; birthdays</span></>}
-        subtitle={`The ${rows.length} most popular ${title} characters, with how old and how tall each one is, their birthday and who voices them.`}
+        title={<>{name} characters: <span className="text-gradient">{cast.length ? "main cast, ages & heights" : "ages, heights & birthdays"}</span></>}
+        subtitle={`${cast.length ? `Who the main ${name} characters are, and the` : "The"} ${rows.length} most popular ${name} characters with how old and how tall each one is, their birthday and who voices them.`}
         facts={[{ value: String(rows.length), label: "characters" }, ...(tall.length ? [{ value: `${tall.length}`, label: "heights listed" }] : [])]}
         hue={300}
         backdrop={anime?.cover?.large || null}
         posters={rows.slice(0, 3).map((r) => snapImage(r.c, "large"))}
       />
+
+      {cast.length > 0 && (
+        <AnswerLead>
+          The main {name} characters are {list(cast.slice(0, 6).map((m) => m.note.name))}. Below are {rows.length} characters with their ages, heights, birthdays and Japanese voice actors.
+        </AnswerLead>
+      )}
+
+      {cast.length > 0 && (
+        <section className="reveal mt-10" aria-labelledby="main-h">
+          <h2 id="main-h" className="h-section mb-1">Main {name} characters and who they are</h2>
+          <p className="mb-4 max-w-3xl text-sm text-muted">Protagonists first, then by popularity. Roles and first appearances are checked against the series wiki and Wikipedia; no spoilers.</p>
+          <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {cast.map((m) => (
+              <li key={m.c.id} className="card flex gap-3 p-3">
+                <span className="relative h-20 w-14 shrink-0 overflow-hidden rounded-lg bg-bg-2">{snapImage(m.c) && <Image src={snapImage(m.c)!} alt={m.note.name} fill sizes="56px" className="object-cover" />}</span>
+                <div className="min-w-0 text-sm">
+                  <Link href={charPath(m)!} className="font-semibold text-ink hover:text-violet-2 hover:underline">{m.note.name}</Link>
+                  {m.note.role && <p className="mt-0.5 leading-5 text-ink/85">{m.note.role}</p>}
+                  {m.note.affiliations.length > 0 && <p className="mt-1 text-xs text-muted">{m.note.affiliations.slice(0, 3).join(" · ")}</p>}
+                  {m.note.debut?.episode && debutInShow(m.note, title, name) && <p className="mt-1 text-xs text-muted">First appears: episode {m.note.debut.episode}</p>}
+                </div>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       {stats.length > 0 && <section className="reveal mt-10"><StatTiles stats={stats} /></section>}
 
@@ -111,10 +150,10 @@ export default async function CharactersTable({ params }: Props) {
 
       {tall.length >= 3 && (
         <section className="reveal mt-10" aria-labelledby="heights-h">
-          <h2 id="heights-h" className="h-section mb-3">{title} height chart</h2>
+          <h2 id="heights-h" className="h-section mb-3">{name} height chart</h2>
           <BarChart
             orientation="bar"
-            title={`${title} characters by height`}
+            title={`${name} characters by height`}
             subtitle="Tallest first, in cm"
             valueHeading="Height (cm)"
             labelKeys={[String(tall[0].c.id), String(tall[tall.length - 1].c.id)]}
@@ -127,7 +166,7 @@ export default async function CharactersTable({ params }: Props) {
 
       {bdays.length >= 3 && (
         <section className="reveal mt-10" aria-labelledby="bd-h">
-          <h2 id="bd-h" className="h-section mb-3">{title} birthdays through the year</h2>
+          <h2 id="bd-h" className="h-section mb-3">{name} birthdays through the year</h2>
           <ul className="flex flex-wrap gap-2">
             {bdays.map((r) => <li key={r.c.id}><Link href={bdPath(r.c.m!, r.c.d!)} className="chip">🎂 {bdLabel(r.c.m!, r.c.d!)} · {r.c.n}</Link></li>)}
           </ul>
@@ -135,23 +174,24 @@ export default async function CharactersTable({ params }: Props) {
       )}
 
       <p className="mt-10 flex flex-wrap gap-2 text-sm">
-        <Link href={base} className="chip">{title} overview</Link>
+        <Link href={base} className="chip">{name} overview</Link>
         <Link href={`${base}/cast`} className="chip">Full cast &amp; voice actors</Link>
         <Link href="/characters" className="chip">👤 Most popular characters</Link>
       </p>
 
       <Faq
-        title={`${title} characters FAQ`}
+        title={`${name} characters FAQ`}
         items={[
+          ...(cast.length ? [{ q: `Who are the main characters in ${name}?`, a: `${cast.slice(0, 6).map((m) => `${m.note.name}${shortRole(m.note.role) ? `: ${shortRole(m.note.role)}` : ""}`).join("; ")}.` }] : []),
           ...(tall.length >= 2 ? [
-            { q: `Who is the tallest character in ${title}?`, a: `${tall[0].c.n}, at ${tall[0].cm} cm${tall[1] ? `, followed by ${tall[1].c.n} (${tall[1].cm} cm)` : ""}.` },
-            { q: `Who is the shortest character in ${title}?`, a: `${tall[tall.length - 1].c.n}, at ${tall[tall.length - 1].cm} cm, among the characters with a listed height.` },
+            { q: `Who is the tallest character in ${name}?`, a: `${tall[0].c.n}, at ${tall[0].cm} cm${tall[1] ? `, followed by ${tall[1].c.n} (${tall[1].cm} cm)` : ""}.` },
+            { q: `Who is the shortest character in ${name}?`, a: `${tall[tall.length - 1].c.n}, at ${tall[tall.length - 1].cm} cm, among the characters with a listed height.` },
           ] : []),
           ...(aged.length >= 2 ? [
-            { q: `Who is the youngest character in ${title}?`, a: `${aged[0].c.n}, listed as ${ageText(aged[0].age)}.` },
-            { q: `How old are the main ${title} characters?`, a: `${rows.filter((r) => r.age).slice(0, 5).map((r) => `${r.c.n} is ${ageText(r.age)}`).join(", ")}.` },
+            { q: `Who is the youngest character in ${name}?`, a: `${aged[0].c.n}, listed as ${ageText(aged[0].age)}.` },
+            { q: `How old are the main ${name} characters?`, a: `${rows.filter((r) => r.age).slice(0, 5).map((r) => `${r.c.n} is ${ageText(r.age)}`).join(", ")}.` },
           ] : []),
-          ...(bdays.length ? [{ q: `When are the ${title} characters' birthdays?`, a: `${bdays.slice(0, 6).map((r) => `${r.c.n}: ${bdLabel(r.c.m!, r.c.d!)}`).join("; ")}${bdays.length > 6 ? `; and ${bdays.length - 6} more on this page` : ""}.` }] : []),
+          ...(bdays.length ? [{ q: `When are the ${name} characters' birthdays?`, a: `${bdays.slice(0, 6).map((r) => `${r.c.n}: ${bdLabel(r.c.m!, r.c.d!)}`).join("; ")}${bdays.length > 6 ? `; and ${bdays.length - 6} more on this page` : ""}.` }] : []),
         ]}
       />
     </div>
