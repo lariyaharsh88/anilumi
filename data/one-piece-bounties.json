@@ -1,0 +1,829 @@
+{
+ "checked": "2026-11-25",
+ "asOf": "manga ch. 1199 / anime ep. 1180",
+ "bounties": [
+  {
+   "name": "Gol D. Roger",
+   "slug": null,
+   "group": "Emperor",
+   "bounty": 5564800000,
+   "previous": null,
+   "revealedChapter": 957,
+   "revealedEpisode": 958,
+   "arc": "Wano Country Arc",
+   "status": "final",
+   "spoiler": true,
+   "sources": [
+    "https://onepiece.fandom.com/wiki/Bounty/List",
+    "https://onepiece.fandom.com/wiki/Gol_D._Roger"
+   ]
+  },
+  {
+   "name": "Edward Newgate (Whitebeard)",
+   "slug": "edward-newgate",
+   "group": "Emperor",
+   "bounty": 5046000000,
+   "previous": null,
+   "revealedChapter": 957,
+   "revealedEpisode": 958,
+   "arc": "Wano Country Arc",
+   "status": "final",
+   "spoiler": true,
+   "sources": [
+    "https://onepiece.fandom.com/wiki/Bounty/List",
+    "https://onepiece.fandom.com/wiki/Edward_Newgate"
+   ]
+  },
+  {
+   "name": "Kaido",
+   "slug": "one-piece-kaido",
+   "group": "Emperor",
+   "bounty": 4611100000,
+   "previous": 70000000,
+   "revealedChapter": 957,
+   "revealedEpisode": 958,
+   "arc": "Wano Country Arc",
+   "status": "unknown",
+   "spoiler": true,
+   "sources": [
+    "https://onepiece.fandom.com/wiki/Bounty/List",
+    "https://onepiece.fandom.com/wiki/Kaidou"
+   ]
+  },
+  {
+   "name": "Charlotte Linlin (Big Mom)",
+   "slug": null,
+   "group": "Emperor",
+   "bounty": 4388000000,
+   "previous": 500000000,
+   "revealedChapter": 957,
+   "revealedEpisode": 958,
+   "arc": "Wano Country Arc",
+   "status": "unknown",
+   "spoiler": true,
+   "sources": [
+    "https://onepiece.fandom.com/wiki/Bounty/List",
+    "https://onepiece.fandom.com/wiki/Charlotte_Linlin"
+   ]
+  },
+  {
+   "name": "Shanks",
+   "slug": "shanks",
+   "group": "Emperor",
+   "bounty": 4048900000,
+   "previous": null,
+   "revealedChapter": 957,
+   "revealedEpisode": 958,
+   "arc": "Wano Country Arc",
+   "status": "active",
+   "spoiler": true,
+   "sources": [
+    "https://onepiece.fandom.com/wiki/Bounty/List",
+    "https://onepiece.fandom.com/wiki/Shanks"
+   ]
+  },
+  {
+   "name": "Marshall D. Teach (Blackbeard)",
+   "slug": "teach-marshall-d",
+   "group": "Emperor",
+   "bounty": 3996000000,
+   "previous": 2247600000,
+   "revealedChapter": 1059,
+   "revealedEpisode": 1087,
+   "arc": "Egghead Arc",
+   "status": "active",
+   "spoiler": true,
+   "sources": [
+    "https://onepiece.fandom.com/wiki/Bounty/List",
+    "https://onepiece.fandom.com/wiki/Marshall_D._Teach"
+   ]
+  },
+  {
+   "name": "Dracule Mihawk",
+   "slug": "mihawk-dracule",
+   "group": "Cross Guild",
+   "bounty": 3590000000,
+   "previous": null,
+   "revealedChapter": 1058,
+   "revealedEpisode": 1086,
+   "arc": "Egghead Arc",
+   "status": "active",
+   "spoiler": true,
+   "sources": [
+    "https://onepiece.fandom.com/wiki/Bounty/List",
+    "https://onepiece.fandom.com/wiki/Dracule_Mihawk"
+   ]
+  },
+  {
+   "name": "Buggy",
+   "slug": null,
+   "group": "Emperor",
+   "bounty": 3189000000,
+   "previous": 15000000,
+   "revealedChapter": 1058,
+   "revealedEpisode": 1086,
+   "arc": "Egghead Arc",
+   "status": "active",
+   "spoiler": true,
+   "sources": [
+    "https://onepiece.fandom.com/wiki/Bounty/List",
+    "https://onepiece.fandom.com/wiki/Buggy"
+   ]
+  },
+  {
+   "name": "Monkey D. Luffy",
+   "slug": "luffy-monkey-d",
+   "group": "Straw Hat Pirates",
+   "bounty": 3000000000,
+   "previous": 1500000000,
+   "revealedChapter": 1053,
+   "revealedEpisode": 1080,
+   "arc": "Wano Country Arc",
+   "status": "active",
+   "spoiler": true,
+   "sources": [
+    "https://onepiece.fandom.com/wiki/Bounty/List",
+    "https://onepiece.fandom.com/wiki/Monkey_D._Luffy"
+   ]
+  },
+  {
+   "name": "Trafalgar Law",
+   "slug": "trafalgar-law",
+   "group": "Worst Generation",
+   "bounty": 3000000000,
+   "previous": 500000000,
+   "revealedChapter": 1053,
+   "revealedEpisode": 1080,
+   "arc": "Wano Country Arc",
+   "status": "active",
+   "spoiler": true,
+   "sources": [
+    "https://onepiece.fandom.com/wiki/Bounty/List",
+    "https://onepiece.fandom.com/wiki/Trafalgar_D._Water_Law"
+   ]
+  },
+  {
+   "name": "Eustass Kid",
+   "slug": "eustass-kid",
+   "group": "Worst Generation",
+   "bounty": 3000000000,
+   "previous": 470000000,
+   "revealedChapter": 1053,
+   "revealedEpisode": 1080,
+   "arc": "Wano Country Arc",
+   "status": "active",
+   "spoiler": true,
+   "sources": [
+    "https://onepiece.fandom.com/wiki/Bounty/List",
+    "https://onepiece.fandom.com/wiki/Eustass_Kid"
+   ]
+  },
+  {
+   "name": "Loki",
+   "slug": null,
+   "group": "Other",
+   "bounty": 2600000000,
+   "previous": null,
+   "revealedChapter": 1131,
+   "revealedEpisode": 1161,
+   "arc": "Elbaph Arc",
+   "status": "active",
+   "spoiler": true,
+   "sources": [
+    "https://onepiece.fandom.com/wiki/Bounty/List",
+    "https://onepiece.fandom.com/wiki/Loki"
+   ]
+  },
+  {
+   "name": "Crocodile",
+   "slug": "crocodile",
+   "group": "Cross Guild",
+   "bounty": 1965000000,
+   "previous": 81000000,
+   "revealedChapter": 1058,
+   "revealedEpisode": 1086,
+   "arc": "Egghead Arc",
+   "status": "active",
+   "spoiler": true,
+   "sources": [
+    "https://onepiece.fandom.com/wiki/Bounty/List",
+    "https://onepiece.fandom.com/wiki/Crocodile"
+   ]
+  },
+  {
+   "name": "Dorry",
+   "slug": null,
+   "group": "Other",
+   "bounty": 1800000000,
+   "previous": 100000000,
+   "revealedChapter": 1130,
+   "revealedEpisode": 1160,
+   "arc": "Elbaph Arc",
+   "status": "active",
+   "spoiler": true,
+   "sources": [
+    "https://onepiece.fandom.com/wiki/Bounty/List",
+    "https://onepiece.fandom.com/wiki/Dorry"
+   ]
+  },
+  {
+   "name": "Brogy",
+   "slug": null,
+   "group": "Other",
+   "bounty": 1800000000,
+   "previous": 100000000,
+   "revealedChapter": 1130,
+   "revealedEpisode": 1160,
+   "arc": "Elbaph Arc",
+   "status": "active",
+   "spoiler": true,
+   "sources": [
+    "https://onepiece.fandom.com/wiki/Bounty/List",
+    "https://onepiece.fandom.com/wiki/Brogy"
+   ]
+  },
+  {
+   "name": "Boa Hancock",
+   "slug": "hancock-boa",
+   "group": "Warlord",
+   "bounty": 1659000000,
+   "previous": 80000000,
+   "revealedChapter": 1059,
+   "revealedEpisode": 1087,
+   "arc": "Egghead Arc",
+   "status": "active",
+   "spoiler": true,
+   "sources": [
+    "https://onepiece.fandom.com/wiki/Bounty/List",
+    "https://onepiece.fandom.com/wiki/Boa_Hancock"
+   ]
+  },
+  {
+   "name": "Queen",
+   "slug": null,
+   "group": "Emperor crew",
+   "bounty": 1320000000,
+   "previous": null,
+   "revealedChapter": 935,
+   "revealedEpisode": 930,
+   "arc": "Wano Country Arc",
+   "status": "active",
+   "spoiler": true,
+   "sources": [
+    "https://onepiece.fandom.com/wiki/Bounty/List",
+    "https://onepiece.fandom.com/wiki/Queen"
+   ]
+  },
+  {
+   "name": "Roronoa Zoro",
+   "slug": "zoro-roronoa",
+   "group": "Straw Hat Pirates",
+   "bounty": 1111000000,
+   "previous": 320000000,
+   "revealedChapter": 1058,
+   "revealedEpisode": 1086,
+   "arc": "Egghead Arc",
+   "status": "active",
+   "spoiler": true,
+   "sources": [
+    "https://onepiece.fandom.com/wiki/Bounty/List",
+    "https://onepiece.fandom.com/wiki/Roronoa_Zoro"
+   ]
+  },
+  {
+   "name": "Jinbe",
+   "slug": "jinbe",
+   "group": "Straw Hat Pirates",
+   "bounty": 1100000000,
+   "previous": 438000000,
+   "revealedChapter": 1058,
+   "revealedEpisode": 1086,
+   "arc": "Egghead Arc",
+   "status": "active",
+   "spoiler": true,
+   "sources": [
+    "https://onepiece.fandom.com/wiki/Bounty/List",
+    "https://onepiece.fandom.com/wiki/Jinbe"
+   ]
+  },
+  {
+   "name": "Charlotte Katakuri",
+   "slug": "katakuri",
+   "group": "Emperor crew",
+   "bounty": 1057000000,
+   "previous": null,
+   "revealedChapter": 860,
+   "revealedEpisode": 830,
+   "arc": "Whole Cake Island Arc",
+   "status": "active",
+   "spoiler": true,
+   "sources": [
+    "https://onepiece.fandom.com/wiki/Bounty/List",
+    "https://onepiece.fandom.com/wiki/Charlotte_Katakuri"
+   ]
+  },
+  {
+   "name": "Sanji",
+   "slug": "sanji",
+   "group": "Straw Hat Pirates",
+   "bounty": 1032000000,
+   "previous": 330000000,
+   "revealedChapter": 1058,
+   "revealedEpisode": 1086,
+   "arc": "Egghead Arc",
+   "status": "active",
+   "spoiler": true,
+   "sources": [
+    "https://onepiece.fandom.com/wiki/Bounty/List",
+    "https://onepiece.fandom.com/wiki/Sanji"
+   ]
+  },
+  {
+   "name": "Jack",
+   "slug": null,
+   "group": "Emperor crew",
+   "bounty": 1000000000,
+   "previous": null,
+   "revealedChapter": 809,
+   "revealedEpisode": 759,
+   "arc": "Zou Arc",
+   "status": "active",
+   "spoiler": true,
+   "sources": [
+    "https://onepiece.fandom.com/wiki/Bounty/List",
+    "https://onepiece.fandom.com/wiki/Jack"
+   ]
+  },
+  {
+   "name": "Charlotte Smoothie",
+   "slug": null,
+   "group": "Emperor crew",
+   "bounty": 932000000,
+   "previous": null,
+   "revealedChapter": 846,
+   "revealedEpisode": 812,
+   "arc": "Whole Cake Island Arc",
+   "status": "active",
+   "spoiler": true,
+   "sources": [
+    "https://onepiece.fandom.com/wiki/Bounty/List",
+    "https://onepiece.fandom.com/wiki/Charlotte_Smoothie"
+   ]
+  },
+  {
+   "name": "Nico Robin",
+   "slug": "robin-nico",
+   "group": "Straw Hat Pirates",
+   "bounty": 930000000,
+   "previous": 130000000,
+   "revealedChapter": 1058,
+   "revealedEpisode": 1086,
+   "arc": "Egghead Arc",
+   "status": "active",
+   "spoiler": true,
+   "sources": [
+    "https://onepiece.fandom.com/wiki/Bounty/List",
+    "https://onepiece.fandom.com/wiki/Nico_Robin"
+   ]
+  },
+  {
+   "name": "Charlotte Cracker",
+   "slug": null,
+   "group": "Emperor crew",
+   "bounty": 860000000,
+   "previous": null,
+   "revealedChapter": 836,
+   "revealedEpisode": 798,
+   "arc": "Whole Cake Island Arc",
+   "status": "active",
+   "spoiler": true,
+   "sources": [
+    "https://onepiece.fandom.com/wiki/Bounty/List",
+    "https://onepiece.fandom.com/wiki/Charlotte_Cracker"
+   ]
+  },
+  {
+   "name": "Charlotte Perospero",
+   "slug": null,
+   "group": "Emperor crew",
+   "bounty": 700000000,
+   "previous": null,
+   "revealedChapter": 877,
+   "revealedEpisode": 849,
+   "arc": "Whole Cake Island Arc",
+   "status": "active",
+   "spoiler": true,
+   "sources": [
+    "https://onepiece.fandom.com/wiki/Bounty/List",
+    "https://onepiece.fandom.com/wiki/Charlotte_Perospero"
+   ]
+  },
+  {
+   "name": "Charlotte Snack",
+   "slug": null,
+   "group": "Emperor crew",
+   "bounty": 600000000,
+   "previous": null,
+   "revealedChapter": 894,
+   "revealedEpisode": 869,
+   "arc": "Whole Cake Island Arc",
+   "status": "active",
+   "spoiler": true,
+   "sources": [
+    "https://onepiece.fandom.com/wiki/Bounty/List",
+    "https://onepiece.fandom.com/wiki/Charlotte_Snack"
+   ]
+  },
+  {
+   "name": "Usopp",
+   "slug": "usopp",
+   "group": "Straw Hat Pirates",
+   "bounty": 500000000,
+   "previous": 200000000,
+   "revealedChapter": 1058,
+   "revealedEpisode": 1086,
+   "arc": "Egghead Arc",
+   "status": "active",
+   "spoiler": true,
+   "sources": [
+    "https://onepiece.fandom.com/wiki/Bounty/List",
+    "https://onepiece.fandom.com/wiki/Usopp"
+   ]
+  },
+  {
+   "name": "Edward Weevil",
+   "slug": null,
+   "group": "Warlord",
+   "bounty": 480000000,
+   "previous": null,
+   "revealedChapter": 802,
+   "revealedEpisode": 751,
+   "arc": "Zou Arc",
+   "status": "final",
+   "spoiler": true,
+   "sources": [
+    "https://onepiece.fandom.com/wiki/Bounty/List",
+    "https://onepiece.fandom.com/wiki/Edward_Weevil"
+   ]
+  },
+  {
+   "name": "Franky",
+   "slug": "franky",
+   "group": "Straw Hat Pirates",
+   "bounty": 394000000,
+   "previous": 94000000,
+   "revealedChapter": 1058,
+   "revealedEpisode": 1086,
+   "arc": "Egghead Arc",
+   "status": "active",
+   "spoiler": true,
+   "sources": [
+    "https://onepiece.fandom.com/wiki/Bounty/List",
+    "https://onepiece.fandom.com/wiki/Franky"
+   ]
+  },
+  {
+   "name": "Brook",
+   "slug": "brook",
+   "group": "Straw Hat Pirates",
+   "bounty": 383000000,
+   "previous": 83000000,
+   "revealedChapter": 1058,
+   "revealedEpisode": 1086,
+   "arc": "Egghead Arc",
+   "status": "active",
+   "spoiler": true,
+   "sources": [
+    "https://onepiece.fandom.com/wiki/Bounty/List",
+    "https://onepiece.fandom.com/wiki/Brook"
+   ]
+  },
+  {
+   "name": "Nami",
+   "slug": "nami",
+   "group": "Straw Hat Pirates",
+   "bounty": 366000000,
+   "previous": 66000000,
+   "revealedChapter": 1058,
+   "revealedEpisode": 1086,
+   "arc": "Egghead Arc",
+   "status": "active",
+   "spoiler": true,
+   "sources": [
+    "https://onepiece.fandom.com/wiki/Bounty/List",
+    "https://onepiece.fandom.com/wiki/Nami"
+   ]
+  },
+  {
+   "name": "Scratchmen Apoo",
+   "slug": null,
+   "group": "Worst Generation",
+   "bounty": 350000000,
+   "previous": 198000000,
+   "revealedChapter": 677,
+   "revealedEpisode": 603,
+   "arc": "Punk Hazard Arc",
+   "status": "active",
+   "spoiler": true,
+   "sources": [
+    "https://onepiece.fandom.com/wiki/Bounty/List",
+    "https://onepiece.fandom.com/wiki/Scratchmen_Apoo"
+   ]
+  },
+  {
+   "name": "Capone Bege",
+   "slug": null,
+   "group": "Worst Generation",
+   "bounty": 350000000,
+   "previous": 300000000,
+   "revealedChapter": 966,
+   "revealedEpisode": null,
+   "arc": "Wano Country Arc (ch. 966 cover page)",
+   "status": "active",
+   "spoiler": true,
+   "sources": [
+    "https://onepiece.fandom.com/wiki/Bounty/List",
+    "https://onepiece.fandom.com/wiki/Capone_Bege"
+   ]
+  },
+  {
+   "name": "Donquixote Doflamingo",
+   "slug": "doflamingo-donquixote",
+   "group": "Warlord",
+   "bounty": 340000000,
+   "previous": null,
+   "revealedChapter": 234,
+   "revealedEpisode": 151,
+   "arc": "Jaya Arc",
+   "status": "final",
+   "spoiler": false,
+   "sources": [
+    "https://onepiece.fandom.com/wiki/Bounty/List",
+    "https://onepiece.fandom.com/wiki/Donquixote_Doflamingo"
+   ]
+  },
+  {
+   "name": "Cavendish",
+   "slug": null,
+   "group": "Other",
+   "bounty": 330000000,
+   "previous": 280000000,
+   "revealedChapter": 801,
+   "revealedEpisode": 746,
+   "arc": "Dressrosa Arc",
+   "status": "active",
+   "spoiler": true,
+   "sources": [
+    "https://onepiece.fandom.com/wiki/Bounty/List",
+    "https://onepiece.fandom.com/wiki/Cavendish"
+   ]
+  },
+  {
+   "name": "Basil Hawkins",
+   "slug": null,
+   "group": "Worst Generation",
+   "bounty": 320000000,
+   "previous": 249000000,
+   "revealedChapter": 677,
+   "revealedEpisode": 603,
+   "arc": "Punk Hazard Arc",
+   "status": "active",
+   "spoiler": true,
+   "sources": [
+    "https://onepiece.fandom.com/wiki/Bounty/List",
+    "https://onepiece.fandom.com/wiki/Basil_Hawkins"
+   ]
+  },
+  {
+   "name": "Jewelry Bonney",
+   "slug": null,
+   "group": "Worst Generation",
+   "bounty": 320000000,
+   "previous": 140000000,
+   "revealedChapter": 1060,
+   "revealedEpisode": 1089,
+   "arc": "Egghead Arc",
+   "status": "active",
+   "spoiler": true,
+   "sources": [
+    "https://onepiece.fandom.com/wiki/Bounty/List",
+    "https://onepiece.fandom.com/wiki/Jewelry_Bonney"
+   ]
+  },
+  {
+   "name": "Gecko Moria",
+   "slug": null,
+   "group": "Warlord",
+   "bounty": 320000000,
+   "previous": null,
+   "revealedChapter": 455,
+   "revealedEpisode": null,
+   "arc": "Thriller Bark Arc",
+   "status": "active",
+   "spoiler": false,
+   "sources": [
+    "https://onepiece.fandom.com/wiki/Bounty/List",
+    "https://onepiece.fandom.com/wiki/Gecko_Moria"
+   ]
+  },
+  {
+   "name": "Bartholomew Kuma",
+   "slug": null,
+   "group": "Warlord",
+   "bounty": 296000000,
+   "previous": null,
+   "revealedChapter": 234,
+   "revealedEpisode": 151,
+   "arc": "Jaya Arc",
+   "status": "active",
+   "spoiler": false,
+   "sources": [
+    "https://onepiece.fandom.com/wiki/Bounty/List",
+    "https://onepiece.fandom.com/wiki/Bartholomew_Kuma"
+   ]
+  },
+  {
+   "name": "X Drake",
+   "slug": null,
+   "group": "Worst Generation",
+   "bounty": 222000000,
+   "previous": null,
+   "revealedChapter": 498,
+   "revealedEpisode": 392,
+   "arc": "Sabaody Archipelago Arc",
+   "status": "active",
+   "spoiler": false,
+   "sources": [
+    "https://onepiece.fandom.com/wiki/Bounty/List",
+    "https://onepiece.fandom.com/wiki/X_Drake"
+   ]
+  },
+  {
+   "name": "Killer",
+   "slug": null,
+   "group": "Worst Generation",
+   "bounty": 200000000,
+   "previous": 162000000,
+   "revealedChapter": 677,
+   "revealedEpisode": 603,
+   "arc": "Punk Hazard Arc",
+   "status": "active",
+   "spoiler": true,
+   "sources": [
+    "https://onepiece.fandom.com/wiki/Bounty/List",
+    "https://onepiece.fandom.com/wiki/Killer"
+   ]
+  },
+  {
+   "name": "Bartolomeo",
+   "slug": null,
+   "group": "Other",
+   "bounty": 200000000,
+   "previous": 150000000,
+   "revealedChapter": 801,
+   "revealedEpisode": 746,
+   "arc": "Dressrosa Arc",
+   "status": "active",
+   "spoiler": true,
+   "sources": [
+    "https://onepiece.fandom.com/wiki/Bounty/List",
+    "https://onepiece.fandom.com/wiki/Bartolomeo"
+   ]
+  },
+  {
+   "name": "Bellamy",
+   "slug": null,
+   "group": "Other",
+   "bounty": 195000000,
+   "previous": 55000000,
+   "revealedChapter": 706,
+   "revealedEpisode": 635,
+   "arc": "Dressrosa Arc",
+   "status": "active",
+   "spoiler": true,
+   "sources": [
+    "https://onepiece.fandom.com/wiki/Bounty/List",
+    "https://onepiece.fandom.com/wiki/Bellamy"
+   ]
+  },
+  {
+   "name": "Urouge",
+   "slug": null,
+   "group": "Worst Generation",
+   "bounty": 108000000,
+   "previous": null,
+   "revealedChapter": 498,
+   "revealedEpisode": 392,
+   "arc": "Sabaody Archipelago Arc",
+   "status": "active",
+   "spoiler": false,
+   "sources": [
+    "https://onepiece.fandom.com/wiki/Bounty/List",
+    "https://onepiece.fandom.com/wiki/Urouge"
+   ]
+  },
+  {
+   "name": "Arlong",
+   "slug": null,
+   "group": "Other",
+   "bounty": 20000000,
+   "previous": null,
+   "revealedChapter": 69,
+   "revealedEpisode": 31,
+   "arc": "Arlong Park Arc",
+   "status": "final",
+   "spoiler": false,
+   "sources": [
+    "https://onepiece.fandom.com/wiki/Bounty/List",
+    "https://onepiece.fandom.com/wiki/Arlong"
+   ]
+  },
+  {
+   "name": "Krieg",
+   "slug": null,
+   "group": "Other",
+   "bounty": 17000000,
+   "previous": null,
+   "revealedChapter": 96,
+   "revealedEpisode": 45,
+   "arc": "Loguetown Arc",
+   "status": "active",
+   "spoiler": false,
+   "sources": [
+    "https://onepiece.fandom.com/wiki/Bounty/List",
+    "https://onepiece.fandom.com/wiki/Krieg"
+   ]
+  },
+  {
+   "name": "Tony Tony Chopper",
+   "slug": "chopper-tony-tony",
+   "group": "Straw Hat Pirates",
+   "bounty": 1000,
+   "previous": 100,
+   "revealedChapter": 1058,
+   "revealedEpisode": 1086,
+   "arc": "Egghead Arc",
+   "status": "active",
+   "spoiler": true,
+   "sources": [
+    "https://onepiece.fandom.com/wiki/Bounty/List",
+    "https://onepiece.fandom.com/wiki/Tony_Tony_Chopper"
+   ]
+  }
+ ],
+ "excluded": [
+  {
+   "name": "Portgas D. Ace",
+   "why": "Only known amount (550,000,000) comes from the 'One Piece Ten' exhibition poster (wiki ref other=OP10), not a manga chapter or anime episode; earlier 'over 100,000,000' is novel-only (Novel A)."
+  },
+  {
+   "name": "Sabo",
+   "why": "602,000,000 comes only from One Piece Magazine Vol. 3; his current (post-Levely) bounty is listed as unknown (Vivre Card). No in-story amount."
+  },
+  {
+   "name": "Marco",
+   "why": "1,374,000,000 is Vivre Card-only; no in-story reveal."
+  },
+  {
+   "name": "King",
+   "why": "1,390,000,000 is Vivre Card-only; no in-story reveal."
+  },
+  {
+   "name": "Benn Beckman",
+   "why": "Bounty unknown (obscured poster in Vivre Card)."
+  },
+  {
+   "name": "Rocks D. Xebec",
+   "why": "Ch. 1154-1155 confirm a massive bounty for killing an Admiral, but no amount is given (unknown)."
+  },
+  {
+   "name": "Silvers Rayleigh",
+   "why": "Bounty confirmed still active (ch. 512 / ep. 404) but amount unknown."
+  },
+  {
+   "name": "Kuzan",
+   "why": "No bounty on record."
+  },
+  {
+   "name": "Monkey D. Dragon",
+   "why": "Bounty unknown (blacked-out poster, Vivre Card)."
+  },
+  {
+   "name": "Belo Betty, Karasu, Lindbergh, Morley (Revolutionary commanders)",
+   "why": "Amounts (457M / 400M / 316M / 293M) are Vivre Card-only. Emporio Ivankov and Inazuma only have an inferred 'at least 100,000,000' (Impel Down Level 5 rule), not an exact figure. Result: no Revolutionary entries qualify."
+  },
+  {
+   "name": "Izou, Who's-Who, Black Maria, Sasaki, Ulti, Page One, Little Oars Jr., Chinjao",
+   "why": "Vivre Card-only amounts (no in-story reveal)."
+  },
+  {
+   "name": "Kuro, Alvida",
+   "why": "Amounts come only from the Red databook (Kuro 16M, Alvida 5M)."
+  },
+  {
+   "name": "Shanks' previous bounty (1,040,000,000)",
+   "why": "From One Piece Film: Red only (non-manga), so Shanks' 'previous' is left null."
+  }
+ ],
+ "notes": "Primary source: One Piece Wiki 'Bounty/List' (page 'Bounties' redirects to 'Bounty', table lives at 'Bounty/List'), read via the MediaWiki API (last revised 2026-09-07). Second source for every entry: the character's own wiki page infobox (bounty field, in 'Template:<Name> Tabs Top' for major characters), read via the API; all 48 amounts match between the two. Wikipedia/ANN were not needed and ANN had no matching article in search. Chapters 1131-1199 were scanned via the API for new bounty reveals: only Loki (ch. 1131) and Rocks (no amount) turned up; ch. 1199 is the latest released chapter (1200 due 30 Nov 2026), ep. 1180 (aired 27 Sep 2026) is the latest episode page. Caveats: Zoro's 1,111,000,000 follows the official @Eiichiro_Staff correction to the ch. 1058 printing. The Bounty/List cites ch. 801 for Usopp's 500M (a ref slip); his infobox and the crew table correctly give ch. 1058. Gecko Moria's 320M was shown in ch. 455 but the anime (ep. 349) skipped the infobox; ep. 917 later shows it still active, so revealedEpisode is null. Capone Bege's 350M is from the ch. 966 cover page (cover story), so it has no anime episode; his 300M previous is ch. 812 / ep. 763. Bonney's ep. 1089 comes from her character page (the list leaves it blank). Dorry/Brogy/Loki episodes (1160/1161) come from their character pages. Status 'final' = dead (Roger, Whitebeard) or a bounty the wiki marks inactive/retracted (Doflamingo imprisoned, Weevil, Arlong captured). Kaidou and Big Mom are 'active' here but the wiki lists their status as 'Unknown' after Wano. Loki's 2.6B is described in-story as a 'special' World Government bounty. Teach had no bounty (0) before Moria's Hachinosu attack. Biggest jump among entries: Buggy +3,174,000,000 (15M to 3.189B); biggest multiplier among Straw Hats: Chopper x10 (100 to 1,000). Spoiler = latest bounty revealed after ch. 597 / ep. 516. Groups: Buggy listed as Emperor (also Cross Guild leader); Luffy listed as Straw Hat (also Emperor); Hawkins/Apoo as Worst Generation (Beasts Pirates members); Dorry/Brogy (Giant Warrior Pirates) and Loki under Other."
+}

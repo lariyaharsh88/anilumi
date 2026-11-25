@@ -33,8 +33,10 @@ import { indexedSimilar } from "@/lib/similarhub";
 import funimation from "@/data/funimation.json";
 import { GEMS_UPDATED } from "@/lib/underrated";
 import { STRONGEST_CHECKED, rankingSlugs, strongestPath } from "@/lib/strongest";
+import { POWERS_CHECKED, powersSlugs, powersPath } from "@/lib/powers";
 import crunchyrollPlans from "@/data/crunchyroll-plans.json";
 import opMc from "@/data/op-mc-anime.json";
+import opBounties from "@/data/one-piece-bounties.json";
 import { searchShown, searchShownPaths, animeIndexed, ownContentSlugs, watchOrderIndexed, characterTableIndexed, notedCharacters, demandCharacters, genreIndexed, bestYearIndexed, trendIndexed, voiceActorIndexed, hindiDubIndexed, SEARCHED_COMPARES } from "@/lib/indexing";
 import franchiseData from "@/data/franchises.json";
 import { DATA_DATES as D, STATIC_UPDATED, BIRTHDAY_PAGES_UPDATED, HINDI_HUB_UPDATED, SCENE_PAGE_UPDATED, DUB_GUIDES_ADDED, latest, weekStart, monthStart } from "@/lib/lastmod";
@@ -43,6 +45,7 @@ import { FILLER } from "@/data/filler";
 const FUNIMATION_CHECKED = (funimation as { checked: string }).checked;
 const CRUNCHYROLL_CHECKED = (crunchyrollPlans as { checked: string }).checked;
 const OPMC_CHECKED = (opMc as { checked: string }).checked;
+const BOUNTY_RANK_CHECKED = (opBounties as { checked: string }).checked;
 
 /**
  * Every URL the site offers search engines, with its real last-change date (lib/lastmod.ts), images (posters) and
@@ -118,6 +121,8 @@ export async function sitemapEntries(): Promise<MetadataRoute.Sitemap> {
     { url: abs("/anime-salt-alternatives"), lastModified: at(D.dubs, HINDI_HUB_UPDATED, DUB_GUIDES_ADDED), changeFrequency: "monthly", priority: 0.7 },
     { url: abs("/download-anime-in-hindi"), lastModified: at(D.dubs, PRICES_CHECKED), changeFrequency: "monthly", priority: 0.7 },
     { url: abs("/crunchyroll-price-india"), lastModified: at(PRICES_CHECKED, D.dubs, D.regionalDubs), changeFrequency: "monthly", priority: 0.7 },
+    ...powersSlugs().map((s) => ({ url: abs(powersPath(s)), lastModified: at(POWERS_CHECKED), changeFrequency: "monthly" as const, priority: 0.7 })),
+    { url: abs("/one-piece-bounties"), lastModified: at(BOUNTY_RANK_CHECKED), changeFrequency: "weekly", priority: 0.7 },
     { url: abs("/strongest-anime-characters"), lastModified: at(STRONGEST_CHECKED), changeFrequency: "monthly", priority: 0.7 },
     ...rankingSlugs().map((s) => ({ url: abs(strongestPath(s)), lastModified: at(STRONGEST_CHECKED), changeFrequency: "monthly" as const, priority: 0.7 })),
     { url: abs("/overpowered-mc-anime"), lastModified: at(OPMC_CHECKED), changeFrequency: "monthly", priority: 0.7 },

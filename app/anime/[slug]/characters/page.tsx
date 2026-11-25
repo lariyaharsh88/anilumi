@@ -177,7 +177,7 @@ export default async function CharactersTable({ params }: Props) {
       {wanted.length >= 3 && (
         <section className="reveal mt-10" aria-labelledby="bounty-h">
           <h2 id="bounty-h" className="h-section mb-1">{name} bounties</h2>
-          <p className="mb-3 max-w-3xl text-sm text-muted">Each character&apos;s latest bounty that isn&apos;t a spoiler; the full history is on their page.</p>
+          <p className="mb-3 max-w-3xl text-sm text-muted">Each character&apos;s latest bounty that isn&apos;t a spoiler; the full history is on their page. <Link href="/one-piece-bounties" className="text-violet hover:underline">Every One Piece bounty, ranked →</Link></p>
           <div className="card overflow-x-auto">
             <table className="w-full min-w-[480px] text-sm">
               <thead className="text-left text-xs uppercase tracking-wider text-muted"><tr className="border-b border-line"><th scope="col" className="p-3 font-semibold">Character</th><th scope="col" className="p-3 font-semibold">Bounty (berries)</th><th scope="col" className="p-3 font-semibold">After</th></tr></thead>
