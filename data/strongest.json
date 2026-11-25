@@ -1,0 +1,543 @@
+{
+ "checked": "2026-11-25",
+ "series": {
+  "dragon-ball": {
+   "name": "Dragon Ball",
+   "anime": "dragon-ball-z",
+   "searches": {
+    "US": 4400,
+    "IN": 1900
+   },
+   "asOf": "2026-11-25",
+   "basis": "Ranked only by official titles and in-story statements (Omni-King, Angels, Gods of Destruction, Toyotaro's official Black Frieza statement) and by on-screen or on-page fight results in Dragon Ball, Z, Super (anime, films and Toyotaro's manga); GT and Daima are kept out of the tiers and covered in notes.",
+   "notes": "Coverage: the Super anime ended at episode 131 (Tournament of Power, March 2018) and continued in two films, Broly (2018) and Super Hero (2022). Toyotaro's manga goes beyond the anime with the Galactic Patrol Prisoner/Moro arc (to ch. 67), the Granolah the Survivor arc (to ch. 87, which introduces Black Frieza) and its own Super Hero adaptation (to ch. 103, March 2024). Chapter 104 (Feb 2025) is a one-shot, and the manga is on hiatus as of late 2026. Everything that rests only on the manga is marked spoiler. 'Dragon Ball Super: Beerus', a remake of the Battle of Gods arc, has aired since 11 Oct 2026; 'Dragon Ball Super: The Galactic Patrol', which adapts the Moro arc, was announced in Jan 2026 with no date yet. Ordering: inside the manga-peak tier, Frieza and then Gas come first because of direct results; Goku, Vegeta, Gohan and Broly have no canon order among themselves. Gods of Destruction are placed above that tier by title only, since no manga-era fight has settled Beerus against Black Frieza or Ultra Instinct Goku. Not ranked: Gogeta and Vegito (fusions; Gogeta beat Broly in the 2018 film, and Vegito fought Merged Zamasu), Granolah (wished to be the universe's strongest and was later out-powered by Gas), Bardock, Krillin and Bulma (non-combatant). DRAGON BALL GT (1996–97) is an anime-original sequel not written by Toriyama and conflicts with Super, so treat it as non-canon: SSJ4 Gogeta beats Omega Shenron in its finale, but that has no place in these tiers. DRAGON BALL DAIMA (Oct 2024–Feb 2025, story by Akira Toriyama) is officially placed between the Buu saga and Super. Goku uses Super Saiyan 4 to beat Gomah there, but those characters are de-aged and the form never shows up in Super, so Daima results are left out of the tiers. Where it sits in the canon is debated by fans, and no official statement has settled it.",
+   "tiers": [
+    {
+     "name": "Omni-King",
+     "chars": [
+      {
+       "name": "Zeno",
+       "slug": null,
+       "why": "Has the highest title in the multiverse (Omni-King), and in Super he erases whole universes, the losing universes in the Tournament of Power and, as Future Zeno, the entire future timeline with Merged Zamasu (Future Trunks arc, ep 66–67). He never fights anyone, so he ranks first on authority and erasure rather than on a fight.",
+       "spoiler": false,
+       "sources": [
+        "https://dragonball.fandom.com/wiki/Zeno",
+        "https://dragonball.fandom.com/wiki/Tournament_of_Power",
+        "https://en.wikipedia.org/wiki/List_of_Dragon_Ball_characters"
+       ],
+       "confidence": "high"
+      }
+     ]
+    },
+    {
+     "name": "Angels",
+     "chars": [
+      {
+       "name": "Grand Priest",
+       "slug": null,
+       "why": "Father of all Angels and Zeno's attendant; Whis openly says his own power is nothing next to the Grand Priest's, and in manga chapter 29 he stops punches from the Gods of Destruction Beerus and Quitela with his fingers.",
+       "spoiler": false,
+       "sources": [
+        "https://dragonball.fandom.com/wiki/Grand_Priest",
+        "https://dragonball.fandom.com/wiki/Angel"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "Whis",
+       "slug": null,
+       "why": "Beerus' martial-arts teacher. Beerus himself says Whis is stronger than him (Battle of Gods; manga ch. 4), and Whis knocks out a rampaging Beerus with a single chop.",
+       "spoiler": false,
+       "sources": [
+        "https://dragonball.fandom.com/wiki/Whis/Power_and_Abilities",
+        "https://en.wikipedia.org/wiki/Dragon_Ball_Z:_Battle_of_Gods"
+       ],
+       "confidence": "high"
+      }
+     ]
+    },
+    {
+     "name": "Gods of Destruction",
+     "chars": [
+      {
+       "name": "Beerus",
+       "slug": "bills",
+       "why": "God of Destruction of Universe 7; in Battle of Gods (Super, Battle of Gods arc) he beats Super Saiyan God Goku without using his full power, and Whis is the only Universe 7 character stated to be above him.",
+       "spoiler": false,
+       "sources": [
+        "https://dragonball.fandom.com/wiki/Beerus",
+        "https://en.wikipedia.org/wiki/Dragon_Ball_Z:_Battle_of_Gods"
+       ],
+       "confidence": "high"
+      }
+     ],
+     "note": "Placed above the manga's peak forms by title only: no fight in the anime or manga settles Beerus against Black Frieza, Ultra Instinct or Ultra Ego."
+    },
+    {
+     "name": "Black Frieza / Ultra Instinct / Ultra Ego / Beast (manga peak)",
+     "chars": [
+      {
+       "name": "Frieza",
+       "slug": "frieza",
+       "why": "As Black Frieza (manga ch. 87) he kills the wished-up Gas with one stab, then floors Ultra Instinct Goku and Ultra Ego Vegeta with one hit each; Toyotaro said on Dragon Ball Official that Black Frieza is clearly above Goku, Vegeta, Gohan, Broly and Piccolo in their strongest forms.",
+       "spoiler": true,
+       "sources": [
+        "https://dragonball.fandom.com/wiki/Black_Frieza",
+        "https://dragon-ball-official.com/news/01_3370.html"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "Gas",
+       "slug": null,
+       "why": "The Heeters used the Dragon Balls to wish Gas into 'the strongest in the universe' (Granolah the Survivor arc); he then out-powered True Ultra Instinct Goku and Ultra Ego Vegeta fighting together, until Black Frieza killed him (ch. 87).",
+       "spoiler": true,
+       "sources": [
+        "https://dragonball.fandom.com/wiki/Gas",
+        "https://en.wikipedia.org/wiki/List_of_Dragon_Ball_Super_chapters"
+       ],
+       "confidence": "medium"
+      },
+      {
+       "name": "Goku",
+       "slug": "goku-son",
+       "why": "Mastered Ultra Instinct overwhelmed Jiren in the Tournament of Power (anime ep 129–131); in the manga he defeated Moro with Ultra Instinct and fought Gas with True Ultra Instinct before Black Frieza beat him in one blow.",
+       "spoiler": true,
+       "sources": [
+        "https://dragonball.fandom.com/wiki/Goku/Power_and_Abilities",
+        "https://dragonball.fandom.com/wiki/Tournament_of_Power"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "Vegeta",
+       "slug": "vegeta",
+       "why": "Ultra Ego, the God of Destruction-style form taught by Beerus (manga only), let him fight Granolah and then Gas alongside Goku; he eliminated Top in the Tournament of Power, and Black Frieza beat him in one hit (ch. 87).",
+       "spoiler": true,
+       "sources": [
+        "https://dragonball.fandom.com/wiki/Ultra_Ego",
+        "https://dragonball.fandom.com/wiki/Vegeta/Power_and_Abilities"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "Gohan",
+       "slug": "gohan-son",
+       "why": "His Beast form defeats Cell Max in Dragon Ball Super: Super Hero (2022 film, also adapted in the manga), after Orange Piccolo and the others could not.",
+       "spoiler": false,
+       "sources": [
+        "https://en.wikipedia.org/wiki/Dragon_Ball_Super:_Super_Hero",
+        "https://dragonball.fandom.com/wiki/Gohan_Beast"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "Broly",
+       "slug": null,
+       "why": "In Dragon Ball Super: Broly (2018) neither Super Saiyan Blue Goku nor Vegeta could beat him alone; it took the fusion Gogeta to overpower him. Toyotaro names him with Goku, Vegeta and Gohan as below Black Frieza.",
+       "spoiler": false,
+       "sources": [
+        "https://en.wikipedia.org/wiki/Dragon_Ball_Super:_Broly",
+        "https://dragon-ball-official.com/news/01_3370.html"
+       ],
+       "confidence": "medium"
+      }
+     ]
+    },
+    {
+     "name": "God-level mortals",
+     "chars": [
+      {
+       "name": "Jiren",
+       "slug": null,
+       "why": "Universe 11's Pride Trooper is stated to have surpassed his own God of Destruction, Belmod. He eliminated Hit and Vegeta in the Tournament of Power and lost only to Mastered Ultra Instinct Goku plus Frieza, going out of the ring together with them (ep 131).",
+       "spoiler": false,
+       "sources": [
+        "https://dragonball.fandom.com/wiki/Jiren/Power_and_Abilities",
+        "https://dragonball.fandom.com/wiki/Tournament_of_Power"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "Moro",
+       "slug": null,
+       "why": "A planet-eating sorcerer who matched Ultra Instinct Sign Goku and then took Merus's Angel-level power before Ultra Instinct Goku destroyed him at the end of the Galactic Patrol Prisoner arc (manga; anime announced, not aired).",
+       "spoiler": true,
+       "sources": [
+        "https://dragonball.fandom.com/wiki/Moro",
+        "https://www.kanzenshuu.com/wiki/Dragon_Ball_Super_Chapter_67"
+       ],
+       "confidence": "medium"
+      }
+     ]
+    },
+    {
+     "name": "Tournament of Power contenders",
+     "chars": [
+      {
+       "name": "Toppo",
+       "slug": null,
+       "why": "Universe 11's God of Destruction candidate, called second only to Jiren (ep 125). He used Destroyer power until Vegeta's Final Explosion eliminated him.",
+       "spoiler": false,
+       "sources": [
+        "https://dragonball.fandom.com/wiki/Toppo",
+        "https://dragonball.fandom.com/wiki/Tournament_of_Power"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "Android 17",
+       "slug": null,
+       "why": "The last fighter standing who won the Tournament of Power for Universe 7 (ep 131), then used the Super Dragon Balls to restore the erased universes.",
+       "spoiler": false,
+       "sources": [
+        "https://dragonball.fandom.com/wiki/Android_17",
+        "https://en.wikipedia.org/wiki/List_of_Dragon_Ball_Super_episodes"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "Hit",
+       "slug": null,
+       "why": "Universe 6's time-skipping assassin made Goku forfeit their match in the Universe 6 vs 7 tournament (ep 39) and eliminated several fighters in the Tournament of Power before Jiren knocked him out.",
+       "spoiler": false,
+       "sources": [
+        "https://dragonball.fandom.com/wiki/Hit",
+        "https://dragonball.fandom.com/wiki/Tournament_of_Power"
+       ],
+       "confidence": "medium"
+      },
+      {
+       "name": "Piccolo",
+       "slug": "piccolo",
+       "why": "His Orange Piccolo form in Super Hero (2022) fights Gamma 2 and holds back Cell Max, but cannot beat it alone; Toyotaro's list puts it below Black Frieza alongside the Saiyans.",
+       "spoiler": false,
+       "sources": [
+        "https://en.wikipedia.org/wiki/Dragon_Ball_Super:_Super_Hero",
+        "https://dragon-ball-official.com/news/01_3370.html"
+       ],
+       "confidence": "medium"
+      }
+     ]
+    },
+    {
+     "name": "Earlier-arc powerhouses (no canon order)",
+     "chars": [
+      {
+       "name": "Future Trunks",
+       "slug": "future-trunks",
+       "why": "In the Future Trunks arc he reaches Super Saiyan Rage and cuts Merged Zamasu in two with the Spirit Sword (ep 66), although Zeno's erasure is what finally ends Zamasu.",
+       "spoiler": false,
+       "sources": [
+        "https://dragonball.fandom.com/wiki/Future_Trunks/Power_and_Abilities",
+        "https://en.wikipedia.org/wiki/List_of_Dragon_Ball_Super_episodes"
+       ],
+       "confidence": "medium"
+      },
+      {
+       "name": "Majin Buu",
+       "slug": null,
+       "why": "Kid Buu, his pure form, destroyed the Earth and was beaten only by Goku's Super Spirit Bomb (Kid Buu saga, Z).",
+       "spoiler": false,
+       "sources": [
+        "https://dragonball.fandom.com/wiki/Majin_Buu",
+        "https://en.wikipedia.org/wiki/List_of_Dragon_Ball_characters"
+       ],
+       "confidence": "medium"
+      },
+      {
+       "name": "Cell",
+       "slug": "cell",
+       "why": "Perfect Cell outlasted Goku at the Cell Games (Goku conceded the match) and lost only to Super Saiyan 2 Gohan's Father–Son Kamehameha (Cell Games saga, Z).",
+       "spoiler": false,
+       "sources": [
+        "https://dragonball.fandom.com/wiki/Cell/Power_and_Abilities",
+        "https://en.wikipedia.org/wiki/List_of_Dragon_Ball_characters"
+       ],
+       "confidence": "high"
+      }
+     ]
+    },
+    {
+     "name": "Human-level elite",
+     "chars": [
+      {
+       "name": "Android 18",
+       "slug": "18",
+       "why": "One of Universe 7's last survivors in the Tournament of Power: she eliminated Ribrianne and others, then took herself out to save Android 17 (anime).",
+       "spoiler": false,
+       "sources": [
+        "https://dragonball.fandom.com/wiki/Android_18/Power_and_Abilities",
+        "https://dragonball.fandom.com/wiki/Tournament_of_Power"
+       ],
+       "confidence": "medium"
+      }
+     ]
+    }
+   ]
+  },
+  "jujutsu-kaisen": {
+   "name": "Jujutsu Kaisen",
+   "anime": "jujutsu-kaisen",
+   "searches": {
+    "US": 480,
+    "IN": 140
+   },
+   "asOf": "2026-11-25",
+   "basis": "Ranked only by official grades (special grade, grade 1 and so on), explicit in-story titles ('the strongest' Gojo, Sukuna as King of Curses) and by fight results in the finished manga (ch. 0–271) and Jujutsu Kaisen 0, with fights that the anime has not yet adapted marked as spoilers.",
+   "notes": "The manga ended with ch. 271 (Weekly Shonen Jump, 30 Sep 2024). Anime as of Nov 2026: S1 (2020–21), the Jujutsu Kaisen 0 film (2021), S2 Hidden Inventory/Shibuya (2023) and S3 'The Culling Game Part 1', which aired 8/9 Jan to 26/27 Mar 2026 (12 episodes, ending with ep 12 'Sendai Colony'). So Culling Game Part 1 did air in Jan 2026. Part 2 (S4) is announced with no date, so the Hakari vs Kashimo fight, the Sakurajima colony, the Shinjuku Showdown (Gojo vs Sukuna, ch. 223–236) and the finale are manga-only. The Zenin clan massacre and Yuji vs Higuruma have now aired. Per AniLumi policy, anything from Shibuya onward is marked spoiler. Not ranked: Rika (special grade curse bound to Yuta), Mahoraga (a shikigami), Uro, Ishigori, Yorozu, Naobito (special grade 1), Mei Mei (grade 1), Panda (semi-grade 2) and Miwa. Ordering inside tiers follows direct results where they exist (Sukuna over Gojo, Yuta over Kenjaku, Kenjaku over Yuki, Hakari over Kashimo); in the special grade curse tier and between Toji and Maki there is no canon order. Yuji is placed in the special grade tier, not the top tier, because Sukuna was already worn down by the many fighters before him.",
+   "tiers": [
+    {
+     "name": "The strongest (special grade top)",
+     "chars": [
+      {
+       "name": "Sukuna",
+       "slug": "jujutsu-kaisen-sukuna",
+       "why": "The King of Curses, called the strongest sorcerer in history, killed Gojo in the Shinjuku Showdown (ch. 223–236) and then beat Kashimo, Higuruma and Yuta in turn, until a combined assault ending with Yuji destroyed him in ch. 268.",
+       "spoiler": true,
+       "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Ryomen_Sukuna",
+        "https://dexerto.com/anime/jujutsu-kaisen-chapter-268-kills-main-villain-after-year-long-battle-2880934"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "Satoru Gojo",
+       "slug": "jujutsu-kaisen-satoru-gojou",
+       "why": "Special grade, called 'the strongest' sorcerer of the modern era. He killed Toji (ch. 75, ep 28) and outclassed Jogo and Hanami, was sealed by Kenjaku in Shibuya (ch. 90–91), and lost to Sukuna in the Shinjuku Showdown when the world-cutting slash killed him (ch. 236).",
+       "spoiler": true,
+       "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Satoru_Gojo",
+        "https://en.wikipedia.org/wiki/List_of_Jujutsu_Kaisen_characters"
+       ],
+       "confidence": "high"
+      }
+     ]
+    },
+    {
+     "name": "Special grade",
+     "chars": [
+      {
+       "name": "Yuji Itadori",
+       "slug": "jujutsu-kaisen-yuji-itadori",
+       "why": "He landed the decisive blows of the final fight: his domain and soul-strike forced Sukuna out of Megumi's body, and Sukuna was reduced to dust (ch. 268).",
+       "spoiler": true,
+       "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori",
+        "https://sportskeeda.com/anime/jujutsu-kaisen-chapter-268-spoilers-megumi-freed-yuji-vs-sukuna-finally-ends"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "Yuta Okkotsu",
+       "slug": "jujutsu-kaisen-yuta-okkotsu",
+       "why": "One of only four special grade sorcerers. He beat Suguru Geto in Jujutsu Kaisen 0, beheaded Kenjaku with Todo's help (ch. 243), and fought Sukuna using Gojo's body.",
+       "spoiler": true,
+       "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuta_Okkotsu",
+        "https://en.wikipedia.org/wiki/Jujutsu_Kaisen_0_(film)"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "Kenjaku",
+       "slug": null,
+       "why": "A thousand-year-old curse user in Geto's body. He killed the special grade Yuki Tsukumo while also holding off Choso (ch. 207–208), then died in Yuta's surprise attack (ch. 243).",
+       "spoiler": true,
+       "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kenjaku",
+        "https://themarysue.com/yuki-tsukumos-death-in-jujutsu-kaisen-explained"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "Yuki Tsukumo",
+       "slug": "jujutsu-kaisen-yuki-tsukumo",
+       "why": "Listed as one of only four special grade sorcerers (ch. 77, ep 29). She lost to Kenjaku but ended the fight with a black hole (ch. 208).",
+       "spoiler": true,
+       "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Yuki_Tsukumo",
+        "https://www.sportskeeda.com/anime/is-yuki-tsukumo-dead-jujutsu-kaisen-explained"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "Suguru Geto",
+       "slug": "suguru-geto",
+       "why": "A special grade curse user who led the Night Parade of a Hundred Demons; Yuta and Rika defeated him and Gojo finished him (Jujutsu Kaisen 0).",
+       "spoiler": false,
+       "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Suguru_Geto",
+        "https://en.wikipedia.org/wiki/Jujutsu_Kaisen_0_(film)"
+       ],
+       "confidence": "high"
+      }
+     ]
+    },
+    {
+     "name": "Special grade cursed spirits",
+     "chars": [
+      {
+       "name": "Mahito",
+       "slug": "jujutsu-kaisen-mahito",
+       "why": "Unregistered special grade curse who killed Nanami in Shibuya (ch. 120); Yuji and Todo beat him (ch. 126–133) and Kenjaku absorbed him (Shibuya Incident, anime S2).",
+       "spoiler": true,
+       "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Mahito",
+        "https://en.wikipedia.org/wiki/Jujutsu_Kaisen_season_2"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "Jogo",
+       "slug": null,
+       "why": "Unregistered special grade curse; Gojo outclassed him easily (ch. 14–15, ep 7), and in Shibuya Sukuna killed him in a one-on-one fight while praising his strength.",
+       "spoiler": true,
+       "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Jogo",
+        "https://en.wikipedia.org/wiki/Jujutsu_Kaisen_season_2"
+       ],
+       "confidence": "medium"
+      }
+     ]
+    },
+    {
+     "name": "Heavenly Restriction and Culling Game top players (no official grade)",
+     "chars": [
+      {
+       "name": "Toji Fushiguro",
+       "slug": "jujutsu-kaisen-touji-fushiguro",
+       "why": "The Sorcerer Killer with zero cursed energy. He beat and stabbed teenage Gojo (ch. 72, ep 27) but died to the awakened Gojo (ch. 75, ep 28, Hidden Inventory arc).",
+       "spoiler": false,
+       "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro",
+        "https://en.wikipedia.org/wiki/Jujutsu_Kaisen_season_2"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "Maki Zenin",
+       "slug": "maki-zen-in",
+       "why": "Mai's death completed Maki's Heavenly Restriction, and she wiped out the Zenin clan's Hei, including Naoya and Ogi (ch. 148–151, adapted in S3 'Cog'). She later fought Sukuna in Shinjuku.",
+       "spoiler": true,
+       "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Maki_Zenin",
+        "https://en.wikipedia.org/wiki/Jujutsu_Kaisen_season_3"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "Kinji Hakari",
+       "slug": null,
+       "why": "Beat the 400-year-old Kashimo in Tokyo Colony 2, surviving a fatal blow by hitting his jackpot (ch. 185–189, not yet animated).",
+       "spoiler": true,
+       "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kinji_Hakari",
+        "https://jujutsu-kaisen.fandom.com/wiki/Hajime_Kashimo"
+       ],
+       "confidence": "medium"
+      },
+      {
+       "name": "Hajime Kashimo",
+       "slug": null,
+       "why": "The 'God of Lightning', the first Culling Game player to challenge Sukuna right after Gojo's death; he forced Sukuna into his true form but died.",
+       "spoiler": true,
+       "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Hajime_Kashimo",
+        "https://www.sportskeeda.com/anime/jujutsu-kaisen-latest-chapter-changes-yuji-sukuna-s-roles-hunter-becomes-hunted"
+       ],
+       "confidence": "medium"
+      },
+      {
+       "name": "Hiromi Higuruma",
+       "slug": "jujutsu-kaisen-hiromi-higuruma",
+       "why": "Culling Game player who put Yuji on trial in his Deadly Sentencing domain (ch. 163–166, S3), and later won the Executioner's Sword against Sukuna before Sukuna took him out of the fight (ch. 244–246).",
+       "spoiler": true,
+       "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Hiromi_Higuruma",
+        "https://en.wikipedia.org/wiki/Jujutsu_Kaisen_season_3"
+       ],
+       "confidence": "medium"
+      }
+     ]
+    },
+    {
+     "name": "Grade 1 and unranked elites",
+     "chars": [
+      {
+       "name": "Aoi Todo",
+       "slug": "aoi-toudou-jujutsu-kaisen",
+       "why": "Grade 1 sorcerer; with Yuji he beat the special grade Mahito in Shibuya (ch. 126–133), and his Boogie Woogie helped Yuta kill Kenjaku (ch. 243).",
+       "spoiler": true,
+       "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Aoi_Todo",
+        "https://en.wikipedia.org/wiki/Jujutsu_Kaisen_season_2"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "Kento Nanami",
+       "slug": "jujutsu-kaisen-kento-nanami",
+       "why": "Grade 1 sorcerer who fought Mahito with no winner in their first clash (ch. 21–29, S1) and was killed by Mahito in Shibuya (ch. 120).",
+       "spoiler": true,
+       "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Kento_Nanami",
+        "https://en.wikipedia.org/wiki/List_of_Jujutsu_Kaisen_characters"
+       ],
+       "confidence": "high"
+      },
+      {
+       "name": "Choso",
+       "slug": "jujutsu-kaisen-choso",
+       "why": "An incarnated special grade cursed object (Death Painting No. 1). As a sorcerer he is not ranked special grade himself; he beat Yuji in Shibuya and later fought Kenjaku alongside Yuki.",
+       "spoiler": true,
+       "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Choso",
+        "https://jujutsu-kaisen.fandom.com/wiki/Grade"
+       ],
+       "confidence": "medium"
+      }
+     ]
+    },
+    {
+     "name": "Grade 2 and below",
+     "chars": [
+      {
+       "name": "Megumi Fushiguro",
+       "slug": "jujutsu-kaisen-megumi-fushiguro",
+       "why": "Officially grade 2. Sukuna treated his Ten Shadows as the key to his plans, and Megumi summoned Mahoraga in Shibuya (ch. 117); Sukuna then used his body in the Culling Game, so these are mostly Sukuna's feats.",
+       "spoiler": true,
+       "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro",
+        "https://jujutsu-kaisen.fandom.com/wiki/Mahoraga"
+       ],
+       "confidence": "medium"
+      },
+      {
+       "name": "Toge Inumaki",
+       "slug": "jujutsu-kaisen-toge-inumaki",
+       "why": "Semi-grade 1 since 2018. His Cursed Speech held off Geto's curses in Jujutsu Kaisen 0 and Hanami at the Goodwill Event.",
+       "spoiler": false,
+       "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Toge_Inumaki",
+        "https://en.wikipedia.org/wiki/List_of_Jujutsu_Kaisen_characters"
+       ],
+       "confidence": "medium"
+      },
+      {
+       "name": "Nobara Kugisaki",
+       "slug": "jujutsu-kaisen-nobara-kugisaki",
+       "why": "Grade 3; with Yuji she beat the Death Painting brothers Eso and Kechizu (ch. 59–63, S1), and she came back in the finale.",
+       "spoiler": true,
+       "sources": [
+        "https://jujutsu-kaisen.fandom.com/wiki/Nobara_Kugisaki",
+        "https://en.wikipedia.org/wiki/List_of_Jujutsu_Kaisen_characters"
+       ],
+       "confidence": "medium"
+      }
+     ]
+    }
+   ]
+  }
+ }
+}
