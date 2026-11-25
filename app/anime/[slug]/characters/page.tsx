@@ -38,7 +38,9 @@ const fans = (n: number) => (n >= 1000 ? `${(n / 1000).toFixed(n >= 10000 ? 0 : 
 const list = (xs: string[]) => (xs.length > 1 ? `${xs.slice(0, -1).join(", ")} and ${xs[xs.length - 1]}` : xs[0] ?? "");
 
 function load(slug: string) {
-  const rows = characterTable(decodeURIComponent(slug));
+  // Searched shows get their list even when AniList has few ages or heights (Pokémon), for the main cast.
+  const s = decodeURIComponent(slug);
+  const rows = characterTable(s) ?? (s in SEARCHED_CHARACTER_TABLES ? characterTable(s, undefined, undefined, 0) : null);
   if (!rows) notFound();
   const title = rows[0].c.t;
   const tall = rows.filter((r) => r.cm).sort((a, b) => b.cm! - a.cm!);
@@ -55,11 +57,13 @@ function load(slug: string) {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const { rows, name, cast } = load(slug);
+  const { rows, name, cast, tall, aged } = load(slug);
+  // Pokémon's cast has almost no ages or heights on AniList, so its title doesn't promise them.
+  const fewStats = tall.length < 3 && aged.length < 3;
   const lead = rows.slice(0, 3).map((r) => `${shown(r)} (${[ageText(r.age), r.cm && `${r.cm} cm`].filter(Boolean).join(", ") || "profile"})`).join(", ");
   return {
     title: cast.length
-      ? fitTitle([`${name} Characters: Main Cast, Ages, Heights & Birthdays`, `${name} Characters: Main Cast, Ages & Heights`, `${name} Characters: Main Cast & Ages`, `${name} Characters`])
+      ? fitTitle([...(fewStats ? [`${name} Characters: Main Cast & Who They Are`] : []), `${name} Characters: Main Cast, Ages, Heights & Birthdays`, `${name} Characters: Main Cast, Ages & Heights`, `${name} Characters: Main Cast & Ages`, `${name} Characters`])
       : `${name} Characters: Ages, Heights & Birthdays`,
     description: fitDescription(cast.length
       ? `Who the main ${name} characters are (${list(cast.slice(0, 3).map((m) => m.note.name))}), plus ages, heights, birthdays and voice actors of ${rows.length} characters.`

@@ -121,7 +121,9 @@ async function load(slug: string) {
   const tableShow = snap && table ? { slug: snap.s, title: snap.t, me: snap.id } : null;
   // Only a one-word nickname that isn't part of the name goes in the title: "Nate River "Near"", "Touka Kirishima "Rabbit"".
   // Kitsu's list only: AniList's alternatives are mostly spellings ("Ryuu" for Ryuk).
-  const nick = (c.otherNames || []).find((x) => /^[\p{L}'-]{2,12}$/u.test(x) && !c.name.toLowerCase().includes(x.toLowerCase())) ?? null;
+  // With checked notes, only a nickname the notes mention: Kitsu's list also holds other countries' names ("Ondine", Misty's French name).
+  const noted = characterNote(c.slug);
+  const nick = (c.otherNames || []).find((x) => /^[\p{L}'-]{2,12}$/u.test(x) && !c.name.toLowerCase().includes(x.toLowerCase()) && (!noted || [noted.name, noted.about ?? "", noted.notes ?? "", noted.role ?? ""].join(" ").includes(x))) ?? null;
   // The show's English title for the snippet ("from Demon Slayer", not "Kimetsu no Yaiba"): what people type. Kitsu
   // sometimes has no main show for a character, so the snapshot's show stands in.
   const showAnime = home ?? (snap ? await getAnimeBySlug(snap.s).catch(() => null) : null);
@@ -260,7 +262,7 @@ export default async function CharacterPage({ params }: Props) {
       </PageHero>
       {answer && (
         <section className="reveal mt-8 rounded-2xl border-2 border-violet/40 bg-violet/[.06] p-4 sm:p-5" aria-labelledby="answer-h">
-          <h2 id="answer-h" className="flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-violet-2"><span aria-hidden>⚡</span> {c.name} at a glance</h2>
+          <h2 id="answer-h" className="flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-violet-2"><span aria-hidden>⚡</span> {note?.name ?? c.name} at a glance</h2>
           <p className="mt-2 text-base leading-7 text-ink sm:text-lg">{answer}</p>
           {aliases.length > 0 && <p className="mt-2 text-sm text-muted">Also known as {aliases.map((x, i) => <span key={x}>{i ? ", " : ""}<strong className="font-semibold text-ink/85">{x}</strong></span>)}.</p>}
         </section>
@@ -277,7 +279,7 @@ export default async function CharacterPage({ params }: Props) {
       )}
       <div id="facts" data-section className="mt-5 grid gap-5 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.5fr)] lg:items-start">
         <section className="card reveal p-5" aria-labelledby="facts-h">
-          <h2 id="facts-h" className="text-xs font-semibold uppercase tracking-wider text-muted">{c.name}: quick facts</h2>
+          <h2 id="facts-h" className="text-xs font-semibold uppercase tracking-wider text-muted">{note?.name ?? c.name}: quick facts</h2>
           <dl className="mt-3 divide-y divide-line/60 text-sm">
             {home && <div className="flex justify-between gap-4 py-2"><dt className="text-muted">Anime</dt><dd className="text-right font-medium"><Link href={animePath(home)} className="text-violet hover:underline">{home.title}</Link></dd></div>}
             {home && <div className="flex justify-between gap-4 py-2"><dt className="text-muted">Role</dt><dd className="text-right font-medium">{homeApp?.role === "main" ? "Main character" : "Supporting character"}</dd></div>}
@@ -338,7 +340,7 @@ export default async function CharacterPage({ params }: Props) {
       )}
       {stats.length >= 2 && (
         <section id="numbers" data-section className="reveal mt-10" aria-labelledby="numbers-h">
-          <h2 id="numbers-h" className="h-section mb-3">{c.name} in numbers</h2>
+          <h2 id="numbers-h" className="h-section mb-3">{note?.name ?? c.name} in numbers</h2>
           <StatTiles stats={stats} />
           <div className="mt-3 grid gap-3 lg:grid-cols-2">
             {loved.length >= 3 && rankShow && (

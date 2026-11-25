@@ -38,7 +38,7 @@ import { CLASSIC_CHECKED, DIRECTORS, directorPath, type DirectorSlug } from "@/l
 import crunchyrollPlans from "@/data/crunchyroll-plans.json";
 import opMc from "@/data/op-mc-anime.json";
 import opBounties from "@/data/one-piece-bounties.json";
-import { searchShown, searchShownPaths, animeIndexed, ownContentSlugs, watchOrderIndexed, characterTableIndexed, notedCharacters, demandCharacters, genreIndexed, bestYearIndexed, trendIndexed, voiceActorIndexed, hindiDubIndexed, SEARCHED_COMPARES } from "@/lib/indexing";
+import { searchShown, searchShownPaths, animeIndexed, ownContentSlugs, watchOrderIndexed, characterTableIndexed, notedCharacters, demandCharacters, genreIndexed, bestYearIndexed, trendIndexed, voiceActorIndexed, hindiDubIndexed, SEARCHED_COMPARES, SEARCHED_CHARACTER_TABLES } from "@/lib/indexing";
 import franchiseData from "@/data/franchises.json";
 import { DATA_DATES as D, STATIC_UPDATED, BIRTHDAY_PAGES_UPDATED, HINDI_HUB_UPDATED, SCENE_PAGE_UPDATED, DUB_GUIDES_ADDED, latest, weekStart, monthStart } from "@/lib/lastmod";
 import { FILLER } from "@/data/filler";
@@ -156,7 +156,7 @@ export async function sitemapEntries(): Promise<MetadataRoute.Sitemap> {
     // Only indexed character pages (lib/indexing.ts): those with verified notes plus any Google already shows.
     ...[...new Set([...notedCharacters(), ...demandCharacters(), ...searchShownPaths("/character/").map((p) => p.slice("/character/".length))])]
       .map((s, i) => ({ url: abs(`/character/${s}`), lastModified: at(D.characters, D.charNotes), changeFrequency: "monthly" as const, priority: i < 100 ? 0.6 : 0.4 })),
-    ...characterTableSlugs().filter(characterTableIndexed).map((s) => ({ url: abs(`/anime/${s}/characters`), lastModified: at(D.seriesCharacters), changeFrequency: "monthly" as const, priority: 0.5 })),
+    ...[...new Set([...characterTableSlugs(), ...Object.keys(SEARCHED_CHARACTER_TABLES)])].filter(characterTableIndexed).map((s) => ({ url: abs(`/anime/${s}/characters`), lastModified: at(D.seriesCharacters), changeFrequency: "monthly" as const, priority: 0.5 })),
     { url: abs("/hype"), lastModified: now, changeFrequency: "daily", priority: 0.6 },
     { ...info("/advertise"), changeFrequency: "monthly", priority: 0.3 },
     { ...info("/contact"), changeFrequency: "yearly", priority: 0.3 },

@@ -15632,6 +15632,351 @@
       },
       "hindiVoice": null,
       "about": "Beam is a Fiend, a devil that has taken over a human corpse, specifically the Shark Devil, and he works as a Public Safety Devil Hunter in Tokyo Special Division 4. He has a muscular body topped by a shark's snout and fin, a mouth full of sharp teeth, and wears nothing but swimming trunks. Wild, childlike and mostly uninterested in other people, he worships Denji, calls him 'Lord Chainsaw', and will cheerfully go along with even his most reckless plans. When Power is taken off duty for a while, Beam asks to become Denji's partner, following him on patrol by swimming through the floor beneath his feet."
+    },
+    "satoshi": {
+      "name": "Ash Ketchum",
+      "role": "Protagonist; a Pokémon Trainer from Pallet Town who sets out with his Pikachu to become a Pokémon Master",
+      "debut": {
+        "anime": "Pokémon",
+        "episode": 1,
+        "episodeTitle": "Pokémon, I Choose You!",
+        "source": null,
+        "chapter": null,
+        "volume": null
+      },
+      "arcs": [
+        "Indigo League",
+        "Orange Islands",
+        "Johto",
+        "Advanced Generation",
+        "Diamond & Pearl",
+        "Best Wishes",
+        "XY",
+        "Sun & Moon",
+        "Journeys"
+      ],
+      "affiliations": [
+        "Pallet Town",
+        "Professor Kukui's Pokémon School (Sun & Moon)",
+        "Ultra Guardians (Sun & Moon)",
+        "Cerise Laboratory (Journeys)"
+      ],
+      "relatives": [
+        {
+          "name": "Delia Ketchum",
+          "relation": "mother"
+        }
+      ],
+      "confidence": "high",
+      "sources": [
+        "https://bulbapedia.bulbagarden.net/wiki/Ash_Ketchum",
+        "https://en.wikipedia.org/wiki/Ash_Ketchum",
+        "https://en.wikipedia.org/wiki/Pok%C3%A9mon:_Indigo_League",
+        "https://tv.apple.com/show/pokemon/umc.cmc.721uypshyjjv0u0zbet4rqu71",
+        "https://press.pokemon.com/en/MEDIA-ALERT-Final-Episodes-of-Pokemon-Ultimate-Journeys-The-Series-Sen",
+        "https://anilist.co/character/2473"
+      ],
+      "notes": "AniList id 2473 confirmed via the AniList API (listed as Satoshi, alternative name Ash Ketchum). Ash is an anime original (loosely based on the games' player character Red), so source is null. Episode title as on Apple TV and the Wikipedia Indigo League list; Bulbapedia writes it \"Pokémon - I Choose You!\". He is the lead of all nine series up to Journeys; the 2023 farewell episodes (Japanese 'Aim to Be a Pokémon Master', English 'Pokémon: To Be a Pokémon Master') are counted under Journeys, as Bulbapedia numbers them JN137-JN147. His unnamed father is only mentioned, so left out. League results are kept to fate. Hindi voice left null: Bulbapedia credits Prasad Barve (Cartoon Network dub) and Nachiket Dighe (Hungama dub), but I found no official or first-hand source. Bulbapedia read through a 2025 Wayback Machine snapshot (the live site blocks fetches).",
+      "about": "Ash Ketchum is a ten-year-old boy from Pallet Town in the Kanto region whose one dream is to become a Pokémon Master. He oversleeps on the day new Trainers collect their first Pokémon from Professor Oak, and is left with a stubborn Pikachu that refuses to get into its Poké Ball. When Ash puts himself in danger to protect Pikachu from a flock of angry Spearow, the two form a bond that carries the whole series. Hot-headed and reckless at first, Ash is also kind-hearted, fair and fiercely loyal, and he will go out of his way to help any Pokémon in trouble. Over the years he travels region after region with a changing group of friends, collecting Gym Badges and entering Pokémon League tournaments.",
+      "abilities": "A Pokémon Trainer known for close bonds with his Pokémon and improvised, unconventional battle tactics; he is also unusually tough, with plenty of stamina, quick reflexes and a never-give-up attitude.",
+      "fate": {
+        "status": "alive",
+        "detail": "Ash's story ended with Pokémon Ultimate Journeys / Aim to Be a Pokémon Master (2023). After winning the Alola League in Sun & Moon and becoming World Champion (Monarch) in the World Coronation Series in Ultimate Journeys, he travels once more with Misty and Brock; in the final episode, \"The Rainbow and the Pokémon Master!\", he decides he is not yet a Pokémon Master and sets off on a new journey with Pikachu. The franchise moved on to new leads in Pokémon Horizons.",
+        "basis": "series ending"
+      },
+      "hindiVoice": null
+    },
+    "pikachu": {
+      "name": "Pikachu",
+      "role": "Ash Ketchum's first Pokémon and partner, an Electric-type that travels outside its Poké Ball",
+      "debut": {
+        "anime": "Pokémon",
+        "episode": 1,
+        "episodeTitle": "Pokémon, I Choose You!",
+        "source": null,
+        "chapter": null,
+        "volume": null
+      },
+      "arcs": [
+        "Indigo League",
+        "Orange Islands",
+        "Johto",
+        "Advanced Generation",
+        "Diamond & Pearl",
+        "Best Wishes",
+        "XY",
+        "Sun & Moon",
+        "Journeys"
+      ],
+      "affiliations": [
+        "Ash Ketchum's team"
+      ],
+      "relatives": [],
+      "confidence": "high",
+      "sources": [
+        "https://bulbapedia.bulbagarden.net/wiki/Ash%27s_Pikachu",
+        "https://en.wikipedia.org/wiki/Pikachu",
+        "https://en.wikipedia.org/wiki/Ash_Ketchum",
+        "https://en.wikipedia.org/wiki/Pok%C3%A9mon:_Indigo_League",
+        "https://tv.apple.com/show/pokemon/umc.cmc.721uypshyjjv0u0zbet4rqu71",
+        "https://press.pokemon.com/en/MEDIA-ALERT-Final-Episodes-of-Pokemon-Ultimate-Journeys-The-Series-Sen",
+        "https://anilist.co/character/3891"
+      ],
+      "notes": "AniList id 3891 confirmed via the AniList API (Pikachu, ピカチュウ, with Pokémon (1997) as its first anime). This is Ash's individual Pikachu, an anime character, so source is null; the Pikachu species itself comes from the games Pokémon Red and Green. Episode title as on Apple TV and the Wikipedia Indigo League list; Bulbapedia writes it \"Pokémon - I Choose You!\". Moves follow Bulbapedia's moves table. Hindi voice left null: Bulbapedia credits Sonal Kaushal (Hungama dub) and other listings say the Cartoon Network dub, and the Japanese voice of Ikue Otani is widely kept in dubs; I found no official or first-hand credit. Bulbapedia read through a 2025 Wayback Machine snapshot (the live site blocks fetches).",
+      "about": "Pikachu is the Electric-type mouse Pokémon that Professor Oak hands to Ash Ketchum as his first partner, the last Pokémon left in the lab after Ash oversleeps. At first it is stubborn and unfriendly, shocking Ash and refusing to enter its Poké Ball, but it warms to him after Ash risks his own safety to protect it. From then on Pikachu rides on Ash's shoulder and stays outside its ball, which makes it the constant target of the Team Rocket trio. Pikachu is brave, loyal and a little mischievous, loves ketchup, and often holds its own against much bigger opponents through sheer speed.",
+      "abilities": "Thunder Shock, Thunderbolt, Quick Attack, Agility, Thunder, Iron Tail, Volt Tackle, Electro Ball and Electroweb; it can also use Z-Moves such as Gigavolt Havoc and its own 10,000,000 Volt Thunderbolt, and it can Gigantamax.",
+      "fate": {
+        "status": "alive",
+        "detail": "Pikachu's story ended with Ash's in Pokémon Ultimate Journeys / Aim to Be a Pokémon Master (2023). In the final episode, \"The Rainbow and the Pokémon Master!\", it agrees to stay by Ash's side until he becomes a Pokémon Master, and the two leave Pallet Town on a new journey.",
+        "basis": "series ending"
+      },
+      "hindiVoice": null
+    },
+    "pokemon-misty": {
+      "name": "Misty",
+      "role": "One of the Cerulean City Gym Leaders and Ash's first travelling companion, who dreams of becoming a Water Pokémon Master",
+      "debut": {
+        "anime": "Pokémon",
+        "episode": 1,
+        "episodeTitle": "Pokémon, I Choose You!",
+        "source": null,
+        "chapter": null,
+        "volume": null
+      },
+      "arcs": [
+        "Indigo League",
+        "Orange Islands",
+        "Johto",
+        "Advanced Generation",
+        "Sun & Moon",
+        "Journeys"
+      ],
+      "affiliations": [
+        "Cerulean Gym"
+      ],
+      "relatives": [
+        {
+          "name": "Daisy",
+          "relation": "older sister"
+        },
+        {
+          "name": "Violet",
+          "relation": "older sister"
+        },
+        {
+          "name": "Lily",
+          "relation": "older sister"
+        }
+      ],
+      "confidence": "high",
+      "sources": [
+        "https://bulbapedia.bulbagarden.net/wiki/Misty_(anime)",
+        "https://en.wikipedia.org/wiki/Misty_(Pok%C3%A9mon)",
+        "https://en.wikipedia.org/wiki/Pok%C3%A9mon:_Indigo_League",
+        "https://tv.apple.com/show/pokemon/umc.cmc.721uypshyjjv0u0zbet4rqu71",
+        "https://press.pokemon.com/en/MEDIA-ALERT-Final-Episodes-of-Pokemon-Ultimate-Journeys-The-Series-Sen",
+        "https://anilist.co/character/2909"
+      ],
+      "notes": "AniList id 2909 confirmed via the AniList API (listed as Kasumi, alternative name Misty). She began as a Gym Leader in the games Pokémon Red and Green, so source is game. Episode title as on Apple TV and the Wikipedia Indigo League list; Bulbapedia writes it \"Pokémon - I Choose You!\". She is a main character in Indigo League, Orange Islands and Johto; in Advanced Generation, Sun & Moon and Journeys she returns for guest episodes, and she travels with Ash again in the 2023 farewell episodes. Diamond & Pearl (a photo and her fishing lure) and Best Wishes (flashback and fantasy only) are left out. Hindi voice left null: Bulbapedia credits Neshma Chemburkar (Cartoon Network dub, seasons 1-2) and Rucha Dighe (Hungama dub), but I found no official or first-hand source. Bulbapedia read through a 2025 Wayback Machine snapshot (the live site blocks fetches). Debut source left null: the character first appeared as a Gym Leader in the Pokémon Red and Green games, a source type the notes don't track.",
+      "about": "Misty is a fiery, orange-haired girl from Cerulean City who loves Water-type Pokémon and wants to become a Water Pokémon Master. She first meets Ash when she fishes him and an injured Pikachu out of a river, and he 'borrows' her bicycle, which soon ends up burnt to a crisp. Misty follows him to get it paid back and ends up travelling with him as a friend, coach and frequent sparring partner. She is quick-tempered and easily annoyed, especially when Ash gets them lost, but she is also caring and good with younger children. As the youngest of four sisters who run the Cerulean Gym, she is keen to prove she is just as good a Trainer as they are.",
+      "abilities": "A skilled Water-type Trainer and Gym Leader whose Pokémon include Staryu, Starmie, Psyduck, Goldeen, Horsea, Politoed, Corsola and Gyarados; she is also a keen angler.",
+      "fate": {
+        "status": "alive",
+        "detail": "Misty leaves Ash at the end of Johto to look after the Cerulean Gym. In the 2023 farewell episodes she sets out on a new journey of her own, travels with Ash and Brock once more, and goes home to Cerulean City in the final episode, \"The Rainbow and the Pokémon Master!\".",
+        "basis": "series ending"
+      },
+      "hindiVoice": null
+    },
+    "pokemon-brock": {
+      "name": "Brock",
+      "role": "Former Pewter City Gym Leader and Ash's longest-serving travelling companion, who wants to become a top Pokémon Breeder",
+      "debut": {
+        "anime": "Pokémon",
+        "episode": 5,
+        "episodeTitle": "Showdown in Pewter City",
+        "source": null,
+        "chapter": null,
+        "volume": null
+      },
+      "arcs": [
+        "Indigo League",
+        "Orange Islands",
+        "Johto",
+        "Advanced Generation",
+        "Diamond & Pearl",
+        "Best Wishes",
+        "Sun & Moon",
+        "Journeys"
+      ],
+      "affiliations": [
+        "Pewter Gym (former Gym Leader)"
+      ],
+      "relatives": [
+        {
+          "name": "Flint",
+          "relation": "father"
+        },
+        {
+          "name": "Lola",
+          "relation": "mother"
+        },
+        {
+          "name": "Forrest",
+          "relation": "younger brother"
+        }
+      ],
+      "confidence": "high",
+      "sources": [
+        "https://bulbapedia.bulbagarden.net/wiki/Brock_(anime)",
+        "https://en.wikipedia.org/wiki/Brock_(Pok%C3%A9mon)",
+        "https://en.wikipedia.org/wiki/Pok%C3%A9mon:_Indigo_League",
+        "https://tv.apple.com/show/pokemon/umc.cmc.721uypshyjjv0u0zbet4rqu71",
+        "https://press.pokemon.com/en/MEDIA-ALERT-Final-Episodes-of-Pokemon-Ultimate-Journeys-The-Series-Sen",
+        "https://anilist.co/character/3854"
+      ],
+      "notes": "AniList id 3854 confirmed via the AniList API (listed as Takeshi, alternative name Brock). He began as a Gym Leader in the games Pokémon Red and Green, so source is game. Debut episode title as on Apple TV and Wikipedia. He has nine younger siblings in all; only Forrest is named here. He leaves early in Orange Islands (replaced by Tracey) and rejoins at its end; Best Wishes counts only for the in-person BWS01 special (other BW appearances are flashbacks); Sun & Moon and Journeys are guest returns plus the 2023 farewell episodes. He does not appear in XY. His later career goal is kept to fate. Hindi voice left null: Bulbapedia credits Uplaksh Kochhar (Hungama dub), but I found no official or first-hand source. Bulbapedia read through a 2025 Wayback Machine snapshot (the live site blocks fetches). Debut source left null: the character first appeared as a Gym Leader in the Pokémon Red and Green games, a source type the notes don't track.",
+      "about": "Brock is the Gym Leader of Pewter City, a serious Rock-type specialist who has been raising his nine younger siblings on his own since his father left. Ash loses to him badly at first, and Brock is touched when Ash refuses to win a rematch at his family's expense. Once his father returns to take over the Gym, Brock joins Ash and Misty to chase his real dream of becoming a great Pokémon Breeder. He is the group's sensible older brother, the one who cooks, carries the map and patches up everyone's Pokémon. His one weakness is pretty women, Nurse Joy and Officer Jenny above all, and his clumsy attempts at romance are a running gag.",
+      "abilities": "An excellent cook and carer for Pokémon with real medical and breeding know-how; as a battler his Pokémon include Onix (later Steelix), Geodude, Vulpix, Crobat, Ludicolo, Croagunk and Sudowoodo.",
+      "fate": {
+        "status": "alive",
+        "detail": "Brock travels with Ash through Kanto, Johto, Hoenn and Sinnoh, then returns home after Diamond & Pearl to study to become a Pokémon Doctor. In the 2023 farewell episodes he travels with Ash and Misty again and goes home to Pewter City in the final episode, \"The Rainbow and the Pokémon Master!\".",
+        "basis": "series ending"
+      },
+      "hindiVoice": null
+    },
+    "pokemon-jessie": {
+      "name": "Jessie",
+      "role": "A Team Rocket agent who, with James and Meowth, chases Ash around the world trying to steal his Pikachu",
+      "debut": {
+        "anime": "Pokémon",
+        "episode": 2,
+        "episodeTitle": "Pokémon Emergency!",
+        "source": null,
+        "chapter": null,
+        "volume": null
+      },
+      "arcs": [
+        "Indigo League",
+        "Orange Islands",
+        "Johto",
+        "Advanced Generation",
+        "Diamond & Pearl",
+        "Best Wishes",
+        "XY",
+        "Sun & Moon",
+        "Journeys"
+      ],
+      "affiliations": [
+        "Team Rocket"
+      ],
+      "relatives": [
+        {
+          "name": "Miyamoto",
+          "relation": "mother"
+        }
+      ],
+      "confidence": "high",
+      "sources": [
+        "https://bulbapedia.bulbagarden.net/wiki/Jessie",
+        "https://en.wikipedia.org/wiki/Team_Rocket",
+        "https://en.wikipedia.org/wiki/Pok%C3%A9mon:_Indigo_League",
+        "https://anilist.co/character/3935"
+      ],
+      "notes": "AniList id 3935 confirmed via the AniList API (listed as Musashi, alternative name Jessie). Jessie, James and Meowth are anime originals (the trio were added to the games later, in Pokémon Yellow), so source is null. Their debut episode title follows Wikipedia; its Japanese title translates as 'Showdown! Pokémon Center!'. They appear in all nine series up to Journeys, including the 2023 farewell episodes. Her mother's story and her childhood are left out as later reveals. Hindi voice left null: Bulbapedia credits Nandini Sharma (Cartoon Network dub), Shagufta Baig and Natasha John (Hungama dub), but I found no official or first-hand source. Bulbapedia read through a 2025 Wayback Machine snapshot (the live site blocks fetches).",
+      "about": "Jessie is the vain, short-tempered member of the Team Rocket trio, a group of bungling crooks who work for the crime syndicate Team Rocket. After seeing how strong Ash's Pikachu is, she and her partners make stealing it their mission and follow Ash from region to region with disguises, traps and giant robots. Every plan ends with the trio being 'blasted off' into the sky, but they always come back for another try. Jessie hates being called old and explodes when her looks are insulted. Away from crime, she has a theatrical streak and enters Pokémon Contests and Showcases under fake names.",
+      "abilities": "A Team Rocket agent and master of disguise who later becomes a capable Pokémon Coordinator and Performer; her Pokémon include Ekans (later Arbok), Wobbuffet, Seviper, Yanmega, Gourgeist and Mimikyu.",
+      "fate": {
+        "status": "alive",
+        "detail": "Jessie is still chasing Pikachu in the 2023 farewell episodes. After a failed scheme the trio briefly split up, but they reunite and vow to keep chasing Pikachu together.",
+        "basis": "series ending"
+      },
+      "hindiVoice": null
+    },
+    "kojirou": {
+      "name": "James",
+      "role": "A Team Rocket agent who, with Jessie and Meowth, chases Ash around the world trying to steal his Pikachu",
+      "debut": {
+        "anime": "Pokémon",
+        "episode": 2,
+        "episodeTitle": "Pokémon Emergency!",
+        "source": null,
+        "chapter": null,
+        "volume": null
+      },
+      "arcs": [
+        "Indigo League",
+        "Orange Islands",
+        "Johto",
+        "Advanced Generation",
+        "Diamond & Pearl",
+        "Best Wishes",
+        "XY",
+        "Sun & Moon",
+        "Journeys"
+      ],
+      "affiliations": [
+        "Team Rocket"
+      ],
+      "relatives": [],
+      "confidence": "high",
+      "sources": [
+        "https://bulbapedia.bulbagarden.net/wiki/James",
+        "https://en.wikipedia.org/wiki/Team_Rocket",
+        "https://en.wikipedia.org/wiki/Pok%C3%A9mon:_Indigo_League",
+        "https://anilist.co/character/3936"
+      ],
+      "notes": "AniList id 3936 confirmed via the AniList API (listed as Kojirou, alternative name James). Jessie, James and Meowth are anime originals (the trio were added to the games later, in Pokémon Yellow), so source is null. Their debut episode title follows Wikipedia; its Japanese title translates as 'Showdown! Pokémon Center!'. They appear in all nine series up to Journeys, including the 2023 farewell episodes. Relatives left empty: his parents are unnamed in Bulbapedia, and his arranged fiancée Jessebelle is not family. Hindi voice left null: Bulbapedia credits Kishore Bhatt (Cartoon Network dub) and Rajesh Shukla (Hungama dub), but I found no official or first-hand source. Bulbapedia read through a 2025 Wayback Machine snapshot (the live site blocks fetches).",
+      "about": "James is the softer-hearted member of the Team Rocket trio, who team up with Meowth and Jessie to follow Ash and try to steal his Pikachu. He grew up the only child of a very rich family but ran away from its strict rules and from Jessebelle, the bossy girl he was engaged to as a child. James is easily swindled, collects rare bottle caps, and is famous for his elaborate disguises, often as Nurse Joy or Officer Jenny. He is genuinely fond of his own Pokémon, many of whom greet him with over-eager hugs or bites. Like his partners, he always ends up blasted off at the end of the episode.",
+      "abilities": "A Team Rocket agent with a talent for disguises and gadgets; his Pokémon include Koffing (later Weezing), Victreebel, Cacnea, Carnivine, Mime Jr., Inkay, Mareanie and Yamask.",
+      "fate": {
+        "status": "alive",
+        "detail": "James is still chasing Pikachu in the 2023 farewell episodes. After a failed scheme the trio briefly split up, but they reunite and vow to keep chasing Pikachu together.",
+        "basis": "series ending"
+      },
+      "hindiVoice": null
+    },
+    "pokemon-meowth": {
+      "name": "Meowth",
+      "role": "Team Rocket's talking Meowth, the third member of the trio with Jessie and James",
+      "debut": {
+        "anime": "Pokémon",
+        "episode": 2,
+        "episodeTitle": "Pokémon Emergency!",
+        "source": null,
+        "chapter": null,
+        "volume": null
+      },
+      "arcs": [
+        "Indigo League",
+        "Orange Islands",
+        "Johto",
+        "Advanced Generation",
+        "Diamond & Pearl",
+        "Best Wishes",
+        "XY",
+        "Sun & Moon",
+        "Journeys"
+      ],
+      "affiliations": [
+        "Team Rocket"
+      ],
+      "relatives": [],
+      "confidence": "high",
+      "sources": [
+        "https://bulbapedia.bulbagarden.net/wiki/Team_Rocket%27s_Meowth",
+        "https://en.wikipedia.org/wiki/Team_Rocket",
+        "https://en.wikipedia.org/wiki/Pok%C3%A9mon:_Indigo_League",
+        "https://anilist.co/character/3937"
+      ],
+      "notes": "AniList id 3937 confirmed via the AniList API (listed as Nyarth, alternative name Meowth). Jessie, James and Meowth are anime originals (the trio were added to the games later, in Pokémon Yellow), so source is null. Their debut episode title follows Wikipedia; its Japanese title translates as 'Showdown! Pokémon Center!'. They appear in all nine series up to Journeys, including the 2023 farewell episodes. The Meowth species itself comes from the games Pokémon Red and Green. Moves follow Bulbapedia's moves table. Hindi voice left null: Bulbapedia credits Damandeep Singh Baggan and Sandeep Karnik (Cartoon Network dub) and Saumya Daan (Hungama dub), but I found no official or first-hand source. Bulbapedia read through a 2025 Wayback Machine snapshot (the live site blocks fetches).",
+      "about": "Meowth is a scratch-cat Pokémon who can do two things almost no other Pokémon can: walk upright and speak human language. He taught himself both as a young stray to impress a female Meowth, and when she still turned him down, he joined Team Rocket. Teamed with Jessie and James, he dreams of becoming his boss Giovanni's favourite by bringing him Ash's Pikachu. Meowth is the trio's schemer, mechanic and translator, since he can understand other Pokémon. He is greedy and boastful but also sentimental, and he sometimes shows a soft spot for the heroes he is trying to rob.",
+      "abilities": "He talks and walks like a human, translates what other Pokémon say, and builds most of the trio's machines; in a fight he relies on Fury Swipes, Scratch and Bite, and he can Gigantamax.",
+      "fate": {
+        "status": "alive",
+        "detail": "Meowth is still chasing Pikachu in the 2023 farewell episodes. After a failed scheme the trio briefly split up, but they reunite and vow to keep chasing Pikachu together.",
+        "basis": "series ending"
+      },
+      "hindiVoice": null
     }
   }
 }

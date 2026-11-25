@@ -123,7 +123,7 @@ export function fromSeries(x: SeriesChar, slug: string, a: number, t: string, kn
  * main and supporting cast when the series snapshot has it, plus anyone popular it missed. Null when there's too
  * little for a useful table: at least 4 characters with 3 known heights or ages.
  */
-export function characterTable(animeSlug: string, src: SnapChar[] = chars, series = src === chars ? seriesCast(animeSlug) : null): TableRow[] | null {
+export function characterTable(animeSlug: string, src: SnapChar[] = chars, series = src === chars ? seriesCast(animeSlug) : null, minFacts = 3): TableRow[] | null {
   if (src === chars) { bySlug2 ??= group(chars, (c) => c.s); byId ??= new Map(chars.map((c) => [c.id, c])); }
   const popular = src === chars ? bySlug2!.get(animeSlug) || [] : src.filter((c) => c.s === animeSlug);
   const known = (id: number) => (src === chars ? byId!.get(id) : src.find((c) => c.id === id));
@@ -135,7 +135,7 @@ export function characterTable(animeSlug: string, src: SnapChar[] = chars, serie
     return { c, age: c.age, ageN: ageNum(c.age), height, cm: heightCm(height) };
   });
   const count = (f: (r: TableRow) => unknown) => rows.filter(f).length;
-  return rows.length >= 4 && (count((r) => r.cm) >= 3 || count((r) => r.ageN !== null) >= 3) ? rows : null;
+  return rows.length >= 4 && (count((r) => r.cm) >= minFacts || count((r) => r.ageN !== null) >= minFacts) ? rows : null;
 }
 
 /** Anime slugs that get a characters table (sitemap, anime page links). */

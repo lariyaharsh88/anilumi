@@ -96,7 +96,7 @@ test("searched character lists: each has a table and at least 3 verified notes f
   const { characterTable } = await import("../lib/charsnap");
   const { notedCast } = await import("../lib/charnotes");
   for (const slug of Object.keys(SEARCHED_CHARACTER_TABLES)) {
-    const rows = characterTable(slug);
+    const rows = characterTable(slug) ?? characterTable(slug, undefined, undefined, 0);
     assert.ok(rows, `${slug}: no character table`);
     assert.ok(notedCast(rows).length >= 3, `${slug}: ${notedCast(rows).length} noted characters`);
     assert.equal(characterTableIndexed(slug), true);

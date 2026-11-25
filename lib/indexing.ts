@@ -160,6 +160,7 @@ export const SEARCHED_CHARACTER_TABLES: Record<string, { name: string; searches:
   "sousou-no-frieren": { name: "Frieren", searches: 27100 },
   "solo-leveling": { name: "Solo Leveling", searches: 22200 },
   "spy-x-family": { name: "Spy x Family", searches: 8100 },
+  pokemon: { name: "Pokémon", searches: 1500 }, // Bing keyword research, 25 Nov 2026: "pokemon characters" 18K impressions a year
 };
 
 /** Character tables repeat what the character pages say: indexed where people search the show's characters or
