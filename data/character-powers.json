@@ -154,7 +154,7 @@
     {
      "who": "Toji Fushiguro",
      "how": "In 2006 Toji ambushed the exhausted student Gojo right after he dropped Infinity, stabbed him and won their first fight. Gojo survived by awakening reverse cursed technique and killed Toji with Hollow Purple in the rematch.",
-     "where": "Gojo's Past (Hidden Inventory) arc, chapters 70–72, episode 27; rematch chapter 75, episode 28",
+     "where": "Gojo's Past (Hidden Inventory) arc, chapters 70–72, episode 27; rematch chapters 74–75, episode 28",
      "spoiler": true,
      "confidence": "high",
      "sources": [
@@ -393,7 +393,7 @@
      "episodeSeries": "Dragon Ball Super",
      "firstChapter": 39,
      "chapterSeries": "Dragon Ball Super manga",
-     "arc": "Universe 6 Saga (vs. Hit)",
+     "arc": "Universe 6 Saga (vs. Hit) (anime); the manga version first appears in the Tournament of Power",
      "what": "Kaio-ken stacked on top of Super Saiyan Blue. Blue's control makes the combination survivable, but it is still risky.",
      "spoiler": false,
      "confidence": "high",
@@ -425,7 +425,7 @@
      "group": "main",
      "firstEpisode": 129,
      "episodeSeries": "Dragon Ball Super",
-     "firstChapter": null,
+     "firstChapter": 41,
      "arc": "Universe Survival Saga (vs. Jiren)",
      "what": "The completed Ultra Instinct, with silver hair. He both defends and attacks automatically.",
      "spoiler": true,
@@ -434,7 +434,8 @@
      "sources": [
       "https://en.wikipedia.org/wiki/List_of_Dragon_Ball_Super_episodes",
       "https://dragonball.fandom.com/wiki/Perfected_Ultra_Instinct"
-     ]
+     ],
+     "chapterSeries": "Dragon Ball Super"
     },
     {
      "name": "True Ultra Instinct",

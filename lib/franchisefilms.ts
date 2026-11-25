@@ -16,7 +16,7 @@ export type Film = { year: number; en: string; in?: string | null; jp: string; l
  *  Pokémon the seasons in order. Researched 25 Nov 2026 (two sources each where possible). */
 export type FranchiseWatch = {
   about: string;
-  tv: { channel: string; status: "airing" | "ended" | "unclear"; note: string; sources: string[] }[];
+  tv: { channel: string; status: "airing" | "ended" | "unclear"; note: string; sources: string[]; /** Month of the latest dated report ("Dec 2025"). */ lastSeen?: string | null }[];
   streaming: { service: string; what: string; url: string | null }[];
   next?: { t: string; year: number; note: string; sources: string[] } | null;
   seasons?: { n: number; t: string; years: string; hindi: string; where: string | null }[];

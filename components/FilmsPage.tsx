@@ -120,7 +120,7 @@ export default function FilmsPage({ slug, lang }: { slug: string; lang: FilmLang
           <div className="grid gap-4 md:grid-cols-2">
             <div className="card p-4">
               <h3 className="font-semibold text-ink">📺 On TV</h3>
-              <ul className="mt-2 space-y-2 text-sm">{w.tv.map((t) => <li key={t.channel}><span className="font-medium text-ink">{t.channel}</span> <span className={`ml-1 rounded-full px-2 py-0.5 text-[11px] ${t.status === "airing" ? "bg-emerald-500/15 text-emerald-300" : "bg-white/5 text-muted"}`}>{t.status === "airing" ? "Airing" : t.status === "ended" ? "Ended" : "Not confirmed lately"}</span><p className="mt-0.5 leading-6 text-ink/80">{t.note}</p></li>)}</ul>
+              <ul className="mt-2 space-y-2 text-sm">{w.tv.map((t) => <li key={t.channel}><span className="font-medium text-ink">{t.channel}</span> <span className={`ml-1 rounded-full px-2 py-0.5 text-[11px] ${t.status === "airing" ? "bg-emerald-500/15 text-emerald-300" : "bg-white/5 text-muted"}`}>{t.status === "airing" ? "Airing" : t.status === "ended" ? "Ended" : "Not confirmed lately"}{t.lastSeen ? ` · last report ${t.lastSeen}` : ""}</span><p className="mt-0.5 leading-6 text-ink/80">{t.note}</p></li>)}</ul>
             </div>
             <div className="card p-4">
               <h3 className="font-semibold text-ink">▶️ Streaming and cinemas</h3>

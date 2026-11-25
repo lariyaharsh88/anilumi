@@ -2,35 +2,123 @@
   "checked": "2026-11-25",
   "lastChange": "US prices rose $2 per plan, announced 2 February 2026, for existing members from their first bill after 4 March 2026 (Fan's first US rise since 2019).",
   "regions": {
-    "US": { "label": "US", "symbol": "$", "plans": [
-      { "name": "Fan", "monthly": 9.99, "annual": null },
-      { "name": "Mega Fan", "monthly": 13.99, "annual": null },
-      { "name": "Ultimate Fan", "monthly": 17.99, "annual": 179.99 }
-    ] },
-    "CA": { "label": "Canada", "symbol": "C$", "plans": [
-      { "name": "Fan", "monthly": 10.99, "annual": 109.99 },
-      { "name": "Mega Fan", "monthly": 13.49, "annual": 134.99 },
-      { "name": "Ultimate Fan", "monthly": 17.99, "annual": 179.99, "single": "annual" }
-    ] },
-    "GB": { "label": "UK", "symbol": "£", "plans": [
-      { "name": "Fan", "monthly": 5.99, "annual": null, "single": "monthly" },
-      { "name": "Mega Fan", "monthly": 6.99, "annual": 69.99, "single": "both" },
-      { "name": "Ultimate Fan", "monthly": 9.99, "annual": 99.99, "single": "annual" }
-    ] },
-    "AU": { "label": "Australia", "symbol": "A$", "plans": [
-      { "name": "Fan", "monthly": 11.99, "annual": null },
-      { "name": "Mega Fan", "monthly": 14.99, "annual": 149.99, "single": "annual" },
-      { "name": "Ultimate Fan", "monthly": 18.99, "annual": null, "single": "monthly" }
-    ] }
+    "US": {
+      "label": "US",
+      "symbol": "$",
+      "plans": [
+        {
+          "name": "Fan",
+          "monthly": 9.99,
+          "annual": null
+        },
+        {
+          "name": "Mega Fan",
+          "monthly": 13.99,
+          "annual": null
+        },
+        {
+          "name": "Ultimate Fan",
+          "monthly": 17.99,
+          "annual": 179.99
+        }
+      ]
+    },
+    "CA": {
+      "label": "Canada",
+      "symbol": "C$",
+      "plans": [
+        {
+          "name": "Fan",
+          "monthly": 10.99,
+          "annual": 109.99
+        },
+        {
+          "name": "Mega Fan",
+          "monthly": 13.49,
+          "annual": 134.99
+        },
+        {
+          "name": "Ultimate Fan",
+          "monthly": 17.99,
+          "annual": 179.99,
+          "single": "annual"
+        }
+      ]
+    },
+    "GB": {
+      "label": "UK",
+      "symbol": "£",
+      "plans": [
+        {
+          "name": "Fan",
+          "monthly": 5.99,
+          "annual": null,
+          "single": "monthly"
+        },
+        {
+          "name": "Mega Fan",
+          "monthly": 6.99,
+          "annual": 69.99,
+          "single": "both"
+        },
+        {
+          "name": "Ultimate Fan",
+          "monthly": 9.99,
+          "annual": 99.99,
+          "single": "annual"
+        }
+      ]
+    },
+    "AU": {
+      "label": "Australia",
+      "symbol": "A$",
+      "plans": [
+        {
+          "name": "Fan",
+          "monthly": 11.99,
+          "annual": null
+        },
+        {
+          "name": "Mega Fan",
+          "monthly": 14.99,
+          "annual": 149.99,
+          "single": "annual"
+        },
+        {
+          "name": "Ultimate Fan",
+          "monthly": 18.99,
+          "annual": null,
+          "single": "monthly"
+        }
+      ]
+    }
   },
   "includes": {
-    "Fan": { "streams": 1, "offline": "1 device", "gameVault": false, "manga": "Add-on in the US and Canada", "store": "5%" },
-    "Mega Fan": { "streams": 4, "offline": "Yes", "gameVault": true, "manga": "Add-on", "store": "10%" },
-    "Ultimate Fan": { "streams": 6, "offline": "Yes", "gameVault": true, "manga": "Included", "store": "15%" }
+    "Fan": {
+      "streams": 1,
+      "offline": "1 device",
+      "gameVault": false,
+      "manga": "Add-on in the US and Canada",
+      "store": "5%"
+    },
+    "Mega Fan": {
+      "streams": 4,
+      "offline": "Yes",
+      "gameVault": true,
+      "manga": "Add-on",
+      "store": "10%"
+    },
+    "Ultimate Fan": {
+      "streams": 6,
+      "offline": "Yes",
+      "gameVault": true,
+      "manga": "Included",
+      "store": "15%"
+    }
   },
   "free": "Crunchyroll's free, ad-supported tier ended on 31 December 2025 in every market reported (US, Brazil, India, Pakistan, Nigeria). A free account can browse but not watch; nothing on demand is free, first episodes included. Still free: the 7-day trial, Crunchyroll's YouTube channels and its 24/7 ad-supported TV channel on services such as Samsung TV Plus.",
   "trial": "7 days on any plan, for new or eligible accounts only, once per person. A payment method is needed, it renews automatically unless cancelled, and cancelling during the trial ends access straight away.",
-  "manga": "Crunchyroll Manga is a separate reading app (and web reader) on the same account, with 450+ titles in English. It launched in the US and Canada on 9 October 2025 and reached the UK, Ireland, Australia, New Zealand and India on 8 October 2026. Ultimate Fan includes it; otherwise it's a paid add-on (in the US, $4 a month on Fan or $3.50 on Mega Fan; outside the US and Canada, on Mega Fan only). In India it comes only with Ultimate Fan.",
+  "manga": "Crunchyroll Manga is a separate reading app (and web reader) on the same account, with 450+ titles in English in the US and Canada (250+ at launch in India and the other newer markets). It launched in the US and Canada on 9 October 2025 and reached the UK, Ireland, Australia, New Zealand and India on 8 October 2026. Ultimate Fan includes it; on other plans it's a paid add-on (in the US, $4 a month on Fan or $3.50 on Mega Fan; which plans can add it varies by country). In India it comes only with Ultimate Fan.",
   "gameVault": "About 100 premium mobile games with no ads or in-app purchases, included with Mega Fan and Ultimate Fan (not Fan) since November 2023.",
   "deal": {
     "name": "Black Friday 2026",
@@ -38,9 +126,18 @@
     "to": "2026-11-30",
     "offer": "Your first 6 months at a lower price, then the regular monthly price",
     "prices": [
-      { "plan": "Fan", "price": 3.99 },
-      { "plan": "Mega Fan", "price": 5.99 },
-      { "plan": "Ultimate Fan", "price": 8.99 }
+      {
+        "plan": "Fan",
+        "price": 3.99
+      },
+      {
+        "plan": "Mega Fan",
+        "price": 5.99
+      },
+      {
+        "plan": "Ultimate Fan",
+        "price": 8.99
+      }
     ],
     "pricesWhere": "US (in Canada the same figures in Canadian dollars)",
     "who": "New and returning eligible members; current members can't use it.",

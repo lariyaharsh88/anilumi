@@ -1377,7 +1377,8 @@
               "https://www.indianbroadcastingworld.com/?p=83344",
               "https://www.medianews4u.com/?p=2471134",
               "https://animenewsindia.com/2025/12/22/cartoon-network-india-kicks-off-holiday-season-with-dragon-ball-z-movie-marathon-from-december-222025-to-january-1-2026"
-            ]
+            ],
+            "lastSeen": "Dec 2025"
           },
           {
             "channel": "Hungama TV",
@@ -1388,7 +1389,8 @@
               "https://www.animenewsnetwork.com/news/2022-08-13/hungama-tv-airs-doraemon-the-movie-nobita-chal-pada-antarctica-on-august-14/.188644",
               "https://www.animenewsnetwork.com/news/2022-09-18/anime-films-airing-on-indian-tv-september-18-24/.189824",
               "https://animenewsnetwork.com/news/2023-04-23/anime-films-airing-on-indian-tv-april-23-29/.197378"
-            ]
+            ],
+            "lastSeen": "Sep 2022"
           }
         ],
         "streaming": [
@@ -1404,14 +1406,14 @@
           },
           {
             "service": "Cinemas",
-            "what": "The 2026 film, New Nobita and the Castle of the Undersea Devil, in Hindi, Tamil and Telugu since 2 Oct 2026: Doraemon's first wide Indian cinema release. No streaming date yet.",
+            "what": "The 2026 film, New Nobita and the Castle of the Undersea Devil, released in Indian cinemas on 2 Oct 2026 in Hindi, Tamil and Telugu: Doraemon's first wide Indian cinema release. No streaming date yet.",
             "url": null
           }
         ],
         "next": {
-          "t": "Doraemon the Movie: Nobita's Steam-Powered Time Machine",
+          "t": "Doraemon the Movie: Nobita's Steam Time Locomotive",
           "year": 2027,
-          "note": "Opens in Japan on 5 March 2027 (the 46th film); no India date announced yet.",
+          "note": "Opens in Japan on 5 March 2027 (the 46th film); no official English title or India date yet.",
           "sources": [
             "https://www.animenewsnetwork.com/news/2026-09-14/2027-doraemon-film-teaser-unveils-march-5-opening-in-japan/.241749",
             "https://www.animenewsnetwork.com/news/2026-07-23/2027-doraemon-film-heads-to-19th-century-london/.239920"
@@ -2684,7 +2686,8 @@
               "https://www.animenewsnetwork.com/news/2026-11-07/sony-yay-airs-crayon-shin-chan-my-moving-story-cactus-attack-anime-film-in-india-on-november-8/.243610",
               "https://www.animenewsnetwork.com/news/2026-10-25/sony-yay-airs-new-episodes-of-shin-chan-tv-anime-in-india-on-november-2/.243157",
               "https://indiantelevision.com/?p=220774"
-            ]
+            ],
+            "lastSeen": "Nov 2026"
           },
           {
             "channel": "Hungama TV",
@@ -2694,7 +2697,8 @@
               "https://animenewsindia.com/2024/05/11/sony-yay-introduces-hit-japanese-series-shin-chan-to-its-lineup",
               "https://indiantelevision.com/television/hungama-tv-to-air-antics-of-shin-chan-from-19-june-2/",
               "https://www.animenewsnetwork.com/news/2008-12-05/india-reportedly-bans-crayon-shin-chan-from-tv"
-            ]
+            ],
+            "lastSeen": "May 2024"
           }
         ],
         "streaming": [
@@ -3135,7 +3139,8 @@
               "https://www.animenewsnetwork.com/news/2024-05-03/pokemon-horizons-the-series-anime-airs-in-india-on-may-25/.210398",
               "https://medianews4u.com/?p=2419782",
               "https://t2online.in/screen/tv/a-brand-new-pokemon-series-is-set-to-hit-hungama-screens-across-the-country-on-may-25.-t2-was-there-for-the-unveiling-of-the-series-in-mumbai/911540"
-            ]
+            ],
+            "lastSeen": "May 2024"
           },
           {
             "channel": "Super Hungama",
@@ -3145,7 +3150,8 @@
               "https://www.animenewsnetwork.com/news/2024-04-22/super-hungama-airs-pokemon-the-series-xyz-anime-starting-on-april-29/.210071",
               "https://indiantelevision.com/news-headline/disney-kids-to-launch-new-channel-super-hungama-on-1-march/",
               "https://cdn.jiostar.com/jiostar/wp-content/uploads/2026/02/Application-for-request-of-signals-of-JIOSTAR-channels.pdf"
-            ]
+            ],
+            "lastSeen": "Apr 2024"
           }
         ],
         "streaming": [
