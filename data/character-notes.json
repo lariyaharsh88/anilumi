@@ -14799,6 +14799,669 @@
         "basis": "manga and anime"
       },
       "hindiVoice": null
+    },
+    "cha-hae-in": {
+      "name": "Cha Hae-In",
+      "role": "An S-Rank Hunter and vice-guild master of the Hunters Guild, one of the strongest Hunters in Korea",
+      "debut": {
+        "anime": "Solo Leveling",
+        "episode": 1,
+        "episodeTitle": "I'm Used to It",
+        "source": "novel",
+        "chapter": 81,
+        "volume": null
+      },
+      "arcs": [
+        "Hunters Guild Gate Arc",
+        "Jeju Island Arc",
+        "Recruitment Arc",
+        "Ahjin Guild Arc",
+        "Double Dungeon Arc",
+        "Monarchs War Arc",
+        "Final Battle Arc"
+      ],
+      "affiliations": [
+        "Hunters Guild"
+      ],
+      "relatives": [],
+      "confidence": "high",
+      "sources": [
+        "https://solo-leveling.fandom.com/wiki/Cha_Hae-In",
+        "https://solo-leveling.fandom.com/wiki/Episode_1",
+        "https://en.wikipedia.org/wiki/Solo_Leveling_season_1",
+        "https://en.wikipedia.org/wiki/Solo_Leveling_season_2",
+        "https://anilist.co/character/138789",
+        "https://www.animenewsnetwork.com/encyclopedia/anime.php?id=26000",
+        "https://www.sportskeeda.com/anime/who-female-lead-solo-leveling-cha-hae-in-s-character-explained"
+      ],
+      "notes": "Anime debut is episode 1 ('I'm Used to It'): an anime-original scene where she stops two purse snatchers and slips away from the crowd. The Solo Leveling wiki lists her debut there (character infobox and Episode 1 appearances), and Sportskeeda places the scene in episode 1. Wikipedia's short summary of episode 1 does not mention her. The anime also adds short cameos in episodes 6, 8, 9, 11-13, 15 and 16 before she meets Jin-Woo in the Hunters Guild Gate Arc (season 2). Debut chapter 81 is the web novel, per the wiki (webtoon chapter 65); no volume found, so null. Arcs follow the wiki's history headings, without the Epilogue and Ragnarok; the anime cameos in earlier arcs are not listed because the wiki's history starts at the Hunters Guild Gate Arc. Relatives left empty: her husband and son (wiki infobox) are ending spoilers. Affiliations limited to the Hunters Guild; her later change of guild is left out as a spoiler. 'Vice-guild master' and S-Rank are given on the wiki and AniList and are part of how she is introduced. Episode titles checked against Wikipedia and ANN. Voices: Reina Ueda (Japanese), Michelle Rojas (English), per ANN.",
+      "about": "Cha Hae-In is one of the few S-Rank Hunters in South Korea and the vice-guild master of the Hunters Guild, one of the country's top guilds. She fights with a sword, and moves so lightly and quickly in battle that her guildmates gave her a dancing nickname, which she finds embarrassing. Unlike many high-ranked Hunters, she treats lower-ranked Hunters and support crews with courtesy, and she checks dungeons carefully to keep the workers inside safe. Off the battlefield she is reserved, a little awkward, and uncomfortable when people recognise her in public. She also has an unusually sharp sense that lets her pick up the mana of other Hunters as a smell, and most of them, to her, smell awful.",
+      "abilities": "An S-Rank swordswoman with great speed and agility and a graceful, dance-like fighting style. She also has a rare ability to sense other Hunters' mana as a smell."
+    },
+    "igris": {
+      "name": "Igris",
+      "role": "Knight Commander Igris the Bloodred, a knight in blood-red armour who guards an empty throne at the end of Jin-Woo's job-change quest",
+      "debut": {
+        "anime": "Solo Leveling",
+        "episode": 11,
+        "episodeTitle": "A Knight Who Defends an Empty Throne",
+        "source": "novel",
+        "chapter": 48,
+        "volume": null
+      },
+      "arcs": [
+        "Job Change Arc",
+        "Red Gate Arc",
+        "Demon Castle Arc",
+        "Hunters Guild Gate Arc",
+        "Return to Demon Castle Arc",
+        "Jeju Island Arc",
+        "Ahjin Guild Arc",
+        "Monarchs War Arc"
+      ],
+      "affiliations": [],
+      "relatives": [],
+      "confidence": "medium",
+      "sources": [
+        "https://solo-leveling.fandom.com/wiki/Igris",
+        "https://solo-leveling.fandom.com/wiki/Blood-Red_Commander_Igris",
+        "https://solo-leveling.fandom.com/wiki/Episode_11",
+        "https://en.wikipedia.org/wiki/Solo_Leveling_season_1",
+        "https://anilist.co/character/145722",
+        "https://www.animenewsnetwork.com/encyclopedia/anime.php?id=26000",
+        "https://www.animenewsnetwork.com/review/solo-leveling/episode-11/.209230"
+      ],
+      "notes": "Debut is the boss Blood-Red Commander Igris in season 1 episode 11, 'A Knight Who Defends an Empty Throne'. The Solo Leveling wiki gives this (Blood-Red Commander Igris infobox, and Episode 11 marks his debut), and Wikipedia's episode 11 summary also has Jin-Woo facing 'Igris, the Bloodred Knight Commander'. AniList (one character page covering both forms) describes him guarding an empty throne in the job-change dungeon. Episode title follows Wikipedia and ANN, which have no question mark; the fan wiki adds '?'. The role's wording follows the anime's 'Knight Commander Igris the Bloodred' (as quoted in the wiki's episode summary). The wiki's separate 'Igris' page (the shadow form) debuts in episode 12; that page was not used for the debut. Debut chapter 48 is the web novel for the knight (wiki; webtoon chapter 38; the shadow form is novel chapter 49); no volume found. Left out as spoilers: how his fight with Jin-Woo ends, that he then serves Jin-Woo as a shadow soldier (episode 12, 'Arise'), his later ranks, and his past with an earlier master. So affiliations are empty. Confidence is medium for the arcs only: the wiki's Igris page has no arc headings. The list is built from the wiki's episode appearance lists (episodes 11-15, 18-20, 25), its webtoon chapter pages that mention him (up to about chapter 122; the wiki has no chapter pages after that), the Ahjin Guild Arc page, and the Igris page's references to webtoon chapters 164-165 (Monarchs War Arc). He very likely appears in later arcs (Japan Crisis, Final Battle) too, but I could not confirm it, so they are left out.",
+      "about": "Igris is the guardian waiting at the end of the dangerous castle dungeon that Sung Jin-Woo is sent into for his job-change quest. A towering knight in dusty blood-red armour with a long crimson plume, he stands silent watch before an empty throne, as if still waiting for a master who never returned. In battle he is terrifyingly fast and strong, the toughest opponent Jin-Woo has faced up to that point. For all his menace, he has a knight's sense of honour: when Jin-Woo puts his useless dagger away, Igris lays down his own weapons to keep the fight even. His unshakeable loyalty to that empty throne is what defines him.",
+      "abilities": "A master swordsman with overwhelming speed and strength who is just as deadly with his fists. He can also move objects without touching them, calling his sword back to his hand from across the room."
+    },
+    "beru": {
+      "name": "Beru",
+      "role": "The Ant King, a newly hatched ant monster of terrifying power that appears during the raid on the S-Rank Gate on Jeju Island",
+      "debut": {
+        "anime": "Solo Leveling Season 2: Arise from the Shadow",
+        "episode": 10,
+        "episodeTitle": "We Need a Hero",
+        "source": "novel",
+        "chapter": 119,
+        "volume": null
+      },
+      "arcs": [
+        "Jeju Island Arc",
+        "Ahjin Guild Arc",
+        "Double Dungeon Arc",
+        "Japan Crisis Arc",
+        "International Guild Conference Arc",
+        "Monarchs War Arc",
+        "Final Battle Arc"
+      ],
+      "affiliations": [],
+      "relatives": [],
+      "confidence": "medium",
+      "sources": [
+        "https://solo-leveling.fandom.com/wiki/Beru",
+        "https://solo-leveling.fandom.com/wiki/Ant_King",
+        "https://solo-leveling.fandom.com/wiki/Episode_22",
+        "https://en.wikipedia.org/wiki/Solo_Leveling_season_2",
+        "https://anilist.co/character/159849",
+        "https://www.animenewsnetwork.com/encyclopedia/anime.php?id=32617"
+      ],
+      "notes": "AniList (id 159849) treats Beru and the Ant King as one character (alternative name 'Ant King'), so the debut is the Ant King's. Season 2 episode 10, 'We Need a Hero', is episode 22 overall. The wiki's Ant King page gives episode 22, and its Episode 22 summary has him hatching from a huge egg in the colony. Wikipedia's episode 22 summary ends with 'a creature' starting to kill the Japanese S-Rank Hunters. His first big scenes and first lines come in episode 23 ('It's Going to Get Even More Intense'); ANN credits Akira Ishida and Jason Liebrecht as the Ant King for episodes 23-24. That is the reason for medium confidence: episode 10 (22) is a brief first appearance, not a speaking one. The wiki's 'Beru' page (the shadow form) debuts in episode 25 / season 2 episode 13, which reveals how the Ant King becomes Beru, so that page is not used for the debut and the reveal is kept out of role, about and abilities. Debut chapter 119 is the web novel for the Ant King (wiki; webtoon chapter 94; the shadow form is novel chapter 124); no volume found. Arcs follow the Beru page's history headings with the Ant King's Jeju Island Arc; Ragnarok (sequel) left out. Affiliations empty, because his later allegiance is a season 2 finale spoiler. Abilities limited to what the Ant King shows in episodes 22-24; the powers he gains later (healing, barrier magic and others) are left out.",
+      "about": "The Ant King is born deep inside the giant ant colony that has taken over Jeju Island, at the very moment Korea's and Japan's best Hunters launch a joint raid to clear the island once and for all. Unlike the swarming ants around him, he walks like a man, has wings, can think and even speak, and he is far stronger than anything the raid party prepared for. Arrogant and hungry for a worthy fight, he cuts through the elite Hunters with frightening ease while demanding to know who their 'king' is. Whether anyone in the world can stand against him becomes the central question of the Jeju Island raid.",
+      "abilities": "Shown with blinding speed, crushing strength, flight and armour-like toughness. He can spit a paralysing venom, fights with the cunning of a human, and seems to get even more dangerous with every Hunter he brings down."
+    },
+    "hyouma-chigiri": {
+      "name": "Hyoma Chigiri",
+      "role": "A Team Z forward with explosive speed who arrives at Blue Lock afraid to play all-out because of a past knee injury",
+      "debut": {
+        "anime": "Blue Lock",
+        "episode": 1,
+        "episodeTitle": "Dream",
+        "source": "manga",
+        "chapter": 1,
+        "volume": 1
+      },
+      "arcs": [
+        "Introduction Arc",
+        "First Selection Arc",
+        "Second Selection Arc",
+        "Third Selection Arc",
+        "U-20 Arc",
+        "Neo Egoist League Arc",
+        "U-20 World Cup Arc"
+      ],
+      "affiliations": [
+        "Blue Lock",
+        "Team Z"
+      ],
+      "relatives": [],
+      "confidence": "high",
+      "sources": [
+        "https://bluelock.fandom.com/wiki/Hyoma_Chigiri",
+        "https://bluelock.fandom.com/wiki/Hyoma_Chigiri/Synopsis",
+        "https://bluelock.fandom.com/wiki/Episode_1",
+        "https://bluelock.fandom.com/wiki/Chapter_1",
+        "https://en.wikipedia.org/wiki/Blue_Lock_season_1",
+        "https://anilist.co/character/167444",
+        "https://en.wikipedia.org/wiki/List_of_Blue_Lock_characters",
+        "https://www.sportskeeda.com/anime/blue-lock-chapter-298-nagi-fails-score-manshine-city-final-rankings-revealed"
+      ],
+      "notes": "Name uses the common English spelling 'Hyoma' (AniList lists 'Hyouma' as its main romanization, the Blue Lock wiki and Wikipedia use Hyoma/Hyōma). Arc names follow the Blue Lock wiki synopsis. Later teams (Blue Lock Eleven, Manshine City, Japan U-20) left out of affiliations as spoilers. His former high school is left out because the wiki is inconsistent about its name ('Rakosute Business High School' as the article title, 'Rajitsu Tech' in the chapter 19 summary) and no second source names it. His mother Neneko and older sister Koyuki are named only on the Blue Lock wiki, so relatives is left empty under the two-source rule. The knee injury is mentioned in role/about because AniList and Wikipedia both present it as part of his introduction; how he deals with it is not. Only fan-site Hindi credits found, so hindiVoice is null.",
+      "about": "Hyoma Chigiri is a striker with long red hair and a sharp tongue who ends up in Team Z, the lowest-ranked group among Blue Lock's 300 hopefuls. As a kid he was hailed as a prodigy thanks to his raw speed, but a serious knee injury in high school shook his confidence and left him unsure whether he still belongs on the pitch. At first he hangs back, refusing to sprint and openly wondering if Blue Lock is simply a place to give up his dream for good. Cool, a little vain about his looks and quick with a sarcastic remark, he slowly becomes one of the teammates Isagi leans on most.",
+      "abilities": "His weapon is pure speed, especially over long distances: given space, he can knock the ball far ahead and outrun defenders in a straight race.",
+      "fate": {
+        "status": "alive",
+        "detail": "In the ongoing manga Chigiri finishes the Neo Egoist League ranked 6th after playing for Manshine City and is selected for Japan's U-20 World Cup squad.",
+        "basis": "manga so far"
+      },
+      "hindiVoice": null
+    },
+    "rin-itoshi": {
+      "name": "Rin Itoshi",
+      "role": "The top-ranked striker in Blue Lock and the younger brother of world-famous prodigy Sae Itoshi",
+      "debut": {
+        "anime": "Blue Lock",
+        "episode": 11,
+        "episodeTitle": "The Final Piece",
+        "source": "manga",
+        "chapter": 40,
+        "volume": 5
+      },
+      "arcs": [
+        "Second Selection Arc",
+        "Third Selection Arc",
+        "U-20 Arc",
+        "Neo Egoist League Arc",
+        "U-20 World Cup Arc"
+      ],
+      "affiliations": [
+        "Blue Lock"
+      ],
+      "relatives": [
+        {
+          "name": "Sae Itoshi",
+          "relation": "older brother"
+        }
+      ],
+      "confidence": "high",
+      "sources": [
+        "https://bluelock.fandom.com/wiki/Rin_Itoshi",
+        "https://bluelock.fandom.com/wiki/Rin_Itoshi/Synopsis",
+        "https://bluelock.fandom.com/wiki/Episode_11",
+        "https://bluelock.fandom.com/wiki/Chapter_40",
+        "https://en.wikipedia.org/wiki/Blue_Lock_season_1",
+        "https://anilist.co/character/169395",
+        "https://en.wikipedia.org/wiki/List_of_Blue_Lock_characters",
+        "https://www.sportskeeda.com/anime/blue-lock-chapter-298-nagi-fails-score-manshine-city-final-rankings-revealed"
+      ],
+      "notes": "Debut: the Blue Lock wiki's episode 11 page describes his first scene (at the start of the Second Selection he shows off a two-ball trick and goes through the door first, and the others realise he is Sae Itoshi's brother); Wikipedia's episode 11 summary does not name him but its episode 12 summary does, and the wiki's chapter 40 page maps his manga debut to episode 11. Arc names follow the Blue Lock wiki; he first appears at the start of the Second Selection. His First Selection team is not given reliably (the wiki infobox lists an unlinked 'Team V', which clashes with Nagi and Reo's Team V), so affiliations is just Blue Lock; later teams (Top 6, Blue Lock Eleven, Paris X Gen, Japan U-20) left out as spoilers, and his school is unnamed. Sae Itoshi is listed as a relative because the link is revealed in his debut episode and is confirmed by Wikipedia and AniList; the details of their falling-out are later spoilers and left out. Parents are unnamed. Fate: the chapter 298 rankings show Rin and Isagi level on 240M, with Rin listed first. Only fan-site Hindi credits found, so hindiVoice is null.",
+      "about": "Rin Itoshi is the number-one ranked striker in Blue Lock, first seen when the program's survivors gather for the Second Selection. He is the younger brother of Sae Itoshi, a Japanese prodigy already famous in European football, and that name follows Rin wherever he goes. Quiet, cold and fiercely serious, he has little time for small talk and none for players he thinks are wasting his time. His one goal is to become the best striker in the world, and on the pitch he backs up his ranking with a level of precision that leaves even Blue Lock's best feeling out of their depth.",
+      "abilities": "An all-round striker with pinpoint kicking accuracy, including bending, curling shots from almost anywhere, plus sharp spatial awareness and positioning that let him read both teammates and opponents.",
+      "fate": {
+        "status": "alive",
+        "detail": "In the ongoing manga Rin finishes the Neo Egoist League tied with Isagi at the top of the Blue Lock rankings after playing for Paris X Gen, and is selected for Japan's U-20 World Cup squad.",
+        "basis": "manga so far"
+      },
+      "hindiVoice": null
+    },
+    "shoei-barou": {
+      "name": "Shoei Barou",
+      "role": "Team X's self-proclaimed 'King', a domineering striker who expects the whole pitch to revolve around him",
+      "debut": {
+        "anime": "Blue Lock",
+        "episode": 1,
+        "episodeTitle": "Dream",
+        "source": "manga",
+        "chapter": 5,
+        "volume": 2
+      },
+      "arcs": [
+        "First Selection Arc",
+        "Second Selection Arc",
+        "Third Selection Arc",
+        "U-20 Arc",
+        "Neo Egoist League Arc",
+        "U-20 World Cup Arc"
+      ],
+      "affiliations": [
+        "Blue Lock",
+        "Team X"
+      ],
+      "relatives": [],
+      "confidence": "medium",
+      "sources": [
+        "https://bluelock.fandom.com/wiki/Shoei_Baro",
+        "https://bluelock.fandom.com/wiki/Shoei_Baro/Synopsis",
+        "https://bluelock.fandom.com/wiki/Episode_1",
+        "https://bluelock.fandom.com/wiki/Chapter_5",
+        "https://bluelock.fandom.com/wiki/Akudo_Academy",
+        "https://en.wikipedia.org/wiki/Blue_Lock_season_1",
+        "https://anilist.co/character/169401",
+        "https://en.wikipedia.org/wiki/List_of_Blue_Lock_characters",
+        "https://www.sportskeeda.com/anime/blue-lock-chapter-298-nagi-fails-score-manshine-city-final-rankings-revealed"
+      ],
+      "notes": "Name: Wikipedia and AniList use Barou/Barō; the Blue Lock wiki titles his page 'Shoei Baro' but also gives 'Barou'. Debut: the Blue Lock wiki lists episode 1 'Dream' as his first anime appearance, but it is only a brief glimpse among the 300 strikers and only the wiki's episode page confirms it; Wikipedia first names him in episode 3, \"Soccer's 'Zero'\", where Team X plays Team Z. That is why confidence is medium. His manga debut is chapter 5 (volume 2), which is part of the First Selection Arc, so arcs start there. Arc names follow the Blue Lock wiki. Akudo Academy, his old school, comes from bonus pages in manga volume 16 and is only named on the Blue Lock wiki. Later teams (Blue Lock Eleven, Ubers, Japan U-20) left out of affiliations as spoilers. His mother Yumiko is named only in a light novel cited by the wiki, so relatives is left empty under the two-source rule. Only fan-site Hindi credits found, so hindiVoice is null. School (Akudo Academy, per the wiki from manga volume 16 extras) left out: single source.",
+      "about": "Shoei Barou is the ace of Team X, a big, intimidating forward who calls himself the 'King' and sees his teammates as servants whose job is to get him the ball. He does not pass, does not compromise and has total faith that he is the star of every match he plays. Yet away from the pitch this supposed tyrant is oddly fussy about manners, keeping things tidy and scolding anyone who behaves badly in shared spaces. When Team Z meets Team X in the First Selection, Barou is the first real wall Isagi runs into, and a clear picture of what pure egoism looks like.",
+      "abilities": "A powerful, physical forward who barges through defenders with strength and forceful dribbling, then finishes with hard shots from mid-range.",
+      "fate": {
+        "status": "alive",
+        "detail": "In the ongoing manga Barou finishes the Neo Egoist League ranked 4th after playing for Ubers and is selected for Japan's U-20 World Cup squad.",
+        "basis": "manga so far"
+      },
+      "hindiVoice": null
+    },
+    "reo-mikage": {
+      "name": "Reo Mikage",
+      "role": "A wealthy, all-round talent from Hakuho High who recruited Nagi into football and plays alongside him in Team V",
+      "debut": {
+        "anime": "Blue Lock",
+        "episode": 1,
+        "episodeTitle": "Dream",
+        "source": "manga",
+        "chapter": 1,
+        "volume": 1
+      },
+      "arcs": [
+        "First Selection Arc",
+        "Second Selection Arc",
+        "Third Selection Arc",
+        "U-20 Arc",
+        "Neo Egoist League Arc",
+        "U-20 World Cup Arc"
+      ],
+      "affiliations": [
+        "Blue Lock",
+        "Team V",
+        "Hakuho High School"
+      ],
+      "relatives": [],
+      "confidence": "medium",
+      "sources": [
+        "https://bluelock.fandom.com/wiki/Reo_Mikage",
+        "https://bluelock.fandom.com/wiki/Reo_Mikage/Synopsis",
+        "https://bluelock.fandom.com/wiki/Episode_1",
+        "https://bluelock.fandom.com/wiki/Chapter_1",
+        "https://bluelock.fandom.com/wiki/Hakuho_High_School",
+        "https://en.wikipedia.org/wiki/Blue_Lock_season_1",
+        "https://anilist.co/character/169394",
+        "https://en.wikipedia.org/wiki/List_of_Blue_Lock_characters",
+        "https://www.sportskeeda.com/anime/blue-lock-chapter-298-nagi-fails-score-manshine-city-final-rankings-revealed"
+      ],
+      "notes": "Debut: the Blue Lock wiki lists episode 1 'Dream' as his first anime appearance and chapter 1 (volume 1) as his manga debut, but both are only brief glimpses among the 300 strikers; he is properly introduced with Nagi in chapter 22 (volume 3), and Wikipedia's summaries do not name him until episode 12. Only the wiki confirms the episode 1 glimpse, so confidence is medium. The spin-off 'Blue Lock: Episode Nagi' covers his and Nagi's time before Blue Lock. Arc names follow the Blue Lock wiki. Later teams (Blue Lock Eleven, Manshine City, Japan U-20) left out of affiliations as spoilers. Being heir to the Mikage Corporation is mentioned in about because AniList and Wikipedia both give it as part of his introduction. His signature copying technique is developed later, so it is left out of abilities. Parents are unnamed. Only fan-site Hindi credits found, so hindiVoice is null.",
+      "about": "Reo Mikage is the heir to the vast Mikage Corporation, a student at Hakuho High who has always been able to buy, or simply be given, anything he wanted. Bored by a life without challenge, he set his heart on winning the World Cup, the one prize money cannot buy. To chase it he started a football team and dragged the lazy, gifted Seishiro Nagi along with him after spotting Nagi's freakish touch. Confident, charming and used to winning, Reo arrives at Blue Lock beside Nagi in Team V, sure that the two of them can go all the way together.",
+      "abilities": "A versatile all-rounder who does almost everything well, from passing and dribbling to defending, and who reads the game well enough to organise his team around its best weapon.",
+      "fate": {
+        "status": "alive",
+        "detail": "In the ongoing manga Reo finishes the Neo Egoist League ranked 7th after playing for Manshine City and is selected for Japan's U-20 World Cup squad.",
+        "basis": "manga so far"
+      },
+      "hindiVoice": null
+    },
+    "spy-x-family-bond": {
+      "name": "Bond Forger",
+      "role": "A big white dog who can see glimpses of the future and becomes the Forger family's pet",
+      "debut": {
+        "anime": "Spy x Family",
+        "episode": 11,
+        "episodeTitle": "Stella",
+        "source": "manga",
+        "chapter": 17,
+        "volume": 3
+      },
+      "arcs": [
+        "Stella Star Arc",
+        "Doggy Crisis Arc",
+        "Midterm Exams Arc",
+        "Campbelldon Tennis Arc",
+        "Imperial Scholars Mixer Arc",
+        "Cruise Adventure Arc",
+        "Loid's Past Arc",
+        "Bus Hijacking Arc",
+        "Wheeler Arc",
+        "Term Finals Arc"
+      ],
+      "affiliations": [
+        "Forger family",
+        "Project Apple (formerly, as a test subject)"
+      ],
+      "relatives": [
+        {
+          "name": "Anya Forger",
+          "relation": "owner (she named him)"
+        },
+        {
+          "name": "Loid Forger",
+          "relation": "owner"
+        },
+        {
+          "name": "Yor Forger",
+          "relation": "owner"
+        }
+      ],
+      "confidence": "medium",
+      "sources": [
+        "https://spy-x-family.fandom.com/wiki/Bond_Forger",
+        "https://spy-x-family.fandom.com/wiki/Bond_Forger/Synopsis",
+        "https://en.wikipedia.org/wiki/List_of_Spy_%C3%97_Family_characters",
+        "https://en.wikipedia.org/wiki/Spy_%C3%97_Family_season_1",
+        "https://en.wikipedia.org/wiki/List_of_Spy_%C3%97_Family_chapters",
+        "https://www.animenewsnetwork.com/press-release/2023-11-06/mission-accepted-spy-x-family-season-one-hindi-dub-streaming-now-on-crunchyroll/.204157",
+        "https://animehunch.com/spy-x-family-season-1-hindi-dub-reveals-release-date-cast/",
+        "https://anilist.co/character/169679"
+      ],
+      "notes": "Debut: the white dog is first seen at the very end of episode 11 ('Stella'), when he has a vision of the Forgers; the wiki lists episode 11 and Mission 17 (volume 3) as his debut, and Wikipedia's episode 11 summary matches. He is properly introduced in episode 13 ('Project Apple') and adopted and named in episode 15 ('A New Family Member'). Arc names follow the wiki's synopsis headings. I could only read them through search excerpts because fandom pages were blocked to the fetcher, so the list may be missing later arcs (Term Break onward). His full backstory as an experiment subject, shown in a later episode, is left out. Relatives: the Forgers are his owners; no animal relatives are known. Hindi voice from Crunchyroll's official Hindi dub announcement (season 1, Nov 2023), published as a press release on Anime News Network. AniList page 169679 could not be fetched (HTTP 403) and is not cited. AniList id 169679 confirmed via the AniList API on 25 Nov 2026.",
+      "about": "Bond is a huge, fluffy white dog who was raised as a test subject in a secret experiment called Project Apple, which left him able to glimpse the future. When the Forgers go looking for a pet for Anya, one of his visions pulls her to him, and the two are soon caught up in a dangerous plot that his foresight helps stop. Adopted into the family and named after Anya's favourite cartoon hero, Bondman, he becomes her loyal partner, and since she can read his mind, she is the only one who can see what he sees. Gentle, brave and a bit goofy, Bond is easily distracted by food and is quite scared of Yor's cooking. Loid hopes the dog will help Anya make friends at school, while Bond simply wants to keep his new family safe.",
+      "abilities": "Precognition: he sees short glimpses of the future, which only Anya can see too by reading his mind. He is also very large, strong and smart enough to follow instructions, though easily distracted.",
+      "fate": {
+        "status": "alive",
+        "detail": "Bond is alive and still the Forger family's dog in the ongoing manga and anime.",
+        "basis": "anime and manga so far"
+      },
+      "hindiVoice": {
+        "name": "Warren Dsouza",
+        "dub": "Crunchyroll Hindi dub (season 1)",
+        "sources": [
+          "https://www.animenewsnetwork.com/press-release/2023-11-06/mission-accepted-spy-x-family-season-one-hindi-dub-streaming-now-on-crunchyroll/.204157",
+          "https://animehunch.com/spy-x-family-season-1-hindi-dub-reveals-release-date-cast/"
+        ]
+      }
+    },
+    "damian-desmond": {
+      "name": "Damian Desmond",
+      "role": "The proud second son of the politician at the centre of Loid's mission, and Anya's classmate at Eden Academy",
+      "debut": {
+        "anime": "Spy x Family",
+        "episode": 6,
+        "episodeTitle": "The Friendship Scheme",
+        "source": "manga",
+        "chapter": 8,
+        "volume": 2
+      },
+      "arcs": [
+        "Eden Beginnings Arc",
+        "Stella Star Arc",
+        "Midterm Exams Arc",
+        "Imperial Scholars Mixer Arc",
+        "Cruise Adventure Arc",
+        "Loid's Past Arc",
+        "Friendship Schemes Arc",
+        "Bus Hijacking Arc",
+        "Term Finals Arc",
+        "Term Break Arc",
+        "New Term Arc",
+        "Eden Scandal Arc"
+      ],
+      "affiliations": [
+        "Eden Academy (Cecile Hall)",
+        "Desmond family"
+      ],
+      "relatives": [
+        {
+          "name": "Donovan Desmond",
+          "relation": "father"
+        },
+        {
+          "name": "Demetrius Desmond",
+          "relation": "older brother"
+        }
+      ],
+      "confidence": "medium",
+      "sources": [
+        "https://spy-x-family.fandom.com/wiki/Damian_Desmond",
+        "https://spy-x-family.fandom.com/wiki/Damian_Desmond/Synopsis",
+        "https://en.wikipedia.org/wiki/List_of_Spy_%C3%97_Family_characters",
+        "https://en.wikipedia.org/wiki/Spy_%C3%97_Family_season_1",
+        "https://en.wikipedia.org/wiki/List_of_Spy_%C3%97_Family_chapters",
+        "https://www.animenewsnetwork.com/press-release/2023-11-06/mission-accepted-spy-x-family-season-one-hindi-dub-streaming-now-on-crunchyroll/.204157",
+        "https://animehunch.com/spy-x-family-season-1-hindi-dub-reveals-release-date-cast/",
+        "https://anilist.co/character/150424"
+      ],
+      "notes": "Debut per the wiki (Chapter 8, Episode 6), matched by Wikipedia's episode 6 summary and its volume list (Mission 8 is in volume 2). Arc names follow the wiki's synopsis headings. I could only read them through search excerpts because fandom pages were blocked to the fetcher, so later arcs he may appear in could be missing. Relatives: his father Donovan and older brother Demetrius (an Imperial Scholar, mentioned from episode 1) are kept. His mother is left out because she is introduced much later. His growing crush on Anya is only hinted at in the about text, as the anime shows from episode 7. His followers Emile and Ewen are friends, not relatives. Hindi voice from Crunchyroll's official Hindi dub announcement (season 1, Nov 2023), published as a press release on Anime News Network. AniList page 150424 could not be fetched (HTTP 403) and is not cited. AniList id 150424 confirmed via the AniList API on 25 Nov 2026.",
+      "about": "Damian Desmond is the second son of Donovan Desmond, the reclusive politician Loid is trying to get close to, and a first-year student in Eden Academy's Cecile Hall. Proud, bossy and always flanked by his friends Emile and Ewen, he gets off to a terrible start with Anya, who ends up punching him on their first day. That is a big problem for Loid, because the back-up plan for his mission depends on Anya becoming Damian's friend. Under the attitude, Damian is a hard-working boy who badly wants a word of praise from his distant father, and Anya flusters him more than he would ever admit. Their prickly, often funny rivalry drives much of the school story.",
+      "abilities": "No special powers: a hard-working, competitive student who does especially well in history, driven by the hope of impressing his father.",
+      "fate": {
+        "status": "alive",
+        "detail": "Damian is alive and still a student at Eden Academy in the ongoing manga and anime.",
+        "basis": "anime and manga so far"
+      },
+      "hindiVoice": {
+        "name": "Sheena Rattan",
+        "dub": "Crunchyroll Hindi dub (season 1)",
+        "sources": [
+          "https://www.animenewsnetwork.com/press-release/2023-11-06/mission-accepted-spy-x-family-season-one-hindi-dub-streaming-now-on-crunchyroll/.204157",
+          "https://animehunch.com/spy-x-family-season-1-hindi-dub-reveals-release-date-cast/"
+        ]
+      }
+    },
+    "yuri-briar": {
+      "name": "Yuri Briar",
+      "role": "Yor's devoted younger brother, a Foreign Affairs official who is secretly an officer in Ostania's secret police",
+      "debut": {
+        "anime": "Spy x Family",
+        "episode": 7,
+        "episodeTitle": "The Target's Second Son",
+        "source": "manga",
+        "chapter": 10,
+        "volume": 2
+      },
+      "arcs": [
+        "Introduction Arc",
+        "Eden Beginnings Arc",
+        "Secret Police Arc",
+        "Midterm Exams Arc",
+        "Imperial Scholars Mixer Arc",
+        "Cruise Adventure Arc",
+        "Friendship Schemes Arc",
+        "Bus Hijacking Arc",
+        "Wheeler Arc",
+        "TV Island Arc",
+        "SSS Gathering Arc"
+      ],
+      "affiliations": [
+        "State Security Service (SSS)",
+        "Ministry of Foreign Affairs (cover job)"
+      ],
+      "relatives": [
+        {
+          "name": "Yor Forger",
+          "relation": "older sister"
+        },
+        {
+          "name": "Loid Forger",
+          "relation": "brother-in-law"
+        },
+        {
+          "name": "Anya Forger",
+          "relation": "niece"
+        }
+      ],
+      "confidence": "medium",
+      "sources": [
+        "https://spy-x-family.fandom.com/wiki/Yuri_Briar",
+        "https://spy-x-family.fandom.com/wiki/Yuri_Briar/Synopsis",
+        "https://en.wikipedia.org/wiki/List_of_Spy_%C3%97_Family_characters",
+        "https://en.wikipedia.org/wiki/Spy_%C3%97_Family_season_1",
+        "https://en.wikipedia.org/wiki/List_of_Spy_%C3%97_Family_chapters",
+        "https://www.animenewsnetwork.com/press-release/2023-11-06/mission-accepted-spy-x-family-season-one-hindi-dub-streaming-now-on-crunchyroll/.204157",
+        "https://animehunch.com/spy-x-family-season-1-hindi-dub-reveals-release-date-cast/",
+        "https://anilist.co/character/150425"
+      ],
+      "notes": "Debut is his first physical appearance: the end of episode 7, adapting Mission 10 (volume 2), when he learns his sister has married. The wiki lists this and Wikipedia's episode 7 summary agrees. Before that he is only heard on the phone with Yor in episode 2 and Mission 2 (that is why the Introduction Arc is listed), and he appears in the ending animation from episode 3. His proper introduction is episode 8 ('The Counter-Secret Police Cover Operation'). Arc names follow the wiki's synopsis headings. I could only read them through search excerpts because fandom pages were blocked to the fetcher, so the list may be incomplete (for example Term Break, Eden Scandal and Hospital Investigation could not be confirmed). His late parents are unnamed and left out. Hindi voice from Crunchyroll's official Hindi dub announcement (season 1, Nov 2023), published as a press release on Anime News Network. AniList page 150425 could not be fetched (HTTP 403) and is not cited. AniList id 150425 confirmed via the AniList API on 25 Nov 2026.",
+      "about": "Yuri Briar is Yor's 20-year-old younger brother, who tells everyone he works for Ostania's Ministry of Foreign Affairs. In truth he is an officer in the State Security Service, the secret police who hunt foreign spies, including the legendary agent Twilight. Yor raised him after their parents died and he adores her to an embarrassing degree, so the news that she has quietly married a man he has never met sends him straight to the Forgers' door. Sharp and ruthless at work but flustered and childish around his sister, he treats Loid with open suspicion. He has no idea that his new brother-in-law is the spy he is chasing, or that his sister is an assassin.",
+      "abilities": "A skilled, ruthless secret police officer and interrogator who fights well and is unusually tough, which he partly owes to years of eating his sister's dangerous cooking.",
+      "fate": {
+        "status": "alive",
+        "detail": "Yuri is alive and still working for the secret police in the ongoing manga and anime.",
+        "basis": "anime and manga so far"
+      },
+      "hindiVoice": {
+        "name": "Rohan Jadhav",
+        "dub": "Crunchyroll Hindi dub (season 1)",
+        "sources": [
+          "https://www.animenewsnetwork.com/press-release/2023-11-06/mission-accepted-spy-x-family-season-one-hindi-dub-streaming-now-on-crunchyroll/.204157",
+          "https://animehunch.com/spy-x-family-season-1-hindi-dub-reveals-release-date-cast/"
+        ]
+      }
+    },
+    "frieren-himmel": {
+      "name": "Himmel",
+      "role": "The hero who led the party that defeated the Demon King, and whose passing sets Frieren on her new journey",
+      "debut": {
+        "anime": "Frieren: Beyond Journey's End",
+        "episode": 1,
+        "episodeTitle": "The Journey's End",
+        "source": "manga",
+        "chapter": 1,
+        "volume": 1
+      },
+      "arcs": [
+        "Aura the Guillotine",
+        "First-Class Mage Exam",
+        "Golden Land"
+      ],
+      "affiliations": [
+        "Hero Himmel's party (leader)"
+      ],
+      "relatives": [],
+      "confidence": "high",
+      "sources": [
+        "https://en.wikipedia.org/wiki/List_of_Frieren_characters",
+        "https://en.wikipedia.org/wiki/List_of_Frieren_episodes",
+        "https://en.wikipedia.org/wiki/List_of_Frieren_chapters",
+        "https://frieren.fandom.com/wiki/Himmel",
+        "https://anilist.co/character/184311",
+        "https://animemirchi.com/frieren-in-hindi-dub-voice-cast/"
+      ],
+      "notes": "The series wiki lists his manga debut as chapter 1 and anime debut as episode 1; Wikipedia's chapter list puts chapter 1 in volume 1. After episode 1 he appears only in flashbacks and memories, which the wiki's appearance tables record in the Aura, exam and Golden Land arcs, so those arcs are listed on that basis (arc names follow the sibling Frieren entries). The fact that his sword is a replica (episode 12) and his later role in the manga's Goddess's Monument arc are left out as spoilers. The wiki's 'unnamed mother' is not listed as a relative. Anime Mirchi (fan site) credits Mohammad Ali Sen as his Hindi voice; not confirmed by an official or first-hand source, so hindiVoice is null.",
+      "about": "Himmel was the hero who, with Frieren, the priest Heiter and the dwarf Eisen, spent ten years travelling to defeat the Demon King. Cheerful, kind and more than a little vain, he loved calling himself handsome and happily agreed to have statues of himself put up in many of the towns the party helped. He went out of his way to help ordinary people, even with small favours, and that habit left a lasting mark on everyone who travelled with him. The story begins as the elderly Himmel reunites with his old friends for one last outing, and his passing soon after makes Frieren realise how little she tried to know him. From then on, his memory guides her journey, and flashbacks to his words and choices become the emotional heart of the series.",
+      "abilities": "A swift, highly skilled swordsman with sharp instincts who also served as the hero party's leader and tactician.",
+      "fate": {
+        "status": "dies",
+        "detail": "Himmel dies of old age in episode 1 ('The Journey's End'), about fifty years after the Demon King's defeat and soon after watching the meteor shower with his old party; his death is the premise of the series, and he appears afterwards in flashbacks.",
+        "basis": "anime and manga so far"
+      },
+      "hindiVoice": null
+    },
+    "frieren-heiter": {
+      "name": "Heiter",
+      "role": "The priest of the hero party who, in his old age, has taken in a young war orphan named Fern",
+      "debut": {
+        "anime": "Frieren: Beyond Journey's End",
+        "episode": 1,
+        "episodeTitle": "The Journey's End",
+        "source": "manga",
+        "chapter": 1,
+        "volume": 1
+      },
+      "arcs": [
+        "Aura the Guillotine",
+        "First-Class Mage Exam",
+        "Golden Land"
+      ],
+      "affiliations": [
+        "Hero Himmel's party (former)"
+      ],
+      "relatives": [
+        {
+          "name": "Fern",
+          "relation": "adoptive daughter"
+        }
+      ],
+      "confidence": "high",
+      "sources": [
+        "https://en.wikipedia.org/wiki/List_of_Frieren_characters",
+        "https://en.wikipedia.org/wiki/List_of_Frieren_episodes",
+        "https://en.wikipedia.org/wiki/List_of_Frieren_chapters",
+        "https://frieren.fandom.com/wiki/Heiter",
+        "https://anilist.co/character/184310",
+        "https://animemirchi.com/frieren-in-hindi-dub-voice-cast/"
+      ],
+      "notes": "The series wiki gives his manga debut as chapter 1 and anime debut as episode 1 (volume 1 per Wikipedia's chapter list); he appears in the present day in episodes 1-2 (chapters 1-2) and in flashbacks afterwards, which the wiki's appearance tables record in the Aura, exam and Golden Land arcs. Fern is listed as his adoptive daughter, matching the Fern entry. His mana-reading insight (revealed in the Aura arc) and his part in the manga's Goddess's Monument arc are left out as spoilers. Anime Mirchi (fan site) credits Niranjan Panchal as his Hindi voice; not confirmed by an official or first-hand source, so hindiVoice is null.",
+      "about": "Heiter was the priest of Himmel's hero party, a man of faith with a famous fondness for drink and a talent for bending the rules with a smile. Decades after the Demon King's defeat, Frieren visits him and finds the old priest raising Fern, a little girl he rescued after the war took her parents. Worried about how long he has left, he finds a gentle, slightly sneaky way to get Frieren to stay and teach Fern magic. Behind his joking manner, Heiter is warm, wise and deeply devoted to the people he loves, and his quiet influence on both Frieren and Fern carries on long after the early episodes. His bond with Fern gives the series some of its most touching moments.",
+      "abilities": "A powerful priest who uses the Goddess's holy magic from scripture for healing, protective barriers and other support spells.",
+      "fate": {
+        "status": "dies",
+        "detail": "Heiter dies of old age in episode 2 ('It Didn't Have to Be Magic…'), a few years after Frieren begins teaching Fern, once Fern has learned enough magic to look after herself; he appears afterwards in flashbacks.",
+        "basis": "anime and manga so far"
+      },
+      "hindiVoice": null
+    },
+    "frieren-eisen": {
+      "name": "Eisen",
+      "role": "The dwarf warrior of the hero party, now living in retirement, who trained the young warrior Stark",
+      "debut": {
+        "anime": "Frieren: Beyond Journey's End",
+        "episode": 1,
+        "episodeTitle": "The Journey's End",
+        "source": "manga",
+        "chapter": 1,
+        "volume": 1
+      },
+      "arcs": [
+        "Aura the Guillotine",
+        "First-Class Mage Exam",
+        "Golden Land"
+      ],
+      "affiliations": [
+        "Hero Himmel's party (former)"
+      ],
+      "relatives": [],
+      "confidence": "high",
+      "sources": [
+        "https://en.wikipedia.org/wiki/List_of_Frieren_characters",
+        "https://en.wikipedia.org/wiki/List_of_Frieren_episodes",
+        "https://en.wikipedia.org/wiki/List_of_Frieren_chapters",
+        "https://frieren.fandom.com/wiki/Eisen",
+        "https://anilist.co/character/184312",
+        "https://animemirchi.com/frieren-in-hindi-dub-voice-cast/"
+      ],
+      "notes": "The series wiki gives his manga debut as chapter 1 and anime debut as episode 1 (volume 1 per Wikipedia's chapter list); he returns in the present in episodes 4-5 (chapters 7-8) and otherwise appears in flashbacks, which the wiki's appearance tables record in the Aura, exam and Golden Land arcs. The wiki lists Stark as his adoptive son, but Wikipedia only says Eisen raised him and the Stark entry does not list Eisen as a relative, so Stark is mentioned as his student rather than under relatives; Eisen's own family backstory is left out. Anime Mirchi (fan site) credits Sanket Jaiswal as his Hindi voice; not confirmed by an official or first-hand source, so hindiVoice is null.",
+      "about": "Eisen was the warrior of Himmel's hero party, a stern, quiet dwarf who stood on the front line through ten years of battles. Dwarves live far longer than humans, but by the time the story begins he has grown old and settled into a peaceful retirement. When Frieren and Fern visit him, he points them towards a new goal and gently turns down Frieren's invitation to travel together again, saying he would only slow them down. Instead, he sends them to Stark, the young warrior he once trained. Gruff and few of words, Eisen has a dry sense of humour and a soft heart, and the lessons he passed on to Stark shape much of the journey that follows.",
+      "abilities": "A dwarf warrior of enormous strength and near-unbreakable toughness who fought on the hero party's front line with a great battle axe.",
+      "fate": {
+        "status": "alive",
+        "detail": "Eisen is alive and living in retirement in the ongoing manga and anime.",
+        "basis": "anime and manga so far"
+      },
+      "hindiVoice": null
+    },
+    "frieren-ubel": {
+      "name": "Übel",
+      "role": "A third-class mage with a dangerous reputation who takes the First-Class Mage Exam at the same time as Frieren and Fern",
+      "debut": {
+        "anime": "Frieren: Beyond Journey's End",
+        "episode": 18,
+        "episodeTitle": "First-Class Mage Exam",
+        "source": "manga",
+        "chapter": 37,
+        "volume": 4
+      },
+      "arcs": [
+        "First-Class Mage Exam",
+        "Foundation Festival"
+      ],
+      "affiliations": [
+        "Continental Magic Association (third-class mage)"
+      ],
+      "relatives": [],
+      "confidence": "high",
+      "sources": [
+        "https://en.wikipedia.org/wiki/List_of_Frieren_characters",
+        "https://en.wikipedia.org/wiki/List_of_Frieren_episodes",
+        "https://en.wikipedia.org/wiki/List_of_Frieren_chapters",
+        "https://frieren.fandom.com/wiki/%C3%9Cbel",
+        "https://anilist.co/character/246057",
+        "https://animemirchi.com/frieren-in-hindi-dub-voice-cast/"
+      ],
+      "notes": "The series wiki gives her debut as manga chapter 37 ('The First-Class Exam', volume 4 per Wikipedia's chapter list) and anime episode 18; Wikipedia's episode list also introduces her in episode 18. Her arcs are the two the wiki's synopsis and appearance tables list: the exam arc and the manga-only Foundation Festival arc (wiki name, 'Arc' dropped to match the sibling entries); a passing mention in the Divine Revolte arc is not counted. Sources differ on her past disqualification (Wikipedia says the second-class exam, AniList and the wiki point to an earlier first-class exam), so the 'about' keeps it general. Her spell-copying ability, her exam result and the unnamed older sister the wiki lists are later reveals and are left out. Anime Mirchi (fan site) credits Mani Puhan as her Hindi voice; not confirmed by an official or first-hand source, so hindiVoice is null.",
+      "about": "Übel is a young mage who shows up to the First-Class Mage Exam with a reputation that makes the other examinees nervous: an earlier exam of hers ended with an examiner dead. Calm, chatty and always smiling, she treats life-or-death fights as something to enjoy, and she rarely hides how much she likes a good scrap. Yet she is also curious about other people, studying her rivals and teammates closely and trying to understand how they think, even in the middle of a tense standoff. When the exam puts her on a team with Fern, the serious young mage has to work alongside someone she cannot quite read. Unpredictable and unsettling but oddly likeable, Übel quickly became one of the exam arc's most talked-about characters.",
+      "abilities": "An intuitive mage who casts by feel rather than theory; her signature spell, Reelseiden, can slice through almost anything she can picture herself cutting.",
+      "fate": {
+        "status": "alive",
+        "detail": "Übel is alive in the ongoing manga and anime.",
+        "basis": "anime and manga so far"
+      },
+      "hindiVoice": null
     }
   }
 }

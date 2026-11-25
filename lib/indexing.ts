@@ -141,7 +141,7 @@ export const hindiDubIndexed = (slug: string) => topHindiDub(slug) || searchShow
  * Character lists people search as "<show> characters", with the name they search by (Keyword Planner, US, Nov 2026,
  * a month; India is 15-25% of that; Bing keyword research 25 Nov: "demon slayer characters" 23K impressions, the
  * top English query for the show, "haikyuu characters" 5.6K, "attack on titan characters" 5.5K). Each has at least
- * 4 characters with verified notes for its main-characters section (tests/indexing.test.ts).
+ * 3 characters with verified notes for its main-characters section (tests/indexing.test.ts).
  */
 export const SEARCHED_CHARACTER_TABLES: Record<string, { name: string; searches: number }> = {
   "kimetsu-no-yaiba": { name: "Demon Slayer", searches: 246000 },
@@ -156,6 +156,10 @@ export const SEARCHED_CHARACTER_TABLES: Record<string, { name: string; searches:
   "hunter-x-hunter-2011": { name: "Hunter x Hunter", searches: 60500 },
   haikyuu: { name: "Haikyuu!!", searches: 40500 },
   "black-clover-tv": { name: "Black Clover", searches: 33100 },
+  "blue-lock": { name: "Blue Lock", searches: 74000 },
+  "sousou-no-frieren": { name: "Frieren", searches: 27100 },
+  "solo-leveling": { name: "Solo Leveling", searches: 22200 },
+  "spy-x-family": { name: "Spy x Family", searches: 8100 },
 };
 
 /** Character tables repeat what the character pages say: indexed where people search the show's characters or
