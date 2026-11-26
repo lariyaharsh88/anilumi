@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import Link from "@/components/Link";
 import Image from "next/image";
 import PageHero from "@/components/PageHero";
@@ -13,7 +13,7 @@ import { pricesFor as priceOf, cheapestPlan, PERIOD } from "@/lib/platformprices
 import { pageAbout } from "@/lib/ld";
 import { fitTitle, fitDescription } from "@/lib/titles";
 import { filmFranchises, filmsPath } from "@/lib/franchisefilms";
-import { DUB_CHECKED, HINDI_PARTS, dubDate, dubHref, dubPageEntry, dubsOn, hindiDubPath, hindiDubbed, platformFor, platformKind, type Dub, type PlatformKind } from "@/lib/hindidub";
+import { DUB_CHECKED, HINDI_PARTS, HINDI_PART_OF, dubDate, dubHref, dubPageEntry, dubsOn, hindiDubPath, hindiDubbed, platformFor, platformKind, type Dub, type PlatformKind } from "@/lib/hindidub";
 import { pricesFor, startingAt } from "@/lib/platformprices";
 import { hindiCast } from "@/lib/hindistats";
 import { LANG, regionalFor, regionalPageEntry, regionalPath } from "@/lib/regionaldub";
@@ -28,7 +28,9 @@ type Props = { params: Promise<{ slug: string }> };
 
 /** Every anime with an official Hindi dub on record (data/hindi-dubs.json) has this page; others 404. */
 function load(slug: string): Dub {
-  const d = dubPageEntry(decodeURIComponent(slug));
+  const s = decodeURIComponent(slug);
+  const d = dubPageEntry(s);
+  if (!d && HINDI_PART_OF[s]) permanentRedirect(hindiDubPath(HINDI_PART_OF[s]));
   if (!d) notFound();
   return d;
 }

@@ -17,7 +17,18 @@ export type Dub = {
 };
 export type PlatformKind = "free" | "subscription" | "tv";
 
-const D = data as { checked: string; reviewed: string | null; entries: Dub[] };
+const RAW = data as { checked: string; reviewed: string | null; entries: Dub[] };
+/**
+ * Apple TV India lists many anime "with Hindi audio" that actually stream through its Prime Video channel. Those rows
+ * are Prime Video for viewers (the price, the "how to switch" steps, the Prime Video page), with Apple's listing kept as
+ * the link that confirms the Hindi audio. Without this the Prime Video page showed 8 titles and missed 27. Pure.
+ */
+export function viaPrimeVideo(p: DubPlatform): DubPlatform {
+  if (!/^apple tv/i.test(p.name) || !/via prime video/i.test(p.scope)) return p;
+  const scope = p.scope.replace(/,?\s*(?:streams? )?via prime video(;?)\s*/i, (_m, semi: string) => (semi ? "; " : "")).replace(/[;\s]+$/, "").trim();
+  return { ...p, name: "Prime Video", scope: `${scope ? `${scope}; ` : ""}Hindi audio confirmed on Apple TV India's listing` };
+}
+const D = { ...RAW, entries: RAW.entries.map((e) => ({ ...e, platforms: e.platforms.map(viaPrimeVideo) })) };
 export const DUB_CHECKED = D.checked;
 /** When the list was last scanned for new or changed dubs (scripts/apply-dub-check.mts). */
 export const DUB_SCANNED = (D as { lastScan?: string }).lastScan ?? D.checked;
@@ -144,6 +155,15 @@ export const HINDI_PARTS: Record<string, { title: string; q: string; a: string }
     a: "Yes. Dragon Ball Super: Beerus, the remastered edition of Dragon Ball Super, streams in Hindi on Crunchyroll, with a new episode every Thursday since 12 November 2026, four weeks behind the subtitled version. Dragon Ball Daima is on Crunchyroll in Hindi too.",
   },
 };
+/**
+ * The part's own URL people (and AI answers) guess, "/anime/naruto-shippuden/hindi-dub", sends them to the page that
+ * covers it (HINDI_PARTS), instead of a 404. Only parts the entry's own scope names.
+ */
+export const HINDI_PART_OF: Record<string, string> = {
+  "naruto-shippuden": "naruto",
+  "dragon-ball-super": "dragon-ball",
+  "dragon-ball-super-beerus": "dragon-ball",
+};
 export const topHindiDub = (s: string) => (top ??= new Set([...hindiDubbed().slice(0, HINDI_DUB_PAGES).map((d) => d.s), ...[...KIDS_INDEXED, ...SEARCHED_INDEXED].filter((k) => dubPageEntry(k))])).has(s);
 
 /**
@@ -196,7 +216,7 @@ export const HINDI_PLATFORMS = [
   { slug: "muse-india", label: "Muse India (YouTube, free)", match: /muse/i, how: "Search \"Muse India\" on YouTube: full episodes are free with ads. Playlists can come down when a licence ends, so watch them while they're up." },
   { slug: "youtube", label: "YouTube (free)", match: /youtube/i, how: "Search the channel name on YouTube; full episodes are free with ads and stay up for months, though some playlists are removed when the licence ends." },
   { slug: "netflix", label: "Netflix India", match: /^netflix/i, how: "Open the title, start an episode, then choose Hindi under Audio & Subtitles." },
-  { slug: "prime-video", label: "Prime Video (Anime Times)", match: /^(?!.*mx player).*(prime video|anime times)/i, how: "Anime Times is a paid channel inside Prime Video India; subscribe to the channel, then pick Hindi in the audio menu." },
+  { slug: "prime-video", label: "Prime Video (Anime Times)", match: /^(?!.*mx player).*(prime video|anime times)/i, how: "Titles listed as Prime Video play with a Prime membership; titles listed as Anime Times need that paid channel inside Prime Video India. Start an episode, then pick Hindi in the audio menu." },
   { slug: "jiohotstar", label: "JioHotstar", match: /hotstar/i, how: "Open the series and choose Hindi in the language menu before you press play." },
   // Amazon folded MX Player into Prime Video in India (announced May 2026): its free shows moved to Prime Video's free
   // tier. The slug and "MX Player" stay, since that's what people search for.

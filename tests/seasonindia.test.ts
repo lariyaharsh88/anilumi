@@ -26,3 +26,13 @@ test("a show counts toward indexing only with an India-specific fact", () => {
   assert.equal(indiaFacts(undefined, { stream: true, dub: false }), true); // earlier seasons stream in India
   assert.equal(indiaFacts(show({ dubs: { hi: { service: "Crunchyroll", sources: ["https://x.y"] }, ta: null, te: null } }), { stream: false, dub: false }), true);
 });
+
+test("Hindi dubs: Apple TV rows that stream via Prime Video count as Prime Video; part URLs point at a page that exists", async () => {
+  const { viaPrimeVideo, HINDI_PART_OF, dubPageEntry, HINDI_PARTS } = await import("../lib/hindidub");
+  assert.deepEqual(viaPrimeVideo({ name: "Apple TV", scope: "Streams via Prime Video", url: "https://tv.apple.com/in/x" }), { name: "Prime Video", scope: "Hindi audio confirmed on Apple TV India's listing", url: "https://tv.apple.com/in/x" });
+  assert.equal(viaPrimeVideo({ name: "Apple TV", scope: "Listed on Apple TV India", url: "https://tv.apple.com/in/y" }).name, "Apple TV");
+  for (const [part, root] of Object.entries(HINDI_PART_OF)) {
+    assert.ok(dubPageEntry(root), `${part} -> ${root}: no Hindi page`);
+    assert.ok(HINDI_PARTS[root], `${root}: the page doesn't name its parts`);
+  }
+});
