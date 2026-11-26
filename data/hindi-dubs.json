@@ -34,7 +34,7 @@
    "s": "boku-no-hero-academia",
    "t": "My Hero Academia",
    "status": "available",
-   "confidence": "high",
+   "confidence": "medium",
    "platforms": [
     {
      "name": "Crunchyroll",
@@ -48,8 +48,8 @@
     },
     {
      "name": "Ani-One India (YouTube)",
-     "scope": "Season 1 (from 11 Oct 2026) and Season 2 (from 24 Oct 2026), Cartoon Network dub (reported)",
-     "url": "https://animemirchi.com/ani-one-india-hindi-dubbed-anime-list/"
+     "scope": "Season 1 (from 11 Oct 2026), Season 2 (from 24 Oct 2026) and Season 3 (from episode 39 on 18 Nov 2026; episode 47 by 25 Nov), roughly one episode a day, Cartoon Network dub (reported)",
+     "url": "https://www.youtube.com/watch?v=fk1oNI567bk"
     },
     {
      "name": "Cartoon Network India",
@@ -63,10 +63,12 @@
     "https://cdn.animenewsnetwork.com/news/2023-08-22/my-hero-academia-anime-airs-in-hindi-tamil-telugu-kannada-malayalam-on-cartoon-network-india/.201482",
     "https://animenewsindia.com/2026/03/16/my-hero-academia-the-final-season-is-now-streaming-on-jiohotstar-in-hindi-tamil-telugu-dub",
     "https://animemirchi.com/hindi-dubbed-anime-on-jiohotstar",
-    "https://animemirchi.com/ani-one-india-hindi-dubbed-anime-list/"
+    "https://animemirchi.com/ani-one-india-hindi-dubbed-anime-list/",
+    "https://www.youtube.com/watch?v=fk1oNI567bk"
    ],
-   "note": "Crunchyroll's series page lists Hindi; ANN confirms Hindi through Season 7, and Season 8 Hindi on Crunchyroll could not be confirmed. JioHotstar added the final season (Season 8) in Hindi on 14 Mar 2026; a fan tracker reports it also added Seasons 1-7 with the Cartoon Network India dub in Jan 2026, and that Ani-One India's YouTube channel began streaming that dub in Oct 2026. Cartoon Network India airs it on TV.",
-   "added": "2026-11-04"
+   "note": "Ani-One India's YouTube channel moved on to Season 3 in Hindi: episode 39 posted 18 Nov 2026 and episode 47 on 25 Nov. Only source is the official channel.",
+   "added": "2026-11-04",
+   "checked": "2026-11-26"
   },
   {
    "s": "one-punch-man",
@@ -3742,12 +3744,17 @@
    "s": "mairimashita-iruma-kun",
    "t": "Welcome to Demon School! Iruma-kun",
    "status": "available",
-   "confidence": "high",
+   "confidence": "medium",
    "platforms": [
     {
      "name": "Muse India (YouTube)",
      "scope": "Season 3 (2026)",
      "url": "https://www.animenewsnetwork.com/news/2026-08-29/hindi-dubs-of-reincarnated-as-a-slime-season-4-welcome-to-demon-school-iruma-kun-season-3-stream-on-/.241106"
+    },
+    {
+     "name": "Muse Hindi Dub (YouTube)",
+     "scope": "Season 2, free, one episode a day at 8:30 p.m. IST from 15 Nov 2026 (episode 11 on 25 Nov)",
+     "url": "https://www.youtube.com/watch?v=MvIO4tmUO8E"
     },
     {
      "name": "Apple TV",
@@ -3757,10 +3764,12 @@
    ],
    "sources": [
     "https://www.animenewsnetwork.com/news/2026-08-29/hindi-dubs-of-reincarnated-as-a-slime-season-4-welcome-to-demon-school-iruma-kun-season-3-stream-on-/.241106",
-    "https://tv.apple.com/in/show/welcome-to-demon-school-iruma-kun/umc.cmc.a9boelyb01te1ui8m1s7p0rs"
+    "https://tv.apple.com/in/show/welcome-to-demon-school-iruma-kun/umc.cmc.a9boelyb01te1ui8m1s7p0rs",
+    "https://www.youtube.com/watch?v=MvIO4tmUO8E"
    ],
-   "note": "Apple TV India lists Hindi audio (via Prime Video); ANN reports Muse India streaming daily episodes of a Hindi dub of Season 3 from 30 Aug 2026.",
-   "added": "2026-11-12"
+   "note": "Muse's separate 'Muse Hindi Dub' YouTube channel began a daily Hindi upload of Season 2 on 15 Nov 2026 (episode 1 posted 15 Nov, 15:00 UTC). Only source is the official channel; no news report found.",
+   "added": "2026-11-12",
+   "checked": "2026-11-26"
   },
   {
    "s": "vanitas-no-carte",
@@ -4495,7 +4504,99 @@
    "note": "Crunchyroll's Fall 2026 India line-up: Hindi, Tamil and Telugu simuldub from 27 Sep 2026, the same day as Japan (OtakuKart, 16 Oct 2026; AnimeMirchi; AnimeHunch). Kitsu lists it as Temppal: Item no Chikara.",
    "added": "2026-11-23",
    "checked": "2026-11-23"
+  },
+  {
+   "s": "fool-night",
+   "t": "Fool Night",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Netflix",
+     "scope": "Season 1, all 12 episodes at once from 26 Nov 2026 (worldwide drop), Hindi audio",
+     "url": "https://www.netflix.com/in/title/81991076"
+    }
+   ],
+   "sources": [
+    "https://www.netflix.com/in/title/81991076",
+    "https://about.netflix.com/en/news/for-how-much-would-you-become-a-flower-a-netflix-series-fool-night-main-trailer-key-art-debut"
+   ],
+   "note": "Netflix India's title page lists Hindi audio (with English, Hindi, Tamil, Telugu and Japanese) for the Sunrise x Shaft series released 26 Nov 2026. Slug 'fool-night' is a guess at the Kitsu slug; check it.",
+   "added": "2026-11-26",
+   "checked": "2026-11-26"
+  },
+  {
+   "s": "okiraku-ryoushu-no-tanoshii-ryouchi-bouei",
+   "t": "Easygoing Territory Defense by the Optimistic Lord",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Crunchyroll",
+     "scope": "Season 1, weekly from 4 Mar 2026",
+     "url": "https://www.crunchyroll.com/series/GT00365565/easygoing-territory-defense-by-the-optimistic-lord"
+    },
+    {
+     "name": "Muse India (YouTube)",
+     "scope": "Season 1, free, one episode a day at 9:00 p.m. IST from Thursday 19 Nov 2026 (episode 7 on 25 Nov)",
+     "url": "https://www.youtube.com/watch?v=HYtpisixpfg"
+    }
+   ],
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2026-11-22/hindi-tamil-telugu-dubs-of-easygoing-territory-defense-by-the-optimistic-lord-anime-streams-on-muse-/.244082",
+    "https://www.animenewsnetwork.com/news/2026-03-08/hindi-dub-of-easygoing-territory-defense-by-the-optimistic-lord-anime-streams-on-crunchyroll/.235021",
+    "https://www.youtube.com/watch?v=HYtpisixpfg"
+   ],
+   "note": "Not yet in our data. Muse India began uploading the Hindi dub daily on 19 Nov 2026 (ANN 22 Nov; upload dates read from the Muse India channel). Crunchyroll has had the Hindi dub since March 2026 (ANN). Slug taken from our season-dubs.json entry.",
+   "added": "2026-11-26",
+   "checked": "2026-11-26"
+  },
+  {
+   "s": "zom-100-zombie-ni-naru-made-ni-shitai-100-no-koto",
+   "t": "Zom 100: Bucket List of the Dead",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Crunchyroll",
+     "scope": "Season 1 (Hindi from 31 Jul 2023)",
+     "url": "https://www.animenewsnetwork.com/news/2023-07-31/crunchyroll-adds-hindi-dub-for-zom-100-bucket-list-of-the-dead-anime/.200837"
+    },
+    {
+     "name": "Muse India (YouTube)",
+     "scope": "Season 1, free, one episode a day at 8:30 p.m. IST from Thursday 19 Nov 2026 (episode 7 on 25 Nov)",
+     "url": "https://www.youtube.com/watch?v=gAGS6W_nRks"
+    }
+   ],
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2026-11-22/hindi-tamil-telugu-dubs-of-easygoing-territory-defense-by-the-optimistic-lord-anime-streams-on-muse-/.244082",
+    "https://www.animenewsnetwork.com/news/2023-07-31/crunchyroll-adds-hindi-dub-for-zom-100-bucket-list-of-the-dead-anime/.200837",
+    "https://www.youtube.com/watch?v=gAGS6W_nRks"
+   ],
+   "note": "No Hindi entry in our data (Tamil/Telugu are in regional-dubs.json). Muse India began daily Hindi uploads on 19 Nov 2026 (ANN 22 Nov mentions it; dates read from the channel). Crunchyroll added its Hindi dub on 31 Jul 2023 (ANN). The Crunchyroll URL is the ANN report because the Crunchyroll series page could not be opened to check.",
+   "added": "2026-11-26",
+   "checked": "2026-11-26"
+  },
+  {
+   "s": "demons-crest",
+   "t": "Devils' Crest",
+   "status": "available",
+   "confidence": "high",
+   "platforms": [
+    {
+     "name": "Prime Video",
+     "scope": "Season 1, weekly on Fridays from 6 Nov 2026 (episodes 1-2 on 6 Nov, episode 4 on 20 Nov)",
+     "url": "https://www.primevideo.com/detail/0J35D20PPSSNACER7Z6BEAHQFW"
+    }
+   ],
+   "sources": [
+    "https://www.primevideo.com/detail/0J35D20PPSSNACER7Z6BEAHQFW",
+    "https://animemirchi.com/hindi-dubbed-anime-on-amazon-prime-video-india/"
+   ],
+   "note": "Prime Video original anime by Reki Kawahara (Sword Art Online). The Prime Video title page lists Hindi audio and subtitles; Anime Mirchi's Prime Video Hindi list has it airing Fridays 5:30 p.m. IST from 6 Nov. It started before 15 Nov but was missing from our data. Slug 'devils-crest' is a guess at the Kitsu slug; check it. Kitsu lists it as \"Demon's Crest\".",
+   "added": "2026-11-26",
+   "checked": "2026-11-26"
   }
  ],
- "lastScan": "2026-11-15"
+ "lastScan": "2026-11-26"
 }

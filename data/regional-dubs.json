@@ -1237,24 +1237,34 @@
    "t": "Blue Lock",
    "ta": {
     "status": "available",
-    "confidence": "high",
+    "confidence": "medium",
     "platforms": [
      {
       "name": "Crunchyroll",
       "scope": "Seasons 1–2",
       "url": "https://www.crunchyroll.com/watch/GE00257767PLPL"
+     },
+     {
+      "name": "Ani-One India (YouTube)",
+      "scope": "Free, from episode 1 on 23 Nov 2026 (12:00 p.m. IST), about one episode a day (episode 4 on 26 Nov)",
+      "url": "https://www.youtube.com/watch?v=DGHLozD4e6U"
      }
     ],
     "added": "2026-11-15"
    },
    "te": {
     "status": "available",
-    "confidence": "high",
+    "confidence": "medium",
     "platforms": [
      {
       "name": "Crunchyroll",
       "scope": "Seasons 1–2",
       "url": "https://www.crunchyroll.com/watch/GE00257767PLPL"
+     },
+     {
+      "name": "Ani-One India (YouTube)",
+      "scope": "Free, from episode 1 on 23 Nov 2026 (8:00 p.m. IST), about one episode a day (episode 4 on 25 Nov)",
+      "url": "https://www.youtube.com/watch?v=bP6-XpCJrCA"
      }
     ],
     "added": "2026-11-15"
@@ -1262,9 +1272,12 @@
    "sources": [
     "https://www.animenewsnetwork.com/news/2024-05-17/crunchyroll-adds-hindi-tamil-telugu-dubs-of-dr-stone-haikyu-bluelock-more-anime-in-may-june/.210906",
     "https://animenewsindia.com/2024/08/17/crunchyroll-announces-regional-dubs-with-popular-anime-titles-to-premiere-in-hindi-tamil-and-telugu-dubbed-in-this-august-and-september/",
-    "https://animenewsindia.com/2024/10/03/crunchyroll-revealed-fall-2024-anime-season-lineup-dragon-ball-daima-dandadan-more-coming-to-this-october-in-india/"
+    "https://animenewsindia.com/2024/10/03/crunchyroll-revealed-fall-2024-anime-season-lineup-dragon-ball-daima-dandadan-more-coming-to-this-october-in-india/",
+    "https://www.youtube.com/watch?v=DGHLozD4e6U",
+    "https://www.youtube.com/watch?v=bP6-XpCJrCA"
    ],
-   "checked": "2026-11-15"
+   "checked": "2026-11-26",
+   "note": "Ani-One India's YouTube channel began a Telugu dub upload of Blue Lock on 23 Nov 2026. Only source is the official channel; the season is not named in the titles (most likely Season 1)."
   },
   {
    "s": "mashle",
@@ -4169,7 +4182,87 @@
    ],
    "note": "JioHotstar's own title page (checked 17 Nov 2026) lists season 17, 52 episodes, in Tamil, Telugu and Hindi. The Hungama TV row comes from a 2010 source; its current schedule isn't confirmed.",
    "checked": "2026-11-17"
+  },
+  {
+   "s": "fool-night",
+   "t": "Fool Night",
+   "sources": [
+    "https://www.netflix.com/in/title/81991076",
+    "https://about.netflix.com/en/news/for-how-much-would-you-become-a-flower-a-netflix-series-fool-night-main-trailer-key-art-debut"
+   ],
+   "note": "Netflix India's title page lists Telugu audio (with English, Hindi, Tamil, Telugu and Japanese) for the Sunrise x Shaft series released 26 Nov 2026. Slug 'fool-night' is a guess at the Kitsu slug; check it.",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Netflix",
+      "scope": "Season 1, all 12 episodes at once from 26 Nov 2026 (worldwide drop), Tamil audio",
+      "url": "https://www.netflix.com/in/title/81991076"
+     }
+    ],
+    "added": "2026-11-26"
+   },
+   "checked": "2026-11-26",
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Netflix",
+      "scope": "Season 1, all 12 episodes at once from 26 Nov 2026 (worldwide drop), Telugu audio",
+      "url": "https://www.netflix.com/in/title/81991076"
+     }
+    ],
+    "added": "2026-11-26"
+   }
+  },
+  {
+   "s": "okiraku-ryoushu-no-tanoshii-ryouchi-bouei",
+   "t": "Easygoing Territory Defense by the Optimistic Lord",
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2026-11-22/hindi-tamil-telugu-dubs-of-easygoing-territory-defense-by-the-optimistic-lord-anime-streams-on-muse-/.244082",
+    "https://www.animenewsnetwork.com/news/2026-03-13/tamil-telugu-dubs-of-easygoing-territory-defense-by-the-optimistic-lord-anime-streams-on-crunchyroll/.235252",
+    "https://www.youtube.com/watch?v=f5Z-U4qbshY",
+    "https://www.youtube.com/watch?v=OvE-DbQKZbM"
+   ],
+   "note": "Not yet in our data. Muse India began uploading the Telugu dub daily on 19 Nov 2026 (ANN 22 Nov; upload dates read from the Muse India channel). Crunchyroll has had the Telugu dub since March 2026 (ANN). Slug taken from our season-dubs.json entry.",
+   "ta": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1, weekly from 11 Mar 2026",
+      "url": "https://www.crunchyroll.com/series/GT00365565/easygoing-territory-defense-by-the-optimistic-lord"
+     },
+     {
+      "name": "Muse India (YouTube)",
+      "scope": "Season 1, free, one episode a day at 9:30 p.m. IST from Thursday 19 Nov 2026 (episode 7 on 25 Nov)",
+      "url": "https://www.youtube.com/watch?v=f5Z-U4qbshY"
+     }
+    ],
+    "added": "2026-11-26"
+   },
+   "checked": "2026-11-26",
+   "te": {
+    "status": "available",
+    "confidence": "high",
+    "platforms": [
+     {
+      "name": "Crunchyroll",
+      "scope": "Season 1, weekly from 11 Mar 2026",
+      "url": "https://www.crunchyroll.com/series/GT00365565/easygoing-territory-defense-by-the-optimistic-lord"
+     },
+     {
+      "name": "Muse India (YouTube)",
+      "scope": "Season 1, free, one episode a day at 10:00 p.m. IST from Thursday 19 Nov 2026 (episode 7 on 25 Nov)",
+      "url": "https://www.youtube.com/watch?v=OvE-DbQKZbM"
+     }
+    ],
+    "added": "2026-11-26"
+   }
   }
  ],
- "lastScan": "2026-11-15"
+ "lastScan": "2026-11-26"
 }
