@@ -6,6 +6,7 @@ import Faq from "@/components/Faq";
 import JsonLd from "@/components/JsonLd";
 import MadeBy from "@/components/MadeBy";
 import SectionNav from "@/components/fx/SectionNav";
+import AnswerLead from "@/components/AnswerLead";
 import { fitTitle, fitDescription } from "@/lib/titles";
 import { FILMS_CHECKED, FILM_LANG, STATUS_LABEL, filmDub, filmFranchise, filmFranchises, filmsPath, hasLang, newestFirst, type Film, type FilmLang } from "@/lib/franchisefilms";
 import { hindiDubPath } from "@/lib/hindidub";
@@ -53,7 +54,12 @@ export default function FilmsPage({ slug, lang }: { slug: string; lang: FilmLang
   const inOrder = [...films].reverse();
   const w = f.watch;
   const airing = w?.tv.filter((t) => t.status === "airing") ?? [];
+  // "doraemon new movie in hindi" (12.1K a month in India, 14.8K in December), "shinchan new movie in hindi" (4.4K):
+  // people want the newest film they can watch in the language, which isn't always the newest film (Shinchan's 2026
+  // film has no Hindi dub yet; the 2025 one does).
+  const newestDubbed = films.find((r) => r.dub.status !== "none_found") ?? null;
   const faq = [
+    ...(newestDubbed ? [{ q: `What is the new ${f.name} movie in ${L}?`, a: `${title(newestDubbed.x)} (${newestDubbed.x.year}), ${newestDubbed.dub.status === "available" ? `streaming in ${L} on` : `shown in ${L} on`} ${newestDubbed.dub.where.join(", ")}.${newestDubbed !== films[0] ? ` The newest film overall, ${title(latest.x)} (${latest.x.year}), has no ${L} dub yet.` : ""}` }] : []),
     { q: `What is the new ${f.name} movie?`, a: `${title(latest.x)}, released in Japan in ${latest.x.year}. ${latest.dub.status === "available" ? `It's in ${L} on ${latest.dub.where.join(", ")}.` : latest.dub.status === "aired" ? `Its ${L} dub came out on ${latest.dub.where.join(", ")}.` : `No ${L} dub has been announced yet.`}` },
     { q: `How many ${f.name} movies are there?`, a: `${films.length} films so far, from ${oldest.en} (${oldest.year}) to ${latest.x.en} (${latest.x.year}).${w?.next ? ` The next, ${w.next.t}, is due in ${w.next.year}.` : ""}` },
     ...(w?.tv.length ? [{ q: `Which channel shows ${f.name} in India?`, a: airing.length ? `${airing.map((t) => `${t.channel}: ${t.note}`).join(" ")}` : `No channel is confirmed to be airing it right now. ${w.tv.map((t) => `${t.channel}: ${t.note}`).join(" ")}` }] : []),
@@ -81,6 +87,14 @@ export default function FilmsPage({ slug, lang }: { slug: string; lang: FilmLang
         hue={25}
       />
       <MadeBy className="mt-4" path={filmsPath(f.slug, lang)} date={FILMS_CHECKED} method={`Each ${L} status is from the platform's own page, the broadcaster's or distributor's announcement, or news reports; fan wikis count only as support for TV dubs. No unofficial uploads.`} />
+
+      {newestDubbed && (
+        <AnswerLead checked={checked()} className="mt-6">
+          The newest {f.name} movie in {L} is <strong>{title(newestDubbed.x)}</strong> ({newestDubbed.x.year}): {newestDubbed.dub.where.join("; ")}.
+          {newestDubbed !== films[0] ? ` The newest film overall, ${title(latest.x)} (${latest.x.year}), has no ${L} dub yet.` : ""}
+          {w?.next ? ` Next: ${w.next.t} (${w.next.year}).` : ""}
+        </AnswerLead>
+      )}
 
       <SectionNav sections={[{ id: "latest", label: "Newest film" }, { id: "list", label: `All ${films.length} in order` }, ...(w ? [{ id: "watch", label: "Where to watch" }] : []), ...(w?.seasons?.length ? [{ id: "seasons", label: "Seasons" }] : []), { id: "faq", label: "FAQ" }]} />
 

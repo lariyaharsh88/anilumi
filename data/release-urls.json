@@ -18,6 +18,9 @@
   "/hindi-dub",
   "/hindi-dub/best",
   "/hindi-dub/crunchyroll",
+  "/hindi-dub/movies/doraemon",
+  "/hindi-dub/movies/pokemon",
+  "/hindi-dub/movies/shinchan",
   "/hindi-dub/muse-india",
   "/hindi-dub/netflix",
   "/hindi-dub/prime-video",
@@ -27,6 +30,12 @@
   "/season/2027/winter/india",
   "/season/2027/winter/preview",
   "/tamil-dub",
-  "/telugu-dub"
+  "/tamil-dub/movies/doraemon",
+  "/tamil-dub/movies/pokemon",
+  "/tamil-dub/movies/shinchan",
+  "/telugu-dub",
+  "/telugu-dub/movies/doraemon",
+  "/telugu-dub/movies/pokemon",
+  "/telugu-dub/movies/shinchan"
  ]
 }
