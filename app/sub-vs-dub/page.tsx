@@ -8,8 +8,9 @@ import SectionNav from "@/components/fx/SectionNav";
 import BarChart from "@/components/viz/BarChart";
 import { itemList } from "@/lib/ld";
 import { fitTitle, fitDescription } from "@/lib/titles";
+import AnswerLead from "@/components/AnswerLead";
 import { STREAMS_CHECKED, REGION_SHORT, streamsDate, streamsPath, type Region } from "@/lib/streams";
-import { DUBS_SEASON, premiereAt } from "@/lib/dubschedule";
+import { DUBS_SEASON, premiereAt, dubsDate } from "@/lib/dubschedule";
 import { dubRows, dubsByService, dubsPerSeason, seasonEnglishDubs } from "@/lib/subdub";
 
 export const revalidate = 86400;
@@ -44,6 +45,9 @@ export default function SubVsDub() {
   const where = (en: Partial<Record<Region, string[]>>) => (["US", "IN", "GB"] as Region[]).filter((r) => en[r]?.length).map((r) => `${REGION_SHORT[r]}: ${en[r]!.join(", ")}`);
   const top = services[0];
   const faq = [
+    // "sub dub anime" (3.8K Bing impressions in 3 months, rising, Nov 2026) is partly people looking for an unlicensed
+    // site of that name; the page answers that and points to the legal dubs.
+    { q: "Is SubDub Anime legal?", a: `It isn't an official service: it streams anime without a licence, so AniLumi doesn't link to it. The ${dubbed.length} dubbed anime on this page each link to where the dub streams legally, and the Hindi dubs (${hindi}) are on the Hindi dub list, many of them free.` },
     { q: "What's the difference between sub and dub?", a: "Sub (subbed) is the original Japanese audio with subtitles in your language; dub (dubbed) replaces the voices with actors speaking English, Hindi or another language. The story, animation and episodes are the same." },
     { q: "Is sub or dub better?", a: "Neither is better for everyone. Sub keeps the original performances and arrives first; dub lets you watch without reading, which suits action-heavy scenes, kids and second-screen viewing. Many fans watch comedies and action dubbed and dialogue-heavy dramas subbed. The best dub is the one you'll actually finish." },
     { q: "Which anime are dubbed in English?", a: `${dubbed.length} of the ${rows.length} most-watched anime on AniLumi have an English dub, including ${dubbed.slice(0, 8).map((r) => r.t).join(", ")}. The table above shows where each dub streams.` },
@@ -75,6 +79,11 @@ export default function SubVsDub() {
           <Link href="/hindi-dub" className="chip">Hindi dubbed anime</Link>
         </p>
       </PageHero>
+
+      <AnswerLead checked={dubsDate()}>
+        Sub means the original Japanese audio with subtitles; dub means the voices are replaced in another language. {dubbed.length} of the {rows.length} most-watched anime have an English dub{hindi ? ` and ${hindi} have an official Hindi dub` : ""}, and {now.length} {DUBS_SEASON} shows are being dubbed, {recentDubs ? `most of them (${pct(recentSimul, recentDubs)}%) within a week of Japan` : "some within days of Japan"}. Looking for the site called SubDub Anime? It isn&apos;t an official service; every dub below links to where it streams legally.
+      </AnswerLead>
+
       <SectionNav sections={[
         { id: "difference", label: "Sub or dub?" },
         ...(now.length ? [{ id: "season", label: DUBS_SEASON }] : []),

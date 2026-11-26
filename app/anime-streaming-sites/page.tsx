@@ -62,8 +62,10 @@ export function generateMetadata(): Metadata {
   const r = rows();
   return {
     // Bing, Nov 2026: "where to watch anime online legally" 79 + "how to watch anime online" 68 + "anime streaming
-    // legality" 22 impressions at positions 5-7, no clicks; the India sites stay in the description.
-    title: fitTitle([`Where to Watch Anime Online Legally: Top Sites in India (${y})`, `Best Anime Streaming Sites in India (${y}): Free & Legal, with Hindi Dubs`, `Best Anime Streaming Sites in India (${y}): Free & Legal`, `Legal Anime Streaming Sites in India (${y})`]),
+    // legality" 22 impressions at positions 5-7, no clicks; the India sites stay in the description. 26 Nov: 3.5K Bing
+    // impressions in 3 months for the first query, #4.2 and still no clicks, so the title no longer ends "in India"
+    // (searchers abroad skipped it); the page stays India-first and points abroad to /where-to-watch.
+    title: fitTitle([`Where to Watch Anime Online Legally (${y}): Free & Paid`, `Where to Watch Anime Online Legally: Top Sites in India (${y})`, `Best Anime Streaming Sites in India (${y}): Free & Legal, with Hindi Dubs`, `Best Anime Streaming Sites in India (${y}): Free & Legal`, `Legal Anime Streaming Sites in India (${y})`]),
     description: fitDescription(`The ${r.length} legal anime streaming sites in India compared: how many popular anime each has, Hindi, Tamil and Telugu dubs, prices in rupees and the free options (${r.filter((x) => x.site.free).map((x) => x.site.name.replace(/ \(.*\)$/, "")).join(", ")}). Checked ${streamsDate()}.`),
     alternates: { canonical: "/anime-streaming-sites" },
   };
@@ -117,7 +119,7 @@ export default function AnimeStreamingSites() {
       />
 
       <AnswerLead checked={streamsDate()}>
-        The best legal anime streaming site in India is {name(most)}: {most.streams.length} of the {total} most-followed anime and {mostHindi === most ? `${most.hindi.length} of the ${hindiTotal} Hindi dubs` : `${most.hindi.length} Hindi dubs`}{most.price ? `, ${most.price.toLowerCase()}` : ""}. {free.map(name).join(" and ")} are free and legal, with {freeHindi.length} anime in Hindi.
+        The best legal anime streaming site in India is {name(most)}: {most.streams.length} of the {total} most-followed anime and {mostHindi === most ? `${most.hindi.length} of the ${hindiTotal} Hindi dubs` : `${most.hindi.length} Hindi dubs`}{most.price ? `, ${most.price.toLowerCase()}` : ""}. {free.map(name).join(" and ")} are free and legal, with {freeHindi.length} anime in Hindi. Outside India, the main legal services are Crunchyroll, Netflix, Hulu and HIDIVE: see <Link href="/where-to-watch" className="text-violet hover:underline">where to watch anime by country</Link> for the US and UK.
       </AnswerLead>
 
       <section className="reveal mt-10" aria-labelledby="quick-h">

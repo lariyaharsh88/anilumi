@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "@/components/Link";
 import MadeBy from "@/components/MadeBy";
 import PageHero from "@/components/PageHero";
+import AnswerLead from "@/components/AnswerLead";
 import Faq from "@/components/Faq";
 import JsonLd from "@/components/JsonLd";
 import SectionNav from "@/components/fx/SectionNav";
@@ -76,6 +77,7 @@ export default async function AltSitePage({ site }: { site: AltSite }) {
   const most = [...platforms].sort((a, b) => b.titles.length - a.titles.length)[0];
   const faq = [
     { q: `What is the best alternative to ${site.brand}?`, a: `For free: ${freePlatforms.map((p) => p.label).join(" and ")}, which together carry ${free.length} official Hindi dubs at no cost. For the biggest catalogue: ${most.label}, with ${most.titles.length} of the ${dubbed.length} Hindi dubbed anime on our list.` },
+    { q: `Is ${site.brand} safe?`, a: `It isn't an official site, and unlicensed streaming sites make their money from pop-up and redirect ads, a common way malware and scam pages reach phones. The official alternatives above carry the same Hindi dubs without that risk, ${free.length} of them free.` },
     { q: `Is ${site.brand} legal?`, a: `AniLumi lists only services that license the anime they stream, and ${site.brand} isn't one of them, so we don't link to it. Streaming or downloading anime from unlicensed sites is copyright infringement under India's Copyright Act, and those sites run on pop-up and redirect ads that are a common route for malware on phones.` },
     { q: "Where can I watch Hindi dubbed anime for free, legally?", a: `${free.length} official Hindi dubs are free: ${free.slice(0, 8).map((d) => d.t).join(", ")} and more, on the licensors' YouTube channels (Muse India, Ani-One India) and on MX Player, now Prime Video's free tier.` },
     // "hindi anime websites" (Bing Copilot cites AniLumi for 29% of its answers, Nov 2026).
@@ -109,6 +111,13 @@ export default async function AltSitePage({ site }: { site: AltSite }) {
           <Link href="/download-anime-in-hindi" className="chip">Download Hindi anime legally</Link>
         </p>
       </PageHero>
+
+      {/* The searched question answered first ("anime salt hindi", 6.7K Bing impressions in 3 months, #7.5, Nov 2026):
+          what the site is, whether it's safe, and the free legal option, in a paragraph answers can quote. */}
+      <AnswerLead checked={dubDate()}>
+        {site.brand} streams anime without a licence, so it isn&apos;t legal and AniLumi doesn&apos;t link to it; sites like it run on pop-up and redirect ads, a common route for malware on phones. The legal way to watch anime in Hindi for free: {free.length} official Hindi dubs, including {free.slice(0, 4).map((d) => d.t).join(", ")}, stream at no cost on the licensors&apos; YouTube channels (Muse India, Ani-One India) and Prime Video&apos;s free tier (formerly MX Player). All {dubbed.length} official Hindi dubs are listed below, with the platform for each.
+      </AnswerLead>
+
       <SectionNav sections={[
         ...(free.length ? [{ id: "free", label: "Free" }] : []),
         { id: "platforms", label: "All platforms" },
