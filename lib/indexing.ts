@@ -222,3 +222,18 @@ export const animeIndexed = (a: { slug: string; userCount: number; status: strin
  *  franchise: that made ~1,600 entries indexable (every OVA of a researched series), more than the sitemap can list. */
 export const hasOwnContent = (slug: string) => Boolean(streamsBySlug(slug) || dubBySlug(slug) || WATCH_ORDER_OVERRIDES[slug]);
 export const ownContentSlugs = () => [...new Set([...allStreams().map((e) => e.s), ...dubSlugs(), ...Object.keys(WATCH_ORDER_OVERRIDES)])].filter(hasOwnContent);
+
+/**
+ * Studio pages worth indexing: the major studios people search by name ("mappa anime list"). Every Kitsu producer has
+ * a page, so the long tail (and Kitsu's duplicate entries: "pierrot" 16 titles next to "studio-pierrot" 232) was
+ * hundreds of thin, near-identical lists, none in the sitemap (Nov 2026 audit). The main entry of each studio only;
+ * Studio Ghibli has its own page (/studio-ghibli). Pure.
+ */
+export const INDEXED_STUDIOS = [
+  "mappa", "ufotable", "kyoto-animation", "wit-studio", "bones", "madhouse", "toei-animation", "a-1-pictures", "production-i-g",
+  "sunrise", "trigger", "cloverworks", "studio-pierrot", "shaft", "j-c-staff", "david-production", "white-fox", "doga-kobo", "lerche",
+  "silver-link", "kinema-citrus", "science-saru", "studio-deen", "tms-entertainment", "olm", "p-a-works", "comix-wave-films", "8bit",
+  "brains-base", "lidenfilms", "studio-bind", "cygames-pictures", "sunrise-beyond",
+];
+export const studioIndexed = (slug: string) => INDEXED_STUDIOS.includes(slug);
+

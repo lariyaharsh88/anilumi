@@ -1,6 +1,7 @@
 import { fitDescription } from "@/lib/titles";
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
+import { robotsFor, studioIndexed } from "@/lib/indexing";
 import { getProducerBySlug, getStudioAnime, posterUrl } from "@/lib/kitsu";
 import { abs } from "@/lib/site";
 import { studioFacts } from "@/lib/wikidata";
@@ -22,10 +23,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const p = await getProducerBySlug(decodeURIComponent(slug));
   if (!p) notFound();
+  if (p.slug === "studio-ghibli") permanentRedirect("/studio-ghibli");
   return {
     title: `${p.name} Anime List – Every Series, Upcoming & Best Rated`,
     description: fitDescription(`All anime animated by ${p.name}: currently airing and upcoming projects, plus the studio's most popular and best-rated series with where to watch.`),
     alternates: { canonical: `/studio/${p.slug}` },
+    robots: robotsFor(studioIndexed(p.slug)),
   };
 }
 
@@ -33,6 +36,7 @@ export default async function StudioPage({ params }: Props) {
   const { slug } = await params;
   const p = await getProducerBySlug(decodeURIComponent(slug));
   if (!p) notFound();
+  if (p.slug === "studio-ghibli") permanentRedirect("/studio-ghibli");
   const { items, total } = await getStudioAnime(p.id);
   const airing = items.filter((a) => a.status === "current");
   const upcoming = items.filter((a) => a.status === "upcoming");

@@ -112,6 +112,15 @@ test("release list: real paths, a valid date, and dated pages go to the sitemap 
   const { inRelease, RELEASE_DATE } = await import("../lib/release");
   assert.ok(!isNaN(new Date(RELEASE_DATE).getTime()));
   assert.equal(new Set(data.paths).size, data.paths.length);
-  for (const p of data.paths) assert.ok(p.startsWith("/") && !p.endsWith("/") && inRelease(p), p);
+  for (const p of data.paths) assert.ok(p.startsWith("/") && (p === "/" || !p.endsWith("/")) && inRelease(p), p);
   assert.equal(inRelease("/zzz-not-in-release"), false);
+});
+
+test("studio pages: the major studios are indexed and in the sitemap; duplicates and the long tail aren't", async () => {
+  const { studioIndexed, INDEXED_STUDIOS } = await import("../lib/indexing");
+  assert.equal(studioIndexed("mappa"), true);
+  assert.equal(studioIndexed("studio-pierrot"), true);
+  assert.equal(studioIndexed("pierrot"), false); // Kitsu's 16-title duplicate of Studio Pierrot
+  assert.equal(studioIndexed("studio-ghibli"), false); // has its own page, /studio-ghibli
+  assert.equal(new Set(INDEXED_STUDIOS).size, INDEXED_STUDIOS.length);
 });

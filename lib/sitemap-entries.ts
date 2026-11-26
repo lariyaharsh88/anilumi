@@ -41,7 +41,7 @@ import { indiaGuide } from "@/lib/indiaguide";
 import crunchyrollPlans from "@/data/crunchyroll-plans.json";
 import opMc from "@/data/op-mc-anime.json";
 import opBounties from "@/data/one-piece-bounties.json";
-import { searchShown, searchShownPaths, animeIndexed, ownContentSlugs, watchOrderIndexed, characterTableIndexed, notedCharacters, demandCharacters, indexedCharacterSlugs, genreIndexed, bestYearIndexed, trendIndexed, voiceActorIndexed, hindiDubIndexed, SEARCHED_COMPARES, SEARCHED_CHARACTER_TABLES, SEARCHED_ANIME } from "@/lib/indexing";
+import { searchShown, searchShownPaths, animeIndexed, ownContentSlugs, watchOrderIndexed, characterTableIndexed, notedCharacters, demandCharacters, indexedCharacterSlugs, genreIndexed, bestYearIndexed, trendIndexed, voiceActorIndexed, hindiDubIndexed, SEARCHED_COMPARES, SEARCHED_CHARACTER_TABLES, SEARCHED_ANIME, INDEXED_STUDIOS } from "@/lib/indexing";
 import franchiseData from "@/data/franchises.json";
 import { DATA_DATES as D, STATIC_UPDATED, BIRTHDAY_PAGES_UPDATED, HINDI_HUB_UPDATED, SCENE_PAGE_UPDATED, DUB_GUIDES_ADDED, latest, weekStart, monthStart } from "@/lib/lastmod";
 import { FILLER } from "@/data/filler";
@@ -136,6 +136,8 @@ export async function sitemapEntries(): Promise<MetadataRoute.Sitemap> {
     { url: abs("/crunchyroll-price"), lastModified: at(CRUNCHYROLL_CHECKED), changeFrequency: "weekly", priority: 0.7 },
     { url: abs("/funimation"), lastModified: at(FUNIMATION_CHECKED), changeFrequency: "yearly", priority: 0.6 },
     { url: abs("/christmas-anime"), lastModified: at(christmas.checked), changeFrequency: "weekly", priority: 0.6 },
+    // The major studios (lib/indexing.ts INDEXED_STUDIOS): the only indexed studio pages.
+    ...INDEXED_STUDIOS.map((st) => ({ url: abs(`/studio/${st}`), lastModified: weekly, changeFrequency: "weekly" as const, priority: 0.5 })),
     ...HINDI_SLUGS.filter(hindiIndexed).map((s) => ({ url: abs(hindiPath(s)), lastModified: at(D.watchOrders, D.dubs), changeFrequency: "weekly" as const, priority: 0.6, alternates: { languages: { en: abs(`/watch-order/${s}`), hi: abs(hindiPath(s)) } } })),
     { url: abs("/anime-openings"), lastModified: at(D.themes), changeFrequency: "weekly", priority: 0.6 },
     { url: abs("/tier-list"), lastModified: weekly, changeFrequency: "weekly", priority: 0.6 },
