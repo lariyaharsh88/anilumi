@@ -171,7 +171,7 @@ const vsFor = (slug: string) => CHARACTER_VS.filter((v) => v.a === slug || v.b =
 
 export default async function CharacterPage({ params }: Props) {
   const { slug } = await params;
-  const { c, apps, mains, home, homeApp, voiced, bday, facts, fact, bio, al, ranked, rankShow, snapped, others, aliases, sign, span: firsts, table, tableShow } = await load(slug);
+  const { c, apps, mains, home, homeApp, voiced, bday, facts, fact, bio, al, ranked, rankShow, snapped, others, aliases, spellings, sign, span: firsts, table, tableShow } = await load(slug);
   const note = characterNote(c.slug);
   const deep = characterDeep(c.slug);
   // Our own research on the page (notes, bio, profile): who checked it, when, and against what.
@@ -180,6 +180,11 @@ export default async function CharacterPage({ params }: Props) {
   const compare = compareSets(c.slug);
   // The checked name in the FAQ ("Monkey D. Luffy", "Tanjiro Kamado"), as in the title and the bio heading.
   const nm = note?.name ?? c.name;
+  // One name everywhere a reader or search engine sees it, the same as the title: the checked name, in the spelling
+  // people search when AniList lists it. The H1 said "Luffy Monkey D." (AniList's order) under a title saying
+  // "Monkey D. Luffy" (Nov 2026). Lookups (birthday, cast, snapshot) keep using c.name.
+  const plainNm = nm.replace(/ou(?![aeiou])/gi, "o").replace(/uu/gi, "u");
+  const shown = plainNm !== nm && spellings.some((x) => x.toLowerCase() === plainNm.toLowerCase()) ? plainNm : nm;
   const later = (deep?.ages ?? []).slice(1);
   const laterAges = later.length ? `${later.some((x) => x.spoiler) ? "Spoiler: " : ""}${later.map((x) => `${x.when.replace(/^./, (ch) => ch.toLowerCase())}, ${x.age}`).join("; ")}.` : "";
   const family = familyOf(c.slug);
@@ -195,7 +200,7 @@ export default async function CharacterPage({ params }: Props) {
   ];
   const span = yearsActive(apps);
   const answer = quickAnswer({
-    name: c.name, gender: fact("gender"), role: home ? (homeApp?.role === "main" ? "main" : "supporting") : null, anime: home?.title,
+    name: shown, gender: fact("gender"), role: home ? (homeApp?.role === "main" ? "main" : "supporting") : null, anime: home?.title,
     age: fact("age"), height: fact("height"), birthday: fact("birthday"), sign, jp: voiced?.jp?.name, en: voiced?.en?.name,
   });
   // Height next to the rest of the cast: the 12 tallest with a known height, always including this character.
@@ -215,14 +220,14 @@ export default async function CharacterPage({ params }: Props) {
     ...(span ? [{ label: "On screen", value: span.from === span.to ? String(span.from) : `${span.from}–${span.to}`, sub: span.to > span.from ? `${span.to - span.from + 1} years` : "one year", still: true }] : []),
   ];
   const voices = voiced ? [voiced.jp && { va: voiced.jp, lang: "Japanese" }, voiced.en && { va: voiced.en, lang: "English dub" }].filter((x): x is NonNullable<typeof x> => Boolean(x)) : [];
-  const alternateName = [c.nameJp, ...aliases].filter(Boolean);
+  const alternateName = [...new Set([c.nameJp, ...(c.name !== shown ? [c.name] : []), ...aliases].filter((x): x is string => Boolean(x) && x !== shown))];
   const gender = fact("gender");
   // A fictional person: described by the works it appears in (subjectOf), never with real-world facts like birthDate.
   const ld = {
     "@context": "https://schema.org",
     "@type": "Person",
     "@id": `${abs(`/character/${c.slug}`)}#character`,
-    name: c.name,
+    name: shown,
     alternateName: alternateName.length ? alternateName : undefined,
     image: c.image || undefined,
     description: note?.about ? excerpt(note.about, 300) : excerpt(bio, 300) || undefined,
@@ -239,9 +244,9 @@ export default async function CharacterPage({ params }: Props) {
         <JsonLd data={{ "@context": "https://schema.org", "@type": "ProfilePage", url: abs(`/character/${c.slug}`), mainEntity: { "@id": `${abs(`/character/${c.slug}`)}#character` }, author: authorRef(), dateModified: checked, citation: sources.slice(0, 8) }} />
       )}
       <PageHero
-        crumbs={[{ href: "/", label: "Home" }, ...(home ? [{ href: animePath(home), label: home.title }] : []), { href: `/character/${c.slug}`, label: c.name }]}
+        crumbs={[{ href: "/", label: "Home" }, ...(home ? [{ href: animePath(home), label: home.title }] : []), { href: `/character/${c.slug}`, label: shown }]}
         eyebrow={homeApp?.role === "main" ? "Main character" : "Character"}
-        title={<>{c.name}{c.nameJp && <span className="mt-1 block text-lg font-semibold text-ink/60 sm:text-xl">{c.nameJp}</span>}</>}
+        title={<>{shown}{c.nameJp && <span className="mt-1 block text-lg font-semibold text-ink/60 sm:text-xl">{c.nameJp}</span>}</>}
         subtitle={home ? <>{homeApp?.role === "main" ? "Main character in" : "Appears in"} <Link href={animePath(home)} className="font-semibold text-violet-2 hover:underline">{home.title}</Link>{apps.length > 1 ? ` and ${apps.length - 1} more` : ""}.</> : undefined}
         // The facts people search first (age, height, birthday), then how much of the franchise they're in.
         facts={[
@@ -256,13 +261,13 @@ export default async function CharacterPage({ params }: Props) {
       >
         {c.image && (
           <div className="relative -mt-1 aspect-[5/6] w-36 overflow-hidden rounded-2xl border border-white/15 shadow-2xl lg:hidden">
-            <Image src={c.image} alt={home ? `${c.name} from ${home.title}` : c.name} fill sizes="144px" className="object-cover" priority />
+            <Image src={c.image} alt={home ? `${shown} from ${home.title}` : shown} fill sizes="144px" className="object-cover" priority />
           </div>
         )}
       </PageHero>
       {answer && (
         <section className="reveal mt-8 rounded-2xl border-2 border-violet/40 bg-violet/[.06] p-4 sm:p-5" aria-labelledby="answer-h">
-          <h2 id="answer-h" className="flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-violet-2"><span aria-hidden>⚡</span> {note?.name ?? c.name} at a glance</h2>
+          <h2 id="answer-h" className="flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-violet-2"><span aria-hidden>⚡</span> {shown} at a glance</h2>
           <p className="mt-2 text-base leading-7 text-ink sm:text-lg">{answer}</p>
           {aliases.length > 0 && <p className="mt-2 text-sm text-muted">Also known as {aliases.map((x, i) => <span key={x}>{i ? ", " : ""}<strong className="font-semibold text-ink/85">{x}</strong></span>)}.</p>}
         </section>
@@ -272,14 +277,14 @@ export default async function CharacterPage({ params }: Props) {
       <SectionNav sections={navSections} />
       {note?.about && (
         <section id="who" data-section className="card reveal mt-5 p-5 sm:p-6" aria-labelledby="bio-h">
-          <h2 id="bio-h" className="h-section mb-2">Who is {note?.name ?? c.name}?</h2>
+          <h2 id="bio-h" className="h-section mb-2">Who is {shown}?</h2>
           <p className="prose-anime">{note.about}</p>
           <p className="mt-2 text-xs text-muted">Written by AniLumi, spoiler-free, checked against {note.sources.length} sources. <Link href="/how-we-check" className="underline">How we check</Link></p>
         </section>
       )}
       <div id="facts" data-section className="mt-5 grid gap-5 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.5fr)] lg:items-start">
         <section className="card reveal p-5" aria-labelledby="facts-h">
-          <h2 id="facts-h" className="text-xs font-semibold uppercase tracking-wider text-muted">{note?.name ?? c.name}: quick facts</h2>
+          <h2 id="facts-h" className="text-xs font-semibold uppercase tracking-wider text-muted">{shown}: quick facts</h2>
           <dl className="mt-3 divide-y divide-line/60 text-sm">
             {home && <div className="flex justify-between gap-4 py-2"><dt className="text-muted">Anime</dt><dd className="text-right font-medium"><Link href={animePath(home)} className="text-violet hover:underline">{home.title}</Link></dd></div>}
             {home && <div className="flex justify-between gap-4 py-2"><dt className="text-muted">Role</dt><dd className="text-right font-medium">{homeApp?.role === "main" ? "Main character" : "Supporting character"}</dd></div>}
@@ -301,7 +306,7 @@ export default async function CharacterPage({ params }: Props) {
               </div>
             ))}
           </dl>
-          {bday && dbEnabled() && <PushButton className="mt-3" topic={charTopic(bday.id)} source="character-birthday" label={`Remind me on ${c.name}'s birthday`} onLabel="Birthday reminder on" />}
+          {bday && dbEnabled() && <PushButton className="mt-3" topic={charTopic(bday.id)} source="character-birthday" label={`Remind me on ${shown}'s birthday`} onLabel="Birthday reminder on" />}
           <p className="mt-3 flex flex-wrap gap-2 text-sm">
             {bday && <Link href={bdPath(bday.m, bday.d)} className="chip">🎂 Everyone born on {bdLabel(bday.m, bday.d)}</Link>}
             {home && <Link href={`${animePath(home)}/cast`} className="chip">Full {home.title} cast</Link>}
@@ -313,7 +318,7 @@ export default async function CharacterPage({ params }: Props) {
         {/* No section at all when there's nothing to say: snapshot-only pages have no Kitsu biography to quote. */}
         {!note?.about && bio && (
         <section className="card reveal p-5 sm:p-6" aria-labelledby="bio-h">
-            <h2 id="bio-h" className="h-section mb-2">Who is {note?.name ?? c.name}?</h2>
+            <h2 id="bio-h" className="h-section mb-2">Who is {shown}?</h2>
             <p className="prose-anime whitespace-pre-line">{excerpt(bio, 520)}</p>
             {bio && <p className="mt-2 text-xs text-muted">Biography excerpt via <a href={home ? `https://kitsu.app/anime/${home.slug}/characters` : "https://kitsu.app"} target="_blank" rel="noopener nofollow" className="underline">Kitsu</a>.</p>}
           </section>
@@ -321,18 +326,18 @@ export default async function CharacterPage({ params }: Props) {
       </div>
       {family && (
         <section id="family" data-section className="reveal pt-10" aria-labelledby="family-h">
-          <h2 id="family-h" className="h-section mb-3"><span aria-hidden className="mr-2">🌳</span>{note?.name ?? c.name}&apos;s family tree</h2>
-          <FamilyTree slug={c.slug} name={note?.name ?? c.name} image={c.image} />
+          <h2 id="family-h" className="h-section mb-3"><span aria-hidden className="mr-2">🌳</span>{shown}&apos;s family tree</h2>
+          <FamilyTree slug={c.slug} name={shown} image={c.image} />
         </section>
       )}
       {powersFor(c.slug) && (
-        <p className="reveal mt-8"><Link href={powersPath(c.slug)} className="card inline-flex items-center gap-2 px-4 py-3 text-sm font-semibold text-ink hover:border-white/20">⚡ {leadsWithForms(powersFor(c.slug)!) ? `All ${powersFor(c.slug)!.short ?? note?.name ?? c.name} ${(powersFor(c.slug)!.formsWord ?? "transformations").toLowerCase()} in order` : `${powersFor(c.slug)!.short ?? note?.name ?? c.name}'s powers explained`} →</Link></p>
+        <p className="reveal mt-8"><Link href={powersPath(c.slug)} className="card inline-flex items-center gap-2 px-4 py-3 text-sm font-semibold text-ink hover:border-white/20">⚡ {leadsWithForms(powersFor(c.slug)!) ? `All ${powersFor(c.slug)!.short ?? shown} ${(powersFor(c.slug)!.formsWord ?? "transformations").toLowerCase()} in order` : `${powersFor(c.slug)!.short ?? shown}'s powers explained`} →</Link></p>
       )}
-      <CharacterBounty slug={c.slug} name={note?.name ?? c.name} />
-      <CharacterDeepProfile slug={c.slug} name={note?.name ?? c.name} />
+      <CharacterBounty slug={c.slug} name={shown} />
+      <CharacterDeepProfile slug={c.slug} name={shown} />
       {compare && (
         <section id="compare" data-section className="reveal pt-10" aria-labelledby="compare-h">
-          <h2 id="compare-h" className="h-section mb-1"><span aria-hidden className="mr-2">⚖️</span>{note?.name ?? c.name} compared with similar characters</h2>
+          <h2 id="compare-h" className="h-section mb-1"><span aria-hidden className="mr-2">⚖️</span>{shown} compared with similar characters</h2>
           <p className="mb-4 text-sm text-muted">Side by side with {compare.sameSeries.length ? "the most-loved characters of the same series" : ""}{compare.sameSeries.length && compare.similar.length ? " and " : ""}{compare.similar.length ? "the leads of anime fans recommend alongside it" : ""}. Tick who to include and sort the table.</p>
           <CharacterCompare {...compare} />
           {vsFor(c.slug).map((v) => <p key={v.slug} className="mt-3 text-sm"><Link href={vsPath(v)} className="font-semibold text-accent-2 hover:underline">{vsLinkText(v)}</Link></p>)}
@@ -340,7 +345,7 @@ export default async function CharacterPage({ params }: Props) {
       )}
       {stats.length >= 2 && (
         <section id="numbers" data-section className="reveal mt-10" aria-labelledby="numbers-h">
-          <h2 id="numbers-h" className="h-section mb-3">{note?.name ?? c.name} in numbers</h2>
+          <h2 id="numbers-h" className="h-section mb-3">{shown} in numbers</h2>
           <StatTiles stats={stats} />
           <div className="mt-3 grid gap-3 lg:grid-cols-2">
             {loved.length >= 3 && rankShow && (
@@ -364,11 +369,11 @@ export default async function CharacterPage({ params }: Props) {
 
       {heightBars.length > 0 && tableShow && (
         <section className="reveal mt-10" aria-labelledby="height-h">
-          <h2 id="height-h" className="h-section mb-3">How tall is {c.name}?</h2>
+          <h2 id="height-h" className="h-section mb-3">How tall is {shown}?</h2>
           <BarChart
             orientation="bar"
-            title={`${c.name} next to the ${tableShow.title} cast`}
-            subtitle={`Height in cm, tallest first. ${c.name} is ${tall[meAt].cm} cm: #${meAt + 1} of ${tall.length} with a listed height.`}
+            title={`${shown} next to the ${tableShow.title} cast`}
+            subtitle={`Height in cm, tallest first. ${shown} is ${tall[meAt].cm} cm: #${meAt + 1} of ${tall.length} with a listed height.`}
             valueHeading="Height (cm)"
             highlightKey={String(tableShow.me)}
             labelKeys={[String(tableShow.me), String(tall[0].c.id)]}
@@ -379,7 +384,7 @@ export default async function CharacterPage({ params }: Props) {
       )}
 
       {/* Fans looking a character up are the likeliest to want their figure. */}
-      <MerchBlock name={c.name} show={home?.title} source="character" className="reveal mt-10" />
+      <MerchBlock name={shown} show={home?.title} source="character" className="reveal mt-10" />
       <AdSlot slot="character-mid" />
       {apps.length > 0 && (
         <section id="appearances" data-section className="mt-10">
@@ -424,7 +429,7 @@ export default async function CharacterPage({ params }: Props) {
         </details>
       )}
       <div id="faq" data-section><Faq
-        title={`${c.name} FAQ`}
+        title={`${shown} FAQ`}
         items={[
           { q: `What anime is ${nm} from?`, a: home ? `${nm} is ${homeApp?.role === "main" ? "a main character" : "a character"} in ${home.title}${apps.length > 1 ? ` and appears in ${apps.length} titles in total, including ${apps.filter((x) => x.anime.id !== home.id).slice(0, 2).map((x) => x.anime.title).join(" and ")}` : ""}.` : `${nm}'s appearances have not been catalogued yet.` },
           // Later ages from the deep profile too ("how old is Luffy" wants 19 after the timeskip, not just 17).
