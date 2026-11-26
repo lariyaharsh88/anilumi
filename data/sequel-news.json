@@ -1,5 +1,5 @@
 {
-  "checked": "2026-11-19",
+  "checked": "2026-11-26",
   "reviewed": null,
   "shows": {
     "one-piece": {
@@ -1222,6 +1222,437 @@
       "season": 4,
       "name": "Kaguya-sama",
       "headline": "A Final Film Instead ({asOf})"
+    },
+    "Cyberpunk-Edgerunners-II": {
+      "status": "none",
+      "what": "No third season has been announced by Netflix, CD Projekt Red or Studio Trigger; Edgerunners 2 was billed as a 10-episode standalone series",
+      "announced": null,
+      "by": null,
+      "window": null,
+      "confidence": "medium",
+      "sources": [
+        "https://press.cdprojektred.com/en/news/1837/cyberpunk-edgerunners-2-premiere-date-announced-alongside-new-trailer",
+        "https://www.gamesradar.com/entertainment/anime-shows/cyberpunk-edgerunners-season-3-is-not-guaranteed-as-creator-says-they-need-a-perfect-story-to-move-forward/"
+      ],
+      "notes": "All 10 episodes premiered on Netflix on 20 Oct 2026 (premiere date announced by CD Projekt Red on 21 Aug 2026). Showrunner Bartosz Sztybor has been noncommittal about a third season.",
+      "why": "It is an original story told as standalone seasons, so another season depends on a new commission that has not been announced.",
+      "season": 3,
+      "name": "Cyberpunk: Edgerunners"
+    },
+    "Kusuriya-no-Hitorigoto-3rd-season": {
+      "status": "announced",
+      "what": "Season 3 Part 2 (the second cour) premieres in April 2027, and a new film, The Apothecary Diaries: The Late Lady's Treasure, opens in Japan on 11 December 2026",
+      "announced": "2025-10-22",
+      "by": "TOHO animation (2nd anniversary trailer), reported by ANN",
+      "window": "April 2027 (Season 3 Part 2); the film opens in Japan on 11 December 2026",
+      "confidence": "high",
+      "sources": [
+        "https://www.animenewsnetwork.com/.230197",
+        "https://www.animenewsnetwork.com/news/2026-10-22/the-apothecary-diaries-film-new-trailer-unveils-kenshi-yonezu-theme-song/.243109"
+      ],
+      "notes": "No Season 4 has been announced. Part 1 premiered 2 Oct 2026 on NTV's Friday Anime Night block; Part 1 finale date not confirmed (likely mid/late December). Important: the dated continuation is the second cour of Season 3, not a Season 4. The film has an original story by novelist Natsu Hyuuga.",
+      "name": "The Apothecary Diaries",
+      "label": "The Apothecary Diaries Season 3 Part 2"
+    },
+    "temppal-item-no-chikara": {
+      "status": "none",
+      "what": "No second season of the Overgeared TV anime has been announced",
+      "announced": null,
+      "by": null,
+      "window": null,
+      "confidence": "medium",
+      "sources": [
+        "https://fandomwire.com/overgeared-season-1-release-schedule-cast-plot-everything-we-know/",
+        "https://finalweapon.net/2026/10/18/overgeared-anime-release-dates-schedule-episodes-crunchyroll-streaming-time/",
+        "https://www.mangaupdates.com/series/il6f88t/overgeared-novel"
+      ],
+      "notes": "12-episode single cour; premiered 2 Oct 2026 in Japan (Tokyo MX/BS11); episode 12 expected 13 Dec 2026 on Crunchyroll (schedule, not officially confirmed).",
+      "outlook": "material-left",
+      "why": "The anime adapts Redice Studio's webtoon (325+ chapters), which is based on Park Saenal's complete 2,059-chapter web novel, so a 12-episode season covers only a small fraction.",
+      "season": 2,
+      "name": "Overgeared"
+    },
+    "hotaru-no-yomeiri": {
+      "status": "none",
+      "what": "No second season of the Firefly Wedding anime has been announced; a live-action TV adaptation is coming on Fuji TV in 2027",
+      "announced": null,
+      "by": null,
+      "window": null,
+      "confidence": "medium",
+      "sources": [
+        "https://www.animenewsnetwork.com/news/2026-10-09/firefly-wedding-manga-gets-live-action-adaptation-on-tv-in-2027/.242676",
+        "https://finalweapon.net/2026/10/10/firefly-wedding-live-action-tv-series-releases-in-2027/",
+        "https://www.tvmaze.com/shows/91069/firefly-wedding"
+      ],
+      "notes": "Premiered 9 Oct 2026 on Fuji TV (Fridays 23:30, David Production); 12 episodes per our data; finale date not confirmed. Live-action drama announced 9 Oct 2026 for 2027.",
+      "outlook": "material-left",
+      "why": "Oreco Tachibana's manga has ended at 13 volumes, more than a single 12-episode season would normally cover.",
+      "season": 2,
+      "name": "Firefly Wedding"
+    },
+    "tensei-shitara-ken-deshita-2nd-season": {
+      "status": "none",
+      "what": "No third season of Reincarnated as a Sword has been announced",
+      "announced": null,
+      "by": null,
+      "window": null,
+      "confidence": "medium",
+      "sources": [
+        "https://www.animenewsnetwork.com/news/2026-11-04/reincarnated-as-a-sword-season-2-anime-reveals-trailer-visual-cast-for-seedrun-arc/.243523",
+        "https://www.animenewsnetwork.com/preview-guide/2026/fall/reincarnated-as-a-sword-season-2/.241251"
+      ],
+      "notes": "Season 2 premiered 7 Oct 2026 (HIDIVE); the Seedrun arc began with episode 6 (ANN, 4 Nov 2026). Finale date not confirmed.",
+      "outlook": "material-left",
+      "why": "The light novel series is ongoing at about 21 volumes, far beyond what two anime seasons cover.",
+      "season": 3,
+      "name": "Reincarnated as a Sword"
+    },
+    "seitokai-ni-mo-ana-wa-aru": {
+      "status": "none",
+      "what": "No second season of Even the Student Council Has Its Holes! has been announced",
+      "announced": null,
+      "by": null,
+      "window": null,
+      "confidence": "medium",
+      "sources": [
+        "https://finalweapon.net/2026/11/14/even-the-student-council-has-its-holes-anime-release-dates-schedule-episodes/",
+        "https://www.animenewsnetwork.com/news/2026-09-29/oceanveil-streams-even-the-student-council-has-its-holes-anime-on-october-3/.242293",
+        "https://www.animenewsnetwork.com/encyclopedia/manga.php?id=27197"
+      ],
+      "notes": "12 episodes; premiered 3 Oct 2026; episode 12 expected 19 Dec 2026 on OceanVeil (schedule).",
+      "outlook": "material-left",
+      "why": "Muchimaro's 4-koma manga is still running in Weekly Shonen Magazine (about 168 chapters), so plenty of material remains.",
+      "season": 2,
+      "name": "Even the Student Council Has Its Holes!"
+    },
+    "tsuihou-sareta-cheat-fuyo-majutsushi-wa-kimama-na-second-life-wo-ouka-suru-ore-wa-buki-dake-ja-naku-arayuru-mono-ni-kyouka-point-wo-fuyo-dekiru-shi-ore-no-ishi-de-itsudemo-kouka-wo-kaijo-dekiru-kedo-nokotta-hitotachi-daijoubu": {
+      "status": "none",
+      "what": "No second season of The Laid-Off Cheat-Granting Mage Enjoys a Second Lease on Life has been announced",
+      "announced": null,
+      "by": null,
+      "window": null,
+      "confidence": "medium",
+      "sources": [
+        "https://finalweapon.net/2026/11/17/the-laid-off-cheat-granting-mage-enjoys-a-second-lease-on-life-anime-release-dates-schedule-episodes/",
+        "https://www.animenewsnetwork.com/.233874"
+      ],
+      "notes": "P.A. Works adaptation of Asa Rokushima's novels; 12 episodes expected, episode 12 expected 22 Dec 2026 on Crunchyroll (schedule).",
+      "why": "Nothing has been announced yet, and I could not verify how many source volumes are left.",
+      "season": 2,
+      "name": "The Laid-Off Cheat-Granting Mage Enjoys a Second Lease on Life"
+    },
+    "ao-no-hako-2": {
+      "status": "none",
+      "what": "No third season of Blue Box has been announced",
+      "announced": null,
+      "by": null,
+      "window": null,
+      "confidence": "medium",
+      "sources": [
+        "https://www.animenewsnetwork.com/.232332",
+        "https://finalweapon.net/2026/11/15/blue-box-season-2-release-dates-schedule-episodes-crunchyroll/",
+        "https://respawn.outlookindia.com/pop-culture/pop-culture-news/blue-box-manga-ends-after-5-year-shonen-jump-run"
+      ],
+      "notes": "Season 2 premiered 4 Oct 2026 on TBS (Netflix worldwide); one schedule lists episode 12 on 20 Dec 2026, another on 27 Dec, and the official episode count was not confirmed.",
+      "outlook": "material-left",
+      "why": "Kouji Miura's manga ended on 13 Jul 2026 at chapter 250; Season 1's 25 episodes covered only about 79 chapters, so a lot of material remains.",
+      "season": 3,
+      "name": "Blue Box"
+    },
+    "koori-no-jouheki-2nd-season": {
+      "status": "none",
+      "what": "No third season of The Ramparts of Ice has been announced",
+      "announced": null,
+      "by": null,
+      "window": null,
+      "confidence": "medium",
+      "sources": [
+        "https://www.animenewsnetwork.com/news/2026-11-03/ramparts-of-ice-manga-gets-epilogue-chapter-in-fan-book/.243463",
+        "https://www.animenewsnetwork.com/news/2026-08-27/the-ramparts-of-ice-season-2-anime-unveils-promo-video-visual-october-1-premiere-on-netflix/.241050"
+      ],
+      "notes": "Season 2 premiered 1 Oct 2026 (TBS; Netflix weekly); 13 episodes per our data; finale date not confirmed. A fan book with an exclusive epilogue chapter ships 4 Jan 2027.",
+      "outlook": "complete",
+      "why": "The manga ended in April 2022, with the 14th and final volume out in Feb 2025, so two seasons likely cover most or all of it (not confirmed).",
+      "season": 3,
+      "name": "The Ramparts of Ice"
+    },
+    "Tokyo-Revengers-Zokuhen": {
+      "status": "none",
+      "what": "No anime beyond the War of the Three Titans (Three Deities) arc has been announced",
+      "announced": null,
+      "by": null,
+      "window": null,
+      "confidence": "medium",
+      "sources": [
+        "https://www.animenewsnetwork.com/news/2026-03-29/tokyo-revengers-war-of-the-three-titans-arc-2nd-trailer-unveils-4-new-cast-members-october-debut/.235913",
+        "https://www.animenewsnetwork.com/preview-guide/2026/fall/tokyo-revengers-war-of-the-three-titans-arc/.241255"
+      ],
+      "notes": "Premiered 2 Oct 2026 (MBS/TBS/CBC; Hulu/Disney+); reported as 13 episodes (episodes 51-63 overall); finale date not confirmed.",
+      "why": "Ken Wakui's manga ended in Nov 2022; sources disagree on whether this 13-episode season also covers the final Kanto Manji arc, so how much remains is unclear.",
+      "season": 5,
+      "name": "Tokyo Revengers"
+    },
+    "kikansha-no-mahou-wa-tokubetsu-desu-2nd-season": {
+      "status": "none",
+      "what": "No third season of A Returner's Magic Should Be Special has been announced",
+      "announced": null,
+      "by": null,
+      "window": null,
+      "confidence": "medium",
+      "sources": [
+        "https://anitrendz.net/news/2026/06/07/a-returners-magic-should-be-special-season-2-reveals-october-2026-start-teaser-visual/",
+        "https://otakukart.com/a-returners-magic-should-be-special-season-2-release-schedule-when-new-episodes-arrive-on-crunchyroll/"
+      ],
+      "notes": "Season 2 premiered 7 Oct 2026 (Fuji TV; Crunchyroll); schedule lists episode 12 on 23 Dec 2026 (12-episode count not officially confirmed).",
+      "why": "Nothing has been announced yet, and I could not verify how far the anime is into Usonan's web novel.",
+      "season": 3,
+      "name": "A Returner's Magic Should Be Special"
+    },
+    "doumo-suki-na-hito-ni-horegusuri-wo-irai-sareta-majo-desu": {
+      "status": "none",
+      "what": "No second season has been announced",
+      "announced": null,
+      "by": null,
+      "window": null,
+      "confidence": "medium",
+      "sources": [
+        "https://www.animenewsnetwork.com/encyclopedia/anime.php?id=38410",
+        "https://finalweapon.net/2026/11/16/hello-i-am-a-witch-and-my-crush-wants-me-to-make-a-love-potion-release-dates-schedule-episodes/"
+      ],
+      "notes": "Diomedea adaptation; premiered 5 Oct 2026; episode 12 expected 21 Dec 2026 (schedule). Official English title: Hello, I Am a Witch and My Crush Wants Me to Make a Love Potion!",
+      "why": "Eiko Mutsuhana's light novel ran only from 2019 to 2020, so how much unadapted material remains is unclear.",
+      "season": 2,
+      "name": "Hello, I Am a Witch and My Crush Wants Me to Make a Love Potion!"
+    },
+    "kyouran-reijou-nia-liston": {
+      "status": "none",
+      "what": "No sequel has been announced; the current anime is a consecutive two-cour (half-year) run that continues into 2027",
+      "announced": null,
+      "by": null,
+      "window": null,
+      "confidence": "medium",
+      "sources": [
+        "https://www.animenewsnetwork.com/encyclopedia/anime.php?id=38387",
+        "https://anitrendz.net/news/2026/09/08/nia-liston-the-merciless-maiden-reveals-new-trailer-consecutive-2-cour-run/"
+      ],
+      "notes": "25 episodes in two consecutive cours from 6 Oct 2026 (Tokyo MX/MBS/BS NTV; HIDIVE), so it airs until about March 2027. There is no December finale.",
+      "outlook": "material-left",
+      "why": "The HJ Bunko light novel is ongoing (12+ volumes), with more material than one two-cour season.",
+      "season": 2,
+      "name": "Nia Liston: The Merciless Maiden"
+    },
+    "mezametara-saikyou-soubi-to-uchuusen-mochi-datta-node-ikkodate-mezashite-youhei-to-shite-jiyuu-ni-ikitai": {
+      "status": "none",
+      "what": "No second season of Reborn as a Space Mercenary has been announced",
+      "announced": null,
+      "by": null,
+      "window": null,
+      "confidence": "medium",
+      "sources": [
+        "https://www.animenewsnetwork.com/daily-briefs/2026-09-12/reborn-as-a-space-mercenary-tv-anime-debuts-on-october-4/.241698",
+        "https://finalweapon.net/2026/11/15/reborn-as-a-space-mercenary-anime-release-dates-schedule-episodes-crunchyroll/"
+      ],
+      "notes": "Premiered 4 Oct 2026 on Tokyo MX; schedule lists episode 12 on 20 Dec 2026 (our data says 13 episodes; not confirmed). A Russian blog's claim of a 2028 season 2 is unsourced and ignored.",
+      "outlook": "material-left",
+      "why": "Ryuto's light novel series has around 18 volumes, far more than one cour adapts.",
+      "season": 2,
+      "name": "Reborn as a Space Mercenary"
+    },
+    "dark-summoner-to-dekiteiru": {
+      "status": "none",
+      "what": "No second season of I'm Dating a Dark Summoner has been announced",
+      "announced": null,
+      "by": null,
+      "window": null,
+      "confidence": "medium",
+      "sources": [
+        "https://www.animenewsnetwork.com/news/2026-05-07/im-dating-a-dark-summoner-short-anime-airs-on-tv-this-year/.237172",
+        "https://finalweapon.net/2026/11/15/im-dating-a-dark-summoner-anime-release-dates-schedule-episodes-hidive/"
+      ],
+      "notes": "Short-format anime (WWWave/Deregula); premiered 4 Oct 2026; episode 12 expected 20 Dec 2026 on HIDIVE. HIDIVE also streams 12 Omake Shorts from 6 Nov 2026.",
+      "outlook": "material-left",
+      "why": "Shaoh's manga is ongoing with 7+ volumes, more than a short-format 12-episode season uses.",
+      "season": 2,
+      "name": "I'm Dating a Dark Summoner"
+    },
+    "Tensei-Kizoku-Kantei-Skill-de-Nariagaru-3rd-Season": {
+      "status": "none",
+      "what": "No fourth season has been announced",
+      "announced": null,
+      "by": null,
+      "window": null,
+      "confidence": "medium",
+      "sources": [
+        "https://www.animenewsnetwork.com/news/2026-11-22/as-a-reincarnated-aristocrat-ill-use-my-appraisal-skill-season-3-new-video-announces-more-cast/.244094",
+        "https://finalweapon.net/2026/11/15/as-a-reincarnated-aristocrat-ill-use-my-appraisal-skill-to-rise-in-the-world-season-3-release-dates-schedule-episodes/"
+      ],
+      "notes": "Season 3 premiered 27 Sep 2026 (Agaru Anime block); episode 12 expected 13 Dec 2026 (schedule).",
+      "why": "Nothing has been announced yet; the light novel is ongoing, but I could not confirm how much remains after Season 3.",
+      "season": 4,
+      "name": "As a Reincarnated Aristocrat, I'll Use My Appraisal Skill to Rise in the World"
+    },
+    "aoashi-2nd-season": {
+      "status": "announced",
+      "what": "Season 2 runs 24 episodes: its first cour (episodes 1–12) airs from 4 Oct 2026, and the second cour (episodes 13–24) is announced without an air date",
+      "announced": "2026-06-28",
+      "by": "Aoashi anime staff / NHK (reported by ABEMA Times)",
+      "window": null,
+      "confidence": "medium",
+      "sources": [
+        "https://times.abema.tv/en/articles/-/10255889",
+        "https://www.animenewsnetwork.com/.235200"
+      ],
+      "notes": "No Season 3 has been announced. First cour airs Sundays 17:00 on NHK E-Tele from 4 Oct 2026 (TMS Entertainment); first-cour finale likely around 20 Dec 2026 (not confirmed). The announced continuation is Season 2's second cour, not a Season 3. Yugo Kobayashi's manga is complete at 40 volumes.",
+      "name": "Aoashi",
+      "label": "Aoashi Season 2 Part 2"
+    },
+    "kashita-maryoku-wa-revo-barai-de-kyousei-choushuu": {
+      "status": "none",
+      "what": "No second season of Magic Repo Man has been announced; an aggregator snippet claiming one could not be traced to any official or ANN source",
+      "announced": null,
+      "by": null,
+      "window": null,
+      "confidence": "medium",
+      "sources": [
+        "https://www.animenewsnetwork.com/news/2026-06-16/magic-repo-man-anime-video-unveils-cast-more-staff-october-tv-debut/.238596",
+        "https://www.animenewsnetwork.com/encyclopedia/anime.php?id=37992"
+      ],
+      "notes": "Premiered 3 Oct 2026 on TV Asahi's NUMAnimation block (SynergySP); episode count and finale date not confirmed.",
+      "why": "Masakichi's web novel and Shingo Iijima's manga (5+ volumes) continue, but nothing has been announced and I could not verify how far the anime goes.",
+      "season": 2,
+      "name": "Magic Repo Man"
+    },
+    "magical-explorer-eroge-no-yuujin-chara-ni-tensei-shitakedo-game-chishiki-tsukatte-jiyuu-ni-ikiru": {
+      "status": "none",
+      "what": "No second season of Magical Explorer has been announced",
+      "announced": null,
+      "by": null,
+      "window": null,
+      "confidence": "medium",
+      "sources": [
+        "https://www.animenewsnetwork.com/news/2026-10-05/magical-explorer-tv-anime-confirms-english-dub-cast/.242513",
+        "https://yenpress.com/titles/9798855438000-magical-explorer-vol-12-light-novel"
+      ],
+      "notes": "White Fox adaptation premiered in Oct 2026 (Crunchyroll from 3 Oct); 13 episodes per our data; finale date not confirmed.",
+      "outlook": "material-left",
+      "why": "Iris's light novel runs to about 14 volumes in Japan (English vol. 12 out 10 Nov 2026), so much remains.",
+      "season": 2,
+      "name": "Magical Explorer"
+    },
+    "tantei-wa-mou-shindeiru-season-2": {
+      "status": "none",
+      "what": "No third season has been announced; staff released a new visual and trailer for a new arc within Season 2 on 22 Nov 2026",
+      "announced": null,
+      "by": null,
+      "window": null,
+      "confidence": "medium",
+      "sources": [
+        "https://www.animenewsnetwork.com/news/2026-11-22/the-detective-is-already-dead-anime-2nd-season-reveals-trailer-visual-for-new-arc/.244074",
+        "https://www.animenewsnetwork.com/news/2026-10-25/nigozyu-plans-to-end-the-detective-is-already-dead-novels-in-15th-volume/.243168"
+      ],
+      "notes": "Season 2 premiered 7 Oct 2026 (Tokyo MX/AT-X/BS NTV; Crunchyroll); 13 episodes per our data; finale date not confirmed. Check whether the 22 Nov 'new arc' turns out to be a further cour.",
+      "outlook": "material-left",
+      "why": "nigozyu's light novels are at 14 volumes and will end with volume 15, well beyond what two seasons adapt.",
+      "season": 3,
+      "name": "The Detective Is Already Dead"
+    },
+    "fool-night": {
+      "status": "none",
+      "what": "No second season has been announced; the series only premiered on Netflix on 26 Nov 2026",
+      "announced": null,
+      "by": null,
+      "window": null,
+      "confidence": "medium",
+      "sources": [
+        "https://finalweapon.net/2026/08/20/fool-night-anime-premieres-november-26-on-netflix/",
+        "https://www.animenewsnetwork.com/news/2026-11-26/fool-night-anime-reveals-3-more-cast-members/.244230"
+      ],
+      "notes": "Sunrise x SHAFT; global Netflix premiere 26 Nov 2026. Sources conflict on all-at-once vs weekly release, so the finale date is unclear.",
+      "why": "It has just premiered, and renewal would depend on Netflix; Kasumi Yasuda's manga is still running (1M+ copies).",
+      "season": 2,
+      "name": "Fool Night"
+    },
+    "yasei-no-last-boss-ga-arawareta-2nd-season": {
+      "status": "none",
+      "what": "No third season has been announced",
+      "announced": null,
+      "by": null,
+      "window": null,
+      "confidence": "medium",
+      "sources": [
+        "https://www.animenewsnetwork.com/news/2026-09-11/a-wild-last-boss-appeared-season-2-anime-reveals-september-26-early-streaming-debut-more-cast-in-/.241664",
+        "https://finalweapon.net/2026/11/14/a-wild-last-boss-appeared-season-2-release-dates-schedule-episodes-crunchyroll/"
+      ],
+      "notes": "Season 2 streamed early from 26 Sep 2026, with TV from 3 Oct (Tokyo MX); sources list episode 12 on 19 Dec or 12 Dec 2026 (unconfirmed).",
+      "why": "The source light novel is finished (9th and final volume, 2019), and I could not confirm how much of it Seasons 1-2 have used.",
+      "season": 3,
+      "name": "A Wild Last Boss Appeared!"
+    },
+    "shinja-zero-no-megami-sama-to-hajimeru-isekai-kouryaku": {
+      "status": "none",
+      "what": "No second season has been announced",
+      "announced": null,
+      "by": null,
+      "window": null,
+      "confidence": "medium",
+      "sources": [
+        "https://www.animenewsnetwork.com/encyclopedia/anime.php?id=38274",
+        "https://finalweapon.net/2026/11/01/full-clearing-another-world-under-a-goddess-with-zero-believers-release-dates-schedule-episodes/"
+      ],
+      "notes": "Premiered 11 Oct 2026 on BS Asahi (HORNETS); episode count and finale date not confirmed (at least 12 expected).",
+      "why": "Isle Osaki's light novel is reported to end with its next volume, but how much the anime covers is unclear.",
+      "season": 2,
+      "name": "Full Clearing Another World under a Goddess with Zero Believers"
+    },
+    "psyren": {
+      "status": "announced",
+      "what": "The anime will adapt PSYREN through the end of the story, so more episodes follow the Fall 2026 cour, with no date yet for the next part",
+      "announced": "2026-03-28",
+      "by": "PSYREN anime official / REMOW (AnimeJapan 2026), reported by Famitsu",
+      "window": null,
+      "confidence": "medium",
+      "sources": [
+        "https://www.famitsu.com/article/202603/70104",
+        "https://animecorner.me/psyren-anime-reveals-new-key-visual-october-2026-release/",
+        "https://finalweapon.net/2026/11/16/psyren-anime-release-dates-schedule-episodes-crunchyroll-streaming/"
+      ],
+      "notes": "Premiered 5 Oct 2026 (Tokyo MX/BS11; Satelight; Crunchyroll). Final Weapon lists a 13-episode first cour ending 28 Dec 2026 followed by two more cours (TBA); the three-cour plan comes from a leak and is not officially confirmed. Manga complete at 16 volumes.",
+      "name": "PSYREN",
+      "label": "PSYREN New Episodes"
+    },
+    "shiotaiou-no-satou-san-ga-ore-ni-dake-amai": {
+      "status": "none",
+      "what": "No second season has been announced",
+      "announced": null,
+      "by": null,
+      "window": null,
+      "confidence": "medium",
+      "sources": [
+        "https://www.animenewsnetwork.com/news/2026-06-26/the-salty-koharu-has-a-soft-spot-for-me-anime-promo-video-reveals-cast-october-premiere/.238986",
+        "https://finalweapon.net/2026/11/17/the-cold-sato-san-is-only-sweet-to-me-anime-release-dates-schedule-episodes-crunchyroll/"
+      ],
+      "notes": "Tezuka Productions; premiered 6 Oct 2026; episode 12 expected 22 Dec 2026 on Crunchyroll (schedule). ANN's English title: The Salty Koharu Has a Soft Spot for Me.",
+      "outlook": "material-left",
+      "why": "The Shogakukan light novel has 13 volumes plus a short-story volume, much more than one cour.",
+      "season": 2,
+      "name": "The Cold Sato-san is Only Sweet to Me"
+    },
+    "tensei-goblin-dakedo-shitsumon-aru": {
+      "status": "none",
+      "what": "No second season has been announced",
+      "announced": null,
+      "by": null,
+      "window": null,
+      "confidence": "medium",
+      "sources": [
+        "https://anitrendz.net/news/2026/09/09/so-whats-wrong-with-getting-reborn-as-a-goblin-unveils-new-visual-trailer-theme-songs-october-5-premiere/",
+        "https://www.animenewsnetwork.com/encyclopedia/manga.php?id=25797"
+      ],
+      "notes": "BAKKKA adaptation premiered 5 Oct 2026 on Tokyo MX with a two-episode premiere; finale date not confirmed.",
+      "outlook": "material-left",
+      "why": "Nazuna Miki and Tsukasa Araki's manga is ongoing in Tonari no Young Jump (14 volumes as of Mar 2026).",
+      "season": 2,
+      "name": "So What's Wrong with Getting Reborn as a Goblin?"
     }
   }
 }
