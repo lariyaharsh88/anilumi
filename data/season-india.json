@@ -1,0 +1,1258 @@
+{
+ "seasons": {
+  "2027-winter": {
+   "checked": "2026-11-26",
+   "reviewed": null,
+   "lineups": [
+    {
+     "service": "Crunchyroll",
+     "published": false,
+     "date": null,
+     "note": "No Winter 2027 season lineup/schedule post found as of 26 Nov 2026. Individual Winter 2027 titles announced piecemeal (Anime Expo 3 Jul 2026, later posts); Anime Frontier (Dec 2026) schedule lists early premieres. Precedent: Winter 2026 schedule announced 16 Dec 2025.",
+     "sources": [
+      "https://www.crunchyroll.com/news/announcements/2026/11/11/anime-frontier-2026-crunchyroll-programming-schedule",
+      "https://www.animenewsnetwork.com/news/2025-12-16/crunchyroll-announces-release-schedule-for-winter-2026-season/.232156"
+     ]
+    },
+    {
+     "service": "Crunchyroll India (Indian-language dubs)",
+     "published": false,
+     "date": null,
+     "note": "No Winter 2027 Hindi/Tamil/Telugu dub lineup found. Individual India announcements so far: Mashle S3, Sekiro: No Defeat, The Eternal Fool's Words of Wisdom (plus region lists incl. India for SSS-Class Revival Hunter, Bless).",
+     "sources": [
+      "https://www.animenewsnetwork.com/news/2026-10-30/crunchyroll-streams-mashle-magic-and-muscles-season-3-anime-in-india-in-january-2027/.243360",
+      "https://www.animenewsnetwork.com/news/2026-09-26/crunchyroll-streams-sekiro-no-defeat-anime-in-india-in-january-2027/.242177",
+      "https://www.animenewsnetwork.com/news/2026-07-14/crunchyroll-to-stream-the-eternal-fool-words-of-wisdom-anime-in-india/.239557"
+     ]
+    },
+    {
+     "service": "Muse Asia / Muse India",
+     "published": false,
+     "date": null,
+     "note": "No Winter 2027 lineup found. Precedent: Winter 2026 lineup came in January 2026.",
+     "sources": [
+      "https://animecorner.me/muse-reveals-winter-2026-anime-line-up/"
+     ]
+    },
+    {
+     "service": "Ani-One Asia",
+     "published": false,
+     "date": null,
+     "note": "No Winter 2027 lineup found. Precedent: January 2026 titles announced ~19 Dec 2025.",
+     "sources": [
+      "https://www.animenewsnetwork.com/news/2025-12-19/ani-one-asia-streams-there-was-a-cute-girl-in-the-hero-party-so-i-tried-confessing-to-her-anyway-im-/.232259"
+     ]
+    }
+   ],
+   "shows": [
+    {
+     "anilistId": 177704,
+     "slug": "mashle-season-3",
+     "title": "Mashle: Magic and Muscles Season 3",
+     "streaming": [
+      {
+       "service": "Crunchyroll",
+       "india": "yes",
+       "kind": null,
+       "note": "Crunchyroll to stream S3 in India from January 2027 (ANN 30 Oct); regions worldwide excluding Japan and China (ANN 28 Oct). Same-day-as-Japan timing not stated.",
+       "sources": [
+        "https://www.animenewsnetwork.com/news/2026-10-30/crunchyroll-streams-mashle-magic-and-muscles-season-3-anime-in-india-in-january-2027/.243360",
+        "https://www.animenewsnetwork.com/news/2026-10-28/crunchyroll-to-stream-mashle-magic-and-muscles-season-3-anime/.243281"
+       ]
+      }
+     ],
+     "previousSeasonIndia": {
+      "service": "Crunchyroll",
+      "note": "previous season, not an announcement. ANN: Crunchyroll streamed seasons 1 and 2 in India, with a Hindi dub for S2 and Tamil/Telugu dubs of S2 from 20 Aug 2024.",
+      "sources": [
+       "https://www.animenewsnetwork.com/news/2026-10-30/crunchyroll-streams-mashle-magic-and-muscles-season-3-anime-in-india-in-january-2027/.243360",
+       "https://animenewsnetwork.com/news/2024-08-19/mashle-dr-stone-stone-wars-5-more-anime-get-indian-language-dubs/.214374"
+      ]
+     },
+     "dubs": {
+      "hi": null,
+      "ta": null,
+      "te": null
+     },
+     "jpPremiere": {
+      "date": "2027-01-09",
+      "timeJst": "24:00",
+      "channel": "Tokyo MX",
+      "sources": [
+       "https://www.animenewsnetwork.com/news/2026-11-11/mashle-magic-and-muscles-season-3-new-video-unveils-more-cast-and-staff-january-9-debut/.243719",
+       "https://animecorner.me/mashle-season-3-reveals-first-main-trailer-and-new-key-visual-january-9-premiere/"
+      ]
+     },
+     "uncertain": "24:00 on 9 Jan = effectively midnight 10 Jan JST; also on BS11, Gunma TV, Tochigi TV and others. tbreak.com says Crunchyroll is exclusive in India and non-exclusive in Southeast Asia (secondary source only). No S3 Indian dub announced yet."
+    },
+    {
+     "anilistId": 189323,
+     "slug": "shangri-la-frontier-3rd-season",
+     "title": "Shangri-La Frontier Season 3",
+     "streaming": [],
+     "previousSeasonIndia": {
+      "service": "Crunchyroll",
+      "note": "previous season, not an announcement. ANN (30 Sep 2024): Crunchyroll simulcast S2 in India with English/Hindi/Tamil/Telugu dubs. ANN (22 Feb 2026): Kodansha's official YouTube channel also began streaming seasons 1-2 in India.",
+      "sources": [
+       "https://www.animenewsnetwork.com/news/2024-09-30/crunchyroll-simulcasts-demon-lord-retry-r-dandadan-23-more-anime-in-india/.216135",
+       "https://www.animenewsnetwork.com/news/2026-02-22/shangri-la-frontier-anime-1st-2nd-seasons-stream-on-youtube-in-india/.234440"
+      ]
+     },
+     "dubs": {
+      "hi": null,
+      "ta": null,
+      "te": null
+     },
+     "jpPremiere": {
+      "date": "2027-01-10",
+      "timeJst": "17:00",
+      "channel": "MBS/TBS",
+      "sources": [
+       "https://www.animenewsnetwork.com/news/2026-09-16/shangri-la-frontier-season-3-announces-january-10-debut-half-year-run/.241849",
+       "https://animecorner.me/shangri-la-frontier-season-3-key-visual-revealed-two-consecutive-cours-starting-on-january-10-2027/"
+      ]
+     },
+     "uncertain": "Crunchyroll's AnimagiC 2026 license for S3 lists North America, Central America, South America, Europe, Africa, Oceania, Middle East and CIS only, so India is NOT covered by that announcement (https://www.animenewsnetwork.com/news/2026-08-02/crunchyroll-to-stream-eleceed-fx-fighter-kurumi-chan-uncle-obsession-with-cute-things-more-anime-/.240182). No India announcement for S3 found. Two continuous cours.",
+     "notIndia": {
+      "service": "Crunchyroll",
+      "sources": [
+       "https://www.animenewsnetwork.com/news/2026-08-02/crunchyroll-to-stream-eleceed-fx-fighter-kurumi-chan-uncle-obsession-with-cute-things-more-anime-/.240182"
+      ]
+     }
+    },
+    {
+     "anilistId": 186822,
+     "slug": "kininatteru-hito-ga-otoko-ja-nakatta",
+     "title": "The Guy She Was Interested in Wasn't a Guy at All",
+     "streaming": [
+      {
+       "service": "Crunchyroll",
+       "india": "unclear",
+       "kind": "simulcast",
+       "note": "Crunchyroll will stream as it airs (announced at Anime Expo 2026); no region list found.",
+       "sources": [
+        "https://www.animenewsnetwork.com/news/2026-10-08/the-guy-she-was-interested-in-wasnt-a-guy-at-all-anime-1st-promo-video-reveals-more-cast-staff-/.242641",
+        "https://www.animenewsnetwork.com/news/2026-07-03/the-guy-she-was-interested-in-wasnt-a-guy-at-all-anime-teaser-reveals-cast-staff-nirvana-opening-/.239271"
+       ]
+      }
+     ],
+     "previousSeasonIndia": null,
+     "dubs": {
+      "hi": null,
+      "ta": null,
+      "te": null
+     },
+     "jpPremiere": {
+      "date": "2027-01-08",
+      "timeJst": "23:00",
+      "channel": "NTV (FuraAni block)",
+      "sources": [
+       "https://www.animenewsnetwork.com/news/2026-10-08/the-guy-she-was-interested-in-wasnt-a-guy-at-all-anime-1st-promo-video-reveals-more-cast-staff-/.242641",
+       "https://animecorner.me/the-guy-she-was-interested-in-wasnt-a-guy-at-all-first-trailer-and-new-cast-revealed-january-8-premiere/"
+      ]
+     },
+     "uncertain": "Crunchyroll's territory list not published in any source found; India not confirmed."
+    },
+    {
+     "anilistId": 169579,
+     "slug": "sekai-saikou-no-ansatsusha-isekai-kizoku-ni-tensei-suru-2nd-season",
+     "title": "The World's Finest Assassin Gets Reincarnated in Another World as an Aristocrat Season 2",
+     "streaming": [],
+     "previousSeasonIndia": {
+      "service": "Muse Asia (YouTube); Netflix",
+      "note": "previous season, not an announcement. ANN (16 Dec 2024): Muse Asia streamed S1 in India as it aired, Netflix also streams it in India, and Muse India began a Hindi dub of S1.",
+      "sources": [
+       "https://www.animenewsnetwork.com/news/2024-12-16/hindi-dub-of-the-world-finest-assassin-gets-reincarnated-in-a-different-world-as-an-aristocrat-/.219134"
+      ]
+     },
+     "dubs": {
+      "hi": null,
+      "ta": null,
+      "te": null
+     },
+     "jpPremiere": {
+      "date": null,
+      "month": "2027-01",
+      "timeJst": null,
+      "channel": null,
+      "sources": [
+       "https://www.animenewsnetwork.com/news/2026-09-04/the-world-finest-assassin-gets-reincarnated-in-a-different-world-as-an-aristocrat-season-2-video-/.241347",
+       "https://animecorner.me/the-worlds-finest-assassin-season-2-reveals-main-trailer-key-visual-cast-january-2027-release/"
+      ]
+     },
+     "uncertain": "Crunchyroll will stream S2 only in North America, Central America, South America, Europe, Africa, Oceania, Middle East and CIS, so NOT India (https://www.animenewsnetwork.com/news/2026-04-27/crunchyroll-to-stream-smoking-behind-the-supermarket-with-you-4-more-2026-anime-reveals-english-dub-/.236806). No Muse/Ani-One/Netflix S2 announcement found. English title: The World's Finest Assassin Gets Reincarnated in Another World as an Aristocrat Season 2.",
+     "notIndia": {
+      "service": "Crunchyroll",
+      "sources": [
+       "https://www.animenewsnetwork.com/news/2026-04-27/crunchyroll-to-stream-smoking-behind-the-supermarket-with-you-4-more-2026-anime-reveals-english-dub-/.236806"
+      ]
+     }
+    },
+    {
+     "anilistId": 204363,
+     "slug": "sakamoto-days-season-2",
+     "title": "Sakamoto Days Season 2",
+     "streaming": [
+      {
+       "service": "Netflix",
+       "india": "unclear",
+       "kind": "simulcast",
+       "note": "Netflix: 'premieres January 2027, only on Netflix' (no worldwide wording). ANN: ep 1 on Netflix at same time as TV premiere, later episodes on Netflix before TV airing.",
+       "sources": [
+        "http://about.netflix.com/en/news/sakamoto-days-season-2-returns-january-2027",
+        "https://www.animenewsnetwork.com/news/2026-11-17/sakamoto-days-season-2-trailer-unveils-more-cast-opening-song-january-18-debut/.243925"
+       ]
+      }
+     ],
+     "previousSeasonIndia": {
+      "service": "Netflix",
+      "note": "previous season, not an announcement. Netflix India title page lists Season 1 with English, Hindi and Japanese audio.",
+      "sources": [
+       "https://www.netflix.com/in/title/81663325"
+      ]
+     },
+     "dubs": {
+      "hi": null,
+      "ta": null,
+      "te": null
+     },
+     "jpPremiere": {
+      "date": "2027-01-18",
+      "timeJst": "24:00",
+      "channel": "TV Tokyo",
+      "sources": [
+       "https://www.animenewsnetwork.com/news/2026-11-17/sakamoto-days-season-2-trailer-unveils-more-cast-opening-song-january-18-debut/.243925",
+       "https://animecorner.me/sakamoto-days-season-2-reveals-key-visual-main-trailer-january-18-premiere-creepy-nuts-theme-song-artist/"
+      ]
+     },
+     "uncertain": "24:00 on 18 Jan = effectively midnight 19 Jan JST (input file says 19 Jan); BS TV Tokyo from 24 Jan. Netflix India almost certainly carries it (S1 is there with Hindi audio) but no S2 source says worldwide/India. S1 Hindi dub exists; no S2 Hindi dub announced."
+    },
+    {
+     "anilistId": 197620,
+     "slug": "sekiro-no-defeat",
+     "title": "Sekiro: No Defeat",
+     "streaming": [
+      {
+       "service": "Crunchyroll",
+       "india": "yes",
+       "kind": null,
+       "note": "ANN (26 Sep 2026): Crunchyroll streams the 8-episode TV version in India in January 2027; ANN (24 Sep): worldwide excluding Japan, China, Korea, Russia, Belarus. Start day not announced.",
+       "sources": [
+        "https://www.animenewsnetwork.com/news/2026-09-26/crunchyroll-streams-sekiro-no-defeat-anime-in-india-in-january-2027/.242177",
+        "https://www.animenewsnetwork.com/news/2025-08-23/sekiro-no-defeat-anime-to-stream-in-india/.227942",
+        "https://www.animenewsnetwork.com/news/2026-09-24/sekiro-no-defeat-anime-airs-in-january-as-8-episode-tv-series/.242149"
+       ]
+      }
+     ],
+     "previousSeasonIndia": null,
+     "dubs": {
+      "hi": null,
+      "ta": null,
+      "te": null
+     },
+     "jpPremiere": {
+      "date": null,
+      "month": "2027-01",
+      "timeJst": null,
+      "channel": null,
+      "sources": [
+       "https://www.animenewsnetwork.com/news/2026-09-24/sekiro-no-defeat-anime-airs-in-january-as-8-episode-tv-series/.242149"
+      ]
+     },
+     "uncertain": "Theatrical version opened in Japan on 4 Sep 2026; the 8-episode TV version airs on Japanese TV in January 2027 (no date/channel). Exact Crunchyroll start day and whether it is simultaneous with the Japan TV airing not announced. India exclusivity claim is from the Aug 2025 announcement (when release was '2026')."
+    },
+    {
+     "anilistId": 204747,
+     "slug": "one-punch-man-3-part-2",
+     "title": "One-Punch Man 3 Part 2",
+     "streaming": [],
+     "previousSeasonIndia": {
+      "service": "Crunchyroll; Muse Asia (YouTube); Netflix",
+      "note": "previous season, not an announcement. Season 3 Part 1 (Oct 2025): Crunchyroll streamed it in India as it aired (Hindi dub from 15 Dec, Tamil/Telugu later); Muse Asia streamed it in India on YouTube; Netflix also streamed it in India.",
+      "sources": [
+       "https://www.animenewsnetwork.com/news/2025-10-28/crunchyroll-streams-one-punch-man-season-3-anime-hindi-dub-on-december-15/.230359",
+       "https://www.animenewsnetwork.com/news/2025-10-12/muse-asia-streams-one-punch-man-season-3-backstabbed-in-a-backwater-dungeon-more-anime-in-india/.229874",
+       "https://www.animenewsnetwork.com/news/2025-10-10/netflix-lists-one-punch-man-season-3-anime-in-india/.229790"
+      ]
+     },
+     "dubs": {
+      "hi": null,
+      "ta": null,
+      "te": null
+     },
+     "jpPremiere": {
+      "date": null,
+      "month": "2027-01",
+      "timeJst": null,
+      "channel": null,
+      "sources": [
+       "https://www.animenewsnetwork.com/news/2026-10-10/one-punch-man-season-3-anime-2nd-part-reveals-january-2027-debut-in-video/.242696",
+       "https://animecorner.me/one-punch-man-season-3-cour-2-visual-and-trailer-revealed-sets-january-2027-release/"
+      ]
+     },
+     "uncertain": "No India streaming announcement for Part 2 found yet; Part 1 services likely continue but unconfirmed."
+    },
+    {
+     "anilistId": 181951,
+     "slug": "spice-and-wolf-merchant-meets-the-wise-wolf-season-2",
+     "title": "Spice and Wolf: MERCHANT MEETS THE WISE WOLF Season 2",
+     "streaming": [],
+     "previousSeasonIndia": {
+      "service": "Netflix",
+      "note": "previous season, not an announcement. Netflix India title page lists the 2024 series (25 episodes, Japanese audio, English subtitles).",
+      "sources": [
+       "https://www.netflix.com/in/title/81768918"
+      ]
+     },
+     "dubs": {
+      "hi": null,
+      "ta": null,
+      "te": null
+     },
+     "jpPremiere": {
+      "date": null,
+      "month": "2027-01",
+      "timeJst": null,
+      "channel": "TV Tokyo",
+      "sources": [
+       "https://www.animenewsnetwork.com/news/2026-11-18/spice-and-wolf-merchant-meets-the-wise-wolf-season-2-to-debut-in-january/.243941",
+       "https://animecorner.me/spice-and-wolf-season-2-announces-january-2027-premiere/"
+      ]
+     },
+     "uncertain": "Crunchyroll (18 Nov 2026) will stream S2 only in North America, Central America, South America, Europe, Africa, Oceania, Middle East and CIS, so NOT India (ANN 243941). No India announcement found.",
+     "notIndia": {
+      "service": "Crunchyroll",
+      "sources": [
+       "https://www.animenewsnetwork.com/news/2026-11-18/spice-and-wolf-merchant-meets-the-wise-wolf-season-2-to-debut-in-january/.243941"
+      ]
+     }
+    },
+    {
+     "anilistId": 213752,
+     "slug": "marriagetoxin-2nd-season",
+     "title": "MARRIAGETOXIN 2nd Season",
+     "streaming": [],
+     "previousSeasonIndia": {
+      "service": "Crunchyroll",
+      "note": "previous season, not an announcement. ANN (5 May 2026): S1 streaming in India as it airs, with Hindi/Tamil/Telugu dubs on Crunchyroll; Crunchyroll News (Sep 2026) lists India and Southeast Asia among S1 regions.",
+      "sources": [
+       "https://www.animenewsnetwork.com/news/2026-05-05/indian-language-dubs-for-liar-game-marriage-toxin-more-anime-stream-on-crunchyroll/.237034",
+       "https://www.crunchyroll.com/news/latest/2026/9/8/marriagetoxin-season-2-anime-main-visual-new-trailer"
+      ]
+     },
+     "dubs": {
+      "hi": null,
+      "ta": null,
+      "te": null
+     },
+     "jpPremiere": {
+      "date": null,
+      "month": "2027-01",
+      "timeJst": null,
+      "channel": null,
+      "sources": [
+       "https://www.crunchyroll.com/news/latest/2026/6/30/marriagetoxin-season-2-anime-announced-january-2027",
+       "https://animecorner.me/marriagetoxin-season-2-main-visual-revealed/"
+      ]
+     },
+     "uncertain": "No formal S2 streaming/region announcement found (Anime Corner only says Crunchyroll streams 'the anime' worldwide). Crunchyroll News page content could not be fetched directly; its India region list was seen only in search-result text. S1 aired on Kansai TV/Fuji TV; S2 channel not confirmed."
+    },
+    {
+     "anilistId": 202564,
+     "slug": "kakunaru-ue-wa",
+     "title": "Now That We Draw",
+     "streaming": [],
+     "previousSeasonIndia": null,
+     "dubs": {
+      "hi": null,
+      "ta": null,
+      "te": null
+     },
+     "jpPremiere": {
+      "date": null,
+      "month": "2027-01",
+      "timeJst": null,
+      "channel": null,
+      "sources": [
+       "https://animeanime.jp/article/2026/09/25/103207.html",
+       "https://realsound.jp/movie/2026/09/post-2532482.html"
+      ]
+     },
+     "uncertain": "No streaming licensor announced; no ANN/official-site confirmation fetched for the month (Japanese outlets report the official Sep 2026 announcement)."
+    },
+    {
+     "anilistId": 204579,
+     "slug": "jirai-nan-desu-ka-chihara-san",
+     "title": "Jirai nan desu ka? Chihara-san",
+     "streaming": [],
+     "previousSeasonIndia": null,
+     "dubs": {
+      "hi": null,
+      "ta": null,
+      "te": null
+     },
+     "jpPremiere": {
+      "date": "2027-01-07",
+      "timeJst": null,
+      "channel": "MBS/TBS (Super Animeism TURBO, 28 stations)",
+      "sources": [
+       "https://chiharasan-anime.com/",
+       "https://pixeltwelve.com/articles/chihara-san-anime-january-7-2027-japan-premiere"
+      ]
+     },
+     "uncertain": "Official site: '2027年1月7日(木)より 毎週木曜深夜0:26～' (Thursday late-night 0:26). By Japanese convention 'Thursday late night 0:26' may mean 00:26 on Fri 8 Jan (AniList: 8 Jan); time left null. Streaming section 'COMING SOON'."
+    },
+    {
+     "anilistId": 209980,
+     "slug": "isekai-de-cheat-skill-wo-te-ni-shita-ore-wa-genjitsu-sekai-wo-mo-musou-suru-level-up-wa-jinsei-wo-kaeta-2nd-season",
+     "title": "I Got a Cheat Skill in Another World and Became Unrivaled in the Real World, Too Season 2",
+     "streaming": [],
+     "previousSeasonIndia": {
+      "service": "Crunchyroll",
+      "note": "previous entry (TV special, Mar 2026) streamed on Crunchyroll in India; same ANN article says Crunchyroll streamed season 1 in India as it aired and added a Hindi dub in Nov 2023. Not an announcement for season 2.",
+      "sources": [
+       "https://www.animenewsnetwork.com/news/2026-04-03/crunchyroll-streams-i-got-a-cheat-skill-in-another-world-anime-special-in-india/.236068"
+      ]
+     },
+     "dubs": {
+      "hi": null,
+      "ta": null,
+      "te": null
+     },
+     "jpPremiere": {
+      "date": null,
+      "month": "2027-01",
+      "timeJst": null,
+      "channel": null,
+      "sources": [
+       "https://animecorner.me/i-got-a-cheat-skill-in-another-world-iseleve-season-2-first-trailer-new-cast-january-2027-release-revealed/"
+      ]
+     },
+     "uncertain": "English title commonly 'I Got a Cheat Skill in Another World and Became Unrivaled in the Real World, Too Season 2'. Season 1 was also simulcast in India by Muse Asia (ANN 2023-04-03, seen only as search result). No season 2 streamer announced yet."
+    },
+    {
+     "anilistId": 217070,
+     "slug": "futsutsuka-na-akujo-de-wa-gozaimasu-ga-suuguu-chouso-torikae-den-part-2",
+     "title": "Though I Am an Inept Villainess Part 2",
+     "streaming": [],
+     "previousSeasonIndia": {
+      "service": "Crunchyroll",
+      "note": "previous cour (Summer 2026) announced by Crunchyroll for regions incl. 'the Indian Subcontinent'; Netflix also streamed it weekly in select Asian regions incl. India (What's on Netflix, 5 Aug 2026). Not an announcement for part 2.",
+      "sources": [
+       "https://www.animenewsnetwork.com/cms/.236406",
+       "https://www.whats-on-netflix.com/news/anime/is-though-i-am-an-inept-villainess-on-netflix/"
+      ]
+     },
+     "dubs": {
+      "hi": null,
+      "ta": null,
+      "te": null
+     },
+     "jpPremiere": {
+      "date": null,
+      "month": "2027-01",
+      "timeJst": null,
+      "channel": null,
+      "sources": [
+       "https://animecorner.me/though-i-am-an-inept-villainess-cour-2-reveals-teaser-trailer-ahead-of-january-2027-debut/",
+       "https://dengekionline.com/article/202609/88727"
+      ]
+     },
+     "uncertain": "Search summaries claim Crunchyroll confirmed the second half for January 2027, but I saw no Crunchyroll/ANN page with a region list for part 2, so not recorded as an India announcement."
+    },
+    {
+     "anilistId": 188892,
+     "slug": "Kuroiwa-Medaka-ni-Watashi-no-Kawaii-ga-Tsuujinai-2nd-Season",
+     "title": "Medaka Kuroiwa is Impervious to My Charms Season 2",
+     "streaming": [],
+     "previousSeasonIndia": {
+      "service": "Crunchyroll",
+      "note": "season 1 was in Crunchyroll's Winter 2025 India lineup (Crunchyroll statement to Sportskeeda, 14 Dec 2024). Previous season, not an announcement.",
+      "sources": [
+       "https://www.sportskeeda.com/anime/news-crunchyroll-brings-solo-leveling-season-2-dr-stone-final-season-winter-2025-anime-to-india"
+      ]
+     },
+     "dubs": {
+      "hi": null,
+      "ta": null,
+      "te": null
+     },
+     "jpPremiere": {
+      "date": null,
+      "month": "2027-01",
+      "timeJst": null,
+      "channel": null,
+      "sources": [
+       "https://www.animenewsnetwork.com/news/2026-07-03/medaka-kuroiwa-is-impervious-to-my-charms-2nd-season-anime-reveals-january-2027-debut/.239258"
+      ]
+     },
+     "uncertain": "Crunchyroll announced season 2 on 11 Nov 2026 for North/Central/South America, Europe, Africa, Oceania, Middle East and CIS only - India NOT listed (per Final Weapon summary of the Crunchyroll news post https://www.crunchyroll.com/news/announcements/2026/11/11/medaka-kuroiwa-is-impervious-to-my-charms-season-2-anime-stream-crunchyroll, which did not render for me). So no India streaming recorded.",
+     "notIndia": {
+      "service": "Crunchyroll",
+      "sources": [
+       "https://www.crunchyroll.com/news/announcements/2026/11/11/medaka-kuroiwa-is-impervious-to-my-charms-season-2-anime-stream-crunchyroll"
+      ]
+     }
+    },
+    {
+     "anilistId": 216624,
+     "slug": "shishite-ikiru-sss-kyuu-hunter",
+     "title": "SSS-Class Revival Hunter",
+     "streaming": [
+      {
+       "service": "Crunchyroll",
+       "india": "yes",
+       "kind": null,
+       "note": "ANN (9 Sep 2026): Crunchyroll streams it worldwide excluding Asia, but including the Indian subcontinent, Indonesia, Singapore, Philippines, Malaysia. Start day not announced.",
+       "sources": [
+        "https://www.animenewsnetwork.com/news/2026-09-09/sss-class-revival-hunter-novel-webtoon-gets-anime/.241578"
+       ]
+      }
+     ],
+     "previousSeasonIndia": null,
+     "dubs": {
+      "hi": null,
+      "ta": null,
+      "te": null
+     },
+     "jpPremiere": {
+      "date": null,
+      "month": "2027-01",
+      "timeJst": null,
+      "channel": "Fuji TV +Ultra",
+      "sources": [
+       "https://www.animenewsnetwork.com/news/2026-09-09/sss-class-revival-hunter-novel-webtoon-gets-anime/.241578",
+       "https://dengekionline.com/article/202610/90622"
+      ]
+     },
+     "uncertain": "Simulcast timing assumed from Crunchyroll's announcement wording; exact episode-1 date not yet announced. Fuji TV +Ultra slot from Dengeki Online (seen via search summary)."
+    },
+    {
+     "anilistId": 190244,
+     "slug": "date-a-live-f-last-date",
+     "title": "Date A Live F Last Date",
+     "streaming": [],
+     "previousSeasonIndia": {
+      "service": "Crunchyroll",
+      "note": "Date A Live V (Spring 2024) was in Crunchyroll's India simulcast lineup, streaming from 10 Apr 2024. Previous season, not an announcement.",
+      "sources": [
+       "https://www.animenewsnetwork.com/news/2024-04-08/sound-euphonium-3-tadaima-okaeri-oblivion-battery-more-anime-simulcast-on-crunchyroll/.209648"
+      ]
+     },
+     "dubs": {
+      "hi": null,
+      "ta": null,
+      "te": null
+     },
+     "jpPremiere": {
+      "date": "2027-03-26",
+      "timeJst": null,
+      "channel": "Theatrical release (Japan, ~60 theaters)",
+      "sources": [
+       "https://animecorner.me/date-a-live-f-last-date-anime-film-key-visual-and-trailer-revealed-gets-march-26-2027-premiere-date/",
+       "https://dengekionline.com/article/202610/92325"
+      ]
+     },
+     "uncertain": "Film; no overseas/India release announced."
+    },
+    {
+     "anilistId": 196333,
+     "slug": "hirayasumi",
+     "title": "Hirayasumi",
+     "streaming": [
+      {
+       "service": "Netflix",
+       "india": "unclear",
+       "kind": null,
+       "note": "ANN (8 Nov 2026): 'will stream internationally on Netflix in January', subtitle 'Global streaming begins in January'. India not named; no exclusions listed. Exact date not announced.",
+       "sources": [
+        "https://www.animenewsnetwork.com/news/2026-11-08/hirayasumi-tv-anime-to-stream-on-netflix/.243636",
+        "https://www.animenewsnetwork.com/press-release/2026-11-09/viz-media-announces-hirayasumi-anime-will-stream-on-netflix-in-january-2027-with-gen-hoshino-/.243638"
+       ]
+      }
+     ],
+     "previousSeasonIndia": null,
+     "dubs": {
+      "hi": null,
+      "ta": null,
+      "te": null
+     },
+     "jpPremiere": {
+      "date": null,
+      "month": "2027-01",
+      "timeJst": null,
+      "channel": "NHK General",
+      "sources": [
+       "https://www.animenewsnetwork.com/news/2026-03-16/hirayasumi-anime-teaser-unveils-staff-january-2027-debut/.235378",
+       "https://www.animenewsnetwork.com/news/2026-09-28/hirayasumi-anime-unveils-teaser-key-visual-cast/.242284"
+      ]
+     },
+     "uncertain": "India inferred from 'global/international' Netflix wording only; no Netflix India title page yet. Simulcast vs. delayed not stated."
+    },
+    {
+     "anilistId": 186741,
+     "slug": "himekishi-sama-no-himo",
+     "title": "The Kept Man of the Princess Knight",
+     "streaming": [],
+     "previousSeasonIndia": null,
+     "dubs": {
+      "hi": null,
+      "ta": null,
+      "te": null
+     },
+     "jpPremiere": {
+      "date": null,
+      "month": "2027-01",
+      "timeJst": null,
+      "channel": null,
+      "sources": [
+       "https://animecorner.me/the-kept-man-of-the-princess-knight-teaser-trailer-and-visual-revealed-gets-january-2027-release/",
+       "https://www.animenewsnetwork.com/news/2026-10-03/the-kept-man-of-the-princess-knight-tv-anime-promo-video-reveals-myth-and-roid-opening-theme/.242438"
+      ]
+     },
+     "uncertain": "No streaming platform announced."
+    },
+    {
+     "anilistId": 194213,
+     "slug": "ghost-yoru-no-hate",
+     "title": "ghost – end of night",
+     "streaming": [],
+     "previousSeasonIndia": null,
+     "dubs": {
+      "hi": null,
+      "ta": null,
+      "te": null
+     },
+     "jpPremiere": {
+      "date": "2027-02-11",
+      "timeJst": null,
+      "channel": "Theatrical release (Japan; distributor Bandai Namco Filmworks)",
+      "sources": [
+       "https://www.animenewsnetwork.com/news/2026-07-01/madhouse-reveals-ghost-original-anime-film-teaser-full-title-february-11-2027-debut/.239177"
+      ]
+     },
+     "uncertain": "Original Madhouse film; no international/India release announced."
+    },
+    {
+     "anilistId": 213360,
+     "slug": "akane-banashi-2nd-season",
+     "title": "Akane-Banashi Season 2",
+     "streaming": [],
+     "previousSeasonIndia": {
+      "service": "Ani-One Asia (YouTube) and Netflix",
+      "note": "season 1 (Spring 2026) streamed in India on Ani-One Asia's YouTube channel (ANN, 10 Apr 2026); Netflix India title page also lists Akane-Banashi (2026, 12 episodes). Previous season, not an announcement.",
+      "sources": [
+       "https://www.animenewsnetwork.com/news/2026-04-10/ani-one-asia-streams-akane-banashi-monster-eater-mao-more-anime-in-india/.236269",
+       "https://www.netflix.com/in/title/82701514"
+      ]
+     },
+     "dubs": {
+      "hi": null,
+      "ta": null,
+      "te": null
+     },
+     "jpPremiere": {
+      "date": null,
+      "month": "2027-01",
+      "timeJst": null,
+      "channel": "TV Asahi IMAnimation (24 stations), BS Asahi",
+      "sources": [
+       "https://animecorner.me/akane-banashi-season-2-announced-for-january-2027/",
+       "https://www.famitsu.com/article/202606/78997"
+      ]
+     },
+     "uncertain": "What's on Netflix (23 Nov 2026) gives conflicting start dates (7 Jan and 9 Jan 2027, citing an AnimeTV tweet) - not official, so month only. Netflix release for season 2 not confirmed; season 1 hit Netflix ~6 weeks after Japan."
+    },
+    {
+     "anilistId": 183960,
+     "slug": "Isekai-Munchkin-HP-1-no-Mama-de-Saikyou-Saisoku-Dungeon-Kouryaku",
+     "title": "Otherworldly Munchkin: Let's Speedrun the Dungeon with Only 1 HP!",
+     "streaming": [
+      {
+       "service": "Crunchyroll",
+       "india": "unclear",
+       "kind": "simulcast",
+       "note": "Crunchyroll's June 2025 announcement listed territories 'North America, Central America, South America, Europe, Oceania, Middle East, North Africa and India' (made when the show was set for Oct 2025; not re-announced for the Jan 2027 date) Not re-announced for the new January 2027 date.",
+       "sources": [
+        "https://finalweapon.net/2025/06/03/crunchyroll-stream-lets-play-otherworldly-munchkin-with-you-and-the-rain",
+        "https://www.crunchyroll.com/news/announcements/2025/6/3/otherworldly-munchkin-lets-play-anime-more-stream-crunchyroll"
+       ]
+      }
+     ],
+     "previousSeasonIndia": null,
+     "dubs": {
+      "hi": null,
+      "ta": null,
+      "te": null
+     },
+     "jpPremiere": {
+      "date": "2027-01-08",
+      "timeJst": "00:30",
+      "channel": "TOKYO MX / BS11",
+      "sources": [
+       "https://dengekionline.com/article/202611/94365",
+       "https://anitrendz.net/news/2026/11/18/otherworldly-munchkin-set-for-january-7-2027-premiere-gets-new-trailer-and-visual/"
+      ]
+     },
+     "uncertain": "Officially listed as Thu 7 Jan 2027 24:30 JST (= 8 Jan 00:30). Crunchyroll India region list comes from the June 2025 announcement made before the delay from Oct 2025; the Crunchyroll page itself would not render for me (region list quoted via Final Weapon, which links it)."
+    },
+    {
+     "anilistId": 208766,
+     "slug": "bless",
+     "title": "Bless",
+     "streaming": [
+      {
+       "service": "Crunchyroll",
+       "india": "yes",
+       "kind": "simulcast",
+       "note": "ANN (22 Oct 2026): Crunchyroll streams it worldwide excluding Japan and China when it debuts in January.",
+       "sources": [
+        "https://www.animenewsnetwork.com/news/2026-10-22/bless-tv-anime-casts-tarusuke-shingaki-crunchyroll-to-stream-series/.243105",
+        "https://www.crunchyroll.com/news/announcements/2026/10/22/bless-anime-january-2027-stream-crunchyroll"
+       ]
+      }
+     ],
+     "previousSeasonIndia": null,
+     "dubs": {
+      "hi": null,
+      "ta": null,
+      "te": null
+     },
+     "jpPremiere": {
+      "date": "2027-01-08",
+      "timeJst": "23:30",
+      "channel": "Fuji TV (Noitamina)",
+      "sources": [
+       "https://www.animenewsnetwork.com/news/2026-11-07/bless-tv-anime-1st-full-promo-video-announces-january-8-debut/.243605",
+       "https://news.denfaminicogamer.jp/?p=1678347"
+      ]
+     },
+     "uncertain": "Prime Video worldwide exclusive mentioned in some coverage refers to the live-action drama, not the anime."
+    },
+    {
+     "anilistId": 205130,
+     "slug": "historie",
+     "title": "Historié",
+     "streaming": [],
+     "previousSeasonIndia": null,
+     "dubs": {
+      "hi": null,
+      "ta": null,
+      "te": null
+     },
+     "jpPremiere": {
+      "date": null,
+      "month": "2027-01",
+      "timeJst": null,
+      "channel": null,
+      "sources": [
+       "https://animenewsnetwork.com/news/2026-05-24/historie-tv-anime-announces-lead-voice-actor-january-2027-premiere/.237768"
+      ]
+     },
+     "uncertain": "No streaming partner or broadcaster announced as of the sources found."
+    },
+    {
+     "anilistId": 206298,
+     "slug": "medalist-movie",
+     "title": "Medalist Movie",
+     "streaming": [],
+     "previousSeasonIndia": null,
+     "dubs": {
+      "hi": null,
+      "ta": null,
+      "te": null
+     },
+     "jpPremiere": {
+      "date": "2027-02-19",
+      "timeJst": null,
+      "channel": "Theatrical release (Japan)",
+      "sources": [
+       "https://anime.eiga.com/news/127347/"
+      ]
+     },
+     "uncertain": "Japan theatrical release date (announced 31 Aug 2026). Season 2 streamed on Disney+ (e.g. disneyplus.com/en-nz listing) but I found no source showing Medalist streams in India; JustWatch India said not available, so previousSeasonIndia is null."
+    },
+    {
+     "anilistId": 197619,
+     "slug": "kekkaishi-no-ichirinka",
+     "title": "Bride of the Barrier Master",
+     "streaming": [
+      {
+       "service": "Netflix",
+       "india": "unclear",
+       "kind": null,
+       "note": "Netflix will stream weekly episodes from January 2027 ('Netflix and other streaming services'); no region list or netflix.com/in title page found",
+       "sources": [
+        "https://www.whats-on-netflix.com/news/anime/bride-of-the-barrier-master-netflix-january-2027-release/",
+        "https://finalweapon.net/2026/09/20/bride-of-the-barrier-master-anime-to-stream-on-netflix/"
+       ]
+      }
+     ],
+     "previousSeasonIndia": null,
+     "dubs": {
+      "hi": null,
+      "ta": null,
+      "te": null
+     },
+     "jpPremiere": {
+      "date": null,
+      "month": "2027-01",
+      "timeJst": null,
+      "channel": null,
+      "sources": [
+       "https://animecorner.me/bride-of-the-barrier-master-reveals-visual-trailer-main-cast-january-2027-premiere/",
+       "https://finalweapon.net/2026/11/08/bride-of-the-barrier-master-anime-new-character-focused-promos/"
+      ]
+     },
+     "uncertain": "Input date 6 Jan 2027 not confirmed by any source; still only 'January 2027' as of early/mid Nov 2026. Input slug was null; slug made from romaji Kekkaishi no Ichirinka."
+    },
+    {
+     "anilistId": 207251,
+     "slug": "mairimashita-iruma-kun-if-episode-of-mafia",
+     "title": "Welcome to Demon School! Iruma-kun: IruMafia Edition",
+     "streaming": [],
+     "previousSeasonIndia": null,
+     "dubs": {
+      "hi": null,
+      "ta": null,
+      "te": null
+     },
+     "jpPremiere": {
+      "date": "2027-01-04",
+      "timeJst": "23:00",
+      "channel": "NHK General (NHK総合)",
+      "sources": [
+       "https://www.nhk-character.com/chara/irumafia/",
+       "https://animecorner.me/welcome-to-demon-school-iruma-kun-irumafia-edition-anime-main-visual-and-january-4-revealed/"
+      ]
+     },
+     "uncertain": "No streaming partner announced for the spinoff; Crunchyroll mentions in coverage refer to the main series. 12 episodes per Anime Corner."
+    },
+    {
+     "anilistId": 200578,
+     "slug": "isshiki-san-wa-koi-wo-shiritai",
+     "title": "Isshiki-san wa Koi wo Shiritai.",
+     "streaming": [],
+     "previousSeasonIndia": null,
+     "dubs": {
+      "hi": null,
+      "ta": null,
+      "te": null
+     },
+     "jpPremiere": {
+      "date": null,
+      "month": "2027-01",
+      "timeJst": null,
+      "channel": null,
+      "sources": [
+       "https://www.animenewsnetwork.com/news/2026-05-22/ms-isshiki-wants-to-know-about-love-anime-teaser-unveils-cast-january-2027-debut/.237702"
+      ]
+     },
+     "uncertain": "English title used by ANN: 'Ms. Isshiki Wants to Know About Love'. No streaming or broadcaster announced in sources found."
+    },
+    {
+     "anilistId": 189121,
+     "slug": "bang-dream-it-s-mygo-ave-mujica-zoku-hen",
+     "title": "BanG Dream! MyGO!!!!! // Ave Mujica",
+     "streaming": [],
+     "previousSeasonIndia": {
+      "service": "Crunchyroll",
+      "note": "previous season (Ave Mujica - The Die is Cast -), not an announcement; ANN: 'will begin streaming worldwide on Crunchyroll on January 2' (2025), no exclusions listed",
+      "sources": [
+       "https://animenewsnetwork.com/news/2024-12-02/bang-dream-ave-mujica-anime-to-stream-on-crunchyroll-with-title-ave-mujica-the-die-is-cast/.218503"
+      ]
+     },
+     "dubs": {
+      "hi": null,
+      "ta": null,
+      "te": null
+     },
+     "jpPremiere": {
+      "date": "2027-01-08",
+      "timeJst": "23:30",
+      "channel": "NTV (FRIDAY ANIME NIGHT) + 29 affiliates",
+      "sources": [
+       "https://animeanime.jp/article/2026/10/26/104205.html",
+       "https://animecorner.me/mygo-and-ave-mujica-anime-sequel-reveals-january-8-2027-release-date/"
+      ]
+     },
+     "uncertain": "No streaming announcement for the new series yet. Previous season India relies on 'worldwide' wording (no explicit India mention). Anime Corner notes Muse Asia also streamed the earlier series, but no India-specific Muse source found. Broadcast time 'may change' per official note."
+    },
+    {
+     "anilistId": 219548,
+     "slug": "spirit-circle",
+     "title": "Spirit Circle",
+     "streaming": [],
+     "previousSeasonIndia": null,
+     "dubs": {
+      "hi": null,
+      "ta": null,
+      "te": null
+     },
+     "jpPremiere": {
+      "date": null,
+      "month": "2026-12",
+      "timeJst": null,
+      "channel": null,
+      "sources": [
+       "https://animecorner.me/spirit-circle-tv-anime-announced-for-december-2026-reveals-cast-and-first-trailer/",
+       "https://finalweapon.net/2026/11/05/spirit-circle-anime-adaptation-announced/"
+      ]
+     },
+     "uncertain": "Starts December 2026 (18 episodes), so it is a Fall-2026-end/carry-over rather than a January start. Announced as 'premiere worldwide' but streaming platforms not yet revealed; no broadcaster/day announced as of 6-7 Nov 2026."
+    },
+    {
+     "anilistId": 210199,
+     "slug": "the-fable-2nd-season",
+     "title": "The Fable 2nd Season",
+     "streaming": [],
+     "previousSeasonIndia": {
+      "service": "JioHotstar (formerly Disney+ Hotstar)",
+      "note": "previous season, not an announcement; Free Press Journal (21 Mar 2024): 'Fans can watch the series on Disney + Hotstar'; ANN says Disney+ streams Season 1 worldwide",
+      "sources": [
+       "https://www.freepressjournal.in/amp/entertainment/the-fable-ott-release-date-know-about-cast-plot-platform",
+       "https://www.animenewsnetwork.com/news/2026-09-14/the-fable-season-2-tv-anime-trailer-reveals-january-2027-premiere/.241771"
+      ]
+     },
+     "dubs": {
+      "hi": null,
+      "ta": null,
+      "te": null
+     },
+     "jpPremiere": {
+      "date": "2027-01-10",
+      "timeJst": "00:55",
+      "channel": "NTV (Nippon TV)",
+      "sources": [
+       "https://finalweapon.net/2026/10/13/the-fable-season-2-premieres-january-9-2027/",
+       "https://tinpanblog.com/?p=87486"
+      ]
+     },
+     "uncertain": "Listed as Sat 9 Jan 2027 24:55 JST (= 10 Jan 00:55). Date comes from Final Weapon (citing official site) plus a blog; ANN/eiga only confirm 'January 2027' and I could not load the official site, so treat exact time as moderately confident. Season 2 streaming not announced. Free Press Journal article does not say 'India' explicitly (Disney+ Hotstar is India's service); JustWatch India currently lists JioHotstar."
+    },
+    {
+     "anilistId": 213877,
+     "slug": "murcielago",
+     "title": "MURCIÉLAGO",
+     "streaming": [],
+     "previousSeasonIndia": null,
+     "dubs": {
+      "hi": null,
+      "ta": null,
+      "te": null
+     },
+     "jpPremiere": {
+      "date": null,
+      "month": "2027-01",
+      "timeJst": null,
+      "channel": null,
+      "sources": [
+       "https://www.animenewsnetwork.com/news/2026-08-23/murcielago-tv-anime-debuts-in-january-2027/.240872",
+       "https://animecorner.me/murcielago-anime-sets-january-2027-release/"
+      ]
+     },
+     "uncertain": "HIDIVE has exclusive streaming in U.S., Canada, U.K., Australia, New Zealand only (ANN .240872; Anime Corner) - NOT India. No India service found. A search summary named TOKYO MX / Kansai TV / BS11 (dengekionline.com/article/202610/91533) but I did not verify it, so channel left null.",
+     "notIndia": {
+      "service": "HIDIVE",
+      "sources": [
+       "https://www.animenewsnetwork.com/news/2026-08-23/murcielago-tv-anime-debuts-in-january-2027/.240872"
+      ]
+     }
+    },
+    {
+     "anilistId": 209661,
+     "slug": "magical-buffs-the-support-caster-is-stronger-than-he-realized",
+     "title": "Magical Buffs: The Support Caster is Stronger Than He Realized!",
+     "streaming": [
+      {
+       "service": "Crunchyroll",
+       "india": "unclear",
+       "kind": "simulcast",
+       "note": "Announced at Crunchyroll's Anime Expo 2026 panel for January 2027; no territory list found in sources I could read",
+       "sources": [
+        "https://www.animenewsnetwork.com/news/2026-07-03/crunchyroll-to-stream-fate-rewinder-overgeared-the-guy-she-was-interested-in-wasnt-a-guy-at-all-/.239266",
+        "https://www.awn.com/news/crunchyroll-shares-expansive-upcoming-slate-anime-expo",
+        "https://www.crunchyroll.com/news/latest/2026/10/8/magical-buffs-anime-january-4-2027-premiere-trailer-visual"
+       ]
+      },
+      {
+       "service": "Netflix",
+       "india": "unclear",
+       "kind": "simulcast",
+       "note": "Official site says 'Netflixほかにて配信開始' (Japanese site; regions not stated)",
+       "sources": [
+        "https://zatsuyofuyo-pr.com/",
+        "https://www.animenewsnetwork.com/cms/.239799"
+       ]
+      }
+     ],
+     "previousSeasonIndia": null,
+     "dubs": {
+      "hi": null,
+      "ta": null,
+      "te": null
+     },
+     "jpPremiere": {
+      "date": "2027-01-04",
+      "timeJst": null,
+      "channel": "TOKYO MX, MBS, BS11 and ~17 other stations",
+      "sources": [
+       "https://zatsuyofuyo-pr.com/",
+       "https://www.crunchyroll.com/news/latest/2026/10/8/magical-buffs-anime-january-4-2027-premiere-trailer-visual"
+      ]
+     },
+     "uncertain": "A WebSearch summary claimed the Crunchyroll Anime Expo article lists 'worldwide excluding Japan, China and Korea', but Crunchyroll News pages would not render for me, so this is unverified - India kept 'unclear'. Netflix region unknown."
+    },
+    {
+     "anilistId": 213052,
+     "slug": "dengeki-daisy",
+     "title": "Dengeki Daisy",
+     "streaming": [
+      {
+       "service": "Crunchyroll",
+       "india": "unclear",
+       "kind": null,
+       "note": "Crunchyroll announced it will stream the series (Anime Expo 2026); continuous two-cour run; territories not stated in readable sources",
+       "sources": [
+        "https://www.animenewsnetwork.com/news/2026-07-03/crunchyroll-to-stream-fate-rewinder-overgeared-the-guy-she-was-interested-in-wasnt-a-guy-at-all-/.239266",
+        "https://animecorner.me/dengeki-daisy-reveals-main-trailer-key-visual-and-4-new-cast-members-ahead-of-january-2027-release/"
+       ]
+      }
+     ],
+     "previousSeasonIndia": null,
+     "dubs": {
+      "hi": null,
+      "ta": null,
+      "te": null
+     },
+     "jpPremiere": {
+      "date": null,
+      "month": "2027-01",
+      "timeJst": null,
+      "channel": null,
+      "sources": [
+       "https://animecorner.me/dengeki-daisy-reveals-main-trailer-key-visual-and-4-new-cast-members-ahead-of-january-2027-release/"
+      ]
+     },
+     "uncertain": "Crunchyroll screens episode 1 at Anime Frontier on 6 Dec 2026 (crunchyroll.com/news/announcements/2026/11/11/anime-frontier-2026-crunchyroll-programming-schedule). No exact JP date/channel found."
+    },
+    {
+     "anilistId": 202503,
+     "slug": "majutsu-wo-kiwamete-tabi-ni-deta-tensei-elf-moteamashita-jumyou-de-ikeru-densetsu-to-naru",
+     "title": "Majutsu wo Kiwamete Tabi ni Deta Tensei Elf, Moteamashita Jumyou de Ikeru Densetsu to Naru",
+     "streaming": [],
+     "previousSeasonIndia": null,
+     "dubs": {
+      "hi": null,
+      "ta": null,
+      "te": null
+     },
+     "jpPremiere": {
+      "date": "2027-01-06",
+      "timeJst": null,
+      "channel": "TOKYO MX, BS Fuji and 5 other stations (7 total)",
+      "sources": [
+       "https://dengekionline.com/article/202611/94495"
+      ]
+     },
+     "uncertain": "TV broadcast starts 6 Jan 2027; ABEMA and d Anime Store stream it one week early from 30 Dec 2026 (Japan only) - this explains the 2026-12-31 input date. No international/India streamer announced."
+    },
+    {
+     "anilistId": 174427,
+     "slug": "zombie-no-afureta-sekai-de-ore-dake-ga-osowarenai",
+     "title": "Zombie no Afureta Sekai de Ore dake ga Osowarenai",
+     "streaming": [],
+     "previousSeasonIndia": null,
+     "dubs": {
+      "hi": null,
+      "ta": null,
+      "te": null
+     },
+     "jpPremiere": {
+      "date": "2027-01-02",
+      "timeJst": "01:00",
+      "channel": "AT-X",
+      "sources": [
+       "https://zom-ore.com/",
+       "https://www.animenewsnetwork.com/news/2026-06-25/i-am-the-only-one-who-is-not-attacked-in-the-world-filled-with-zombies-anime-teaser-unveils-cast-/.238918"
+      ]
+     },
+     "uncertain": "Official site lists Fri 1 Jan 2027 25:00 on AT-X (= 2 Jan 01:00 JST). No international/India streamer announced."
+    },
+    {
+     "anilistId": 207782,
+     "slug": "odebu-akujo-ni-tensei-shitara-naze-ka-last-boss-ouji-sama-ni-shuuchaku-sareteimasu",
+     "title": "Odebu Akujo ni Tensei Shitara, Naze ka Last Boss Ouji-sama ni Shuuchaku Sareteimasu",
+     "streaming": [],
+     "previousSeasonIndia": null,
+     "dubs": {
+      "hi": null,
+      "ta": null,
+      "te": null
+     },
+     "jpPremiere": {
+      "date": null,
+      "month": "2027-01",
+      "timeJst": null,
+      "channel": "TOKYO MX, BS NTV, AT-X, CBC TV and others",
+      "sources": [
+       "https://animeanime.jp/release/prtimes/20260930/316503.html",
+       "https://www.animenewsnetwork.com/news/2026-09-30/the-final-boss-prince-is-somehow-obsessed-with-the-chubby-villainess-reincarnated-me-anime-1st-/.242337"
+      ]
+     },
+     "uncertain": "Only d Anime Store (Japan) streaming announced; no international/India streamer found."
+    },
+    {
+     "anilistId": 213497,
+     "slug": "sudachi-no-maoujou",
+     "title": "Sudachi no Maoujou",
+     "streaming": [],
+     "previousSeasonIndia": null,
+     "dubs": {
+      "hi": null,
+      "ta": null,
+      "te": null
+     },
+     "jpPremiere": {
+      "date": null,
+      "month": "2027-01",
+      "timeJst": null,
+      "channel": "TOKYO MX, MBS, BS11 and others",
+      "sources": [
+       "https://www.sudachi-anime.com/",
+       "https://www.animenewsnetwork.com/news/2026-10-06/the-fledgling-demon-lord-starter-shop-anime-2nd-teaser-reveals-more-cast-january-debut/.242541"
+      ]
+     },
+     "uncertain": "English title: The Fledgling Demon Lord's Starter Shop. No streaming service announced anywhere."
+    },
+    {
+     "anilistId": 202282,
+     "slug": "disney-twisted-wonderland-the-animation-season-2-episode-of-savanaclaw",
+     "title": "Disney Twisted-Wonderland: THE ANIMATION - Season 2: EPISODE of SAVANACLAW",
+     "streaming": [
+      {
+       "service": "Disney+",
+       "india": "unclear",
+       "kind": "simulcast",
+       "note": "Streams weekly exclusively on Disney+ from 23 Dec 2026 (8 episodes); regions not stated. In India Disney+ content is on JioHotstar; no JioHotstar listing found",
+       "sources": [
+        "https://animecorner.me/disney-twisted-wonderland-season-2-episode-of-savanaclaw-reveals-new-visual-december-23-premiere/",
+        "https://www.animenewsnetwork.com/news/2026-07-27/disney-twisted-wonderland-anime-episode-of-savanaclaw-debuts-in-december/.240012"
+       ]
+      }
+     ],
+     "previousSeasonIndia": null,
+     "dubs": {
+      "hi": null,
+      "ta": null,
+      "te": null
+     },
+     "jpPremiere": {
+      "date": "2026-12-23",
+      "timeJst": null,
+      "channel": "Disney+ (streaming premiere, not a TV broadcast)",
+      "sources": [
+       "https://animecorner.me/disney-twisted-wonderland-season-2-episode-of-savanaclaw-reveals-new-visual-december-23-premiere/"
+      ]
+     },
+     "uncertain": "Season 1 (Episode of Heartslabyul) premiered worldwide on Disney+ in Oct 2025, but no source confirms India availability (Disney+ is not a standalone service in India), so previousSeasonIndia is null. Premieres in December 2026, before the Winter season proper."
+    },
+    {
+     "anilistId": 187303,
+     "slug": "giant-ojosama",
+     "title": "Giant Ojosama",
+     "streaming": [],
+     "previousSeasonIndia": null,
+     "dubs": {
+      "hi": null,
+      "ta": null,
+      "te": null
+     },
+     "jpPremiere": {
+      "date": null,
+      "month": "2027-01",
+      "timeJst": null,
+      "channel": null,
+      "sources": [
+       "https://animecorner.me/giant-ojo-sama-anime-reveals-teaser-visual-main-staff-january-2027-release-date/",
+       "https://anime.eiga.com/news/127378/"
+      ]
+     },
+     "uncertain": "HIDIVE simulcast covers U.S., Canada, U.K., Ireland, Australia, New Zealand only (Anime Corner exclusive) - NOT India. No India streamer found.",
+     "notIndia": {
+      "service": "HIDIVE",
+      "sources": [
+       "https://animecorner.me/exclusive-giant-ojosama-joins-hidive-winter-2027-lineup-anime-frontier-premiere-set-for-december-4/"
+      ]
+     }
+    },
+    {
+     "anilistId": 194030,
+     "slug": "gacha-wo-mawashite-nakama-wo-fuyasu-saikyou-no-bishoujo-gundan-wo-tsukuriagero",
+     "title": "Gacha wo Mawashite Nakama wo Fuyasu: Saikyou no Bishoujo Gundan wo Tsukuriagero",
+     "streaming": [
+      {
+       "service": "Crunchyroll",
+       "india": "unclear",
+       "kind": null,
+       "note": "Crunchyroll announced it at Anime Expo 2026 for January 2027 (English title Gacha Girls Corps); territories not stated in readable sources",
+       "sources": [
+        "https://www.animenewsnetwork.com/news/2026-07-03/crunchyroll-to-stream-fate-rewinder-overgeared-the-guy-she-was-interested-in-wasnt-a-guy-at-all-/.239266",
+        "https://www.awn.com/news/crunchyroll-shares-expansive-upcoming-slate-anime-expo"
+       ]
+      }
+     ],
+     "previousSeasonIndia": null,
+     "dubs": {
+      "hi": null,
+      "ta": null,
+      "te": null
+     },
+     "jpPremiere": {
+      "date": "2027-01-07",
+      "timeJst": "21:25",
+      "channel": null,
+      "sources": [
+       "https://dengekionline.com/article/202611/93361",
+       "https://animecorner.me/gacha-girls-corps-anime-premieres-january-7/"
+      ]
+     },
+     "uncertain": "Dengeki Online: rolling broadcast from Thu 7 Jan 2027 21:25 on TOKYO MX, HBC, RKB, BS11, AT-X; per-station times TBA, so which station has the 21:25 slot is not stated (channel left null)."
+    },
+    {
+     "anilistId": 207328,
+     "slug": "yuukyuu-no-gusha-asley-no-kenja-no-susume",
+     "title": "The Eternal Fool's Words of Wisdom: A Pawsitively Fantastic Adventure",
+     "streaming": [
+      {
+       "service": "Crunchyroll",
+       "india": "yes",
+       "kind": null,
+       "note": "ANN (14 Jul 2026): Crunchyroll streams it in the Indian subcontinent; Crunchyroll regions: North/Central/South America, Europe, Africa, Oceania, Middle East, CIS and Indian subcontinent. Simulcast schedule TBA.",
+       "sources": [
+        "https://www.animenewsnetwork.com/news/2026-07-14/crunchyroll-to-stream-the-eternal-fool-words-of-wisdom-anime-in-india/.239557",
+        "https://www.crunchyroll.com/news/announcements/2026/7/12/psyren-the-eternal-fools-words-of-wisdom-dreamland-musketeer-nanako-stream-crunchyroll"
+       ]
+      }
+     ],
+     "previousSeasonIndia": null,
+     "dubs": {
+      "hi": null,
+      "ta": null,
+      "te": null
+     },
+     "jpPremiere": {
+      "date": "2027-01-09",
+      "timeJst": null,
+      "channel": "TOKYO MX, BS Asahi, AT-X and others",
+      "sources": [
+       "https://www.crunchyroll.com/news/latest/2026/11/17/the-eternal-fools-words-of-wisdom-a-pawsitively-fantastic-adventure-anime-january-9-release-date-main-trailer-theme-songs",
+       "https://animecorner.me/the-eternal-fools-words-of-wisdom-a-pawsitively-fantastic-adventure-anime-unveils-main-trailer-january-9-premiere-additional-cast-theme-songs/"
+      ]
+     },
+     "uncertain": "Region list seen via search summary of the Crunchyroll post; India itself confirmed by ANN fetch."
+    }
+   ]
+  }
+ }
+}

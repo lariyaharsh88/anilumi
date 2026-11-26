@@ -16,6 +16,7 @@ import Countdown from "@/components/Countdown";
 import AnswerLead from "@/components/AnswerLead";
 import { dubFor, dubHref } from "@/lib/hindidub";
 import { seasonDubs } from "@/lib/seasondubs";
+import { seasonIndia } from "@/lib/seasonindia";
 
 export const revalidate = 86400;
 export async function generateStaticParams() { return []; }
@@ -215,6 +216,7 @@ export default async function SeasonPreview({ params }: Props) {
       {(announcedHi.length > 0 || hindiLikely.length > 0) && (
         <section className="reveal mt-10" aria-labelledby="hi-h">
           <h2 id="hi-h" className="h-section">{label} anime in India: Hindi dubs</h2>
+          {seasonIndia(y, s) && <p className="mt-1"><Link href={`/season/${y}/${s}/india`} className="chip">🇮🇳 {label} in India: where to watch, IST times and dubs →</Link></p>}
           <p className="mt-1 max-w-3xl text-sm text-muted">Hindi dubs usually arrive months after Japan, on the platform that dubbed the earlier seasons. We add each one to the <Link href="/hindi-dub" className="text-violet hover:underline">Hindi dub list</Link> once the platform announces it.</p>
           {announcedHi.length > 0 && (
             <>

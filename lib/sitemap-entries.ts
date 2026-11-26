@@ -36,6 +36,7 @@ import { STRONGEST_CHECKED, rankingSlugs, strongestPath } from "@/lib/strongest"
 import { POWERS_CHECKED, powersSlugs, powersPath } from "@/lib/powers";
 import { CLASSIC_CHECKED, DIRECTORS, directorPath, type DirectorSlug } from "@/lib/classicfilms";
 import { RELEASE_DATE, inRelease } from "@/lib/release";
+import { indiaGuide } from "@/lib/indiaguide";
 import crunchyrollPlans from "@/data/crunchyroll-plans.json";
 import opMc from "@/data/op-mc-anime.json";
 import opBounties from "@/data/one-piece-bounties.json";
@@ -176,6 +177,11 @@ export async function sitemapEntries(): Promise<MetadataRoute.Sitemap> {
     const x = shiftSeason(s.season, s.year, d);
     out.push({ url: abs(`/season/${x.year}/${x.season}`), lastModified: d >= -1 ? now : at(D.seasonDubs), changeFrequency: d >= -1 ? "daily" : "monthly", priority: d >= -1 ? 0.8 : 0.5 });
     if (d >= 0) out.push({ url: abs(`/season/${x.year}/${x.season}/preview`), lastModified: now, changeFrequency: "daily", priority: 0.8 });
+    // The India guide, once its research says enough about enough shows (lib/indiaguide.ts).
+    if (d >= 0) {
+      const g = await indiaGuide(x.year, x.season).catch(() => null);
+      if (g?.indexed) out.push({ url: abs(`/season/${x.year}/${x.season}/india`), lastModified: at(g.research.checked), changeFrequency: "weekly", priority: 0.7 });
+    }
   }
   try {
     const genres = await getCategories(60);

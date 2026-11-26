@@ -25,6 +25,8 @@ export type PreviewItem = {
   trailer?: string | null;
   prequel: { id: number; title: string } | null;
   kind: PreviewKind;
+  /** Episode 1's broadcast in Japan, Unix seconds (AniList's airing schedule), when announced. */
+  airs?: number | null;
   anime: Anime | null;
   prequelAnime: Anime | null;
 };
@@ -41,6 +43,7 @@ type Raw = {
   studios: { nodes: { name: string }[] };
   coverImage: { large: string | null };
   trailer?: { id: string | null; site: string | null } | null;
+  airingSchedule?: { nodes: { episode: number; airingAt: number }[] } | null;
   relations: { edges: { relationType: string; node: { id: number; type: string; format: string | null; title: { romaji: string; english: string | null } } }[] };
 };
 
@@ -69,6 +72,8 @@ export function toPreview(r: Raw): Omit<PreviewItem, "anime" | "prequelAnime"> {
     trailer: r.trailer?.site === "youtube" && r.trailer.id && /^[\w-]{6,20}$/.test(r.trailer.id) ? r.trailer.id : null,
     prequel: pre ? { id: pre.node.id, title: pre.node.title.english || pre.node.title.romaji } : null,
     kind,
+    // Episode 1's broadcast time in Japan (Unix seconds) once AniList has it: the India guide shows it in IST.
+    airs: r.airingSchedule?.nodes.find((n) => n.episode === 1)?.airingAt ?? null,
   };
 }
 
@@ -88,7 +93,7 @@ export function premiereCalendar<T extends { date: PreviewItem["date"] }>(items:
   return [...by.entries()].sort(([a], [b]) => a.localeCompare(b)).map(([date, items]) => ({ date, items }));
 }
 
-const QUERY = `query($s:MediaSeason,$y:Int,$p:Int){Page(page:$p,perPage:50){pageInfo{hasNextPage} media(type:ANIME,season:$s,seasonYear:$y,isAdult:false,sort:POPULARITY_DESC,format_in:[TV,TV_SHORT,ONA,MOVIE]){id title{romaji english} format episodes source startDate{year month day} popularity genres studios(isMain:true){nodes{name}} coverImage{large} trailer{id site} relations{edges{relationType node{id type format title{romaji english}}}}}}}`;
+const QUERY = `query($s:MediaSeason,$y:Int,$p:Int){Page(page:$p,perPage:50){pageInfo{hasNextPage} media(type:ANIME,season:$s,seasonYear:$y,isAdult:false,sort:POPULARITY_DESC,format_in:[TV,TV_SHORT,ONA,MOVIE]){id title{romaji english} format episodes source startDate{year month day} popularity genres studios(isMain:true){nodes{name}} coverImage{large} trailer{id site} airingSchedule(page:1,perPage:1){nodes{episode airingAt}} relations{edges{relationType node{id type format title{romaji english}}}}}}}`;
 
 type PreviewSnap = { generated: string; seasons: Record<string, PreviewItem[]> };
 let snap: PreviewSnap | null = null;

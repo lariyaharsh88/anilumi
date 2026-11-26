@@ -62,3 +62,17 @@ test("franchise watch sections: every TV and streaming line is specific, TV line
     for (const x of f.watch.streaming) assert.ok(x.what.length >= 20, `${f.slug}/${x.service}`);
   }
 });
+
+test("season India guides: every streaming, region and earlier-season claim has a source; enough shows researched", async () => {
+  const d = (await import("../data/season-india.json")).default as unknown as { seasons: Record<string, { checked: string; shows: { anilistId: number; streaming: { service: string; sources: string[] }[]; notIndia?: { sources: string[] } | null; previousSeasonIndia: { sources: string[] } | null }[] }> };
+  const https = (xs: string[]) => xs.some((u) => /^https:\/\//.test(u));
+  for (const [k, s] of Object.entries(d.seasons)) {
+    assert.ok(s.shows.length >= 20, `${k}: only ${s.shows.length} shows researched`);
+    assert.ok(/^\d{4}-\d{2}-\d{2}$/.test(s.checked), `${k}: checked date`);
+    for (const x of s.shows) {
+      for (const st of x.streaming) assert.ok(st.service && https(st.sources), `${k}/${x.anilistId}: ${st.service} without a source`);
+      if (x.notIndia) assert.ok(https(x.notIndia.sources), `${k}/${x.anilistId}: region exclusion without a source`);
+      if (x.previousSeasonIndia) assert.ok(https(x.previousSeasonIndia.sources), `${k}/${x.anilistId}: earlier season without a source`);
+    }
+  }
+});
