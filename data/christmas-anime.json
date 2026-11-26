@@ -1,0 +1,724 @@
+{
+ "checked": "2026-11-26",
+ "reviewed": null,
+ "method": "Availability is taken only from live JustWatch regional pages fetched on 26 Nov 2026 (their 'checked for updates' stamps were 24 to 26 Nov 2026). Where JustWatch exposed the service's own outbound link, that link is used as url; otherwise url is the JustWatch regional page. JustWatch 'PROMOTED' Amazon Prime Video banners for 'similar titles' were ignored. Crunchyroll's own pages return 403 to automated fetches, so they were not checked directly. Physical discs and bundles are omitted. Offers with kind 'buy' carry a 'note' saying rent and/or buy.",
+ "titles": [
+  {
+   "t": "Tokyo Godfathers",
+   "kind": "film",
+   "year": 2003,
+   "what": "",
+   "why": "Three homeless people in Tokyo find an abandoned baby in the trash on Christmas Eve and search the city for her mother over the Christmas to New Year period.",
+   "regions": {
+    "US": [
+     {
+      "service": "Hoopla",
+      "kind": "free",
+      "note": "free with a participating library card; JustWatch lists Japanese audio only",
+      "url": "https://www.justwatch.com/us/movie/tokyo-godfathers"
+     },
+     {
+      "service": "Apple TV Store",
+      "kind": "buy",
+      "note": "rent $2.99 / buy $6.99",
+      "url": "https://www.justwatch.com/us/movie/tokyo-godfathers"
+     },
+     {
+      "service": "Fandango At Home",
+      "kind": "buy",
+      "note": "rent $3.99 / buy $12.99",
+      "url": "https://www.justwatch.com/us/movie/tokyo-godfathers"
+     }
+    ],
+    "IN": [
+     {
+      "service": "Amazon Video",
+      "kind": "buy",
+      "note": "rent only, ₹99",
+      "url": "https://www.justwatch.com/in/movie/tokyo-godfathers"
+     }
+    ],
+    "GB": [
+     {
+      "service": "Apple TV Store",
+      "kind": "buy",
+      "note": "rent £3.49 / buy £4.99",
+      "url": "https://www.justwatch.com/uk/movie/tokyo-godfathers"
+     },
+     {
+      "service": "Amazon Video",
+      "kind": "buy",
+      "note": "rent £3.49 / buy £4.99; JustWatch shows a 'Leaving in 4 days' label near this offer",
+      "url": "https://www.justwatch.com/uk/movie/tokyo-godfathers"
+     },
+     {
+      "service": "Sky Store",
+      "kind": "buy",
+      "note": "rent £3.49 / buy £7.99",
+      "url": "https://www.justwatch.com/uk/movie/tokyo-godfathers"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.animenewsnetwork.com/watch/2021-12-17/tokyo-godfather-a-beautiful-underappreciated-anime-christmas/.180651",
+    "https://www.japantimes.co.jp/culture/2023/12/23/film/anime-classic-tokyo-godfathers-christmas-movie",
+    "https://www.justwatch.com/us/movie/tokyo-godfathers",
+    "https://www.justwatch.com/in/movie/tokyo-godfathers",
+    "https://www.justwatch.com/uk/movie/tokyo-godfathers"
+   ],
+   "confidence": "high",
+   "slug": "tokyo-godfathers"
+  },
+  {
+   "t": "Jujutsu Kaisen 0",
+   "kind": "film",
+   "year": 2021,
+   "what": "",
+   "why": "The climax is Suguru Geto's 'Night Parade of a Hundred Demons' attack on Shinjuku and Kyoto on December 24, Christmas Eve.",
+   "regions": {
+    "US": [
+     {
+      "service": "Crunchyroll",
+      "kind": "subscription",
+      "url": "https://www.crunchyroll.com/watch/GMEE00194450PLPL"
+     },
+     {
+      "service": "Netflix",
+      "kind": "subscription",
+      "url": "https://www.netflix.com/title/81602834"
+     },
+     {
+      "service": "Hulu",
+      "kind": "subscription",
+      "url": "https://www.hulu.com/watch/41b6c953-8b06-4359-8f2c-01931611f77b"
+     },
+     {
+      "service": "Amazon Prime Video",
+      "kind": "subscription",
+      "url": "https://www.justwatch.com/us/movie/jujutsu-kaisen-0-the-movie"
+     },
+     {
+      "service": "Apple TV Store",
+      "kind": "buy",
+      "note": "rent $3.99 / buy $4.99",
+      "url": "https://tv.apple.com/us/movie/jujutsu-kaisen-0/"
+     }
+    ],
+    "IN": [
+     {
+      "service": "Crunchyroll",
+      "kind": "subscription",
+      "url": "https://www.justwatch.com/in/movie/jujutsu-kaisen-0-the-movie"
+     },
+     {
+      "service": "Sony LIV",
+      "kind": "subscription",
+      "url": "https://www.justwatch.com/in/movie/jujutsu-kaisen-0-the-movie"
+     }
+    ],
+    "GB": [
+     {
+      "service": "Crunchyroll",
+      "kind": "subscription",
+      "url": "https://www.justwatch.com/uk/movie/jujutsu-kaisen-0-the-movie"
+     },
+     {
+      "service": "Netflix",
+      "kind": "subscription",
+      "url": "https://www.justwatch.com/uk/movie/jujutsu-kaisen-0-the-movie"
+     },
+     {
+      "service": "Disney+",
+      "kind": "subscription",
+      "url": "https://www.justwatch.com/uk/movie/jujutsu-kaisen-0-the-movie"
+     },
+     {
+      "service": "Amazon Prime Video",
+      "kind": "subscription",
+      "url": "https://www.justwatch.com/uk/movie/jujutsu-kaisen-0-the-movie"
+     }
+    ]
+   },
+   "sources": [
+    "https://en.wikipedia.org/wiki/Jujutsu_Kaisen_0_(film)",
+    "https://www.justwatch.com/us/movie/jujutsu-kaisen-0-the-movie",
+    "https://www.justwatch.com/in/movie/jujutsu-kaisen-0-the-movie",
+    "https://www.justwatch.com/uk/movie/jujutsu-kaisen-0-the-movie"
+   ],
+   "confidence": "high",
+   "slug": "jujutsu-kaisen-movie-0"
+  },
+  {
+   "t": "The Disappearance of Haruhi Suzumiya",
+   "kind": "film",
+   "year": 2010,
+   "what": "",
+   "why": "It opens in mid-December with the SOS Brigade planning a Christmas Eve hot-pot party, and then Kyon wakes up on December 18 to a rewritten world.",
+   "regions": {
+    "US": [
+     {
+      "service": "Crunchyroll",
+      "kind": "subscription",
+      "url": "https://www.justwatch.com/us/movie/the-disappearance-of-haruhi-suzumiya"
+     }
+    ],
+    "IN": [],
+    "GB": [
+     {
+      "service": "Crunchyroll",
+      "kind": "subscription",
+      "url": "https://www.justwatch.com/uk/movie/the-disappearance-of-haruhi-suzumiya"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.animenewsnetwork.com/review/the-disappearance-of-haruhi-suzumiya/bd-dvd/.121312",
+    "https://www.cbr.com/the-disappearance-of-haruhi-suzumiya-christmas-movie/",
+    "https://www.justwatch.com/us/movie/the-disappearance-of-haruhi-suzumiya",
+    "https://www.justwatch.com/in/movie/the-disappearance-of-haruhi-suzumiya",
+    "https://www.justwatch.com/uk/movie/the-disappearance-of-haruhi-suzumiya"
+   ],
+   "confidence": "high",
+   "slug": "the-disappearance-of-haruhi-suzumiya"
+  },
+  {
+   "t": "Kaguya-sama: Love Is War -The First Kiss That Never Ends-",
+   "kind": "film",
+   "year": 2022,
+   "what": "Four-part film; Crunchyroll US streams it episodically and JustWatch files it as 'Season 4' (2023, 4 episodes)",
+   "why": "The film's story, the manga's 'Ice' arc, builds up to and takes place over Christmas, and its key visuals are Christmas-themed.",
+   "regions": {
+    "US": [
+     {
+      "service": "Crunchyroll",
+      "kind": "subscription",
+      "url": "https://www.justwatch.com/us/tv-show/kaguya-sama-love-is-war/season-4"
+     }
+    ],
+    "IN": [],
+    "GB": []
+   },
+   "sources": [
+    "https://animenewsnetwork.com/encyclopedia/anime.php?id=26033",
+    "https://animecorner.me/kaguya-sama-first-kiss-never-ends-unveils-christmas-visuals/amp/",
+    "https://animecorner.me/kaguya-sama-the-first-kiss-that-never-ends-begins-streaming-on-crunchyroll/",
+    "https://www.justwatch.com/us/tv-show/kaguya-sama-love-is-war/season-4",
+    "https://www.justwatch.com/in/tv-show/kaguya-sama-love-is-war/season-4",
+    "https://www.justwatch.com/uk/tv-series/kaguya-sama-love-is-war",
+    "https://www.justwatch.com/uk/movie/kaguya-sama-wa-kokurasetai-first-kiss-wa-owaranai"
+   ],
+   "confidence": "medium",
+   "slug": "kaguya-sama-wa-kokurasetai-first-kiss-wa-owaranai"
+  },
+  {
+   "t": "Mobile Suit Gundam 0080: War in the Pocket",
+   "kind": "special",
+   "year": 1989,
+   "what": "Six-episode OVA",
+   "why": "The war story takes place on and around Christmas, and Sunrise held a Christmas Eve 2023 screening on that basis.",
+   "regions": {
+    "US": [],
+    "IN": [],
+    "GB": []
+   },
+   "sources": [
+    "https://www.animenewsnetwork.com/interest/2023-12-06/is-gundam-0080-a-christmas-anime-sunrise-says-yes-with-xmas-screening/.204773",
+    "https://www.justwatch.com/us/movie/mobile-suit-gundam-0080-war-in-the-pocket",
+    "https://www.justwatch.com/uk/search?q=gundam%200080",
+    "https://www.justwatch.com/in/search?q=gundam%200080"
+   ],
+   "confidence": "medium",
+   "slug": "mobile-suit-gundam-0080-war-in-the-pocket"
+  },
+  {
+   "t": "Toradora!",
+   "kind": "episode",
+   "year": 2008,
+   "what": "Episode 19 'Christmas Eve Party' (the end of a three-episode Christmas arc, Episodes 17-19)",
+   "why": "Ryuji and Taiga organize the school's Christmas Eve party, and the episode is widely cited as anime's best-known Christmas episode.",
+   "regions": {
+    "US": [
+     {
+      "service": "Crunchyroll Amazon Channel",
+      "kind": "subscription",
+      "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.4ea9f792-45b3-ea23-5e57-b04cc9805f02"
+     },
+     {
+      "service": "Amazon Prime Video",
+      "kind": "subscription",
+      "note": "JustWatch lists Japanese audio",
+      "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.4ea9f792-45b3-ea23-5e57-b04cc9805f02"
+     },
+     {
+      "service": "Amazon Video",
+      "kind": "buy",
+      "note": "buy, from $36.99 per season",
+      "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.eaa9f71c-e65d-42f8-ee86-ba4eb9b2d0a8"
+     }
+    ],
+    "IN": [],
+    "GB": [
+     {
+      "service": "Crunchyroll Amazon Channel",
+      "kind": "subscription",
+      "url": "https://www.justwatch.com/uk/tv-series/toradora"
+     }
+    ]
+   },
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_Toradora!_episodes",
+    "https://www.crunchyroll.com/news/features/2022/12/24/feature-12-christmas-anime-episodes-to-deck-the-halls-with",
+    "https://www.justwatch.com/us/tv-show/toradora",
+    "https://www.justwatch.com/in/tv-show/toradora",
+    "https://www.justwatch.com/uk/tv-series/toradora"
+   ],
+   "confidence": "high",
+   "slug": "toradora"
+  },
+  {
+   "t": "Sword Art Online",
+   "kind": "episode",
+   "year": 2012,
+   "what": "Season 1 Episode 3 'The Red-Nosed Reindeer'",
+   "why": "Kirito solos the Christmas Eve event boss Nicholas the Renegade for a revival item, and the episode closes on Sachi's message humming 'Rudolph the Red-Nosed Reindeer'.",
+   "regions": {
+    "US": [
+     {
+      "service": "Crunchyroll",
+      "kind": "subscription",
+      "url": "https://www.crunchyroll.com/watch/GE00058642HIIN"
+     },
+     {
+      "service": "Netflix",
+      "kind": "subscription",
+      "url": "https://www.netflix.com/title/70302573"
+     },
+     {
+      "service": "Hulu",
+      "kind": "subscription",
+      "url": "https://www.hulu.com/watch/a3d6f753-731a-4d6f-a167-ee5693daba3f"
+     },
+     {
+      "service": "Apple TV Store",
+      "kind": "buy",
+      "note": "buy, $7.99",
+      "url": "https://tv.apple.com/us/show/sword-art-online/umc.cmc.17abefe62cl7febo80i40cwvu"
+     }
+    ],
+    "IN": [
+     {
+      "service": "Crunchyroll",
+      "kind": "subscription",
+      "url": "https://www.justwatch.com/in/tv-show/sword-art-online/season-1"
+     },
+     {
+      "service": "Netflix",
+      "kind": "subscription",
+      "url": "https://www.justwatch.com/in/tv-show/sword-art-online/season-1"
+     },
+     {
+      "service": "Sony LIV",
+      "kind": "subscription",
+      "note": "JustWatch lists 20 of 25 Season 1 episodes",
+      "url": "https://www.justwatch.com/in/tv-show/sword-art-online/season-1"
+     },
+     {
+      "service": "JioHotstar",
+      "kind": "free",
+      "note": "JustWatch labels this 'free with ads'; check whether a plan is needed",
+      "url": "https://www.justwatch.com/in/tv-show/sword-art-online/season-1"
+     },
+     {
+      "service": "Amazon MX Player",
+      "kind": "free",
+      "note": "free with ads, Japanese audio",
+      "url": "https://www.justwatch.com/in/tv-show/sword-art-online/season-1"
+     }
+    ],
+    "GB": [
+     {
+      "service": "Crunchyroll",
+      "kind": "subscription",
+      "url": "https://www.justwatch.com/uk/tv-series/sword-art-online/season-1"
+     },
+     {
+      "service": "Netflix",
+      "kind": "subscription",
+      "url": "https://www.justwatch.com/uk/tv-series/sword-art-online/season-1"
+     },
+     {
+      "service": "Apple TV Store",
+      "kind": "buy",
+      "note": "buy, £7.99",
+      "url": "https://www.justwatch.com/uk/tv-series/sword-art-online/season-1"
+     }
+    ]
+   },
+   "sources": [
+    "https://myanimelist.net/anime/11757/Sword_Art_Online/episode/3",
+    "https://www.tvmaze.com/shows/2059/sword-art-online/episodeguide",
+    "https://www.justwatch.com/us/tv-show/sword-art-online/season-1",
+    "https://www.justwatch.com/in/tv-show/sword-art-online/season-1",
+    "https://www.justwatch.com/uk/tv-series/sword-art-online/season-1"
+   ],
+   "confidence": "high",
+   "slug": "sword-art-online"
+  },
+  {
+   "t": "Laid-Back Camp",
+   "kind": "episode",
+   "year": 2018,
+   "what": "Season 1 Episode 11 'Christmas Camp!' (continues into Episode 12)",
+   "why": "The whole group goes on a Christmas camping trip with a view of Mount Fuji, and it runs into the season finale.",
+   "regions": {
+    "US": [
+     {
+      "service": "Crunchyroll",
+      "kind": "subscription",
+      "url": "https://www.crunchyroll.com/watch/GRW4DG3QY"
+     },
+     {
+      "service": "Crunchyroll Amazon Channel",
+      "kind": "subscription",
+      "url": "https://www.justwatch.com/us/tv-show/laid-back-camp"
+     }
+    ],
+    "IN": [
+     {
+      "service": "Crunchyroll",
+      "kind": "subscription",
+      "url": "https://www.justwatch.com/in/tv-show/laid-back-camp"
+     },
+     {
+      "service": "Sony LIV",
+      "kind": "subscription",
+      "note": "JustWatch lists 2 seasons; which ones is not stated",
+      "url": "https://www.justwatch.com/in/tv-show/laid-back-camp"
+     }
+    ],
+    "GB": [
+     {
+      "service": "Crunchyroll",
+      "kind": "subscription",
+      "url": "https://www.justwatch.com/uk/tv-series/laid-back-camp"
+     },
+     {
+      "service": "Apple TV Store",
+      "kind": "buy",
+      "note": "buy one season, £21.99",
+      "url": "https://www.justwatch.com/uk/tv-series/laid-back-camp"
+     }
+    ]
+   },
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_Laid-Back_Camp_episodes",
+    "https://www.justwatch.com/us/tv-show/laid-back-camp",
+    "https://www.justwatch.com/in/tv-show/laid-back-camp",
+    "https://www.justwatch.com/uk/tv-series/laid-back-camp"
+   ],
+   "confidence": "high",
+   "slug": "yuru-camp"
+  },
+  {
+   "t": "K-On!",
+   "kind": "episode",
+   "year": 2009,
+   "what": "Season 1 Episode 7 'Christmas!'",
+   "why": "Ritsu throws a Christmas party with a gift exchange at Yui's house, and a flashback shows Yui making Ui a 'white Christmas' as kids.",
+   "regions": {
+    "US": [
+     {
+      "service": "HIDIVE",
+      "kind": "subscription",
+      "url": "https://www.hidive.com/interstitial/589537"
+     },
+     {
+      "service": "HIDIVE Amazon Channel",
+      "kind": "subscription",
+      "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.d2c3a875-4af5-456f-ac18-179901b2c8ed"
+     },
+     {
+      "service": "Fandango At Home",
+      "kind": "buy",
+      "note": "buy Season 1, $25.87",
+      "url": "https://athome.fandango.com/content/browse/details/K-ON-Disband-the-Club-/1250034"
+     }
+    ],
+    "IN": [],
+    "GB": []
+   },
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_K-On!_episodes",
+    "https://www.justwatch.com/us/tv-show/k-on/season-1",
+    "https://www.justwatch.com/uk/tv-series/k-on/season-1",
+    "https://www.justwatch.com/in/search?q=k-on"
+   ],
+   "confidence": "high",
+   "slug": "k-on"
+  },
+  {
+   "t": "My Hero Academia",
+   "kind": "episode",
+   "year": 2021,
+   "what": "Season 5 Episode 13 'Have a Merry Christmas!' (Episode 101 overall)",
+   "why": "Class 1-A hold a Christmas party in their U.A. dorm before winter hero work-studies begin.",
+   "regions": {
+    "US": [
+     {
+      "service": "Hulu",
+      "kind": "subscription",
+      "url": "https://www.hulu.com/series/my-hero-academia-36e318dc-3daf-47fb-8219-9e3cb5cd28f2"
+     },
+     {
+      "service": "Netflix",
+      "kind": "subscription",
+      "url": "https://www.netflix.com/title/80135674"
+     },
+     {
+      "service": "Crunchyroll Amazon Channel",
+      "kind": "subscription",
+      "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.7b84517a-5965-4230-8630-af51d44e7f76"
+     },
+     {
+      "service": "Apple TV Store",
+      "kind": "buy",
+      "note": "buy",
+      "url": "https://tv.apple.com/us/show/my-hero-academia/umc.cmc.q5m1ulm329damie9vyu8ooty"
+     }
+    ],
+    "IN": [
+     {
+      "service": "Netflix",
+      "kind": "subscription",
+      "url": "https://www.justwatch.com/in/tv-show/my-hero-academia/season-5"
+     },
+     {
+      "service": "Crunchyroll Amazon Channel",
+      "kind": "subscription",
+      "url": "https://www.justwatch.com/in/tv-show/my-hero-academia/season-5"
+     }
+    ],
+    "GB": [
+     {
+      "service": "Netflix",
+      "kind": "subscription",
+      "url": "https://www.justwatch.com/uk/tv-series/my-hero-academia/season-5"
+     },
+     {
+      "service": "Crunchyroll Amazon Channel",
+      "kind": "subscription",
+      "url": "https://www.justwatch.com/uk/tv-series/my-hero-academia/season-5"
+     },
+     {
+      "service": "Sky Store",
+      "kind": "buy",
+      "note": "buy season, £42.99",
+      "url": "https://www.justwatch.com/uk/tv-series/my-hero-academia/season-5"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.tvmaze.com/episodes/2062322/my-hero-academia-5x13-have-a-merry-christmas",
+    "https://www.denofgeek.com/?p=687860",
+    "https://www.justwatch.com/us/tv-show/my-hero-academia/season-5",
+    "https://www.justwatch.com/in/tv-show/my-hero-academia/season-5",
+    "https://www.justwatch.com/uk/tv-series/my-hero-academia/season-5"
+   ],
+   "confidence": "high",
+   "slug": "boku-no-hero-academia-5th-season"
+  },
+  {
+   "t": "Tokyo Revengers",
+   "kind": "series-arc",
+   "year": 2023,
+   "what": "Season 2, the 'Christmas Showdown' arc (Seiya Kessen-hen)",
+   "why": "The season adapts the manga's Christmas Showdown arc, in which Toman fights the 10th-generation Black Dragons on Christmas.",
+   "regions": {
+    "US": [
+     {
+      "service": "Hulu",
+      "kind": "subscription",
+      "url": "https://www.hulu.com/watch/bdf46832-df34-4591-88ea-8f167a26522e"
+     }
+    ],
+    "IN": [
+     {
+      "service": "JioHotstar",
+      "kind": "free",
+      "note": "JustWatch labels this 'free with ads' and lists 2 seasons (Season 2 was a Disney+ Hotstar exclusive in Asia); check whether a plan is needed",
+      "url": "https://www.justwatch.com/in/tv-show/tokyo-revengers"
+     }
+    ],
+    "GB": [
+     {
+      "service": "Disney+",
+      "kind": "subscription",
+      "url": "https://www.justwatch.com/uk/tv-series/tokyo-revengers"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.animenewsnetwork.com/news/2022-11-30/disney-to-exclusively-stream-tokyo-revengers-christmas-showdown-anime-in-january/.192398",
+    "https://www.cbr.com/tokyo-revengers-anime-christmas-showdown-release-date-trailer-plot/",
+    "https://www.justwatch.com/us/tv-show/tokyo-revengers",
+    "https://www.justwatch.com/in/tv-show/tokyo-revengers",
+    "https://www.justwatch.com/uk/tv-series/tokyo-revengers"
+   ],
+   "confidence": "medium",
+   "slug": "tokyo-revengers-seiya-kessen-hen"
+  },
+  {
+   "t": "My Teen Romantic Comedy SNAFU TOO!",
+   "kind": "series-arc",
+   "year": 2015,
+   "what": "Season 2, Christmas event arc (roughly Episodes 6-10)",
+   "why": "For much of the season, Hachiman and then the whole Service Club help Iroha's student council run a joint Christmas event with another school.",
+   "regions": {
+    "US": [
+     {
+      "service": "HIDIVE",
+      "kind": "subscription",
+      "url": "https://www.hidive.com/interstitial/563571"
+     }
+    ],
+    "IN": [],
+    "GB": []
+   },
+   "sources": [
+    "https://www.animenewsnetwork.com/review/my-teen-romantic-comedy-snafu-too/episode-6/.88003",
+    "https://www.animenewsnetwork.com/review/my-teen-romantic-comedy-snafu-too/episode-9/.88763",
+    "https://www.justwatch.com/us/tv-show/my-teen-romantic-comedy-snafu-2013/season-2",
+    "https://www.justwatch.com/in/tv-show/my-teen-romantic-comedy-snafu/season-2",
+    "https://www.justwatch.com/uk/tv-series/my-teen-romantic-comedy-snafu/season-2"
+   ],
+   "confidence": "medium",
+   "slug": "yahari-ore-no-seishun-love-comedy-wa-machigatteiru-zoku"
+  },
+  {
+   "t": "Komi Can't Communicate",
+   "kind": "episode",
+   "year": 2022,
+   "what": "Season 2 Episode 4 (Episode 16 overall); on Netflix it is listed as S1 E16 'It's just a merry Christmas.'",
+   "why": "Komi, who has no Christmas Eve plans, is invited to a Christmas party at Najimi's house that doubles as her birthday celebration.",
+   "regions": {
+    "US": [
+     {
+      "service": "Netflix",
+      "kind": "subscription",
+      "url": "https://www.netflix.com/title/81228573"
+     }
+    ],
+    "IN": [
+     {
+      "service": "Netflix",
+      "kind": "subscription",
+      "url": "https://www.netflix.com/title/81228573"
+     }
+    ],
+    "GB": [
+     {
+      "service": "Netflix",
+      "kind": "subscription",
+      "url": "https://www.netflix.com/title/81228573"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.animenewsnetwork.com/review/komi-cant-communicate-season-2/episode-16/.185892",
+    "https://thecinemaholic.com/komi-cant-communicate-season-2-episode-4-recap-and-ending-explained",
+    "https://www.justwatch.com/us/tv-show/komi-cant-communicate/season-1",
+    "https://www.justwatch.com/in/tv-show/komi-cant-communicate/season-1",
+    "https://www.justwatch.com/uk/tv-series/komi-cant-communicate/season-1"
+   ],
+   "confidence": "high",
+   "slug": "komi-san-wa-komyushou-desu-2"
+  },
+  {
+   "t": "Kimi ni Todoke: From Me to You",
+   "kind": "episode",
+   "year": 2010,
+   "what": "Season 1 Episode 22 'Christmas'",
+   "why": "Sawako is invited by Kazehaya to the class Christmas party, her first Christmas spent with friends.",
+   "regions": {
+    "US": [
+     {
+      "service": "Netflix",
+      "kind": "subscription",
+      "url": "https://www.netflix.com/title/80236253"
+     },
+     {
+      "service": "Crunchyroll Amazon Channel",
+      "kind": "subscription",
+      "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.da5b49bd-5c3e-4d0f-bab6-3d5380362f96"
+     },
+     {
+      "service": "Apple TV Store",
+      "kind": "buy",
+      "note": "buy",
+      "url": "https://tv.apple.com/us/show/kimi-ni-todoke/umc.cmc.5k8ubt8lwl3l92rb64ks8qt9d"
+     }
+    ],
+    "IN": [
+     {
+      "service": "Netflix",
+      "kind": "subscription",
+      "url": "https://www.netflix.com/title/80236253"
+     }
+    ],
+    "GB": [
+     {
+      "service": "Netflix",
+      "kind": "subscription",
+      "url": "https://www.netflix.com/title/80236253"
+     }
+    ]
+   },
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_Kimi_ni_Todoke_episodes",
+    "https://www.justwatch.com/us/tv-show/kimi-ni-todoke-from-me-to-you/season-1",
+    "https://www.justwatch.com/in/tv-show/kimi-ni-todoke-from-me-to-you/season-1",
+    "https://www.justwatch.com/uk/tv-series/kimi-ni-todoke-from-me-to-you/season-1"
+   ],
+   "confidence": "medium",
+   "slug": "kimi-ni-todoke"
+  },
+  {
+   "t": "Gabriel DropOut",
+   "kind": "episode",
+   "year": 2017,
+   "what": "Season 1 Episode 9",
+   "why": "Raphiel and Vigne throw a Christmas party while trying to stop the demon Satania from ruining Christmas, and the episode also covers New Year's.",
+   "regions": {
+    "US": [
+     {
+      "service": "Crunchyroll",
+      "kind": "subscription",
+      "url": "https://www.crunchyroll.com/watch/G31UX9G2D"
+     },
+     {
+      "service": "Crunchyroll Amazon Channel",
+      "kind": "subscription",
+      "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.301e8f9f-9a68-4ae8-ab8b-6cf19fa535f5"
+     }
+    ],
+    "IN": [],
+    "GB": [
+     {
+      "service": "Crunchyroll",
+      "kind": "subscription",
+      "url": "https://www.justwatch.com/uk/tv-series/gabriel-dropout"
+     }
+    ]
+   },
+   "sources": [
+    "https://www.animenewsnetwork.com/review/gabriel-dropout/episode-9/.113086",
+    "https://www.justwatch.com/us/tv-show/gabriel-dropout",
+    "https://www.justwatch.com/in/tv-show/gabriel-dropout",
+    "https://www.justwatch.com/uk/tv-series/gabriel-dropout"
+   ],
+   "confidence": "high",
+   "slug": "gabriel-dropout"
+  }
+ ],
+ "notes": "1) Kaguya-sama First Kiss: US Crunchyroll comes from JustWatch's 'Season 4' page, whose episodes match the film's Ice arc. JustWatch UK shows only 3 seasons on Crunchyroll and says the film itself is unavailable, so GB is [] even though 2023 launch reports listed the UK. Treat GB as unconfirmed, not as confirmed absent. India is [] per JustWatch. 2) Gundam 0080 has no legal streaming offer in any of the three regions per JustWatch (Reelgood and TV Guide agree for the US); discs only. 3) Tokyo Revengers: only offers that cover Season 2 (the Christmas arc) are kept. Crunchyroll and Adult Swim carry Season 1 only and were dropped. For India, JustWatch lists JioHotstar with 2 seasons labeled 'free with ads'; whether Season 2 is free or needs a plan is unverified. 4) In India, JustWatch labels JioHotstar and Amazon MX Player listings 'free with ads' but still prints a monthly price beside some of them, so the free status is not certain. 5) MHA S5 in India: JustWatch lists Crunchyroll with only 2 episodes of Season 5, so it was left out in favour of Netflix and Crunchyroll Amazon Channel. JustWatch does not list Crunchyroll direct for MHA S5 in the US or UK either (only the Amazon Channel). 6) K-On!: JustWatch UK lists one unspecified season on the Crunchyroll Amazon Channel, but its Season 1 page says Season 1 is unavailable in the UK, so GB is []. 7) Episode numbering: Komi is S1E16 on Netflix but S2E4 in Japanese numbering. For Kimi ni Todoke, some sites call Episode 22 'Christmas with Friends' or number it differently; Wikipedia gives S1E22 'Christmas'. For the Oregairu Christmas arc, only Episodes 6, 9 and 10 are confirmed from ANN reviews, so the 6-10 range is approximate. 8) Netflix title URLs are global IDs and were confirmed only on the US JustWatch page; JustWatch IN and UK list Netflix for the same seasons. 9) Not checked on the services' own sites because Crunchyroll blocks automated fetches; everything rests on JustWatch snapshots dated 24-26 Nov 2026. Re-check before publishing, because December catalog changes are common. 10) Considered and excluded: Spy x Family Season 3 (no Christmas episode found) and Kimi ni Todoke Season 3 (Netflix re-cuts its episodes, so the episode number was unclear)."
+}

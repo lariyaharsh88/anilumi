@@ -76,3 +76,14 @@ test("season India guides: every streaming, region and earlier-season claim has 
     }
   }
 });
+
+test("christmas anime: 12+ titles, each with a Christmas reason, a source and all three regions researched", async () => {
+  const d = (await import("../data/christmas-anime.json")).default as unknown as { titles: { t: string; why: string; slug: string; sources: string[]; regions: Record<string, { url: string }[]> }[] };
+  assert.ok(d.titles.length >= 12, `${d.titles.length} titles`);
+  for (const t of d.titles) {
+    assert.ok(t.why.length >= 40, `${t.t}: reason`);
+    assert.ok(t.sources.some((u) => u.startsWith("https://")), `${t.t}: source`);
+    for (const r of ["US", "IN", "GB"]) assert.ok(Array.isArray(t.regions[r]), `${t.t}: ${r} not researched`);
+    assert.ok(/^[\w-]+$/.test(t.slug), `${t.t}: slug`);
+  }
+});

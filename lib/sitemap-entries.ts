@@ -31,6 +31,7 @@ import { KIDS_TV_CHECKED, KIDS_TV_PATH, kidsChannel } from "@/lib/kidstv";
 import { PRICES_CHECKED } from "@/lib/platformprices";
 import { indexedSimilar } from "@/lib/similarhub";
 import funimation from "@/data/funimation.json";
+import christmas from "@/data/christmas-anime.json";
 import { GEMS_UPDATED } from "@/lib/underrated";
 import { STRONGEST_CHECKED, rankingSlugs, strongestPath } from "@/lib/strongest";
 import { POWERS_CHECKED, powersSlugs, powersPath } from "@/lib/powers";
@@ -134,6 +135,7 @@ export async function sitemapEntries(): Promise<MetadataRoute.Sitemap> {
     { url: abs("/underrated-anime"), lastModified: at(GEMS_UPDATED), changeFrequency: "monthly", priority: 0.7 },
     { url: abs("/crunchyroll-price"), lastModified: at(CRUNCHYROLL_CHECKED), changeFrequency: "weekly", priority: 0.7 },
     { url: abs("/funimation"), lastModified: at(FUNIMATION_CHECKED), changeFrequency: "yearly", priority: 0.6 },
+    { url: abs("/christmas-anime"), lastModified: at(christmas.checked), changeFrequency: "weekly", priority: 0.6 },
     ...HINDI_SLUGS.filter(hindiIndexed).map((s) => ({ url: abs(hindiPath(s)), lastModified: at(D.watchOrders, D.dubs), changeFrequency: "weekly" as const, priority: 0.6, alternates: { languages: { en: abs(`/watch-order/${s}`), hi: abs(hindiPath(s)) } } })),
     { url: abs("/anime-openings"), lastModified: at(D.themes), changeFrequency: "weekly", priority: 0.6 },
     { url: abs("/tier-list"), lastModified: weekly, changeFrequency: "weekly", priority: 0.6 },
