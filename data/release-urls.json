@@ -1,5 +1,9 @@
 {
  "note": "Pages a release changes in their template or wording (data dates don't move for those): set \"date\" to the deploy day right before pushing; the sitemap then dates these pages to it, and the after-deploy IndexNow job (scripts/submit-sitemap.mts, 72-hour lookback) sends them. Replace the list each release.",
  "date": "2026-11-26",
- "paths": []
+ "paths": [
+  "/anime/pokemon-sun-moon",
+  "/anime/dandadan-2",
+  "/anime/goblin-slayer-2nd-season"
+ ]
 }

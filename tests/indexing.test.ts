@@ -87,6 +87,7 @@ test("anime pages: popular, airing or announced with a following, or researched;
   assert.equal(animeIndexed(a("zz-plain", 9_000, "finished"), true), true);
   // Searched by name despite a small following (Dragon Ball Kai 40.5K searches a month in the US).
   assert.equal(animeIndexed(a("dragon-ball-kai", 27_000, "finished"), false), true);
+  assert.equal(animeIndexed(a("dandadan-2", 40_000, "finished"), false), true); // sequel season, smaller following
   // Hindi dub research on the title itself counts; an OVA of a researched series doesn't.
   assert.equal(hasOwnContent("otomege-sekai-wa-mob-ni-kibishii-sekai-desu"), true);
   assert.equal(hasOwnContent("attack-on-titan-ova"), false);

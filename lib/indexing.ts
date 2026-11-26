@@ -205,8 +205,10 @@ export const AIRING_MIN_MEMBERS = 100;
 export const UPCOMING_MIN_MEMBERS = 20;
 /** Titles under the member floor that people search by name (Keyword Planner, Nov 2026, a month, US / India; Bing
  *  flagged them as important but noindexed): Dragon Ball Kai 40.5K / 6.6K, Bofuri 9.9K / 1.9K, Nande Koko ni Sensei
- *  ga!? 8.1K / 1.9K, Pokémon Ranger and the Temple of the Sea 2.9K / 1K. Listed in the sitemap too. */
-export const SEARCHED_ANIME = ["dragon-ball-kai", "itai-no-wa-lya-nano-de-bougyoryoku-ni-kyokufuri-shitai-to-omoimasu", "nande-koko-ni-sensei-ga", "pokemon-advanced-generation-pokemon-ranger-to-umi-no-ouji-manaphy"];
+ *  ga!? 8.1K / 1.9K, Pokémon Ranger and the Temple of the Sea 2.9K / 1K; and sequel seasons whose own following is smaller than the first
+ * season's (Bing flagged them as important noindexed pages, 26 Nov): Pokémon Sun & Moon 9.9K, Dandadan season 2 5.4K,
+ * Goblin Slayer season 2 1.3K (US). Listed in the sitemap too. */
+export const SEARCHED_ANIME = ["dragon-ball-kai", "itai-no-wa-lya-nano-de-bougyoryoku-ni-kyokufuri-shitai-to-omoimasu", "nande-koko-ni-sensei-ga", "pokemon-advanced-generation-pokemon-ranger-to-umi-no-ouji-manaphy", "pokemon-sun-moon", "dandadan-2", "goblin-slayer-2nd-season"];
 export const animeIndexed = (a: { slug: string; userCount: number; status: string }, ownContent: boolean) =>
   a.userCount >= ANIME_MIN_MEMBERS || (a.status === "current" && a.userCount >= AIRING_MIN_MEMBERS) || (a.status === "upcoming" && a.userCount >= UPCOMING_MIN_MEMBERS) || ownContent || SEARCHED_ANIME.includes(a.slug) || searchShown(`/anime/${a.slug}`);
 
