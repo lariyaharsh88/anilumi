@@ -68,6 +68,12 @@ let noted: Set<string> | null = null;
  * conflicting numbers). Their pages lead with those facts and rank the cast by height.
  */
 export const demandCharacters = (): string[] => (characterDemand as { chars: { k: string }[] }).chars.map((c) => c.k);
+/**
+ * Every indexed character page: verified notes, searched facts, or already in search. The sitemap lists exactly
+ * these and the /characters hub links every one, so none is an orphan Google finds only through the sitemap
+ * ("Referring page: None detected" on Luffy's page, Nov 2026).
+ */
+export const indexedCharacterSlugs = (): string[] => [...new Set([...notedCharacters(), ...demandCharacters(), ...searchShownPaths("/character/").map((p) => p.slice("/character/".length))])];
 let demanded: Set<string> | null = null;
 /**
  * A character page is indexed when it has verified notes, people search its facts (demandCharacters), or search

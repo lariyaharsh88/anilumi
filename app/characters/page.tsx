@@ -3,7 +3,8 @@ import type { Metadata } from "next";
 import Link from "@/components/Link";
 import Image from "next/image";
 import { popularCharacters, snapImage, snapGenerated, snapByPage, type SnapChar } from "@/lib/charsnap";
-import { notedCharacters, searchShownPaths } from "@/lib/indexing";
+import { indexedCharacterSlugs } from "@/lib/indexing";
+import { characterNote } from "@/lib/charnotes";
 import { animePath } from "@/lib/kitsu";
 import PageHero from "@/components/PageHero";
 import Faq from "@/components/Faq";
@@ -24,8 +25,9 @@ const path = (c: SnapChar) => `/character/${c.k}`;
 
 /** Every indexed character profile (the sitemap's list), A–Z by name, with the series it's from. */
 function allProfiles() {
-  const slugs = new Set([...notedCharacters(), ...searchShownPaths("/character/").map((p) => p.slice("/character/".length))]);
-  return [...slugs].flatMap((k) => { const c = snapByPage(k); return c ? [{ k, n: c.n, t: c.t }] : []; }).sort((x, y) => x.n.localeCompare(y.n));
+  // Every indexed character page, the same set as the sitemap, under the checked name ("Monkey D. Luffy").
+  const title = (k: string) => k.split("-").filter((w) => w && !/^[0-9a-f]{4,}$/.test(w)).map((w) => w[0].toUpperCase() + w.slice(1)).join(" ");
+  return indexedCharacterSlugs().map((k) => { const c = snapByPage(k); return { k, n: characterNote(k)?.name ?? c?.n ?? title(k), t: c?.t ?? "" }; }).sort((x, y) => x.n.localeCompare(y.n));
 }
 
 /** The anime with the most-loved casts: summed favourites of their characters in the top list. */
@@ -116,7 +118,7 @@ export default function CharactersHub() {
           <p className="mb-4 text-sm text-muted">{profiles.length} characters with a full profile: age, birthday, the anime they appear in and their voice actors.</p>
           <ul className="grid gap-x-3 text-sm sm:grid-cols-2 lg:grid-cols-4">
             {profiles.map((c) => (
-              <li key={c.k}><Link href={`/character/${c.k}`} className="block truncate rounded-lg px-2 py-1 hover:bg-white/[0.05]"><span className="text-ink/90 hover:text-violet-2">{c.n}</span> <span className="text-xs text-muted">· {c.t}</span></Link></li>
+              <li key={c.k}><Link href={`/character/${c.k}`} className="block truncate rounded-lg px-2 py-1 hover:bg-white/[0.05]"><span className="text-ink/90 hover:text-violet-2">{c.n}</span>{c.t && <span className="text-xs text-muted"> · {c.t}</span>}</Link></li>
             ))}
           </ul>
         </section>

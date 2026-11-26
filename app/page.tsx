@@ -28,7 +28,9 @@ import { airing as airingSnapshot } from "@/lib/airing";
 import { onNow } from "@/lib/trending";
 import { bingeFranchises } from "@/lib/franchiselist";
 import { hindiDubbed, hindiDubPath, platformKind } from "@/lib/hindidub";
-import { hindiDubIndexed } from "@/lib/indexing";
+import { hindiDubIndexed, demandCharacters, indexedCharacterSlugs } from "@/lib/indexing";
+import { characterNote } from "@/lib/charnotes";
+import { snapByPage } from "@/lib/charsnap";
 import { hindiArrivals } from "@/lib/hindistats";
 
 export const revalidate = 1800;
@@ -115,6 +117,8 @@ export default async function Home() {
   }));
   // Mainstream genres only on the home page (Kitsu's biggest tags include adult-leaning ones).
   const tiles = genres.filter((g) => MAIN_GENRES.has(g.slug) && !["ecchi", "harem"].includes(g.slug)).slice(0, 12);
+  const indexedChars = new Set(indexedCharacterSlugs());
+  const popularChars = demandCharacters().filter((k) => indexedChars.has(k)).slice(0, 16).map((k) => ({ k, n: characterNote(k)?.name ?? snapByPage(k)?.n ?? k }));
 
   return (
     <div className="container-x py-6 sm:py-8">
@@ -168,6 +172,18 @@ export default async function Home() {
               <GenreTile slug={g.slug} title={g.title} count={g.count} hue={GENRE_HUES[i % GENRE_HUES.length]} />
             </li>
           ))}
+        </ul>
+      </section>
+      {/* The characters people search most (data/character-demand.json order), linked from the homepage so Google sees
+          them as important pages of the site, not orphans reached only through the sitemap (Nov 2026). */}
+      <section className="reveal mt-12" aria-labelledby="home-chars-h">
+        <div className="mb-3 flex items-end justify-between">
+          <h2 id="home-chars-h" className="h-section">Popular characters</h2>
+          <Link href="/characters" className="group text-sm font-medium text-violet hover:text-violet-2">All characters <span className="inline-block transition-transform group-hover:translate-x-1">→</span></Link>
+        </div>
+        <ul className="flex flex-wrap gap-2">
+          {popularChars.map((c) => <li key={c.k}><Link href={`/character/${c.k}`} className="chip">{c.n}</Link></li>)}
+          <li><Link href="/strongest-anime-characters" className="chip">⚔️ Strongest characters by series</Link></li>
         </ul>
       </section>
       <AdSlot slot="home-mid" />
