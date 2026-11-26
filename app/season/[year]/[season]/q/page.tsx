@@ -48,6 +48,12 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
   // The searched answer up front ("anime airing in fall 2026"): how many, whether they're airing now, the top titles.
   const now = seasonOf();
   const current = now.season === season && now.year === Number(year);
+  // The next season in its last ~6 weeks before it starts: people already search "anime airing in winter 2027"
+  // (its fall counterpart is 3.6K Bing impressions over 3 months, where this wording holds #2), so the title uses the
+  // same words and the snippet leads with release dates.
+  const START_MONTH: Record<string, number> = { winter: 0, spring: 3, summer: 6, fall: 9 };
+  const startsAt = Date.UTC(Number(year), START_MONTH[season] ?? 0, 1);
+  const soon = !current && startsAt > Date.now() && startsAt - Date.now() <= 45 * 86400_000;
   const first = Number(page) > 1 ? null : await getSeason(Number(year), season as Season, 1, 20).catch(() => null);
   const total = first?.total ?? 0;
   // The shows people know, by the names they search: AniList's English titles and popularity from the season preview
@@ -64,6 +70,7 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
     // Bing ranks the current season at #2 for "anime airing in fall 2026" with no clicks: match that wording first.
     title: p ? `${label} Anime – Full Season Chart${p}` : fitTitle([
       total && current ? `Anime Airing in ${label}: All ${total} Shows & Where to Watch` : null,
+      total && soon ? `Anime Airing in ${label}: All ${total} Shows & Release Dates` : null,
       total && current ? `${label} Anime Airing Now: All ${total} Shows & Where to Watch` : null,
       total ? `${label} Anime: All ${total} Shows, Air Days & Where to Watch` : null,
       total ? `${label} Anime: All ${total} Shows${current ? " Airing Now" : ""}, Ranked` : null,
@@ -73,6 +80,8 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
     // page near #2 for "anime airing in fall 2026" with no clicks after the title matched the query, Nov 2026).
     description: fitDescription(current && total && tops.length
       ? `${label} anime airing now: ${tops.join(", ")} and ${total - tops.length} more, with the day each new episode comes out, where to stream it${dubs ? ` and the ${dubs} with English dubs` : ""}.`
+      : soon && total && tops.length
+      ? `${label} anime starting soon: ${tops.join(", ")} and ${total - tops.length} more, with each show's release date, air day and where it will stream.`
       : `${total ? `All ${total} ${label} anime${current ? " airing now" : ""}` : `Every ${label} anime`} with air days, where to stream${dubs ? `, ${dubs} English dubs` : ""} and fan scores${tops.length ? `: ${tops.join(", ")} and more` : ""}.`),
     alternates: { canonical: `/season/${year}/${season}${Number(page) > 1 ? `?page=${page}` : ""}` },
   };

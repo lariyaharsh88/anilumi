@@ -69,7 +69,7 @@ export default async function SchedulePage() {
       <PageHero
         crumbs={[{ href: "/", label: "Home" }, { href: "/schedule", label: "Schedule" }]}
         eyebrow={<><span className="live-dot mr-2 inline-block align-middle" aria-hidden />Live · {todayJst} in Tokyo</>}
-        title={<>Anime airing <span className="text-gradient">this week</span></>}
+        title={<>Anime release schedule: <span className="text-gradient">this week</span></>}
         subtitle={`Next-episode times for the ${all.length} most-followed series currently airing, grouped by day in Japan Standard Time, with your local time alongside. Save shows to your list to filter the week down to what you watch.`}
         facts={[
           { value: String(days.reduce((n, d) => n + d.items.length, 0)), label: "episodes this week" },
