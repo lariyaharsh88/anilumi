@@ -64,7 +64,10 @@ function collectLinks(html) {
 }
 async function warm(loc, mode) {
   const t = Date.now();
-  const headers = { "User-Agent": "AniLumi cache warmer", ...(mode ? { "x-warm-mode": mode } : {}) };
+  // WARM_KEY (a GitHub Actions secret) lets these requests past the zone's bot challenge and rate limit, which
+  // blocked 725 of 3,097 pages after the 26 Nov release (/character, /voice-actor, /similar: 403; others: 429).
+  // The Cloudflare custom rule skips the security rules only when this header carries the exact secret.
+  const headers = { "User-Agent": "AniLumi cache warmer", ...(process.env.WARM_KEY ? { "x-anilumi-warm": process.env.WARM_KEY } : {}), ...(mode ? { "x-warm-mode": mode } : {}) };
   const res = await fetch(loc, { headers, signal: AbortSignal.timeout(90000) }).catch(() => null);
   const body = res ? await res.text().catch(() => "") : "";
   if (LINKS && !mode && (res?.headers.get("content-type") || "").includes("text/html")) collectLinks(body);

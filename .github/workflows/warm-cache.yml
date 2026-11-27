@@ -27,4 +27,6 @@ jobs:
         with:
           node-version: 22
       - name: Warm pages
+        env:
+          WARM_KEY: ${{ secrets.WARM_KEY }}
         run: SCOPE=${{ inputs.full && 'all' || 'top' }} CONC=3 GAP=1 node scripts/warm-cache.mjs https://anilumi.in
