@@ -15,8 +15,10 @@ on:
         type: boolean
         default: false
 concurrency:
-  group: warm-cache
-  cancel-in-progress: true # a newer deploy supersedes a pass that is still running
+  # One group per kind of pass: a newer full pass (a newer deploy) supersedes a running full pass, but the 6-hourly
+  # top-pages pass must never cancel a full one (on 27 Nov a late scheduled top pass killed both post-release passes).
+  group: warm-cache-${{ inputs.full && 'full' || 'top' }}
+  cancel-in-progress: true
 jobs:
   warm:
     runs-on: ubuntu-latest
