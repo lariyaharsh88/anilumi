@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Link from "@/components/Link";
 import PageHero from "@/components/PageHero";
 import Faq from "@/components/Faq";
+import JoinChannels from "@/components/JoinChannels";
 import JsonLd from "@/components/JsonLd";
 import Image from "next/image";
 import { animeBySlugs, animePath, posterUrl, type Anime } from "@/lib/kitsu";
@@ -244,6 +245,7 @@ export default async function HindiPlatformPage({ params }: Props) {
         </ul>
       </nav>
 
+      <JoinChannels source={`hindi-${p.slug}`} className="mt-8" />
       <div id="faq" data-section className="pt-2"><Faq title={`${p.label}: Hindi dub FAQ`} items={faq} /></div>
     </div>
   );

@@ -3,6 +3,7 @@ import Link from "@/components/Link";
 import PageHero from "@/components/PageHero";
 import JsonLd from "@/components/JsonLd";
 import Faq, { type FaqItem } from "@/components/Faq";
+import JoinChannels from "@/components/JoinChannels";
 import { itemList } from "@/lib/ld";
 import { fitTitle, fitDescription } from "@/lib/titles";
 import { STREAMS_CHECKED, allStreams, audioLine, catalogue, servicesIn, streamsDate, streamsPath, type Service, type Streams } from "@/lib/streams";
@@ -98,6 +99,7 @@ export default function AnimeOnNetflixIndia() {
         <Link href="/anime-streaming-sites" className="chip">Every streaming site in India</Link>
       </p>
 
+      <JoinChannels source="netflix-india" lang="Indian" className="mt-8" />
       <Faq title="Anime on Netflix India: FAQ" items={faq} />
     </div>
   );

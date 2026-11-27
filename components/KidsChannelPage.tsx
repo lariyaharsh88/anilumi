@@ -4,6 +4,7 @@ import PageHero from "@/components/PageHero";
 import AnswerLead from "@/components/AnswerLead";
 import MadeBy from "@/components/MadeBy";
 import Faq, { type FaqItem } from "@/components/Faq";
+import JoinChannels from "@/components/JoinChannels";
 import JsonLd from "@/components/JsonLd";
 import SectionNav from "@/components/fx/SectionNav";
 import KidsShowTable, { KidsPremieres, KidsTimings } from "@/components/KidsShowTable";
@@ -194,6 +195,7 @@ export default async function KidsChannelPage({ channel: ch }: { channel: KidsCh
         </ul>
       </nav>
 
+      <JoinChannels source="kids-channel" className="mt-8" />
       <div id="faq" data-section className="pt-2"><Faq title={`${ch.name} anime: FAQ`} items={faq} /></div>
     </div>
   );

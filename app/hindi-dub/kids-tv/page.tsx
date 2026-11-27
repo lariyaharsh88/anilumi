@@ -4,6 +4,7 @@ import PageHero from "@/components/PageHero";
 import AnswerLead from "@/components/AnswerLead";
 import MadeBy from "@/components/MadeBy";
 import Faq, { type FaqItem } from "@/components/Faq";
+import JoinChannels from "@/components/JoinChannels";
 import JsonLd from "@/components/JsonLd";
 import SectionNav from "@/components/fx/SectionNav";
 import { StreamCell } from "@/components/KidsShowTable";
@@ -190,6 +191,7 @@ export default async function KidsTvHub() {
         <Link href="/hindi-dub" className="chip">All Hindi dubbed anime</Link>
       </p>
 
+      <JoinChannels source="kids-tv" className="mt-8" />
       <div id="faq" data-section className="pt-2"><Faq title="Kids' anime in Hindi on TV: FAQ" items={faq} /></div>
     </div>
   );

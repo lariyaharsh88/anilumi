@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "@/components/Link";
 import PageHero from "@/components/PageHero";
 import Faq from "@/components/Faq";
+import JoinChannels from "@/components/JoinChannels";
 import JsonLd from "@/components/JsonLd";
 import MadeBy from "@/components/MadeBy";
 import SectionNav from "@/components/fx/SectionNav";
@@ -160,6 +161,7 @@ export default async function BestHindiDubbed() {
         {[...new Map(list.flatMap((r) => r.d.platforms.flatMap((p) => { const pf = platformFor(p.name); return pf ? [[pf.slug, pf] as const] : []; }))).values()].slice(0, 5).map((pf) => <Link key={pf.slug} href={`/hindi-dub/${pf.slug}`} className="chip">{pf.label}</Link>)}
       </p>
 
+      <JoinChannels source="hindi-best" className="mt-8" />
       <div id="faq" data-section className="pt-2"><Faq title="Best Hindi dubbed anime: FAQ" items={faq} /></div>
     </div>
   );

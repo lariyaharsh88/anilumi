@@ -4,6 +4,7 @@ import Link from "@/components/Link";
 import PageHero from "@/components/PageHero";
 import JsonLd from "@/components/JsonLd";
 import Faq, { type FaqItem } from "@/components/Faq";
+import JoinChannels from "@/components/JoinChannels";
 import AnswerLead from "@/components/AnswerLead";
 import MadeBy from "@/components/MadeBy";
 import { webPage } from "@/lib/ld";
@@ -193,6 +194,7 @@ export default async function SeasonIndiaPage({ params }: Props) {
       )}
 
       <MadeBy className="mt-8" path={`/season/${y}/${s}/india`} method="Line-up and broadcast times from AniList; India streaming only as the services or official sites announce it (Crunchyroll, Netflix, Muse, Ani-One and others), earlier seasons from our India where-to-watch research, dubs from the platforms' own pages." date={research.checked} />
+      <JoinChannels source="season-india" lang="Indian" className="mt-8" />
       <Faq title={`${label} anime in India: FAQ`} items={faq} />
     </div>
   );

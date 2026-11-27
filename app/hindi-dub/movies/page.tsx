@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "@/components/Link";
 import PageHero from "@/components/PageHero";
 import Faq from "@/components/Faq";
+import JoinChannels from "@/components/JoinChannels";
 import JsonLd from "@/components/JsonLd";
 import MadeBy from "@/components/MadeBy";
 import SectionNav from "@/components/fx/SectionNav";
@@ -122,6 +123,7 @@ export default async function HindiDubMovies() {
         {dbEnabled() && <LeadForm className="mt-6" kind="hindi" source="hindi-movies" title="🔔 Email me when an anime film gets a Hindi dub" blurb="One short email when an official Hindi dub is added, with where to watch it and whether it's free." />}
       </section>
 
+      <JoinChannels source="hindi-movies" className="mt-8" />
       <div id="faq" data-section className="pt-2"><Faq title="Anime movies in Hindi: FAQ" items={faq} /></div>
     </div>
   );

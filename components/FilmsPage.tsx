@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Link from "@/components/Link";
 import PageHero from "@/components/PageHero";
 import Faq from "@/components/Faq";
+import JoinChannels from "@/components/JoinChannels";
 import JsonLd from "@/components/JsonLd";
 import MadeBy from "@/components/MadeBy";
 import SectionNav from "@/components/fx/SectionNav";
@@ -159,6 +160,7 @@ export default function FilmsPage({ slug, lang }: { slug: string; lang: FilmLang
         {others.map((o) => <Link key={o.slug} href={filmsPath(o.slug, lang)} className="chip">{o.name} movies in {L}</Link>)}
       </p>
 
+      <JoinChannels source={`films-${lang}`} lang={L} className="mt-8" />
       <div id="faq" data-section className="pt-2"><Faq title={`${f.name} movies in ${L}: FAQ`} items={faq} /></div>
     </div>
   );
