@@ -198,6 +198,10 @@ async function handle(request, env, ctx) {
     url.hostname = SITE;
     return Response.redirect(url.toString(), 301);
   }
+  // Two API calls answered here, without waking the app (each wake-up costs a cold start; 27 Nov sample: /api/search
+  // ~780 ms of CPU, /api/geo ~80 ms, on every search and every new visitor).
+  if (request.method === "GET" && url.pathname === "/api/geo") return geoAnswer(request);
+  if (request.method === "GET" && url.pathname === "/api/search") return cachedSearch(request, url, ctx);
   if (!cacheable(request, url)) return toOrigin(request, url);
   // From here on, a tagged link is the same page as the untagged one: one cache entry, one render.
   if (url.search) url.search = cleanSearch(url.search);
@@ -393,6 +397,46 @@ async function refreshLastCopy(res, lastKey, storedAt) {
   kept.headers.set("cache-control", `public, max-age=${LAST_GOOD_TTL}`);
   kept.headers.set("x-stored-at", String(storedAt));
   await Promise.all([caches.default.put(lastKey, kept), pages ? storeShared(res, lastKey) : null].map((p) => Promise.resolve(p).catch(() => {})));
+}
+
+/** The visitor's country for the consent banner, as /api/geo answers it (app/api/geo/route.ts), from Cloudflare's
+ *  own geolocation: no app call. */
+function geoAnswer(request) {
+  const c = request.headers.get("cf-ipcountry") || request.cf?.country || null;
+  const country = c && /^[A-Z]{2}$/.test(c) && c !== "XX" && c !== "T1" ? c : null;
+  return new Response(JSON.stringify({ c: country }), { headers: { "content-type": "application/json", "cache-control": "private, no-store" } });
+}
+
+const SEARCH_TTL = 3600; // the route's own s-maxage
+/** Search results by query, cached in this data centre for an hour (the route marks them public for that long).
+ *  The query is trimmed and lower-cased for the key, so "Naruto" and "naruto " share one entry. Pure lookups only. */
+export function searchKey(url) {
+  const sp = new URLSearchParams(url.search);
+  const out = new URLSearchParams();
+  for (const k of ["q", "limit", "anime"]) {
+    const v = sp.get(k);
+    if (v != null) out.set(k, k === "q" ? v.trim().toLowerCase().replace(/\s+/g, " ") : v);
+  }
+  out.sort();
+  return `https://${SITE}/__edge/search?${out}`;
+}
+async function cachedSearch(request, url, ctx) {
+  const key = new Request(searchKey(url), { method: "GET" });
+  const hit = await caches.default.match(key);
+  if (hit) { const out = new Response(hit.body, hit); out.headers.set("x-edge-cache", "HIT"); return out; }
+  const res = await toOrigin(request, url);
+  if (res.status === 200 && !res.headers.has("set-cookie")) {
+    const body = await res.clone().text();
+    // An empty answer may be a lookup that failed upstream; keep it only briefly so a real result shows soon.
+    const ttl = body.includes('"items":[]') ? 300 : SEARCH_TTL;
+    const stored = new Response(body, res);
+    stored.headers.set("cache-control", `public, max-age=${ttl}`);
+    stored.headers.delete("vary");
+    ctx.waitUntil(caches.default.put(key, stored).catch(() => {}));
+  }
+  const out = new Response(res.body, res);
+  out.headers.set("x-edge-cache", "MISS");
+  return out;
 }
 
 /** Seconds since a last-good copy was stored (x-stored-at); copies from before the stamp count as expired. Pure. */

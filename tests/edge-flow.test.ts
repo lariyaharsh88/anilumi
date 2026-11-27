@@ -115,3 +115,19 @@ test("warm-up link pass: a page with a fresh shared copy is skipped, one with on
   assert.equal(s.r2.text("last/character/no-copy?__last=1"), "fresh /character/no-copy");
   assert.equal(s.renders(), 1);
 });
+
+test("/api/geo is answered at the edge; /api/search is cached per normalised query", async () => {
+  const { searchKey } = await import("../edge/worker.js");
+  const s = setup();
+  let searches = 0;
+  const env = { ...s.env, APP: { async fetch(req: Request) { if (new URL(req.url).pathname === "/api/search") { searches++; return new Response(JSON.stringify({ items: [1] }), { headers: { "content-type": "application/json" } }); } return s.env.APP.fetch(req); } } };
+  const geo = await worker.fetch(new Request("https://anilumi.in/api/geo", { headers: { "cf-ipcountry": "IN" } }), env, s.ctx);
+  assert.deepEqual(await geo.json(), { c: "IN" });
+  assert.equal(geo.headers.get("cache-control"), "private, no-store");
+  await worker.fetch(new Request("https://anilumi.in/api/search?limit=6&q=Naruto"), env, s.ctx);
+  await s.flush();
+  const again = await worker.fetch(new Request("https://anilumi.in/api/search?q=naruto%20&limit=6"), env, s.ctx);
+  assert.equal(again.headers.get("x-edge-cache"), "HIT");
+  assert.equal(searches, 1);
+  assert.equal(searchKey(new URL("https://anilumi.in/api/search?q=%20One%20%20Piece&limit=6")), "https://anilumi.in/__edge/search?limit=6&q=one+piece");
+});
