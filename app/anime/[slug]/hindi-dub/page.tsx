@@ -7,13 +7,14 @@ import JsonLd from "@/components/JsonLd";
 import Faq, { type FaqItem } from "@/components/Faq";
 import JoinChannels from "@/components/JoinChannels";
 import AnswerLead from "@/components/AnswerLead";
+import HindiDubStatus, { statusMetadata } from "@/components/HindiDubStatus";
 import { getAnimeBySlug, animeBySlugs, animePath, posterUrl, buildWatchOrder } from "@/lib/kitsu";
 import { dubShows, premiereAt } from "@/lib/dubschedule";
 import { pricesFor as priceOf, cheapestPlan, PERIOD } from "@/lib/platformprices";
 import { pageAbout } from "@/lib/ld";
 import { fitTitle, fitDescription } from "@/lib/titles";
 import { filmFranchises, filmsPath } from "@/lib/franchisefilms";
-import { DUB_CHECKED, HINDI_PARTS, HINDI_PART_OF, dubDate, dubHref, dubPageEntry, dubsOn, hindiDubPath, hindiDubbed, platformFor, platformKind, type Dub, type PlatformKind } from "@/lib/hindidub";
+import { DUB_CHECKED, HINDI_PARTS, HINDI_PART_OF, dubDate, dubHref, dubPageEntry, dubsOn, hindiDubPath, hindiStatus, type HindiStatus, hindiDubbed, platformFor, platformKind, type Dub, type PlatformKind } from "@/lib/hindidub";
 import { pricesFor, startingAt } from "@/lib/platformprices";
 import { hindiCast } from "@/lib/hindistats";
 import { LANG, regionalFor, regionalPageEntry, regionalPath } from "@/lib/regionaldub";
@@ -26,13 +27,18 @@ export const revalidate = 86400;
 export async function generateStaticParams() { return []; }
 type Props = { params: Promise<{ slug: string }> };
 
-/** Every anime with an official Hindi dub on record (data/hindi-dubs.json) has this page; others 404. */
-function load(slug: string): Dub {
+/**
+ * Every anime with an official Hindi dub on record (data/hindi-dubs.json) has this page; so does one whose Hindi dub is
+ * announced or was checked and not found, as a status page (components/HindiDubStatus.tsx). Others 404.
+ */
+function load(slug: string): { d: Dub } | { st: HindiStatus } {
   const s = decodeURIComponent(slug);
   const d = dubPageEntry(s);
-  if (!d && HINDI_PART_OF[s]) permanentRedirect(hindiDubPath(HINDI_PART_OF[s]));
-  if (!d) notFound();
-  return d;
+  if (d) return { d };
+  if (HINDI_PART_OF[s]) permanentRedirect(hindiDubPath(HINDI_PART_OF[s]));
+  const st = hindiStatus(s);
+  if (st) return { st };
+  notFound();
 }
 
 const KIND_TAG: Record<PlatformKind, string> = { free: "Free", subscription: "Paid", tv: "TV channel" };
@@ -41,7 +47,9 @@ const names = (d: Dub) => [...new Set(d.platforms.map((p) => p.name))];
 const checkedOn = (d: Dub) => dubDate("en", d.checked ?? DUB_CHECKED);
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const d = load((await params).slug);
+  const r = load((await params).slug);
+  if ("st" in r) return statusMetadata(r.st);
+  const d = r.d;
   const y = new Date().getFullYear();
   const free = d.platforms.some((p) => platformKind(p.name) === "free");
   return {
@@ -54,7 +62,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 /** One anime's official Hindi dub: where it streams, which seasons, free or paid, the cost, the Hindi cast. */
 export default async function HindiDubPage({ params }: Props) {
-  const d = load((await params).slug);
+  const r = load((await params).slug);
+  if ("st" in r) return <HindiDubStatus st={r.st} />;
+  const d = r.d;
   const a = await getAnimeBySlug(d.s).catch(() => null);
   const anime = { id: a?.id ?? "", slug: d.s };
   const rows = d.platforms.map((p) => {

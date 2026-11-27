@@ -5,7 +5,7 @@
  */
 import data from "@/data/regional-dubs.json";
 import franchises from "@/data/franchises.json";
-import { platformKind, type DubPlatform, type PlatformKind } from "./hindidub";
+import { HINDI_PLATFORMS, platformKind, type DubPlatform, type HindiPlatform, type PlatformKind } from "./hindidub";
 import { orderSlugs } from "./wosnap";
 
 export const REGIONAL_LANGS = ["ta", "te"] as const;
@@ -74,3 +74,21 @@ export function regionalPageEntry(slug: string, lang: RegionalLang): RegionalDub
 }
 const top: Partial<Record<RegionalLang, Set<string>>> = {};
 export const topRegional = (slug: string, lang: RegionalLang) => (top[lang] ??= new Set(dubbedIn(lang).slice(0, REGIONAL_PAGES).map((d) => d.s))).has(slug);
+
+/**
+ * Tamil and Telugu pages per platform (/tamil-dub/crunchyroll, /telugu-dub/netflix): the questions that already bring
+ * Hindi traffic ("tamil anime on crunchyroll", "telugu dubbed anime netflix"), for platforms with at least
+ * REGIONAL_PLATFORM_MIN titles in the language. YouTube is left out: Muse India's channel is nearly all of it and has
+ * its own page. Pure.
+ */
+export const REGIONAL_PLATFORM_MIN = 5;
+export function regionalPlatforms(lang: RegionalLang): { p: HindiPlatform; titles: RegionalDub[] }[] {
+  const dubs = dubbedIn(lang);
+  return HINDI_PLATFORMS.filter((p) => p.slug !== "youtube")
+    .map((p) => ({ p, titles: dubs.filter((d) => d.platforms.some((x) => p.match.test(x.name))) }))
+    .filter((x) => x.titles.length >= REGIONAL_PLATFORM_MIN);
+}
+export const regionalPlatform = (lang: RegionalLang, slug: string) => regionalPlatforms(lang).find((x) => x.p.slug === slug) ?? null;
+export const regionalPlatformPath = (lang: RegionalLang, slug: string) => `${LANG[lang].path}/${slug}`;
+/** A platform's short name, without the note in brackets: "Muse India (YouTube, free)" → "Muse India". */
+export const platformLabel = (p: HindiPlatform) => p.label.replace(/ \(.*\)$/, "");

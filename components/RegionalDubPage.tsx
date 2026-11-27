@@ -17,10 +17,10 @@ import { itemList } from "@/lib/ld";
 import { fitTitle, fitDescription } from "@/lib/titles";
 import { dubHref, hasHindiDub, platformKind } from "@/lib/hindidub";
 import { filmFranchises, filmsPath, hasLang } from "@/lib/franchisefilms";
-import { LANG, REGIONAL_CHECKED, cheapest, dubbedIn, platformsFor, regionalDate, regionalPath, topRegional, type RegionalLang } from "@/lib/regionaldub";
+import { LANG, REGIONAL_CHECKED, cheapest, dubbedIn, platformLabel, platformsFor, regionalDate, regionalPath, regionalPlatformPath, regionalPlatforms, topRegional, type RegionalLang } from "@/lib/regionaldub";
 
 /** The show's own page in this language when it has an indexed one, else its Hindi-dub link. */
-const hrefIn = (d: { s: string }, lang: RegionalLang) => (topRegional(d.s, lang) ? regionalPath(d.s, lang) : dubHref(d));
+export const hrefIn = (d: { s: string }, lang: RegionalLang) => (topRegional(d.s, lang) ? regionalPath(d.s, lang) : dubHref(d));
 
 /** /tamil-dub and /telugu-dub: every anime with an official dub in the language, free ones first, then by platform. */
 export function regionalMetadata(lang: RegionalLang): Metadata {
@@ -80,6 +80,8 @@ export default async function RegionalDubPage({ lang }: { lang: RegionalLang }) 
         posters={dubs.slice(0, 3).map((d) => poster(d.s, "medium"))}
       >
         <p className="flex flex-wrap gap-2 text-sm">
+          <Link href={`${L.path}/best`} className="chip">Best {L.name} dubs</Link>
+          {regionalPlatforms(lang).map((x) => <Link key={x.p.slug} href={regionalPlatformPath(lang, x.p.slug)} className="chip">{L.name} on {platformLabel(x.p)}</Link>)}
           <Link href="/new-dubs" className="chip">New this week</Link>
           <Link href={other.path} className="chip">{other.name} dubbed anime</Link>
           <Link href="/hindi-dub" className="chip">Hindi dubbed anime</Link>
@@ -137,7 +139,7 @@ export default async function RegionalDubPage({ lang }: { lang: RegionalLang }) 
             <ul className="grid gap-2 text-sm">
               {platforms.map((p) => (
                 <li key={p.name} className="card p-3">
-                  <p className="font-semibold text-ink">{p.name} <span className="text-xs font-normal text-muted">· {p.kind === "free" ? "Free" : p.kind === "tv" ? "TV channel" : "Subscription"} · {p.titles.length} anime</span></p>
+                  <p className="font-semibold text-ink">{(() => { const own = regionalPlatforms(lang).find((x) => x.p.match.test(p.name)); return own ? <Link href={regionalPlatformPath(lang, own.p.slug)} className="hover:text-violet-2 hover:underline">{p.name}</Link> : p.name; })()} <span className="text-xs font-normal text-muted">· {p.kind === "free" ? "Free" : p.kind === "tv" ? "TV channel" : "Subscription"} · {p.titles.length} anime</span></p>
                   <p className="mt-0.5 text-ink/80">{p.titles.slice(0, 6).map((d, i) => <span key={d.s}>{i ? ", " : ""}<Link href={hrefIn(d, lang)} className="hover:text-violet-2 hover:underline">{d.t}</Link></span>)}{p.titles.length > 6 ? ` and ${p.titles.length - 6} more` : ""}</p>
                 </li>
               ))}

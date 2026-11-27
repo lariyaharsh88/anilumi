@@ -170,7 +170,32 @@ export const topHindiDub = (s: string) => (top ??= new Set([...hindiDubbed().sli
  * Where a dub links to: its own Hindi dub page for the most-watched, else the watch order when the franchise has
  * several parts, else the anime page.
  */
-export const dubHref = (d: Pick<Dub, "s">) => (topHindiDub(d.s) ? hindiDubPath(d.s) : (users.get(d.s)?.n ?? 1) > 1 ? `/watch-order/${d.s}` : `/anime/${d.s}`);
+export const dubHref = (d: Pick<Dub, "s">) => (topHindiDub(d.s) || statusIndexed(d.s) ? hindiDubPath(d.s) : (users.get(d.s)?.n ?? 1) > 1 ? `/watch-order/${d.s}` : `/anime/${d.s}`);
+
+/**
+ * A Hindi dub status page (/anime/<slug>/hindi-dub) for an anime with no Hindi dub out: announced on the dub schedule
+ * but not streaming yet, or checked on the platforms that carry it in India and found without Hindi audio. People ask
+ * AI "when is <show> coming in Hindi?" and it usually has nothing dated to give; these answer it with what's confirmed,
+ * where the show streams in India meanwhile, and the date it was checked. Pure.
+ */
+export type HindiStatus = { s: string; t: string; kind: "announced" | "not_yet"; service: string | null; premiere: string | null; note: string; sources: string[]; checked: string };
+const SCHEDULE_CHECKED = (schedule as { checked: string }).checked;
+export function hindiStatus(slug: string): HindiStatus | null {
+  if (dubPageEntry(slug)) return null;
+  const e = bySlug.get(slug);
+  const row = (schedule as { entries: ScheduleRow[] }).entries.find((x) => x.lang === "hi" && x.slug === slug && x.status === "announced");
+  if (row) return { s: slug, t: e?.t ?? row.t, kind: "announced", service: row.service, premiere: row.premiere?.slice(0, 10) ?? null, note: row.note ?? "", sources: [...new Set(row.sources ?? [row.url])], checked: SCHEDULE_CHECKED };
+  if (e && e.status === "none_found" && e.confidence !== "low") return { s: slug, t: e.t, kind: "not_yet", service: null, premiere: null, note: e.note ?? "", sources: e.sources ?? [], checked: e.checked ?? D.checked };
+  return null;
+}
+/** Status pages indexed: every announced dub, plus the most-watched STATUS_PAGES shows checked without one. */
+export const STATUS_PAGES = 30;
+let statusTop: Set<string> | null = null;
+export function statusSlugs(): string[] {
+  const announced = (schedule as { entries: ScheduleRow[] }).entries.filter((x) => x.lang === "hi" && x.status === "announced" && x.slug).map((x) => x.slug!);
+  return [...new Set([...announced, ...notDubbed().slice(0, STATUS_PAGES).map((d) => d.s)])].filter((s) => hindiStatus(s));
+}
+export const statusIndexed = (s: string) => (statusTop ??= new Set(statusSlugs())).has(s);
 /** Platform page (/hindi-dub/<slug>) and price key for a dub platform name, when it has one. */
 export const platformFor = (name: string) => HINDI_PLATFORMS.find((p) => p.match.test(name)) ?? null;
 
