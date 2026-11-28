@@ -1310,7 +1310,7 @@
             "https://www.justwatch.com/in/search?q=doraemon"
           ],
           "confidence": "high",
-          "note": "No Indian release or Hindi dub found; JustWatch IN lists no provider (19 Nov 2026)",
+          "note": "No Indian release or Hindi dub found; JustWatch IN lists no provider (28 Nov 2026)",
           "ta": {
             "status": "none_found",
             "where": [],
@@ -1335,10 +1335,11 @@
           "sources": [
             "https://www.animenewsnetwork.com/press-release/2026-06-18/doraemon-makes-its-big-screen-india-debut-on-october-2/.238662",
             "https://animationxpress.com/?p=1638562",
-            "https://www.thestatesman.com/entertainment/doraemon-movie-india-theatrical-release-new-nobita-castle-undersea-devil-hindi-tamil-telugu-1503607539.html"
+            "https://www.thestatesman.com/entertainment/doraemon-movie-india-theatrical-release-new-nobita-castle-undersea-devil-hindi-tamil-telugu-1503607539.html",
+            "https://www.sacnilk.com/movie/Doraemon_Castle_of_the_Undersea_Devil_2026"
           ],
           "confidence": "high",
-          "note": "Released in Indian cinemas on 2 Oct 2026 in Hindi, Tamil and Telugu, the first wide Indian theatrical release for a Doraemon film. Not streaming yet; check showtimes in case it's still playing near you.",
+          "note": "Released in Indian cinemas on 2 Oct 2026 in Hindi, Tamil and Telugu, the first wide Indian theatrical release for a Doraemon film. No Hindi TV premiere or streaming release announced yet (28 Nov 2026).",
           "ta": {
             "status": "aired",
             "where": [
@@ -2658,9 +2659,11 @@
           "jp": "Eiga Kureyon Shinchan: Kikikaikai! Ora no Yōkai Bakēshon",
           "hindi": "none_found",
           "where": [],
-          "sources": [],
+          "sources": [
+            "https://www.animenewsnetwork.com/news/2026-09-14/latest-crayon-shin-chan-film-becomes-highest-grossing-in-franchise/.241767"
+          ],
           "confidence": "medium",
-          "note": "No Indian release or Hindi dub announcement found as of 19 Nov 2026",
+          "note": "Opened in Japan on 31 Jul 2026; no Indian release or Hindi dub announcement found as of 28 Nov 2026",
           "ta": {
             "status": "none_found",
             "where": [],

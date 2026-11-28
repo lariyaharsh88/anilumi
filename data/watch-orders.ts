@@ -223,7 +223,7 @@ export const WATCH_ORDER_OVERRIDES: Record<string, WatchOrderOverride> = {
   },
   "tokyo-revengers": {
     label: "Tokyo Revengers",
-    intro: "Season 1, then Christmas Showdown (Season 2) and the Tenjiku arc (Season 3). Season 4, the War of the Three Titans arc, follows; it premiered in October 2026. Chibi Reve is a set of comedy shorts and is optional.",
+    intro: "Season 1, then Christmas Showdown (Season 2) and the Tenjiku arc (Season 3). Season 4, the War of the Three Titans arc, is the final arc; it premiered in October 2026 and streams on Disney+ outside Japan. Chibi Reve is a set of comedy shorts and is optional.",
   },
   "one-punch-man": {
     label: "One Punch Man",

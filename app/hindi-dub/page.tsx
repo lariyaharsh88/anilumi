@@ -8,7 +8,7 @@ import { KIND_CLASS } from "@/components/HindiDub";
 import Image from "next/image";
 import { animeBySlugs, animePath, posterUrl, type Anime } from "@/lib/kitsu";
 import { itemList } from "@/lib/ld";
-import { DUB_CHECKED, HINDI_PLATFORMS, byPlatform, dubDate, dubHref, hindiDubbed, notDubbed, platformKind, type PlatformKind } from "@/lib/hindidub";
+import { DUB_CHECKED, DUB_SCANNED, HINDI_PLATFORMS, byPlatform, dubDate, dubHref, hindiDubbed, notDubbed, platformKind, type PlatformKind } from "@/lib/hindidub";
 import { fitTitle, fitDescription } from "@/lib/titles";
 import { dubStats, cheapestKind, genreCounts, eraCounts, hindiArrivals, hindiComing, castShows } from "@/lib/hindistats";
 import { premiereAt } from "@/lib/dubschedule";
@@ -77,7 +77,7 @@ export default async function HindiDubHub() {
     ...(arrivals.length ? [{ q: "Which anime got a Hindi dub recently?", a: `${arrivals.slice(0, 6).map((e) => `${e.t} (${e.service}, ${fmtDay(e.premiere)})`).join(", ")}. The newest are listed under New Hindi dubbed anime above.` }] : []),
     ...(coming.length ? [{ q: "Which Hindi dubs are coming soon?", a: `${coming.map((e) => `${e.t} on ${e.service}${e.premiere ? ` from ${fmtDay(e.premiere)}` : ""}`).join("; ")}.` }] : []),
     { q: "Is it legal to download Hindi dubbed anime?", a: "Only from the official sources: Crunchyroll and Netflix allow offline downloads inside their apps, and the YouTube channels are free to stream. Sites that offer Hindi dubbed anime as file downloads are copying it without a licence, which is copyright infringement in India, and they often carry harmful ads." },
-    { q: "How was this list checked?", a: `Against each platform's own title page (Crunchyroll lists Hindi under Audio; Netflix India lists audio languages) and Indian anime news, on ${dubDate()}. Fan lists alone never count. Platforms add and drop dubs, so check the audio menu before you start.` },
+    { q: "How was this list checked?", a: `Against each platform's own title page (Crunchyroll lists Hindi under Audio; Netflix India lists audio languages) and Indian anime news. Each title shows the date it was confirmed, and the list is scanned weekly for new dubs (last on ${dubDate("en", DUB_SCANNED)}). Fan lists alone never count. Platforms add and drop dubs, so check the audio menu before you start.` },
   ];
 
   return (
@@ -116,7 +116,7 @@ export default async function HindiDubHub() {
           <Link href="/telugu-dub" className="chip">Telugu dubbed anime</Link>
         </p>
       </PageHero>
-      <AnswerLead checked={dubDate()}>
+      <AnswerLead label="List updated" checked={dubDate("en", DUB_SCANNED)}>
         You can watch {free.length} of the {dubbed.length} official Hindi dubbed anime free, on YouTube (Muse India, Ani-One India) and Prime Video&apos;s free tier (formerly MX Player). {top.name} has the most ({top.titles.length}), followed by {streamers.slice(1, 3).map((p) => `${p.name.replace(/ \(.*\)$/, "")} (${p.titles.length})`).join(" and ")}.
       </AnswerLead>
       {/* Most visitors (ChatGPT links) read the answer above and leave; the hub's main signup sits after three
@@ -253,7 +253,7 @@ export default async function HindiDubHub() {
 
       <section id="list" data-section className="reveal pt-10" aria-labelledby="list-h">
         <h2 id="list-h" className="h-section mb-1">All {dubbed.length} Hindi dubbed anime, most-watched first</h2>
-        <p className="mb-4 text-sm text-muted">Checked {dubDate()}. Scope shows which seasons or films have Hindi audio; every row links to the page that confirms it.</p>
+        <p className="mb-4 text-sm text-muted">List updated {dubDate("en", DUB_SCANNED)}; each title shows the date it was confirmed. Scope shows which seasons or films have Hindi audio; every row links to the page that confirms it.</p>
         <HindiDubList items={cards} platforms={platforms.map((p) => p.name)} canReport={dbEnabled()} />
         {dbEnabled() && <CorrectionForm kind="dub" className="mt-4" />}
       </section>
