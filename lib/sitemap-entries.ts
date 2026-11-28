@@ -40,6 +40,7 @@ import { RELEASE_DATE, inRelease } from "@/lib/release";
 import { indiaGuide } from "@/lib/indiaguide";
 import crunchyrollPlans from "@/data/crunchyroll-plans.json";
 import opMc from "@/data/op-mc-anime.json";
+import describeAnime from "@/data/describe-anime.json";
 import opBounties from "@/data/one-piece-bounties.json";
 import { searchShown, searchShownPaths, animeIndexed, ownContentSlugs, watchOrderIndexed, characterTableIndexed, notedCharacters, demandCharacters, indexedCharacterSlugs, genreIndexed, bestYearIndexed, trendIndexed, voiceActorIndexed, hindiDubIndexed, SEARCHED_COMPARES, SEARCHED_CHARACTER_TABLES, SEARCHED_ANIME, INDEXED_STUDIOS } from "@/lib/indexing";
 import franchiseData from "@/data/franchises.json";
@@ -147,6 +148,7 @@ export async function sitemapEntries(): Promise<MetadataRoute.Sitemap> {
     { url: abs("/anime-openings"), lastModified: at(D.themes), changeFrequency: "weekly", priority: 0.6 },
     { url: abs("/tier-list"), lastModified: weekly, changeFrequency: "weekly", priority: 0.6 },
     { url: abs("/what-anime-is-this"), lastModified: at(SCENE_PAGE_UPDATED), changeFrequency: "monthly", priority: 0.8 },
+    { url: abs("/what-anime-is-this/describe"), lastModified: at(describeAnime.checked), changeFrequency: "monthly", priority: 0.7 },
     { url: abs("/news"), lastModified: now, changeFrequency: "hourly", priority: 0.8 },
     { url: abs("/comic-con-india"), lastModified: at(CC_CHECKED), changeFrequency: "weekly", priority: 0.7 },
     { url: abs("/quiz"), lastModified: at(), changeFrequency: "monthly", priority: 0.6 },

@@ -87,3 +87,16 @@ test("christmas anime: 12+ titles, each with a Christmas reason, a source and al
     assert.ok(/^[\w-]+$/.test(t.slug), `${t.t}: slug`);
   }
 });
+
+test("find-by-description: enough answers, each with a real clue, a source and a group", async () => {
+  const d = (await import("../data/describe-anime.json")).default as { groups: { id: string }[]; entries: { q: string; t: string; kitsu: string; group: string; clue: string; sources: string[] }[] };
+  assert.ok(d.entries.length >= 40, `only ${d.entries.length}`);
+  const groups = new Set(d.groups.map((g) => g.id));
+  for (const e of d.entries) {
+    assert.ok(e.q.length >= 30 && e.clue.length >= 40, `${e.t}: description or clue too short`);
+    assert.ok(e.sources.length >= 1 && e.sources.every((u) => /^https:\/\//.test(u)), `${e.t}: source`);
+    assert.ok(groups.has(e.group), `${e.t}: group ${e.group}`);
+    assert.match(e.kitsu, /^[a-z0-9-]+$/, `${e.t}: slug`);
+  }
+  assert.equal(new Set(d.entries.map((e) => e.q)).size, d.entries.length, "duplicate description");
+});

@@ -128,8 +128,9 @@ export default function WhatAnimeIsThis() {
       <section className="reveal pt-12" aria-labelledby="else-h">
         <h2 id="else-h" className="h-section mb-1">No screenshot? Other ways to find an anime</h2>
         <p className="mb-4 text-sm text-muted">If all you remember is the story, a character or the vibe:</p>
-        <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
           {[
+            ["/what-anime-is-this/describe", "📝 Find it by description", "\"A guy whose body turns to rubber\", \"a notebook that kills\": the ways people describe anime they can't name, answered."],
             ["/search", "🔎 Search by title or character", "Type any part of a name, in English or romaji."],
             ["/genre", "🏷️ Browse by genre and theme", "Isekai, time travel, sports, romance and hundreds more."],
             ["/random-anime-generator", "🎲 Random anime generator", "Pick a mood and get three picks you can share."],
