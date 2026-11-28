@@ -1,8 +1,9 @@
 {
- "checked": "2026-11-20",
- "source": "Bing Webmaster Tools: Page Traffic export (to 15 Nov 2026) and the 'important pages missing in sitemaps' report (20 Nov)",
+ "checked": "2026-11-28",
+ "source": "Bing Webmaster Tools: Page Traffic export (to 15 Nov 2026) and the 'important pages missing in sitemaps' report (20 Nov); 'meta robots tag need review' report (28 Nov)",
  "paths": [
   "/",
+  "/anime/Made-in-Abyss-Mezameru-Shinpi",
   "/anime/Tensei-Kizoku-Kantei-Skill-de-Nariagaru-3rd-Season",
   "/anime/attack-on-titan-ova",
   "/anime/doumo-suki-na-hito-ni-horegusuri-wo-irai-sareta-majo-desu",
@@ -10,7 +11,12 @@
   "/anime/futsutsuka-na-akujo-de-wa-gozaimasu-ga-suuguu-chouso-torikae-den-part-2",
   "/anime/hotaru-no-yomeiri",
   "/anime/mahou-shoujo-ni-akogarete",
+  "/anime/mushoku-tensei-isekai-ittara-honki-dasu-part-2",
+  "/anime/nande-koko-ni-sensei-ga",
   "/anime/otonari-no-tenshisama-ni-itsunomanika-dame-ningen-ni-sareteita-Ken",
+  "/anime/pokemon-advanced-generation-nanayo-no-negaiboshi-jirachi",
+  "/anime/pokemon-advanced-generation-pokemon-ranger-to-umi-no-ouji-manaphy",
+  "/anime/sasaki-to-miyano-movie-sotsugyou-hen",
   "/anime/seitokai-ni-mo-ana-wa-aru",
   "/anime/tenjou-tenge",
   "/anime/yowaki-max-reijou-nano-ni-ratsuwan-konyakusha-sama-no-kake-ni-notte-shimatta",
@@ -32,6 +38,7 @@
   "/watch-order/dungeon-ni-deai-wo-motomeru-no-wa-machigatteiru-no-darou-ka",
   "/watch-order/hellsing-ultimate",
   "/watch-order/higurashi-no-naku-koro-ni",
+  "/watch-order/itai-no-wa-lya-nano-de-bougyoryoku-ni-kyokufuri-shitai-to-omoimasu",
   "/watch-order/jibaku-shounen-hanako-kun",
   "/watch-order/kimetsu-no-yaiba",
   "/watch-order/kobayashi-san-chi-no-maid-dragon",
@@ -45,6 +52,7 @@
   "/watch-order/tengen-toppa-gurren-lagann",
   "/watch-order/tensei-shitara-slime-datta-ken",
   "/watch-order/toaru-majutsu-no-index",
+  "/watch-order/wind-breaker",
   "/what-anime-is-this",
   "/where-to-watch"
  ]
