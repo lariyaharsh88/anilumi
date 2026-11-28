@@ -2,6 +2,8 @@
  "note": "Pages a release changes in their template or wording (data dates don't move for those): set \"date\" to the deploy day right before pushing; the sitemap then dates these pages to it, and the after-deploy IndexNow job (scripts/submit-sitemap.mts, 72-hour lookback) sends them. Replace the list each release.",
  "date": "2026-11-28",
  "paths": [
+  "/what-anime-is-this/describe",
+  "/what-anime-is-this",
   "/tamil-dub/crunchyroll",
   "/tamil-dub/muse-india",
   "/tamil-dub/netflix",
