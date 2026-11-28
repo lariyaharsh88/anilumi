@@ -45,6 +45,12 @@ export const SCENE_PAGE_UPDATED = "2026-11-23";
 export const DUB_GUIDES_ADDED = "2026-11-15";
 /** Tamil and Telugu platform and best pages, and the Hindi dub status pages, went up (27 Nov 2026). */
 export const REGIONAL_PAGES_ADDED = "2026-11-27";
+/**
+ * The per-anime Hindi dub page template last changed (28 Nov 2026: Tamil/Telugu links, follow box, related status
+ * pages). Bing flagged these pages as changed but never sent via IndexNow: their sitemap date was the entry's own
+ * check date (11 Nov), so the daily IndexNow job skipped them. Move this when the template changes.
+ */
+export const HINDI_DUB_PAGE_UPDATED = "2026-11-28";
 
 /** Info pages, by the date their text last changed. */
 export const STATIC_UPDATED: Record<string, string> = {

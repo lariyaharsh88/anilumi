@@ -26,7 +26,7 @@ import { LANG, dubbedIn, regionalPath, regionalPlatformPath, regionalPlatforms, 
 import { dubEvents } from "@/lib/dubupdates";
 import { allStreams, streamsPath } from "@/lib/streams";
 import { filmFranchises, filmsPath, hasLang, FILMS_CHECKED, type FilmLang } from "@/lib/franchisefilms";
-import { HINDI_PLATFORMS, dubsOn, hindiDubbed, hindiDubPath, statusSlugs } from "@/lib/hindidub";
+import { DUB_SCANNED, HINDI_PLATFORMS, dubsOn, hindiDubbed, hindiDubPath, statusSlugs } from "@/lib/hindidub";
 import { KIDS_TV_CHECKED, KIDS_TV_PATH, kidsChannel } from "@/lib/kidstv";
 import { PRICES_CHECKED } from "@/lib/platformprices";
 import { indexedSimilar } from "@/lib/similarhub";
@@ -44,7 +44,7 @@ import describeAnime from "@/data/describe-anime.json";
 import opBounties from "@/data/one-piece-bounties.json";
 import { searchShown, searchShownPaths, animeIndexed, ownContentSlugs, watchOrderIndexed, characterTableIndexed, notedCharacters, demandCharacters, indexedCharacterSlugs, genreIndexed, bestYearIndexed, trendIndexed, voiceActorIndexed, hindiDubIndexed, SEARCHED_COMPARES, SEARCHED_CHARACTER_TABLES, SEARCHED_ANIME, INDEXED_STUDIOS } from "@/lib/indexing";
 import franchiseData from "@/data/franchises.json";
-import { DATA_DATES as D, STATIC_UPDATED, BIRTHDAY_PAGES_UPDATED, HINDI_HUB_UPDATED, SCENE_PAGE_UPDATED, DUB_GUIDES_ADDED, REGIONAL_PAGES_ADDED, latest, weekStart, monthStart } from "@/lib/lastmod";
+import { DATA_DATES as D, STATIC_UPDATED, BIRTHDAY_PAGES_UPDATED, HINDI_HUB_UPDATED, SCENE_PAGE_UPDATED, DUB_GUIDES_ADDED, REGIONAL_PAGES_ADDED, HINDI_DUB_PAGE_UPDATED, latest, weekStart, monthStart } from "@/lib/lastmod";
 import { FILLER } from "@/data/filler";
 
 const FUNIMATION_CHECKED = (funimation as { checked: string }).checked;
@@ -105,7 +105,7 @@ export async function sitemapEntries(): Promise<MetadataRoute.Sitemap> {
     // Kids' TV channels that air anime in Hindi (lib/kidstv.ts); the channel pages are the platform pages above.
     { url: abs(KIDS_TV_PATH), lastModified: at(KIDS_TV_CHECKED), changeFrequency: "monthly", priority: 0.7 },
     // Per-anime Hindi dub pages: the most-watched dubs (lib/indexing.ts hindiDubIndexed).
-    ...hindiDubbed().filter((d) => hindiDubIndexed(d.s)).map((d) => ({ url: abs(hindiDubPath(d.s)), lastModified: at(D.dubs, d.checked), changeFrequency: "weekly" as const, priority: 0.7 })),
+    ...hindiDubbed().filter((d) => hindiDubIndexed(d.s)).map((d) => ({ url: abs(hindiDubPath(d.s)), lastModified: at(D.dubs, d.checked, HINDI_DUB_PAGE_UPDATED), changeFrequency: "weekly" as const, priority: 0.7 })),
     ...(["ta", "te"] as const).flatMap((l) => dubbedIn(l).filter((d) => topRegional(d.s, l)).map((d) => ({ url: abs(regionalPath(d.s, l)), lastModified: at(D.regionalDubs, d.checked), changeFrequency: "monthly" as const, priority: 0.6 }))),
     // Tamil and Telugu per platform and ranked (lib/regionaldub.ts regionalPlatforms; components/RegionalBestPage.tsx).
     ...(["ta", "te"] as const).flatMap((l) => regionalPlatforms(l).map((x) => ({ url: abs(regionalPlatformPath(l, x.p.slug)), lastModified: at(D.regionalDubs, REGIONAL_PAGES_ADDED), changeFrequency: "monthly" as const, priority: 0.6 }))),
@@ -129,7 +129,7 @@ export async function sitemapEntries(): Promise<MetadataRoute.Sitemap> {
     { url: abs("/dub-schedule"), lastModified: now, changeFrequency: "daily", priority: 0.8 },
     { url: abs("/sub-vs-dub"), lastModified: at(D.streams, D.dubSchedule, D.seasonDubs, DUB_GUIDES_ADDED), changeFrequency: "weekly", priority: 0.8 },
     { url: abs("/anime-salt-alternatives"), lastModified: at(D.dubs, HINDI_HUB_UPDATED, DUB_GUIDES_ADDED), changeFrequency: "monthly", priority: 0.7 },
-    { url: abs("/download-anime-in-hindi"), lastModified: at(D.dubs, PRICES_CHECKED), changeFrequency: "monthly", priority: 0.7 },
+    { url: abs("/download-anime-in-hindi"), lastModified: at(D.dubs, PRICES_CHECKED, DUB_SCANNED), changeFrequency: "monthly", priority: 0.7 },
     { url: abs("/crunchyroll-price-india"), lastModified: at(PRICES_CHECKED, D.dubs, D.regionalDubs), changeFrequency: "monthly", priority: 0.7 },
     ...powersSlugs().map((s) => ({ url: abs(powersPath(s)), lastModified: at(POWERS_CHECKED), changeFrequency: "monthly" as const, priority: 0.7 })),
     { url: abs("/classic-anime-movies"), lastModified: at(CLASSIC_CHECKED), changeFrequency: "monthly", priority: 0.7 },
